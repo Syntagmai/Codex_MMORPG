@@ -1,0 +1,32 @@
+[book]
+title = "Codex MMORPG - Documentação Completa"
+authors = ["JP - Codex MMORPG Team"]
+language = "pt-BR"
+src = "src"
+description = "Documentação completa para desenvolvimento de MMORPGs com OTClient e Canary"
+
+[output.html]
+default-theme = "light"
+git-repository-url = "https://github.com/Syntagmai/Codex_MMORPG"
+git-repository-icon = "fa-github"
+additional-css = ["custom.css"]
+additional-js = ["custom.js"]
+
+[output.html.fold]
+enable = true
+level = 1
+
+[output.html.search]
+enable = true
+limit-results = 30
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 1
+boost-paragraph = 1
+expand-title = false
+heading-split-level = 3
+copy-title = true
+use-keyboard-shortcuts = true
+
+[output.html.mathjax-support]
+enable = true 
