@@ -1,0 +1,332 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "analysis_date": "2025-07-31T14:39:12.929114",
+    "methodology": "Habdel",
+    "story_id": "OTCLIENT-005",
+    "system": "Module System"
+  },
+  "overview": {
+    "total_files": 42,
+    "total_lines": 649,
+    "components": {},
+    "patterns": [],
+    "apis": {},
+    "dependencies": []
+  },
+  "components": {
+    "module.h": {
+      "classes": [
+        {
+          "name": "class",
+          "inherits": null
+        },
+        {
+          "name": "ModuleManager",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "bool",
+          "name": "load"
+        },
+        {
+          "return_type": "void",
+          "name": "unload"
+        },
+        {
+          "return_type": "bool",
+          "name": "reload"
+        },
+        {
+          "return_type": "bool",
+          "name": "isDependent"
+        },
+        {
+          "return_type": "bool",
+          "name": "hasDependency"
+        },
+        {
+          "return_type": "bool",
+          "name": "hasSupportedDevice"
+        },
+        {
+          "return_type": "int",
+          "name": "getSandbox"
+        },
+        {
+          "return_type": "void",
+          "name": "discover"
+        }
+      ],
+      "patterns": [],
+      "lines": 89,
+      "size": 3220
+    },
+    "module.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "return",
+          "name": "load"
+        }
+      ],
+      "patterns": [],
+      "lines": 274,
+      "size": 9258
+    },
+    "modulemanager.h": {
+      "classes": [
+        {
+          "name": "ModuleManager",
+          "inherits": null
+        },
+        {
+          "name": "Module",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "clear"
+        },
+        {
+          "return_type": "void",
+          "name": "discoverModules"
+        },
+        {
+          "return_type": "void",
+          "name": "autoLoadModules"
+        },
+        {
+          "return_type": "ModulePtr",
+          "name": "discoverModule"
+        },
+        {
+          "return_type": "void",
+          "name": "ensureModuleLoaded"
+        },
+        {
+          "return_type": "void",
+          "name": "unloadModules"
+        },
+        {
+          "return_type": "void",
+          "name": "reloadModules"
+        },
+        {
+          "return_type": "ModulePtr",
+          "name": "getModule"
+        },
+        {
+          "return_type": "void",
+          "name": "enableAutoReload"
+        },
+        {
+          "return_type": "void",
+          "name": "updateModuleLoadOrder"
+        }
+      ],
+      "patterns": [
+        "Singleton"
+      ],
+      "lines": 60,
+      "size": 2079
+    },
+    "modulemanager.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 226,
+      "size": 6847
+    }
+  },
+  "patterns": [
+    "Singleton"
+  ],
+  "apis": {
+    "Module": {
+      "description": "Classe base para todos os módulos",
+      "methods": [
+        "load",
+        "unload",
+        "init",
+        "terminate",
+        "isLoaded"
+      ],
+      "components": [
+        "module.h",
+        "module.cpp"
+      ]
+    },
+    "ModuleManager": {
+      "description": "Gerenciador central de módulos",
+      "methods": [
+        "loadModule",
+        "unloadModule",
+        "getModule",
+        "reloadModule"
+      ],
+      "components": [
+        "modulemanager.h",
+        "modulemanager.cpp"
+      ]
+    }
+  },
+  "examples": {
+    "basic_module": {
+      "title": "Criação de Módulo Básico",
+      "description": "Como criar um módulo básico",
+      "code": "// Exemplo de módulo básico\n#include \"module.h\"\n\nclass MyModule : public Module {{\npublic:\n    void load() override {{\n        // Inicializar módulo\n        g_logger.info(\"MyModule carregado\");\n    }}\n    \n    void unload() override {{\n        // Finalizar módulo\n        g_logger.info(\"MyModule descarregado\");\n    }}\n    \n    void init() override {{\n        // Configurar módulo\n        g_logger.info(\"MyModule inicializado\");\n    }}\n    \n    void terminate() override {{\n        // Limpar recursos\n        g_logger.info(\"MyModule finalizado\");\n    }}\n}};\n\n// Registrar módulo\nMODULE_LOADER(MyModule)"
+    },
+    "module_manager": {
+      "title": "Uso do ModuleManager",
+      "description": "Como usar o gerenciador de módulos",
+      "code": "// Exemplo de uso do ModuleManager\n#include \"modulemanager.h\"\n\nvoid manageModules() {{\n    // Carregar módulo\n    ModulePtr module = g_modules.loadModule(\"MyModule\");\n    \n    if (module) {{\n        std::cout << \"Módulo carregado com sucesso!\" << std::endl;\n        \n        // Verificar se está carregado\n        if (module->isLoaded()) {{\n            std::cout << \"Módulo está ativo\" << std::endl;\n        }}\n        \n        // Recarregar módulo\n        g_modules.reloadModule(\"MyModule\");\n        \n        // Descarregar módulo\n        g_modules.unloadModule(\"MyModule\");\n    }} else {{\n        std::cout << \"Falha ao carregar módulo!\" << std::endl;\n    }}\n}}"
+    },
+    "game_module": {
+      "title": "Módulo de Jogo",
+      "description": "Como criar um módulo específico do jogo",
+      "code": "// Exemplo de módulo de jogo\n#include \"module.h\"\n#include \"uimanager.h\"\n\nclass GameInventoryModule : public Module {{\nprivate:\n    UIWidgetPtr inventoryWindow;\n    \npublic:\n    void load() override {{\n        // Criar interface do inventário\n        inventoryWindow = g_ui.createWidget(\"UIWidget\");\n        inventoryWindow->setVisible(false);\n        \n        g_logger.info(\"GameInventoryModule carregado\");\n    }}\n    \n    void unload() override {{\n        // Remover interface\n        if (inventoryWindow) {{\n            inventoryWindow->destroy();\n            inventoryWindow = nullptr;\n        }}\n        \n        g_logger.info(\"GameInventoryModule descarregado\");\n    }}\n    \n    void showInventory() {{\n        if (inventoryWindow) {{\n            inventoryWindow->setVisible(true);\n        }}\n    }}\n    \n    void hideInventory() {{\n        if (inventoryWindow) {{\n            inventoryWindow->setVisible(false);\n        }}\n    }}\n}};\n\nMODULE_LOADER(GameInventoryModule)"
+    },
+    "client_module": {
+      "title": "Módulo de Cliente",
+      "description": "Como criar um módulo de interface do cliente",
+      "code": "// Exemplo de módulo de cliente\n#include \"module.h\"\n#include \"uimanager.h\"\n\nclass ClientTopMenuModule : public Module {{\nprivate:\n    UIWidgetPtr topMenu;\n    \npublic:\n    void load() override {{\n        // Criar menu superior\n        topMenu = g_ui.createWidget(\"UIWidget\");\n        topMenu->setPosition(Point(0, 0));\n        topMenu->setSize(Size(800, 30));\n        \n        // Adicionar botões\n        UIWidgetPtr settingsBtn = g_ui.createWidget(\"UIButton\");\n        settingsBtn->setText(\"Configurações\");\n        settingsBtn->onClick = []() {{\n            // Abrir configurações\n        }};\n        \n        topMenu->addChild(settingsBtn);\n        \n        g_logger.info(\"ClientTopMenuModule carregado\");\n    }}\n    \n    void unload() override {{\n        if (topMenu) {{\n            topMenu->destroy();\n            topMenu = nullptr;\n        }}\n        \n        g_logger.info(\"ClientTopMenuModule descarregado\");\n    }}\n}};\n\nMODULE_LOADER(ClientTopMenuModule)"
+    }
+  },
+  "integration_points": [
+    {
+      "system": "Core Framework",
+      "description": "Integração com sistema core (Application, EventDispatcher)",
+      "files": [
+        "module.h",
+        "module.cpp",
+        "modulemanager.h",
+        "modulemanager.cpp"
+      ],
+      "type": "dependency"
+    },
+    {
+      "system": "UI System",
+      "description": "Integração com sistema de UI para interfaces de módulos",
+      "files": [
+        "module.h",
+        "module.cpp"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Lua Engine",
+      "description": "Exposição de módulos para scripts Lua",
+      "files": [
+        "module.h",
+        "module.cpp"
+      ],
+      "type": "binding"
+    },
+    {
+      "system": "Event System",
+      "description": "Integração com sistema de eventos para comunicação entre módulos",
+      "files": [
+        "module.h",
+        "module.cpp"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Resource Management",
+      "description": "Integração com gerenciamento de recursos",
+      "files": [
+        "module.h",
+        "module.cpp"
+      ],
+      "type": "dependency"
+    }
+  ],
+  "available_modules": [
+    "client",
+    "client_background",
+    "client_bottommenu",
+    "client_debug_info",
+    "client_entergame",
+    "client_locales",
+    "client_options",
+    "client_serverlist",
+    "client_styles",
+    "client_terminal",
+    "client_topmenu",
+    "corelib",
+    "gamelib",
+    "game_actionbar",
+    "game_attachedeffects",
+    "game_battle",
+    "game_blessing",
+    "game_bugreport",
+    "game_console",
+    "game_containers",
+    "game_cooldown",
+    "game_creatureinformation",
+    "game_cyclopedia",
+    "game_features",
+    "game_healthcircle",
+    "game_healthinfo",
+    "game_highscore",
+    "game_hotkeys",
+    "game_imbuementtracker",
+    "game_imbuing",
+    "game_interface",
+    "game_inventory",
+    "game_joystick",
+    "game_mainpanel",
+    "game_market",
+    "game_minimap",
+    "game_modaldialog",
+    "game_npctrade",
+    "game_outfit",
+    "game_playerdeath",
+    "game_playermount",
+    "game_playertrade",
+    "game_prey",
+    "game_questlog",
+    "game_quickloot",
+    "game_rewardwall",
+    "game_ruleviolation",
+    "game_screenshot",
+    "game_shaders",
+    "game_shop",
+    "game_shortcuts",
+    "game_skills",
+    "game_spelllist",
+    "game_stash",
+    "game_store",
+    "game_tasks",
+    "game_textmessage",
+    "game_textwindow",
+    "game_things",
+    "game_unjustifiedpoints",
+    "game_viplist",
+    "game_walk",
+    "modulelib",
+    "startup",
+    "updater"
+  ]
+}
