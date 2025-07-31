@@ -1,0 +1,609 @@
+{
+  "metadata": {
+    "story_id": "OTCLIENT-001",
+    "title": "Análise da Arquitetura Core",
+    "date": "2025-07-31 13:51:33",
+    "version": "1.0.0",
+    "methodology": "Habdel"
+  },
+  "files_analyzed": 10,
+  "total_headers": 22,
+  "total_cpp": 20,
+  "components": {
+    "application.h": {
+      "classes": [
+        {
+          "name": "ApplicationContext",
+          "inherits": null
+        },
+        {
+          "name": "Application",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "return_type": "void",
+          "name": "deinit"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "void",
+          "name": "poll"
+        },
+        {
+          "return_type": "void",
+          "name": "exit"
+        },
+        {
+          "return_type": "void",
+          "name": "close"
+        },
+        {
+          "return_type": "void",
+          "name": "restart"
+        },
+        {
+          "return_type": "string",
+          "name": "getVersion"
+        },
+        {
+          "return_type": "string",
+          "name": "getBuildRevision"
+        },
+        {
+          "return_type": "string",
+          "name": "getBuildCommit"
+        },
+        {
+          "return_type": "string",
+          "name": "getOs"
+        },
+        {
+          "return_type": "void",
+          "name": "registerLuaFunctions"
+        }
+      ],
+      "patterns": [
+        "Singleton",
+        "Polymorphism",
+        "STL Usage"
+      ],
+      "lines": 97,
+      "size": 3306
+    },
+    "graphicalapplication.h": {
+      "classes": [
+        {
+          "name": "ApplicationDrawEvents",
+          "inherits": null
+        },
+        {
+          "name": "GraphicalApplication",
+          "inherits": null
+        },
+        {
+          "name": "GraphicalApplicationContext",
+          "inherits": "ApplicationContext"
+        },
+        {
+          "name": "GraphicalApplication",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "mainPoll"
+        },
+        {
+          "return_type": "void",
+          "name": "setHUDScale"
+        },
+        {
+          "return_type": "bool",
+          "name": "isLoadingAsyncTexture"
+        },
+        {
+          "return_type": "void",
+          "name": "setLoadingAsyncTexture"
+        },
+        {
+          "return_type": "void",
+          "name": "doScreenshot"
+        },
+        {
+          "return_type": "void",
+          "name": "doMapScreenshot"
+        },
+        {
+          "return_type": "void",
+          "name": "mainLoop"
+        },
+        {
+          "return_type": "void",
+          "name": "resize"
+        },
+        {
+          "return_type": "void",
+          "name": "inputEvent"
+        }
+      ],
+      "patterns": [
+        "Polymorphism",
+        "STL Usage"
+      ],
+      "lines": 161,
+      "size": 5705
+    },
+    "modulemanager.h": {
+      "classes": [
+        {
+          "name": "ModuleManager",
+          "inherits": null
+        },
+        {
+          "name": "Module",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "clear"
+        },
+        {
+          "return_type": "void",
+          "name": "discoverModules"
+        },
+        {
+          "return_type": "void",
+          "name": "autoLoadModules"
+        },
+        {
+          "return_type": "ModulePtr",
+          "name": "discoverModule"
+        },
+        {
+          "return_type": "void",
+          "name": "ensureModuleLoaded"
+        },
+        {
+          "return_type": "void",
+          "name": "unloadModules"
+        },
+        {
+          "return_type": "void",
+          "name": "reloadModules"
+        },
+        {
+          "return_type": "ModulePtr",
+          "name": "getModule"
+        },
+        {
+          "return_type": "void",
+          "name": "enableAutoReload"
+        },
+        {
+          "return_type": "void",
+          "name": "updateModuleLoadOrder"
+        }
+      ],
+      "patterns": [
+        "Singleton",
+        "STL Usage"
+      ],
+      "lines": 60,
+      "size": 2079
+    },
+    "eventdispatcher.h": {
+      "classes": [
+        {
+          "name": "TaskGroup",
+          "inherits": null
+        },
+        {
+          "name": "DispatcherType",
+          "inherits": null
+        },
+        {
+          "name": "EventDispatcher",
+          "inherits": null
+        },
+        {
+          "name": "EventDispatcher",
+          "inherits": null
+        },
+        {
+          "name": "ThreadTaskEventState",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "return_type": "void",
+          "name": "shutdown"
+        },
+        {
+          "return_type": "void",
+          "name": "poll"
+        },
+        {
+          "return_type": "void",
+          "name": "mergeEvents"
+        },
+        {
+          "return_type": "void",
+          "name": "executeEvents"
+        },
+        {
+          "return_type": "void",
+          "name": "executeDeferEvents"
+        },
+        {
+          "return_type": "void",
+          "name": "executeScheduledEvents"
+        }
+      ],
+      "patterns": [
+        "Singleton",
+        "Template",
+        "STL Usage"
+      ],
+      "lines": 165,
+      "size": 4686
+    },
+    "module.h": {
+      "classes": [
+        {
+          "name": "class",
+          "inherits": null
+        },
+        {
+          "name": "ModuleManager",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "bool",
+          "name": "load"
+        },
+        {
+          "return_type": "void",
+          "name": "unload"
+        },
+        {
+          "return_type": "bool",
+          "name": "reload"
+        },
+        {
+          "return_type": "bool",
+          "name": "hasDependency"
+        },
+        {
+          "return_type": "bool",
+          "name": "hasSupportedDevice"
+        },
+        {
+          "return_type": "int",
+          "name": "getSandbox"
+        },
+        {
+          "return_type": "void",
+          "name": "discover"
+        }
+      ],
+      "patterns": [
+        "STL Usage"
+      ],
+      "lines": 89,
+      "size": 3220
+    },
+    "resourcemanager.h": {
+      "classes": [
+        {
+          "name": "ResourceManager",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "bool",
+          "name": "discoverWorkDir"
+        },
+        {
+          "return_type": "bool",
+          "name": "setupUserWriteDir"
+        },
+        {
+          "return_type": "bool",
+          "name": "setWriteDir"
+        },
+        {
+          "return_type": "bool",
+          "name": "addSearchPath"
+        },
+        {
+          "return_type": "bool",
+          "name": "removeSearchPath"
+        },
+        {
+          "return_type": "void",
+          "name": "searchAndAddPackages"
+        },
+        {
+          "return_type": "bool",
+          "name": "fileExists"
+        },
+        {
+          "return_type": "bool",
+          "name": "directoryExists"
+        },
+        {
+          "return_type": "void",
+          "name": "readFileStream"
+        },
+        {
+          "return_type": "string",
+          "name": "readFileContents"
+        },
+        {
+          "return_type": "bool",
+          "name": "writeFileBuffer"
+        },
+        {
+          "return_type": "bool",
+          "name": "writeFileContents"
+        },
+        {
+          "return_type": "bool",
+          "name": "writeFileStream"
+        },
+        {
+          "return_type": "FileStreamPtr",
+          "name": "openFile"
+        },
+        {
+          "return_type": "bool",
+          "name": "deleteFile"
+        },
+        {
+          "return_type": "bool",
+          "name": "makeDir"
+        },
+        {
+          "return_type": "string",
+          "name": "resolvePath"
+        },
+        {
+          "return_type": "string",
+          "name": "getRealDir"
+        },
+        {
+          "return_type": "string",
+          "name": "getRealPath"
+        },
+        {
+          "return_type": "string",
+          "name": "getBaseDir"
+        },
+        {
+          "return_type": "string",
+          "name": "getUserDir"
+        },
+        {
+          "return_type": "string",
+          "name": "guessFilePath"
+        },
+        {
+          "return_type": "bool",
+          "name": "isFileType"
+        },
+        {
+          "return_type": "string",
+          "name": "getFileName"
+        },
+        {
+          "return_type": "ticks_t",
+          "name": "getFileTime"
+        },
+        {
+          "return_type": "string",
+          "name": "encrypt"
+        },
+        {
+          "return_type": "string",
+          "name": "decrypt"
+        },
+        {
+          "return_type": "void",
+          "name": "runEncryption"
+        },
+        {
+          "return_type": "void",
+          "name": "save_string_into_file"
+        },
+        {
+          "return_type": "string",
+          "name": "fileChecksum"
+        },
+        {
+          "return_type": "string",
+          "name": "selfChecksum"
+        },
+        {
+          "return_type": "void",
+          "name": "updateFiles"
+        },
+        {
+          "return_type": "void",
+          "name": "updateExecutable"
+        },
+        {
+          "return_type": "bool",
+          "name": "launchCorrect"
+        },
+        {
+          "return_type": "string",
+          "name": "createArchive"
+        }
+      ],
+      "patterns": [
+        "Singleton",
+        "STL Usage"
+      ],
+      "lines": 110,
+      "size": 4837
+    },
+    "logger.h": {
+      "classes": [
+        {
+          "name": "Logger",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "log"
+        },
+        {
+          "return_type": "void",
+          "name": "logFunc"
+        },
+        {
+          "return_type": "void",
+          "name": "fireOldMessages"
+        },
+        {
+          "return_type": "void",
+          "name": "setLogFile"
+        }
+      ],
+      "patterns": [
+        "Singleton",
+        "Template",
+        "STL Usage"
+      ],
+      "lines": 166,
+      "size": 5764
+    },
+    "timer.h": {
+      "classes": [
+        {
+          "name": "Timer",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "restart"
+        }
+      ],
+      "patterns": [],
+      "lines": 46,
+      "size": 1666
+    },
+    "configmanager.h": {
+      "classes": [
+        {
+          "name": "ConfigManager",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "ConfigPtr",
+          "name": "getSettings"
+        },
+        {
+          "return_type": "ConfigPtr",
+          "name": "get"
+        },
+        {
+          "return_type": "ConfigPtr",
+          "name": "create"
+        },
+        {
+          "return_type": "ConfigPtr",
+          "name": "loadSettings"
+        },
+        {
+          "return_type": "ConfigPtr",
+          "name": "load"
+        },
+        {
+          "return_type": "bool",
+          "name": "unload"
+        },
+        {
+          "return_type": "void",
+          "name": "remove"
+        }
+      ],
+      "patterns": [
+        "Singleton",
+        "STL Usage"
+      ],
+      "lines": 52,
+      "size": 1715
+    },
+    "clock.h": {
+      "classes": [
+        {
+          "name": "Clock",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "update"
+        },
+        {
+          "return_type": "ticks_t",
+          "name": "realMicros"
+        },
+        {
+          "return_type": "ticks_t",
+          "name": "realMillis"
+        }
+      ],
+      "patterns": [
+        "Singleton",
+        "STL Usage"
+      ],
+      "lines": 46,
+      "size": 1642
+    }
+  }
+}
