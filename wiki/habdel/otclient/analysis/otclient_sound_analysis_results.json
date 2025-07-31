@@ -1,0 +1,967 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "analysis_date": "2025-07-31T15:17:27.534454",
+    "methodology": "Habdel",
+    "story_id": "OTCLIENT-009",
+    "system": "Sound System"
+  },
+  "overview": {
+    "total_files": 19,
+    "total_lines": 2523,
+    "components": {},
+    "patterns": [],
+    "apis": {},
+    "dependencies": []
+  },
+  "components": {
+    "soundmanager.h": {
+      "classes": [
+        {
+          "name": "SoundManager",
+          "inherits": null
+        }
+      ],
+      "enums": [
+        "ClientSoundType",
+        "ClientMusicType"
+      ],
+      "structs": [
+        "ClientSoundEffect",
+        "ClientLocationAmbient",
+        "ClientItemAmbient",
+        "ClientMusic"
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "void",
+          "name": "poll"
+        },
+        {
+          "return_type": "void",
+          "name": "setAudioEnabled"
+        },
+        {
+          "return_type": "void",
+          "name": "stopAll"
+        },
+        {
+          "return_type": "void",
+          "name": "setPosition"
+        },
+        {
+          "return_type": "bool",
+          "name": "isEaxEnabled"
+        },
+        {
+          "return_type": "bool",
+          "name": "loadClientFiles"
+        },
+        {
+          "return_type": "std::string",
+          "name": "getAudioFileNameById"
+        },
+        {
+          "return_type": "void",
+          "name": "preload"
+        },
+        {
+          "return_type": "SoundSourcePtr",
+          "name": "play"
+        },
+        {
+          "return_type": "SoundChannelPtr",
+          "name": "getChannel"
+        },
+        {
+          "return_type": "SoundEffectPtr",
+          "name": "createSoundEffect"
+        },
+        {
+          "return_type": "std::string",
+          "name": "resolveSoundFile"
+        },
+        {
+          "return_type": "void",
+          "name": "ensureContext"
+        },
+        {
+          "return_type": "SoundSourcePtr",
+          "name": "createSoundSource"
+        },
+        {
+          "return_type": "bool",
+          "name": "loadFromProtobuf"
+        }
+      ],
+      "patterns": [
+        "Singleton",
+        "Sound",
+        "Audio",
+        "Effect",
+        "Channel",
+        "Stream"
+      ],
+      "lines": 173,
+      "size": 5789
+    },
+    "soundmanager.cpp": {
+      "classes": [
+        {
+          "name": "StreamSoundSource",
+          "inherits": null
+        },
+        {
+          "name": "CombinedSoundSource",
+          "inherits": null
+        },
+        {
+          "name": "SoundFile",
+          "inherits": null
+        },
+        {
+          "name": "SoundBuffer",
+          "inherits": null
+        }
+      ],
+      "enums": [],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "protobuf",
+          "name": "loadFromProtobuf"
+        }
+      ],
+      "patterns": [
+        "Template",
+        "Sound",
+        "Audio",
+        "Effect",
+        "Channel",
+        "Stream"
+      ],
+      "lines": 539,
+      "size": 17613
+    },
+    "soundeffect.h": {
+      "classes": [
+        {
+          "name": "SoundEffect",
+          "inherits": null
+        },
+        {
+          "name": "SoundManager",
+          "inherits": null
+        },
+        {
+          "name": "SoundSource",
+          "inherits": null
+        }
+      ],
+      "enums": [],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "explicit",
+          "name": "SoundEffect"
+        },
+        {
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "return_type": "void",
+          "name": "setPreset"
+        },
+        {
+          "return_type": "void",
+          "name": "setReverbDensity"
+        },
+        {
+          "return_type": "void",
+          "name": "setReverbDiffusion"
+        },
+        {
+          "return_type": "void",
+          "name": "setReverbGain"
+        },
+        {
+          "return_type": "void",
+          "name": "setReverbGainHF"
+        },
+        {
+          "return_type": "void",
+          "name": "setReverbGainLF"
+        },
+        {
+          "return_type": "void",
+          "name": "setReverbDecayTime"
+        },
+        {
+          "return_type": "void",
+          "name": "setReverbDecayHfRatio"
+        },
+        {
+          "return_type": "void",
+          "name": "setReverbDecayLfRatio"
+        },
+        {
+          "return_type": "void",
+          "name": "setReverbReflectionsGain"
+        },
+        {
+          "return_type": "void",
+          "name": "setReverbReflectionsDelay"
+        },
+        {
+          "return_type": "void",
+          "name": "loadPreset"
+        }
+      ],
+      "patterns": [
+        "Sound",
+        "Effect"
+      ],
+      "lines": 62,
+      "size": 2260
+    },
+    "soundeffect.cpp": {
+      "classes": [],
+      "enums": [],
+      "structs": [],
+      "methods": [],
+      "patterns": [
+        "Factory",
+        "Template",
+        "Sound",
+        "Effect"
+      ],
+      "lines": 420,
+      "size": 18084
+    },
+    "soundsource.h": {
+      "classes": [
+        {
+          "name": "SoundSource",
+          "inherits": "LuaObject"
+        },
+        {
+          "name": "SoundManager",
+          "inherits": null
+        },
+        {
+          "name": "CombinedSoundSource",
+          "inherits": null
+        }
+      ],
+      "enums": [
+        "FadeState"
+      ],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "play"
+        },
+        {
+          "return_type": "void",
+          "name": "stop"
+        },
+        {
+          "return_type": "bool",
+          "name": "isBuffering"
+        },
+        {
+          "return_type": "return",
+          "name": "isBuffering"
+        },
+        {
+          "return_type": "void",
+          "name": "setLooping"
+        },
+        {
+          "return_type": "void",
+          "name": "setRelative"
+        },
+        {
+          "return_type": "void",
+          "name": "setReferenceDistance"
+        },
+        {
+          "return_type": "void",
+          "name": "setGain"
+        },
+        {
+          "return_type": "void",
+          "name": "setPitch"
+        },
+        {
+          "return_type": "void",
+          "name": "setPosition"
+        },
+        {
+          "return_type": "void",
+          "name": "setVelocity"
+        },
+        {
+          "return_type": "void",
+          "name": "setRolloff"
+        },
+        {
+          "return_type": "void",
+          "name": "setFading"
+        },
+        {
+          "return_type": "void",
+          "name": "setEffect"
+        },
+        {
+          "return_type": "void",
+          "name": "removeEffect"
+        },
+        {
+          "return_type": "float",
+          "name": "getReferenceDistance"
+        },
+        {
+          "return_type": "void",
+          "name": "setBuffer"
+        },
+        {
+          "return_type": "void",
+          "name": "update"
+        }
+      ],
+      "patterns": [
+        "Sound",
+        "Effect",
+        "Channel"
+      ],
+      "lines": 86,
+      "size": 2892
+    },
+    "soundsource.cpp": {
+      "classes": [],
+      "enums": [
+        "err",
+        "err"
+      ],
+      "structs": [],
+      "methods": [],
+      "patterns": [
+        "Sound",
+        "Effect"
+      ],
+      "lines": 191,
+      "size": 5434
+    },
+    "soundchannel.h": {
+      "classes": [
+        {
+          "name": "class",
+          "inherits": null
+        },
+        {
+          "name": "SoundManager",
+          "inherits": null
+        }
+      ],
+      "enums": [],
+      "structs": [
+        "QueueEntry"
+      ],
+      "methods": [
+        {
+          "return_type": "SoundSourcePtr",
+          "name": "play"
+        },
+        {
+          "return_type": "void",
+          "name": "stop"
+        },
+        {
+          "return_type": "void",
+          "name": "enqueue"
+        },
+        {
+          "return_type": "void",
+          "name": "setGain"
+        },
+        {
+          "return_type": "void",
+          "name": "setPitch"
+        },
+        {
+          "return_type": "void",
+          "name": "setPosition"
+        },
+        {
+          "return_type": "void",
+          "name": "setEnabled"
+        },
+        {
+          "return_type": "void",
+          "name": "update"
+        }
+      ],
+      "patterns": [
+        "Sound",
+        "Channel"
+      ],
+      "lines": 76,
+      "size": 2519
+    },
+    "soundchannel.cpp": {
+      "classes": [],
+      "enums": [],
+      "structs": [],
+      "methods": [],
+      "patterns": [
+        "Sound",
+        "Audio",
+        "Channel",
+        "Stream"
+      ],
+      "lines": 113,
+      "size": 3419
+    },
+    "soundfile.h": {
+      "classes": [
+        {
+          "name": "SoundFile",
+          "inherits": "std"
+        }
+      ],
+      "enums": [
+        "getSampleFormat"
+      ],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "SoundFilePtr",
+          "name": "loadSoundFile"
+        },
+        {
+          "return_type": "ALenum",
+          "name": "getSampleFormat"
+        }
+      ],
+      "patterns": [
+        "Sound",
+        "Channel",
+        "Stream"
+      ],
+      "lines": 55,
+      "size": 2091
+    },
+    "soundfile.cpp": {
+      "classes": [],
+      "enums": [
+        "SoundFile"
+      ],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        }
+      ],
+      "patterns": [
+        "Sound",
+        "Channel"
+      ],
+      "lines": 64,
+      "size": 2270
+    },
+    "soundbuffer.h": {
+      "classes": [
+        {
+          "name": "SoundBuffer",
+          "inherits": "std"
+        }
+      ],
+      "enums": [
+        "sampleFormat"
+      ],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "bool",
+          "name": "fillBuffer"
+        },
+        {
+          "return_type": "bool",
+          "name": "fillBuffer"
+        }
+      ],
+      "patterns": [
+        "Sound"
+      ],
+      "lines": 41,
+      "size": 1568
+    },
+    "soundbuffer.cpp": {
+      "classes": [],
+      "enums": [
+        "format",
+        "sampleFormat",
+        "err"
+      ],
+      "structs": [],
+      "methods": [],
+      "patterns": [
+        "Sound",
+        "Audio"
+      ],
+      "lines": 65,
+      "size": 2442
+    },
+    "streamsoundsource.h": {
+      "classes": [
+        {
+          "name": "StreamSoundSource",
+          "inherits": null
+        }
+      ],
+      "enums": [
+        "DownMix"
+      ],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "setSoundFile"
+        },
+        {
+          "return_type": "void",
+          "name": "setFile"
+        },
+        {
+          "return_type": "void",
+          "name": "downMix"
+        },
+        {
+          "return_type": "void",
+          "name": "queueBuffers"
+        },
+        {
+          "return_type": "void",
+          "name": "unqueueBuffers"
+        },
+        {
+          "return_type": "bool",
+          "name": "fillBufferAndQueue"
+        }
+      ],
+      "patterns": [
+        "Sound",
+        "Stream"
+      ],
+      "lines": 68,
+      "size": 2155
+    },
+    "streamsoundsource.cpp": {
+      "classes": [],
+      "enums": [
+        "format",
+        "err"
+      ],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "fill",
+          "name": "return"
+        }
+      ],
+      "patterns": [
+        "Sound",
+        "Audio",
+        "Stream"
+      ],
+      "lines": 200,
+      "size": 5516
+    },
+    "combinedsoundsource.h": {
+      "classes": [
+        {
+          "name": "CombinedSoundSource",
+          "inherits": null
+        }
+      ],
+      "enums": [],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "addSource"
+        }
+      ],
+      "patterns": [
+        "Sound",
+        "Effect"
+      ],
+      "lines": 58,
+      "size": 2102
+    },
+    "combinedsoundsource.cpp": {
+      "classes": [],
+      "enums": [],
+      "structs": [],
+      "methods": [],
+      "patterns": [
+        "Sound",
+        "Effect"
+      ],
+      "lines": 126,
+      "size": 3470
+    },
+    "oggsoundfile.h": {
+      "classes": [
+        {
+          "name": "OggSoundFile",
+          "inherits": null
+        }
+      ],
+      "enums": [],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "bool",
+          "name": "prepareOgg"
+        },
+        {
+          "return_type": "size_t",
+          "name": "cb_read"
+        },
+        {
+          "return_type": "int",
+          "name": "cb_seek"
+        },
+        {
+          "return_type": "int",
+          "name": "cb_close"
+        },
+        {
+          "return_type": "long",
+          "name": "cb_tell"
+        }
+      ],
+      "patterns": [
+        "Sound",
+        "Stream"
+      ],
+      "lines": 48,
+      "size": 1844
+    },
+    "oggsoundfile.cpp": {
+      "classes": [],
+      "enums": [],
+      "structs": [],
+      "methods": [],
+      "patterns": [
+        "Sound",
+        "Channel",
+        "Stream"
+      ],
+      "lines": 88,
+      "size": 3112
+    },
+    "declarations.h": {
+      "classes": [
+        {
+          "name": "SoundManager",
+          "inherits": null
+        },
+        {
+          "name": "SoundSource",
+          "inherits": null
+        },
+        {
+          "name": "SoundBuffer",
+          "inherits": null
+        },
+        {
+          "name": "SoundFile",
+          "inherits": null
+        },
+        {
+          "name": "SoundChannel",
+          "inherits": null
+        },
+        {
+          "name": "StreamSoundSource",
+          "inherits": null
+        },
+        {
+          "name": "CombinedSoundSource",
+          "inherits": null
+        },
+        {
+          "name": "OggSoundFile",
+          "inherits": null
+        },
+        {
+          "name": "SoundEffect",
+          "inherits": null
+        }
+      ],
+      "enums": [],
+      "structs": [],
+      "methods": [],
+      "patterns": [
+        "Sound",
+        "Effect",
+        "Channel",
+        "Stream"
+      ],
+      "lines": 50,
+      "size": 1929
+    }
+  },
+  "patterns": [
+    "Factory",
+    "Sound",
+    "Stream",
+    "Audio",
+    "Template",
+    "Channel",
+    "Effect",
+    "Singleton"
+  ],
+  "apis": {
+    "SoundManager": {
+      "description": "Gerenciador central do sistema de som",
+      "methods": [
+        "init",
+        "terminate",
+        "poll",
+        "play",
+        "stopAll",
+        "setPosition"
+      ],
+      "components": [
+        "soundmanager.h",
+        "soundmanager.cpp"
+      ]
+    },
+    "SoundEffect": {
+      "description": "Sistema de efeitos de áudio (reverb, echo, etc.)",
+      "methods": [
+        "setPreset",
+        "setReverbDensity",
+        "setReverbGain",
+        "setReverbDecayTime"
+      ],
+      "components": [
+        "soundeffect.h",
+        "soundeffect.cpp"
+      ]
+    },
+    "SoundSource": {
+      "description": "Fonte de áudio para reprodução",
+      "methods": [
+        "play",
+        "stop",
+        "pause",
+        "setGain",
+        "setPitch",
+        "setPosition"
+      ],
+      "components": [
+        "soundsource.h",
+        "soundsource.cpp"
+      ]
+    },
+    "SoundChannel": {
+      "description": "Canais de áudio para organização",
+      "methods": [
+        "setGain",
+        "setEnabled",
+        "getGain",
+        "isEnabled"
+      ],
+      "components": [
+        "soundchannel.h",
+        "soundchannel.cpp"
+      ]
+    },
+    "SoundFile": {
+      "description": "Gerenciamento de arquivos de áudio",
+      "methods": [
+        "load",
+        "getDuration",
+        "getSampleRate",
+        "getChannels"
+      ],
+      "components": [
+        "soundfile.h",
+        "soundfile.cpp"
+      ]
+    },
+    "SoundBuffer": {
+      "description": "Buffer de áudio para otimização",
+      "methods": [
+        "load",
+        "unload",
+        "isLoaded",
+        "getSize"
+      ],
+      "components": [
+        "soundbuffer.h",
+        "soundbuffer.cpp"
+      ]
+    },
+    "StreamSoundSource": {
+      "description": "Fonte de áudio para streaming",
+      "methods": [
+        "stream",
+        "update",
+        "setStreaming",
+        "isStreaming"
+      ],
+      "components": [
+        "streamsoundsource.h",
+        "streamsoundsource.cpp"
+      ]
+    },
+    "CombinedSoundSource": {
+      "description": "Combinação de múltiplas fontes de áudio",
+      "methods": [
+        "addSource",
+        "removeSource",
+        "playAll",
+        "stopAll"
+      ],
+      "components": [
+        "combinedsoundsource.h",
+        "combinedsoundsource.cpp"
+      ]
+    },
+    "OggSoundFile": {
+      "description": "Suporte para arquivos OGG Vorbis",
+      "methods": [
+        "loadOgg",
+        "decodeOgg",
+        "getOggInfo"
+      ],
+      "components": [
+        "oggsoundfile.h",
+        "oggsoundfile.cpp"
+      ]
+    }
+  },
+  "examples": {
+    "sound_manager": {
+      "title": "Gerenciador de Som",
+      "description": "Como usar o gerenciador principal de som",
+      "code": "// Exemplo de uso do gerenciador de som\n#include \"sound/soundmanager.h\"\n\nvoid useSoundManager() {{\n    // Obter instância do gerenciador\n    SoundManager& soundManager = g_sounds;\n    \n    // Inicializar sistema de som\n    soundManager.init();\n    \n    // Habilitar/desabilitar áudio\n    soundManager.setAudioEnabled(true);\n    \n    // Definir posição do listener\n    soundManager.setPosition(Point(100, 100));\n    \n    // Reproduzir som\n    SoundSourcePtr soundSource = soundManager.play(\"sounds/attack.wav\");\n    \n    // Reproduzir com parâmetros\n    SoundSourcePtr musicSource = soundManager.play(\"music/background.ogg\", 2.0f, 0.8f, 1.0f);\n    // fadeTime=2.0s, gain=0.8, pitch=1.0\n    \n    // Parar todos os sons\n    soundManager.stopAll();\n    \n    // Verificar se áudio está habilitado\n    if (soundManager.isAudioEnabled()) {{\n        std::cout << \"Audio is enabled\" << std::endl;\n    }}\n    \n    // Finalizar sistema\n    soundManager.terminate();\n}}"
+    },
+    "sound_effects": {
+      "title": "Efeitos de Som",
+      "description": "Como usar efeitos de áudio",
+      "code": "// Exemplo de uso de efeitos de som\n#include \"sound/soundeffect.h\"\n\nvoid useSoundEffects() {{\n    // Criar efeito de som\n    SoundEffectPtr reverbEffect = std::make_shared<SoundEffect>(g_sounds.getDevice());\n    \n    // Configurar preset de reverb\n    reverbEffect->setPreset(\"cave\");\n    \n    // Configurar parâmetros manualmente\n    reverbEffect->setReverbDensity(1.0f);      // Densidade do reverb\n    reverbEffect->setReverbGain(0.5f);         // Ganho do reverb\n    reverbEffect->setReverbDecayTime(2.0f);    // Tempo de decaimento\n    reverbEffect->setReverbDiffusion(1.0f);    // Difusão do reverb\n    \n    // Aplicar efeito a uma fonte de som\n    SoundSourcePtr source = g_sounds.play(\"sounds/echo.wav\");\n    source->setEffect(reverbEffect);\n    \n    // Criar efeito de eco\n    SoundEffectPtr echoEffect = std::make_shared<SoundEffect>(g_sounds.getDevice());\n    echoEffect->setPreset(\"echo\");\n    \n    // Aplicar múltiplos efeitos\n    source->addEffect(echoEffect);\n}}"
+    },
+    "sound_channels": {
+      "title": "Canais de Som",
+      "description": "Como usar canais de áudio",
+      "code": "// Exemplo de uso de canais de som\n#include \"sound/soundchannel.h\"\n\nvoid useSoundChannels() {{\n    // Obter canais específicos\n    SoundChannelPtr musicChannel = g_sounds.getChannel(0);  // Canal de música\n    SoundChannelPtr sfxChannel = g_sounds.getChannel(1);    // Canal de efeitos\n    SoundChannelPtr voiceChannel = g_sounds.getChannel(2);  // Canal de voz\n    \n    // Configurar volume dos canais\n    musicChannel->setGain(0.7f);   // 70% volume para música\n    sfxChannel->setGain(0.9f);     // 90% volume para efeitos\n    voiceChannel->setGain(1.0f);   // 100% volume para voz\n    \n    // Habilitar/desabilitar canais\n    musicChannel->setEnabled(true);\n    sfxChannel->setEnabled(true);\n    voiceChannel->setEnabled(false);  // Desabilitar voz\n    \n    // Reproduzir sons em canais específicos\n    SoundSourcePtr musicSource = g_sounds.play(\"music/background.ogg\");\n    musicSource->setChannel(musicChannel);\n    \n    SoundSourcePtr attackSound = g_sounds.play(\"sounds/attack.wav\");\n    attackSound->setChannel(sfxChannel);\n    \n    // Verificar status dos canais\n    if (musicChannel->isEnabled()) {{\n        std::cout << \"Music channel is enabled\" << std::endl;\n    }}\n    \n    float musicVolume = musicChannel->getGain();\n    std::cout << \"Music volume: \" << musicVolume << std::endl;\n}}"
+    },
+    "streaming_audio": {
+      "title": "Áudio em Streaming",
+      "description": "Como usar streaming de áudio",
+      "code": "// Exemplo de streaming de áudio\n#include \"sound/streamsoundsource.h\"\n\nvoid useStreamingAudio() {{\n    // Criar fonte de streaming\n    StreamSoundSourcePtr streamSource = std::make_shared<StreamSoundSource>();\n    \n    // Configurar streaming\n    streamSource->setStreaming(true);\n    streamSource->setBufferSize(8192);  // 8KB buffer\n    \n    // Carregar arquivo para streaming\n    streamSource->load(\"music/long_track.ogg\");\n    \n    // Iniciar streaming\n    streamSource->play();\n    \n    // Atualizar streaming (chamar periodicamente)\n    while (streamSource->isPlaying()) {{\n        streamSource->update();\n        std::this_thread::sleep_for(std::chrono::milliseconds(16));\n    }}\n    \n    // Verificar se está fazendo streaming\n    if (streamSource->isStreaming()) {{\n        std::cout << \"Audio is streaming\" << std::endl;\n    }}\n    \n    // Parar streaming\n    streamSource->stop();\n    streamSource->setStreaming(false);\n}}"
+    },
+    "combined_sources": {
+      "title": "Fontes Combinadas",
+      "description": "Como combinar múltiplas fontes de áudio",
+      "code": "// Exemplo de fontes de áudio combinadas\n#include \"sound/combinedsoundsource.h\"\n\nvoid useCombinedSources() {{\n    // Criar fonte combinada\n    CombinedSoundSourcePtr combinedSource = std::make_shared<CombinedSoundSource>();\n    \n    // Adicionar fontes individuais\n    SoundSourcePtr source1 = g_sounds.play(\"sounds/ambient1.wav\");\n    SoundSourcePtr source2 = g_sounds.play(\"sounds/ambient2.wav\");\n    SoundSourcePtr source3 = g_sounds.play(\"sounds/ambient3.wav\");\n    \n    combinedSource->addSource(source1);\n    combinedSource->addSource(source2);\n    combinedSource->addSource(source3);\n    \n    // Configurar volume geral\n    combinedSource->setGain(0.8f);\n    \n    // Reproduzir todas as fontes\n    combinedSource->playAll();\n    \n    // Pausar todas as fontes\n    combinedSource->pauseAll();\n    \n    // Retomar todas as fontes\n    combinedSource->resumeAll();\n    \n    // Parar todas as fontes\n    combinedSource->stopAll();\n    \n    // Remover fonte específica\n    combinedSource->removeSource(source2);\n    \n    // Verificar número de fontes\n    size_t sourceCount = combinedSource->getSourceCount();\n    std::cout << \"Combined source has \" << sourceCount << \" sources\" << std::endl;\n}}"
+    },
+    "ogg_support": {
+      "title": "Suporte OGG Vorbis",
+      "description": "Como usar arquivos OGG Vorbis",
+      "code": "// Exemplo de suporte OGG Vorbis\n#include \"sound/oggsoundfile.h\"\n\nvoid useOggSupport() {{\n    // Criar arquivo OGG\n    OggSoundFilePtr oggFile = std::make_shared<OggSoundFile>();\n    \n    // Carregar arquivo OGG\n    if (oggFile->loadOgg(\"music/track.ogg\")) {{\n        // Obter informações do arquivo\n        uint32_t sampleRate = oggFile->getSampleRate();\n        uint32_t channels = oggFile->getChannels();\n        uint32_t duration = oggFile->getDuration();\n        \n        std::cout << \"OGG Info:\" << std::endl;\n        std::cout << \"  Sample Rate: \" << sampleRate << \" Hz\" << std::endl;\n        std::cout << \"  Channels: \" << channels << std::endl;\n        std::cout << \"  Duration: \" << duration << \" ms\" << std::endl;\n        \n        // Decodificar dados\n        std::vector<uint8_t> audioData = oggFile->decodeOgg();\n        \n        // Criar buffer de som\n        SoundBufferPtr buffer = std::make_shared<SoundBuffer>();\n        buffer->loadFromMemory(audioData.data(), audioData.size(), channels, sampleRate);\n        \n        // Reproduzir buffer\n        SoundSourcePtr source = g_sounds.createSoundSource(\"ogg_source\");\n        source->setBuffer(buffer);\n        source->play();\n    }} else {{\n        std::cout << \"Failed to load OGG file\" << std::endl;\n    }}\n}}"
+    },
+    "sound_types": {
+      "title": "Tipos de Som",
+      "description": "Como usar diferentes tipos de som",
+      "code": "// Exemplo de tipos de som\n#include \"sound/soundmanager.h\"\n\nvoid useSoundTypes() {{\n    // Tipos de som disponíveis\n    enum ClientSoundType {{\n        NUMERIC_SOUND_TYPE_SPELL_ATTACK = 1,\n        NUMERIC_SOUND_TYPE_SPELL_HEALING = 2,\n        NUMERIC_SOUND_TYPE_WEAPON_ATTACK = 4,\n        NUMERIC_SOUND_TYPE_CREATURE_NOISE = 5,\n        NUMERIC_SOUND_TYPE_CREATURE_DEATH = 6,\n        NUMERIC_SOUND_TYPE_AMBIENCE_STREAM = 8,\n        NUMERIC_SOUND_TYPE_FOOD_AND_DRINK = 9,\n        NUMERIC_SOUND_TYPE_UI = 12,\n        NUMERIC_SOUND_TYPE_CHAT_MESSAGE = 14\n    }};\n    \n    // Reproduzir som de ataque de magia\n    g_sounds.playSoundEffect(NUMERIC_SOUND_TYPE_SPELL_ATTACK, 100);\n    \n    // Reproduzir som de cura\n    g_sounds.playSoundEffect(NUMERIC_SOUND_TYPE_SPELL_HEALING, 101);\n    \n    // Reproduzir som de ataque de arma\n    g_sounds.playSoundEffect(NUMERIC_SOUND_TYPE_WEAPON_ATTACK, 102);\n    \n    // Reproduzir som de criatura\n    g_sounds.playSoundEffect(NUMERIC_SOUND_TYPE_CREATURE_NOISE, 103);\n    \n    // Reproduzir som de morte\n    g_sounds.playSoundEffect(NUMERIC_SOUND_TYPE_CREATURE_DEATH, 104);\n    \n    // Reproduzir som de UI\n    g_sounds.playSoundEffect(NUMERIC_SOUND_TYPE_UI, 105);\n    \n    // Reproduzir som de chat\n    g_sounds.playSoundEffect(NUMERIC_SOUND_TYPE_CHAT_MESSAGE, 106);\n}}"
+    }
+  },
+  "integration_points": [
+    {
+      "system": "Core Framework",
+      "description": "Integração com sistema core (Timer, EventDispatcher)",
+      "files": [
+        "soundmanager.h",
+        "soundmanager.cpp"
+      ],
+      "type": "dependency"
+    },
+    {
+      "system": "Lua System",
+      "description": "Exposição de APIs de som para scripts Lua",
+      "files": [
+        "soundeffect.h",
+        "soundmanager.h"
+      ],
+      "type": "binding"
+    },
+    {
+      "system": "Game System",
+      "description": "Integração com sistema de jogo para sons",
+      "files": [
+        "soundmanager.h",
+        "soundmanager.cpp"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "UI System",
+      "description": "Sons de interface do usuário",
+      "files": [
+        "soundmanager.h",
+        "soundchannel.h"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Network System",
+      "description": "Recebimento de dados de som do servidor",
+      "files": [
+        "soundmanager.h",
+        "soundmanager.cpp"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Resource Management",
+      "description": "Gerenciamento de recursos de áudio",
+      "files": [
+        "soundfile.h",
+        "soundbuffer.h"
+      ],
+      "type": "dependency"
+    },
+    {
+      "system": "Data System",
+      "description": "Conversão de dados de áudio",
+      "files": [
+        "soundfile.h",
+        "oggsoundfile.h"
+      ],
+      "type": "integration"
+    }
+  ]
+}
