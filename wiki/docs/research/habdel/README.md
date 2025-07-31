@@ -1,6 +1,6 @@
-# Canary - Analysis
+# Canary - Stories
 
-Esta pasta contém analysis relacionados ao canary.
+Esta pasta contém stories relacionados ao canary.
 
 ## Conteúdo
 - Documentação específica do canary
