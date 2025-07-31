@@ -1,0 +1,39 @@
+name: Build mdBook Always
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      
+    - name: Setup mdBook
+      uses: peaceiris/actions-mdbook@v1
+      with:
+        mdbook-version: 'latest'
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Convert Obsidian to mdBook
+      run: |
+        python scripts/obsidian_to_mdbook.py
+        
+    - name: Build mdBook to docs folder
+      run: mdbook build docs/ -d docs/
+      
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add docs/
+        git diff --quiet && git diff --staged --quiet || git commit -m "Build mdBook for GitHub Pages"
+        git push 
