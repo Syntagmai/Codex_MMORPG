@@ -1,0 +1,1038 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "analysis_date": "2025-07-31T14:19:36.795511",
+    "methodology": "Habdel",
+    "story_id": "OTCLIENT-003",
+    "system": "Network System"
+  },
+  "overview": {
+    "total_files": 21,
+    "total_lines": 4061,
+    "components": {},
+    "patterns": [],
+    "apis": {},
+    "dependencies": []
+  },
+  "components": {
+    "connection.h": {
+      "classes": [
+        {
+          "name": "Connection",
+          "inherits": null
+        },
+        {
+          "name": "Server",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "poll"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "void",
+          "name": "close"
+        },
+        {
+          "return_type": "void",
+          "name": "write"
+        },
+        {
+          "return_type": "void",
+          "name": "read"
+        },
+        {
+          "return_type": "void",
+          "name": "read_until"
+        },
+        {
+          "return_type": "void",
+          "name": "read_some"
+        },
+        {
+          "return_type": "int",
+          "name": "getIp"
+        },
+        {
+          "return_type": "void",
+          "name": "internal_connect"
+        },
+        {
+          "return_type": "void",
+          "name": "internal_write"
+        },
+        {
+          "return_type": "void",
+          "name": "onResolve"
+        },
+        {
+          "return_type": "void",
+          "name": "onConnect"
+        },
+        {
+          "return_type": "void",
+          "name": "onCanWrite"
+        },
+        {
+          "return_type": "void",
+          "name": "onWrite"
+        },
+        {
+          "return_type": "void",
+          "name": "onRecv"
+        },
+        {
+          "return_type": "void",
+          "name": "onTimeout"
+        },
+        {
+          "return_type": "void",
+          "name": "handleError"
+        }
+      ],
+      "patterns": [],
+      "lines": 102,
+      "size": 3980
+    },
+    "connection.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "endif",
+          "name": "close"
+        },
+        {
+          "return_type": "else",
+          "name": "handleError"
+        },
+        {
+          "return_type": "tcp::no_delay",
+          "name": "option"
+        },
+        {
+          "return_type": "else",
+          "name": "handleError"
+        },
+        {
+          "return_type": "else",
+          "name": "handleError"
+        }
+      ],
+      "patterns": [],
+      "lines": 350,
+      "size": 10255
+    },
+    "protocol.h": {
+      "classes": [
+        {
+          "name": "class",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "connect"
+        },
+        {
+          "return_type": "void",
+          "name": "connect"
+        },
+        {
+          "return_type": "void",
+          "name": "disconnect"
+        },
+        {
+          "return_type": "void",
+          "name": "setRecorder"
+        },
+        {
+          "return_type": "void",
+          "name": "playRecord"
+        },
+        {
+          "return_type": "bool",
+          "name": "isConnected"
+        },
+        {
+          "return_type": "bool",
+          "name": "isConnecting"
+        },
+        {
+          "return_type": "void",
+          "name": "generateXteaKey"
+        },
+        {
+          "return_type": "void",
+          "name": "send"
+        },
+        {
+          "return_type": "void",
+          "name": "recv"
+        },
+        {
+          "return_type": "void",
+          "name": "onConnect"
+        },
+        {
+          "return_type": "void",
+          "name": "onRecv"
+        },
+        {
+          "return_type": "void",
+          "name": "onError"
+        },
+        {
+          "return_type": "void",
+          "name": "onProxyPacket"
+        },
+        {
+          "return_type": "void",
+          "name": "onPlayerPacket"
+        },
+        {
+          "return_type": "void",
+          "name": "onLocalDisconnected"
+        },
+        {
+          "return_type": "void",
+          "name": "internalRecvHeader"
+        },
+        {
+          "return_type": "void",
+          "name": "internalRecvData"
+        },
+        {
+          "return_type": "bool",
+          "name": "xteaDecrypt"
+        },
+        {
+          "return_type": "void",
+          "name": "xteaEncrypt"
+        }
+      ],
+      "patterns": [],
+      "lines": 115,
+      "size": 4072
+    },
+    "protocol.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "endif",
+          "name": "disconnect"
+        },
+        {
+          "return_type": "return",
+          "name": "onConnect"
+        },
+        {
+          "return_type": "byte",
+          "name": "for"
+        },
+        {
+          "return_type": "return",
+          "name": "unif"
+        },
+        {
+          "return_type": "return",
+          "name": "onConnect"
+        }
+      ],
+      "patterns": [],
+      "lines": 468,
+      "size": 14899
+    },
+    "inputmessage.h": {
+      "classes": [
+        {
+          "name": "class",
+          "inherits": null
+        },
+        {
+          "name": "Protocol",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "setBuffer"
+        },
+        {
+          "return_type": "uint8_t",
+          "name": "getU8"
+        },
+        {
+          "return_type": "uint16_t",
+          "name": "getU16"
+        },
+        {
+          "return_type": "uint32_t",
+          "name": "getU32"
+        },
+        {
+          "return_type": "uint64_t",
+          "name": "getU64"
+        },
+        {
+          "return_type": "int64_t",
+          "name": "get64"
+        },
+        {
+          "return_type": "std::string",
+          "name": "getString"
+        },
+        {
+          "return_type": "double",
+          "name": "getDouble"
+        },
+        {
+          "return_type": "bool",
+          "name": "decryptRsa"
+        },
+        {
+          "return_type": "void",
+          "name": "reset"
+        },
+        {
+          "return_type": "void",
+          "name": "fillBuffer"
+        },
+        {
+          "return_type": "void",
+          "name": "setHeaderSize"
+        },
+        {
+          "return_type": "return",
+          "name": "getU16"
+        },
+        {
+          "return_type": "bool",
+          "name": "readChecksum"
+        },
+        {
+          "return_type": "bool",
+          "name": "canRead"
+        },
+        {
+          "return_type": "void",
+          "name": "checkRead"
+        },
+        {
+          "return_type": "void",
+          "name": "checkWrite"
+        }
+      ],
+      "patterns": [],
+      "lines": 118,
+      "size": 3824
+    },
+    "inputmessage.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 152,
+      "size": 4200
+    },
+    "outputmessage.h": {
+      "classes": [
+        {
+          "name": "class",
+          "inherits": null
+        },
+        {
+          "name": "Protocol",
+          "inherits": null
+        },
+        {
+          "name": "PacketPlayer",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "reset"
+        },
+        {
+          "return_type": "void",
+          "name": "setBuffer"
+        },
+        {
+          "return_type": "void",
+          "name": "addU8"
+        },
+        {
+          "return_type": "void",
+          "name": "addU16"
+        },
+        {
+          "return_type": "void",
+          "name": "addU32"
+        },
+        {
+          "return_type": "void",
+          "name": "addU64"
+        },
+        {
+          "return_type": "void",
+          "name": "addString"
+        },
+        {
+          "return_type": "void",
+          "name": "addPaddingBytes"
+        },
+        {
+          "return_type": "void",
+          "name": "prependU8"
+        },
+        {
+          "return_type": "void",
+          "name": "prependU16"
+        },
+        {
+          "return_type": "void",
+          "name": "encryptRsa"
+        },
+        {
+          "return_type": "void",
+          "name": "writeChecksum"
+        },
+        {
+          "return_type": "void",
+          "name": "writeSequence"
+        },
+        {
+          "return_type": "void",
+          "name": "writeMessageSize"
+        },
+        {
+          "return_type": "void",
+          "name": "writePaddingAmount"
+        },
+        {
+          "return_type": "void",
+          "name": "writeHeaderSize"
+        },
+        {
+          "return_type": "bool",
+          "name": "canWrite"
+        },
+        {
+          "return_type": "void",
+          "name": "checkWrite"
+        }
+      ],
+      "patterns": [],
+      "lines": 88,
+      "size": 2936
+    },
+    "outputmessage.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "checksum",
+          "name": "prependU16"
+        }
+      ],
+      "patterns": [],
+      "lines": 187,
+      "size": 5288
+    },
+    "server.h": {
+      "classes": [
+        {
+          "name": "Server",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "ServerPtr",
+          "name": "create"
+        },
+        {
+          "return_type": "void",
+          "name": "close"
+        },
+        {
+          "return_type": "void",
+          "name": "acceptNext"
+        }
+      ],
+      "patterns": [],
+      "lines": 42,
+      "size": 1511
+    },
+    "server.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 68,
+      "size": 2232
+    },
+    "webconnection.h": {
+      "classes": [
+        {
+          "name": "WebConnection",
+          "inherits": "LuaObject"
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "poll"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "void",
+          "name": "close"
+        },
+        {
+          "return_type": "void",
+          "name": "write"
+        },
+        {
+          "return_type": "void",
+          "name": "read"
+        },
+        {
+          "return_type": "int",
+          "name": "getIp"
+        },
+        {
+          "return_type": "bool",
+          "name": "sendPacket"
+        },
+        {
+          "return_type": "void",
+          "name": "internal_write"
+        },
+        {
+          "return_type": "void",
+          "name": "onWrite"
+        },
+        {
+          "return_type": "void",
+          "name": "onRecv"
+        },
+        {
+          "return_type": "void",
+          "name": "onTimeout"
+        },
+        {
+          "return_type": "void",
+          "name": "runOnErrorCallback"
+        }
+      ],
+      "patterns": [],
+      "lines": 98,
+      "size": 3334
+    },
+    "webconnection.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "endif",
+          "name": "close"
+        },
+        {
+          "return_type": "std::ostream",
+          "name": "os"
+        }
+      ],
+      "patterns": [],
+      "lines": 290,
+      "size": 8306
+    },
+    "protocolhttp.h": {
+      "classes": [
+        {
+          "name": "HttpSession",
+          "inherits": null
+        },
+        {
+          "name": "HttpSession",
+          "inherits": "std"
+        },
+        {
+          "name": "WebsocketCallbackType",
+          "inherits": null
+        },
+        {
+          "name": "WebsocketSession",
+          "inherits": "std"
+        },
+        {
+          "name": "Http",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "start"
+        },
+        {
+          "return_type": "void",
+          "name": "close"
+        },
+        {
+          "return_type": "void",
+          "name": "on_resolve"
+        },
+        {
+          "return_type": "void",
+          "name": "on_connect"
+        },
+        {
+          "return_type": "void",
+          "name": "on_request_sent"
+        },
+        {
+          "return_type": "void",
+          "name": "on_write"
+        },
+        {
+          "return_type": "void",
+          "name": "on_read"
+        },
+        {
+          "return_type": "void",
+          "name": "onTimeout"
+        },
+        {
+          "return_type": "void",
+          "name": "onError"
+        },
+        {
+          "return_type": "void",
+          "name": "start"
+        },
+        {
+          "return_type": "void",
+          "name": "send"
+        },
+        {
+          "return_type": "void",
+          "name": "close"
+        },
+        {
+          "return_type": "void",
+          "name": "on_resolve"
+        },
+        {
+          "return_type": "void",
+          "name": "on_connect"
+        },
+        {
+          "return_type": "void",
+          "name": "on_request_sent"
+        },
+        {
+          "return_type": "void",
+          "name": "on_write"
+        },
+        {
+          "return_type": "void",
+          "name": "on_read"
+        },
+        {
+          "return_type": "void",
+          "name": "on_close"
+        },
+        {
+          "return_type": "void",
+          "name": "onTimeout"
+        },
+        {
+          "return_type": "void",
+          "name": "onError"
+        },
+        {
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "int",
+          "name": "get"
+        },
+        {
+          "return_type": "int",
+          "name": "post"
+        },
+        {
+          "return_type": "int",
+          "name": "download"
+        },
+        {
+          "return_type": "int",
+          "name": "ws"
+        },
+        {
+          "return_type": "bool",
+          "name": "wsSend"
+        },
+        {
+          "return_type": "bool",
+          "name": "wsClose"
+        },
+        {
+          "return_type": "bool",
+          "name": "cancel"
+        }
+      ],
+      "patterns": [],
+      "lines": 244,
+      "size": 8445
+    },
+    "protocolhttp.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "resolver::query",
+          "name": "query_resolver"
+        },
+        {
+          "return_type": "resolver::query",
+          "name": "query_resolver"
+        }
+      ],
+      "patterns": [],
+      "lines": 1096,
+      "size": 38868
+    },
+    "httplogin.h": {
+      "classes": [
+        {
+          "name": "LoginHttp",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "startHttpLogin"
+        },
+        {
+          "return_type": "void",
+          "name": "Logger"
+        },
+        {
+          "return_type": "std::string",
+          "name": "getCharacterList"
+        },
+        {
+          "return_type": "std::string",
+          "name": "getWorldList"
+        },
+        {
+          "return_type": "std::string",
+          "name": "getSession"
+        },
+        {
+          "return_type": "bool",
+          "name": "parseJsonResponse"
+        },
+        {
+          "return_type": "void",
+          "name": "httpLogin"
+        },
+        {
+          "return_type": "httplib::Result",
+          "name": "loginHttpsJson"
+        },
+        {
+          "return_type": "httplib::Result",
+          "name": "loginHttpJson"
+        }
+      ],
+      "patterns": [],
+      "lines": 70,
+      "size": 2645
+    },
+    "httplogin.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "httplib::SSLClient",
+          "name": "cli"
+        },
+        {
+          "return_type": "httplib::SSLClient",
+          "name": "client"
+        },
+        {
+          "return_type": "httplib::Client",
+          "name": "client"
+        }
+      ],
+      "patterns": [],
+      "lines": 308,
+      "size": 11579
+    },
+    "packet_recorder.h": {
+      "classes": [
+        {
+          "name": "PacketRecorder",
+          "inherits": "LuaObject"
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "addInputPacket"
+        },
+        {
+          "return_type": "void",
+          "name": "addOutputPacket"
+        }
+      ],
+      "patterns": [],
+      "lines": 41,
+      "size": 1572
+    },
+    "packet_recorder.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 70,
+      "size": 2465
+    },
+    "packet_player.h": {
+      "classes": [
+        {
+          "name": "PacketPlayer",
+          "inherits": "LuaObject"
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "stop"
+        },
+        {
+          "return_type": "void",
+          "name": "onOutputPacket"
+        },
+        {
+          "return_type": "void",
+          "name": "process"
+        }
+      ],
+      "patterns": [],
+      "lines": 49,
+      "size": 1996
+    },
+    "packet_player.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "logout",
+          "name": "m_disconnectCallback"
+        }
+      ],
+      "patterns": [],
+      "lines": 105,
+      "size": 3532
+    }
+  },
+  "patterns": [],
+  "apis": {
+    "Connection": {
+      "description": "Gerenciamento de conexões de rede",
+      "methods": [
+        "connect",
+        "disconnect",
+        "send",
+        "receive",
+        "isConnected"
+      ],
+      "components": [
+        "connection.h",
+        "connection.cpp"
+      ]
+    },
+    "Protocol": {
+      "description": "Protocolo de comunicação cliente-servidor",
+      "methods": [
+        "send",
+        "receive",
+        "parse",
+        "build"
+      ],
+      "components": [
+        "protocol.h",
+        "protocol.cpp"
+      ]
+    },
+    "InputMessage": {
+      "description": "Processamento de mensagens recebidas",
+      "methods": [
+        "read",
+        "getU8",
+        "getU16",
+        "getU32",
+        "getString"
+      ],
+      "components": [
+        "inputmessage.h",
+        "inputmessage.cpp"
+      ]
+    },
+    "OutputMessage": {
+      "description": "Construção de mensagens para envio",
+      "methods": [
+        "addU8",
+        "addU16",
+        "addU32",
+        "addString",
+        "send"
+      ],
+      "components": [
+        "outputmessage.h",
+        "outputmessage.cpp"
+      ]
+    },
+    "Server": {
+      "description": "Gerenciamento de servidores",
+      "methods": [
+        "connect",
+        "disconnect",
+        "getStatus"
+      ],
+      "components": [
+        "server.h",
+        "server.cpp"
+      ]
+    },
+    "WebConnection": {
+      "description": "Conexões web e HTTP",
+      "methods": [
+        "request",
+        "response",
+        "download"
+      ],
+      "components": [
+        "webconnection.h",
+        "webconnection.cpp"
+      ]
+    },
+    "HTTPLogin": {
+      "description": "Sistema de login via HTTP",
+      "methods": [
+        "login",
+        "logout",
+        "authenticate"
+      ],
+      "components": [
+        "httplogin.h",
+        "httplogin.cpp"
+      ]
+    },
+    "PacketRecorder": {
+      "description": "Gravação de pacotes para debug",
+      "methods": [
+        "record",
+        "save",
+        "load"
+      ],
+      "components": [
+        "packet_recorder.h",
+        "packet_recorder.cpp"
+      ]
+    }
+  },
+  "examples": {
+    "basic_connection": {
+      "title": "Conexão Básica com Servidor",
+      "description": "Como estabelecer uma conexão básica com o servidor",
+      "code": "// Exemplo de conexão básica\n#include \"connection.h\"\n#include \"server.h\"\n\nvoid connectToServer() {{\n    // Criar conexão\n    ConnectionPtr connection = Connection::create();\n    \n    // Configurar servidor\n    Server server;\n    server.setHost(\"localhost\");\n    server.setPort(7172);\n    \n    // Conectar\n    if (connection->connect(server)) {{\n        std::cout << \"Conectado ao servidor!\" << std::endl;\n    }} else {{\n        std::cout << \"Falha na conexão!\" << std::endl;\n    }}\n}}"
+    },
+    "protocol_communication": {
+      "title": "Comunicação via Protocolo",
+      "description": "Como enviar e receber mensagens usando o protocolo",
+      "code": "// Exemplo de comunicação via protocolo\n#include \"protocol.h\"\n#include \"inputmessage.h\"\n#include \"outputmessage.h\"\n\nvoid sendLoginRequest() {{\n    // Criar mensagem de saída\n    OutputMessagePtr msg = OutputMessage::create();\n    \n    // Adicionar dados do login\n    msg->addU8(0x01); // Login opcode\n    msg->addString(\"username\");\n    msg->addString(\"password\");\n    \n    // Enviar mensagem\n    g_protocol.send(msg);\n}}\n\nvoid handleServerResponse() {{\n    // Receber mensagem\n    InputMessagePtr msg = g_protocol.receive();\n    \n    if (msg) {{\n        uint8_t opcode = msg->getU8();\n        \n        switch (opcode) {{\n            case 0x0A: // Login response\n                handleLoginResponse(msg);\n                break;\n            case 0x0B: // Game data\n                handleGameData(msg);\n                break;\n        }}\n    }}\n}}"
+    },
+    "http_login": {
+      "title": "Login via HTTP",
+      "description": "Como realizar login usando sistema HTTP",
+      "code": "// Exemplo de login HTTP\n#include \"httplogin.h\"\n\nvoid performHTTPLogin() {{\n    // Criar cliente de login HTTP\n    HTTPLogin login;\n    \n    // Configurar credenciais\n    login.setUsername(\"player\");\n    login.setPassword(\"password\");\n    login.setServer(\"https://login.server.com\");\n    \n    // Realizar login\n    if (login.authenticate()) {{\n        std::cout << \"Login HTTP realizado com sucesso!\" << std::endl;\n        \n        // Obter token de sessão\n        std::string sessionToken = login.getSessionToken();\n        \n        // Conectar ao servidor de jogo\n        connectToGameServer(sessionToken);\n    }} else {{\n        std::cout << \"Falha no login HTTP!\" << std::endl;\n    }}\n}}"
+    },
+    "packet_recording": {
+      "title": "Gravação de Pacotes",
+      "description": "Como gravar e reproduzir pacotes para debug",
+      "code": "// Exemplo de gravação de pacotes\n#include \"packet_recorder.h\"\n#include \"packet_player.h\"\n\nvoid recordPackets() {{\n    // Criar gravador de pacotes\n    PacketRecorder recorder;\n    \n    // Iniciar gravação\n    recorder.startRecording(\"session.pcap\");\n    \n    // Durante a sessão de jogo...\n    // Pacotes são automaticamente gravados\n    \n    // Parar gravação\n    recorder.stopRecording();\n}}\n\nvoid replayPackets() {{\n    // Criar player de pacotes\n    PacketPlayer player;\n    \n    // Carregar arquivo de pacotes\n    if (player.loadFile(\"session.pcap\")) {{\n        // Reproduzir pacotes\n        player.startReplay();\n        \n        // Processar pacotes reproduzidos\n        while (player.hasNextPacket()) {{\n            InputMessagePtr packet = player.getNextPacket();\n            processPacket(packet);\n        }}\n    }}\n}}"
+    }
+  },
+  "integration_points": [
+    {
+      "system": "Core Framework",
+      "description": "Integração com sistema core (Application, EventDispatcher)",
+      "files": [
+        "connection.h",
+        "connection.cpp"
+      ],
+      "type": "dependency"
+    },
+    {
+      "system": "Game Logic",
+      "description": "Integração com lógica do jogo e eventos",
+      "files": [
+        "protocol.h",
+        "protocol.cpp"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "UI System",
+      "description": "Integração com interface do usuário para status de conexão",
+      "files": [
+        "connection.h",
+        "server.h"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Lua Engine",
+      "description": "Exposição de APIs de rede para scripts Lua",
+      "files": [
+        "protocol.h",
+        "connection.h"
+      ],
+      "type": "binding"
+    },
+    {
+      "system": "Security",
+      "description": "Integração com sistema de segurança e criptografia",
+      "files": [
+        "httplogin.h",
+        "httplogin.cpp"
+      ],
+      "type": "security"
+    },
+    {
+      "system": "Debug Tools",
+      "description": "Integração com ferramentas de debug e análise",
+      "files": [
+        "packet_recorder.h",
+        "packet_player.h"
+      ],
+      "type": "debug"
+    }
+  ]
+}
