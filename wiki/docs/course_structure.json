@@ -1,0 +1,210 @@
+{
+  "otclient": {
+    "title": "Curso Completo OTClient",
+    "description": "Aprenda a desenvolver e customizar o OTClient desde o básico até o avançado",
+    "level": "beginner_to_advanced",
+    "duration": "8 semanas",
+    "modules": [
+      {
+        "id": "MÓDULO-001",
+        "title": "Introdução ao OTClient",
+        "description": "Conceitos básicos e arquitetura",
+        "level": "beginner",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-002",
+        "title": "Sistema Core",
+        "description": "Análise profunda do sistema core",
+        "level": "intermediate",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-003",
+        "title": "Sistema de Gráficos",
+        "description": "Renderização e OpenGL",
+        "level": "intermediate",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-004",
+        "title": "Sistema de Rede",
+        "description": "Protocolos e comunicação",
+        "level": "intermediate",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-005",
+        "title": "Sistema de Áudio",
+        "description": "OpenAL e sons",
+        "level": "intermediate",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-006",
+        "title": "Framework UI",
+        "description": "Widgets e interface",
+        "level": "intermediate",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-007",
+        "title": "Sistema de Módulos",
+        "description": "Desenvolvimento Lua",
+        "level": "intermediate",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-008",
+        "title": "Lógica do Jogo",
+        "description": "Mecânicas e regras",
+        "level": "advanced",
+        "duration": "1 semana",
+        "lessons": []
+      }
+    ]
+  },
+  "canary": {
+    "title": "Curso Completo Canary",
+    "description": "Domine o desenvolvimento com Canary e suas funcionalidades avançadas",
+    "level": "intermediate_to_advanced",
+    "duration": "6 semanas",
+    "modules": [
+      {
+        "id": "MÓDULO-001",
+        "title": "Introdução ao Canary",
+        "description": "Conceitos básicos e arquitetura",
+        "level": "intermediate",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-002",
+        "title": "Arquitetura Core",
+        "description": "Análise da arquitetura Canary",
+        "level": "intermediate",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-003",
+        "title": "Engine de Gráficos",
+        "description": "Renderização avançada",
+        "level": "advanced",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-004",
+        "title": "Protocolo de Rede",
+        "description": "Comunicação cliente-servidor",
+        "level": "advanced",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-005",
+        "title": "Sistema de Scripting",
+        "description": "Desenvolvimento de scripts",
+        "level": "intermediate",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-006",
+        "title": "Mecânicas do Jogo",
+        "description": "Lógica e regras avançadas",
+        "level": "advanced",
+        "duration": "1 semana",
+        "lessons": []
+      }
+    ]
+  },
+  "integration": {
+    "title": "Integração OTClient-Canary",
+    "description": "Aprenda a integrar e migrar entre OTClient e Canary",
+    "level": "advanced",
+    "duration": "4 semanas",
+    "modules": [
+      {
+        "id": "MÓDULO-001",
+        "title": "Comparação de Arquiteturas",
+        "description": "OTClient vs Canary",
+        "level": "advanced",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-002",
+        "title": "Análise de Protocolos",
+        "description": "Diferenças e compatibilidade",
+        "level": "advanced",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-003",
+        "title": "Migração de Código",
+        "description": "Guias práticos de migração",
+        "level": "advanced",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-004",
+        "title": "Padrões de Integração",
+        "description": "Melhores práticas",
+        "level": "advanced",
+        "duration": "1 semana",
+        "lessons": []
+      }
+    ]
+  },
+  "fundamentals": {
+    "title": "Fundamentos de Desenvolvimento",
+    "description": "Base sólida em Lua, C++ e conceitos de desenvolvimento de jogos",
+    "level": "beginner",
+    "duration": "4 semanas",
+    "modules": [
+      {
+        "id": "MÓDULO-001",
+        "title": "Introdução à Lua",
+        "description": "Sintaxe e conceitos básicos",
+        "level": "beginner",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-002",
+        "title": "C++ para Jogos",
+        "description": "Conceitos essenciais",
+        "level": "beginner",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-003",
+        "title": "Desenvolvimento de Jogos",
+        "description": "Conceitos fundamentais",
+        "level": "beginner",
+        "duration": "1 semana",
+        "lessons": []
+      },
+      {
+        "id": "MÓDULO-004",
+        "title": "Ferramentas de Desenvolvimento",
+        "description": "IDE, debug, versionamento",
+        "level": "beginner",
+        "duration": "1 semana",
+        "lessons": []
+      }
+    ]
+  }
+}

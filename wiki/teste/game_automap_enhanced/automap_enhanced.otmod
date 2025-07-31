@@ -1,0 +1,9 @@
+Module
+  name: game_automap_enhanced
+  description: Mapa automático aprimorado com marcadores e filtros
+  author: BMAD AI Agent
+  website: https://github.com/edubart/otclient
+  sandboxed: true
+  scripts: [ automap_enhanced ]
+  @onLoad: automap_enhancedController:init()
+  @onUnload: automap_enhancedController:terminate()

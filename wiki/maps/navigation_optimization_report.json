@@ -1,0 +1,202 @@
+{
+  "navigation_optimization_analysis": {
+    "timestamp": "2025-07-28T20:54:13.131089",
+    "overall_score": 94.4,
+    "grade": "A+ (Excelente)",
+    "individual_scores": {
+      "tags_index": 100,
+      "wiki_map": 100,
+      "rules": 92.0,
+      "context_system": 90,
+      "intelligent_navigation": 90
+    },
+    "detailed_analysis": {
+      "tags_index_optimization": {
+        "status": "exists",
+        "metadata": {
+          "has_version": true,
+          "has_last_updated": true,
+          "has_total_files": true,
+          "has_total_tags": true
+        },
+        "structure": {
+          "has_files_by_tag": true,
+          "has_tags_by_file": true,
+          "tag_count": 4,
+          "file_count": 25
+        },
+        "optimization": {
+          "has_quick_access": true,
+          "has_search_index": true,
+          "has_performance_metrics": true
+        },
+        "score": 100
+      },
+      "wiki_map_optimization": {
+        "status": "exists",
+        "metadata": {
+          "has_version": true,
+          "has_last_updated": true,
+          "has_total_documents": true,
+          "has_context": true
+        },
+        "structure": {
+          "has_categories": true,
+          "has_files": true,
+          "category_count": 5,
+          "file_count": 29
+        },
+        "optimization": {
+          "has_navigation_paths": true,
+          "has_quick_access": true,
+          "has_performance_metrics": true
+        },
+        "score": 100
+      },
+      "rules_optimization": {
+        "individual_rules": {
+          "rules.md": {
+            "status": "exists",
+            "size_bytes": 1939,
+            "lines": 60,
+            "has_structure": true,
+            "has_examples": true,
+            "has_checklist": true,
+            "has_performance_info": false,
+            "score": 80
+          },
+          "wiki-json-navigation-rules.md": {
+            "status": "exists",
+            "size_bytes": 8383,
+            "lines": 289,
+            "has_structure": true,
+            "has_examples": true,
+            "has_checklist": true,
+            "has_performance_info": true,
+            "score": 100
+          },
+          "context-aware-rules.md": {
+            "status": "exists",
+            "size_bytes": 12985,
+            "lines": 424,
+            "has_structure": true,
+            "has_examples": true,
+            "has_checklist": true,
+            "has_performance_info": false,
+            "score": 80
+          },
+          "performance-rules.md": {
+            "status": "exists",
+            "size_bytes": 5172,
+            "lines": 208,
+            "has_structure": true,
+            "has_examples": true,
+            "has_checklist": true,
+            "has_performance_info": true,
+            "score": 100
+          },
+          "simplification-rules.md": {
+            "status": "exists",
+            "size_bytes": 6527,
+            "lines": 240,
+            "has_structure": true,
+            "has_examples": true,
+            "has_checklist": true,
+            "has_performance_info": true,
+            "score": 100
+          }
+        },
+        "average_score": 92.0,
+        "total_rules_analyzed": 5
+      },
+      "enhanced_context_system": {
+        "status": "exists",
+        "version": "2.0",
+        "components": {
+          "has_repository_info": true,
+          "has_directory_structure": true,
+          "has_navigation_system": true,
+          "has_performance_optimization": true,
+          "has_context_detection": true
+        },
+        "optimization": {
+          "has_cache_strategy": true,
+          "has_search_limits": true,
+          "has_lazy_loading": true,
+          "has_quick_access": true
+        },
+        "score": 90
+      },
+      "intelligent_navigation": {
+        "status": "exists",
+        "version": "1.0",
+        "components": {
+          "has_navigation_patterns": true,
+          "has_smart_caching": true,
+          "has_performance_metrics": true,
+          "has_context_switching": true,
+          "has_error_recovery": true
+        },
+        "patterns": {
+          "has_context_aware": true,
+          "has_task_based": true,
+          "has_cache_strategy": true,
+          "has_search_optimization": true
+        },
+        "score": 90
+      },
+      "performance_metrics": {
+        "path_performance": {
+          "wiki/maps/tags_index.json": {
+            "status": "accessible",
+            "access_time_ms": 1.77,
+            "size_bytes": 7581,
+            "optimization_score": 100
+          },
+          "wiki/maps/wiki_map.json": {
+            "status": "accessible",
+            "access_time_ms": 3.3,
+            "size_bytes": 13821,
+            "optimization_score": 100
+          },
+          "wiki/maps/enhanced_context_system.json": {
+            "status": "accessible",
+            "access_time_ms": 0.77,
+            "size_bytes": 7285,
+            "optimization_score": 110
+          },
+          "wiki/maps/intelligent_navigation.json": {
+            "status": "accessible",
+            "access_time_ms": 0.58,
+            "size_bytes": 6091,
+            "optimization_score": 110
+          },
+          ".cursor/rules/rules.md": {
+            "status": "accessible",
+            "access_time_ms": 0.34,
+            "size_bytes": 2085,
+            "optimization_score": 100
+          },
+          ".cursor/rules/wiki-json-navigation-rules.md": {
+            "status": "accessible",
+            "access_time_ms": 0.46,
+            "size_bytes": 8885,
+            "optimization_score": 100
+          }
+        },
+        "average_access_time_ms": 1.2,
+        "total_paths_tested": 6
+      }
+    },
+    "optimization_status": {
+      "highly_optimized": true,
+      "needs_improvement": false,
+      "recommendations": [
+        "✅ Sistema altamente otimizado",
+        "🔮 Considerar implementar machine learning",
+        "📊 Monitorar performance em tempo real",
+        "🚀 Explorar otimizações avançadas"
+      ]
+    }
+  }
+}

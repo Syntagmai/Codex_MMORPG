@@ -1,0 +1,9 @@
+Module
+  name: game_combat_analyzer
+  description: Analisador de combate com estatísticas em tempo real
+  author: BMAD AI Agent
+  website: https://github.com/edubart/otclient
+  sandboxed: true
+  scripts: [ combat_analyzer ]
+  @onLoad: combat_analyzerController:init()
+  @onUnload: combat_analyzerController:terminate()

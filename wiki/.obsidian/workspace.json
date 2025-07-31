@@ -1,0 +1,211 @@
+{
+  "main": {
+    "id": "810a00f3bda9a24e",
+    "type": "split",
+    "children": [
+      {
+        "id": "785db7434bb975b5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a0c1528d3c374097",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "otclient/otclient_wiki.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "otclient_wiki"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "528f413db6937b7e",
+    "type": "split",
+    "children": [
+      {
+        "id": "5e79dd02db025118",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f680c32b0913bd3b",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "e904b28cabf19141",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "aura",
+                "matchingCase": true,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": true,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "b673762a508dc4b4",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8a13b31503740e97",
+    "type": "split",
+    "children": [
+      {
+        "id": "f9d7f85ab1bee9f9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c82a8f26f9a92fec",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "otclient_wiki.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for otclient_wiki"
+            }
+          },
+          {
+            "id": "98f596caf108d87a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "otclient_wiki.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from otclient_wiki"
+            }
+          },
+          {
+            "id": "aae68ed4c078d26d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "bd0800a9c215e8ec",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "otclient_wiki.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of otclient_wiki"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "a0c1528d3c374097",
+  "lastOpenFiles": [
+    "teste/COMPARACAO_SIMPLIFICADA.md",
+    "teste/AGENTES_SIMPLIFICADOS.md",
+    "teste/ESTRUTURA_FINAL.md",
+    "teste/CHERRY_PICK_GUIDE.md",
+    "teste/game_outfit/outfit.lua",
+    "teste/client_locales/locales.otui",
+    "teste/client_locales/locales.lua",
+    "teste/game_cyclopedia/game_cyclopedia.otui",
+    "teste/game_cyclopedia/game_cyclopedia.lua",
+    "teste/game_npctrade/npctrade.otui",
+    "teste/game_npctrade/npctrade.lua",
+    "teste/game_interface/interface.otmod",
+    "teste/game_cyclopedia/tab/charms",
+    "teste/game_cyclopedia/tab",
+    "otclient/Animation_System_Guide.md",
+    "otclient/otclient_wiki.md",
+    "log/otclient_improvements_priority.md",
+    "log/analysis_summary.md",
+    "log/otclient_analysis_report.md",
+    "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+    "bmad/agents/BMAD_Agents_Guide.md",
+    "bmad/BMAD_System_Guide.md",
+    "integration_tasks.md",
+    "integration/OTClient_Canary_Integration.md",
+    "docs/Lua_API_Reference.md",
+    "otclient/integration/OTClient_Canary_Integration.md",
+    "otclient/World_System_Guide.md",
+    "otclient/Wiki_Optimization_Report.md",
+    "otclient/Wiki_Index.md",
+    "otclient/UI_System_Guide.md",
+    "otclient/Sound_System_Guide.md",
+    "otclient/Protocol_System_Guide.md",
+    "otclient/Performance_System_Guide.md",
+    "otclient/OTUI_Module_Development_Guide.md",
+    "otclient/Network_System_Guide.md",
+    "otclient/Module_System_Guide.md"
+  ]
+}

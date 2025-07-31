@@ -1,0 +1,319 @@
+template:
+  name: "Game Feature Design Document"
+  description: "Comprehensive template for designing MMORPG game features"
+  version: "1.0.0"
+  output_format: "markdown"
+  agent_context: "game_designer"
+
+metadata:
+  document_type: "game_design_document"
+  target_audience: ["development_team", "stakeholders", "qa_team"]
+  review_cycle: "design_phase"
+  
+placeholders:
+  # Basic Feature Information
+  feature_name:
+    type: "string"
+    description: "Name of the game feature being designed"
+    required: true
+    example: "Guild Territory Control System"
+  
+  feature_category:
+    type: "select"
+    description: "Category of the game feature"
+    options: ["combat", "social", "progression", "economy", "exploration", "pvp", "pve", "customization"]
+    required: true
+  
+  target_player_level:
+    type: "range"
+    description: "Target player level range for this feature"
+    min: 1
+    max: 100
+    example: "20-50"
+  
+  development_priority:
+    type: "select"
+    description: "Development priority level"
+    options: ["critical", "high", "medium", "low"]
+    required: true
+  
+  estimated_development_time:
+    type: "string"
+    description: "Estimated development time in weeks"
+    example: "3-4 weeks"
+  
+  # Player Experience Design
+  player_motivation:
+    type: "text"
+    description: "Why would players want to engage with this feature?"
+    required: true
+    guidance: "Focus on player emotions and intrinsic motivations"
+  
+  core_gameplay_loop:
+    type: "text"
+    description: "The basic repetitive actions players will take"
+    required: true
+    guidance: "Describe the 30-second to 5-minute gameplay cycle"
+  
+  player_progression:
+    type: "text"
+    description: "How does the feature evolve and grow over time?"
+    required: true
+    guidance: "Include short-term and long-term progression elements"
+  
+  social_elements:
+    type: "text"
+    description: "How do other players interact with this feature?"
+    guidance: "Consider cooperation, competition, and community aspects"
+  
+  # Game Design Specifications
+  core_mechanics:
+    type: "list"
+    description: "List of core mechanics that make up this feature"
+    required: true
+    guidance: "Be specific about rules, calculations, and interactions"
+  
+  user_interface_requirements:
+    type: "text"
+    description: "UI/UX requirements and interaction patterns"
+    guidance: "Consider accessibility and ease of use"
+  
+  balance_considerations:
+    type: "text"
+    description: "Potential balance issues and mitigation strategies"
+    required: true
+    guidance: "Think about exploits, dominant strategies, and fairness"
+  
+  reward_structure:
+    type: "text"
+    description: "What rewards do players receive and when?"
+    required: true
+    guidance: "Include both tangible and intangible rewards"
+  
+  # Technical Requirements
+  engine_requirements:
+    type: "list"
+    description: "C++ engine features and systems needed"
+    guidance: "Be specific about data structures and performance needs"
+  
+  database_requirements:
+    type: "list"
+    description: "Database schema additions or modifications needed"
+    guidance: "Consider data persistence and query performance"
+  
+  scripting_requirements:
+    type: "list"
+    description: "Lua scripting capabilities needed"
+    guidance: "Consider content creation and customization needs"
+  
+  performance_requirements:
+    type: "text"
+    description: "Performance constraints and optimization targets"
+    guidance: "Include memory usage, CPU impact, and network considerations"
+  
+  # World Integration
+  spatial_requirements:
+    type: "text"
+    description: "How does this feature integrate with the game world?"
+    guidance: "Consider map areas, NPC placement, and environmental needs"
+  
+  existing_system_integration:
+    type: "list"
+    description: "How this feature interacts with existing game systems"
+    guidance: "Consider combat, economy, guilds, quests, etc."
+  
+  # Quality Assurance
+  success_metrics:
+    type: "list"
+    description: "How will we measure if this feature is successful?"
+    required: true
+    guidance: "Include both quantitative and qualitative metrics"
+  
+  testing_scenarios:
+    type: "list"
+    description: "Key scenarios that must be tested"
+    guidance: "Include edge cases and stress testing scenarios"
+  
+  risk_assessment:
+    type: "text"
+    description: "Potential risks and mitigation strategies"
+    guidance: "Consider technical, design, and business risks"
+
+conditional_sections:
+  pvp_feature:
+    condition: "feature_category == 'pvp'"
+    content: |
+      ## PvP-Specific Considerations
+      
+      ### Balance Framework
+      {pvp_balance_framework}
+      
+      ### Anti-Griefing Measures
+      {anti_griefing_measures}
+      
+      ### Competitive Integrity
+      {competitive_integrity_measures}
+  
+  economy_feature:
+    condition: "feature_category == 'economy'"
+    content: |
+      ## Economic Impact Analysis
+      
+      ### Market Effects
+      {market_impact_analysis}
+      
+      ### Resource Flow
+      {resource_flow_design}
+      
+      ### Anti-Inflation Measures
+      {inflation_prevention_strategy}
+  
+  social_feature:
+    condition: "feature_category == 'social'"
+    content: |
+      ## Social Dynamics
+      
+      ### Community Building
+      {community_building_elements}
+      
+      ### Moderation Requirements
+      {moderation_system_needs}
+      
+      ### Communication Tools
+      {communication_feature_requirements}
+
+elicitation:
+  feature_complexity_assessment:
+    prompt: "Rate the complexity of this feature (1-5) and explain your reasoning"
+    store_as: "complexity_rating"
+  
+  competitive_analysis:
+    prompt: "Which games have similar features and how do they implement them?"
+    store_as: "competitive_reference"
+  
+  player_testing_plan:
+    prompt: "How should we test this feature with real players?"
+    store_as: "player_testing_strategy"
+
+validation_rules:
+  - rule: "player_motivation must be non-empty"
+    message: "Player motivation is critical for feature success"
+  
+  - rule: "core_mechanics must have at least 2 items"
+    message: "Features need multiple mechanics to be engaging"
+  
+  - rule: "success_metrics must have at least 3 items"
+    message: "Need multiple ways to measure feature success"
+
+output_template: |
+  # {feature_name} - Game Design Document
+  
+  **Feature Category:** {feature_category}  
+  **Target Player Level:** {target_player_level}  
+  **Development Priority:** {development_priority}  
+  **Estimated Development Time:** {estimated_development_time}
+  
+  ## Executive Summary
+  
+  {feature_name} is a {feature_category} feature designed to {player_motivation}
+  
+  ## Player Experience Design
+  
+  ### Player Motivation
+  {player_motivation}
+  
+  ### Core Gameplay Loop
+  {core_gameplay_loop}
+  
+  ### Player Progression
+  {player_progression}
+  
+  ### Social Elements
+  {social_elements}
+  
+  ## Game Design Specifications
+  
+  ### Core Mechanics
+  {#each core_mechanics}
+  - {this}
+  {/each}
+  
+  ### User Interface Requirements
+  {user_interface_requirements}
+  
+  ### Balance Considerations
+  {balance_considerations}
+  
+  ### Reward Structure
+  {reward_structure}
+  
+  ## Technical Requirements
+  
+  ### Engine Requirements
+  {#each engine_requirements}
+  - {this}
+  {/each}
+  
+  ### Database Requirements
+  {#each database_requirements}
+  - {this}
+  {/each}
+  
+  ### Scripting Requirements
+  {#each scripting_requirements}
+  - {this}
+  {/each}
+  
+  ### Performance Requirements
+  {performance_requirements}
+  
+  ## World Integration
+  
+  ### Spatial Requirements
+  {spatial_requirements}
+  
+  ### Existing System Integration
+  {#each existing_system_integration}
+  - {this}
+  {/each}
+  
+  {#if pvp_feature}
+  {pvp_feature}
+  {/if}
+  
+  {#if economy_feature}
+  {economy_feature}
+  {/if}
+  
+  {#if social_feature}
+  {social_feature}
+  {/if}
+  
+  ## Quality Assurance
+  
+  ### Success Metrics
+  {#each success_metrics}
+  - {this}
+  {/each}
+  
+  ### Testing Scenarios
+  {#each testing_scenarios}
+  - {this}
+  {/each}
+  
+  ### Risk Assessment
+  {risk_assessment}
+  
+  ## Additional Analysis
+  
+  **Complexity Rating:** {complexity_rating}
+  
+  **Competitive Reference:** {competitive_reference}
+  
+  **Player Testing Strategy:** {player_testing_strategy}
+  
+  ---
+  
+  *This document was generated using the BMAD Game Development Framework.*  
+  *Last Updated: {current_date}*  
+  *Document Version: 1.0*

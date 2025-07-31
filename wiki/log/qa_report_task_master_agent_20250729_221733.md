@@ -1,0 +1,89 @@
+# Quality Assurance Report - task_master_agent.py
+
+## 📋 Resumo Executivo
+
+**Arquivo**: C:\Users\Dell\Documents\GitHub\otclient_doc\wiki\bmad\agents\task_master_agent.py
+**Linguagem**: python
+**Score Geral**: 0.00/1.0
+**Status**: ❌ Reprovado
+**Data**: 2025-07-29 22:17:33
+
+## 📊 Métricas de Código
+
+| Métrica | Valor |
+|---------|-------|
+| **Total de Linhas** | 555 |
+| **Linhas de Código** | 401 |
+| **Linhas de Comentário** | 35 |
+| **Linhas em Branco** | 119 |
+| **Funções** | 21 |
+| **Classes** | 1 |
+| **Imports** | 9 |
+| **Razão de Comentários** | 0.09 |
+| **Densidade de Funções** | 0.05 |
+
+## 🏗️ Complexidade
+
+| Tipo | Valor |
+|------|-------|
+| **Ciclomática** | 42 |
+| **Cognitiva** | 57 |
+| **Aninhamento Máximo** | 5 |
+
+## 📝 Documentação
+
+| Item | Status |
+|------|--------|
+| **Docstrings** | ✅ Presente |
+| **Comentários** | ✅ Presente |
+| **README** | ✅ Presente |
+| **Cobertura de Docstrings** | 0.50 |
+
+## 🔍 Problemas Identificados
+
+### 🎨 Estilo (141 problemas)
+- **Linha 50**: Linha muito longa (84 caracteres)
+- **Linha 56**: Linha muito longa (103 caracteres)
+- **Linha 86**: Linha muito longa (122 caracteres)
+- **Linha 98**: Linha muito longa (85 caracteres)
+- **Linha 146**: Linha muito longa (85 caracteres)
+
+### 🔒 Segurança (0 problemas)
+- ✅ Nenhum problema de segurança encontrado
+
+### ⚡ Performance (0 problemas)
+- ✅ Nenhum problema de performance encontrado
+
+## 🔍 Resultados do Linter
+
+**Linter**: none
+**Score**: 1.00/1.0
+**Problemas**: 0
+
+## 🧪 Resultados dos Testes
+
+**Framework**: pytest
+**Sucesso**: ❌ Não
+**Testes Executados**: 0
+**Testes Aprovados**: 0
+**Testes Falharam**: 0
+**Cobertura**: 0.00
+
+## 🎯 Recomendações
+
+- Melhorar score geral de qualidade
+- Corrigir problemas de estilo
+- Reduzir complexidade ciclomática
+- Implementar testes unitários
+
+## 📈 Melhorias Sugeridas
+
+1. **Documentação**: Adicionar docstrings e comentários
+2. **Testes**: Implementar testes unitários
+3. **Estilo**: Seguir padrões de codificação
+4. **Segurança**: Revisar práticas de segurança
+5. **Performance**: Otimizar código crítico
+
+---
+**Relatório gerado**: 2025-07-29 22:17:33
+**Responsável**: Quality Assurance Agent

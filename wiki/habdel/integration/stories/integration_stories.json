@@ -1,0 +1,95 @@
+{
+  "title": "Análises Comparativas",
+  "stories": [
+    {
+      "id": "INTEGRATION-001",
+      "title": "Architecture Comparison",
+      "description": "Comparação de arquiteturas",
+      "status": "not_started",
+      "priority": "high",
+      "estimated_hours": 12,
+      "created": "2025-07-29T01:04:09.668347"
+    },
+    {
+      "id": "INTEGRATION-002",
+      "title": "Protocol Analysis",
+      "description": "Análise de protocolos",
+      "status": "not_started",
+      "priority": "high",
+      "estimated_hours": 12,
+      "created": "2025-07-29T01:04:09.668351"
+    },
+    {
+      "id": "INTEGRATION-003",
+      "title": "UI Framework Comparison",
+      "description": "Comparação de frameworks UI",
+      "status": "not_started",
+      "priority": "high",
+      "estimated_hours": 12,
+      "created": "2025-07-29T01:04:09.668355"
+    },
+    {
+      "id": "INTEGRATION-004",
+      "title": "Scripting Comparison",
+      "description": "Comparação de sistemas de scripting",
+      "status": "not_started",
+      "priority": "high",
+      "estimated_hours": 12,
+      "created": "2025-07-29T01:04:09.668359"
+    },
+    {
+      "id": "INTEGRATION-005",
+      "title": "Performance Analysis",
+      "description": "Análise de performance",
+      "status": "not_started",
+      "priority": "high",
+      "estimated_hours": 12,
+      "created": "2025-07-29T01:04:09.668362"
+    },
+    {
+      "id": "INTEGRATION-006",
+      "title": "Migration Guide",
+      "description": "Guia de migração",
+      "status": "not_started",
+      "priority": "medium",
+      "estimated_hours": 12,
+      "created": "2025-07-29T01:04:09.668366"
+    },
+    {
+      "id": "INTEGRATION-007",
+      "title": "Integration Patterns",
+      "description": "Padrões de integração",
+      "status": "not_started",
+      "priority": "medium",
+      "estimated_hours": 12,
+      "created": "2025-07-29T01:04:09.668369"
+    },
+    {
+      "id": "INTEGRATION-008",
+      "title": "Best Practices",
+      "description": "Melhores práticas",
+      "status": "not_started",
+      "priority": "medium",
+      "estimated_hours": 12,
+      "created": "2025-07-29T01:04:09.668372"
+    },
+    {
+      "id": "INTEGRATION-009",
+      "title": "Tooling Comparison",
+      "description": "Comparação de ferramentas",
+      "status": "not_started",
+      "priority": "medium",
+      "estimated_hours": 12,
+      "created": "2025-07-29T01:04:09.668380"
+    },
+    {
+      "id": "INTEGRATION-010",
+      "title": "Future Roadmap",
+      "description": "Roadmap futuro",
+      "status": "not_started",
+      "priority": "medium",
+      "estimated_hours": 12,
+      "created": "2025-07-29T01:04:09.668385"
+    }
+  ]
+}

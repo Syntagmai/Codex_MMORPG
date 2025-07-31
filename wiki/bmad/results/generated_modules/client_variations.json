@@ -1,0 +1,302 @@
+[
+  {
+    "variation_id": 1,
+    "base_module": "client",
+    "variation_name": "client_improved_1",
+    "generation_date": "2025-07-30T19:21:32.934242",
+    "files": {
+      "client.lua": {
+        "file_type": ".lua",
+        "size": 2025,
+        "lines": 82,
+        "content": "\n-- ========================================\n-- Módulo: client_improved_1\n-- Descrição: Variação funcional do módulo original\n-- Data de criação: 2025-07-30\n-- ========================================\n\n-- Configurações para client_improved_1\nlocal client_improved_1_debug = false\nlocal client_improved_1_enabled = true\nlocal client_improved_1_config = {}\nlocal client_improved_1_version = '1.0'\n\nlocal musicFilename = 'sounds/startup'\nlocal musicChannel = nil\nif g_sounds then\n    musicChannel = g_sounds.getChannel(SoundChannels.Music)\nend\n\nfunction setMusic(filename)\n    musicFilename = filename\n\n    if not g_game.isOnline() then\n        musicChannel:stop()\n        musicChannel:enqueue(musicFilename, 3)\n    end\nend\n\nfunction startup()\n    if musicChannel then\n        musicChannel:enqueue(musicFilename, 3)\n        connect(g_game, {\n            onGameStart = function()\n                musicChannel:stop(3)\n            end\n        })\n        connect(g_game, {\n            onGameEnd = function()\n                g_sounds.stopAll()\n                musicChannel:enqueue(musicFilename, 3)\n            end\n        })\n    end\n\n    -- Check for startup errors\n    local errtitle = nil\n    local errmsg = nil\n\n    if g_graphics.getRenderer():lower():match('gdi generic') then\n        errtitle = tr('Graphics card driver not detected')\n        errmsg = tr(\n            'No graphics card detected, everything will be drawn using the CPU,\\nthus the performance will be really bad.\\nPlease update your graphics driver to have a better performance.')\n    end\n\n    -- Show entergame\n    if errmsg or errtitle then\n        local msgbox = displayErrorBox(errtitle, errmsg)\n        msgbox.onOk = function()\n            EnterGame.firstShow()\n        end\n    else\n        EnterGame.firstShow()\n    end\n    if g_app.hasUpdater() and g_sounds then\n        g_sounds.setAudioEnabled(g_settings.getBoolean('enableAudio'))\n    end\nend\n\n\n-- Função init modificada para client_improved_1\nfunction client_improved_1_init()\n    if g_app.hasUpdater() then\n        connect(g_app, {\n            onUpdateFinished = startup,\n        })\n    else\n        connect(g_app, {\n            onRun = startup,\n        })\n    end\n\n    if musicChannel then\n        g_sounds.preload(musicFilename)\n    end\nend\n\nfunction terminate()\n    if g_app.hasUpdater() then\n        disconnect(g_app, {\n            onUpdateFinished = startup,\n        })\n    else\n        disconnect(g_app, {\n            onRun = startup,\n        })\n    end\nend\n\n\n-- Função de configuração para client_improved_1\nfunction client_improved_1_configure()\n    local config = {\n        enabled = true,\n        autoSave = true,\n        debugMode = false\n    }\n    return config\nend\n\n\n-- Função de utilidade para client_improved_1\nfunction client_improved_1_getInfo()\n    return {\n        name = \"client_improved_1\",\n        version = \"1.0\",\n        description = \"Variação do módulo original\"\n    }\nend\n\n\n-- Função de inicialização para client_improved_1\n\n-- Função init modificada para client_improved_1\nfunction client_improved_1_init()\n    print(\"Inicializando client_improved_1\")\n    local config = client_improved_1_configure()\n    return config\nend",
+        "structure": {
+          "functions": [
+            {
+              "name": "setMusic",
+              "line": 7,
+              "definition": "function setMusic(filename)"
+            },
+            {
+              "name": "startup",
+              "line": 16,
+              "definition": "function startup()"
+            },
+            {
+              "name": "init",
+              "line": 56,
+              "definition": "function init()"
+            },
+            {
+              "name": "terminate",
+              "line": 72,
+              "definition": "function terminate()"
+            }
+          ],
+          "variables": [
+            {
+              "name": "musicFilename",
+              "line": 1,
+              "definition": "local musicFilename = 'sounds/startup'"
+            },
+            {
+              "name": "musicChannel",
+              "line": 2,
+              "definition": "local musicChannel = nil"
+            },
+            {
+              "name": "errtitle",
+              "line": 33,
+              "definition": "local errtitle = nil"
+            },
+            {
+              "name": "errmsg",
+              "line": 34,
+              "definition": "local errmsg = nil"
+            },
+            {
+              "name": "msgbox",
+              "line": 44,
+              "definition": "local msgbox = displayErrorBox(errtitle, errmsg)"
+            }
+          ],
+          "imports": [],
+          "comments": [
+            {
+              "line": 32,
+              "content": "-- Check for startup errors"
+            },
+            {
+              "line": 42,
+              "content": "-- Show entergame"
+            }
+          ],
+          "complexity": 9
+        },
+        "patterns": {},
+        "error": "'ModuleAnalyzerAgent' object has no attribute 'extract_lua_patterns'",
+        "original_content": "local musicFilename = 'sounds/startup'\nlocal musicChannel = nil\nif g_sounds then\n    musicChannel = g_sounds.getChannel(SoundChannels.Music)\nend\n\nfunction setMusic(filename)\n    musicFilename = filename\n\n    if not g_game.isOnline() then\n        musicChannel:stop()\n        musicChannel:enqueue(musicFilename, 3)\n    end\nend\n\nfunction startup()\n    if musicChannel then\n        musicChannel:enqueue(musicFilename, 3)\n        connect(g_game, {\n            onGameStart = function()\n                musicChannel:stop(3)\n            end\n        })\n        connect(g_game, {\n            onGameEnd = function()\n                g_sounds.stopAll()\n                musicChannel:enqueue(musicFilename, 3)\n            end\n        })\n    end\n\n    -- Check for startup errors\n    local errtitle = nil\n    local errmsg = nil\n\n    if g_graphics.getRenderer():lower():match('gdi generic') then\n        errtitle = tr('Graphics card driver not detected')\n        errmsg = tr(\n            'No graphics card detected, everything will be drawn using the CPU,\\nthus the performance will be really bad.\\nPlease update your graphics driver to have a better performance.')\n    end\n\n    -- Show entergame\n    if errmsg or errtitle then\n        local msgbox = displayErrorBox(errtitle, errmsg)\n        msgbox.onOk = function()\n            EnterGame.firstShow()\n        end\n    else\n        EnterGame.firstShow()\n    end\n    if g_app.hasUpdater() and g_sounds then\n        g_sounds.setAudioEnabled(g_settings.getBoolean('enableAudio'))\n    end\nend\n\nfunction init()\n    if g_app.hasUpdater() then\n        connect(g_app, {\n            onUpdateFinished = startup,\n        })\n    else\n        connect(g_app, {\n            onRun = startup,\n        })\n    end\n\n    if musicChannel then\n        g_sounds.preload(musicFilename)\n    end\nend\n\nfunction terminate()\n    if g_app.hasUpdater() then\n        disconnect(g_app, {\n            onUpdateFinished = startup,\n        })\n    else\n        disconnect(g_app, {\n            onRun = startup,\n        })\n    end\nend\n",
+        "modifications": {
+          "new_functions": 3,
+          "modified_functions": 3,
+          "new_variables": 5
+        }
+      },
+      "client.otmod": {
+        "file_type": ".otmod",
+        "size": 493,
+        "lines": 22,
+        "content": "Module\n  author: Module Generator Agent\n  website: Generated variation\n  reloadable: true\n  sandboxed: true\n\n  name: client_improved_1\n  description: Variação funcional do módulo original\n  author: edubart\n  website: https://github.com/edubart/otclient\n  reloadable: false\n  sandboxed: true\n  scripts: [ client ]\n  @onLoad: init()\n  @onUnload: terminate()\n\n  load-later:\n    - client_styles\n    - client_locales\n    - client_topmenu\n    - client_bottommenu\n    - client_background\n    - client_options\n    - client_entergame\n    - client_terminal\n    - client_debug_info\n    - client_serverlist\n",
+        "structure": {
+          "module_info": {
+            "name": "client",
+            "description": "Initialize the client and setups its main window",
+            "author": "edubart",
+            "website": "https://github.com/edubart/otclient",
+            "reloadable": "false",
+            "sandboxed": "true"
+          },
+          "scripts": [],
+          "load_later": [
+            "client_styles",
+            "client_locales",
+            "client_topmenu",
+            "client_bottommenu",
+            "client_background",
+            "client_options",
+            "client_entergame",
+            "client_terminal",
+            "client_debug_info",
+            "client_serverlist"
+          ],
+          "events": [
+            {
+              "event": "onLoad",
+              "action": "init()"
+            },
+            {
+              "event": "onUnload",
+              "action": "terminate()"
+            }
+          ]
+        },
+        "patterns": {},
+        "error": "'ModuleAnalyzerAgent' object has no attribute 'extract_otmod_patterns'",
+        "original_content": "Module\n  name: client\n  description: Initialize the client and setups its main window\n  author: edubart\n  website: https://github.com/edubart/otclient\n  reloadable: false\n  sandboxed: true\n  scripts: [ client ]\n  @onLoad: init()\n  @onUnload: terminate()\n\n  load-later:\n    - client_styles\n    - client_locales\n    - client_topmenu\n    - client_bottommenu\n    - client_background\n    - client_options\n    - client_entergame\n    - client_terminal\n    - client_debug_info\n    - client_serverlist\n",
+        "modifications": {
+          "name_changed": true,
+          "description_changed": true,
+          "extra_info_added": true
+        }
+      },
+      "sounds\\startup.ogg": {
+        "file_type": ".ogg",
+        "size": 3154098,
+        "lines": 0,
+        "content": "",
+        "structure": {},
+        "patterns": {},
+        "error": "'utf-8' codec can't decode byte 0xfb in position 22: invalid start byte"
+      }
+    },
+    "modifications": {
+      "total_files_modified": 2,
+      "functions_added": 3,
+      "functions_modified": 3,
+      "variables_added": 5,
+      "widgets_modified": 0,
+      "structure_changes": 0
+    },
+    "compatibility_score": 0.9
+  },
+  {
+    "variation_id": 2,
+    "base_module": "client",
+    "variation_name": "client_basic_2",
+    "generation_date": "2025-07-30T19:21:32.937381",
+    "files": {
+      "client.lua": {
+        "file_type": ".lua",
+        "size": 2025,
+        "lines": 82,
+        "content": "\n-- ========================================\n-- Módulo: client_basic_2\n-- Descrição: Variação funcional do módulo original\n-- Data de criação: 2025-07-30\n-- ========================================\n\n-- Configurações para client_basic_2\nlocal client_basic_2_config = {}\nlocal client_basic_2_debug = false\nlocal client_basic_2_version = '1.0'\nlocal client_basic_2_enabled = true\n\nlocal musicFilename = 'sounds/startup'\nlocal musicChannel = nil\nif g_sounds then\n    musicChannel = g_sounds.getChannel(SoundChannels.Music)\nend\n\nfunction setMusic(filename)\n    musicFilename = filename\n\n    if not g_game.isOnline() then\n        musicChannel:stop()\n        musicChannel:enqueue(musicFilename, 3)\n    end\nend\n\nfunction startup()\n    if musicChannel then\n        musicChannel:enqueue(musicFilename, 3)\n        connect(g_game, {\n            onGameStart = function()\n                musicChannel:stop(3)\n            end\n        })\n        connect(g_game, {\n            onGameEnd = function()\n                g_sounds.stopAll()\n                musicChannel:enqueue(musicFilename, 3)\n            end\n        })\n    end\n\n    -- Check for startup errors\n    local errtitle = nil\n    local errmsg = nil\n\n    if g_graphics.getRenderer():lower():match('gdi generic') then\n        errtitle = tr('Graphics card driver not detected')\n        errmsg = tr(\n            'No graphics card detected, everything will be drawn using the CPU,\\nthus the performance will be really bad.\\nPlease update your graphics driver to have a better performance.')\n    end\n\n    -- Show entergame\n    if errmsg or errtitle then\n        local msgbox = displayErrorBox(errtitle, errmsg)\n        msgbox.onOk = function()\n            EnterGame.firstShow()\n        end\n    else\n        EnterGame.firstShow()\n    end\n    if g_app.hasUpdater() and g_sounds then\n        g_sounds.setAudioEnabled(g_settings.getBoolean('enableAudio'))\n    end\nend\n\n\n-- Função init modificada para client_basic_2\nfunction client_basic_2_init()\n    if g_app.hasUpdater() then\n        connect(g_app, {\n            onUpdateFinished = startup,\n        })\n    else\n        connect(g_app, {\n            onRun = startup,\n        })\n    end\n\n    if musicChannel then\n        g_sounds.preload(musicFilename)\n    end\nend\n\nfunction terminate()\n    if g_app.hasUpdater() then\n        disconnect(g_app, {\n            onUpdateFinished = startup,\n        })\n    else\n        disconnect(g_app, {\n            onRun = startup,\n        })\n    end\nend\n\n\n-- Função de utilidade para client_basic_2\nfunction client_basic_2_getInfo()\n    return {\n        name = \"client_basic_2\",\n        version = \"1.0\",\n        description = \"Variação do módulo original\"\n    }\nend\n\n\n-- Função de configuração para client_basic_2\nfunction client_basic_2_configure()\n    local config = {\n        enabled = true,\n        autoSave = true,\n        debugMode = false\n    }\n    return config\nend",
+        "structure": {
+          "functions": [
+            {
+              "name": "setMusic",
+              "line": 7,
+              "definition": "function setMusic(filename)"
+            },
+            {
+              "name": "startup",
+              "line": 16,
+              "definition": "function startup()"
+            },
+            {
+              "name": "init",
+              "line": 56,
+              "definition": "function init()"
+            },
+            {
+              "name": "terminate",
+              "line": 72,
+              "definition": "function terminate()"
+            }
+          ],
+          "variables": [
+            {
+              "name": "musicFilename",
+              "line": 1,
+              "definition": "local musicFilename = 'sounds/startup'"
+            },
+            {
+              "name": "musicChannel",
+              "line": 2,
+              "definition": "local musicChannel = nil"
+            },
+            {
+              "name": "errtitle",
+              "line": 33,
+              "definition": "local errtitle = nil"
+            },
+            {
+              "name": "errmsg",
+              "line": 34,
+              "definition": "local errmsg = nil"
+            },
+            {
+              "name": "msgbox",
+              "line": 44,
+              "definition": "local msgbox = displayErrorBox(errtitle, errmsg)"
+            }
+          ],
+          "imports": [],
+          "comments": [
+            {
+              "line": 32,
+              "content": "-- Check for startup errors"
+            },
+            {
+              "line": 42,
+              "content": "-- Show entergame"
+            }
+          ],
+          "complexity": 9
+        },
+        "patterns": {},
+        "error": "'ModuleAnalyzerAgent' object has no attribute 'extract_lua_patterns'",
+        "original_content": "local musicFilename = 'sounds/startup'\nlocal musicChannel = nil\nif g_sounds then\n    musicChannel = g_sounds.getChannel(SoundChannels.Music)\nend\n\nfunction setMusic(filename)\n    musicFilename = filename\n\n    if not g_game.isOnline() then\n        musicChannel:stop()\n        musicChannel:enqueue(musicFilename, 3)\n    end\nend\n\nfunction startup()\n    if musicChannel then\n        musicChannel:enqueue(musicFilename, 3)\n        connect(g_game, {\n            onGameStart = function()\n                musicChannel:stop(3)\n            end\n        })\n        connect(g_game, {\n            onGameEnd = function()\n                g_sounds.stopAll()\n                musicChannel:enqueue(musicFilename, 3)\n            end\n        })\n    end\n\n    -- Check for startup errors\n    local errtitle = nil\n    local errmsg = nil\n\n    if g_graphics.getRenderer():lower():match('gdi generic') then\n        errtitle = tr('Graphics card driver not detected')\n        errmsg = tr(\n            'No graphics card detected, everything will be drawn using the CPU,\\nthus the performance will be really bad.\\nPlease update your graphics driver to have a better performance.')\n    end\n\n    -- Show entergame\n    if errmsg or errtitle then\n        local msgbox = displayErrorBox(errtitle, errmsg)\n        msgbox.onOk = function()\n            EnterGame.firstShow()\n        end\n    else\n        EnterGame.firstShow()\n    end\n    if g_app.hasUpdater() and g_sounds then\n        g_sounds.setAudioEnabled(g_settings.getBoolean('enableAudio'))\n    end\nend\n\nfunction init()\n    if g_app.hasUpdater() then\n        connect(g_app, {\n            onUpdateFinished = startup,\n        })\n    else\n        connect(g_app, {\n            onRun = startup,\n        })\n    end\n\n    if musicChannel then\n        g_sounds.preload(musicFilename)\n    end\nend\n\nfunction terminate()\n    if g_app.hasUpdater() then\n        disconnect(g_app, {\n            onUpdateFinished = startup,\n        })\n    else\n        disconnect(g_app, {\n            onRun = startup,\n        })\n    end\nend\n",
+        "modifications": {
+          "new_functions": 3,
+          "modified_functions": 3,
+          "new_variables": 5
+        }
+      },
+      "client.otmod": {
+        "file_type": ".otmod",
+        "size": 493,
+        "lines": 22,
+        "content": "Module\n  author: Module Generator Agent\n  website: Generated variation\n  reloadable: true\n  sandboxed: true\n\n  name: client_basic_2\n  description: Variação funcional do módulo original\n  author: edubart\n  website: https://github.com/edubart/otclient\n  reloadable: false\n  sandboxed: true\n  scripts: [ client ]\n  @onLoad: init()\n  @onUnload: terminate()\n\n  load-later:\n    - client_styles\n    - client_locales\n    - client_topmenu\n    - client_bottommenu\n    - client_background\n    - client_options\n    - client_entergame\n    - client_terminal\n    - client_debug_info\n    - client_serverlist\n",
+        "structure": {
+          "module_info": {
+            "name": "client",
+            "description": "Initialize the client and setups its main window",
+            "author": "edubart",
+            "website": "https://github.com/edubart/otclient",
+            "reloadable": "false",
+            "sandboxed": "true"
+          },
+          "scripts": [],
+          "load_later": [
+            "client_styles",
+            "client_locales",
+            "client_topmenu",
+            "client_bottommenu",
+            "client_background",
+            "client_options",
+            "client_entergame",
+            "client_terminal",
+            "client_debug_info",
+            "client_serverlist"
+          ],
+          "events": [
+            {
+              "event": "onLoad",
+              "action": "init()"
+            },
+            {
+              "event": "onUnload",
+              "action": "terminate()"
+            }
+          ]
+        },
+        "patterns": {},
+        "error": "'ModuleAnalyzerAgent' object has no attribute 'extract_otmod_patterns'",
+        "original_content": "Module\n  name: client\n  description: Initialize the client and setups its main window\n  author: edubart\n  website: https://github.com/edubart/otclient\n  reloadable: false\n  sandboxed: true\n  scripts: [ client ]\n  @onLoad: init()\n  @onUnload: terminate()\n\n  load-later:\n    - client_styles\n    - client_locales\n    - client_topmenu\n    - client_bottommenu\n    - client_background\n    - client_options\n    - client_entergame\n    - client_terminal\n    - client_debug_info\n    - client_serverlist\n",
+        "modifications": {
+          "name_changed": true,
+          "description_changed": true,
+          "extra_info_added": true
+        }
+      },
+      "sounds\\startup.ogg": {
+        "file_type": ".ogg",
+        "size": 3154098,
+        "lines": 0,
+        "content": "",
+        "structure": {},
+        "patterns": {},
+        "error": "'utf-8' codec can't decode byte 0xfb in position 22: invalid start byte"
+      }
+    },
+    "modifications": {
+      "total_files_modified": 2,
+      "functions_added": 3,
+      "functions_modified": 3,
+      "variables_added": 5,
+      "widgets_modified": 0,
+      "structure_changes": 0
+    },
+    "compatibility_score": 0.9
+  }
+]

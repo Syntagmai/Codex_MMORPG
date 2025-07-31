@@ -1,0 +1,226 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-07-28T20:39:49.473495",
+    "description": "Navegação inteligente e padrões de acesso"
+  },
+  "intelligent_navigation": {
+    "version": "1.0",
+    "last_updated": "2025-07-28T20:39:49.473495",
+    "navigation_patterns": {
+      "context_aware": {
+        "otclient_development": {
+          "primary_paths": [
+            "src/client/",
+            "modules/client_",
+            "data/"
+          ],
+          "documentation": "wiki/otclient/",
+          "rules": [
+            ".cursor/rules/otclient-source-index-rules.md"
+          ],
+          "quick_access": [
+            "cursor.md",
+            "wiki/maps/otclient_source_index.json"
+          ]
+        },
+        "bmad_system": {
+          "primary_paths": [
+            "wiki/bmad/",
+            ".cursor/rules/"
+          ],
+          "documentation": "wiki/bmad/",
+          "rules": [
+            ".cursor/rules/bmad-system-rules.md"
+          ],
+          "quick_access": [
+            "wiki/maps/bmad_agents_index.json",
+            "wiki/maps/bmad_workflows_index.json"
+          ]
+        },
+        "wiki_documentation": {
+          "primary_paths": [
+            "wiki/"
+          ],
+          "documentation": "wiki/",
+          "rules": [
+            ".cursor/rules/wiki-rules.md",
+            ".cursor/rules/wiki-comprehensive-rules.md"
+          ],
+          "quick_access": [
+            "wiki/maps/tags_index.json",
+            "wiki/maps/wiki_map.json"
+          ]
+        },
+        "integration_work": {
+          "primary_paths": [
+            "wiki/integration/"
+          ],
+          "documentation": "wiki/integration/",
+          "rules": [
+            ".cursor/rules/cross-project-integration-rules.md"
+          ],
+          "quick_access": [
+            "wiki/maps/relationships.json"
+          ]
+        }
+      },
+      "task_based": {
+        "code_analysis": {
+          "sequence": [
+            "wiki/maps/otclient_source_index.json",
+            "src/",
+            "modules/",
+            "wiki/otclient/"
+          ],
+          "priority": "high"
+        },
+        "documentation_search": {
+          "sequence": [
+            "wiki/maps/tags_index.json",
+            "wiki/maps/wiki_map.json",
+            "wiki/",
+            "wiki/maps/relationships.json"
+          ],
+          "priority": "high"
+        },
+        "rule_consultation": {
+          "sequence": [
+            "cursor.md",
+            ".cursor/rules/",
+            "wiki/maps/enhanced_context_system.json"
+          ],
+          "priority": "medium"
+        },
+        "bmad_workflow": {
+          "sequence": [
+            "wiki/maps/bmad_agents_index.json",
+            "wiki/maps/bmad_workflows_index.json",
+            "wiki/bmad/",
+            ".cursor/rules/bmad-system-rules.md"
+          ],
+          "priority": "medium"
+        }
+      }
+    },
+    "smart_caching": {
+      "file_access_patterns": {
+        "frequently_accessed": {
+          "files": [
+            "cursor.md",
+            "wiki/maps/tags_index.json",
+            "wiki/maps/wiki_map.json",
+            ".cursor/rules/rules.md"
+          ],
+          "cache_duration": 1800,
+          "priority": "high"
+        },
+        "context_switchers": {
+          "files": [
+            "wiki/maps/enhanced_context_system.json",
+            "wiki/maps/context_data.json"
+          ],
+          "cache_duration": 900,
+          "priority": "medium"
+        },
+        "large_datasets": {
+          "files": [
+            "wiki/maps/otclient_source_index.json",
+            "wiki/maps/modules_index.json",
+            "wiki/maps/resources_index.json"
+          ],
+          "cache_duration": 3600,
+          "priority": "low"
+        }
+      },
+      "search_optimization": {
+        "indexed_searches": {
+          "tags": "wiki/maps/tags_index.json",
+          "relationships": "wiki/maps/relationships.json",
+          "source_code": "wiki/maps/otclient_source_index.json",
+          "modules": "wiki/maps/modules_index.json"
+        },
+        "full_text_searches": {
+          "documentation": "wiki/",
+          "rules": ".cursor/rules/",
+          "source": "src/"
+        }
+      }
+    },
+    "performance_metrics": {
+      "access_patterns": {
+        "most_accessed_files": [
+          "cursor.md",
+          "wiki/maps/tags_index.json",
+          "wiki/maps/wiki_map.json",
+          ".cursor/rules/rules.md"
+        ],
+        "access_frequency": {
+          "high": ">10 times per session",
+          "medium": "3-10 times per session",
+          "low": "<3 times per session"
+        }
+      },
+      "response_times": {
+        "target": {
+          "simple_queries": "<2 seconds",
+          "complex_queries": "<10 seconds",
+          "large_datasets": "<30 seconds"
+        },
+        "current": {
+          "simple_queries": "~1.5 seconds",
+          "complex_queries": "~8 seconds",
+          "large_datasets": "~25 seconds"
+        }
+      }
+    },
+    "context_switching": {
+      "automatic_detection": {
+        "triggers": [
+          "file_path_analysis",
+          "content_keywords",
+          "user_query_patterns"
+        ],
+        "confidence_threshold": 0.8
+      },
+      "manual_override": {
+        "commands": [
+          "@otclient",
+          "@bmad",
+          "@wiki",
+          "@integration"
+        ],
+        "context_files": [
+          "wiki/maps/enhanced_context_system.json",
+          "wiki/maps/context_data.json"
+        ]
+      }
+    },
+    "error_recovery": {
+      "fallback_strategies": {
+        "file_not_found": {
+          "action": "search_similar",
+          "fallback": "use_index"
+        },
+        "permission_denied": {
+          "action": "switch_context",
+          "fallback": "read_only_mode"
+        },
+        "timeout": {
+          "action": "reduce_scope",
+          "fallback": "simple_mode"
+        }
+      },
+      "retry_logic": {
+        "max_retries": 3,
+        "backoff_strategy": "exponential",
+        "timeout_increase": 1.5
+      }
+    }
+  },
+  "_metadata": {
+    "base_path": "C:\\Users\\Dell\\Documents\\GitHub\\otclient_doc",
+    "updated": "2025-07-29T01:54:39.443945",
+    "absolute_paths": true
+  }
+}

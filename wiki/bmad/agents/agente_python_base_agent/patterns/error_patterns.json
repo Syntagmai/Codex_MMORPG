@@ -1,0 +1,8 @@
+[
+  {
+    "error": "Example error pattern",
+    "correction": "Example correction",
+    "pattern": "error_description",
+    "tag": "error-type"
+  }
+]

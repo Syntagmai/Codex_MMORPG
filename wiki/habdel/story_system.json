@@ -1,0 +1,517 @@
+{
+  "otclient": {
+    "title": "Sistema OTClient",
+    "stories": [
+      {
+        "id": "OTCLIENT-001",
+        "title": "Core System Analysis",
+        "description": "Análise profunda do sistema core",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668165"
+      },
+      {
+        "id": "OTCLIENT-002",
+        "title": "Graphics System",
+        "description": "Sistema de gráficos e renderização",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668187"
+      },
+      {
+        "id": "OTCLIENT-003",
+        "title": "Network System",
+        "description": "Sistema de rede e protocolos",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668193"
+      },
+      {
+        "id": "OTCLIENT-004",
+        "title": "Audio System",
+        "description": "Sistema de áudio e sons",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668197"
+      },
+      {
+        "id": "OTCLIENT-005",
+        "title": "UI Framework",
+        "description": "Framework de interface do usuário",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668200"
+      },
+      {
+        "id": "OTCLIENT-006",
+        "title": "Module System",
+        "description": "Sistema de módulos Lua",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668204"
+      },
+      {
+        "id": "OTCLIENT-007",
+        "title": "Game Logic",
+        "description": "Lógica do jogo e mecânicas",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668207"
+      },
+      {
+        "id": "OTCLIENT-008",
+        "title": "Resource Management",
+        "description": "Gerenciamento de recursos",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668211"
+      },
+      {
+        "id": "OTCLIENT-009",
+        "title": "Configuration System",
+        "description": "Sistema de configuração",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668214"
+      },
+      {
+        "id": "OTCLIENT-010",
+        "title": "Event System",
+        "description": "Sistema de eventos e callbacks",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668217"
+      },
+      {
+        "id": "OTCLIENT-011",
+        "title": "Animation System",
+        "description": "Sistema de animações",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668227"
+      },
+      {
+        "id": "OTCLIENT-012",
+        "title": "Effect System",
+        "description": "Sistema de efeitos visuais",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668231"
+      },
+      {
+        "id": "OTCLIENT-013",
+        "title": "World System",
+        "description": "Sistema de mundo e mapas",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668235"
+      },
+      {
+        "id": "OTCLIENT-014",
+        "title": "Creature System",
+        "description": "Sistema de criaturas",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668238"
+      },
+      {
+        "id": "OTCLIENT-015",
+        "title": "Item System",
+        "description": "Sistema de itens",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668241"
+      },
+      {
+        "id": "OTCLIENT-016",
+        "title": "Combat System",
+        "description": "Sistema de combate",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668245"
+      },
+      {
+        "id": "OTCLIENT-017",
+        "title": "Storage System",
+        "description": "Sistema de armazenamento",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668248"
+      },
+      {
+        "id": "OTCLIENT-018",
+        "title": "Security System",
+        "description": "Sistema de segurança",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668252"
+      },
+      {
+        "id": "OTCLIENT-019",
+        "title": "Performance System",
+        "description": "Sistema de performance",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668260"
+      },
+      {
+        "id": "OTCLIENT-020",
+        "title": "Debug System",
+        "description": "Sistema de debug e logging",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668264"
+      }
+    ]
+  },
+  "canary": {
+    "title": "Sistema Canary",
+    "stories": [
+      {
+        "id": "CANARY-001",
+        "title": "Core Architecture",
+        "description": "Arquitetura core do Canary",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668269"
+      },
+      {
+        "id": "CANARY-002",
+        "title": "Graphics Engine",
+        "description": "Engine de gráficos",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668274"
+      },
+      {
+        "id": "CANARY-003",
+        "title": "Network Protocol",
+        "description": "Protocolo de rede",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668277"
+      },
+      {
+        "id": "CANARY-004",
+        "title": "Audio Engine",
+        "description": "Engine de áudio",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668283"
+      },
+      {
+        "id": "CANARY-005",
+        "title": "UI System",
+        "description": "Sistema de interface",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668288"
+      },
+      {
+        "id": "CANARY-006",
+        "title": "Scripting System",
+        "description": "Sistema de scripting",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668291"
+      },
+      {
+        "id": "CANARY-007",
+        "title": "Game Mechanics",
+        "description": "Mecânicas do jogo",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668295"
+      },
+      {
+        "id": "CANARY-008",
+        "title": "Resource Engine",
+        "description": "Engine de recursos",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668298"
+      },
+      {
+        "id": "CANARY-009",
+        "title": "Config System",
+        "description": "Sistema de configuração",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668301"
+      },
+      {
+        "id": "CANARY-010",
+        "title": "Event Engine",
+        "description": "Engine de eventos",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668304"
+      },
+      {
+        "id": "CANARY-011",
+        "title": "Animation Engine",
+        "description": "Engine de animações",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668313"
+      },
+      {
+        "id": "CANARY-012",
+        "title": "Effect Engine",
+        "description": "Engine de efeitos",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668316"
+      },
+      {
+        "id": "CANARY-013",
+        "title": "World Engine",
+        "description": "Engine de mundo",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668320"
+      },
+      {
+        "id": "CANARY-014",
+        "title": "Creature Engine",
+        "description": "Engine de criaturas",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668323"
+      },
+      {
+        "id": "CANARY-015",
+        "title": "Item Engine",
+        "description": "Engine de itens",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668326"
+      },
+      {
+        "id": "CANARY-016",
+        "title": "Combat Engine",
+        "description": "Engine de combate",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668330"
+      },
+      {
+        "id": "CANARY-017",
+        "title": "Database System",
+        "description": "Sistema de banco de dados",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668333"
+      },
+      {
+        "id": "CANARY-018",
+        "title": "Security Engine",
+        "description": "Engine de segurança",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668336"
+      },
+      {
+        "id": "CANARY-019",
+        "title": "Performance Engine",
+        "description": "Engine de performance",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668339"
+      },
+      {
+        "id": "CANARY-020",
+        "title": "Debug Engine",
+        "description": "Engine de debug",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 8,
+        "created": "2025-07-29T01:04:09.668343"
+      }
+    ]
+  },
+  "integration": {
+    "title": "Análises Comparativas",
+    "stories": [
+      {
+        "id": "INTEGRATION-001",
+        "title": "Architecture Comparison",
+        "description": "Comparação de arquiteturas",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 12,
+        "created": "2025-07-29T01:04:09.668347"
+      },
+      {
+        "id": "INTEGRATION-002",
+        "title": "Protocol Analysis",
+        "description": "Análise de protocolos",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 12,
+        "created": "2025-07-29T01:04:09.668351"
+      },
+      {
+        "id": "INTEGRATION-003",
+        "title": "UI Framework Comparison",
+        "description": "Comparação de frameworks UI",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 12,
+        "created": "2025-07-29T01:04:09.668355"
+      },
+      {
+        "id": "INTEGRATION-004",
+        "title": "Scripting Comparison",
+        "description": "Comparação de sistemas de scripting",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 12,
+        "created": "2025-07-29T01:04:09.668359"
+      },
+      {
+        "id": "INTEGRATION-005",
+        "title": "Performance Analysis",
+        "description": "Análise de performance",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 12,
+        "created": "2025-07-29T01:04:09.668362"
+      },
+      {
+        "id": "INTEGRATION-006",
+        "title": "Migration Guide",
+        "description": "Guia de migração",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 12,
+        "created": "2025-07-29T01:04:09.668366"
+      },
+      {
+        "id": "INTEGRATION-007",
+        "title": "Integration Patterns",
+        "description": "Padrões de integração",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 12,
+        "created": "2025-07-29T01:04:09.668369"
+      },
+      {
+        "id": "INTEGRATION-008",
+        "title": "Best Practices",
+        "description": "Melhores práticas",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 12,
+        "created": "2025-07-29T01:04:09.668372"
+      },
+      {
+        "id": "INTEGRATION-009",
+        "title": "Tooling Comparison",
+        "description": "Comparação de ferramentas",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 12,
+        "created": "2025-07-29T01:04:09.668380"
+      },
+      {
+        "id": "INTEGRATION-010",
+        "title": "Future Roadmap",
+        "description": "Roadmap futuro",
+        "status": "not_started",
+        "priority": "medium",
+        "estimated_hours": 12,
+        "created": "2025-07-29T01:04:09.668385"
+      }
+    ]
+  },
+  "methodology": {
+    "title": "Metodologia e Templates",
+    "stories": [
+      {
+        "id": "METHODOLOGY-001",
+        "title": "Research Templates",
+        "description": "Templates de pesquisa",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 6,
+        "created": "2025-07-29T01:04:09.668389"
+      },
+      {
+        "id": "METHODOLOGY-002",
+        "title": "Analysis Workflows",
+        "description": "Workflows de análise",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 6,
+        "created": "2025-07-29T01:04:09.668392"
+      },
+      {
+        "id": "METHODOLOGY-003",
+        "title": "Documentation Standards",
+        "description": "Padrões de documentação",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 6,
+        "created": "2025-07-29T01:04:09.668395"
+      },
+      {
+        "id": "METHODOLOGY-004",
+        "title": "Quality Assurance",
+        "description": "Garantia de qualidade",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 6,
+        "created": "2025-07-29T01:04:09.668398"
+      },
+      {
+        "id": "METHODOLOGY-005",
+        "title": "Integration Tools",
+        "description": "Ferramentas de integração",
+        "status": "not_started",
+        "priority": "high",
+        "estimated_hours": 6,
+        "created": "2025-07-29T01:04:09.668400"
+      }
+    ]
+  }
+}

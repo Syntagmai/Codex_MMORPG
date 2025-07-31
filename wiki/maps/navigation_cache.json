@@ -1,0 +1,63 @@
+{
+  "tags_index": {
+    "last_updated": "2025-07-29T02:56:59.974077",
+    "total_files": 28,
+    "quick_access": {
+      "popular_tags": [
+        "otclient",
+        "guide",
+        "documentation",
+        "system",
+        "ui",
+        "wiki",
+        "development",
+        "animations",
+        "transitions",
+        "combat"
+      ]
+    }
+  },
+  "wiki_map": {
+    "last_updated": "2025-07-29T02:56:59.992186",
+    "total_files": 0,
+    "quick_access": {
+      "categories": [
+        "core",
+        "ui",
+        "development",
+        "reference",
+        "integration"
+      ]
+    }
+  },
+  "relationships": {
+    "last_updated": "2025-07-29T02:57:00.008496",
+    "total_files": 0,
+    "quick_access": {}
+  },
+  "enhanced_context": {
+    "last_updated": "2025-07-28T20:39:49.471292",
+    "total_files": 0,
+    "quick_access": {}
+  },
+  "intelligent_navigation": {
+    "last_updated": "2025-07-28T20:39:49.473495",
+    "total_files": 0,
+    "quick_access": {}
+  },
+  "otclient_source": {
+    "last_updated": "2025-07-28T02:56:44.827226",
+    "total_files": 524,
+    "quick_access": {
+      "categories": [
+        "core",
+        "ui",
+        "game",
+        "network",
+        "resource",
+        "module",
+        "other"
+      ]
+    }
+  }
+}

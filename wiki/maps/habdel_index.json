@@ -1,0 +1,3182 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-07-28T02:56:45.066004",
+    "total_files": 25,
+    "description": "Índice da documentação original e planejamento (pasta habdel)"
+  },
+  "categories": {
+    "UI": {
+      "name": "Sistema de Interface",
+      "stories": [
+        {
+          "id": "UI-UIButton",
+          "file": "UIButton.md",
+          "path": "wiki\\habdel\\UIButton.md",
+          "title": "UIButton",
+          "category": "UI",
+          "status": "todo",
+          "description": "O `UIButton` é um widget simples que estende `UIWidget`. É usado para criar botões clicáveis na interface.",
+          "tags": [],
+          "lines": 35,
+          "size": 1038,
+          "last_modified": "2025-07-26T18:44:33.509123"
+        },
+        {
+          "id": "UI-UIEvents",
+          "file": "UIEvents.md",
+          "path": "wiki\\habdel\\UIEvents.md",
+          "title": "Sistema de Eventos UIWidget",
+          "category": "UI",
+          "status": "unknown",
+          "description": "O sistema de eventos do OTClient permite criar interfaces interativas e responsivas através de callbacks e manipuladores de eventos que respondem a ações do usuário e mudanças de estado.",
+          "tags": [
+            "Melhores Práticas",
+            "Visão Geral",
+            "Tipos de Eventos",
+            "555555",
+            "Eventos Customizados",
+            "Exemplos Práticos",
+            "eventName",
+            "tipos",
+            "exemplos",
+            "widget",
+            "00ff00",
+            "propagação",
+            "333333",
+            "ff0000",
+            "Eventos de Teclado",
+            "visão",
+            "Eventos de Estado",
+            "melhores",
+            "ffffff",
+            "event",
+            "Eventos de Mouse",
+            "Propagação de Eventos",
+            "000000bb",
+            "0000ff",
+            "666666",
+            "eventos"
+          ],
+          "lines": 755,
+          "size": 19679,
+          "last_modified": "2025-07-26T19:08:37.874273"
+        },
+        {
+          "id": "UI-UILayouts",
+          "file": "UILayouts.md",
+          "path": "wiki\\habdel\\UILayouts.md",
+          "title": "Sistema de Layouts UIWidget",
+          "category": "UI",
+          "status": "todo",
+          "description": "O sistema de layouts do OTClient fornece mecanismos poderosos para organizar e posicionar widgets automaticamente, criando interfaces responsivas e bem estruturadas.",
+          "tags": [
+            "Melhores Práticas",
+            "layout",
+            "Visão Geral",
+            "001122",
+            "margens",
+            "Exemplos Práticos",
+            "layouts",
+            "tipos",
+            "exemplos",
+            "Layouts de Caixa",
+            "Layout de Grade",
+            "333333",
+            "ff0000",
+            "Sistema de Âncoras",
+            "visão",
+            "melhores",
+            "sistema",
+            "Tipos de Layout",
+            "Margens e Padding",
+            "666666",
+            "223322"
+          ],
+          "lines": 515,
+          "size": 15233,
+          "last_modified": "2025-07-26T19:06:03.076643"
+        },
+        {
+          "id": "UI-UIStyling",
+          "file": "UIStyling.md",
+          "path": "wiki\\habdel\\UIStyling.md",
+          "title": "Sistema de Estilização e Temas UIWidget",
+          "category": "UI",
+          "status": "todo",
+          "description": "O OTClient utiliza um sistema de estilização baseado em CSS que permite criar interfaces visuais consistentes e facilmente personalizáveis através de arquivos `.otui` e definição de estilos programáti...",
+          "tags": [
+            "Melhores Práticas",
+            "00aa00",
+            "'size'",
+            "880000",
+            "000000",
+            "3a3a3a",
+            "exemplos",
+            "ff4444",
+            "visão",
+            "propriedades",
+            "0099ff",
+            "'border-width'",
+            "d0d0d0",
+            "2a0000",
+            "8b0000",
+            "222222",
+            "themeName",
+            "Visão Geral",
+            "Estados e Pseudoclasses",
+            "cccccc",
+            "ff00ff",
+            "2a1a1a",
+            "'background-color'",
+            "000088",
+            "Estilização Programática",
+            "name",
+            "000044",
+            "melhores",
+            "ffffff",
+            "'border-color'",
+            "mobile",
+            "f8f8f8",
+            "seletores",
+            "ff0000ff",
+            "estilização",
+            "2a2a2a",
+            "Exemplos Práticos",
+            "0080ff",
+            "004400",
+            "000000aa",
+            "007acc",
+            "myId",
+            "Propriedades de Estilo",
+            "0066cc",
+            "888888",
+            "00ff00",
+            "f4f4f4ff",
+            "333333",
+            "444444",
+            "1a1a1a",
+            "ff0000",
+            "zoomOut",
+            "444400",
+            "ffaa00",
+            "Arquivos .otui",
+            "desktop",
+            "temas",
+            "4a4a4a",
+            "777777",
+            "e0e0e0",
+            "icon",
+            "Temas e Variações",
+            "estados",
+            "555555",
+            "zoomIn",
+            "Seletores e Hierarquia",
+            "440000",
+            "008000",
+            "008800",
+            "aaaaaa",
+            "sintaxe",
+            "saveButton",
+            "f0f0f0",
+            "inventory",
+            "Sintaxe de Estilização",
+            "c0c0c0",
+            "888800",
+            "666666",
+            "fff2cc",
+            "arquivos",
+            "999999"
+          ],
+          "lines": 949,
+          "size": 19421,
+          "last_modified": "2025-07-26T19:11:33.401457"
+        },
+        {
+          "id": "UI-UITextEdit",
+          "file": "UITextEdit.md",
+          "path": "wiki\\habdel\\UITextEdit.md",
+          "title": "UITextEdit",
+          "category": "UI",
+          "status": "todo",
+          "description": "O `UITextEdit` é um widget avançado que estende `UIWidget` para fornecer funcionalidades de edição de texto. Ele oferece recursos como posicionamento de cursor, seleção de texto, validação de entrada,...",
+          "tags": [
+            "888888",
+            "f4f4f4ff",
+            "363636ff",
+            "808080ff",
+            "ffffffff",
+            "0000ff",
+            "ffff00"
+          ],
+          "lines": 316,
+          "size": 10176,
+          "last_modified": "2025-07-26T18:42:56.699303"
+        },
+        {
+          "id": "UI-UIWidget",
+          "file": "UIWidget.md",
+          "path": "wiki\\habdel\\UIWidget.md",
+          "title": "UIWidget",
+          "category": "UI",
+          "status": "todo",
+          "description": "O `UIWidget` é a classe base para todos os elementos de interface no OTClient. Fornece a funcionalidade central para criar e gerenciar elementos de interface, incluindo:",
+          "tags": [
+            "color=#ff0000",
+            "00ff00",
+            "ff0000",
+            "color=#00ff00",
+            "/color"
+          ],
+          "lines": 408,
+          "size": 24785,
+          "last_modified": "2025-07-26T18:44:16.668235"
+        },
+        {
+          "id": "UI-UIWidget_Reference",
+          "file": "UIWidget_Reference.md",
+          "path": "wiki\\habdel\\UIWidget_Reference.md",
+          "title": "Guia de Referência UIWidget do OTClient",
+          "category": "UI",
+          "status": "todo",
+          "description": "Esta documentação de referência fornece uma visão geral do sistema UIWidget no OTClient, detalhando funções disponíveis, propriedades e padrões de uso para ajudar desenvolvedores a criar e modificar e...",
+          "tags": [
+            "Posicionamento e Dimensionamento",
+            "Eventos e Interação",
+            "0000FF",
+            "Uso Básico de Widget",
+            "Imagens e Ícones",
+            "imagens",
+            "uso",
+            "estilização",
+            "posicionamento",
+            "manipulação",
+            "Hierarquia de Widget",
+            "layouts",
+            "FF0000",
+            "00FF00",
+            "Estilização",
+            "Criação de Widget",
+            "widgets",
+            "hierarquia",
+            "Manipulação de Texto",
+            "Layouts",
+            "eventos",
+            "criação",
+            "Widgets Especiais"
+          ],
+          "lines": 538,
+          "size": 13150,
+          "last_modified": "2025-07-26T17:18:07.074125"
+        },
+        {
+          "id": "UI-UIWidgetsSpecialized",
+          "file": "UIWidgetsSpecialized.md",
+          "path": "wiki\\habdel\\UIWidgetsSpecialized.md",
+          "title": "Widgets Especializados - OTClient Redemption",
+          "category": "UI",
+          "status": "todo",
+          "description": "Documentação completa dos widgets especializados do OTClient, incluindo minimap, containers, market, tabs e outros componentes avançados da interface.",
+          "tags": [
+            "0000FF",
+            "FF0066",
+            "Calendar Widgets",
+            "404040",
+            "2A2A2A",
+            "Tree Widgets",
+            "Minimap Widget",
+            "Exemplos Práticos",
+            "Scroll Widgets",
+            "00000066",
+            "FF0000",
+            "0066FF",
+            "Container System",
+            "00AA00",
+            "00FF00",
+            "FFFFFF",
+            "Progress Widgets",
+            "Market Widgets",
+            "Tab System",
+            "Split Widgets",
+            "FFAA00",
+            "353535"
+          ],
+          "lines": 1182,
+          "size": 31970,
+          "last_modified": "2025-07-26T22:23:20.718613"
+        }
+      ]
+    },
+    "GAME": {
+      "name": "Sistema de Jogo",
+      "stories": [
+        {
+          "id": "GAME-CreatureSystem",
+          "file": "CreatureSystem.md",
+          "path": "wiki\\habdel\\CreatureSystem.md",
+          "title": "Sistema de Criaturas - OTClient Redemption",
+          "category": "GAME",
+          "status": "todo",
+          "description": "Documentação completa do sistema de criaturas do OTClient, incluindo jogadores, NPCs, monstros e sistema de battle.",
+          "tags": [
+            "1",
+            "ShieldYellowSharedExp",
+            "ShieldWhiteYellow",
+            "ShieldWhiteBlue",
+            "EmblemBlue",
+            "Sistema de Outfit",
+            "Visão Geral",
+            "SkullRed",
+            "EmblemGreen",
+            "ShieldYellowNoSharedExpBlink",
+            "shieldId",
+            "EmblemMember",
+            "EmblemOther",
+            "Exemplos Práticos",
+            "id",
+            "ShieldYellow",
+            "EmblemRed",
+            "emblemId",
+            "FF0000",
+            "Creature Base",
+            "%s",
+            "00FF00",
+            "FFFFFF",
+            "FFFF00",
+            "2",
+            "Pathfinding e Movimento",
+            "Eventos e Callbacks",
+            "ShieldBlueNoSharedExpBlink",
+            "808080",
+            "Sistema de Battle",
+            "ShieldGray",
+            "FF6666",
+            "validTargets",
+            "path",
+            "Sistema Visual",
+            "ShieldBlueSharedExp",
+            "name",
+            "SkullGreen",
+            "Tipos de Criaturas",
+            "SkullWhite",
+            "SkullYellow",
+            "SkullBlack",
+            "targetName",
+            "creature:getId()",
+            "FFAA00",
+            "skullId",
+            "Estados e Propriedades",
+            "SkullOrange",
+            "ShieldBlue"
+          ],
+          "lines": 1257,
+          "size": 37383,
+          "last_modified": "2025-07-26T22:28:07.189423"
+        },
+        {
+          "id": "GAME-ItemSystem",
+          "file": "ItemSystem.md",
+          "path": "wiki\\habdel\\ItemSystem.md",
+          "title": "Sistema de Itens - OTClient Redemption",
+          "category": "GAME",
+          "status": "todo",
+          "description": "Documentação completa do sistema de itens do OTClient, incluindo criação, manipulação, inventário, containers e market.",
+          "tags": [
+            "1",
+            "66FF66",
+            "Durabilidade e Cargas",
+            "Visão Geral",
+            "Tipos de Itens",
+            "itemId",
+            "[\nID: %d\nDescrição: %s\nCategoria: %s\nPeso: %.2f oz\nEmpilhável: %s\nMovível: %s\nUsável: %s\nMarket: %s",
+            "Exemplos Práticos",
+            "00FF00",
+            "FFFFFF",
+            "FFFF00",
+            "2",
+            "Market System",
+            "FF6666",
+            "itemInfo.category",
+            "Sistema de Containers",
+            "parts",
+            "Drag & Drop",
+            "Sistema de Inventário",
+            "FF66FF",
+            "Item Base",
+            "6666FF",
+            "UIItem Widget",
+            "FFFF66",
+            "searchText"
+          ],
+          "lines": 1362,
+          "size": 40699,
+          "last_modified": "2025-07-26T22:33:40.448967"
+        }
+      ]
+    },
+    "CORE": {
+      "name": "Sistema Central",
+      "stories": [
+        {
+          "id": "CORE-Configuration",
+          "file": "Configuration.md",
+          "path": "wiki\\habdel\\Configuration.md",
+          "title": "Sistema de Configuração OTClient",
+          "category": "CORE",
+          "status": "todo",
+          "description": "O OTClient implementa um sistema robusto de configuração baseado em arquivos OTML (OTClient Markup Language) que permite personalizar todos os aspectos do cliente, desde configurações gráficas até con...",
+          "tags": [
+            "Melhores Práticas",
+            "Visão Geral",
+            "formato",
+            "configmanager",
+            "\"interface.theme\"",
+            "settings",
+            "gameconfig",
+            "\"game.autoLogin\"",
+            "\"graphics.vsync\"",
+            "key",
+            "Arquitetura do Sistema",
+            "GameConfig (g_gameConfig)",
+            "implementação",
+            "\"game.classicControls\"",
+            "Formato OTML",
+            "\"graphics.frameRate\"",
+            "Implementação Prática",
+            "Configurações de Jogo",
+            "configurações",
+            "visão",
+            "melhores",
+            "\"game.rememberAccount\"",
+            "presets",
+            "sistema",
+            "Sistema de Opções",
+            "arquitetura",
+            "ConfigManager (g_configs)",
+            "Configurações de Controle",
+            "category",
+            "\"audio.masterVolume\"",
+            "Settings (g_settings)",
+            "\"graphics.fullscreen\"",
+            "\"graphics.antialiasing\""
+          ],
+          "lines": 997,
+          "size": 27033,
+          "last_modified": "2025-07-26T19:26:21.743485"
+        },
+        {
+          "id": "CORE-ConfigurationAdvanced",
+          "file": "ConfigurationAdvanced.md",
+          "path": "wiki\\habdel\\ConfigurationAdvanced.md",
+          "title": "Sistema de Configuração Avançada",
+          "category": "CORE",
+          "status": "unknown",
+          "description": "Sistema de configuração com suporte a múltiplos tipos de dados, validação e callbacks personalizados.",
+          "tags": [
+            "Melhores Práticas",
+            "a-zA-Z",
+            "Visão Geral",
+            "change.key",
+            "api",
+            "a-z",
+            "channelName",
+            "Exemplos Práticos",
+            "API C++",
+            "tipos",
+            "API Lua",
+            "key",
+            "exemplos",
+            "Tipos de Configuração",
+            "configMetrics",
+            "visão",
+            "melhores",
+            "sistema",
+            "Sistema de Opções"
+          ],
+          "lines": 631,
+          "size": 16750,
+          "last_modified": "2025-07-26T22:49:01.481503"
+        },
+        {
+          "id": "CORE-FirstModule",
+          "file": "FirstModule.md",
+          "path": "wiki\\habdel\\FirstModule.md",
+          "title": "Criando Seu Primeiro Módulo - OTClient",
+          "category": "CORE",
+          "status": "todo",
+          "description": "Este guia prático te levará passo a passo na criação de módulos completos e funcionais para o OTClient. Aprenderemos desde conceitos básicos até implementações avançadas com exemplos reais.",
+          "tags": [
+            "1",
+            "Projeto 3: Monitor de Status",
+            "activeNotifications",
+            "Otimização e Performance",
+            "2c3e50",
+            "anatomia",
+            "projeto",
+            "otimização",
+            "distribuição",
+            "clickcounter",
+            "Anatomia de um Módulo",
+            "Projeto 1: Contador de Cliques",
+            "d68910",
+            "Projeto 5: Mini-Jogo Integrado",
+            "3498db",
+            "debugging",
+            "my_module",
+            "key",
+            "%s",
+            "9b59b6",
+            "2471a3",
+            "f39c12",
+            "27ae60",
+            "preparação",
+            "notifications",
+            "Projeto 4: Sistema de Comandos",
+            "ecf0f1",
+            "Debugging e Testes",
+            "e67e22",
+            "1e8449",
+            "stats",
+            "34495e",
+            "Preparação do Ambiente",
+            "#stats.clickTimes",
+            "2980b9",
+            "229954",
+            "notificationQueue",
+            "Distribuição e Compartilhamento",
+            "Projeto 2: Sistema de Notificações",
+            "statusmonitor",
+            "bdc3c7",
+            "e74c3c"
+          ],
+          "lines": 1540,
+          "size": 42834,
+          "last_modified": "2025-07-26T19:34:11.128174"
+        },
+        {
+          "id": "CORE-ModuleSystem",
+          "file": "ModuleSystem.md",
+          "path": "wiki\\habdel\\ModuleSystem.md",
+          "title": "Sistema de Módulos OTClient",
+          "category": "CORE",
+          "status": "todo",
+          "description": "O OTClient utiliza um sistema modular robusto que permite carregar, gerenciar e estender funcionalidades através de módulos Lua organizados hierarquicamente com controle de dependências e carregamento...",
+          "tags": [
+            "RELOADABLE",
+            "Melhores Práticas",
+            "Arquivos .otmod",
+            "Estrutura de Módulos",
+            "gerenciamento",
+            "Gerenciamento de Módulos",
+            "game_inventory",
+            "criando",
+            "Visão Geral",
+            "estrutura",
+            "Exemplos Práticos",
+            "dependências",
+            "script1",
+            "script2",
+            "Criando Módulos",
+            "Sistema de Prioridades",
+            "inventory_slots",
+            "module1",
+            "exemplos",
+            "MyModule",
+            "carregamento",
+            "module2",
+            "Carregamento de Módulos",
+            "name",
+            "visão",
+            "inventory",
+            "SANDBOX",
+            "melhores",
+            "sistema",
+            "Dependências e Load-Later",
+            "game_interface",
+            "method",
+            "gamelib",
+            "arquivos"
+          ],
+          "lines": 706,
+          "size": 16871,
+          "last_modified": "2025-07-26T19:14:20.867323"
+        }
+      ]
+    },
+    "GUIDE": {
+      "name": "Guias e Tutoriais",
+      "stories": [
+        {
+          "id": "GUIDE-BestPractices",
+          "file": "BestPractices.md",
+          "path": "wiki\\habdel\\BestPractices.md",
+          "title": "Boas Práticas de Desenvolvimento - OTClient",
+          "category": "GUIDE",
+          "status": "done",
+          "description": "Este guia apresenta as melhores práticas para desenvolvimento no OTClient, cobrindo desde organização de código até otimização de performance e padrões de arquitetura.",
+          "tags": [
+            "Testes e Validação",
+            "1",
+            "0-9a-fA-F",
+            "colaboração",
+            "gerenciamento",
+            "errorLog",
+            "Documentação",
+            "'UI.createWindow'",
+            "Deployment e Distribuição",
+            "documentação",
+            "performance",
+            "2c3e50",
+            "typeName",
+            "'Network.connect'",
+            "eventQueue",
+            "ERROR",
+            "'Config.load'",
+            "#errorLog",
+            "Filosofia de Desenvolvimento",
+            "Padrões de Arquitetura",
+            "i",
+            "field",
+            "tratamento",
+            "3498db",
+            "segurança",
+            "id",
+            "eventName",
+            "filosofia",
+            "Performance e Otimização",
+            "testes",
+            "Segurança",
+            "'ui.windowSize.width'",
+            "debugging",
+            "'ui.windowSize.height'",
+            "'gameplay.maxHistory'",
+            "organização",
+            "key",
+            "Tratamento de Erros",
+            "%s",
+            "'gameplay.saveInterval'",
+            "Colaboração e Versionamento",
+            "2",
+            "widget",
+            "Gerenciamento de Memória",
+            "rule.type",
+            "keys",
+            "RRGGBB",
+            "Organização de Código",
+            "ecf0f1",
+            "ff0000",
+            "from",
+            "toState",
+            "errors",
+            "self.currentState",
+            "fromState",
+            "moduleName .. '.' .. funcName",
+            "Debugging e Profiling",
+            "name",
+            "34495e",
+            "self",
+            "padrões",
+            "ffffff",
+            "instanceId",
+            "event",
+            "keys[#keys",
+            "2980b9",
+            "data",
+            "deployment",
+            "property",
+            "value"
+          ],
+          "lines": 1630,
+          "size": 44465,
+          "last_modified": "2025-07-26T22:08:45.183422"
+        },
+        {
+          "id": "GUIDE-GettingStarted",
+          "file": "GettingStarted.md",
+          "path": "wiki\\habdel\\GettingStarted.md",
+          "title": "Getting Started - OTClient Redemption",
+          "category": "GUIDE",
+          "status": "done",
+          "description": "Bem-vindo ao OTClient - Redemption! Este guia te ajudará a dar os primeiros passos no desenvolvimento e customização do cliente Tibia mais avançado e flexível disponível.",
+          "tags": [
+            "Sistema de Mundo e Mapas",
+            "Customização Básica",
+            "UIWidget Reference",
+            "Próximos Passos",
+            "Visão Geral",
+            "Comunidade OTClient",
+            "2c3e50",
+            "conceitos",
+            "estrutura",
+            "[\n  MainWindow {\n    background-color: #2c3e50;\n    border: 1px solid #34495e;\n  }\n  \n  Button {\n    background-color: #3498db;\n    color: white;\n    border-radius: 3px;\n  }\n  \n  Button:hover {\n    background-color: #2980b9;\n  }",
+            "desenvolvimento",
+            "\"http://127.0.0.1/login.php\"",
+            "3498db",
+            "Debugging e Ferramentas",
+            "primeiro",
+            "\"protocol\"",
+            "debugging",
+            "customização",
+            "Primeiro Módulo",
+            "\"httpLogin\"",
+            "00ff00",
+            "Sistema de Módulos",
+            "Sistema de Configuração",
+            "Repositório Principal",
+            "ecf0f1",
+            "Instalação e Setup",
+            "primeira",
+            "Estrutura do Projeto",
+            "DEBUG",
+            "\"port\"",
+            "visão",
+            "34495e",
+            "próximos",
+            "Protocolo de Comunicação",
+            "Conceitos Fundamentais",
+            "2980b9",
+            "Primeira Execução",
+            "Desenvolvimento Local",
+            "\"otserver.com\"",
+            "instalação"
+          ],
+          "lines": 708,
+          "size": 16615,
+          "last_modified": "2025-07-26T19:29:56.542219"
+        }
+      ]
+    },
+    "REF": {
+      "name": "Referências",
+      "stories": [
+        {
+          "id": "REF-CheatSheet",
+          "file": "CheatSheet.md",
+          "path": "wiki\\habdel\\CheatSheet.md",
+          "title": "Cheat Sheet de Desenvolvimento - OTClient Redemption",
+          "category": "REF",
+          "status": "unknown",
+          "description": "Referência rápida para desenvolvimento no OTClient com códigos essenciais, padrões comuns e comandos úteis.",
+          "tags": [
+            "Patterns e Snippets",
+            "Troubleshooting",
+            "0000FF",
+            "' .. name .. '",
+            "currentLine",
+            "Estrutura de Módulo",
+            "404040",
+            "00FFFF",
+            "2B2B2B",
+            "AA0000",
+            "FF00FF",
+            "APIs Essenciais",
+            "word",
+            "000000",
+            "FF0000",
+            "0088FF",
+            "00FF00",
+            "00AA00",
+            "FFFFFF",
+            "FFFF00",
+            "Interface Básica",
+            "Comandos de Debug",
+            "808080",
+            "Cores e Constantes",
+            "CCCCCC",
+            "name",
+            "event",
+            "Configuração Rápida",
+            "FFAA00",
+            "state",
+            "Eventos Comuns",
+            "0078D4"
+          ],
+          "lines": 943,
+          "size": 19491,
+          "last_modified": "2025-07-26T22:17:34.186453"
+        },
+        {
+          "id": "REF-LuaAPI",
+          "file": "LuaAPI.md",
+          "path": "wiki\\habdel\\LuaAPI.md",
+          "title": "Lua API Reference - OTClient Redemption",
+          "category": "REF",
+          "status": "todo",
+          "description": "Referência completa da API Lua do OTClient, incluindo todas as funções globais, módulos e sistemas disponíveis para desenvolvimento.",
+          "tags": [
+            "Utilitários",
+            "0000FF",
+            "Callbacks e Eventos",
+            "00FFFF",
+            "Sistema de Som",
+            "8040FF",
+            "\"Authorization\"",
+            "FF00FF",
+            "Exemplos Práticos",
+            "000000",
+            "FF6060",
+            "account",
+            "FF0000",
+            "FF8000",
+            "FF0080",
+            "key",
+            "Sistema de Interface",
+            "00FF00",
+            "A5F1FF",
+            "FFFFFF",
+            "FFFF00",
+            "808080",
+            "Sistema de Configuração",
+            "CCCCCC",
+            "0080FF",
+            "password",
+            "\"Content-Type\"",
+            "Sistema de Jogo",
+            "Globais Core",
+            "C0C0C0",
+            "Sistema de Gráficos",
+            "value",
+            "Sistema de Rede"
+          ],
+          "lines": 1941,
+          "size": 59232,
+          "last_modified": "2025-07-26T22:14:03.467515"
+        }
+      ]
+    },
+    "UNKNOWN": {
+      "name": "Desconhecido",
+      "stories": [
+        {
+          "id": "UNKNOWN-DOCUMENTATION_PLAN",
+          "file": "DOCUMENTATION_PLAN.md",
+          "path": "wiki\\habdel\\DOCUMENTATION_PLAN.md",
+          "title": "Plano de Documentação OTClient - Redemption",
+          "category": "UNKNOWN",
+          "status": "done",
+          "description": "**Última Atualização:** 2025-01-27",
+          "tags": [
+            "",
+            "Melhores Práticas",
+            "Documentação da API Lua",
+            "exemplos",
+            "melhores",
+            "Descrição breve de 1-2 linhas",
+            "Explicação detalhada",
+            "Documentação da API C++",
+            "Recomendações",
+            "API C++",
+            "Visão Geral",
+            "Exemplos práticos",
+            "api",
+            "Exemplos",
+            "API Lua",
+            "Nome do Sistema/Widget",
+            "visão"
+          ],
+          "lines": 239,
+          "size": 7998,
+          "last_modified": "2025-07-26T22:52:36.962708"
+        },
+        {
+          "id": "UNKNOWN-EffectsSystem",
+          "file": "EffectsSystem.md",
+          "path": "wiki\\habdel\\EffectsSystem.md",
+          "title": "Sistema de Efeitos",
+          "category": "UNKNOWN",
+          "status": "todo",
+          "description": "Sistema completo de efeitos visuais incluindo efeitos animados, anexados e UI com suporte a shaders e transformações.",
+          "tags": [
+            "1",
+            "Melhores Práticas",
+            "COMBAT_EARTH",
+            "Efeitos Anexados",
+            "Visão Geral",
+            "COMBAT_ENERGY",
+            "api",
+            "ffff00",
+            "COMBAT_ICE",
+            "Effect Debug",
+            "2ecc71",
+            "type",
+            "Exemplos Práticos",
+            "3498db",
+            "efeitos",
+            "ff6600",
+            "EffectPool",
+            "API C++",
+            "9966ff",
+            "Efeitos de UI",
+            "East",
+            "API Lua",
+            "key",
+            "West",
+            "COMBAT_HOLY",
+            "f39c12",
+            "2",
+            "exemplos",
+            "spellId",
+            "COMBAT_DEATH",
+            "00ff00",
+            "condition",
+            "CONDITION_PROTECTION",
+            "COMBAT_FIRE",
+            "0066ff",
+            "ff0000",
+            "990099",
+            "CONDITION_HASTE",
+            "CONDITION_STRONG",
+            "North",
+            "visão",
+            "South",
+            "melhores",
+            "ffffff",
+            "Efeitos Básicos",
+            "0099ff",
+            "damageType",
+            "COMBAT_PHYSICAL",
+            "e74c3c"
+          ],
+          "lines": 1112,
+          "size": 29918,
+          "last_modified": "2025-07-26T23:03:07.162120"
+        },
+        {
+          "id": "UNKNOWN-GraphicsSystem",
+          "file": "GraphicsSystem.md",
+          "path": "wiki\\habdel\\GraphicsSystem.md",
+          "title": "Sistema de Gráficos - OTClient Redemption",
+          "category": "UNKNOWN",
+          "status": "todo",
+          "description": "Documentação completa do sistema de gráficos do OTClient, incluindo renderização, shaders, texturas, fontes e efeitos visuais.",
+          "tags": [
+            "Screenshots e Gravação",
+            "Visão Geral",
+            "i-1",
+            "Configurações Gráficas",
+            "Gerenciamento de Texturas",
+            "1.0);\n        }",
+            "i",
+            "Exemplos Práticos",
+            "Performance e Otimização",
+            "FF0000",
+            "00FF00",
+            "Efeitos Visuais",
+            "Sistema de Shaders",
+            "Sistema de Renderização",
+            "FFFFFF",
+            "FFFF00",
+            "2",
+            "[\n        uniform float u_Time;\n        uniform vec2 u_Resolution;\n        \n        void main() {\n            vec2 uv = gl_FragCoord.xy / u_Resolution.xy;\n            vec3 color = vec3(0.5 + 0.5 * cos(u_Time + uv.xyx + vec3(0",
+            "graphicsMonitor",
+            "^\\r\\n",
+            "property",
+            "4)));\n            gl_FragColor = vec4(color",
+            "Sistema de Fontes"
+          ],
+          "lines": 1169,
+          "size": 37619,
+          "last_modified": "2025-07-26T22:38:53.048479"
+        },
+        {
+          "id": "UNKNOWN-NetworkSystem",
+          "file": "NetworkSystem.md",
+          "path": "wiki\\habdel\\NetworkSystem.md",
+          "title": "Sistema de Rede",
+          "category": "UNKNOWN",
+          "status": "todo",
+          "description": "Sistema de comunicação de rede assíncrono com suporte a múltiplos protocolos, criptografia e reconexão automática.",
+          "tags": [
+            "Melhores Práticas",
+            "\" .. sender .. \"",
+            "opcode",
+            "Visão Geral",
+            "api",
+            "0x01",
+            "0",
+            "Arquitetura de Conexão",
+            "i",
+            "Exemplos Práticos",
+            "segurança",
+            "Sistema de Protocolo",
+            "API C++",
+            "API Lua",
+            "%s",
+            "exemplos",
+            "level",
+            "Segurança e Criptografia",
+            "0x02",
+            "visão",
+            "self",
+            "melhores",
+            "sistema",
+            "arquitetura",
+            "0x03"
+          ],
+          "lines": 994,
+          "size": 25860,
+          "last_modified": "2025-07-26T22:52:01.715710"
+        },
+        {
+          "id": "UNKNOWN-Protocol",
+          "file": "Protocol.md",
+          "path": "wiki\\habdel\\Protocol.md",
+          "title": "Sistema de Protocolo de Comunicação OTClient",
+          "category": "UNKNOWN",
+          "status": "done",
+          "description": "O OTClient implementa um sistema robusto de comunicação com servidores Tibia através de protocolos binários, suportando múltiplas versões (7.72 a 14.12) e extensões customizadas para funcionalidades a...",
+          "tags": [
+            "Melhores Práticas",
+            "Arquitetura do Protocolo",
+            "opcode",
+            "protocollogin",
+            "Visão Geral",
+            "ffff00",
+            "versões",
+            "Versões e Compatibilidade",
+            "g_map",
+            "Mensagens e Serialização",
+            "ProtocolGame",
+            "implementação",
+            "Extended Opcodes",
+            "00ff00",
+            "Sistema de Opcodes",
+            "Implementação Prática",
+            "visão",
+            "protocolgame",
+            "melhores",
+            "sistema",
+            "extended",
+            "mensagens",
+            "arquitetura",
+            "PROTOCOL",
+            "ProtocolLogin"
+          ],
+          "lines": 869,
+          "size": 24050,
+          "last_modified": "2025-07-26T19:17:45.019053"
+        },
+        {
+          "id": "UNKNOWN-SoundSystem",
+          "file": "SoundSystem.md",
+          "path": "wiki\\habdel\\SoundSystem.md",
+          "title": "Sistema de Som - OTClient Redemption",
+          "category": "UNKNOWN",
+          "status": "todo",
+          "description": "Documentação completa do sistema de áudio do OTClient, incluindo reprodução de sons, canais de áudio, efeitos sonoros e controle de volume.",
+          "tags": [
+            "1",
+            "9",
+            "musicType",
+            "files",
+            "Visão Geral",
+            "presetName",
+            "ambientType",
+            "math.random(1",
+            "sourceId",
+            "Configurações de Áudio",
+            "SoundChannels.Master",
+            "missileId",
+            "4608",
+            "Controle de Volume",
+            "SoundChannels.Effects",
+            "type",
+            "Exemplos Práticos",
+            "4527",
+            "5406",
+            "action",
+            "12",
+            "key",
+            "Integração com Jogo",
+            "Efeitos Sonoros",
+            "2",
+            "SoundChannels.Music",
+            "5",
+            "Reprodução de Sons",
+            "5407",
+            "11",
+            "SoundChannels.Voice",
+            "groundId",
+            "SoundChannels.Interface",
+            "Sistema de Áudio",
+            "10",
+            "name",
+            "Canais de Som",
+            "7",
+            "effectId",
+            "4609",
+            "3",
+            "#files)",
+            "Sons Ambientais",
+            "category",
+            "8",
+            "4",
+            "4526",
+            "6",
+            "soundType",
+            "SoundChannels.Environment"
+          ],
+          "lines": 1560,
+          "size": 46397,
+          "last_modified": "2025-07-26T22:46:47.619922"
+        },
+        {
+          "id": "UNKNOWN-WorldSystem",
+          "file": "WorldSystem.md",
+          "path": "wiki\\habdel\\WorldSystem.md",
+          "title": "Sistema de Mundo e Mapas OTClient",
+          "category": "UNKNOWN",
+          "status": "done",
+          "description": "O OTClient implementa um sistema completo de mundo e mapas que gerencia terrenos, tiles, criaturas e pathfinding para criar um ambiente de jogo totalmente funcional.",
+          "tags": [
+            "Melhores Práticas",
+            "0000FF",
+            "Sistema de Mapas",
+            "Visão Geral",
+            "items",
+            "Sistema de Tiles",
+            "Awareness Range",
+            "FF0000",
+            "key",
+            "00FF00",
+            "mapview",
+            "FFFF00",
+            "Arquitetura do Sistema",
+            "MapView e Rendering",
+            "implementação",
+            "Implementação Prática",
+            "Sistema de Criaturas",
+            "visão",
+            "melhores",
+            "sistema",
+            "Pathfinding",
+            "pathfinding",
+            "arquitetura",
+            "awareness"
+          ],
+          "lines": 711,
+          "size": 17903,
+          "last_modified": "2025-07-26T19:21:32.731700"
+        }
+      ]
+    }
+  },
+  "statistics": {
+    "total_stories": 25,
+    "by_category": {
+      "UI": 8,
+      "GAME": 2,
+      "CORE": 4,
+      "GUIDE": 2,
+      "REF": 2,
+      "UNKNOWN": 7
+    },
+    "by_status": {
+      "done": 5,
+      "unknown": 3,
+      "todo": 17
+    },
+    "total_lines": 23067,
+    "total_size": 646570
+  },
+  "search_index": {
+    "by_title": {
+      "boas práticas de desenvolvimento - otclient": [
+        "GUIDE-BestPractices"
+      ],
+      "cheat sheet de desenvolvimento - otclient redemption": [
+        "REF-CheatSheet"
+      ],
+      "sistema de configuração otclient": [
+        "CORE-Configuration"
+      ],
+      "sistema de configuração avançada": [
+        "CORE-ConfigurationAdvanced"
+      ],
+      "sistema de criaturas - otclient redemption": [
+        "GAME-CreatureSystem"
+      ],
+      "plano de documentação otclient - redemption": [
+        "UNKNOWN-DOCUMENTATION_PLAN"
+      ],
+      "sistema de efeitos": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "criando seu primeiro módulo - otclient": [
+        "CORE-FirstModule"
+      ],
+      "getting started - otclient redemption": [
+        "GUIDE-GettingStarted"
+      ],
+      "sistema de gráficos - otclient redemption": [
+        "UNKNOWN-GraphicsSystem"
+      ],
+      "sistema de itens - otclient redemption": [
+        "GAME-ItemSystem"
+      ],
+      "lua api reference - otclient redemption": [
+        "REF-LuaAPI"
+      ],
+      "sistema de módulos otclient": [
+        "CORE-ModuleSystem"
+      ],
+      "sistema de rede": [
+        "UNKNOWN-NetworkSystem"
+      ],
+      "sistema de protocolo de comunicação otclient": [
+        "UNKNOWN-Protocol"
+      ],
+      "sistema de som - otclient redemption": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "uibutton": [
+        "UI-UIButton"
+      ],
+      "sistema de eventos uiwidget": [
+        "UI-UIEvents"
+      ],
+      "sistema de layouts uiwidget": [
+        "UI-UILayouts"
+      ],
+      "sistema de estilização e temas uiwidget": [
+        "UI-UIStyling"
+      ],
+      "uitextedit": [
+        "UI-UITextEdit"
+      ],
+      "uiwidget": [
+        "UI-UIWidget"
+      ],
+      "guia de referência uiwidget do otclient": [
+        "UI-UIWidget_Reference"
+      ],
+      "widgets especializados - otclient redemption": [
+        "UI-UIWidgetsSpecialized"
+      ],
+      "sistema de mundo e mapas otclient": [
+        "UNKNOWN-WorldSystem"
+      ]
+    },
+    "by_tag": {
+      "testes e validação": [
+        "GUIDE-BestPractices"
+      ],
+      "1": [
+        "GUIDE-BestPractices",
+        "GAME-CreatureSystem",
+        "UNKNOWN-EffectsSystem",
+        "CORE-FirstModule",
+        "GAME-ItemSystem",
+        "UNKNOWN-SoundSystem"
+      ],
+      "0-9a-fa-f": [
+        "GUIDE-BestPractices"
+      ],
+      "colaboração": [
+        "GUIDE-BestPractices"
+      ],
+      "gerenciamento": [
+        "GUIDE-BestPractices",
+        "CORE-ModuleSystem"
+      ],
+      "errorlog": [
+        "GUIDE-BestPractices"
+      ],
+      "documentação": [
+        "GUIDE-BestPractices",
+        "GUIDE-BestPractices"
+      ],
+      "'ui.createwindow'": [
+        "GUIDE-BestPractices"
+      ],
+      "deployment e distribuição": [
+        "GUIDE-BestPractices"
+      ],
+      "performance": [
+        "GUIDE-BestPractices"
+      ],
+      "2c3e50": [
+        "GUIDE-BestPractices",
+        "CORE-FirstModule",
+        "GUIDE-GettingStarted"
+      ],
+      "typename": [
+        "GUIDE-BestPractices"
+      ],
+      "'network.connect'": [
+        "GUIDE-BestPractices"
+      ],
+      "eventqueue": [
+        "GUIDE-BestPractices"
+      ],
+      "error": [
+        "GUIDE-BestPractices"
+      ],
+      "'config.load'": [
+        "GUIDE-BestPractices"
+      ],
+      "#errorlog": [
+        "GUIDE-BestPractices"
+      ],
+      "filosofia de desenvolvimento": [
+        "GUIDE-BestPractices"
+      ],
+      "padrões de arquitetura": [
+        "GUIDE-BestPractices"
+      ],
+      "i": [
+        "GUIDE-BestPractices",
+        "UNKNOWN-GraphicsSystem",
+        "UNKNOWN-NetworkSystem"
+      ],
+      "field": [
+        "GUIDE-BestPractices"
+      ],
+      "tratamento": [
+        "GUIDE-BestPractices"
+      ],
+      "3498db": [
+        "GUIDE-BestPractices",
+        "UNKNOWN-EffectsSystem",
+        "CORE-FirstModule",
+        "GUIDE-GettingStarted"
+      ],
+      "segurança": [
+        "GUIDE-BestPractices",
+        "GUIDE-BestPractices",
+        "UNKNOWN-NetworkSystem"
+      ],
+      "id": [
+        "GUIDE-BestPractices",
+        "GAME-CreatureSystem"
+      ],
+      "eventname": [
+        "GUIDE-BestPractices",
+        "UI-UIEvents"
+      ],
+      "filosofia": [
+        "GUIDE-BestPractices"
+      ],
+      "performance e otimização": [
+        "GUIDE-BestPractices",
+        "UNKNOWN-GraphicsSystem"
+      ],
+      "testes": [
+        "GUIDE-BestPractices"
+      ],
+      "'ui.windowsize.width'": [
+        "GUIDE-BestPractices"
+      ],
+      "debugging": [
+        "GUIDE-BestPractices",
+        "CORE-FirstModule",
+        "GUIDE-GettingStarted"
+      ],
+      "'ui.windowsize.height'": [
+        "GUIDE-BestPractices"
+      ],
+      "'gameplay.maxhistory'": [
+        "GUIDE-BestPractices"
+      ],
+      "organização": [
+        "GUIDE-BestPractices"
+      ],
+      "key": [
+        "GUIDE-BestPractices",
+        "CORE-Configuration",
+        "CORE-ConfigurationAdvanced",
+        "UNKNOWN-EffectsSystem",
+        "CORE-FirstModule",
+        "REF-LuaAPI",
+        "UNKNOWN-SoundSystem",
+        "UNKNOWN-WorldSystem"
+      ],
+      "tratamento de erros": [
+        "GUIDE-BestPractices"
+      ],
+      "%s": [
+        "GUIDE-BestPractices",
+        "GAME-CreatureSystem",
+        "CORE-FirstModule",
+        "UNKNOWN-NetworkSystem"
+      ],
+      "'gameplay.saveinterval'": [
+        "GUIDE-BestPractices"
+      ],
+      "colaboração e versionamento": [
+        "GUIDE-BestPractices"
+      ],
+      "2": [
+        "GUIDE-BestPractices",
+        "GAME-CreatureSystem",
+        "UNKNOWN-EffectsSystem",
+        "UNKNOWN-GraphicsSystem",
+        "GAME-ItemSystem",
+        "UNKNOWN-SoundSystem"
+      ],
+      "widget": [
+        "GUIDE-BestPractices",
+        "UI-UIEvents"
+      ],
+      "gerenciamento de memória": [
+        "GUIDE-BestPractices"
+      ],
+      "rule.type": [
+        "GUIDE-BestPractices"
+      ],
+      "keys": [
+        "GUIDE-BestPractices"
+      ],
+      "rrggbb": [
+        "GUIDE-BestPractices"
+      ],
+      "organização de código": [
+        "GUIDE-BestPractices"
+      ],
+      "ecf0f1": [
+        "GUIDE-BestPractices",
+        "CORE-FirstModule",
+        "GUIDE-GettingStarted"
+      ],
+      "ff0000": [
+        "GUIDE-BestPractices",
+        "REF-CheatSheet",
+        "GAME-CreatureSystem",
+        "UNKNOWN-EffectsSystem",
+        "UNKNOWN-GraphicsSystem",
+        "REF-LuaAPI",
+        "UI-UIEvents",
+        "UI-UILayouts",
+        "UI-UIStyling",
+        "UI-UIWidget",
+        "UI-UIWidget_Reference",
+        "UI-UIWidgetsSpecialized",
+        "UNKNOWN-WorldSystem"
+      ],
+      "from": [
+        "GUIDE-BestPractices"
+      ],
+      "tostate": [
+        "GUIDE-BestPractices"
+      ],
+      "errors": [
+        "GUIDE-BestPractices"
+      ],
+      "self.currentstate": [
+        "GUIDE-BestPractices"
+      ],
+      "fromstate": [
+        "GUIDE-BestPractices"
+      ],
+      "modulename .. '.' .. funcname": [
+        "GUIDE-BestPractices"
+      ],
+      "debugging e profiling": [
+        "GUIDE-BestPractices"
+      ],
+      "name": [
+        "GUIDE-BestPractices",
+        "REF-CheatSheet",
+        "GAME-CreatureSystem",
+        "CORE-ModuleSystem",
+        "UNKNOWN-SoundSystem",
+        "UI-UIStyling"
+      ],
+      "34495e": [
+        "GUIDE-BestPractices",
+        "CORE-FirstModule",
+        "GUIDE-GettingStarted"
+      ],
+      "self": [
+        "GUIDE-BestPractices",
+        "UNKNOWN-NetworkSystem"
+      ],
+      "padrões": [
+        "GUIDE-BestPractices"
+      ],
+      "ffffff": [
+        "GUIDE-BestPractices",
+        "REF-CheatSheet",
+        "GAME-CreatureSystem",
+        "UNKNOWN-EffectsSystem",
+        "UNKNOWN-GraphicsSystem",
+        "GAME-ItemSystem",
+        "REF-LuaAPI",
+        "UI-UIEvents",
+        "UI-UIStyling",
+        "UI-UIWidgetsSpecialized"
+      ],
+      "instanceid": [
+        "GUIDE-BestPractices"
+      ],
+      "event": [
+        "GUIDE-BestPractices",
+        "REF-CheatSheet",
+        "UI-UIEvents"
+      ],
+      "keys[#keys": [
+        "GUIDE-BestPractices"
+      ],
+      "2980b9": [
+        "GUIDE-BestPractices",
+        "CORE-FirstModule",
+        "GUIDE-GettingStarted"
+      ],
+      "data": [
+        "GUIDE-BestPractices"
+      ],
+      "deployment": [
+        "GUIDE-BestPractices"
+      ],
+      "property": [
+        "GUIDE-BestPractices",
+        "UNKNOWN-GraphicsSystem"
+      ],
+      "value": [
+        "GUIDE-BestPractices",
+        "REF-LuaAPI"
+      ],
+      "patterns e snippets": [
+        "REF-CheatSheet"
+      ],
+      "troubleshooting": [
+        "REF-CheatSheet"
+      ],
+      "0000ff": [
+        "REF-CheatSheet",
+        "REF-LuaAPI",
+        "UI-UIEvents",
+        "UI-UITextEdit",
+        "UI-UIWidget_Reference",
+        "UI-UIWidgetsSpecialized",
+        "UNKNOWN-WorldSystem"
+      ],
+      "' .. name .. '": [
+        "REF-CheatSheet"
+      ],
+      "currentline": [
+        "REF-CheatSheet"
+      ],
+      "estrutura de módulo": [
+        "REF-CheatSheet"
+      ],
+      "404040": [
+        "REF-CheatSheet",
+        "UI-UIWidgetsSpecialized"
+      ],
+      "00ffff": [
+        "REF-CheatSheet",
+        "REF-LuaAPI"
+      ],
+      "2b2b2b": [
+        "REF-CheatSheet"
+      ],
+      "aa0000": [
+        "REF-CheatSheet"
+      ],
+      "ff00ff": [
+        "REF-CheatSheet",
+        "REF-LuaAPI",
+        "UI-UIStyling"
+      ],
+      "apis essenciais": [
+        "REF-CheatSheet"
+      ],
+      "word": [
+        "REF-CheatSheet"
+      ],
+      "000000": [
+        "REF-CheatSheet",
+        "REF-LuaAPI",
+        "UI-UIStyling"
+      ],
+      "0088ff": [
+        "REF-CheatSheet"
+      ],
+      "00ff00": [
+        "REF-CheatSheet",
+        "GAME-CreatureSystem",
+        "UNKNOWN-EffectsSystem",
+        "GUIDE-GettingStarted",
+        "UNKNOWN-GraphicsSystem",
+        "GAME-ItemSystem",
+        "REF-LuaAPI",
+        "UNKNOWN-Protocol",
+        "UI-UIEvents",
+        "UI-UIStyling",
+        "UI-UIWidget",
+        "UI-UIWidget_Reference",
+        "UI-UIWidgetsSpecialized",
+        "UNKNOWN-WorldSystem"
+      ],
+      "00aa00": [
+        "REF-CheatSheet",
+        "UI-UIStyling",
+        "UI-UIWidgetsSpecialized"
+      ],
+      "ffff00": [
+        "REF-CheatSheet",
+        "GAME-CreatureSystem",
+        "UNKNOWN-EffectsSystem",
+        "UNKNOWN-GraphicsSystem",
+        "GAME-ItemSystem",
+        "REF-LuaAPI",
+        "UNKNOWN-Protocol",
+        "UI-UITextEdit",
+        "UNKNOWN-WorldSystem"
+      ],
+      "interface básica": [
+        "REF-CheatSheet"
+      ],
+      "comandos de debug": [
+        "REF-CheatSheet"
+      ],
+      "808080": [
+        "REF-CheatSheet",
+        "GAME-CreatureSystem",
+        "REF-LuaAPI"
+      ],
+      "cores e constantes": [
+        "REF-CheatSheet"
+      ],
+      "cccccc": [
+        "REF-CheatSheet",
+        "REF-LuaAPI",
+        "UI-UIStyling"
+      ],
+      "configuração rápida": [
+        "REF-CheatSheet"
+      ],
+      "ffaa00": [
+        "REF-CheatSheet",
+        "GAME-CreatureSystem",
+        "UI-UIStyling",
+        "UI-UIWidgetsSpecialized"
+      ],
+      "state": [
+        "REF-CheatSheet"
+      ],
+      "eventos comuns": [
+        "REF-CheatSheet"
+      ],
+      "0078d4": [
+        "REF-CheatSheet"
+      ],
+      "melhores práticas": [
+        "CORE-Configuration",
+        "CORE-ConfigurationAdvanced",
+        "UNKNOWN-DOCUMENTATION_PLAN",
+        "UNKNOWN-EffectsSystem",
+        "CORE-ModuleSystem",
+        "UNKNOWN-NetworkSystem",
+        "UNKNOWN-Protocol",
+        "UI-UIEvents",
+        "UI-UILayouts",
+        "UI-UIStyling",
+        "UNKNOWN-WorldSystem"
+      ],
+      "visão geral": [
+        "CORE-Configuration",
+        "CORE-ConfigurationAdvanced",
+        "GAME-CreatureSystem",
+        "UNKNOWN-DOCUMENTATION_PLAN",
+        "UNKNOWN-EffectsSystem",
+        "GUIDE-GettingStarted",
+        "UNKNOWN-GraphicsSystem",
+        "GAME-ItemSystem",
+        "CORE-ModuleSystem",
+        "UNKNOWN-NetworkSystem",
+        "UNKNOWN-Protocol",
+        "UNKNOWN-SoundSystem",
+        "UI-UIEvents",
+        "UI-UILayouts",
+        "UI-UIStyling",
+        "UNKNOWN-WorldSystem"
+      ],
+      "formato": [
+        "CORE-Configuration"
+      ],
+      "configmanager": [
+        "CORE-Configuration"
+      ],
+      "\"interface.theme\"": [
+        "CORE-Configuration"
+      ],
+      "settings": [
+        "CORE-Configuration"
+      ],
+      "gameconfig": [
+        "CORE-Configuration"
+      ],
+      "\"game.autologin\"": [
+        "CORE-Configuration"
+      ],
+      "\"graphics.vsync\"": [
+        "CORE-Configuration"
+      ],
+      "arquitetura do sistema": [
+        "CORE-Configuration",
+        "UNKNOWN-WorldSystem"
+      ],
+      "gameconfig (g_gameconfig)": [
+        "CORE-Configuration"
+      ],
+      "implementação": [
+        "CORE-Configuration",
+        "UNKNOWN-Protocol",
+        "UNKNOWN-WorldSystem"
+      ],
+      "\"game.classiccontrols\"": [
+        "CORE-Configuration"
+      ],
+      "formato otml": [
+        "CORE-Configuration"
+      ],
+      "\"graphics.framerate\"": [
+        "CORE-Configuration"
+      ],
+      "implementação prática": [
+        "CORE-Configuration",
+        "UNKNOWN-Protocol",
+        "UNKNOWN-WorldSystem"
+      ],
+      "configurações de jogo": [
+        "CORE-Configuration"
+      ],
+      "configurações": [
+        "CORE-Configuration"
+      ],
+      "visão": [
+        "CORE-Configuration",
+        "CORE-ConfigurationAdvanced",
+        "UNKNOWN-DOCUMENTATION_PLAN",
+        "UNKNOWN-EffectsSystem",
+        "GUIDE-GettingStarted",
+        "CORE-ModuleSystem",
+        "UNKNOWN-NetworkSystem",
+        "UNKNOWN-Protocol",
+        "UI-UIEvents",
+        "UI-UILayouts",
+        "UI-UIStyling",
+        "UNKNOWN-WorldSystem"
+      ],
+      "melhores": [
+        "CORE-Configuration",
+        "CORE-ConfigurationAdvanced",
+        "UNKNOWN-DOCUMENTATION_PLAN",
+        "UNKNOWN-EffectsSystem",
+        "CORE-ModuleSystem",
+        "UNKNOWN-NetworkSystem",
+        "UNKNOWN-Protocol",
+        "UI-UIEvents",
+        "UI-UILayouts",
+        "UI-UIStyling",
+        "UNKNOWN-WorldSystem"
+      ],
+      "\"game.rememberaccount\"": [
+        "CORE-Configuration"
+      ],
+      "presets": [
+        "CORE-Configuration"
+      ],
+      "sistema": [
+        "CORE-Configuration",
+        "CORE-ConfigurationAdvanced",
+        "CORE-ModuleSystem",
+        "UNKNOWN-NetworkSystem",
+        "UNKNOWN-Protocol",
+        "UI-UILayouts",
+        "UNKNOWN-WorldSystem"
+      ],
+      "sistema de opções": [
+        "CORE-Configuration",
+        "CORE-ConfigurationAdvanced"
+      ],
+      "arquitetura": [
+        "CORE-Configuration",
+        "UNKNOWN-NetworkSystem",
+        "UNKNOWN-Protocol",
+        "UNKNOWN-WorldSystem"
+      ],
+      "configmanager (g_configs)": [
+        "CORE-Configuration"
+      ],
+      "configurações de controle": [
+        "CORE-Configuration"
+      ],
+      "category": [
+        "CORE-Configuration",
+        "UNKNOWN-SoundSystem"
+      ],
+      "\"audio.mastervolume\"": [
+        "CORE-Configuration"
+      ],
+      "settings (g_settings)": [
+        "CORE-Configuration"
+      ],
+      "\"graphics.fullscreen\"": [
+        "CORE-Configuration"
+      ],
+      "\"graphics.antialiasing\"": [
+        "CORE-Configuration"
+      ],
+      "a-za-z": [
+        "CORE-ConfigurationAdvanced"
+      ],
+      "change.key": [
+        "CORE-ConfigurationAdvanced"
+      ],
+      "api": [
+        "CORE-ConfigurationAdvanced",
+        "UNKNOWN-DOCUMENTATION_PLAN",
+        "UNKNOWN-EffectsSystem",
+        "UNKNOWN-NetworkSystem"
+      ],
+      "a-z": [
+        "CORE-ConfigurationAdvanced"
+      ],
+      "channelname": [
+        "CORE-ConfigurationAdvanced"
+      ],
+      "exemplos práticos": [
+        "CORE-ConfigurationAdvanced",
+        "GAME-CreatureSystem",
+        "UNKNOWN-DOCUMENTATION_PLAN",
+        "UNKNOWN-EffectsSystem",
+        "UNKNOWN-GraphicsSystem",
+        "GAME-ItemSystem",
+        "REF-LuaAPI",
+        "CORE-ModuleSystem",
+        "UNKNOWN-NetworkSystem",
+        "UNKNOWN-SoundSystem",
+        "UI-UIEvents",
+        "UI-UILayouts",
+        "UI-UIStyling",
+        "UI-UIWidgetsSpecialized"
+      ],
+      "api c++": [
+        "CORE-ConfigurationAdvanced",
+        "UNKNOWN-DOCUMENTATION_PLAN",
+        "UNKNOWN-EffectsSystem",
+        "UNKNOWN-NetworkSystem"
+      ],
+      "tipos": [
+        "CORE-ConfigurationAdvanced",
+        "UI-UIEvents",
+        "UI-UILayouts"
+      ],
+      "api lua": [
+        "CORE-ConfigurationAdvanced",
+        "UNKNOWN-DOCUMENTATION_PLAN",
+        "UNKNOWN-EffectsSystem",
+        "UNKNOWN-NetworkSystem"
+      ],
+      "exemplos": [
+        "CORE-ConfigurationAdvanced",
+        "UNKNOWN-DOCUMENTATION_PLAN",
+        "UNKNOWN-DOCUMENTATION_PLAN",
+        "UNKNOWN-EffectsSystem",
+        "CORE-ModuleSystem",
+        "UNKNOWN-NetworkSystem",
+        "UI-UIEvents",
+        "UI-UILayouts",
+        "UI-UIStyling"
+      ],
+      "tipos de configuração": [
+        "CORE-ConfigurationAdvanced"
+      ],
+      "configmetrics": [
+        "CORE-ConfigurationAdvanced"
+      ],
+      "shieldyellowsharedexp": [
+        "GAME-CreatureSystem"
+      ],
+      "shieldwhiteyellow": [
+        "GAME-CreatureSystem"
+      ],
+      "shieldwhiteblue": [
+        "GAME-CreatureSystem"
+      ],
+      "emblemblue": [
+        "GAME-CreatureSystem"
+      ],
+      "sistema de outfit": [
+        "GAME-CreatureSystem"
+      ],
+      "skullred": [
+        "GAME-CreatureSystem"
+      ],
+      "emblemgreen": [
+        "GAME-CreatureSystem"
+      ],
+      "shieldyellownosharedexpblink": [
+        "GAME-CreatureSystem"
+      ],
+      "shieldid": [
+        "GAME-CreatureSystem"
+      ],
+      "emblemmember": [
+        "GAME-CreatureSystem"
+      ],
+      "emblemother": [
+        "GAME-CreatureSystem"
+      ],
+      "shieldyellow": [
+        "GAME-CreatureSystem"
+      ],
+      "emblemred": [
+        "GAME-CreatureSystem"
+      ],
+      "emblemid": [
+        "GAME-CreatureSystem"
+      ],
+      "creature base": [
+        "GAME-CreatureSystem"
+      ],
+      "pathfinding e movimento": [
+        "GAME-CreatureSystem"
+      ],
+      "eventos e callbacks": [
+        "GAME-CreatureSystem"
+      ],
+      "shieldbluenosharedexpblink": [
+        "GAME-CreatureSystem"
+      ],
+      "sistema de battle": [
+        "GAME-CreatureSystem"
+      ],
+      "shieldgray": [
+        "GAME-CreatureSystem"
+      ],
+      "ff6666": [
+        "GAME-CreatureSystem",
+        "GAME-ItemSystem"
+      ],
+      "validtargets": [
+        "GAME-CreatureSystem"
+      ],
+      "path": [
+        "GAME-CreatureSystem"
+      ],
+      "sistema visual": [
+        "GAME-CreatureSystem"
+      ],
+      "shieldbluesharedexp": [
+        "GAME-CreatureSystem"
+      ],
+      "skullgreen": [
+        "GAME-CreatureSystem"
+      ],
+      "tipos de criaturas": [
+        "GAME-CreatureSystem"
+      ],
+      "skullwhite": [
+        "GAME-CreatureSystem"
+      ],
+      "skullyellow": [
+        "GAME-CreatureSystem"
+      ],
+      "skullblack": [
+        "GAME-CreatureSystem"
+      ],
+      "targetname": [
+        "GAME-CreatureSystem"
+      ],
+      "creature:getid()": [
+        "GAME-CreatureSystem"
+      ],
+      "skullid": [
+        "GAME-CreatureSystem"
+      ],
+      "estados e propriedades": [
+        "GAME-CreatureSystem"
+      ],
+      "skullorange": [
+        "GAME-CreatureSystem"
+      ],
+      "shieldblue": [
+        "GAME-CreatureSystem"
+      ],
+      "": [
+        "UNKNOWN-DOCUMENTATION_PLAN"
+      ],
+      "documentação da api lua": [
+        "UNKNOWN-DOCUMENTATION_PLAN"
+      ],
+      "descrição breve de 1-2 linhas": [
+        "UNKNOWN-DOCUMENTATION_PLAN"
+      ],
+      "explicação detalhada": [
+        "UNKNOWN-DOCUMENTATION_PLAN"
+      ],
+      "documentação da api c++": [
+        "UNKNOWN-DOCUMENTATION_PLAN"
+      ],
+      "recomendações": [
+        "UNKNOWN-DOCUMENTATION_PLAN"
+      ],
+      "nome do sistema/widget": [
+        "UNKNOWN-DOCUMENTATION_PLAN"
+      ],
+      "combat_earth": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "efeitos anexados": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "combat_energy": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "combat_ice": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "effect debug": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "2ecc71": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "type": [
+        "UNKNOWN-EffectsSystem",
+        "UNKNOWN-SoundSystem"
+      ],
+      "efeitos": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "ff6600": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "effectpool": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "9966ff": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "efeitos de ui": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "east": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "west": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "combat_holy": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "f39c12": [
+        "UNKNOWN-EffectsSystem",
+        "CORE-FirstModule"
+      ],
+      "spellid": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "combat_death": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "condition": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "condition_protection": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "combat_fire": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "0066ff": [
+        "UNKNOWN-EffectsSystem",
+        "UI-UIWidgetsSpecialized"
+      ],
+      "990099": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "condition_haste": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "condition_strong": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "north": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "south": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "efeitos básicos": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "0099ff": [
+        "UNKNOWN-EffectsSystem",
+        "UI-UIStyling"
+      ],
+      "damagetype": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "combat_physical": [
+        "UNKNOWN-EffectsSystem"
+      ],
+      "e74c3c": [
+        "UNKNOWN-EffectsSystem",
+        "CORE-FirstModule"
+      ],
+      "projeto 3: monitor de status": [
+        "CORE-FirstModule"
+      ],
+      "activenotifications": [
+        "CORE-FirstModule"
+      ],
+      "otimização e performance": [
+        "CORE-FirstModule"
+      ],
+      "anatomia": [
+        "CORE-FirstModule"
+      ],
+      "projeto": [
+        "CORE-FirstModule"
+      ],
+      "otimização": [
+        "CORE-FirstModule"
+      ],
+      "distribuição": [
+        "CORE-FirstModule"
+      ],
+      "clickcounter": [
+        "CORE-FirstModule"
+      ],
+      "anatomia de um módulo": [
+        "CORE-FirstModule"
+      ],
+      "projeto 1: contador de cliques": [
+        "CORE-FirstModule"
+      ],
+      "d68910": [
+        "CORE-FirstModule"
+      ],
+      "projeto 5: mini-jogo integrado": [
+        "CORE-FirstModule"
+      ],
+      "my_module": [
+        "CORE-FirstModule"
+      ],
+      "9b59b6": [
+        "CORE-FirstModule"
+      ],
+      "2471a3": [
+        "CORE-FirstModule"
+      ],
+      "27ae60": [
+        "CORE-FirstModule"
+      ],
+      "preparação": [
+        "CORE-FirstModule"
+      ],
+      "notifications": [
+        "CORE-FirstModule"
+      ],
+      "projeto 4: sistema de comandos": [
+        "CORE-FirstModule"
+      ],
+      "debugging e testes": [
+        "CORE-FirstModule"
+      ],
+      "e67e22": [
+        "CORE-FirstModule"
+      ],
+      "1e8449": [
+        "CORE-FirstModule"
+      ],
+      "stats": [
+        "CORE-FirstModule"
+      ],
+      "preparação do ambiente": [
+        "CORE-FirstModule"
+      ],
+      "#stats.clicktimes": [
+        "CORE-FirstModule"
+      ],
+      "229954": [
+        "CORE-FirstModule"
+      ],
+      "notificationqueue": [
+        "CORE-FirstModule"
+      ],
+      "distribuição e compartilhamento": [
+        "CORE-FirstModule"
+      ],
+      "projeto 2: sistema de notificações": [
+        "CORE-FirstModule"
+      ],
+      "statusmonitor": [
+        "CORE-FirstModule"
+      ],
+      "bdc3c7": [
+        "CORE-FirstModule"
+      ],
+      "sistema de mundo e mapas": [
+        "GUIDE-GettingStarted"
+      ],
+      "customização básica": [
+        "GUIDE-GettingStarted"
+      ],
+      "uiwidget reference": [
+        "GUIDE-GettingStarted"
+      ],
+      "próximos passos": [
+        "GUIDE-GettingStarted"
+      ],
+      "comunidade otclient": [
+        "GUIDE-GettingStarted"
+      ],
+      "conceitos": [
+        "GUIDE-GettingStarted"
+      ],
+      "estrutura": [
+        "GUIDE-GettingStarted",
+        "CORE-ModuleSystem"
+      ],
+      "[\n  mainwindow {\n    background-color: #2c3e50;\n    border: 1px solid #34495e;\n  }\n  \n  button {\n    background-color: #3498db;\n    color: white;\n    border-radius: 3px;\n  }\n  \n  button:hover {\n    background-color: #2980b9;\n  }": [
+        "GUIDE-GettingStarted"
+      ],
+      "desenvolvimento": [
+        "GUIDE-GettingStarted"
+      ],
+      "\"http://127.0.0.1/login.php\"": [
+        "GUIDE-GettingStarted"
+      ],
+      "debugging e ferramentas": [
+        "GUIDE-GettingStarted"
+      ],
+      "primeiro": [
+        "GUIDE-GettingStarted"
+      ],
+      "\"protocol\"": [
+        "GUIDE-GettingStarted"
+      ],
+      "customização": [
+        "GUIDE-GettingStarted"
+      ],
+      "primeiro módulo": [
+        "GUIDE-GettingStarted"
+      ],
+      "\"httplogin\"": [
+        "GUIDE-GettingStarted"
+      ],
+      "sistema de módulos": [
+        "GUIDE-GettingStarted"
+      ],
+      "sistema de configuração": [
+        "GUIDE-GettingStarted",
+        "REF-LuaAPI"
+      ],
+      "repositório principal": [
+        "GUIDE-GettingStarted"
+      ],
+      "instalação e setup": [
+        "GUIDE-GettingStarted"
+      ],
+      "primeira": [
+        "GUIDE-GettingStarted"
+      ],
+      "estrutura do projeto": [
+        "GUIDE-GettingStarted"
+      ],
+      "debug": [
+        "GUIDE-GettingStarted"
+      ],
+      "\"port\"": [
+        "GUIDE-GettingStarted"
+      ],
+      "próximos": [
+        "GUIDE-GettingStarted"
+      ],
+      "protocolo de comunicação": [
+        "GUIDE-GettingStarted"
+      ],
+      "conceitos fundamentais": [
+        "GUIDE-GettingStarted"
+      ],
+      "primeira execução": [
+        "GUIDE-GettingStarted"
+      ],
+      "desenvolvimento local": [
+        "GUIDE-GettingStarted"
+      ],
+      "\"otserver.com\"": [
+        "GUIDE-GettingStarted"
+      ],
+      "instalação": [
+        "GUIDE-GettingStarted"
+      ],
+      "screenshots e gravação": [
+        "UNKNOWN-GraphicsSystem"
+      ],
+      "i-1": [
+        "UNKNOWN-GraphicsSystem"
+      ],
+      "configurações gráficas": [
+        "UNKNOWN-GraphicsSystem"
+      ],
+      "gerenciamento de texturas": [
+        "UNKNOWN-GraphicsSystem"
+      ],
+      "1.0);\n        }": [
+        "UNKNOWN-GraphicsSystem"
+      ],
+      "efeitos visuais": [
+        "UNKNOWN-GraphicsSystem"
+      ],
+      "sistema de shaders": [
+        "UNKNOWN-GraphicsSystem"
+      ],
+      "sistema de renderização": [
+        "UNKNOWN-GraphicsSystem"
+      ],
+      "[\n        uniform float u_time;\n        uniform vec2 u_resolution;\n        \n        void main() {\n            vec2 uv = gl_fragcoord.xy / u_resolution.xy;\n            vec3 color = vec3(0.5 + 0.5 * cos(u_time + uv.xyx + vec3(0": [
+        "UNKNOWN-GraphicsSystem"
+      ],
+      "graphicsmonitor": [
+        "UNKNOWN-GraphicsSystem"
+      ],
+      "^\\r\\n": [
+        "UNKNOWN-GraphicsSystem"
+      ],
+      "4)));\n            gl_fragcolor = vec4(color": [
+        "UNKNOWN-GraphicsSystem"
+      ],
+      "sistema de fontes": [
+        "UNKNOWN-GraphicsSystem"
+      ],
+      "66ff66": [
+        "GAME-ItemSystem"
+      ],
+      "durabilidade e cargas": [
+        "GAME-ItemSystem"
+      ],
+      "tipos de itens": [
+        "GAME-ItemSystem"
+      ],
+      "itemid": [
+        "GAME-ItemSystem"
+      ],
+      "[\nid: %d\ndescrição: %s\ncategoria: %s\npeso: %.2f oz\nempilhável: %s\nmovível: %s\nusável: %s\nmarket: %s": [
+        "GAME-ItemSystem"
+      ],
+      "market system": [
+        "GAME-ItemSystem"
+      ],
+      "iteminfo.category": [
+        "GAME-ItemSystem"
+      ],
+      "sistema de containers": [
+        "GAME-ItemSystem"
+      ],
+      "parts": [
+        "GAME-ItemSystem"
+      ],
+      "drag & drop": [
+        "GAME-ItemSystem"
+      ],
+      "sistema de inventário": [
+        "GAME-ItemSystem"
+      ],
+      "ff66ff": [
+        "GAME-ItemSystem"
+      ],
+      "item base": [
+        "GAME-ItemSystem"
+      ],
+      "6666ff": [
+        "GAME-ItemSystem"
+      ],
+      "uiitem widget": [
+        "GAME-ItemSystem"
+      ],
+      "ffff66": [
+        "GAME-ItemSystem"
+      ],
+      "searchtext": [
+        "GAME-ItemSystem"
+      ],
+      "utilitários": [
+        "REF-LuaAPI"
+      ],
+      "callbacks e eventos": [
+        "REF-LuaAPI"
+      ],
+      "sistema de som": [
+        "REF-LuaAPI"
+      ],
+      "8040ff": [
+        "REF-LuaAPI"
+      ],
+      "\"authorization\"": [
+        "REF-LuaAPI"
+      ],
+      "ff6060": [
+        "REF-LuaAPI"
+      ],
+      "account": [
+        "REF-LuaAPI"
+      ],
+      "ff8000": [
+        "REF-LuaAPI"
+      ],
+      "ff0080": [
+        "REF-LuaAPI"
+      ],
+      "sistema de interface": [
+        "REF-LuaAPI"
+      ],
+      "a5f1ff": [
+        "REF-LuaAPI"
+      ],
+      "0080ff": [
+        "REF-LuaAPI",
+        "UI-UIStyling"
+      ],
+      "password": [
+        "REF-LuaAPI"
+      ],
+      "\"content-type\"": [
+        "REF-LuaAPI"
+      ],
+      "sistema de jogo": [
+        "REF-LuaAPI"
+      ],
+      "globais core": [
+        "REF-LuaAPI"
+      ],
+      "c0c0c0": [
+        "REF-LuaAPI",
+        "UI-UIStyling"
+      ],
+      "sistema de gráficos": [
+        "REF-LuaAPI"
+      ],
+      "sistema de rede": [
+        "REF-LuaAPI"
+      ],
+      "reloadable": [
+        "CORE-ModuleSystem"
+      ],
+      "arquivos .otmod": [
+        "CORE-ModuleSystem"
+      ],
+      "estrutura de módulos": [
+        "CORE-ModuleSystem"
+      ],
+      "gerenciamento de módulos": [
+        "CORE-ModuleSystem"
+      ],
+      "game_inventory": [
+        "CORE-ModuleSystem"
+      ],
+      "criando": [
+        "CORE-ModuleSystem"
+      ],
+      "dependências": [
+        "CORE-ModuleSystem"
+      ],
+      "script1": [
+        "CORE-ModuleSystem"
+      ],
+      "script2": [
+        "CORE-ModuleSystem"
+      ],
+      "criando módulos": [
+        "CORE-ModuleSystem"
+      ],
+      "sistema de prioridades": [
+        "CORE-ModuleSystem"
+      ],
+      "inventory_slots": [
+        "CORE-ModuleSystem"
+      ],
+      "module1": [
+        "CORE-ModuleSystem"
+      ],
+      "mymodule": [
+        "CORE-ModuleSystem"
+      ],
+      "carregamento": [
+        "CORE-ModuleSystem"
+      ],
+      "module2": [
+        "CORE-ModuleSystem"
+      ],
+      "carregamento de módulos": [
+        "CORE-ModuleSystem"
+      ],
+      "inventory": [
+        "CORE-ModuleSystem",
+        "UI-UIStyling"
+      ],
+      "sandbox": [
+        "CORE-ModuleSystem"
+      ],
+      "dependências e load-later": [
+        "CORE-ModuleSystem"
+      ],
+      "game_interface": [
+        "CORE-ModuleSystem"
+      ],
+      "method": [
+        "CORE-ModuleSystem"
+      ],
+      "gamelib": [
+        "CORE-ModuleSystem"
+      ],
+      "arquivos": [
+        "CORE-ModuleSystem",
+        "UI-UIStyling"
+      ],
+      "\" .. sender .. \"": [
+        "UNKNOWN-NetworkSystem"
+      ],
+      "opcode": [
+        "UNKNOWN-NetworkSystem",
+        "UNKNOWN-Protocol"
+      ],
+      "0x01": [
+        "UNKNOWN-NetworkSystem"
+      ],
+      "0": [
+        "UNKNOWN-NetworkSystem"
+      ],
+      "arquitetura de conexão": [
+        "UNKNOWN-NetworkSystem"
+      ],
+      "sistema de protocolo": [
+        "UNKNOWN-NetworkSystem"
+      ],
+      "level": [
+        "UNKNOWN-NetworkSystem"
+      ],
+      "segurança e criptografia": [
+        "UNKNOWN-NetworkSystem"
+      ],
+      "0x02": [
+        "UNKNOWN-NetworkSystem"
+      ],
+      "0x03": [
+        "UNKNOWN-NetworkSystem"
+      ],
+      "arquitetura do protocolo": [
+        "UNKNOWN-Protocol"
+      ],
+      "protocollogin": [
+        "UNKNOWN-Protocol",
+        "UNKNOWN-Protocol"
+      ],
+      "versões": [
+        "UNKNOWN-Protocol"
+      ],
+      "versões e compatibilidade": [
+        "UNKNOWN-Protocol"
+      ],
+      "g_map": [
+        "UNKNOWN-Protocol"
+      ],
+      "mensagens e serialização": [
+        "UNKNOWN-Protocol"
+      ],
+      "protocolgame": [
+        "UNKNOWN-Protocol",
+        "UNKNOWN-Protocol"
+      ],
+      "extended opcodes": [
+        "UNKNOWN-Protocol"
+      ],
+      "sistema de opcodes": [
+        "UNKNOWN-Protocol"
+      ],
+      "extended": [
+        "UNKNOWN-Protocol"
+      ],
+      "mensagens": [
+        "UNKNOWN-Protocol"
+      ],
+      "protocol": [
+        "UNKNOWN-Protocol"
+      ],
+      "9": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "musictype": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "files": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "presetname": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "ambienttype": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "math.random(1": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "sourceid": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "configurações de áudio": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "soundchannels.master": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "missileid": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "4608": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "controle de volume": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "soundchannels.effects": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "4527": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "5406": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "action": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "12": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "integração com jogo": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "efeitos sonoros": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "soundchannels.music": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "5": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "reprodução de sons": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "5407": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "11": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "soundchannels.voice": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "groundid": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "soundchannels.interface": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "sistema de áudio": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "10": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "canais de som": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "7": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "effectid": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "4609": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "3": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "#files)": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "sons ambientais": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "8": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "4": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "4526": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "6": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "soundtype": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "soundchannels.environment": [
+        "UNKNOWN-SoundSystem"
+      ],
+      "tipos de eventos": [
+        "UI-UIEvents"
+      ],
+      "555555": [
+        "UI-UIEvents",
+        "UI-UIStyling"
+      ],
+      "eventos customizados": [
+        "UI-UIEvents"
+      ],
+      "propagação": [
+        "UI-UIEvents"
+      ],
+      "333333": [
+        "UI-UIEvents",
+        "UI-UILayouts",
+        "UI-UIStyling"
+      ],
+      "eventos de teclado": [
+        "UI-UIEvents"
+      ],
+      "eventos de estado": [
+        "UI-UIEvents"
+      ],
+      "eventos de mouse": [
+        "UI-UIEvents"
+      ],
+      "propagação de eventos": [
+        "UI-UIEvents"
+      ],
+      "000000bb": [
+        "UI-UIEvents"
+      ],
+      "666666": [
+        "UI-UIEvents",
+        "UI-UILayouts",
+        "UI-UIStyling"
+      ],
+      "eventos": [
+        "UI-UIEvents",
+        "UI-UIWidget_Reference"
+      ],
+      "layout": [
+        "UI-UILayouts"
+      ],
+      "001122": [
+        "UI-UILayouts"
+      ],
+      "margens": [
+        "UI-UILayouts"
+      ],
+      "layouts": [
+        "UI-UILayouts",
+        "UI-UIWidget_Reference",
+        "UI-UIWidget_Reference"
+      ],
+      "layouts de caixa": [
+        "UI-UILayouts"
+      ],
+      "layout de grade": [
+        "UI-UILayouts"
+      ],
+      "sistema de âncoras": [
+        "UI-UILayouts"
+      ],
+      "tipos de layout": [
+        "UI-UILayouts"
+      ],
+      "margens e padding": [
+        "UI-UILayouts"
+      ],
+      "223322": [
+        "UI-UILayouts"
+      ],
+      "'size'": [
+        "UI-UIStyling"
+      ],
+      "880000": [
+        "UI-UIStyling"
+      ],
+      "3a3a3a": [
+        "UI-UIStyling"
+      ],
+      "ff4444": [
+        "UI-UIStyling"
+      ],
+      "propriedades": [
+        "UI-UIStyling"
+      ],
+      "'border-width'": [
+        "UI-UIStyling"
+      ],
+      "d0d0d0": [
+        "UI-UIStyling"
+      ],
+      "2a0000": [
+        "UI-UIStyling"
+      ],
+      "8b0000": [
+        "UI-UIStyling"
+      ],
+      "222222": [
+        "UI-UIStyling"
+      ],
+      "themename": [
+        "UI-UIStyling"
+      ],
+      "estados e pseudoclasses": [
+        "UI-UIStyling"
+      ],
+      "2a1a1a": [
+        "UI-UIStyling"
+      ],
+      "'background-color'": [
+        "UI-UIStyling"
+      ],
+      "000088": [
+        "UI-UIStyling"
+      ],
+      "estilização programática": [
+        "UI-UIStyling"
+      ],
+      "000044": [
+        "UI-UIStyling"
+      ],
+      "'border-color'": [
+        "UI-UIStyling"
+      ],
+      "mobile": [
+        "UI-UIStyling"
+      ],
+      "f8f8f8": [
+        "UI-UIStyling"
+      ],
+      "seletores": [
+        "UI-UIStyling"
+      ],
+      "ff0000ff": [
+        "UI-UIStyling"
+      ],
+      "estilização": [
+        "UI-UIStyling",
+        "UI-UIWidget_Reference",
+        "UI-UIWidget_Reference"
+      ],
+      "2a2a2a": [
+        "UI-UIStyling",
+        "UI-UIWidgetsSpecialized"
+      ],
+      "004400": [
+        "UI-UIStyling"
+      ],
+      "000000aa": [
+        "UI-UIStyling"
+      ],
+      "007acc": [
+        "UI-UIStyling"
+      ],
+      "myid": [
+        "UI-UIStyling"
+      ],
+      "propriedades de estilo": [
+        "UI-UIStyling"
+      ],
+      "0066cc": [
+        "UI-UIStyling"
+      ],
+      "888888": [
+        "UI-UIStyling",
+        "UI-UITextEdit"
+      ],
+      "f4f4f4ff": [
+        "UI-UIStyling",
+        "UI-UITextEdit"
+      ],
+      "444444": [
+        "UI-UIStyling"
+      ],
+      "1a1a1a": [
+        "UI-UIStyling"
+      ],
+      "zoomout": [
+        "UI-UIStyling"
+      ],
+      "444400": [
+        "UI-UIStyling"
+      ],
+      "arquivos .otui": [
+        "UI-UIStyling"
+      ],
+      "desktop": [
+        "UI-UIStyling"
+      ],
+      "temas": [
+        "UI-UIStyling"
+      ],
+      "4a4a4a": [
+        "UI-UIStyling"
+      ],
+      "777777": [
+        "UI-UIStyling"
+      ],
+      "e0e0e0": [
+        "UI-UIStyling"
+      ],
+      "icon": [
+        "UI-UIStyling"
+      ],
+      "temas e variações": [
+        "UI-UIStyling"
+      ],
+      "estados": [
+        "UI-UIStyling"
+      ],
+      "zoomin": [
+        "UI-UIStyling"
+      ],
+      "seletores e hierarquia": [
+        "UI-UIStyling"
+      ],
+      "440000": [
+        "UI-UIStyling"
+      ],
+      "008000": [
+        "UI-UIStyling"
+      ],
+      "008800": [
+        "UI-UIStyling"
+      ],
+      "aaaaaa": [
+        "UI-UIStyling"
+      ],
+      "sintaxe": [
+        "UI-UIStyling"
+      ],
+      "savebutton": [
+        "UI-UIStyling"
+      ],
+      "f0f0f0": [
+        "UI-UIStyling"
+      ],
+      "sintaxe de estilização": [
+        "UI-UIStyling"
+      ],
+      "888800": [
+        "UI-UIStyling"
+      ],
+      "fff2cc": [
+        "UI-UIStyling"
+      ],
+      "999999": [
+        "UI-UIStyling"
+      ],
+      "363636ff": [
+        "UI-UITextEdit"
+      ],
+      "808080ff": [
+        "UI-UITextEdit"
+      ],
+      "ffffffff": [
+        "UI-UITextEdit"
+      ],
+      "color=#ff0000": [
+        "UI-UIWidget"
+      ],
+      "color=#00ff00": [
+        "UI-UIWidget"
+      ],
+      "/color": [
+        "UI-UIWidget"
+      ],
+      "posicionamento e dimensionamento": [
+        "UI-UIWidget_Reference"
+      ],
+      "eventos e interação": [
+        "UI-UIWidget_Reference"
+      ],
+      "uso básico de widget": [
+        "UI-UIWidget_Reference"
+      ],
+      "imagens e ícones": [
+        "UI-UIWidget_Reference"
+      ],
+      "imagens": [
+        "UI-UIWidget_Reference"
+      ],
+      "uso": [
+        "UI-UIWidget_Reference"
+      ],
+      "posicionamento": [
+        "UI-UIWidget_Reference"
+      ],
+      "manipulação": [
+        "UI-UIWidget_Reference"
+      ],
+      "hierarquia de widget": [
+        "UI-UIWidget_Reference"
+      ],
+      "criação de widget": [
+        "UI-UIWidget_Reference"
+      ],
+      "widgets": [
+        "UI-UIWidget_Reference"
+      ],
+      "hierarquia": [
+        "UI-UIWidget_Reference"
+      ],
+      "manipulação de texto": [
+        "UI-UIWidget_Reference"
+      ],
+      "criação": [
+        "UI-UIWidget_Reference"
+      ],
+      "widgets especiais": [
+        "UI-UIWidget_Reference"
+      ],
+      "ff0066": [
+        "UI-UIWidgetsSpecialized"
+      ],
+      "calendar widgets": [
+        "UI-UIWidgetsSpecialized"
+      ],
+      "tree widgets": [
+        "UI-UIWidgetsSpecialized"
+      ],
+      "minimap widget": [
+        "UI-UIWidgetsSpecialized"
+      ],
+      "scroll widgets": [
+        "UI-UIWidgetsSpecialized"
+      ],
+      "00000066": [
+        "UI-UIWidgetsSpecialized"
+      ],
+      "container system": [
+        "UI-UIWidgetsSpecialized"
+      ],
+      "progress widgets": [
+        "UI-UIWidgetsSpecialized"
+      ],
+      "market widgets": [
+        "UI-UIWidgetsSpecialized"
+      ],
+      "tab system": [
+        "UI-UIWidgetsSpecialized"
+      ],
+      "split widgets": [
+        "UI-UIWidgetsSpecialized"
+      ],
+      "353535": [
+        "UI-UIWidgetsSpecialized"
+      ],
+      "sistema de mapas": [
+        "UNKNOWN-WorldSystem"
+      ],
+      "items": [
+        "UNKNOWN-WorldSystem"
+      ],
+      "sistema de tiles": [
+        "UNKNOWN-WorldSystem"
+      ],
+      "awareness range": [
+        "UNKNOWN-WorldSystem"
+      ],
+      "mapview": [
+        "UNKNOWN-WorldSystem"
+      ],
+      "mapview e rendering": [
+        "UNKNOWN-WorldSystem"
+      ],
+      "sistema de criaturas": [
+        "UNKNOWN-WorldSystem"
+      ],
+      "pathfinding": [
+        "UNKNOWN-WorldSystem",
+        "UNKNOWN-WorldSystem"
+      ],
+      "awareness": [
+        "UNKNOWN-WorldSystem"
+      ]
+    },
+    "by_status": {
+      "done": [
+        "GUIDE-BestPractices",
+        "UNKNOWN-DOCUMENTATION_PLAN",
+        "GUIDE-GettingStarted",
+        "UNKNOWN-Protocol",
+        "UNKNOWN-WorldSystem"
+      ],
+      "unknown": [
+        "REF-CheatSheet",
+        "CORE-ConfigurationAdvanced",
+        "UI-UIEvents"
+      ],
+      "todo": [
+        "CORE-Configuration",
+        "GAME-CreatureSystem",
+        "UNKNOWN-EffectsSystem",
+        "CORE-FirstModule",
+        "UNKNOWN-GraphicsSystem",
+        "GAME-ItemSystem",
+        "REF-LuaAPI",
+        "CORE-ModuleSystem",
+        "UNKNOWN-NetworkSystem",
+        "UNKNOWN-SoundSystem",
+        "UI-UIButton",
+        "UI-UILayouts",
+        "UI-UIStyling",
+        "UI-UITextEdit",
+        "UI-UIWidget",
+        "UI-UIWidget_Reference",
+        "UI-UIWidgetsSpecialized"
+      ]
+    },
+    "by_category": {
+      "GUIDE": [
+        "GUIDE-BestPractices",
+        "GUIDE-GettingStarted"
+      ],
+      "REF": [
+        "REF-CheatSheet",
+        "REF-LuaAPI"
+      ],
+      "CORE": [
+        "CORE-Configuration",
+        "CORE-ConfigurationAdvanced",
+        "CORE-FirstModule",
+        "CORE-ModuleSystem"
+      ],
+      "GAME": [
+        "GAME-CreatureSystem",
+        "GAME-ItemSystem"
+      ],
+      "UNKNOWN": [
+        "UNKNOWN-DOCUMENTATION_PLAN",
+        "UNKNOWN-EffectsSystem",
+        "UNKNOWN-GraphicsSystem",
+        "UNKNOWN-NetworkSystem",
+        "UNKNOWN-Protocol",
+        "UNKNOWN-SoundSystem",
+        "UNKNOWN-WorldSystem"
+      ],
+      "UI": [
+        "UI-UIButton",
+        "UI-UIEvents",
+        "UI-UILayouts",
+        "UI-UIStyling",
+        "UI-UITextEdit",
+        "UI-UIWidget",
+        "UI-UIWidget_Reference",
+        "UI-UIWidgetsSpecialized"
+      ]
+    }
+  }
+}

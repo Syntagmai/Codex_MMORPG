@@ -1,0 +1,2873 @@
+{
+  "category": "NETWORK_PROTOCOLS",
+  "description": "Protocolos de rede e comunicação",
+  "files_analyzed": 51,
+  "detailed_analyses": [
+    {
+      "file": "src\\framework\\core\\asyncdispatcher.h",
+      "total_lines": 27,
+      "code_lines": 3,
+      "comment_lines": 21,
+      "empty_lines": 3,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "BS_thread_pool.hpp"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\core\\clock.cpp",
+      "total_lines": 35,
+      "code_lines": 10,
+      "comment_lines": 21,
+      "empty_lines": 4,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "clock.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\core\\clock.h",
+      "total_lines": 45,
+      "code_lines": 17,
+      "comment_lines": 22,
+      "empty_lines": 6,
+      "functions": [
+        {
+          "line": 31,
+          "return_type": "void",
+          "name": "update"
+        },
+        {
+          "line": 33,
+          "return_type": "ticks_t",
+          "name": "micros"
+        },
+        {
+          "line": 34,
+          "return_type": "ticks_t",
+          "name": "millis"
+        },
+        {
+          "line": 35,
+          "return_type": "float",
+          "name": "seconds"
+        },
+        {
+          "line": 36,
+          "return_type": "ticks_t",
+          "name": "realMicros"
+        },
+        {
+          "line": 37,
+          "return_type": "ticks_t",
+          "name": "realMillis"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "Clock"
+        }
+      ],
+      "includes": [
+        "declarations.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\core\\configmanager.cpp",
+      "total_lines": 119,
+      "code_lines": 79,
+      "comment_lines": 23,
+      "empty_lines": 17,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "configmanager.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\core\\configmanager.h",
+      "total_lines": 51,
+      "code_lines": 20,
+      "comment_lines": 22,
+      "empty_lines": 9,
+      "functions": [
+        {
+          "line": 31,
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "line": 32,
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "line": 34,
+          "return_type": "ConfigPtr",
+          "name": "getSettings"
+        },
+        {
+          "line": 35,
+          "return_type": "ConfigPtr",
+          "name": "get"
+        },
+        {
+          "line": 37,
+          "return_type": "ConfigPtr",
+          "name": "create"
+        },
+        {
+          "line": 38,
+          "return_type": "ConfigPtr",
+          "name": "loadSettings"
+        },
+        {
+          "line": 39,
+          "return_type": "ConfigPtr",
+          "name": "load"
+        },
+        {
+          "line": 41,
+          "return_type": "bool",
+          "name": "unload"
+        },
+        {
+          "line": 42,
+          "return_type": "void",
+          "name": "remove"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "ConfigManager"
+        }
+      ],
+      "includes": [
+        "config.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\core\\event.cpp",
+      "total_lines": 48,
+      "code_lines": 18,
+      "comment_lines": 24,
+      "empty_lines": 6,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "event.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\core\\inputevent.h",
+      "total_lines": 55,
+      "code_lines": 29,
+      "comment_lines": 21,
+      "empty_lines": 5,
+      "functions": [
+        {
+          "line": 35,
+          "return_type": "void",
+          "name": "reset"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "declarations.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\core\\logger.h",
+      "total_lines": 165,
+      "code_lines": 113,
+      "comment_lines": 24,
+      "empty_lines": 28,
+      "functions": [
+        {
+          "line": 48,
+          "return_type": "void",
+          "name": "log"
+        },
+        {
+          "line": 49,
+          "return_type": "void",
+          "name": "logFunc"
+        },
+        {
+          "line": 52,
+          "return_type": "void",
+          "name": "fine"
+        },
+        {
+          "line": 53,
+          "return_type": "void",
+          "name": "debug"
+        },
+        {
+          "line": 54,
+          "return_type": "void",
+          "name": "info"
+        },
+        {
+          "line": 55,
+          "return_type": "void",
+          "name": "warning"
+        },
+        {
+          "line": 56,
+          "return_type": "void",
+          "name": "error"
+        },
+        {
+          "line": 57,
+          "return_type": "void",
+          "name": "fatal"
+        },
+        {
+          "line": 61,
+          "return_type": "void",
+          "name": "debug"
+        },
+        {
+          "line": 66,
+          "return_type": "void",
+          "name": "info"
+        },
+        {
+          "line": 71,
+          "return_type": "void",
+          "name": "warning"
+        },
+        {
+          "line": 76,
+          "return_type": "void",
+          "name": "error"
+        },
+        {
+          "line": 81,
+          "return_type": "void",
+          "name": "fatal"
+        },
+        {
+          "line": 86,
+          "return_type": "void",
+          "name": "fine"
+        },
+        {
+          "line": 90,
+          "return_type": "void",
+          "name": "trace"
+        },
+        {
+          "line": 95,
+          "return_type": "void",
+          "name": "traceDebug"
+        },
+        {
+          "line": 99,
+          "return_type": "void",
+          "name": "traceDebug"
+        },
+        {
+          "line": 104,
+          "return_type": "void",
+          "name": "traceInfo"
+        },
+        {
+          "line": 108,
+          "return_type": "void",
+          "name": "traceInfo"
+        },
+        {
+          "line": 113,
+          "return_type": "void",
+          "name": "traceWarning"
+        },
+        {
+          "line": 117,
+          "return_type": "void",
+          "name": "traceWarning"
+        },
+        {
+          "line": 122,
+          "return_type": "void",
+          "name": "traceError"
+        },
+        {
+          "line": 126,
+          "return_type": "void",
+          "name": "traceError"
+        },
+        {
+          "line": 130,
+          "return_type": "void",
+          "name": "fireOldMessages"
+        },
+        {
+          "line": 131,
+          "return_type": "void",
+          "name": "setLogFile"
+        },
+        {
+          "line": 132,
+          "return_type": "void",
+          "name": "setOnLog"
+        },
+        {
+          "line": 133,
+          "return_type": "void",
+          "name": "setLevel"
+        },
+        {
+          "line": 134,
+          "return_type": "LogLevel",
+          "name": "getLevel"
+        },
+        {
+          "line": 145,
+          "return_type": "define",
+          "name": "logTraceCounter"
+        },
+        {
+          "line": 156,
+          "return_type": "define",
+          "name": "logTraceFrameCounter"
+        }
+      ],
+      "classes": [
+        {
+          "line": 38,
+          "name": "Logger"
+        }
+      ],
+      "includes": [
+        "../global.h",
+        "fstream"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\core\\scheduledevent.cpp",
+      "total_lines": 52,
+      "code_lines": 22,
+      "comment_lines": 24,
+      "empty_lines": 6,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "scheduledevent.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\core\\timer.cpp",
+      "total_lines": 35,
+      "code_lines": 11,
+      "comment_lines": 21,
+      "empty_lines": 3,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "timer.h",
+        "clock.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\coordsbuffer.cpp",
+      "total_lines": 68,
+      "code_lines": 39,
+      "comment_lines": 22,
+      "empty_lines": 7,
+      "functions": [
+        {
+          "line": 47,
+          "return_type": "Rect",
+          "name": "virtualDest"
+        },
+        {
+          "line": 50,
+          "return_type": "Rect",
+          "name": "partialDest"
+        },
+        {
+          "line": 51,
+          "return_type": "Rect",
+          "name": "partialSrc"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "coordsbuffer.h",
+        "graphics.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\coordsbuffer.h",
+      "total_lines": 98,
+      "code_lines": 63,
+      "comment_lines": 21,
+      "empty_lines": 14,
+      "functions": [
+        {
+          "line": 33,
+          "return_type": "void",
+          "name": "clear"
+        },
+        {
+          "line": 39,
+          "return_type": "void",
+          "name": "addTriangle"
+        },
+        {
+          "line": 43,
+          "return_type": "void",
+          "name": "addRect"
+        },
+        {
+          "line": 47,
+          "return_type": "void",
+          "name": "addRect"
+        },
+        {
+          "line": 54,
+          "return_type": "void",
+          "name": "addRect"
+        },
+        {
+          "line": 60,
+          "return_type": "void",
+          "name": "addQuad"
+        },
+        {
+          "line": 65,
+          "return_type": "void",
+          "name": "addUpsideDownQuad"
+        },
+        {
+          "line": 71,
+          "return_type": "void",
+          "name": "addUpsideDownRect"
+        },
+        {
+          "line": 77,
+          "return_type": "void",
+          "name": "addBoudingRect"
+        },
+        {
+          "line": 78,
+          "return_type": "void",
+          "name": "addRepeatedRects"
+        },
+        {
+          "line": 80,
+          "return_type": "void",
+          "name": "append"
+        },
+        {
+          "line": 88,
+          "return_type": "int",
+          "name": "getVertexCount"
+        },
+        {
+          "line": 89,
+          "return_type": "int",
+          "name": "getTextureCoordCount"
+        },
+        {
+          "line": 91,
+          "return_type": "size_t",
+          "name": "size"
+        }
+      ],
+      "classes": [
+        {
+          "line": 27,
+          "name": "CoordsBuffer"
+        }
+      ],
+      "includes": [
+        "vertexarray.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\glutil.h",
+      "total_lines": 35,
+      "code_lines": 11,
+      "comment_lines": 22,
+      "empty_lines": 2,
+      "functions": [
+        {
+          "line": 25,
+          "return_type": "if",
+          "name": "defined"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "GLES3/gl3.h",
+        "GL/glew.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\graphics.h",
+      "total_lines": 62,
+      "code_lines": 26,
+      "comment_lines": 24,
+      "empty_lines": 12,
+      "functions": [
+        {
+          "line": 32,
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "line": 34,
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "line": 36,
+          "return_type": "void",
+          "name": "resize"
+        },
+        {
+          "line": 38,
+          "return_type": "int",
+          "name": "getMaxTextureSize"
+        },
+        {
+          "line": 41,
+          "return_type": "string",
+          "name": "getVendor"
+        },
+        {
+          "line": 42,
+          "return_type": "string",
+          "name": "getRenderer"
+        },
+        {
+          "line": 43,
+          "return_type": "string",
+          "name": "getVersion"
+        },
+        {
+          "line": 44,
+          "return_type": "string",
+          "name": "getExtensions"
+        },
+        {
+          "line": 46,
+          "return_type": "bool",
+          "name": "ok"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "Graphics"
+        }
+      ],
+      "includes": [
+        "declarations.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\particleaffector.cpp",
+      "total_lines": 123,
+      "code_lines": 84,
+      "comment_lines": 21,
+      "empty_lines": 18,
+      "functions": [
+        {
+          "line": 48,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 50,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 52,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 55,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 57,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 75,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 101,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 103,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 105,
+          "return_type": "else",
+          "name": "if"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "particleaffector.h",
+        "particle.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\particleeffect.cpp",
+      "total_lines": 72,
+      "code_lines": 42,
+      "comment_lines": 21,
+      "empty_lines": 9,
+      "functions": [
+        {
+          "line": 33,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 41,
+          "return_type": "throw",
+          "name": "Exception"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "particleeffect.h",
+        "particlesystem.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\particleemitter.cpp",
+      "total_lines": 101,
+      "code_lines": 60,
+      "comment_lines": 26,
+      "empty_lines": 15,
+      "functions": [
+        {
+          "line": 34,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 36,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 38,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 40,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 42,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 47,
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "line": 81,
+          "return_type": "PointF",
+          "name": "pVelocity"
+        },
+        {
+          "line": 86,
+          "return_type": "PointF",
+          "name": "pAcceleration"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "particleemitter.h",
+        "particle.h",
+        "particlemanager.h",
+        "particlesystem.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\particlesystem.h",
+      "total_lines": 48,
+      "code_lines": 19,
+      "comment_lines": 21,
+      "empty_lines": 8,
+      "functions": [
+        {
+          "line": 33,
+          "return_type": "void",
+          "name": "load"
+        },
+        {
+          "line": 35,
+          "return_type": "void",
+          "name": "addParticle"
+        },
+        {
+          "line": 37,
+          "return_type": "void",
+          "name": "render"
+        },
+        {
+          "line": 38,
+          "return_type": "void",
+          "name": "update"
+        },
+        {
+          "line": 40,
+          "return_type": "bool",
+          "name": "hasFinished"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "ParticleSystem"
+        }
+      ],
+      "includes": [
+        "declarations.h",
+        "particleemitter.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\vertexarray.h",
+      "total_lines": 156,
+      "code_lines": 110,
+      "comment_lines": 21,
+      "empty_lines": 25,
+      "functions": [
+        {
+          "line": 34,
+          "return_type": "void",
+          "name": "addTriangle"
+        },
+        {
+          "line": 46,
+          "return_type": "void",
+          "name": "addRect"
+        },
+        {
+          "line": 66,
+          "return_type": "void",
+          "name": "addRect"
+        },
+        {
+          "line": 86,
+          "return_type": "void",
+          "name": "addQuad"
+        },
+        {
+          "line": 106,
+          "return_type": "void",
+          "name": "addUpsideDownQuad"
+        },
+        {
+          "line": 124,
+          "return_type": "void",
+          "name": "addUpsideDownRect"
+        },
+        {
+          "line": 144,
+          "return_type": "void",
+          "name": "append"
+        },
+        {
+          "line": 148,
+          "return_type": "void",
+          "name": "clear"
+        },
+        {
+          "line": 151,
+          "return_type": "int",
+          "name": "vertexCount"
+        },
+        {
+          "line": 152,
+          "return_type": "int",
+          "name": "size"
+        }
+      ],
+      "classes": [
+        {
+          "line": 27,
+          "name": "VertexArray"
+        }
+      ],
+      "includes": [
+        "declarations.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\luaengine\\luaexception.h",
+      "total_lines": 53,
+      "code_lines": 23,
+      "comment_lines": 21,
+      "empty_lines": 9,
+      "functions": [
+        {
+          "line": 33,
+          "return_type": "void",
+          "name": "generateLuaErrorMessage"
+        }
+      ],
+      "classes": [
+        {
+          "line": 27,
+          "name": "LuaException"
+        },
+        {
+          "line": 43,
+          "name": "LuaBadNumberOfArgumentsException"
+        },
+        {
+          "line": 49,
+          "name": "LuaBadValueCastException"
+        }
+      ],
+      "includes": [
+        "declarations.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\net\\server.cpp",
+      "total_lines": 68,
+      "code_lines": 38,
+      "comment_lines": 21,
+      "empty_lines": 9,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "server.h",
+        "connection.h",
+        "asio/io_service.hpp"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\otml\\otml.h",
+      "total_lines": 26,
+      "code_lines": 3,
+      "comment_lines": 21,
+      "empty_lines": 2,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "otmldocument.h",
+        "otmlnode.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\otml\\otmldocument.h",
+      "total_lines": 49,
+      "code_lines": 13,
+      "comment_lines": 28,
+      "empty_lines": 8,
+      "functions": [
+        {
+          "line": 31,
+          "return_type": "OTMLDocumentPtr",
+          "name": "create"
+        },
+        {
+          "line": 34,
+          "return_type": "OTMLDocumentPtr",
+          "name": "parse"
+        },
+        {
+          "line": 39,
+          "return_type": "OTMLDocumentPtr",
+          "name": "parse"
+        },
+        {
+          "line": 42,
+          "return_type": "string",
+          "name": "emit"
+        },
+        {
+          "line": 45,
+          "return_type": "bool",
+          "name": "save"
+        }
+      ],
+      "classes": [
+        {
+          "line": 27,
+          "name": "OTMLDocument"
+        }
+      ],
+      "includes": [
+        "otmlnode.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\otml\\otmlemitter.cpp",
+      "total_lines": 92,
+      "code_lines": 47,
+      "comment_lines": 32,
+      "empty_lines": 13,
+      "functions": [
+        {
+          "line": 49,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 58,
+          "return_type": "else",
+          "name": "if"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "otmlemitter.h",
+        "otmldocument.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\otml\\otmlemitter.h",
+      "total_lines": 32,
+      "code_lines": 7,
+      "comment_lines": 22,
+      "empty_lines": 3,
+      "functions": [
+        {
+          "line": 31,
+          "return_type": "string",
+          "name": "emitNode"
+        }
+      ],
+      "classes": [
+        {
+          "line": 27,
+          "name": "OTMLEmitter"
+        }
+      ],
+      "includes": [
+        "declarations.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\otml\\otmlexception.cpp",
+      "total_lines": 47,
+      "code_lines": 23,
+      "comment_lines": 21,
+      "empty_lines": 3,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "otmlexception.h",
+        "otmldocument.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\otml\\otmlexception.h",
+      "total_lines": 39,
+      "code_lines": 12,
+      "comment_lines": 22,
+      "empty_lines": 5,
+      "functions": [],
+      "classes": [
+        {
+          "line": 28,
+          "name": "OTMLException"
+        }
+      ],
+      "includes": [
+        "declarations.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\otml\\otmlnode.cpp",
+      "total_lines": 190,
+      "code_lines": 143,
+      "comment_lines": 23,
+      "empty_lines": 24,
+      "functions": [
+        {
+          "line": 76,
+          "return_type": "throw",
+          "name": "OTMLException"
+        },
+        {
+          "line": 82,
+          "return_type": "throw",
+          "name": "OTMLException"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "otmlnode.h",
+        "otmlemitter.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\otml\\otmlnode.h",
+      "total_lines": 180,
+      "code_lines": 132,
+      "comment_lines": 21,
+      "empty_lines": 27,
+      "functions": [
+        {
+          "line": 32,
+          "return_type": "OTMLNodePtr",
+          "name": "create"
+        },
+        {
+          "line": 33,
+          "return_type": "OTMLNodePtr",
+          "name": "create"
+        },
+        {
+          "line": 35,
+          "return_type": "string",
+          "name": "tag"
+        },
+        {
+          "line": 36,
+          "return_type": "int",
+          "name": "size"
+        },
+        {
+          "line": 37,
+          "return_type": "string",
+          "name": "source"
+        },
+        {
+          "line": 38,
+          "return_type": "string",
+          "name": "rawValue"
+        },
+        {
+          "line": 40,
+          "return_type": "bool",
+          "name": "isUnique"
+        },
+        {
+          "line": 41,
+          "return_type": "bool",
+          "name": "isNull"
+        },
+        {
+          "line": 43,
+          "return_type": "bool",
+          "name": "hasTag"
+        },
+        {
+          "line": 44,
+          "return_type": "bool",
+          "name": "hasValue"
+        },
+        {
+          "line": 45,
+          "return_type": "bool",
+          "name": "hasChildren"
+        },
+        {
+          "line": 46,
+          "return_type": "bool",
+          "name": "hasChildAt"
+        },
+        {
+          "line": 47,
+          "return_type": "bool",
+          "name": "hasChildAtIndex"
+        },
+        {
+          "line": 49,
+          "return_type": "void",
+          "name": "setTag"
+        },
+        {
+          "line": 50,
+          "return_type": "void",
+          "name": "setValue"
+        },
+        {
+          "line": 51,
+          "return_type": "void",
+          "name": "setNull"
+        },
+        {
+          "line": 52,
+          "return_type": "void",
+          "name": "setUnique"
+        },
+        {
+          "line": 53,
+          "return_type": "void",
+          "name": "setSource"
+        },
+        {
+          "line": 55,
+          "return_type": "OTMLNodePtr",
+          "name": "get"
+        },
+        {
+          "line": 56,
+          "return_type": "OTMLNodePtr",
+          "name": "getIndex"
+        },
+        {
+          "line": 58,
+          "return_type": "OTMLNodePtr",
+          "name": "at"
+        },
+        {
+          "line": 59,
+          "return_type": "OTMLNodePtr",
+          "name": "atIndex"
+        },
+        {
+          "line": 61,
+          "return_type": "void",
+          "name": "addChild"
+        },
+        {
+          "line": 62,
+          "return_type": "bool",
+          "name": "removeChild"
+        },
+        {
+          "line": 63,
+          "return_type": "bool",
+          "name": "replaceChild"
+        },
+        {
+          "line": 64,
+          "return_type": "void",
+          "name": "copy"
+        },
+        {
+          "line": 65,
+          "return_type": "void",
+          "name": "merge"
+        },
+        {
+          "line": 66,
+          "return_type": "void",
+          "name": "clear"
+        },
+        {
+          "line": 68,
+          "return_type": "OTMLNodeList",
+          "name": "children"
+        },
+        {
+          "line": 69,
+          "return_type": "OTMLNodePtr",
+          "name": "clone"
+        },
+        {
+          "line": 72,
+          "return_type": "T",
+          "name": "value"
+        },
+        {
+          "line": 74,
+          "return_type": "T",
+          "name": "valueAt"
+        },
+        {
+          "line": 76,
+          "return_type": "T",
+          "name": "valueAtIndex"
+        },
+        {
+          "line": 78,
+          "return_type": "T",
+          "name": "valueAt"
+        },
+        {
+          "line": 80,
+          "return_type": "T",
+          "name": "valueAtIndex"
+        },
+        {
+          "line": 83,
+          "return_type": "void",
+          "name": "write"
+        },
+        {
+          "line": 85,
+          "return_type": "void",
+          "name": "writeAt"
+        },
+        {
+          "line": 87,
+          "return_type": "void",
+          "name": "writeIn"
+        },
+        {
+          "line": 89,
+          "return_type": "string",
+          "name": "emit"
+        },
+        {
+          "line": 91,
+          "return_type": "OTMLNodePtr",
+          "name": "asOTMLNode"
+        },
+        {
+          "line": 124,
+          "return_type": "throw",
+          "name": "OTMLException"
+        }
+      ],
+      "classes": [
+        {
+          "line": 27,
+          "name": "OTMLNode"
+        }
+      ],
+      "includes": [
+        "declarations.h",
+        "otmlexception.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\platform\\crashhandler.h",
+      "total_lines": 27,
+      "code_lines": 4,
+      "comment_lines": 21,
+      "empty_lines": 2,
+      "functions": [
+        {
+          "line": 26,
+          "return_type": "void",
+          "name": "installCrashHandler"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\sound\\combinedsoundsource.cpp",
+      "total_lines": 126,
+      "code_lines": 87,
+      "comment_lines": 21,
+      "empty_lines": 18,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "combinedsoundsource.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\sound\\combinedsoundsource.h",
+      "total_lines": 57,
+      "code_lines": 27,
+      "comment_lines": 21,
+      "empty_lines": 9,
+      "functions": [
+        {
+          "line": 32,
+          "return_type": "void",
+          "name": "addSource"
+        },
+        {
+          "line": 35,
+          "return_type": "void",
+          "name": "play"
+        },
+        {
+          "line": 36,
+          "return_type": "void",
+          "name": "stop"
+        },
+        {
+          "line": 38,
+          "return_type": "bool",
+          "name": "isBuffering"
+        },
+        {
+          "line": 39,
+          "return_type": "bool",
+          "name": "isPlaying"
+        },
+        {
+          "line": 41,
+          "return_type": "void",
+          "name": "setLooping"
+        },
+        {
+          "line": 42,
+          "return_type": "void",
+          "name": "setRelative"
+        },
+        {
+          "line": 43,
+          "return_type": "void",
+          "name": "setReferenceDistance"
+        },
+        {
+          "line": 44,
+          "return_type": "void",
+          "name": "setGain"
+        },
+        {
+          "line": 45,
+          "return_type": "void",
+          "name": "setPitch"
+        },
+        {
+          "line": 46,
+          "return_type": "void",
+          "name": "setPosition"
+        },
+        {
+          "line": 47,
+          "return_type": "void",
+          "name": "setVelocity"
+        },
+        {
+          "line": 48,
+          "return_type": "void",
+          "name": "setFading"
+        },
+        {
+          "line": 49,
+          "return_type": "void",
+          "name": "setEffect"
+        },
+        {
+          "line": 50,
+          "return_type": "void",
+          "name": "removeEffect"
+        },
+        {
+          "line": 53,
+          "return_type": "void",
+          "name": "update"
+        }
+      ],
+      "classes": [
+        {
+          "line": 27,
+          "name": "CombinedSoundSource"
+        }
+      ],
+      "includes": [
+        "soundsource.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\sound\\oggsoundfile.cpp",
+      "total_lines": 88,
+      "code_lines": 55,
+      "comment_lines": 21,
+      "empty_lines": 12,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "oggsoundfile.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\sound\\oggsoundfile.h",
+      "total_lines": 47,
+      "code_lines": 18,
+      "comment_lines": 21,
+      "empty_lines": 8,
+      "functions": [
+        {
+          "line": 35,
+          "return_type": "bool",
+          "name": "prepareOgg"
+        },
+        {
+          "line": 37,
+          "return_type": "int",
+          "name": "read"
+        },
+        {
+          "line": 38,
+          "return_type": "void",
+          "name": "reset"
+        },
+        {
+          "line": 41,
+          "return_type": "size_t",
+          "name": "cb_read"
+        },
+        {
+          "line": 42,
+          "return_type": "int",
+          "name": "cb_seek"
+        },
+        {
+          "line": 43,
+          "return_type": "int",
+          "name": "cb_close"
+        },
+        {
+          "line": 44,
+          "return_type": "long",
+          "name": "cb_tell"
+        }
+      ],
+      "classes": [
+        {
+          "line": 29,
+          "name": "OggSoundFile"
+        }
+      ],
+      "includes": [
+        "soundfile.h",
+        "vorbis/vorbisfile.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\sound\\soundbuffer.cpp",
+      "total_lines": 65,
+      "code_lines": 37,
+      "comment_lines": 21,
+      "empty_lines": 7,
+      "functions": [
+        {
+          "line": 53,
+          "return_type": "return",
+          "name": "fillBuffer"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "soundbuffer.h",
+        "soundfile.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\sound\\soundchannel.cpp",
+      "total_lines": 113,
+      "code_lines": 76,
+      "comment_lines": 22,
+      "empty_lines": 15,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "soundchannel.h",
+        "soundmanager.h",
+        "streamsoundsource.h",
+        "random"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\sound\\soundchannel.h",
+      "total_lines": 75,
+      "code_lines": 41,
+      "comment_lines": 22,
+      "empty_lines": 12,
+      "functions": [
+        {
+          "line": 34,
+          "return_type": "SoundSourcePtr",
+          "name": "play"
+        },
+        {
+          "line": 35,
+          "return_type": "void",
+          "name": "stop"
+        },
+        {
+          "line": 36,
+          "return_type": "void",
+          "name": "enqueue"
+        },
+        {
+          "line": 37,
+          "return_type": "void",
+          "name": "enable"
+        },
+        {
+          "line": 38,
+          "return_type": "void",
+          "name": "disable"
+        },
+        {
+          "line": 40,
+          "return_type": "void",
+          "name": "setGain"
+        },
+        {
+          "line": 41,
+          "return_type": "float",
+          "name": "getGain"
+        },
+        {
+          "line": 43,
+          "return_type": "void",
+          "name": "setPitch"
+        },
+        {
+          "line": 44,
+          "return_type": "float",
+          "name": "getPitch"
+        },
+        {
+          "line": 46,
+          "return_type": "void",
+          "name": "setPosition"
+        },
+        {
+          "line": 47,
+          "return_type": "Point",
+          "name": "getPosition"
+        },
+        {
+          "line": 49,
+          "return_type": "void",
+          "name": "setEnabled"
+        },
+        {
+          "line": 50,
+          "return_type": "bool",
+          "name": "isEnabled"
+        },
+        {
+          "line": 52,
+          "return_type": "int",
+          "name": "getId"
+        },
+        {
+          "line": 55,
+          "return_type": "void",
+          "name": "update"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "SoundChannel"
+        },
+        {
+          "line": 56,
+          "name": "SoundManager"
+        }
+      ],
+      "includes": [
+        "soundsource.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\cast.h",
+      "total_lines": 178,
+      "code_lines": 126,
+      "comment_lines": 34,
+      "empty_lines": 18,
+      "functions": [
+        {
+          "line": 36,
+          "return_type": "bool",
+          "name": "cast"
+        },
+        {
+          "line": 46,
+          "return_type": "bool",
+          "name": "cast"
+        },
+        {
+          "line": 55,
+          "return_type": "bool",
+          "name": "cast"
+        },
+        {
+          "line": 62,
+          "return_type": "bool",
+          "name": "cast"
+        },
+        {
+          "line": 66,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 74,
+          "return_type": "bool",
+          "name": "cast"
+        },
+        {
+          "line": 83,
+          "return_type": "bool",
+          "name": "cast"
+        },
+        {
+          "line": 94,
+          "return_type": "bool",
+          "name": "cast"
+        },
+        {
+          "line": 104,
+          "return_type": "bool",
+          "name": "cast"
+        },
+        {
+          "line": 119,
+          "return_type": "bool",
+          "name": "cast"
+        },
+        {
+          "line": 129,
+          "return_type": "bool",
+          "name": "cast"
+        },
+        {
+          "line": 142,
+          "return_type": "void",
+          "name": "update_what"
+        },
+        {
+          "line": 156,
+          "return_type": "R",
+          "name": "safe_cast"
+        },
+        {
+          "line": 169,
+          "return_type": "R",
+          "name": "unsafe_cast"
+        }
+      ],
+      "classes": [
+        {
+          "line": 136,
+          "name": "cast_exception"
+        },
+        {
+          "line": 141,
+          "name": "T"
+        }
+      ],
+      "includes": [
+        "demangle.h",
+        "exception.h",
+        "cstdlib",
+        "iostream",
+        "sstream"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\demangle.h",
+      "total_lines": 55,
+      "code_lines": 24,
+      "comment_lines": 25,
+      "empty_lines": 6,
+      "functions": [
+        {
+          "line": 34,
+          "return_type": "string",
+          "name": "demangle_class"
+        },
+        {
+          "line": 37,
+          "return_type": "return",
+          "name": "demangle_name"
+        },
+        {
+          "line": 39,
+          "return_type": "return",
+          "name": "demangle_name"
+        },
+        {
+          "line": 44,
+          "return_type": "string",
+          "name": "demangle_class"
+        },
+        {
+          "line": 47,
+          "return_type": "return",
+          "name": "demangle_name"
+        },
+        {
+          "line": 49,
+          "return_type": "return",
+          "name": "demangle_name"
+        },
+        {
+          "line": 54,
+          "return_type": "string",
+          "name": "demangle_type"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "string",
+        "typeinfo"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\exception.h",
+      "total_lines": 49,
+      "code_lines": 20,
+      "comment_lines": 21,
+      "empty_lines": 8,
+      "functions": [],
+      "classes": [
+        {
+          "line": 32,
+          "name": "exception"
+        }
+      ],
+      "includes": [
+        "exception",
+        "string",
+        "fmt/format.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\stdext.h",
+      "total_lines": 40,
+      "code_lines": 15,
+      "comment_lines": 21,
+      "empty_lines": 4,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "cmath",
+        "cstring",
+        "ctime",
+        "types.h",
+        "cast.h",
+        "compiler.h",
+        "demangle.h",
+        "hash.h",
+        "math.h",
+        "qrcodegen.h",
+        "storage.h",
+        "string.h",
+        "thread.h",
+        "time.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\thread.h",
+      "total_lines": 40,
+      "code_lines": 14,
+      "comment_lines": 21,
+      "empty_lines": 5,
+      "functions": [
+        {
+          "line": 29,
+          "return_type": "int16_t",
+          "name": "getThreadId"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "atomic"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\time.cpp",
+      "total_lines": 47,
+      "code_lines": 19,
+      "comment_lines": 21,
+      "empty_lines": 7,
+      "functions": [
+        {
+          "line": 33,
+          "return_type": "ticks_t",
+          "name": "time"
+        },
+        {
+          "line": 35,
+          "return_type": "ticks_t",
+          "name": "millis"
+        },
+        {
+          "line": 39,
+          "return_type": "ticks_t",
+          "name": "micros"
+        },
+        {
+          "line": 44,
+          "return_type": "void",
+          "name": "microsleep"
+        },
+        {
+          "line": 46,
+          "return_type": "void",
+          "name": "millisleep"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "chrono",
+        "ctime",
+        "thread",
+        "types.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\time.h",
+      "total_lines": 46,
+      "code_lines": 20,
+      "comment_lines": 21,
+      "empty_lines": 5,
+      "functions": [
+        {
+          "line": 29,
+          "return_type": "ticks_t",
+          "name": "time"
+        },
+        {
+          "line": 30,
+          "return_type": "ticks_t",
+          "name": "millis"
+        },
+        {
+          "line": 31,
+          "return_type": "ticks_t",
+          "name": "micros"
+        },
+        {
+          "line": 32,
+          "return_type": "void",
+          "name": "millisleep"
+        },
+        {
+          "line": 33,
+          "return_type": "void",
+          "name": "microsleep"
+        },
+        {
+          "line": 38,
+          "return_type": "float",
+          "name": "elapsed_seconds"
+        },
+        {
+          "line": 39,
+          "return_type": "ticks_t",
+          "name": "elapsed_millis"
+        },
+        {
+          "line": 40,
+          "return_type": "ticks_t",
+          "name": "elapsed_micros"
+        },
+        {
+          "line": 41,
+          "return_type": "void",
+          "name": "restart"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "types.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\util\\matrix.h",
+      "total_lines": 258,
+      "code_lines": 201,
+      "comment_lines": 21,
+      "empty_lines": 36,
+      "functions": [
+        {
+          "line": 39,
+          "return_type": "void",
+          "name": "setIdentity"
+        },
+        {
+          "line": 40,
+          "return_type": "bool",
+          "name": "isIdentity"
+        },
+        {
+          "line": 41,
+          "return_type": "void",
+          "name": "fill"
+        },
+        {
+          "line": 43,
+          "return_type": "size_t",
+          "name": "hash"
+        },
+        {
+          "line": 52,
+          "return_type": "T",
+          "name": "operator"
+        },
+        {
+          "line": 132,
+          "return_type": "return",
+          "name": "generateHash"
+        },
+        {
+          "line": 142,
+          "return_type": "return",
+          "name": "generateHash"
+        },
+        {
+          "line": 151,
+          "return_type": "return",
+          "name": "generateHash"
+        },
+        {
+          "line": 160,
+          "return_type": "return",
+          "name": "generateHash"
+        },
+        {
+          "line": 169,
+          "return_type": "return",
+          "name": "generateHash"
+        },
+        {
+          "line": 179,
+          "return_type": "return",
+          "name": "generateHash"
+        },
+        {
+          "line": 185,
+          "return_type": "return",
+          "name": "hash"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "Matrix"
+        }
+      ],
+      "includes": [
+        "initializer_list"
+      ],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "src\\framework\\util\\point.h",
+      "total_lines": 101,
+      "code_lines": 64,
+      "comment_lines": 21,
+      "empty_lines": 16,
+      "functions": [
+        {
+          "line": 36,
+          "return_type": "constexpr",
+          "name": "TPoint"
+        },
+        {
+          "line": 37,
+          "return_type": "constexpr",
+          "name": "TPoint"
+        },
+        {
+          "line": 38,
+          "return_type": "constexpr",
+          "name": "TPoint"
+        },
+        {
+          "line": 39,
+          "return_type": "constexpr",
+          "name": "TPoint"
+        },
+        {
+          "line": 41,
+          "return_type": "bool",
+          "name": "isNull"
+        },
+        {
+          "line": 42,
+          "return_type": "T",
+          "name": "manhattanLength"
+        },
+        {
+          "line": 43,
+          "return_type": "float",
+          "name": "length"
+        },
+        {
+          "line": 44,
+          "return_type": "float",
+          "name": "distanceFrom"
+        },
+        {
+          "line": 45,
+          "return_type": "TPoint",
+          "name": "translated"
+        },
+        {
+          "line": 47,
+          "return_type": "TPoint",
+          "name": "scale"
+        },
+        {
+          "line": 71,
+          "return_type": "return",
+          "name": "TPoint"
+        },
+        {
+          "line": 73,
+          "return_type": "return",
+          "name": "TPoint"
+        },
+        {
+          "line": 89,
+          "return_type": "size_t",
+          "name": "hash"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "T"
+        },
+        {
+          "line": 29,
+          "name": "TSize"
+        },
+        {
+          "line": 31,
+          "name": "T"
+        },
+        {
+          "line": 32,
+          "name": "TPoint"
+        }
+      ],
+      "includes": [
+        "cmath",
+        "ostream"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\util\\rect.h",
+      "total_lines": 235,
+      "code_lines": 187,
+      "comment_lines": 21,
+      "empty_lines": 27,
+      "functions": [
+        {
+          "line": 37,
+          "return_type": "constexpr",
+          "name": "TRect"
+        },
+        {
+          "line": 38,
+          "return_type": "constexpr",
+          "name": "TRect"
+        },
+        {
+          "line": 39,
+          "return_type": "constexpr",
+          "name": "TRect"
+        },
+        {
+          "line": 40,
+          "return_type": "constexpr",
+          "name": "TRect"
+        },
+        {
+          "line": 41,
+          "return_type": "constexpr",
+          "name": "TRect"
+        },
+        {
+          "line": 42,
+          "return_type": "constexpr",
+          "name": "TRect"
+        },
+        {
+          "line": 43,
+          "return_type": "constexpr",
+          "name": "TRect"
+        },
+        {
+          "line": 45,
+          "return_type": "bool",
+          "name": "isNull"
+        },
+        {
+          "line": 46,
+          "return_type": "bool",
+          "name": "isEmpty"
+        },
+        {
+          "line": 47,
+          "return_type": "bool",
+          "name": "isValid"
+        },
+        {
+          "line": 49,
+          "return_type": "T",
+          "name": "left"
+        },
+        {
+          "line": 50,
+          "return_type": "T",
+          "name": "top"
+        },
+        {
+          "line": 51,
+          "return_type": "T",
+          "name": "right"
+        },
+        {
+          "line": 52,
+          "return_type": "T",
+          "name": "bottom"
+        },
+        {
+          "line": 53,
+          "return_type": "T",
+          "name": "horizontalCenter"
+        },
+        {
+          "line": 54,
+          "return_type": "T",
+          "name": "verticalCenter"
+        },
+        {
+          "line": 55,
+          "return_type": "T",
+          "name": "x"
+        },
+        {
+          "line": 56,
+          "return_type": "T",
+          "name": "y"
+        },
+        {
+          "line": 66,
+          "return_type": "T",
+          "name": "width"
+        },
+        {
+          "line": 67,
+          "return_type": "T",
+          "name": "height"
+        },
+        {
+          "line": 69,
+          "return_type": "void",
+          "name": "reset"
+        },
+        {
+          "line": 70,
+          "return_type": "void",
+          "name": "clear"
+        },
+        {
+          "line": 72,
+          "return_type": "void",
+          "name": "setLeft"
+        },
+        {
+          "line": 73,
+          "return_type": "void",
+          "name": "setTop"
+        },
+        {
+          "line": 74,
+          "return_type": "void",
+          "name": "setRight"
+        },
+        {
+          "line": 75,
+          "return_type": "void",
+          "name": "setBottom"
+        },
+        {
+          "line": 76,
+          "return_type": "void",
+          "name": "setX"
+        },
+        {
+          "line": 77,
+          "return_type": "void",
+          "name": "setY"
+        },
+        {
+          "line": 78,
+          "return_type": "void",
+          "name": "setTopLeft"
+        },
+        {
+          "line": 79,
+          "return_type": "void",
+          "name": "setBottomRight"
+        },
+        {
+          "line": 80,
+          "return_type": "void",
+          "name": "setTopRight"
+        },
+        {
+          "line": 81,
+          "return_type": "void",
+          "name": "setBottomLeft"
+        },
+        {
+          "line": 82,
+          "return_type": "void",
+          "name": "setWidth"
+        },
+        {
+          "line": 83,
+          "return_type": "void",
+          "name": "setHeight"
+        },
+        {
+          "line": 84,
+          "return_type": "void",
+          "name": "setSize"
+        },
+        {
+          "line": 85,
+          "return_type": "void",
+          "name": "setRect"
+        },
+        {
+          "line": 86,
+          "return_type": "void",
+          "name": "setCoords"
+        },
+        {
+          "line": 88,
+          "return_type": "void",
+          "name": "expandLeft"
+        },
+        {
+          "line": 89,
+          "return_type": "void",
+          "name": "expandTop"
+        },
+        {
+          "line": 90,
+          "return_type": "void",
+          "name": "expandRight"
+        },
+        {
+          "line": 91,
+          "return_type": "void",
+          "name": "expandBottom"
+        },
+        {
+          "line": 92,
+          "return_type": "void",
+          "name": "expand"
+        },
+        {
+          "line": 93,
+          "return_type": "void",
+          "name": "expand"
+        },
+        {
+          "line": 95,
+          "return_type": "void",
+          "name": "translate"
+        },
+        {
+          "line": 96,
+          "return_type": "void",
+          "name": "translate"
+        },
+        {
+          "line": 97,
+          "return_type": "void",
+          "name": "resize"
+        },
+        {
+          "line": 98,
+          "return_type": "void",
+          "name": "resize"
+        },
+        {
+          "line": 99,
+          "return_type": "void",
+          "name": "move"
+        },
+        {
+          "line": 100,
+          "return_type": "void",
+          "name": "move"
+        },
+        {
+          "line": 101,
+          "return_type": "void",
+          "name": "moveLeft"
+        },
+        {
+          "line": 102,
+          "return_type": "void",
+          "name": "moveTop"
+        },
+        {
+          "line": 103,
+          "return_type": "void",
+          "name": "moveRight"
+        },
+        {
+          "line": 104,
+          "return_type": "void",
+          "name": "moveBottom"
+        },
+        {
+          "line": 105,
+          "return_type": "void",
+          "name": "moveTopLeft"
+        },
+        {
+          "line": 106,
+          "return_type": "void",
+          "name": "moveBottomRight"
+        },
+        {
+          "line": 107,
+          "return_type": "void",
+          "name": "moveTopRight"
+        },
+        {
+          "line": 108,
+          "return_type": "void",
+          "name": "moveBottomLeft"
+        },
+        {
+          "line": 109,
+          "return_type": "void",
+          "name": "moveTopCenter"
+        },
+        {
+          "line": 110,
+          "return_type": "void",
+          "name": "moveBottomCenter"
+        },
+        {
+          "line": 111,
+          "return_type": "void",
+          "name": "moveCenterLeft"
+        },
+        {
+          "line": 112,
+          "return_type": "void",
+          "name": "moveCenterRight"
+        },
+        {
+          "line": 114,
+          "return_type": "TRect",
+          "name": "translated"
+        },
+        {
+          "line": 115,
+          "return_type": "TRect",
+          "name": "translated"
+        },
+        {
+          "line": 116,
+          "return_type": "TRect",
+          "name": "expanded"
+        },
+        {
+          "line": 117,
+          "return_type": "TRect",
+          "name": "clamp"
+        },
+        {
+          "line": 123,
+          "return_type": "void",
+          "name": "moveCenter"
+        },
+        {
+          "line": 131,
+          "return_type": "void",
+          "name": "moveHorizontalCenter"
+        },
+        {
+          "line": 136,
+          "return_type": "void",
+          "name": "moveVerticalCenter"
+        },
+        {
+          "line": 142,
+          "return_type": "size_t",
+          "name": "hash"
+        },
+        {
+          "line": 149,
+          "return_type": "bool",
+          "name": "contains"
+        },
+        {
+          "line": 154,
+          "return_type": "bool",
+          "name": "contains"
+        },
+        {
+          "line": 155,
+          "return_type": "return",
+          "name": "contains"
+        },
+        {
+          "line": 158,
+          "return_type": "bool",
+          "name": "intersects"
+        },
+        {
+          "line": 162,
+          "return_type": "TRect",
+          "name": "united"
+        },
+        {
+          "line": 168,
+          "return_type": "TRect",
+          "name": "intersection"
+        },
+        {
+          "line": 175,
+          "return_type": "void",
+          "name": "alignIn"
+        },
+        {
+          "line": 179,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 181,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 183,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 185,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 187,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 189,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 191,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 193,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 197,
+          "return_type": "void",
+          "name": "bind"
+        }
+      ],
+      "classes": [
+        {
+          "line": 27,
+          "name": "T"
+        },
+        {
+          "line": 28,
+          "name": "TPoint"
+        },
+        {
+          "line": 30,
+          "name": "T"
+        },
+        {
+          "line": 31,
+          "name": "TSize"
+        },
+        {
+          "line": 33,
+          "name": "T"
+        },
+        {
+          "line": 34,
+          "name": "TRect"
+        }
+      ],
+      "includes": [
+        "../const.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\util\\size.h",
+      "total_lines": 132,
+      "code_lines": 88,
+      "comment_lines": 21,
+      "empty_lines": 23,
+      "functions": [
+        {
+          "line": 32,
+          "return_type": "constexpr",
+          "name": "TSize"
+        },
+        {
+          "line": 33,
+          "return_type": "constexpr",
+          "name": "TSize"
+        },
+        {
+          "line": 34,
+          "return_type": "constexpr",
+          "name": "TSize"
+        },
+        {
+          "line": 35,
+          "return_type": "constexpr",
+          "name": "TSize"
+        },
+        {
+          "line": 39,
+          "return_type": "bool",
+          "name": "isNull"
+        },
+        {
+          "line": 40,
+          "return_type": "bool",
+          "name": "isEmpty"
+        },
+        {
+          "line": 41,
+          "return_type": "bool",
+          "name": "isValid"
+        },
+        {
+          "line": 42,
+          "return_type": "bool",
+          "name": "isUnset"
+        },
+        {
+          "line": 44,
+          "return_type": "T",
+          "name": "width"
+        },
+        {
+          "line": 45,
+          "return_type": "T",
+          "name": "height"
+        },
+        {
+          "line": 47,
+          "return_type": "void",
+          "name": "resize"
+        },
+        {
+          "line": 48,
+          "return_type": "void",
+          "name": "setWidth"
+        },
+        {
+          "line": 49,
+          "return_type": "void",
+          "name": "setHeight"
+        },
+        {
+          "line": 51,
+          "return_type": "return",
+          "name": "TSize"
+        },
+        {
+          "line": 52,
+          "return_type": "return",
+          "name": "TSize"
+        },
+        {
+          "line": 54,
+          "return_type": "return",
+          "name": "TSize"
+        },
+        {
+          "line": 56,
+          "return_type": "return",
+          "name": "TSize"
+        },
+        {
+          "line": 58,
+          "return_type": "return",
+          "name": "TSize"
+        },
+        {
+          "line": 60,
+          "return_type": "return",
+          "name": "TSize"
+        },
+        {
+          "line": 62,
+          "return_type": "return",
+          "name": "TSize"
+        },
+        {
+          "line": 83,
+          "return_type": "TSize",
+          "name": "expandedTo"
+        },
+        {
+          "line": 84,
+          "return_type": "TSize",
+          "name": "boundedTo"
+        },
+        {
+          "line": 86,
+          "return_type": "void",
+          "name": "scale"
+        },
+        {
+          "line": 106,
+          "return_type": "void",
+          "name": "scale"
+        },
+        {
+          "line": 108,
+          "return_type": "T",
+          "name": "smaller"
+        },
+        {
+          "line": 109,
+          "return_type": "T",
+          "name": "bigger"
+        },
+        {
+          "line": 111,
+          "return_type": "float",
+          "name": "ratio"
+        },
+        {
+          "line": 112,
+          "return_type": "T",
+          "name": "area"
+        },
+        {
+          "line": 113,
+          "return_type": "T",
+          "name": "dimension"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "T"
+        },
+        {
+          "line": 29,
+          "name": "TSize"
+        }
+      ],
+      "includes": [
+        "../const.h",
+        "point.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\inputmessage.lua",
+      "total_lines": 51,
+      "code_lines": 48,
+      "comment_lines": 0,
+      "empty_lines": 3,
+      "functions": [
+        {
+          "line": 4,
+          "return_type": "return",
+          "name": "numbertoboolean"
+        },
+        {
+          "line": 14,
+          "return_type": "return",
+          "name": "tonumber"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\net.lua",
+      "total_lines": 16,
+      "code_lines": 16,
+      "comment_lines": 0,
+      "empty_lines": 0,
+      "functions": [
+        {
+          "line": 1,
+          "return_type": "function",
+          "name": "translateNetworkError"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\outputmessage.lua",
+      "total_lines": 69,
+      "code_lines": 62,
+      "comment_lines": 0,
+      "empty_lines": 7,
+      "functions": [
+        {
+          "line": 2,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 5,
+          "return_type": "elseif",
+          "name": "type"
+        },
+        {
+          "line": 22,
+          "return_type": "elseif",
+          "name": "type"
+        },
+        {
+          "line": 25,
+          "return_type": "elseif",
+          "name": "type"
+        },
+        {
+          "line": 36,
+          "return_type": "for",
+          "name": "size"
+        },
+        {
+          "line": 42,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    }
+  ],
+  "metrics": {
+    "total_functions": 383,
+    "total_classes": 34,
+    "total_lines": 2466
+  }
+}

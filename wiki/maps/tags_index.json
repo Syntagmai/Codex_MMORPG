@@ -1,0 +1,228 @@
+{
+  "metadata": {
+    "version": "1.1",
+    "last_updated": "2025-07-29T12:00:00",
+    "total_files": 28,
+    "total_tags": 42,
+    "description": "Índice de tags unificado com submódulos OTClient e Canary como fontes de verdade imutáveis."
+  },
+  "files_by_tag": {
+    "otclient_submodule": [
+      "otclient/"
+    ],
+    "canary_submodule": [
+      "canary/"
+    ],
+    "otclient": [
+      "Advanced_Configuration_Guide.md",
+      "Animation_System_Guide.md",
+      "Cheat_Sheet.md",
+      "Combat_System_Guide.md",
+      "Configuration_Guide.md",
+      "Creature_System_Guide.md",
+      "Debug_System_Guide.md",
+      "Documentation_Status.md",
+      "Drag_Drop_System_Guide.md",
+      "Effects_System_Guide.md",
+      "Getting_Started_Guide.md",
+      "Graphics_System_Guide.md",
+      "Guia_Busca_Rapida.md",
+      "Item_System_Guide.md",
+      "Map_System_Guide.md",
+      "Module_Development_Guide.md",
+      "Module_System_Guide.md",
+      "Network_System_Guide.md",
+      "OTUI_Module_Development_Guide.md",
+      "Performance_System_Guide.md",
+      "Protocol_System_Guide.md",
+      "Sound_System_Guide.md",
+      "UI_System_Guide.md",
+      "World_System_Guide.md",
+      "otclient_wiki.md"
+    ],
+    "system": [
+      "Advanced_Configuration_Guide.md",
+      "Animation_System_Guide.md",
+      "Cheat_Sheet.md",
+      "Combat_System_Guide.md",
+      "Configuration_Guide.md",
+      "Creature_System_Guide.md",
+      "Debug_System_Guide.md",
+      "Drag_Drop_System_Guide.md",
+      "Effects_System_Guide.md",
+      "Getting_Started_Guide.md",
+      "Graphics_System_Guide.md",
+      "Item_System_Guide.md",
+      "Module_Development_Guide.md",
+      "Module_System_Guide.md",
+      "Network_System_Guide.md",
+      "Performance_System_Guide.md",
+      "Protocol_System_Guide.md",
+      "Sound_System_Guide.md",
+      "World_System_Guide.md"
+    ],
+    "guide": [
+      "Advanced_Configuration_Guide.md",
+      "Animation_System_Guide.md",
+      "Cheat_Sheet.md",
+      "Combat_System_Guide.md",
+      "Configuration_Guide.md",
+      "Creature_System_Guide.md",
+      "Debug_System_Guide.md",
+      "Drag_Drop_System_Guide.md",
+      "Effects_System_Guide.md",
+      "Getting_Started_Guide.md",
+      "Graphics_System_Guide.md",
+      "Item_System_Guide.md",
+      "Map_System_Guide.md",
+      "Module_Development_Guide.md",
+      "Module_System_Guide.md",
+      "Network_System_Guide.md",
+      "OTUI_Module_Development_Guide.md",
+      "Performance_System_Guide.md",
+      "Protocol_System_Guide.md",
+      "Sound_System_Guide.md",
+      "UI_System_Guide.md",
+      "World_System_Guide.md",
+      "otclient_wiki.md"
+    ],
+    "documentation": [
+      "Advanced_Configuration_Guide.md",
+      "Animation_System_Guide.md",
+      "Cheat_Sheet.md",
+      "Combat_System_Guide.md",
+      "Configuration_Guide.md",
+      "Creature_System_Guide.md",
+      "Debug_System_Guide.md",
+      "Documentation_Status.md",
+      "Drag_Drop_System_Guide.md",
+      "Effects_System_Guide.md",
+      "Getting_Started_Guide.md",
+      "Graphics_System_Guide.md",
+      "Item_System_Guide.md",
+      "Map_System_Guide.md",
+      "Module_Development_Guide.md",
+      "Module_System_Guide.md",
+      "Network_System_Guide.md",
+      "Performance_System_Guide.md",
+      "Protocol_System_Guide.md",
+      "Sound_System_Guide.md",
+      "UI_System_Guide.md",
+      "World_System_Guide.md",
+      "otclient_wiki.md"
+    ],
+    "animations": [
+      "Animation_System_Guide.md"
+    ],
+    "transitions": [
+      "Animation_System_Guide.md"
+    ],
+    "ui": [
+      "Animation_System_Guide.md",
+      "Drag_Drop_System_Guide.md",
+      "UI_System_Guide.md"
+    ],
+    "combat": [
+      "Combat_System_Guide.md"
+    ],
+    "battle": [
+      "Combat_System_Guide.md"
+    ],
+    "damage": [
+      "Combat_System_Guide.md"
+    ],
+    "game-state-sync": [
+      "Combat_System_Guide.md"
+    ],
+    "canary": [
+      "Combat_System_Guide.md"
+    ],
+    "integration": [
+      "Combat_System_Guide.md"
+    ],
+    "debug": [
+      "Debug_System_Guide.md"
+    ],
+    "logging": [
+      "Debug_System_Guide.md"
+    ],
+    "development": [
+      "Debug_System_Guide.md",
+      "OTUI_Module_Development_Guide.md"
+    ],
+    "status": [
+      "Documentation_Status.md"
+    ],
+    "progress": [
+      "Documentation_Status.md"
+    ],
+    "wiki": [
+      "Documentation_Status.md",
+      "Guia_Busca_Rapida.md",
+      "otclient_wiki.md"
+    ],
+    "drag-drop": [
+      "Drag_Drop_System_Guide.md"
+    ],
+    "interaction": [
+      "Drag_Drop_System_Guide.md"
+    ],
+    "busca": [
+      "Guia_Busca_Rapida.md"
+    ],
+    "navegação": [
+      "Guia_Busca_Rapida.md"
+    ],
+    "ajuda": [
+      "Guia_Busca_Rapida.md"
+    ],
+    "map": [
+      "Map_System_Guide.md"
+    ],
+    "world": [
+      "Map_System_Guide.md"
+    ],
+    "tiles": [
+      "Map_System_Guide.md"
+    ],
+    "creatures": [
+      "Map_System_Guide.md"
+    ],
+    "pathfinding": [
+      "Map_System_Guide.md"
+    ],
+    "modules": [
+      "OTUI_Module_Development_Guide.md"
+    ],
+    "otui": [
+      "OTUI_Module_Development_Guide.md"
+    ],
+    "completed": [
+      "OTUI_Module_Development_Guide.md"
+    ],
+    "performance": [
+      "Performance_System_Guide.md"
+    ],
+    "optimization": [
+      "Performance_System_Guide.md"
+    ],
+    "profiling": [
+      "Performance_System_Guide.md"
+    ],
+    "widgets": [
+      "UI_System_Guide.md"
+    ],
+    "layouts": [
+      "UI_System_Guide.md"
+    ],
+    "events": [
+      "UI_System_Guide.md"
+    ],
+    "styling": [
+      "UI_System_Guide.md"
+    ],
+    "index": [
+      "otclient_wiki.md"
+    ]
+  }
+}

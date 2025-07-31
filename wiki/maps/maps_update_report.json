@@ -1,0 +1,73 @@
+{
+  "timestamp": "2025-07-29T02:56:59.229841",
+  "context": "otclient",
+  "scripts_executed": [
+    {
+      "script": "wiki/update/update_wiki_maps.py",
+      "execution_time": 0.16926002502441406,
+      "status": "success"
+    },
+    {
+      "script": "wiki/update/update_bmad_maps.py",
+      "execution_time": 0.11922669410705566,
+      "status": "success"
+    },
+    {
+      "script": "wiki/update/optimize_maps_for_tokens.py",
+      "execution_time": 0.16035676002502441,
+      "status": "success"
+    },
+    {
+      "script": "wiki/update/expand_wiki_comprehensive.py",
+      "execution_time": 0.15579628944396973,
+      "status": "success"
+    }
+  ],
+  "scripts_failed": [
+    {
+      "script": "wiki/update/update_source_index.py",
+      "error": "  File \"C:\\Users\\Dell\\Documents\\GitHub\\otclient_doc\\wiki\\update\\update_source_index.py\", line 79\n    else:\n    ^^^^\nSyntaxError: expected 'except' or 'finally' block\n",
+      "status": "failed"
+    },
+    {
+      "script": "wiki/update/update_habdel_index.py",
+      "error": "  File \"C:\\Users\\Dell\\Documents\\GitHub\\otclient_doc\\wiki\\update\\update_habdel_index.py\", line 264\n    self.stories.append(story_info)\n    ^^^^\nIndentationError: expected an indented block after 'if' statement on line 263\n",
+      "status": "failed"
+    },
+    {
+      "script": "wiki/update/update_modules_index.py",
+      "error": "  File \"C:\\Users\\Dell\\Documents\\GitHub\\otclient_doc\\wiki\\update\\update_modules_index.py\", line 306\n    indexer = ModulesIndexer()\n    ^^^^^^^\nIndentationError: expected an indented block after 'try' statement on line 305\n",
+      "status": "failed"
+    },
+    {
+      "script": "wiki/update/update_styles_index.py",
+      "error": "  File \"C:\\Users\\Dell\\Documents\\GitHub\\otclient_doc\\wiki\\update\\update_styles_index.py\", line 259\n    self.styles.append(style_info)\n    ^^^^\nIndentationError: expected an indented block after 'if' statement on line 258\n",
+      "status": "failed"
+    },
+    {
+      "script": "wiki/update/update_resources_index.py",
+      "error": "  File \"C:\\Users\\Dell\\Documents\\GitHub\\otclient_doc\\wiki\\update\\update_resources_index.py\", line 116\n    metadata = self.extract_font_metadata(file_path)\n    ^^^^^^^^\nIndentationError: expected an indented block after 'if' statement on line 115\n",
+      "status": "failed"
+    },
+    {
+      "script": "wiki/update/update_tools_index.py",
+      "error": "  File \"C:\\Users\\Dell\\Documents\\GitHub\\otclient_doc\\wiki\\update\\update_tools_index.py\", line 104\n    with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:\nIndentationError: expected an indented block after 'if' statement on line 103\n",
+      "status": "failed"
+    }
+  ],
+  "maps_validated": [
+    "wiki/maps/otclient_source_index.json",
+    "wiki/maps/habdel_index.json",
+    "wiki/maps/modules_index.json",
+    "wiki/maps/styles_index.json",
+    "wiki/maps/resources_index.json",
+    "wiki/maps/tools_index.json",
+    "wiki/maps/tags_index.json",
+    "wiki/maps/wiki_map.json",
+    "wiki/maps/relationships.json"
+  ],
+  "maps_invalid": [],
+  "total_files_indexed": 577,
+  "performance_metrics": {},
+  "errors": []
+}

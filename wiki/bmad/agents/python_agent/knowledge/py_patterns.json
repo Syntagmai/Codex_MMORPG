@@ -1,0 +1,14 @@
+[
+  {
+    "erro": "NameError: name 'request' is not defined",
+    "correcao": "import requests  # corrigir import",
+    "padrão": "uso de 'requests' sem import",
+    "tag": "missing-import"
+  },
+  {
+    "erro": "TypeError: expected str, got int",
+    "correcao": "usar str(var) ao concatenar com strings",
+    "padrão": "concatenação de int com string",
+    "tag": "type-coercion"
+  }
+]

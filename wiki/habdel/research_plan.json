@@ -1,0 +1,108 @@
+{
+  "phases": [
+    {
+      "id": "phase_1",
+      "name": "Estrutura e Metodologia",
+      "duration": "2 semanas",
+      "stories": [
+        "METHODOLOGY-001",
+        "METHODOLOGY-002",
+        "METHODOLOGY-003"
+      ],
+      "deliverables": [
+        "Estrutura de pastas habdel",
+        "Sistema de stories",
+        "Templates de pesquisa"
+      ]
+    },
+    {
+      "id": "phase_2",
+      "name": "Análise OTClient",
+      "duration": "4 semanas",
+      "stories": [
+        "OTCLIENT-001",
+        "OTCLIENT-002",
+        "OTCLIENT-003",
+        "OTCLIENT-004",
+        "OTCLIENT-005",
+        "OTCLIENT-006",
+        "OTCLIENT-007",
+        "OTCLIENT-008",
+        "OTCLIENT-009",
+        "OTCLIENT-010",
+        "OTCLIENT-011",
+        "OTCLIENT-012",
+        "OTCLIENT-013",
+        "OTCLIENT-014",
+        "OTCLIENT-015",
+        "OTCLIENT-016",
+        "OTCLIENT-017",
+        "OTCLIENT-018",
+        "OTCLIENT-019",
+        "OTCLIENT-020"
+      ],
+      "deliverables": [
+        "Documentação completa OTClient",
+        "Análises técnicas detalhadas",
+        "Exemplos práticos"
+      ]
+    },
+    {
+      "id": "phase_3",
+      "name": "Análise Canary",
+      "duration": "4 semanas",
+      "stories": [
+        "CANARY-001",
+        "CANARY-002",
+        "CANARY-003",
+        "CANARY-004",
+        "CANARY-005",
+        "CANARY-006",
+        "CANARY-007",
+        "CANARY-008",
+        "CANARY-009",
+        "CANARY-010",
+        "CANARY-011",
+        "CANARY-012",
+        "CANARY-013",
+        "CANARY-014",
+        "CANARY-015",
+        "CANARY-016",
+        "CANARY-017",
+        "CANARY-018",
+        "CANARY-019",
+        "CANARY-020"
+      ],
+      "deliverables": [
+        "Documentação completa Canary",
+        "Análises técnicas detalhadas",
+        "Exemplos práticos"
+      ]
+    },
+    {
+      "id": "phase_4",
+      "name": "Integração e Comparação",
+      "duration": "2 semanas",
+      "stories": [
+        "INTEGRATION-001",
+        "INTEGRATION-002",
+        "INTEGRATION-003",
+        "INTEGRATION-004",
+        "INTEGRATION-005",
+        "INTEGRATION-006",
+        "INTEGRATION-007",
+        "INTEGRATION-008",
+        "INTEGRATION-009",
+        "INTEGRATION-010"
+      ],
+      "deliverables": [
+        "Análises comparativas",
+        "Guias de migração",
+        "Sistema integrado"
+      ]
+    }
+  ],
+  "timeline": {},
+  "resources": [],
+  "deliverables": []
+}

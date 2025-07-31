@@ -1,0 +1,600 @@
+{
+  "category": "LUA_INTEGRATION",
+  "description": "Integração com Lua e scripts",
+  "files_analyzed": 14,
+  "detailed_analyses": [
+    {
+      "file": "modules\\corelib\\bitwise.lua",
+      "total_lines": 17,
+      "code_lines": 13,
+      "comment_lines": 0,
+      "empty_lines": 4,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\config.lua",
+      "total_lines": 73,
+      "code_lines": 62,
+      "comment_lines": 0,
+      "empty_lines": 11,
+      "functions": [
+        {
+          "line": 2,
+          "return_type": "function",
+          "name": "convertSettingValue"
+        },
+        {
+          "line": 3,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 5,
+          "return_type": "return",
+          "name": "recttostring"
+        },
+        {
+          "line": 7,
+          "return_type": "return",
+          "name": "pointtostring"
+        },
+        {
+          "line": 9,
+          "return_type": "return",
+          "name": "sizetostring"
+        },
+        {
+          "line": 11,
+          "return_type": "return",
+          "name": "colortostring"
+        },
+        {
+          "line": 18,
+          "return_type": "return",
+          "name": "tostring"
+        },
+        {
+          "line": 56,
+          "return_type": "return",
+          "name": "toboolean"
+        },
+        {
+          "line": 60,
+          "return_type": "return",
+          "name": "topoint"
+        },
+        {
+          "line": 64,
+          "return_type": "return",
+          "name": "torect"
+        },
+        {
+          "line": 68,
+          "return_type": "return",
+          "name": "tosize"
+        },
+        {
+          "line": 72,
+          "return_type": "return",
+          "name": "tocolor"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\http.lua",
+      "total_lines": 310,
+      "code_lines": 284,
+      "comment_lines": 0,
+      "empty_lines": 26,
+      "functions": [
+        {
+          "line": 13,
+          "return_type": "return",
+          "name": "error"
+        },
+        {
+          "line": 22,
+          "return_type": "return",
+          "name": "error"
+        },
+        {
+          "line": 31,
+          "return_type": "return",
+          "name": "error"
+        },
+        {
+          "line": 34,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 50,
+          "return_type": "return",
+          "name": "error"
+        },
+        {
+          "line": 52,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 62,
+          "return_type": "return",
+          "name": "error"
+        },
+        {
+          "line": 77,
+          "return_type": "return",
+          "name": "error"
+        },
+        {
+          "line": 94,
+          "return_type": "return",
+          "name": "error"
+        },
+        {
+          "line": 108,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 290,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\corelib\\math.lua",
+      "total_lines": 34,
+      "code_lines": 28,
+      "comment_lines": 0,
+      "empty_lines": 6,
+      "functions": [],
+      "classes": [
+        {
+          "line": 1,
+          "name": "math"
+        }
+      ],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\objectpool.lua",
+      "total_lines": 29,
+      "code_lines": 25,
+      "comment_lines": 0,
+      "empty_lines": 4,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\settings.lua",
+      "total_lines": 3,
+      "code_lines": 2,
+      "comment_lines": 0,
+      "empty_lines": 1,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\string.lua",
+      "total_lines": 76,
+      "code_lines": 67,
+      "comment_lines": 0,
+      "empty_lines": 9,
+      "functions": [
+        {
+          "line": 31,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 36,
+          "return_type": "in",
+          "name": "function"
+        }
+      ],
+      "classes": [
+        {
+          "line": 1,
+          "name": "string"
+        }
+      ],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\struct.lua",
+      "total_lines": 174,
+      "code_lines": 148,
+      "comment_lines": 0,
+      "empty_lines": 26,
+      "functions": [
+        {
+          "line": 173,
+          "return_type": "return",
+          "name": "unpack"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\table.lua",
+      "total_lines": 327,
+      "code_lines": 298,
+      "comment_lines": 0,
+      "empty_lines": 29,
+      "functions": [
+        {
+          "line": 6,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 8,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 18,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 25,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 33,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 34,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 45,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 52,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 58,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 59,
+          "return_type": "and",
+          "name": "type"
+        },
+        {
+          "line": 71,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 72,
+          "return_type": "and",
+          "name": "type"
+        },
+        {
+          "line": 88,
+          "return_type": "and",
+          "name": "type"
+        },
+        {
+          "line": 89,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 102,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 113,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 129,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 138,
+          "return_type": "and",
+          "name": "type"
+        },
+        {
+          "line": 139,
+          "return_type": "return",
+          "name": "next"
+        },
+        {
+          "line": 154,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 164,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 174,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 189,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 201,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 207,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 208,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 226,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 230,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 244,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 245,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 254,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 255,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 264,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 280,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 316,
+          "return_type": "not",
+          "name": "fnc"
+        }
+      ],
+      "classes": [
+        {
+          "line": 1,
+          "name": "table"
+        }
+      ],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\gamelib\\position.lua",
+      "total_lines": 105,
+      "code_lines": 89,
+      "comment_lines": 0,
+      "empty_lines": 16,
+      "functions": [
+        {
+          "line": 28,
+          "return_type": "return",
+          "name": "not"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\gamelib\\util.lua",
+      "total_lines": 16,
+      "code_lines": 14,
+      "comment_lines": 0,
+      "empty_lines": 2,
+      "functions": [
+        {
+          "line": 1,
+          "return_type": "function",
+          "name": "postostring"
+        },
+        {
+          "line": 5,
+          "return_type": "function",
+          "name": "dirtostring"
+        },
+        {
+          "line": 6,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 13,
+          "return_type": "function",
+          "name": "comma_value"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_market\\offerstatistic.lua",
+      "total_lines": 101,
+      "code_lines": 82,
+      "comment_lines": 0,
+      "empty_lines": 19,
+      "functions": [
+        {
+          "line": 38,
+          "return_type": "or",
+          "name": "type"
+        },
+        {
+          "line": 49,
+          "return_type": "or",
+          "name": "type"
+        },
+        {
+          "line": 60,
+          "return_type": "or",
+          "name": "type"
+        },
+        {
+          "line": 71,
+          "return_type": "or",
+          "name": "type"
+        },
+        {
+          "line": 82,
+          "return_type": "or",
+          "name": "type"
+        },
+        {
+          "line": 93,
+          "return_type": "or",
+          "name": "type"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\modulelib\\ext\\translator.lua",
+      "total_lines": 77,
+      "code_lines": 64,
+      "comment_lines": 0,
+      "empty_lines": 13,
+      "functions": [
+        {
+          "line": 24,
+          "return_type": "function",
+          "name": "translateStyleName"
+        },
+        {
+          "line": 48,
+          "return_type": "function",
+          "name": "translateAttribute"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\modulelib\\htmlcssparser\\luacs.lua",
+      "total_lines": 136,
+      "code_lines": 122,
+      "comment_lines": 0,
+      "empty_lines": 14,
+      "functions": [
+        {
+          "line": 11,
+          "return_type": "return",
+          "name": "setmetatable"
+        },
+        {
+          "line": 30,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 54,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 62,
+          "return_type": "function",
+          "name": "replace_string"
+        },
+        {
+          "line": 127,
+          "return_type": "in",
+          "name": "ipairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    }
+  ],
+  "metrics": {
+    "total_functions": 79,
+    "total_classes": 3,
+    "total_lines": 1298
+  }
+}

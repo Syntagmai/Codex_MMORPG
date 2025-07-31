@@ -1,0 +1,9 @@
+Module
+  name: game_achievements
+  description: Sistema de conquistas e progresso do jogador
+  author: BMAD AI Agent
+  website: https://github.com/edubart/otclient
+  sandboxed: true
+  scripts: [ achievements ]
+  @onLoad: achievementsController:init()
+  @onUnload: achievementsController:terminate()

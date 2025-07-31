@@ -1,0 +1,394 @@
+{
+  "architecture": {},
+  "systems": {
+    "OTCLIENT-001": {
+      "story_id": "OTCLIENT-001",
+      "title": "Core System Analysis",
+      "description": "Análise profunda do sistema core",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação",
+        "Sistema core - priorizar estabilidade e performance"
+      ]
+    },
+    "OTCLIENT-002": {
+      "story_id": "OTCLIENT-002",
+      "title": "Graphics System",
+      "description": "Sistema de gráficos e renderização",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação",
+        "Sistema gráfico - otimizar renderização e compatibilidade"
+      ]
+    },
+    "OTCLIENT-003": {
+      "story_id": "OTCLIENT-003",
+      "title": "Network System",
+      "description": "Sistema de rede e protocolos",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação",
+        "Sistema de rede - priorizar segurança e eficiência"
+      ]
+    },
+    "OTCLIENT-004": {
+      "story_id": "OTCLIENT-004",
+      "title": "Audio System",
+      "description": "Sistema de áudio e sons",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação"
+      ]
+    },
+    "OTCLIENT-005": {
+      "story_id": "OTCLIENT-005",
+      "title": "UI Framework",
+      "description": "Framework de interface do usuário",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação",
+        "Framework UI - focar em usabilidade e flexibilidade"
+      ]
+    },
+    "OTCLIENT-006": {
+      "story_id": "OTCLIENT-006",
+      "title": "Module System",
+      "description": "Sistema de módulos Lua",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação"
+      ]
+    },
+    "OTCLIENT-007": {
+      "story_id": "OTCLIENT-007",
+      "title": "Game Logic",
+      "description": "Lógica do jogo e mecânicas",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação"
+      ]
+    },
+    "OTCLIENT-008": {
+      "story_id": "OTCLIENT-008",
+      "title": "Resource Management",
+      "description": "Gerenciamento de recursos",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação"
+      ]
+    },
+    "OTCLIENT-009": {
+      "story_id": "OTCLIENT-009",
+      "title": "Configuration System",
+      "description": "Sistema de configuração",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação"
+      ]
+    },
+    "OTCLIENT-010": {
+      "story_id": "OTCLIENT-010",
+      "title": "Event System",
+      "description": "Sistema de eventos e callbacks",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação"
+      ]
+    },
+    "OTCLIENT-011": {
+      "story_id": "OTCLIENT-011",
+      "title": "Animation System",
+      "description": "Sistema de animações",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação"
+      ]
+    },
+    "OTCLIENT-012": {
+      "story_id": "OTCLIENT-012",
+      "title": "Effect System",
+      "description": "Sistema de efeitos visuais",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação"
+      ]
+    },
+    "OTCLIENT-013": {
+      "story_id": "OTCLIENT-013",
+      "title": "World System",
+      "description": "Sistema de mundo e mapas",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação"
+      ]
+    },
+    "OTCLIENT-014": {
+      "story_id": "OTCLIENT-014",
+      "title": "Creature System",
+      "description": "Sistema de criaturas",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação"
+      ]
+    },
+    "OTCLIENT-015": {
+      "story_id": "OTCLIENT-015",
+      "title": "Item System",
+      "description": "Sistema de itens",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação"
+      ]
+    },
+    "OTCLIENT-016": {
+      "story_id": "OTCLIENT-016",
+      "title": "Combat System",
+      "description": "Sistema de combate",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação"
+      ]
+    },
+    "OTCLIENT-017": {
+      "story_id": "OTCLIENT-017",
+      "title": "Storage System",
+      "description": "Sistema de armazenamento",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação"
+      ]
+    },
+    "OTCLIENT-018": {
+      "story_id": "OTCLIENT-018",
+      "title": "Security System",
+      "description": "Sistema de segurança",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação"
+      ]
+    },
+    "OTCLIENT-019": {
+      "story_id": "OTCLIENT-019",
+      "title": "Performance System",
+      "description": "Sistema de performance",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação"
+      ]
+    },
+    "OTCLIENT-020": {
+      "story_id": "OTCLIENT-020",
+      "title": "Debug System",
+      "description": "Sistema de debug e logging",
+      "status": "completed",
+      "files_analyzed": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "classes": [],
+      "functions": [],
+      "apis": [],
+      "dependencies": [],
+      "issues": [],
+      "recommendations": [
+        "Sistema não encontrado no código-fonte - verificar mapeamento",
+        "Baixa complexidade - verificar se está completo",
+        "Nenhuma API identificada - verificar documentação"
+      ]
+    }
+  },
+  "files_analyzed": 0,
+  "total_lines": 0,
+  "complexity_score": 0,
+  "dependencies": {},
+  "apis": {}
+}

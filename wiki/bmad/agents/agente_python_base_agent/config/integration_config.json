@@ -1,0 +1,15 @@
+{
+  "agent_type": "python",
+  "version": "1.0",
+  "description": "python development agent",
+  "capabilities": [
+    "analysis",
+    "optimization",
+    "validation"
+  ],
+  "settings": {
+    "auto_analyze": true,
+    "auto_optimize": false,
+    "log_level": "info"
+  }
+}

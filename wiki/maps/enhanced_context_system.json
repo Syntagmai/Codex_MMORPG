@@ -1,0 +1,176 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "last_updated": "2025-07-28T20:39:49.471292",
+    "description": "Sistema de contexto avançado e navegação inteligente"
+  },
+  "context_system": {
+    "version": "2.0",
+    "last_updated": "2025-07-28T20:39:49.471292",
+    "repository_info": {
+      "name": "otclient_doc",
+      "type": "otclient",
+      "description": "Documentação e sistema de regras do OTClient",
+      "main_focus": "client_side_development",
+      "integration_target": "canary_server"
+    },
+    "directory_structure": {
+      "root": {
+        "path": "/",
+        "description": "Raiz do repositório principal (BMAD Agent)",
+        "permissions": "full_access",
+        "key_files": [
+          "cursor.md",
+          ".gitmodules",
+          "README.md"
+        ]
+      },
+      "otclient_submodule": {
+        "path": "otclient/",
+        "description": "Submódulo OTClient (imutável, fonte de verdade)",
+        "permissions": "read_only"
+      },
+      "canary_submodule": {
+        "path": "canary/",
+        "description": "Submódulo Canary (imutável, fonte de verdade)",
+        "permissions": "read_only"
+      },
+      "wiki": {
+        "path": "wiki/",
+        "description": "Documentação e automação (editável)",
+        "permissions": "full_access",
+        "subdirectories": {
+          "bmad": "Documentação bmad",
+          "integration": "Documentação de integração",
+          "otclient": "Documentação OTClient",
+          "canary": "Documentação Canary",
+          "maps": "Mapas de navegação"
+        }
+      },
+      "cursor_rules": {
+        "path": ".cursor/rules/",
+        "description": "Sistema de regras do assistente",
+        "permissions": "full_access",
+        "total_rules": 25
+      }
+    },
+    "navigation_system": {
+      "primary_indexes": {
+        "wiki_map": "wiki/maps/wiki_map.json",
+        "tags_index": "wiki/maps/tags_index.json",
+        "relationships": "wiki/maps/relationships.json",
+        "source_index": "wiki/maps/otclient_source_index.json",
+        "modules_index": "wiki/maps/modules_index.json",
+        "resources_index": "wiki/maps/resources_index.json",
+        "styles_index": "wiki/maps/styles_index.json",
+        "tools_index": "wiki/maps/tools_index.json",
+        "bmad_agents": "wiki/maps/bmad_agents_index.json",
+        "bmad_workflows": "wiki/maps/bmad_workflows_index.json",
+        "bmad_templates": "wiki/maps/bmad_templates_index.json",
+        "habdel_index": "wiki/maps/habdel_index.json"
+      },
+      "context_rules": {
+        "otclient_focus": {
+          "priority": "high",
+          "paths": [
+            "src/client/",
+            "modules/client_",
+            "data/"
+          ],
+          "documentation": "wiki/otclient/",
+          "integration": "wiki/integration/"
+        },
+        "bmad_system": {
+          "priority": "medium",
+          "paths": [
+            "wiki/bmad/",
+            ".cursor/rules/"
+          ],
+          "documentation": "wiki/bmad/",
+          "agents": "wiki/maps/bmad_agents_index.json"
+        },
+        "integration_focus": {
+          "priority": "medium",
+          "paths": [
+            "wiki/integration/"
+          ],
+          "documentation": "wiki/integration/",
+          "cross_project": true
+        }
+      },
+      "quick_access": {
+        "frequently_used": [
+          "cursor.md",
+          "wiki/otclient_wiki.md",
+          ".cursor/rules/rules.md",
+          "wiki/maps/tags_index.json"
+        ],
+        "context_switchers": [
+          "wiki/maps/context_data.json",
+          "wiki/maps/enhanced_context_system.json"
+        ],
+        "performance_monitors": [
+          "wiki/log/performance_metrics.json",
+          "wiki/log/system_status.json"
+        ]
+      }
+    },
+    "performance_optimization": {
+      "cache_strategy": {
+        "file_structure": 300,
+        "json_maps": 600,
+        "context_data": 1800,
+        "rule_references": 900
+      },
+      "search_limits": {
+        "max_results": 50,
+        "max_depth": 3,
+        "max_file_reads": 10,
+        "timeout_seconds": 30
+      },
+      "lazy_loading": {
+        "enabled": true,
+        "rules": true,
+        "maps": true,
+        "documentation": false
+      }
+    },
+    "context_detection": {
+      "automatic": true,
+      "indicators": {
+        "otclient": [
+          "otclient/src/",
+          "otclient/modules/",
+          "otclient/data/",
+          "otclient/docs/"
+        ],
+        "canary": [
+          "canary/src/",
+          "canary/modules/",
+          "canary/data/",
+          "canary/docs/"
+        ],
+        "bmad": [
+          "bmad/",
+          "wiki/bmad/"
+        ],
+        "unified": [
+          "wiki/",
+          "wiki/integration/"
+        ]
+      },
+      "fallback": "unified"
+    },
+    "integration_status": {
+      "otclient": "active",
+      "canary": "planned",
+      "unified": "in_progress",
+      "bmad": "active"
+    }
+  },
+  "_metadata": {
+    "base_path": "C:\\Users\\Dell\\Documents\\GitHub\\otclient_doc",
+    "updated": "2025-07-29T01:54:39.438200",
+    "absolute_paths": true
+  }
+}

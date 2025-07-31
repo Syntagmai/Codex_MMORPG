@@ -1,0 +1,542 @@
+{
+  "metadata": {
+    "version": "1.1",
+    "last_updated": "2025-07-29T12:00:00",
+    "total_documents": 28,
+    "context": "unified",
+    "description": "Mapa de navegação unificado com submódulos OTClient e Canary como fontes de verdade imutáveis."
+  },
+  "categories": {
+    "otclient_submodule": {
+      "name": "OTClient Submodule (imutável)",
+      "description": "Fonte de verdade do código OTClient. Nunca editar por este repositório.",
+      "documents": []
+    },
+    "canary_submodule": {
+      "name": "Canary Submodule (imutável)",
+      "description": "Fonte de verdade do código Canary. Nunca editar por este repositório.",
+      "documents": []
+    },
+    "core": {
+      "name": "Core Systems",
+      "documents": [
+        "Cheat_Sheet.md",
+        "Documentation_Status.md",
+        "Wiki_Index.md",
+        "Wiki_Optimization_Report.md",
+        "otclient_wiki.md"
+      ]
+    },
+    "ui": {
+      "name": "User Interface",
+      "documents": [
+        "Advanced_Configuration_Guide.md",
+        "Animation_System_Guide.md",
+        "Combat_System_Guide.md",
+        "Configuration_Guide.md",
+        "Creature_System_Guide.md",
+        "Debug_System_Guide.md",
+        "Drag_Drop_System_Guide.md",
+        "Effects_System_Guide.md",
+        "Getting_Started_Guide.md",
+        "Graphics_System_Guide.md",
+        "Guia_Busca_Rapida.md",
+        "Item_System_Guide.md",
+        "Map_System_Guide.md",
+        "Module_Development_Guide.md",
+        "Module_System_Guide.md",
+        "Network_System_Guide.md",
+        "OTUI_Module_Development_Guide.md",
+        "Performance_System_Guide.md",
+        "Protocol_System_Guide.md",
+        "Sound_System_Guide.md",
+        "UI_System_Guide.md",
+        "World_System_Guide.md"
+      ]
+    },
+    "development": {
+      "name": "Development",
+      "documents": []
+    },
+    "reference": {
+      "name": "Reference",
+      "documents": [
+        "Lua_API_Reference.md"
+      ]
+    },
+    "integration": {
+      "name": "Integration",
+      "documents": []
+    }
+  },
+  "files": {
+    "Advanced_Configuration_Guide.md": {
+      "title": "Configurationadvanced",
+      "tags": [
+        "otclient",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Configurationadvanced"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Animation_System_Guide.md": {
+      "title": "Animation_System_Guide",
+      "tags": [
+        "otclient",
+        "animations",
+        "transitions",
+        "ui",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Sistema de Animações",
+        "Animation System",
+        "UI Animations",
+        "Transitions",
+        "Tweening"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Cheat_Sheet.md": {
+      "title": "Cheatsheet",
+      "tags": [
+        "otclient",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Cheatsheet"
+      ],
+      "category": "core",
+      "description": ""
+    },
+    "Combat_System_Guide.md": {
+      "title": "Combat_System_Guide",
+      "tags": [
+        "otclient",
+        "combat",
+        "battle",
+        "damage",
+        "system",
+        "guide",
+        "documentation",
+        "game-state-sync",
+        "canary",
+        "integration"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Sistema de Combate",
+        "Combat System",
+        "Battle System",
+        "Damage System"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Configuration_Guide.md": {
+      "title": "Configuration",
+      "tags": [
+        "otclient",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Configuration"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Creature_System_Guide.md": {
+      "title": "Creaturesystem",
+      "tags": [
+        "otclient",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Creaturesystem"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Debug_System_Guide.md": {
+      "title": "Debug_System_Guide",
+      "tags": [
+        "otclient",
+        "debug",
+        "logging",
+        "development",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Debug System",
+        "Depuração",
+        "Sistema de Debug",
+        "Debugging",
+        "Development Tools",
+        "Logging System",
+        "Debug"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Documentation_Status.md": {
+      "title": "Documentation_Status",
+      "tags": [
+        "otclient",
+        "documentation",
+        "status",
+        "progress",
+        "wiki"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Status da Documentação",
+        "Progresso da Wiki",
+        "Documentação Completa"
+      ],
+      "category": "core",
+      "description": ""
+    },
+    "Drag_Drop_System_Guide.md": {
+      "title": "Drag_Drop_System_Guide",
+      "tags": [
+        "otclient",
+        "drag-drop",
+        "ui",
+        "interaction",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Sistema de Drag Drop",
+        "Drag and Drop",
+        "UI Interaction",
+        "Drag System"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Effects_System_Guide.md": {
+      "title": "Effectssystem",
+      "tags": [
+        "otclient",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Effectssystem"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Getting_Started_Guide.md": {
+      "title": "Gettingstarted",
+      "tags": [
+        "otclient",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Gettingstarted"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Graphics_System_Guide.md": {
+      "title": "Graphicssystem",
+      "tags": [
+        "otclient",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Graphicssystem"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Guia_Busca_Rapida.md": {
+      "title": "Guia_Busca_Rapida",
+      "tags": [
+        "otclient",
+        "wiki",
+        "busca",
+        "navegação",
+        "ajuda"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Busca Rápida",
+        "Como Encontrar",
+        "Navegação Rápida",
+        "Ajuda"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Item_System_Guide.md": {
+      "title": "Itemsystem",
+      "tags": [
+        "otclient",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Itemsystem"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Lua_API_Reference.md": {
+      "title": "Lua_API_Reference",
+      "tags": [],
+      "status": "unknown",
+      "aliases": [],
+      "category": "reference",
+      "description": ""
+    },
+    "Map_System_Guide.md": {
+      "title": "Map_System_Guide",
+      "tags": [
+        "otclient",
+        "map",
+        "world",
+        "tiles",
+        "creatures",
+        "pathfinding",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Sistema de Mapas",
+        "World System",
+        "Map System",
+        "OTClient Maps"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Module_Development_Guide.md": {
+      "title": "Firstmodule",
+      "tags": [
+        "otclient",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Firstmodule"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Module_System_Guide.md": {
+      "title": "Modulesystem",
+      "tags": [
+        "otclient",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Modulesystem"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Network_System_Guide.md": {
+      "title": "Networksystem",
+      "tags": [
+        "otclient",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Networksystem"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "OTUI_Module_Development_Guide.md": {
+      "title": "OTUI_Module_Development_Guide",
+      "tags": [
+        "otclient",
+        "modules",
+        "otui",
+        "development",
+        "completed",
+        "guide"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Module Development",
+        "OTUI Guide",
+        "Module Creation"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Performance_System_Guide.md": {
+      "title": "Performance_System_Guide",
+      "tags": [
+        "otclient",
+        "performance",
+        "optimization",
+        "profiling",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Sistema de Performance",
+        "Performance System",
+        "Optimization System",
+        "Profiling"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Protocol_System_Guide.md": {
+      "title": "Protocol",
+      "tags": [
+        "otclient",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Protocol"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Sound_System_Guide.md": {
+      "title": "Soundsystem",
+      "tags": [
+        "otclient",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Soundsystem"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "UI_System_Guide.md": {
+      "title": "UI_System_Guide",
+      "tags": [
+        "otclient",
+        "ui",
+        "widgets",
+        "layouts",
+        "events",
+        "styling",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Widgets",
+        "Interface do Usuário",
+        "OTClient UI",
+        "Sistema de UI",
+        "Interface",
+        "UI",
+        "Layouts",
+        "UI System"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "Wiki_Index.md": {
+      "title": "Wiki_Index",
+      "tags": [],
+      "status": "unknown",
+      "aliases": [],
+      "category": "core",
+      "description": ""
+    },
+    "Wiki_Optimization_Report.md": {
+      "title": "Wiki_Optimization_Report",
+      "tags": [],
+      "status": "unknown",
+      "aliases": [],
+      "category": "core",
+      "description": ""
+    },
+    "World_System_Guide.md": {
+      "title": "Worldsystem",
+      "tags": [
+        "otclient",
+        "system",
+        "guide",
+        "documentation"
+      ],
+      "status": "completed",
+      "aliases": [
+        "Worldsystem"
+      ],
+      "category": "ui",
+      "description": ""
+    },
+    "otclient_wiki.md": {
+      "title": "otclient_wiki",
+      "tags": [
+        "otclient",
+        "wiki",
+        "documentation",
+        "index",
+        "guide"
+      ],
+      "status": "unknown",
+      "aliases": [
+        "OTClient Wiki",
+        "Documentação OTClient",
+        "Wiki Principal"
+      ],
+      "category": "core",
+      "description": ""
+    }
+  }
+}

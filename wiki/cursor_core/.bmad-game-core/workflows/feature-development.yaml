@@ -1,0 +1,333 @@
+workflow:
+  name: "Feature Development Workflow"
+  description: "Complete MMORPG feature development from concept to deployment"
+  version: "1.0.0"
+  type: "feature_development"
+  
+metadata:
+  estimated_duration: "2-4 weeks"
+  team_size: "3-7 people"
+  complexity: "medium_to_high"
+  prerequisites:
+    - "Active game development team"
+    - "Established development environment"
+    - "Basic BMAD framework setup"
+
+phases:
+  - phase_id: "concept_design"
+    name: "Concept and Design Phase"
+    description: "Define feature requirements and create comprehensive design"
+    estimated_duration: "3-5 days"
+    
+    steps:
+      - step_id: "feature_concept"
+        agent: "game_designer"
+        action: "create-feature-concept"
+        description: "Create initial feature concept and player value proposition"
+        deliverables:
+          - "Feature concept document"
+          - "Player journey mapping"
+          - "Initial requirements outline"
+        success_criteria:
+          - "Clear player motivation identified"
+          - "Feature scope well-defined"
+          - "Initial technical feasibility confirmed"
+      
+      - step_id: "technical_design"
+        agent: "engine_developer"
+        action: "design-architecture"
+        description: "Create technical architecture and implementation plan"
+        dependencies: ["feature_concept"]
+        deliverables:
+          - "Technical architecture document"
+          - "API specifications"
+          - "Database schema changes"
+          - "Performance requirements"
+        success_criteria:
+          - "Technical approach validated"
+          - "Resource requirements estimated"
+          - "Integration points identified"
+      
+      - step_id: "content_planning"
+        agent: "content_creator"
+        action: "plan-content-implementation"
+        description: "Plan Lua scripting and content requirements"
+        dependencies: ["feature_concept", "technical_design"]
+        deliverables:
+          - "Content implementation plan"
+          - "Lua scripting requirements"
+          - "Asset and data requirements"
+        success_criteria:
+          - "Content scope defined"
+          - "Scripting approach planned"
+          - "Data requirements specified"
+      
+      - step_id: "spatial_requirements"
+        agent: "level_designer"
+        action: "plan-spatial-requirements"
+        description: "Define spatial and world integration requirements"
+        dependencies: ["feature_concept"]
+        deliverables:
+          - "Spatial requirements document"
+          - "World integration plan"
+          - "Performance considerations"
+        success_criteria:
+          - "Spatial needs identified"
+          - "World integration planned"
+          - "Performance impact assessed"
+
+  - phase_id: "implementation"
+    name: "Implementation Phase"
+    description: "Develop feature components in parallel"
+    estimated_duration: "1-2 weeks"
+    
+    steps:
+      - step_id: "engine_implementation"
+        agent: "engine_developer"
+        action: "implement-system"
+        description: "Implement core C++ engine components"
+        dependencies: ["technical_design"]
+        parallel_execution: true
+        deliverables:
+          - "Core engine code"
+          - "API implementations"
+          - "Database schema updates"
+          - "Unit tests"
+        success_criteria:
+          - "Core functionality working"
+          - "APIs properly exposed"
+          - "Performance targets met"
+          - "Tests passing"
+      
+      - step_id: "content_implementation"
+        agent: "content_creator"
+        action: "implement-content"
+        description: "Create Lua scripts and game content"
+        dependencies: ["content_planning", "engine_implementation"]
+        parallel_execution: true
+        deliverables:
+          - "Lua scripts and content"
+          - "Configuration files"
+          - "Content documentation"
+        success_criteria:
+          - "Content functions correctly"
+          - "Scripts are optimized"
+          - "Content is well-documented"
+      
+      - step_id: "world_integration"
+        agent: "level_designer"
+        action: "integrate-spatial-elements"
+        description: "Integrate feature into game world"
+        dependencies: ["spatial_requirements", "content_implementation"]
+        deliverables:
+          - "Updated world areas"
+          - "Spatial feature integration"
+          - "Performance optimization"
+        success_criteria:
+          - "Feature properly integrated"
+          - "Performance acceptable"
+          - "World consistency maintained"
+
+  - phase_id: "testing_validation"
+    name: "Testing and Validation Phase"
+    description: "Comprehensive testing and quality assurance"
+    estimated_duration: "3-5 days"
+    
+    steps:
+      - step_id: "functional_testing"
+        agent: "qa_tester"
+        action: "test-feature"
+        description: "Execute comprehensive functional testing"
+        dependencies: ["engine_implementation", "content_implementation", "world_integration"]
+        deliverables:
+          - "Test execution report"
+          - "Bug reports and fixes"
+          - "Feature validation document"
+        success_criteria:
+          - "All test cases pass"
+          - "Critical bugs resolved"
+          - "Performance acceptable"
+      
+      - step_id: "balance_testing"
+        agent: "qa_tester"
+        action: "balance-test"
+        description: "Validate gameplay balance and player experience"
+        dependencies: ["functional_testing"]
+        deliverables:
+          - "Balance analysis report"
+          - "Player experience validation"
+          - "Recommended adjustments"
+        success_criteria:
+          - "Feature is balanced"
+          - "Player experience positive"
+          - "No exploits identified"
+      
+      - step_id: "integration_testing"
+        agent: "qa_tester"
+        action: "integration-test"
+        description: "Test feature integration with existing systems"
+        dependencies: ["functional_testing"]
+        deliverables:
+          - "Integration test results"
+          - "System compatibility report"
+          - "Regression test results"
+        success_criteria:
+          - "No regressions introduced"
+          - "System integration works"
+          - "Performance maintained"
+
+  - phase_id: "deployment"
+    name: "Deployment Phase"
+    description: "Deploy feature to production environment"
+    estimated_duration: "1-2 days"
+    
+    steps:
+      - step_id: "deployment_preparation"
+        agent: "devops_engineer"
+        action: "prepare-deployment"
+        description: "Prepare production deployment package"
+        dependencies: ["balance_testing", "integration_testing"]
+        deliverables:
+          - "Deployment package"
+          - "Deployment plan"
+          - "Rollback procedures"
+        success_criteria:
+          - "Package validated"
+          - "Procedures documented"
+          - "Rollback tested"
+      
+      - step_id: "production_deployment"
+        agent: "devops_engineer"
+        action: "deploy-release"
+        description: "Execute production deployment"
+        dependencies: ["deployment_preparation"]
+        deliverables:
+          - "Deployment execution log"
+          - "Post-deployment validation"
+          - "Monitoring setup"
+        success_criteria:
+          - "Deployment successful"
+          - "Feature functioning"
+          - "Monitoring active"
+      
+      - step_id: "post_deployment_monitoring"
+        agent: "devops_engineer"
+        action: "monitor-feature-performance"
+        description: "Monitor feature performance and player adoption"
+        dependencies: ["production_deployment"]
+        deliverables:
+          - "Performance monitoring report"
+          - "Player adoption metrics"
+          - "Issue resolution log"
+        success_criteria:
+          - "Performance stable"
+          - "No critical issues"
+          - "Player adoption positive"
+
+handoff_points:
+  - from: "game_designer"
+    to: "engine_developer"
+    deliverable: "Feature concept and requirements"
+    validation_criteria:
+      - "Requirements are clear and testable"
+      - "Technical feasibility confirmed"
+      - "Scope appropriately defined"
+  
+  - from: "engine_developer"
+    to: "content_creator"
+    deliverable: "Technical APIs and interfaces"
+    validation_criteria:
+      - "APIs are complete and documented"
+      - "Performance meets requirements"
+      - "Integration points defined"
+  
+  - from: "content_creator"
+    to: "level_designer"
+    deliverable: "Content requirements and assets"
+    validation_criteria:
+      - "Content is functionally complete"
+      - "Spatial requirements defined"
+      - "Performance acceptable"
+  
+  - from: "level_designer"
+    to: "qa_tester"
+    deliverable: "Integrated feature in game world"
+    validation_criteria:
+      - "Feature is spatially integrated"
+      - "World consistency maintained"
+      - "Performance optimized"
+  
+  - from: "qa_tester"
+    to: "devops_engineer"
+    deliverable: "Validated and tested feature"
+    validation_criteria:
+      - "All tests passing"
+      - "Quality gates met"
+      - "Documentation complete"
+
+quality_gates:
+  - gate_id: "design_approval"
+    phase: "concept_design"
+    criteria:
+      - "Stakeholder design approval received"
+      - "Technical feasibility confirmed"
+      - "Resource allocation approved"
+  
+  - gate_id: "implementation_complete"
+    phase: "implementation"
+    criteria:
+      - "All code reviews passed"
+      - "Unit tests passing"
+      - "Performance benchmarks met"
+  
+  - gate_id: "quality_validation"
+    phase: "testing_validation"
+    criteria:
+      - "Zero critical bugs"
+      - "Performance requirements met"
+      - "Player experience validated"
+  
+  - gate_id: "deployment_readiness"
+    phase: "deployment"
+    criteria:
+      - "Deployment plan approved"
+      - "Rollback procedures tested"
+      - "Monitoring systems configured"
+
+communication_protocols:
+  daily_standups:
+    frequency: "daily"
+    duration: "15 minutes"
+    participants: ["all_active_agents"]
+    focus: "Progress updates, blockers, coordination"
+  
+  phase_reviews:
+    frequency: "end_of_phase"
+    duration: "60 minutes"
+    participants: ["all_team_members", "stakeholders"]
+    focus: "Deliverable review, quality validation, next phase planning"
+  
+  feature_retrospective:
+    frequency: "end_of_workflow"
+    duration: "90 minutes"
+    participants: ["all_team_members"]
+    focus: "Process improvement, lessons learned, team feedback"
+
+success_metrics:
+  development_metrics:
+    - "Time to delivery within estimated range"
+    - "Quality gates passed without major revisions"
+    - "Team satisfaction with process and collaboration"
+    - "Technical debt minimized"
+  
+  feature_metrics:
+    - "Player adoption rate within expected range"
+    - "Performance impact within acceptable limits"
+    - "Bug reports below threshold"
+    - "Player satisfaction scores positive"
+  
+  process_metrics:
+    - "Handoff efficiency and clarity"
+    - "Communication effectiveness"
+    - "Resource utilization optimization"
+    - "Documentation quality and completeness"

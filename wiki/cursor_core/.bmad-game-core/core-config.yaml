@@ -1,0 +1,79 @@
+bmad:
+  version: "1.0.0"
+  name: "BMAD Game Development Framework - Canary Integration"
+  description: "Better Model-Assisted Development Framework for Canary MMORPG Server Development"
+  project_type: "canary_mmorpg_server"
+  
+directories:
+  agents: "./agents"
+  tasks: "./tasks"
+  templates: "./templates"
+  workflows: "./workflows"
+  checklists: "./checklists"
+  data: "./data"
+  utils: "./utils"
+  
+defaults:
+  workflow: "feature-development"
+  orchestrator: "game-team-orchestrator"
+  
+canary_integration:
+  project:
+    name: "Canary MMORPG Server"
+    type: "mmorpg_cpp_server"
+    architecture: "client_server"
+    repository_type: "canary_otserv"
+  
+  build_system:
+    primary: "cmake"
+    package_manager: "vcpkg"
+    supported_platforms: ["linux", "windows", "docker"]
+    compilers: ["gcc-13", "gcc-14", "msvc-2022"]
+    build_tools: ["ninja", "msbuild"]
+  
+  development_environment:
+    languages: ["cpp", "lua", "xml", "yaml"]
+    primary_language: "cpp"
+    scripting_language: "luajit"
+    databases: ["mysql", "mariadb"]
+    networking: ["asio", "tcp_udp"]
+    logging: ["spdlog"]
+    formatting: ["fmt"]
+  
+  ci_cd:
+    platform: "github_actions"
+    quality_tools: ["cppcheck", "clang-format", "luacheck", "stylua"]
+    testing_framework: ["ctest", "unit_tests"]
+    static_analysis: ["reviewdog", "cppcheck"]
+    containerization: ["docker", "ghcr"]
+  
+  deployment:
+    targets: ["docker", "linux_server", "windows_server"]
+    configurations: ["debug", "release"]
+    architectures: ["x86_64", "arm64"]
+  
+features:
+  allow_party_mode: true
+  enable_custom_agents: true
+  enable_rapid_prototyping: true
+  enable_content_pipeline: true
+  enable_performance_tracking: true
+  
+team_structure:
+  core_roles:
+    - game_designer
+    - engine_developer
+    - content_creator
+    - level_designer
+  support_roles:
+    - qa_tester
+    - devops_engineer
+    - community_manager
+  
+development_phases:
+  - concept_design
+  - technical_design
+  - implementation
+  - content_creation
+  - testing_optimization
+  - deployment_maintenance

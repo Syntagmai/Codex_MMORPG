@@ -1,0 +1,50 @@
+{
+  "title": "Metodologia e Templates",
+  "stories": [
+    {
+      "id": "METHODOLOGY-001",
+      "title": "Research Templates",
+      "description": "Templates de pesquisa",
+      "status": "not_started",
+      "priority": "high",
+      "estimated_hours": 6,
+      "created": "2025-07-29T01:04:09.668389"
+    },
+    {
+      "id": "METHODOLOGY-002",
+      "title": "Analysis Workflows",
+      "description": "Workflows de análise",
+      "status": "not_started",
+      "priority": "high",
+      "estimated_hours": 6,
+      "created": "2025-07-29T01:04:09.668392"
+    },
+    {
+      "id": "METHODOLOGY-003",
+      "title": "Documentation Standards",
+      "description": "Padrões de documentação",
+      "status": "not_started",
+      "priority": "high",
+      "estimated_hours": 6,
+      "created": "2025-07-29T01:04:09.668395"
+    },
+    {
+      "id": "METHODOLOGY-004",
+      "title": "Quality Assurance",
+      "description": "Garantia de qualidade",
+      "status": "not_started",
+      "priority": "high",
+      "estimated_hours": 6,
+      "created": "2025-07-29T01:04:09.668398"
+    },
+    {
+      "id": "METHODOLOGY-005",
+      "title": "Integration Tools",
+      "description": "Ferramentas de integração",
+      "status": "not_started",
+      "priority": "high",
+      "estimated_hours": 6,
+      "created": "2025-07-29T01:04:09.668400"
+    }
+  ]
+}

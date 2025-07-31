@@ -1,0 +1,11 @@
+{
+  "category": "RESOURCE_MANAGEMENT",
+  "description": "Gerenciamento de recursos",
+  "files_analyzed": 0,
+  "detailed_analyses": [],
+  "metrics": {
+    "total_functions": 0,
+    "total_classes": 0,
+    "total_lines": 0
+  }
+}

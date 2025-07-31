@@ -1,0 +1,53 @@
+{
+  "project_info": {
+    "name": "Canary",
+    "type": "Tibia Server",
+    "language": "C++",
+    "framework": "OTX",
+    "version": "Latest",
+    "analysis_date": "2025-07-29T22:23:57.786081"
+  },
+  "expected_structure": {
+    "src/": {
+      "description": "Código-fonte principal",
+      "subdirs": [
+        "server/",
+        "client/",
+        "common/",
+        "tools/"
+      ]
+    },
+    "data/": {
+      "description": "Dados do servidor",
+      "subdirs": [
+        "world/",
+        "items/",
+        "creatures/",
+        "scripts/"
+      ]
+    },
+    "docs/": {
+      "description": "Documentação",
+      "subdirs": [
+        "api/",
+        "guides/",
+        "examples/"
+      ]
+    },
+    "tools/": {
+      "description": "Ferramentas de desenvolvimento",
+      "subdirs": [
+        "compiler/",
+        "debugger/",
+        "profiler/"
+      ]
+    }
+  },
+  "analysis_plan": {
+    "phase_1": "Estrutura e arquitetura",
+    "phase_2": "APIs e interfaces",
+    "phase_3": "Comparação com OTClient",
+    "phase_4": "Documentação técnica",
+    "phase_5": "Guias de migração"
+  }
+}

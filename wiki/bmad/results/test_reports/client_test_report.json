@@ -1,0 +1,198 @@
+{
+  "test_date": "2025-07-30T19:21:32.942186",
+  "original_module": "client",
+  "total_variations": 2,
+  "test_criteria": {
+    "syntax_check": true,
+    "structure_validation": true,
+    "dependency_check": true,
+    "compatibility_test": true,
+    "performance_test": true,
+    "security_test": true
+  },
+  "variation_results": [
+    {
+      "variation_name": "client_improved_1",
+      "variation_id": 1,
+      "test_results": {
+        "syntax": {
+          "passed": false,
+          "errors": [
+            "Funções e 'end' desbalanceados: 7 funções, 19 ends"
+          ],
+          "files_tested": 1,
+          "files_with_errors": 1
+        },
+        "structure": {
+          "passed": true,
+          "warnings": [],
+          "structure_changes": {
+            "client.lua": {
+              "functions_added": [
+                "client_improved_1_getInfo",
+                "client_improved_1_init",
+                "client_improved_1_configure"
+              ],
+              "functions_removed": [
+                "init"
+              ],
+              "functions_modified": [
+                "terminate",
+                "setMusic",
+                "startup"
+              ],
+              "variables_added": [
+                "client_improved_1_enabled",
+                "client_improved_1_debug",
+                "client_improved_1_version",
+                "config",
+                "client_improved_1_config"
+              ],
+              "variables_removed": []
+            }
+          },
+          "missing_elements": [],
+          "new_elements": []
+        },
+        "dependencies": {
+          "passed": true,
+          "errors": [],
+          "warnings": [],
+          "missing_deps": [],
+          "unused_deps": []
+        },
+        "compatibility": {
+          "passed": true,
+          "score": 0.9,
+          "issues": [],
+          "compatibility_notes": []
+        },
+        "performance": {
+          "passed": true,
+          "score": 0.9,
+          "issues": [],
+          "metrics": {
+            "total_lines": 128,
+            "total_functions": 7,
+            "total_variables": 11,
+            "complexity_ratio": 0.0546875
+          }
+        },
+        "security": {
+          "passed": false,
+          "score": 0.8,
+          "issues": [],
+          "vulnerabilities": [
+            "Uso de load pode ser inseguro"
+          ]
+        }
+      },
+      "errors": [
+        "Funções e 'end' desbalanceados: 7 funções, 19 ends"
+      ],
+      "warnings": [],
+      "quality_score": 1.0,
+      "compatibility_score": 0.9,
+      "performance_score": 0.9
+    },
+    {
+      "variation_name": "client_basic_2",
+      "variation_id": 2,
+      "test_results": {
+        "syntax": {
+          "passed": false,
+          "errors": [
+            "Funções e 'end' desbalanceados: 6 funções, 18 ends"
+          ],
+          "files_tested": 1,
+          "files_with_errors": 1
+        },
+        "structure": {
+          "passed": true,
+          "warnings": [],
+          "structure_changes": {
+            "client.lua": {
+              "functions_added": [
+                "client_basic_2_getInfo",
+                "client_basic_2_init",
+                "client_basic_2_configure"
+              ],
+              "functions_removed": [
+                "init"
+              ],
+              "functions_modified": [
+                "terminate",
+                "setMusic",
+                "startup"
+              ],
+              "variables_added": [
+                "client_basic_2_config",
+                "config",
+                "client_basic_2_enabled",
+                "client_basic_2_debug",
+                "client_basic_2_version"
+              ],
+              "variables_removed": []
+            }
+          },
+          "missing_elements": [],
+          "new_elements": []
+        },
+        "dependencies": {
+          "passed": true,
+          "errors": [],
+          "warnings": [],
+          "missing_deps": [],
+          "unused_deps": []
+        },
+        "compatibility": {
+          "passed": true,
+          "score": 0.9,
+          "issues": [],
+          "compatibility_notes": []
+        },
+        "performance": {
+          "passed": true,
+          "score": 0.9,
+          "issues": [],
+          "metrics": {
+            "total_lines": 118,
+            "total_functions": 6,
+            "total_variables": 10,
+            "complexity_ratio": 0.05084745762711865
+          }
+        },
+        "security": {
+          "passed": false,
+          "score": 0.8,
+          "issues": [],
+          "vulnerabilities": [
+            "Uso de load pode ser inseguro"
+          ]
+        }
+      },
+      "errors": [
+        "Funções e 'end' desbalanceados: 6 funções, 18 ends"
+      ],
+      "warnings": [],
+      "quality_score": 1.0,
+      "compatibility_score": 0.9,
+      "performance_score": 0.9
+    }
+  ],
+  "summary": {
+    "total_variations": 2,
+    "passed_variations": 2,
+    "failed_variations": 0,
+    "average_quality_score": 1.0,
+    "average_compatibility_score": 0.9,
+    "average_performance_score": 0.9,
+    "total_errors": 2,
+    "total_warnings": 0,
+    "best_variation": "client_improved_1",
+    "worst_variation": "client_improved_1"
+  },
+  "recommendations": [
+    "Encontrados 2 erros. Corrigir problemas de sintaxe."
+  ]
+}

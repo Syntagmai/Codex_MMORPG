@@ -1,0 +1,9 @@
+Module
+  name: game_party_manager
+  description: Gerenciador de grupo com ferramentas avançadas
+  author: BMAD AI Agent
+  website: https://github.com/edubart/otclient
+  sandboxed: true
+  scripts: [ party_manager ]
+  @onLoad: party_managerController:init()
+  @onUnload: party_managerController:terminate()

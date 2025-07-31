@@ -1,0 +1,158 @@
+{
+  "metadata": {
+    "project": "Canary",
+    "version": "3.0.0",
+    "created": "2025-07-29T02:01:15.533123",
+    "total_stories": 25,
+    "categories": [
+      "CORE",
+      "NETWORK",
+      "GAME",
+      "UI",
+      "INTEGRATION"
+    ]
+  },
+  "stories": {
+    "CORE": [
+      {
+        "id": "CANARY-001",
+        "title": "Arquitetura Core",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-002",
+        "title": "Sistema de Eventos",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-003",
+        "title": "Gerenciamento de Memória",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-004",
+        "title": "Sistema de Logs",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-005",
+        "title": "Configuração e Settings",
+        "status": "pending"
+      }
+    ],
+    "NETWORK": [
+      {
+        "id": "CANARY-006",
+        "title": "Protocolo de Comunicação",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-007",
+        "title": "Conexão com Servidor",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-008",
+        "title": "Sistema de Pacotes",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-009",
+        "title": "Criptografia e Segurança",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-010",
+        "title": "Proxy e Firewall",
+        "status": "pending"
+      }
+    ],
+    "GAME": [
+      {
+        "id": "CANARY-011",
+        "title": "Engine de Jogo",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-012",
+        "title": "Sistema de Combate",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-013",
+        "title": "Inventário e Items",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-014",
+        "title": "NPCs e IA",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-015",
+        "title": "Quests e Missões",
+        "status": "pending"
+      }
+    ],
+    "UI": [
+      {
+        "id": "CANARY-016",
+        "title": "Interface Principal",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-017",
+        "title": "Sistema de Janelas",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-018",
+        "title": "HUD e Informações",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-019",
+        "title": "Chat e Comunicação",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-020",
+        "title": "Configurações de UI",
+        "status": "pending"
+      }
+    ],
+    "INTEGRATION": [
+      {
+        "id": "CANARY-021",
+        "title": "Compatibilidade OTClient",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-022",
+        "title": "Migração de Dados",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-023",
+        "title": "APIs Comuns",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-024",
+        "title": "Padrões de Design",
+        "status": "pending"
+      },
+      {
+        "id": "CANARY-025",
+        "title": "Estratégias de Integração",
+        "status": "pending"
+      }
+    ]
+  },
+  "progress": {
+    "completed": 0,
+    "in_progress": 0,
+    "pending": 25,
+    "total": 25
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-07-29T22:18:49.254249",
+  "total_agents_executed": 1,
+  "successful_agents": 0,
+  "failed_agents": 1,
+  "agent_results": {
+    "task_master": {
+      "success": false,
+      "output": "",
+      "error": "2025-07-29 22:18:39,387 - TaskMasterAgent - INFO - \\U0001f527 Carregando configurações do Task Master Agent...\n2025-07-29 22:18:39,390 - TaskMasterAgent - INFO - \\U0001f50d Caminho base: C:\\Users\\Dell\\Documents\\GitHub\\otclient_doc\\wiki\n2025-07-29 22:18:39,390 - TaskMasterAgent - INFO - \\U0001f50d Caminho dashboard: C:\\Users\\Dell\\Documents\\GitHub\\otclient_doc\\wiki\\wiki\\dashboard\n2025-07-29 22:18:39,390 - TaskMasterAgent - INFO - \\U0001f50d Arquivo dashboard: C:\\Users\\Dell\\Documents\\GitHub\\otclient_doc\\wiki\\wiki\\dashboard\\integrated_task_manager.md\n2025-07-29 22:18:39,390 - TaskMasterAgent - INFO - \\u2705 Configurações carregadas com sucesso\n2025-07-29 22:18:39,390 - TaskMasterAgent - INFO - \\U0001f680 Iniciando Task Master Agent...\n2025-07-29 22:18:39,390 - TaskMasterAgent - INFO - \\U0001f4ca Analisando dashboard central...\n2025-07-29 22:18:39,390 - TaskMasterAgent - ERROR - \\u274c Dashboard não encontrado: C:\\Users\\Dell\\Documents\\GitHub\\otclient_doc\\wiki\\wiki\\dashboard\\integrated_task_manager.md\n2025-07-29 22:18:39,390 - TaskMasterAgent - ERROR - \\u274c Falha ao analisar dashboard\nTraceback (most recent call last):\n  File \"C:\\Users\\Dell\\Documents\\GitHub\\otclient_doc\\wiki\\bmad\\agents\\task_master_agent.py\", line 555, in <module>\n    print(\"\\u274c Task Master Agent falhou na execução!\")\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Dell\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\encodings\\cp1252.py\", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'charmap' codec can't encode character '\\u274c' in position 0: character maps to <undefined>\n",
+      "task": {
+        "id": "1.2",
+        "title": "Integrar habdel com wiki principal",
+        "type": "subtask",
+        "current_progress": 0,
+        "target_progress": 100,
+        "priority": "high"
+      },
+      "completion_time": 

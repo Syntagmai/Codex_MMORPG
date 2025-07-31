@@ -1,0 +1,8 @@
+[
+  {
+    "pattern": "quality_pattern",
+    "description": "Description of quality pattern",
+    "severity": "medium",
+    "fix": "How to fix"
+  }
+]

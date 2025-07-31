@@ -1,0 +1,52 @@
+{
+  "systems": {
+    "src": {
+      "name": "src",
+      "files": {},
+      "file_count": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "languages": {},
+      "classes": [],
+      "functions": [],
+      "apis": []
+    },
+    "modules": {
+      "name": "modules",
+      "files": {},
+      "file_count": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "languages": {},
+      "classes": [],
+      "functions": [],
+      "apis": []
+    },
+    "data": {
+      "name": "data",
+      "files": {},
+      "file_count": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "languages": {},
+      "classes": [],
+      "functions": [],
+      "apis": []
+    },
+    "tools": {
+      "name": "tools",
+      "files": {},
+      "file_count": 0,
+      "total_lines": 0,
+      "complexity_score": 0,
+      "languages": {},
+      "classes": [],
+      "functions": [],
+      "apis": []
+    }
+  },
+  "total_files": 0,
+  "total_lines": 0,
+  "complexity_score": 0,
+  "languages": {}
+}

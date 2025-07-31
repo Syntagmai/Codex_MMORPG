@@ -1,0 +1,1699 @@
+{
+  "category": "GAME_LOGIC",
+  "description": "Lógica de jogo e mecânicas",
+  "files_analyzed": 27,
+  "detailed_analyses": [
+    {
+      "file": "src\\client\\luavaluecasts_client.h",
+      "total_lines": 100,
+      "code_lines": 53,
+      "comment_lines": 33,
+      "empty_lines": 14,
+      "functions": [
+        {
+          "line": 29,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 30,
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "line": 33,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 34,
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "line": 37,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 38,
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "line": 41,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 42,
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "line": 45,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 46,
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "line": 49,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 50,
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "line": 53,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 54,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 57,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 58,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 59,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 62,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 63,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 64,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 65,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 66,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 67,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 70,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 71,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 72,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 73,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 74,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 75,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 76,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 77,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 78,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 79,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 80,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 81,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 82,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 83,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 84,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 85,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 86,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 87,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 88,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 89,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 90,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 91,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 94,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 97,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 98,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 99,
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "line": 100,
+          "return_type": "int",
+          "name": "push_luavalue"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "game.h",
+        "outfit.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\client\\player.cpp",
+      "total_lines": 23,
+      "code_lines": 1,
+      "comment_lines": 21,
+      "empty_lines": 1,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "player.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\client\\player.h",
+      "total_lines": 36,
+      "code_lines": 10,
+      "comment_lines": 22,
+      "empty_lines": 4,
+      "functions": [
+        {
+          "line": 34,
+          "return_type": "PlayerPtr",
+          "name": "asPlayer"
+        },
+        {
+          "line": 35,
+          "return_type": "bool",
+          "name": "isPlayer"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "Player"
+        }
+      ],
+      "includes": [
+        "creature.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\core\\modulemanager.h",
+      "total_lines": 59,
+      "code_lines": 27,
+      "comment_lines": 22,
+      "empty_lines": 10,
+      "functions": [
+        {
+          "line": 31,
+          "return_type": "void",
+          "name": "clear"
+        },
+        {
+          "line": 33,
+          "return_type": "void",
+          "name": "discoverModules"
+        },
+        {
+          "line": 34,
+          "return_type": "void",
+          "name": "autoLoadModules"
+        },
+        {
+          "line": 35,
+          "return_type": "ModulePtr",
+          "name": "discoverModule"
+        },
+        {
+          "line": 36,
+          "return_type": "void",
+          "name": "ensureModuleLoaded"
+        },
+        {
+          "line": 37,
+          "return_type": "void",
+          "name": "unloadModules"
+        },
+        {
+          "line": 38,
+          "return_type": "void",
+          "name": "reloadModules"
+        },
+        {
+          "line": 40,
+          "return_type": "ModulePtr",
+          "name": "getModule"
+        },
+        {
+          "line": 42,
+          "return_type": "ModulePtr",
+          "name": "getCurrentModule"
+        },
+        {
+          "line": 43,
+          "return_type": "void",
+          "name": "enableAutoReload"
+        },
+        {
+          "line": 44,
+          "return_type": "bool",
+          "name": "isAutoReloadEnabled"
+        },
+        {
+          "line": 47,
+          "return_type": "void",
+          "name": "updateModuleLoadOrder"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "ModuleManager"
+        },
+        {
+          "line": 49,
+          "name": "Module"
+        }
+      ],
+      "includes": [
+        "module.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\cachedtext.h",
+      "total_lines": 58,
+      "code_lines": 27,
+      "comment_lines": 21,
+      "empty_lines": 10,
+      "functions": [
+        {
+          "line": 32,
+          "return_type": "void",
+          "name": "draw"
+        },
+        {
+          "line": 34,
+          "return_type": "void",
+          "name": "wrapText"
+        },
+        {
+          "line": 35,
+          "return_type": "void",
+          "name": "setFont"
+        },
+        {
+          "line": 36,
+          "return_type": "void",
+          "name": "setText"
+        },
+        {
+          "line": 37,
+          "return_type": "void",
+          "name": "setAlign"
+        },
+        {
+          "line": 39,
+          "return_type": "Size",
+          "name": "getTextSize"
+        },
+        {
+          "line": 40,
+          "return_type": "string",
+          "name": "getText"
+        },
+        {
+          "line": 41,
+          "return_type": "bool",
+          "name": "hasText"
+        },
+        {
+          "line": 42,
+          "return_type": "BitmapFontPtr",
+          "name": "getFont"
+        },
+        {
+          "line": 43,
+          "return_type": "AlignmentFlag",
+          "name": "getAlign"
+        },
+        {
+          "line": 46,
+          "return_type": "void",
+          "name": "update"
+        }
+      ],
+      "classes": [
+        {
+          "line": 27,
+          "name": "CachedText"
+        }
+      ],
+      "includes": [
+        "declarations.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\particlemanager.h",
+      "total_lines": 49,
+      "code_lines": 20,
+      "comment_lines": 21,
+      "empty_lines": 8,
+      "functions": [
+        {
+          "line": 31,
+          "return_type": "bool",
+          "name": "importParticle"
+        },
+        {
+          "line": 32,
+          "return_type": "ParticleEffectPtr",
+          "name": "createEffect"
+        },
+        {
+          "line": 33,
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "line": 35,
+          "return_type": "void",
+          "name": "poll"
+        },
+        {
+          "line": 37,
+          "return_type": "ParticleTypePtr",
+          "name": "getParticleType"
+        },
+        {
+          "line": 38,
+          "return_type": "ParticleEffectTypePtr",
+          "name": "getParticleEffectType"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "ParticleManager"
+        }
+      ],
+      "includes": [
+        "declarations.h",
+        "particletype.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\net\\declarations.h",
+      "total_lines": 52,
+      "code_lines": 27,
+      "comment_lines": 21,
+      "empty_lines": 4,
+      "functions": [],
+      "classes": [
+        {
+          "line": 28,
+          "name": "InputMessage"
+        },
+        {
+          "line": 29,
+          "name": "OutputMessage"
+        },
+        {
+          "line": 31,
+          "name": "WebConnection"
+        },
+        {
+          "line": 33,
+          "name": "Connection"
+        },
+        {
+          "line": 35,
+          "name": "Protocol"
+        },
+        {
+          "line": 36,
+          "name": "ProtocolHttp"
+        },
+        {
+          "line": 37,
+          "name": "Server"
+        },
+        {
+          "line": 38,
+          "name": "PacketPlayer"
+        },
+        {
+          "line": 39,
+          "name": "PacketRecorder"
+        }
+      ],
+      "includes": [
+        "asio/ip/tcp.hpp",
+        "asio/write.hpp"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\otml\\otmlparser.cpp",
+      "total_lines": 212,
+      "code_lines": 130,
+      "comment_lines": 51,
+      "empty_lines": 31,
+      "functions": [
+        {
+          "line": 37,
+          "return_type": "throw",
+          "name": "OTMLException"
+        },
+        {
+          "line": 72,
+          "return_type": "throw",
+          "name": "OTMLException"
+        },
+        {
+          "line": 76,
+          "return_type": "throw",
+          "name": "OTMLException"
+        },
+        {
+          "line": 104,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 108,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 109,
+          "return_type": "throw",
+          "name": "OTMLException"
+        },
+        {
+          "line": 131,
+          "return_type": "else",
+          "name": "if"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "otmlparser.h",
+        "otmldocument.h",
+        "otmlexception.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\otml\\otmlparser.h",
+      "total_lines": 55,
+      "code_lines": 20,
+      "comment_lines": 26,
+      "empty_lines": 9,
+      "functions": [
+        {
+          "line": 33,
+          "return_type": "void",
+          "name": "parse"
+        },
+        {
+          "line": 37,
+          "return_type": "string",
+          "name": "getNextLine"
+        },
+        {
+          "line": 39,
+          "return_type": "int",
+          "name": "getLineDepth"
+        },
+        {
+          "line": 42,
+          "return_type": "void",
+          "name": "parseLine"
+        },
+        {
+          "line": 44,
+          "return_type": "void",
+          "name": "parseNode"
+        }
+      ],
+      "classes": [
+        {
+          "line": 27,
+          "name": "OTMLParser"
+        }
+      ],
+      "includes": [
+        "declarations.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\platform\\androidgameactivity.cpp",
+      "total_lines": 9,
+      "code_lines": 7,
+      "comment_lines": 0,
+      "empty_lines": 2,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "game-activity/GameActivity.cpp",
+        "game-text-input/gametextinput.cpp",
+        "game-activity/native_app_glue/android_native_app_glue.c"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\storage.h",
+      "total_lines": 76,
+      "code_lines": 42,
+      "comment_lines": 21,
+      "empty_lines": 13,
+      "functions": [
+        {
+          "line": 49,
+          "return_type": "void",
+          "name": "set"
+        },
+        {
+          "line": 51,
+          "return_type": "bool",
+          "name": "remove"
+        },
+        {
+          "line": 53,
+          "return_type": "T",
+          "name": "get"
+        },
+        {
+          "line": 67,
+          "return_type": "bool",
+          "name": "has"
+        },
+        {
+          "line": 69,
+          "return_type": "size_t",
+          "name": "size"
+        },
+        {
+          "line": 71,
+          "return_type": "void",
+          "name": "clear"
+        }
+      ],
+      "classes": [
+        {
+          "line": 29,
+          "name": "K"
+        },
+        {
+          "line": 30,
+          "name": "Hash"
+        },
+        {
+          "line": 31,
+          "name": "Eq"
+        },
+        {
+          "line": 32,
+          "name": "Alloc"
+        },
+        {
+          "line": 35,
+          "name": "T"
+        },
+        {
+          "line": 36,
+          "name": "Hash"
+        },
+        {
+          "line": 37,
+          "name": "Eq"
+        },
+        {
+          "line": 38,
+          "name": "Alloc"
+        },
+        {
+          "line": 45,
+          "name": "dynamic_storage"
+        }
+      ],
+      "includes": [
+        "../pch.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\client\\client.lua",
+      "total_lines": 82,
+      "code_lines": 73,
+      "comment_lines": 0,
+      "empty_lines": 9,
+      "functions": [
+        {
+          "line": 7,
+          "return_type": "function",
+          "name": "setMusic"
+        },
+        {
+          "line": 16,
+          "return_type": "function",
+          "name": "startup"
+        },
+        {
+          "line": 56,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 72,
+          "return_type": "function",
+          "name": "terminate"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\json.lua",
+      "total_lines": 377,
+      "code_lines": 337,
+      "comment_lines": 0,
+      "empty_lines": 40,
+      "functions": [
+        {
+          "line": 7,
+          "return_type": "documentation",
+          "name": "files"
+        },
+        {
+          "line": 47,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 51,
+          "return_type": "function",
+          "name": "escape_char"
+        },
+        {
+          "line": 55,
+          "return_type": "function",
+          "name": "encode_nil"
+        },
+        {
+          "line": 59,
+          "return_type": "function",
+          "name": "encode_table"
+        },
+        {
+          "line": 70,
+          "return_type": "if",
+          "name": "rawget"
+        },
+        {
+          "line": 73,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 74,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 83,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 91,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 92,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 102,
+          "return_type": "function",
+          "name": "encode_string"
+        },
+        {
+          "line": 106,
+          "return_type": "function",
+          "name": "encode_number"
+        },
+        {
+          "line": 126,
+          "return_type": "return",
+          "name": "f"
+        },
+        {
+          "line": 141,
+          "return_type": "function",
+          "name": "create_set"
+        },
+        {
+          "line": 160,
+          "return_type": "function",
+          "name": "next_char"
+        },
+        {
+          "line": 169,
+          "return_type": "function",
+          "name": "decode_error"
+        },
+        {
+          "line": 182,
+          "return_type": "function",
+          "name": "codepoint_to_utf8"
+        },
+        {
+          "line": 197,
+          "return_type": "function",
+          "name": "parse_unicode_escape"
+        },
+        {
+          "line": 202,
+          "return_type": "return",
+          "name": "codepoint_to_utf8"
+        },
+        {
+          "line": 204,
+          "return_type": "return",
+          "name": "codepoint_to_utf8"
+        },
+        {
+          "line": 208,
+          "return_type": "function",
+          "name": "parse_string"
+        },
+        {
+          "line": 247,
+          "return_type": "function",
+          "name": "parse_number"
+        },
+        {
+          "line": 257,
+          "return_type": "function",
+          "name": "parse_literal"
+        },
+        {
+          "line": 266,
+          "return_type": "function",
+          "name": "parse_array"
+        },
+        {
+          "line": 296,
+          "return_type": "function",
+          "name": "parse_object"
+        },
+        {
+          "line": 360,
+          "return_type": "return",
+          "name": "f"
+        },
+        {
+          "line": 366,
+          "return_type": "if",
+          "name": "type"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\gamelib\\creature.lua",
+      "total_lines": 159,
+      "code_lines": 144,
+      "comment_lines": 0,
+      "empty_lines": 15,
+      "functions": [
+        {
+          "line": 18,
+          "return_type": "function",
+          "name": "getNextSkullId"
+        },
+        {
+          "line": 25,
+          "return_type": "function",
+          "name": "getSkullImagePath"
+        },
+        {
+          "line": 43,
+          "return_type": "function",
+          "name": "getShieldImagePathAndBlink"
+        },
+        {
+          "line": 71,
+          "return_type": "function",
+          "name": "getEmblemImagePath"
+        },
+        {
+          "line": 87,
+          "return_type": "function",
+          "name": "getTypeImagePath"
+        },
+        {
+          "line": 97,
+          "return_type": "function",
+          "name": "getIconImagePath"
+        },
+        {
+          "line": 111,
+          "return_type": "function",
+          "name": "getIconsImagePath"
+        }
+      ],
+      "classes": [
+        {
+          "line": 1,
+          "name": "Creature"
+        }
+      ],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\gamelib\\protocolgame.lua",
+      "total_lines": 139,
+      "code_lines": 117,
+      "comment_lines": 0,
+      "empty_lines": 22,
+      "functions": [
+        {
+          "line": 8,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 41,
+          "return_type": "JSON",
+          "name": "opcode"
+        },
+        {
+          "line": 62,
+          "return_type": "or",
+          "name": "type"
+        },
+        {
+          "line": 90,
+          "return_type": "or",
+          "name": "type"
+        },
+        {
+          "line": 121,
+          "return_type": "if",
+          "name": "type"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\gamelib\\textmessages.lua",
+      "total_lines": 30,
+      "code_lines": 24,
+      "comment_lines": 0,
+      "empty_lines": 6,
+      "functions": [
+        {
+          "line": 10,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 15,
+          "return_type": "function",
+          "name": "registerMessageMode"
+        },
+        {
+          "line": 24,
+          "return_type": "function",
+          "name": "unregisterMessageMode"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\gamelib\\tile.lua",
+      "total_lines": 39,
+      "code_lines": 30,
+      "comment_lines": 0,
+      "empty_lines": 9,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_attachedeffects\\attachedeffects.lua",
+      "total_lines": 85,
+      "code_lines": 69,
+      "comment_lines": 0,
+      "empty_lines": 16,
+      "functions": [
+        {
+          "line": 1,
+          "return_type": "function",
+          "name": "onAttach"
+        },
+        {
+          "line": 14,
+          "return_type": "function",
+          "name": "onDetach"
+        },
+        {
+          "line": 23,
+          "return_type": "function",
+          "name": "onOutfitChange"
+        },
+        {
+          "line": 24,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 61,
+          "return_type": "function",
+          "name": "getCategory"
+        },
+        {
+          "line": 65,
+          "return_type": "function",
+          "name": "getTexture"
+        },
+        {
+          "line": 71,
+          "return_type": "function",
+          "name": "getName"
+        },
+        {
+          "line": 72,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 79,
+          "return_type": "function",
+          "name": "thingId"
+        },
+        {
+          "line": 80,
+          "return_type": "if",
+          "name": "type"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_market\\marketoffer.lua",
+      "total_lines": 158,
+      "code_lines": 129,
+      "comment_lines": 0,
+      "empty_lines": 29,
+      "functions": [
+        {
+          "line": 19,
+          "return_type": "or",
+          "name": "type"
+        },
+        {
+          "line": 66,
+          "return_type": "or",
+          "name": "type"
+        },
+        {
+          "line": 77,
+          "return_type": "or",
+          "name": "type"
+        },
+        {
+          "line": 88,
+          "return_type": "or",
+          "name": "type"
+        },
+        {
+          "line": 99,
+          "return_type": "or",
+          "name": "type"
+        },
+        {
+          "line": 110,
+          "return_type": "or",
+          "name": "type"
+        },
+        {
+          "line": 125,
+          "return_type": "or",
+          "name": "type"
+        },
+        {
+          "line": 136,
+          "return_type": "or",
+          "name": "type"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_market\\marketprotocol.lua",
+      "total_lines": 82,
+      "code_lines": 67,
+      "comment_lines": 0,
+      "empty_lines": 15,
+      "functions": [
+        {
+          "line": 9,
+          "return_type": "function",
+          "name": "send"
+        },
+        {
+          "line": 16,
+          "return_type": "function",
+          "name": "initProtocol"
+        },
+        {
+          "line": 30,
+          "return_type": "function",
+          "name": "terminateProtocol"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_playermount\\playermount.lua",
+      "total_lines": 56,
+      "code_lines": 50,
+      "comment_lines": 0,
+      "empty_lines": 6,
+      "functions": [
+        {
+          "line": 1,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 11,
+          "return_type": "function",
+          "name": "terminate"
+        },
+        {
+          "line": 19,
+          "return_type": "function",
+          "name": "online"
+        },
+        {
+          "line": 31,
+          "return_type": "function",
+          "name": "offline"
+        },
+        {
+          "line": 37,
+          "return_type": "function",
+          "name": "toggleMount"
+        },
+        {
+          "line": 44,
+          "return_type": "function",
+          "name": "mount"
+        },
+        {
+          "line": 51,
+          "return_type": "function",
+          "name": "dismount"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_things\\things.lua",
+      "total_lines": 106,
+      "code_lines": 89,
+      "comment_lines": 0,
+      "empty_lines": 17,
+      "functions": [
+        {
+          "line": 6,
+          "return_type": "function",
+          "name": "setFileName"
+        },
+        {
+          "line": 10,
+          "return_type": "function",
+          "name": "isLoaded"
+        },
+        {
+          "line": 14,
+          "return_type": "function",
+          "name": "tryLoadDatWithFallbacks"
+        },
+        {
+          "line": 31,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 32,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 44,
+          "return_type": "function",
+          "name": "load"
+        },
+        {
+          "line": 66,
+          "return_type": "not",
+          "name": "tryLoadDatWithFallbacks"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_tasks\\serverSIDE\\lib\\core\\json.lua",
+      "total_lines": 400,
+      "code_lines": 339,
+      "comment_lines": 0,
+      "empty_lines": 61,
+      "functions": [
+        {
+          "line": 7,
+          "return_type": "documentation",
+          "name": "files"
+        },
+        {
+          "line": 44,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 49,
+          "return_type": "function",
+          "name": "escape_char"
+        },
+        {
+          "line": 54,
+          "return_type": "function",
+          "name": "encode_nil"
+        },
+        {
+          "line": 59,
+          "return_type": "function",
+          "name": "encode_table"
+        },
+        {
+          "line": 64,
+          "return_type": "then",
+          "name": "error"
+        },
+        {
+          "line": 68,
+          "return_type": "if",
+          "name": "rawget"
+        },
+        {
+          "line": 71,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 72,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 81,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 89,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 90,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 101,
+          "return_type": "function",
+          "name": "encode_string"
+        },
+        {
+          "line": 106,
+          "return_type": "function",
+          "name": "encode_number"
+        },
+        {
+          "line": 128,
+          "return_type": "return",
+          "name": "f"
+        },
+        {
+          "line": 145,
+          "return_type": "function",
+          "name": "create_set"
+        },
+        {
+          "line": 165,
+          "return_type": "function",
+          "name": "next_char"
+        },
+        {
+          "line": 175,
+          "return_type": "function",
+          "name": "decode_error"
+        },
+        {
+          "line": 189,
+          "return_type": "function",
+          "name": "codepoint_to_utf8"
+        },
+        {
+          "line": 206,
+          "return_type": "function",
+          "name": "parse_unicode_escape"
+        },
+        {
+          "line": 211,
+          "return_type": "return",
+          "name": "codepoint_to_utf8"
+        },
+        {
+          "line": 213,
+          "return_type": "return",
+          "name": "codepoint_to_utf8"
+        },
+        {
+          "line": 218,
+          "return_type": "function",
+          "name": "parse_string"
+        },
+        {
+          "line": 271,
+          "return_type": "function",
+          "name": "parse_number"
+        },
+        {
+          "line": 282,
+          "return_type": "function",
+          "name": "parse_literal"
+        },
+        {
+          "line": 292,
+          "return_type": "function",
+          "name": "parse_array"
+        },
+        {
+          "line": 313,
+          "return_type": "then",
+          "name": "decode_error"
+        },
+        {
+          "line": 319,
+          "return_type": "function",
+          "name": "parse_object"
+        },
+        {
+          "line": 350,
+          "return_type": "then",
+          "name": "decode_error"
+        },
+        {
+          "line": 381,
+          "return_type": "return",
+          "name": "f"
+        },
+        {
+          "line": 388,
+          "return_type": "if",
+          "name": "type"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\game_tasks\\serverSIDE\\lib\\core\\player.lua",
+      "total_lines": 13,
+      "code_lines": 12,
+      "comment_lines": 0,
+      "empty_lines": 1,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_shop\\serverSIDE\\data\\core\\mounts.lua",
+      "total_lines": 29,
+      "code_lines": 25,
+      "comment_lines": 0,
+      "empty_lines": 4,
+      "functions": [
+        {
+          "line": 1,
+          "return_type": "function",
+          "name": "readFile"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_shop\\serverSIDE\\data\\lib\\json.lua",
+      "total_lines": 390,
+      "code_lines": 352,
+      "comment_lines": 0,
+      "empty_lines": 38,
+      "functions": [
+        {
+          "line": 7,
+          "return_type": "documentation",
+          "name": "files"
+        },
+        {
+          "line": 47,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 51,
+          "return_type": "function",
+          "name": "escape_char"
+        },
+        {
+          "line": 55,
+          "return_type": "function",
+          "name": "encode_nil"
+        },
+        {
+          "line": 59,
+          "return_type": "function",
+          "name": "encode_table"
+        },
+        {
+          "line": 70,
+          "return_type": "or",
+          "name": "next"
+        },
+        {
+          "line": 73,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 74,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 83,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 91,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 92,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 102,
+          "return_type": "function",
+          "name": "encode_string"
+        },
+        {
+          "line": 106,
+          "return_type": "function",
+          "name": "encode_number"
+        },
+        {
+          "line": 126,
+          "return_type": "return",
+          "name": "f"
+        },
+        {
+          "line": 141,
+          "return_type": "function",
+          "name": "create_set"
+        },
+        {
+          "line": 160,
+          "return_type": "function",
+          "name": "next_char"
+        },
+        {
+          "line": 169,
+          "return_type": "function",
+          "name": "decode_error"
+        },
+        {
+          "line": 182,
+          "return_type": "function",
+          "name": "codepoint_to_utf8"
+        },
+        {
+          "line": 197,
+          "return_type": "function",
+          "name": "parse_unicode_escape"
+        },
+        {
+          "line": 202,
+          "return_type": "return",
+          "name": "codepoint_to_utf8"
+        },
+        {
+          "line": 204,
+          "return_type": "return",
+          "name": "codepoint_to_utf8"
+        },
+        {
+          "line": 208,
+          "return_type": "function",
+          "name": "parse_string"
+        },
+        {
+          "line": 260,
+          "return_type": "function",
+          "name": "parse_number"
+        },
+        {
+          "line": 270,
+          "return_type": "function",
+          "name": "parse_literal"
+        },
+        {
+          "line": 279,
+          "return_type": "function",
+          "name": "parse_array"
+        },
+        {
+          "line": 309,
+          "return_type": "function",
+          "name": "parse_object"
+        },
+        {
+          "line": 373,
+          "return_type": "return",
+          "name": "f"
+        },
+        {
+          "line": 379,
+          "return_type": "if",
+          "name": "type"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\game_attachedeffects\\configs\\outfit_618.lua",
+      "total_lines": 29,
+      "code_lines": 27,
+      "comment_lines": 0,
+      "empty_lines": 2,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    }
+  ],
+  "metrics": {
+    "total_functions": 241,
+    "total_classes": 25,
+    "total_lines": 2248
+  }
+}

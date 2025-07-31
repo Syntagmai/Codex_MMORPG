@@ -1,0 +1,574 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+OTClient Debug Tools
+Ferramentas especializadas para debug do OTClient
+"""
+
+import json
+import subprocess
+import sys
+import os
+import re
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+import platform
+import re # Added missing import for re
+
+class OTClientDebugTools:
+    """Ferramentas de debug especializadas para OTClient"""
+    
+    def __init__(self, work_dir: str = "."):
+        self.work_dir = Path(work_dir)
+        self.debug_config = {
+            "log_level": "DEBUG",
+            "enable_console": True,
+            "enable_file": True,
+            "enable_profiling": True,
+            "enable_ui_inspector": True
+        }
+        
+        # Configurações de debug
+        self.debug_settings = {
+            "debug_log": True,
+            "asan_enabled": False,
+            "profiling_enabled": True,
+            "ui_inspector_enabled": True
+        }
+    
+    def check_debug_environment(self) -> Dict[str, Any]:
+        """Verifica ambiente de debug"""
+        print("🔍 Verificando ambiente de debug...")
+        
+        environment = {
+            "system": platform.system(),
+            "architecture": platform.architecture(),
+            "python_version": sys.version,
+            "work_directory": str(self.work_dir),
+            "debug_files": {},
+            "build_config": {},
+            "debug_tools": {}
+        }
+        
+        # Verificar arquivos de debug
+        debug_files = [
+            "otclient.log",
+            "debug.log",
+            "packet.log",
+            "crash.log",
+            "CMakeLists.txt"
+        ]
+        
+        for file_name in debug_files:
+            file_path = self.work_dir / file_name
+            environment["debug_files"][file_name] = {
+                "exists": file_path.exists(),
+                "size": file_path.stat().st_size if file_path.exists() else 0,
+                "modified": datetime.fromtimestamp(file_path.stat().st_mtime).isoformat() if file_path.exists() else None
+            }
+        
+        # Verificar configuração de build
+        cmake_file = self.work_dir / "CMakeLists.txt"
+        if cmake_file.exists():
+            with open(cmake_file, 'r', encoding='utf-8') as f:
+                cmake_content = f.read()
+                
+            environment["build_config"] = {
+                "debug_log_enabled": "DEBUG_LOG=ON" in cmake_content,
+                "asan_enabled": "ASAN_ENABLED" in cmake_content,
+                "build_type": "Debug" if "CMAKE_BUILD_TYPE.*Debug" in cmake_content else "Release"
+            }
+        
+        # Verificar ferramentas de debug
+        environment["debug_tools"] = {
+            "gdb_available": self.check_tool_available("gdb"),
+            "valgrind_available": self.check_tool_available("valgrind"),
+            "perf_available": self.check_tool_available("perf"),
+            "lua_debugger": self.check_lua_debugger()
+        }
+        
+        return environment
+    
+    def check_tool_available(self, tool_name: str) -> bool:
+        """Verifica se ferramenta está disponível"""
+        try:
+            result = subprocess.run([tool_name, "--version"], 
+                                  capture_output=True, text=True, timeout=5)
+            return result.returncode == 0
+        except:
+            return False
+    
+    def check_lua_debugger(self) -> Dict[str, Any]:
+        """Verifica debugger Lua"""
+        lua_debugger = {
+            "available": False,
+            "type": None,
+            "version": None
+        }
+        
+        # Verificar VSCode Lua Debugger
+        if os.getenv("LOCAL_LUA_DEBUGGER_VSCODE") == "1":
+            lua_debugger["available"] = True
+            lua_debugger["type"] = "VSCode Lua Debugger"
+        
+        # Verificar outras ferramentas Lua
+        try:
+            result = subprocess.run(["lua", "-e", "print(_VERSION)"], 
+                                  capture_output=True, text=True, timeout=5)
+            if result.returncode == 0:
+                lua_debugger["version"] = result.stdout.strip()
+        except:
+            pass
+        
+        return lua_debugger
+    
+    def analyze_crash_dump(self, crash_file: str = "crash.log") -> Dict[str, Any]:
+        """Analisa dump de crash"""
+        print(f"🔍 Analisando dump de crash: {crash_file}")
+        
+        crash_analysis = {
+            "file": crash_file,
+            "exists": False,
+            "crash_type": None,
+            "stack_trace": [],
+            "memory_info": {},
+            "system_info": {},
+            "recommendations": []
+        }
+        
+        crash_path = self.work_dir / crash_file
+        if not crash_path.exists():
+            crash_analysis["recommendations"].append("Arquivo de crash não encontrado")
+            return crash_analysis
+        
+        crash_analysis["exists"] = True
+        
+        try:
+            with open(crash_path, 'r', encoding='utf-8', errors='ignore') as f:
+                crash_content = f.read()
+            
+            # Analisar tipo de crash
+            crash_analysis["crash_type"] = self.identify_crash_type(crash_content)
+            
+            # Extrair stack trace
+            crash_analysis["stack_trace"] = self.extract_stack_trace(crash_content)
+            
+            # Informações de memória
+            crash_analysis["memory_info"] = self.extract_memory_info(crash_content)
+            
+            # Informações do sistema
+            crash_analysis["system_info"] = self.extract_system_info()
+            
+            # Gerar recomendações
+            crash_analysis["recommendations"] = self.generate_crash_recommendations(crash_analysis)
+            
+        except Exception as e:
+            crash_analysis["recommendations"].append(f"Erro ao analisar crash: {e}")
+        
+        return crash_analysis
+    
+    def identify_crash_type(self, crash_content: str) -> str:
+        """Identifica tipo de crash"""
+        content_lower = crash_content.lower()
+        
+        if "segmentation fault" in content_lower:
+            return "segmentation_fault"
+        elif "access violation" in content_lower:
+            return "access_violation"
+        elif "stack overflow" in content_lower:
+            return "stack_overflow"
+        elif "out of memory" in content_lower:
+            return "out_of_memory"
+        elif "exception" in content_lower:
+            return "exception"
+        elif "assertion failed" in content_lower:
+            return "assertion_failed"
+        else:
+            return "unknown"
+    
+    def extract_stack_trace(self, crash_content: str) -> List[str]:
+        """Extrai stack trace do crash"""
+        stack_trace = []
+        
+        # Padrões comuns de stack trace
+        patterns = [
+            r"#\d+\s+0x[0-9a-f]+\s+in\s+(.+)",
+            r"at\s+(.+)",
+            r"\[0x[0-9a-f]+\]\s+(.+)",
+            r"(.+)\s+\(.+\)"
+        ]
+        
+        lines = crash_content.split('\n')
+        for line in lines:
+            for pattern in patterns:
+                match = re.search(pattern, line)
+                if match:
+                    stack_trace.append(match.group(1).strip())
+                    break
+        
+        return stack_trace[:10]  # Limitar a 10 entradas
+    
+    def extract_memory_info(self, crash_content: str) -> Dict[str, Any]:
+        """Extrai informações de memória"""
+        memory_info = {
+            "total_memory": None,
+            "used_memory": None,
+            "free_memory": None,
+            "memory_leak": False
+        }
+        
+        # Padrões de memória
+        memory_patterns = {
+            "total": r"total.*memory.*?(\d+(?:\.\d+)?)\s*(?:mb|gb)",
+            "used": r"used.*memory.*?(\d+(?:\.\d+)?)\s*(?:mb|gb)",
+            "free": r"free.*memory.*?(\d+(?:\.\d+)?)\s*(?:mb|gb)",
+            "leak": r"memory.*leak|leak.*memory"
+        }
+        
+        content_lower = crash_content.lower()
+        
+        for key, pattern in memory_patterns.items():
+            match = re.search(pattern, content_lower, re.IGNORECASE)
+            if match:
+                if key == "leak":
+                    memory_info["memory_leak"] = True
+                else:
+                    memory_info[f"{key}_memory"] = float(match.group(1))
+        
+        return memory_info
+    
+    def extract_system_info(self) -> Dict[str, Any]:
+        """Extrai informações do sistema"""
+        system_info = {
+            "os": platform.system(),
+            "architecture": platform.architecture()[0],
+            "python_version": sys.version,
+            "cpu_count": "N/A",
+            "memory_total": "N/A"
+        }
+        
+        try:
+            import psutil
+            system_info["cpu_count"] = psutil.cpu_count()
+            system_info["memory_total"] = psutil.virtual_memory().total
+        except ImportError:
+            pass
+        
+        return system_info
+    
+    def generate_crash_recommendations(self, crash_analysis: Dict[str, Any]) -> List[str]:
+        """Gera recomendações baseadas na análise de crash"""
+        recommendations = []
+        
+        crash_type = crash_analysis.get("crash_type")
+        
+        if crash_type == "segmentation_fault":
+            recommendations.extend([
+                "🔴 SEGMENTATION FAULT detectado",
+                "Verificar ponteiros nulos ou inválidos",
+                "Analisar acesso a memória fora dos limites",
+                "Usar AddressSanitizer (ASAN) para debug",
+                "Verificar inicialização de objetos"
+            ])
+        
+        elif crash_type == "access_violation":
+            recommendations.extend([
+                "🔴 ACCESS VIOLATION detectado",
+                "Verificar permissões de memória",
+                "Analisar acesso a memória protegida",
+                "Verificar inicialização de estruturas",
+                "Usar ferramentas de análise de memória"
+            ])
+        
+        elif crash_type == "stack_overflow":
+            recommendations.extend([
+                "🔴 STACK OVERFLOW detectado",
+                "Verificar recursão infinita",
+                "Analisar tamanho de variáveis locais",
+                "Verificar chamadas de função excessivas",
+                "Considerar otimização de stack"
+            ])
+        
+        elif crash_type == "out_of_memory":
+            recommendations.extend([
+                "🔴 OUT OF MEMORY detectado",
+                "Verificar vazamentos de memória",
+                "Analisar uso excessivo de memória",
+                "Implementar garbage collection",
+                "Otimizar alocação de recursos"
+            ])
+        
+        elif crash_type == "exception":
+            recommendations.extend([
+                "🔴 EXCEPTION detectada",
+                "Analisar stack trace para localizar origem",
+                "Verificar tratamento de exceções",
+                "Implementar try-catch adequado",
+                "Validar entrada de dados"
+            ])
+        
+        # Recomendações gerais
+        recommendations.extend([
+            "📋 Coletar informações do ambiente",
+            "🔍 Reproduzir crash em ambiente controlado",
+            "📊 Analisar logs relacionados",
+            "🛠️ Usar ferramentas de debug apropriadas",
+            "📝 Documentar passos para reprodução"
+        ])
+        
+        return recommendations
+    
+    def analyze_performance(self) -> Dict[str, Any]:
+        """Analisa performance do sistema"""
+        print("⚡ Analisando performance do sistema...")
+        
+        performance_analysis = {
+            "system_performance": {},
+            "memory_usage": {},
+            "cpu_usage": {},
+            "disk_usage": {},
+            "network_status": {},
+            "recommendations": []
+        }
+        
+        # Performance do sistema básica
+        performance_analysis["system_performance"] = {
+            "uptime": "N/A",
+            "load_average": "N/A",
+            "process_count": "N/A"
+        }
+        
+        # Uso de memória básico
+        try:
+            import psutil
+            memory = psutil.virtual_memory()
+            performance_analysis["memory_usage"] = {
+                "total": memory.total,
+                "available": memory.available,
+                "used": memory.used,
+                "percent": memory.percent,
+                "free": memory.free
+            }
+        except ImportError:
+            performance_analysis["memory_usage"] = {
+                "total": "N/A (psutil não disponível)",
+                "available": "N/A",
+                "used": "N/A",
+                "percent": "N/A",
+                "free": "N/A"
+            }
+        
+        # Uso de CPU básico
+        try:
+            import psutil
+            cpu_percent = psutil.cpu_percent(interval=1)
+            performance_analysis["cpu_usage"] = {
+                "percent": cpu_percent,
+                "count": psutil.cpu_count(),
+                "frequency": psutil.cpu_freq().current if psutil.cpu_freq() else None
+            }
+        except ImportError:
+            performance_analysis["cpu_usage"] = {
+                "percent": "N/A (psutil não disponível)",
+                "count": "N/A",
+                "frequency": "N/A"
+            }
+        
+        # Uso de disco básico
+        try:
+            import psutil
+            disk = psutil.disk_usage('/')
+            performance_analysis["disk_usage"] = {
+                "total": disk.total,
+                "used": disk.used,
+                "free": disk.free,
+                "percent": disk.percent
+            }
+        except ImportError:
+            performance_analysis["disk_usage"] = {
+                "total": "N/A (psutil não disponível)",
+                "used": "N/A",
+                "free": "N/A",
+                "percent": "N/A"
+            }
+        
+        # Status de rede básico
+        try:
+            import psutil
+            network = psutil.net_io_counters()
+            performance_analysis["network_status"] = {
+                "bytes_sent": network.bytes_sent,
+                "bytes_recv": network.bytes_recv,
+                "packets_sent": network.packets_sent,
+                "packets_recv": network.packets_recv
+            }
+        except ImportError:
+            performance_analysis["network_status"] = {"error": "psutil não disponível"}
+        
+        # Gerar recomendações
+        performance_analysis["recommendations"] = self.generate_performance_recommendations(performance_analysis)
+        
+        return performance_analysis
+    
+    def generate_performance_recommendations(self, performance_analysis: Dict[str, Any]) -> List[str]:
+        """Gera recomendações de performance"""
+        recommendations = []
+        
+        # Análise de memória
+        memory_usage = performance_analysis.get("memory_usage", {})
+        memory_percent = memory_usage.get("percent", 0)
+        
+        if memory_percent > 90:
+            recommendations.append("🔴 Uso de memória crítico (>90%). Considerar liberar recursos.")
+        elif memory_percent > 80:
+            recommendations.append("🟡 Uso de memória alto (>80%). Monitorar uso de memória.")
+        
+        # Análise de CPU
+        cpu_usage = performance_analysis.get("cpu_usage", {})
+        cpu_percent = cpu_usage.get("percent", 0)
+        
+        if cpu_percent > 90:
+            recommendations.append("🔴 Uso de CPU crítico (>90%). Verificar processos em background.")
+        elif cpu_percent > 80:
+            recommendations.append("🟡 Uso de CPU alto (>80%). Otimizar operações custosas.")
+        
+        # Análise de disco
+        disk_usage = performance_analysis.get("disk_usage", {})
+        disk_percent = disk_usage.get("percent", 0)
+        
+        if disk_percent > 95:
+            recommendations.append("🔴 Espaço em disco crítico (>95%). Liberar espaço imediatamente.")
+        elif disk_percent > 90:
+            recommendations.append("🟡 Espaço em disco baixo (>90%). Considerar limpeza.")
+        
+        if not recommendations:
+            recommendations.append("✅ Performance do sistema está normal.")
+        
+        return recommendations
+    
+    def generate_debug_report(self, environment: Dict[str, Any], 
+                            crash_analysis: Dict[str, Any] = None,
+                            performance_analysis: Dict[str, Any] = None) -> str:
+        """Gera relatório completo de debug"""
+        report = f"""# Relatório de Debug OTClient
+
+## 📊 Ambiente de Debug
+- **Sistema**: {environment.get('system', 'N/A')}
+- **Arquitetura**: {environment.get('architecture', 'N/A')[0]}
+- **Python**: {environment.get('python_version', 'N/A')}
+- **Diretório**: {environment.get('work_directory', 'N/A')}
+
+## 📁 Arquivos de Debug
+"""
+        
+        debug_files = environment.get('debug_files', {})
+        for file_name, file_info in debug_files.items():
+            status = "✅" if file_info['exists'] else "❌"
+            size = f"{file_info['size']} bytes" if file_info['size'] > 0 else "N/A"
+            report += f"- {status} **{file_name}**: {size}\n"
+        
+        # Configuração de Build
+        build_config = environment.get('build_config', {})
+        if build_config:
+            report += f"\n## 🔧 Configuração de Build\n"
+            report += f"- **Debug Log**: {'✅' if build_config.get('debug_log_enabled') else '❌'}\n"
+            report += f"- **ASAN**: {'✅' if build_config.get('asan_enabled') else '❌'}\n"
+            report += f"- **Build Type**: {build_config.get('build_type', 'N/A')}\n"
+        
+        # Ferramentas de Debug
+        debug_tools = environment.get('debug_tools', {})
+        if debug_tools:
+            report += f"\n## 🛠️ Ferramentas de Debug\n"
+            for tool, available in debug_tools.items():
+                if isinstance(available, bool):
+                    status = "✅" if available else "❌"
+                    report += f"- {status} **{tool}**\n"
+                elif isinstance(available, dict):
+                    status = "✅" if available.get('available') else "❌"
+                    tool_type = available.get('type', 'N/A')
+                    report += f"- {status} **{tool}**: {tool_type}\n"
+        
+        # Análise de Crash
+        if crash_analysis and crash_analysis.get('exists'):
+            report += f"\n## 💥 Análise de Crash\n"
+            report += f"- **Tipo**: {crash_analysis.get('crash_type', 'N/A')}\n"
+            report += f"- **Stack Trace**: {len(crash_analysis.get('stack_trace', []))} entradas\n"
+            
+            recommendations = crash_analysis.get('recommendations', [])
+            if recommendations:
+                report += f"\n### Recomendações de Crash:\n"
+                for rec in recommendations:
+                    report += f"- {rec}\n"
+        
+        # Análise de Performance
+        if performance_analysis:
+            report += f"\n## ⚡ Análise de Performance\n"
+            
+            memory_usage = performance_analysis.get('memory_usage', {})
+            if memory_usage:
+                report += f"- **Memória**: {memory_usage.get('percent', 0):.1f}% usado\n"
+            
+            cpu_usage = performance_analysis.get('cpu_usage', {})
+            if cpu_usage:
+                report += f"- **CPU**: {cpu_usage.get('percent', 0):.1f}% usado\n"
+            
+            disk_usage = performance_analysis.get('disk_usage', {})
+            if disk_usage:
+                report += f"- **Disco**: {disk_usage.get('percent', 0):.1f}% usado\n"
+            
+            recommendations = performance_analysis.get('recommendations', [])
+            if recommendations:
+                report += f"\n### Recomendações de Performance:\n"
+                for rec in recommendations:
+                    report += f"- {rec}\n"
+        
+        return report
+    
+    def save_debug_report(self, report: str, output_file: str = "otclient_debug_report.md"):
+        """Salva relatório de debug"""
+        try:
+            output_path = self.work_dir / output_file
+            with open(output_path, 'w', encoding='utf-8') as f:
+                f.write(report)
+            
+            print(f"✅ Relatório de debug salvo em: {output_path}")
+            return True
+            
+        except Exception as e:
+            print(f"❌ Erro ao salvar relatório: {e}")
+            return False
+
+def main():
+    """Função principal"""
+    print("🔍 OTClient Debug Tools")
+    print("=" * 50)
+    
+    # Inicializar ferramentas
+    debug_tools = OTClientDebugTools()
+    
+    # Verificar ambiente
+    print("\n🔍 Verificando ambiente de debug...")
+    environment = debug_tools.check_debug_environment()
+    
+    # Analisar crash (se existir)
+    crash_analysis = None
+    if (debug_tools.work_dir / "crash.log").exists():
+        print("\n💥 Analisando crash...")
+        crash_analysis = debug_tools.analyze_crash_dump()
+    
+    # Analisar performance
+    print("\n⚡ Analisando performance...")
+    performance_analysis = debug_tools.analyze_performance()
+    
+    # Gerar relatório
+    print("\n📋 Gerando relatório...")
+    report = debug_tools.generate_debug_report(environment, crash_analysis, performance_analysis)
+    
+    # Salvar relatório
+    debug_tools.save_debug_report(report)
+    
+    print("\n✅ Análise de debug concluída!")
+
+if __name__ == "__main__":
+    main() 

@@ -1,0 +1,116 @@
+-- Mapa automático aprimorado com marcadores e filtros
+-- Interface criada automaticamente pelo BMAD AI Agent
+
+automap_enhancedWindow < MainWindow
+  id: automap_enhancedWindow
+  size: 400 300
+  @onEscape: self:close()
+  
+  Panel
+    id: mainPanel
+    anchors.fill: parent
+    layout: verticalBox
+    
+    Panel
+      id: titlePanel
+      height: 30
+      layout: horizontalBox
+      margin: 5
+      
+      Label
+        id: titleLabel
+        text: tr('Game Automap Enhanced')
+        font: verdana-11px-antialised
+        color: white
+        anchors.verticalCenter: parent.verticalCenter
+        
+      Button
+        id: closeButton
+        text: "X"
+        width: 20
+        height: 20
+        anchors.right: parent.right
+        anchors.verticalCenter: parent.verticalCenter
+        @onClick: parent.parent.parent:close()
+    
+    Panel
+      id: contentPanel
+      layout: verticalBox
+      margin: 10
+      
+      Label
+        id: descriptionLabel
+        text: tr('Mapa automático aprimorado com marcadores e filtros')
+        font: verdana-10px-antialised
+        color: #cccccc
+        text-wrap: true
+        margin-bottom: 10
+      
+      Panel
+        id: featuresPanel
+        layout: verticalBox
+        
+        Label
+          id: featuresTitle
+          text: tr('Funcionalidades:')
+          font: verdana-11px-antialised
+          color: white
+          margin-bottom: 5
+        
+        ScrollablePanel
+          id: featuresList
+          layout: verticalBox
+          height: 150
+          margin: 5
+          
+          -- Lista de features será preenchida dinamicamente
+
+          Label
+            id: feature1
+            text: tr('• Marcadores personalizados')
+            font: verdana-10px-antialised
+            color: #aaaaaa
+            margin: 2
+
+          Label
+            id: feature2
+            text: tr('• Filtros de criaturas')
+            font: verdana-10px-antialised
+            color: #aaaaaa
+            margin: 2
+
+          Label
+            id: feature3
+            text: tr('• Rotas salvas')
+            font: verdana-10px-antialised
+            color: #aaaaaa
+            margin: 2
+
+          Label
+            id: feature4
+            text: tr('• Zoom avançado')
+            font: verdana-10px-antialised
+            color: #aaaaaa
+            margin: 2
+
+      
+      Panel
+        id: statusPanel
+        layout: horizontalBox
+        margin-top: 10
+        
+        Label
+          id: statusLabel
+          text: tr('Status: Pronto')
+          font: verdana-10px-antialised
+          color: #00ff00
+          anchors.verticalCenter: parent.verticalCenter
+        
+        Button
+          id: refreshButton
+          text: tr('Atualizar')
+          width: 80
+          height: 25
+          anchors.right: parent.right
+          anchors.verticalCenter: parent.verticalCenter
+          @onClick: refresh()

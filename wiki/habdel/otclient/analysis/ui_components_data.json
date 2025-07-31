@@ -1,0 +1,8567 @@
+{
+  "category": "UI_COMPONENTS",
+  "description": "Componentes de interface do usuário",
+  "files_analyzed": 129,
+  "detailed_analyses": [
+    {
+      "file": "src\\client\\attachedeffect.h",
+      "total_lines": 184,
+      "code_lines": 119,
+      "comment_lines": 21,
+      "empty_lines": 44,
+      "functions": [
+        {
+          "line": 31,
+          "return_type": "AttachedEffectPtr",
+          "name": "create"
+        },
+        {
+          "line": 33,
+          "return_type": "void",
+          "name": "draw"
+        },
+        {
+          "line": 34,
+          "return_type": "void",
+          "name": "drawLight"
+        },
+        {
+          "line": 36,
+          "return_type": "uint16_t",
+          "name": "getId"
+        },
+        {
+          "line": 38,
+          "return_type": "AttachedEffectPtr",
+          "name": "clone"
+        },
+        {
+          "line": 40,
+          "return_type": "float",
+          "name": "getSpeed"
+        },
+        {
+          "line": 41,
+          "return_type": "void",
+          "name": "setSpeed"
+        },
+        {
+          "line": 43,
+          "return_type": "float",
+          "name": "getOpacity"
+        },
+        {
+          "line": 44,
+          "return_type": "void",
+          "name": "setOpacity"
+        },
+        {
+          "line": 46,
+          "return_type": "Size",
+          "name": "getSize"
+        },
+        {
+          "line": 47,
+          "return_type": "void",
+          "name": "setSize"
+        },
+        {
+          "line": 49,
+          "return_type": "bool",
+          "name": "isHidedOwner"
+        },
+        {
+          "line": 50,
+          "return_type": "void",
+          "name": "setHideOwner"
+        },
+        {
+          "line": 52,
+          "return_type": "bool",
+          "name": "isTransform"
+        },
+        {
+          "line": 53,
+          "return_type": "void",
+          "name": "setTransform"
+        },
+        {
+          "line": 55,
+          "return_type": "bool",
+          "name": "isDisabledWalkAnimation"
+        },
+        {
+          "line": 56,
+          "return_type": "void",
+          "name": "setDisableWalkAnimation"
+        },
+        {
+          "line": 58,
+          "return_type": "bool",
+          "name": "isPermanent"
+        },
+        {
+          "line": 59,
+          "return_type": "void",
+          "name": "setPermanent"
+        },
+        {
+          "line": 61,
+          "return_type": "uint16_t",
+          "name": "getDuration"
+        },
+        {
+          "line": 62,
+          "return_type": "void",
+          "name": "setDuration"
+        },
+        {
+          "line": 64,
+          "return_type": "int8_t",
+          "name": "getLoop"
+        },
+        {
+          "line": 65,
+          "return_type": "void",
+          "name": "setLoop"
+        },
+        {
+          "line": 67,
+          "return_type": "void",
+          "name": "setName"
+        },
+        {
+          "line": 68,
+          "return_type": "string",
+          "name": "getName"
+        },
+        {
+          "line": 70,
+          "return_type": "Direction",
+          "name": "getDirection"
+        },
+        {
+          "line": 71,
+          "return_type": "void",
+          "name": "setDirection"
+        },
+        {
+          "line": 73,
+          "return_type": "void",
+          "name": "setBounce"
+        },
+        {
+          "line": 79,
+          "return_type": "void",
+          "name": "setPulse"
+        },
+        {
+          "line": 85,
+          "return_type": "void",
+          "name": "setFade"
+        },
+        {
+          "line": 92,
+          "return_type": "void",
+          "name": "setOnTop"
+        },
+        {
+          "line": 93,
+          "return_type": "void",
+          "name": "setOffset"
+        },
+        {
+          "line": 94,
+          "return_type": "void",
+          "name": "setOnTopByDir"
+        },
+        {
+          "line": 96,
+          "return_type": "void",
+          "name": "setDirOffset"
+        },
+        {
+          "line": 102,
+          "return_type": "void",
+          "name": "setShader"
+        },
+        {
+          "line": 103,
+          "return_type": "void",
+          "name": "setCanDrawOnUI"
+        },
+        {
+          "line": 104,
+          "return_type": "bool",
+          "name": "canDrawOnUI"
+        },
+        {
+          "line": 106,
+          "return_type": "void",
+          "name": "move"
+        },
+        {
+          "line": 108,
+          "return_type": "void",
+          "name": "attachEffect"
+        },
+        {
+          "line": 110,
+          "return_type": "DrawOrder",
+          "name": "getDrawOrder"
+        },
+        {
+          "line": 111,
+          "return_type": "void",
+          "name": "setDrawOrder"
+        },
+        {
+          "line": 113,
+          "return_type": "void",
+          "name": "setLight"
+        },
+        {
+          "line": 126,
+          "return_type": "int",
+          "name": "getCurrentAnimationPhase"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "AttachedEffect"
+        },
+        {
+          "line": 181,
+          "name": "Thing"
+        },
+        {
+          "line": 182,
+          "name": "Creature"
+        },
+        {
+          "line": 183,
+          "name": "AttachedEffectManager"
+        }
+      ],
+      "includes": [
+        "outfit.h",
+        "thingtype.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\client\\attachedeffectmanager.h",
+      "total_lines": 42,
+      "code_lines": 15,
+      "comment_lines": 21,
+      "empty_lines": 6,
+      "functions": [
+        {
+          "line": 31,
+          "return_type": "AttachedEffectPtr",
+          "name": "registerByThing"
+        },
+        {
+          "line": 32,
+          "return_type": "AttachedEffectPtr",
+          "name": "registerByImage"
+        },
+        {
+          "line": 34,
+          "return_type": "AttachedEffectPtr",
+          "name": "getById"
+        },
+        {
+          "line": 35,
+          "return_type": "void",
+          "name": "remove"
+        },
+        {
+          "line": 36,
+          "return_type": "void",
+          "name": "clear"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "AttachedEffectManager"
+        }
+      ],
+      "includes": [
+        "declarations.h",
+        "thingtype.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\client\\container.cpp",
+      "total_lines": 133,
+      "code_lines": 86,
+      "comment_lines": 23,
+      "empty_lines": 24,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "container.h",
+        "item.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\client\\outfit.cpp",
+      "total_lines": 155,
+      "code_lines": 120,
+      "comment_lines": 21,
+      "empty_lines": 14,
+      "functions": [
+        {
+          "line": 79,
+          "return_type": "return",
+          "name": "Color"
+        },
+        {
+          "line": 90,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 94,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 98,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 102,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 111,
+          "return_type": "return",
+          "name": "Color"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "outfit.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\client\\position.cpp",
+      "total_lines": 71,
+      "code_lines": 41,
+      "comment_lines": 21,
+      "empty_lines": 9,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "position.h",
+        "gameconfig.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\client\\protocolcodes.cpp",
+      "total_lines": 243,
+      "code_lines": 213,
+      "comment_lines": 23,
+      "empty_lines": 7,
+      "functions": [
+        {
+          "line": 29,
+          "return_type": "void",
+          "name": "buildMessageModesMap"
+        },
+        {
+          "line": 88,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 131,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 138,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 141,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 167,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 197,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 227,
+          "return_type": "MessageMode",
+          "name": "translateMessageModeFromServer"
+        },
+        {
+          "line": 235,
+          "return_type": "uint8_t",
+          "name": "translateMessageModeToServer"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "protocolcodes.h"
+      ],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "src\\client\\staticdata.h",
+      "total_lines": 35,
+      "code_lines": 10,
+      "comment_lines": 21,
+      "empty_lines": 4,
+      "functions": [],
+      "classes": [
+        {
+          "line": 27,
+          "name": "Outfit"
+        }
+      ],
+      "includes": [
+        "outfit.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\client\\uicreature.cpp",
+      "total_lines": 70,
+      "code_lines": 42,
+      "comment_lines": 21,
+      "empty_lines": 7,
+      "functions": [
+        {
+          "line": 53,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 55,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 60,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 62,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 64,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 66,
+          "return_type": "else",
+          "name": "if"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "uicreature.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\client\\uieffect.cpp",
+      "total_lines": 85,
+      "code_lines": 51,
+      "comment_lines": 22,
+      "empty_lines": 12,
+      "functions": [
+        {
+          "line": 78,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 80,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 82,
+          "return_type": "else",
+          "name": "if"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "uieffect.h",
+        "lightview.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\client\\uiminimap.cpp",
+      "total_lines": 160,
+      "code_lines": 108,
+      "comment_lines": 21,
+      "empty_lines": 31,
+      "functions": [
+        {
+          "line": 57,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 155,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 157,
+          "return_type": "else",
+          "name": "if"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "uiminimap.h",
+        "game.h",
+        "luavaluecasts_client.h",
+        "minimap.h",
+        "uimapanchorlayout.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\client\\uimissile.cpp",
+      "total_lines": 88,
+      "code_lines": 54,
+      "comment_lines": 22,
+      "empty_lines": 12,
+      "functions": [
+        {
+          "line": 79,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 81,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 83,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 85,
+          "return_type": "else",
+          "name": "if"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "uimissile.h",
+        "lightview.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\config.h",
+      "total_lines": 55,
+      "code_lines": 19,
+      "comment_lines": 32,
+      "empty_lines": 4,
+      "functions": [
+        {
+          "line": 39,
+          "return_type": "ENCRYPTION_PASSWORD",
+          "name": "AY_OBFUSCATE"
+        },
+        {
+          "line": 41,
+          "return_type": "ENCRYPTION_HEADER",
+          "name": "AY_OBFUSCATE"
+        },
+        {
+          "line": 54,
+          "return_type": "Image",
+          "name": "Name"
+        },
+        {
+          "line": 55,
+          "return_type": "Large",
+          "name": "Text"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "obfuscate.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\core\\binarytree.cpp",
+      "total_lines": 228,
+      "code_lines": 178,
+      "comment_lines": 21,
+      "empty_lines": 29,
+      "functions": [
+        {
+          "line": 89,
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "line": 103,
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "line": 113,
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "line": 123,
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "line": 133,
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "line": 146,
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "line": 148,
+          "return_type": "string",
+          "name": "ret"
+        },
+        {
+          "line": 188,
+          "return_type": "throw",
+          "name": "Exception"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "binarytree.h",
+        "filestream.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\core\\binarytree.h",
+      "total_lines": 84,
+      "code_lines": 49,
+      "comment_lines": 21,
+      "empty_lines": 14,
+      "functions": [
+        {
+          "line": 37,
+          "return_type": "explicit",
+          "name": "BinaryTree"
+        },
+        {
+          "line": 39,
+          "return_type": "void",
+          "name": "seek"
+        },
+        {
+          "line": 40,
+          "return_type": "void",
+          "name": "skip"
+        },
+        {
+          "line": 41,
+          "return_type": "uint32_t",
+          "name": "tell"
+        },
+        {
+          "line": 42,
+          "return_type": "uint32_t",
+          "name": "size"
+        },
+        {
+          "line": 44,
+          "return_type": "uint8_t",
+          "name": "getU8"
+        },
+        {
+          "line": 45,
+          "return_type": "uint16_t",
+          "name": "getU16"
+        },
+        {
+          "line": 46,
+          "return_type": "uint32_t",
+          "name": "getU32"
+        },
+        {
+          "line": 47,
+          "return_type": "uint64_t",
+          "name": "getU64"
+        },
+        {
+          "line": 48,
+          "return_type": "string",
+          "name": "getString"
+        },
+        {
+          "line": 49,
+          "return_type": "Point",
+          "name": "getPoint"
+        },
+        {
+          "line": 51,
+          "return_type": "BinaryTreeVec",
+          "name": "getChildren"
+        },
+        {
+          "line": 52,
+          "return_type": "bool",
+          "name": "canRead"
+        },
+        {
+          "line": 55,
+          "return_type": "void",
+          "name": "unserialize"
+        },
+        {
+          "line": 56,
+          "return_type": "void",
+          "name": "skipNodes"
+        },
+        {
+          "line": 69,
+          "return_type": "void",
+          "name": "addU8"
+        },
+        {
+          "line": 70,
+          "return_type": "void",
+          "name": "addU16"
+        },
+        {
+          "line": 71,
+          "return_type": "void",
+          "name": "addU32"
+        },
+        {
+          "line": 72,
+          "return_type": "void",
+          "name": "addString"
+        },
+        {
+          "line": 73,
+          "return_type": "void",
+          "name": "addPos"
+        },
+        {
+          "line": 74,
+          "return_type": "void",
+          "name": "addPoint"
+        },
+        {
+          "line": 76,
+          "return_type": "void",
+          "name": "startNode"
+        },
+        {
+          "line": 77,
+          "return_type": "void",
+          "name": "endNode"
+        },
+        {
+          "line": 83,
+          "return_type": "void",
+          "name": "write"
+        }
+      ],
+      "classes": [
+        {
+          "line": 27,
+          "name": "BinaryTree"
+        },
+        {
+          "line": 30,
+          "name": "Node"
+        },
+        {
+          "line": 64,
+          "name": "OutputBinaryTree"
+        }
+      ],
+      "includes": [
+        "declarations.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\core\\unzipper.h",
+      "total_lines": 30,
+      "code_lines": 5,
+      "comment_lines": 21,
+      "empty_lines": 4,
+      "functions": [
+        {
+          "line": 29,
+          "return_type": "void",
+          "name": "extract"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "string"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\apngloader.h",
+      "total_lines": 45,
+      "code_lines": 19,
+      "comment_lines": 22,
+      "empty_lines": 4,
+      "functions": [
+        {
+          "line": 43,
+          "return_type": "int",
+          "name": "load_apng"
+        },
+        {
+          "line": 44,
+          "return_type": "void",
+          "name": "save_png"
+        },
+        {
+          "line": 45,
+          "return_type": "void",
+          "name": "free_apng"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "sstream",
+        "cstdint"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\drawpool.cpp",
+      "total_lines": 415,
+      "code_lines": 318,
+      "comment_lines": 23,
+      "empty_lines": 74,
+      "functions": [
+        {
+          "line": 33,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 39,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 61,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 109,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 111,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 113,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 115,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 160,
+          "return_type": "else",
+          "name": "if"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "drawpool.h"
+      ],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "src\\framework\\graphics\\drawpoolmanager.cpp",
+      "total_lines": 238,
+      "code_lines": 167,
+      "comment_lines": 25,
+      "empty_lines": 46,
+      "functions": [
+        {
+          "line": 30,
+          "return_type": "void",
+          "name": "resetSelectedPool"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "drawpoolmanager.h",
+        "declarations.h",
+        "drawpool.h",
+        "graphics.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\fontmanager.h",
+      "total_lines": 51,
+      "code_lines": 20,
+      "comment_lines": 22,
+      "empty_lines": 9,
+      "functions": [
+        {
+          "line": 31,
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "line": 32,
+          "return_type": "void",
+          "name": "clearFonts"
+        },
+        {
+          "line": 34,
+          "return_type": "bool",
+          "name": "importFont"
+        },
+        {
+          "line": 36,
+          "return_type": "bool",
+          "name": "fontExists"
+        },
+        {
+          "line": 37,
+          "return_type": "BitmapFontPtr",
+          "name": "getFont"
+        },
+        {
+          "line": 39,
+          "return_type": "BitmapFontPtr",
+          "name": "getDefaultFont"
+        },
+        {
+          "line": 40,
+          "return_type": "BitmapFontPtr",
+          "name": "getDefaultWidgetFont"
+        },
+        {
+          "line": 42,
+          "return_type": "void",
+          "name": "setDefaultFont"
+        },
+        {
+          "line": 43,
+          "return_type": "void",
+          "name": "setDefaultWidgetFont"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "FontManager"
+        }
+      ],
+      "includes": [
+        "bitmapfont.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\framebuffer.h",
+      "total_lines": 91,
+      "code_lines": 50,
+      "comment_lines": 21,
+      "empty_lines": 20,
+      "functions": [
+        {
+          "line": 35,
+          "return_type": "void",
+          "name": "release"
+        },
+        {
+          "line": 36,
+          "return_type": "void",
+          "name": "bind"
+        },
+        {
+          "line": 37,
+          "return_type": "void",
+          "name": "draw"
+        },
+        {
+          "line": 38,
+          "return_type": "void",
+          "name": "draw"
+        },
+        {
+          "line": 40,
+          "return_type": "void",
+          "name": "reset"
+        },
+        {
+          "line": 41,
+          "return_type": "void",
+          "name": "setSmooth"
+        },
+        {
+          "line": 43,
+          "return_type": "bool",
+          "name": "resize"
+        },
+        {
+          "line": 44,
+          "return_type": "bool",
+          "name": "isValid"
+        },
+        {
+          "line": 45,
+          "return_type": "bool",
+          "name": "canDraw"
+        },
+        {
+          "line": 47,
+          "return_type": "TexturePtr",
+          "name": "getTexture"
+        },
+        {
+          "line": 48,
+          "return_type": "TexturePtr",
+          "name": "extractTexture"
+        },
+        {
+          "line": 50,
+          "return_type": "Size",
+          "name": "getSize"
+        },
+        {
+          "line": 52,
+          "return_type": "void",
+          "name": "setCompositionMode"
+        },
+        {
+          "line": 53,
+          "return_type": "void",
+          "name": "disableBlend"
+        },
+        {
+          "line": 54,
+          "return_type": "void",
+          "name": "doScreenshot"
+        },
+        {
+          "line": 55,
+          "return_type": "Size",
+          "name": "getSize"
+        },
+        {
+          "line": 67,
+          "return_type": "void",
+          "name": "internalBind"
+        },
+        {
+          "line": 68,
+          "return_type": "void",
+          "name": "internalRelease"
+        },
+        {
+          "line": 69,
+          "return_type": "void",
+          "name": "prepare"
+        }
+      ],
+      "classes": [
+        {
+          "line": 29,
+          "name": "FrameBuffer"
+        },
+        {
+          "line": 60,
+          "name": "FrameBufferManager"
+        },
+        {
+          "line": 61,
+          "name": "DrawPoolManager"
+        },
+        {
+          "line": 62,
+          "name": "DrawPool"
+        }
+      ],
+      "includes": [
+        "declarations.h",
+        "painter.h",
+        "texture.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\image.h",
+      "total_lines": 82,
+      "code_lines": 47,
+      "comment_lines": 21,
+      "empty_lines": 14,
+      "functions": [
+        {
+          "line": 32,
+          "return_type": "ImagePtr",
+          "name": "load"
+        },
+        {
+          "line": 33,
+          "return_type": "ImagePtr",
+          "name": "loadPNG"
+        },
+        {
+          "line": 34,
+          "return_type": "ImagePtr",
+          "name": "loadPNG"
+        },
+        {
+          "line": 35,
+          "return_type": "ImagePtr",
+          "name": "fromQRCode"
+        },
+        {
+          "line": 37,
+          "return_type": "void",
+          "name": "savePNG"
+        },
+        {
+          "line": 39,
+          "return_type": "void",
+          "name": "overwriteMask"
+        },
+        {
+          "line": 40,
+          "return_type": "void",
+          "name": "overwrite"
+        },
+        {
+          "line": 41,
+          "return_type": "void",
+          "name": "blit"
+        },
+        {
+          "line": 42,
+          "return_type": "void",
+          "name": "paste"
+        },
+        {
+          "line": 43,
+          "return_type": "void",
+          "name": "resize"
+        },
+        {
+          "line": 49,
+          "return_type": "bool",
+          "name": "nextMipmap"
+        },
+        {
+          "line": 51,
+          "return_type": "void",
+          "name": "flipVertically"
+        },
+        {
+          "line": 52,
+          "return_type": "void",
+          "name": "setOpacity"
+        },
+        {
+          "line": 54,
+          "return_type": "void",
+          "name": "reverseChannels"
+        },
+        {
+          "line": 56,
+          "return_type": "void",
+          "name": "setPixel"
+        },
+        {
+          "line": 61,
+          "return_type": "void",
+          "name": "setPixel"
+        },
+        {
+          "line": 62,
+          "return_type": "void",
+          "name": "setPixel"
+        },
+        {
+          "line": 66,
+          "return_type": "int",
+          "name": "getPixelCount"
+        },
+        {
+          "line": 68,
+          "return_type": "int",
+          "name": "getWidth"
+        },
+        {
+          "line": 69,
+          "return_type": "int",
+          "name": "getHeight"
+        },
+        {
+          "line": 70,
+          "return_type": "int",
+          "name": "getBpp"
+        },
+        {
+          "line": 73,
+          "return_type": "bool",
+          "name": "hasTransparentPixel"
+        },
+        {
+          "line": 74,
+          "return_type": "void",
+          "name": "setTransparentPixel"
+        }
+      ],
+      "classes": [
+        {
+          "line": 27,
+          "name": "Image"
+        }
+      ],
+      "includes": [
+        "declarations.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\paintershaderprogram.h",
+      "total_lines": 99,
+      "code_lines": 58,
+      "comment_lines": 21,
+      "empty_lines": 20,
+      "functions": [
+        {
+          "line": 49,
+          "return_type": "void",
+          "name": "setupUniforms"
+        },
+        {
+          "line": 54,
+          "return_type": "uint8_t",
+          "name": "getId"
+        },
+        {
+          "line": 58,
+          "return_type": "bool",
+          "name": "link"
+        },
+        {
+          "line": 60,
+          "return_type": "void",
+          "name": "setTransformMatrix"
+        },
+        {
+          "line": 61,
+          "return_type": "void",
+          "name": "setProjectionMatrix"
+        },
+        {
+          "line": 62,
+          "return_type": "void",
+          "name": "setTextureMatrix"
+        },
+        {
+          "line": 63,
+          "return_type": "void",
+          "name": "setColor"
+        },
+        {
+          "line": 64,
+          "return_type": "void",
+          "name": "setOpacity"
+        },
+        {
+          "line": 65,
+          "return_type": "void",
+          "name": "setResolution"
+        },
+        {
+          "line": 66,
+          "return_type": "void",
+          "name": "updateTime"
+        },
+        {
+          "line": 68,
+          "return_type": "void",
+          "name": "addMultiTexture"
+        },
+        {
+          "line": 69,
+          "return_type": "void",
+          "name": "bindMultiTextures"
+        },
+        {
+          "line": 71,
+          "return_type": "void",
+          "name": "setUseFramebuffer"
+        },
+        {
+          "line": 75,
+          "return_type": "bool",
+          "name": "useFramebuffer"
+        }
+      ],
+      "classes": [
+        {
+          "line": 27,
+          "name": "PainterShaderProgram"
+        },
+        {
+          "line": 47,
+          "name": "Painter"
+        },
+        {
+          "line": 98,
+          "name": "ShaderManager"
+        }
+      ],
+      "includes": [
+        "shaderprogram.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\graphics\\shader.h",
+      "total_lines": 50,
+      "code_lines": 21,
+      "comment_lines": 21,
+      "empty_lines": 8,
+      "functions": [
+        {
+          "line": 40,
+          "return_type": "bool",
+          "name": "compileSourceCode"
+        },
+        {
+          "line": 41,
+          "return_type": "bool",
+          "name": "compileSourceFile"
+        },
+        {
+          "line": 42,
+          "return_type": "string",
+          "name": "log"
+        },
+        {
+          "line": 44,
+          "return_type": "uint32_t",
+          "name": "getShaderId"
+        },
+        {
+          "line": 45,
+          "return_type": "ShaderType",
+          "name": "getShaderType"
+        }
+      ],
+      "classes": [
+        {
+          "line": 27,
+          "name": "ShaderType"
+        },
+        {
+          "line": 33,
+          "name": "Shader"
+        }
+      ],
+      "includes": [
+        "declarations.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\luaengine\\luaexception.cpp",
+      "total_lines": 53,
+      "code_lines": 26,
+      "comment_lines": 22,
+      "empty_lines": 5,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "luaexception.h",
+        "luainterface.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\platform\\androidwindow.h",
+      "total_lines": 166,
+      "code_lines": 114,
+      "comment_lines": 21,
+      "empty_lines": 31,
+      "functions": [
+        {
+          "line": 66,
+          "return_type": "KeyCode",
+          "name": "getKeyCodeFromInt"
+        },
+        {
+          "line": 67,
+          "return_type": "EventType",
+          "name": "getEventTypeFromInt"
+        },
+        {
+          "line": 76,
+          "return_type": "void",
+          "name": "internalInitGL"
+        },
+        {
+          "line": 77,
+          "return_type": "void",
+          "name": "internalCheckGL"
+        },
+        {
+          "line": 78,
+          "return_type": "void",
+          "name": "internalChooseGL"
+        },
+        {
+          "line": 79,
+          "return_type": "void",
+          "name": "internalCreateGLContext"
+        },
+        {
+          "line": 80,
+          "return_type": "void",
+          "name": "internalCreateGLSurface"
+        },
+        {
+          "line": 81,
+          "return_type": "void",
+          "name": "internalConnectSurface"
+        },
+        {
+          "line": 82,
+          "return_type": "void",
+          "name": "queryGlSize"
+        },
+        {
+          "line": 84,
+          "return_type": "void",
+          "name": "internalDestroyGLContext"
+        },
+        {
+          "line": 85,
+          "return_type": "void",
+          "name": "internalDestroySurface"
+        },
+        {
+          "line": 87,
+          "return_type": "void",
+          "name": "processNativeInputEvents"
+        },
+        {
+          "line": 93,
+          "return_type": "void",
+          "name": "processKeyDownOrUp"
+        },
+        {
+          "line": 94,
+          "return_type": "void",
+          "name": "processTextInput"
+        },
+        {
+          "line": 95,
+          "return_type": "void",
+          "name": "processFingerDownAndUp"
+        },
+        {
+          "line": 96,
+          "return_type": "void",
+          "name": "processFingerMotion"
+        },
+        {
+          "line": 97,
+          "return_type": "void",
+          "name": "handleInputEvent"
+        },
+        {
+          "line": 99,
+          "return_type": "void",
+          "name": "handleNativeEvents"
+        },
+        {
+          "line": 100,
+          "return_type": "void",
+          "name": "handleCmd"
+        },
+        {
+          "line": 105,
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "line": 106,
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "line": 108,
+          "return_type": "void",
+          "name": "move"
+        },
+        {
+          "line": 109,
+          "return_type": "void",
+          "name": "resize"
+        },
+        {
+          "line": 110,
+          "return_type": "void",
+          "name": "show"
+        },
+        {
+          "line": 111,
+          "return_type": "void",
+          "name": "hide"
+        },
+        {
+          "line": 112,
+          "return_type": "void",
+          "name": "maximize"
+        },
+        {
+          "line": 113,
+          "return_type": "void",
+          "name": "poll"
+        },
+        {
+          "line": 114,
+          "return_type": "void",
+          "name": "swapBuffers"
+        },
+        {
+          "line": 115,
+          "return_type": "void",
+          "name": "showMouse"
+        },
+        {
+          "line": 116,
+          "return_type": "void",
+          "name": "hideMouse"
+        },
+        {
+          "line": 118,
+          "return_type": "void",
+          "name": "setMouseCursor"
+        },
+        {
+          "line": 119,
+          "return_type": "void",
+          "name": "restoreMouseCursor"
+        },
+        {
+          "line": 121,
+          "return_type": "void",
+          "name": "setTitle"
+        },
+        {
+          "line": 122,
+          "return_type": "void",
+          "name": "setMinimumSize"
+        },
+        {
+          "line": 123,
+          "return_type": "void",
+          "name": "setFullscreen"
+        },
+        {
+          "line": 124,
+          "return_type": "void",
+          "name": "setVerticalSync"
+        },
+        {
+          "line": 125,
+          "return_type": "void",
+          "name": "setIcon"
+        },
+        {
+          "line": 126,
+          "return_type": "void",
+          "name": "setClipboardText"
+        },
+        {
+          "line": 128,
+          "return_type": "Size",
+          "name": "getDisplaySize"
+        },
+        {
+          "line": 129,
+          "return_type": "string",
+          "name": "getClipboardText"
+        },
+        {
+          "line": 130,
+          "return_type": "string",
+          "name": "getPlatformType"
+        },
+        {
+          "line": 132,
+          "return_type": "void",
+          "name": "initializeAndroidApp"
+        },
+        {
+          "line": 133,
+          "return_type": "void",
+          "name": "nativeCommitText"
+        },
+        {
+          "line": 134,
+          "return_type": "void",
+          "name": "onNativeKeyDown"
+        },
+        {
+          "line": 135,
+          "return_type": "void",
+          "name": "onNativeKeyUp"
+        },
+        {
+          "line": 137,
+          "return_type": "int",
+          "name": "internalLoadMouseCursor"
+        }
+      ],
+      "classes": [
+        {
+          "line": 35,
+          "name": "AndroidWindow"
+        }
+      ],
+      "includes": [
+        "platformwindow.h",
+        "android/native_window.h",
+        "android/native_window_jni.h",
+        "jni.h",
+        "EGL/egl.h",
+        "queue",
+        "game-activity/native_app_glue/android_native_app_glue.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\platform\\browserwindow.h",
+      "total_lines": 92,
+      "code_lines": 56,
+      "comment_lines": 21,
+      "empty_lines": 15,
+      "functions": [
+        {
+          "line": 34,
+          "return_type": "void",
+          "name": "internalInitGL"
+        },
+        {
+          "line": 40,
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "line": 41,
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "line": 43,
+          "return_type": "void",
+          "name": "move"
+        },
+        {
+          "line": 44,
+          "return_type": "void",
+          "name": "resize"
+        },
+        {
+          "line": 45,
+          "return_type": "void",
+          "name": "show"
+        },
+        {
+          "line": 46,
+          "return_type": "void",
+          "name": "hide"
+        },
+        {
+          "line": 47,
+          "return_type": "void",
+          "name": "maximize"
+        },
+        {
+          "line": 48,
+          "return_type": "void",
+          "name": "poll"
+        },
+        {
+          "line": 49,
+          "return_type": "void",
+          "name": "swapBuffers"
+        },
+        {
+          "line": 50,
+          "return_type": "void",
+          "name": "showMouse"
+        },
+        {
+          "line": 51,
+          "return_type": "void",
+          "name": "hideMouse"
+        },
+        {
+          "line": 53,
+          "return_type": "void",
+          "name": "setMouseCursor"
+        },
+        {
+          "line": 54,
+          "return_type": "void",
+          "name": "restoreMouseCursor"
+        },
+        {
+          "line": 55,
+          "return_type": "int",
+          "name": "loadMouseCursor"
+        },
+        {
+          "line": 57,
+          "return_type": "void",
+          "name": "setTitle"
+        },
+        {
+          "line": 58,
+          "return_type": "void",
+          "name": "setMinimumSize"
+        },
+        {
+          "line": 59,
+          "return_type": "void",
+          "name": "setFullscreen"
+        },
+        {
+          "line": 60,
+          "return_type": "void",
+          "name": "setVerticalSync"
+        },
+        {
+          "line": 61,
+          "return_type": "void",
+          "name": "setIcon"
+        },
+        {
+          "line": 62,
+          "return_type": "void",
+          "name": "setClipboardText"
+        },
+        {
+          "line": 63,
+          "return_type": "void",
+          "name": "setRunning"
+        },
+        {
+          "line": 65,
+          "return_type": "void",
+          "name": "handleResizeCallback"
+        },
+        {
+          "line": 66,
+          "return_type": "void",
+          "name": "handleMouseCallback"
+        },
+        {
+          "line": 67,
+          "return_type": "void",
+          "name": "handleMouseWheelCallback"
+        },
+        {
+          "line": 68,
+          "return_type": "void",
+          "name": "handleMouseMotionCallback"
+        },
+        {
+          "line": 69,
+          "return_type": "void",
+          "name": "handleKeyboardCallback"
+        },
+        {
+          "line": 70,
+          "return_type": "void",
+          "name": "handleFocusCallback"
+        },
+        {
+          "line": 71,
+          "return_type": "void",
+          "name": "handleTouchCallback"
+        },
+        {
+          "line": 72,
+          "return_type": "void",
+          "name": "updateTouchPosition"
+        },
+        {
+          "line": 73,
+          "return_type": "void",
+          "name": "processLongTouch"
+        },
+        {
+          "line": 75,
+          "return_type": "Size",
+          "name": "getDisplaySize"
+        },
+        {
+          "line": 76,
+          "return_type": "string",
+          "name": "getClipboardText"
+        },
+        {
+          "line": 77,
+          "return_type": "string",
+          "name": "getPlatformType"
+        },
+        {
+          "line": 80,
+          "return_type": "int",
+          "name": "internalLoadMouseCursor"
+        }
+      ],
+      "classes": [
+        {
+          "line": 32,
+          "name": "BrowserWindow"
+        }
+      ],
+      "includes": [
+        "platformwindow.h",
+        "emscripten/emscripten.h",
+        "emscripten/html5.h",
+        "emscripten/websocket.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\platform\\platform.cpp",
+      "total_lines": 79,
+      "code_lines": 48,
+      "comment_lines": 21,
+      "empty_lines": 10,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "platform.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\platform\\win32window.h",
+      "total_lines": 105,
+      "code_lines": 65,
+      "comment_lines": 21,
+      "empty_lines": 19,
+      "functions": [
+        {
+          "line": 37,
+          "return_type": "void",
+          "name": "internalCreateWindow"
+        },
+        {
+          "line": 38,
+          "return_type": "void",
+          "name": "internalCreateGLContext"
+        },
+        {
+          "line": 39,
+          "return_type": "void",
+          "name": "internalDestroyGLContext"
+        },
+        {
+          "line": 40,
+          "return_type": "void",
+          "name": "internalRestoreGLContext"
+        },
+        {
+          "line": 43,
+          "return_type": "bool",
+          "name": "isExtensionSupported"
+        },
+        {
+          "line": 45,
+          "return_type": "LRESULT",
+          "name": "windowProc"
+        },
+        {
+          "line": 48,
+          "return_type": "Key",
+          "name": "retranslateVirtualKey"
+        },
+        {
+          "line": 53,
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "line": 54,
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "line": 56,
+          "return_type": "void",
+          "name": "move"
+        },
+        {
+          "line": 57,
+          "return_type": "void",
+          "name": "resize"
+        },
+        {
+          "line": 58,
+          "return_type": "void",
+          "name": "show"
+        },
+        {
+          "line": 59,
+          "return_type": "void",
+          "name": "hide"
+        },
+        {
+          "line": 60,
+          "return_type": "void",
+          "name": "maximize"
+        },
+        {
+          "line": 61,
+          "return_type": "void",
+          "name": "poll"
+        },
+        {
+          "line": 62,
+          "return_type": "void",
+          "name": "swapBuffers"
+        },
+        {
+          "line": 63,
+          "return_type": "void",
+          "name": "showMouse"
+        },
+        {
+          "line": 64,
+          "return_type": "void",
+          "name": "hideMouse"
+        },
+        {
+          "line": 65,
+          "return_type": "void",
+          "name": "displayFatalError"
+        },
+        {
+          "line": 67,
+          "return_type": "void",
+          "name": "setMouseCursor"
+        },
+        {
+          "line": 68,
+          "return_type": "void",
+          "name": "restoreMouseCursor"
+        },
+        {
+          "line": 70,
+          "return_type": "void",
+          "name": "setTitle"
+        },
+        {
+          "line": 71,
+          "return_type": "void",
+          "name": "setMinimumSize"
+        },
+        {
+          "line": 72,
+          "return_type": "void",
+          "name": "setFullscreen"
+        },
+        {
+          "line": 73,
+          "return_type": "void",
+          "name": "setVerticalSync"
+        },
+        {
+          "line": 74,
+          "return_type": "void",
+          "name": "setIcon"
+        },
+        {
+          "line": 75,
+          "return_type": "void",
+          "name": "setClipboardText"
+        },
+        {
+          "line": 77,
+          "return_type": "Size",
+          "name": "getDisplaySize"
+        },
+        {
+          "line": 78,
+          "return_type": "string",
+          "name": "getClipboardText"
+        },
+        {
+          "line": 79,
+          "return_type": "string",
+          "name": "getPlatformType"
+        },
+        {
+          "line": 82,
+          "return_type": "int",
+          "name": "internalLoadMouseCursor"
+        },
+        {
+          "line": 85,
+          "return_type": "Rect",
+          "name": "getClientRect"
+        },
+        {
+          "line": 86,
+          "return_type": "Rect",
+          "name": "getWindowRect"
+        },
+        {
+          "line": 87,
+          "return_type": "Rect",
+          "name": "adjustWindowRect"
+        }
+      ],
+      "classes": [
+        {
+          "line": 35,
+          "name": "WIN32Window"
+        }
+      ],
+      "includes": [
+        "platformwindow.h",
+        "windows.h",
+        "EGL/egl.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\proxy\\proxy.h",
+      "total_lines": 74,
+      "code_lines": 42,
+      "comment_lines": 22,
+      "empty_lines": 10,
+      "functions": [
+        {
+          "line": 41,
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "line": 42,
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "line": 43,
+          "return_type": "void",
+          "name": "clear"
+        },
+        {
+          "line": 44,
+          "return_type": "void",
+          "name": "setMaxActiveProxies"
+        },
+        {
+          "line": 50,
+          "return_type": "bool",
+          "name": "isActive"
+        },
+        {
+          "line": 51,
+          "return_type": "void",
+          "name": "addProxy"
+        },
+        {
+          "line": 52,
+          "return_type": "void",
+          "name": "removeProxy"
+        },
+        {
+          "line": 53,
+          "return_type": "uint32_t",
+          "name": "addSession"
+        },
+        {
+          "line": 54,
+          "return_type": "void",
+          "name": "removeSession"
+        },
+        {
+          "line": 55,
+          "return_type": "void",
+          "name": "send"
+        },
+        {
+          "line": 59,
+          "return_type": "int",
+          "name": "getPing"
+        }
+      ],
+      "classes": [
+        {
+          "line": 29,
+          "name": "Proxy"
+        },
+        {
+          "line": 30,
+          "name": "Session"
+        },
+        {
+          "line": 35,
+          "name": "ProxyManager"
+        }
+      ],
+      "includes": [
+        "asio.hpp",
+        "list",
+        "map"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\proxy\\proxy_client.h",
+      "total_lines": 189,
+      "code_lines": 129,
+      "comment_lines": 25,
+      "empty_lines": 35,
+      "functions": [
+        {
+          "line": 58,
+          "return_type": "void",
+          "name": "start"
+        },
+        {
+          "line": 59,
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "line": 61,
+          "return_type": "uint32_t",
+          "name": "getPing"
+        },
+        {
+          "line": 62,
+          "return_type": "uint32_t",
+          "name": "getRealPing"
+        },
+        {
+          "line": 63,
+          "return_type": "uint32_t",
+          "name": "getPriority"
+        },
+        {
+          "line": 64,
+          "return_type": "bool",
+          "name": "isConnected"
+        },
+        {
+          "line": 65,
+          "return_type": "string",
+          "name": "getHost"
+        },
+        {
+          "line": 66,
+          "return_type": "uint16_t",
+          "name": "getPort"
+        },
+        {
+          "line": 67,
+          "return_type": "string",
+          "name": "getDebugInfo"
+        },
+        {
+          "line": 68,
+          "return_type": "bool",
+          "name": "isActive"
+        },
+        {
+          "line": 71,
+          "return_type": "void",
+          "name": "addSession"
+        },
+        {
+          "line": 72,
+          "return_type": "void",
+          "name": "removeSession"
+        },
+        {
+          "line": 74,
+          "return_type": "void",
+          "name": "send"
+        },
+        {
+          "line": 77,
+          "return_type": "void",
+          "name": "check"
+        },
+        {
+          "line": 78,
+          "return_type": "void",
+          "name": "connect"
+        },
+        {
+          "line": 79,
+          "return_type": "void",
+          "name": "disconnect"
+        },
+        {
+          "line": 81,
+          "return_type": "void",
+          "name": "ping"
+        },
+        {
+          "line": 82,
+          "return_type": "void",
+          "name": "onPing"
+        },
+        {
+          "line": 84,
+          "return_type": "void",
+          "name": "readHeader"
+        },
+        {
+          "line": 85,
+          "return_type": "void",
+          "name": "onHeader"
+        },
+        {
+          "line": 86,
+          "return_type": "void",
+          "name": "onPacket"
+        },
+        {
+          "line": 87,
+          "return_type": "void",
+          "name": "onSent"
+        },
+        {
+          "line": 147,
+          "return_type": "uint32_t",
+          "name": "getId"
+        },
+        {
+          "line": 148,
+          "return_type": "void",
+          "name": "start"
+        },
+        {
+          "line": 149,
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "line": 150,
+          "return_type": "void",
+          "name": "onPacket"
+        },
+        {
+          "line": 153,
+          "return_type": "void",
+          "name": "onProxyPacket"
+        },
+        {
+          "line": 156,
+          "return_type": "void",
+          "name": "check"
+        },
+        {
+          "line": 157,
+          "return_type": "void",
+          "name": "selectProxies"
+        },
+        {
+          "line": 159,
+          "return_type": "void",
+          "name": "readTibia12Header"
+        },
+        {
+          "line": 160,
+          "return_type": "void",
+          "name": "readHeader"
+        },
+        {
+          "line": 161,
+          "return_type": "void",
+          "name": "onHeader"
+        },
+        {
+          "line": 162,
+          "return_type": "void",
+          "name": "onBody"
+        },
+        {
+          "line": 163,
+          "return_type": "void",
+          "name": "onSent"
+        }
+      ],
+      "classes": [
+        {
+          "line": 33,
+          "name": "Session"
+        },
+        {
+          "line": 36,
+          "name": "Proxy"
+        },
+        {
+          "line": 120,
+          "name": "Session"
+        }
+      ],
+      "includes": [
+        "asio.hpp",
+        "list",
+        "map",
+        "set"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\sound\\soundbuffer.h",
+      "total_lines": 40,
+      "code_lines": 13,
+      "comment_lines": 21,
+      "empty_lines": 6,
+      "functions": [
+        {
+          "line": 33,
+          "return_type": "bool",
+          "name": "fillBuffer"
+        },
+        {
+          "line": 34,
+          "return_type": "bool",
+          "name": "fillBuffer"
+        },
+        {
+          "line": 36,
+          "return_type": "uint32_t",
+          "name": "getBufferId"
+        }
+      ],
+      "classes": [
+        {
+          "line": 27,
+          "name": "SoundBuffer"
+        }
+      ],
+      "includes": [
+        "declarations.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\sound\\soundeffect.cpp",
+      "total_lines": 420,
+      "code_lines": 331,
+      "comment_lines": 46,
+      "empty_lines": 43,
+      "functions": [
+        {
+          "line": 187,
+          "return_type": "T",
+          "name": "LoadProcAddress"
+        },
+        {
+          "line": 195,
+          "return_type": "define",
+          "name": "LOAD_PROC"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "soundeffect.h",
+        "soundfile.h",
+        "soundmanager.h",
+        "AL/al.h",
+        "AL/alc.h",
+        "AL/efx-presets.h",
+        "AL/efx.h",
+        "unordered_map"
+      ],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "src\\framework\\sound\\streamsoundsource.cpp",
+      "total_lines": 200,
+      "code_lines": 143,
+      "comment_lines": 24,
+      "empty_lines": 33,
+      "functions": [
+        {
+          "line": 133,
+          "return_type": "else",
+          "name": "if"
+        },
+        {
+          "line": 136,
+          "return_type": "else",
+          "name": "if"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "streamsoundsource.h",
+        "soundbuffer.h",
+        "soundfile.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\sound\\streamsoundsource.h",
+      "total_lines": 67,
+      "code_lines": 33,
+      "comment_lines": 21,
+      "empty_lines": 13,
+      "functions": [
+        {
+          "line": 42,
+          "return_type": "void",
+          "name": "play"
+        },
+        {
+          "line": 43,
+          "return_type": "void",
+          "name": "stop"
+        },
+        {
+          "line": 45,
+          "return_type": "bool",
+          "name": "isPlaying"
+        },
+        {
+          "line": 47,
+          "return_type": "void",
+          "name": "setSoundFile"
+        },
+        {
+          "line": 49,
+          "return_type": "void",
+          "name": "setFile"
+        },
+        {
+          "line": 51,
+          "return_type": "void",
+          "name": "downMix"
+        },
+        {
+          "line": 53,
+          "return_type": "void",
+          "name": "update"
+        },
+        {
+          "line": 56,
+          "return_type": "void",
+          "name": "queueBuffers"
+        },
+        {
+          "line": 57,
+          "return_type": "void",
+          "name": "unqueueBuffers"
+        },
+        {
+          "line": 58,
+          "return_type": "bool",
+          "name": "fillBufferAndQueue"
+        }
+      ],
+      "classes": [
+        {
+          "line": 27,
+          "name": "StreamSoundSource"
+        }
+      ],
+      "includes": [
+        "soundsource.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\compiler.h",
+      "total_lines": 69,
+      "code_lines": 35,
+      "comment_lines": 24,
+      "empty_lines": 10,
+      "functions": [
+        {
+          "line": 31,
+          "return_type": "elif",
+          "name": "defined"
+        },
+        {
+          "line": 36,
+          "return_type": "elif",
+          "name": "defined"
+        },
+        {
+          "line": 39,
+          "return_type": "Studio",
+          "name": "2022"
+        },
+        {
+          "line": 44,
+          "return_type": "pragma",
+          "name": "warning"
+        },
+        {
+          "line": 45,
+          "return_type": "pragma",
+          "name": "warning"
+        },
+        {
+          "line": 46,
+          "return_type": "pragma",
+          "name": "warning"
+        },
+        {
+          "line": 47,
+          "return_type": "pragma",
+          "name": "warning"
+        },
+        {
+          "line": 48,
+          "return_type": "pragma",
+          "name": "warning"
+        },
+        {
+          "line": 59,
+          "return_type": "if",
+          "name": "defined"
+        },
+        {
+          "line": 60,
+          "return_type": "define",
+          "name": "likely"
+        },
+        {
+          "line": 61,
+          "return_type": "define",
+          "name": "unlikely"
+        },
+        {
+          "line": 63,
+          "return_type": "define",
+          "name": "likely"
+        },
+        {
+          "line": 64,
+          "return_type": "define",
+          "name": "unlikely"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "winsock2.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\demangle.cpp",
+      "total_lines": 68,
+      "code_lines": 37,
+      "comment_lines": 21,
+      "empty_lines": 10,
+      "functions": [
+        {
+          "line": 30,
+          "return_type": "pragma",
+          "name": "warning"
+        },
+        {
+          "line": 31,
+          "return_type": "pragma",
+          "name": "warning"
+        },
+        {
+          "line": 33,
+          "return_type": "pragma",
+          "name": "warning"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "demangle.h",
+        "winsock2.h",
+        "Windows.h",
+        "ImageHlp.h",
+        "cxxabi.h",
+        "cstring",
+        "cstdlib"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\hash.h",
+      "total_lines": 50,
+      "code_lines": 22,
+      "comment_lines": 23,
+      "empty_lines": 5,
+      "functions": [
+        {
+          "line": 30,
+          "return_type": "size_t",
+          "name": "hash_int"
+        },
+        {
+          "line": 39,
+          "return_type": "void",
+          "name": "hash_union"
+        },
+        {
+          "line": 45,
+          "return_type": "void",
+          "name": "hash_combine"
+        }
+      ],
+      "classes": [
+        {
+          "line": 44,
+          "name": "T"
+        }
+      ],
+      "includes": [
+        "parallel_hashmap/phmap.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\math.cpp",
+      "total_lines": 105,
+      "code_lines": 65,
+      "comment_lines": 21,
+      "empty_lines": 19,
+      "functions": [
+        {
+          "line": 30,
+          "return_type": "pragma",
+          "name": "warning"
+        },
+        {
+          "line": 35,
+          "return_type": "uint32_t",
+          "name": "adler32"
+        },
+        {
+          "line": 67,
+          "return_type": "int",
+          "name": "random_range"
+        },
+        {
+          "line": 72,
+          "return_type": "return",
+          "name": "dis"
+        },
+        {
+          "line": 75,
+          "return_type": "float",
+          "name": "random_range"
+        },
+        {
+          "line": 80,
+          "return_type": "return",
+          "name": "dis"
+        },
+        {
+          "line": 83,
+          "return_type": "bool",
+          "name": "random_bool"
+        },
+        {
+          "line": 88,
+          "return_type": "bernoulli_distribution",
+          "name": "dis"
+        },
+        {
+          "line": 89,
+          "return_type": "return",
+          "name": "dis"
+        },
+        {
+          "line": 92,
+          "return_type": "int32_t",
+          "name": "normal_random"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "algorithm",
+        "climits",
+        "cmath",
+        "random",
+        "stdexcept"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\math.h",
+      "total_lines": 56,
+      "code_lines": 26,
+      "comment_lines": 21,
+      "empty_lines": 9,
+      "functions": [
+        {
+          "line": 29,
+          "return_type": "bool",
+          "name": "is_power_of_two"
+        },
+        {
+          "line": 30,
+          "return_type": "size_t",
+          "name": "to_power_of_two"
+        },
+        {
+          "line": 32,
+          "return_type": "uint16_t",
+          "name": "readULE16"
+        },
+        {
+          "line": 33,
+          "return_type": "uint32_t",
+          "name": "readULE32"
+        },
+        {
+          "line": 34,
+          "return_type": "uint64_t",
+          "name": "readULE64"
+        },
+        {
+          "line": 36,
+          "return_type": "void",
+          "name": "writeULE16"
+        },
+        {
+          "line": 37,
+          "return_type": "void",
+          "name": "writeULE32"
+        },
+        {
+          "line": 38,
+          "return_type": "void",
+          "name": "writeULE64"
+        },
+        {
+          "line": 40,
+          "return_type": "int16_t",
+          "name": "readSLE16"
+        },
+        {
+          "line": 41,
+          "return_type": "int32_t",
+          "name": "readSLE32"
+        },
+        {
+          "line": 42,
+          "return_type": "int64_t",
+          "name": "readSLE64"
+        },
+        {
+          "line": 44,
+          "return_type": "void",
+          "name": "writeSLE16"
+        },
+        {
+          "line": 45,
+          "return_type": "void",
+          "name": "writeSLE32"
+        },
+        {
+          "line": 46,
+          "return_type": "void",
+          "name": "writeSLE64"
+        },
+        {
+          "line": 48,
+          "return_type": "uint32_t",
+          "name": "adler32"
+        },
+        {
+          "line": 49,
+          "return_type": "int",
+          "name": "random_range"
+        },
+        {
+          "line": 50,
+          "return_type": "float",
+          "name": "random_range"
+        },
+        {
+          "line": 51,
+          "return_type": "int32_t",
+          "name": "normal_random"
+        },
+        {
+          "line": 52,
+          "return_type": "bool",
+          "name": "random_bool"
+        },
+        {
+          "line": 55,
+          "return_type": "uint32_t",
+          "name": "circularShift"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "random"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\net.cpp",
+      "total_lines": 56,
+      "code_lines": 30,
+      "comment_lines": 21,
+      "empty_lines": 5,
+      "functions": [
+        {
+          "line": 28,
+          "return_type": "string",
+          "name": "ip_to_string"
+        },
+        {
+          "line": 35,
+          "return_type": "uint32_t",
+          "name": "string_to_ip"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "net.h",
+        "asio.hpp"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\net.h",
+      "total_lines": 34,
+      "code_lines": 10,
+      "comment_lines": 21,
+      "empty_lines": 3,
+      "functions": [
+        {
+          "line": 31,
+          "return_type": "string",
+          "name": "ip_to_string"
+        },
+        {
+          "line": 32,
+          "return_type": "uint32_t",
+          "name": "string_to_ip"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "types.h",
+        "string",
+        "vector"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\string.h",
+      "total_lines": 72,
+      "code_lines": 39,
+      "comment_lines": 24,
+      "empty_lines": 9,
+      "functions": [
+        {
+          "line": 32,
+          "return_type": "string",
+          "name": "to_string"
+        },
+        {
+          "line": 33,
+          "return_type": "T",
+          "name": "from_string"
+        },
+        {
+          "line": 36,
+          "return_type": "string",
+          "name": "resolve_path"
+        },
+        {
+          "line": 38,
+          "return_type": "string",
+          "name": "date_time_string"
+        },
+        {
+          "line": 40,
+          "return_type": "string",
+          "name": "dec_to_hex"
+        },
+        {
+          "line": 41,
+          "return_type": "uint64_t",
+          "name": "hex_to_dec"
+        },
+        {
+          "line": 42,
+          "return_type": "void",
+          "name": "tolower"
+        },
+        {
+          "line": 43,
+          "return_type": "void",
+          "name": "toupper"
+        },
+        {
+          "line": 44,
+          "return_type": "void",
+          "name": "ltrim"
+        },
+        {
+          "line": 45,
+          "return_type": "void",
+          "name": "rtrim"
+        },
+        {
+          "line": 46,
+          "return_type": "void",
+          "name": "trim"
+        },
+        {
+          "line": 47,
+          "return_type": "void",
+          "name": "ucwords"
+        },
+        {
+          "line": 48,
+          "return_type": "void",
+          "name": "eraseWhiteSpace"
+        },
+        {
+          "line": 49,
+          "return_type": "void",
+          "name": "replace_all"
+        },
+        {
+          "line": 51,
+          "return_type": "bool",
+          "name": "is_valid_utf8"
+        },
+        {
+          "line": 52,
+          "return_type": "string",
+          "name": "utf8_to_latin1"
+        },
+        {
+          "line": 53,
+          "return_type": "string",
+          "name": "latin1_to_utf8"
+        },
+        {
+          "line": 56,
+          "return_type": "wstring",
+          "name": "utf8_to_utf16"
+        },
+        {
+          "line": 57,
+          "return_type": "string",
+          "name": "utf16_to_utf8"
+        },
+        {
+          "line": 58,
+          "return_type": "string",
+          "name": "utf16_to_latin1"
+        },
+        {
+          "line": 59,
+          "return_type": "wstring",
+          "name": "latin1_to_utf16"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "string",
+        "vector",
+        "cast.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\traits.h",
+      "total_lines": 45,
+      "code_lines": 21,
+      "comment_lines": 21,
+      "empty_lines": 3,
+      "functions": [],
+      "classes": [
+        {
+          "line": 29,
+          "name": "T"
+        },
+        {
+          "line": 33,
+          "name": "T"
+        },
+        {
+          "line": 37,
+          "name": "T"
+        }
+      ],
+      "includes": [
+        "type_traits"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\stdext\\types.h",
+      "total_lines": 38,
+      "code_lines": 12,
+      "comment_lines": 21,
+      "empty_lines": 5,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "any",
+        "cstddef",
+        "cstdint"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\ui\\ui.h",
+      "total_lines": 34,
+      "code_lines": 11,
+      "comment_lines": 21,
+      "empty_lines": 2,
+      "functions": [],
+      "classes": [],
+      "includes": [
+        "uianchorlayout.h",
+        "uigridlayout.h",
+        "uihorizontallayout.h",
+        "uilayout.h",
+        "uimanager.h",
+        "uiparticles.h",
+        "uiqrcode.h",
+        "uitextedit.h",
+        "uiverticallayout.h",
+        "uiwidget.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\ui\\uianchorlayout.h",
+      "total_lines": 90,
+      "code_lines": 51,
+      "comment_lines": 22,
+      "empty_lines": 17,
+      "functions": [
+        {
+          "line": 39,
+          "return_type": "AnchorEdge",
+          "name": "getAnchoredEdge"
+        },
+        {
+          "line": 40,
+          "return_type": "AnchorEdge",
+          "name": "getHookedEdge"
+        },
+        {
+          "line": 42,
+          "return_type": "UIWidgetPtr",
+          "name": "getHookedWidget"
+        },
+        {
+          "line": 43,
+          "return_type": "int",
+          "name": "getHookedPoint"
+        },
+        {
+          "line": 56,
+          "return_type": "void",
+          "name": "addAnchor"
+        },
+        {
+          "line": 58,
+          "return_type": "bool",
+          "name": "isUpdated"
+        },
+        {
+          "line": 59,
+          "return_type": "void",
+          "name": "setUpdated"
+        },
+        {
+          "line": 74,
+          "return_type": "void",
+          "name": "removeAnchors"
+        },
+        {
+          "line": 75,
+          "return_type": "bool",
+          "name": "hasAnchors"
+        },
+        {
+          "line": 76,
+          "return_type": "void",
+          "name": "centerIn"
+        },
+        {
+          "line": 77,
+          "return_type": "void",
+          "name": "fill"
+        },
+        {
+          "line": 79,
+          "return_type": "void",
+          "name": "addWidget"
+        },
+        {
+          "line": 80,
+          "return_type": "void",
+          "name": "removeWidget"
+        },
+        {
+          "line": 82,
+          "return_type": "bool",
+          "name": "isUIAnchorLayout"
+        },
+        {
+          "line": 84,
+          "return_type": "auto",
+          "name": "getAnchorsGroup"
+        },
+        {
+          "line": 87,
+          "return_type": "bool",
+          "name": "internalUpdate"
+        },
+        {
+          "line": 88,
+          "return_type": "bool",
+          "name": "updateWidget"
+        }
+      ],
+      "classes": [
+        {
+          "line": 29,
+          "name": "UIAnchor"
+        },
+        {
+          "line": 51,
+          "name": "UIAnchorGroup"
+        },
+        {
+          "line": 67,
+          "name": "UIAnchorLayout"
+        }
+      ],
+      "includes": [
+        "utility",
+        "uilayout.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\ui\\uiboxlayout.cpp",
+      "total_lines": 40,
+      "code_lines": 14,
+      "comment_lines": 21,
+      "empty_lines": 5,
+      "functions": [
+        {
+          "line": 37,
+          "return_type": "else",
+          "name": "if"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "uiboxlayout.h",
+        "uiwidget.h",
+        "utility"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\ui\\uiboxlayout.h",
+      "total_lines": 45,
+      "code_lines": 16,
+      "comment_lines": 22,
+      "empty_lines": 7,
+      "functions": [
+        {
+          "line": 33,
+          "return_type": "void",
+          "name": "applyStyle"
+        },
+        {
+          "line": 34,
+          "return_type": "void",
+          "name": "addWidget"
+        },
+        {
+          "line": 35,
+          "return_type": "void",
+          "name": "removeWidget"
+        },
+        {
+          "line": 37,
+          "return_type": "void",
+          "name": "setSpacing"
+        },
+        {
+          "line": 38,
+          "return_type": "void",
+          "name": "setFitChildren"
+        },
+        {
+          "line": 40,
+          "return_type": "bool",
+          "name": "isUIBoxLayout"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "UIBoxLayout"
+        }
+      ],
+      "includes": [
+        "uilayout.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\ui\\uigridlayout.h",
+      "total_lines": 65,
+      "code_lines": 34,
+      "comment_lines": 22,
+      "empty_lines": 9,
+      "functions": [
+        {
+          "line": 33,
+          "return_type": "void",
+          "name": "applyStyle"
+        },
+        {
+          "line": 34,
+          "return_type": "void",
+          "name": "removeWidget"
+        },
+        {
+          "line": 35,
+          "return_type": "void",
+          "name": "addWidget"
+        },
+        {
+          "line": 37,
+          "return_type": "void",
+          "name": "setCellSize"
+        },
+        {
+          "line": 38,
+          "return_type": "void",
+          "name": "setCellWidth"
+        },
+        {
+          "line": 39,
+          "return_type": "void",
+          "name": "setCellHeight"
+        },
+        {
+          "line": 40,
+          "return_type": "void",
+          "name": "setCellSpacing"
+        },
+        {
+          "line": 41,
+          "return_type": "void",
+          "name": "setNumColumns"
+        },
+        {
+          "line": 42,
+          "return_type": "void",
+          "name": "setNumLines"
+        },
+        {
+          "line": 43,
+          "return_type": "void",
+          "name": "setAutoSpacing"
+        },
+        {
+          "line": 44,
+          "return_type": "void",
+          "name": "setFitChildren"
+        },
+        {
+          "line": 45,
+          "return_type": "void",
+          "name": "setFlow"
+        },
+        {
+          "line": 47,
+          "return_type": "Size",
+          "name": "getCellSize"
+        },
+        {
+          "line": 48,
+          "return_type": "uint8_t",
+          "name": "getCellSpacing"
+        },
+        {
+          "line": 49,
+          "return_type": "uint8_t",
+          "name": "getNumColumns"
+        },
+        {
+          "line": 50,
+          "return_type": "uint16_t",
+          "name": "getNumLines"
+        },
+        {
+          "line": 52,
+          "return_type": "bool",
+          "name": "isUIGridLayout"
+        },
+        {
+          "line": 55,
+          "return_type": "bool",
+          "name": "internalUpdate"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "UIGridLayout"
+        }
+      ],
+      "includes": [
+        "uilayout.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\ui\\uihorizontallayout.h",
+      "total_lines": 45,
+      "code_lines": 15,
+      "comment_lines": 21,
+      "empty_lines": 9,
+      "functions": [
+        {
+          "line": 34,
+          "return_type": "void",
+          "name": "applyStyle"
+        },
+        {
+          "line": 36,
+          "return_type": "void",
+          "name": "setAlignRight"
+        },
+        {
+          "line": 38,
+          "return_type": "bool",
+          "name": "isUIHorizontalLayout"
+        },
+        {
+          "line": 41,
+          "return_type": "bool",
+          "name": "internalUpdate"
+        }
+      ],
+      "classes": [
+        {
+          "line": 29,
+          "name": "UIHorizontalLayout"
+        }
+      ],
+      "includes": [
+        "utility",
+        "uiboxlayout.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\ui\\uiqrcode.h",
+      "total_lines": 43,
+      "code_lines": 15,
+      "comment_lines": 22,
+      "empty_lines": 6,
+      "functions": [
+        {
+          "line": 31,
+          "return_type": "void",
+          "name": "setCode"
+        },
+        {
+          "line": 32,
+          "return_type": "void",
+          "name": "setCodeBorder"
+        },
+        {
+          "line": 34,
+          "return_type": "string",
+          "name": "getCode"
+        },
+        {
+          "line": 35,
+          "return_type": "int",
+          "name": "getCodeBorder"
+        },
+        {
+          "line": 38,
+          "return_type": "void",
+          "name": "parseCustomStyle"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "UIQrCode"
+        }
+      ],
+      "includes": [
+        "uiwidget.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\ui\\uitextedit.h",
+      "total_lines": 164,
+      "code_lines": 120,
+      "comment_lines": 22,
+      "empty_lines": 22,
+      "functions": [
+        {
+          "line": 33,
+          "return_type": "void",
+          "name": "drawSelf"
+        },
+        {
+          "line": 36,
+          "return_type": "void",
+          "name": "update"
+        },
+        {
+          "line": 39,
+          "return_type": "void",
+          "name": "setCursorPos"
+        },
+        {
+          "line": 40,
+          "return_type": "void",
+          "name": "setSelection"
+        },
+        {
+          "line": 41,
+          "return_type": "void",
+          "name": "setCursorVisible"
+        },
+        {
+          "line": 42,
+          "return_type": "void",
+          "name": "setChangeCursorImage"
+        },
+        {
+          "line": 43,
+          "return_type": "void",
+          "name": "setTextHidden"
+        },
+        {
+          "line": 44,
+          "return_type": "void",
+          "name": "setValidCharacters"
+        },
+        {
+          "line": 45,
+          "return_type": "void",
+          "name": "setShiftNavigation"
+        },
+        {
+          "line": 46,
+          "return_type": "void",
+          "name": "setMultiline"
+        },
+        {
+          "line": 47,
+          "return_type": "void",
+          "name": "setMaxLength"
+        },
+        {
+          "line": 48,
+          "return_type": "void",
+          "name": "setTextVirtualOffset"
+        },
+        {
+          "line": 49,
+          "return_type": "void",
+          "name": "setEditable"
+        },
+        {
+          "line": 50,
+          "return_type": "void",
+          "name": "setSelectable"
+        },
+        {
+          "line": 51,
+          "return_type": "void",
+          "name": "setSelectionColor"
+        },
+        {
+          "line": 52,
+          "return_type": "void",
+          "name": "setSelectionBackgroundColor"
+        },
+        {
+          "line": 53,
+          "return_type": "void",
+          "name": "setAutoScroll"
+        },
+        {
+          "line": 54,
+          "return_type": "void",
+          "name": "setPlaceholder"
+        },
+        {
+          "line": 55,
+          "return_type": "void",
+          "name": "setPlaceholderColor"
+        },
+        {
+          "line": 56,
+          "return_type": "void",
+          "name": "setPlaceholderAlign"
+        },
+        {
+          "line": 57,
+          "return_type": "void",
+          "name": "setPlaceholderFont"
+        },
+        {
+          "line": 59,
+          "return_type": "void",
+          "name": "moveCursorHorizontally"
+        },
+        {
+          "line": 60,
+          "return_type": "void",
+          "name": "moveCursorVertically"
+        },
+        {
+          "line": 61,
+          "return_type": "void",
+          "name": "appendText"
+        },
+        {
+          "line": 62,
+          "return_type": "void",
+          "name": "appendCharacter"
+        },
+        {
+          "line": 63,
+          "return_type": "void",
+          "name": "removeCharacter"
+        },
+        {
+          "line": 64,
+          "return_type": "void",
+          "name": "blinkCursor"
+        },
+        {
+          "line": 66,
+          "return_type": "void",
+          "name": "deleteSelection"
+        },
+        {
+          "line": 67,
+          "return_type": "void",
+          "name": "del"
+        },
+        {
+          "line": 68,
+          "return_type": "void",
+          "name": "paste"
+        },
+        {
+          "line": 69,
+          "return_type": "string",
+          "name": "copy"
+        },
+        {
+          "line": 70,
+          "return_type": "string",
+          "name": "cut"
+        },
+        {
+          "line": 71,
+          "return_type": "void",
+          "name": "selectAll"
+        },
+        {
+          "line": 72,
+          "return_type": "void",
+          "name": "clearSelection"
+        },
+        {
+          "line": 74,
+          "return_type": "void",
+          "name": "wrapText"
+        },
+        {
+          "line": 75,
+          "return_type": "string",
+          "name": "getDisplayedText"
+        },
+        {
+          "line": 76,
+          "return_type": "string",
+          "name": "getSelection"
+        },
+        {
+          "line": 77,
+          "return_type": "int",
+          "name": "getTextPos"
+        },
+        {
+          "line": 78,
+          "return_type": "int",
+          "name": "getCursorPos"
+        },
+        {
+          "line": 79,
+          "return_type": "Point",
+          "name": "getTextVirtualOffset"
+        },
+        {
+          "line": 80,
+          "return_type": "Size",
+          "name": "getTextVirtualSize"
+        },
+        {
+          "line": 81,
+          "return_type": "Size",
+          "name": "getTextTotalSize"
+        },
+        {
+          "line": 82,
+          "return_type": "uint32_t",
+          "name": "getMaxLength"
+        },
+        {
+          "line": 83,
+          "return_type": "int",
+          "name": "getSelectionStart"
+        },
+        {
+          "line": 84,
+          "return_type": "int",
+          "name": "getSelectionEnd"
+        },
+        {
+          "line": 85,
+          "return_type": "Color",
+          "name": "getSelectionColor"
+        },
+        {
+          "line": 86,
+          "return_type": "Color",
+          "name": "getSelectionBackgroundColor"
+        },
+        {
+          "line": 87,
+          "return_type": "bool",
+          "name": "hasSelection"
+        },
+        {
+          "line": 88,
+          "return_type": "bool",
+          "name": "isCursorVisible"
+        },
+        {
+          "line": 89,
+          "return_type": "bool",
+          "name": "isChangingCursorImage"
+        },
+        {
+          "line": 90,
+          "return_type": "bool",
+          "name": "isTextHidden"
+        },
+        {
+          "line": 91,
+          "return_type": "bool",
+          "name": "isShiftNavigation"
+        },
+        {
+          "line": 92,
+          "return_type": "bool",
+          "name": "isMultiline"
+        },
+        {
+          "line": 93,
+          "return_type": "bool",
+          "name": "isEditable"
+        },
+        {
+          "line": 94,
+          "return_type": "bool",
+          "name": "isSelectable"
+        },
+        {
+          "line": 95,
+          "return_type": "bool",
+          "name": "isAutoScrolling"
+        },
+        {
+          "line": 98,
+          "return_type": "void",
+          "name": "updateText"
+        },
+        {
+          "line": 100,
+          "return_type": "void",
+          "name": "onHoverChange"
+        },
+        {
+          "line": 101,
+          "return_type": "void",
+          "name": "onStyleApply"
+        },
+        {
+          "line": 102,
+          "return_type": "void",
+          "name": "onGeometryChange"
+        },
+        {
+          "line": 103,
+          "return_type": "void",
+          "name": "onFocusChange"
+        },
+        {
+          "line": 104,
+          "return_type": "bool",
+          "name": "onKeyText"
+        },
+        {
+          "line": 105,
+          "return_type": "bool",
+          "name": "onKeyPress"
+        },
+        {
+          "line": 106,
+          "return_type": "bool",
+          "name": "onMousePress"
+        },
+        {
+          "line": 107,
+          "return_type": "bool",
+          "name": "onMouseRelease"
+        },
+        {
+          "line": 108,
+          "return_type": "bool",
+          "name": "onMouseMove"
+        },
+        {
+          "line": 109,
+          "return_type": "bool",
+          "name": "onDoubleClick"
+        },
+        {
+          "line": 110,
+          "return_type": "void",
+          "name": "onTextAreaUpdate"
+        },
+        {
+          "line": 128,
+          "return_type": "void",
+          "name": "updateDisplayedText"
+        },
+        {
+          "line": 129,
+          "return_type": "void",
+          "name": "disableUpdates"
+        },
+        {
+          "line": 130,
+          "return_type": "void",
+          "name": "enableUpdates"
+        },
+        {
+          "line": 131,
+          "return_type": "void",
+          "name": "recacheGlyphs"
+        },
+        {
+          "line": 143,
+          "return_type": "void",
+          "name": "setProp"
+        },
+        {
+          "line": 144,
+          "return_type": "bool",
+          "name": "getProp"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "UITextEdit"
+        }
+      ],
+      "includes": [
+        "uiwidget.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\ui\\uitranslator.h",
+      "total_lines": 34,
+      "code_lines": 10,
+      "comment_lines": 21,
+      "empty_lines": 3,
+      "functions": [
+        {
+          "line": 30,
+          "return_type": "AlignmentFlag",
+          "name": "translateAlignment"
+        },
+        {
+          "line": 31,
+          "return_type": "AnchorEdge",
+          "name": "translateAnchorEdge"
+        },
+        {
+          "line": 32,
+          "return_type": "WidgetState",
+          "name": "translateState"
+        },
+        {
+          "line": 33,
+          "return_type": "AutoFocusPolicy",
+          "name": "translateAutoFocusPolicy"
+        }
+      ],
+      "classes": [],
+      "includes": [
+        "../const.h",
+        "string"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\ui\\uiverticallayout.h",
+      "total_lines": 46,
+      "code_lines": 15,
+      "comment_lines": 22,
+      "empty_lines": 9,
+      "functions": [
+        {
+          "line": 35,
+          "return_type": "void",
+          "name": "applyStyle"
+        },
+        {
+          "line": 37,
+          "return_type": "void",
+          "name": "setAlignBottom"
+        },
+        {
+          "line": 38,
+          "return_type": "bool",
+          "name": "isAlignBottom"
+        },
+        {
+          "line": 40,
+          "return_type": "bool",
+          "name": "isUIVerticalLayout"
+        },
+        {
+          "line": 43,
+          "return_type": "bool",
+          "name": "internalUpdate"
+        }
+      ],
+      "classes": [
+        {
+          "line": 30,
+          "name": "UIVerticalLayout"
+        }
+      ],
+      "includes": [
+        "utility",
+        "uiboxlayout.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "src\\framework\\util\\color.h",
+      "total_lines": 138,
+      "code_lines": 93,
+      "comment_lines": 21,
+      "empty_lines": 24,
+      "functions": [
+        {
+          "line": 31,
+          "return_type": "constexpr",
+          "name": "Color"
+        },
+        {
+          "line": 32,
+          "return_type": "constexpr",
+          "name": "Color"
+        },
+        {
+          "line": 33,
+          "return_type": "constexpr",
+          "name": "Color"
+        },
+        {
+          "line": 34,
+          "return_type": "constexpr",
+          "name": "Color"
+        },
+        {
+          "line": 35,
+          "return_type": "constexpr",
+          "name": "Color"
+        },
+        {
+          "line": 36,
+          "return_type": "constexpr",
+          "name": "Color"
+        },
+        {
+          "line": 52,
+          "return_type": "uint8_t",
+          "name": "a"
+        },
+        {
+          "line": 53,
+          "return_type": "uint8_t",
+          "name": "b"
+        },
+        {
+          "line": 54,
+          "return_type": "uint8_t",
+          "name": "g"
+        },
+        {
+          "line": 55,
+          "return_type": "uint8_t",
+          "name": "r"
+        },
+        {
+          "line": 57,
+          "return_type": "float",
+          "name": "aF"
+        },
+        {
+          "line": 58,
+          "return_type": "float",
+          "name": "bF"
+        },
+        {
+          "line": 59,
+          "return_type": "float",
+          "name": "gF"
+        },
+        {
+          "line": 60,
+          "return_type": "float",
+          "name": "rF"
+        },
+        {
+          "line": 62,
+          "return_type": "uint32_t",
+          "name": "rgba"
+        },
+        {
+          "line": 63,
+          "return_type": "size_t",
+          "name": "hash"
+        },
+        {
+          "line": 65,
+          "return_type": "void",
+          "name": "setRed"
+        },
+        {
+          "line": 66,
+          "return_type": "void",
+          "name": "setGreen"
+        },
+        {
+          "line": 67,
+          "return_type": "void",
+          "name": "setBlue"
+        },
+        {
+          "line": 68,
+          "return_type": "void",
+          "name": "setAlpha"
+        },
+        {
+          "line": 70,
+          "return_type": "void",
+          "name": "setRed"
+        },
+        {
+          "line": 71,
+          "return_type": "void",
+          "name": "setGreen"
+        },
+        {
+          "line": 72,
+          "return_type": "void",
+          "name": "setBlue"
+        },
+        {
+          "line": 73,
+          "return_type": "void",
+          "name": "setAlpha"
+        },
+        {
+          "line": 75,
+          "return_type": "void",
+          "name": "setRGBA"
+        },
+        {
+          "line": 76,
+          "return_type": "void",
+          "name": "setRGBA"
+        },
+        {
+          "line": 81,
+          "return_type": "void",
+          "name": "blend"
+        },
+        {
+          "line": 89,
+          "return_type": "uint8_t",
+          "name": "to8bit"
+        },
+        {
+          "line": 99,
+          "return_type": "Color",
+          "name": "from8bit"
+        },
+        {
+          "line": 108,
+          "return_type": "return",
+          "name": "Color"
+        },
+        {
+          "line": 120,
+          "return_type": "return",
+          "name": "Color"
+        },
+        {
+          "line": 121,
+          "return_type": "return",
+          "name": "Color"
+        },
+        {
+          "line": 122,
+          "return_type": "return",
+          "name": "Color"
+        },
+        {
+          "line": 123,
+          "return_type": "return",
+          "name": "Color"
+        },
+        {
+          "line": 130,
+          "return_type": "void",
+          "name": "update"
+        }
+      ],
+      "classes": [
+        {
+          "line": 28,
+          "name": "Color"
+        }
+      ],
+      "includes": [
+        "../stdext/cast.h",
+        "../stdext/types.h"
+      ],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\client_background\\background.lua",
+      "total_lines": 63,
+      "code_lines": 51,
+      "comment_lines": 0,
+      "empty_lines": 12,
+      "functions": [
+        {
+          "line": 6,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 30,
+          "return_type": "function",
+          "name": "terminate"
+        },
+        {
+          "line": 45,
+          "return_type": "function",
+          "name": "hide"
+        },
+        {
+          "line": 49,
+          "return_type": "function",
+          "name": "show"
+        },
+        {
+          "line": 53,
+          "return_type": "function",
+          "name": "hideVersionLabel"
+        },
+        {
+          "line": 57,
+          "return_type": "function",
+          "name": "setVersionText"
+        },
+        {
+          "line": 61,
+          "return_type": "function",
+          "name": "getBackground"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\client_bottommenu\\bottommenu.lua",
+      "total_lines": 552,
+      "code_lines": 478,
+      "comment_lines": 0,
+      "empty_lines": 74,
+      "functions": [
+        {
+          "line": 28,
+          "return_type": "a",
+          "name": "webservice"
+        },
+        {
+          "line": 35,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 88,
+          "return_type": "function",
+          "name": "terminate"
+        },
+        {
+          "line": 93,
+          "return_type": "function",
+          "name": "hide"
+        },
+        {
+          "line": 102,
+          "return_type": "function",
+          "name": "show"
+        },
+        {
+          "line": 109,
+          "return_type": "function",
+          "name": "setShowOffData"
+        },
+        {
+          "line": 132,
+          "return_type": "function",
+          "name": "onClickOnCalendar"
+        },
+        {
+          "line": 147,
+          "return_type": "function",
+          "name": "onClickCloseCalendar"
+        },
+        {
+          "line": 154,
+          "return_type": "function",
+          "name": "setEventsSchedulerTimestamp"
+        },
+        {
+          "line": 159,
+          "return_type": "function",
+          "name": "getCalendarEventWidgetByDay"
+        },
+        {
+          "line": 180,
+          "return_type": "function",
+          "name": "reloadEventsSchedulerCurrentPage"
+        },
+        {
+          "line": 212,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 262,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 271,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 280,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 293,
+          "return_type": "function",
+          "name": "reloadEventsSchedulerCalender"
+        },
+        {
+          "line": 302,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 304,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 322,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 330,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 336,
+          "return_type": "function",
+          "name": "setEventsSchedulerCalender"
+        },
+        {
+          "line": 341,
+          "return_type": "function",
+          "name": "createCalendar"
+        },
+        {
+          "line": 365,
+          "return_type": "function",
+          "name": "getCalendarDays"
+        },
+        {
+          "line": 451,
+          "return_type": "function",
+          "name": "getDayOfWeek"
+        },
+        {
+          "line": 469,
+          "return_type": "function",
+          "name": "onClickOnPreviousCalendar"
+        },
+        {
+          "line": 490,
+          "return_type": "function",
+          "name": "onClickOnNextCalendar"
+        },
+        {
+          "line": 513,
+          "return_type": "function",
+          "name": "applyToBoostedSlot"
+        },
+        {
+          "line": 536,
+          "return_type": "function",
+          "name": "setBoostedCreatureAndBoss"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\client_debug_info\\debug_info.lua",
+      "total_lines": 65,
+      "code_lines": 52,
+      "comment_lines": 0,
+      "empty_lines": 13,
+      "functions": [
+        {
+          "line": 6,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 25,
+          "return_type": "function",
+          "name": "terminate"
+        },
+        {
+          "line": 34,
+          "return_type": "function",
+          "name": "onClose"
+        },
+        {
+          "line": 38,
+          "return_type": "function",
+          "name": "toggle"
+        },
+        {
+          "line": 50,
+          "return_type": "function",
+          "name": "update"
+        },
+        {
+          "line": 60,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\client_locales\\locales.lua",
+      "total_lines": 235,
+      "code_lines": 208,
+      "comment_lines": 0,
+      "empty_lines": 27,
+      "functions": [
+        {
+          "line": 8,
+          "return_type": "function",
+          "name": "sendLocale"
+        },
+        {
+          "line": 17,
+          "return_type": "function",
+          "name": "createWindow"
+        },
+        {
+          "line": 25,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 46,
+          "return_type": "function",
+          "name": "selectFirstLocale"
+        },
+        {
+          "line": 51,
+          "return_type": "if",
+          "name": "setLocale"
+        },
+        {
+          "line": 57,
+          "return_type": "function",
+          "name": "onGameStart"
+        },
+        {
+          "line": 61,
+          "return_type": "function",
+          "name": "onExtendedLocales"
+        },
+        {
+          "line": 63,
+          "return_type": "and",
+          "name": "setLocale"
+        },
+        {
+          "line": 69,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 75,
+          "return_type": "and",
+          "name": "setLocale"
+        },
+        {
+          "line": 96,
+          "return_type": "function",
+          "name": "terminate"
+        },
+        {
+          "line": 115,
+          "return_type": "function",
+          "name": "generateNewTranslationTable"
+        },
+        {
+          "line": 117,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 135,
+          "return_type": "function",
+          "name": "installLocale"
+        },
+        {
+          "line": 146,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 154,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 162,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 170,
+          "return_type": "function",
+          "name": "installLocales"
+        },
+        {
+          "line": 174,
+          "return_type": "function",
+          "name": "setLocale"
+        },
+        {
+          "line": 195,
+          "return_type": "function",
+          "name": "getInstalledLocales"
+        },
+        {
+          "line": 199,
+          "return_type": "function",
+          "name": "getCurrentLocale"
+        },
+        {
+          "line": 206,
+          "return_type": "if",
+          "name": "tonumber"
+        },
+        {
+          "line": 221,
+          "return_type": "elseif",
+          "name": "tostring"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\client_options\\data_options.lua",
+      "total_lines": 474,
+      "code_lines": 461,
+      "comment_lines": 0,
+      "empty_lines": 13,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\client_options\\keybins.lua",
+      "total_lines": 759,
+      "code_lines": 630,
+      "comment_lines": 0,
+      "empty_lines": 129,
+      "functions": [
+        {
+          "line": 11,
+          "return_type": "function",
+          "name": "addNewPreset"
+        },
+        {
+          "line": 31,
+          "return_type": "function",
+          "name": "copyPreset"
+        },
+        {
+          "line": 50,
+          "return_type": "function",
+          "name": "renamePreset"
+        },
+        {
+          "line": 70,
+          "return_type": "function",
+          "name": "removePreset"
+        },
+        {
+          "line": 87,
+          "return_type": "function",
+          "name": "okPresetWindow"
+        },
+        {
+          "line": 120,
+          "return_type": "function",
+          "name": "cancelPresetWindow"
+        },
+        {
+          "line": 125,
+          "return_type": "function",
+          "name": "editKeybindKeyDown"
+        },
+        {
+          "line": 140,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 152,
+          "return_type": "function",
+          "name": "editKeybind"
+        },
+        {
+          "line": 178,
+          "return_type": "function",
+          "name": "editKeybindPrimary"
+        },
+        {
+          "line": 246,
+          "return_type": "function",
+          "name": "editKeybindSecondary"
+        },
+        {
+          "line": 314,
+          "return_type": "function",
+          "name": "resetActions"
+        },
+        {
+          "line": 322,
+          "return_type": "function",
+          "name": "updateKeybinds"
+        },
+        {
+          "line": 327,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 346,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 354,
+          "return_type": "function",
+          "name": "updateHotkeys"
+        },
+        {
+          "line": 360,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 366,
+          "return_type": "function",
+          "name": "preAddHotkey"
+        },
+        {
+          "line": 385,
+          "return_type": "function",
+          "name": "addKeybind"
+        },
+        {
+          "line": 427,
+          "return_type": "function",
+          "name": "clearHotkey"
+        },
+        {
+          "line": 435,
+          "return_type": "function",
+          "name": "editHotkeyKey"
+        },
+        {
+          "line": 460,
+          "return_type": "function",
+          "name": "editHotkeyPrimary"
+        },
+        {
+          "line": 528,
+          "return_type": "function",
+          "name": "editHotkeySecondary"
+        },
+        {
+          "line": 594,
+          "return_type": "function",
+          "name": "searchActions"
+        },
+        {
+          "line": 602,
+          "return_type": "function",
+          "name": "performeSearchActions"
+        },
+        {
+          "line": 607,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 611,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 620,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 629,
+          "return_type": "function",
+          "name": "chatModeChange"
+        },
+        {
+          "line": 638,
+          "return_type": "function",
+          "name": "getChatMode"
+        },
+        {
+          "line": 646,
+          "return_type": "function",
+          "name": "applyChangedOptions"
+        },
+        {
+          "line": 650,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 658,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 659,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 681,
+          "return_type": "function",
+          "name": "presetOption"
+        },
+        {
+          "line": 693,
+          "return_type": "function",
+          "name": "init_binds"
+        },
+        {
+          "line": 722,
+          "return_type": "function",
+          "name": "terminate_binds"
+        },
+        {
+          "line": 745,
+          "return_type": "function",
+          "name": "listKeybindsComboBox"
+        },
+        {
+          "line": 754,
+          "return_type": "function",
+          "name": "debug"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "high"
+    },
+    {
+      "file": "modules\\client_serverlist\\addserver.lua",
+      "total_lines": 39,
+      "code_lines": 32,
+      "comment_lines": 0,
+      "empty_lines": 7,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\client_serverlist\\serverlist.lua",
+      "total_lines": 160,
+      "code_lines": 139,
+      "comment_lines": 0,
+      "empty_lines": 21,
+      "functions": [
+        {
+          "line": 16,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 41,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\client_styles\\styles.lua",
+      "total_lines": 48,
+      "code_lines": 42,
+      "comment_lines": 0,
+      "empty_lines": 6,
+      "functions": [
+        {
+          "line": 7,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 17,
+          "return_type": "function",
+          "name": "terminate"
+        },
+        {
+          "line": 20,
+          "return_type": "function",
+          "name": "importResources"
+        },
+        {
+          "line": 23,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 44,
+          "return_type": "function",
+          "name": "reloadParticles"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\client_terminal\\commands.lua",
+      "total_lines": 90,
+      "code_lines": 79,
+      "comment_lines": 0,
+      "empty_lines": 11,
+      "functions": [
+        {
+          "line": 1,
+          "return_type": "function",
+          "name": "pcolored"
+        },
+        {
+          "line": 6,
+          "return_type": "function",
+          "name": "draw_debug_boxes"
+        },
+        {
+          "line": 10,
+          "return_type": "function",
+          "name": "hide_map"
+        },
+        {
+          "line": 14,
+          "return_type": "function",
+          "name": "show_map"
+        },
+        {
+          "line": 18,
+          "return_type": "function",
+          "name": "live_textures_reload"
+        },
+        {
+          "line": 23,
+          "return_type": "function",
+          "name": "pingBack"
+        },
+        {
+          "line": 33,
+          "return_type": "function",
+          "name": "ping"
+        },
+        {
+          "line": 39,
+          "return_type": "if",
+          "name": "not"
+        },
+        {
+          "line": 54,
+          "return_type": "function",
+          "name": "clear"
+        },
+        {
+          "line": 58,
+          "return_type": "function",
+          "name": "ls"
+        },
+        {
+          "line": 61,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 70,
+          "return_type": "function",
+          "name": "about_version"
+        },
+        {
+          "line": 75,
+          "return_type": "function",
+          "name": "about_graphics"
+        },
+        {
+          "line": 81,
+          "return_type": "function",
+          "name": "about_modules"
+        },
+        {
+          "line": 82,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\globals.lua",
+      "total_lines": 60,
+      "code_lines": 49,
+      "comment_lines": 0,
+      "empty_lines": 11,
+      "functions": [
+        {
+          "line": 13,
+          "return_type": "function",
+          "name": "scheduleEvent"
+        },
+        {
+          "line": 20,
+          "return_type": "function",
+          "name": "addEvent"
+        },
+        {
+          "line": 27,
+          "return_type": "function",
+          "name": "cycleEvent"
+        },
+        {
+          "line": 34,
+          "return_type": "function",
+          "name": "periodicalEvent"
+        },
+        {
+          "line": 40,
+          "return_type": "not",
+          "name": "conditionFunc"
+        },
+        {
+          "line": 53,
+          "return_type": "function",
+          "name": "removeEvent"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\keybind.lua",
+      "total_lines": 1036,
+      "code_lines": 840,
+      "comment_lines": 0,
+      "empty_lines": 196,
+      "functions": [
+        {
+          "line": 61,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 77,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 82,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 108,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 119,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 125,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 138,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 146,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 169,
+          "return_type": "primary",
+          "name": "key"
+        },
+        {
+          "line": 177,
+          "return_type": "primary",
+          "name": "key"
+        },
+        {
+          "line": 185,
+          "return_type": "secondary",
+          "name": "key"
+        },
+        {
+          "line": 193,
+          "return_type": "secondary",
+          "name": "key"
+        },
+        {
+          "line": 234,
+          "return_type": "and",
+          "name": "tostring"
+        },
+        {
+          "line": 235,
+          "return_type": "and",
+          "name": "tostring"
+        },
+        {
+          "line": 236,
+          "return_type": "and",
+          "name": "tostring"
+        },
+        {
+          "line": 237,
+          "return_type": "and",
+          "name": "tostring"
+        },
+        {
+          "line": 269,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 323,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 503,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 509,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 515,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 521,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 610,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 616,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 621,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 668,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 675,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 683,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 735,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 780,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 1007,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 1013,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 1023,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 1029,
+          "return_type": "in",
+          "name": "ipairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "high"
+    },
+    {
+      "file": "modules\\corelib\\keyboard.lua",
+      "total_lines": 276,
+      "code_lines": 249,
+      "comment_lines": 0,
+      "empty_lines": 27,
+      "functions": [
+        {
+          "line": 5,
+          "return_type": "function",
+          "name": "translateKeyCombo"
+        },
+        {
+          "line": 10,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 21,
+          "return_type": "function",
+          "name": "getKeyCode"
+        },
+        {
+          "line": 22,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 29,
+          "return_type": "function",
+          "name": "retranslateKeyComboDesc"
+        },
+        {
+          "line": 34,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 39,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 40,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 46,
+          "return_type": "return",
+          "name": "translateKeyCombo"
+        },
+        {
+          "line": 49,
+          "return_type": "function",
+          "name": "determineKeyComboDesc"
+        },
+        {
+          "line": 76,
+          "return_type": "return",
+          "name": "translateKeyCombo"
+        },
+        {
+          "line": 79,
+          "return_type": "function",
+          "name": "onWidgetKeyDown"
+        },
+        {
+          "line": 86,
+          "return_type": "return",
+          "name": "signalcall"
+        },
+        {
+          "line": 89,
+          "return_type": "function",
+          "name": "onWidgetKeyUp"
+        },
+        {
+          "line": 96,
+          "return_type": "return",
+          "name": "signalcall"
+        },
+        {
+          "line": 99,
+          "return_type": "function",
+          "name": "onWidgetKeyPress"
+        },
+        {
+          "line": 104,
+          "return_type": "return",
+          "name": "signalcall"
+        },
+        {
+          "line": 107,
+          "return_type": "function",
+          "name": "connectKeyDownEvent"
+        },
+        {
+          "line": 118,
+          "return_type": "function",
+          "name": "connectKeyUpEvent"
+        },
+        {
+          "line": 129,
+          "return_type": "function",
+          "name": "connectKeyPressEvent"
+        },
+        {
+          "line": 173,
+          "return_type": "function",
+          "name": "getUnbindArgs"
+        },
+        {
+          "line": 176,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 178,
+          "return_type": "elseif",
+          "name": "type"
+        },
+        {
+          "line": 181,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 183,
+          "return_type": "elseif",
+          "name": "type"
+        },
+        {
+          "line": 222,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 231,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 232,
+          "return_type": "if",
+          "name": "type"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\corelib\\mouse.lua",
+      "total_lines": 60,
+      "code_lines": 56,
+      "comment_lines": 0,
+      "empty_lines": 4,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\gamelib\\game.lua",
+      "total_lines": 99,
+      "code_lines": 84,
+      "comment_lines": 0,
+      "empty_lines": 15,
+      "functions": [
+        {
+          "line": 10,
+          "return_type": "itemId",
+          "name": "and"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\gamelib\\market.lua",
+      "total_lines": 223,
+      "code_lines": 203,
+      "comment_lines": 0,
+      "empty_lines": 20,
+      "functions": [
+        {
+          "line": 115,
+          "return_type": "function",
+          "name": "getMarketCategoryName"
+        },
+        {
+          "line": 121,
+          "return_type": "function",
+          "name": "getMarketCategoryId"
+        },
+        {
+          "line": 183,
+          "return_type": "function",
+          "name": "getMarketDescriptionName"
+        },
+        {
+          "line": 189,
+          "return_type": "function",
+          "name": "getMarketDescriptionId"
+        },
+        {
+          "line": 212,
+          "return_type": "function",
+          "name": "getMarketSlotFilterId"
+        },
+        {
+          "line": 219,
+          "return_type": "function",
+          "name": "getMarketSlotFilterName"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\gamelib\\player.lua",
+      "total_lines": 207,
+      "code_lines": 186,
+      "comment_lines": 0,
+      "empty_lines": 21,
+      "functions": [
+        {
+          "line": 121,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 162,
+          "return_type": "itemId",
+          "name": "and"
+        },
+        {
+          "line": 167,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 168,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 169,
+          "return_type": "itemId",
+          "name": "and"
+        }
+      ],
+      "classes": [
+        {
+          "line": 1,
+          "name": "Player"
+        }
+      ],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\gamelib\\protocol.lua",
+      "total_lines": 208,
+      "code_lines": 199,
+      "comment_lines": 0,
+      "empty_lines": 9,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\gamelib\\protocollogin.lua",
+      "total_lines": 282,
+      "code_lines": 234,
+      "comment_lines": 0,
+      "empty_lines": 48,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\gamelib\\thing.lua",
+      "total_lines": 54,
+      "code_lines": 51,
+      "comment_lines": 0,
+      "empty_lines": 3,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_attachedeffects\\effects.lua",
+      "total_lines": 147,
+      "code_lines": 131,
+      "comment_lines": 0,
+      "empty_lines": 16,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_attachedeffects\\lib.lua",
+      "total_lines": 201,
+      "code_lines": 164,
+      "comment_lines": 0,
+      "empty_lines": 37,
+      "functions": [
+        {
+          "line": 96,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 101,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 152,
+          "return_type": "Effect",
+          "name": "ID"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_bugreport\\bugreport.lua",
+      "total_lines": 42,
+      "code_lines": 34,
+      "comment_lines": 0,
+      "empty_lines": 8,
+      "functions": [
+        {
+          "line": 7,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 24,
+          "return_type": "function",
+          "name": "terminate"
+        },
+        {
+          "line": 29,
+          "return_type": "function",
+          "name": "doReport"
+        },
+        {
+          "line": 35,
+          "return_type": "function",
+          "name": "show"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_cooldown\\cooldown.lua",
+      "total_lines": 258,
+      "code_lines": 217,
+      "comment_lines": 0,
+      "empty_lines": 41,
+      "functions": [
+        {
+          "line": 15,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 34,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 43,
+          "return_type": "function",
+          "name": "terminate"
+        },
+        {
+          "line": 55,
+          "return_type": "function",
+          "name": "loadIcon"
+        },
+        {
+          "line": 89,
+          "return_type": "function",
+          "name": "onMiniWindowOpen"
+        },
+        {
+          "line": 93,
+          "return_type": "function",
+          "name": "onMiniWindowClose"
+        },
+        {
+          "line": 97,
+          "return_type": "function",
+          "name": "online"
+        },
+        {
+          "line": 113,
+          "return_type": "function",
+          "name": "offline"
+        },
+        {
+          "line": 125,
+          "return_type": "function",
+          "name": "refresh"
+        },
+        {
+          "line": 131,
+          "return_type": "function",
+          "name": "removeCooldown"
+        },
+        {
+          "line": 140,
+          "return_type": "function",
+          "name": "turnOffCooldown"
+        },
+        {
+          "line": 155,
+          "return_type": "function",
+          "name": "initCooldown"
+        },
+        {
+          "line": 165,
+          "return_type": "function",
+          "name": "updateCooldown"
+        },
+        {
+          "line": 179,
+          "return_type": "function",
+          "name": "isGroupCooldownIconActive"
+        },
+        {
+          "line": 183,
+          "return_type": "function",
+          "name": "isCooldownIconActive"
+        },
+        {
+          "line": 187,
+          "return_type": "function",
+          "name": "onSpellCooldown"
+        },
+        {
+          "line": 220,
+          "return_type": "function",
+          "name": "onSpellGroupCooldown"
+        },
+        {
+          "line": 250,
+          "return_type": "function",
+          "name": "setSpellGroupCooldownsVisible"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\game_healthcircle\\game_healthcircle.lua",
+      "total_lines": 600,
+      "code_lines": 500,
+      "comment_lines": 0,
+      "empty_lines": 100,
+      "functions": [
+        {
+          "line": 9,
+          "return_type": "function",
+          "name": "currentViewMode"
+        },
+        {
+          "line": 39,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 87,
+          "return_type": "function",
+          "name": "terminate"
+        },
+        {
+          "line": 123,
+          "return_type": "function",
+          "name": "initOnHpAndMpChange"
+        },
+        {
+          "line": 133,
+          "return_type": "function",
+          "name": "terminateOnHpAndMpChange"
+        },
+        {
+          "line": 143,
+          "return_type": "function",
+          "name": "initOnGeometryChange"
+        },
+        {
+          "line": 149,
+          "return_type": "function",
+          "name": "terminateOnGeometryChange"
+        },
+        {
+          "line": 155,
+          "return_type": "function",
+          "name": "initOnLoginChange"
+        },
+        {
+          "line": 161,
+          "return_type": "function",
+          "name": "terminateOnLoginChange"
+        },
+        {
+          "line": 167,
+          "return_type": "function",
+          "name": "whenHealthChange"
+        },
+        {
+          "line": 212,
+          "return_type": "function",
+          "name": "whenManaChange"
+        },
+        {
+          "line": 248,
+          "return_type": "function",
+          "name": "whenSkillsChange"
+        },
+        {
+          "line": 329,
+          "return_type": "function",
+          "name": "whenMapResizeChange"
+        },
+        {
+          "line": 333,
+          "return_type": "if",
+          "name": "not"
+        },
+        {
+          "line": 337,
+          "return_type": "if",
+          "name": "currentViewMode"
+        },
+        {
+          "line": 403,
+          "return_type": "function",
+          "name": "setHealthCircle"
+        },
+        {
+          "line": 418,
+          "return_type": "function",
+          "name": "setManaCircle"
+        },
+        {
+          "line": 433,
+          "return_type": "function",
+          "name": "setExpCircle"
+        },
+        {
+          "line": 449,
+          "return_type": "function",
+          "name": "setSkillCircle"
+        },
+        {
+          "line": 465,
+          "return_type": "function",
+          "name": "setSkillType"
+        },
+        {
+          "line": 478,
+          "return_type": "function",
+          "name": "setDistanceFromCenter"
+        },
+        {
+          "line": 485,
+          "return_type": "function",
+          "name": "setCircleOpacity"
+        },
+        {
+          "line": 513,
+          "return_type": "function",
+          "name": "addToOptionsModule"
+        },
+        {
+          "line": 568,
+          "return_type": "function",
+          "name": "updateStatsBar"
+        },
+        {
+          "line": 574,
+          "return_type": "function",
+          "name": "setPlayerValues"
+        },
+        {
+          "line": 582,
+          "return_type": "function",
+          "name": "setStatsBarOption"
+        },
+        {
+          "line": 587,
+          "return_type": "function",
+          "name": "destroyOptionsModule"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\game_hotkeys\\hotkeys_manager.lua",
+      "total_lines": 817,
+      "code_lines": 735,
+      "comment_lines": 0,
+      "empty_lines": 82,
+      "functions": [
+        {
+          "line": 65,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 102,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 131,
+          "return_type": "function",
+          "name": "terminate"
+        },
+        {
+          "line": 163,
+          "return_type": "function",
+          "name": "configure"
+        },
+        {
+          "line": 169,
+          "return_type": "function",
+          "name": "online"
+        },
+        {
+          "line": 174,
+          "return_type": "function",
+          "name": "offline"
+        },
+        {
+          "line": 179,
+          "return_type": "function",
+          "name": "show"
+        },
+        {
+          "line": 188,
+          "return_type": "function",
+          "name": "hide"
+        },
+        {
+          "line": 192,
+          "return_type": "function",
+          "name": "toggle"
+        },
+        {
+          "line": 200,
+          "return_type": "function",
+          "name": "ok"
+        },
+        {
+          "line": 205,
+          "return_type": "function",
+          "name": "cancel"
+        },
+        {
+          "line": 210,
+          "return_type": "function",
+          "name": "load"
+        },
+        {
+          "line": 233,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 248,
+          "return_type": "function",
+          "name": "unload"
+        },
+        {
+          "line": 249,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 259,
+          "return_type": "function",
+          "name": "reset"
+        },
+        {
+          "line": 264,
+          "return_type": "function",
+          "name": "reload"
+        },
+        {
+          "line": 269,
+          "return_type": "function",
+          "name": "save"
+        },
+        {
+          "line": 291,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 307,
+          "return_type": "function",
+          "name": "loadDefautComboKeys"
+        },
+        {
+          "line": 316,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 322,
+          "return_type": "function",
+          "name": "setDefaultComboKeys"
+        },
+        {
+          "line": 326,
+          "return_type": "function",
+          "name": "onActionChange"
+        },
+        {
+          "line": 342,
+          "return_type": "function",
+          "name": "onChooseItemMouseRelease"
+        },
+        {
+          "line": 384,
+          "return_type": "function",
+          "name": "startChooseItem"
+        },
+        {
+          "line": 393,
+          "return_type": "function",
+          "name": "clearObject"
+        },
+        {
+          "line": 404,
+          "return_type": "function",
+          "name": "addHotkey"
+        },
+        {
+          "line": 413,
+          "return_type": "function",
+          "name": "addKeyCombo"
+        },
+        {
+          "line": 479,
+          "return_type": "function",
+          "name": "doKeyCombo"
+        },
+        {
+          "line": 483,
+          "return_type": "not",
+          "name": "canPerformKeyCombo"
+        },
+        {
+          "line": 526,
+          "return_type": "function",
+          "name": "executeHotkeyItem"
+        },
+        {
+          "line": 585,
+          "return_type": "function",
+          "name": "updateHotkeyLabel"
+        },
+        {
+          "line": 602,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 623,
+          "return_type": "function",
+          "name": "updateHotkeyForm"
+        },
+        {
+          "line": 718,
+          "return_type": "function",
+          "name": "removeHotkey"
+        },
+        {
+          "line": 728,
+          "return_type": "function",
+          "name": "onHotkeyTextChange"
+        },
+        {
+          "line": 743,
+          "return_type": "function",
+          "name": "onSendAutomaticallyChange"
+        },
+        {
+          "line": 758,
+          "return_type": "function",
+          "name": "onChangeUseType"
+        },
+        {
+          "line": 778,
+          "return_type": "function",
+          "name": "onSelectHotkeyLabel"
+        },
+        {
+          "line": 783,
+          "return_type": "function",
+          "name": "hotkeyCapture"
+        },
+        {
+          "line": 793,
+          "return_type": "function",
+          "name": "hotkeyCaptureOk"
+        },
+        {
+          "line": 798,
+          "return_type": "function",
+          "name": "enableHotkeys"
+        },
+        {
+          "line": 806,
+          "return_type": "function",
+          "name": "areHotkeysDisabled"
+        },
+        {
+          "line": 811,
+          "return_type": "is",
+          "name": "opened"
+        },
+        {
+          "line": 812,
+          "return_type": "function",
+          "name": "canPerformKeyCombo"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "high"
+    },
+    {
+      "file": "modules\\game_joystick\\joystick.lua",
+      "total_lines": 158,
+      "code_lines": 126,
+      "comment_lines": 0,
+      "empty_lines": 32,
+      "functions": [
+        {
+          "line": 8,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 26,
+          "return_type": "function",
+          "name": "terminate"
+        },
+        {
+          "line": 47,
+          "return_type": "function",
+          "name": "hide"
+        },
+        {
+          "line": 51,
+          "return_type": "function",
+          "name": "show"
+        },
+        {
+          "line": 55,
+          "return_type": "function",
+          "name": "onGameStart"
+        },
+        {
+          "line": 60,
+          "return_type": "function",
+          "name": "onGameEnd"
+        },
+        {
+          "line": 64,
+          "return_type": "function",
+          "name": "addOnJoystickMoveListener"
+        },
+        {
+          "line": 68,
+          "return_type": "function",
+          "name": "onKeypadTouchPress"
+        },
+        {
+          "line": 80,
+          "return_type": "function",
+          "name": "onKeypadTouchMove"
+        },
+        {
+          "line": 87,
+          "return_type": "function",
+          "name": "onKeypadTouchRelease"
+        },
+        {
+          "line": 103,
+          "return_type": "function",
+          "name": "executeWalk"
+        },
+        {
+          "line": 135,
+          "return_type": "dir",
+          "name": "and"
+        },
+        {
+          "line": 156,
+          "return_type": "function",
+          "name": "getPanel"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_modaldialog\\modaldialog.lua",
+      "total_lines": 132,
+      "code_lines": 110,
+      "comment_lines": 0,
+      "empty_lines": 22,
+      "functions": [
+        {
+          "line": 3,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 17,
+          "return_type": "function",
+          "name": "terminate"
+        },
+        {
+          "line": 24,
+          "return_type": "function",
+          "name": "destroyDialog"
+        },
+        {
+          "line": 31,
+          "return_type": "function",
+          "name": "onModalDialog"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_npctrade\\npctrade.lua",
+      "total_lines": 556,
+      "code_lines": 469,
+      "comment_lines": 0,
+      "empty_lines": 87,
+      "functions": [
+        {
+          "line": 43,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 97,
+          "return_type": "function",
+          "name": "terminate"
+        },
+        {
+          "line": 114,
+          "return_type": "function",
+          "name": "show"
+        },
+        {
+          "line": 128,
+          "return_type": "function",
+          "name": "hide"
+        },
+        {
+          "line": 132,
+          "return_type": "function",
+          "name": "onItemBoxChecked"
+        },
+        {
+          "line": 139,
+          "return_type": "if",
+          "name": "getCurrentTradeType"
+        },
+        {
+          "line": 145,
+          "return_type": "function",
+          "name": "onQuantityValueChange"
+        },
+        {
+          "line": 152,
+          "return_type": "function",
+          "name": "onTradeTypeChange"
+        },
+        {
+          "line": 168,
+          "return_type": "function",
+          "name": "onTradeClick"
+        },
+        {
+          "line": 169,
+          "return_type": "if",
+          "name": "getCurrentTradeType"
+        },
+        {
+          "line": 177,
+          "return_type": "function",
+          "name": "onSearchTextChange"
+        },
+        {
+          "line": 181,
+          "return_type": "function",
+          "name": "itemPopup"
+        },
+        {
+          "line": 204,
+          "return_type": "function",
+          "name": "onBuyWithBackpackChange"
+        },
+        {
+          "line": 210,
+          "return_type": "function",
+          "name": "onIgnoreCapacityChange"
+        },
+        {
+          "line": 214,
+          "return_type": "function",
+          "name": "onIgnoreEquippedChange"
+        },
+        {
+          "line": 218,
+          "return_type": "function",
+          "name": "onShowAllItemsChange"
+        },
+        {
+          "line": 222,
+          "return_type": "function",
+          "name": "setCurrency"
+        },
+        {
+          "line": 227,
+          "return_type": "function",
+          "name": "setShowWeight"
+        },
+        {
+          "line": 233,
+          "return_type": "function",
+          "name": "setShowYourCapacity"
+        },
+        {
+          "line": 239,
+          "return_type": "function",
+          "name": "clearSelectedItem"
+        },
+        {
+          "line": 252,
+          "return_type": "function",
+          "name": "getCurrentTradeType"
+        },
+        {
+          "line": 260,
+          "return_type": "function",
+          "name": "getItemPrice"
+        },
+        {
+          "line": 266,
+          "return_type": "if",
+          "name": "getCurrentTradeType"
+        },
+        {
+          "line": 278,
+          "return_type": "function",
+          "name": "getSellQuantity"
+        },
+        {
+          "line": 295,
+          "return_type": "function",
+          "name": "canTradeItem"
+        },
+        {
+          "line": 296,
+          "return_type": "if",
+          "name": "getCurrentTradeType"
+        },
+        {
+          "line": 301,
+          "return_type": "return",
+          "name": "getSellQuantity"
+        },
+        {
+          "line": 305,
+          "return_type": "function",
+          "name": "refreshItem"
+        },
+        {
+          "line": 308,
+          "return_type": "if",
+          "name": "getCurrentTradeType"
+        },
+        {
+          "line": 327,
+          "return_type": "function",
+          "name": "refreshTradeItems"
+        },
+        {
+          "line": 343,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 369,
+          "return_type": "function",
+          "name": "refreshPlayerGoods"
+        },
+        {
+          "line": 412,
+          "return_type": "function",
+          "name": "onOpenNpcTrade"
+        },
+        {
+          "line": 416,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 440,
+          "return_type": "function",
+          "name": "closeNpcTrade"
+        },
+        {
+          "line": 445,
+          "return_type": "function",
+          "name": "onCloseNpcTrade"
+        },
+        {
+          "line": 449,
+          "return_type": "function",
+          "name": "onPlayerGoods"
+        },
+        {
+          "line": 453,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 465,
+          "return_type": "function",
+          "name": "onFreeCapacityChange"
+        },
+        {
+          "line": 473,
+          "return_type": "function",
+          "name": "onInventoryChange"
+        },
+        {
+          "line": 477,
+          "return_type": "function",
+          "name": "getTradeItemData"
+        },
+        {
+          "line": 483,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 489,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 490,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 500,
+          "return_type": "function",
+          "name": "checkSellAllTooltip"
+        },
+        {
+          "line": 508,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 533,
+          "return_type": "function",
+          "name": "formatCurrency"
+        },
+        {
+          "line": 541,
+          "return_type": "function",
+          "name": "getMaxAmount"
+        },
+        {
+          "line": 542,
+          "return_type": "if",
+          "name": "getCurrentTradeType"
+        },
+        {
+          "line": 548,
+          "return_type": "function",
+          "name": "sellAll"
+        },
+        {
+          "line": 549,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\game_screenshot\\game_screenshot.lua",
+      "total_lines": 192,
+      "code_lines": 169,
+      "comment_lines": 0,
+      "empty_lines": 23,
+      "functions": [
+        {
+          "line": 75,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 107,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 113,
+          "return_type": "function",
+          "name": "onUICheckBox"
+        },
+        {
+          "line": 118,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 127,
+          "return_type": "function",
+          "name": "resetValues"
+        },
+        {
+          "line": 128,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 132,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 133,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 137,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 150,
+          "return_type": "function",
+          "name": "destroyOptionsModule"
+        },
+        {
+          "line": 158,
+          "return_type": "function",
+          "name": "onScreenShot"
+        },
+        {
+          "line": 164,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 174,
+          "return_type": "function",
+          "name": "takeScreenshot"
+        },
+        {
+          "line": 188,
+          "return_type": "function",
+          "name": "OpenFolder"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_shaders\\shaders.lua",
+      "total_lines": 181,
+      "code_lines": 159,
+      "comment_lines": 0,
+      "empty_lines": 22,
+      "functions": [
+        {
+          "line": 85,
+          "return_type": "function",
+          "name": "attachShaders"
+        },
+        {
+          "line": 116,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 120,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 124,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 146,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 150,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 154,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_shortcuts\\shortcuts.lua",
+      "total_lines": 83,
+      "code_lines": 68,
+      "comment_lines": 0,
+      "empty_lines": 15,
+      "functions": [
+        {
+          "line": 5,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 20,
+          "return_type": "function",
+          "name": "terminate"
+        },
+        {
+          "line": 32,
+          "return_type": "function",
+          "name": "onGameStart"
+        },
+        {
+          "line": 36,
+          "return_type": "function",
+          "name": "onGameEnd"
+        },
+        {
+          "line": 40,
+          "return_type": "function",
+          "name": "hide"
+        },
+        {
+          "line": 44,
+          "return_type": "function",
+          "name": "show"
+        },
+        {
+          "line": 48,
+          "return_type": "function",
+          "name": "setupShortcuts"
+        },
+        {
+          "line": 50,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 65,
+          "return_type": "function",
+          "name": "resetShortcuts"
+        },
+        {
+          "line": 66,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 72,
+          "return_type": "function",
+          "name": "getShortcut"
+        },
+        {
+          "line": 73,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 81,
+          "return_type": "function",
+          "name": "getPanel"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_stash\\game_stash.lua",
+      "total_lines": 157,
+      "code_lines": 142,
+      "comment_lines": 0,
+      "empty_lines": 15,
+      "functions": [
+        {
+          "line": 8,
+          "return_type": "function",
+          "name": "resetSelectAmount"
+        },
+        {
+          "line": 15,
+          "return_type": "function",
+          "name": "resetItems"
+        },
+        {
+          "line": 25,
+          "return_type": "function",
+          "name": "prepareWithdraw"
+        },
+        {
+          "line": 81,
+          "return_type": "function",
+          "name": "renderItems"
+        },
+        {
+          "line": 88,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 115,
+          "return_type": "function",
+          "name": "onSupplyStashEnter"
+        },
+        {
+          "line": 125,
+          "return_type": "function",
+          "name": "onSupplyStashClose"
+        },
+        {
+          "line": 139,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 151,
+          "return_type": "function",
+          "name": "terminate"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_store\\game_store.lua",
+      "total_lines": 1129,
+      "code_lines": 991,
+      "comment_lines": 0,
+      "empty_lines": 138,
+      "functions": [
+        {
+          "line": 82,
+          "return_type": "function",
+          "name": "showPanel"
+        },
+        {
+          "line": 98,
+          "return_type": "function",
+          "name": "destroyWindow"
+        },
+        {
+          "line": 99,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 100,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 114,
+          "return_type": "function",
+          "name": "getPageLabelHistory"
+        },
+        {
+          "line": 117,
+          "return_type": "return",
+          "name": "tonumber"
+        },
+        {
+          "line": 120,
+          "return_type": "function",
+          "name": "setImagenHttp"
+        },
+        {
+          "line": 150,
+          "return_type": "function",
+          "name": "formatNumberWithCommas"
+        },
+        {
+          "line": 159,
+          "return_type": "function",
+          "name": "getCoinsBalance"
+        },
+        {
+          "line": 160,
+          "return_type": "function",
+          "name": "extractNumber"
+        },
+        {
+          "line": 161,
+          "return_type": "if",
+          "name": "type"
+        },
+        {
+          "line": 169,
+          "return_type": "return",
+          "name": "tonumber"
+        },
+        {
+          "line": 175,
+          "return_type": "and",
+          "name": "extractNumber"
+        },
+        {
+          "line": 176,
+          "return_type": "and",
+          "name": "extractNumber"
+        },
+        {
+          "line": 180,
+          "return_type": "function",
+          "name": "fixServerNoSend0xF2"
+        },
+        {
+          "line": 200,
+          "return_type": "function",
+          "name": "convert_timestamp"
+        },
+        {
+          "line": 205,
+          "return_type": "function",
+          "name": "getProductData"
+        },
+        {
+          "line": 229,
+          "return_type": "function",
+          "name": "createProductImage"
+        },
+        {
+          "line": 254,
+          "return_type": "function",
+          "name": "disableAllButtons"
+        },
+        {
+          "line": 263,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 275,
+          "return_type": "function",
+          "name": "enableAllButtons"
+        },
+        {
+          "line": 281,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 292,
+          "return_type": "function",
+          "name": "toggleSubCategories"
+        },
+        {
+          "line": 293,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 309,
+          "return_type": "function",
+          "name": "close"
+        },
+        {
+          "line": 315,
+          "return_type": "function",
+          "name": "open"
+        },
+        {
+          "line": 324,
+          "return_type": "function",
+          "name": "closeCategoryButtons"
+        },
+        {
+          "line": 328,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 339,
+          "return_type": "function",
+          "name": "createSubWidget"
+        },
+        {
+          "line": 436,
+          "return_type": "function",
+          "name": "onStoreInit"
+        },
+        {
+          "line": 442,
+          "return_type": "function",
+          "name": "onParseStoreGetCoin"
+        },
+        {
+          "line": 449,
+          "return_type": "function",
+          "name": "onParseStoreOfferDescriptions"
+        },
+        {
+          "line": 456,
+          "return_type": "function",
+          "name": "onParseStoreGetPurchaseStatus"
+        },
+        {
+          "line": 488,
+          "return_type": "function",
+          "name": "onParseStoreCreateProducts"
+        },
+        {
+          "line": 494,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 507,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 517,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 550,
+          "return_type": "and",
+          "name": "type"
+        },
+        {
+          "line": 551,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 552,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 574,
+          "return_type": "function",
+          "name": "onParseStoreCreateHome"
+        },
+        {
+          "line": 576,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 606,
+          "return_type": "function",
+          "name": "onParseStoreGetHistory"
+        },
+        {
+          "line": 617,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 632,
+          "return_type": "function",
+          "name": "onParseStoreGetCategories"
+        },
+        {
+          "line": 654,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 663,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 673,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 678,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 689,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 707,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 786,
+          "return_type": "function",
+          "name": "onParseStoreError"
+        },
+        {
+          "line": 795,
+          "return_type": "function",
+          "name": "hide"
+        },
+        {
+          "line": 802,
+          "return_type": "function",
+          "name": "toggle"
+        },
+        {
+          "line": 808,
+          "return_type": "return",
+          "name": "hide"
+        },
+        {
+          "line": 813,
+          "return_type": "function",
+          "name": "show"
+        },
+        {
+          "line": 834,
+          "return_type": "function",
+          "name": "getCoinsWebsite"
+        },
+        {
+          "line": 845,
+          "return_type": "function",
+          "name": "toggleTransferHistory"
+        },
+        {
+          "line": 857,
+          "return_type": "function",
+          "name": "requestTransactionHistory"
+        },
+        {
+          "line": 870,
+          "return_type": "function",
+          "name": "chooseOffert"
+        },
+        {
+          "line": 899,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 969,
+          "return_type": "return",
+          "name": "displayChangeName"
+        },
+        {
+          "line": 973,
+          "return_type": "return",
+          "name": "displayErrorBox"
+        },
+        {
+          "line": 976,
+          "return_type": "function",
+          "name": "acceptFunc"
+        },
+        {
+          "line": 997,
+          "return_type": "function",
+          "name": "cancelFunc"
+        },
+        {
+          "line": 1026,
+          "return_type": "function",
+          "name": "chooseHome"
+        },
+        {
+          "line": 1035,
+          "return_type": "function",
+          "name": "changeImagenHome"
+        },
+        {
+          "line": 1056,
+          "return_type": "function",
+          "name": "displayChangeName"
+        },
+        {
+          "line": 1064,
+          "return_type": "function",
+          "name": "closeWindow"
+        },
+        {
+          "line": 1082,
+          "return_type": "function",
+          "name": "transferPoints"
+        },
+        {
+          "line": 1123,
+          "return_type": "function",
+          "name": "search"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "high"
+    },
+    {
+      "file": "modules\\game_tasks\\tasks.lua",
+      "total_lines": 282,
+      "code_lines": 238,
+      "comment_lines": 0,
+      "empty_lines": 44,
+      "functions": [
+        {
+          "line": 6,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 28,
+          "return_type": "function",
+          "name": "terminate"
+        },
+        {
+          "line": 38,
+          "return_type": "function",
+          "name": "onGameStart"
+        },
+        {
+          "line": 49,
+          "return_type": "function",
+          "name": "destroy"
+        },
+        {
+          "line": 56,
+          "return_type": "function",
+          "name": "parseOpcode"
+        },
+        {
+          "line": 60,
+          "return_type": "function",
+          "name": "sendOpcode"
+        },
+        {
+          "line": 68,
+          "return_type": "function",
+          "name": "onItemSelect"
+        },
+        {
+          "line": 81,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 99,
+          "return_type": "function",
+          "name": "onFilterSearch"
+        },
+        {
+          "line": 105,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 115,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 122,
+          "return_type": "function",
+          "name": "start"
+        },
+        {
+          "line": 124,
+          "return_type": "not",
+          "name": "setTaskConsoleText"
+        },
+        {
+          "line": 133,
+          "return_type": "function",
+          "name": "finish"
+        },
+        {
+          "line": 135,
+          "return_type": "not",
+          "name": "setTaskConsoleText"
+        },
+        {
+          "line": 144,
+          "return_type": "function",
+          "name": "abort"
+        },
+        {
+          "line": 153,
+          "return_type": "not",
+          "name": "setTaskConsoleText"
+        },
+        {
+          "line": 183,
+          "return_type": "function",
+          "name": "updateTasks"
+        },
+        {
+          "line": 185,
+          "return_type": "return",
+          "name": "setTaskConsoleText"
+        },
+        {
+          "line": 193,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 201,
+          "return_type": "if",
+          "name": "not"
+        },
+        {
+          "line": 211,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 219,
+          "return_type": "if",
+          "name": "not"
+        },
+        {
+          "line": 233,
+          "return_type": "function",
+          "name": "toggleWindow"
+        },
+        {
+          "line": 251,
+          "return_type": "function",
+          "name": "hideWindowzz"
+        },
+        {
+          "line": 264,
+          "return_type": "function",
+          "name": "setTaskConsoleText"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\game_textwindow\\textwindow.lua",
+      "total_lines": 154,
+      "code_lines": 123,
+      "comment_lines": 0,
+      "empty_lines": 31,
+      "functions": [
+        {
+          "line": 3,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 13,
+          "return_type": "function",
+          "name": "terminate"
+        },
+        {
+          "line": 23,
+          "return_type": "function",
+          "name": "destroyWindows"
+        },
+        {
+          "line": 24,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 30,
+          "return_type": "function",
+          "name": "onGameEditText"
+        },
+        {
+          "line": 90,
+          "return_type": "function",
+          "name": "destroy"
+        },
+        {
+          "line": 114,
+          "return_type": "function",
+          "name": "onGameEditList"
+        },
+        {
+          "line": 139,
+          "return_type": "function",
+          "name": "destroy"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_walk\\walk.lua",
+      "total_lines": 315,
+      "code_lines": 259,
+      "comment_lines": 0,
+      "empty_lines": 56,
+      "functions": [
+        {
+          "line": 35,
+          "return_type": "function",
+          "name": "stopSmartWalk"
+        },
+        {
+          "line": 41,
+          "return_type": "function",
+          "name": "cancelWalkEvent"
+        },
+        {
+          "line": 50,
+          "return_type": "function",
+          "name": "canChangeFloor"
+        },
+        {
+          "line": 62,
+          "return_type": "function",
+          "name": "walk"
+        },
+        {
+          "line": 101,
+          "return_type": "not",
+          "name": "canChangeFloor"
+        },
+        {
+          "line": 114,
+          "return_type": "function",
+          "name": "addWalkEvent"
+        },
+        {
+          "line": 126,
+          "return_type": "and",
+          "name": "scheduleEvent"
+        },
+        {
+          "line": 130,
+          "return_type": "function",
+          "name": "smartWalk"
+        },
+        {
+          "line": 135,
+          "return_type": "function",
+          "name": "changeWalkDir"
+        },
+        {
+          "line": 158,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 168,
+          "return_type": "function",
+          "name": "turn"
+        },
+        {
+          "line": 190,
+          "return_type": "function",
+          "name": "bindKeys"
+        },
+        {
+          "line": 193,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 194,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 197,
+          "return_type": "function",
+          "name": "unbindKeys"
+        },
+        {
+          "line": 198,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 199,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 203,
+          "return_type": "function",
+          "name": "onTeleport"
+        },
+        {
+          "line": 219,
+          "return_type": "function",
+          "name": "onWalkFinish"
+        },
+        {
+          "line": 229,
+          "return_type": "function",
+          "name": "onAutoWalk"
+        },
+        {
+          "line": 233,
+          "return_type": "function",
+          "name": "onCancelWalk"
+        },
+        {
+          "line": 276,
+          "return_type": "function",
+          "name": "bindWalkKey"
+        },
+        {
+          "line": 292,
+          "return_type": "function",
+          "name": "bindTurnKey"
+        },
+        {
+          "line": 303,
+          "return_type": "function",
+          "name": "unbindWalkKey"
+        },
+        {
+          "line": 310,
+          "return_type": "function",
+          "name": "unbindTurnKey"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\modulelib\\controller.lua",
+      "total_lines": 398,
+      "code_lines": 332,
+      "comment_lines": 0,
+      "empty_lines": 66,
+      "functions": [
+        {
+          "line": 6,
+          "return_type": "function",
+          "name": "onGameStart"
+        },
+        {
+          "line": 14,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 22,
+          "return_type": "function",
+          "name": "onGameEnd"
+        },
+        {
+          "line": 29,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 38,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 122,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 150,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 213,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 217,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 221,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 225,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 227,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 233,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 235,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 261,
+          "return_type": "in",
+          "name": "onInit"
+        },
+        {
+          "line": 263,
+          "return_type": "inside",
+          "name": "onGameStart"
+        },
+        {
+          "line": 293,
+          "return_type": "function",
+          "name": "registerScheduledEvent"
+        },
+        {
+          "line": 332,
+          "return_type": "return",
+          "name": "registerScheduledEvent"
+        },
+        {
+          "line": 336,
+          "return_type": "return",
+          "name": "registerScheduledEvent"
+        },
+        {
+          "line": 359,
+          "return_type": "or",
+          "name": "type"
+        },
+        {
+          "line": 373,
+          "return_type": "or",
+          "name": "type"
+        },
+        {
+          "line": 388,
+          "return_type": "or",
+          "name": "type"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\modulelib\\eventcontroller.lua",
+      "total_lines": 71,
+      "code_lines": 59,
+      "comment_lines": 0,
+      "empty_lines": 12,
+      "functions": [
+        {
+          "line": 64,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\modulelib\\htmlloader.lua",
+      "total_lines": 193,
+      "code_lines": 161,
+      "comment_lines": 0,
+      "empty_lines": 32,
+      "functions": [
+        {
+          "line": 9,
+          "return_type": "function",
+          "name": "readNode"
+        },
+        {
+          "line": 18,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 29,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 37,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 48,
+          "return_type": "return",
+          "name": "function"
+        },
+        {
+          "line": 69,
+          "return_type": "or",
+          "name": "toboolean"
+        },
+        {
+          "line": 95,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 108,
+          "return_type": "function",
+          "name": "HtmlLoader"
+        },
+        {
+          "line": 120,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 135,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 142,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\startup\\startup.lua",
+      "total_lines": 59,
+      "code_lines": 49,
+      "comment_lines": 0,
+      "empty_lines": 10,
+      "functions": [
+        {
+          "line": 1,
+          "return_type": "function",
+          "name": "init"
+        },
+        {
+          "line": 45,
+          "return_type": "function",
+          "name": "terminate"
+        },
+        {
+          "line": 57,
+          "return_type": "function",
+          "name": "exit"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\modulelib\\ext\\parse.lua",
+      "total_lines": 60,
+      "code_lines": 50,
+      "comment_lines": 0,
+      "empty_lines": 10,
+      "functions": [
+        {
+          "line": 3,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 31,
+          "return_type": "function",
+          "name": "parseExpression"
+        },
+        {
+          "line": 48,
+          "return_type": "return",
+          "name": "function"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\modulelib\\ext\\parseevent.lua",
+      "total_lines": 198,
+      "code_lines": 181,
+      "comment_lines": 0,
+      "empty_lines": 17,
+      "functions": [
+        {
+          "line": 39,
+          "return_type": "return",
+          "name": "function"
+        },
+        {
+          "line": 41,
+          "return_type": "function",
+          "name": "execEventCall"
+        },
+        {
+          "line": 120,
+          "return_type": "return",
+          "name": "function"
+        },
+        {
+          "line": 121,
+          "return_type": "and",
+          "name": "f"
+        },
+        {
+          "line": 155,
+          "return_type": "function",
+          "name": "setText"
+        },
+        {
+          "line": 185,
+          "return_type": "function",
+          "name": "afterLoadElement"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\modulelib\\ext\\style.lua",
+      "total_lines": 98,
+      "code_lines": 84,
+      "comment_lines": 0,
+      "empty_lines": 14,
+      "functions": [
+        {
+          "line": 1,
+          "return_type": "function",
+          "name": "FixSelection"
+        },
+        {
+          "line": 28,
+          "return_type": "function",
+          "name": "parseCss"
+        },
+        {
+          "line": 32,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 41,
+          "return_type": "function",
+          "name": "parseAndSetDisplayAttr"
+        },
+        {
+          "line": 64,
+          "return_type": "function",
+          "name": "parseAndSetFloatStyle"
+        },
+        {
+          "line": 72,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 85,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_interface\\widgets\\uigamemap.lua",
+      "total_lines": 148,
+      "code_lines": 121,
+      "comment_lines": 0,
+      "empty_lines": 27,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\game_interface\\widgets\\uiitem.lua",
+      "total_lines": 201,
+      "code_lines": 172,
+      "comment_lines": 0,
+      "empty_lines": 29,
+      "functions": [
+        {
+          "line": 43,
+          "return_type": "if",
+          "name": "not"
+        },
+        {
+          "line": 112,
+          "return_type": "hovered",
+          "name": "and"
+        },
+        {
+          "line": 123,
+          "return_type": "function",
+          "name": "splitTextIntoLines"
+        },
+        {
+          "line": 181,
+          "return_type": "selectable",
+          "name": "and"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\gamelib\\ui\\uicreaturebutton.lua",
+      "total_lines": 194,
+      "code_lines": 171,
+      "comment_lines": 0,
+      "empty_lines": 23,
+      "functions": [
+        {
+          "line": 163,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 180,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\gamelib\\ui\\uiitem.lua",
+      "total_lines": 137,
+      "code_lines": 112,
+      "comment_lines": 0,
+      "empty_lines": 25,
+      "functions": [
+        {
+          "line": 70,
+          "return_type": "hovered",
+          "name": "and"
+        },
+        {
+          "line": 104,
+          "return_type": "selectable",
+          "name": "and"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\effects.lua",
+      "total_lines": 79,
+      "code_lines": 70,
+      "comment_lines": 0,
+      "empty_lines": 9,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\tooltip.lua",
+      "total_lines": 346,
+      "code_lines": 301,
+      "comment_lines": 0,
+      "empty_lines": 45,
+      "functions": [
+        {
+          "line": 10,
+          "return_type": "function",
+          "name": "moveToolTip"
+        },
+        {
+          "line": 11,
+          "return_type": "first",
+          "name": "and"
+        },
+        {
+          "line": 36,
+          "return_type": "function",
+          "name": "moveSpecialToolTip"
+        },
+        {
+          "line": 37,
+          "return_type": "first",
+          "name": "and"
+        },
+        {
+          "line": 63,
+          "return_type": "function",
+          "name": "onWidgetDestroy"
+        },
+        {
+          "line": 75,
+          "return_type": "function",
+          "name": "onWidgetHoverChange"
+        },
+        {
+          "line": 100,
+          "return_type": "function",
+          "name": "onWidgetStyleApply"
+        },
+        {
+          "line": 233,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 321,
+          "return_type": "if",
+          "name": "type"
+        }
+      ],
+      "classes": [
+        {
+          "line": 299,
+          "name": "UIWidget"
+        }
+      ],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uiactionslot.lua",
+      "total_lines": 15,
+      "code_lines": 14,
+      "comment_lines": 0,
+      "empty_lines": 1,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uibutton.lua",
+      "total_lines": 12,
+      "code_lines": 10,
+      "comment_lines": 0,
+      "empty_lines": 2,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uicalendar.lua",
+      "total_lines": 114,
+      "code_lines": 106,
+      "comment_lines": 0,
+      "empty_lines": 8,
+      "functions": [
+        {
+          "line": 11,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 35,
+          "return_type": "in",
+          "name": "ipairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uicheckbox.lua",
+      "total_lines": 13,
+      "code_lines": 11,
+      "comment_lines": 0,
+      "empty_lines": 2,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uicombobox.lua",
+      "total_lines": 210,
+      "code_lines": 188,
+      "comment_lines": 0,
+      "empty_lines": 22,
+      "functions": [
+        {
+          "line": 30,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 46,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 62,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 102,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 127,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 160,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 166,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 174,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 196,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uiimageview.lua",
+      "total_lines": 102,
+      "code_lines": 89,
+      "comment_lines": 0,
+      "empty_lines": 13,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uiinputbox.lua",
+      "total_lines": 142,
+      "code_lines": 125,
+      "comment_lines": 0,
+      "empty_lines": 17,
+      "functions": [
+        {
+          "line": 15,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 114,
+          "return_type": "or",
+          "name": "tr"
+        },
+        {
+          "line": 115,
+          "return_type": "or",
+          "name": "tr"
+        },
+        {
+          "line": 132,
+          "return_type": "function",
+          "name": "displayTextInputBox"
+        },
+        {
+          "line": 138,
+          "return_type": "function",
+          "name": "displayNumberInputBox"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uilabel.lua",
+      "total_lines": 24,
+      "code_lines": 21,
+      "comment_lines": 0,
+      "empty_lines": 3,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uimessagebox.lua",
+      "total_lines": 211,
+      "code_lines": 181,
+      "comment_lines": 0,
+      "empty_lines": 30,
+      "functions": [
+        {
+          "line": 73,
+          "return_type": "function",
+          "name": "displayInfoBox"
+        },
+        {
+          "line": 85,
+          "return_type": "function",
+          "name": "displayErrorBox"
+        },
+        {
+          "line": 97,
+          "return_type": "function",
+          "name": "displayCancelBox"
+        },
+        {
+          "line": 109,
+          "return_type": "function",
+          "name": "displayGeneralBox"
+        },
+        {
+          "line": 113,
+          "return_type": "function",
+          "name": "displayGeneralSHOPBox"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uimovabletabbar.lua",
+      "total_lines": 610,
+      "code_lines": 540,
+      "comment_lines": 0,
+      "empty_lines": 70,
+      "functions": [
+        {
+          "line": 5,
+          "return_type": "function",
+          "name": "onTabClick"
+        },
+        {
+          "line": 9,
+          "return_type": "function",
+          "name": "updateMargins"
+        },
+        {
+          "line": 21,
+          "return_type": "function",
+          "name": "updateNavigation"
+        },
+        {
+          "line": 25,
+          "return_type": "fitsOnBar",
+          "name": "and"
+        },
+        {
+          "line": 58,
+          "return_type": "function",
+          "name": "updateIndexes"
+        },
+        {
+          "line": 78,
+          "return_type": "function",
+          "name": "getMaxMargin"
+        },
+        {
+          "line": 92,
+          "return_type": "function",
+          "name": "updateTabs"
+        },
+        {
+          "line": 97,
+          "return_type": "if",
+          "name": "getMaxMargin"
+        },
+        {
+          "line": 109,
+          "return_type": "if",
+          "name": "getMaxMargin"
+        },
+        {
+          "line": 126,
+          "return_type": "function",
+          "name": "hideTabs"
+        },
+        {
+          "line": 127,
+          "return_type": "and",
+          "name": "getMaxMargin"
+        },
+        {
+          "line": 148,
+          "return_type": "function",
+          "name": "showPreTab"
+        },
+        {
+          "line": 162,
+          "return_type": "function",
+          "name": "showPostTab"
+        },
+        {
+          "line": 176,
+          "return_type": "function",
+          "name": "onTabMousePress"
+        },
+        {
+          "line": 185,
+          "return_type": "function",
+          "name": "onTabDragEnter"
+        },
+        {
+          "line": 192,
+          "return_type": "function",
+          "name": "onTabDragLeave"
+        },
+        {
+          "line": 198,
+          "return_type": "function",
+          "name": "onTabDragMove"
+        },
+        {
+          "line": 236,
+          "return_type": "function",
+          "name": "tabBlink"
+        },
+        {
+          "line": 425,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 430,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 435,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "high"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uipopupmenu.lua",
+      "total_lines": 153,
+      "code_lines": 133,
+      "comment_lines": 0,
+      "empty_lines": 20,
+      "functions": [
+        {
+          "line": 136,
+          "return_type": "function",
+          "name": "onRootGeometryUpdate"
+        },
+        {
+          "line": 142,
+          "return_type": "function",
+          "name": "onGameEnd"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uipopupscrollmenu.lua",
+      "total_lines": 138,
+      "code_lines": 116,
+      "comment_lines": 0,
+      "empty_lines": 22,
+      "functions": [
+        {
+          "line": 131,
+          "return_type": "function",
+          "name": "onRootGeometryUpdate"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uiprogressbar.lua",
+      "total_lines": 107,
+      "code_lines": 93,
+      "comment_lines": 0,
+      "empty_lines": 14,
+      "functions": [
+        {
+          "line": 84,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uiradiogroup.lua",
+      "total_lines": 72,
+      "code_lines": 58,
+      "comment_lines": 0,
+      "empty_lines": 14,
+      "functions": [
+        {
+          "line": 12,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uiresizeborder.lua",
+      "total_lines": 148,
+      "code_lines": 133,
+      "comment_lines": 0,
+      "empty_lines": 15,
+      "functions": [
+        {
+          "line": 90,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uiscrollarea.lua",
+      "total_lines": 190,
+      "code_lines": 171,
+      "comment_lines": 0,
+      "empty_lines": 19,
+      "functions": [
+        {
+          "line": 14,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 175,
+          "return_type": "focusedChild",
+          "name": "and"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uiscrollbar.lua",
+      "total_lines": 346,
+      "code_lines": 308,
+      "comment_lines": 0,
+      "empty_lines": 38,
+      "functions": [
+        {
+          "line": 5,
+          "return_type": "function",
+          "name": "calcValues"
+        },
+        {
+          "line": 60,
+          "return_type": "function",
+          "name": "updateValueDisplay"
+        },
+        {
+          "line": 70,
+          "return_type": "function",
+          "name": "updateSlider"
+        },
+        {
+          "line": 89,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 94,
+          "return_type": "function",
+          "name": "parseSliderPos"
+        },
+        {
+          "line": 111,
+          "return_type": "function",
+          "name": "parseSliderPress"
+        },
+        {
+          "line": 165,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "medium"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uispinbox.lua",
+      "total_lines": 208,
+      "code_lines": 179,
+      "comment_lines": 0,
+      "empty_lines": 29,
+      "functions": [
+        {
+          "line": 85,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uisplitter.lua",
+      "total_lines": 87,
+      "code_lines": 81,
+      "comment_lines": 0,
+      "empty_lines": 6,
+      "functions": [
+        {
+          "line": 14,
+          "return_type": "hovered",
+          "name": "and"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uistatsbar.lua",
+      "total_lines": 158,
+      "code_lines": 145,
+      "comment_lines": 0,
+      "empty_lines": 13,
+      "functions": [
+        {
+          "line": 24,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 38,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 47,
+          "return_type": "in",
+          "name": "ipairs"
+        },
+        {
+          "line": 92,
+          "return_type": "in",
+          "name": "pairs"
+        },
+        {
+          "line": 110,
+          "return_type": "if",
+          "name": "not"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uitabbar.lua",
+      "total_lines": 191,
+      "code_lines": 164,
+      "comment_lines": 0,
+      "empty_lines": 27,
+      "functions": [
+        {
+          "line": 5,
+          "return_type": "function",
+          "name": "onTabClick"
+        },
+        {
+          "line": 9,
+          "return_type": "function",
+          "name": "onTabMouseRelease"
+        },
+        {
+          "line": 99,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uitextedit.lua",
+      "total_lines": 78,
+      "code_lines": 69,
+      "comment_lines": 0,
+      "empty_lines": 9,
+      "functions": [
+        {
+          "line": 2,
+          "return_type": "in",
+          "name": "pairs"
+        }
+      ],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uiwidget.lua",
+      "total_lines": 40,
+      "code_lines": 39,
+      "comment_lines": 0,
+      "empty_lines": 1,
+      "functions": [],
+      "classes": [
+        {
+          "line": 1,
+          "name": "UIWidget"
+        }
+      ],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    },
+    {
+      "file": "modules\\corelib\\ui\\uiwindow.lua",
+      "total_lines": 62,
+      "code_lines": 54,
+      "comment_lines": 0,
+      "empty_lines": 8,
+      "functions": [],
+      "classes": [],
+      "includes": [],
+      "dependencies": [],
+      "complexity": "low"
+    }
+  ],
+  "metrics": {
+    "total_functions": 1299,
+    "total_classes": 48,
+    "total_lines": 17350
+  }
+}
