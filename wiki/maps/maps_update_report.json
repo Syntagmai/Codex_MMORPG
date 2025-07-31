@@ -1,60 +1,59 @@
 {
-  "timestamp": "2025-07-31T12:39:31.588652",
+  "timestamp": "2025-07-31T12:41:33.459190",
   "context": "otclient",
   "scripts_executed": [
     {
       "script": "wiki/update/update_source_index.py",
-      "execution_time": 2.4964325428009033,
+      "execution_time": 2.340702533721924,
       "status": "success"
     },
     {
       "script": "wiki/update/update_habdel_index.py",
-      "execution_time": 0.12009239196777344,
+      "execution_time": 0.15544486045837402,
       "status": "success"
     },
     {
       "script": "wiki/update/update_modules_index.py",
-      "execution_time": 0.1091606616973877,
+      "execution_time": 0.4127159118652344,
+      "status": "success"
+    },
+    {
+      "script": "wiki/update/update_styles_index.py",
+      "execution_time": 0.2900724411010742,
+      "status": "success"
+    },
+    {
+      "script": "wiki/update/update_resources_index.py",
+      "execution_time": 0.22132396697998047,
       "status": "success"
     },
     {
       "script": "wiki/update/update_tools_index.py",
-      "execution_time": 0.11603188514709473,
+      "execution_time": 0.12830018997192383,
       "status": "success"
     },
     {
       "script": "wiki/update/update_wiki_maps.py",
-      "execution_time": 0.19915533065795898,
+      "execution_time": 0.19371604919433594,
       "status": "success"
     },
     {
       "script": "wiki/update/update_bmad_maps.py",
-      "execution_time": 0.1099860668182373,
+      "execution_time": 0.12256979942321777,
       "status": "success"
     },
     {
       "script": "wiki/update/optimize_maps_for_tokens.py",
-      "execution_time": 0.15868234634399414,
+      "execution_time": 0.17865467071533203,
       "status": "success"
     },
     {
       "script": "wiki/update/expand_wiki_comprehensive.py",
-      "execution_time": 0.11723780632019043,
+      "execution_time": 0.12256360054016113,
       "status": "success"
     }
   ],
-  "scripts_failed": [
-    {
-      "script": "wiki/update/update_styles_index.py",
-      "error": "  File \"C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\update_styles_index.py\", line 310\n    indexer = StylesIndexer()\n    ^^^^^^^\nIndentationError: expected an indented block after 'try' statement on line 309\n",
-      "status": "failed"
-    },
-    {
-      "script": "wiki/update/update_resources_index.py",
-      "error": "  File \"C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\update_resources_index.py\", line 273\n    self.resources.append(resource_info)\n    ^^^^\nIndentationError: expected an indented block after 'if' statement on line 272\n",
-      "status": "failed"
-    }
-  ],
+  "scripts_failed": [],
   "maps_validated": [
     "wiki/maps/otclient_source_index.json",
     "wiki/maps/habdel_index.json",

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-07-31T12:39:34.191552",
+    "last_updated": "2025-07-31T12:41:35.933326",
     "total_files": 3,
     "description": "Índice da documentação original e planejamento (pasta habdel)"
   },
@@ -19,11 +19,11 @@
           "description": "tags: [ui, advanced_widgets, widgets, otclient, habdel, documentation]",
           "tags": [
             "habdel",
-            "documentation",
-            "otclient",
-            "advanced_widgets",
             "ui",
-            "widgets"
+            "widgets",
+            "advanced_widgets",
+            "documentation",
+            "otclient"
           ],
           "lines": 605,
           "size": 15175,
@@ -60,10 +60,10 @@
           "description": "tags: [habdel_documentation_plan, strategic_planning, documentation_development, bmad]",
           "tags": [
             "",
-            "bmad",
-            "habdel_documentation_plan",
             "strategic_planning",
             "documentation_development",
+            "habdel_documentation_plan",
+            "bmad",
             "x"
           ],
           "lines": 394,
@@ -119,16 +119,16 @@
       "": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
-      "bmad": [
+      "strategic_planning": [
+        "UNKNOWN-DOCUMENTATION_PLAN"
+      ],
+      "documentation_development": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
       "habdel_documentation_plan": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
-      "strategic_planning": [
-        "UNKNOWN-DOCUMENTATION_PLAN"
-      ],
-      "documentation_development": [
+      "bmad": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
       "x": [
@@ -137,19 +137,19 @@
       "habdel": [
         "UI-UIAdvancedWidgets"
       ],
-      "documentation": [
+      "ui": [
         "UI-UIAdvancedWidgets"
       ],
-      "otclient": [
+      "widgets": [
         "UI-UIAdvancedWidgets"
       ],
       "advanced_widgets": [
         "UI-UIAdvancedWidgets"
       ],
-      "ui": [
+      "documentation": [
         "UI-UIAdvancedWidgets"
       ],
-      "widgets": [
+      "otclient": [
         "UI-UIAdvancedWidgets"
       ]
     },
