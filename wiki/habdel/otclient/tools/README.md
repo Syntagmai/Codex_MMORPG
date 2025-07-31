@@ -1,10 +1,10 @@
-# Stories - Pesquisa OTClient
+# Tools - Pesquisa OTClient
 
 ## 📋 Descrição
-Sistema de stories OTClient (OTCLIENT-001 a OTCLIENT-020)
+Ferramentas de análise
 
 ## 📁 Conteúdo
-Este diretório contém arquivos relacionados à pesquisa de stories do OTClient.
+Este diretório contém arquivos relacionados à pesquisa de tools do OTClient.
 
 ## 🔗 Links Relacionados
 - [Stories OTClient](../stories/)

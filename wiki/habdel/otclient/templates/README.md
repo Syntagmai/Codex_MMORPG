@@ -1,10 +1,10 @@
-# Stories - Pesquisa OTClient
+# Templates - Pesquisa OTClient
 
 ## 📋 Descrição
-Sistema de stories OTClient (OTCLIENT-001 a OTCLIENT-020)
+Templates para pesquisa
 
 ## 📁 Conteúdo
-Este diretório contém arquivos relacionados à pesquisa de stories do OTClient.
+Este diretório contém arquivos relacionados à pesquisa de templates do OTClient.
 
 ## 🔗 Links Relacionados
 - [Stories OTClient](../stories/)
