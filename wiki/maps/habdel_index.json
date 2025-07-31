@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-07-31T12:41:35.933326",
+    "last_updated": "2025-07-31T13:21:43.488624",
     "total_files": 3,
     "description": "Índice da documentação original e planejamento (pasta habdel)"
   },
@@ -18,11 +18,11 @@
           "status": "done",
           "description": "tags: [ui, advanced_widgets, widgets, otclient, habdel, documentation]",
           "tags": [
-            "habdel",
             "ui",
             "widgets",
-            "advanced_widgets",
             "documentation",
+            "advanced_widgets",
+            "habdel",
             "otclient"
           ],
           "lines": 605,
@@ -61,9 +61,9 @@
           "tags": [
             "",
             "strategic_planning",
+            "bmad",
             "documentation_development",
             "habdel_documentation_plan",
-            "bmad",
             "x"
           ],
           "lines": 394,
@@ -77,11 +77,11 @@
           "title": "Relatório de Status - Pesquisador Especializado",
           "category": "UNKNOWN",
           "status": "todo",
-          "description": "- **Total de Stories**: 55",
+          "description": "- **Total de Stories**: 53",
           "tags": [],
-          "lines": 46,
-          "size": 980,
-          "last_modified": "2025-07-29T01:04:09.706851"
+          "lines": 58,
+          "size": 1461,
+          "last_modified": "2025-07-31T13:13:36.303554"
         }
       ]
     }
@@ -100,8 +100,8 @@
       "todo": 2,
       "done": 1
     },
-    "total_lines": 1045,
-    "total_size": 28476
+    "total_lines": 1057,
+    "total_size": 28957
   },
   "search_index": {
     "by_title": {
@@ -122,20 +122,17 @@
       "strategic_planning": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
+      "bmad": [
+        "UNKNOWN-DOCUMENTATION_PLAN"
+      ],
       "documentation_development": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
       "habdel_documentation_plan": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
-      "bmad": [
-        "UNKNOWN-DOCUMENTATION_PLAN"
-      ],
       "x": [
         "UNKNOWN-DOCUMENTATION_PLAN"
-      ],
-      "habdel": [
-        "UI-UIAdvancedWidgets"
       ],
       "ui": [
         "UI-UIAdvancedWidgets"
@@ -143,10 +140,13 @@
       "widgets": [
         "UI-UIAdvancedWidgets"
       ],
+      "documentation": [
+        "UI-UIAdvancedWidgets"
+      ],
       "advanced_widgets": [
         "UI-UIAdvancedWidgets"
       ],
-      "documentation": [
+      "habdel": [
         "UI-UIAdvancedWidgets"
       ],
       "otclient": [
