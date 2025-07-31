@@ -3,13 +3,13 @@
 
 [submodule "otclient"]
     path = otclient
-    url = https://github.com/mehah/otclient.git
+    url = https://github.com/Syntagmai/otclient.git
     branch = main
     ignore = dirty
 
 [submodule "canary"]
     path = canary
-    url = https://github.com/otland/forgottenserver.git
+    url = https://github.com/Syntagmai/canary.git
     branch = master
     ignore = dirty
 
