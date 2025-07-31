@@ -1,0 +1,558 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "analysis_date": "2025-07-31T15:05:39.471149",
+    "methodology": "Habdel",
+    "story_id": "OTCLIENT-008",
+    "system": "Animation System"
+  },
+  "overview": {
+    "total_files": 16,
+    "total_lines": 1386,
+    "components": {},
+    "patterns": [],
+    "apis": {},
+    "dependencies": []
+  },
+  "components": {
+    "animatedtexture.h": {
+      "classes": [
+        {
+          "name": "AnimatedTexture",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "TexturePtr",
+          "name": "get"
+        },
+        {
+          "return_type": "TexturePtr",
+          "name": "getCurrentFrame"
+        },
+        {
+          "return_type": "void",
+          "name": "update"
+        }
+      ],
+      "patterns": [
+        "Timer"
+      ],
+      "lines": 69,
+      "size": 2464
+    },
+    "animatedtexture.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [
+        "Animation",
+        "Timer"
+      ],
+      "lines": 127,
+      "size": 3789
+    },
+    "particleeffect.h": {
+      "classes": [
+        {
+          "name": "ParticleEffectType",
+          "inherits": null
+        },
+        {
+          "name": "ParticleEffect",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "load"
+        },
+        {
+          "return_type": "void",
+          "name": "load"
+        },
+        {
+          "return_type": "void",
+          "name": "render"
+        },
+        {
+          "return_type": "void",
+          "name": "update"
+        }
+      ],
+      "patterns": [
+        "Particle System",
+        "Effect"
+      ],
+      "lines": 60,
+      "size": 2014
+    },
+    "particleeffect.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        }
+      ],
+      "patterns": [
+        "Particle System",
+        "Effect"
+      ],
+      "lines": 72,
+      "size": 2395
+    },
+    "particlesystem.h": {
+      "classes": [
+        {
+          "name": "ParticleSystem",
+          "inherits": "std"
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "load"
+        },
+        {
+          "return_type": "void",
+          "name": "addParticle"
+        },
+        {
+          "return_type": "void",
+          "name": "render"
+        },
+        {
+          "return_type": "void",
+          "name": "update"
+        }
+      ],
+      "patterns": [
+        "Particle System"
+      ],
+      "lines": 49,
+      "size": 1730
+    },
+    "particlesystem.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "emitters",
+          "name": "for"
+        },
+        {
+          "return_type": "affectors",
+          "name": "for"
+        },
+        {
+          "return_type": "particles",
+          "name": "for"
+        }
+      ],
+      "patterns": [
+        "Particle System"
+      ],
+      "lines": 120,
+      "size": 4266
+    },
+    "particle.h": {
+      "classes": [
+        {
+          "name": "Particle",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "render"
+        },
+        {
+          "return_type": "void",
+          "name": "update"
+        },
+        {
+          "return_type": "void",
+          "name": "updateColor"
+        },
+        {
+          "return_type": "void",
+          "name": "updatePosition"
+        },
+        {
+          "return_type": "void",
+          "name": "updateSize"
+        }
+      ],
+      "patterns": [
+        "Animation",
+        "Particle System",
+        "Timer"
+      ],
+      "lines": 87,
+      "size": 3063
+    },
+    "particle.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [
+        "Particle System"
+      ],
+      "lines": 102,
+      "size": 3396
+    },
+    "particleemitter.h": {
+      "classes": [
+        {
+          "name": "ParticleEmitter",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "load"
+        },
+        {
+          "return_type": "void",
+          "name": "update"
+        }
+      ],
+      "patterns": [
+        "Particle System"
+      ],
+      "lines": 53,
+      "size": 1776
+    },
+    "particleemitter.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        }
+      ],
+      "patterns": [
+        "Particle System"
+      ],
+      "lines": 101,
+      "size": 4675
+    },
+    "particlemanager.h": {
+      "classes": [
+        {
+          "name": "ParticleManager",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "bool",
+          "name": "importParticle"
+        },
+        {
+          "return_type": "ParticleEffectPtr",
+          "name": "createEffect"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "void",
+          "name": "poll"
+        }
+      ],
+      "patterns": [
+        "Particle System",
+        "Effect"
+      ],
+      "lines": 50,
+      "size": 2036
+    },
+    "particlemanager.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [
+        "Particle System",
+        "Effect"
+      ],
+      "lines": 87,
+      "size": 3146
+    },
+    "particletype.h": {
+      "classes": [
+        {
+          "name": "ParticleType",
+          "inherits": null
+        },
+        {
+          "name": "ParticleEmitter",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "load"
+        }
+      ],
+      "patterns": [
+        "Particle System"
+      ],
+      "lines": 80,
+      "size": 2632
+    },
+    "particletype.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        }
+      ],
+      "patterns": [
+        "Particle System"
+      ],
+      "lines": 136,
+      "size": 6466
+    },
+    "particleaffector.h": {
+      "classes": [
+        {
+          "name": "ParticleAffector",
+          "inherits": null
+        },
+        {
+          "name": "GravityAffector",
+          "inherits": null
+        },
+        {
+          "name": "AttractionAffector",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "update"
+        },
+        {
+          "return_type": "void",
+          "name": "load"
+        }
+      ],
+      "patterns": [
+        "Particle System"
+      ],
+      "lines": 70,
+      "size": 2288
+    },
+    "particleaffector.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [
+        "Particle System"
+      ],
+      "lines": 123,
+      "size": 4519
+    }
+  },
+  "patterns": [
+    "Effect",
+    "Particle System",
+    "Animation",
+    "Timer"
+  ],
+  "apis": {
+    "AnimatedTexture": {
+      "description": "Sistema de texturas animadas com frames e delays",
+      "methods": [
+        "get",
+        "getCurrentFrame",
+        "update",
+        "restart",
+        "setNumPlays"
+      ],
+      "components": [
+        "animatedtexture.h",
+        "animatedtexture.cpp"
+      ]
+    },
+    "ParticleEffect": {
+      "description": "Sistema de efeitos de partículas",
+      "methods": [
+        "load",
+        "hasFinished",
+        "render",
+        "update",
+        "getEffectType"
+      ],
+      "components": [
+        "particleeffect.h",
+        "particleeffect.cpp"
+      ]
+    },
+    "ParticleSystem": {
+      "description": "Sistema de partículas com emissores e afetores",
+      "methods": [
+        "addEmitter",
+        "addAffector",
+        "update",
+        "render"
+      ],
+      "components": [
+        "particlesystem.h",
+        "particlesystem.cpp"
+      ]
+    },
+    "ParticleEmitter": {
+      "description": "Emissores de partículas com diferentes tipos",
+      "methods": [
+        "emit",
+        "setEmissionRate",
+        "setParticleType"
+      ],
+      "components": [
+        "particleemitter.h",
+        "particleemitter.cpp"
+      ]
+    },
+    "ParticleAffector": {
+      "description": "Afetores que modificam partículas durante animação",
+      "methods": [
+        "affect",
+        "setForce",
+        "setGravity"
+      ],
+      "components": [
+        "particleaffector.h",
+        "particleaffector.cpp"
+      ]
+    },
+    "ParticleManager": {
+      "description": "Gerenciador central de partículas",
+      "methods": [
+        "createEffect",
+        "updateEffects",
+        "renderEffects"
+      ],
+      "components": [
+        "particlemanager.h",
+        "particlemanager.cpp"
+      ]
+    },
+    "ParticleType": {
+      "description": "Definição de tipos de partículas",
+      "methods": [
+        "setTexture",
+        "setSize",
+        "setColor",
+        "setLifetime"
+      ],
+      "components": [
+        "particletype.h",
+        "particletype.cpp"
+      ]
+    }
+  },
+  "examples": {
+    "animated_texture": {
+      "title": "Textura Animada",
+      "description": "Como criar e usar texturas animadas",
+      "code": "// Exemplo de textura animada\n#include \"graphics/animatedtexture.h\"\n\nvoid createAnimatedTexture() {{\n    // Carregar frames da animação\n    std::vector<ImagePtr> frames;\n    frames.push_back(g_images.loadImage(\"animation/frame1.png\"));\n    frames.push_back(g_images.loadImage(\"animation/frame2.png\"));\n    frames.push_back(g_images.loadImage(\"animation/frame3.png\"));\n    frames.push_back(g_images.loadImage(\"animation/frame4.png\"));\n    \n    // Definir delays entre frames (em milissegundos)\n    std::vector<uint16_t> frameDelays = {{100, 100, 100, 100}};\n    \n    // Criar textura animada (0 = loop infinito)\n    AnimatedTexturePtr animTexture = std::make_shared<AnimatedTexture>(\n        Size(64, 64), frames, frameDelays, 0\n    );\n    \n    // Atualizar animação\n    animTexture->update();\n    \n    // Obter frame atual\n    TexturePtr currentFrame = animTexture->getCurrentFrame();\n    \n    // Reiniciar animação\n    animTexture->restart();\n    \n    // Definir número de repetições\n    animTexture->setNumPlays(3);  // Repetir 3 vezes\n}}"
+    },
+    "particle_effect": {
+      "title": "Efeito de Partículas",
+      "description": "Como criar e usar efeitos de partículas",
+      "code": "// Exemplo de efeito de partículas\n#include \"graphics/particleeffect.h\"\n#include \"graphics/particlesystem.h\"\n\nvoid createParticleEffect() {{\n    // Criar tipo de partícula\n    ParticleTypePtr particleType = std::make_shared<ParticleType>();\n    particleType->setTexture(g_textures.loadTexture(\"particles/fire.png\"));\n    particleType->setSize(Size(16, 16));\n    particleType->setColor(Color(255, 100, 0, 255));\n    particleType->setLifetime(2000);  // 2 segundos\n    \n    // Criar sistema de partículas\n    ParticleSystemPtr particleSystem = std::make_shared<ParticleSystem>();\n    particleSystem->setParticleType(particleType);\n    \n    // Criar emissor\n    ParticleEmitterPtr emitter = std::make_shared<ParticleEmitter>();\n    emitter->setEmissionRate(50);  // 50 partículas por segundo\n    emitter->setPosition(Point(100, 100));\n    particleSystem->addEmitter(emitter);\n    \n    // Criar afetor de gravidade\n    ParticleAffectorPtr gravityAffector = std::make_shared<ParticleAffector>();\n    gravityAffector->setGravity(Point(0, 50));  // Gravidade para baixo\n    particleSystem->addAffector(gravityAffector);\n    \n    // Criar efeito\n    ParticleEffectPtr effect = std::make_shared<ParticleEffect>();\n    effect->addSystem(particleSystem);\n    \n    // Atualizar e renderizar\n    effect->update();\n    effect->render();\n    \n    // Verificar se terminou\n    if (effect->hasFinished()) {{\n        std::cout << \"Effect finished\" << std::endl;\n    }}\n}}"
+    },
+    "particle_manager": {
+      "title": "Gerenciador de Partículas",
+      "description": "Como usar o gerenciador de partículas",
+      "code": "// Exemplo de gerenciador de partículas\n#include \"graphics/particlemanager.h\"\n\nvoid useParticleManager() {{\n    // Obter instância do gerenciador\n    ParticleManager& manager = g_particles;\n    \n    // Criar efeito de fogo\n    ParticleEffectPtr fireEffect = manager.createEffect(\"fire\");\n    fireEffect->setPosition(Point(200, 200));\n    \n    // Criar efeito de explosão\n    ParticleEffectPtr explosionEffect = manager.createEffect(\"explosion\");\n    explosionEffect->setPosition(Point(300, 300));\n    \n    // Atualizar todos os efeitos\n    manager.updateEffects();\n    \n    // Renderizar todos os efeitos\n    manager.renderEffects();\n    \n    // Verificar efeitos ativos\n    if (manager.hasActiveEffects()) {{\n        std::cout << \"Active effects: \" << manager.getActiveEffectsCount() << std::endl;\n    }}\n    \n    // Limpar efeitos terminados\n    manager.cleanupFinishedEffects();\n}}"
+    },
+    "custom_particle_type": {
+      "title": "Tipo de Partícula Personalizado",
+      "description": "Como criar tipos de partículas personalizados",
+      "code": "// Exemplo de tipo de partícula personalizado\n#include \"graphics/particletype.h\"\n\nvoid createCustomParticleType() {{\n    // Criar tipo de partícula de fogo\n    ParticleTypePtr fireParticle = std::make_shared<ParticleType>();\n    fireParticle->setTexture(g_textures.loadTexture(\"particles/fire.png\"));\n    fireParticle->setSize(Size(32, 32));\n    fireParticle->setColor(Color(255, 100, 0, 255));\n    fireParticle->setLifetime(1500);\n    fireParticle->setFadeOut(true);\n    fireParticle->setFadeOutTime(500);\n    \n    // Criar tipo de partícula de fumaça\n    ParticleTypePtr smokeParticle = std::make_shared<ParticleType>();\n    smokeParticle->setTexture(g_textures.loadTexture(\"particles/smoke.png\"));\n    smokeParticle->setSize(Size(48, 48));\n    smokeParticle->setColor(Color(100, 100, 100, 128));\n    smokeParticle->setLifetime(3000);\n    smokeParticle->setFadeOut(true);\n    smokeParticle->setFadeOutTime(1000);\n    \n    // Criar tipo de partícula de faísca\n    ParticleTypePtr sparkParticle = std::make_shared<ParticleType>();\n    sparkParticle->setTexture(g_textures.loadTexture(\"particles/spark.png\"));\n    sparkParticle->setSize(Size(8, 8));\n    sparkParticle->setColor(Color(255, 255, 0, 255));\n    sparkParticle->setLifetime(800);\n    sparkParticle->setFadeOut(true);\n    sparkParticle->setFadeOutTime(200);\n}}"
+    },
+    "particle_affectors": {
+      "title": "Afetores de Partículas",
+      "description": "Como usar afetores para modificar partículas",
+      "code": "// Exemplo de afetores de partículas\n#include \"graphics/particleaffector.h\"\n\nvoid useParticleAffectors() {{\n    // Afetor de gravidade\n    ParticleAffectorPtr gravityAffector = std::make_shared<ParticleAffector>();\n    gravityAffector->setGravity(Point(0, 100));  // Gravidade para baixo\n    gravityAffector->setType(ParticleAffectorType::Gravity);\n    \n    // Afetor de força\n    ParticleAffectorPtr forceAffector = std::make_shared<ParticleAffector>();\n    forceAffector->setForce(Point(10, -20));  // Força para cima e direita\n    forceAffector->setType(ParticleAffectorType::Force);\n    \n    // Afetor de cor\n    ParticleAffectorPtr colorAffector = std::make_shared<ParticleAffector>();\n    colorAffector->setStartColor(Color(255, 0, 0, 255));  // Vermelho\n    colorAffector->setEndColor(Color(255, 255, 0, 255));  // Amarelo\n    colorAffector->setType(ParticleAffectorType::Color);\n    \n    // Afetor de tamanho\n    ParticleAffectorPtr sizeAffector = std::make_shared<ParticleAffector>();\n    sizeAffector->setStartSize(Size(16, 16));\n    sizeAffector->setEndSize(Size(32, 32));\n    sizeAffector->setType(ParticleAffectorType::Size);\n    \n    // Afetor de rotação\n    ParticleAffectorPtr rotationAffector = std::make_shared<ParticleAffector>();\n    rotationAffector->setStartRotation(0.0f);\n    rotationAffector->setEndRotation(360.0f);\n    rotationAffector->setType(ParticleAffectorType::Rotation);\n}}"
+    },
+    "animation_timer": {
+      "title": "Timer de Animação",
+      "description": "Como usar timers para controlar animações",
+      "code": "// Exemplo de timer de animação\n#include \"graphics/animatedtexture.h\"\n#include \"core/timer.h\"\n\nvoid useAnimationTimer() {{\n    // Criar timer para animação\n    Timer animTimer;\n    animTimer.restart();\n    \n    // Configurar animação\n    uint32_t currentFrame = 0;\n    uint32_t totalFrames = 4;\n    uint32_t frameDelay = 100;  // 100ms por frame\n    \n    // Loop de animação\n    while (animTimer.running()) {{\n        // Calcular frame atual baseado no tempo\n        uint32_t elapsed = animTimer.elapsed_millis();\n        currentFrame = (elapsed / frameDelay) % totalFrames;\n        \n        // Obter textura animada\n        AnimatedTexturePtr animTexture = getAnimatedTexture();\n        TexturePtr frame = animTexture->get(currentFrame, animTimer);\n        \n        // Renderizar frame\n        g_painter.drawTexture(frame, Point(100, 100));\n        \n        // Verificar se animação terminou\n        if (elapsed > totalFrames * frameDelay) {{\n            animTimer.stop();\n        }}\n        \n        // Aguardar próximo frame\n        std::this_thread::sleep_for(std::chrono::milliseconds(16));  // ~60 FPS\n    }}\n}}"
+    }
+  },
+  "integration_points": [
+    {
+      "system": "Graphics System",
+      "description": "Integração com sistema de gráficos para renderização",
+      "files": [
+        "animatedtexture.h",
+        "particleeffect.h",
+        "particlesystem.h"
+      ],
+      "type": "dependency"
+    },
+    {
+      "system": "UI System",
+      "description": "Animações de interface do usuário",
+      "files": [
+        "animatedtexture.h",
+        "particleeffect.h"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Core Framework",
+      "description": "Integração com sistema core (Timer, EventDispatcher)",
+      "files": [
+        "animatedtexture.h",
+        "particleeffect.h"
+      ],
+      "type": "dependency"
+    },
+    {
+      "system": "Lua System",
+      "description": "Exposição de animações para scripts Lua",
+      "files": [
+        "particleeffect.h",
+        "particlemanager.h"
+      ],
+      "type": "binding"
+    },
+    {
+      "system": "Resource Management",
+      "description": "Gerenciamento de recursos de animação",
+      "files": [
+        "animatedtexture.h",
+        "particletype.h"
+      ],
+      "type": "dependency"
+    },
+    {
+      "system": "Event System",
+      "description": "Eventos de animação e partículas",
+      "files": [
+        "particleeffect.h",
+        "particlesystem.h"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Data System",
+      "description": "Conversão de dados de animação",
+      "files": [
+        "particletype.h",
+        "particleeffect.h"
+      ],
+      "type": "integration"
+    }
+  ]
+}

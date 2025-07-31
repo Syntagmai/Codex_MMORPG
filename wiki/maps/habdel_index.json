@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-07-31T14:48:05.467572",
+    "last_updated": "2025-07-31T14:59:25.816046",
     "total_files": 3,
     "description": "Índice da documentação original e planejamento (pasta habdel)"
   },
@@ -19,11 +19,11 @@
           "description": "tags: [ui, advanced_widgets, widgets, otclient, habdel, documentation]",
           "tags": [
             "ui",
+            "otclient",
+            "documentation",
             "advanced_widgets",
             "habdel",
-            "widgets",
-            "otclient",
-            "documentation"
+            "widgets"
           ],
           "lines": 605,
           "size": 15175,
@@ -60,10 +60,10 @@
           "description": "tags: [habdel_documentation_plan, strategic_planning, documentation_development, bmad]",
           "tags": [
             "",
-            "strategic_planning",
             "x",
-            "bmad",
+            "strategic_planning",
             "documentation_development",
+            "bmad",
             "habdel_documentation_plan"
           ],
           "lines": 394,
@@ -119,22 +119,28 @@
       "": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
-      "strategic_planning": [
-        "UNKNOWN-DOCUMENTATION_PLAN"
-      ],
       "x": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
-      "bmad": [
+      "strategic_planning": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
       "documentation_development": [
+        "UNKNOWN-DOCUMENTATION_PLAN"
+      ],
+      "bmad": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
       "habdel_documentation_plan": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
       "ui": [
+        "UI-UIAdvancedWidgets"
+      ],
+      "otclient": [
+        "UI-UIAdvancedWidgets"
+      ],
+      "documentation": [
         "UI-UIAdvancedWidgets"
       ],
       "advanced_widgets": [
@@ -144,12 +150,6 @@
         "UI-UIAdvancedWidgets"
       ],
       "widgets": [
-        "UI-UIAdvancedWidgets"
-      ],
-      "otclient": [
-        "UI-UIAdvancedWidgets"
-      ],
-      "documentation": [
         "UI-UIAdvancedWidgets"
       ]
     },
