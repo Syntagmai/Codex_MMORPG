@@ -1,0 +1,625 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "analysis_date": "2025-07-31T14:59:10.616496",
+    "methodology": "Habdel",
+    "story_id": "OTCLIENT-007",
+    "system": "Data System"
+  },
+  "overview": {
+    "total_files": 31,
+    "total_lines": 1582,
+    "components": {},
+    "patterns": [],
+    "apis": {},
+    "dependencies": []
+  },
+  "components": {
+    "storage.h": {
+      "classes": [
+        {
+          "name": "K",
+          "inherits": null
+        },
+        {
+          "name": "V",
+          "inherits": null
+        },
+        {
+          "name": "Hash",
+          "inherits": null
+        },
+        {
+          "name": "Eq",
+          "inherits": null
+        },
+        {
+          "name": "Alloc",
+          "inherits": null
+        },
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "Hash",
+          "inherits": null
+        },
+        {
+          "name": "Eq",
+          "inherits": null
+        },
+        {
+          "name": "Alloc",
+          "inherits": null
+        },
+        {
+          "name": "dynamic_storage",
+          "inherits": null
+        }
+      ],
+      "templates": [
+        "dynamic_storage"
+      ],
+      "methods": [],
+      "patterns": [
+        "Template",
+        "Storage",
+        "Type Conversion"
+      ],
+      "lines": 77,
+      "size": 2667
+    },
+    "cast.h": {
+      "classes": [
+        {
+          "name": "cast_exception",
+          "inherits": null
+        },
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "R",
+          "inherits": null
+        }
+      ],
+      "templates": [],
+      "methods": [],
+      "patterns": [
+        "Template",
+        "Type Conversion"
+      ],
+      "lines": 179,
+      "size": 5090
+    },
+    "string.h": {
+      "classes": [],
+      "templates": [],
+      "methods": [
+        {
+          "return_type": "std::string",
+          "name": "resolve_path"
+        },
+        {
+          "return_type": "std::string",
+          "name": "date_time_string"
+        },
+        {
+          "return_type": "std::string",
+          "name": "dec_to_hex"
+        },
+        {
+          "return_type": "uint64_t",
+          "name": "hex_to_dec"
+        },
+        {
+          "return_type": "void",
+          "name": "tolower"
+        },
+        {
+          "return_type": "void",
+          "name": "toupper"
+        },
+        {
+          "return_type": "void",
+          "name": "ltrim"
+        },
+        {
+          "return_type": "void",
+          "name": "rtrim"
+        },
+        {
+          "return_type": "void",
+          "name": "trim"
+        },
+        {
+          "return_type": "void",
+          "name": "ucwords"
+        },
+        {
+          "return_type": "void",
+          "name": "eraseWhiteSpace"
+        },
+        {
+          "return_type": "void",
+          "name": "replace_all"
+        },
+        {
+          "return_type": "bool",
+          "name": "is_valid_utf8"
+        },
+        {
+          "return_type": "std::string",
+          "name": "utf8_to_latin1"
+        },
+        {
+          "return_type": "std::string",
+          "name": "latin1_to_utf8"
+        },
+        {
+          "return_type": "std::wstring",
+          "name": "utf8_to_utf16"
+        },
+        {
+          "return_type": "std::string",
+          "name": "utf16_to_utf8"
+        },
+        {
+          "return_type": "std::string",
+          "name": "utf16_to_latin1"
+        },
+        {
+          "return_type": "std::wstring",
+          "name": "latin1_to_utf16"
+        }
+      ],
+      "patterns": [
+        "Template",
+        "Type Conversion"
+      ],
+      "lines": 73,
+      "size": 3261
+    },
+    "string.cpp": {
+      "classes": [],
+      "templates": [],
+      "methods": [
+        {
+          "return_type": "_WIN32",
+          "name": "localtime_s"
+        },
+        {
+          "return_type": "else",
+          "name": "localtime_r"
+        },
+        {
+          "return_type": "allocations",
+          "name": "for"
+        }
+      ],
+      "patterns": [
+        "Type Conversion"
+      ],
+      "lines": 212,
+      "size": 7720
+    },
+    "types.h": {
+      "classes": [],
+      "templates": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 39,
+      "size": 1443
+    },
+    "point.h": {
+      "classes": [
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "TSize",
+          "inherits": null
+        },
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "TPoint",
+          "inherits": null
+        }
+      ],
+      "templates": [
+        "TSize",
+        "TPoint"
+      ],
+      "methods": [
+        {
+          "return_type": "return",
+          "name": "TPoint"
+        },
+        {
+          "return_type": "return",
+          "name": "TPoint"
+        }
+      ],
+      "patterns": [
+        "Template",
+        "Type Conversion"
+      ],
+      "lines": 101,
+      "size": 4929
+    },
+    "rect.h": {
+      "classes": [
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "TPoint",
+          "inherits": null
+        },
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "TSize",
+          "inherits": null
+        },
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "TRect",
+          "inherits": null
+        }
+      ],
+      "templates": [
+        "TPoint",
+        "TSize",
+        "TRect"
+      ],
+      "methods": [],
+      "patterns": [
+        "Template"
+      ],
+      "lines": 235,
+      "size": 12307
+    },
+    "size.h": {
+      "classes": [
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "TSize",
+          "inherits": null
+        }
+      ],
+      "templates": [
+        "TSize"
+      ],
+      "methods": [
+        {
+          "return_type": "return",
+          "name": "TSize"
+        },
+        {
+          "return_type": "return",
+          "name": "TSize"
+        },
+        {
+          "return_type": "return",
+          "name": "TSize"
+        }
+      ],
+      "patterns": [
+        "Template",
+        "Type Conversion"
+      ],
+      "lines": 133,
+      "size": 6380
+    },
+    "color.h": {
+      "classes": [
+        {
+          "name": "Color",
+          "inherits": null
+        }
+      ],
+      "templates": [],
+      "methods": [
+        {
+          "return_type": "return",
+          "name": "Color"
+        },
+        {
+          "return_type": "return",
+          "name": "Color"
+        },
+        {
+          "return_type": "return",
+          "name": "Color"
+        },
+        {
+          "return_type": "return",
+          "name": "Color"
+        },
+        {
+          "return_type": "return",
+          "name": "Color"
+        },
+        {
+          "return_type": "void",
+          "name": "update"
+        }
+      ],
+      "patterns": [
+        "Type Conversion"
+      ],
+      "lines": 139,
+      "size": 6419
+    },
+    "color.cpp": {
+      "classes": [],
+      "templates": [],
+      "methods": [],
+      "patterns": [
+        "Type Conversion"
+      ],
+      "lines": 135,
+      "size": 4894
+    },
+    "matrix.h": {
+      "classes": [
+        {
+          "name": "Matrix",
+          "inherits": null
+        }
+      ],
+      "templates": [
+        "Matrix"
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "setIdentity"
+        },
+        {
+          "return_type": "bool",
+          "name": "isIdentity"
+        },
+        {
+          "return_type": "void",
+          "name": "fill"
+        },
+        {
+          "return_type": "return",
+          "name": "generateHash"
+        },
+        {
+          "return_type": "return",
+          "name": "generateHash"
+        },
+        {
+          "return_type": "return",
+          "name": "generateHash"
+        },
+        {
+          "return_type": "return",
+          "name": "generateHash"
+        },
+        {
+          "return_type": "return",
+          "name": "generateHash"
+        },
+        {
+          "return_type": "return",
+          "name": "generateHash"
+        }
+      ],
+      "patterns": [
+        "Template"
+      ],
+      "lines": 259,
+      "size": 7565
+    }
+  },
+  "patterns": [
+    "Template",
+    "Storage",
+    "Type Conversion"
+  ],
+  "apis": {
+    "Storage System": {
+      "description": "Sistema de armazenamento dinâmico de dados",
+      "methods": [
+        "set",
+        "get",
+        "remove",
+        "has",
+        "clear",
+        "size"
+      ],
+      "components": [
+        "storage.h"
+      ]
+    },
+    "Type Casting": {
+      "description": "Sistema de conversão de tipos",
+      "methods": [
+        "cast",
+        "to_string",
+        "from_string"
+      ],
+      "components": [
+        "cast.h",
+        "cast.cpp"
+      ]
+    },
+    "String Utilities": {
+      "description": "Utilitários para manipulação de strings",
+      "methods": [
+        "split",
+        "join",
+        "trim",
+        "replace",
+        "to_lower",
+        "to_upper"
+      ],
+      "components": [
+        "string.h",
+        "string.cpp"
+      ]
+    },
+    "Geometric Types": {
+      "description": "Tipos geométricos (Point, Rect, Size)",
+      "methods": [
+        "constructor",
+        "operator+",
+        "operator-",
+        "contains",
+        "intersects"
+      ],
+      "components": [
+        "point.h",
+        "rect.h",
+        "size.h"
+      ]
+    },
+    "Color System": {
+      "description": "Sistema de cores e manipulação",
+      "methods": [
+        "constructor",
+        "setAlpha",
+        "setRed",
+        "setGreen",
+        "setBlue"
+      ],
+      "components": [
+        "color.h",
+        "color.cpp"
+      ]
+    },
+    "Matrix Operations": {
+      "description": "Operações com matrizes",
+      "methods": [
+        "multiply",
+        "inverse",
+        "transpose",
+        "determinant"
+      ],
+      "components": [
+        "matrix.h"
+      ]
+    }
+  },
+  "examples": {
+    "dynamic_storage": {
+      "title": "Sistema de Armazenamento Dinâmico",
+      "description": "Como usar o sistema de armazenamento dinâmico",
+      "code": "// Exemplo de uso do sistema de armazenamento dinâmico\n#include \"stdext/storage.h\"\n\n// Definir enum para chaves\nenum class PlayerData {\n    Name,\n    Level,\n    Health,\n    Position,\n    Inventory\n};\n\nvoid useDynamicStorage() {{\n    // Criar storage dinâmico\n    stdext::dynamic_storage<PlayerData> playerStorage;\n    \n    // Armazenar dados\n    playerStorage.set(PlayerData::Name, std::string(\"Player1\"));\n    playerStorage.set(PlayerData::Level, 10);\n    playerStorage.set(PlayerData::Health, 100.0f);\n    playerStorage.set(PlayerData::Position, Point(100, 200));\n    \n    // Recuperar dados\n    std::string name = playerStorage.get<std::string>(PlayerData::Name, \"Unknown\");\n    int level = playerStorage.get<int>(PlayerData::Level, 1);\n    float health = playerStorage.get<float>(PlayerData::Health, 0.0f);\n    Point pos = playerStorage.get<Point>(PlayerData::Position, Point(0, 0));\n    \n    // Verificar se existe\n    if (playerStorage.has(PlayerData::Inventory)) {{\n        // Dados existem\n    }}\n    \n    // Remover dados\n    playerStorage.remove(PlayerData::Health);\n    \n    // Limpar tudo\n    playerStorage.clear();\n}}"
+    },
+    "type_casting": {
+      "title": "Sistema de Conversão de Tipos",
+      "description": "Como usar o sistema de conversão de tipos",
+      "code": "// Exemplo de conversão de tipos\n#include \"stdext/cast.h\"\n\nvoid useTypeCasting() {{\n    // Conversão de string para tipos básicos\n    std::string strValue = \"42\";\n    int intValue;\n    if (stdext::cast(strValue, intValue)) {{\n        std::cout << \"Converted: \" << intValue << std::endl;\n    }}\n    \n    // Conversão de string para float\n    std::string floatStr = \"3.14\";\n    float floatValue;\n    if (stdext::cast(floatStr, floatValue)) {{\n        std::cout << \"Float: \" << floatValue << std::endl;\n    }}\n    \n    // Conversão de string para bool\n    std::string boolStr = \"true\";\n    bool boolValue;\n    if (stdext::cast(boolStr, boolValue)) {{\n        std::cout << \"Boolean: \" << boolValue << std::endl;\n    }}\n    \n    // Conversão de tipos para string\n    int number = 123;\n    std::string result;\n    if (stdext::cast(number, result)) {{\n        std::cout << \"String: \" << result << std::endl;\n    }}\n    \n    // Conversão de Point para string\n    Point point(100, 200);\n    std::string pointStr;\n    if (stdext::cast(point, pointStr)) {{\n        std::cout << \"Point: \" << pointStr << std::endl;\n    }}\n}}"
+    },
+    "geometric_types": {
+      "title": "Tipos Geométricos",
+      "description": "Como usar os tipos geométricos",
+      "code": "// Exemplo de uso dos tipos geométricos\n#include \"util/point.h\"\n#include \"util/rect.h\"\n#include \"util/size.h\"\n\nvoid useGeometricTypes() {{\n    // Point - Ponto 2D\n    Point p1(10, 20);\n    Point p2(30, 40);\n    \n    // Operações com Point\n    Point sum = p1 + p2;  // (40, 60)\n    Point diff = p2 - p1; // (20, 20)\n    Point scaled = p1 * 2; // (20, 40)\n    \n    // Rect - Retângulo\n    Rect rect1(Point(0, 0), Size(100, 100));\n    Rect rect2(Point(50, 50), Size(100, 100));\n    \n    // Verificar se ponto está dentro do retângulo\n    if (rect1.contains(p1)) {{\n        std::cout << \"Point is inside rect\" << std::endl;\n    }}\n    \n    // Verificar interseção entre retângulos\n    if (rect1.intersects(rect2)) {{\n        std::cout << \"Rectangles intersect\" << std::endl;\n        Rect intersection = rect1.intersection(rect2);\n        std::cout << \"Intersection: \" << intersection.toString() << std::endl;\n    }}\n    \n    // Size - Tamanho\n    Size size1(100, 200);\n    Size size2(50, 100);\n    \n    // Operações com Size\n    Size sumSize = size1 + size2;  // (150, 300)\n    Size diffSize = size1 - size2; // (50, 100)\n    Size scaledSize = size1 * 2;   // (200, 400)\n    \n    // Área e perímetro\n    int area = size1.area();       // 20000\n    int perimeter = size1.perimeter(); // 600\n}}"
+    },
+    "color_system": {
+      "title": "Sistema de Cores",
+      "description": "Como usar o sistema de cores",
+      "code": "// Exemplo de uso do sistema de cores\n#include \"util/color.h\"\n\nvoid useColorSystem() {{\n    // Criar cores\n    Color red(255, 0, 0, 255);      // Vermelho opaco\n    Color green(0, 255, 0, 128);    // Verde semi-transparente\n    Color blue(0, 0, 255, 255);     // Azul opaco\n    Color white = Color::white;      // Branco predefinido\n    Color black = Color::black;      // Preto predefinido\n    \n    // Manipular componentes\n    Color customColor;\n    customColor.setRed(128);\n    customColor.setGreen(64);\n    customColor.setBlue(32);\n    customColor.setAlpha(255);\n    \n    // Obter componentes\n    uint8_t r = customColor.red();\n    uint8_t g = customColor.green();\n    uint8_t b = customColor.blue();\n    uint8_t a = customColor.alpha();\n    \n    // Operações com cores\n    Color mixed = red.blend(green);  // Misturar cores\n    Color lighter = red.lighter();   // Versão mais clara\n    Color darker = red.darker();     // Versão mais escura\n    \n    // Converter para string\n    std::string colorStr = customColor.toString();\n    std::cout << \"Color: \" << colorStr << std::endl;\n    \n    // Converter de string\n    Color fromString;\n    if (Color::fromString(\"#FF0000\", fromString)) {{\n        std::cout << \"Parsed color: \" << fromString.toString() << std::endl;\n    }}\n    \n    // Cores predefinidas\n    Color transparent = Color::alpha;\n    Color gray = Color::gray;\n    Color yellow = Color::yellow;\n    Color cyan = Color::cyan;\n    Color magenta = Color::magenta;\n}}"
+    },
+    "string_utilities": {
+      "title": "Utilitários de String",
+      "description": "Como usar os utilitários de string",
+      "code": "// Exemplo de uso dos utilitários de string\n#include \"stdext/string.h\"\n\nvoid useStringUtilities() {{\n    std::string text = \"  Hello, World!  \";\n    \n    // Remover espaços em branco\n    std::string trimmed = stdext::trim(text);\n    std::cout << \"Trimmed: '\" << trimmed << \"'\" << std::endl;\n    \n    // Converter para maiúsculas/minúsculas\n    std::string upper = stdext::to_upper(text);\n    std::string lower = stdext::to_lower(text);\n    \n    // Substituir texto\n    std::string replaced = stdext::replace(text, \"World\", \"OTClient\");\n    \n    // Dividir string\n    std::string csv = \"apple,banana,orange\";\n    std::vector<std::string> fruits = stdext::split(csv, \",\");\n    \n    // Juntar strings\n    std::string joined = stdext::join(fruits, \" | \");\n    \n    // Verificar se contém\n    if (stdext::contains(text, \"Hello\")) {{\n        std::cout << \"Contains 'Hello'\" << std::endl;\n    }}\n    \n    // Verificar se começa/termina com\n    if (stdext::starts_with(text, \"  Hello\")) {{\n        std::cout << \"Starts with '  Hello'\" << std::endl;\n    }}\n    \n    if (stdext::ends_with(text, \"!  \")) {{\n        std::cout << \"Ends with '!  '\" << std::endl;\n    }}\n    \n    // Formatação\n    std::string formatted = stdext::format(\"Player: %s, Level: %d\", \"Player1\", 10);\n    \n    // Conversão de números\n    std::string numberStr = \"42\";\n    int number = stdext::to_number<int>(numberStr);\n    \n    // Conversão para string\n    std::string result = stdext::to_string(3.14159);\n}}"
+    },
+    "matrix_operations": {
+      "title": "Operações com Matrizes",
+      "description": "Como usar operações com matrizes",
+      "code": "// Exemplo de uso de operações com matrizes\n#include \"util/matrix.h\"\n\nvoid useMatrixOperations() {{\n    // Criar matriz 3x3\n    Matrix3D matrix1;\n    matrix1.setIdentity();  // Matriz identidade\n    \n    // Criar matriz de rotação\n    Matrix3D rotationMatrix;\n    rotationMatrix.setRotation(45.0f);  // Rotação de 45 graus\n    \n    // Criar matriz de translação\n    Matrix3D translationMatrix;\n    translationMatrix.setTranslation(Point(100, 200));\n    \n    // Criar matriz de escala\n    Matrix3D scaleMatrix;\n    scaleMatrix.setScale(2.0f, 2.0f);\n    \n    // Multiplicar matrizes\n    Matrix3D result = rotationMatrix * translationMatrix * scaleMatrix;\n    \n    // Aplicar transformação a um ponto\n    Point originalPoint(10, 20);\n    Point transformedPoint = result * originalPoint;\n    \n    // Inverter matriz\n    Matrix3D inverse = result.inverse();\n    \n    // Transpor matriz\n    Matrix3D transposed = result.transpose();\n    \n    // Obter determinante\n    float det = result.determinant();\n    \n    // Verificar se é invertível\n    if (result.isInvertible()) {{\n        std::cout << \"Matrix is invertible\" << std::endl;\n    }}\n    \n    // Converter para string\n    std::string matrixStr = result.toString();\n    std::cout << \"Matrix: \" << matrixStr << std::endl;\n}}"
+    }
+  },
+  "integration_points": [
+    {
+      "system": "Core Framework",
+      "description": "Integração com sistema core (Application, ModuleManager)",
+      "files": [
+        "storage.h",
+        "cast.h",
+        "string.h"
+      ],
+      "type": "dependency"
+    },
+    {
+      "system": "UI System",
+      "description": "Fornecimento de tipos geométricos e cores para UI",
+      "files": [
+        "point.h",
+        "rect.h",
+        "size.h",
+        "color.h"
+      ],
+      "type": "dependency"
+    },
+    {
+      "system": "Graphics System",
+      "description": "Fornecimento de tipos para renderização",
+      "files": [
+        "point.h",
+        "rect.h",
+        "color.h",
+        "matrix.h"
+      ],
+      "type": "dependency"
+    },
+    {
+      "system": "Lua System",
+      "description": "Conversão de tipos para scripts Lua",
+      "files": [
+        "cast.h",
+        "cast.cpp"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Network System",
+      "description": "Conversão de dados de rede",
+      "files": [
+        "cast.h",
+        "string.h"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Module System",
+      "description": "Armazenamento de dados de módulos",
+      "files": [
+        "storage.h"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Event System",
+      "description": "Conversão de dados de eventos",
+      "files": [
+        "cast.h",
+        "string.h"
+      ],
+      "type": "integration"
+    }
+  ]
+}

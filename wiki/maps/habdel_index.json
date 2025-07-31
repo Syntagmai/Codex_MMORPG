@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-07-31T14:39:37.277784",
+    "last_updated": "2025-07-31T14:48:05.467572",
     "total_files": 3,
     "description": "Índice da documentação original e planejamento (pasta habdel)"
   },
@@ -18,12 +18,12 @@
           "status": "done",
           "description": "tags: [ui, advanced_widgets, widgets, otclient, habdel, documentation]",
           "tags": [
+            "ui",
+            "advanced_widgets",
+            "habdel",
             "widgets",
             "otclient",
-            "documentation",
-            "ui",
-            "habdel",
-            "advanced_widgets"
+            "documentation"
           ],
           "lines": 605,
           "size": 15175,
@@ -60,11 +60,11 @@
           "description": "tags: [habdel_documentation_plan, strategic_planning, documentation_development, bmad]",
           "tags": [
             "",
+            "strategic_planning",
             "x",
-            "habdel_documentation_plan",
-            "documentation_development",
             "bmad",
-            "strategic_planning"
+            "documentation_development",
+            "habdel_documentation_plan"
           ],
           "lines": 394,
           "size": 12321,
@@ -119,20 +119,29 @@
       "": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
+      "strategic_planning": [
+        "UNKNOWN-DOCUMENTATION_PLAN"
+      ],
       "x": [
-        "UNKNOWN-DOCUMENTATION_PLAN"
-      ],
-      "habdel_documentation_plan": [
-        "UNKNOWN-DOCUMENTATION_PLAN"
-      ],
-      "documentation_development": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
       "bmad": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
-      "strategic_planning": [
+      "documentation_development": [
         "UNKNOWN-DOCUMENTATION_PLAN"
+      ],
+      "habdel_documentation_plan": [
+        "UNKNOWN-DOCUMENTATION_PLAN"
+      ],
+      "ui": [
+        "UI-UIAdvancedWidgets"
+      ],
+      "advanced_widgets": [
+        "UI-UIAdvancedWidgets"
+      ],
+      "habdel": [
+        "UI-UIAdvancedWidgets"
       ],
       "widgets": [
         "UI-UIAdvancedWidgets"
@@ -141,15 +150,6 @@
         "UI-UIAdvancedWidgets"
       ],
       "documentation": [
-        "UI-UIAdvancedWidgets"
-      ],
-      "ui": [
-        "UI-UIAdvancedWidgets"
-      ],
-      "habdel": [
-        "UI-UIAdvancedWidgets"
-      ],
-      "advanced_widgets": [
         "UI-UIAdvancedWidgets"
       ]
     },
