@@ -1,25 +1,9 @@
 {
   "metadata": {
-    "version": "1.1",
-    "last_updated": "2025-07-29T12:00:00",
-    "context": "unified",
-    "description": "Relacionamentos unificados com submódulos OTClient e Canary como fontes de verdade imutáveis."
-  },
-  "otclient_submodule": {
-    "type": "submodule",
-    "description": "Fonte de verdade do código OTClient. Nunca editar por este repositório.",
-    "prerequisites": [],
-    "next_steps": [],
-    "related": [],
-    "integration_links": []
-  },
-  "canary_submodule": {
-    "type": "submodule",
-    "description": "Fonte de verdade do código Canary. Nunca editar por este repositório.",
-    "prerequisites": [],
-    "next_steps": [],
-    "related": [],
-    "integration_links": []
+    "version": "1.0",
+    "last_updated": "2025-07-31T12:39:34.784382",
+    "context": "otclient",
+    "description": "OTCLIENT document relationships"
   },
   "Advanced_Configuration_Guide.md": {
     "prerequisites": [],
@@ -30,6 +14,38 @@
     ]
   },
   "Animation_System_Guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
+  "CORE-007_Debug_System.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
+  "CORE-008_Performance_System.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
+  "CORE-009_Logs_System.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
+  "CORE-010_Backup_System.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
@@ -77,6 +93,12 @@
       "OTClient_Canary_Integration.md"
     ]
   },
+  "Developer_Practical_Guides.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
   "Documentation_Status.md": {
     "prerequisites": [],
     "next_steps": [],
@@ -101,6 +123,78 @@
       "OTClient_Canary_Integration.md"
     ]
   },
+  "GUIDE-004_Debugging_Avancado.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
+  "GUIDE-005_Performance_Otimizacao.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
+  "GUIDE-006_UI_Avancada.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
+  "GUIDE-007_Game_Systems.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
+  "GUIDE-008_Deploy.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
+  "GUIDE-009_Contribuicao.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
+  "GUIDE-010_Troubleshooting.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
+  "Game_Quests_System_Guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
+  "Game_Trading_System_Guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
   "Getting_Started_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
@@ -118,6 +212,28 @@
     ]
   },
   "Guia_Busca_Rapida.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
+  "Habdel_Integration_Index.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
+  "Habdel_Navigation_Guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "Habdel_Wiki_Integration_Report.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
@@ -163,6 +279,30 @@
       "OTClient_Canary_Integration.md"
     ]
   },
+  "Navigation_Index_Alphabetical.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "Navigation_Index_Categorical.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "Navigation_Index_Search.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "Navigation_Index_Story_Based.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
   "Network_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
@@ -203,7 +343,39 @@
       "OTClient_Canary_Integration.md"
     ]
   },
+  "UI_Modals_System_Guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
+  "UI_Scroll_Pagination_System_Guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
   "UI_System_Guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
+  "UI_Tabs_System_Guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": [
+      "OTClient_Canary_Integration.md"
+    ]
+  },
+  "Wiki_Completion_Plan.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],

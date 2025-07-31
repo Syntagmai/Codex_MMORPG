@@ -113,11 +113,11 @@ class ResourcesIndexer:
         
         try:
             if file_ext == '.otfont':
-            metadata = self.extract_font_metadata(file_path)
+                metadata = self.extract_font_metadata(file_path)
             elif file_ext == '.lua' and file_path.parent.name == 'locales':
-            metadata = self.extract_locale_metadata(file_path)
+                metadata = self.extract_locale_metadata(file_path)
             elif file_ext == '.otps':
-            metadata = self.extract_particle_metadata(file_path)
+                metadata = self.extract_particle_metadata(file_path)
             elif file_ext in ['.png', '.jpg', '.jpeg', '.gif', '.bmp']:
                 metadata = {
                     "type": "image",
@@ -270,7 +270,7 @@ class ResourcesIndexer:
         for resource_path in resource_files:
             resource_info = self.analyze_resource(resource_path)
             if resource_info:
-            self.resources.append(resource_info)
+                self.resources.append(resource_info)
         
         # Categorizar recursos
         self.categorize_resources()
@@ -321,15 +321,15 @@ def main():
     print("Iniciando indexação dos recursos...")
     
     try:
-    indexer = ResourcesIndexer()
-    success = indexer.update_index()
-    
-    if success:
+        indexer = ResourcesIndexer()
+        success = indexer.update_index()
+        
+        if success:
             print("Indexação dos recursos concluída com sucesso!")
-    else:
+        else:
             print("Erro na indexação dos recursos!")
             
-        except Exception as e:
+    except Exception as e:
         print(f"Erro durante indexação: {e}")
 
 if __name__ == "__main__":

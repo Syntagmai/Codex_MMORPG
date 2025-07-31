@@ -1,127 +1,22 @@
 {
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-07-28T02:56:46.599298",
-    "total_tools": 9,
+    "last_updated": "2025-07-31T12:39:34.613187",
+    "total_tools": 0,
     "description": "Índice das ferramentas do OTClient"
   },
   "categories": {
     "build": {
       "name": "Ferramentas de Build",
-      "tools": [
-        {
-          "name": "make_snapshot.sh",
-          "path": "tools\\make_snapshot.sh",
-          "type": "file",
-          "category": "build",
-          "size": 5630,
-          "lines": 252,
-          "last_modified": "2025-07-26T17:03:00.212148",
-          "info": {
-            "description": "!/bin/bash",
-            "language": "Shell",
-            "functions": [],
-            "dependencies": []
-          }
-        }
-      ]
+      "tools": []
     },
     "generator": {
       "name": "Geradores",
-      "tools": [
-        {
-          "name": "gen_lang_template.sh",
-          "path": "tools\\gen_lang_template.sh",
-          "type": "file",
-          "category": "generator",
-          "size": 688,
-          "lines": 15,
-          "last_modified": "2025-07-26T17:03:00.206150",
-          "info": {
-            "description": "!/bin/bash",
-            "language": "Shell",
-            "functions": [],
-            "dependencies": []
-          }
-        },
-        {
-          "name": "gen_needed_translations.sh",
-          "path": "tools\\gen_needed_translations.sh",
-          "type": "file",
-          "category": "generator",
-          "size": 371,
-          "lines": 7,
-          "last_modified": "2025-07-26T17:03:00.207149",
-          "info": {
-            "description": "!/bin/bash",
-            "language": "Shell",
-            "functions": [],
-            "dependencies": []
-          }
-        },
-        {
-          "name": "generate_git_version.bat",
-          "path": "tools\\generate_git_version.bat",
-          "type": "file",
-          "category": "generator",
-          "size": 429,
-          "lines": 13,
-          "last_modified": "2025-07-26T17:03:00.207149",
-          "info": {
-            "description": "Sem descrição disponível",
-            "language": "Batch",
-            "functions": [],
-            "dependencies": []
-          }
-        },
-        {
-          "name": "gimp-bitmap-generator",
-          "path": "tools\\gimp-bitmap-generator",
-          "type": "directory",
-          "category": "generator",
-          "size": 0,
-          "lines": 0,
-          "last_modified": "2025-07-26T17:03:00.208148",
-          "info": {
-            "description": "Diretório com 1 itens",
-            "files_count": 1,
-            "subdirectories": 0
-          }
-        },
-        {
-          "name": "lua-binding-generator",
-          "path": "tools\\lua-binding-generator",
-          "type": "directory",
-          "category": "generator",
-          "size": 0,
-          "lines": 0,
-          "last_modified": "2025-07-26T17:03:00.211150",
-          "info": {
-            "description": "Diretório com 1 itens",
-            "files_count": 1,
-            "subdirectories": 0
-          }
-        }
-      ]
+      "tools": []
     },
     "api": {
       "name": "APIs e Interfaces",
-      "tools": [
-        {
-          "name": "api",
-          "path": "tools\\api",
-          "type": "directory",
-          "category": "api",
-          "size": 0,
-          "lines": 0,
-          "last_modified": "2025-07-26T17:03:00.206150",
-          "info": {
-            "description": "Diretório com 2 itens",
-            "files_count": 2,
-            "subdirectories": 0
-          }
-        }
-      ]
+      "tools": []
     },
     "utility": {
       "name": "Utilitários",
@@ -129,105 +24,26 @@
     },
     "other": {
       "name": "Outras Ferramentas",
-      "tools": [
-        {
-          "name": "katepart-syntax",
-          "path": "tools\\katepart-syntax",
-          "type": "directory",
-          "category": "other",
-          "size": 0,
-          "lines": 0,
-          "last_modified": "2025-07-26T17:03:00.210149",
-          "info": {
-            "description": "Diretório com 3 itens",
-            "files_count": 3,
-            "subdirectories": 0
-          }
-        },
-        {
-          "name": "tfs_extendedopcode.patch",
-          "path": "tools\\tfs_extendedopcode.patch",
-          "type": "file",
-          "category": "other",
-          "size": 13891,
-          "lines": 399,
-          "last_modified": "2025-07-26T17:03:00.212148",
-          "info": {
-            "description": "Arquivo .patch",
-            "language": "unknown"
-          }
-        }
-      ]
+      "tools": []
     }
   },
   "statistics": {
-    "total_tools": 9,
+    "total_tools": 0,
     "by_category": {
-      "build": 1,
-      "generator": 5,
-      "api": 1,
+      "build": 0,
+      "generator": 0,
+      "api": 0,
       "utility": 0,
-      "other": 2
+      "other": 0
     },
-    "by_type": {
-      "directory": 4,
-      "file": 5
-    },
-    "by_language": {
-      "unknown": 5,
-      "Shell": 3,
-      "Batch": 1
-    },
-    "total_size": 21009,
-    "total_lines": 686
+    "by_type": {},
+    "by_language": {},
+    "total_size": 0,
+    "total_lines": 0
   },
   "search_index": {
-    "by_name": {
-      "api": "api",
-      "gen_lang_template.sh": "gen_lang_template.sh",
-      "gen_needed_translations.sh": "gen_needed_translations.sh",
-      "generate_git_version.bat": "generate_git_version.bat",
-      "gimp-bitmap-generator": "gimp-bitmap-generator",
-      "katepart-syntax": "katepart-syntax",
-      "lua-binding-generator": "lua-binding-generator",
-      "make_snapshot.sh": "make_snapshot.sh",
-      "tfs_extendedopcode.patch": "tfs_extendedopcode.patch"
-    },
-    "by_category": {
-      "api": [
-        "api"
-      ],
-      "generator": [
-        "gen_lang_template.sh",
-        "gen_needed_translations.sh",
-        "generate_git_version.bat",
-        "gimp-bitmap-generator",
-        "lua-binding-generator"
-      ],
-      "other": [
-        "katepart-syntax",
-        "tfs_extendedopcode.patch"
-      ],
-      "build": [
-        "make_snapshot.sh"
-      ]
-    },
-    "by_language": {
-      "unknown": [
-        "api",
-        "gimp-bitmap-generator",
-        "katepart-syntax",
-        "lua-binding-generator",
-        "tfs_extendedopcode.patch"
-      ],
-      "Shell": [
-        "gen_lang_template.sh",
-        "gen_needed_translations.sh",
-        "make_snapshot.sh"
-      ],
-      "Batch": [
-        "generate_git_version.bat"
-      ]
-    }
+    "by_name": {},
+    "by_category": {},
+    "by_language": {}
   }
 }

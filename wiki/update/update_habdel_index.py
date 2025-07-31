@@ -261,7 +261,7 @@ class HabdelIndexer:
         for file_path in habdel_files:
             story_info = self.extract_story_info(file_path)
             if story_info:
-            self.stories.append(story_info)
+                self.stories.append(story_info)
         
         # Categorizar stories
         self.categorize_stories()
@@ -309,18 +309,18 @@ class HabdelIndexer:
 
 def main():
     """Função principal"""
-            print("Iniciando indexação da pasta habdel...")
+    print("Iniciando indexação da pasta habdel...")
     
     try:
-    indexer = HabdelIndexer()
-    success = indexer.update_index()
-    
-    if success:
-        print("Indexação da pasta habdel concluída com sucesso!")
-    else:
-        print("Erro na indexação da pasta habdel!")
+        indexer = HabdelIndexer()
+        success = indexer.update_index()
+        
+        if success:
+            print("Indexação da pasta habdel concluída com sucesso!")
+        else:
+            print("Erro na indexação da pasta habdel!")
             
-        except Exception as e:
+    except Exception as e:
         print(f"Erro durante indexação: {e}")
 
 if __name__ == "__main__":

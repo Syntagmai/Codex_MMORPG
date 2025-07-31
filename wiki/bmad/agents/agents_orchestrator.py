@@ -511,13 +511,34 @@ Commit automático gerado pelo Agents Orchestrator
         """Gera relatório de orquestração"""
         self.logger.info("📊 Gerando relatório de orquestração...")
         
+        # Converter datetime objects para strings
+        serializable_agent_results = {}
+        for agent_name, result in self.agent_results.items():
+            serializable_result = {}
+            for key, value in result.items():
+                if isinstance(value, datetime):
+                    serializable_result[key] = value.isoformat()
+                else:
+                    serializable_result[key] = value
+            serializable_agent_results[agent_name] = serializable_result
+        
+        serializable_running_agents = {}
+        for agent_name, agent_info in self.running_agents.items():
+            serializable_agent_info = {}
+            for key, value in agent_info.items():
+                if isinstance(value, datetime):
+                    serializable_agent_info[key] = value.isoformat()
+                else:
+                    serializable_agent_info[key] = value
+            serializable_running_agents[agent_name] = serializable_agent_info
+        
         report = {
             "timestamp": datetime.now().isoformat(),
             "total_agents_executed": len(self.agent_results),
             "successful_agents": sum(1 for r in self.agent_results.values() if r.get('success')),
             "failed_agents": sum(1 for r in self.agent_results.values() if not r.get('success')),
-            "agent_results": self.agent_results,
-            "running_agents": self.running_agents
+            "agent_results": serializable_agent_results,
+            "running_agents": serializable_running_agents
         }
         
         # Salvar relatório

@@ -256,7 +256,7 @@ class StylesIndexer:
         for file_path in style_files:
             style_info = self.analyze_style_file(file_path)
             if style_info:
-            self.styles.append(style_info)
+                self.styles.append(style_info)
         
         # Categorizar estilos
         self.categorize_styles()
@@ -307,15 +307,15 @@ def main():
     print("Iniciando indexação dos estilos...")
     
     try:
-    indexer = StylesIndexer()
-    success = indexer.update_index()
-    
-    if success:
+        indexer = StylesIndexer()
+        success = indexer.update_index()
+        
+        if success:
             print("Indexação dos estilos concluída com sucesso!")
-    else:
+        else:
             print("Erro na indexação dos estilos!")
             
-        except Exception as e:
+    except Exception as e:
         print(f"Erro durante indexação: {e}")
 
 if __name__ == "__main__":

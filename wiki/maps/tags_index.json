@@ -1,21 +1,19 @@
 {
   "metadata": {
-    "version": "1.1",
-    "last_updated": "2025-07-29T12:00:00",
-    "total_files": 28,
-    "total_tags": 42,
-    "description": "Índice de tags unificado com submódulos OTClient e Canary como fontes de verdade imutáveis."
+    "version": "1.0",
+    "last_updated": "2025-07-31T12:39:34.725669",
+    "total_files": 53,
+    "total_tags": 105,
+    "description": "OTCLIENT wiki tags index"
   },
   "files_by_tag": {
-    "otclient_submodule": [
-      "otclient/"
-    ],
-    "canary_submodule": [
-      "canary/"
-    ],
     "otclient": [
       "Advanced_Configuration_Guide.md",
       "Animation_System_Guide.md",
+      "CORE-007_Debug_System.md",
+      "CORE-008_Performance_System.md",
+      "CORE-009_Logs_System.md",
+      "CORE-010_Backup_System.md",
       "Cheat_Sheet.md",
       "Combat_System_Guide.md",
       "Configuration_Guide.md",
@@ -24,9 +22,19 @@
       "Documentation_Status.md",
       "Drag_Drop_System_Guide.md",
       "Effects_System_Guide.md",
+      "GUIDE-004_Debugging_Avancado.md",
+      "GUIDE-005_Performance_Otimizacao.md",
+      "GUIDE-006_UI_Avancada.md",
+      "GUIDE-007_Game_Systems.md",
+      "GUIDE-008_Deploy.md",
+      "GUIDE-009_Contribuicao.md",
+      "GUIDE-010_Troubleshooting.md",
+      "Game_Quests_System_Guide.md",
+      "Game_Trading_System_Guide.md",
       "Getting_Started_Guide.md",
       "Graphics_System_Guide.md",
       "Guia_Busca_Rapida.md",
+      "Habdel_Wiki_Integration_Report.md",
       "Item_System_Guide.md",
       "Map_System_Guide.md",
       "Module_Development_Guide.md",
@@ -36,13 +44,21 @@
       "Performance_System_Guide.md",
       "Protocol_System_Guide.md",
       "Sound_System_Guide.md",
+      "UI_Modals_System_Guide.md",
+      "UI_Scroll_Pagination_System_Guide.md",
       "UI_System_Guide.md",
+      "UI_Tabs_System_Guide.md",
+      "Wiki_Completion_Plan.md",
       "World_System_Guide.md",
       "otclient_wiki.md"
     ],
     "system": [
       "Advanced_Configuration_Guide.md",
       "Animation_System_Guide.md",
+      "CORE-007_Debug_System.md",
+      "CORE-008_Performance_System.md",
+      "CORE-009_Logs_System.md",
+      "CORE-010_Backup_System.md",
       "Cheat_Sheet.md",
       "Combat_System_Guide.md",
       "Configuration_Guide.md",
@@ -50,6 +66,8 @@
       "Debug_System_Guide.md",
       "Drag_Drop_System_Guide.md",
       "Effects_System_Guide.md",
+      "Game_Quests_System_Guide.md",
+      "Game_Trading_System_Guide.md",
       "Getting_Started_Guide.md",
       "Graphics_System_Guide.md",
       "Item_System_Guide.md",
@@ -59,6 +77,9 @@
       "Performance_System_Guide.md",
       "Protocol_System_Guide.md",
       "Sound_System_Guide.md",
+      "UI_Modals_System_Guide.md",
+      "UI_Scroll_Pagination_System_Guide.md",
+      "UI_Tabs_System_Guide.md",
       "World_System_Guide.md"
     ],
     "guide": [
@@ -71,6 +92,15 @@
       "Debug_System_Guide.md",
       "Drag_Drop_System_Guide.md",
       "Effects_System_Guide.md",
+      "GUIDE-004_Debugging_Avancado.md",
+      "GUIDE-005_Performance_Otimizacao.md",
+      "GUIDE-006_UI_Avancada.md",
+      "GUIDE-007_Game_Systems.md",
+      "GUIDE-008_Deploy.md",
+      "GUIDE-009_Contribuicao.md",
+      "GUIDE-010_Troubleshooting.md",
+      "Game_Quests_System_Guide.md",
+      "Game_Trading_System_Guide.md",
       "Getting_Started_Guide.md",
       "Graphics_System_Guide.md",
       "Item_System_Guide.md",
@@ -82,7 +112,10 @@
       "Performance_System_Guide.md",
       "Protocol_System_Guide.md",
       "Sound_System_Guide.md",
+      "UI_Modals_System_Guide.md",
+      "UI_Scroll_Pagination_System_Guide.md",
       "UI_System_Guide.md",
+      "UI_Tabs_System_Guide.md",
       "World_System_Guide.md",
       "otclient_wiki.md"
     ],
@@ -97,6 +130,8 @@
       "Documentation_Status.md",
       "Drag_Drop_System_Guide.md",
       "Effects_System_Guide.md",
+      "Game_Quests_System_Guide.md",
+      "Game_Trading_System_Guide.md",
       "Getting_Started_Guide.md",
       "Graphics_System_Guide.md",
       "Item_System_Guide.md",
@@ -107,12 +142,16 @@
       "Performance_System_Guide.md",
       "Protocol_System_Guide.md",
       "Sound_System_Guide.md",
+      "UI_Modals_System_Guide.md",
+      "UI_Scroll_Pagination_System_Guide.md",
       "UI_System_Guide.md",
+      "UI_Tabs_System_Guide.md",
       "World_System_Guide.md",
       "otclient_wiki.md"
     ],
     "animations": [
-      "Animation_System_Guide.md"
+      "Animation_System_Guide.md",
+      "GUIDE-006_UI_Avancada.md"
     ],
     "transitions": [
       "Animation_System_Guide.md"
@@ -120,10 +159,100 @@
     "ui": [
       "Animation_System_Guide.md",
       "Drag_Drop_System_Guide.md",
-      "UI_System_Guide.md"
+      "GUIDE-006_UI_Avancada.md",
+      "UI_Modals_System_Guide.md",
+      "UI_Scroll_Pagination_System_Guide.md",
+      "UI_System_Guide.md",
+      "UI_Tabs_System_Guide.md"
+    ],
+    "core": [
+      "CORE-007_Debug_System.md",
+      "CORE-008_Performance_System.md",
+      "CORE-009_Logs_System.md",
+      "CORE-010_Backup_System.md"
+    ],
+    "debug": [
+      "CORE-007_Debug_System.md",
+      "CORE-009_Logs_System.md",
+      "Debug_System_Guide.md"
+    ],
+    "development": [
+      "CORE-007_Debug_System.md",
+      "Debug_System_Guide.md",
+      "GUIDE-004_Debugging_Avancado.md",
+      "GUIDE-009_Contribuicao.md",
+      "Navigation_Index_Story_Based.md",
+      "OTUI_Module_Development_Guide.md"
+    ],
+    "logging": [
+      "CORE-007_Debug_System.md",
+      "CORE-009_Logs_System.md",
+      "Debug_System_Guide.md"
+    ],
+    "profiling": [
+      "CORE-007_Debug_System.md",
+      "CORE-008_Performance_System.md",
+      "GUIDE-005_Performance_Otimizacao.md",
+      "Performance_System_Guide.md"
+    ],
+    "troubleshooting": [
+      "CORE-007_Debug_System.md",
+      "GUIDE-004_Debugging_Avancado.md",
+      "GUIDE-010_Troubleshooting.md"
+    ],
+    "performance": [
+      "CORE-008_Performance_System.md",
+      "GUIDE-005_Performance_Otimizacao.md",
+      "Performance_System_Guide.md"
+    ],
+    "optimization": [
+      "CORE-008_Performance_System.md",
+      "GUIDE-005_Performance_Otimizacao.md",
+      "Performance_System_Guide.md"
+    ],
+    "memory": [
+      "CORE-008_Performance_System.md"
+    ],
+    "cpu": [
+      "CORE-008_Performance_System.md"
+    ],
+    "fps": [
+      "CORE-008_Performance_System.md"
+    ],
+    "logs": [
+      "CORE-009_Logs_System.md"
+    ],
+    "monitoring": [
+      "CORE-009_Logs_System.md",
+      "GUIDE-005_Performance_Otimizacao.md"
+    ],
+    "error": [
+      "CORE-009_Logs_System.md"
+    ],
+    "trace": [
+      "CORE-009_Logs_System.md"
+    ],
+    "backup": [
+      "CORE-010_Backup_System.md"
+    ],
+    "recovery": [
+      "CORE-010_Backup_System.md"
+    ],
+    "data": [
+      "CORE-010_Backup_System.md"
+    ],
+    "configuration": [
+      "CORE-010_Backup_System.md"
+    ],
+    "save": [
+      "CORE-010_Backup_System.md"
+    ],
+    "restore": [
+      "CORE-010_Backup_System.md"
     ],
     "combat": [
-      "Combat_System_Guide.md"
+      "Combat_System_Guide.md",
+      "GUIDE-007_Game_Systems.md"
     ],
     "battle": [
       "Combat_System_Guide.md"
@@ -138,17 +267,24 @@
       "Combat_System_Guide.md"
     ],
     "integration": [
-      "Combat_System_Guide.md"
+      "Combat_System_Guide.md",
+      "Habdel_Integration_Index.md",
+      "Habdel_Wiki_Integration_Report.md"
     ],
-    "debug": [
-      "Debug_System_Guide.md"
+    "guides": [
+      "Developer_Practical_Guides.md"
     ],
-    "logging": [
-      "Debug_System_Guide.md"
+    "practical": [
+      "Developer_Practical_Guides.md"
     ],
-    "development": [
-      "Debug_System_Guide.md",
-      "OTUI_Module_Development_Guide.md"
+    "developer": [
+      "Developer_Practical_Guides.md"
+    ],
+    "tutorial": [
+      "Developer_Practical_Guides.md"
+    ],
+    "best_practices": [
+      "Developer_Practical_Guides.md"
     ],
     "status": [
       "Documentation_Status.md"
@@ -159,6 +295,9 @@
     "wiki": [
       "Documentation_Status.md",
       "Guia_Busca_Rapida.md",
+      "Habdel_Integration_Index.md",
+      "Habdel_Wiki_Integration_Report.md",
+      "Wiki_Completion_Plan.md",
       "otclient_wiki.md"
     ],
     "drag-drop": [
@@ -166,6 +305,93 @@
     ],
     "interaction": [
       "Drag_Drop_System_Guide.md"
+    ],
+    "debugging": [
+      "GUIDE-004_Debugging_Avancado.md",
+      "GUIDE-010_Troubleshooting.md"
+    ],
+    "advanced": [
+      "GUIDE-004_Debugging_Avancado.md",
+      "GUIDE-006_UI_Avancada.md"
+    ],
+    "interface": [
+      "GUIDE-006_UI_Avancada.md"
+    ],
+    "widgets": [
+      "GUIDE-006_UI_Avancada.md",
+      "UI_System_Guide.md"
+    ],
+    "layouts": [
+      "GUIDE-006_UI_Avancada.md",
+      "UI_System_Guide.md"
+    ],
+    "game_systems": [
+      "GUIDE-007_Game_Systems.md"
+    ],
+    "inventory": [
+      "GUIDE-007_Game_Systems.md"
+    ],
+    "spells": [
+      "GUIDE-007_Game_Systems.md"
+    ],
+    "creatures": [
+      "GUIDE-007_Game_Systems.md",
+      "Map_System_Guide.md"
+    ],
+    "items": [
+      "GUIDE-007_Game_Systems.md"
+    ],
+    "deploy": [
+      "GUIDE-008_Deploy.md"
+    ],
+    "build": [
+      "GUIDE-008_Deploy.md"
+    ],
+    "distribution": [
+      "GUIDE-008_Deploy.md"
+    ],
+    "release": [
+      "GUIDE-008_Deploy.md"
+    ],
+    "packaging": [
+      "GUIDE-008_Deploy.md"
+    ],
+    "contribution": [
+      "GUIDE-009_Contribuicao.md"
+    ],
+    "community": [
+      "GUIDE-009_Contribuicao.md"
+    ],
+    "guidelines": [
+      "GUIDE-009_Contribuicao.md"
+    ],
+    "problems": [
+      "GUIDE-010_Troubleshooting.md"
+    ],
+    "solutions": [
+      "GUIDE-010_Troubleshooting.md"
+    ],
+    "game": [
+      "Game_Quests_System_Guide.md",
+      "Game_Trading_System_Guide.md"
+    ],
+    "quests": [
+      "Game_Quests_System_Guide.md"
+    ],
+    "missions": [
+      "Game_Quests_System_Guide.md"
+    ],
+    "trade": [
+      "Game_Trading_System_Guide.md"
+    ],
+    "economy": [
+      "Game_Trading_System_Guide.md"
+    ],
+    "shop": [
+      "Game_Trading_System_Guide.md"
+    ],
+    "market": [
+      "Game_Trading_System_Guide.md"
     ],
     "busca": [
       "Guia_Busca_Rapida.md"
@@ -176,6 +402,40 @@
     "ajuda": [
       "Guia_Busca_Rapida.md"
     ],
+    "habdel": [
+      "Habdel_Integration_Index.md",
+      "Habdel_Navigation_Guide.md",
+      "Habdel_Wiki_Integration_Report.md",
+      "Wiki_Completion_Plan.md"
+    ],
+    "index": [
+      "Habdel_Integration_Index.md",
+      "Navigation_Index_Alphabetical.md",
+      "Navigation_Index_Categorical.md",
+      "Navigation_Index_Search.md",
+      "Navigation_Index_Story_Based.md",
+      "otclient_wiki.md"
+    ],
+    "navigation": [
+      "Habdel_Integration_Index.md",
+      "Habdel_Navigation_Guide.md",
+      "Navigation_Index_Alphabetical.md",
+      "Navigation_Index_Categorical.md",
+      "Navigation_Index_Search.md",
+      "Navigation_Index_Story_Based.md"
+    ],
+    "links": [
+      "Habdel_Navigation_Guide.md"
+    ],
+    "quick_access": [
+      "Habdel_Navigation_Guide.md"
+    ],
+    "report": [
+      "Habdel_Wiki_Integration_Report.md"
+    ],
+    "analysis": [
+      "Habdel_Wiki_Integration_Report.md"
+    ],
     "map": [
       "Map_System_Guide.md"
     ],
@@ -185,11 +445,27 @@
     "tiles": [
       "Map_System_Guide.md"
     ],
-    "creatures": [
-      "Map_System_Guide.md"
-    ],
     "pathfinding": [
       "Map_System_Guide.md"
+    ],
+    "alphabetical": [
+      "Navigation_Index_Alphabetical.md"
+    ],
+    "search": [
+      "Navigation_Index_Alphabetical.md",
+      "Navigation_Index_Search.md"
+    ],
+    "categorical": [
+      "Navigation_Index_Categorical.md"
+    ],
+    "organization": [
+      "Navigation_Index_Categorical.md"
+    ],
+    "keywords": [
+      "Navigation_Index_Search.md"
+    ],
+    "story_based": [
+      "Navigation_Index_Story_Based.md"
     ],
     "modules": [
       "OTUI_Module_Development_Guide.md"
@@ -200,20 +476,17 @@
     "completed": [
       "OTUI_Module_Development_Guide.md"
     ],
-    "performance": [
-      "Performance_System_Guide.md"
+    "modals": [
+      "UI_Modals_System_Guide.md"
     ],
-    "optimization": [
-      "Performance_System_Guide.md"
+    "dialogs": [
+      "UI_Modals_System_Guide.md"
     ],
-    "profiling": [
-      "Performance_System_Guide.md"
+    "scroll": [
+      "UI_Scroll_Pagination_System_Guide.md"
     ],
-    "widgets": [
-      "UI_System_Guide.md"
-    ],
-    "layouts": [
-      "UI_System_Guide.md"
+    "pagination": [
+      "UI_Scroll_Pagination_System_Guide.md"
     ],
     "events": [
       "UI_System_Guide.md"
@@ -221,8 +494,20 @@
     "styling": [
       "UI_System_Guide.md"
     ],
-    "index": [
-      "otclient_wiki.md"
+    "tabs": [
+      "UI_Tabs_System_Guide.md"
+    ],
+    "tabbar": [
+      "UI_Tabs_System_Guide.md"
+    ],
+    "completion": [
+      "Wiki_Completion_Plan.md"
+    ],
+    "plan": [
+      "Wiki_Completion_Plan.md"
+    ],
+    "priority": [
+      "Wiki_Completion_Plan.md"
     ]
   }
 }

@@ -101,16 +101,16 @@ class ToolsIndexer:
                 file_ext = file_path.suffix.lower()
                 
                 if file_ext in ['.py', '.lua', '.sh', '.bat']:
-            with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
-                content = f.read()
-            
+                    with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                        content = f.read()
+                    
                     info = {
                         "description": self.extract_description(content),
                         "language": self.get_language(file_ext),
                         "functions": self.extract_functions(content, file_ext),
                         "dependencies": self.extract_dependencies(content)
                     }
-            else:
+                else:
                     info = {
                         "description": f"Arquivo {file_ext}",
                         "language": "unknown"
@@ -195,8 +195,8 @@ class ToolsIndexer:
             ]
             
             for pattern in patterns:
-            matches = re.findall(pattern, content)
-            dependencies.extend(matches)
+                matches = re.findall(pattern, content)
+                dependencies.extend(matches)
             
         except Exception:
             pass
@@ -346,14 +346,14 @@ def main():
     print("Iniciando indexação das ferramentas...")
     
     try:
-    indexer = ToolsIndexer()
-    success = indexer.update_index()
-    
-    if success:
+        indexer = ToolsIndexer()
+        success = indexer.update_index()
+        
+        if success:
             print("Indexação das ferramentas concluída com sucesso!")
-    else:
+        else:
             print("Erro na indexação das ferramentas!")
-    
+        
     except Exception as e:
         print(f"Erro durante indexação: {e}")
 

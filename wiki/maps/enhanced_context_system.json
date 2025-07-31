@@ -1,12 +1,7 @@
 {
-  "metadata": {
-    "version": "2.0",
-    "last_updated": "2025-07-28T20:39:49.471292",
-    "description": "Sistema de contexto avançado e navegação inteligente"
-  },
   "context_system": {
     "version": "2.0",
-    "last_updated": "2025-07-28T20:39:49.471292",
+    "last_updated": "2025-07-31T12:35:43.457371",
     "repository_info": {
       "name": "otclient_doc",
       "type": "otclient",
@@ -51,7 +46,7 @@
         "path": ".cursor/rules/",
         "description": "Sistema de regras do assistente",
         "permissions": "full_access",
-        "total_rules": 25
+        "total_rules": 30
       }
     },
     "navigation_system": {
@@ -139,27 +134,19 @@
       "automatic": true,
       "indicators": {
         "otclient": [
-          "otclient/src/",
-          "otclient/modules/",
-          "otclient/data/",
-          "otclient/docs/"
+          "otclient/",
+          "canary/"
         ],
         "canary": [
-          "canary/src/",
-          "canary/modules/",
-          "canary/data/",
-          "canary/docs/"
-        ],
-        "bmad": [
-          "bmad/",
-          "wiki/bmad/"
+          "canary/"
         ],
         "unified": [
-          "wiki/",
+          "wiki/otclient/",
+          "wiki/canary/",
           "wiki/integration/"
         ]
       },
-      "fallback": "unified"
+      "fallback": "otclient"
     },
     "integration_status": {
       "otclient": "active",
@@ -167,10 +154,5 @@
       "unified": "in_progress",
       "bmad": "active"
     }
-  },
-  "_metadata": {
-    "base_path": "C:\\Users\\Dell\\Documents\\GitHub\\otclient_doc",
-    "updated": "2025-07-29T01:54:39.438200",
-    "absolute_paths": true
   }
 }

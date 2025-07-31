@@ -1,19 +1,13 @@
 {
-  "metadata": {
-    "version": "1.0",
-    "last_updated": "2025-07-28T20:39:49.473495",
-    "description": "Navegação inteligente e padrões de acesso"
-  },
   "intelligent_navigation": {
     "version": "1.0",
-    "last_updated": "2025-07-28T20:39:49.473495",
+    "last_updated": "2025-07-31T12:35:43.458995",
     "navigation_patterns": {
       "context_aware": {
         "otclient_development": {
           "primary_paths": [
-            "src/client/",
-            "modules/client_",
-            "data/"
+            "otclient/",
+            "canary/"
           ],
           "documentation": "wiki/otclient/",
           "rules": [
@@ -217,10 +211,5 @@
         "timeout_increase": 1.5
       }
     }
-  },
-  "_metadata": {
-    "base_path": "C:\\Users\\Dell\\Documents\\GitHub\\otclient_doc",
-    "updated": "2025-07-29T01:54:39.443945",
-    "absolute_paths": true
   }
 }

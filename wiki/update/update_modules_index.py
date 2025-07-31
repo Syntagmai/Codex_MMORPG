@@ -303,15 +303,15 @@ def main():
     print("Iniciando indexação dos módulos...")
     
     try:
-    indexer = ModulesIndexer()
-    success = indexer.update_index()
-    
-    if success:
+        indexer = ModulesIndexer()
+        success = indexer.update_index()
+        
+        if success:
             print("Indexação dos módulos concluída com sucesso!")
-    else:
+        else:
             print("Erro na indexação dos módulos!")
             
-        except Exception as e:
+    except Exception as e:
         print(f"Erro durante indexação: {e}")
 
 if __name__ == "__main__":
