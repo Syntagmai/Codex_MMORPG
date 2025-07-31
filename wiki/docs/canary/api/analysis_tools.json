@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Structure Analyzer",
+    "description": "Analisa estrutura de diretórios e arquivos",
+    "file": "structure_analyzer.py",
+    "function": "analyze_project_structure"
+  },
+  {
+    "name": "API Extractor",
+    "description": "Extrai APIs Lua do código-fonte",
+    "file": "api_extractor.py",
+    "function": "extract_lua_apis"
+  },
+  {
+    "name": "Comparison Tool",
+    "description": "Compara OTClient e Canary",
+    "file": "comparison_tool.py",
+    "function": "compare_projects"
+  },
+  {
+    "name": "Documentation Generator",
+    "description": "Gera documentação automática",
+    "file": "doc_generator.py",
+    "function": "generate_documentation"
+  }
+]

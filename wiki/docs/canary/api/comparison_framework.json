@@ -1,0 +1,54 @@
+{
+  "comparison_categories": {
+    "architecture": {
+      "otclient": "Cliente standalone",
+      "canary": "Servidor standalone",
+      "differences": [
+        "Cliente vs Servidor",
+        "UI vs Backend",
+        "Lua vs C++"
+      ]
+    },
+    "features": {
+      "otclient": [
+        "Interface gráfica",
+        "Protocolo cliente",
+        "Módulos Lua"
+      ],
+      "canary": [
+        "Servidor de jogo",
+        "Protocolo servidor",
+        "Scripts Lua"
+      ],
+      "common": [
+        "Protocolo Tibia",
+        "Lua scripting",
+        "World management"
+      ]
+    },
+    "api": {
+      "otclient": "Lua API para UI",
+      "canary": "Lua API para servidor",
+      "integration_points": [
+        "Protocolo",
+        "World data",
+        "Scripts"
+      ]
+    },
+    "performance": {
+      "otclient": "Otimizado para UI",
+      "canary": "Otimizado para servidor",
+      "metrics": [
+        "FPS",
+        "Latência",
+        "Throughput"
+      ]
+    }
+  },
+  "integration_opportunities": [
+    "Protocolo unificado",
+    "Scripts compartilhados",
+    "World data sync",
+    "API comum"
+  ]
+}
