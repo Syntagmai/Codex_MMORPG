@@ -33,7 +33,7 @@ O **Task Master** é o sistema central de controle de todas as tasks do projeto 
 - [x] **1.9** Executar OTCLIENT-008: Sistema de Animações (100% → 100%) ✅ **COMPLETA**
 - [x] **1.10** Executar OTCLIENT-009: Sistema de Som (100% → 100%) ✅ **COMPLETA**
 - [x] **1.11** Executar OTCLIENT-010: Sistema de Partículas (100% → 100%) ✅ **COMPLETA**
-- [ ] **1.12** Executar OTCLIENT-011: Sistema de Mapas (0% → 100%)
+- [x] **1.12** Executar OTCLIENT-011: Sistema de Mapas (100% → 100%) ✅ **COMPLETA**
 - [ ] **1.13** Executar OTCLIENT-012: Sistema de Combate (0% → 100%)
 - [ ] **1.14** Executar OTCLIENT-013: Sistema de Inventário (0% → 100%)
 - [ ] **1.15** Executar OTCLIENT-014: Sistema de NPCs (0% → 100%)

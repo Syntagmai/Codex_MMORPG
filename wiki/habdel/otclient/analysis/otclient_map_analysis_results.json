@@ -1,0 +1,1717 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "analysis_date": "2025-07-31T15:51:34.759983",
+    "methodology": "Habdel",
+    "story_id": "OTCLIENT-011",
+    "system": "Map System"
+  },
+  "overview": {
+    "total_files": 17,
+    "total_lines": 8646,
+    "components": {},
+    "patterns": [],
+    "apis": {},
+    "dependencies": []
+  },
+  "components": {
+    "map.h": {
+      "classes": [
+        {
+          "name": "TileBlock",
+          "inherits": null
+        },
+        {
+          "name": "Map",
+          "inherits": null
+        }
+      ],
+      "enums": [
+        "OTBM_NodeTypes_t",
+        "OTBM_ItemAttr"
+      ],
+      "structs": [
+        "PathFindResult",
+        "Node",
+        "FloorData"
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "void",
+          "name": "addMapView"
+        },
+        {
+          "return_type": "void",
+          "name": "removeMapView"
+        },
+        {
+          "return_type": "void",
+          "name": "notificateTileUpdate"
+        },
+        {
+          "return_type": "void",
+          "name": "notificateCameraMove"
+        },
+        {
+          "return_type": "void",
+          "name": "notificateKeyRelease"
+        },
+        {
+          "return_type": "bool",
+          "name": "loadOtcm"
+        },
+        {
+          "return_type": "void",
+          "name": "saveOtcm"
+        },
+        {
+          "return_type": "void",
+          "name": "loadOtbm"
+        },
+        {
+          "return_type": "void",
+          "name": "saveOtbm"
+        },
+        {
+          "return_type": "void",
+          "name": "setShowZone"
+        },
+        {
+          "return_type": "void",
+          "name": "setShowZones"
+        },
+        {
+          "return_type": "void",
+          "name": "setZoneColor"
+        },
+        {
+          "return_type": "Color",
+          "name": "getZoneColor"
+        },
+        {
+          "return_type": "void",
+          "name": "setForceShowAnimations"
+        },
+        {
+          "return_type": "void",
+          "name": "setShowAnimations"
+        },
+        {
+          "return_type": "void",
+          "name": "clean"
+        },
+        {
+          "return_type": "void",
+          "name": "cleanDynamicThings"
+        },
+        {
+          "return_type": "ThingPtr",
+          "name": "getThing"
+        },
+        {
+          "return_type": "void",
+          "name": "addThing"
+        },
+        {
+          "return_type": "bool",
+          "name": "removeThing"
+        },
+        {
+          "return_type": "bool",
+          "name": "removeThingByPos"
+        },
+        {
+          "return_type": "void",
+          "name": "addStaticText"
+        },
+        {
+          "return_type": "bool",
+          "name": "removeStaticText"
+        },
+        {
+          "return_type": "void",
+          "name": "addAnimatedText"
+        },
+        {
+          "return_type": "bool",
+          "name": "removeAnimatedText"
+        },
+        {
+          "return_type": "bool",
+          "name": "isWidgetAttached"
+        },
+        {
+          "return_type": "void",
+          "name": "addAttachedWidgetToObject"
+        },
+        {
+          "return_type": "bool",
+          "name": "removeAttachedWidgetFromObject"
+        },
+        {
+          "return_type": "void",
+          "name": "updateAttachedWidgets"
+        },
+        {
+          "return_type": "void",
+          "name": "colorizeThing"
+        },
+        {
+          "return_type": "void",
+          "name": "removeThingColor"
+        },
+        {
+          "return_type": "StaticTextPtr",
+          "name": "getStaticText"
+        },
+        {
+          "return_type": "TileList",
+          "name": "getTiles"
+        },
+        {
+          "return_type": "void",
+          "name": "cleanTile"
+        },
+        {
+          "return_type": "void",
+          "name": "beginGhostMode"
+        },
+        {
+          "return_type": "void",
+          "name": "endGhostMode"
+        },
+        {
+          "return_type": "CreaturePtr",
+          "name": "getCreatureById"
+        },
+        {
+          "return_type": "void",
+          "name": "addCreature"
+        },
+        {
+          "return_type": "void",
+          "name": "removeCreatureById"
+        },
+        {
+          "return_type": "return",
+          "name": "getSpectatorsInRangeEx"
+        },
+        {
+          "return_type": "return",
+          "name": "getSpectatorsInRangeEx"
+        },
+        {
+          "return_type": "return",
+          "name": "getSpectatorsInRangeEx"
+        },
+        {
+          "return_type": "void",
+          "name": "setLight"
+        },
+        {
+          "return_type": "void",
+          "name": "setCentralPosition"
+        },
+        {
+          "return_type": "bool",
+          "name": "isLookPossible"
+        },
+        {
+          "return_type": "bool",
+          "name": "isCovered"
+        },
+        {
+          "return_type": "bool",
+          "name": "isCompletelyCovered"
+        },
+        {
+          "return_type": "return",
+          "name": "isAwareOfPosition"
+        },
+        {
+          "return_type": "bool",
+          "name": "isAwareOfPosition"
+        },
+        {
+          "return_type": "void",
+          "name": "resetLastCamera"
+        },
+        {
+          "return_type": "void",
+          "name": "setAwareRange"
+        },
+        {
+          "return_type": "void",
+          "name": "resetAwareRange"
+        },
+        {
+          "return_type": "uint8_t",
+          "name": "getFirstAwareFloor"
+        },
+        {
+          "return_type": "uint8_t",
+          "name": "getLastAwareFloor"
+        },
+        {
+          "return_type": "PathFindResult_ptr",
+          "name": "newFindPath"
+        },
+        {
+          "return_type": "int",
+          "name": "getMinimapColor"
+        },
+        {
+          "return_type": "bool",
+          "name": "isSightClear"
+        },
+        {
+          "return_type": "void",
+          "name": "removeUnawareThings"
+        }
+      ],
+      "patterns": [
+        "Singleton",
+        "Template",
+        "Map",
+        "Tile",
+        "View",
+        "Position",
+        "Thing",
+        "Camera"
+      ],
+      "lines": 354,
+      "size": 12364
+    },
+    "map.cpp": {
+      "classes": [],
+      "enums": [],
+      "structs": [
+        "SNode",
+        "LessNode",
+        "LessNode",
+        "LessNode"
+      ],
+      "methods": [
+        {
+          "return_type": "floors",
+          "name": "for"
+        },
+        {
+          "return_type": "anymore",
+          "name": "for"
+        },
+        {
+          "return_type": "anymore",
+          "name": "for"
+        },
+        {
+          "return_type": "new",
+          "name": "SNode"
+        },
+        {
+          "return_type": "new",
+          "name": "SNode"
+        },
+        {
+          "return_type": "Position",
+          "name": "start"
+        },
+        {
+          "return_type": "Position",
+          "name": "destination"
+        }
+      ],
+      "patterns": [
+        "Template",
+        "Map",
+        "Tile",
+        "View",
+        "Position",
+        "Thing",
+        "Camera"
+      ],
+      "lines": 1472,
+      "size": 49930
+    },
+    "mapview.h": {
+      "classes": [
+        {
+          "name": "MapView",
+          "inherits": null
+        },
+        {
+          "name": "class",
+          "inherits": null
+        },
+        {
+          "name": "Map",
+          "inherits": null
+        },
+        {
+          "name": "UIMap",
+          "inherits": null
+        },
+        {
+          "name": "Tile",
+          "inherits": null
+        },
+        {
+          "name": "LightView",
+          "inherits": null
+        },
+        {
+          "name": "FadeType",
+          "inherits": null
+        }
+      ],
+      "enums": [
+        "FloorViewMode",
+        "AntialiasingMode",
+        "FadeType"
+      ],
+      "structs": [
+        "AwareRange",
+        "MapPosInfo",
+        "MapObject",
+        "FloorData",
+        "Crosshair"
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "drawForeground"
+        },
+        {
+          "return_type": "void",
+          "name": "drawCreatureInformation"
+        },
+        {
+          "return_type": "void",
+          "name": "preLoad"
+        },
+        {
+          "return_type": "void",
+          "name": "lockFirstVisibleFloor"
+        },
+        {
+          "return_type": "void",
+          "name": "unlockFirstVisibleFloor"
+        },
+        {
+          "return_type": "void",
+          "name": "setVisibleDimension"
+        },
+        {
+          "return_type": "void",
+          "name": "setFloorViewMode"
+        },
+        {
+          "return_type": "void",
+          "name": "followCreature"
+        },
+        {
+          "return_type": "Position",
+          "name": "getCameraPosition"
+        },
+        {
+          "return_type": "void",
+          "name": "setCameraPosition"
+        },
+        {
+          "return_type": "void",
+          "name": "setDrawLights"
+        },
+        {
+          "return_type": "void",
+          "name": "move"
+        },
+        {
+          "return_type": "void",
+          "name": "setShader"
+        },
+        {
+          "return_type": "Position",
+          "name": "getPosition"
+        },
+        {
+          "return_type": "Position",
+          "name": "getPosition"
+        },
+        {
+          "return_type": "TilePtr",
+          "name": "getTopTile"
+        },
+        {
+          "return_type": "void",
+          "name": "setCrosshairTexture"
+        },
+        {
+          "return_type": "void",
+          "name": "setAntiAliasingMode"
+        },
+        {
+          "return_type": "void",
+          "name": "onMouseMove"
+        },
+        {
+          "return_type": "void",
+          "name": "onKeyRelease"
+        },
+        {
+          "return_type": "void",
+          "name": "addForegroundTile"
+        },
+        {
+          "return_type": "void",
+          "name": "removeForegroundTile"
+        },
+        {
+          "return_type": "void",
+          "name": "onGlobalLightChange"
+        },
+        {
+          "return_type": "void",
+          "name": "onFloorChange"
+        },
+        {
+          "return_type": "void",
+          "name": "onTileUpdate"
+        },
+        {
+          "return_type": "void",
+          "name": "onMapCenterChange"
+        },
+        {
+          "return_type": "void",
+          "name": "onCameraMove"
+        },
+        {
+          "return_type": "void",
+          "name": "onFadeInFinished"
+        },
+        {
+          "return_type": "void",
+          "name": "updateHighlightTile"
+        },
+        {
+          "return_type": "void",
+          "name": "destroyHighlightTile"
+        },
+        {
+          "return_type": "void",
+          "name": "updateLight"
+        },
+        {
+          "return_type": "void",
+          "name": "updateViewportDirectionCache"
+        },
+        {
+          "return_type": "void",
+          "name": "updateGeometry"
+        },
+        {
+          "return_type": "void",
+          "name": "updateVisibleTiles"
+        },
+        {
+          "return_type": "void",
+          "name": "updateRect"
+        },
+        {
+          "return_type": "void",
+          "name": "registerEvents"
+        },
+        {
+          "return_type": "uint8_t",
+          "name": "calcFirstVisibleFloor"
+        },
+        {
+          "return_type": "uint8_t",
+          "name": "calcLastVisibleFloor"
+        },
+        {
+          "return_type": "void",
+          "name": "drawFloor"
+        },
+        {
+          "return_type": "void",
+          "name": "drawLights"
+        },
+        {
+          "return_type": "Rect",
+          "name": "calcFramebufferSource"
+        },
+        {
+          "return_type": "return",
+          "name": "transformPositionTo2D"
+        }
+      ],
+      "patterns": [
+        "Map",
+        "Tile",
+        "View",
+        "Position",
+        "Thing",
+        "Camera"
+      ],
+      "lines": 351,
+      "size": 11740
+    },
+    "mapview.cpp": {
+      "classes": [],
+      "enums": [],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "mousePosition",
+          "name": "destroyHighlightTile"
+        },
+        {
+          "return_type": "System",
+          "name": "destroyHighlightTile"
+        },
+        {
+          "return_type": "return",
+          "name": "Rect"
+        }
+      ],
+      "patterns": [
+        "Map",
+        "Tile",
+        "View",
+        "Position",
+        "Thing",
+        "Manager",
+        "Render",
+        "Camera"
+      ],
+      "lines": 974,
+      "size": 35406
+    },
+    "tile.h": {
+      "classes": [
+        {
+          "name": "TileSelectType",
+          "inherits": null
+        },
+        {
+          "name": "Tile",
+          "inherits": null
+        }
+      ],
+      "enums": [
+        "tileflags_t",
+        "TileSelectType",
+        "TileThingType"
+      ],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "return",
+          "name": "asLuaObject"
+        },
+        {
+          "return_type": "void",
+          "name": "onAddInMapView"
+        },
+        {
+          "return_type": "void",
+          "name": "draw"
+        },
+        {
+          "return_type": "void",
+          "name": "drawLight"
+        },
+        {
+          "return_type": "void",
+          "name": "clean"
+        },
+        {
+          "return_type": "void",
+          "name": "addWalkingCreature"
+        },
+        {
+          "return_type": "void",
+          "name": "removeWalkingCreature"
+        },
+        {
+          "return_type": "void",
+          "name": "addThing"
+        },
+        {
+          "return_type": "bool",
+          "name": "removeThing"
+        },
+        {
+          "return_type": "ThingPtr",
+          "name": "getThing"
+        },
+        {
+          "return_type": "EffectPtr",
+          "name": "getEffect"
+        },
+        {
+          "return_type": "int",
+          "name": "getThingStackPos"
+        },
+        {
+          "return_type": "ThingPtr",
+          "name": "getTopThing"
+        },
+        {
+          "return_type": "ThingPtr",
+          "name": "getTopLookThing"
+        },
+        {
+          "return_type": "ThingPtr",
+          "name": "getTopUseThing"
+        },
+        {
+          "return_type": "CreaturePtr",
+          "name": "getTopCreature"
+        },
+        {
+          "return_type": "ThingPtr",
+          "name": "getTopMoveThing"
+        },
+        {
+          "return_type": "ThingPtr",
+          "name": "getTopMultiUseThing"
+        },
+        {
+          "return_type": "int",
+          "name": "getGroundSpeed"
+        },
+        {
+          "return_type": "uint8_t",
+          "name": "getMinimapColorByte"
+        },
+        {
+          "return_type": "bool",
+          "name": "isWalkable"
+        },
+        {
+          "return_type": "bool",
+          "name": "isClickable"
+        },
+        {
+          "return_type": "bool",
+          "name": "isCovered"
+        },
+        {
+          "return_type": "bool",
+          "name": "isCompletelyCovered"
+        },
+        {
+          "return_type": "bool",
+          "name": "hasBlockingCreature"
+        },
+        {
+          "return_type": "bool",
+          "name": "limitsFloorsView"
+        },
+        {
+          "return_type": "bool",
+          "name": "canRender"
+        },
+        {
+          "return_type": "void",
+          "name": "select"
+        },
+        {
+          "return_type": "void",
+          "name": "unselect"
+        },
+        {
+          "return_type": "bool",
+          "name": "checkForDetachableThing"
+        },
+        {
+          "return_type": "void",
+          "name": "drawTexts"
+        },
+        {
+          "return_type": "void",
+          "name": "setText"
+        },
+        {
+          "return_type": "std::string",
+          "name": "getText"
+        },
+        {
+          "return_type": "void",
+          "name": "setTimer"
+        },
+        {
+          "return_type": "int",
+          "name": "getTimer"
+        },
+        {
+          "return_type": "void",
+          "name": "setFill"
+        },
+        {
+          "return_type": "bool",
+          "name": "canShoot"
+        },
+        {
+          "return_type": "void",
+          "name": "updateThingStackPos"
+        },
+        {
+          "return_type": "void",
+          "name": "drawTop"
+        },
+        {
+          "return_type": "void",
+          "name": "drawCreature"
+        },
+        {
+          "return_type": "void",
+          "name": "setThingFlag"
+        }
+      ],
+      "patterns": [
+        "Map",
+        "Tile",
+        "View",
+        "Position",
+        "Thing",
+        "Render",
+        "Camera"
+      ],
+      "lines": 272,
+      "size": 10016
+    },
+    "tile.cpp": {
+      "classes": [],
+      "enums": [],
+      "structs": [],
+      "methods": [],
+      "patterns": [
+        "Map",
+        "Tile",
+        "View",
+        "Position",
+        "Thing",
+        "Manager",
+        "Render",
+        "Camera"
+      ],
+      "lines": 1004,
+      "size": 29037
+    },
+    "position.h": {
+      "classes": [
+        {
+          "name": "Position",
+          "inherits": null
+        }
+      ],
+      "enums": [],
+      "structs": [
+        "Hasher",
+        "fmt"
+      ],
+      "methods": [
+        {
+          "return_type": "return",
+          "name": "getAngleFromPositions"
+        },
+        {
+          "return_type": "return",
+          "name": "getDirectionFromPositions"
+        },
+        {
+          "return_type": "bool",
+          "name": "isMapPosition"
+        },
+        {
+          "return_type": "bool",
+          "name": "up"
+        },
+        {
+          "return_type": "bool",
+          "name": "down"
+        },
+        {
+          "return_type": "bool",
+          "name": "coveredUp"
+        },
+        {
+          "return_type": "bool",
+          "name": "coveredDown"
+        }
+      ],
+      "patterns": [
+        "Template",
+        "Map",
+        "Position"
+      ],
+      "lines": 304,
+      "size": 10055
+    },
+    "position.cpp": {
+      "classes": [],
+      "enums": [],
+      "structs": [],
+      "methods": [],
+      "patterns": [
+        "Map",
+        "Position"
+      ],
+      "lines": 71,
+      "size": 2344
+    },
+    "thing.h": {
+      "classes": [
+        {
+          "name": "Thing",
+          "inherits": "AttachableObject"
+        },
+        {
+          "name": "Client",
+          "inherits": null
+        },
+        {
+          "name": "Tile",
+          "inherits": null
+        }
+      ],
+      "enums": [],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "return",
+          "name": "asLuaObject"
+        },
+        {
+          "return_type": "void",
+          "name": "setPosition"
+        },
+        {
+          "return_type": "ContainerPtr",
+          "name": "getParentContainer"
+        },
+        {
+          "return_type": "int",
+          "name": "getStackPos"
+        },
+        {
+          "return_type": "int",
+          "name": "getStackPriority"
+        },
+        {
+          "return_type": "void",
+          "name": "setShader"
+        },
+        {
+          "return_type": "PainterShaderProgramPtr",
+          "name": "getShader"
+        },
+        {
+          "return_type": "return",
+          "name": "isOwnerHidden"
+        }
+      ],
+      "patterns": [
+        "Map",
+        "Tile",
+        "View",
+        "Position",
+        "Thing",
+        "Manager"
+      ],
+      "lines": 276,
+      "size": 12536
+    },
+    "thing.cpp": {
+      "classes": [],
+      "enums": [],
+      "structs": [],
+      "methods": [],
+      "patterns": [
+        "Map",
+        "Tile",
+        "View",
+        "Position",
+        "Thing",
+        "Manager"
+      ],
+      "lines": 102,
+      "size": 2827
+    },
+    "thingtype.h": {
+      "classes": [
+        {
+          "name": "ThingType",
+          "inherits": null
+        }
+      ],
+      "enums": [
+        "FrameGroupType",
+        "ThingCategory",
+        "StaticDataCategory",
+        "ThingAttr",
+        "ThingFlagAttr",
+        "STACK_PRIORITY",
+        "PLAYER_ACTION",
+        "ITEM_CATEGORY",
+        "SpriteMask"
+      ],
+      "structs": [
+        "Imbuement",
+        "ImbuementSlot",
+        "ImbuementTrackerItem",
+        "MarketData",
+        "NPCData",
+        "MarketOffer",
+        "Light",
+        "TextureData",
+        "Pos"
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "unserializeAppearance"
+        },
+        {
+          "return_type": "void",
+          "name": "unserialize"
+        },
+        {
+          "return_type": "void",
+          "name": "unserializeOtml"
+        },
+        {
+          "return_type": "void",
+          "name": "applyAppearanceFlags"
+        },
+        {
+          "return_type": "void",
+          "name": "serialize"
+        },
+        {
+          "return_type": "void",
+          "name": "exportImage"
+        },
+        {
+          "return_type": "void",
+          "name": "draw"
+        },
+        {
+          "return_type": "void",
+          "name": "drawWithFrameBuffer"
+        },
+        {
+          "return_type": "int",
+          "name": "getExactSize"
+        },
+        {
+          "return_type": "bool",
+          "name": "isTall"
+        },
+        {
+          "return_type": "void",
+          "name": "setPathable"
+        },
+        {
+          "return_type": "int",
+          "name": "getExactHeight"
+        },
+        {
+          "return_type": "ThingFlagAttr",
+          "name": "thingAttrToThingFlagAttr"
+        },
+        {
+          "return_type": "Size",
+          "name": "getBestTextureDimension"
+        },
+        {
+          "return_type": "void",
+          "name": "loadTexture"
+        },
+        {
+          "return_type": "uint32_t",
+          "name": "getSpriteIndex"
+        },
+        {
+          "return_type": "uint32_t",
+          "name": "getTextureIndex"
+        }
+      ],
+      "patterns": [
+        "Map",
+        "Tile",
+        "View",
+        "Thing",
+        "Manager"
+      ],
+      "lines": 546,
+      "size": 18674
+    },
+    "thingtype.cpp": {
+      "classes": [],
+      "enums": [],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        }
+      ],
+      "patterns": [
+        "Map",
+        "Tile",
+        "View",
+        "Thing",
+        "Manager"
+      ],
+      "lines": 1080,
+      "size": 41415
+    },
+    "thingtypemanager.h": {
+      "classes": [
+        {
+          "name": "ThingTypeManager",
+          "inherits": null
+        },
+        {
+          "name": "GarbageCollection",
+          "inherits": null
+        }
+      ],
+      "enums": [],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "bool",
+          "name": "loadDat"
+        },
+        {
+          "return_type": "bool",
+          "name": "loadOtml"
+        },
+        {
+          "return_type": "bool",
+          "name": "loadAppearances"
+        },
+        {
+          "return_type": "bool",
+          "name": "loadStaticData"
+        },
+        {
+          "return_type": "void",
+          "name": "parseItemType"
+        },
+        {
+          "return_type": "void",
+          "name": "loadOtb"
+        },
+        {
+          "return_type": "void",
+          "name": "loadXml"
+        },
+        {
+          "return_type": "void",
+          "name": "saveDat"
+        },
+        {
+          "return_type": "void",
+          "name": "addItemType"
+        },
+        {
+          "return_type": "ItemTypeList",
+          "name": "findItemTypesByName"
+        },
+        {
+          "return_type": "ItemTypeList",
+          "name": "findItemTypesByString"
+        },
+        {
+          "return_type": "ItemTypeList",
+          "name": "findItemTypeByCategory"
+        },
+        {
+          "return_type": "ThingTypeList",
+          "name": "findThingTypeByAttr"
+        },
+        {
+          "return_type": "RaceList",
+          "name": "getRacesByName"
+        }
+      ],
+      "patterns": [
+        "Thing",
+        "Manager"
+      ],
+      "lines": 112,
+      "size": 4061
+    },
+    "thingtypemanager.cpp": {
+      "classes": [],
+      "enums": [],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "throw",
+          "name": "OTMLException"
+        },
+        {
+          "return_type": "throw",
+          "name": "OTMLException"
+        },
+        {
+          "return_type": "banks",
+          "name": "loadCreatureBank"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "OTB_ROOT_ATTR_VERSION",
+          "name": "if"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        }
+      ],
+      "patterns": [
+        "Thing",
+        "Manager"
+      ],
+      "lines": 607,
+      "size": 22127
+    },
+    "minimap.h": {
+      "classes": [
+        {
+          "name": "MinimapBlock",
+          "inherits": null
+        },
+        {
+          "name": "Minimap",
+          "inherits": null
+        }
+      ],
+      "enums": [
+        "MinimapTileFlags"
+      ],
+      "structs": [
+        "MinimapTile"
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "clean"
+        },
+        {
+          "return_type": "void",
+          "name": "update"
+        },
+        {
+          "return_type": "void",
+          "name": "updateTile"
+        },
+        {
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "void",
+          "name": "clean"
+        },
+        {
+          "return_type": "void",
+          "name": "draw"
+        },
+        {
+          "return_type": "Point",
+          "name": "getTilePoint"
+        },
+        {
+          "return_type": "Position",
+          "name": "getTilePosition"
+        },
+        {
+          "return_type": "Rect",
+          "name": "getTileRect"
+        },
+        {
+          "return_type": "void",
+          "name": "updateTile"
+        },
+        {
+          "return_type": "bool",
+          "name": "loadImage"
+        },
+        {
+          "return_type": "void",
+          "name": "saveImage"
+        },
+        {
+          "return_type": "bool",
+          "name": "loadOtmm"
+        },
+        {
+          "return_type": "void",
+          "name": "saveOtmm"
+        },
+        {
+          "return_type": "Rect",
+          "name": "calcMapRect"
+        },
+        {
+          "return_type": "std::scoped_lock",
+          "name": "lock"
+        }
+      ],
+      "patterns": [
+        "Map",
+        "Tile",
+        "Position"
+      ],
+      "lines": 136,
+      "size": 5169
+    },
+    "minimap.cpp": {
+      "classes": [],
+      "enums": [],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "std::scoped_lock",
+          "name": "lock"
+        },
+        {
+          "return_type": "Rect",
+          "name": "src"
+        },
+        {
+          "return_type": "Rect",
+          "name": "tileRect"
+        },
+        {
+          "return_type": "Rect",
+          "name": "mapRect"
+        },
+        {
+          "return_type": "std::scoped_lock",
+          "name": "lock"
+        },
+        {
+          "return_type": "Position",
+          "name": "pos"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        }
+      ],
+      "patterns": [
+        "Map",
+        "Tile",
+        "Position",
+        "Manager"
+      ],
+      "lines": 434,
+      "size": 14380
+    },
+    "mapio.cpp": {
+      "classes": [],
+      "enums": [],
+      "structs": [],
+      "methods": [
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        }
+      ],
+      "patterns": [
+        "Map",
+        "Tile",
+        "Position",
+        "Thing",
+        "Manager"
+      ],
+      "lines": 551,
+      "size": 21395
+    }
+  },
+  "patterns": [
+    "View",
+    "Thing",
+    "Map",
+    "Singleton",
+    "Position",
+    "Render",
+    "Manager",
+    "Camera",
+    "Template",
+    "Tile"
+  ],
+  "apis": {
+    "Map": {
+      "description": "Classe principal para gerenciamento do mapa",
+      "methods": [
+        "addTile",
+        "removeTile",
+        "getTile",
+        "clean",
+        "update"
+      ],
+      "components": [
+        "map.h",
+        "map.cpp"
+      ]
+    },
+    "MapView": {
+      "description": "Visualização e renderização do mapa",
+      "methods": [
+        "drawForeground",
+        "setCameraPosition",
+        "followCreature",
+        "move"
+      ],
+      "components": [
+        "mapview.h",
+        "mapview.cpp"
+      ]
+    },
+    "Tile": {
+      "description": "Representação de um tile no mapa",
+      "methods": [
+        "addThing",
+        "removeThing",
+        "getThing",
+        "draw",
+        "isWalkable"
+      ],
+      "components": [
+        "tile.h",
+        "tile.cpp"
+      ]
+    },
+    "Position": {
+      "description": "Sistema de posicionamento 3D",
+      "methods": [
+        "getX",
+        "getY",
+        "getZ",
+        "distance",
+        "isInRange"
+      ],
+      "components": [
+        "position.h",
+        "position.cpp"
+      ]
+    },
+    "Thing": {
+      "description": "Classe base para objetos no mapa",
+      "methods": [
+        "draw",
+        "getPosition",
+        "isItem",
+        "isCreature"
+      ],
+      "components": [
+        "thing.h",
+        "thing.cpp"
+      ]
+    },
+    "ThingType": {
+      "description": "Definição de tipos de objetos",
+      "methods": [
+        "getSize",
+        "getHeight",
+        "isGround",
+        "isWalkable"
+      ],
+      "components": [
+        "thingtype.h",
+        "thingtype.cpp"
+      ]
+    },
+    "ThingTypeManager": {
+      "description": "Gerenciador de tipos de objetos",
+      "methods": [
+        "getThingType",
+        "loadThingTypes",
+        "getThingTypeCount"
+      ],
+      "components": [
+        "thingtypemanager.h",
+        "thingtypemanager.cpp"
+      ]
+    },
+    "Minimap": {
+      "description": "Sistema de minimapa",
+      "methods": [
+        "draw",
+        "update",
+        "setPosition",
+        "getTileColor"
+      ],
+      "components": [
+        "minimap.h",
+        "minimap.cpp"
+      ]
+    },
+    "MapIO": {
+      "description": "Entrada/saída de dados do mapa",
+      "methods": [
+        "loadMap",
+        "saveMap",
+        "parseMapData"
+      ],
+      "components": [
+        "mapio.cpp"
+      ]
+    }
+  },
+  "examples": {
+    "basic_map": {
+      "title": "Mapa Básico",
+      "description": "Como criar e usar um mapa básico",
+      "code": "// Exemplo de mapa básico\n#include \"client/map.h\"\n#include \"client/mapview.h\"\n\nvoid createBasicMap() {{\n    // Criar mapa\n    MapPtr map = std::make_shared<Map>();\n    \n    // Criar visualização do mapa\n    MapViewPtr mapView = std::make_shared<MapView>();\n    mapView->setMap(map);\n    \n    // Definir dimensões visíveis\n    mapView->setVisibleDimension(Size(15, 11));  // 15x11 tiles visíveis\n    \n    // Definir posição da câmera\n    Position cameraPos(100, 100, 7);  // x=100, y=100, z=7\n    mapView->setCameraPosition(cameraPos);\n    \n    // Configurar modo de visualização de andares\n    mapView->setFloorViewMode(MapView::FloorViewMode::NORMAL);\n    \n    // Habilitar/desabilitar recursos\n    mapView->setDrawNames(true);\n    mapView->setDrawHealthBars(true);\n    mapView->setDrawLights(true);\n    \n    // Renderizar mapa\n    mapView->drawForeground(Rect(0, 0, 800, 600));\n}}"
+    },
+    "tile_management": {
+      "title": "Gerenciamento de Tiles",
+      "description": "Como gerenciar tiles no mapa",
+      "code": "// Exemplo de gerenciamento de tiles\n#include \"client/map.h\"\n#include \"client/tile.h\"\n#include \"client/item.h\"\n\nvoid manageTiles() {{\n    // Obter mapa\n    MapPtr map = g_map;\n    \n    // Criar posição\n    Position pos(100, 100, 7);\n    \n    // Obter tile na posição\n    TilePtr tile = map->getTile(pos);\n    \n    if (!tile) {{\n        // Criar novo tile se não existir\n        tile = std::make_shared<Tile>(pos);\n        map->addTile(tile);\n    }}\n    \n    // Adicionar item ao tile\n    ItemPtr item = Item::create(100);  // ID do item\n    tile->addThing(item, 0);  // stackPos = 0\n    \n    // Verificar propriedades do tile\n    if (tile->isWalkable()) {{\n        std::cout << \"Tile is walkable\" << std::endl;\n    }}\n    \n    if (tile->isClickable()) {{\n        std::cout << \"Tile is clickable\" << std::endl;\n    }}\n    \n    // Obter coisas no tile\n    const std::vector<ThingPtr>& things = tile->getThings();\n    std::cout << \"Tile has \" << things.size() << \" things\" << std::endl;\n    \n    // Remover coisa do tile\n    if (!things.empty()) {{\n        tile->removeThing(things[0]);\n    }}\n}}"
+    },
+    "camera_control": {
+      "title": "Controle de Câmera",
+      "description": "Como controlar a câmera do mapa",
+      "code": "// Exemplo de controle de câmera\n#include \"client/mapview.h\"\n#include \"client/creature.h\"\n\nvoid controlCamera() {{\n    // Obter visualização do mapa\n    MapViewPtr mapView = g_mapView;\n    \n    // Definir posição da câmera\n    Position cameraPos(200, 200, 7);\n    mapView->setCameraPosition(cameraPos);\n    \n    // Mover câmera\n    mapView->move(10, 5);  // Mover 10 tiles para direita, 5 para baixo\n    \n    // Seguir criatura\n    CreaturePtr player = g_game.getLocalPlayer();\n    if (player) {{\n        mapView->followCreature(player);\n    }}\n    \n    // Verificar se está seguindo criatura\n    if (mapView->isFollowingCreature()) {{\n        std::cout << \"Camera is following creature\" << std::endl;\n    }}\n    \n    // Obter posição atual da câmera\n    Position currentPos = mapView->getCameraPosition();\n    std::cout << \"Camera at: \" << currentPos.x() << \", \" << currentPos.y() << \", \" << currentPos.z() << std::endl;\n    \n    // Configurar modo de visualização de andares\n    mapView->setFloorViewMode(MapView::FloorViewMode::FADE);\n    mapView->setFloorFading(1000);  // 1 segundo de fade\n    \n    // Bloquear andar visível\n    mapView->lockFirstVisibleFloor(5);  // Bloquear no andar 5\n}}"
+    },
+    "thing_types": {
+      "title": "Tipos de Coisas",
+      "description": "Como trabalhar com tipos de coisas",
+      "code": "// Exemplo de tipos de coisas\n#include \"client/thingtype.h\"\n#include \"client/thingtypemanager.h\"\n\nvoid workWithThingTypes() {{\n    // Obter gerenciador de tipos\n    ThingTypeManager& manager = g_things;\n    \n    // Carregar tipos de coisas\n    manager.loadThingTypes(\"things.xml\");\n    \n    // Obter tipo específico\n    ThingTypePtr thingType = manager.getThingType(100);  // ID do item\n    if (thingType) {{\n        // Obter propriedades do tipo\n        Size size = thingType->getSize();\n        uint8_t height = thingType->getHeight();\n        \n        std::cout << \"Thing size: \" << size.width() << \"x\" << size.height() << std::endl;\n        std::cout << \"Thing height: \" << (int)height << std::endl;\n        \n        // Verificar propriedades\n        if (thingType->isGround()) {{\n            std::cout << \"This is ground\" << std::endl;\n        }}\n        \n        if (thingType->isWalkable()) {{\n            std::cout << \"This is walkable\" << std::endl;\n        }}\n        \n        if (thingType->isBlocking()) {{\n            std::cout << \"This is blocking\" << std::endl;\n        }}\n        \n        if (thingType->isStackable()) {{\n            std::cout << \"This is stackable\" << std::endl;\n        }}\n        \n        // Obter informações de luz\n        if (thingType->hasLight()) {{\n            Light light = thingType->getLight();\n            std::cout << \"Light: \" << light.intensity << \", \" << light.color << std::endl;\n        }}\n        \n        // Obter informações de elevação\n        if (thingType->hasElevation()) {{\n            uint8_t elevation = thingType->getElevation();\n            std::cout << \"Elevation: \" << (int)elevation << std::endl;\n        }}\n    }}\n}}"
+    },
+    "minimap": {
+      "title": "Minimapa",
+      "description": "Como trabalhar com o minimapa",
+      "code": "// Exemplo de minimapa\n#include \"client/minimap.h\"\n\nvoid workWithMinimap() {{\n    // Obter minimapa\n    MinimapPtr minimap = g_minimap;\n    \n    // Definir posição do jogador\n    Position playerPos(100, 100, 7);\n    minimap->setPosition(playerPos);\n    \n    // Obter cor do tile no minimapa\n    uint8_t tileColor = minimap->getTileColor(playerPos);\n    std::cout << \"Tile color: \" << (int)tileColor << std::endl;\n    \n    // Desenhar minimapa\n    minimap->draw(Rect(10, 10, 200, 200));\n    \n    // Atualizar minimapa\n    minimap->update();\n    \n    // Verificar se posição está no minimapa\n    if (minimap->hasTile(playerPos)) {{\n        std::cout << \"Position is in minimap\" << std::endl;\n    }}\n    \n    // Obter informações do tile\n    MinimapTile minimapTile = minimap->getTile(playerPos);\n    if (minimapTile.hasFlag(MinimapTile::Walkable)) {{\n        std::cout << \"Tile is walkable on minimap\" << std::endl;\n    }}\n}}"
+    },
+    "map_rendering": {
+      "title": "Renderização de Mapas",
+      "description": "Como renderizar mapas com diferentes configurações",
+      "code": "// Exemplo de renderização de mapas\n#include \"client/mapview.h\"\n#include \"framework/graphics/painter.h\"\n\nvoid renderMap() {{\n    // Obter visualização do mapa\n    MapViewPtr mapView = g_mapView;\n    \n    // Configurar anti-aliasing\n    mapView->setAntiAliasingMode(MapView::AntialiasingMode::ANTIALIASING_ENABLED);\n    \n    // Configurar shader\n    mapView->setShader(\"default\", 1000.0f, 1000.0f);  // fadein=1s, fadeout=1s\n    \n    // Configurar luz\n    mapView->setMinimumAmbientLight(0.2f);  // Luz ambiente mínima\n    mapView->setShadowFloorIntensity(0.5f);  // Intensidade da sombra\n    \n    // Configurar dimensões visíveis\n    mapView->setVisibleDimension(Size(19, 15));  // 19x15 tiles\n    mapView->setLimitVisibleDimension(true);\n    \n    // Configurar modo de visualização de andares\n    mapView->setFloorViewMode(MapView::FloorViewMode::ALWAYS_WITH_TRANSPARENCY);\n    \n    // Desenhar mapa\n    Rect viewport(0, 0, 800, 600);\n    mapView->drawForeground(viewport);\n    \n    // Desenhar informações de criaturas\n    mapView->drawCreatureInformation();\n    \n    // Verificar se shader está ativo\n    if (mapView->getShader()) {{\n        std::cout << \"Shader is active\" << std::endl;\n    }}\n    \n    // Obter próximo shader\n    PainterShaderProgramPtr nextShader = mapView->getNextShader();\n    if (nextShader) {{\n        std::cout << \"Next shader is ready\" << std::endl;\n    }}\n}}"
+    },
+    "position_system": {
+      "title": "Sistema de Posicionamento",
+      "description": "Como trabalhar com o sistema de posicionamento",
+      "code": "// Exemplo de sistema de posicionamento\n#include \"client/position.h\"\n\nvoid workWithPositions() {{\n    // Criar posições\n    Position pos1(100, 100, 7);\n    Position pos2(105, 105, 7);\n    \n    // Obter coordenadas\n    int x = pos1.x();\n    int y = pos1.y();\n    int z = pos1.z();\n    \n    std::cout << \"Position: \" << x << \", \" << y << \", \" << z << std::endl;\n    \n    // Calcular distância\n    int distance = pos1.distance(pos2);\n    std::cout << \"Distance: \" << distance << std::endl;\n    \n    // Verificar se está no alcance\n    if (pos1.isInRange(pos2, 10)) {{\n        std::cout << \"Position is in range\" << std::endl;\n    }}\n    \n    // Mover posição\n    Position movedPos = pos1.translated(5, 3, 0);  // Mover 5 para direita, 3 para baixo\n    std::cout << \"Moved to: \" << movedPos.x() << \", \" << movedPos.y() << \", \" << movedPos.z() << std::endl;\n    \n    // Comparar posições\n    if (pos1 == pos2) {{\n        std::cout << \"Positions are equal\" << std::endl;\n    }}\n    \n    if (pos1 < pos2) {{\n        std::cout << \"pos1 is less than pos2\" << std::endl;\n    }}\n    \n    // Obter posição relativa\n    Position relativePos = pos1 - pos2;\n    std::cout << \"Relative: \" << relativePos.x() << \", \" << relativePos.y() << \", \" << relativePos.z() << std::endl;\n    \n    // Verificar se é válida\n    if (pos1.isValid()) {{\n        std::cout << \"Position is valid\" << std::endl;\n    }}\n}}"
+    },
+    "map_interaction": {
+      "title": "Interação com Mapas",
+      "description": "Como interagir com mapas e tiles",
+      "code": "// Exemplo de interação com mapas\n#include \"client/map.h\"\n#include \"client/mapview.h\"\n#include \"client/tile.h\"\n\nvoid interactWithMap() {{\n    // Obter mapa e visualização\n    MapPtr map = g_map;\n    MapViewPtr mapView = g_mapView;\n    \n    // Obter posição do mouse\n    Point mousePos(400, 300);\n    Position tilePos = mapView->getPosition(mousePos);\n    \n    // Obter tile na posição\n    TilePtr tile = map->getTile(tilePos);\n    if (tile) {{\n        // Verificar propriedades do tile\n        if (tile->isWalkable()) {{\n            std::cout << \"Tile is walkable\" << std::endl;\n        }}\n        \n        if (tile->isClickable()) {{\n            std::cout << \"Tile is clickable\" << std::endl;\n        }}\n        \n        // Obter coisas no tile\n        const std::vector<ThingPtr>& things = tile->getThings();\n        for (const auto& thing : things) {{\n            if (thing->isItem()) {{\n                ItemPtr item = thing->static_self_cast<Item>();\n                std::cout << \"Item ID: \" << item->getId() << std::endl;\n            }} else if (thing->isCreature()) {{\n                CreaturePtr creature = thing->static_self_cast<Creature>();\n                std::cout << \"Creature: \" << creature->getName() << std::endl;\n            }}\n        }}\n        \n        // Obter coisa no topo\n        ThingPtr topThing = tile->getTopThing();\n        if (topThing) {{\n            std::cout << \"Top thing: \" << topThing->getType() << std::endl;\n        }}\n        \n        // Obter criatura no topo\n        CreaturePtr topCreature = tile->getTopCreature();\n        if (topCreature) {{\n            std::cout << \"Top creature: \" << topCreature->getName() << std::endl;\n        }}\n        \n        // Verificar se tile está vazio\n        if (tile->isEmpty()) {{\n            std::cout << \"Tile is empty\" << std::endl;\n        }}\n        \n        // Verificar se tile é desenhável\n        if (tile->isDrawable()) {{\n            std::cout << \"Tile is drawable\" << std::endl;\n        }}\n        \n        // Obter velocidade do ground\n        int groundSpeed = tile->getGroundSpeed();\n        std::cout << \"Ground speed: \" << groundSpeed << std::endl;\n    }}\n}}"
+    }
+  },
+  "integration_points": [
+    {
+      "system": "Graphics System",
+      "description": "Integração com sistema de gráficos para renderização",
+      "files": [
+        "mapview.h",
+        "mapview.cpp",
+        "tile.h",
+        "tile.cpp"
+      ],
+      "type": "dependency"
+    },
+    {
+      "system": "Network System",
+      "description": "Recebimento de dados de mapa do servidor",
+      "files": [
+        "map.h",
+        "map.cpp",
+        "mapio.cpp"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Game System",
+      "description": "Integração com sistema de jogo para posicionamento",
+      "files": [
+        "position.h",
+        "position.cpp",
+        "mapview.h"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "UI System",
+      "description": "Interface de usuário para mapas",
+      "files": [
+        "mapview.h",
+        "mapview.cpp",
+        "minimap.h"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Lua System",
+      "description": "Exposição de mapas para scripts Lua",
+      "files": [
+        "map.h",
+        "mapview.h",
+        "tile.h"
+      ],
+      "type": "binding"
+    },
+    {
+      "system": "Resource Management",
+      "description": "Gerenciamento de recursos de mapa",
+      "files": [
+        "thingtype.h",
+        "thingtypemanager.h"
+      ],
+      "type": "dependency"
+    },
+    {
+      "system": "Input System",
+      "description": "Entrada de mouse e teclado para mapas",
+      "files": [
+        "mapview.h",
+        "mapview.cpp"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Light System",
+      "description": "Sistema de iluminação para mapas",
+      "files": [
+        "mapview.h",
+        "tile.h",
+        "lightview.h"
+      ],
+      "type": "integration"
+    }
+  ]
+}
