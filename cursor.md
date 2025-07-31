@@ -10,8 +10,8 @@
 
 ### **⚡ Ações Rápidas:**
 - **🎯 Dashboard** → `wiki/dashboard/integrated_task_manager.md` (Sistema Central)
-- **📋 Regras** → `.cursor/rules/` (26 arquivos)
-- **🗺️ Mapas** → `wiki/maps/` (15 arquivos JSON)
+- **📋 Regras** → `.cursor/rules/` (30 arquivos)
+- **🗺️ Mapas** → `wiki/maps/` (23 arquivos JSON)
 - **📚 Wiki** → `wiki/` (documentação estruturada)
 - **🔧 Código** → `src/` (código-fonte - somente leitura)
 - **🐍 Scripts** → `wiki/update/` (scripts Python com resolução automática)
@@ -137,6 +137,7 @@ Este arquivo atua como **orquestrador** que referencia a **coletânea de regras*
 | `git-task-manager-integration-rules.md` | **Regras de integração** Git-Task Manager | ✅ Ativo |
 | `log-organization-rules.md` | **Regras de organização** de logs e arquivos de log | ✅ Ativo |
 | `wiki-log-organization-rules.md` | **Regras de organização** da pasta wiki/log/ | ✅ Ativo |
+| `readme-maintenance-rules.md` | **Regras de manutenção** do README.md | ✅ Ativo |
 
 ### 📁 **Contexto das Pastas do Projeto**
 

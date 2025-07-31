@@ -1,0 +1,64 @@
+{
+  "timestamp": "2025-07-31T12:25:44.030551",
+  "metrics": {
+    "total_rules": 30,
+    "total_maps": 23,
+    "wiki_dirs": 14,
+    "submodules": {
+      "otclient": true,
+      "canary": true
+    },
+    "functionality": {
+      "sistema_regras": {
+        "status": "✅ Ativo",
+        "progresso": 100,
+        "descricao": "Sistema de regras funcionando"
+      },
+      "mapas_navegacao": {
+        "status": "✅ Ativo",
+        "progresso": 100,
+        "descricao": "Mapas JSON funcionais"
+      },
+      "documentacao_otclient": {
+        "status": "✅ Ativo",
+        "progresso": 95,
+        "descricao": "Documentação OTClient completa"
+      },
+      "sistema_bmad": {
+        "status": "✅ Ativo",
+        "progresso": 90,
+        "descricao": "Sistema BMAD funcional"
+      },
+      "integracao": {
+        "status": "✅ Ativo",
+        "progresso": 85,
+        "descricao": "Integração OTClient-Canary"
+      },
+      "documentacao_canary": {
+        "status": "✅ Ativo",
+        "progresso": 80,
+        "descricao": "Documentação Canary"
+      },
+      "dashboard_central": {
+        "status": "✅ Ativo",
+        "progresso": 75,
+        "descricao": "Dashboard central"
+      }
+    }
+  },
+  "navigation": {
+    "contexts": {
+      "@otclient": "✅ Funcional",
+      "@bmad": "✅ Funcional",
+      "@wiki": "✅ Funcional",
+      "@integration": "✅ Funcional"
+    },
+    "patterns": {
+      "analise_codigo": "cursor.md → otclient_source_index.json → src/ → modules/ → wiki/otclient/",
+      "busca_documentacao": "cursor.md → tags_index.json → wiki_map.json → wiki/ → relationships.json",
+      "consulta_regras": "cursor.md → .cursor/rules/ → enhanced_context_system.json",
+      "workflow_bmad": "cursor.md → bmad_agents_index.json → bmad_workflows_index.json → wiki/bmad/"
+    }
+  },
+  "status": "✅ Sistema Funcional"
+}
