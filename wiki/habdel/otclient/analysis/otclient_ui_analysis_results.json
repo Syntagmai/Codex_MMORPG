@@ -1,0 +1,1771 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "analysis_date": "2025-07-31T14:26:41.791805",
+    "methodology": "Habdel",
+    "story_id": "OTCLIENT-004",
+    "system": "UI System"
+  },
+  "overview": {
+    "total_files": 29,
+    "total_lines": 6913,
+    "components": {},
+    "patterns": [],
+    "apis": {},
+    "dependencies": []
+  },
+  "components": {
+    "ui.h": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 35,
+      "size": 1425
+    },
+    "uiwidget.h": {
+      "classes": [
+        {
+          "name": "class",
+          "inherits": null
+        },
+        {
+          "name": "UIManager",
+          "inherits": null
+        },
+        {
+          "name": "UIGridLayout",
+          "inherits": null
+        },
+        {
+          "name": "UIHorizontalLayout",
+          "inherits": null
+        },
+        {
+          "name": "UIVerticalLayout",
+          "inherits": null
+        },
+        {
+          "name": "UILayout",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "drawSelf"
+        },
+        {
+          "return_type": "void",
+          "name": "draw"
+        },
+        {
+          "return_type": "void",
+          "name": "drawChildren"
+        },
+        {
+          "return_type": "void",
+          "name": "addChild"
+        },
+        {
+          "return_type": "void",
+          "name": "insertChild"
+        },
+        {
+          "return_type": "void",
+          "name": "removeChild"
+        },
+        {
+          "return_type": "void",
+          "name": "focusChild"
+        },
+        {
+          "return_type": "void",
+          "name": "focusNextChild"
+        },
+        {
+          "return_type": "void",
+          "name": "focusPreviousChild"
+        },
+        {
+          "return_type": "void",
+          "name": "lowerChild"
+        },
+        {
+          "return_type": "void",
+          "name": "raiseChild"
+        },
+        {
+          "return_type": "void",
+          "name": "moveChildToIndex"
+        },
+        {
+          "return_type": "void",
+          "name": "reorderChildren"
+        },
+        {
+          "return_type": "void",
+          "name": "lockChild"
+        },
+        {
+          "return_type": "void",
+          "name": "unlockChild"
+        },
+        {
+          "return_type": "void",
+          "name": "mergeStyle"
+        },
+        {
+          "return_type": "void",
+          "name": "applyStyle"
+        },
+        {
+          "return_type": "void",
+          "name": "addAnchor"
+        },
+        {
+          "return_type": "void",
+          "name": "removeAnchor"
+        },
+        {
+          "return_type": "void",
+          "name": "fill"
+        },
+        {
+          "return_type": "void",
+          "name": "centerIn"
+        },
+        {
+          "return_type": "void",
+          "name": "breakAnchors"
+        },
+        {
+          "return_type": "void",
+          "name": "updateParentLayout"
+        },
+        {
+          "return_type": "void",
+          "name": "updateLayout"
+        },
+        {
+          "return_type": "void",
+          "name": "lock"
+        },
+        {
+          "return_type": "void",
+          "name": "unlock"
+        },
+        {
+          "return_type": "void",
+          "name": "focus"
+        },
+        {
+          "return_type": "void",
+          "name": "recursiveFocus"
+        },
+        {
+          "return_type": "void",
+          "name": "lower"
+        },
+        {
+          "return_type": "void",
+          "name": "raise"
+        },
+        {
+          "return_type": "void",
+          "name": "grabMouse"
+        },
+        {
+          "return_type": "void",
+          "name": "ungrabMouse"
+        },
+        {
+          "return_type": "void",
+          "name": "grabKeyboard"
+        },
+        {
+          "return_type": "void",
+          "name": "ungrabKeyboard"
+        },
+        {
+          "return_type": "void",
+          "name": "bindRectToParent"
+        },
+        {
+          "return_type": "void",
+          "name": "destroy"
+        },
+        {
+          "return_type": "void",
+          "name": "destroyChildren"
+        },
+        {
+          "return_type": "void",
+          "name": "removeChildren"
+        },
+        {
+          "return_type": "void",
+          "name": "hideChildren"
+        },
+        {
+          "return_type": "void",
+          "name": "showChildren"
+        },
+        {
+          "return_type": "void",
+          "name": "setId"
+        },
+        {
+          "return_type": "void",
+          "name": "setParent"
+        },
+        {
+          "return_type": "void",
+          "name": "setLayout"
+        },
+        {
+          "return_type": "bool",
+          "name": "setRect"
+        },
+        {
+          "return_type": "void",
+          "name": "setStyle"
+        },
+        {
+          "return_type": "void",
+          "name": "setStyleFromNode"
+        },
+        {
+          "return_type": "void",
+          "name": "setEnabled"
+        },
+        {
+          "return_type": "void",
+          "name": "setVisible"
+        },
+        {
+          "return_type": "void",
+          "name": "setOn"
+        },
+        {
+          "return_type": "void",
+          "name": "setChecked"
+        },
+        {
+          "return_type": "void",
+          "name": "setFocusable"
+        },
+        {
+          "return_type": "void",
+          "name": "setPhantom"
+        },
+        {
+          "return_type": "void",
+          "name": "setDraggable"
+        },
+        {
+          "return_type": "void",
+          "name": "setFixedSize"
+        },
+        {
+          "return_type": "void",
+          "name": "setLastFocusReason"
+        },
+        {
+          "return_type": "void",
+          "name": "setAutoFocusPolicy"
+        },
+        {
+          "return_type": "void",
+          "name": "setVirtualOffset"
+        },
+        {
+          "return_type": "return",
+          "name": "hasProp"
+        },
+        {
+          "return_type": "bool",
+          "name": "isAnchored"
+        },
+        {
+          "return_type": "bool",
+          "name": "isChildLocked"
+        },
+        {
+          "return_type": "bool",
+          "name": "hasChild"
+        },
+        {
+          "return_type": "Rect",
+          "name": "getPaddingRect"
+        },
+        {
+          "return_type": "Rect",
+          "name": "getMarginRect"
+        },
+        {
+          "return_type": "Rect",
+          "name": "getChildrenRect"
+        },
+        {
+          "return_type": "UIAnchorLayoutPtr",
+          "name": "getAnchoredLayout"
+        },
+        {
+          "return_type": "UIAnchorList",
+          "name": "getAnchorsGroup"
+        },
+        {
+          "return_type": "Fw::AnchorEdge",
+          "name": "getAnchorType"
+        },
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "getRootParent"
+        },
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "getChildAfter"
+        },
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "getChildBefore"
+        },
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "getChildById"
+        },
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "getChildByPos"
+        },
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "getChildByIndex"
+        },
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "getChildByState"
+        },
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "getChildByStyleName"
+        },
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "recursiveGetChildById"
+        },
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "recursiveGetChildByPos"
+        },
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "recursiveGetChildByState"
+        },
+        {
+          "return_type": "UIWidgetList",
+          "name": "recursiveGetChildren"
+        },
+        {
+          "return_type": "UIWidgetList",
+          "name": "recursiveGetChildrenByPos"
+        },
+        {
+          "return_type": "UIWidgetList",
+          "name": "recursiveGetChildrenByMarginPos"
+        },
+        {
+          "return_type": "UIWidgetList",
+          "name": "recursiveGetChildrenByState"
+        },
+        {
+          "return_type": "UIWidgetList",
+          "name": "recursiveGetChildrenByStyleName"
+        },
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "backwardsGetWidgetById"
+        },
+        {
+          "return_type": "void",
+          "name": "setShader"
+        },
+        {
+          "return_type": "void",
+          "name": "setProp"
+        },
+        {
+          "return_type": "void",
+          "name": "disableUpdateTemporarily"
+        },
+        {
+          "return_type": "void",
+          "name": "removeOnDestroyCallback"
+        },
+        {
+          "return_type": "void",
+          "name": "repaint"
+        },
+        {
+          "return_type": "bool",
+          "name": "setState"
+        },
+        {
+          "return_type": "bool",
+          "name": "hasState"
+        },
+        {
+          "return_type": "void",
+          "name": "internalDestroy"
+        },
+        {
+          "return_type": "void",
+          "name": "updateState"
+        },
+        {
+          "return_type": "void",
+          "name": "updateStates"
+        },
+        {
+          "return_type": "void",
+          "name": "updateChildrenIndexStates"
+        },
+        {
+          "return_type": "void",
+          "name": "updateStyle"
+        },
+        {
+          "return_type": "void",
+          "name": "onStyleApply"
+        },
+        {
+          "return_type": "void",
+          "name": "onGeometryChange"
+        },
+        {
+          "return_type": "void",
+          "name": "onLayoutUpdate"
+        },
+        {
+          "return_type": "void",
+          "name": "onFocusChange"
+        },
+        {
+          "return_type": "void",
+          "name": "onChildFocusChange"
+        },
+        {
+          "return_type": "void",
+          "name": "onHoverChange"
+        },
+        {
+          "return_type": "void",
+          "name": "onVisibilityChange"
+        },
+        {
+          "return_type": "bool",
+          "name": "onDragEnter"
+        },
+        {
+          "return_type": "bool",
+          "name": "onDragLeave"
+        },
+        {
+          "return_type": "bool",
+          "name": "onDragMove"
+        },
+        {
+          "return_type": "bool",
+          "name": "onDrop"
+        },
+        {
+          "return_type": "bool",
+          "name": "onKeyText"
+        },
+        {
+          "return_type": "bool",
+          "name": "onKeyDown"
+        },
+        {
+          "return_type": "bool",
+          "name": "onKeyPress"
+        },
+        {
+          "return_type": "bool",
+          "name": "onKeyUp"
+        },
+        {
+          "return_type": "bool",
+          "name": "onMousePress"
+        },
+        {
+          "return_type": "bool",
+          "name": "onMouseRelease"
+        },
+        {
+          "return_type": "bool",
+          "name": "onMouseMove"
+        },
+        {
+          "return_type": "bool",
+          "name": "onMouseWheel"
+        },
+        {
+          "return_type": "bool",
+          "name": "onClick"
+        },
+        {
+          "return_type": "bool",
+          "name": "onDoubleClick"
+        },
+        {
+          "return_type": "bool",
+          "name": "propagateOnKeyText"
+        },
+        {
+          "return_type": "bool",
+          "name": "propagateOnKeyDown"
+        },
+        {
+          "return_type": "bool",
+          "name": "propagateOnKeyPress"
+        },
+        {
+          "return_type": "bool",
+          "name": "propagateOnKeyUp"
+        },
+        {
+          "return_type": "bool",
+          "name": "propagateOnMouseEvent"
+        },
+        {
+          "return_type": "bool",
+          "name": "propagateOnMouseMove"
+        },
+        {
+          "return_type": "void",
+          "name": "move"
+        },
+        {
+          "return_type": "return",
+          "name": "hasState"
+        },
+        {
+          "return_type": "return",
+          "name": "hasState"
+        },
+        {
+          "return_type": "return",
+          "name": "hasState"
+        },
+        {
+          "return_type": "return",
+          "name": "hasState"
+        },
+        {
+          "return_type": "return",
+          "name": "hasState"
+        },
+        {
+          "return_type": "return",
+          "name": "hasState"
+        },
+        {
+          "return_type": "return",
+          "name": "hasState"
+        },
+        {
+          "return_type": "return",
+          "name": "hasState"
+        },
+        {
+          "return_type": "return",
+          "name": "hasState"
+        },
+        {
+          "return_type": "return",
+          "name": "hasState"
+        },
+        {
+          "return_type": "return",
+          "name": "hasState"
+        },
+        {
+          "return_type": "return",
+          "name": "hasState"
+        },
+        {
+          "return_type": "return",
+          "name": "hasProp"
+        },
+        {
+          "return_type": "return",
+          "name": "hasProp"
+        },
+        {
+          "return_type": "return",
+          "name": "hasProp"
+        },
+        {
+          "return_type": "return",
+          "name": "hasProp"
+        },
+        {
+          "return_type": "return",
+          "name": "hasProp"
+        },
+        {
+          "return_type": "return",
+          "name": "hasProp"
+        },
+        {
+          "return_type": "return",
+          "name": "hasProp"
+        },
+        {
+          "return_type": "return",
+          "name": "hasProp"
+        },
+        {
+          "return_type": "return",
+          "name": "hasProp"
+        },
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "getHoveredChild"
+        },
+        {
+          "return_type": "return",
+          "name": "getChildByIndex"
+        },
+        {
+          "return_type": "return",
+          "name": "getChildByIndex"
+        },
+        {
+          "return_type": "void",
+          "name": "initBaseStyle"
+        },
+        {
+          "return_type": "void",
+          "name": "parseBaseStyle"
+        },
+        {
+          "return_type": "void",
+          "name": "drawBackground"
+        },
+        {
+          "return_type": "void",
+          "name": "drawBorder"
+        },
+        {
+          "return_type": "void",
+          "name": "drawIcon"
+        },
+        {
+          "return_type": "void",
+          "name": "setIcon"
+        },
+        {
+          "return_type": "void",
+          "name": "initImage"
+        },
+        {
+          "return_type": "void",
+          "name": "parseImageStyle"
+        },
+        {
+          "return_type": "void",
+          "name": "drawImage"
+        },
+        {
+          "return_type": "void",
+          "name": "setImageSource"
+        },
+        {
+          "return_type": "return",
+          "name": "hasProp"
+        },
+        {
+          "return_type": "return",
+          "name": "hasProp"
+        },
+        {
+          "return_type": "return",
+          "name": "hasProp"
+        },
+        {
+          "return_type": "return",
+          "name": "hasProp"
+        },
+        {
+          "return_type": "void",
+          "name": "initText"
+        },
+        {
+          "return_type": "void",
+          "name": "parseTextStyle"
+        },
+        {
+          "return_type": "void",
+          "name": "updateText"
+        },
+        {
+          "return_type": "void",
+          "name": "drawText"
+        },
+        {
+          "return_type": "void",
+          "name": "onTextChange"
+        },
+        {
+          "return_type": "void",
+          "name": "onFontChange"
+        },
+        {
+          "return_type": "void",
+          "name": "resizeToText"
+        },
+        {
+          "return_type": "void",
+          "name": "setText"
+        },
+        {
+          "return_type": "void",
+          "name": "setColoredText"
+        },
+        {
+          "return_type": "void",
+          "name": "setFont"
+        },
+        {
+          "return_type": "return",
+          "name": "hasProp"
+        }
+      ],
+      "patterns": [],
+      "lines": 629,
+      "size": 30840
+    },
+    "uiwidget.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "index",
+          "name": "for"
+        },
+        {
+          "return_type": "UIWidgetList",
+          "name": "rotatedChildren"
+        },
+        {
+          "return_type": "UIWidgetList",
+          "name": "rotatedChildren"
+        },
+        {
+          "return_type": "index",
+          "name": "for"
+        },
+        {
+          "return_type": "else",
+          "name": "updateLayout"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "layout",
+          "name": "updateLayout"
+        },
+        {
+          "return_type": "layout",
+          "name": "updateParentLayout"
+        },
+        {
+          "return_type": "proprieties",
+          "name": "applyStyle"
+        },
+        {
+          "return_type": "return",
+          "name": "onKeyText"
+        },
+        {
+          "return_type": "return",
+          "name": "onKeyDown"
+        },
+        {
+          "return_type": "return",
+          "name": "onKeyPress"
+        },
+        {
+          "return_type": "return",
+          "name": "onKeyUp"
+        }
+      ],
+      "patterns": [],
+      "lines": 2075,
+      "size": 58288
+    },
+    "uimanager.h": {
+      "classes": [
+        {
+          "name": "UIManager",
+          "inherits": null
+        },
+        {
+          "name": "UIWidget",
+          "inherits": null
+        },
+        {
+          "name": "GraphicalApplication",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "void",
+          "name": "render"
+        },
+        {
+          "return_type": "void",
+          "name": "resize"
+        },
+        {
+          "return_type": "void",
+          "name": "inputEvent"
+        },
+        {
+          "return_type": "void",
+          "name": "updatePressedWidget"
+        },
+        {
+          "return_type": "bool",
+          "name": "updateDraggingWidget"
+        },
+        {
+          "return_type": "void",
+          "name": "updateHoveredWidget"
+        },
+        {
+          "return_type": "void",
+          "name": "clearStyles"
+        },
+        {
+          "return_type": "bool",
+          "name": "importStyle"
+        },
+        {
+          "return_type": "void",
+          "name": "importStyleFromOTML"
+        },
+        {
+          "return_type": "void",
+          "name": "importStyleFromOTML"
+        },
+        {
+          "return_type": "OTMLNodePtr",
+          "name": "getStyle"
+        },
+        {
+          "return_type": "std::string",
+          "name": "getStyleName"
+        },
+        {
+          "return_type": "std::string",
+          "name": "getStyleClass"
+        },
+        {
+          "return_type": "OTMLNodePtr",
+          "name": "findMainWidgetNode"
+        },
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "loadUI"
+        },
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "loadUIFromString"
+        },
+        {
+          "return_type": "OTMLNodePtr",
+          "name": "loadDeviceUI"
+        },
+        {
+          "return_type": "OTMLNodePtr",
+          "name": "loadDeviceUI"
+        },
+        {
+          "return_type": "return",
+          "name": "loadUI"
+        },
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "createWidget"
+        },
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "createWidgetFromOTML"
+        },
+        {
+          "return_type": "void",
+          "name": "onWidgetAppear"
+        },
+        {
+          "return_type": "void",
+          "name": "onWidgetDisappear"
+        },
+        {
+          "return_type": "void",
+          "name": "onWidgetDestroy"
+        }
+      ],
+      "patterns": [
+        "Singleton"
+      ],
+      "lines": 102,
+      "size": 4520
+    },
+    "uimanager.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "widgets",
+          "name": "updateHoveredWidget"
+        },
+        {
+          "return_type": "throw",
+          "name": "OTMLException"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "return",
+          "name": "findMainWidgetNode"
+        },
+        {
+          "return_type": "return",
+          "name": "findMainWidgetNode"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "return",
+          "name": "createWidgetFromOTML"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "return",
+          "name": "createWidgetFromOTML"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        }
+      ],
+      "patterns": [],
+      "lines": 617,
+      "size": 20321
+    },
+    "uilayout.h": {
+      "classes": [
+        {
+          "name": "class",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "update"
+        },
+        {
+          "return_type": "void",
+          "name": "updateLater"
+        }
+      ],
+      "patterns": [],
+      "lines": 66,
+      "size": 2544
+    },
+    "uilayout.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 72,
+      "size": 2144
+    },
+    "uianchorlayout.h": {
+      "classes": [
+        {
+          "name": "UIAnchor",
+          "inherits": "std"
+        },
+        {
+          "name": "UIAnchorGroup",
+          "inherits": "std"
+        },
+        {
+          "name": "class",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "UIWidgetPtr",
+          "name": "getHookedWidget"
+        },
+        {
+          "return_type": "int",
+          "name": "getHookedPoint"
+        },
+        {
+          "return_type": "void",
+          "name": "addAnchor"
+        },
+        {
+          "return_type": "void",
+          "name": "addAnchor"
+        },
+        {
+          "return_type": "void",
+          "name": "removeAnchors"
+        },
+        {
+          "return_type": "bool",
+          "name": "hasAnchors"
+        },
+        {
+          "return_type": "void",
+          "name": "centerIn"
+        },
+        {
+          "return_type": "void",
+          "name": "fill"
+        },
+        {
+          "return_type": "bool",
+          "name": "updateWidget"
+        }
+      ],
+      "patterns": [],
+      "lines": 91,
+      "size": 3531
+    },
+    "uianchorlayout.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "happens",
+          "name": "assert"
+        },
+        {
+          "return_type": "in",
+          "name": "update"
+        }
+      ],
+      "patterns": [],
+      "lines": 286,
+      "size": 10037
+    },
+    "uiverticallayout.h": {
+      "classes": [
+        {
+          "name": "class",
+          "inherits": null
+        }
+      ],
+      "methods": [],
+      "patterns": [],
+      "lines": 47,
+      "size": 1729
+    },
+    "uiverticallayout.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 104,
+      "size": 4039
+    },
+    "uihorizontallayout.h": {
+      "classes": [
+        {
+          "name": "UIHorizontalLayout",
+          "inherits": null
+        }
+      ],
+      "methods": [],
+      "patterns": [],
+      "lines": 46,
+      "size": 1721
+    },
+    "uihorizontallayout.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 102,
+      "size": 3986
+    },
+    "uigridlayout.h": {
+      "classes": [
+        {
+          "name": "class",
+          "inherits": null
+        }
+      ],
+      "methods": [],
+      "patterns": [],
+      "lines": 66,
+      "size": 2728
+    },
+    "uigridlayout.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 121,
+      "size": 4597
+    },
+    "uiboxlayout.h": {
+      "classes": [
+        {
+          "name": "class",
+          "inherits": null
+        }
+      ],
+      "methods": [],
+      "patterns": [],
+      "lines": 46,
+      "size": 1800
+    },
+    "uiboxlayout.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 40,
+      "size": 1654
+    },
+    "uitextedit.h": {
+      "classes": [
+        {
+          "name": "class",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "update"
+        },
+        {
+          "return_type": "void",
+          "name": "setCursorPos"
+        },
+        {
+          "return_type": "void",
+          "name": "setSelection"
+        },
+        {
+          "return_type": "void",
+          "name": "setTextHidden"
+        },
+        {
+          "return_type": "void",
+          "name": "setTextVirtualOffset"
+        },
+        {
+          "return_type": "void",
+          "name": "setPlaceholderFont"
+        },
+        {
+          "return_type": "void",
+          "name": "moveCursorHorizontally"
+        },
+        {
+          "return_type": "void",
+          "name": "moveCursorVertically"
+        },
+        {
+          "return_type": "void",
+          "name": "appendText"
+        },
+        {
+          "return_type": "void",
+          "name": "appendCharacter"
+        },
+        {
+          "return_type": "void",
+          "name": "removeCharacter"
+        },
+        {
+          "return_type": "void",
+          "name": "blinkCursor"
+        },
+        {
+          "return_type": "void",
+          "name": "deleteSelection"
+        },
+        {
+          "return_type": "void",
+          "name": "del"
+        },
+        {
+          "return_type": "void",
+          "name": "paste"
+        },
+        {
+          "return_type": "std::string",
+          "name": "copy"
+        },
+        {
+          "return_type": "std::string",
+          "name": "cut"
+        },
+        {
+          "return_type": "void",
+          "name": "wrapText"
+        },
+        {
+          "return_type": "std::string",
+          "name": "getSelection"
+        },
+        {
+          "return_type": "int",
+          "name": "getTextPos"
+        },
+        {
+          "return_type": "return",
+          "name": "getProp"
+        },
+        {
+          "return_type": "return",
+          "name": "getProp"
+        },
+        {
+          "return_type": "return",
+          "name": "getProp"
+        },
+        {
+          "return_type": "return",
+          "name": "getProp"
+        },
+        {
+          "return_type": "return",
+          "name": "getProp"
+        },
+        {
+          "return_type": "return",
+          "name": "getProp"
+        },
+        {
+          "return_type": "return",
+          "name": "getProp"
+        },
+        {
+          "return_type": "return",
+          "name": "getProp"
+        },
+        {
+          "return_type": "void",
+          "name": "onTextAreaUpdate"
+        },
+        {
+          "return_type": "void",
+          "name": "updateDisplayedText"
+        }
+      ],
+      "patterns": [],
+      "lines": 165,
+      "size": 7032
+    },
+    "uitextedit.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "buffers",
+          "name": "recacheGlyphs"
+        },
+        {
+          "return_type": "position",
+          "name": "setProp"
+        },
+        {
+          "return_type": "Rect",
+          "name": "glyphRect"
+        },
+        {
+          "return_type": "Rect",
+          "name": "glyphRect"
+        },
+        {
+          "return_type": "Rect",
+          "name": "glyphScreenCoords"
+        },
+        {
+          "return_type": "else",
+          "name": "removeCharacter"
+        },
+        {
+          "return_type": "else",
+          "name": "blinkCursor"
+        },
+        {
+          "return_type": "right",
+          "name": "clearSelection"
+        },
+        {
+          "return_type": "left",
+          "name": "clearSelection"
+        },
+        {
+          "return_type": "right",
+          "name": "moveCursorHorizontally"
+        },
+        {
+          "return_type": "left",
+          "name": "moveCursorHorizontally"
+        }
+      ],
+      "patterns": [],
+      "lines": 955,
+      "size": 32487
+    },
+    "uiwidgettext.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 211,
+      "size": 7332
+    },
+    "uiwidgetimage.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 230,
+      "size": 11006
+    },
+    "uiwidgetbasestyle.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "throw",
+          "name": "OTMLException"
+        },
+        {
+          "return_type": "throw",
+          "name": "OTMLException"
+        },
+        {
+          "return_type": "throw",
+          "name": "OTMLException"
+        },
+        {
+          "return_type": "throw",
+          "name": "OTMLException"
+        },
+        {
+          "return_type": "throw",
+          "name": "OTMLException"
+        },
+        {
+          "return_type": "throw",
+          "name": "OTMLException"
+        },
+        {
+          "return_type": "throw",
+          "name": "OTMLException"
+        }
+      ],
+      "patterns": [],
+      "lines": 422,
+      "size": 18733
+    },
+    "uiqrcode.h": {
+      "classes": [
+        {
+          "name": "class",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "setCode"
+        }
+      ],
+      "patterns": [],
+      "lines": 44,
+      "size": 1660
+    },
+    "uiqrcode.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 62,
+      "size": 2262
+    },
+    "uiparticles.h": {
+      "classes": [
+        {
+          "name": "UIParticles",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "addEffect"
+        }
+      ],
+      "patterns": [],
+      "lines": 43,
+      "size": 1672
+    },
+    "uiparticles.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 69,
+      "size": 2598
+    },
+    "uitranslator.h": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "AlignmentFlag",
+          "name": "translateAlignment"
+        },
+        {
+          "return_type": "AnchorEdge",
+          "name": "translateAnchorEdge"
+        },
+        {
+          "return_type": "WidgetState",
+          "name": "translateState"
+        },
+        {
+          "return_type": "AutoFocusPolicy",
+          "name": "translateAutoFocusPolicy"
+        }
+      ],
+      "patterns": [],
+      "lines": 35,
+      "size": 1467
+    },
+    "uitranslator.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 132,
+      "size": 3686
+    }
+  },
+  "patterns": [
+    "Singleton"
+  ],
+  "apis": {
+    "UIWidget": {
+      "description": "Widget base para todos os componentes de UI",
+      "methods": [
+        "create",
+        "destroy",
+        "setVisible",
+        "setEnabled",
+        "setFocus"
+      ],
+      "components": [
+        "uiwidget.h",
+        "uiwidget.cpp"
+      ]
+    },
+    "UIManager": {
+      "description": "Gerenciador central de widgets e layouts",
+      "methods": [
+        "createWidget",
+        "destroyWidget",
+        "getWidget",
+        "update"
+      ],
+      "components": [
+        "uimanager.h",
+        "uimanager.cpp"
+      ]
+    },
+    "UILayout": {
+      "description": "Sistema de layouts para organização de widgets",
+      "methods": [
+        "addWidget",
+        "removeWidget",
+        "updateLayout",
+        "getSize"
+      ],
+      "components": [
+        "uilayout.h",
+        "uilayout.cpp"
+      ]
+    },
+    "UIAnchorLayout": {
+      "description": "Layout baseado em âncoras para posicionamento",
+      "methods": [
+        "setAnchor",
+        "getAnchor",
+        "updateAnchors"
+      ],
+      "components": [
+        "uianchorlayout.h",
+        "uianchorlayout.cpp"
+      ]
+    },
+    "UIVerticalLayout": {
+      "description": "Layout vertical para organização em coluna",
+      "methods": [
+        "addWidget",
+        "setSpacing",
+        "setAlignment"
+      ],
+      "components": [
+        "uiverticallayout.h",
+        "uiverticallayout.cpp"
+      ]
+    },
+    "UIHorizontalLayout": {
+      "description": "Layout horizontal para organização em linha",
+      "methods": [
+        "addWidget",
+        "setSpacing",
+        "setAlignment"
+      ],
+      "components": [
+        "uihorizontallayout.h",
+        "uihorizontallayout.cpp"
+      ]
+    },
+    "UIGridLayout": {
+      "description": "Layout em grade para organização tabular",
+      "methods": [
+        "setGridSize",
+        "addWidget",
+        "setCellSpacing"
+      ],
+      "components": [
+        "uigridlayout.h",
+        "uigridlayout.cpp"
+      ]
+    },
+    "UITextEdit": {
+      "description": "Widget de edição de texto",
+      "methods": [
+        "setText",
+        "getText",
+        "setReadOnly",
+        "setMaxLength"
+      ],
+      "components": [
+        "uitextedit.h",
+        "uitextedit.cpp"
+      ]
+    },
+    "UIWidgetText": {
+      "description": "Widget de exibição de texto",
+      "methods": [
+        "setText",
+        "getText",
+        "setFont",
+        "setColor"
+      ],
+      "components": [
+        "uiwidgettext.h",
+        "uiwidgettext.cpp"
+      ]
+    },
+    "UIWidgetImage": {
+      "description": "Widget de exibição de imagens",
+      "methods": [
+        "setImage",
+        "getImage",
+        "setStretched",
+        "setSmooth"
+      ],
+      "components": [
+        "uiwidgetimage.h",
+        "uiwidgetimage.cpp"
+      ]
+    },
+    "UIWidgetBaseStyle": {
+      "description": "Sistema de estilos base para widgets",
+      "methods": [
+        "setStyle",
+        "getStyle",
+        "applyStyle",
+        "resetStyle"
+      ],
+      "components": [
+        "uiwidgetbasestyle.h",
+        "uiwidgetbasestyle.cpp"
+      ]
+    },
+    "UIQRCode": {
+      "description": "Widget para exibição de códigos QR",
+      "methods": [
+        "setData",
+        "getData",
+        "setSize",
+        "setErrorCorrection"
+      ],
+      "components": [
+        "uiqrcode.h",
+        "uiqrcode.cpp"
+      ]
+    },
+    "UIParticles": {
+      "description": "Sistema de partículas para UI",
+      "methods": [
+        "addParticle",
+        "removeParticle",
+        "update",
+        "clear"
+      ],
+      "components": [
+        "uiparticles.h",
+        "uiparticles.cpp"
+      ]
+    },
+    "UITranslator": {
+      "description": "Sistema de tradução para internacionalização",
+      "methods": [
+        "translate",
+        "setLanguage",
+        "getLanguage",
+        "loadFile"
+      ],
+      "components": [
+        "uitranslator.h",
+        "uitranslator.cpp"
+      ]
+    }
+  },
+  "examples": {
+    "basic_widget": {
+      "title": "Criação de Widget Básico",
+      "description": "Como criar e configurar um widget básico",
+      "code": "// Exemplo de criação de widget básico\n#include \"uiwidget.h\"\n#include \"uimanager.h\"\n\nvoid createBasicWidget() {{\n    // Criar widget através do gerenciador\n    UIWidgetPtr widget = g_ui.createWidget(\"UIWidget\");\n    \n    // Configurar propriedades básicas\n    widget->setVisible(true);\n    widget->setEnabled(true);\n    widget->setSize(Size(100, 50));\n    widget->setPosition(Point(10, 10));\n    \n    // Definir texto se for um widget de texto\n    if (auto textWidget = std::dynamic_pointer_cast<UIWidgetText>(widget)) {{\n        textWidget->setText(\"Hello World!\");\n        textWidget->setColor(Color::white);\n    }}\n}}"
+    },
+    "layout_system": {
+      "title": "Sistema de Layouts",
+      "description": "Como usar diferentes tipos de layouts",
+      "code": "// Exemplo de uso de layouts\n#include \"uiverticallayout.h\"\n#include \"uihorizontallayout.h\"\n#include \"uigridlayout.h\"\n\nvoid createLayoutExample() {{\n    // Criar layout vertical\n    UIVerticalLayoutPtr verticalLayout = UIVerticalLayout::create();\n    verticalLayout->setSpacing(5);\n    verticalLayout->setAlignment(UIAlign::Center);\n    \n    // Adicionar widgets ao layout\n    UIWidgetPtr button1 = g_ui.createWidget(\"UIButton\");\n    UIWidgetPtr button2 = g_ui.createWidget(\"UIButton\");\n    UIWidgetPtr textEdit = g_ui.createWidget(\"UITextEdit\");\n    \n    verticalLayout->addWidget(button1);\n    verticalLayout->addWidget(button2);\n    verticalLayout->addWidget(textEdit);\n    \n    // Criar layout horizontal\n    UIHorizontalLayoutPtr horizontalLayout = UIHorizontalLayout::create();\n    horizontalLayout->setSpacing(10);\n    \n    // Adicionar widgets ao layout horizontal\n    UIWidgetPtr label = g_ui.createWidget(\"UILabel\");\n    UIWidgetPtr input = g_ui.createWidget(\"UITextEdit\");\n    \n    horizontalLayout->addWidget(label);\n    horizontalLayout->addWidget(input);\n    \n    // Criar layout em grade\n    UIGridLayoutPtr gridLayout = UIGridLayout::create();\n    gridLayout->setGridSize(Size(2, 2));\n    gridLayout->setCellSpacing(5);\n    \n    // Adicionar widgets à grade\n    for (int i = 0; i < 4; i++) {{\n        UIWidgetPtr cell = g_ui.createWidget(\"UIWidget\");\n        gridLayout->addWidget(cell);\n    }}\n}}"
+    },
+    "anchor_layout": {
+      "title": "Layout com Âncoras",
+      "description": "Como usar layout baseado em âncoras para posicionamento",
+      "code": "// Exemplo de layout com âncoras\n#include \"uianchorlayout.h\"\n\nvoid createAnchorLayout() {{\n    // Criar layout com âncoras\n    UIAnchorLayoutPtr anchorLayout = UIAnchorLayout::create();\n    \n    // Criar widgets\n    UIWidgetPtr topBar = g_ui.createWidget(\"UIWidget\");\n    UIWidgetPtr sidePanel = g_ui.createWidget(\"UIWidget\");\n    UIWidgetPtr mainContent = g_ui.createWidget(\"UIWidget\");\n    UIWidgetPtr statusBar = g_ui.createWidget(\"UIWidget\");\n    \n    // Configurar âncoras\n    // Top bar: ancorado no topo, largura total\n    anchorLayout->setAnchor(topBar, UIAnchor::Top | UIAnchor::Left | UIAnchor::Right);\n    \n    // Side panel: ancorado à esquerda, altura entre top bar e status bar\n    anchorLayout->setAnchor(sidePanel, UIAnchor::Left | UIAnchor::Top | UIAnchor::Bottom);\n    \n    // Main content: preenche o espaço restante\n    anchorLayout->setAnchor(mainContent, UIAnchor::Top | UIAnchor::Right | UIAnchor::Bottom);\n    \n    // Status bar: ancorado na parte inferior, largura total\n    anchorLayout->setAnchor(statusBar, UIAnchor::Bottom | UIAnchor::Left | UIAnchor::Right);\n    \n    // Adicionar widgets ao layout\n    anchorLayout->addWidget(topBar);\n    anchorLayout->addWidget(sidePanel);\n    anchorLayout->addWidget(mainContent);\n    anchorLayout->addWidget(statusBar);\n}}"
+    },
+    "text_editing": {
+      "title": "Edição de Texto",
+      "description": "Como criar e configurar widgets de edição de texto",
+      "code": "// Exemplo de edição de texto\n#include \"uitextedit.h\"\n#include \"uiwidgettext.h\"\n\nvoid createTextWidgets() {{\n    // Criar widget de edição de texto\n    UITextEditPtr textEdit = UITextEdit::create();\n    textEdit->setSize(Size(200, 100));\n    textEdit->setText(\"Digite seu texto aqui...\");\n    textEdit->setMaxLength(1000);\n    textEdit->setReadOnly(false);\n    \n    // Configurar eventos\n    textEdit->onTextChange = [](const std::string& text) {{\n        std::cout << \"Texto alterado: \" << text << std::endl;\n    }};\n    \n    textEdit->onEnterPress = [](const std::string& text) {{\n        std::cout << \"Enter pressionado: \" << text << std::endl;\n    }};\n    \n    // Criar widget de exibição de texto\n    UIWidgetTextPtr textDisplay = UIWidgetText::create();\n    textDisplay->setSize(Size(200, 50));\n    textDisplay->setText(\"Texto de exemplo\");\n    textDisplay->setColor(Color::white);\n    textDisplay->setFont(\"Arial\", 12);\n    \n    // Configurar alinhamento\n    textDisplay->setTextAlign(UIAlign::Center);\n    textDisplay->setVerticalAlign(UIAlign::Middle);\n}}"
+    },
+    "image_widget": {
+      "title": "Widget de Imagem",
+      "description": "Como criar e configurar widgets de imagem",
+      "code": "// Exemplo de widget de imagem\n#include \"uiwidgetimage.h\"\n\nvoid createImageWidget() {{\n    // Criar widget de imagem\n    UIWidgetImagePtr imageWidget = UIWidgetImage::create();\n    imageWidget->setSize(Size(256, 256));\n    \n    // Carregar imagem\n    imageWidget->setImage(\"data/images/icon.png\");\n    \n    // Configurar propriedades\n    imageWidget->setStretched(true);  // Esticar para preencher o widget\n    imageWidget->setSmooth(true);     // Suavização de pixels\n    imageWidget->setRepeat(false);    // Não repetir a imagem\n    \n    // Configurar eventos\n    imageWidget->onClick = []() {{\n        std::cout << \"Imagem clicada!\" << std::endl;\n    }};\n    \n    imageWidget->onHoverChange = [](bool hovered) {{\n        if (hovered) {{\n            std::cout << \"Mouse sobre a imagem\" << std::endl;\n        }}\n    }};\n}}"
+    },
+    "style_system": {
+      "title": "Sistema de Estilos",
+      "description": "Como aplicar estilos aos widgets",
+      "code": "// Exemplo de sistema de estilos\n#include \"uiwidgetbasestyle.h\"\n\nvoid applyStyles() {{\n    // Criar widget\n    UIWidgetPtr widget = g_ui.createWidget(\"UIButton\");\n    \n    // Aplicar estilo básico\n    UIWidgetBaseStylePtr style = UIWidgetBaseStyle::create();\n    \n    // Configurar cores\n    style->setBackgroundColor(Color::darkBlue);\n    style->setBorderColor(Color::white);\n    style->setTextColor(Color::white);\n    \n    // Configurar bordas\n    style->setBorderWidth(2);\n    style->setBorderRadius(5);\n    \n    // Configurar padding e margin\n    style->setPadding(UIEdge(5, 5, 5, 5));\n    style->setMargin(UIEdge(2, 2, 2, 2));\n    \n    // Aplicar estilo ao widget\n    widget->setStyle(style);\n    \n    // Criar estilo hover\n    UIWidgetBaseStylePtr hoverStyle = UIWidgetBaseStyle::create();\n    hoverStyle->setBackgroundColor(Color::blue);\n    hoverStyle->setBorderColor(Color::yellow);\n    \n    // Aplicar estilo hover\n    widget->setHoverStyle(hoverStyle);\n}}"
+    },
+    "internationalization": {
+      "title": "Internacionalização",
+      "description": "Como usar o sistema de tradução",
+      "code": "// Exemplo de internacionalização\n#include \"uitranslator.h\"\n\nvoid setupInternationalization() {{\n    // Criar tradutor\n    UITranslatorPtr translator = UITranslator::create();\n    \n    // Carregar arquivo de tradução\n    translator->loadFile(\"data/locales/pt_BR.lua\");\n    \n    // Definir idioma\n    translator->setLanguage(\"pt_BR\");\n    \n    // Traduzir texto\n    std::string translated = translator->translate(\"welcome_message\");\n    std::cout << \"Traduzido: \" << translated << std::endl;\n    \n    // Criar widget com texto traduzido\n    UIWidgetTextPtr label = UIWidgetText::create();\n    label->setText(translator->translate(\"login_button\"));\n    \n    // Configurar callback para mudança de idioma\n    translator->onLanguageChanged = [](const std::string& language) {{\n        std::cout << \"Idioma alterado para: \" << language << std::endl;\n        // Atualizar todos os widgets com texto traduzido\n        g_ui.updateAllWidgets();\n    }};\n}}"
+    }
+  },
+  "integration_points": [
+    {
+      "system": "Core Framework",
+      "description": "Integração com sistema core (Application, EventDispatcher)",
+      "files": [
+        "ui.h",
+        "uimanager.h",
+        "uimanager.cpp"
+      ],
+      "type": "dependency"
+    },
+    {
+      "system": "Graphics System",
+      "description": "Integração com sistema de gráficos para renderização",
+      "files": [
+        "uiwidget.h",
+        "uiwidget.cpp",
+        "uiwidgetimage.h",
+        "uiwidgetimage.cpp"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Network System",
+      "description": "Integração com sistema de rede para status de conexão",
+      "files": [
+        "uiwidget.h",
+        "uiwidget.cpp"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Lua Engine",
+      "description": "Exposição de APIs de UI para scripts Lua",
+      "files": [
+        "ui.h",
+        "uiwidget.h",
+        "uimanager.h"
+      ],
+      "type": "binding"
+    },
+    {
+      "system": "Resource Management",
+      "description": "Integração com gerenciamento de recursos (imagens, fontes)",
+      "files": [
+        "uiwidgetimage.h",
+        "uiwidgettext.h"
+      ],
+      "type": "dependency"
+    },
+    {
+      "system": "Event System",
+      "description": "Integração com sistema de eventos para interações",
+      "files": [
+        "uiwidget.h",
+        "uiwidget.cpp"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Localization",
+      "description": "Integração com sistema de localização",
+      "files": [
+        "uitranslator.h",
+        "uitranslator.cpp"
+      ],
+      "type": "integration"
+    }
+  ]
+}

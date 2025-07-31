@@ -1,55 +1,55 @@
 {
-  "timestamp": "2025-07-31T14:12:20.883427",
+  "timestamp": "2025-07-31T14:19:53.638014",
   "context": "otclient",
   "scripts_executed": [
     {
       "script": "wiki/update/update_source_index.py",
-      "execution_time": 13.474457025527954,
+      "execution_time": 2.1256601810455322,
       "status": "success"
     },
     {
       "script": "wiki/update/update_habdel_index.py",
-      "execution_time": 0.1550295352935791,
+      "execution_time": 0.10994386672973633,
       "status": "success"
     },
     {
       "script": "wiki/update/update_modules_index.py",
-      "execution_time": 0.11098051071166992,
+      "execution_time": 0.10292506217956543,
       "status": "success"
     },
     {
       "script": "wiki/update/update_styles_index.py",
-      "execution_time": 0.09908437728881836,
+      "execution_time": 0.10357069969177246,
       "status": "success"
     },
     {
       "script": "wiki/update/update_resources_index.py",
-      "execution_time": 0.11617827415466309,
+      "execution_time": 0.10199403762817383,
       "status": "success"
     },
     {
       "script": "wiki/update/update_tools_index.py",
-      "execution_time": 0.10272717475891113,
+      "execution_time": 0.10521435737609863,
       "status": "success"
     },
     {
       "script": "wiki/update/update_wiki_maps.py",
-      "execution_time": 0.9606854915618896,
+      "execution_time": 0.18341612815856934,
       "status": "success"
     },
     {
       "script": "wiki/update/update_bmad_maps.py",
-      "execution_time": 0.1044321060180664,
+      "execution_time": 0.11038780212402344,
       "status": "success"
     },
     {
       "script": "wiki/update/optimize_maps_for_tokens.py",
-      "execution_time": 0.14862489700317383,
+      "execution_time": 0.15613365173339844,
       "status": "success"
     },
     {
       "script": "wiki/update/expand_wiki_comprehensive.py",
-      "execution_time": 0.10647177696228027,
+      "execution_time": 0.10478687286376953,
       "status": "success"
     }
   ],
