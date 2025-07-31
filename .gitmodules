@@ -2,14 +2,14 @@
 # Este arquivo define os submódulos que servem como fontes de verdade imutáveis
 
 [submodule "otclient"]
-    path = otclient
-    url = https://github.com/Syntagmai/otclient.git
+	path = otclient
+	url = https://github.com/Syntagmai/otclient.git
     branch = main
     ignore = dirty
 
 [submodule "canary"]
-    path = canary
-    url = https://github.com/Syntagmai/canary.git
+	path = canary
+	url = https://github.com/Syntagmai/canary.git
     branch = master
     ignore = dirty
 
