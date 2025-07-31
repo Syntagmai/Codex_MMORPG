@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-07-31T14:27:12.075593",
+    "last_updated": "2025-07-31T14:39:37.277784",
     "total_files": 3,
     "description": "Índice da documentação original e planejamento (pasta habdel)"
   },
@@ -18,12 +18,12 @@
           "status": "done",
           "description": "tags: [ui, advanced_widgets, widgets, otclient, habdel, documentation]",
           "tags": [
-            "documentation",
             "widgets",
             "otclient",
-            "advanced_widgets",
+            "documentation",
+            "ui",
             "habdel",
-            "ui"
+            "advanced_widgets"
           ],
           "lines": 605,
           "size": 15175,
@@ -60,11 +60,11 @@
           "description": "tags: [habdel_documentation_plan, strategic_planning, documentation_development, bmad]",
           "tags": [
             "",
-            "documentation_development",
-            "strategic_planning",
             "x",
+            "habdel_documentation_plan",
+            "documentation_development",
             "bmad",
-            "habdel_documentation_plan"
+            "strategic_planning"
           ],
           "lines": 394,
           "size": 12321,
@@ -119,23 +119,20 @@
       "": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
-      "documentation_development": [
-        "UNKNOWN-DOCUMENTATION_PLAN"
-      ],
-      "strategic_planning": [
-        "UNKNOWN-DOCUMENTATION_PLAN"
-      ],
       "x": [
-        "UNKNOWN-DOCUMENTATION_PLAN"
-      ],
-      "bmad": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
       "habdel_documentation_plan": [
         "UNKNOWN-DOCUMENTATION_PLAN"
       ],
-      "documentation": [
-        "UI-UIAdvancedWidgets"
+      "documentation_development": [
+        "UNKNOWN-DOCUMENTATION_PLAN"
+      ],
+      "bmad": [
+        "UNKNOWN-DOCUMENTATION_PLAN"
+      ],
+      "strategic_planning": [
+        "UNKNOWN-DOCUMENTATION_PLAN"
       ],
       "widgets": [
         "UI-UIAdvancedWidgets"
@@ -143,13 +140,16 @@
       "otclient": [
         "UI-UIAdvancedWidgets"
       ],
-      "advanced_widgets": [
+      "documentation": [
+        "UI-UIAdvancedWidgets"
+      ],
+      "ui": [
         "UI-UIAdvancedWidgets"
       ],
       "habdel": [
         "UI-UIAdvancedWidgets"
       ],
-      "ui": [
+      "advanced_widgets": [
         "UI-UIAdvancedWidgets"
       ]
     },

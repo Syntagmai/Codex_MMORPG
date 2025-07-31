@@ -1,0 +1,1812 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "analysis_date": "2025-07-31T14:47:35.602315",
+    "methodology": "Habdel",
+    "story_id": "OTCLIENT-006",
+    "system": "Lua System"
+  },
+  "overview": {
+    "total_files": 10,
+    "total_lines": 3682,
+    "components": {},
+    "patterns": [],
+    "apis": {},
+    "dependencies": []
+  },
+  "components": {
+    "luainterface.h": {
+      "classes": [
+        {
+          "name": "LuaInterface",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "B",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "FC",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "FC",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "FC",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "FC",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "FC",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "FC",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "FC",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "FC",
+          "inherits": null
+        },
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "FC",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "FC",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "FC",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "FC",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "FC",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "FC",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "FC",
+          "inherits": null
+        },
+        {
+          "name": "C",
+          "inherits": null
+        },
+        {
+          "name": "FC",
+          "inherits": null
+        },
+        {
+          "name": "T",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "void",
+          "name": "registerSingletonClass"
+        },
+        {
+          "return_type": "void",
+          "name": "registerClass"
+        },
+        {
+          "return_type": "void",
+          "name": "registerClassStaticFunction"
+        },
+        {
+          "return_type": "void",
+          "name": "registerClassMemberFunction"
+        },
+        {
+          "return_type": "void",
+          "name": "registerClassMemberField"
+        },
+        {
+          "return_type": "void",
+          "name": "registerGlobalFunction"
+        },
+        {
+          "return_type": "void",
+          "name": "bindSingletonFunction"
+        },
+        {
+          "return_type": "void",
+          "name": "bindSingletonFunction"
+        },
+        {
+          "return_type": "void",
+          "name": "bindClassStaticFunction"
+        },
+        {
+          "return_type": "void",
+          "name": "bindClassStaticFunction"
+        },
+        {
+          "return_type": "void",
+          "name": "bindClassMemberFunction"
+        },
+        {
+          "return_type": "void",
+          "name": "bindClassMemberFunction"
+        },
+        {
+          "return_type": "void",
+          "name": "bindClassMemberField"
+        },
+        {
+          "return_type": "void",
+          "name": "bindClassMemberField"
+        },
+        {
+          "return_type": "void",
+          "name": "bindClassMemberGetField"
+        },
+        {
+          "return_type": "void",
+          "name": "bindClassMemberGetField"
+        },
+        {
+          "return_type": "void",
+          "name": "bindClassMemberSetField"
+        },
+        {
+          "return_type": "void",
+          "name": "bindClassMemberSetField"
+        },
+        {
+          "return_type": "void",
+          "name": "bindGlobalFunction"
+        },
+        {
+          "return_type": "int",
+          "name": "luaObjectGetEvent"
+        },
+        {
+          "return_type": "int",
+          "name": "luaObjectSetEvent"
+        },
+        {
+          "return_type": "int",
+          "name": "luaObjectEqualEvent"
+        },
+        {
+          "return_type": "int",
+          "name": "luaObjectCollectEvent"
+        },
+        {
+          "return_type": "bool",
+          "name": "safeRunScript"
+        },
+        {
+          "return_type": "void",
+          "name": "runScript"
+        },
+        {
+          "return_type": "void",
+          "name": "runBuffer"
+        },
+        {
+          "return_type": "void",
+          "name": "loadScript"
+        },
+        {
+          "return_type": "void",
+          "name": "loadFunction"
+        },
+        {
+          "return_type": "void",
+          "name": "evaluateExpression"
+        },
+        {
+          "return_type": "std::string",
+          "name": "traceback"
+        },
+        {
+          "return_type": "void",
+          "name": "throwError"
+        },
+        {
+          "return_type": "std::string",
+          "name": "getCurrentSourcePath"
+        },
+        {
+          "return_type": "int",
+          "name": "safeCall"
+        },
+        {
+          "return_type": "int",
+          "name": "signalCall"
+        },
+        {
+          "return_type": "int",
+          "name": "newSandboxEnv"
+        },
+        {
+          "return_type": "int",
+          "name": "luaCallGlobalField"
+        },
+        {
+          "return_type": "void",
+          "name": "callGlobalField"
+        },
+        {
+          "return_type": "R",
+          "name": "callGlobalField"
+        },
+        {
+          "return_type": "int",
+          "name": "luaScriptLoader"
+        },
+        {
+          "return_type": "int",
+          "name": "lua_dofile"
+        },
+        {
+          "return_type": "int",
+          "name": "lua_dofiles"
+        },
+        {
+          "return_type": "int",
+          "name": "lua_loadfile"
+        },
+        {
+          "return_type": "int",
+          "name": "luaErrorHandler"
+        },
+        {
+          "return_type": "int",
+          "name": "luaCppFunctionCallback"
+        },
+        {
+          "return_type": "int",
+          "name": "luaCollectCppFunction"
+        },
+        {
+          "return_type": "int",
+          "name": "luaBitAnd"
+        },
+        {
+          "return_type": "int",
+          "name": "luaBitNot"
+        },
+        {
+          "return_type": "int",
+          "name": "luaBitOr"
+        },
+        {
+          "return_type": "int",
+          "name": "luaBitXor"
+        },
+        {
+          "return_type": "int",
+          "name": "luaBitRightShift"
+        },
+        {
+          "return_type": "int",
+          "name": "luaBitLeftShift"
+        },
+        {
+          "return_type": "void",
+          "name": "registerTable"
+        },
+        {
+          "return_type": "void",
+          "name": "registerMethod"
+        },
+        {
+          "return_type": "void",
+          "name": "createLuaState"
+        },
+        {
+          "return_type": "void",
+          "name": "closeLuaState"
+        },
+        {
+          "return_type": "void",
+          "name": "collectGarbage"
+        },
+        {
+          "return_type": "void",
+          "name": "loadBuffer"
+        },
+        {
+          "return_type": "int",
+          "name": "pcall"
+        },
+        {
+          "return_type": "void",
+          "name": "call"
+        },
+        {
+          "return_type": "void",
+          "name": "error"
+        },
+        {
+          "return_type": "int",
+          "name": "ref"
+        },
+        {
+          "return_type": "int",
+          "name": "weakRef"
+        },
+        {
+          "return_type": "void",
+          "name": "unref"
+        },
+        {
+          "return_type": "std::string",
+          "name": "functionSourcePath"
+        },
+        {
+          "return_type": "void",
+          "name": "insert"
+        },
+        {
+          "return_type": "void",
+          "name": "remove"
+        },
+        {
+          "return_type": "bool",
+          "name": "next"
+        },
+        {
+          "return_type": "void",
+          "name": "getStackFunction"
+        },
+        {
+          "return_type": "void",
+          "name": "getRef"
+        },
+        {
+          "return_type": "void",
+          "name": "getWeakRef"
+        },
+        {
+          "return_type": "void",
+          "name": "setGlobalEnvironment"
+        },
+        {
+          "return_type": "void",
+          "name": "setMetatable"
+        },
+        {
+          "return_type": "void",
+          "name": "getMetatable"
+        },
+        {
+          "return_type": "void",
+          "name": "getField"
+        },
+        {
+          "return_type": "void",
+          "name": "setField"
+        },
+        {
+          "return_type": "void",
+          "name": "getTable"
+        },
+        {
+          "return_type": "void",
+          "name": "setTable"
+        },
+        {
+          "return_type": "void",
+          "name": "clearTable"
+        },
+        {
+          "return_type": "void",
+          "name": "getEnv"
+        },
+        {
+          "return_type": "void",
+          "name": "setEnv"
+        },
+        {
+          "return_type": "void",
+          "name": "getGlobal"
+        },
+        {
+          "return_type": "void",
+          "name": "getGlobalField"
+        },
+        {
+          "return_type": "void",
+          "name": "setGlobal"
+        },
+        {
+          "return_type": "void",
+          "name": "rawGet"
+        },
+        {
+          "return_type": "void",
+          "name": "rawGeti"
+        },
+        {
+          "return_type": "void",
+          "name": "rawSet"
+        },
+        {
+          "return_type": "void",
+          "name": "rawSeti"
+        },
+        {
+          "return_type": "void",
+          "name": "newTable"
+        },
+        {
+          "return_type": "void",
+          "name": "createTable"
+        },
+        {
+          "return_type": "void",
+          "name": "pop"
+        },
+        {
+          "return_type": "long",
+          "name": "popInteger"
+        },
+        {
+          "return_type": "double",
+          "name": "popNumber"
+        },
+        {
+          "return_type": "bool",
+          "name": "popBoolean"
+        },
+        {
+          "return_type": "std::string",
+          "name": "popString"
+        },
+        {
+          "return_type": "LuaObjectPtr",
+          "name": "popObject"
+        },
+        {
+          "return_type": "void",
+          "name": "pushNil"
+        },
+        {
+          "return_type": "void",
+          "name": "pushInteger"
+        },
+        {
+          "return_type": "void",
+          "name": "pushNumber"
+        },
+        {
+          "return_type": "void",
+          "name": "pushBoolean"
+        },
+        {
+          "return_type": "void",
+          "name": "pushString"
+        },
+        {
+          "return_type": "void",
+          "name": "pushLightUserdata"
+        },
+        {
+          "return_type": "void",
+          "name": "pushThread"
+        },
+        {
+          "return_type": "void",
+          "name": "pushValue"
+        },
+        {
+          "return_type": "void",
+          "name": "pushObject"
+        },
+        {
+          "return_type": "void",
+          "name": "pushCFunction"
+        },
+        {
+          "return_type": "void",
+          "name": "pushCppFunction"
+        },
+        {
+          "return_type": "bool",
+          "name": "isNil"
+        },
+        {
+          "return_type": "bool",
+          "name": "isBoolean"
+        },
+        {
+          "return_type": "bool",
+          "name": "isNumber"
+        },
+        {
+          "return_type": "bool",
+          "name": "isString"
+        },
+        {
+          "return_type": "bool",
+          "name": "isTable"
+        },
+        {
+          "return_type": "bool",
+          "name": "isFunction"
+        },
+        {
+          "return_type": "bool",
+          "name": "isCFunction"
+        },
+        {
+          "return_type": "bool",
+          "name": "isUserdata"
+        },
+        {
+          "return_type": "bool",
+          "name": "toBoolean"
+        },
+        {
+          "return_type": "int",
+          "name": "toInteger"
+        },
+        {
+          "return_type": "double",
+          "name": "toNumber"
+        },
+        {
+          "return_type": "std::string_view",
+          "name": "toVString"
+        },
+        {
+          "return_type": "std::string",
+          "name": "toString"
+        },
+        {
+          "return_type": "LuaObjectPtr",
+          "name": "toObject"
+        },
+        {
+          "return_type": "int",
+          "name": "getTop"
+        },
+        {
+          "return_type": "return",
+          "name": "getTop"
+        },
+        {
+          "return_type": "std::string",
+          "name": "getSource"
+        },
+        {
+          "return_type": "void",
+          "name": "loadFiles"
+        },
+        {
+          "return_type": "int",
+          "name": "polymorphicPush"
+        },
+        {
+          "return_type": "T",
+          "name": "castValue"
+        },
+        {
+          "return_type": "return",
+          "name": "R"
+        }
+      ],
+      "patterns": [
+        "Singleton",
+        "Template"
+      ],
+      "lines": 535,
+      "size": 20987
+    },
+    "luainterface.cpp": {
+      "classes": [
+        {
+          "name": "is",
+          "inherits": null
+        },
+        {
+          "name": "table",
+          "inherits": null
+        },
+        {
+          "name": "methods",
+          "inherits": null
+        },
+        {
+          "name": "fieldmethods",
+          "inherits": null
+        },
+        {
+          "name": "metatable",
+          "inherits": null
+        },
+        {
+          "name": "ones",
+          "inherits": null
+        },
+        {
+          "name": "methods",
+          "inherits": null
+        },
+        {
+          "name": "fieldmethods",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "reference",
+          "name": "pushThread"
+        },
+        {
+          "return_type": "objects",
+          "name": "closeLuaState"
+        },
+        {
+          "return_type": "table",
+          "name": "newTable"
+        },
+        {
+          "return_type": "metatable",
+          "name": "newTable"
+        },
+        {
+          "return_type": "metamethods",
+          "name": "pushCppFunction"
+        },
+        {
+          "return_type": "metatable",
+          "name": "pushValue"
+        },
+        {
+          "return_type": "methods",
+          "name": "pushValue"
+        },
+        {
+          "return_type": "fieldmethods",
+          "name": "pushValue"
+        },
+        {
+          "return_type": "klass_fieldmethods",
+          "name": "pop"
+        },
+        {
+          "return_type": "function",
+          "name": "getGlobal"
+        },
+        {
+          "return_type": "__func",
+          "name": "pushNil"
+        },
+        {
+          "return_type": "result",
+          "name": "getGlobal"
+        },
+        {
+          "return_type": "__exp",
+          "name": "pushNil"
+        },
+        {
+          "return_type": "else",
+          "name": "pushNil"
+        },
+        {
+          "return_type": "traceback",
+          "name": "getGlobal"
+        },
+        {
+          "return_type": "return",
+          "name": "popString"
+        },
+        {
+          "return_type": "throw",
+          "name": "LuaException"
+        },
+        {
+          "return_type": "throw",
+          "name": "LuaException"
+        },
+        {
+          "return_type": "values",
+          "name": "pushNil"
+        },
+        {
+          "return_type": "throw",
+          "name": "LuaException"
+        },
+        {
+          "return_type": "throw",
+          "name": "LuaException"
+        },
+        {
+          "return_type": "throw",
+          "name": "LuaException"
+        },
+        {
+          "return_type": "table",
+          "name": "newTable"
+        },
+        {
+          "return_type": "environment",
+          "name": "setField"
+        },
+        {
+          "return_type": "environment",
+          "name": "setMetatable"
+        },
+        {
+          "return_type": "return",
+          "name": "ref"
+        },
+        {
+          "return_type": "globalName",
+          "name": "lua_pop"
+        },
+        {
+          "return_type": "libraries",
+          "name": "luaL_openlibs"
+        },
+        {
+          "return_type": "__EMSCRIPTEN__",
+          "name": "luaopen_bit"
+        },
+        {
+          "return_type": "operations",
+          "name": "registerTable"
+        },
+        {
+          "return_type": "table",
+          "name": "newTable"
+        },
+        {
+          "return_type": "loader",
+          "name": "getGlobal"
+        },
+        {
+          "return_type": "dofile",
+          "name": "pushCFunction"
+        },
+        {
+          "return_type": "dofiles",
+          "name": "pushCFunction"
+        },
+        {
+          "return_type": "loadfile",
+          "name": "pushCFunction"
+        },
+        {
+          "return_type": "collects",
+          "name": "lua_close"
+        },
+        {
+          "return_type": "return",
+          "name": "lua_pcall"
+        },
+        {
+          "return_type": "table",
+          "name": "getRef"
+        },
+        {
+          "return_type": "v",
+          "name": "rawSeti"
+        },
+        {
+          "return_type": "table",
+          "name": "pop"
+        },
+        {
+          "return_type": "return",
+          "name": "lua_typename"
+        },
+        {
+          "return_type": "return",
+          "name": "lua_next"
+        },
+        {
+          "return_type": "else",
+          "name": "pushNil"
+        },
+        {
+          "return_type": "LUAJIT_VERSION",
+          "name": "lua_getfenv"
+        },
+        {
+          "return_type": "else",
+          "name": "lua_getupvalue"
+        },
+        {
+          "return_type": "LUAJIT_VERSION",
+          "name": "lua_setfenv"
+        },
+        {
+          "return_type": "value",
+          "name": "pop"
+        },
+        {
+          "return_type": "key",
+          "name": "pushValue"
+        },
+        {
+          "return_type": "value",
+          "name": "pop"
+        },
+        {
+          "return_type": "nextkey",
+          "name": "insert"
+        },
+        {
+          "return_type": "key",
+          "name": "pushNil"
+        },
+        {
+          "return_type": "nil",
+          "name": "rawSet"
+        },
+        {
+          "return_type": "key",
+          "name": "pushNil"
+        },
+        {
+          "return_type": "nil",
+          "name": "rawSet"
+        },
+        {
+          "return_type": "return",
+          "name": "lua_newuserdata"
+        },
+        {
+          "return_type": "collected",
+          "name": "newTable"
+        },
+        {
+          "return_type": "function",
+          "name": "pushCFunction"
+        },
+        {
+          "return_type": "return",
+          "name": "lua_isnil"
+        },
+        {
+          "return_type": "return",
+          "name": "lua_isboolean"
+        },
+        {
+          "return_type": "return",
+          "name": "lua_isnumber"
+        },
+        {
+          "return_type": "return",
+          "name": "lua_isstring"
+        },
+        {
+          "return_type": "return",
+          "name": "lua_istable"
+        },
+        {
+          "return_type": "return",
+          "name": "lua_isfunction"
+        },
+        {
+          "return_type": "return",
+          "name": "lua_iscfunction"
+        },
+        {
+          "return_type": "return",
+          "name": "lua_isuserdata"
+        },
+        {
+          "return_type": "return",
+          "name": "lua_tointeger"
+        },
+        {
+          "return_type": "return",
+          "name": "lua_tonumber"
+        },
+        {
+          "return_type": "return",
+          "name": "lua_touserdata"
+        },
+        {
+          "return_type": "return",
+          "name": "lua_gettop"
+        }
+      ],
+      "patterns": [
+        "Singleton"
+      ],
+      "lines": 1394,
+      "size": 35674
+    },
+    "luaobject.h": {
+      "classes": [
+        {
+          "name": "class",
+          "inherits": null
+        },
+        {
+          "name": "name",
+          "inherits": null
+        },
+        {
+          "name": "LuaInterface",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "connectLuaField"
+        },
+        {
+          "return_type": "int",
+          "name": "luaCallLuaField"
+        },
+        {
+          "return_type": "R",
+          "name": "callLuaField"
+        },
+        {
+          "return_type": "void",
+          "name": "callLuaField"
+        },
+        {
+          "return_type": "bool",
+          "name": "hasLuaField"
+        },
+        {
+          "return_type": "void",
+          "name": "setLuaField"
+        },
+        {
+          "return_type": "void",
+          "name": "clearLuaField"
+        },
+        {
+          "return_type": "T",
+          "name": "getLuaField"
+        },
+        {
+          "return_type": "void",
+          "name": "releaseLuaFieldsTable"
+        },
+        {
+          "return_type": "void",
+          "name": "luaSetField"
+        },
+        {
+          "return_type": "void",
+          "name": "luaGetField"
+        },
+        {
+          "return_type": "void",
+          "name": "luaGetMetatable"
+        },
+        {
+          "return_type": "void",
+          "name": "luaGetFieldsTable"
+        },
+        {
+          "return_type": "std::string",
+          "name": "getClassName"
+        },
+        {
+          "return_type": "return",
+          "name": "shared_from_this"
+        },
+        {
+          "return_type": "void",
+          "name": "connect"
+        }
+      ],
+      "patterns": [
+        "Template"
+      ],
+      "lines": 242,
+      "size": 7981
+    },
+    "luaobject.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "endif",
+          "name": "releaseLuaFieldsTable"
+        }
+      ],
+      "patterns": [],
+      "lines": 130,
+      "size": 3683
+    },
+    "luavaluecasts.h": {
+      "classes": [
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "K",
+          "inherits": null
+        },
+        {
+          "name": "V",
+          "inherits": null
+        },
+        {
+          "name": "H",
+          "inherits": null
+        },
+        {
+          "name": "K",
+          "inherits": null
+        },
+        {
+          "name": "V",
+          "inherits": null
+        },
+        {
+          "name": "H",
+          "inherits": null
+        },
+        {
+          "name": "K",
+          "inherits": null
+        },
+        {
+          "name": "V",
+          "inherits": null
+        },
+        {
+          "name": "H",
+          "inherits": null
+        },
+        {
+          "name": "K",
+          "inherits": null
+        },
+        {
+          "name": "V",
+          "inherits": null
+        },
+        {
+          "name": "H",
+          "inherits": null
+        },
+        {
+          "name": "K",
+          "inherits": null
+        },
+        {
+          "name": "V",
+          "inherits": null
+        },
+        {
+          "name": "H",
+          "inherits": null
+        },
+        {
+          "name": "K",
+          "inherits": null
+        },
+        {
+          "name": "V",
+          "inherits": null
+        },
+        {
+          "name": "H",
+          "inherits": null
+        },
+        {
+          "name": "K",
+          "inherits": null
+        },
+        {
+          "name": "V",
+          "inherits": null
+        },
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "T",
+          "inherits": null
+        },
+        {
+          "name": "K",
+          "inherits": null
+        },
+        {
+          "name": "V",
+          "inherits": null
+        },
+        {
+          "name": "H",
+          "inherits": null
+        },
+        {
+          "name": "K",
+          "inherits": null
+        },
+        {
+          "name": "V",
+          "inherits": null
+        },
+        {
+          "name": "H",
+          "inherits": null
+        },
+        {
+          "name": "K",
+          "inherits": null
+        },
+        {
+          "name": "V",
+          "inherits": null
+        },
+        {
+          "name": "H",
+          "inherits": null
+        },
+        {
+          "name": "K",
+          "inherits": null
+        },
+        {
+          "name": "V",
+          "inherits": null
+        },
+        {
+          "name": "H",
+          "inherits": null
+        },
+        {
+          "name": "K",
+          "inherits": null
+        },
+        {
+          "name": "V",
+          "inherits": null
+        },
+        {
+          "name": "H",
+          "inherits": null
+        },
+        {
+          "name": "K",
+          "inherits": null
+        },
+        {
+          "name": "V",
+          "inherits": null
+        },
+        {
+          "name": "H",
+          "inherits": null
+        },
+        {
+          "name": "K",
+          "inherits": null
+        },
+        {
+          "name": "V",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "int",
+          "name": "push_internal_luavalue"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "bool",
+          "name": "luavalue_cast"
+        },
+        {
+          "return_type": "int",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "int",
+          "name": "push_internal_luavalue"
+        },
+        {
+          "return_type": "return",
+          "name": "push_luavalue"
+        },
+        {
+          "return_type": "throw",
+          "name": "LuaException"
+        },
+        {
+          "return_type": "throw",
+          "name": "LuaException"
+        },
+        {
+          "return_type": "throw",
+          "name": "LuaException"
+        },
+        {
+          "return_type": "return",
+          "name": "Ret"
+        }
+      ],
+      "patterns": [
+        "Template"
+      ],
+      "lines": 638,
+      "size": 17385
+    },
+    "luavaluecasts.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 366,
+      "size": 9554
+    },
+    "luaexception.h": {
+      "classes": [
+        {
+          "name": "LuaException",
+          "inherits": "stdext"
+        },
+        {
+          "name": "LuaBadNumberOfArgumentsException",
+          "inherits": null
+        },
+        {
+          "name": "LuaBadValueCastException",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "generateLuaErrorMessage"
+        }
+      ],
+      "patterns": [],
+      "lines": 54,
+      "size": 1900
+    },
+    "luaexception.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "stack",
+          "name": "generateLuaErrorMessage"
+        }
+      ],
+      "patterns": [],
+      "lines": 53,
+      "size": 2341
+    },
+    "luabinder.h": {
+      "classes": [
+        {
+          "name": "FC",
+          "inherits": null
+        },
+        {
+          "name": "FC",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "throw",
+          "name": "LuaException"
+        },
+        {
+          "return_type": "throw",
+          "name": "LuaException"
+        },
+        {
+          "return_type": "return",
+          "name": "mf"
+        },
+        {
+          "return_type": "return",
+          "name": "mf"
+        }
+      ],
+      "patterns": [
+        "Singleton",
+        "Template"
+      ],
+      "lines": 237,
+      "size": 8979
+    },
+    "declarations.h": {
+      "classes": [
+        {
+          "name": "LuaInterface",
+          "inherits": null
+        },
+        {
+          "name": "LuaObject",
+          "inherits": null
+        }
+      ],
+      "methods": [],
+      "patterns": [],
+      "lines": 33,
+      "size": 1406
+    }
+  },
+  "patterns": [
+    "Template",
+    "Singleton"
+  ],
+  "apis": {
+    "LuaInterface": {
+      "description": "Interface principal para interação com Lua",
+      "methods": [
+        "bindGlobalFunction",
+        "bindClassMemberFunction",
+        "loadFile",
+        "execute"
+      ],
+      "components": [
+        "luainterface.h",
+        "luainterface.cpp"
+      ]
+    },
+    "LuaObject": {
+      "description": "Wrapper para objetos Lua",
+      "methods": [
+        "get",
+        "set",
+        "call",
+        "isValid"
+      ],
+      "components": [
+        "luaobject.h",
+        "luaobject.cpp"
+      ]
+    },
+    "LuaValueCasts": {
+      "description": "Conversões de tipos entre C++ e Lua",
+      "methods": [
+        "toLua",
+        "fromLua",
+        "push",
+        "pop"
+      ],
+      "components": [
+        "luavaluecasts.h",
+        "luavaluecasts.cpp"
+      ]
+    },
+    "LuaBinder": {
+      "description": "Sistema de binding de funções C++ para Lua",
+      "methods": [
+        "bindFunction",
+        "bindClass",
+        "bindMethod"
+      ],
+      "components": [
+        "luabinder.h"
+      ]
+    },
+    "LuaException": {
+      "description": "Sistema de tratamento de exceções Lua",
+      "methods": [
+        "handle",
+        "throw",
+        "catch"
+      ],
+      "components": [
+        "luaexception.h",
+        "luaexception.cpp"
+      ]
+    }
+  },
+  "examples": {
+    "basic_lua_script": {
+      "title": "Script Lua Básico",
+      "description": "Como criar e executar um script Lua básico",
+      "code": "-- Exemplo de script Lua básico\nfunction hello_world()\n    print(\"Hello from Lua!\")\n    return \"Hello World\"\nend\n\nfunction calculate_sum(a, b)\n    return a + b\nend\n\n-- Variáveis globais\nplayer_name = \"Player1\"\nplayer_level = 10\n\n-- Tabelas\nplayer_stats = {{\n    health = 100,\n    mana = 50,\n    stamina = 75\n}}\n\n-- Retornar valores para C++\nreturn {{\n    message = \"Script loaded successfully\",\n    functions = {{\n        hello_world = hello_world,\n        calculate_sum = calculate_sum\n    }}\n}}"
+    },
+    "lua_interface_usage": {
+      "title": "Uso da Interface Lua",
+      "description": "Como usar a interface Lua do C++",
+      "code": "// Exemplo de uso da interface Lua\n#include \"luainterface.h\"\n\nvoid useLuaInterface() {{\n    // Carregar script Lua\n    g_lua.loadFile(\"scripts/player.lua\");\n    \n    // Executar função Lua\n    g_lua.execute(\"hello_world()\");\n    \n    // Chamar função com parâmetros\n    int result = g_lua.call<int>(\"calculate_sum\", 10, 20);\n    std::cout << \"Result: \" << result << std::endl;\n    \n    // Acessar variável Lua\n    std::string playerName = g_lua.get<std::string>(\"player_name\");\n    std::cout << \"Player: \" << playerName << std::endl;\n    \n    // Acessar tabela Lua\n    int health = g_lua.get<int>(\"player_stats.health\");\n    std::cout << \"Health: \" << health << std::endl;\n}}"
+    },
+    "lua_object_wrapper": {
+      "title": "Wrapper de Objeto Lua",
+      "description": "Como usar o wrapper de objetos Lua",
+      "code": "// Exemplo de wrapper de objeto Lua\n#include \"luaobject.h\"\n\nvoid useLuaObject() {{\n    // Criar objeto Lua\n    LuaObjectPtr obj = g_lua.createObject(\"Player\");\n    \n    // Definir propriedades\n    obj->set(\"name\", \"Player1\");\n    obj->set(\"level\", 10);\n    obj->set(\"health\", 100);\n    \n    // Chamar métodos\n    obj->call(\"setPosition\", 100, 200);\n    obj->call(\"addItem\", \"sword\");\n    \n    // Obter propriedades\n    std::string name = obj->get<std::string>(\"name\");\n    int level = obj->get<int>(\"level\");\n    \n    // Verificar se objeto é válido\n    if (obj->isValid()) {{\n        std::cout << \"Object is valid\" << std::endl;\n    }}\n}}"
+    },
+    "lua_function_binding": {
+      "title": "Binding de Funções C++ para Lua",
+      "description": "Como expor funções C++ para Lua",
+      "code": "// Exemplo de binding de funções\n#include \"luainterface.h\"\n\n// Função C++ para expor ao Lua\nvoid cpp_function(const std::string& message) {{\n    std::cout << \"C++ function called: \" << message << std::endl;\n}}\n\nint cpp_calculate(int a, int b) {{\n    return a * b;\n}}\n\nvoid bindFunctions() {{\n    // Bind de função global\n    g_lua.bindGlobalFunction(\"cpp_print\", cpp_function);\n    g_lua.bindGlobalFunction(\"cpp_multiply\", cpp_calculate);\n    \n    // Bind de método de classe\n    g_lua.bindClassMemberFunction(\"Player\", \"setHealth\", [](int health) {{\n        // Implementação do método\n        std::cout << \"Setting health to: \" << health << std::endl;\n    }});\n    \n    // Bind de propriedade\n    g_lua.bindClassMemberFunction(\"Player\", \"getHealth\", []() {{\n        return 100; // Valor de exemplo\n    }});\n}}\n\n// Agora no Lua:\n-- cpp_print(\"Hello from Lua!\")\n-- local result = cpp_multiply(5, 3)\n-- player:setHealth(50)\n-- local health = player:getHealth()"
+    },
+    "lua_exception_handling": {
+      "title": "Tratamento de Exceções Lua",
+      "description": "Como tratar exceções do Lua",
+      "code": "// Exemplo de tratamento de exceções Lua\n#include \"luaexception.h\"\n\nvoid handleLuaExceptions() {{\n    try {{\n        // Executar código Lua que pode gerar erro\n        g_lua.execute(\"undefined_function()\");\n    }} catch (const LuaException& e) {{\n        std::cout << \"Lua error: \" << e.what() << std::endl;\n        \n        // Obter stack trace\n        std::string stackTrace = e.getStackTrace();\n        std::cout << \"Stack trace: \" << stackTrace << std::endl;\n    }} catch (const std::exception& e) {{\n        std::cout << \"General error: \" << e.what() << std::endl;\n    }}\n}}\n\n// Função para verificar se há erros\nbool checkLuaErrors() {{\n    if (g_lua.hasError()) {{\n        std::string error = g_lua.getLastError();\n        std::cout << \"Lua error detected: \" << error << std::endl;\n        return true;\n    }}\n    return false;\n}}"
+    },
+    "lua_value_conversion": {
+      "title": "Conversão de Valores Lua",
+      "description": "Como converter valores entre C++ e Lua",
+      "code": "// Exemplo de conversão de valores\n#include \"luavaluecasts.h\"\n\nvoid valueConversion() {{\n    // Converter tipos básicos\n    g_lua.push(42);                    // int\n    g_lua.push(3.14f);                 // float\n    g_lua.push(\"Hello\");               // string\n    g_lua.push(true);                  // bool\n    \n    // Converter estruturas\n    Point point(100, 200);\n    g_lua.push(point);\n    \n    Color color(255, 0, 0, 255);\n    g_lua.push(color);\n    \n    Size size(800, 600);\n    g_lua.push(size);\n    \n    Rect rect(0, 0, 100, 100);\n    g_lua.push(rect);\n    \n    // Converter de Lua para C++\n    int value = g_lua.pop<int>();\n    float fvalue = g_lua.pop<float>();\n    std::string str = g_lua.pop<std::string>();\n    bool bvalue = g_lua.pop<bool>();\n    \n    Point luaPoint = g_lua.pop<Point>();\n    Color luaColor = g_lua.pop<Color>();\n    Size luaSize = g_lua.pop<Size>();\n    Rect luaRect = g_lua.pop<Rect>();\n}}\n\n// No Lua:\n-- local point = topoint(\"100,200\")\n-- local color = tocolor(\"255,0,0,255\")\n-- local size = tosize(\"800,600\")\n-- local rect = torect(\"0,0,100,100\")"
+    }
+  },
+  "integration_points": [
+    {
+      "system": "Core Framework",
+      "description": "Integração com sistema core (Application, ModuleManager)",
+      "files": [
+        "luainterface.h",
+        "luainterface.cpp"
+      ],
+      "type": "dependency"
+    },
+    {
+      "system": "UI System",
+      "description": "Exposição de APIs de UI para scripts Lua",
+      "files": [
+        "luainterface.h",
+        "luainterface.cpp"
+      ],
+      "type": "binding"
+    },
+    {
+      "system": "Graphics System",
+      "description": "Exposição de APIs de gráficos para Lua",
+      "files": [
+        "luainterface.h",
+        "luainterface.cpp"
+      ],
+      "type": "binding"
+    },
+    {
+      "system": "Network System",
+      "description": "Exposição de APIs de rede para Lua",
+      "files": [
+        "luainterface.h",
+        "luainterface.cpp"
+      ],
+      "type": "binding"
+    },
+    {
+      "system": "Module System",
+      "description": "Integração com sistema de módulos para scripts",
+      "files": [
+        "luainterface.h",
+        "luainterface.cpp"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Event System",
+      "description": "Exposição de sistema de eventos para Lua",
+      "files": [
+        "luainterface.h",
+        "luainterface.cpp"
+      ],
+      "type": "binding"
+    },
+    {
+      "system": "Resource Management",
+      "description": "Integração com gerenciamento de recursos",
+      "files": [
+        "luainterface.h",
+        "luainterface.cpp"
+      ],
+      "type": "dependency"
+    }
+  ],
+  "lua_functions": {
+    "global_functions": [
+      "torect",
+      "topoint",
+      "tocolor",
+      "tosize",
+      "recttostring",
+      "pointtostring",
+      "colortostring",
+      "sizetostring",
+      "iptostring",
+      "stringtoip",
+      "listSubnetAddresses",
+      "ucwords",
+      "regexMatch"
+    ],
+    "class_methods": [],
+    "total_functions": 13
+  }
+}

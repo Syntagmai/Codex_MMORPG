@@ -28,7 +28,7 @@ O **Task Master** é o sistema central de controle de todas as tasks do projeto 
 - [x] **1.4** Executar OTCLIENT-003: Sistema de Rede (100% → 100%) ✅ **COMPLETA**
 - [x] **1.5** Executar OTCLIENT-004: Sistema de UI (100% → 100%) ✅ **COMPLETA**
 - [x] **1.6** Executar OTCLIENT-005: Sistema de Módulos (100% → 100%) ✅ **COMPLETA**
-- [ ] **1.7** Executar OTCLIENT-006: Sistema de Lua (0% → 100%)
+- [x] **1.7** Executar OTCLIENT-006: Sistema de Lua (100% → 100%) ✅ **COMPLETA**
 - [ ] **1.8** Executar OTCLIENT-007: Sistema de Dados (0% → 100%)
 - [ ] **1.9** Executar OTCLIENT-008: Sistema de Animações (0% → 100%)
 - [ ] **1.10** Executar OTCLIENT-009: Sistema de Som (0% → 100%)
