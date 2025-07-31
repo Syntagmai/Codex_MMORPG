@@ -1,0 +1,1371 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "analysis_date": "2025-07-31T14:12:07.325156",
+    "methodology": "Habdel",
+    "story_id": "OTCLIENT-002",
+    "system": "Graphics System"
+  },
+  "overview": {
+    "total_files": 55,
+    "total_lines": 4986,
+    "components": {},
+    "patterns": [],
+    "apis": {},
+    "dependencies": []
+  },
+  "components": {
+    "graphics.h": {
+      "classes": [
+        {
+          "name": "Graphics",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "void",
+          "name": "resize"
+        }
+      ],
+      "patterns": [
+        "Singleton"
+      ],
+      "lines": 63,
+      "size": 1999
+    },
+    "graphics.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "enabled",
+          "name": "glEnable"
+        }
+      ],
+      "patterns": [],
+      "lines": 99,
+      "size": 3302
+    },
+    "painter.h": {
+      "classes": [
+        {
+          "name": "CompositionMode",
+          "inherits": null
+        },
+        {
+          "name": "DrawMode",
+          "inherits": null
+        },
+        {
+          "name": "BlendEquation",
+          "inherits": null
+        },
+        {
+          "name": "Painter",
+          "inherits": null
+        },
+        {
+          "name": "FrameBuffer",
+          "inherits": null
+        },
+        {
+          "name": "DrawPoolManager",
+          "inherits": null
+        },
+        {
+          "name": "DrawPool",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "clear"
+        },
+        {
+          "return_type": "void",
+          "name": "clearRect"
+        },
+        {
+          "return_type": "void",
+          "name": "drawCoords"
+        },
+        {
+          "return_type": "void",
+          "name": "drawLine"
+        },
+        {
+          "return_type": "Matrix3",
+          "name": "getTransformMatrix"
+        },
+        {
+          "return_type": "void",
+          "name": "setTexture"
+        },
+        {
+          "return_type": "void",
+          "name": "setTexture"
+        },
+        {
+          "return_type": "void",
+          "name": "setClipRect"
+        },
+        {
+          "return_type": "void",
+          "name": "setResolution"
+        },
+        {
+          "return_type": "void",
+          "name": "setAlphaWriting"
+        },
+        {
+          "return_type": "void",
+          "name": "setBlendEquation"
+        },
+        {
+          "return_type": "void",
+          "name": "setCompositionMode"
+        },
+        {
+          "return_type": "void",
+          "name": "resetState"
+        },
+        {
+          "return_type": "void",
+          "name": "refreshState"
+        },
+        {
+          "return_type": "void",
+          "name": "updateGlTexture"
+        },
+        {
+          "return_type": "void",
+          "name": "updateGlCompositionMode"
+        },
+        {
+          "return_type": "void",
+          "name": "updateGlBlendEquation"
+        },
+        {
+          "return_type": "void",
+          "name": "updateGlClipRect"
+        },
+        {
+          "return_type": "void",
+          "name": "updateGlAlphaWriting"
+        },
+        {
+          "return_type": "void",
+          "name": "updateGlViewport"
+        }
+      ],
+      "patterns": [],
+      "lines": 148,
+      "size": 5904
+    },
+    "painter.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "OPENGL_ES",
+          "name": "glEnable"
+        },
+        {
+          "return_type": "endif",
+          "name": "glLineWidth"
+        },
+        {
+          "return_type": "OPENGL_ES",
+          "name": "glDisable"
+        },
+        {
+          "return_type": "else",
+          "name": "resetTexture"
+        }
+      ],
+      "patterns": [],
+      "lines": 287,
+      "size": 10518
+    },
+    "texture.h": {
+      "classes": [
+        {
+          "name": "Texture",
+          "inherits": null
+        },
+        {
+          "name": "GarbageCollection",
+          "inherits": null
+        },
+        {
+          "name": "TextureManager",
+          "inherits": null
+        },
+        {
+          "name": "TextureAtlas",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "create"
+        },
+        {
+          "return_type": "void",
+          "name": "uploadPixels"
+        },
+        {
+          "return_type": "void",
+          "name": "updateImage"
+        },
+        {
+          "return_type": "void",
+          "name": "updatePixels"
+        },
+        {
+          "return_type": "void",
+          "name": "buildHardwareMipmaps"
+        },
+        {
+          "return_type": "void",
+          "name": "setSmooth"
+        },
+        {
+          "return_type": "void",
+          "name": "setRepeat"
+        },
+        {
+          "return_type": "void",
+          "name": "setUpsideDown"
+        },
+        {
+          "return_type": "return",
+          "name": "getProp"
+        },
+        {
+          "return_type": "return",
+          "name": "getProp"
+        },
+        {
+          "return_type": "return",
+          "name": "getProp"
+        },
+        {
+          "return_type": "bool",
+          "name": "setupSize"
+        },
+        {
+          "return_type": "void",
+          "name": "bind"
+        },
+        {
+          "return_type": "void",
+          "name": "setupWrap"
+        },
+        {
+          "return_type": "void",
+          "name": "setupFilters"
+        },
+        {
+          "return_type": "void",
+          "name": "createTexture"
+        },
+        {
+          "return_type": "void",
+          "name": "setupTranformMatrix"
+        },
+        {
+          "return_type": "void",
+          "name": "setupPixels"
+        }
+      ],
+      "patterns": [],
+      "lines": 120,
+      "size": 4182
+    },
+    "texture.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "std::atomic_uint32_t",
+          "name": "UID"
+        },
+        {
+          "return_type": "endif",
+          "name": "setProp"
+        }
+      ],
+      "patterns": [],
+      "lines": 255,
+      "size": 6840
+    },
+    "texturemanager.h": {
+      "classes": [
+        {
+          "name": "TextureManager",
+          "inherits": null
+        },
+        {
+          "name": "GarbageCollection",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "void",
+          "name": "poll"
+        },
+        {
+          "return_type": "void",
+          "name": "clearCache"
+        },
+        {
+          "return_type": "void",
+          "name": "liveReload"
+        },
+        {
+          "return_type": "TexturePtr",
+          "name": "getTexture"
+        },
+        {
+          "return_type": "TexturePtr",
+          "name": "loadTexture"
+        },
+        {
+          "return_type": "uint16_t",
+          "name": "getMatrixId"
+        }
+      ],
+      "patterns": [],
+      "lines": 63,
+      "size": 2235
+    },
+    "texturemanager.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "std::shared_lock",
+          "name": "l"
+        },
+        {
+          "return_type": "std::unique_lock",
+          "name": "l"
+        },
+        {
+          "return_type": "std::shared_lock",
+          "name": "l"
+        },
+        {
+          "return_type": "std::shared_lock",
+          "name": "l"
+        },
+        {
+          "return_type": "std::stringstream",
+          "name": "fin"
+        },
+        {
+          "return_type": "std::unique_lock",
+          "name": "l"
+        },
+        {
+          "return_type": "Size",
+          "name": "imageSize"
+        },
+        {
+          "return_type": "std::scoped_lock",
+          "name": "l"
+        }
+      ],
+      "patterns": [],
+      "lines": 213,
+      "size": 7106
+    },
+    "shader.h": {
+      "classes": [
+        {
+          "name": "ShaderType",
+          "inherits": null
+        },
+        {
+          "name": "Shader",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "bool",
+          "name": "compileSourceCode"
+        },
+        {
+          "return_type": "bool",
+          "name": "compileSourceFile"
+        },
+        {
+          "return_type": "std::string",
+          "name": "log"
+        }
+      ],
+      "patterns": [],
+      "lines": 51,
+      "size": 1712
+    },
+    "shader.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "return",
+          "name": "compileSourceCode"
+        }
+      ],
+      "patterns": [],
+      "lines": 98,
+      "size": 3288
+    },
+    "shaderprogram.h": {
+      "classes": [
+        {
+          "name": "class",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "bool",
+          "name": "addShader"
+        },
+        {
+          "return_type": "bool",
+          "name": "addShaderFromSourceCode"
+        },
+        {
+          "return_type": "bool",
+          "name": "addShaderFromSourceFile"
+        },
+        {
+          "return_type": "void",
+          "name": "removeShader"
+        },
+        {
+          "return_type": "void",
+          "name": "removeAllShaders"
+        },
+        {
+          "return_type": "bool",
+          "name": "link"
+        },
+        {
+          "return_type": "bool",
+          "name": "bind"
+        },
+        {
+          "return_type": "void",
+          "name": "release"
+        },
+        {
+          "return_type": "std::string",
+          "name": "log"
+        },
+        {
+          "return_type": "int",
+          "name": "getAttributeLocation"
+        },
+        {
+          "return_type": "void",
+          "name": "bindAttributeLocation"
+        },
+        {
+          "return_type": "void",
+          "name": "bindUniformLocation"
+        }
+      ],
+      "patterns": [],
+      "lines": 123,
+      "size": 6568
+    },
+    "shaderprogram.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "return",
+          "name": "addShader"
+        },
+        {
+          "return_type": "return",
+          "name": "addShader"
+        },
+        {
+          "return_type": "return",
+          "name": "glGetAttribLocation"
+        },
+        {
+          "return_type": "return",
+          "name": "glBindAttribLocation"
+        }
+      ],
+      "patterns": [],
+      "lines": 161,
+      "size": 4694
+    },
+    "shadermanager.h": {
+      "classes": [
+        {
+          "name": "ShaderManager",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "void",
+          "name": "clear"
+        },
+        {
+          "return_type": "void",
+          "name": "setupMapShader"
+        },
+        {
+          "return_type": "void",
+          "name": "setupItemShader"
+        },
+        {
+          "return_type": "void",
+          "name": "setupOutfitShader"
+        },
+        {
+          "return_type": "void",
+          "name": "setupMountShader"
+        },
+        {
+          "return_type": "void",
+          "name": "createShader"
+        },
+        {
+          "return_type": "void",
+          "name": "createFragmentShader"
+        },
+        {
+          "return_type": "void",
+          "name": "createFragmentShaderFromCode"
+        },
+        {
+          "return_type": "void",
+          "name": "addMultiTexture"
+        },
+        {
+          "return_type": "PainterShaderProgramPtr",
+          "name": "getShader"
+        },
+        {
+          "return_type": "void",
+          "name": "putShader"
+        }
+      ],
+      "patterns": [
+        "Singleton"
+      ],
+      "lines": 73,
+      "size": 2734
+    },
+    "shadermanager.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 163,
+      "size": 6078
+    },
+    "drawpool.h": {
+      "classes": [
+        {
+          "name": "DrawPoolType",
+          "inherits": null
+        },
+        {
+          "name": "DrawPoolState",
+          "inherits": null
+        },
+        {
+          "name": "DrawPool",
+          "inherits": null
+        },
+        {
+          "name": "DrawMethodType",
+          "inherits": null
+        },
+        {
+          "name": "DrawPoolManager",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "bool",
+          "name": "canRepaint"
+        },
+        {
+          "return_type": "void",
+          "name": "resetState"
+        },
+        {
+          "return_type": "void",
+          "name": "scale"
+        },
+        {
+          "return_type": "void",
+          "name": "setFramebuffer"
+        },
+        {
+          "return_type": "void",
+          "name": "removeFramebuffer"
+        },
+        {
+          "return_type": "void",
+          "name": "execute"
+        },
+        {
+          "return_type": "void",
+          "name": "addCoords"
+        },
+        {
+          "return_type": "void",
+          "name": "add"
+        },
+        {
+          "return_type": "void",
+          "name": "bindFrameBuffer"
+        },
+        {
+          "return_type": "void",
+          "name": "releaseFrameBuffer"
+        },
+        {
+          "return_type": "bool",
+          "name": "updateHash"
+        },
+        {
+          "return_type": "PoolState",
+          "name": "getState"
+        },
+        {
+          "return_type": "void",
+          "name": "setCompositionMode"
+        },
+        {
+          "return_type": "void",
+          "name": "setBlendEquation"
+        },
+        {
+          "return_type": "void",
+          "name": "setClipRect"
+        },
+        {
+          "return_type": "void",
+          "name": "setOpacity"
+        },
+        {
+          "return_type": "void",
+          "name": "pushTransformMatrix"
+        },
+        {
+          "return_type": "void",
+          "name": "popTransformMatrix"
+        },
+        {
+          "return_type": "void",
+          "name": "translate"
+        },
+        {
+          "return_type": "void",
+          "name": "rotate"
+        },
+        {
+          "return_type": "void",
+          "name": "rotate"
+        },
+        {
+          "return_type": "return",
+          "name": "T"
+        }
+      ],
+      "patterns": [],
+      "lines": 438,
+      "size": 13483
+    },
+    "drawpool.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "else",
+          "name": "addCoords"
+        }
+      ],
+      "patterns": [],
+      "lines": 427,
+      "size": 14006
+    },
+    "drawpoolmanager.h": {
+      "classes": [
+        {
+          "name": "DrawPoolManager",
+          "inherits": null
+        },
+        {
+          "name": "GraphicalApplication",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "select"
+        },
+        {
+          "return_type": "void",
+          "name": "addTexturedRect"
+        },
+        {
+          "return_type": "void",
+          "name": "addTexturedCoordsBuffer"
+        },
+        {
+          "return_type": "void",
+          "name": "addUpsideDownTexturedRect"
+        },
+        {
+          "return_type": "void",
+          "name": "addTexturedRepeatedRect"
+        },
+        {
+          "return_type": "void",
+          "name": "addFilledRect"
+        },
+        {
+          "return_type": "void",
+          "name": "addFilledTriangle"
+        },
+        {
+          "return_type": "void",
+          "name": "addBoundingRect"
+        },
+        {
+          "return_type": "DrawPoolType",
+          "name": "getCurrentType"
+        },
+        {
+          "return_type": "bool",
+          "name": "isPreDrawing"
+        },
+        {
+          "return_type": "void",
+          "name": "removeTextureFromAtlas"
+        },
+        {
+          "return_type": "void",
+          "name": "draw"
+        },
+        {
+          "return_type": "void",
+          "name": "init"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "void",
+          "name": "drawObject"
+        },
+        {
+          "return_type": "void",
+          "name": "drawPool"
+        },
+        {
+          "return_type": "void",
+          "name": "drawObjects"
+        }
+      ],
+      "patterns": [],
+      "lines": 133,
+      "size": 8224
+    },
+    "drawpoolmanager.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "Pools",
+          "name": "for"
+        },
+        {
+          "return_type": "Pools",
+          "name": "for"
+        }
+      ],
+      "patterns": [],
+      "lines": 266,
+      "size": 8774
+    },
+    "framebuffer.h": {
+      "classes": [
+        {
+          "name": "FrameBuffer",
+          "inherits": null
+        },
+        {
+          "name": "FrameBufferManager",
+          "inherits": null
+        },
+        {
+          "name": "DrawPoolManager",
+          "inherits": null
+        },
+        {
+          "name": "DrawPool",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "release"
+        },
+        {
+          "return_type": "void",
+          "name": "bind"
+        },
+        {
+          "return_type": "void",
+          "name": "draw"
+        },
+        {
+          "return_type": "bool",
+          "name": "resize"
+        },
+        {
+          "return_type": "bool",
+          "name": "canDraw"
+        },
+        {
+          "return_type": "TexturePtr",
+          "name": "extractTexture"
+        },
+        {
+          "return_type": "void",
+          "name": "doScreenshot"
+        },
+        {
+          "return_type": "Size",
+          "name": "getSize"
+        },
+        {
+          "return_type": "void",
+          "name": "internalBind"
+        },
+        {
+          "return_type": "void",
+          "name": "internalRelease"
+        },
+        {
+          "return_type": "void",
+          "name": "prepare"
+        }
+      ],
+      "patterns": [],
+      "lines": 97,
+      "size": 3126
+    },
+    "framebuffer.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 211,
+      "size": 6293
+    },
+    "image.h": {
+      "classes": [
+        {
+          "name": "Image",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "ImagePtr",
+          "name": "load"
+        },
+        {
+          "return_type": "ImagePtr",
+          "name": "loadPNG"
+        },
+        {
+          "return_type": "ImagePtr",
+          "name": "loadPNG"
+        },
+        {
+          "return_type": "ImagePtr",
+          "name": "fromQRCode"
+        },
+        {
+          "return_type": "void",
+          "name": "savePNG"
+        },
+        {
+          "return_type": "void",
+          "name": "overwriteMask"
+        },
+        {
+          "return_type": "void",
+          "name": "overwrite"
+        },
+        {
+          "return_type": "void",
+          "name": "blit"
+        },
+        {
+          "return_type": "void",
+          "name": "paste"
+        },
+        {
+          "return_type": "bool",
+          "name": "nextMipmap"
+        },
+        {
+          "return_type": "void",
+          "name": "flipVertically"
+        },
+        {
+          "return_type": "void",
+          "name": "setOpacity"
+        },
+        {
+          "return_type": "void",
+          "name": "reverseChannels"
+        }
+      ],
+      "patterns": [],
+      "lines": 83,
+      "size": 3392
+    },
+    "image.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "return",
+          "name": "loadPNG"
+        },
+        {
+          "return_type": "std::stringstream",
+          "name": "fin"
+        },
+        {
+          "return_type": "throw",
+          "name": "Exception"
+        },
+        {
+          "return_type": "Color",
+          "name": "pixelColor"
+        },
+        {
+          "return_type": "Color",
+          "name": "pixelColor"
+        }
+      ],
+      "patterns": [],
+      "lines": 278,
+      "size": 8599
+    },
+    "bitmapfont.h": {
+      "classes": [
+        {
+          "name": "BitmapFont",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "load"
+        },
+        {
+          "return_type": "void",
+          "name": "drawText"
+        },
+        {
+          "return_type": "void",
+          "name": "drawText"
+        },
+        {
+          "return_type": "void",
+          "name": "fillTextCoords"
+        },
+        {
+          "return_type": "void",
+          "name": "fillTextColorCoords"
+        },
+        {
+          "return_type": "Size",
+          "name": "calculateTextRectSize"
+        },
+        {
+          "return_type": "std::string",
+          "name": "wrapText"
+        },
+        {
+          "return_type": "void",
+          "name": "calculateGlyphsWidthsAutomatically"
+        },
+        {
+          "return_type": "void",
+          "name": "updateColors"
+        }
+      ],
+      "patterns": [],
+      "lines": 92,
+      "size": 4350
+    },
+    "bitmapfont.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "Rect",
+          "name": "screenCoords"
+        },
+        {
+          "return_type": "Rect",
+          "name": "glyphScreenCoords"
+        },
+        {
+          "return_type": "Rect",
+          "name": "glyphScreenCoords"
+        },
+        {
+          "return_type": "Rect",
+          "name": "glyphScreenCoords"
+        },
+        {
+          "return_type": "Point",
+          "name": "virtualPos"
+        },
+        {
+          "return_type": "alpha",
+          "name": "for"
+        },
+        {
+          "return_type": "std::string",
+          "name": "line"
+        }
+      ],
+      "patterns": [],
+      "lines": 549,
+      "size": 21171
+    },
+    "particle.h": {
+      "classes": [
+        {
+          "name": "Particle",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "render"
+        },
+        {
+          "return_type": "void",
+          "name": "update"
+        },
+        {
+          "return_type": "void",
+          "name": "updateColor"
+        },
+        {
+          "return_type": "void",
+          "name": "updatePosition"
+        },
+        {
+          "return_type": "void",
+          "name": "updateSize"
+        }
+      ],
+      "patterns": [],
+      "lines": 87,
+      "size": 3063
+    },
+    "particle.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 102,
+      "size": 3396
+    },
+    "particlesystem.h": {
+      "classes": [
+        {
+          "name": "ParticleSystem",
+          "inherits": "std"
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "void",
+          "name": "load"
+        },
+        {
+          "return_type": "void",
+          "name": "addParticle"
+        },
+        {
+          "return_type": "void",
+          "name": "render"
+        },
+        {
+          "return_type": "void",
+          "name": "update"
+        }
+      ],
+      "patterns": [],
+      "lines": 49,
+      "size": 1730
+    },
+    "particlesystem.cpp": {
+      "classes": [],
+      "methods": [
+        {
+          "return_type": "emitters",
+          "name": "for"
+        },
+        {
+          "return_type": "affectors",
+          "name": "for"
+        },
+        {
+          "return_type": "particles",
+          "name": "for"
+        }
+      ],
+      "patterns": [],
+      "lines": 120,
+      "size": 4266
+    },
+    "particlemanager.h": {
+      "classes": [
+        {
+          "name": "ParticleManager",
+          "inherits": null
+        }
+      ],
+      "methods": [
+        {
+          "return_type": "bool",
+          "name": "importParticle"
+        },
+        {
+          "return_type": "ParticleEffectPtr",
+          "name": "createEffect"
+        },
+        {
+          "return_type": "void",
+          "name": "terminate"
+        },
+        {
+          "return_type": "void",
+          "name": "poll"
+        }
+      ],
+      "patterns": [],
+      "lines": 50,
+      "size": 2036
+    },
+    "particlemanager.cpp": {
+      "classes": [],
+      "methods": [],
+      "patterns": [],
+      "lines": 87,
+      "size": 3146
+    }
+  },
+  "patterns": [
+    "Singleton"
+  ],
+  "apis": {
+    "Graphics": {
+      "description": "Sistema principal de gráficos",
+      "methods": [
+        "init",
+        "terminate",
+        "resize",
+        "clear"
+      ],
+      "components": [
+        "graphics.h",
+        "graphics.cpp"
+      ]
+    },
+    "Painter": {
+      "description": "Sistema de pintura e renderização",
+      "methods": [
+        "draw",
+        "fill",
+        "setColor",
+        "setOpacity"
+      ],
+      "components": [
+        "painter.h",
+        "painter.cpp"
+      ]
+    },
+    "Texture": {
+      "description": "Gerenciamento de texturas",
+      "methods": [
+        "load",
+        "bind",
+        "unbind",
+        "destroy"
+      ],
+      "components": [
+        "texture.h",
+        "texture.cpp",
+        "texturemanager.h",
+        "texturemanager.cpp"
+      ]
+    },
+    "Shader": {
+      "description": "Sistema de shaders",
+      "methods": [
+        "compile",
+        "link",
+        "use",
+        "setUniform"
+      ],
+      "components": [
+        "shader.h",
+        "shader.cpp",
+        "shaderprogram.h",
+        "shaderprogram.cpp"
+      ]
+    },
+    "DrawPool": {
+      "description": "Sistema de pool de desenho",
+      "methods": [
+        "add",
+        "draw",
+        "clear",
+        "optimize"
+      ],
+      "components": [
+        "drawpool.h",
+        "drawpool.cpp",
+        "drawpoolmanager.h",
+        "drawpoolmanager.cpp"
+      ]
+    },
+    "Particle": {
+      "description": "Sistema de partículas",
+      "methods": [
+        "emit",
+        "update",
+        "render",
+        "destroy"
+      ],
+      "components": [
+        "particle.h",
+        "particle.cpp",
+        "particlesystem.h",
+        "particlesystem.cpp"
+      ]
+    }
+  },
+  "examples": {
+    "basic_graphics": {
+      "title": "Inicialização Básica do Sistema de Gráficos",
+      "description": "Como inicializar o sistema de gráficos do OTClient",
+      "code": "// Exemplo de inicialização do sistema de gráficos\n#include \"graphics.h\"\n\nvoid initGraphics() {\n    // Inicializar sistema de gráficos\n    g_graphics.init();\n    \n    // Configurar viewport\n    g_graphics.resize(800, 600);\n    \n    // Limpar tela\n    g_graphics.clear();\n}"
+    },
+    "texture_loading": {
+      "title": "Carregamento de Texturas",
+      "description": "Como carregar e usar texturas no OTClient",
+      "code": "// Exemplo de carregamento de texturas\n#include \"texture.h\"\n#include \"texturemanager.h\"\n\nvoid loadGameTextures() {\n    // Carregar textura\n    TexturePtr texture = g_textures.getTexture(\"player.png\");\n    \n    if (texture) {\n        // Usar textura\n        texture->bind();\n        // Renderizar...\n        texture->unbind();\n    }\n}"
+    },
+    "shader_usage": {
+      "title": "Uso de Shaders",
+      "description": "Como usar shaders para efeitos visuais",
+      "code": "// Exemplo de uso de shaders\n#include \"shaderprogram.h\"\n\nvoid setupShader() {\n    // Criar programa de shader\n    ShaderProgramPtr program = ShaderProgram::create();\n    \n    // Compilar shaders\n    program->addShaderFromSourceCode(Shader::Vertex, vertexSource);\n    program->addShaderFromSourceCode(Shader::Fragment, fragmentSource);\n    \n    // Linkar programa\n    program->link();\n    \n    // Usar programa\n    program->use();\n    program->setUniformValue(\"color\", Color::red);\n}"
+    },
+    "particle_system": {
+      "title": "Sistema de Partículas",
+      "description": "Como criar e gerenciar sistemas de partículas",
+      "code": "// Exemplo de sistema de partículas\n#include \"particlesystem.h\"\n#include \"particlemanager.h\"\n\nvoid createParticleEffect() {\n    // Criar sistema de partículas\n    ParticleSystemPtr system = ParticleSystem::create();\n    \n    // Configurar partículas\n    system->setParticleType(\"fire\");\n    system->setEmissionRate(100);\n    system->setLifetime(2.0f);\n    \n    // Adicionar ao gerenciador\n    g_particles.addParticleSystem(system);\n}"
+    }
+  },
+  "integration_points": [
+    {
+      "system": "Core Framework",
+      "description": "Integração com sistema core (Application, ModuleManager)",
+      "files": [
+        "graphics.h",
+        "graphics.cpp"
+      ],
+      "type": "dependency"
+    },
+    {
+      "system": "UI System",
+      "description": "Integração com sistema de interface do usuário",
+      "files": [
+        "painter.h",
+        "painter.cpp"
+      ],
+      "type": "integration"
+    },
+    {
+      "system": "Resource Management",
+      "description": "Integração com gerenciamento de recursos",
+      "files": [
+        "texturemanager.h",
+        "texturemanager.cpp"
+      ],
+      "type": "dependency"
+    },
+    {
+      "system": "Lua Engine",
+      "description": "Exposição de APIs para scripts Lua",
+      "files": [
+        "graphics.h",
+        "painter.h"
+      ],
+      "type": "binding"
+    },
+    {
+      "system": "Platform Layer",
+      "description": "Integração com camada de plataforma (OpenGL)",
+      "files": [
+        "glutil.h",
+        "shader.h",
+        "shader.cpp"
+      ],
+      "type": "abstraction"
+    }
+  ]
+}
