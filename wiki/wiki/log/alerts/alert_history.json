@@ -9,5 +9,22 @@
     "message": "Taxa de conclusão de tarefas crítica: 0.0%",
     "recommendation": "Verifique se há tarefas travadas ou agentes inativos",
     "timestamp": "2025-08-01T11:05:38.800279"
+  },
+  {
+    "id": "memory_warning_1754075087",
+    "message": "Uso de memória alto: 80.2%",
+    "recommendation": "Feche aplicações desnecessárias para liberar memória",
+    "timestamp": "2025-08-01T16:04:47.161793"
+  },
+  {
+    "id": "task_completion_critical_1754075087",
+    "type": "critical",
+    "component": "application",
+    "metric": "task_completion_rate",
+    "value": 0,
+    "threshold": 70.0,
+    "message": "Taxa de conclusão de tarefas crítica: 0.0%",
+    "recommendation": "Verifique se há tarefas travadas ou agentes inativos",
+    "timestamp": "2025-08-01T16:04:47.161879"
   }
 ]

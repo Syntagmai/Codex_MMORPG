@@ -1,35 +1,35 @@
 
 # 📊 Dashboard de Métricas - Codex MMORPG
 
-**Data/Hora**: 2025-08-01 11:03:56
+**Data/Hora**: 2025-08-01 16:04:49
 
 ## 🎯 Visão Geral
 
 | Métrica | Valor | Status |
 |---------|-------|--------|
-| **Score Geral** | 42.0/100 | 🔴 |
-| **CPU** | 25.2% | 🔴 |
-| **Memória** | 69.9% | 🟢 |
-| **Disco** | 58.1% | 🔴 |
+| **Score Geral** | 35.2/100 | 🔴 |
+| **CPU** | 49.8% | 🟢 |
+| **Memória** | 80.2% | 🟢 |
+| **Disco** | 58.3% | 🔴 |
 
 ## 📈 Métricas Detalhadas
 
 ### 🖥️ Sistema
 
 #### CPU
-- **Uso**: 25.2%
+- **Uso**: 49.8%
 - **Núcleos**: 4
-- **Frequência**: 2600 MHz
+- **Frequência**: 3201 MHz
 
 #### Memória
 - **Total**: 7.9 GB
-- **Usado**: 5.5 GB
-- **Uso**: 69.9%
+- **Usado**: 6.3 GB
+- **Uso**: 80.2%
 
 #### Disco
 - **Total**: 446.5 GB
-- **Usado**: 259.4 GB
-- **Uso**: 58.1%
+- **Usado**: 260.3 GB
+- **Uso**: 58.3%
 
 ### 📊 KPIs da Aplicação
 
@@ -43,13 +43,15 @@
 
 ## 🚨 Alertas
 
+- 🟡 **WARNING**: Uso de CPU alto: 49.8%
+- 🔴 **CRITICAL**: Uso de memória crítico: 80.2%
 - 🟡 **WARNING**: Taxa de conclusão de tarefas baixa: 0.0%
 
 ## 📋 Status do Sistema
 
 - **Status Geral**: 🔴 Crítico
-- **Última Atualização**: 2025-08-01 11:03:56
-- **Próxima Atualização**: 2025-08-01 11:08:56
+- **Última Atualização**: 2025-08-01 16:04:49
+- **Próxima Atualização**: 2025-08-01 16:09:49
 
 ## 🔄 Histórico de Atualizações
 

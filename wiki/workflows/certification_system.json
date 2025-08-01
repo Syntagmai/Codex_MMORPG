@@ -3,7 +3,7 @@
   "name": "Sistema de Certificação Automática",
   "version": "1.0.0",
   "status": "active",
-  "created_at": "2025-08-01T10:25:48.105824",
+  "created_at": "2025-08-01T16:05:06.583640",
   "certification_types": {
     "course_completion": {
       "name": "Conclusão de Curso",

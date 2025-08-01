@@ -1,11 +1,11 @@
 {
-  "timestamp": "2025-08-01T10:59:29.362275",
+  "timestamp": "2025-08-01T16:05:19.414061",
   "system_kpis": {
-    "cpu_usage_percent": 25.2,
-    "memory_usage_percent": 69.9,
-    "disk_usage_percent": 58.09740659270655,
-    "uptime_hours": 1.6186113756895066,
-    "system_health_score": 50.930648351823365
+    "cpu_usage_percent": 70.5,
+    "memory_usage_percent": 74.9,
+    "disk_usage_percent": 58.3013360115743,
+    "uptime_hours": 6.7158334784375295,
+    "system_health_score": 31.009665997106424
   },
   "application_kpis": {
     "task_completion_rate": 0,
@@ -15,8 +15,24 @@
     "cache_hit_rate_percent": 94.5,
     "application_health_score": 33.050000000000004
   },
-  "overall_score": 41.99032417591168,
+  "overall_score": 32.02983299855322,
   "alerts": [
+    {
+      "type": "critical",
+      "component": "system",
+      "metric": "cpu_usage",
+      "value": 70.5,
+      "threshold": 70.0,
+      "message": "Uso de CPU crítico: 70.5%"
+    },
+    {
+      "type": "critical",
+      "component": "system",
+      "metric": "memory_usage",
+      "value": 74.9,
+      "threshold": 80.0,
+      "message": "Uso de memória crítico: 74.9%"
+    },
     {
       "type": "warning",
       "component": "application",
