@@ -81,7 +81,7 @@ Desenvolver solução completa integrando múltiplos conceitos.
 
 ## 🔗 Próxima Lição
 
-[[CANARY-007]] - Próxima lição
+[[CANARY-007_lua_system]] - Próxima lição
 
 ---
 
