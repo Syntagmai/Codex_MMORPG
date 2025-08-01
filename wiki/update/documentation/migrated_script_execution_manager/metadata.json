@@ -1,0 +1,309 @@
+{
+  "module": {
+    "name": "migrated_script_execution_manager",
+    "path": "wiki\\update\\modules\\python\\script_executor\\migrated_script_execution_manager.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 27
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 11
+      },
+      {
+        "name": "execute_script_with_error_resolution",
+        "docstring": "Executa script Python com resolução automática de erros",
+        "parameters": [
+          "self",
+          "script_path",
+          "args"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 64
+      },
+      {
+        "name": "resolve_script_error",
+        "docstring": "Resolve erro em script usando o resolver automático",
+        "parameters": [
+          "self",
+          "script_path",
+          "error_message"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 20
+      },
+      {
+        "name": "execute_script_safely",
+        "docstring": "Executa script de forma segura com fallback",
+        "parameters": [
+          "self",
+          "script_path",
+          "args"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 11
+      },
+      {
+        "name": "execute_fallback_mode",
+        "docstring": "Executa script em modo fallback (simplificado)",
+        "parameters": [
+          "self",
+          "script_path",
+          "args"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "create_basic_map_update",
+        "docstring": "Cria atualização básica de mapas",
+        "parameters": [
+          "self",
+          "script_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 48
+      },
+      {
+        "name": "create_basic_analysis_report",
+        "docstring": "Cria relatório básico de análise",
+        "parameters": [
+          "self",
+          "script_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 28
+      },
+      {
+        "name": "create_basic_report",
+        "docstring": "Cria relatório básico genérico",
+        "parameters": [
+          "self",
+          "script_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 22
+      },
+      {
+        "name": "log_execution",
+        "docstring": "Registra resultado da execução",
+        "parameters": [
+          "self",
+          "execution_result"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 25
+      },
+      {
+        "name": "get_execution_stats",
+        "docstring": "Obtém estatísticas de execução",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 24
+      }
+    ],
+    "classes": [
+      {
+        "name": "ScriptExecutionManager",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 11
+          },
+          {
+            "name": "execute_script_with_error_resolution",
+            "docstring": "Executa script Python com resolução automática de erros",
+            "parameters": [
+              "self",
+              "script_path",
+              "args"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 64
+          },
+          {
+            "name": "resolve_script_error",
+            "docstring": "Resolve erro em script usando o resolver automático",
+            "parameters": [
+              "self",
+              "script_path",
+              "error_message"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 20
+          },
+          {
+            "name": "execute_script_safely",
+            "docstring": "Executa script de forma segura com fallback",
+            "parameters": [
+              "self",
+              "script_path",
+              "args"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 11
+          },
+          {
+            "name": "execute_fallback_mode",
+            "docstring": "Executa script em modo fallback (simplificado)",
+            "parameters": [
+              "self",
+              "script_path",
+              "args"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          },
+          {
+            "name": "create_basic_map_update",
+            "docstring": "Cria atualização básica de mapas",
+            "parameters": [
+              "self",
+              "script_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 48
+          },
+          {
+            "name": "create_basic_analysis_report",
+            "docstring": "Cria relatório básico de análise",
+            "parameters": [
+              "self",
+              "script_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 28
+          },
+          {
+            "name": "create_basic_report",
+            "docstring": "Cria relatório básico genérico",
+            "parameters": [
+              "self",
+              "script_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 22
+          },
+          {
+            "name": "log_execution",
+            "docstring": "Registra resultado da execução",
+            "parameters": [
+              "self",
+              "execution_result"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 25
+          },
+          {
+            "name": "get_execution_stats",
+            "docstring": "Obtém estatísticas de execução",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 24
+          }
+        ],
+        "attributes": [
+          "execution_result",
+          "result",
+          "log_file",
+          "executions",
+          "log_file",
+          "args",
+          "start_time",
+          "cmd",
+          "result",
+          "script_name",
+          "script_name",
+          "report_file",
+          "basic_report",
+          "script_name",
+          "report_file",
+          "basic_report",
+          "executions",
+          "total",
+          "successful",
+          "success_rate",
+          "cmd",
+          "result",
+          "execution_time",
+          "map_file",
+          "basic_data",
+          "executions",
+          "map_file",
+          "basic_data",
+          "map_file",
+          "basic_data",
+          "executions",
+          "executions"
+        ],
+        "inheritance": [],
+        "line_count": 293
+      }
+    ],
+    "imports": [
+      ".ScriptexecutorModule",
+      "json",
+      "subprocess",
+      "sys",
+      "time",
+      "datetime.datetime"
+    ],
+    "line_count": 374,
+    "complexity_score": 30
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:53.562297"
+}

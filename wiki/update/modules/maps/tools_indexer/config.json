@@ -1,0 +1,18 @@
+{
+  "module_name": "tools_indexer",
+  "description": "Indexação de ferramentas",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "maps",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.761437",
+  "migrated_scripts": [
+    {
+      "name": "update_tools_index.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\update_tools_index.py",
+      "migration_date": "2025-08-01T12:21:35.652762",
+      "status": "migrated"
+    }
+  ]
+}

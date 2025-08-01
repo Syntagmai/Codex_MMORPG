@@ -1,0 +1,398 @@
+{
+  "module": {
+    "name": "function_catalog_agent",
+    "path": "wiki\\update\\function_catalog_agent.py",
+    "docstring": "🚀 Function Catalog Agent - Epic 12 Task 12.4\n=============================================\n\nScript para criar catálogo automático de todas as funções Python.\nBaseado nos módulos migrados da Task 12.3.\n\nResponsável: Function Catalog Agent\nDuração: 2-3 dias\nDependência: Task 12.3 (Migração de scripts)",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal do script.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 43
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 35
+      },
+      {
+        "name": "discover_python_files",
+        "docstring": "Descobre todos os arquivos Python nos módulos.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 13
+      },
+      {
+        "name": "analyze_python_file",
+        "docstring": "Analisa um arquivo Python para extrair funções e classes.",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 59
+      },
+      {
+        "name": "extract_function_info",
+        "docstring": "Extrai informações de uma função.",
+        "parameters": [
+          "self",
+          "node",
+          "content"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 43
+      },
+      {
+        "name": "extract_class_info",
+        "docstring": "Extrai informações de uma classe.",
+        "parameters": [
+          "self",
+          "node",
+          "content"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 34
+      },
+      {
+        "name": "extract_module_docstring",
+        "docstring": "Extrai docstring do módulo.",
+        "parameters": [
+          "self",
+          "content"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 6
+      },
+      {
+        "name": "categorize_function",
+        "docstring": "Categoriza uma função baseada em seu contexto.",
+        "parameters": [
+          "self",
+          "function_info",
+          "module_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 25
+      },
+      {
+        "name": "build_function_catalog",
+        "docstring": "Constrói o catálogo completo de funções.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 31
+      },
+      {
+        "name": "add_to_catalog",
+        "docstring": "Adiciona análise de arquivo ao catálogo.",
+        "parameters": [
+          "self",
+          "analysis"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 73
+      },
+      {
+        "name": "build_search_index",
+        "docstring": "Constrói índice de busca para o catálogo.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 52
+      },
+      {
+        "name": "update_catalog_stats",
+        "docstring": "Atualiza estatísticas do catálogo.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "save_catalog",
+        "docstring": "Salva o catálogo em arquivos JSON.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 37
+      },
+      {
+        "name": "generate_catalog_report",
+        "docstring": "Gera relatório do catálogo.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "save_catalog_report",
+        "docstring": "Salva relatório do catálogo.",
+        "parameters": [
+          "self",
+          "report"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      }
+    ],
+    "classes": [
+      {
+        "name": "FunctionCatalogAgent",
+        "docstring": "Agente para criação de catálogo automático de funções Python.",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 35
+          },
+          {
+            "name": "discover_python_files",
+            "docstring": "Descobre todos os arquivos Python nos módulos.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 13
+          },
+          {
+            "name": "analyze_python_file",
+            "docstring": "Analisa um arquivo Python para extrair funções e classes.",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 59
+          },
+          {
+            "name": "extract_function_info",
+            "docstring": "Extrai informações de uma função.",
+            "parameters": [
+              "self",
+              "node",
+              "content"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 43
+          },
+          {
+            "name": "extract_class_info",
+            "docstring": "Extrai informações de uma classe.",
+            "parameters": [
+              "self",
+              "node",
+              "content"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 34
+          },
+          {
+            "name": "extract_module_docstring",
+            "docstring": "Extrai docstring do módulo.",
+            "parameters": [
+              "self",
+              "content"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 6
+          },
+          {
+            "name": "categorize_function",
+            "docstring": "Categoriza uma função baseada em seu contexto.",
+            "parameters": [
+              "self",
+              "function_info",
+              "module_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 25
+          },
+          {
+            "name": "build_function_catalog",
+            "docstring": "Constrói o catálogo completo de funções.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 31
+          },
+          {
+            "name": "add_to_catalog",
+            "docstring": "Adiciona análise de arquivo ao catálogo.",
+            "parameters": [
+              "self",
+              "analysis"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 73
+          },
+          {
+            "name": "build_search_index",
+            "docstring": "Constrói índice de busca para o catálogo.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 52
+          },
+          {
+            "name": "update_catalog_stats",
+            "docstring": "Atualiza estatísticas do catálogo.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "save_catalog",
+            "docstring": "Salva o catálogo em arquivos JSON.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 37
+          },
+          {
+            "name": "generate_catalog_report",
+            "docstring": "Gera relatório do catálogo.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 16
+          },
+          {
+            "name": "save_catalog_report",
+            "docstring": "Salva relatório do catálogo.",
+            "parameters": [
+              "self",
+              "report"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          }
+        ],
+        "attributes": [
+          "python_files",
+          "start_line",
+          "end_line",
+          "docstring",
+          "args",
+          "decorators",
+          "function_type",
+          "start_line",
+          "end_line",
+          "docstring",
+          "methods",
+          "decorators",
+          "bases",
+          "parts",
+          "function_name",
+          "python_files",
+          "module_path",
+          "file_name",
+          "search_index",
+          "catalog_file",
+          "search_index_file",
+          "report_file",
+          "content",
+          "tree",
+          "analysis",
+          "total_elements",
+          "function_type",
+          "tree",
+          "analysis",
+          "category",
+          "function_id",
+          "category",
+          "class_id",
+          "name",
+          "func_type",
+          "module_path",
+          "docstring",
+          "category_file",
+          "category_data",
+          "function_type",
+          "method_info",
+          "words",
+          "function_info",
+          "function_type",
+          "content",
+          "class_info",
+          "function_type"
+        ],
+        "inheritance": [],
+        "line_count": 470
+      }
+    ],
+    "imports": [
+      "os",
+      "json",
+      "ast",
+      "inspect",
+      "pathlib.Path",
+      "typing.Dict",
+      "typing.List",
+      "typing.Any",
+      "typing.Optional",
+      "typing.Tuple",
+      "datetime.datetime",
+      "logging"
+    ],
+    "line_count": 549,
+    "complexity_score": 67
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:51.146010"
+}

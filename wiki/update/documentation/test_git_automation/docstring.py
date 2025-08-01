@@ -1,0 +1,23 @@
+"""
+test_git_automation
+
+Testes para o módulo git_automation
+
+Módulo: git_automation
+Descrição: Automação Git
+
+Módulo: test_git_automation
+Caminho: wiki\update\modules\tools\git_automation\test_git_automation.py
+Linhas de código: 45
+Complexidade: 2.00
+
+Funções (4):
+- setUp(self): Configuração inicial dos testes...\n- test_module_initialization(self): Testa inicialização do módulo...\n- test_module_execution(self): Testa execução do módulo...\n- test_module_validation(self): Testa validação do módulo...\n
+Classes (1):
+- TestGitautomationModule: Testes para o módulo git_automation...\n  - setUp(self): Configuração inicial dos teste...\n  - test_module_initialization(self): Testa inicialização do módulo...\n  - test_module_execution(self): Testa execução do módulo...\n  - test_module_validation(self): Testa validação do módulo...\n
+Imports (4):
+unittest, pathlib.Path, sys, git_automation.GitautomationModule
+
+Autor: Documentation Agent
+Data: 2025-08-01 15:05:53
+"""

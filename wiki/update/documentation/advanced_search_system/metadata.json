@@ -1,0 +1,548 @@
+{
+  "module": {
+    "name": "advanced_search_system",
+    "path": "wiki\\update\\advanced_search_system.py",
+    "docstring": "Sistema de Busca Avançada Semântica\n===================================\n\nEste script implementa sistema de busca avançada semântica na wiki consolidada\ncom busca por conteúdo, tags, categorias e similaridade.\n\nAutor: Sistema BMAD - Search Agent\nData: 2025-08-01",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal do script.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 15
+      },
+      {
+        "name": "__init__",
+        "docstring": "Inicializa o sistema de busca avançada.\n\nArgs:\n    consolidated_dir: Diretório dos documentos consolidados",
+        "parameters": [
+          "self",
+          "consolidated_dir"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 23
+      },
+      {
+        "name": "load_intelligent_navigation",
+        "docstring": "Carrega dados de navegação inteligente.\n\nReturns:\n    Dados de navegação inteligente",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "extract_document_content",
+        "docstring": "Extrai conteúdo completo de um documento.\n\nArgs:\n    file_path: Caminho para o documento\n    \nReturns:\n    Conteúdo extraído do documento",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 56
+      },
+      {
+        "name": "build_content_index",
+        "docstring": "Constrói índice de conteúdo para busca textual.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 22
+      },
+      {
+        "name": "build_semantic_index",
+        "docstring": "Constrói índice semântico baseado em similaridade de conteúdo.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 32
+      },
+      {
+        "name": "build_category_index",
+        "docstring": "Constrói índice por categorias.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 26
+      },
+      {
+        "name": "build_tag_index",
+        "docstring": "Constrói índice por tags.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 23
+      },
+      {
+        "name": "build_keyword_index",
+        "docstring": "Constrói índice por palavras-chave.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 27
+      },
+      {
+        "name": "build_metadata_index",
+        "docstring": "Constrói índice por metadados.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 45
+      },
+      {
+        "name": "build_similarity_matrix",
+        "docstring": "Constrói matriz de similaridade entre documentos.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 22
+      },
+      {
+        "name": "calculate_similarity",
+        "docstring": "Calcula similaridade entre dois documentos.\n\nArgs:\n    doc1: Dados do primeiro documento\n    doc2: Dados do segundo documento\n    \nReturns:\n    Score de similaridade (0-1)",
+        "parameters": [
+          "self",
+          "doc1",
+          "doc2"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 34
+      },
+      {
+        "name": "search_by_text",
+        "docstring": "Busca por texto nos documentos.\n\nArgs:\n    query: Query de busca\n    limit: Limite de resultados\n    \nReturns:\n    Lista de resultados",
+        "parameters": [
+          "self",
+          "query",
+          "limit"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 50
+      },
+      {
+        "name": "search_by_tags",
+        "docstring": "Busca por tags.\n\nArgs:\n    tags: Lista de tags para buscar\n    limit: Limite de resultados\n    \nReturns:\n    Lista de resultados",
+        "parameters": [
+          "self",
+          "tags",
+          "limit"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 32
+      },
+      {
+        "name": "search_by_category",
+        "docstring": "Busca por categoria.\n\nArgs:\n    category: Categoria principal\n    subcategory: Subcategoria (opcional)\n    limit: Limite de resultados\n    \nReturns:\n    Lista de resultados",
+        "parameters": [
+          "self",
+          "category",
+          "subcategory",
+          "limit"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 23
+      },
+      {
+        "name": "search_similar",
+        "docstring": "Busca documentos similares.\n\nArgs:\n    doc_path: Caminho do documento de referência\n    limit: Limite de resultados\n    \nReturns:\n    Lista de documentos similares",
+        "parameters": [
+          "self",
+          "doc_path",
+          "limit"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 28
+      },
+      {
+        "name": "extract_snippet",
+        "docstring": "Extrai snippet do conteúdo com a query destacada.\n\nArgs:\n    content: Conteúdo do documento\n    query: Query de busca\n    max_length: Tamanho máximo do snippet\n    \nReturns:\n    Snippet extraído",
+        "parameters": [
+          "self",
+          "content",
+          "query",
+          "max_length"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 41
+      },
+      {
+        "name": "save_search_index",
+        "docstring": "Salva o índice de busca avançada.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "generate_search_report",
+        "docstring": "Gera relatório do sistema de busca.\n\nReturns:\n    Caminho do relatório",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 38
+      },
+      {
+        "name": "build_advanced_search",
+        "docstring": "Constrói sistema completo de busca avançada.\n\nReturns:\n    Resultados da construção",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 35
+      }
+    ],
+    "classes": [
+      {
+        "name": "AdvancedSearchSystem",
+        "docstring": "Sistema de busca avançada semântica",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "Inicializa o sistema de busca avançada.\n\nArgs:\n    consolidated_dir: Diretório dos documentos consolidados",
+            "parameters": [
+              "self",
+              "consolidated_dir"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 23
+          },
+          {
+            "name": "load_intelligent_navigation",
+            "docstring": "Carrega dados de navegação inteligente.\n\nReturns:\n    Dados de navegação inteligente",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "extract_document_content",
+            "docstring": "Extrai conteúdo completo de um documento.\n\nArgs:\n    file_path: Caminho para o documento\n    \nReturns:\n    Conteúdo extraído do documento",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 56
+          },
+          {
+            "name": "build_content_index",
+            "docstring": "Constrói índice de conteúdo para busca textual.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 22
+          },
+          {
+            "name": "build_semantic_index",
+            "docstring": "Constrói índice semântico baseado em similaridade de conteúdo.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 32
+          },
+          {
+            "name": "build_category_index",
+            "docstring": "Constrói índice por categorias.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 26
+          },
+          {
+            "name": "build_tag_index",
+            "docstring": "Constrói índice por tags.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 23
+          },
+          {
+            "name": "build_keyword_index",
+            "docstring": "Constrói índice por palavras-chave.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 27
+          },
+          {
+            "name": "build_metadata_index",
+            "docstring": "Constrói índice por metadados.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 45
+          },
+          {
+            "name": "build_similarity_matrix",
+            "docstring": "Constrói matriz de similaridade entre documentos.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 22
+          },
+          {
+            "name": "calculate_similarity",
+            "docstring": "Calcula similaridade entre dois documentos.\n\nArgs:\n    doc1: Dados do primeiro documento\n    doc2: Dados do segundo documento\n    \nReturns:\n    Score de similaridade (0-1)",
+            "parameters": [
+              "self",
+              "doc1",
+              "doc2"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 34
+          },
+          {
+            "name": "search_by_text",
+            "docstring": "Busca por texto nos documentos.\n\nArgs:\n    query: Query de busca\n    limit: Limite de resultados\n    \nReturns:\n    Lista de resultados",
+            "parameters": [
+              "self",
+              "query",
+              "limit"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 50
+          },
+          {
+            "name": "search_by_tags",
+            "docstring": "Busca por tags.\n\nArgs:\n    tags: Lista de tags para buscar\n    limit: Limite de resultados\n    \nReturns:\n    Lista de resultados",
+            "parameters": [
+              "self",
+              "tags",
+              "limit"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 32
+          },
+          {
+            "name": "search_by_category",
+            "docstring": "Busca por categoria.\n\nArgs:\n    category: Categoria principal\n    subcategory: Subcategoria (opcional)\n    limit: Limite de resultados\n    \nReturns:\n    Lista de resultados",
+            "parameters": [
+              "self",
+              "category",
+              "subcategory",
+              "limit"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 23
+          },
+          {
+            "name": "search_similar",
+            "docstring": "Busca documentos similares.\n\nArgs:\n    doc_path: Caminho do documento de referência\n    limit: Limite de resultados\n    \nReturns:\n    Lista de documentos similares",
+            "parameters": [
+              "self",
+              "doc_path",
+              "limit"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 28
+          },
+          {
+            "name": "extract_snippet",
+            "docstring": "Extrai snippet do conteúdo com a query destacada.\n\nArgs:\n    content: Conteúdo do documento\n    query: Query de busca\n    max_length: Tamanho máximo do snippet\n    \nReturns:\n    Snippet extraído",
+            "parameters": [
+              "self",
+              "content",
+              "query",
+              "max_length"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 41
+          },
+          {
+            "name": "save_search_index",
+            "docstring": "Salva o índice de busca avançada.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "generate_search_report",
+            "docstring": "Gera relatório do sistema de busca.\n\nReturns:\n    Caminho do relatório",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 38
+          },
+          {
+            "name": "build_advanced_search",
+            "docstring": "Constrói sistema completo de busca avançada.\n\nReturns:\n    Resultados da construção",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 35
+          }
+        ],
+        "attributes": [
+          "content_index",
+          "nav_graph",
+          "semantic_index",
+          "content_index",
+          "category_index",
+          "content_index",
+          "tag_index",
+          "content_index",
+          "keyword_index",
+          "semantic_index",
+          "metadata_index",
+          "content_index",
+          "similarity_matrix",
+          "semantic_index",
+          "doc_paths",
+          "keywords1",
+          "keywords2",
+          "keyword_similarity",
+          "tags1",
+          "tags2",
+          "tag_similarity",
+          "type_similarity",
+          "total_similarity",
+          "query_lower",
+          "results",
+          "content_index",
+          "results",
+          "tag_index",
+          "seen",
+          "unique_results",
+          "results",
+          "category_index",
+          "results",
+          "similarity_matrix",
+          "content_lower",
+          "query_lower",
+          "pos",
+          "start",
+          "end",
+          "snippet",
+          "report",
+          "report_file",
+          "report_path",
+          "results",
+          "metadata",
+          "title_match",
+          "tags_match",
+          "type_match",
+          "status_match",
+          "sections",
+          "links",
+          "code_blocks",
+          "content",
+          "words",
+          "word_freq",
+          "sorted_words",
+          "tags",
+          "keywords",
+          "metadata",
+          "doc_type",
+          "status",
+          "size",
+          "size_category",
+          "word_count",
+          "word_category",
+          "tag_similarity",
+          "content",
+          "title",
+          "score",
+          "content_matches",
+          "query_words",
+          "similarities",
+          "sorted_similarities",
+          "words",
+          "snippet",
+          "snippet",
+          "content",
+          "doc_path",
+          "full_path",
+          "similarity",
+          "word_matches",
+          "results",
+          "content_data",
+          "pos",
+          "content_data"
+        ],
+        "inheritance": [],
+        "line_count": 619
+      }
+    ],
+    "imports": [
+      "json",
+      "os",
+      "re",
+      "pathlib.Path",
+      "typing.Dict",
+      "typing.List",
+      "typing.Any",
+      "typing.Optional",
+      "typing.Tuple",
+      "datetime.datetime",
+      "logging",
+      "difflib.SequenceMatcher"
+    ],
+    "line_count": 669,
+    "complexity_score": 60
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:50.404249"
+}

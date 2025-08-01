@@ -1,3 +1,19 @@
+            import psutil
+            import psutil
+            import psutil
+            import psutil
+            import psutil
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+import json
+import os
+import platform
+import re
+import re # Added missing import for re
+import subprocess
+import sys
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -5,16 +21,6 @@ OTClient Debug Tools
 Ferramentas especializadas para debug do OTClient
 """
 
-import json
-import subprocess
-import sys
-import os
-import re
-from datetime import datetime
-from pathlib import Path
-from typing import Dict, List, Any, Optional
-import platform
-import re # Added missing import for re
 
 class OTClientDebugTools:
     """Ferramentas de debug especializadas para OTClient"""
@@ -249,7 +255,6 @@ class OTClientDebugTools:
         }
         
         try:
-            import psutil
             system_info["cpu_count"] = psutil.cpu_count()
             system_info["memory_total"] = psutil.virtual_memory().total
         except ImportError:
@@ -341,7 +346,6 @@ class OTClientDebugTools:
         
         # Uso de memória básico
         try:
-            import psutil
             memory = psutil.virtual_memory()
             performance_analysis["memory_usage"] = {
                 "total": memory.total,
@@ -361,7 +365,6 @@ class OTClientDebugTools:
         
         # Uso de CPU básico
         try:
-            import psutil
             cpu_percent = psutil.cpu_percent(interval=1)
             performance_analysis["cpu_usage"] = {
                 "percent": cpu_percent,
@@ -377,7 +380,6 @@ class OTClientDebugTools:
         
         # Uso de disco básico
         try:
-            import psutil
             disk = psutil.disk_usage('/')
             performance_analysis["disk_usage"] = {
                 "total": disk.total,
@@ -395,7 +397,6 @@ class OTClientDebugTools:
         
         # Status de rede básico
         try:
-            import psutil
             network = psutil.net_io_counters()
             performance_analysis["network_status"] = {
                 "bytes_sent": network.bytes_sent,

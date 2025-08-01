@@ -1,14 +1,15 @@
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Any
+import json
+import os
+import re
+
 #!/usr/bin/env python3
 """
 Script para preparar a wiki do OTClient para integração com Canary
 Adiciona tags de integração, referências cruzadas e estrutura para ecossistema completo
 """
-import os
-import json
-import re
-from datetime import datetime
-from pathlib import Path
-from typing import Dict, List, Any
 
 class CanaryIntegrationPreparer:
     def __init__(self, wiki_dir: str = "wiki"):

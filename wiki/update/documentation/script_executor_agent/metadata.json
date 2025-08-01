@@ -1,0 +1,477 @@
+{
+  "module": {
+    "name": "script_executor_agent",
+    "path": "wiki\\update\\script_executor_agent.py",
+    "docstring": "Script Executor Agent - Sistema Inteligente de Execução de Scripts Python\n\nEste agente implementa um sistema inteligente para execução automática de scripts Python\ncom análise de dependências, validação, monitoramento e tratamento de erros.",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 1
+      },
+      {
+        "name": "analyze_script",
+        "docstring": "Analisa um script Python e retorna suas informações",
+        "parameters": [
+          "self",
+          "script_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 61
+      },
+      {
+        "name": "_calculate_complexity",
+        "docstring": "Calcula complexidade ciclomática simples",
+        "parameters": [
+          "self",
+          "tree"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 6
+      },
+      {
+        "name": "_validate_script",
+        "docstring": "Valida se um script Python é sintaticamente correto",
+        "parameters": [
+          "self",
+          "script_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "base_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 4
+      },
+      {
+        "name": "execute_script",
+        "docstring": "Executa um script Python com análise e monitoramento",
+        "parameters": [
+          "self",
+          "script_path",
+          "args",
+          "timeout",
+          "capture_output"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 57
+      },
+      {
+        "name": "_run_script",
+        "docstring": "Executa um script Python usando subprocess",
+        "parameters": [
+          "self",
+          "script_path",
+          "args",
+          "timeout",
+          "capture_output"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 51
+      },
+      {
+        "name": "_check_dependencies",
+        "docstring": "Verifica se as dependências estão disponíveis",
+        "parameters": [
+          "self",
+          "dependencies"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 15
+      },
+      {
+        "name": "execute_batch",
+        "docstring": "Executa múltiplos scripts em lote",
+        "parameters": [
+          "self",
+          "scripts",
+          "parallel",
+          "max_workers"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 11
+      },
+      {
+        "name": "_execute_parallel",
+        "docstring": "Executa scripts em paralelo",
+        "parameters": [
+          "self",
+          "scripts",
+          "max_workers"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 15
+      },
+      {
+        "name": "get_execution_history",
+        "docstring": "Retorna o histórico de execuções",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      },
+      {
+        "name": "get_statistics",
+        "docstring": "Retorna estatísticas das execuções",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 20
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "base_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "execute_task_12_8",
+        "docstring": "Executa a Task 12.8: Implementar executor inteligente de scripts",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 39
+      },
+      {
+        "name": "_find_test_scripts",
+        "docstring": "Encontra scripts para testar o executor",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      }
+    ],
+    "classes": [
+      {
+        "name": "ExecutionResult",
+        "docstring": "Resultado da execução de um script",
+        "methods": [],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 11
+      },
+      {
+        "name": "ScriptInfo",
+        "docstring": "Informações sobre um script Python",
+        "methods": [],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 11
+      },
+      {
+        "name": "DependencyAnalyzer",
+        "docstring": "Analisador de dependências de scripts Python",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 1
+          },
+          {
+            "name": "analyze_script",
+            "docstring": "Analisa um script Python e retorna suas informações",
+            "parameters": [
+              "self",
+              "script_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 61
+          },
+          {
+            "name": "_calculate_complexity",
+            "docstring": "Calcula complexidade ciclomática simples",
+            "parameters": [
+              "self",
+              "tree"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 6
+          },
+          {
+            "name": "_validate_script",
+            "docstring": "Valida se um script Python é sintaticamente correto",
+            "parameters": [
+              "self",
+              "script_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          }
+        ],
+        "attributes": [
+          "complexity",
+          "tree",
+          "imports",
+          "functions",
+          "classes",
+          "complexity",
+          "is_valid",
+          "stat",
+          "last_modified",
+          "content",
+          "content",
+          "module"
+        ],
+        "inheritance": [],
+        "line_count": 85
+      },
+      {
+        "name": "ScriptExecutor",
+        "docstring": "Executor inteligente de scripts Python",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "base_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 4
+          },
+          {
+            "name": "execute_script",
+            "docstring": "Executa um script Python com análise e monitoramento",
+            "parameters": [
+              "self",
+              "script_path",
+              "args",
+              "timeout",
+              "capture_output"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 57
+          },
+          {
+            "name": "_run_script",
+            "docstring": "Executa um script Python usando subprocess",
+            "parameters": [
+              "self",
+              "script_path",
+              "args",
+              "timeout",
+              "capture_output"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 51
+          },
+          {
+            "name": "_check_dependencies",
+            "docstring": "Verifica se as dependências estão disponíveis",
+            "parameters": [
+              "self",
+              "dependencies"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 15
+          },
+          {
+            "name": "execute_batch",
+            "docstring": "Executa múltiplos scripts em lote",
+            "parameters": [
+              "self",
+              "scripts",
+              "parallel",
+              "max_workers"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 11
+          },
+          {
+            "name": "_execute_parallel",
+            "docstring": "Executa scripts em paralelo",
+            "parameters": [
+              "self",
+              "scripts",
+              "max_workers"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 15
+          },
+          {
+            "name": "get_execution_history",
+            "docstring": "Retorna o histórico de execuções",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          },
+          {
+            "name": "get_statistics",
+            "docstring": "Retorna estatísticas das execuções",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 20
+          }
+        ],
+        "attributes": [
+          "script_path",
+          "script_info",
+          "missing_deps",
+          "start_time",
+          "result",
+          "execution_time",
+          "execution_result",
+          "cmd",
+          "missing",
+          "results",
+          "total_executions",
+          "successful_executions",
+          "failed_executions",
+          "total_time",
+          "avg_time",
+          "results",
+          "future_to_script",
+          "process",
+          "process",
+          "module_name",
+          "module_name",
+          "result",
+          "result"
+        ],
+        "inheritance": [],
+        "line_count": 192
+      },
+      {
+        "name": "ScriptExecutorAgent",
+        "docstring": "Agente principal para execução inteligente de scripts",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "base_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "execute_task_12_8",
+            "docstring": "Executa a Task 12.8: Implementar executor inteligente de scripts",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 39
+          },
+          {
+            "name": "_find_test_scripts",
+            "docstring": "Encontra scripts para testar o executor",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          }
+        ],
+        "attributes": [
+          "test_scripts",
+          "results",
+          "stats",
+          "report",
+          "report_path",
+          "test_scripts",
+          "search_paths",
+          "result",
+          "path"
+        ],
+        "inheritance": [],
+        "line_count": 70
+      }
+    ],
+    "imports": [
+      "os",
+      "sys",
+      "subprocess",
+      "importlib",
+      "ast",
+      "logging",
+      "json",
+      "time",
+      "threading",
+      "pathlib.Path",
+      "typing.Dict",
+      "typing.List",
+      "typing.Optional",
+      "typing.Tuple",
+      "typing.Any",
+      "dataclasses.dataclass",
+      "dataclasses.asdict",
+      "datetime.datetime",
+      "traceback",
+      "concurrent.futures"
+    ],
+    "line_count": 431,
+    "complexity_score": 36
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:52.042523"
+}

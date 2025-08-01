@@ -1,3 +1,10 @@
+from datetime import datetime, timedelta
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+import json
+import logging
+import os
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -11,12 +18,6 @@ Autor: Sistema BMAD - Dashboard Agent
 Data: 2025-08-01
 """
 
-import json
-import os
-from pathlib import Path
-from typing import Dict, List, Any, Optional
-from datetime import datetime, timedelta
-import logging
 
 # Configuração de logging
 logging.basicConfig(

@@ -1,9 +1,0 @@
-Module
-  name: Game Network Analyzer
-  description: Módulo para análise de rede do jogo
-  author: BMAD AI Agent
-  website: https://github.com/edubart/otclient
-  sandboxed: true
-  scripts: [ game_network_analyzer ]
-  @onLoad: game_network_analyzerController:init()
-  @onUnload: game_network_analyzerController:terminate()

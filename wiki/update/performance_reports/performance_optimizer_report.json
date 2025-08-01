@@ -1,0 +1,65 @@
+{
+  "task": "12.10",
+  "epic": "12",
+  "title": "Implementar cache e otimização de performance",
+  "status": "completed",
+  "timestamp": "2025-08-01T15:02:45.543056",
+  "cache_tests": {
+    "cache_basic": {
+      "first_execution_time": 0.0009942054748535156,
+      "second_execution_time": 6.103515625e-05,
+      "improvement": 93.86091127098322,
+      "cache_hit_rate": 50.0
+    },
+    "cache_ttl": {
+      "expired_value_is_none": true
+    }
+  },
+  "optimization_results": [
+    {
+      "script_path": "wiki/update/python_tools/complexity_analyzer.py",
+      "original_time": 0.0,
+      "optimized_time": 0.0,
+      "improvement_percent": 0.0,
+      "optimizations_applied": [],
+      "memory_saved_mb": 0.0,
+      "cache_entries": 0,
+      "timestamp": "2025-08-01 15:02:45.346178"
+    },
+    {
+      "script_path": "wiki/update/python_tools/dependency_mapper.py",
+      "original_time": 0.0,
+      "optimized_time": 0.0,
+      "improvement_percent": 0.0,
+      "optimizations_applied": [],
+      "memory_saved_mb": 0.0,
+      "cache_entries": 0,
+      "timestamp": "2025-08-01 15:02:45.350386"
+    }
+  ],
+  "performance_metrics": {
+    "memory_usage_mb": 21.1328125,
+    "cpu_usage_percent": 0.0,
+    "memory_percent": 0.2610898013787086,
+    "num_threads": 5,
+    "open_files": 1,
+    "connections": 0,
+    "system_memory_percent": 76.2,
+    "system_cpu_percent": 33.2
+  },
+  "cache_stats": {
+    "hits": 1,
+    "misses": 2,
+    "hit_rate": 33.33333333333333,
+    "size_mb": 1.811981201171875e-05,
+    "max_size_mb": 50.0,
+    "entries": 1,
+    "utilization_percent": 3.62396240234375e-05
+  },
+  "average_metrics": {
+    "avg_execution_time": 0.0005276203155517578,
+    "avg_memory_usage": 20.70703125,
+    "avg_cpu_usage": 0.0,
+    "avg_cache_hit_rate": 25.0
+  }
+}

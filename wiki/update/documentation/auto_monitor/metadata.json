@@ -1,0 +1,534 @@
+{
+  "module": {
+    "name": "auto_monitor",
+    "path": "wiki\\update\\auto_monitor.py",
+    "docstring": "Sistema de Auto-Monitoramento Contínuo BMAD\nMonitora continuamente o estado do sistema e dispara ações automáticas",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 24
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 28
+      },
+      {
+        "name": "setup_logging",
+        "docstring": "Configura sistema de logging",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 13
+      },
+      {
+        "name": "start_monitoring",
+        "docstring": "Inicia monitoramento contínuo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 28
+      },
+      {
+        "name": "check_system_health",
+        "docstring": "Verifica saúde geral do sistema",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 20
+      },
+      {
+        "name": "check_maps_integrity",
+        "docstring": "Verifica integridade dos mapas JSON",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 27
+      },
+      {
+        "name": "check_rules_consistency",
+        "docstring": "Verifica consistência das regras",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 26
+      },
+      {
+        "name": "check_scripts_functionality",
+        "docstring": "Verifica funcionalidade dos scripts Python",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 34
+      },
+      {
+        "name": "check_file_permissions",
+        "docstring": "Verifica permissões de arquivos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "check_json_validity",
+        "docstring": "Verifica validade de arquivos JSON",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 18
+      },
+      {
+        "name": "detect_changes",
+        "docstring": "Detecta mudanças no sistema",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 38
+      },
+      {
+        "name": "analyze_performance",
+        "docstring": "Analisa performance do sistema",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "measure_response_time",
+        "docstring": "Mede tempo de resposta do sistema",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 23
+      },
+      {
+        "name": "measure_memory_usage",
+        "docstring": "Mede uso de memória",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "measure_file_access_speed",
+        "docstring": "Mede velocidade de acesso a arquivos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 31
+      },
+      {
+        "name": "measure_script_execution_time",
+        "docstring": "Mede tempo de execução de scripts",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 31
+      },
+      {
+        "name": "check_and_trigger_actions",
+        "docstring": "Verifica se ações automáticas são necessárias",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 27
+      },
+      {
+        "name": "trigger_health_correction",
+        "docstring": "Dispara correção de saúde do sistema",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "trigger_performance_optimization",
+        "docstring": "Dispara otimização de performance",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "trigger_auto_update",
+        "docstring": "Dispara atualização automática",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "trigger_emergency_mode",
+        "docstring": "Ativa modo de emergência",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "save_system_state",
+        "docstring": "Salva estado atual do sistema",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 10
+      },
+      {
+        "name": "get_system_status",
+        "docstring": "Retorna status atual do sistema",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      }
+    ],
+    "classes": [
+      {
+        "name": "AutoMonitor",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 28
+          },
+          {
+            "name": "setup_logging",
+            "docstring": "Configura sistema de logging",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 13
+          },
+          {
+            "name": "start_monitoring",
+            "docstring": "Inicia monitoramento contínuo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 28
+          },
+          {
+            "name": "check_system_health",
+            "docstring": "Verifica saúde geral do sistema",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 20
+          },
+          {
+            "name": "check_maps_integrity",
+            "docstring": "Verifica integridade dos mapas JSON",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 27
+          },
+          {
+            "name": "check_rules_consistency",
+            "docstring": "Verifica consistência das regras",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 26
+          },
+          {
+            "name": "check_scripts_functionality",
+            "docstring": "Verifica funcionalidade dos scripts Python",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 34
+          },
+          {
+            "name": "check_file_permissions",
+            "docstring": "Verifica permissões de arquivos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          },
+          {
+            "name": "check_json_validity",
+            "docstring": "Verifica validade de arquivos JSON",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 18
+          },
+          {
+            "name": "detect_changes",
+            "docstring": "Detecta mudanças no sistema",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 38
+          },
+          {
+            "name": "analyze_performance",
+            "docstring": "Analisa performance do sistema",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "measure_response_time",
+            "docstring": "Mede tempo de resposta do sistema",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 23
+          },
+          {
+            "name": "measure_memory_usage",
+            "docstring": "Mede uso de memória",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          },
+          {
+            "name": "measure_file_access_speed",
+            "docstring": "Mede velocidade de acesso a arquivos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 31
+          },
+          {
+            "name": "measure_script_execution_time",
+            "docstring": "Mede tempo de execução de scripts",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 31
+          },
+          {
+            "name": "check_and_trigger_actions",
+            "docstring": "Verifica se ações automáticas são necessárias",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 27
+          },
+          {
+            "name": "trigger_health_correction",
+            "docstring": "Dispara correção de saúde do sistema",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "trigger_performance_optimization",
+            "docstring": "Dispara otimização de performance",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "trigger_auto_update",
+            "docstring": "Dispara atualização automática",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "trigger_emergency_mode",
+            "docstring": "Ativa modo de emergência",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "save_system_state",
+            "docstring": "Salva estado atual do sistema",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 10
+          },
+          {
+            "name": "get_system_status",
+            "docstring": "Retorna status atual do sistema",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          }
+        ],
+        "attributes": [
+          "log_file",
+          "health_checks",
+          "health_score",
+          "current_time",
+          "changes",
+          "performance_metrics",
+          "performance_score",
+          "actions_triggered",
+          "emergency_state",
+          "emergency_file",
+          "maps_to_check",
+          "valid_maps",
+          "rules_to_check",
+          "valid_rules",
+          "scripts_to_check",
+          "valid_scripts",
+          "critical_paths",
+          "accessible_paths",
+          "json_files",
+          "valid_jsons",
+          "start_time",
+          "response_time",
+          "memory_percent",
+          "start_time",
+          "test_files",
+          "access_time",
+          "start_time",
+          "test_script",
+          "correction_script",
+          "optimization_script",
+          "update_script",
+          "state_file",
+          "map_path",
+          "rule_path",
+          "script_path",
+          "result",
+          "execution_time",
+          "file_key",
+          "current_mtime",
+          "result"
+        ],
+        "inheritance": [],
+        "line_count": 508
+      }
+    ],
+    "imports": [
+      "json",
+      "time",
+      "os",
+      "subprocess",
+      "sys",
+      "datetime.datetime",
+      "datetime.timedelta",
+      "pathlib.Path",
+      "typing.Dict",
+      "typing.List",
+      "typing.Any",
+      "typing.Optional",
+      "threading",
+      "logging",
+      "psutil"
+    ],
+    "line_count": 556,
+    "complexity_score": 67
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:50.583800"
+}

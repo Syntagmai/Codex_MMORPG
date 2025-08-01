@@ -1,0 +1,1843 @@
+{
+  "timestamp": "2025-08-01T15:21:54.841761",
+  "agent": "FolderRestructureAgent",
+  "version": "1.0.0",
+  "actions": [
+    {
+      "timestamp": "2025-08-01T15:21:48.601669",
+      "action": "migrate",
+      "details": "Migrado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\generated\\canary_integration_tool.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\legacy_tools\\canary_integration_tool.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.604422",
+      "action": "migrate",
+      "details": "Migrado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\generated\\network_protocol_validator.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\legacy_tools\\network_protocol_validator.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.606341",
+      "action": "migrate",
+      "details": "Migrado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\generated\\otclient_ui_enhancement.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\legacy_tools\\otclient_ui_enhancement.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.608381",
+      "action": "migrate",
+      "details": "Migrado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\generated\\performance_analyzer.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\legacy_tools\\performance_analyzer.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.613009",
+      "action": "migrate",
+      "details": "Migrado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\scripts\\obsidian_to_mdbook.py -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\obsidian_to_mdbook.py"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.617576",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\cleanup_and_path_update_report.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\cleanup_and_path_update_report.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.620340",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\migration_report.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\migration_report.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.622317",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\README.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\README.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.627633",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\SUMMARY.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\SUMMARY.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.633093",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\test.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\test.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.636842",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\trigger.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\trigger.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.638833",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\wiki_reorganization_plan.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\wiki_reorganization_plan.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.643183",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\courses_overview.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\courses_overview.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.647385",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\documentation\\educational_overview.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\documentation\\educational_overview.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.654178",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\resources\\examples\\README.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\resources\\examples\\README.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.656592",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\resources\\references\\README.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\resources\\references\\README.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.658616",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\resources\\templates\\README.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\resources\\templates\\README.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.663674",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\AdvancedUseCases.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\AdvancedUseCases.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.667801",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\BestPractices.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\BestPractices.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.671455",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-001.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-001.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.673777",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-002.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-002.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.676523",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-003.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-003.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.680543",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-004.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-004.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.682976",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-005.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-005.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.685930",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-006.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-006.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.687836",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-007.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-007.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.689465",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-008.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-008.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.690978",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-009.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-009.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.692403",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-010.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-010.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.695947",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-011.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-011.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.699101",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-012.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-012.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.706095",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-013.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-013.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.707931",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-014.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-014.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.711503",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-015.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-015.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.714943",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-016.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-016.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.718556",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-017.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-017.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.721611",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-018.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-018.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.723455",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-019.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-019.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.725753",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CANARY-020.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CANARY-020.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.728604",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\canary_overview.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\canary_overview.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.731044",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CheatSheet.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CheatSheet.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.733994",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CodeExamples.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CodeExamples.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.736485",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CompleteAPIReference.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CompleteAPIReference.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.738608",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\Configuration.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\Configuration.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.741203",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\ConfigurationAdvanced.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\ConfigurationAdvanced.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.743013",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CoreDebug.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CoreDebug.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.747157",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CoreLogs.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CoreLogs.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.750751",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CoreOptimization.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CoreOptimization.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.754574",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CoreProfiling.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CoreProfiling.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.756695",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\core_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\core_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.758431",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\core_systems_detailed_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\core_systems_detailed_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.761436",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\CreatureSystem.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\CreatureSystem.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.764007",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\DOCUMENTATION_PLAN.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\DOCUMENTATION_PLAN.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.767203",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\EffectsSystem.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\EffectsSystem.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.769454",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\epic_1_1_status_report.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\epic_1_1_status_report.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.771603",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\EventTutorial.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\EventTutorial.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.773741",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\FAQ.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\FAQ.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.775635",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\FirstModule.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\FirstModule.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.778058",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\GameAchievements.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\GameAchievements.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.780898",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\GameChat.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\GameChat.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.784250",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\GameCombat.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\GameCombat.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.786755",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\GameCrafting.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\GameCrafting.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.788857",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\GameEffects.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\GameEffects.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.790948",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\GameGuilds.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\GameGuilds.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.792899",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\GameInventory.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\GameInventory.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.796420",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\GameMinimap.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\GameMinimap.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.799416",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\GamePvP.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\GamePvP.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.802249",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\GameQuests.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\GameQuests.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.804918",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\GameTrading.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\GameTrading.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.806805",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\game_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\game_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.808327",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\game_logic_detailed_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\game_logic_detailed_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.811823",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\GettingStarted.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\GettingStarted.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.814389",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\GraphicsSystem.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\GraphicsSystem.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.817440",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\INTEGRATION-001.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\INTEGRATION-001.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.821243",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\INTEGRATION-002.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\INTEGRATION-002.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.824530",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\INTEGRATION-003.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\INTEGRATION-003.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.829341",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\INTEGRATION-004.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\INTEGRATION-004.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.832540",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\INTEGRATION-005.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\INTEGRATION-005.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.835693",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\INTEGRATION-006.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\INTEGRATION-006.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.838334",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\INTEGRATION-007.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\INTEGRATION-007.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.840093",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\INTEGRATION-008.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\INTEGRATION-008.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.841884",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\INTEGRATION-009.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\INTEGRATION-009.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.844784",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\INTEGRATION-010.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\INTEGRATION-010.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.848413",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\integration_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\integration_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.851733",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\integration_overview.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\integration_overview.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.854452",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\ItemSystem.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\ItemSystem.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.856399",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\LayoutTutorial.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\LayoutTutorial.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.858298",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\LuaAPI.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\LuaAPI.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.859972",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\lua_integration_detailed_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\lua_integration_detailed_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.863361",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\METHODOLOGY-001.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\METHODOLOGY-001.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.866683",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\METHODOLOGY-002.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\METHODOLOGY-002.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.868872",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\METHODOLOGY-003.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\METHODOLOGY-003.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.871422",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\ModuleSystem.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\ModuleSystem.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.873216",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\NetworkSystem.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\NetworkSystem.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.874865",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\network_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\network_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.884732",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\network_protocols_detailed_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\network_protocols_detailed_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.888194",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-001.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-001.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.891168",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-001_core_system_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-001_core_system_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.898047",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-002.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-002.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.902117",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-002_graphics_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-002_graphics_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.904944",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-003.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-003.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.908498",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-003_network_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-003_network_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.911696",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-004.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-004.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.918206",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-004_audio_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-004_audio_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.922808",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-005.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-005.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.934043",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-005_ui_framework.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-005_ui_framework.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.937688",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-006.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-006.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.941420",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-006_module_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-006_module_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.946075",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-007.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-007.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.955793",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-007_game_logic.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-007_game_logic.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.961537",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-008.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-008.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.972589",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-008_resource_management.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-008_resource_management.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.976047",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-009.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-009.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.989489",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-009_configuration_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-009_configuration_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:48.994084",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-010.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-010.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.003681",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-010_event_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-010_event_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.007740",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-011.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-011.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.022248",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-011_animation_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-011_animation_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.029288",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-012.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-012.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.034447",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-012_effect_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-012_effect_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.037296",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-013.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-013.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.040082",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-013_world_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-013_world_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.046596",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-014.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-014.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.053775",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-014_creature_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-014_creature_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.057507",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-015.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-015.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.063366",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-015_item_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-015_item_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.069101",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-016.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-016.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.075200",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-016_combat_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-016_combat_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.082727",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-017.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-017.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.088609",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-017_storage_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-017_storage_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.096136",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-018.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-018.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.100078",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-018_security_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-018_security_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.106840",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-019.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-019.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.116405",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-019_performance_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-019_performance_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.122631",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-020.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-020.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.136303",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-020_debug_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-020_debug_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.142506",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-021.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-021.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.153178",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\OTCLIENT-022.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\OTCLIENT-022.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.162392",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\otclient_animation_system_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\otclient_animation_system_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.170688",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\otclient_core_architecture_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\otclient_core_architecture_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.173218",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\otclient_data_system_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\otclient_data_system_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.175773",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\otclient_graphics_system_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.179185",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\otclient_lua_system_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\otclient_lua_system_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.189991",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\otclient_map_system_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\otclient_map_system_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.197880",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\otclient_module_system_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\otclient_module_system_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.204803",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\otclient_network_system_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\otclient_network_system_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.208971",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\otclient_particle_system_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\otclient_particle_system_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.219844",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\otclient_sound_system_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\otclient_sound_system_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.224077",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\otclient_ui_system_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\otclient_ui_system_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.231605",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\PerformanceTips.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\PerformanceTips.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.236945",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\phase2_real_progress_report.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\phase2_real_progress_report.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.240214",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\phase2_refined_documentation.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\phase2_refined_documentation.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.247792",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\phase2_refinement_report.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\phase2_refinement_report.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.255551",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\Protocol.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\Protocol.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.259209",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\README.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\README.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.266827",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\report_template.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\report_template.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.274965",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\research_plan.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\research_plan.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.289223",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\research_template.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\research_template.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.295436",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\resource_management_detailed_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\resource_management_detailed_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.303172",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\SoundSystem.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\SoundSystem.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.308776",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\status_report.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\status_report.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.316069",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\ThemeTutorial.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\ThemeTutorial.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.319647",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\Troubleshooting.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\Troubleshooting.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.322594",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIAccessibility.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIAccessibility.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.325010",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIAdvancedWidgets.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIAdvancedWidgets.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.328359",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIAnimations.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIAnimations.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.332639",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIButton.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIButton.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.335709",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UICalendarDates.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UICalendarDates.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.338441",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIDragDrop.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIDragDrop.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.341663",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIEvents.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIEvents.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.345012",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIFormWidgets.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIFormWidgets.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.348888",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIGraphicsCharts.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIGraphicsCharts.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.353542",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIGraphicsWidgets.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIGraphicsWidgets.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.355597",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIGridList.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIGridList.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.357668",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UILayouts.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UILayouts.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.359353",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIListWidgets.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIListWidgets.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.363208",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIMenuWidgets.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIMenuWidgets.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.366885",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIModals.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIModals.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.369469",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIPlugins.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIPlugins.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.393505",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIReportWidgets.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIReportWidgets.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.402696",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIScrollPagination.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIScrollPagination.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.407674",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIStyling.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIStyling.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.413230",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UITabs.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UITabs.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.426095",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UITextEdit.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UITextEdit.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.439636",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UITooltips.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UITooltips.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.521955",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UITreeHierarchy.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UITreeHierarchy.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.525221",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIUploadDownload.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIUploadDownload.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.532442",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIWidget.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIWidget.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.537236",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIWidgetsSpecialized.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIWidgetsSpecialized.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.540126",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\UIWidget_Reference.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\UIWidget_Reference.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.546128",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\ui_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\ui_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.555607",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\ui_components_detailed_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\ui_components_detailed_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.562915",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\unified_workflows.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\unified_workflows.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.573078",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\WidgetTutorial.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\WidgetTutorial.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.576605",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\research\\habdel\\WorldSystem.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\research\\habdel\\WorldSystem.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.585706",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Advanced_Configuration_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Advanced_Configuration_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.589542",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Animation_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Animation_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.593158",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Cheat_Sheet.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Cheat_Sheet.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.604556",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Combat_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Combat_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.609117",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Configuration_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Configuration_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.615082",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\CORE-007_Debug_System.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\CORE-007_Debug_System.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.618800",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\CORE-008_Performance_System.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\CORE-008_Performance_System.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.623107",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\CORE-009_Logs_System.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.627458",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\CORE-010_Backup_System.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\CORE-010_Backup_System.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.639801",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Creature_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Creature_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.643930",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Debug_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Debug_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.656669",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Developer_Practical_Guides.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Developer_Practical_Guides.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.659864",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Documentation_Status.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Documentation_Status.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.668229",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Drag_Drop_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Drag_Drop_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.673598",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Effects_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Effects_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.676921",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Game_Quests_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Game_Quests_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.686759",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Game_Trading_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Game_Trading_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.690844",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Getting_Started_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Getting_Started_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.693678",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Graphics_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Graphics_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.703410",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Guia_Busca_Rapida.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Guia_Busca_Rapida.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.707172",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\GUIDE-004_Debugging_Avancado.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\GUIDE-004_Debugging_Avancado.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.712120",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\GUIDE-005_Performance_Otimizacao.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\GUIDE-005_Performance_Otimizacao.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.721508",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\GUIDE-006_UI_Avancada.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\GUIDE-006_UI_Avancada.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.738448",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\GUIDE-007_Game_Systems.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\GUIDE-007_Game_Systems.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.757793",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\GUIDE-008_Deploy.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\GUIDE-008_Deploy.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.775495",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\GUIDE-009_Contribuicao.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\GUIDE-009_Contribuicao.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.788737",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\GUIDE-010_Troubleshooting.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\GUIDE-010_Troubleshooting.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.800320",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Habdel_Integration_Index.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Habdel_Integration_Index.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.809281",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Habdel_Navigation_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Habdel_Navigation_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.871811",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Habdel_Wiki_Integration_Report.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Habdel_Wiki_Integration_Report.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:49.970863",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Item_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Item_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:50.010391",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Lua_API_Reference.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Lua_API_Reference.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:50.159336",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Map_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Map_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:50.190852",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Module_Development_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Module_Development_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:50.321891",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Module_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:50.469550",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Navigation_Index_Alphabetical.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Navigation_Index_Alphabetical.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:50.576300",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Navigation_Index_Categorical.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Navigation_Index_Categorical.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:50.740105",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Navigation_Index_Search.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Navigation_Index_Search.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:50.816790",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Navigation_Index_Story_Based.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Navigation_Index_Story_Based.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:50.831104",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Network_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Network_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:50.854814",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\OTCLIENT-012-Sistema-de-Combate.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\OTCLIENT-012-Sistema-de-Combate.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:50.869361",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\OTCLIENT-013-Sistema-de-Inventario.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\OTCLIENT-013-Sistema-de-Inventario.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:50.994793",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\OTCLIENT-014-Sistema-de-NPCs.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\OTCLIENT-014-Sistema-de-NPCs.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.141812",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\OTCLIENT-015-Sistema-de-Quests.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\OTCLIENT-015-Sistema-de-Quests.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.188514",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\OTCLIENT-016-Sistema-de-Grupos.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\OTCLIENT-016-Sistema-de-Grupos.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.196359",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\OTCLIENT-017-Sistema-de-Guilds.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\OTCLIENT-017-Sistema-de-Guilds.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.242427",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\otclient_wiki.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\otclient_wiki.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.255861",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\OTUI_Module_Development_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\OTUI_Module_Development_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.308469",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Performance_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Performance_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.335892",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Protocol_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Protocol_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.377840",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Sound_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Sound_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.391066",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\UI_Modals_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\UI_Modals_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.397974",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\UI_Scroll_Pagination_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\UI_Scroll_Pagination_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.437827",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\UI_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\UI_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.441797",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\UI_Tabs_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\UI_Tabs_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.444204",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Wiki_Completion_Plan.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Wiki_Completion_Plan.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.457940",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Wiki_Index.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Wiki_Index.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.486877",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\Wiki_Optimization_Report.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\Wiki_Optimization_Report.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.522142",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\otclient\\guides\\World_System_Guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\otclient\\guides\\World_System_Guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.557369",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\advanced\\README.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\advanced\\README.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.564407",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\beginner\\README.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\beginner\\README.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.577895",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-001_core_architecture.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-001_core_architecture.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.603388",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-002_graphics_engine.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-002_graphics_engine.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.610394",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-003_network_protocol.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-003_network_protocol.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.654801",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-004_audio_engine.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-004_audio_engine.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.665262",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-005_ui_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-005_ui_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.677198",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-006_scripting_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-006_scripting_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.728048",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-007_game_mechanics.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-007_game_mechanics.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.742686",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-008_resource_engine.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-008_resource_engine.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.754959",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-009_config_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-009_config_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.759309",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-010_event_engine.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-010_event_engine.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.803063",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-011_animation_engine.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-011_animation_engine.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.809243",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-012_effect_engine.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-012_effect_engine.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.835701",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-013_world_engine.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-013_world_engine.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.844413",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-014_creature_engine.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-014_creature_engine.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.889100",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-015_item_engine.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-015_item_engine.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:51.989990",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-016_combat_engine.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-016_combat_engine.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.023299",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-017_database_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-017_database_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.114424",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-018_security_engine.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-018_security_engine.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.140330",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-019_performance_engine.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-019_performance_engine.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.155819",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\canary\\CANARY-020_debug_engine.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\canary\\CANARY-020_debug_engine.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.160429",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\integration\\INTEGRATION-001_architecture_comparison.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\integration\\INTEGRATION-001_architecture_comparison.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.185876",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\integration\\INTEGRATION-002_protocol_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\integration\\INTEGRATION-002_protocol_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.195778",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\integration\\INTEGRATION-003_ui_framework_comparison.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\integration\\INTEGRATION-003_ui_framework_comparison.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.238135",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\integration\\INTEGRATION-004_scripting_comparison.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\integration\\INTEGRATION-004_scripting_comparison.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.247957",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\integration\\INTEGRATION-005_performance_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\integration\\INTEGRATION-005_performance_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.288811",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\integration\\INTEGRATION-006_migration_guide.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\integration\\INTEGRATION-006_migration_guide.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.293644",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\integration\\INTEGRATION-007_integration_patterns.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\integration\\INTEGRATION-007_integration_patterns.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.308776",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\integration\\INTEGRATION-008_best_practices.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\integration\\INTEGRATION-008_best_practices.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.328248",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\integration\\INTEGRATION-009_tooling_comparison.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\integration\\INTEGRATION-009_tooling_comparison.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.335986",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\integration\\INTEGRATION-010_future_roadmap.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\integration\\INTEGRATION-010_future_roadmap.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.346052",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\intermediate\\README.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\intermediate\\README.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.363145",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-001_core_system_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-001_core_system_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.393493",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-002_graphics_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-002_graphics_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.409448",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-003_network_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-003_network_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.420654",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-004_audio_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-004_audio_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.473885",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-005_ui_framework.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-005_ui_framework.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.478183",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-006_module_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-006_module_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.489325",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-007_game_logic.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-007_game_logic.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.525833",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-008_resource_management.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-008_resource_management.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.541681",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-009_configuration_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-009_configuration_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.558260",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-010_event_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-010_event_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.585952",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-011_animation_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-011_animation_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.590693",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-012_effect_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-012_effect_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.593253",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-013_world_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-013_world_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.604280",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-014_creature_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-014_creature_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.711421",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-015_item_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-015_item_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.754141",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-016_combat_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-016_combat_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.776268",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-017_storage_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-017_storage_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.793694",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-018_security_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-018_security_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.821764",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-019_performance_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-019_performance_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.867667",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\lessons\\otclient\\OTCLIENT-020_debug_system.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\lessons\\otclient\\OTCLIENT-020_debug_system.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.894292",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\laboratory\\experiments\\AGENTES_SIMPLIFICADOS.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\laboratory\\experiments\\AGENTES_SIMPLIFICADOS.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.954348",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\laboratory\\experiments\\CHERRY_PICK_GUIDE.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\laboratory\\experiments\\CHERRY_PICK_GUIDE.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.981430",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\laboratory\\experiments\\COMPARACAO_SIMPLIFICADA.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\laboratory\\experiments\\COMPARACAO_SIMPLIFICADA.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:52.999239",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\laboratory\\experiments\\ESTRUTURA_FINAL.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\laboratory\\experiments\\ESTRUTURA_FINAL.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.008520",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\laboratory\\experiments\\RELATORIO_FINAL_CORRIGIDO.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\laboratory\\experiments\\RELATORIO_FINAL_CORRIGIDO.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.055025",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\laboratory\\experiments\\RELATORIO_IMPLEMENTACAO.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\laboratory\\experiments\\RELATORIO_IMPLEMENTACAO.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.068306",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\integration\\comparisons\\otclient_canary_unified_documentation.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\integration\\comparisons\\otclient_canary_unified_documentation.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.073562",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\integration\\protocols\\migration_canary_to_otclient.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\integration\\protocols\\migration_canary_to_otclient.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.086068",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\integration\\protocols\\migration_guides.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\integration\\protocols\\migration_guides.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.101443",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\integration\\protocols\\migration_otclient_to_canary.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\integration\\protocols\\migration_otclient_to_canary.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.125064",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\exercises\\challenges\\README.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\exercises\\challenges\\README.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.191429",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\exercises\\practice\\README.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\exercises\\practice\\README.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.225580",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\exercises\\projects\\README.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\exercises\\projects\\README.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.295075",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\dashboard\\metrics\\professor_status_report.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\dashboard\\metrics\\professor_status_report.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.356146",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\canary\\canary_course.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\canary\\canary_course.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.380680",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\canary\\MÓDULO-001_introdução_ao_canary.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\canary\\MÓDULO-001_introdução_ao_canary.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.447544",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\canary\\MÓDULO-002_arquitetura_core.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\canary\\MÓDULO-002_arquitetura_core.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.460185",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\canary\\MÓDULO-003_engine_de_gráficos.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\canary\\MÓDULO-003_engine_de_gráficos.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.481136",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\canary\\MÓDULO-004_protocolo_de_rede.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\canary\\MÓDULO-004_protocolo_de_rede.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.490847",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\canary\\MÓDULO-005_sistema_de_scripting.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\canary\\MÓDULO-005_sistema_de_scripting.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.511976",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\canary\\MÓDULO-006_mecânicas_do_jogo.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\canary\\MÓDULO-006_mecânicas_do_jogo.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.531930",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\canary\\README.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\canary\\README.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.609221",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\fundamentals\\fundamentals_course.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\fundamentals\\fundamentals_course.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.624977",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\fundamentals\\MÓDULO-001_introdução_à_lua.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\fundamentals\\MÓDULO-001_introdução_à_lua.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.672000",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\fundamentals\\MÓDULO-002_c++_para_jogos.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\fundamentals\\MÓDULO-002_c++_para_jogos.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.690332",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\fundamentals\\MÓDULO-003_desenvolvimento_de_jogos.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\fundamentals\\MÓDULO-003_desenvolvimento_de_jogos.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.749841",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\fundamentals\\MÓDULO-004_ferramentas_de_desenvolvimento.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\fundamentals\\MÓDULO-004_ferramentas_de_desenvolvimento.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.761581",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\fundamentals\\README.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\fundamentals\\README.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.807619",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\integration\\integration_course.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\integration\\integration_course.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.851313",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\integration\\MÓDULO-001_comparação_de_arquiteturas.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\integration\\MÓDULO-001_comparação_de_arquiteturas.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.870625",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\integration\\MÓDULO-002_análise_de_protocolos.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\integration\\MÓDULO-002_análise_de_protocolos.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.888411",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\integration\\MÓDULO-003_migração_de_código.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\integration\\MÓDULO-003_migração_de_código.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.908393",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\integration\\MÓDULO-004_padrões_de_integração.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\integration\\MÓDULO-004_padrões_de_integração.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.935992",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\integration\\README.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\integration\\README.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.947709",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\otclient\\MÓDULO-001_introdução_ao_otclient.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\otclient\\MÓDULO-001_introdução_ao_otclient.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.959157",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\otclient\\MÓDULO-002_sistema_core.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\otclient\\MÓDULO-002_sistema_core.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.972597",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\otclient\\MÓDULO-003_sistema_de_gráficos.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\otclient\\MÓDULO-003_sistema_de_gráficos.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:53.976018",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\otclient\\MÓDULO-004_sistema_de_rede.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\otclient\\MÓDULO-004_sistema_de_rede.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.003872",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\otclient\\MÓDULO-005_sistema_de_áudio.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\otclient\\MÓDULO-005_sistema_de_áudio.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.019365",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\otclient\\MÓDULO-006_framework_ui.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\otclient\\MÓDULO-006_framework_ui.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.035757",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\otclient\\MÓDULO-007_sistema_de_módulos.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\otclient\\MÓDULO-007_sistema_de_módulos.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.060859",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\otclient\\MÓDULO-008_lógica_do_jogo.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\otclient\\MÓDULO-008_lógica_do_jogo.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.173260",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\otclient\\otclient_course.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\otclient\\otclient_course.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.291739",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\courses\\otclient\\README.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\courses\\otclient\\README.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.409827",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\canary\\guides\\api_reference.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\canary\\guides\\api_reference.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.525826",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\canary\\guides\\architecture_diagram.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\canary\\guides\\architecture_diagram.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.630714",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\canary\\guides\\cpp_analysis.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\canary\\guides\\cpp_analysis.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.644478",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\canary\\guides\\dependencies.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\canary\\guides\\dependencies.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.678878",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\canary\\guides\\design_patterns.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\canary\\guides\\design_patterns.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.706326",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\canary\\guides\\Documentation_Template.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\canary\\guides\\Documentation_Template.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.710956",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\canary\\guides\\epic_2_1_3_lua_analysis_report.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\canary\\guides\\epic_2_1_3_lua_analysis_report.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.729106",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\canary\\guides\\lua_api_reference.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\canary\\guides\\lua_api_reference.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.739589",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\canary\\guides\\lua_modules.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\canary\\guides\\lua_modules.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.753219",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\canary\\guides\\lua_usage_guides.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\canary\\guides\\lua_usage_guides.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.760808",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\canary\\guides\\project_structure.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\canary\\guides\\project_structure.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.772864",
+      "action": "consolidate",
+      "details": "Consolidado: C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\docs\\src\\canary\\guides\\README.md -> C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\legacy_docs\\src\\canary\\guides\\README.md"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.790405",
+      "action": "remove",
+      "details": "Removida pasta: generated"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.802818",
+      "action": "remove",
+      "details": "Removida pasta: scripts"
+    },
+    {
+      "timestamp": "2025-08-01T15:21:54.827846",
+      "action": "remove",
+      "details": "Removida pasta: modules"
+    }
+  ],
+  "summary": {
+    "total_actions": 366,
+    "migrations": 5,
+    "removals": 3,
+    "consolidations": 358
+  }
+}

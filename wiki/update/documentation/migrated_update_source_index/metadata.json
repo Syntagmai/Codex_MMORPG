@@ -1,0 +1,268 @@
+{
+  "module": {
+    "name": "migrated_update_source_index",
+    "path": "wiki\\update\\modules\\maps\\source_indexer\\migrated_update_source_index.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 11
+      },
+      {
+        "name": "scan_source_files",
+        "docstring": "Escaneia arquivos de código-fonte nos submódulos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 34
+      },
+      {
+        "name": "categorize_file",
+        "docstring": "Categoriza um arquivo baseado em seu caminho e conteúdo",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 32
+      },
+      {
+        "name": "extract_functions",
+        "docstring": "Extrai funções de um arquivo",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "extract_classes",
+        "docstring": "Extrai classes de um arquivo",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 15
+      },
+      {
+        "name": "generate_source_index",
+        "docstring": "Gera o índice completo do código-fonte",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 44
+      },
+      {
+        "name": "generate_statistics",
+        "docstring": "Gera estatísticas do código-fonte",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 26
+      },
+      {
+        "name": "generate_search_index",
+        "docstring": "Gera índice de busca",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 27
+      },
+      {
+        "name": "save_index",
+        "docstring": "Salva o índice em arquivo JSON",
+        "parameters": [
+          "self",
+          "source_index",
+          "output_file"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 13
+      }
+    ],
+    "classes": [
+      {
+        "name": "SourceIndexer",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 11
+          },
+          {
+            "name": "scan_source_files",
+            "docstring": "Escaneia arquivos de código-fonte nos submódulos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 34
+          },
+          {
+            "name": "categorize_file",
+            "docstring": "Categoriza um arquivo baseado em seu caminho e conteúdo",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 32
+          },
+          {
+            "name": "extract_functions",
+            "docstring": "Extrai funções de um arquivo",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "extract_classes",
+            "docstring": "Extrai classes de um arquivo",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 15
+          },
+          {
+            "name": "generate_source_index",
+            "docstring": "Gera o índice completo do código-fonte",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 44
+          },
+          {
+            "name": "generate_statistics",
+            "docstring": "Gera estatísticas do código-fonte",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 26
+          },
+          {
+            "name": "generate_search_index",
+            "docstring": "Gera índice de busca",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 27
+          },
+          {
+            "name": "save_index",
+            "docstring": "Salva o índice em arquivo JSON",
+            "parameters": [
+              "self",
+              "source_index",
+              "output_file"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 13
+          }
+        ],
+        "attributes": [
+          "source_extensions",
+          "source_files",
+          "otclient_src_dir",
+          "otclient_modules_dir",
+          "canary_src_dir",
+          "canary_modules_dir",
+          "path_lower",
+          "functions",
+          "classes",
+          "source_files",
+          "statistics",
+          "search_index",
+          "source_index",
+          "stats",
+          "search_index",
+          "category",
+          "functions",
+          "classes",
+          "file_info",
+          "output_path",
+          "content",
+          "lua_functions",
+          "cpp_functions",
+          "content",
+          "cpp_classes",
+          "ext",
+          "file_name"
+        ],
+        "inheritance": [],
+        "line_count": 238
+      }
+    ],
+    "imports": [
+      ".SourceindexerModule",
+      "json",
+      "re",
+      "datetime.datetime"
+    ],
+    "line_count": 301,
+    "complexity_score": 55
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:56.660101"
+}

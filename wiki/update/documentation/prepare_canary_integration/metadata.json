@@ -1,0 +1,271 @@
+{
+  "module": {
+    "name": "prepare_canary_integration",
+    "path": "wiki\\update\\prepare_canary_integration.py",
+    "docstring": "Script para preparar a wiki do OTClient para integração com Canary\nAdiciona tags de integração, referências cruzadas e estrutura para ecossistema completo",
+    "functions": [
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "wiki_dir"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 38
+      },
+      {
+        "name": "create_integration_structure",
+        "docstring": "Cria estrutura de pastas para integração",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 12
+      },
+      {
+        "name": "add_integration_tags",
+        "docstring": "Adiciona tags de integração aos documentos existentes",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 10
+      },
+      {
+        "name": "add_tags_to_file",
+        "docstring": "Adiciona tags de integração a um arquivo específico",
+        "parameters": [
+          "self",
+          "file_path",
+          "tags"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 36
+      },
+      {
+        "name": "add_integration_sections",
+        "docstring": "Adiciona seções de integração aos documentos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 10
+      },
+      {
+        "name": "add_integration_section_to_file",
+        "docstring": "Adiciona seção de integração a um arquivo específico",
+        "parameters": [
+          "self",
+          "file_path",
+          "area"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 22
+      },
+      {
+        "name": "create_integration_section",
+        "docstring": "Cria seção de integração baseada na área",
+        "parameters": [
+          "self",
+          "area"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 84
+      },
+      {
+        "name": "create_integration_documents",
+        "docstring": "Cria documentos específicos de integração",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 135
+      },
+      {
+        "name": "update_maps_for_integration",
+        "docstring": "Atualiza mapas JSON para incluir informações de integração",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 37
+      },
+      {
+        "name": "prepare_integration",
+        "docstring": "Executa todo o processo de preparação para integração",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 20
+      }
+    ],
+    "classes": [
+      {
+        "name": "CanaryIntegrationPreparer",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "wiki_dir"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 38
+          },
+          {
+            "name": "create_integration_structure",
+            "docstring": "Cria estrutura de pastas para integração",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 12
+          },
+          {
+            "name": "add_integration_tags",
+            "docstring": "Adiciona tags de integração aos documentos existentes",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 10
+          },
+          {
+            "name": "add_tags_to_file",
+            "docstring": "Adiciona tags de integração a um arquivo específico",
+            "parameters": [
+              "self",
+              "file_path",
+              "tags"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 36
+          },
+          {
+            "name": "add_integration_sections",
+            "docstring": "Adiciona seções de integração aos documentos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 10
+          },
+          {
+            "name": "add_integration_section_to_file",
+            "docstring": "Adiciona seção de integração a um arquivo específico",
+            "parameters": [
+              "self",
+              "file_path",
+              "area"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 22
+          },
+          {
+            "name": "create_integration_section",
+            "docstring": "Cria seção de integração baseada na área",
+            "parameters": [
+              "self",
+              "area"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 84
+          },
+          {
+            "name": "create_integration_documents",
+            "docstring": "Cria documentos específicos de integração",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 135
+          },
+          {
+            "name": "update_maps_for_integration",
+            "docstring": "Atualiza mapas JSON para incluir informações de integração",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 37
+          },
+          {
+            "name": "prepare_integration",
+            "docstring": "Executa todo o processo de preparação para integração",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 20
+          }
+        ],
+        "attributes": [
+          "subdirs",
+          "integration_section",
+          "main_integration",
+          "tags_file",
+          "content",
+          "parts",
+          "content",
+          "content",
+          "integration_tags",
+          "integration_files",
+          "file_path",
+          "frontmatter",
+          "content_body",
+          "current_tags",
+          "content",
+          "file_path",
+          "tags_data",
+          "existing_tags",
+          "new_tags_str",
+          "frontmatter"
+        ],
+        "inheritance": [],
+        "line_count": 423
+      }
+    ],
+    "imports": [
+      "os",
+      "json",
+      "re",
+      "datetime.datetime",
+      "pathlib.Path",
+      "typing.Dict",
+      "typing.List",
+      "typing.Any"
+    ],
+    "line_count": 440,
+    "complexity_score": 26
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:51.768019"
+}

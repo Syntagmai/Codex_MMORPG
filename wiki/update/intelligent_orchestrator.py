@@ -1,3 +1,9 @@
+from datetime import datetime
+from typing import Dict, List, Any, Optional
+import json
+import re
+import time
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -5,11 +11,6 @@ Sistema de Orquestração Inteligente para Agentes BMAD
 Detecta automaticamente o contexto e coordena agentes sem comandos manuais
 """
 
-import json
-import re
-import time
-from datetime import datetime
-from typing import Dict, List, Any, Optional
 
 class IntelligentOrchestrator:
     """Sistema de orquestração inteligente para agentes BMAD"""

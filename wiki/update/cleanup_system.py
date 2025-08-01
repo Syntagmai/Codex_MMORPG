@@ -1,3 +1,9 @@
+from datetime import datetime
+from pathlib import Path
+import json
+import os
+import shutil
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -5,11 +11,6 @@ Script de Limpeza e Organização do Sistema
 Organiza arquivos temporários e relatórios conforme regras de limpeza
 """
 
-import os
-import shutil
-import json
-from datetime import datetime
-from pathlib import Path
 
 class SystemCleanup:
     """Sistema de limpeza e organização automática"""

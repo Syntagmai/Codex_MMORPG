@@ -1,0 +1,626 @@
+{
+  "module": {
+    "name": "migrated_integration_workflow",
+    "path": "wiki\\update\\modules\\agents\\workflow_manager\\migrated_integration_workflow.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal do Integration Workflow.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 42
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 39
+      },
+      {
+        "name": "run_full_integration",
+        "docstring": "Executa o workflow completo de integração.\n\nReturns:\n    Dict com resultados do workflow",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 71
+      },
+      {
+        "name": "_execute_phase",
+        "docstring": "Executa uma fase específica do workflow.\n\nArgs:\n    phase: Nome da fase\n    \nReturns:\n    Dict com resultado da fase",
+        "parameters": [
+          "self",
+          "phase"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 44
+      },
+      {
+        "name": "_phase_preparation",
+        "docstring": "Fase de preparação do ambiente.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 37
+      },
+      {
+        "name": "_phase_structure_validation",
+        "docstring": "Fase de validação da estrutura.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 27
+      },
+      {
+        "name": "_phase_compatibility_check",
+        "docstring": "Fase de verificação de compatibilidade.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 35
+      },
+      {
+        "name": "_phase_template_creation",
+        "docstring": "Fase de criação de templates.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 18
+      },
+      {
+        "name": "_phase_workflow_setup",
+        "docstring": "Fase de configuração de workflows.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 18
+      },
+      {
+        "name": "_phase_integration_testing",
+        "docstring": "Fase de testes de integração.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "_phase_conflict_resolution",
+        "docstring": "Fase de resolução de conflitos.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 18
+      },
+      {
+        "name": "_phase_final_integration",
+        "docstring": "Fase de integração final.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 18
+      },
+      {
+        "name": "_phase_validation",
+        "docstring": "Fase de validação final.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 18
+      },
+      {
+        "name": "_phase_deployment",
+        "docstring": "Fase de deploy.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 18
+      },
+      {
+        "name": "_check_permissions",
+        "docstring": "Verifica permissões de escrita.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      },
+      {
+        "name": "_validate_integration_structure",
+        "docstring": "Valida estrutura de integração.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "_check_api_compatibility",
+        "docstring": "Verifica compatibilidade de APIs.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "_check_format_compatibility",
+        "docstring": "Verifica compatibilidade de formatos.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "_check_dependency_compatibility",
+        "docstring": "Verifica compatibilidade de dependências.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "_create_integration_templates",
+        "docstring": "Cria templates de integração.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "_setup_integration_workflows",
+        "docstring": "Configura workflows de integração.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 15
+      },
+      {
+        "name": "_run_integration_tests",
+        "docstring": "Executa testes de integração.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "_resolve_integration_conflicts",
+        "docstring": "Resolve conflitos de integração.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "_execute_final_integration",
+        "docstring": "Executa integração final.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 6
+      },
+      {
+        "name": "_execute_final_validation",
+        "docstring": "Executa validação final.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 6
+      },
+      {
+        "name": "_execute_deployment",
+        "docstring": "Executa deploy.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 6
+      },
+      {
+        "name": "_rollback_phase",
+        "docstring": "Executa rollback de uma fase.",
+        "parameters": [
+          "self",
+          "phase"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 4
+      },
+      {
+        "name": "get_workflow_status",
+        "docstring": "Obtém status atual do workflow.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      }
+    ],
+    "classes": [
+      {
+        "name": "IntegrationWorkflow",
+        "docstring": "Workflow de integração total entre OTClient e Canary.\n\nResponsabilidades:\n- Coordenar todas as etapas de integração\n- Executar validações de compatibilidade\n- Gerenciar conflitos e resoluções\n- Gerar relatórios de progresso\n- Manter rastreabilidade completa",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 39
+          },
+          {
+            "name": "run_full_integration",
+            "docstring": "Executa o workflow completo de integração.\n\nReturns:\n    Dict com resultados do workflow",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 71
+          },
+          {
+            "name": "_execute_phase",
+            "docstring": "Executa uma fase específica do workflow.\n\nArgs:\n    phase: Nome da fase\n    \nReturns:\n    Dict com resultado da fase",
+            "parameters": [
+              "self",
+              "phase"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 44
+          },
+          {
+            "name": "_phase_preparation",
+            "docstring": "Fase de preparação do ambiente.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 37
+          },
+          {
+            "name": "_phase_structure_validation",
+            "docstring": "Fase de validação da estrutura.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 27
+          },
+          {
+            "name": "_phase_compatibility_check",
+            "docstring": "Fase de verificação de compatibilidade.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 35
+          },
+          {
+            "name": "_phase_template_creation",
+            "docstring": "Fase de criação de templates.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 18
+          },
+          {
+            "name": "_phase_workflow_setup",
+            "docstring": "Fase de configuração de workflows.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 18
+          },
+          {
+            "name": "_phase_integration_testing",
+            "docstring": "Fase de testes de integração.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          },
+          {
+            "name": "_phase_conflict_resolution",
+            "docstring": "Fase de resolução de conflitos.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 18
+          },
+          {
+            "name": "_phase_final_integration",
+            "docstring": "Fase de integração final.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 18
+          },
+          {
+            "name": "_phase_validation",
+            "docstring": "Fase de validação final.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 18
+          },
+          {
+            "name": "_phase_deployment",
+            "docstring": "Fase de deploy.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 18
+          },
+          {
+            "name": "_check_permissions",
+            "docstring": "Verifica permissões de escrita.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          },
+          {
+            "name": "_validate_integration_structure",
+            "docstring": "Valida estrutura de integração.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "_check_api_compatibility",
+            "docstring": "Verifica compatibilidade de APIs.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "_check_format_compatibility",
+            "docstring": "Verifica compatibilidade de formatos.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "_check_dependency_compatibility",
+            "docstring": "Verifica compatibilidade de dependências.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "_create_integration_templates",
+            "docstring": "Cria templates de integração.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "_setup_integration_workflows",
+            "docstring": "Configura workflows de integração.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 15
+          },
+          {
+            "name": "_run_integration_tests",
+            "docstring": "Executa testes de integração.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "_resolve_integration_conflicts",
+            "docstring": "Resolve conflitos de integração.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "_execute_final_integration",
+            "docstring": "Executa integração final.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 6
+          },
+          {
+            "name": "_execute_final_validation",
+            "docstring": "Executa validação final.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 6
+          },
+          {
+            "name": "_execute_deployment",
+            "docstring": "Executa deploy.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 6
+          },
+          {
+            "name": "_rollback_phase",
+            "docstring": "Executa rollback de uma fase.",
+            "parameters": [
+              "self",
+              "phase"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 4
+          },
+          {
+            "name": "get_workflow_status",
+            "docstring": "Obtém status atual do workflow.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          }
+        ],
+        "attributes": [
+          "required_components",
+          "issues",
+          "templates",
+          "workflows",
+          "start_time",
+          "results",
+          "end_time",
+          "duration",
+          "total_phases",
+          "completed_phases",
+          "failed_phases",
+          "workflow_result",
+          "required_dirs",
+          "structure_validation",
+          "api_compatibility",
+          "format_compatibility",
+          "dependency_compatibility",
+          "overall_score",
+          "templates_created",
+          "workflows_configured",
+          "test_results",
+          "conflicts_resolved",
+          "integration_result",
+          "validation_result",
+          "deployment_result",
+          "test_file",
+          "template_path",
+          "workflow_path",
+          "phase_result"
+        ],
+        "inheritance": [],
+        "line_count": 551
+      }
+    ],
+    "imports": [
+      ".WorkflowmanagerModule",
+      "sys",
+      "json",
+      "logging",
+      "argparse",
+      "datetime.datetime"
+    ],
+    "line_count": 673,
+    "complexity_score": 48
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:59.628248"
+}

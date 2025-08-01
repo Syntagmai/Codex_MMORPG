@@ -1,0 +1,18 @@
+{
+  "module_name": "content_validator",
+  "description": "Validação de conteúdo",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "documentation",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.902740",
+  "migrated_scripts": [
+    {
+      "name": "update_json_maps.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\update_json_maps.py",
+      "migration_date": "2025-08-01T12:21:35.587020",
+      "status": "migrated"
+    }
+  ]
+}

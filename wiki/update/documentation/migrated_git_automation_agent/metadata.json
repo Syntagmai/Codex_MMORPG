@@ -1,0 +1,687 @@
+{
+  "module": {
+    "name": "migrated_git_automation_agent",
+    "path": "wiki\\update\\modules\\agents\\agent_orchestrator\\migrated_git_automation_agent.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal do agente.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 127
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "Inicializa o agente de automação Git.\n\nArgs:\n    project_root: Caminho raiz do projeto",
+        "parameters": [
+          "self",
+          "project_root"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 45
+      },
+      {
+        "name": "validate_file_exists",
+        "docstring": "Valida se um arquivo existe antes de tentar adicioná-lo.\n\nArgs:\n    file_path: Caminho do arquivo\n    \nReturns:\n    True se o arquivo existe",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 15
+      },
+      {
+        "name": "safe_add_file",
+        "docstring": "Adiciona um arquivo de forma segura, validando sua existência.\n\nArgs:\n    file_path: Caminho do arquivo\n    \nReturns:\n    True se adicionado com sucesso",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 33
+      },
+      {
+        "name": "analyze_changes",
+        "docstring": "Analisa mudanças no repositório Git.\n\nReturns:\n    Dicionário com informações das mudanças",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 70
+      },
+      {
+        "name": "_detect_task_context",
+        "docstring": "Detecta contexto de tarefa atual.\n\nReturns:\n    Informações do contexto de tarefa",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 30
+      },
+      {
+        "name": "_detect_open_files",
+        "docstring": "Detecta arquivos abertos no IDE.\n\nReturns:\n    Lista de arquivos abertos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 25
+      },
+      {
+        "name": "_analyze_commit_groups",
+        "docstring": "Analisa e agrupa mudanças para commits separados.\n\nArgs:\n    changes: Dicionário com informações das mudanças\n    \nReturns:\n    Lista de grupos de commit",
+        "parameters": [
+          "self",
+          "changes"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 52
+      },
+      {
+        "name": "_group_by_directory",
+        "docstring": "Agrupa arquivos por diretório.\n\nArgs:\n    files: Lista de arquivos\n    \nReturns:\n    Lista de grupos por diretório",
+        "parameters": [
+          "self",
+          "files"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 24
+      },
+      {
+        "name": "_group_by_file_type",
+        "docstring": "Agrupa arquivos por tipo.\n\nArgs:\n    files: Lista de arquivos\n    \nReturns:\n    Lista de grupos por tipo",
+        "parameters": [
+          "self",
+          "files"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 24
+      },
+      {
+        "name": "_group_by_context",
+        "docstring": "Agrupa arquivos por contexto (análise de diff).\n\nArgs:\n    files: Lista de arquivos\n    \nReturns:\n    Lista de grupos por contexto",
+        "parameters": [
+          "self",
+          "files"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 30
+      },
+      {
+        "name": "_get_file_diff",
+        "docstring": "Obtém diff de um arquivo.\n\nArgs:\n    file_path: Caminho do arquivo\n    \nReturns:\n    Conteúdo do diff",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 18
+      },
+      {
+        "name": "_extract_context_from_diff",
+        "docstring": "Extrai contexto de um diff.\n\nArgs:\n    diff_content: Conteúdo do diff\n    \nReturns:\n    Contexto extraído",
+        "parameters": [
+          "self",
+          "diff_content"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 24
+      },
+      {
+        "name": "_is_similar_context",
+        "docstring": "Verifica se dois contextos são similares.\n\nArgs:\n    context1: Primeiro contexto\n    context2: Segundo contexto\n    \nReturns:\n    True se similares",
+        "parameters": [
+          "self",
+          "context1",
+          "context2"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "_consolidate_groups",
+        "docstring": "Consolida grupos sobrepostos.\n\nArgs:\n    groups: Lista de grupos\n    \nReturns:\n    Lista consolidada",
+        "parameters": [
+          "self",
+          "groups"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 30
+      },
+      {
+        "name": "_ensure_unique_files",
+        "docstring": "Garante que cada arquivo está em apenas um grupo.\n\nArgs:\n    groups: Lista de grupos\n    all_files: Lista de todos os arquivos\n    \nReturns:\n    Lista de grupos com arquivos únicos",
+        "parameters": [
+          "self",
+          "groups",
+          "all_files"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 31
+      },
+      {
+        "name": "_get_file_type",
+        "docstring": "Determina o tipo de um arquivo.\n\nArgs:\n    file_path: Caminho do arquivo\n    \nReturns:\n    Tipo do arquivo",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 36
+      },
+      {
+        "name": "_determine_type_from_files",
+        "docstring": "Determina o tipo de commit baseado em uma lista de arquivos.\n\nArgs:\n    files: Lista de arquivos\n    \nReturns:\n    Tipo de commit",
+        "parameters": [
+          "self",
+          "files"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 24
+      },
+      {
+        "name": "_generate_group_message",
+        "docstring": "Gera mensagem para um grupo de arquivos.\n\nArgs:\n    files: Lista de arquivos\n    commit_type: Tipo de commit\n    \nReturns:\n    Mensagem gerada",
+        "parameters": [
+          "self",
+          "files",
+          "commit_type"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 32
+      },
+      {
+        "name": "_determine_commit_type",
+        "docstring": "Determina o tipo de commit baseado nas mudanças.\n\nArgs:\n    changes: Dicionário com informações das mudanças\n    \nReturns:\n    Tipo de commit convencional",
+        "parameters": [
+          "self",
+          "changes"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 38
+      },
+      {
+        "name": "_generate_change_summary",
+        "docstring": "Gera resumo das mudanças em português.\n\nArgs:\n    changes: Dicionário com informações das mudanças\n    \nReturns:\n    Resumo das mudanças",
+        "parameters": [
+          "self",
+          "changes"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 30
+      },
+      {
+        "name": "generate_commit_message",
+        "docstring": "Gera mensagem de commit inteligente em português.\n\nArgs:\n    changes: Dicionário com informações das mudanças\n    \nReturns:\n    Mensagem de commit formatada",
+        "parameters": [
+          "self",
+          "changes"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 67
+      },
+      {
+        "name": "validate_commit_message",
+        "docstring": "Valida mensagem de commit seguindo boas práticas.\n\nArgs:\n    message: Mensagem de commit a ser validada\n    \nReturns:\n    Resultado da validação",
+        "parameters": [
+          "self",
+          "message"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 74
+      },
+      {
+        "name": "execute_commit",
+        "docstring": "Executa commit com validação.\n\nArgs:\n    message: Mensagem de commit\n    auto_push: Se deve fazer push automático\n    \nReturns:\n    Resultado da execução",
+        "parameters": [
+          "self",
+          "message",
+          "auto_push"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 94
+      },
+      {
+        "name": "auto_commit",
+        "docstring": "Executa commit automático completo.\n\nArgs:\n    auto_push: Se deve fazer push automático\n    \nReturns:\n    Resultado da execução",
+        "parameters": [
+          "self",
+          "auto_push"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 29
+      },
+      {
+        "name": "execute_multiple_commits",
+        "docstring": "Executa múltiplos commits baseado nos grupos.\n\nArgs:\n    commit_groups: Lista de grupos de commit\n    auto_push: Se deve fazer push automático\n    \nReturns:\n    Lista de resultados dos commits",
+        "parameters": [
+          "self",
+          "commit_groups",
+          "auto_push"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 41
+      }
+    ],
+    "classes": [
+      {
+        "name": "GitAutomationAgentFixed",
+        "docstring": "Agente de automação Git com boas práticas em português - VERSÃO CORRIGIDA.",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "Inicializa o agente de automação Git.\n\nArgs:\n    project_root: Caminho raiz do projeto",
+            "parameters": [
+              "self",
+              "project_root"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 45
+          },
+          {
+            "name": "validate_file_exists",
+            "docstring": "Valida se um arquivo existe antes de tentar adicioná-lo.\n\nArgs:\n    file_path: Caminho do arquivo\n    \nReturns:\n    True se o arquivo existe",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 15
+          },
+          {
+            "name": "safe_add_file",
+            "docstring": "Adiciona um arquivo de forma segura, validando sua existência.\n\nArgs:\n    file_path: Caminho do arquivo\n    \nReturns:\n    True se adicionado com sucesso",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 33
+          },
+          {
+            "name": "analyze_changes",
+            "docstring": "Analisa mudanças no repositório Git.\n\nReturns:\n    Dicionário com informações das mudanças",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 70
+          },
+          {
+            "name": "_detect_task_context",
+            "docstring": "Detecta contexto de tarefa atual.\n\nReturns:\n    Informações do contexto de tarefa",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 30
+          },
+          {
+            "name": "_detect_open_files",
+            "docstring": "Detecta arquivos abertos no IDE.\n\nReturns:\n    Lista de arquivos abertos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 25
+          },
+          {
+            "name": "_analyze_commit_groups",
+            "docstring": "Analisa e agrupa mudanças para commits separados.\n\nArgs:\n    changes: Dicionário com informações das mudanças\n    \nReturns:\n    Lista de grupos de commit",
+            "parameters": [
+              "self",
+              "changes"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 52
+          },
+          {
+            "name": "_group_by_directory",
+            "docstring": "Agrupa arquivos por diretório.\n\nArgs:\n    files: Lista de arquivos\n    \nReturns:\n    Lista de grupos por diretório",
+            "parameters": [
+              "self",
+              "files"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 24
+          },
+          {
+            "name": "_group_by_file_type",
+            "docstring": "Agrupa arquivos por tipo.\n\nArgs:\n    files: Lista de arquivos\n    \nReturns:\n    Lista de grupos por tipo",
+            "parameters": [
+              "self",
+              "files"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 24
+          },
+          {
+            "name": "_group_by_context",
+            "docstring": "Agrupa arquivos por contexto (análise de diff).\n\nArgs:\n    files: Lista de arquivos\n    \nReturns:\n    Lista de grupos por contexto",
+            "parameters": [
+              "self",
+              "files"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 30
+          },
+          {
+            "name": "_get_file_diff",
+            "docstring": "Obtém diff de um arquivo.\n\nArgs:\n    file_path: Caminho do arquivo\n    \nReturns:\n    Conteúdo do diff",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 18
+          },
+          {
+            "name": "_extract_context_from_diff",
+            "docstring": "Extrai contexto de um diff.\n\nArgs:\n    diff_content: Conteúdo do diff\n    \nReturns:\n    Contexto extraído",
+            "parameters": [
+              "self",
+              "diff_content"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 24
+          },
+          {
+            "name": "_is_similar_context",
+            "docstring": "Verifica se dois contextos são similares.\n\nArgs:\n    context1: Primeiro contexto\n    context2: Segundo contexto\n    \nReturns:\n    True se similares",
+            "parameters": [
+              "self",
+              "context1",
+              "context2"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 16
+          },
+          {
+            "name": "_consolidate_groups",
+            "docstring": "Consolida grupos sobrepostos.\n\nArgs:\n    groups: Lista de grupos\n    \nReturns:\n    Lista consolidada",
+            "parameters": [
+              "self",
+              "groups"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 30
+          },
+          {
+            "name": "_ensure_unique_files",
+            "docstring": "Garante que cada arquivo está em apenas um grupo.\n\nArgs:\n    groups: Lista de grupos\n    all_files: Lista de todos os arquivos\n    \nReturns:\n    Lista de grupos com arquivos únicos",
+            "parameters": [
+              "self",
+              "groups",
+              "all_files"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 31
+          },
+          {
+            "name": "_get_file_type",
+            "docstring": "Determina o tipo de um arquivo.\n\nArgs:\n    file_path: Caminho do arquivo\n    \nReturns:\n    Tipo do arquivo",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 36
+          },
+          {
+            "name": "_determine_type_from_files",
+            "docstring": "Determina o tipo de commit baseado em uma lista de arquivos.\n\nArgs:\n    files: Lista de arquivos\n    \nReturns:\n    Tipo de commit",
+            "parameters": [
+              "self",
+              "files"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 24
+          },
+          {
+            "name": "_generate_group_message",
+            "docstring": "Gera mensagem para um grupo de arquivos.\n\nArgs:\n    files: Lista de arquivos\n    commit_type: Tipo de commit\n    \nReturns:\n    Mensagem gerada",
+            "parameters": [
+              "self",
+              "files",
+              "commit_type"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 32
+          },
+          {
+            "name": "_determine_commit_type",
+            "docstring": "Determina o tipo de commit baseado nas mudanças.\n\nArgs:\n    changes: Dicionário com informações das mudanças\n    \nReturns:\n    Tipo de commit convencional",
+            "parameters": [
+              "self",
+              "changes"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 38
+          },
+          {
+            "name": "_generate_change_summary",
+            "docstring": "Gera resumo das mudanças em português.\n\nArgs:\n    changes: Dicionário com informações das mudanças\n    \nReturns:\n    Resumo das mudanças",
+            "parameters": [
+              "self",
+              "changes"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 30
+          },
+          {
+            "name": "generate_commit_message",
+            "docstring": "Gera mensagem de commit inteligente em português.\n\nArgs:\n    changes: Dicionário com informações das mudanças\n    \nReturns:\n    Mensagem de commit formatada",
+            "parameters": [
+              "self",
+              "changes"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 67
+          },
+          {
+            "name": "validate_commit_message",
+            "docstring": "Valida mensagem de commit seguindo boas práticas.\n\nArgs:\n    message: Mensagem de commit a ser validada\n    \nReturns:\n    Resultado da validação",
+            "parameters": [
+              "self",
+              "message"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 74
+          },
+          {
+            "name": "execute_commit",
+            "docstring": "Executa commit com validação.\n\nArgs:\n    message: Mensagem de commit\n    auto_push: Se deve fazer push automático\n    \nReturns:\n    Resultado da execução",
+            "parameters": [
+              "self",
+              "message",
+              "auto_push"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 94
+          },
+          {
+            "name": "auto_commit",
+            "docstring": "Executa commit automático completo.\n\nArgs:\n    auto_push: Se deve fazer push automático\n    \nReturns:\n    Resultado da execução",
+            "parameters": [
+              "self",
+              "auto_push"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 29
+          },
+          {
+            "name": "execute_multiple_commits",
+            "docstring": "Executa múltiplos commits baseado nos grupos.\n\nArgs:\n    commit_groups: Lista de grupos de commit\n    auto_push: Se deve fazer push automático\n    \nReturns:\n    Lista de resultados dos commits",
+            "parameters": [
+              "self",
+              "commit_groups",
+              "auto_push"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 41
+          }
+        ],
+        "attributes": [
+          "groups",
+          "groups",
+          "groups",
+          "consolidated",
+          "used_files",
+          "final_groups",
+          "unused_files",
+          "changes",
+          "message",
+          "result",
+          "results",
+          "full_path",
+          "result",
+          "result",
+          "changes",
+          "task_files",
+          "open_files",
+          "cursor_temp_dir",
+          "all_files",
+          "valid_files",
+          "groups",
+          "consolidated_groups",
+          "final_groups",
+          "directory",
+          "file_type",
+          "result",
+          "lines",
+          "context_lines",
+          "similarity",
+          "merged",
+          "unique_files",
+          "file_path_lower",
+          "ext",
+          "type_counts",
+          "file_types",
+          "type_counts",
+          "descriptions",
+          "all_files",
+          "parts",
+          "commit_type",
+          "summary",
+          "task_context",
+          "body_parts",
+          "timestamp",
+          "message",
+          "validation",
+          "lines",
+          "title",
+          "conventional_pattern",
+          "validation",
+          "result",
+          "commit_result",
+          "message",
+          "result",
+          "latest_task",
+          "task_content",
+          "task_id_match",
+          "task_title_match",
+          "dir_groups",
+          "type_groups",
+          "context_groups",
+          "common_files",
+          "file_type",
+          "task_id",
+          "title",
+          "title",
+          "modified_files",
+          "added_files",
+          "deleted_files",
+          "untracked_files",
+          "push_result",
+          "error_msg",
+          "error_msg",
+          "push_result",
+          "status",
+          "file_path",
+          "merged",
+          "content"
+        ],
+        "inheritance": [],
+        "line_count": 983
+      }
+    ],
+    "imports": [
+      ".AgentorchestratorModule",
+      "subprocess",
+      "re",
+      "logging",
+      "datetime.datetime",
+      "sys",
+      "argparse",
+      "difflib"
+    ],
+    "line_count": 1200,
+    "complexity_score": 156
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:58.867602"
+}

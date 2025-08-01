@@ -1,14 +1,15 @@
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Any
+import json
+import os
+import re
+
 #!/usr/bin/env python3
 """
 Script para expansão abrangente da wiki do OTClient
 Integra conteúdo do habdel e cria documentação completa
 """
-import os
-import json
-import re
-from datetime import datetime
-from pathlib import Path
-from typing import Dict, List, Any
 
 class WikiExpander:
     def __init__(self, wiki_dir: str = "wiki"):

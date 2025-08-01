@@ -1,0 +1,58 @@
+from .migrated_git_task_integration import integrate_with_module
+from .migrated_create_module_simple import integrate_with_module
+from .migrated_auto_learning_system import integrate_with_module
+from .migrated_data_collector import integrate_with_module
+from .migrated_example_integration import integrate_with_module
+from .migrated_feedback_system import integrate_with_module
+from .migrated_optimization_engine import integrate_with_module
+from .migrated_rules_learning_integration import integrate_with_module
+from .migrated_visualization_interface import integrate_with_module
+from .migrated_advanced_prompt_system import integrate_with_module
+from .migrated_prompt_evaluator import integrate_with_module
+from .migrated_prompt_learning_integration import integrate_with_module
+from .migrated_prompt_optimizer import integrate_with_module
+
+
+
+
+
+
+
+
+
+
+
+
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Automação Git
+
+Módulo: git_automation
+Descrição: Automação Git
+Responsável: Git Automation Agent
+"""
+
+__version__ = "1.0.0"
+__author__ = "Sistema BMAD"
+__description__ = "Automação Git"
+
+class GitautomationModule:
+    """Módulo Automação Git"""
+    
+    def __init__(self):
+        self.name = "git_automation"
+        self.description = "Automação Git"
+        self.version = "1.0.0"
+    
+    def execute(self, *args, **kwargs):
+        """Executa o módulo"""
+        raise NotImplementedError("Método execute deve ser implementado")
+    
+    def validate(self, *args, **kwargs):
+        """Valida o módulo"""
+        raise NotImplementedError("Método validate deve ser implementado")
+
+# Instância principal do módulo
+module = GitautomationModule()

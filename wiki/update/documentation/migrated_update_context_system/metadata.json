@@ -1,0 +1,447 @@
+{
+  "module": {
+    "name": "migrated_update_context_system",
+    "path": "wiki\\update\\modules\\tools\\config_manager\\migrated_update_context_system.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 17
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 4
+      },
+      {
+        "name": "update_enhanced_context_system",
+        "docstring": "Atualiza o sistema de contexto avançado",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 73
+      },
+      {
+        "name": "update_intelligent_navigation",
+        "docstring": "Atualiza o sistema de navegação inteligente",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 22
+      },
+      {
+        "name": "analyze_directory_structure",
+        "docstring": "Analisa a estrutura de diretórios atual",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 41
+      },
+      {
+        "name": "get_key_files",
+        "docstring": "Obtém arquivos-chave de um diretório",
+        "parameters": [
+          "self",
+          "path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 6
+      },
+      {
+        "name": "get_wiki_subdirectories",
+        "docstring": "Obtém subdiretórios da wiki",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "get_source_components",
+        "docstring": "Obtém componentes do código-fonte",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      },
+      {
+        "name": "get_module_categories",
+        "docstring": "Obtém categorias de módulos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      },
+      {
+        "name": "get_data_categories",
+        "docstring": "Obtém categorias de dados",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      },
+      {
+        "name": "get_navigation_system",
+        "docstring": "Obtém configuração do sistema de navegação",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 53
+      },
+      {
+        "name": "get_performance_config",
+        "docstring": "Obtém configuração de performance",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "get_context_detection",
+        "docstring": "Obtém configuração de detecção de contexto",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 10
+      },
+      {
+        "name": "get_integration_status",
+        "docstring": "Obtém status de integração",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "get_navigation_patterns",
+        "docstring": "Obtém padrões de navegação",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 66
+      },
+      {
+        "name": "get_smart_caching",
+        "docstring": "Obtém configuração de cache inteligente",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 45
+      },
+      {
+        "name": "get_performance_metrics",
+        "docstring": "Obtém métricas de performance",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 28
+      },
+      {
+        "name": "get_context_switching",
+        "docstring": "Obtém configuração de troca de contexto",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 23
+      },
+      {
+        "name": "get_error_recovery",
+        "docstring": "Obtém configuração de recuperação de erros",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 22
+      },
+      {
+        "name": "generate_report",
+        "docstring": "Gera relatório de atualização",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 30
+      }
+    ],
+    "classes": [
+      {
+        "name": "ContextSystemUpdater",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 4
+          },
+          {
+            "name": "update_enhanced_context_system",
+            "docstring": "Atualiza o sistema de contexto avançado",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 73
+          },
+          {
+            "name": "update_intelligent_navigation",
+            "docstring": "Atualiza o sistema de navegação inteligente",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 22
+          },
+          {
+            "name": "analyze_directory_structure",
+            "docstring": "Analisa a estrutura de diretórios atual",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 41
+          },
+          {
+            "name": "get_key_files",
+            "docstring": "Obtém arquivos-chave de um diretório",
+            "parameters": [
+              "self",
+              "path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 6
+          },
+          {
+            "name": "get_wiki_subdirectories",
+            "docstring": "Obtém subdiretórios da wiki",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "get_source_components",
+            "docstring": "Obtém componentes do código-fonte",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          },
+          {
+            "name": "get_module_categories",
+            "docstring": "Obtém categorias de módulos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          },
+          {
+            "name": "get_data_categories",
+            "docstring": "Obtém categorias de dados",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          },
+          {
+            "name": "get_navigation_system",
+            "docstring": "Obtém configuração do sistema de navegação",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 53
+          },
+          {
+            "name": "get_performance_config",
+            "docstring": "Obtém configuração de performance",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          },
+          {
+            "name": "get_context_detection",
+            "docstring": "Obtém configuração de detecção de contexto",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 10
+          },
+          {
+            "name": "get_integration_status",
+            "docstring": "Obtém status de integração",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "get_navigation_patterns",
+            "docstring": "Obtém padrões de navegação",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 66
+          },
+          {
+            "name": "get_smart_caching",
+            "docstring": "Obtém configuração de cache inteligente",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 45
+          },
+          {
+            "name": "get_performance_metrics",
+            "docstring": "Obtém métricas de performance",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 28
+          },
+          {
+            "name": "get_context_switching",
+            "docstring": "Obtém configuração de troca de contexto",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 23
+          },
+          {
+            "name": "get_error_recovery",
+            "docstring": "Obtém configuração de recuperação de erros",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 22
+          },
+          {
+            "name": "generate_report",
+            "docstring": "Gera relatório de atualização",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 30
+          }
+        ],
+        "attributes": [
+          "structure",
+          "context_data",
+          "output_file",
+          "navigation_data",
+          "output_file",
+          "structure",
+          "key_files",
+          "subdirs",
+          "src_path",
+          "components",
+          "modules_path",
+          "categories",
+          "data_path",
+          "categories",
+          "report",
+          "report_file"
+        ],
+        "inheritance": [],
+        "line_count": 519
+      }
+    ],
+    "imports": [
+      ".ConfigmanagerModule",
+      "json"
+    ],
+    "line_count": 585,
+    "complexity_score": 20
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:52.642610"
+}

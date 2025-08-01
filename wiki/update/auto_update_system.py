@@ -1,3 +1,17 @@
+            import psutil
+    from auto_monitor import AutoMonitor
+    from auto_optimizer import AutoOptimizer
+    from auto_updater import AutoUpdater
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+import json
+import logging
+import subprocess
+import sys
+import threading
+import time
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -5,21 +19,9 @@ Sistema de Auto-Atualização Integrado BMAD
 Coordena auto-monitoramento, auto-atualização e auto-otimização
 """
 
-import json
-import time
-import threading
-import subprocess
-import sys
-from datetime import datetime
-from pathlib import Path
-from typing import Dict, List, Any, Optional
-import logging
 
 # Importar componentes do sistema
 try:
-    from auto_monitor import AutoMonitor
-    from auto_updater import AutoUpdater
-    from auto_optimizer import AutoOptimizer
 except ImportError:
     print("Componentes do sistema não encontrados. Criando classes básicas...")
     
@@ -490,7 +492,6 @@ class AutoUpdateSystem:
     def measure_memory_usage(self) -> float:
         """Mede uso de memória"""
         try:
-            import psutil
             return psutil.virtual_memory().percent
         except ImportError:
             return 50.0  # Estimativa padrão

@@ -1,3 +1,12 @@
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+import json
+import subprocess
+import sys
+import time
+import traceback
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -5,14 +14,6 @@ Sistema de Resolução de Erros para Scripts Python
 Resolve automaticamente problemas de execução em scripts Python
 """
 
-import json
-import subprocess
-import sys
-import traceback
-import time
-from datetime import datetime
-from pathlib import Path
-from typing import Dict, List, Any, Optional
 
 class PythonErrorResolver:
     def __init__(self):

@@ -1,3 +1,10 @@
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Any, Optional, Tuple
+import json
+import os
+import time
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -5,12 +12,6 @@ Sistema de Validação de Integridade AAA
 Valida compatibilidade entre sistema AAA e sistema existente
 """
 
-import os
-import json
-import time
-from datetime import datetime
-from typing import Dict, List, Any, Optional, Tuple
-from pathlib import Path
 
 class AAAIntegrationValidator:
     """Sistema de validação de integridade para sistema AAA"""

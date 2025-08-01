@@ -1,3 +1,14 @@
+    import argparse
+from datetime import datetime, timedelta
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+import json
+import logging
+import os
+import psutil
+import threading
+import time
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -11,15 +22,6 @@ Autor: Sistema BMAD - OTClient Documentation
 Data: 2024-12-19
 """
 
-import json
-import os
-import time
-import psutil
-import threading
-from pathlib import Path
-from typing import Dict, List, Any, Optional
-from datetime import datetime, timedelta
-import logging
 
 # Configuração de logging
 logging.basicConfig(
@@ -393,7 +395,6 @@ class PerformanceMonitor:
 
 def main():
     """Função principal do script."""
-    import argparse
     
     parser = argparse.ArgumentParser(description='Monitor de Performance OTClient')
     parser.add_argument('action', choices=['start', 'stop', 'status', 'report'],

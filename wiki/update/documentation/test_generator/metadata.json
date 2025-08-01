@@ -1,0 +1,193 @@
+{
+  "module": {
+    "name": "test_generator",
+    "path": "wiki\\update\\python_tools\\test_generator.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 1
+      },
+      {
+        "name": "generate_tests",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "source_file",
+          "test_type"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      },
+      {
+        "name": "visit_ClassDef",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "node"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      },
+      {
+        "name": "visit_FunctionDef",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "node"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "visit_AsyncFunctionDef",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "node"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      }
+    ],
+    "classes": [
+      {
+        "name": "TestGenerator",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 1
+          },
+          {
+            "name": "generate_tests",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "source_file",
+              "test_type"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 16
+          }
+        ],
+        "attributes": [
+          "tree",
+          "visitor",
+          "module_name",
+          "class_name",
+          "functions",
+          "template",
+          "content"
+        ],
+        "inheritance": [],
+        "line_count": 21
+      },
+      {
+        "name": "TestVisitor",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          },
+          {
+            "name": "visit_ClassDef",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "node"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          },
+          {
+            "name": "visit_FunctionDef",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "node"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "visit_AsyncFunctionDef",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "node"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          }
+        ],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 18
+      }
+    ],
+    "imports": [
+      "ast",
+      "json",
+      "pathlib.Path",
+      "typing.Dict",
+      "typing.List",
+      "typing.Any",
+      "typing.Optional",
+      "datetime.datetime"
+    ],
+    "line_count": 60,
+    "complexity_score": 7
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:52.485627"
+}

@@ -1,0 +1,487 @@
+{
+  "module": {
+    "name": "error_correction_agent",
+    "path": "wiki\\update\\error_correction_agent.py",
+    "docstring": "🚀 Error Correction Agent - Epic 12 Task 12.6\n=============================================\n\nScript para implementar correção automática de erros Python.\nBaseado nos resultados de validação da Task 12.5.\n\nResponsável: Error Correction Agent\nDuração: 3-4 dias\nDependência: Task 12.5 (Validação de scripts)",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal do script.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 42
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 43
+      },
+      {
+        "name": "load_validation_results",
+        "docstring": "Carrega os resultados de validação.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      },
+      {
+        "name": "get_files_with_errors",
+        "docstring": "Obtém arquivos que possuem erros para correção.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "create_backup",
+        "docstring": "Cria backup de um arquivo antes da correção.",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 10
+      },
+      {
+        "name": "fix_unterminated_string",
+        "docstring": "Corrige strings não terminadas.",
+        "parameters": [
+          "self",
+          "content",
+          "line_number"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "fix_invalid_character",
+        "docstring": "Corrige caracteres inválidos.",
+        "parameters": [
+          "self",
+          "content",
+          "line_number"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 12
+      },
+      {
+        "name": "fix_leading_zeros",
+        "docstring": "Corrige literais com zeros à esquerda.",
+        "parameters": [
+          "self",
+          "content",
+          "line_number"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "fix_line_length",
+        "docstring": "Corrige linhas muito longas.",
+        "parameters": [
+          "self",
+          "content"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 40
+      },
+      {
+        "name": "fix_naming_convention",
+        "docstring": "Corrige convenções de nomenclatura.",
+        "parameters": [
+          "self",
+          "content"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 30
+      },
+      {
+        "name": "fix_missing_docstring",
+        "docstring": "Adiciona docstrings ausentes.",
+        "parameters": [
+          "self",
+          "content"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "fix_magic_numbers",
+        "docstring": "Substitui números mágicos por constantes.",
+        "parameters": [
+          "self",
+          "content"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 23
+      },
+      {
+        "name": "fix_unused_imports",
+        "docstring": "Remove imports não utilizados.",
+        "parameters": [
+          "self",
+          "content"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 44
+      },
+      {
+        "name": "correct_file",
+        "docstring": "Corrige um arquivo Python.",
+        "parameters": [
+          "self",
+          "file_info"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 109
+      },
+      {
+        "name": "correct_all_files",
+        "docstring": "Corrige todos os arquivos com problemas.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 30
+      },
+      {
+        "name": "save_correction_results",
+        "docstring": "Salva os resultados da correção.",
+        "parameters": [
+          "self",
+          "results"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 31
+      },
+      {
+        "name": "generate_correction_report",
+        "docstring": "Gera relatório da correção.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 17
+      },
+      {
+        "name": "save_correction_report",
+        "docstring": "Salva relatório da correção.",
+        "parameters": [
+          "self",
+          "report"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      }
+    ],
+    "classes": [
+      {
+        "name": "ErrorCorrectionAgent",
+        "docstring": "Agente para correção automática de erros Python.",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 43
+          },
+          {
+            "name": "load_validation_results",
+            "docstring": "Carrega os resultados de validação.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          },
+          {
+            "name": "get_files_with_errors",
+            "docstring": "Obtém arquivos que possuem erros para correção.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "create_backup",
+            "docstring": "Cria backup de um arquivo antes da correção.",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 10
+          },
+          {
+            "name": "fix_unterminated_string",
+            "docstring": "Corrige strings não terminadas.",
+            "parameters": [
+              "self",
+              "content",
+              "line_number"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          },
+          {
+            "name": "fix_invalid_character",
+            "docstring": "Corrige caracteres inválidos.",
+            "parameters": [
+              "self",
+              "content",
+              "line_number"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 12
+          },
+          {
+            "name": "fix_leading_zeros",
+            "docstring": "Corrige literais com zeros à esquerda.",
+            "parameters": [
+              "self",
+              "content",
+              "line_number"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "fix_line_length",
+            "docstring": "Corrige linhas muito longas.",
+            "parameters": [
+              "self",
+              "content"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 40
+          },
+          {
+            "name": "fix_naming_convention",
+            "docstring": "Corrige convenções de nomenclatura.",
+            "parameters": [
+              "self",
+              "content"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 30
+          },
+          {
+            "name": "fix_missing_docstring",
+            "docstring": "Adiciona docstrings ausentes.",
+            "parameters": [
+              "self",
+              "content"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 16
+          },
+          {
+            "name": "fix_magic_numbers",
+            "docstring": "Substitui números mágicos por constantes.",
+            "parameters": [
+              "self",
+              "content"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 23
+          },
+          {
+            "name": "fix_unused_imports",
+            "docstring": "Remove imports não utilizados.",
+            "parameters": [
+              "self",
+              "content"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 44
+          },
+          {
+            "name": "correct_file",
+            "docstring": "Corrige um arquivo Python.",
+            "parameters": [
+              "self",
+              "file_info"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 109
+          },
+          {
+            "name": "correct_all_files",
+            "docstring": "Corrige todos os arquivos com problemas.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 30
+          },
+          {
+            "name": "save_correction_results",
+            "docstring": "Salva os resultados da correção.",
+            "parameters": [
+              "self",
+              "results"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 31
+          },
+          {
+            "name": "generate_correction_report",
+            "docstring": "Gera relatório da correção.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 17
+          },
+          {
+            "name": "save_correction_report",
+            "docstring": "Salva relatório da correção.",
+            "parameters": [
+              "self",
+              "report"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          }
+        ],
+        "attributes": [
+          "validation_file",
+          "files_with_errors",
+          "lines",
+          "lines",
+          "lines",
+          "lines",
+          "corrected_lines",
+          "lines",
+          "has_docstring",
+          "lines",
+          "constants",
+          "constants_added",
+          "file_path",
+          "files_with_issues",
+          "correction_results",
+          "correction_file",
+          "summary_file",
+          "summary",
+          "report_file",
+          "backup_path",
+          "line",
+          "line",
+          "cleaned_line",
+          "line",
+          "corrected_line",
+          "corrected_line",
+          "tree",
+          "name_mapping",
+          "docstring",
+          "tree",
+          "imports",
+          "used_names",
+          "lines",
+          "corrected_lines",
+          "content",
+          "original_content",
+          "corrections_made",
+          "content",
+          "result",
+          "content",
+          "has_docstring",
+          "should_keep",
+          "error_type",
+          "line_number",
+          "warning_type",
+          "parts",
+          "current_line",
+          "old_name",
+          "new_name",
+          "message",
+          "content",
+          "words",
+          "current_line",
+          "old_name",
+          "new_name",
+          "content",
+          "content",
+          "content",
+          "current_line",
+          "should_keep",
+          "content",
+          "content",
+          "current_line",
+          "content",
+          "content"
+        ],
+        "inheritance": [],
+        "line_count": 500
+      }
+    ],
+    "imports": [
+      "os",
+      "json",
+      "ast",
+      "re",
+      "shutil",
+      "pathlib.Path",
+      "typing.Dict",
+      "typing.List",
+      "typing.Any",
+      "typing.Optional",
+      "typing.Tuple",
+      "datetime.datetime",
+      "logging"
+    ],
+    "line_count": 579,
+    "complexity_score": 82
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:51.037834"
+}

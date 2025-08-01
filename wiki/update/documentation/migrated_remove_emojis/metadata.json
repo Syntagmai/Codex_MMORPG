@@ -1,0 +1,49 @@
+{
+  "module": {
+    "name": "migrated_remove_emojis",
+    "path": "wiki\\update\\modules\\documentation\\markdown_processor\\migrated_remove_emojis.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "remove_emojis_from_file",
+        "docstring": "Remove emojis de um arquivo",
+        "parameters": [
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 23
+      },
+      {
+        "name": "main",
+        "docstring": "Função principal",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      }
+    ],
+    "classes": [],
+    "imports": [
+      ".MarkdownprocessorModule",
+      "os",
+      "re"
+    ],
+    "line_count": 84,
+    "complexity_score": 7
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:57.024519"
+}

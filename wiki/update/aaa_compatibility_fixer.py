@@ -1,3 +1,11 @@
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Any, Optional, Tuple
+import json
+import os
+import shutil
+import time
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -5,13 +13,6 @@ Sistema de Correção de Compatibilidade AAA
 Corrige problemas de compatibilidade identificados na validação
 """
 
-import os
-import json
-import shutil
-import time
-from datetime import datetime
-from typing import Dict, List, Any, Optional, Tuple
-from pathlib import Path
 
 class AAACompatibilityFixer:
     """Sistema de correção de compatibilidade para sistema AAA"""

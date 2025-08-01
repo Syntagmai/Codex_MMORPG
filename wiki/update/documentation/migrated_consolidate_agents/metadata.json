@@ -1,0 +1,208 @@
+{
+  "module": {
+    "name": "migrated_consolidate_agents",
+    "path": "wiki\\update\\modules\\maps\\map_updater\\migrated_consolidate_agents.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 38
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "Inicializa o consolidador de agentes.\n\nArgs:\n    agents_dir: Diretório contendo os agentes",
+        "parameters": [
+          "self",
+          "agents_dir"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 122
+      },
+      {
+        "name": "analyze_agents",
+        "docstring": "Analisa todos os agentes existentes",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 53
+      },
+      {
+        "name": "backup_agents",
+        "docstring": "Faz backup de todos os agentes antes da consolidação",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 17
+      },
+      {
+        "name": "consolidate_group",
+        "docstring": "Consolida um grupo de agentes",
+        "parameters": [
+          "self",
+          "group_name",
+          "group_config"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 83
+      },
+      {
+        "name": "consolidate_all_agents",
+        "docstring": "Consolida todos os agentes",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 43
+      },
+      {
+        "name": "generate_consolidation_report",
+        "docstring": "Gera relatório de consolidação",
+        "parameters": [
+          "self",
+          "results"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 40
+      }
+    ],
+    "classes": [
+      {
+        "name": "AgentConsolidator",
+        "docstring": "Consolidador de agentes BMAD",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "Inicializa o consolidador de agentes.\n\nArgs:\n    agents_dir: Diretório contendo os agentes",
+            "parameters": [
+              "self",
+              "agents_dir"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 122
+          },
+          {
+            "name": "analyze_agents",
+            "docstring": "Analisa todos os agentes existentes",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 53
+          },
+          {
+            "name": "backup_agents",
+            "docstring": "Faz backup de todos os agentes antes da consolidação",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 17
+          },
+          {
+            "name": "consolidate_group",
+            "docstring": "Consolida um grupo de agentes",
+            "parameters": [
+              "self",
+              "group_name",
+              "group_config"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 83
+          },
+          {
+            "name": "consolidate_all_agents",
+            "docstring": "Consolida todos os agentes",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 43
+          },
+          {
+            "name": "generate_consolidation_report",
+            "docstring": "Gera relatório de consolidação",
+            "parameters": [
+              "self",
+              "results"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 40
+          }
+        ],
+        "attributes": [
+          "analysis",
+          "agent_files",
+          "analysis",
+          "results",
+          "final_agents",
+          "report",
+          "filename",
+          "categorized",
+          "agent_files",
+          "agents_to_merge",
+          "new_name",
+          "description",
+          "existing_agents",
+          "consolidated_agent_path",
+          "main_agent",
+          "main_agent_path",
+          "agents_in_group",
+          "backup_file",
+          "agent_path",
+          "consolidation_header",
+          "lines",
+          "header_end",
+          "new_content",
+          "success",
+          "categorized",
+          "content",
+          "header_end",
+          "agent_path"
+        ],
+        "inheritance": [],
+        "line_count": 371
+      }
+    ],
+    "imports": [
+      ".MapupdaterModule",
+      "json",
+      "shutil",
+      "datetime.datetime",
+      "logging"
+    ],
+    "line_count": 474,
+    "complexity_score": 35
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:54.637249"
+}

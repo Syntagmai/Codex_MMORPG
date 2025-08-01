@@ -1,9 +1,0 @@
-Module
-  name: Game Performance Monitor
-  description: Módulo para monitoramento de performance do jogo
-  author: BMAD AI Agent
-  website: https://github.com/edubart/otclient
-  sandboxed: true
-  scripts: [ game_performance_monitor ]
-  @onLoad: game_performance_monitorController:init()
-  @onUnload: game_performance_monitorController:terminate()

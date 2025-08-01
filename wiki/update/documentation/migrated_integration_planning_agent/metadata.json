@@ -1,0 +1,235 @@
+{
+  "module": {
+    "name": "migrated_integration_planning_agent",
+    "path": "wiki\\update\\modules\\agents\\agent_orchestrator\\migrated_integration_planning_agent.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "log_message",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "message",
+          "level"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "define_success_criteria",
+        "docstring": "Define critérios de sucesso para integração total",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 77
+      },
+      {
+        "name": "create_transition_timeline",
+        "docstring": "Cria cronograma de transição",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 75
+      },
+      {
+        "name": "adapt_educational_system",
+        "docstring": "Adapta sistema educacional para código Canary real",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 57
+      },
+      {
+        "name": "establish_validation_processes",
+        "docstring": "Estabelece processos de validação pós-integração",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 57
+      },
+      {
+        "name": "generate_integration_plan",
+        "docstring": "Gera plano completo de integração",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 40
+      },
+      {
+        "name": "execute",
+        "docstring": "Executa o planejamento de integração completo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 47
+      }
+    ],
+    "classes": [
+      {
+        "name": "IntegrationPlanningAgent",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          },
+          {
+            "name": "log_message",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "message",
+              "level"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "define_success_criteria",
+            "docstring": "Define critérios de sucesso para integração total",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 77
+          },
+          {
+            "name": "create_transition_timeline",
+            "docstring": "Cria cronograma de transição",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 75
+          },
+          {
+            "name": "adapt_educational_system",
+            "docstring": "Adapta sistema educacional para código Canary real",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 57
+          },
+          {
+            "name": "establish_validation_processes",
+            "docstring": "Estabelece processos de validação pós-integração",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 57
+          },
+          {
+            "name": "generate_integration_plan",
+            "docstring": "Gera plano completo de integração",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 40
+          },
+          {
+            "name": "execute",
+            "docstring": "Executa o planejamento de integração completo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 47
+          }
+        ],
+        "attributes": [
+          "timestamp",
+          "log_entry",
+          "log_file",
+          "success_criteria",
+          "critical_criteria",
+          "criteria_summary",
+          "start_date",
+          "transition_timeline",
+          "total_duration",
+          "end_date",
+          "timeline_summary",
+          "educational_adaptations",
+          "adaptation_summary",
+          "validation_processes",
+          "process_summary",
+          "success_criteria",
+          "transition_timeline",
+          "educational_adaptations",
+          "validation_processes",
+          "integration_plan",
+          "plan_file",
+          "criteria_result",
+          "timeline_result",
+          "educational_result",
+          "validation_result",
+          "integration_plan",
+          "final_report",
+          "report_file"
+        ],
+        "inheritance": [],
+        "line_count": 380
+      }
+    ],
+    "imports": [
+      ".AgentorchestratorModule",
+      "json",
+      "datetime.datetime",
+      "datetime.timedelta"
+    ],
+    "line_count": 428,
+    "complexity_score": 5
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:58.975634"
+}

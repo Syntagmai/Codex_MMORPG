@@ -1,0 +1,30 @@
+{
+  "module_name": "performance_monitor",
+  "description": "Monitoramento de performance",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "metrics",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.806631",
+  "migrated_scripts": [
+    {
+      "name": "performance_monitor.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\performance_monitor.py",
+      "migration_date": "2025-08-01T12:21:06.683747",
+      "status": "migrated"
+    },
+    {
+      "name": "performance_monitor.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\performance_monitor.py",
+      "migration_date": "2025-08-01T12:21:35.165151",
+      "status": "migrated"
+    },
+    {
+      "name": "performance_monitor.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\performance_monitor.py",
+      "migration_date": "2025-08-01T12:21:37.868455",
+      "status": "migrated"
+    }
+  ]
+}

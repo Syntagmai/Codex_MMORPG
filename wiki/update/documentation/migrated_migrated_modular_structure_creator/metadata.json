@@ -1,0 +1,315 @@
+{
+  "module": {
+    "name": "migrated_migrated_modular_structure_creator",
+    "path": "wiki\\update\\modules\\maps\\map_updater\\migrated_migrated_modular_structure_creator.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal do script.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 33
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 108
+      },
+      {
+        "name": "create_script_mapping",
+        "docstring": "Cria mapeamento de scripts existentes para módulos.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 65
+      },
+      {
+        "name": "create_module_structure",
+        "docstring": "Cria a estrutura modular unificada.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 41
+      },
+      {
+        "name": "create_init_file",
+        "docstring": "Cria arquivo __init__.py para categoria.",
+        "parameters": [
+          "self",
+          "path",
+          "description"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "create_module_init",
+        "docstring": "Cria arquivo __init__.py para módulo.",
+        "parameters": [
+          "self",
+          "path",
+          "module_name",
+          "description"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 38
+      },
+      {
+        "name": "create_module_files",
+        "docstring": "Cria arquivos base do módulo.",
+        "parameters": [
+          "self",
+          "path",
+          "module_name",
+          "description"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 158
+      },
+      {
+        "name": "get_category_for_module",
+        "docstring": "Retorna a categoria de um módulo.",
+        "parameters": [
+          "self",
+          "module_name"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "create_structure_config",
+        "docstring": "Cria arquivo de configuração da estrutura.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "create_script_mapping_file",
+        "docstring": "Cria arquivo de mapeamento de scripts.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 4
+      },
+      {
+        "name": "create_structure_documentation",
+        "docstring": "Cria documentação da estrutura modular.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 77
+      },
+      {
+        "name": "generate_report",
+        "docstring": "Gera relatório da criação da estrutura.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      }
+    ],
+    "classes": [
+      {
+        "name": "ModuleStructureCreator",
+        "docstring": "Criador de estrutura modular unificada para scripts Python.",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 108
+          },
+          {
+            "name": "create_script_mapping",
+            "docstring": "Cria mapeamento de scripts existentes para módulos.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 65
+          },
+          {
+            "name": "create_module_structure",
+            "docstring": "Cria a estrutura modular unificada.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 41
+          },
+          {
+            "name": "create_init_file",
+            "docstring": "Cria arquivo __init__.py para categoria.",
+            "parameters": [
+              "self",
+              "path",
+              "description"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "create_module_init",
+            "docstring": "Cria arquivo __init__.py para módulo.",
+            "parameters": [
+              "self",
+              "path",
+              "module_name",
+              "description"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 38
+          },
+          {
+            "name": "create_module_files",
+            "docstring": "Cria arquivos base do módulo.",
+            "parameters": [
+              "self",
+              "path",
+              "module_name",
+              "description"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 158
+          },
+          {
+            "name": "get_category_for_module",
+            "docstring": "Retorna a categoria de um módulo.",
+            "parameters": [
+              "self",
+              "module_name"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          },
+          {
+            "name": "create_structure_config",
+            "docstring": "Cria arquivo de configuração da estrutura.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 16
+          },
+          {
+            "name": "create_script_mapping_file",
+            "docstring": "Cria arquivo de mapeamento de scripts.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 4
+          },
+          {
+            "name": "create_structure_documentation",
+            "docstring": "Cria documentação da estrutura modular.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 77
+          },
+          {
+            "name": "generate_report",
+            "docstring": "Gera relatório da criação da estrutura.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          }
+        ],
+        "attributes": [
+          "init_content",
+          "init_file",
+          "init_content",
+          "init_file",
+          "main_file",
+          "main_content",
+          "config_file",
+          "config_content",
+          "test_file",
+          "test_content",
+          "config_file",
+          "config_content",
+          "mapping_file",
+          "doc_file",
+          "doc_content",
+          "category_path",
+          "module_path"
+        ],
+        "inheritance": [],
+        "line_count": 573
+      }
+    ],
+    "imports": [
+      ".MapupdaterModule",
+      ".MapupdaterModule",
+      "json",
+      "datetime.datetime",
+      "logging"
+    ],
+    "line_count": 700,
+    "complexity_score": 15
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:55.868683"
+}

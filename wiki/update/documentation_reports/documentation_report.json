@@ -1,0 +1,14 @@
+{
+  "task": "12.11",
+  "epic": "12",
+  "title": "Criar documentação automática de scripts",
+  "status": "completed",
+  "timestamp": "2025-08-01T15:05:59.702263",
+  "modules_documented": 397,
+  "functions_documented": 3751,
+  "classes_documented": 3273,
+  "total_lines": 106708,
+  "documentation_coverage": 100.0,
+  "errors": 38,
+  "warnings": 0
+}

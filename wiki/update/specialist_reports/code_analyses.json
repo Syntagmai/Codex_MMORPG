@@ -1,0 +1,1254 @@
+{
+  "analyses": [
+    {
+      "module_name": "aaa_agent_specialization_system",
+      "complexity_score": 18,
+      "quality_score": 79.0,
+      "issues": [
+        "Complexidade alta (18) - considere refatorar",
+        "Linhas muito longas nas linhas: [654, 655]",
+        "Funções sem docstring: ['__init__', '__init__', '__init__', '__init__', '__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 716,
+        "functions": 25,
+        "classes": 5,
+        "imports": 9,
+        "comments": 46,
+        "docstrings": 52
+      }
+    },
+    {
+      "module_name": "aaa_compatibility_fixer",
+      "complexity_score": 56,
+      "quality_score": 4.888888888888888,
+      "issues": [
+        "Complexidade alta (56) - considere refatorar",
+        "Linhas muito longas nas linhas: [93, 165, 720, 801]",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 806,
+        "functions": 18,
+        "classes": 1,
+        "imports": 7,
+        "comments": 123,
+        "docstrings": 42
+      }
+    },
+    {
+      "module_name": "aaa_integration_validator",
+      "complexity_score": 74,
+      "quality_score": 0.0,
+      "issues": [
+        "Complexidade alta (74) - considere refatorar",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 641,
+        "functions": 12,
+        "classes": 1,
+        "imports": 6,
+        "comments": 62,
+        "docstrings": 26
+      }
+    },
+    {
+      "module_name": "advanced_search_system",
+      "complexity_score": 60,
+      "quality_score": 0.0,
+      "issues": [
+        "Complexidade alta (60) - considere refatorar"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 669,
+        "functions": 20,
+        "classes": 1,
+        "imports": 8,
+        "comments": 41,
+        "docstrings": 44
+      }
+    },
+    {
+      "module_name": "agent_organizer",
+      "complexity_score": 66,
+      "quality_score": 0.0,
+      "issues": [
+        "Complexidade alta (66) - considere refatorar",
+        "Linhas muito longas nas linhas: [183]",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 704,
+        "functions": 27,
+        "classes": 1,
+        "imports": 6,
+        "comments": 130,
+        "docstrings": 124
+      }
+    },
+    {
+      "module_name": "alert_system",
+      "complexity_score": 60,
+      "quality_score": 0.0,
+      "issues": [
+        "Complexidade alta (60) - considere refatorar",
+        "Linhas muito longas nas linhas: [550]"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 582,
+        "functions": 13,
+        "classes": 1,
+        "imports": 7,
+        "comments": 41,
+        "docstrings": 30
+      }
+    },
+    {
+      "module_name": "analyze_cursor_performance",
+      "complexity_score": 18,
+      "quality_score": 81.27777777777777,
+      "issues": [
+        "Complexidade alta (18) - considere refatorar",
+        "Linhas muito longas nas linhas: [36]",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 268,
+        "functions": 9,
+        "classes": 1,
+        "imports": 4,
+        "comments": 12,
+        "docstrings": 18
+      }
+    },
+    {
+      "module_name": "analyze_navigation_optimization",
+      "complexity_score": 60,
+      "quality_score": 0.0,
+      "issues": [
+        "Complexidade alta (60) - considere refatorar",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 451,
+        "functions": 12,
+        "classes": 1,
+        "imports": 4,
+        "comments": 26,
+        "docstrings": 24
+      }
+    },
+    {
+      "module_name": "auto_monitor",
+      "complexity_score": 67,
+      "quality_score": 0.0,
+      "issues": [
+        "Complexidade alta (67) - considere refatorar",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 556,
+        "functions": 23,
+        "classes": 1,
+        "imports": 11,
+        "comments": 37,
+        "docstrings": 46
+      }
+    },
+    {
+      "module_name": "auto_optimizer",
+      "complexity_score": 40,
+      "quality_score": 39.2,
+      "issues": [
+        "Complexidade alta (40) - considere refatorar",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 878,
+        "functions": 25,
+        "classes": 1,
+        "imports": 8,
+        "comments": 73,
+        "docstrings": 50
+      }
+    },
+    {
+      "module_name": "auto_updater",
+      "complexity_score": 82,
+      "quality_score": 0.0,
+      "issues": [
+        "Complexidade alta (82) - considere refatorar",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 720,
+        "functions": 25,
+        "classes": 1,
+        "imports": 8,
+        "comments": 77,
+        "docstrings": 54
+      }
+    },
+    {
+      "module_name": "auto_update_all_maps",
+      "complexity_score": 23,
+      "quality_score": 71.68181818181819,
+      "issues": [
+        "Complexidade alta (23) - considere refatorar",
+        "Linhas muito longas nas linhas: [269]",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 276,
+        "functions": 11,
+        "classes": 1,
+        "imports": 8,
+        "comments": 11,
+        "docstrings": 22
+      }
+    },
+    {
+      "module_name": "auto_update_system",
+      "complexity_score": 81,
+      "quality_score": 0.0,
+      "issues": [
+        "Complexidade alta (81) - considere refatorar",
+        "Funções sem docstring: ['__init__', '__init__', 'start_monitoring', 'get_system_status', '__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 710,
+        "functions": 38,
+        "classes": 4,
+        "imports": 13,
+        "comments": 80,
+        "docstrings": 58
+      }
+    },
+    {
+      "module_name": "backup_system",
+      "complexity_score": 53,
+      "quality_score": 14.0,
+      "issues": [
+        "Complexidade alta (53) - considere refatorar"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 471,
+        "functions": 12,
+        "classes": 1,
+        "imports": 12,
+        "comments": 34,
+        "docstrings": 28
+      }
+    },
+    {
+      "module_name": "canary_analysis_preparator",
+      "complexity_score": 9,
+      "quality_score": 97.0,
+      "issues": [
+        "Linhas muito longas nas linhas: [379]",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 486,
+        "functions": 8,
+        "classes": 1,
+        "imports": 6,
+        "comments": 108,
+        "docstrings": 18
+      }
+    },
+    {
+      "module_name": "centralize_logs",
+      "complexity_score": 38,
+      "quality_score": 43.0,
+      "issues": [
+        "Complexidade alta (38) - considere refatorar",
+        "Linhas muito longas nas linhas: [50, 52]"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 417,
+        "functions": 10,
+        "classes": 1,
+        "imports": 8,
+        "comments": 68,
+        "docstrings": 28
+      }
+    },
+    {
+      "module_name": "cleanup_system",
+      "complexity_score": 29,
+      "quality_score": 60.0,
+      "issues": [
+        "Complexidade alta (29) - considere refatorar",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 271,
+        "functions": 10,
+        "classes": 1,
+        "imports": 5,
+        "comments": 19,
+        "docstrings": 22
+      }
+    },
+    {
+      "module_name": "consolidate_agents",
+      "complexity_score": 33,
+      "quality_score": 53.5,
+      "issues": [
+        "Complexidade alta (33) - considere refatorar",
+        "Linhas muito longas nas linhas: [397]"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 443,
+        "functions": 7,
+        "classes": 1,
+        "imports": 7,
+        "comments": 51,
+        "docstrings": 29
+      }
+    },
+    {
+      "module_name": "context_detector",
+      "complexity_score": 27,
+      "quality_score": 64.18181818181819,
+      "issues": [
+        "Complexidade alta (27) - considere refatorar",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 275,
+        "functions": 11,
+        "classes": 1,
+        "imports": 5,
+        "comments": 19,
+        "docstrings": 22
+      }
+    },
+    {
+      "module_name": "dashboard_monitoring",
+      "complexity_score": 45,
+      "quality_score": 29.5,
+      "issues": [
+        "Complexidade alta (45) - considere refatorar",
+        "Linhas muito longas nas linhas: [290]"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 608,
+        "functions": 14,
+        "classes": 1,
+        "imports": 6,
+        "comments": 32,
+        "docstrings": 32
+      }
+    },
+    {
+      "module_name": "documentation_agent",
+      "complexity_score": 47,
+      "quality_score": 24.0,
+      "issues": [
+        "Complexidade alta (47) - considere refatorar",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 550,
+        "functions": 10,
+        "classes": 5,
+        "imports": 13,
+        "comments": 83,
+        "docstrings": 60
+      }
+    },
+    {
+      "module_name": "enhanced_intelligent_orchestrator",
+      "complexity_score": 35,
+      "quality_score": 47.5,
+      "issues": [
+        "Complexidade alta (35) - considere refatorar",
+        "Linhas muito longas nas linhas: [207]",
+        "Funções sem docstring: ['__init__', '__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 721,
+        "functions": 20,
+        "classes": 2,
+        "imports": 5,
+        "comments": 47,
+        "docstrings": 48
+      }
+    },
+    {
+      "module_name": "error_correction_agent",
+      "complexity_score": 82,
+      "quality_score": 0.0,
+      "issues": [
+        "Complexidade alta (82) - considere refatorar",
+        "Linhas muito longas nas linhas: [497]",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 579,
+        "functions": 18,
+        "classes": 1,
+        "imports": 9,
+        "comments": 51,
+        "docstrings": 48
+      }
+    },
+    {
+      "module_name": "expand_wiki_comprehensive",
+      "complexity_score": 24,
+      "quality_score": 69.96153846153847,
+      "issues": [
+        "Complexidade alta (24) - considere refatorar",
+        "Linhas muito longas nas linhas: [416]",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 447,
+        "functions": 13,
+        "classes": 1,
+        "imports": 6,
+        "comments": 95,
+        "docstrings": 34
+      }
+    },
+    {
+      "module_name": "final_commit_verification",
+      "complexity_score": 37,
+      "quality_score": 43.5,
+      "issues": [
+        "Complexidade alta (37) - considere refatorar",
+        "Linhas muito longas nas linhas: [376]",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 473,
+        "functions": 10,
+        "classes": 1,
+        "imports": 8,
+        "comments": 68,
+        "docstrings": 24
+      }
+    },
+    {
+      "module_name": "fix_wiki_issues",
+      "complexity_score": 20,
+      "quality_score": 76.0,
+      "issues": [
+        "Complexidade alta (20) - considere refatorar",
+        "Linhas muito longas nas linhas: [79, 167, 340]",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 449,
+        "functions": 8,
+        "classes": 1,
+        "imports": 6,
+        "comments": 114,
+        "docstrings": 22
+      }
+    },
+    {
+      "module_name": "function_catalog_agent",
+      "complexity_score": 67,
+      "quality_score": 0.0,
+      "issues": [
+        "Complexidade alta (67) - considere refatorar",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 549,
+        "functions": 15,
+        "classes": 1,
+        "imports": 8,
+        "comments": 53,
+        "docstrings": 32
+      }
+    },
+    {
+      "module_name": "git_atomic_commits",
+      "complexity_score": 21,
+      "quality_score": 78.0,
+      "issues": [
+        "Complexidade alta (21) - considere refatorar"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 135,
+        "functions": 5,
+        "classes": 0,
+        "imports": 4,
+        "comments": 10,
+        "docstrings": 12
+      }
+    },
+    {
+      "module_name": "git_task_integration",
+      "complexity_score": 82,
+      "quality_score": 0.0,
+      "issues": [
+        "Complexidade alta (82) - considere refatorar",
+        "Linhas muito longas nas linhas: [295, 359, 561]"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 655,
+        "functions": 23,
+        "classes": 1,
+        "imports": 11,
+        "comments": 52,
+        "docstrings": 52
+      }
+    },
+    {
+      "module_name": "habdel_wiki_integration",
+      "complexity_score": 61,
+      "quality_score": 0.0,
+      "issues": [
+        "Complexidade alta (61) - considere refatorar",
+        "Linhas muito longas nas linhas: [106, 108, 222, 277, 278]",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 499,
+        "functions": 15,
+        "classes": 1,
+        "imports": 6,
+        "comments": 87,
+        "docstrings": 40
+      }
+    },
+    {
+      "module_name": "implement_smart_cache",
+      "complexity_score": 24,
+      "quality_score": 72.0,
+      "issues": [
+        "Complexidade alta (24) - considere refatorar"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 372,
+        "functions": 11,
+        "classes": 1,
+        "imports": 7,
+        "comments": 31,
+        "docstrings": 26
+      }
+    },
+    {
+      "module_name": "intelligent_navigation_system",
+      "complexity_score": 55,
+      "quality_score": 9.5,
+      "issues": [
+        "Complexidade alta (55) - considere refatorar",
+        "Linhas muito longas nas linhas: [176]"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 496,
+        "functions": 14,
+        "classes": 1,
+        "imports": 7,
+        "comments": 37,
+        "docstrings": 32
+      }
+    },
+    {
+      "module_name": "intelligent_orchestrator",
+      "complexity_score": 31,
+      "quality_score": 56.46153846153846,
+      "issues": [
+        "Complexidade alta (31) - considere refatorar",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 517,
+        "functions": 13,
+        "classes": 1,
+        "imports": 5,
+        "comments": 51,
+        "docstrings": 32
+      }
+    },
+    {
+      "module_name": "knowledge_consolidation_system",
+      "complexity_score": 44,
+      "quality_score": 31.0,
+      "issues": [
+        "Complexidade alta (44) - considere refatorar",
+        "Linhas muito longas nas linhas: [313, 360]"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 384,
+        "functions": 8,
+        "classes": 1,
+        "imports": 7,
+        "comments": 20,
+        "docstrings": 20
+      }
+    },
+    {
+      "module_name": "metrics_system",
+      "complexity_score": 42,
+      "quality_score": 34.0,
+      "issues": [
+        "Complexidade alta (42) - considere refatorar",
+        "Linhas muito longas nas linhas: [364, 382, 399, 455]"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 551,
+        "functions": 11,
+        "classes": 1,
+        "imports": 8,
+        "comments": 45,
+        "docstrings": 26
+      }
+    },
+    {
+      "module_name": "modular_structure_creator",
+      "complexity_score": 11,
+      "quality_score": 95.33333333333333,
+      "issues": [
+        "Complexidade alta (11) - considere refatorar",
+        "Linhas muito longas nas linhas: [516, 555]",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 644,
+        "functions": 12,
+        "classes": 1,
+        "imports": 7,
+        "comments": 79,
+        "docstrings": 78
+      }
+    },
+    {
+      "module_name": "navigation_index_generator",
+      "complexity_score": 62,
+      "quality_score": 0.0,
+      "issues": [
+        "Complexidade alta (62) - considere refatorar",
+        "Linhas muito longas nas linhas: [445, 498, 584]",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 657,
+        "functions": 15,
+        "classes": 1,
+        "imports": 6,
+        "comments": 89,
+        "docstrings": 50
+      }
+    },
+    {
+      "module_name": "optimize_json_maps",
+      "complexity_score": 35,
+      "quality_score": 50.0,
+      "issues": [
+        "Complexidade alta (35) - considere refatorar"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 326,
+        "functions": 10,
+        "classes": 1,
+        "imports": 8,
+        "comments": 22,
+        "docstrings": 24
+      }
+    },
+    {
+      "module_name": "optimize_maps_for_tokens",
+      "complexity_score": 12,
+      "quality_score": 93.5,
+      "issues": [
+        "Complexidade alta (12) - considere refatorar",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 559,
+        "functions": 8,
+        "classes": 1,
+        "imports": 5,
+        "comments": 17,
+        "docstrings": 16
+      }
+    },
+    {
+      "module_name": "optimize_wiki_structure",
+      "complexity_score": 36,
+      "quality_score": 46.46153846153846,
+      "issues": [
+        "Complexidade alta (36) - considere refatorar",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 384,
+        "functions": 13,
+        "classes": 1,
+        "imports": 6,
+        "comments": 62,
+        "docstrings": 40
+      }
+    },
+    {
+      "module_name": "otclient_debug_tools",
+      "complexity_score": 57,
+      "quality_score": 4.166666666666667,
+      "issues": [
+        "Complexidade alta (57) - considere refatorar",
+        "Linhas muito longas nas linhas: [68]",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 574,
+        "functions": 15,
+        "classes": 1,
+        "imports": 15,
+        "comments": 57,
+        "docstrings": 34
+      }
+    },
+    {
+      "module_name": "otclient_log_analyzer",
+      "complexity_score": 64,
+      "quality_score": 0.0,
+      "issues": [
+        "Complexidade alta (64) - considere refatorar",
+        "Linhas muito longas nas linhas: [426, 501]",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 535,
+        "functions": 17,
+        "classes": 1,
+        "imports": 9,
+        "comments": 51,
+        "docstrings": 38
+      }
+    },
+    {
+      "module_name": "performance_monitor",
+      "complexity_score": 43,
+      "quality_score": 31.5,
+      "issues": [
+        "Complexidade alta (43) - considere refatorar",
+        "Linhas muito longas nas linhas: [209, 266, 369, 370, 371]"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 463,
+        "functions": 13,
+        "classes": 1,
+        "imports": 10,
+        "comments": 44,
+        "docstrings": 30
+      }
+    },
+    {
+      "module_name": "performance_optimizer_agent",
+      "complexity_score": 35,
+      "quality_score": 46.42307692307692,
+      "issues": [
+        "Complexidade alta (35) - considere refatorar",
+        "Linhas muito longas nas linhas: [512]",
+        "Funções sem docstring: ['__init__', '__init__', '__init__', '__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 523,
+        "functions": 26,
+        "classes": 7,
+        "imports": 17,
+        "comments": 38,
+        "docstrings": 60
+      }
+    },
+    {
+      "module_name": "prepare_canary_integration",
+      "complexity_score": 26,
+      "quality_score": 65.5,
+      "issues": [
+        "Complexidade alta (26) - considere refatorar",
+        "Linhas muito longas nas linhas: [111]",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 440,
+        "functions": 10,
+        "classes": 1,
+        "imports": 6,
+        "comments": 125,
+        "docstrings": 30
+      }
+    },
+    {
+      "module_name": "python_agent_integration_test",
+      "complexity_score": 7,
+      "quality_score": 100.0,
+      "issues": [],
+      "recommendations": [
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 108,
+        "functions": 1,
+        "classes": 0,
+        "imports": 1,
+        "comments": 8,
+        "docstrings": 4
+      }
+    },
+    {
+      "module_name": "python_error_resolver",
+      "complexity_score": 62,
+      "quality_score": 0.0,
+      "issues": [
+        "Complexidade alta (62) - considere refatorar",
+        "Funções sem docstring: ['__init__']"
+      ],
+      "recommendations": [
+        "Refatore funções complexas em funções menores",
+        "Use early returns para reduzir aninhamento",
+        "Adicione docstrings para todas as funções públicas",
+        "Use formato Google ou NumPy para docstrings",
+        "Execute testes unitários regularmente",
+        "Use type hints para melhorar legibilidade",
+        "Mantenha funções com responsabilidade única"
+      ],
+      "metrics": {
+        "lines_of_code": 539,
+        "functions": 16,
+        "classes": 1,
+        "imports": 8,
+        "comments": 46,
+        "docstrings": 32
+      }
+    }
+  ],
+  "coordination_results": {
+    "documentation_agent": {
+      "status": "success",
+      "result": {
+        "action": "generate_documentation",
+        "modules_processed": 50,
+        "files_generated": 150
+      },
+      "execution_time": -4.76837158203125e-07
+    },
+    "testing_agent": {
+      "status": "success",
+      "result": {
+        "action": "run_tests",
+        "tests_executed": 200,
+        "coverage": 85.5
+      },
+      "execution_time": -4.76837158203125e-07
+    },
+    "performance_optimizer_agent": {
+      "status": "success",
+      "result": {
+        "action": "optimize_performance",
+        "modules_optimized": 30,
+        "performance_gain": 15.2
+      },
+      "execution_time": -7.152557373046875e-07
+    },
+    "script_executor_agent": {
+      "status": "success",
+      "result": {
+        "action": "execute_scripts",
+        "scripts_executed": 25,
+        "success_rate": 92.0
+      },
+      "execution_time": -2.384185791015625e-07
+    },
+    "recipe_manager_agent": {
+      "status": "success",
+      "result": {
+        "action": "manage_recipes",
+        "recipes_created": 10,
+        "recipes_executed": 15
+      },
+      "execution_time": -2.384185791015625e-07
+    }
+  },
+  "summary": {
+    "total_modules": 47,
+    "average_quality": 36.42634032634033,
+    "total_issues": 104,
+    "total_recommendations": 295
+  }
+}

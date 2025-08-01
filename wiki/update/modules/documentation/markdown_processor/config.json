@@ -1,0 +1,18 @@
+{
+  "module_name": "markdown_processor",
+  "description": "Processamento de Markdown",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "documentation",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.899349",
+  "migrated_scripts": [
+    {
+      "name": "remove_emojis.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\remove_emojis.py",
+      "migration_date": "2025-08-01T12:21:35.255622",
+      "status": "migrated"
+    }
+  ]
+}

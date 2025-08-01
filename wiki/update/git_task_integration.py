@@ -1,3 +1,15 @@
+    from git_automation_agent import GitAutomationAgent
+    import argparse
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, Any, Optional, List
+import json
+import logging
+import os
+import re
+import subprocess
+import sys
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -13,21 +25,11 @@ Data: 2024-12-19
 Versão: 2.0 - Automático e Atômico
 """
 
-import os
-import sys
-import json
-import logging
-import subprocess
-import re
-from pathlib import Path
-from typing import Dict, Any, Optional, List
-from datetime import datetime
 
 # Adicionar pasta do agente Git ao path
 sys.path.append(str(Path(__file__).parent.parent / 'bmad' / 'agents'))
 
 try:
-    from git_automation_agent import GitAutomationAgent
 except ImportError:
     print("❌ Erro: Agente Git não encontrado. Execute primeiro a criação do agente.")
     sys.exit(1)
@@ -608,7 +610,6 @@ class GitTaskIntegration:
 
 def main():
     """Função principal."""
-    import argparse
     
     parser = argparse.ArgumentParser(description='Integração Git + Sistema de Tarefas - Automático e Atômico')
     parser.add_argument('--auto-commit', action='store_true', help='Executar commit automático')

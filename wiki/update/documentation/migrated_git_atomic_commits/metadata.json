@@ -1,0 +1,81 @@
+{
+  "module": {
+    "name": "migrated_git_atomic_commits",
+    "path": "wiki\\update\\modules\\maps\\map_updater\\migrated_git_atomic_commits.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "run_command",
+        "docstring": "Executa comando e retorna resultado",
+        "parameters": [
+          "command",
+          "capture_output"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 6
+      },
+      {
+        "name": "get_untracked_files",
+        "docstring": "Obtém lista de arquivos não rastreados",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 13
+      },
+      {
+        "name": "categorize_files",
+        "docstring": "Categoriza arquivos por tipo",
+        "parameters": [
+          "files"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 24
+      },
+      {
+        "name": "make_commit",
+        "docstring": "Faz commit de uma categoria de arquivos",
+        "parameters": [
+          "files",
+          "category",
+          "description"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 24
+      },
+      {
+        "name": "main",
+        "docstring": "Função principal",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 43
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      }
+    ],
+    "classes": [],
+    "imports": [
+      ".MapupdaterModule",
+      "subprocess",
+      "os",
+      "sys"
+    ],
+    "line_count": 166,
+    "complexity_score": 23
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:54.721201"
+}

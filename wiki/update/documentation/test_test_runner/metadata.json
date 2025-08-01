@@ -1,0 +1,117 @@
+{
+  "module": {
+    "name": "test_test_runner",
+    "path": "wiki\\update\\modules\\python\\test_runner\\test_test_runner.py",
+    "docstring": "Testes para o módulo test_runner\n\nMódulo: test_runner\nDescrição: Executor de testes",
+    "functions": [
+      {
+        "name": "setUp",
+        "docstring": "Configuração inicial dos testes",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      },
+      {
+        "name": "test_module_initialization",
+        "docstring": "Testa inicialização do módulo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 4
+      },
+      {
+        "name": "test_module_execution",
+        "docstring": "Testa execução do módulo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "test_module_validation",
+        "docstring": "Testa validação do módulo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      }
+    ],
+    "classes": [
+      {
+        "name": "TestTestrunnerModule",
+        "docstring": "Testes para o módulo test_runner",
+        "methods": [
+          {
+            "name": "setUp",
+            "docstring": "Configuração inicial dos testes",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          },
+          {
+            "name": "test_module_initialization",
+            "docstring": "Testa inicialização do módulo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 4
+          },
+          {
+            "name": "test_module_execution",
+            "docstring": "Testa execução do módulo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "test_module_validation",
+            "docstring": "Testa validação do módulo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          }
+        ],
+        "attributes": [
+          "result",
+          "result"
+        ],
+        "inheritance": [],
+        "line_count": 21
+      }
+    ],
+    "imports": [
+      "unittest",
+      "pathlib.Path",
+      "sys",
+      "test_runner.TestrunnerModule"
+    ],
+    "line_count": 45,
+    "complexity_score": 2
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:53.607718"
+}

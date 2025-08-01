@@ -1,0 +1,39 @@
+{
+  "module": {
+    "name": "migrated_optimizer",
+    "path": "wiki\\update\\modules\\agents\\agent_orchestrator\\migrated_optimizer.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "optimize_python_code",
+        "docstring": "Otimiza código python",
+        "parameters": [
+          "target"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      }
+    ],
+    "classes": [],
+    "imports": [
+      ".AgentorchestratorModule"
+    ],
+    "line_count": 46,
+    "complexity_score": 4
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:59.243195"
+}

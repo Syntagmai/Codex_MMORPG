@@ -1,0 +1,18 @@
+{
+  "module_name": "script_executor",
+  "description": "Executor de scripts",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "python",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.840854",
+  "migrated_scripts": [
+    {
+      "name": "script_execution_manager.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\script_execution_manager.py",
+      "migration_date": "2025-08-01T12:21:35.287241",
+      "status": "migrated"
+    }
+  ]
+}

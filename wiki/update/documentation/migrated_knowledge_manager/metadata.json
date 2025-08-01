@@ -1,0 +1,588 @@
+{
+  "module": {
+    "name": "migrated_knowledge_manager",
+    "path": "wiki\\update\\modules\\agents\\agent_orchestrator\\migrated_knowledge_manager.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal para teste do agente",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 35
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "workspace_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 31
+      },
+      {
+        "name": "load_navigation_maps",
+        "docstring": "Carrega mapas de navegação da wiki",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 31
+      },
+      {
+        "name": "process_workflow_results",
+        "docstring": "Processa resultados do workflow completo e extrai insights\n\nArgs:\n    analysis_results: Resultados do Module Analyzer\n    generation_results: Resultados do Module Generator\n    test_results: Resultados do Module Tester\n    \nReturns:\n    Insights e aprendizados extraídos",
+        "parameters": [
+          "self",
+          "analysis_results",
+          "generation_results",
+          "test_results"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 53
+      },
+      {
+        "name": "extract_analysis_insights",
+        "docstring": "Extrai insights dos resultados de análise",
+        "parameters": [
+          "self",
+          "analysis_results"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 44
+      },
+      {
+        "name": "extract_generation_insights",
+        "docstring": "Extrai insights dos resultados de geração",
+        "parameters": [
+          "self",
+          "generation_results"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 53
+      },
+      {
+        "name": "extract_test_insights",
+        "docstring": "Extrai insights dos resultados de teste",
+        "parameters": [
+          "self",
+          "test_results"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 36
+      },
+      {
+        "name": "identify_patterns",
+        "docstring": "Identifica padrões nos resultados",
+        "parameters": [
+          "self",
+          "analysis_results",
+          "generation_results",
+          "test_results"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 27
+      },
+      {
+        "name": "analyze_success_patterns",
+        "docstring": "Analisa padrões de sucesso",
+        "parameters": [
+          "self",
+          "successful_variations"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 27
+      },
+      {
+        "name": "analyze_failure_patterns",
+        "docstring": "Analisa padrões de falha",
+        "parameters": [
+          "self",
+          "failed_variations"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "analyze_code_patterns",
+        "docstring": "Analisa padrões de código",
+        "parameters": [
+          "self",
+          "analysis_results"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 28
+      },
+      {
+        "name": "analyze_structural_patterns",
+        "docstring": "Analisa padrões estruturais",
+        "parameters": [
+          "self",
+          "analysis_results",
+          "generation_results"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 26
+      },
+      {
+        "name": "generate_rules",
+        "docstring": "Gera regras baseadas nos insights e padrões",
+        "parameters": [
+          "self",
+          "insights",
+          "patterns"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 36
+      },
+      {
+        "name": "generate_recommendations",
+        "docstring": "Gera recomendações baseadas nos dados de aprendizado",
+        "parameters": [
+          "self",
+          "learning_data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 29
+      },
+      {
+        "name": "update_knowledge_base",
+        "docstring": "Atualiza base de conhecimento com novos dados",
+        "parameters": [
+          "self",
+          "learning_data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 33
+      },
+      {
+        "name": "save_knowledge_base",
+        "docstring": "Salva base de conhecimento em arquivo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "save_learning_data",
+        "docstring": "Salva dados de aprendizado",
+        "parameters": [
+          "self",
+          "module_name",
+          "learning_data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 13
+      },
+      {
+        "name": "analyze_file_types",
+        "docstring": "Analisa tipos de arquivo",
+        "parameters": [
+          "self",
+          "files"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 6
+      },
+      {
+        "name": "analyze_score_distribution",
+        "docstring": "Analisa distribuição de scores",
+        "parameters": [
+          "self",
+          "scores"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "get_common_patterns",
+        "docstring": "Obtém padrões mais comuns",
+        "parameters": [
+          "self",
+          "patterns",
+          "top_n"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      },
+      {
+        "name": "get_wiki_knowledge",
+        "docstring": "Obtém conhecimento da wiki sobre um tópico específico",
+        "parameters": [
+          "self",
+          "topic"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "update_navigation_maps",
+        "docstring": "Atualiza mapas de navegação com novos dados",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      }
+    ],
+    "classes": [
+      {
+        "name": "KnowledgeManagerAgent",
+        "docstring": "Agente especializado em gerenciamento de conhecimento e navegação da wiki",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "workspace_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 31
+          },
+          {
+            "name": "load_navigation_maps",
+            "docstring": "Carrega mapas de navegação da wiki",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 31
+          },
+          {
+            "name": "process_workflow_results",
+            "docstring": "Processa resultados do workflow completo e extrai insights\n\nArgs:\n    analysis_results: Resultados do Module Analyzer\n    generation_results: Resultados do Module Generator\n    test_results: Resultados do Module Tester\n    \nReturns:\n    Insights e aprendizados extraídos",
+            "parameters": [
+              "self",
+              "analysis_results",
+              "generation_results",
+              "test_results"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 53
+          },
+          {
+            "name": "extract_analysis_insights",
+            "docstring": "Extrai insights dos resultados de análise",
+            "parameters": [
+              "self",
+              "analysis_results"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 44
+          },
+          {
+            "name": "extract_generation_insights",
+            "docstring": "Extrai insights dos resultados de geração",
+            "parameters": [
+              "self",
+              "generation_results"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 53
+          },
+          {
+            "name": "extract_test_insights",
+            "docstring": "Extrai insights dos resultados de teste",
+            "parameters": [
+              "self",
+              "test_results"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 36
+          },
+          {
+            "name": "identify_patterns",
+            "docstring": "Identifica padrões nos resultados",
+            "parameters": [
+              "self",
+              "analysis_results",
+              "generation_results",
+              "test_results"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 27
+          },
+          {
+            "name": "analyze_success_patterns",
+            "docstring": "Analisa padrões de sucesso",
+            "parameters": [
+              "self",
+              "successful_variations"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 27
+          },
+          {
+            "name": "analyze_failure_patterns",
+            "docstring": "Analisa padrões de falha",
+            "parameters": [
+              "self",
+              "failed_variations"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "analyze_code_patterns",
+            "docstring": "Analisa padrões de código",
+            "parameters": [
+              "self",
+              "analysis_results"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 28
+          },
+          {
+            "name": "analyze_structural_patterns",
+            "docstring": "Analisa padrões estruturais",
+            "parameters": [
+              "self",
+              "analysis_results",
+              "generation_results"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 26
+          },
+          {
+            "name": "generate_rules",
+            "docstring": "Gera regras baseadas nos insights e padrões",
+            "parameters": [
+              "self",
+              "insights",
+              "patterns"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 36
+          },
+          {
+            "name": "generate_recommendations",
+            "docstring": "Gera recomendações baseadas nos dados de aprendizado",
+            "parameters": [
+              "self",
+              "learning_data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 29
+          },
+          {
+            "name": "update_knowledge_base",
+            "docstring": "Atualiza base de conhecimento com novos dados",
+            "parameters": [
+              "self",
+              "learning_data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 33
+          },
+          {
+            "name": "save_knowledge_base",
+            "docstring": "Salva base de conhecimento em arquivo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "save_learning_data",
+            "docstring": "Salva dados de aprendizado",
+            "parameters": [
+              "self",
+              "module_name",
+              "learning_data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 13
+          },
+          {
+            "name": "analyze_file_types",
+            "docstring": "Analisa tipos de arquivo",
+            "parameters": [
+              "self",
+              "files"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 6
+          },
+          {
+            "name": "analyze_score_distribution",
+            "docstring": "Analisa distribuição de scores",
+            "parameters": [
+              "self",
+              "scores"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "get_common_patterns",
+            "docstring": "Obtém padrões mais comuns",
+            "parameters": [
+              "self",
+              "patterns",
+              "top_n"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          },
+          {
+            "name": "get_wiki_knowledge",
+            "docstring": "Obtém conhecimento da wiki sobre um tópico específico",
+            "parameters": [
+              "self",
+              "topic"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          },
+          {
+            "name": "update_navigation_maps",
+            "docstring": "Atualiza mapas de navegação com novos dados",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          }
+        ],
+        "attributes": [
+          "learning_data",
+          "analysis_insights",
+          "generation_insights",
+          "test_insights",
+          "insights",
+          "metrics",
+          "patterns",
+          "dependencies",
+          "structure",
+          "insights",
+          "total_variations",
+          "successful_variations",
+          "variation_patterns",
+          "modification_patterns",
+          "compatibility_scores",
+          "insights",
+          "summary",
+          "error_patterns",
+          "patterns",
+          "successful_variations",
+          "failed_variations",
+          "patterns",
+          "mod_counts",
+          "naming_patterns",
+          "patterns",
+          "error_types",
+          "patterns",
+          "lua_patterns",
+          "patterns",
+          "files",
+          "file_types",
+          "rules",
+          "generation_insights",
+          "success_rate",
+          "test_insights",
+          "pass_rate",
+          "quality_insights",
+          "avg_quality",
+          "recommendations",
+          "insights",
+          "patterns",
+          "generation_insights",
+          "success_rate",
+          "test_insights",
+          "pass_rate",
+          "updates",
+          "new_patterns",
+          "new_rules",
+          "new_insights",
+          "knowledge_file",
+          "learning_file",
+          "file_types",
+          "distribution",
+          "pattern_counts",
+          "sorted_patterns",
+          "knowledge",
+          "tags_file",
+          "wiki_map_file",
+          "relationships_file",
+          "variation_name",
+          "modifications",
+          "modifications",
+          "name",
+          "ext",
+          "ext"
+        ],
+        "inheritance": [],
+        "line_count": 597
+      }
+    ],
+    "imports": [
+      ".AgentorchestratorModule",
+      "os",
+      "json",
+      "datetime.datetime"
+    ],
+    "line_count": 682,
+    "complexity_score": 59
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:59.095723"
+}

@@ -1,0 +1,39 @@
+{
+  "module": {
+    "name": "migrated_create_module_simple",
+    "path": "wiki\\update\\modules\\tools\\git_automation\\migrated_create_module_simple.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 33
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      }
+    ],
+    "classes": [],
+    "imports": [
+      ".GitautomationModule",
+      "os",
+      "sys"
+    ],
+    "line_count": 84,
+    "complexity_score": 8
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:52.836200"
+}

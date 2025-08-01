@@ -1,0 +1,474 @@
+{
+  "module": {
+    "name": "migrated_aaa_compatibility_fixer",
+    "path": "wiki\\update\\modules\\agents\\agent_integrator\\migrated_aaa_compatibility_fixer.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal para teste do sistema de correção",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 26
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "base_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "fix_all_compatibility_issues",
+        "docstring": "Corrige todos os problemas de compatibilidade identificados",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 59
+      },
+      {
+        "name": "fix_rules_folder",
+        "docstring": "Corrige problemas da pasta de regras",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 59
+      },
+      {
+        "name": "create_aaa_rules_file",
+        "docstring": "Cria arquivo de regras AAA",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 131
+      },
+      {
+        "name": "create_basic_rule_file",
+        "docstring": "Cria arquivo de regra básico",
+        "parameters": [
+          "self",
+          "file_path",
+          "rule_name"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 35
+      },
+      {
+        "name": "optimize_compatibility",
+        "docstring": "Otimiza compatibilidade geral",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 53
+      },
+      {
+        "name": "fix_json_maps",
+        "docstring": "Corrige problemas nos mapas JSON",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 49
+      },
+      {
+        "name": "create_basic_agents_map",
+        "docstring": "Cria mapa básico de agentes",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 29
+      },
+      {
+        "name": "fix_agents_map_structure",
+        "docstring": "Corrige estrutura do mapa de agentes",
+        "parameters": [
+          "self",
+          "file_path",
+          "data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 13
+      },
+      {
+        "name": "fix_invalid_json",
+        "docstring": "Corrige JSON inválido",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      },
+      {
+        "name": "fix_agent_integration",
+        "docstring": "Corrige problemas de integração de agentes",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 55
+      },
+      {
+        "name": "create_basic_agent_config",
+        "docstring": "Cria configuração básica para um agente",
+        "parameters": [
+          "self",
+          "agent_id"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 46
+      },
+      {
+        "name": "validate_fixes",
+        "docstring": "Valida as correções aplicadas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 55
+      },
+      {
+        "name": "calculate_final_compatibility_score",
+        "docstring": "Calcula score final de compatibilidade",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "calculate_overall_fix_status",
+        "docstring": "Calcula status geral das correções",
+        "parameters": [
+          "self",
+          "fixes"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 32
+      },
+      {
+        "name": "save_fix_results",
+        "docstring": "Salva resultados das correções",
+        "parameters": [
+          "self",
+          "results"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "generate_fix_report",
+        "docstring": "Gera relatório das correções em formato legível",
+        "parameters": [
+          "self",
+          "results"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 61
+      }
+    ],
+    "classes": [
+      {
+        "name": "AAACompatibilityFixer",
+        "docstring": "Sistema de correção de compatibilidade para sistema AAA",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "base_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 16
+          },
+          {
+            "name": "fix_all_compatibility_issues",
+            "docstring": "Corrige todos os problemas de compatibilidade identificados",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 59
+          },
+          {
+            "name": "fix_rules_folder",
+            "docstring": "Corrige problemas da pasta de regras",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 59
+          },
+          {
+            "name": "create_aaa_rules_file",
+            "docstring": "Cria arquivo de regras AAA",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 131
+          },
+          {
+            "name": "create_basic_rule_file",
+            "docstring": "Cria arquivo de regra básico",
+            "parameters": [
+              "self",
+              "file_path",
+              "rule_name"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 35
+          },
+          {
+            "name": "optimize_compatibility",
+            "docstring": "Otimiza compatibilidade geral",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 53
+          },
+          {
+            "name": "fix_json_maps",
+            "docstring": "Corrige problemas nos mapas JSON",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 49
+          },
+          {
+            "name": "create_basic_agents_map",
+            "docstring": "Cria mapa básico de agentes",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 29
+          },
+          {
+            "name": "fix_agents_map_structure",
+            "docstring": "Corrige estrutura do mapa de agentes",
+            "parameters": [
+              "self",
+              "file_path",
+              "data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 13
+          },
+          {
+            "name": "fix_invalid_json",
+            "docstring": "Corrige JSON inválido",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          },
+          {
+            "name": "fix_agent_integration",
+            "docstring": "Corrige problemas de integração de agentes",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 55
+          },
+          {
+            "name": "create_basic_agent_config",
+            "docstring": "Cria configuração básica para um agente",
+            "parameters": [
+              "self",
+              "agent_id"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 46
+          },
+          {
+            "name": "validate_fixes",
+            "docstring": "Valida as correções aplicadas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 55
+          },
+          {
+            "name": "calculate_final_compatibility_score",
+            "docstring": "Calcula score final de compatibilidade",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 16
+          },
+          {
+            "name": "calculate_overall_fix_status",
+            "docstring": "Calcula status geral das correções",
+            "parameters": [
+              "self",
+              "fixes"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 32
+          },
+          {
+            "name": "save_fix_results",
+            "docstring": "Salva resultados das correções",
+            "parameters": [
+              "self",
+              "results"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "generate_fix_report",
+            "docstring": "Gera relatório das correções em formato legível",
+            "parameters": [
+              "self",
+              "results"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 61
+          }
+        ],
+        "attributes": [
+          "start_time",
+          "fix_results",
+          "rules_fix",
+          "compatibility_fix",
+          "json_fix",
+          "agent_fix",
+          "final_validation",
+          "overall_status",
+          "total_time",
+          "rules_fix",
+          "rules_path",
+          "aaa_rules_file",
+          "important_rules",
+          "content",
+          "content",
+          "compatibility_fix",
+          "bmad_path",
+          "maps_path",
+          "logs_path",
+          "json_fix",
+          "agents_file",
+          "basic_map",
+          "backup_path",
+          "agent_fix",
+          "agents_file",
+          "agent_configs",
+          "validation",
+          "rules_path",
+          "agents_file",
+          "bmad_path",
+          "valid_count",
+          "total_count",
+          "base_score",
+          "bonuses",
+          "final_score",
+          "status_scores",
+          "total_score",
+          "total_fixes",
+          "average_score",
+          "timestamp",
+          "filename",
+          "filepath",
+          "report",
+          "fixes",
+          "rule_path",
+          "data",
+          "status",
+          "score",
+          "status",
+          "status_emoji",
+          "issues_fixed",
+          "issues_remaining",
+          "agents",
+          "aaa_agents",
+          "missing_agents",
+          "data",
+          "data",
+          "data"
+        ],
+        "inheritance": [],
+        "line_count": 761
+      }
+    ],
+    "imports": [
+      ".AgentintegratorModule",
+      "json",
+      "shutil",
+      "time",
+      "datetime.datetime"
+    ],
+    "line_count": 841,
+    "complexity_score": 58
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:58.304874"
+}

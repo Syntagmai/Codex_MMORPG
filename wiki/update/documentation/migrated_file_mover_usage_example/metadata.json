@@ -1,0 +1,80 @@
+{
+  "module": {
+    "name": "migrated_file_mover_usage_example",
+    "path": "wiki\\update\\modules\\tools\\file_mover\\migrated_file_mover_usage_example.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "example_1_basic_usage",
+        "docstring": "Example 1: Basic file moving with absolute paths.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 27
+      },
+      {
+        "name": "example_2_configuration_file",
+        "docstring": "Example 2: Using configuration file.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 33
+      },
+      {
+        "name": "example_3_batch_operations",
+        "docstring": "Example 3: Batch operations for different file types.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 37
+      },
+      {
+        "name": "example_4_conditional_moving",
+        "docstring": "Example 4: Conditional moving based on file content or metadata.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 46
+      },
+      {
+        "name": "example_5_error_handling",
+        "docstring": "Example 5: Error handling and recovery.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 18
+      },
+      {
+        "name": "main",
+        "docstring": "Run all examples.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      }
+    ],
+    "classes": [],
+    "imports": [
+      ".FilemoverModule",
+      "os",
+      "sys",
+      "json"
+    ],
+    "line_count": 246,
+    "complexity_score": 10
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:52.717495"
+}

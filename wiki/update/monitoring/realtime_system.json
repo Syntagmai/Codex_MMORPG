@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-08-01T15:39:34.734795",
+  "system": {
+    "total_scripts": 100,
+    "active_scripts": 99,
+    "failed_scripts": 0,
+    "avg_memory_usage": 19.945,
+    "avg_cpu_usage": 8.978000000000002,
+    "disk_usage": 1.5309724807739258,
+    "system_health": 95.445,
+    "alerts": [
+      "PERFORMANCE: 18 scripts lentos: aaa_agent_specialization_system, analyze_cursor_performance, analyze_navigation_optimization"
+    ]
+  }
+}

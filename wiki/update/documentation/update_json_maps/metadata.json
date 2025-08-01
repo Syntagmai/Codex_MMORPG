@@ -1,0 +1,454 @@
+{
+  "module": {
+    "name": "update_json_maps",
+    "path": "wiki\\update\\update_json_maps.py",
+    "docstring": "Script para atualização automática dos mapas JSON da wiki do OTClient\nAtualiza: maps/tags_index.json, maps/wiki_map.json, maps/relationships.json",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "wiki_dir"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "scan_markdown_files",
+        "docstring": "Escaneia todos os arquivos markdown na pasta wiki",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "extract_frontmatter",
+        "docstring": "Extrai frontmatter de um arquivo markdown",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 45
+      },
+      {
+        "name": "generate_tags_index",
+        "docstring": "Gera o índice de tags",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 38
+      },
+      {
+        "name": "generate_search_aliases",
+        "docstring": "Gera aliases de busca para tags",
+        "parameters": [
+          "self",
+          "files_by_tag"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "generate_wiki_map",
+        "docstring": "Gera o mapa completo da wiki",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 53
+      },
+      {
+        "name": "categorize_document",
+        "docstring": "Categoriza um documento baseado em seu conteúdo",
+        "parameters": [
+          "self",
+          "file",
+          "frontmatter"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 33
+      },
+      {
+        "name": "get_priority",
+        "docstring": "Determina a prioridade de um documento",
+        "parameters": [
+          "self",
+          "file",
+          "frontmatter"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 13
+      },
+      {
+        "name": "get_description",
+        "docstring": "Extrai descrição do documento",
+        "parameters": [
+          "self",
+          "file",
+          "frontmatter"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "generate_statistics",
+        "docstring": "Gera estatísticas da wiki",
+        "parameters": [
+          "self",
+          "categories"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 29
+      },
+      {
+        "name": "generate_navigation_paths",
+        "docstring": "Gera caminhos de navegação",
+        "parameters": [
+          "self",
+          "categories"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 26
+      },
+      {
+        "name": "generate_relationships",
+        "docstring": "Gera relacionamentos entre documentos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "generate_learning_paths",
+        "docstring": "Gera caminhos de aprendizado",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 33
+      },
+      {
+        "name": "generate_dependency_graph",
+        "docstring": "Gera grafo de dependências",
+        "parameters": [
+          "self",
+          "relationships"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 36
+      },
+      {
+        "name": "generate_topic_clusters",
+        "docstring": "Gera clusters de tópicos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 31
+      },
+      {
+        "name": "update_all_json_files",
+        "docstring": "Atualiza todos os arquivos JSON",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 26
+      }
+    ],
+    "classes": [
+      {
+        "name": "WikiJSONUpdater",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "wiki_dir"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          },
+          {
+            "name": "scan_markdown_files",
+            "docstring": "Escaneia todos os arquivos markdown na pasta wiki",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "extract_frontmatter",
+            "docstring": "Extrai frontmatter de um arquivo markdown",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 45
+          },
+          {
+            "name": "generate_tags_index",
+            "docstring": "Gera o índice de tags",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 38
+          },
+          {
+            "name": "generate_search_aliases",
+            "docstring": "Gera aliases de busca para tags",
+            "parameters": [
+              "self",
+              "files_by_tag"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "generate_wiki_map",
+            "docstring": "Gera o mapa completo da wiki",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 53
+          },
+          {
+            "name": "categorize_document",
+            "docstring": "Categoriza um documento baseado em seu conteúdo",
+            "parameters": [
+              "self",
+              "file",
+              "frontmatter"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 33
+          },
+          {
+            "name": "get_priority",
+            "docstring": "Determina a prioridade de um documento",
+            "parameters": [
+              "self",
+              "file",
+              "frontmatter"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 13
+          },
+          {
+            "name": "get_description",
+            "docstring": "Extrai descrição do documento",
+            "parameters": [
+              "self",
+              "file",
+              "frontmatter"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "generate_statistics",
+            "docstring": "Gera estatísticas da wiki",
+            "parameters": [
+              "self",
+              "categories"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 29
+          },
+          {
+            "name": "generate_navigation_paths",
+            "docstring": "Gera caminhos de navegação",
+            "parameters": [
+              "self",
+              "categories"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 26
+          },
+          {
+            "name": "generate_relationships",
+            "docstring": "Gera relacionamentos entre documentos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          },
+          {
+            "name": "generate_learning_paths",
+            "docstring": "Gera caminhos de aprendizado",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 33
+          },
+          {
+            "name": "generate_dependency_graph",
+            "docstring": "Gera grafo de dependências",
+            "parameters": [
+              "self",
+              "relationships"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 36
+          },
+          {
+            "name": "generate_topic_clusters",
+            "docstring": "Gera clusters de tópicos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 31
+          },
+          {
+            "name": "update_all_json_files",
+            "docstring": "Atualiza todos os arquivos JSON",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 26
+          }
+        ],
+        "attributes": [
+          "md_files",
+          "frontmatter",
+          "files_by_tag",
+          "tags_by_file",
+          "all_tags",
+          "search_aliases",
+          "tags_index",
+          "aliases",
+          "common_aliases",
+          "categories",
+          "statistics",
+          "navigation",
+          "wiki_map",
+          "tags",
+          "title",
+          "title",
+          "stats",
+          "status_counts",
+          "priority_counts",
+          "paths",
+          "relationships",
+          "learning_paths",
+          "dependency_graph",
+          "topic_clusters",
+          "relationships_data",
+          "paths",
+          "graph",
+          "clusters",
+          "ui_files",
+          "game_files",
+          "api_files",
+          "md_files",
+          "frontmatter",
+          "tags",
+          "frontmatter",
+          "category",
+          "priority",
+          "description",
+          "doc_info",
+          "frontmatter",
+          "frontmatter",
+          "frontmatter",
+          "frontmatter",
+          "frontmatter",
+          "frontmatter",
+          "tags",
+          "frontmatter",
+          "frontmatter",
+          "frontmatter",
+          "content",
+          "parts",
+          "status",
+          "priority",
+          "frontmatter_text",
+          "tags_match",
+          "status_match",
+          "aliases_match",
+          "title_match",
+          "other_frontmatter",
+          "other_tags",
+          "common_tags",
+          "tags_str",
+          "aliases_str"
+        ],
+        "inheritance": [],
+        "line_count": 460
+      }
+    ],
+    "imports": [
+      "os",
+      "json",
+      "re",
+      "datetime.datetime",
+      "pathlib.Path",
+      "typing.Dict",
+      "typing.List",
+      "typing.Any"
+    ],
+    "line_count": 482,
+    "complexity_score": 82
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:52.245118"
+}

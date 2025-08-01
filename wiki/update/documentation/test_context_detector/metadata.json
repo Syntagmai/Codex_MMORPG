@@ -1,0 +1,117 @@
+{
+  "module": {
+    "name": "test_context_detector",
+    "path": "wiki\\update\\modules\\analysis\\context_detector\\test_context_detector.py",
+    "docstring": "Testes para o módulo context_detector\n\nMódulo: context_detector\nDescrição: Detecção de contexto",
+    "functions": [
+      {
+        "name": "setUp",
+        "docstring": "Configuração inicial dos testes",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      },
+      {
+        "name": "test_module_initialization",
+        "docstring": "Testa inicialização do módulo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 4
+      },
+      {
+        "name": "test_module_execution",
+        "docstring": "Testa execução do módulo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "test_module_validation",
+        "docstring": "Testa validação do módulo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      }
+    ],
+    "classes": [
+      {
+        "name": "TestContextdetectorModule",
+        "docstring": "Testes para o módulo context_detector",
+        "methods": [
+          {
+            "name": "setUp",
+            "docstring": "Configuração inicial dos testes",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          },
+          {
+            "name": "test_module_initialization",
+            "docstring": "Testa inicialização do módulo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 4
+          },
+          {
+            "name": "test_module_execution",
+            "docstring": "Testa execução do módulo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "test_module_validation",
+            "docstring": "Testa validação do módulo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          }
+        ],
+        "attributes": [
+          "result",
+          "result"
+        ],
+        "inheritance": [],
+        "line_count": 21
+      }
+    ],
+    "imports": [
+      "unittest",
+      "pathlib.Path",
+      "sys",
+      "context_detector.ContextdetectorModule"
+    ],
+    "line_count": 45,
+    "complexity_score": 2
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:57.944298"
+}

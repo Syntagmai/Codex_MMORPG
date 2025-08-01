@@ -1,0 +1,602 @@
+{
+  "module": {
+    "name": "migrated_auto_learning_system",
+    "path": "wiki\\update\\modules\\tools\\git_automation\\migrated_auto_learning_system.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "base_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 32
+      },
+      {
+        "name": "create_directory_structure",
+        "docstring": "Cria estrutura de pastas necessária",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 11
+      },
+      {
+        "name": "load_config",
+        "docstring": "Carrega configuração do sistema",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 18
+      },
+      {
+        "name": "save_config",
+        "docstring": "Salva configuração do sistema",
+        "parameters": [
+          "self",
+          "config"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 4
+      },
+      {
+        "name": "start_learning_background",
+        "docstring": "Inicia thread de aprendizado em background",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 6
+      },
+      {
+        "name": "stop_learning_background",
+        "docstring": "Para thread de aprendizado",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "_learning_loop",
+        "docstring": "Loop principal de aprendizado em background",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 13
+      },
+      {
+        "name": "_perform_learning_cycle",
+        "docstring": "Executa um ciclo completo de aprendizado",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 22
+      },
+      {
+        "name": "_save_learning_results",
+        "docstring": "Salva resultados do aprendizado",
+        "parameters": [
+          "self",
+          "patterns",
+          "optimizations"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "record_interaction",
+        "docstring": "Registra uma nova interação no sistema",
+        "parameters": [
+          "self",
+          "interaction_data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 20
+      },
+      {
+        "name": "_check_immediate_optimizations",
+        "docstring": "Verifica otimizações que podem ser aplicadas imediatamente",
+        "parameters": [
+          "self",
+          "interaction_data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 10
+      },
+      {
+        "name": "_find_similar_patterns",
+        "docstring": "Encontra padrões similares à interação atual",
+        "parameters": [
+          "self",
+          "interaction_data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 15
+      },
+      {
+        "name": "_calculate_context_similarity",
+        "docstring": "Calcula similaridade entre contexto e palavras-chave",
+        "parameters": [
+          "self",
+          "context",
+          "keywords"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 17
+      },
+      {
+        "name": "get_learning_stats",
+        "docstring": "Retorna estatísticas do sistema de aprendizado",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "get_recommendations",
+        "docstring": "Retorna recomendações baseadas no contexto atual",
+        "parameters": [
+          "self",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 26
+      },
+      {
+        "name": "update_feedback",
+        "docstring": "Atualiza feedback de uma interação",
+        "parameters": [
+          "self",
+          "interaction_id",
+          "feedback",
+          "score"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 6
+      },
+      {
+        "name": "_trigger_relearning",
+        "docstring": "Dispara relearning baseado em feedback negativo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 6
+      },
+      {
+        "name": "generate_learning_report",
+        "docstring": "Gera relatório completo do sistema de aprendizado",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 30
+      },
+      {
+        "name": "_generate_system_recommendations",
+        "docstring": "Gera recomendações para melhorar o sistema",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "shutdown",
+        "docstring": "Desliga o sistema de aprendizado",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 10
+      },
+      {
+        "name": "_save_current_state",
+        "docstring": "Salva estado atual do sistema",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 11
+      },
+      {
+        "name": "get_rule_recommendations",
+        "docstring": "Obtém recomendações de regras baseado no contexto",
+        "parameters": [
+          "self",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      },
+      {
+        "name": "apply_rule_optimizations",
+        "docstring": "Aplica otimizações de regras aprendidas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "analyze_rule_patterns",
+        "docstring": "Analisa padrões de uso das regras",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      }
+    ],
+    "classes": [
+      {
+        "name": "InteractionData",
+        "docstring": "Dados de uma interação do sistema",
+        "methods": [],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 12
+      },
+      {
+        "name": "LearningPattern",
+        "docstring": "Padrão aprendido pelo sistema",
+        "methods": [],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 11
+      },
+      {
+        "name": "AutoLearningSystem",
+        "docstring": "Sistema principal de auto aprendizado BMAD",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "base_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 32
+          },
+          {
+            "name": "create_directory_structure",
+            "docstring": "Cria estrutura de pastas necessária",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 11
+          },
+          {
+            "name": "load_config",
+            "docstring": "Carrega configuração do sistema",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 18
+          },
+          {
+            "name": "save_config",
+            "docstring": "Salva configuração do sistema",
+            "parameters": [
+              "self",
+              "config"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 4
+          },
+          {
+            "name": "start_learning_background",
+            "docstring": "Inicia thread de aprendizado em background",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 6
+          },
+          {
+            "name": "stop_learning_background",
+            "docstring": "Para thread de aprendizado",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          },
+          {
+            "name": "_learning_loop",
+            "docstring": "Loop principal de aprendizado em background",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 13
+          },
+          {
+            "name": "_perform_learning_cycle",
+            "docstring": "Executa um ciclo completo de aprendizado",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 22
+          },
+          {
+            "name": "_save_learning_results",
+            "docstring": "Salva resultados do aprendizado",
+            "parameters": [
+              "self",
+              "patterns",
+              "optimizations"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "record_interaction",
+            "docstring": "Registra uma nova interação no sistema",
+            "parameters": [
+              "self",
+              "interaction_data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 20
+          },
+          {
+            "name": "_check_immediate_optimizations",
+            "docstring": "Verifica otimizações que podem ser aplicadas imediatamente",
+            "parameters": [
+              "self",
+              "interaction_data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 10
+          },
+          {
+            "name": "_find_similar_patterns",
+            "docstring": "Encontra padrões similares à interação atual",
+            "parameters": [
+              "self",
+              "interaction_data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 15
+          },
+          {
+            "name": "_calculate_context_similarity",
+            "docstring": "Calcula similaridade entre contexto e palavras-chave",
+            "parameters": [
+              "self",
+              "context",
+              "keywords"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 17
+          },
+          {
+            "name": "get_learning_stats",
+            "docstring": "Retorna estatísticas do sistema de aprendizado",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "get_recommendations",
+            "docstring": "Retorna recomendações baseadas no contexto atual",
+            "parameters": [
+              "self",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 26
+          },
+          {
+            "name": "update_feedback",
+            "docstring": "Atualiza feedback de uma interação",
+            "parameters": [
+              "self",
+              "interaction_id",
+              "feedback",
+              "score"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 6
+          },
+          {
+            "name": "_trigger_relearning",
+            "docstring": "Dispara relearning baseado em feedback negativo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 6
+          },
+          {
+            "name": "generate_learning_report",
+            "docstring": "Gera relatório completo do sistema de aprendizado",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 30
+          },
+          {
+            "name": "_generate_system_recommendations",
+            "docstring": "Gera recomendações para melhorar o sistema",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 16
+          },
+          {
+            "name": "shutdown",
+            "docstring": "Desliga o sistema de aprendizado",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 10
+          },
+          {
+            "name": "_save_current_state",
+            "docstring": "Salva estado atual do sistema",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 11
+          },
+          {
+            "name": "get_rule_recommendations",
+            "docstring": "Obtém recomendações de regras baseado no contexto",
+            "parameters": [
+              "self",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          },
+          {
+            "name": "apply_rule_optimizations",
+            "docstring": "Aplica otimizações de regras aprendidas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 16
+          },
+          {
+            "name": "analyze_rule_patterns",
+            "docstring": "Analisa padrões de uso das regras",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          }
+        ],
+        "attributes": [
+          "directories",
+          "config_file",
+          "config_file",
+          "interactions",
+          "patterns",
+          "optimizations",
+          "timestamp",
+          "patterns_file",
+          "optimizations_file",
+          "similar_patterns",
+          "similar_patterns",
+          "context_text",
+          "context_words",
+          "keyword_set",
+          "intersection",
+          "union",
+          "recommendations",
+          "relevant_patterns",
+          "stats",
+          "pattern_analysis",
+          "performance_analysis",
+          "recommendations",
+          "avg_confidence",
+          "state",
+          "state_file",
+          "optimizations",
+          "applied_optimizations",
+          "default_config",
+          "context_similarity",
+          "recent_optimizations",
+          "optimization",
+          "success"
+        ],
+        "inheritance": [],
+        "line_count": 375
+      }
+    ],
+    "imports": [
+      ".GitautomationModule",
+      "json",
+      "time",
+      "threading",
+      "datetime.datetime",
+      "datetime.timedelta",
+      "statistics"
+    ],
+    "line_count": 456,
+    "complexity_score": 31
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:52.823771"
+}

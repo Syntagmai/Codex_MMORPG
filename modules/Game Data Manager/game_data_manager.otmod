@@ -1,9 +1,0 @@
-Module
-  name: Game Data Manager
-  description: Módulo para gerenciamento de dados do jogo
-  author: BMAD AI Agent
-  website: https://github.com/edubart/otclient
-  sandboxed: true
-  scripts: [ game_data_manager ]
-  @onLoad: game_data_managerController:init()
-  @onUnload: game_data_managerController:terminate()

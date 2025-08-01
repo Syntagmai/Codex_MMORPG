@@ -1,3 +1,9 @@
+from datetime import datetime
+from typing import Dict, List, Any, Set
+import json
+import os
+import re
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -5,11 +11,6 @@ Enhanced Intelligent Orchestrator
 Versão melhorada com detecção de extensões de arquivo e contextos mais específicos
 """
 
-import os
-import json
-import re
-from datetime import datetime
-from typing import Dict, List, Any, Set
 
 class EnhancedContextAnalyzer:
     """Analisador de contexto melhorado com detecção de extensões de arquivo"""

@@ -1,0 +1,10 @@
+{
+  "module_name": "documentation_generator",
+  "description": "Gerador de documentação",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "python",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.855666"
+}

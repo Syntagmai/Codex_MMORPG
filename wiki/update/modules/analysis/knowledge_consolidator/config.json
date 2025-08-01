@@ -1,0 +1,24 @@
+{
+  "module_name": "knowledge_consolidator",
+  "description": "Consolidação de conhecimento",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "analysis",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.832457",
+  "migrated_scripts": [
+    {
+      "name": "knowledge_consolidation_system.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\knowledge_consolidation_system.py",
+      "migration_date": "2025-08-01T12:21:06.426740",
+      "status": "migrated"
+    },
+    {
+      "name": "knowledge_consolidation_system.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\knowledge_consolidation_system.py",
+      "migration_date": "2025-08-01T12:21:34.860740",
+      "status": "migrated"
+    }
+  ]
+}

@@ -1,14 +1,15 @@
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Any
+import json
+import os
+import re
+
 #!/usr/bin/env python3
 """
 Script para otimização da estrutura da wiki
 Remove duplicações e melhora organização sem perder informação
 """
-import os
-import json
-import re
-from datetime import datetime
-from pathlib import Path
-from typing import Dict, List, Any
 
 class WikiOptimizer:
     def __init__(self, wiki_dir: str = "wiki"):

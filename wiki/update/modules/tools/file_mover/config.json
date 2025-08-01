@@ -1,0 +1,30 @@
+{
+  "module_name": "file_mover",
+  "description": "Movimentação de arquivos",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "tools",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.862674",
+  "migrated_scripts": [
+    {
+      "name": "file_mover.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\file_mover.py",
+      "migration_date": "2025-08-01T12:21:36.217441",
+      "status": "migrated"
+    },
+    {
+      "name": "file_mover.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\file_mover.py",
+      "migration_date": "2025-08-01T12:21:45.580699",
+      "status": "migrated"
+    },
+    {
+      "name": "file_mover_usage_example.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\file_mover_usage_example.py",
+      "migration_date": "2025-08-01T12:21:45.612956",
+      "status": "migrated"
+    }
+  ]
+}

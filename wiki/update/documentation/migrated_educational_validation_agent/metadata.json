@@ -1,0 +1,236 @@
+{
+  "module": {
+    "name": "migrated_educational_validation_agent",
+    "path": "wiki\\update\\modules\\agents\\agent_orchestrator\\migrated_educational_validation_agent.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "log_message",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "message",
+          "level"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "test_lessons_functionality",
+        "docstring": "Testa funcionalidade de todas as 47 lições",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 70
+      },
+      {
+        "name": "validate_course_progression",
+        "docstring": "Valida progressão dos 4 cursos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 46
+      },
+      {
+        "name": "measure_learning_effectiveness",
+        "docstring": "Mede eficácia do aprendizado",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 50
+      },
+      {
+        "name": "identify_knowledge_gaps",
+        "docstring": "Identifica gaps de conhecimento",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 41
+      },
+      {
+        "name": "generate_educational_report",
+        "docstring": "Gera relatório completo do sistema educacional",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 29
+      },
+      {
+        "name": "execute",
+        "docstring": "Executa a validação educacional completa",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 47
+      }
+    ],
+    "classes": [
+      {
+        "name": "EducationalValidationAgent",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          },
+          {
+            "name": "log_message",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "message",
+              "level"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "test_lessons_functionality",
+            "docstring": "Testa funcionalidade de todas as 47 lições",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 70
+          },
+          {
+            "name": "validate_course_progression",
+            "docstring": "Valida progressão dos 4 cursos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 46
+          },
+          {
+            "name": "measure_learning_effectiveness",
+            "docstring": "Mede eficácia do aprendizado",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 50
+          },
+          {
+            "name": "identify_knowledge_gaps",
+            "docstring": "Identifica gaps de conhecimento",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 41
+          },
+          {
+            "name": "generate_educational_report",
+            "docstring": "Gera relatório completo do sistema educacional",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 29
+          },
+          {
+            "name": "execute",
+            "docstring": "Executa a validação educacional completa",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 47
+          }
+        ],
+        "attributes": [
+          "timestamp",
+          "log_entry",
+          "log_file",
+          "expected_lessons",
+          "lessons_path",
+          "validation_structure",
+          "lessons_index",
+          "lessons_file",
+          "course_progression",
+          "progression_validation",
+          "effectiveness_metrics",
+          "total_score",
+          "max_possible",
+          "overall_effectiveness",
+          "effectiveness_report",
+          "knowledge_gaps",
+          "gap_analysis",
+          "lessons_validation",
+          "progression_validation",
+          "effectiveness_report",
+          "gaps_analysis",
+          "educational_report",
+          "report_file",
+          "lessons_result",
+          "progression_result",
+          "effectiveness_result",
+          "gaps_result",
+          "educational_report",
+          "final_report",
+          "report_file"
+        ],
+        "inheritance": [],
+        "line_count": 310
+      }
+    ],
+    "imports": [
+      ".AgentorchestratorModule",
+      "json",
+      "datetime.datetime"
+    ],
+    "line_count": 360,
+    "complexity_score": 5
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:58.708974"
+}

@@ -1,0 +1,698 @@
+{
+  "module": {
+    "name": "performance_optimizer_agent",
+    "path": "wiki\\update\\performance_optimizer_agent.py",
+    "docstring": "Performance Optimizer Agent - Sistema de Cache e Otimização de Performance\n\nEste agente implementa um sistema de cache inteligente e otimizações de performance\npara scripts Python, incluindo cache de resultados, otimização de memória e análise de performance.",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 20
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "max_size_mb",
+          "default_ttl_seconds"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 12
+      },
+      {
+        "name": "get",
+        "docstring": "Obtém um valor do cache",
+        "parameters": [
+          "self",
+          "key"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 25
+      },
+      {
+        "name": "set",
+        "docstring": "Define um valor no cache",
+        "parameters": [
+          "self",
+          "key",
+          "value",
+          "ttl_seconds"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 41
+      },
+      {
+        "name": "_evict_lru",
+        "docstring": "Remove a entrada menos recentemente usada",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 6
+      },
+      {
+        "name": "_remove_entry",
+        "docstring": "Remove uma entrada do cache",
+        "parameters": [
+          "self",
+          "key"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      },
+      {
+        "name": "_cleanup_worker",
+        "docstring": "Worker para limpeza periódica do cache",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 4
+      },
+      {
+        "name": "_cleanup_expired",
+        "docstring": "Remove entradas expiradas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 11
+      },
+      {
+        "name": "get_stats",
+        "docstring": "Retorna estatísticas do cache",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "clear",
+        "docstring": "Limpa todo o cache",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      },
+      {
+        "name": "start_monitoring",
+        "docstring": "Inicia monitoramento e retorna estado inicial",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "end_monitoring",
+        "docstring": "Finaliza monitoramento e retorna métricas",
+        "parameters": [
+          "self",
+          "start_state",
+          "cache_stats"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 26
+      },
+      {
+        "name": "get_average_metrics",
+        "docstring": "Retorna métricas médias",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 10
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 6
+      },
+      {
+        "name": "optimize_script",
+        "docstring": "Otimiza um script Python",
+        "parameters": [
+          "self",
+          "script_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 52
+      },
+      {
+        "name": "_optimize_imports",
+        "docstring": "Otimiza imports",
+        "parameters": [
+          "self",
+          "code"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 15
+      },
+      {
+        "name": "_optimize_loops",
+        "docstring": "Otimiza loops",
+        "parameters": [
+          "self",
+          "code"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "_optimize_memory",
+        "docstring": "Otimiza uso de memória",
+        "parameters": [
+          "self",
+          "code"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "_optimize_cache_usage",
+        "docstring": "Otimiza uso de cache",
+        "parameters": [
+          "self",
+          "code"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "execute_task_12_10",
+        "docstring": "Executa a Task 12.10: Implementar cache e otimização de performance",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 34
+      },
+      {
+        "name": "_test_cache_functionality",
+        "docstring": "Testa funcionalidades do cache",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 33
+      },
+      {
+        "name": "_expensive_operation",
+        "docstring": "Operação cara para testar cache",
+        "parameters": [
+          "self",
+          "n"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 15
+      },
+      {
+        "name": "_optimize_sample_scripts",
+        "docstring": "Otimiza scripts de exemplo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "_collect_performance_metrics",
+        "docstring": "Coleta métricas de performance do sistema",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 13
+      }
+    ],
+    "classes": [
+      {
+        "name": "CacheEntry",
+        "docstring": "Entrada do cache",
+        "methods": [],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 8
+      },
+      {
+        "name": "PerformanceMetrics",
+        "docstring": "Métricas de performance",
+        "methods": [],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 9
+      },
+      {
+        "name": "OptimizationResult",
+        "docstring": "Resultado de otimização",
+        "methods": [],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 9
+      },
+      {
+        "name": "SmartCache",
+        "docstring": "Cache inteligente com TTL e LRU",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "max_size_mb",
+              "default_ttl_seconds"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 12
+          },
+          {
+            "name": "get",
+            "docstring": "Obtém um valor do cache",
+            "parameters": [
+              "self",
+              "key"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 25
+          },
+          {
+            "name": "set",
+            "docstring": "Define um valor no cache",
+            "parameters": [
+              "self",
+              "key",
+              "value",
+              "ttl_seconds"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 41
+          },
+          {
+            "name": "_evict_lru",
+            "docstring": "Remove a entrada menos recentemente usada",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 6
+          },
+          {
+            "name": "_remove_entry",
+            "docstring": "Remove uma entrada do cache",
+            "parameters": [
+              "self",
+              "key"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          },
+          {
+            "name": "_cleanup_worker",
+            "docstring": "Worker para limpeza periódica do cache",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 4
+          },
+          {
+            "name": "_cleanup_expired",
+            "docstring": "Remove entradas expiradas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 11
+          },
+          {
+            "name": "get_stats",
+            "docstring": "Retorna estatísticas do cache",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "clear",
+            "docstring": "Limpa todo o cache",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          }
+        ],
+        "attributes": [
+          "key",
+          "entry",
+          "entry",
+          "now",
+          "expired_keys",
+          "total_requests",
+          "hit_rate",
+          "entry",
+          "serialized",
+          "size_bytes"
+        ],
+        "inheritance": [],
+        "line_count": 145
+      },
+      {
+        "name": "PerformanceMonitor",
+        "docstring": "Monitor de performance do sistema",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          },
+          {
+            "name": "start_monitoring",
+            "docstring": "Inicia monitoramento e retorna estado inicial",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "end_monitoring",
+            "docstring": "Finaliza monitoramento e retorna métricas",
+            "parameters": [
+              "self",
+              "start_state",
+              "cache_stats"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 26
+          },
+          {
+            "name": "get_average_metrics",
+            "docstring": "Retorna métricas médias",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 10
+          }
+        ],
+        "attributes": [
+          "process",
+          "process",
+          "end_time",
+          "execution_time",
+          "memory_usage",
+          "cpu_usage",
+          "metrics"
+        ],
+        "inheritance": [],
+        "line_count": 54
+      },
+      {
+        "name": "CodeOptimizer",
+        "docstring": "Otimizador de código Python",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 6
+          },
+          {
+            "name": "optimize_script",
+            "docstring": "Otimiza um script Python",
+            "parameters": [
+              "self",
+              "script_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 52
+          },
+          {
+            "name": "_optimize_imports",
+            "docstring": "Otimiza imports",
+            "parameters": [
+              "self",
+              "code"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 15
+          },
+          {
+            "name": "_optimize_loops",
+            "docstring": "Otimiza loops",
+            "parameters": [
+              "self",
+              "code"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "_optimize_memory",
+            "docstring": "Otimiza uso de memória",
+            "parameters": [
+              "self",
+              "code"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "_optimize_cache_usage",
+            "docstring": "Otimiza uso de cache",
+            "parameters": [
+              "self",
+              "code"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          }
+        ],
+        "attributes": [
+          "lines",
+          "optimized_lines",
+          "start_time",
+          "original_time",
+          "optimized_code",
+          "optimizations_applied",
+          "start_time",
+          "optimized_time",
+          "improvement",
+          "original_code",
+          "import_name",
+          "optimized_code"
+        ],
+        "inheritance": [],
+        "line_count": 95
+      },
+      {
+        "name": "PerformanceOptimizerAgent",
+        "docstring": "Agente principal para otimização de performance",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          },
+          {
+            "name": "execute_task_12_10",
+            "docstring": "Executa a Task 12.10: Implementar cache e otimização de performance",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 34
+          },
+          {
+            "name": "_test_cache_functionality",
+            "docstring": "Testa funcionalidades do cache",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 33
+          },
+          {
+            "name": "_expensive_operation",
+            "docstring": "Operação cara para testar cache",
+            "parameters": [
+              "self",
+              "n"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 15
+          },
+          {
+            "name": "_optimize_sample_scripts",
+            "docstring": "Otimiza scripts de exemplo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 16
+          },
+          {
+            "name": "_collect_performance_metrics",
+            "docstring": "Coleta métricas de performance do sistema",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 13
+          }
+        ],
+        "attributes": [
+          "cache_tests",
+          "optimization_results",
+          "performance_metrics",
+          "report",
+          "report_path",
+          "tests",
+          "start_state",
+          "result1",
+          "cache_stats",
+          "metrics1",
+          "start_state",
+          "result2",
+          "cache_stats",
+          "metrics2",
+          "expired_value",
+          "cache_key",
+          "cached_result",
+          "result",
+          "results",
+          "sample_scripts",
+          "process",
+          "result"
+        ],
+        "inheritance": [],
+        "line_count": 129
+      }
+    ],
+    "imports": [
+      "os",
+      "sys",
+      "json",
+      "time",
+      "hashlib",
+      "pickle",
+      "logging",
+      "psutil",
+      "threading",
+      "pathlib.Path",
+      "typing.Dict",
+      "typing.List",
+      "typing.Optional",
+      "typing.Any",
+      "typing.Union",
+      "typing.Callable",
+      "dataclasses.dataclass",
+      "dataclasses.asdict",
+      "datetime.datetime",
+      "datetime.timedelta",
+      "traceback",
+      "functools",
+      "gc",
+      "weakref"
+    ],
+    "line_count": 523,
+    "complexity_score": 35
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:51.748005"
+}

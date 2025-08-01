@@ -1,0 +1,10 @@
+{
+  "module_name": "test_runner",
+  "description": "Executor de testes",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "python",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.853353"
+}

@@ -1,0 +1,40 @@
+{
+  "module": {
+    "name": "remove_emojis",
+    "path": "wiki\\update\\remove_emojis.py",
+    "docstring": "Script para remover emojis dos scripts de indexação",
+    "functions": [
+      {
+        "name": "remove_emojis_from_file",
+        "docstring": "Remove emojis de um arquivo",
+        "parameters": [
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 23
+      },
+      {
+        "name": "main",
+        "docstring": "Função principal",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      }
+    ],
+    "classes": [],
+    "imports": [
+      "os",
+      "re"
+    ],
+    "line_count": 52,
+    "complexity_score": 5
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:51.982438"
+}

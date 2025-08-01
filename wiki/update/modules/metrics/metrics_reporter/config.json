@@ -1,0 +1,10 @@
+{
+  "module_name": "metrics_reporter",
+  "description": "Relatórios de métricas",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "metrics",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.816798"
+}

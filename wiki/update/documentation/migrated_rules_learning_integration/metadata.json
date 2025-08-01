@@ -1,0 +1,562 @@
+{
+  "module": {
+    "name": "migrated_rules_learning_integration",
+    "path": "wiki\\update\\modules\\tools\\git_automation\\migrated_rules_learning_integration.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "base_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 27
+      },
+      {
+        "name": "load_rule_patterns",
+        "docstring": "Carrega padrões de regras aprendidos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "load_rule_optimizations",
+        "docstring": "Carrega otimizações de regras",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "load_rule_usage_log",
+        "docstring": "Carrega log de uso de regras",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "save_rule_patterns",
+        "docstring": "Salva padrões de regras aprendidos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "save_rule_optimizations",
+        "docstring": "Salva otimizações de regras",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "save_rule_usage_log",
+        "docstring": "Salva log de uso de regras",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "get_all_rules",
+        "docstring": "Obtém todas as regras do sistema",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 17
+      },
+      {
+        "name": "parse_rule_content",
+        "docstring": "Analisa conteúdo de uma regra",
+        "parameters": [
+          "self",
+          "content"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 18
+      },
+      {
+        "name": "record_rule_usage",
+        "docstring": "Registra uso de uma regra",
+        "parameters": [
+          "self",
+          "rule_file",
+          "context",
+          "success_score",
+          "feedback"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 17
+      },
+      {
+        "name": "analyze_rule_patterns",
+        "docstring": "Analisa padrões de uso das regras",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 37
+      },
+      {
+        "name": "_analyze_context_applicability",
+        "docstring": "Analisa aplicabilidade da regra em diferentes contextos",
+        "parameters": [
+          "self",
+          "usages"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "_extract_context_keywords",
+        "docstring": "Extrai palavras-chave do contexto",
+        "parameters": [
+          "self",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "_generate_rule_improvements",
+        "docstring": "Gera sugestões de melhoria para uma regra",
+        "parameters": [
+          "self",
+          "rule_file",
+          "usages"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "generate_rule_optimizations",
+        "docstring": "Gera otimizações para regras baseado em padrões aprendidos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 12
+      },
+      {
+        "name": "_create_rule_optimization",
+        "docstring": "Cria otimização para uma regra específica",
+        "parameters": [
+          "self",
+          "pattern"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 31
+      },
+      {
+        "name": "_generate_improved_content",
+        "docstring": "Gera conteúdo melhorado baseado em sugestões",
+        "parameters": [
+          "self",
+          "current_content",
+          "suggestions"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "apply_rule_optimization",
+        "docstring": "Aplica uma otimização de regra",
+        "parameters": [
+          "self",
+          "optimization"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 39
+      },
+      {
+        "name": "get_rule_recommendations",
+        "docstring": "Obtém recomendações de regras baseado no contexto",
+        "parameters": [
+          "self",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "_calculate_context_relevance",
+        "docstring": "Calcula relevância de uma regra para o contexto atual",
+        "parameters": [
+          "self",
+          "pattern",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "generate_rules_learning_report",
+        "docstring": "Gera relatório de aprendizado das regras",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 20
+      }
+    ],
+    "classes": [
+      {
+        "name": "RuleLearningPattern",
+        "docstring": "Padrão aprendido sobre regras",
+        "methods": [],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 10
+      },
+      {
+        "name": "RuleOptimization",
+        "docstring": "Otimização sugerida para uma regra",
+        "methods": [],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 8
+      },
+      {
+        "name": "RulesLearningIntegration",
+        "docstring": "Sistema de integração entre auto-aprendizado e regras",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "base_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 27
+          },
+          {
+            "name": "load_rule_patterns",
+            "docstring": "Carrega padrões de regras aprendidos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          },
+          {
+            "name": "load_rule_optimizations",
+            "docstring": "Carrega otimizações de regras",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          },
+          {
+            "name": "load_rule_usage_log",
+            "docstring": "Carrega log de uso de regras",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          },
+          {
+            "name": "save_rule_patterns",
+            "docstring": "Salva padrões de regras aprendidos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "save_rule_optimizations",
+            "docstring": "Salva otimizações de regras",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "save_rule_usage_log",
+            "docstring": "Salva log de uso de regras",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "get_all_rules",
+            "docstring": "Obtém todas as regras do sistema",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 17
+          },
+          {
+            "name": "parse_rule_content",
+            "docstring": "Analisa conteúdo de uma regra",
+            "parameters": [
+              "self",
+              "content"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 18
+          },
+          {
+            "name": "record_rule_usage",
+            "docstring": "Registra uso de uma regra",
+            "parameters": [
+              "self",
+              "rule_file",
+              "context",
+              "success_score",
+              "feedback"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 17
+          },
+          {
+            "name": "analyze_rule_patterns",
+            "docstring": "Analisa padrões de uso das regras",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 37
+          },
+          {
+            "name": "_analyze_context_applicability",
+            "docstring": "Analisa aplicabilidade da regra em diferentes contextos",
+            "parameters": [
+              "self",
+              "usages"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "_extract_context_keywords",
+            "docstring": "Extrai palavras-chave do contexto",
+            "parameters": [
+              "self",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "_generate_rule_improvements",
+            "docstring": "Gera sugestões de melhoria para uma regra",
+            "parameters": [
+              "self",
+              "rule_file",
+              "usages"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "generate_rule_optimizations",
+            "docstring": "Gera otimizações para regras baseado em padrões aprendidos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 12
+          },
+          {
+            "name": "_create_rule_optimization",
+            "docstring": "Cria otimização para uma regra específica",
+            "parameters": [
+              "self",
+              "pattern"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 31
+          },
+          {
+            "name": "_generate_improved_content",
+            "docstring": "Gera conteúdo melhorado baseado em sugestões",
+            "parameters": [
+              "self",
+              "current_content",
+              "suggestions"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 16
+          },
+          {
+            "name": "apply_rule_optimization",
+            "docstring": "Aplica uma otimização de regra",
+            "parameters": [
+              "self",
+              "optimization"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 39
+          },
+          {
+            "name": "get_rule_recommendations",
+            "docstring": "Obtém recomendações de regras baseado no contexto",
+            "parameters": [
+              "self",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          },
+          {
+            "name": "_calculate_context_relevance",
+            "docstring": "Calcula relevância de uma regra para o contexto atual",
+            "parameters": [
+              "self",
+              "pattern",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 16
+          },
+          {
+            "name": "generate_rules_learning_report",
+            "docstring": "Gera relatório de aprendizado das regras",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 20
+          }
+        ],
+        "attributes": [
+          "rules",
+          "sections",
+          "current_section",
+          "current_content",
+          "usage_entry",
+          "patterns",
+          "rule_usage",
+          "context_scores",
+          "applicability",
+          "keywords",
+          "suggestions",
+          "negative_feedback",
+          "context_applicability",
+          "low_applicability",
+          "optimizations",
+          "patterns",
+          "improved_content",
+          "recommendations",
+          "patterns",
+          "context_keywords",
+          "overlap_score",
+          "patterns",
+          "report",
+          "success_scores",
+          "avg_success",
+          "context_applicability",
+          "suggestions",
+          "pattern",
+          "context",
+          "score",
+          "keywords",
+          "request_words",
+          "rule_content",
+          "sections",
+          "suggestions",
+          "optimization",
+          "rule_file_path",
+          "backup_path",
+          "relevance_score",
+          "current_section",
+          "current_content",
+          "optimization",
+          "current_content",
+          "recommendation",
+          "content",
+          "rule_file_path"
+        ],
+        "inheritance": [],
+        "line_count": 395
+      }
+    ],
+    "imports": [
+      ".GitautomationModule",
+      "json",
+      "re",
+      "hashlib",
+      "datetime.datetime",
+      "datetime.timedelta",
+      "statistics"
+    ],
+    "line_count": 468,
+    "complexity_score": 48
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:53.091849"
+}

@@ -1,3 +1,15 @@
+            import psutil
+from datetime import datetime, timedelta
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+import json
+import logging
+import os
+import subprocess
+import sys
+import threading
+import time
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -5,16 +17,6 @@ Sistema de Auto-Monitoramento Contínuo BMAD
 Monitora continuamente o estado do sistema e dispara ações automáticas
 """
 
-import json
-import time
-import os
-import subprocess
-import sys
-from datetime import datetime, timedelta
-from pathlib import Path
-from typing import Dict, List, Any, Optional
-import threading
-import logging
 
 class AutoMonitor:
     def __init__(self):
@@ -339,7 +341,6 @@ class AutoMonitor:
     def measure_memory_usage(self) -> float:
         """Mede uso de memória"""
         try:
-            import psutil
             memory_percent = psutil.virtual_memory().percent
             
             # Normalizar (0-1, onde 1 é melhor)

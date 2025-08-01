@@ -1,0 +1,24 @@
+{
+  "module_name": "intelligent_navigator",
+  "description": "Navegação inteligente",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "analysis",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.825920",
+  "migrated_scripts": [
+    {
+      "name": "intelligent_navigation_system.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\intelligent_navigation_system.py",
+      "migration_date": "2025-08-01T12:21:06.376179",
+      "status": "migrated"
+    },
+    {
+      "name": "intelligent_navigation_system.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\intelligent_navigation_system.py",
+      "migration_date": "2025-08-01T12:21:34.798274",
+      "status": "migrated"
+    }
+  ]
+}

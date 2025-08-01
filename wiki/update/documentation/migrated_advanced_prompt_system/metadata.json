@@ -1,0 +1,969 @@
+{
+  "module": {
+    "name": "migrated_advanced_prompt_system",
+    "path": "wiki\\update\\modules\\tools\\git_automation\\migrated_advanced_prompt_system.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "base_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 20
+      },
+      {
+        "name": "create_directory_structure",
+        "docstring": "Cria estrutura de pastas necessária",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 10
+      },
+      {
+        "name": "load_config",
+        "docstring": "Carrega configurações do sistema",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "save_config",
+        "docstring": "Salva configurações do sistema",
+        "parameters": [
+          "self",
+          "config"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 4
+      },
+      {
+        "name": "optimize_prompt",
+        "docstring": "Otimiza um prompt usando técnicas avançadas",
+        "parameters": [
+          "self",
+          "original_prompt",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 41
+      },
+      {
+        "name": "evaluate_prompt",
+        "docstring": "Avalia a qualidade de um prompt",
+        "parameters": [
+          "self",
+          "prompt"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 34
+      },
+      {
+        "name": "apply_tree_of_thought",
+        "docstring": "Aplica técnica Tree-of-Thought para problemas complexos",
+        "parameters": [
+          "self",
+          "problem",
+          "max_depth"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 35
+      },
+      {
+        "name": "apply_self_consistency",
+        "docstring": "Aplica técnica Self-Consistency para maior precisão",
+        "parameters": [
+          "self",
+          "prompt",
+          "num_samples"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 20
+      },
+      {
+        "name": "apply_generated_knowledge",
+        "docstring": "Aplica técnica Generated Knowledge Prompting",
+        "parameters": [
+          "self",
+          "prompt",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "_select_optimization_technique",
+        "docstring": "Seleciona técnica de otimização baseada na avaliação",
+        "parameters": [
+          "self",
+          "evaluation",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "_apply_optimization_technique",
+        "docstring": "Aplica técnica específica de otimização",
+        "parameters": [
+          "self",
+          "prompt",
+          "technique",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "_comprehensive_rewrite",
+        "docstring": "Reescreve prompt completamente",
+        "parameters": [
+          "self",
+          "prompt",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "_enhance_clarity",
+        "docstring": "Melhora clareza do prompt",
+        "parameters": [
+          "self",
+          "prompt"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "_improve_specificity",
+        "docstring": "Melhora especificidade do prompt",
+        "parameters": [
+          "self",
+          "prompt",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 17
+      },
+      {
+        "name": "_enhance_completeness",
+        "docstring": "Melhora completude do prompt",
+        "parameters": [
+          "self",
+          "prompt",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 15
+      },
+      {
+        "name": "_apply_tot_to_prompt",
+        "docstring": "Aplica Tree-of-Thought ao prompt",
+        "parameters": [
+          "self",
+          "prompt",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 17
+      },
+      {
+        "name": "_apply_role_prompting",
+        "docstring": "Aplica Role Prompting",
+        "parameters": [
+          "self",
+          "prompt",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 12
+      },
+      {
+        "name": "_detect_task_type",
+        "docstring": "Detecta tipo de tarefa do prompt",
+        "parameters": [
+          "self",
+          "prompt"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 12
+      },
+      {
+        "name": "_determine_appropriate_role",
+        "docstring": "Determina papel apropriado baseado no contexto",
+        "parameters": [
+          "self",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 20
+      },
+      {
+        "name": "_calculate_clarity_score",
+        "docstring": "Calcula score de clareza do prompt",
+        "parameters": [
+          "self",
+          "prompt"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 23
+      },
+      {
+        "name": "_calculate_specificity_score",
+        "docstring": "Calcula score de especificidade do prompt",
+        "parameters": [
+          "self",
+          "prompt"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "_calculate_completeness_score",
+        "docstring": "Calcula score de completude do prompt",
+        "parameters": [
+          "self",
+          "prompt"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 17
+      },
+      {
+        "name": "_generate_evaluation_suggestions",
+        "docstring": "Gera sugestões baseadas na avaliação",
+        "parameters": [
+          "self",
+          "clarity",
+          "specificity",
+          "completeness"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 17
+      },
+      {
+        "name": "_calculate_optimization_confidence",
+        "docstring": "Calcula confiança da otimização",
+        "parameters": [
+          "self",
+          "evaluation"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "_generate_optimization_reasoning",
+        "docstring": "Gera explicação para a otimização",
+        "parameters": [
+          "self",
+          "evaluation",
+          "technique"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "_estimate_improvement",
+        "docstring": "Estima melhoria esperada",
+        "parameters": [
+          "self",
+          "evaluation"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "_generate_child_thoughts",
+        "docstring": "Gera pensamentos filhos para Tree-of-Thought",
+        "parameters": [
+          "self",
+          "parent_thought",
+          "depth"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 23
+      },
+      {
+        "name": "_evaluate_thought",
+        "docstring": "Avalia um pensamento",
+        "parameters": [
+          "self",
+          "thought"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 13
+      },
+      {
+        "name": "_calculate_thought_confidence",
+        "docstring": "Calcula confiança de um pensamento",
+        "parameters": [
+          "self",
+          "thought"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 11
+      },
+      {
+        "name": "_generate_thought_chain",
+        "docstring": "Gera uma cadeia de pensamento",
+        "parameters": [
+          "self",
+          "prompt"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 12
+      },
+      {
+        "name": "_analyze_consistency",
+        "docstring": "Analisa consistência entre cadeias de pensamento",
+        "parameters": [
+          "self",
+          "chains"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 22
+      },
+      {
+        "name": "_select_most_consistent_response",
+        "docstring": "Seleciona resposta mais consistente",
+        "parameters": [
+          "self",
+          "chains",
+          "analysis"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 15
+      },
+      {
+        "name": "_generate_relevant_knowledge",
+        "docstring": "Gera conhecimento relevante para o prompt",
+        "parameters": [
+          "self",
+          "prompt",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 28
+      },
+      {
+        "name": "_integrate_knowledge_into_prompt",
+        "docstring": "Integra conhecimento ao prompt",
+        "parameters": [
+          "self",
+          "prompt",
+          "knowledge"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 12
+      },
+      {
+        "name": "get_optimization_stats",
+        "docstring": "Retorna estatísticas de otimização",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 10
+      },
+      {
+        "name": "_get_most_used_technique",
+        "docstring": "Retorna técnica mais usada",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      }
+    ],
+    "classes": [
+      {
+        "name": "PromptOptimization",
+        "docstring": "Otimização de prompt",
+        "methods": [],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 7
+      },
+      {
+        "name": "ThoughtNode",
+        "docstring": "Nó de pensamento para Tree-of-Thought",
+        "methods": [],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 8
+      },
+      {
+        "name": "PromptEvaluation",
+        "docstring": "Avaliação de prompt",
+        "methods": [],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 8
+      },
+      {
+        "name": "AdvancedPromptSystem",
+        "docstring": "Sistema avançado de engenharia de prompt",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "base_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 20
+          },
+          {
+            "name": "create_directory_structure",
+            "docstring": "Cria estrutura de pastas necessária",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 10
+          },
+          {
+            "name": "load_config",
+            "docstring": "Carrega configurações do sistema",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          },
+          {
+            "name": "save_config",
+            "docstring": "Salva configurações do sistema",
+            "parameters": [
+              "self",
+              "config"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 4
+          },
+          {
+            "name": "optimize_prompt",
+            "docstring": "Otimiza um prompt usando técnicas avançadas",
+            "parameters": [
+              "self",
+              "original_prompt",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 41
+          },
+          {
+            "name": "evaluate_prompt",
+            "docstring": "Avalia a qualidade de um prompt",
+            "parameters": [
+              "self",
+              "prompt"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 34
+          },
+          {
+            "name": "apply_tree_of_thought",
+            "docstring": "Aplica técnica Tree-of-Thought para problemas complexos",
+            "parameters": [
+              "self",
+              "problem",
+              "max_depth"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 35
+          },
+          {
+            "name": "apply_self_consistency",
+            "docstring": "Aplica técnica Self-Consistency para maior precisão",
+            "parameters": [
+              "self",
+              "prompt",
+              "num_samples"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 20
+          },
+          {
+            "name": "apply_generated_knowledge",
+            "docstring": "Aplica técnica Generated Knowledge Prompting",
+            "parameters": [
+              "self",
+              "prompt",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "_select_optimization_technique",
+            "docstring": "Seleciona técnica de otimização baseada na avaliação",
+            "parameters": [
+              "self",
+              "evaluation",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "_apply_optimization_technique",
+            "docstring": "Aplica técnica específica de otimização",
+            "parameters": [
+              "self",
+              "prompt",
+              "technique",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 16
+          },
+          {
+            "name": "_comprehensive_rewrite",
+            "docstring": "Reescreve prompt completamente",
+            "parameters": [
+              "self",
+              "prompt",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "_enhance_clarity",
+            "docstring": "Melhora clareza do prompt",
+            "parameters": [
+              "self",
+              "prompt"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 16
+          },
+          {
+            "name": "_improve_specificity",
+            "docstring": "Melhora especificidade do prompt",
+            "parameters": [
+              "self",
+              "prompt",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 17
+          },
+          {
+            "name": "_enhance_completeness",
+            "docstring": "Melhora completude do prompt",
+            "parameters": [
+              "self",
+              "prompt",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 15
+          },
+          {
+            "name": "_apply_tot_to_prompt",
+            "docstring": "Aplica Tree-of-Thought ao prompt",
+            "parameters": [
+              "self",
+              "prompt",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 17
+          },
+          {
+            "name": "_apply_role_prompting",
+            "docstring": "Aplica Role Prompting",
+            "parameters": [
+              "self",
+              "prompt",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 12
+          },
+          {
+            "name": "_detect_task_type",
+            "docstring": "Detecta tipo de tarefa do prompt",
+            "parameters": [
+              "self",
+              "prompt"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 12
+          },
+          {
+            "name": "_determine_appropriate_role",
+            "docstring": "Determina papel apropriado baseado no contexto",
+            "parameters": [
+              "self",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 20
+          },
+          {
+            "name": "_calculate_clarity_score",
+            "docstring": "Calcula score de clareza do prompt",
+            "parameters": [
+              "self",
+              "prompt"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 23
+          },
+          {
+            "name": "_calculate_specificity_score",
+            "docstring": "Calcula score de especificidade do prompt",
+            "parameters": [
+              "self",
+              "prompt"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 16
+          },
+          {
+            "name": "_calculate_completeness_score",
+            "docstring": "Calcula score de completude do prompt",
+            "parameters": [
+              "self",
+              "prompt"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 17
+          },
+          {
+            "name": "_generate_evaluation_suggestions",
+            "docstring": "Gera sugestões baseadas na avaliação",
+            "parameters": [
+              "self",
+              "clarity",
+              "specificity",
+              "completeness"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 17
+          },
+          {
+            "name": "_calculate_optimization_confidence",
+            "docstring": "Calcula confiança da otimização",
+            "parameters": [
+              "self",
+              "evaluation"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "_generate_optimization_reasoning",
+            "docstring": "Gera explicação para a otimização",
+            "parameters": [
+              "self",
+              "evaluation",
+              "technique"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "_estimate_improvement",
+            "docstring": "Estima melhoria esperada",
+            "parameters": [
+              "self",
+              "evaluation"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "_generate_child_thoughts",
+            "docstring": "Gera pensamentos filhos para Tree-of-Thought",
+            "parameters": [
+              "self",
+              "parent_thought",
+              "depth"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 23
+          },
+          {
+            "name": "_evaluate_thought",
+            "docstring": "Avalia um pensamento",
+            "parameters": [
+              "self",
+              "thought"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 13
+          },
+          {
+            "name": "_calculate_thought_confidence",
+            "docstring": "Calcula confiança de um pensamento",
+            "parameters": [
+              "self",
+              "thought"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 11
+          },
+          {
+            "name": "_generate_thought_chain",
+            "docstring": "Gera uma cadeia de pensamento",
+            "parameters": [
+              "self",
+              "prompt"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 12
+          },
+          {
+            "name": "_analyze_consistency",
+            "docstring": "Analisa consistência entre cadeias de pensamento",
+            "parameters": [
+              "self",
+              "chains"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 22
+          },
+          {
+            "name": "_select_most_consistent_response",
+            "docstring": "Seleciona resposta mais consistente",
+            "parameters": [
+              "self",
+              "chains",
+              "analysis"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 15
+          },
+          {
+            "name": "_generate_relevant_knowledge",
+            "docstring": "Gera conhecimento relevante para o prompt",
+            "parameters": [
+              "self",
+              "prompt",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 28
+          },
+          {
+            "name": "_integrate_knowledge_into_prompt",
+            "docstring": "Integra conhecimento ao prompt",
+            "parameters": [
+              "self",
+              "prompt",
+              "knowledge"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 12
+          },
+          {
+            "name": "get_optimization_stats",
+            "docstring": "Retorna estatísticas de otimização",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 10
+          },
+          {
+            "name": "_get_most_used_technique",
+            "docstring": "Retorna técnica mais usada",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          }
+        ],
+        "attributes": [
+          "directories",
+          "config_file",
+          "default_config",
+          "config_file",
+          "prompt_hash",
+          "evaluation",
+          "optimization_technique",
+          "optimized_prompt",
+          "optimization",
+          "prompt_hash",
+          "clarity_score",
+          "specificity_score",
+          "completeness_score",
+          "overall_score",
+          "suggestions",
+          "evaluation",
+          "root_thought",
+          "thoughts",
+          "thought_dict",
+          "chains",
+          "consistency_analysis",
+          "most_consistent",
+          "generated_knowledge",
+          "enhanced_prompt",
+          "task_type",
+          "enhanced",
+          "context_info",
+          "enhanced",
+          "enhanced",
+          "enhanced",
+          "role",
+          "enhanced",
+          "prompt_lower",
+          "word_count",
+          "sentence_count",
+          "avg_sentence_length",
+          "ambiguous_words",
+          "ambiguous_count",
+          "specific_indicators",
+          "specific_count",
+          "specificity_score",
+          "completeness_indicators",
+          "completeness_count",
+          "completeness_score",
+          "instruction_count",
+          "suggestions",
+          "reasoning",
+          "children",
+          "approaches",
+          "content",
+          "steps",
+          "all_steps",
+          "step_frequency",
+          "total_steps",
+          "unique_steps",
+          "consistency",
+          "step_frequency",
+          "best_chain",
+          "best_score",
+          "knowledge",
+          "task_type",
+          "knowledge_text",
+          "enhanced",
+          "technique_count",
+          "max_depth",
+          "current_level",
+          "chain",
+          "techs",
+          "clarity_score",
+          "child",
+          "score",
+          "child_thoughts",
+          "clarity_score",
+          "best_score",
+          "best_chain",
+          "clarity_score",
+          "clarity_score"
+        ],
+        "inheritance": [],
+        "line_count": 680
+      }
+    ],
+    "imports": [
+      ".GitautomationModule",
+      "json",
+      "re",
+      "hashlib",
+      "datetime.datetime",
+      "datetime.timedelta",
+      "statistics"
+    ],
+    "line_count": 761,
+    "complexity_score": 77
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:52.789921"
+}

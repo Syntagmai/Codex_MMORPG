@@ -1,0 +1,239 @@
+{
+  "module": {
+    "name": "migrated_migrated_canary_analysis_preparator",
+    "path": "wiki\\update\\modules\\maps\\map_updater\\migrated_migrated_canary_analysis_preparator.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "create_canary_structure",
+        "docstring": "Cria estrutura de análise para o Canary",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 40
+      },
+      {
+        "name": "create_comparison_framework",
+        "docstring": "Cria framework de comparação OTClient vs Canary",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 35
+      },
+      {
+        "name": "create_documentation_template",
+        "docstring": "Cria template de documentação para Canary",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 184
+      },
+      {
+        "name": "create_analysis_tools",
+        "docstring": "Cria ferramentas de análise",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 31
+      },
+      {
+        "name": "create_migration_guides",
+        "docstring": "Cria estrutura para guias de migração",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 40
+      },
+      {
+        "name": "save_preparation_files",
+        "docstring": "Salva arquivos de preparação",
+        "parameters": [
+          "self",
+          "structure",
+          "comparison",
+          "template",
+          "tools",
+          "guides"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 60
+      },
+      {
+        "name": "run",
+        "docstring": "Executa a preparação da análise Canary",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 37
+      }
+    ],
+    "classes": [
+      {
+        "name": "CanaryAnalysisPreparator",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "create_canary_structure",
+            "docstring": "Cria estrutura de análise para o Canary",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 40
+          },
+          {
+            "name": "create_comparison_framework",
+            "docstring": "Cria framework de comparação OTClient vs Canary",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 35
+          },
+          {
+            "name": "create_documentation_template",
+            "docstring": "Cria template de documentação para Canary",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 184
+          },
+          {
+            "name": "create_analysis_tools",
+            "docstring": "Cria ferramentas de análise",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 31
+          },
+          {
+            "name": "create_migration_guides",
+            "docstring": "Cria estrutura para guias de migração",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 40
+          },
+          {
+            "name": "save_preparation_files",
+            "docstring": "Salva arquivos de preparação",
+            "parameters": [
+              "self",
+              "structure",
+              "comparison",
+              "template",
+              "tools",
+              "guides"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 60
+          },
+          {
+            "name": "run",
+            "docstring": "Executa a preparação da análise Canary",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 37
+          }
+        ],
+        "attributes": [
+          "structure",
+          "comparison",
+          "template",
+          "tools",
+          "guides",
+          "saved_files",
+          "structure_file",
+          "comparison_file",
+          "template_file",
+          "tools_file",
+          "guides_file",
+          "structure",
+          "comparison",
+          "template",
+          "tools",
+          "guides",
+          "saved_files"
+        ],
+        "inheritance": [],
+        "line_count": 461
+      }
+    ],
+    "imports": [
+      ".MapupdaterModule",
+      ".MapupdaterModule",
+      "json",
+      "logging",
+      "datetime.datetime"
+    ],
+    "line_count": 548,
+    "complexity_score": 13
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:55.415816"
+}

@@ -1,3 +1,8 @@
+from datetime import datetime
+from pathlib import Path
+import json
+import time
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -5,10 +10,6 @@ Script de Análise de Otimização de Navegação
 Analisa se todos os caminhos referenciados no cursor.md estão otimizados
 """
 
-import json
-import time
-from datetime import datetime
-from pathlib import Path
 
 class NavigationOptimizationAnalyzer:
     def __init__(self):

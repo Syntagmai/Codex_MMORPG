@@ -1,0 +1,486 @@
+{
+  "module": {
+    "name": "migrated_prompt_evaluator",
+    "path": "wiki\\update\\modules\\tools\\git_automation\\migrated_prompt_evaluator.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "_load_evaluation_patterns",
+        "docstring": "Carrega padrões de avaliação",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 49
+      },
+      {
+        "name": "evaluate_prompt",
+        "docstring": "Avalia um prompt completo",
+        "parameters": [
+          "self",
+          "prompt",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 64
+      },
+      {
+        "name": "_calculate_clarity_score",
+        "docstring": "Calcula score de clareza",
+        "parameters": [
+          "self",
+          "prompt"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 27
+      },
+      {
+        "name": "_calculate_specificity_score",
+        "docstring": "Calcula score de especificidade",
+        "parameters": [
+          "self",
+          "prompt",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 26
+      },
+      {
+        "name": "_calculate_completeness_score",
+        "docstring": "Calcula score de completude",
+        "parameters": [
+          "self",
+          "prompt"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 26
+      },
+      {
+        "name": "_calculate_structure_score",
+        "docstring": "Calcula score de estrutura",
+        "parameters": [
+          "self",
+          "prompt"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 23
+      },
+      {
+        "name": "_calculate_context_score",
+        "docstring": "Calcula score de contexto",
+        "parameters": [
+          "self",
+          "prompt",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 28
+      },
+      {
+        "name": "_calculate_overall_score",
+        "docstring": "Calcula score geral ponderado",
+        "parameters": [
+          "self",
+          "scores"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "_generate_suggestions",
+        "docstring": "Gera sugestões baseadas nos scores",
+        "parameters": [
+          "self",
+          "scores"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 23
+      },
+      {
+        "name": "_create_detailed_analysis",
+        "docstring": "Cria análise detalhada do prompt",
+        "parameters": [
+          "self",
+          "prompt",
+          "metrics"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 37
+      },
+      {
+        "name": "_generate_recommendations",
+        "docstring": "Gera recomendações específicas",
+        "parameters": [
+          "self",
+          "metrics",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 30
+      },
+      {
+        "name": "_calculate_evaluation_confidence",
+        "docstring": "Calcula confiança da avaliação",
+        "parameters": [
+          "self",
+          "metrics"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "_generate_prompt_id",
+        "docstring": "Gera ID único para o prompt",
+        "parameters": [
+          "self",
+          "prompt"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 4
+      },
+      {
+        "name": "batch_evaluate",
+        "docstring": "Avalia múltiplos prompts",
+        "parameters": [
+          "self",
+          "prompts",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      },
+      {
+        "name": "get_evaluation_stats",
+        "docstring": "Retorna estatísticas de avaliação",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 26
+      },
+      {
+        "name": "_calculate_improvement_trend",
+        "docstring": "Calcula tendência de melhoria",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      }
+    ],
+    "classes": [
+      {
+        "name": "PromptMetrics",
+        "docstring": "Métricas de avaliação de prompt",
+        "methods": [],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 10
+      },
+      {
+        "name": "EvaluationResult",
+        "docstring": "Resultado completo de avaliação",
+        "methods": [],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 5
+      },
+      {
+        "name": "PromptEvaluator",
+        "docstring": "Avaliador especializado de prompts",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "_load_evaluation_patterns",
+            "docstring": "Carrega padrões de avaliação",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 49
+          },
+          {
+            "name": "evaluate_prompt",
+            "docstring": "Avalia um prompt completo",
+            "parameters": [
+              "self",
+              "prompt",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 64
+          },
+          {
+            "name": "_calculate_clarity_score",
+            "docstring": "Calcula score de clareza",
+            "parameters": [
+              "self",
+              "prompt"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 27
+          },
+          {
+            "name": "_calculate_specificity_score",
+            "docstring": "Calcula score de especificidade",
+            "parameters": [
+              "self",
+              "prompt",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 26
+          },
+          {
+            "name": "_calculate_completeness_score",
+            "docstring": "Calcula score de completude",
+            "parameters": [
+              "self",
+              "prompt"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 26
+          },
+          {
+            "name": "_calculate_structure_score",
+            "docstring": "Calcula score de estrutura",
+            "parameters": [
+              "self",
+              "prompt"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 23
+          },
+          {
+            "name": "_calculate_context_score",
+            "docstring": "Calcula score de contexto",
+            "parameters": [
+              "self",
+              "prompt",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 28
+          },
+          {
+            "name": "_calculate_overall_score",
+            "docstring": "Calcula score geral ponderado",
+            "parameters": [
+              "self",
+              "scores"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "_generate_suggestions",
+            "docstring": "Gera sugestões baseadas nos scores",
+            "parameters": [
+              "self",
+              "scores"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 23
+          },
+          {
+            "name": "_create_detailed_analysis",
+            "docstring": "Cria análise detalhada do prompt",
+            "parameters": [
+              "self",
+              "prompt",
+              "metrics"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 37
+          },
+          {
+            "name": "_generate_recommendations",
+            "docstring": "Gera recomendações específicas",
+            "parameters": [
+              "self",
+              "metrics",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 30
+          },
+          {
+            "name": "_calculate_evaluation_confidence",
+            "docstring": "Calcula confiança da avaliação",
+            "parameters": [
+              "self",
+              "metrics"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 16
+          },
+          {
+            "name": "_generate_prompt_id",
+            "docstring": "Gera ID único para o prompt",
+            "parameters": [
+              "self",
+              "prompt"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 4
+          },
+          {
+            "name": "batch_evaluate",
+            "docstring": "Avalia múltiplos prompts",
+            "parameters": [
+              "self",
+              "prompts",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          },
+          {
+            "name": "get_evaluation_stats",
+            "docstring": "Retorna estatísticas de avaliação",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 26
+          },
+          {
+            "name": "_calculate_improvement_trend",
+            "docstring": "Calcula tendência de melhoria",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          }
+        ],
+        "attributes": [
+          "clarity_score",
+          "specificity_score",
+          "completeness_score",
+          "structure_score",
+          "context_score",
+          "overall_score",
+          "suggestions",
+          "prompt_id",
+          "metrics",
+          "detailed_analysis",
+          "recommendations",
+          "confidence",
+          "score",
+          "sentences",
+          "avg_sentence_length",
+          "positive_count",
+          "negative_count",
+          "score",
+          "specific_count",
+          "generic_count",
+          "score",
+          "complete_count",
+          "incomplete_count",
+          "instruction_count",
+          "score",
+          "structure_count",
+          "no_structure_count",
+          "score",
+          "context_count",
+          "no_context_count",
+          "overall",
+          "suggestions",
+          "recommendations",
+          "scores",
+          "variance",
+          "confidence",
+          "results",
+          "recent_evaluations",
+          "scores",
+          "recent_scores",
+          "first_half",
+          "second_half",
+          "avg_first",
+          "avg_second",
+          "context_mentions",
+          "tech_list",
+          "result",
+          "tech_mentions"
+        ],
+        "inheritance": [],
+        "line_count": 464
+      }
+    ],
+    "imports": [
+      ".GitautomationModule",
+      "re",
+      "statistics",
+      "datetime.datetime",
+      "hashlib"
+    ],
+    "line_count": 531,
+    "complexity_score": 46
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:52.989682"
+}

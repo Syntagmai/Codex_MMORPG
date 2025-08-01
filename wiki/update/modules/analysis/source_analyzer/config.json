@@ -1,0 +1,30 @@
+{
+  "module_name": "source_analyzer",
+  "description": "Análise do código-fonte",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "analysis",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.820088",
+  "migrated_scripts": [
+    {
+      "name": "otclient_debug_tools.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\otclient_debug_tools.py",
+      "migration_date": "2025-08-01T12:21:06.614881",
+      "status": "migrated"
+    },
+    {
+      "name": "otclient_debug_tools.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\otclient_debug_tools.py",
+      "migration_date": "2025-08-01T12:21:35.092475",
+      "status": "migrated"
+    },
+    {
+      "name": "pattern_analyzer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\pattern_analyzer.py",
+      "migration_date": "2025-08-01T12:21:45.002689",
+      "status": "migrated"
+    }
+  ]
+}

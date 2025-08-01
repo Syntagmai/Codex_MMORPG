@@ -1,0 +1,458 @@
+{
+  "module": {
+    "name": "migrated_otclient_log_analyzer",
+    "path": "wiki\\update\\modules\\maps\\map_updater\\migrated_otclient_log_analyzer.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 36
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "work_dir"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 67
+      },
+      {
+        "name": "analyze_logs",
+        "docstring": "Analisa logs do OTClient",
+        "parameters": [
+          "self",
+          "log_file"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 34
+      },
+      {
+        "name": "parse_log_entries",
+        "docstring": "Parseia entradas de log",
+        "parameters": [
+          "self",
+          "log_content"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 13
+      },
+      {
+        "name": "parse_log_line",
+        "docstring": "Parseia uma linha de log",
+        "parameters": [
+          "self",
+          "line"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 35
+      },
+      {
+        "name": "get_time_range",
+        "docstring": "Obtém o intervalo de tempo dos logs",
+        "parameters": [
+          "self",
+          "entries"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 12
+      },
+      {
+        "name": "analyze_level_distribution",
+        "docstring": "Analisa distribuição de níveis de log",
+        "parameters": [
+          "self",
+          "entries"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "analyze_category_distribution",
+        "docstring": "Analisa distribuição de categorias",
+        "parameters": [
+          "self",
+          "entries"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "analyze_errors",
+        "docstring": "Analisa erros nos logs",
+        "parameters": [
+          "self",
+          "entries"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 31
+      },
+      {
+        "name": "classify_error",
+        "docstring": "Classifica o tipo de erro",
+        "parameters": [
+          "self",
+          "message"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "analyze_performance",
+        "docstring": "Analisa métricas de performance",
+        "parameters": [
+          "self",
+          "entries"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 48
+      },
+      {
+        "name": "analyze_crashes",
+        "docstring": "Analisa crashes do cliente",
+        "parameters": [
+          "self",
+          "entries"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 29
+      },
+      {
+        "name": "identify_crash_pattern",
+        "docstring": "Identifica padrão de crash",
+        "parameters": [
+          "self",
+          "message"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 15
+      },
+      {
+        "name": "analyze_patterns",
+        "docstring": "Analisa padrões nos logs",
+        "parameters": [
+          "self",
+          "entries"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 32
+      },
+      {
+        "name": "generate_recommendations",
+        "docstring": "Gera recomendações baseadas na análise",
+        "parameters": [
+          "self",
+          "entries"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 36
+      },
+      {
+        "name": "generate_report",
+        "docstring": "Gera relatório de análise",
+        "parameters": [
+          "self",
+          "analysis"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 66
+      },
+      {
+        "name": "save_analysis",
+        "docstring": "Salva análise em arquivo JSON",
+        "parameters": [
+          "self",
+          "analysis",
+          "output_file"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 12
+      }
+    ],
+    "classes": [
+      {
+        "name": "OTClientLogAnalyzer",
+        "docstring": "Analisador especializado de logs do OTClient",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "work_dir"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 67
+          },
+          {
+            "name": "analyze_logs",
+            "docstring": "Analisa logs do OTClient",
+            "parameters": [
+              "self",
+              "log_file"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 34
+          },
+          {
+            "name": "parse_log_entries",
+            "docstring": "Parseia entradas de log",
+            "parameters": [
+              "self",
+              "log_content"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 13
+          },
+          {
+            "name": "parse_log_line",
+            "docstring": "Parseia uma linha de log",
+            "parameters": [
+              "self",
+              "line"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 35
+          },
+          {
+            "name": "get_time_range",
+            "docstring": "Obtém o intervalo de tempo dos logs",
+            "parameters": [
+              "self",
+              "entries"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 12
+          },
+          {
+            "name": "analyze_level_distribution",
+            "docstring": "Analisa distribuição de níveis de log",
+            "parameters": [
+              "self",
+              "entries"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "analyze_category_distribution",
+            "docstring": "Analisa distribuição de categorias",
+            "parameters": [
+              "self",
+              "entries"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "analyze_errors",
+            "docstring": "Analisa erros nos logs",
+            "parameters": [
+              "self",
+              "entries"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 31
+          },
+          {
+            "name": "classify_error",
+            "docstring": "Classifica o tipo de erro",
+            "parameters": [
+              "self",
+              "message"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "analyze_performance",
+            "docstring": "Analisa métricas de performance",
+            "parameters": [
+              "self",
+              "entries"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 48
+          },
+          {
+            "name": "analyze_crashes",
+            "docstring": "Analisa crashes do cliente",
+            "parameters": [
+              "self",
+              "entries"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 29
+          },
+          {
+            "name": "identify_crash_pattern",
+            "docstring": "Identifica padrão de crash",
+            "parameters": [
+              "self",
+              "message"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 15
+          },
+          {
+            "name": "analyze_patterns",
+            "docstring": "Analisa padrões nos logs",
+            "parameters": [
+              "self",
+              "entries"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 32
+          },
+          {
+            "name": "generate_recommendations",
+            "docstring": "Gera recomendações baseadas na análise",
+            "parameters": [
+              "self",
+              "entries"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 36
+          },
+          {
+            "name": "generate_report",
+            "docstring": "Gera relatório de análise",
+            "parameters": [
+              "self",
+              "analysis"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 66
+          },
+          {
+            "name": "save_analysis",
+            "docstring": "Salva análise em arquivo JSON",
+            "parameters": [
+              "self",
+              "analysis",
+              "output_file"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 12
+          }
+        ],
+        "attributes": [
+          "log_path",
+          "entries",
+          "lines",
+          "timestamps",
+          "level_counts",
+          "category_counts",
+          "error_entries",
+          "error_analysis",
+          "message_lower",
+          "performance_analysis",
+          "crash_entries",
+          "crash_analysis",
+          "message_lower",
+          "pattern_analysis",
+          "error_messages",
+          "error_counts",
+          "error_sequence",
+          "recommendations",
+          "level_dist",
+          "error_count",
+          "fatal_count",
+          "performance_analysis",
+          "pattern_analysis",
+          "report",
+          "level_dist",
+          "category_dist",
+          "error_analysis",
+          "performance_analysis",
+          "crash_analysis",
+          "recommendations",
+          "log_entries",
+          "analysis",
+          "entry",
+          "pattern",
+          "match",
+          "pattern2",
+          "match2",
+          "message",
+          "category",
+          "error_type",
+          "error_key",
+          "message",
+          "category",
+          "message",
+          "crash_pattern",
+          "output_path",
+          "log_content",
+          "fps_match",
+          "memory_match",
+          "latency_match",
+          "fps_value",
+          "memory_value",
+          "latency_value"
+        ],
+        "inheritance": [],
+        "line_count": 478
+      }
+    ],
+    "imports": [
+      ".MapupdaterModule",
+      "json",
+      "re",
+      "argparse"
+    ],
+    "line_count": 565,
+    "complexity_score": 66
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:56.184040"
+}

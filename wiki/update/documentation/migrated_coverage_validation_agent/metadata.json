@@ -1,0 +1,276 @@
+{
+  "module": {
+    "name": "migrated_coverage_validation_agent",
+    "path": "wiki\\update\\modules\\agents\\agent_orchestrator\\migrated_coverage_validation_agent.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "log_message",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "message",
+          "level"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "analyze_dashboard_coverage",
+        "docstring": "Analisa a cobertura atual do dashboard",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 38
+      },
+      {
+        "name": "integrate_stories_habdel",
+        "docstring": "Integra as 60 Stories Habdel ignoradas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 28
+      },
+      {
+        "name": "map_missing_tasks",
+        "docstring": "Mapeia as 4 Tasks importantes não documentadas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 23
+      },
+      {
+        "name": "document_missing_agents",
+        "docstring": "Documenta os 7 Agentes BMAD não cobertos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 26
+      },
+      {
+        "name": "integrate_missing_roadmaps",
+        "docstring": "Integra os 2 Roadmaps faltantes",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "cover_missing_plans",
+        "docstring": "Cobre os 3 Planejamentos específicos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 22
+      },
+      {
+        "name": "update_dashboard_coverage",
+        "docstring": "Atualiza o dashboard com 100% de cobertura",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 25
+      },
+      {
+        "name": "execute",
+        "docstring": "Executa a validação de cobertura completa",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 61
+      }
+    ],
+    "classes": [
+      {
+        "name": "CoverageValidationAgent",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          },
+          {
+            "name": "log_message",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "message",
+              "level"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "analyze_dashboard_coverage",
+            "docstring": "Analisa a cobertura atual do dashboard",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 38
+          },
+          {
+            "name": "integrate_stories_habdel",
+            "docstring": "Integra as 60 Stories Habdel ignoradas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 28
+          },
+          {
+            "name": "map_missing_tasks",
+            "docstring": "Mapeia as 4 Tasks importantes não documentadas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 23
+          },
+          {
+            "name": "document_missing_agents",
+            "docstring": "Documenta os 7 Agentes BMAD não cobertos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 26
+          },
+          {
+            "name": "integrate_missing_roadmaps",
+            "docstring": "Integra os 2 Roadmaps faltantes",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          },
+          {
+            "name": "cover_missing_plans",
+            "docstring": "Cobre os 3 Planejamentos específicos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 22
+          },
+          {
+            "name": "update_dashboard_coverage",
+            "docstring": "Atualiza o dashboard com 100% de cobertura",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 25
+          },
+          {
+            "name": "execute",
+            "docstring": "Executa a validação de cobertura completa",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 61
+          }
+        ],
+        "attributes": [
+          "timestamp",
+          "log_entry",
+          "log_file",
+          "gaps",
+          "habdel_path",
+          "stories_index",
+          "stories_file",
+          "missing_tasks",
+          "tasks_index",
+          "tasks_file",
+          "missing_agents",
+          "agents_index",
+          "agents_file",
+          "missing_roadmaps",
+          "roadmaps_index",
+          "roadmaps_file",
+          "missing_plans",
+          "plans_index",
+          "plans_file",
+          "coverage_report",
+          "report_file",
+          "gaps",
+          "stories_result",
+          "tasks_result",
+          "agents_result",
+          "roadmaps_result",
+          "plans_result",
+          "coverage_result",
+          "final_report",
+          "report_file"
+        ],
+        "inheritance": [],
+        "line_count": 275
+      }
+    ],
+    "imports": [
+      ".AgentorchestratorModule",
+      "json",
+      "datetime.datetime"
+    ],
+    "line_count": 326,
+    "complexity_score": 5
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:58.641778"
+}

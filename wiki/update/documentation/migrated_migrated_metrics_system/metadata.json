@@ -1,0 +1,344 @@
+{
+  "module": {
+    "name": "migrated_migrated_metrics_system",
+    "path": "wiki\\update\\modules\\maps\\map_updater\\migrated_migrated_metrics_system.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal do script.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "Inicializa o sistema de métricas.\n\nArgs:\n    metrics_dir: Diretório para armazenar métricas",
+        "parameters": [
+          "self",
+          "metrics_dir"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 26
+      },
+      {
+        "name": "collect_system_metrics",
+        "docstring": "Coleta métricas do sistema.\n\nReturns:\n    Métricas do sistema",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 57
+      },
+      {
+        "name": "collect_performance_metrics",
+        "docstring": "Coleta métricas de performance do sistema BMAD.\n\nReturns:\n    Métricas de performance",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 65
+      },
+      {
+        "name": "collect_usage_metrics",
+        "docstring": "Coleta métricas de uso do sistema.\n\nReturns:\n    Métricas de uso",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 46
+      },
+      {
+        "name": "collect_quality_metrics",
+        "docstring": "Coleta métricas de qualidade do sistema.\n\nReturns:\n    Métricas de qualidade",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 47
+      },
+      {
+        "name": "save_metrics",
+        "docstring": "Salva métricas em arquivo JSON.\n\nArgs:\n    metrics_type: Tipo de métrica (performance, usage, quality)\n    metrics_data: Dados das métricas",
+        "parameters": [
+          "self",
+          "metrics_type",
+          "metrics_data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 44
+      },
+      {
+        "name": "analyze_trends",
+        "docstring": "Analisa tendências das métricas coletadas.\n\nReturns:\n    Análise de tendências",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 104
+      },
+      {
+        "name": "generate_metrics_report",
+        "docstring": "Gera relatório completo de métricas.\n\nReturns:\n    Caminho do relatório",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 48
+      },
+      {
+        "name": "collect_all_metrics",
+        "docstring": "Coleta todas as métricas do sistema.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 20
+      },
+      {
+        "name": "implement_metrics_system",
+        "docstring": "Implementa sistema completo de métricas.\n\nReturns:\n    Resultados da implementação",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 31
+      }
+    ],
+    "classes": [
+      {
+        "name": "MetricsSystem",
+        "docstring": "Sistema de métricas e feedback",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "Inicializa o sistema de métricas.\n\nArgs:\n    metrics_dir: Diretório para armazenar métricas",
+            "parameters": [
+              "self",
+              "metrics_dir"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 26
+          },
+          {
+            "name": "collect_system_metrics",
+            "docstring": "Coleta métricas do sistema.\n\nReturns:\n    Métricas do sistema",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 57
+          },
+          {
+            "name": "collect_performance_metrics",
+            "docstring": "Coleta métricas de performance do sistema BMAD.\n\nReturns:\n    Métricas de performance",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 65
+          },
+          {
+            "name": "collect_usage_metrics",
+            "docstring": "Coleta métricas de uso do sistema.\n\nReturns:\n    Métricas de uso",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 46
+          },
+          {
+            "name": "collect_quality_metrics",
+            "docstring": "Coleta métricas de qualidade do sistema.\n\nReturns:\n    Métricas de qualidade",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 47
+          },
+          {
+            "name": "save_metrics",
+            "docstring": "Salva métricas em arquivo JSON.\n\nArgs:\n    metrics_type: Tipo de métrica (performance, usage, quality)\n    metrics_data: Dados das métricas",
+            "parameters": [
+              "self",
+              "metrics_type",
+              "metrics_data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 44
+          },
+          {
+            "name": "analyze_trends",
+            "docstring": "Analisa tendências das métricas coletadas.\n\nReturns:\n    Análise de tendências",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 104
+          },
+          {
+            "name": "generate_metrics_report",
+            "docstring": "Gera relatório completo de métricas.\n\nReturns:\n    Caminho do relatório",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 48
+          },
+          {
+            "name": "collect_all_metrics",
+            "docstring": "Coleta todas as métricas do sistema.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 20
+          },
+          {
+            "name": "implement_metrics_system",
+            "docstring": "Implementa sistema completo de métricas.\n\nReturns:\n    Resultados da implementação",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 31
+          }
+        ],
+        "attributes": [
+          "trends",
+          "system_metrics",
+          "performance_metrics",
+          "usage_metrics",
+          "quality_metrics",
+          "trends",
+          "report",
+          "report_file",
+          "system_metrics",
+          "performance_metrics",
+          "usage_metrics",
+          "quality_metrics",
+          "report_path",
+          "files_created",
+          "results",
+          "cpu_percent",
+          "cpu_count",
+          "memory",
+          "memory_percent",
+          "memory_available",
+          "disk",
+          "disk_percent",
+          "disk_free",
+          "network",
+          "bytes_sent",
+          "bytes_recv",
+          "process_count",
+          "consolidated_dir",
+          "consolidated_files",
+          "consolidated_size",
+          "agents_dir",
+          "agent_files",
+          "agent_size",
+          "log_dir",
+          "log_files",
+          "log_size",
+          "total_files",
+          "total_size_mb",
+          "nav_file",
+          "nav_data",
+          "search_file",
+          "search_data",
+          "total_documents",
+          "search_index_size",
+          "tag_count",
+          "keyword_count",
+          "consolidated_dir",
+          "corrupted_files",
+          "empty_files",
+          "total_files",
+          "quality_score",
+          "existing_metrics",
+          "cutoff_date",
+          "filtered_metrics",
+          "recommendations",
+          "quality_score",
+          "file_path",
+          "metric_date",
+          "nav_data",
+          "search_data",
+          "file_path",
+          "existing_metrics",
+          "performance_data",
+          "latest",
+          "previous",
+          "file_change",
+          "size_change",
+          "usage_data",
+          "latest",
+          "previous",
+          "doc_change",
+          "tag_change",
+          "quality_data",
+          "latest",
+          "previous",
+          "quality_change",
+          "file_path",
+          "content"
+        ],
+        "inheritance": [],
+        "line_count": 509
+      }
+    ],
+    "imports": [
+      ".MapupdaterModule",
+      ".MetricscollectorModule",
+      "json",
+      "psutil",
+      "logging"
+    ],
+    "line_count": 616,
+    "complexity_score": 46
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:55.836235"
+}

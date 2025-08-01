@@ -1,0 +1,422 @@
+{
+  "module": {
+    "name": "migrated_python_error_resolver",
+    "path": "wiki\\update\\modules\\python\\error_resolver\\migrated_python_error_resolver.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal para resolução automática",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "load_error_patterns",
+        "docstring": "Carrega padrões de erro conhecidos e suas soluções",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 92
+      },
+      {
+        "name": "detect_error_type",
+        "docstring": "Detecta o tipo de erro baseado na mensagem",
+        "parameters": [
+          "self",
+          "error_message"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "check_python_path",
+        "docstring": "Verifica se o Python está no PATH",
+        "parameters": [
+          "self",
+          "script_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "install_missing_dependencies",
+        "docstring": "Instala dependências faltantes",
+        "parameters": [
+          "self",
+          "script_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "fix_import_statement",
+        "docstring": "Corrige declarações de import problemáticas",
+        "parameters": [
+          "self",
+          "script_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 49
+      },
+      {
+        "name": "fix_syntax_error",
+        "docstring": "Corrige erros de sintaxe básicos",
+        "parameters": [
+          "self",
+          "script_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 36
+      },
+      {
+        "name": "validate_json_syntax",
+        "docstring": "Valida e corrige sintaxe JSON",
+        "parameters": [
+          "self",
+          "json_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 42
+      },
+      {
+        "name": "check_file_path",
+        "docstring": "Verifica se o arquivo existe e cria se necessário",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "fix_encoding_declaration",
+        "docstring": "Corrige declaração de encoding",
+        "parameters": [
+          "self",
+          "script_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 29
+      },
+      {
+        "name": "increase_timeout",
+        "docstring": "Aumenta timeout para scripts que demoram muito",
+        "parameters": [
+          "self",
+          "script_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 22
+      },
+      {
+        "name": "resolve_error",
+        "docstring": "Resolve erro específico em um script Python",
+        "parameters": [
+          "self",
+          "script_path",
+          "error_message"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 70
+      },
+      {
+        "name": "test_script",
+        "docstring": "Testa se o script funciona após correções",
+        "parameters": [
+          "self",
+          "script_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 16
+      },
+      {
+        "name": "auto_resolve_script_errors",
+        "docstring": "Resolve automaticamente erros em um script Python",
+        "parameters": [
+          "self",
+          "script_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 25
+      },
+      {
+        "name": "log_resolution",
+        "docstring": "Registra resultado da resolução",
+        "parameters": [
+          "self",
+          "resolution_result"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      }
+    ],
+    "classes": [
+      {
+        "name": "PythonErrorResolver",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "load_error_patterns",
+            "docstring": "Carrega padrões de erro conhecidos e suas soluções",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 92
+          },
+          {
+            "name": "detect_error_type",
+            "docstring": "Detecta o tipo de erro baseado na mensagem",
+            "parameters": [
+              "self",
+              "error_message"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "check_python_path",
+            "docstring": "Verifica se o Python está no PATH",
+            "parameters": [
+              "self",
+              "script_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "install_missing_dependencies",
+            "docstring": "Instala dependências faltantes",
+            "parameters": [
+              "self",
+              "script_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          },
+          {
+            "name": "fix_import_statement",
+            "docstring": "Corrige declarações de import problemáticas",
+            "parameters": [
+              "self",
+              "script_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 49
+          },
+          {
+            "name": "fix_syntax_error",
+            "docstring": "Corrige erros de sintaxe básicos",
+            "parameters": [
+              "self",
+              "script_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 36
+          },
+          {
+            "name": "validate_json_syntax",
+            "docstring": "Valida e corrige sintaxe JSON",
+            "parameters": [
+              "self",
+              "json_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 42
+          },
+          {
+            "name": "check_file_path",
+            "docstring": "Verifica se o arquivo existe e cria se necessário",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "fix_encoding_declaration",
+            "docstring": "Corrige declaração de encoding",
+            "parameters": [
+              "self",
+              "script_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 29
+          },
+          {
+            "name": "increase_timeout",
+            "docstring": "Aumenta timeout para scripts que demoram muito",
+            "parameters": [
+              "self",
+              "script_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 22
+          },
+          {
+            "name": "resolve_error",
+            "docstring": "Resolve erro específico em um script Python",
+            "parameters": [
+              "self",
+              "script_path",
+              "error_message"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 70
+          },
+          {
+            "name": "test_script",
+            "docstring": "Testa se o script funciona após correções",
+            "parameters": [
+              "self",
+              "script_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 16
+          },
+          {
+            "name": "auto_resolve_script_errors",
+            "docstring": "Resolve automaticamente erros em um script Python",
+            "parameters": [
+              "self",
+              "script_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 25
+          },
+          {
+            "name": "log_resolution",
+            "docstring": "Registra resultado da resolução",
+            "parameters": [
+              "self",
+              "resolution_result"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          }
+        ],
+        "attributes": [
+          "error_message_lower",
+          "path",
+          "error_type",
+          "resolution_result",
+          "solutions",
+          "log_file",
+          "resolutions",
+          "result",
+          "dependencies",
+          "common_imports",
+          "lines",
+          "import_section",
+          "other_lines",
+          "essential_imports",
+          "new_content",
+          "backup_path",
+          "lines",
+          "fixed_lines",
+          "new_content",
+          "backup_path",
+          "backup_path",
+          "result",
+          "result",
+          "error_message",
+          "content",
+          "content",
+          "content",
+          "content",
+          "content",
+          "content",
+          "content",
+          "content",
+          "line",
+          "lines",
+          "cleaned_lines",
+          "cleaned_content",
+          "backup_path",
+          "lines",
+          "content",
+          "content",
+          "resolutions",
+          "resolutions",
+          "line"
+        ],
+        "inheritance": [],
+        "line_count": 496
+      }
+    ],
+    "imports": [
+      ".ErrorresolverModule",
+      "json",
+      "subprocess",
+      "sys"
+    ],
+    "line_count": 568,
+    "complexity_score": 64
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:53.372855"
+}

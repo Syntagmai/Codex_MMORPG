@@ -1,3 +1,12 @@
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+import json
+import logging
+import subprocess
+import sys
+import time
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -5,14 +14,6 @@ Sistema de Auto-Atualização Inteligente BMAD
 Atualiza automaticamente o sistema baseado em mudanças detectadas
 """
 
-import json
-import time
-import subprocess
-import sys
-from datetime import datetime
-from pathlib import Path
-from typing import Dict, List, Any, Optional
-import logging
 
 class AutoUpdater:
     def __init__(self):

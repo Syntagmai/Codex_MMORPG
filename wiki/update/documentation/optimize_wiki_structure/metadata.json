@@ -1,0 +1,345 @@
+{
+  "module": {
+    "name": "optimize_wiki_structure",
+    "path": "wiki\\update\\optimize_wiki_structure.py",
+    "docstring": "Script para otimização da estrutura da wiki\nRemove duplicações e melhora organização sem perder informação",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "wiki_dir"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 38
+      },
+      {
+        "name": "analyze_content_overlap",
+        "docstring": "Analisa sobreposição de conteúdo entre dois arquivos",
+        "parameters": [
+          "self",
+          "file1",
+          "file2"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 28
+      },
+      {
+        "name": "extract_sections",
+        "docstring": "Extrai seções do conteúdo",
+        "parameters": [
+          "self",
+          "content"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 10
+      },
+      {
+        "name": "merge_network_documents",
+        "docstring": "Mescla documentos de rede em um só",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 67
+      },
+      {
+        "name": "optimize_ui_documents",
+        "docstring": "Otimiza documentos de UI",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 30
+      },
+      {
+        "name": "extract_widget_sections",
+        "docstring": "Extrai seções de widgets do conteúdo",
+        "parameters": [
+          "self",
+          "content"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 12
+      },
+      {
+        "name": "remove_repetitive_sections",
+        "docstring": "Remove seções repetitivas desnecessárias",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 38
+      },
+      {
+        "name": "get_section_content",
+        "docstring": "Obtém conteúdo de uma seção",
+        "parameters": [
+          "self",
+          "lines",
+          "start_index"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      },
+      {
+        "name": "standardize_navigation",
+        "docstring": "Padroniza seções de navegação",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 24
+      },
+      {
+        "name": "generate_standard_navigation",
+        "docstring": "Gera navegação padronizada baseada no tipo de documento",
+        "parameters": [
+          "self",
+          "filename"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 45
+      },
+      {
+        "name": "update_wiki_index",
+        "docstring": "Atualiza o índice da wiki com a nova estrutura",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "optimize_wiki_structure",
+        "docstring": "Otimiza a estrutura completa da wiki",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      }
+    ],
+    "classes": [
+      {
+        "name": "WikiOptimizer",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "wiki_dir"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 38
+          },
+          {
+            "name": "analyze_content_overlap",
+            "docstring": "Analisa sobreposição de conteúdo entre dois arquivos",
+            "parameters": [
+              "self",
+              "file1",
+              "file2"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 28
+          },
+          {
+            "name": "extract_sections",
+            "docstring": "Extrai seções do conteúdo",
+            "parameters": [
+              "self",
+              "content"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 10
+          },
+          {
+            "name": "merge_network_documents",
+            "docstring": "Mescla documentos de rede em um só",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 67
+          },
+          {
+            "name": "optimize_ui_documents",
+            "docstring": "Otimiza documentos de UI",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 30
+          },
+          {
+            "name": "extract_widget_sections",
+            "docstring": "Extrai seções de widgets do conteúdo",
+            "parameters": [
+              "self",
+              "content"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 12
+          },
+          {
+            "name": "remove_repetitive_sections",
+            "docstring": "Remove seções repetitivas desnecessárias",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 38
+          },
+          {
+            "name": "get_section_content",
+            "docstring": "Obtém conteúdo de uma seção",
+            "parameters": [
+              "self",
+              "lines",
+              "start_index"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          },
+          {
+            "name": "standardize_navigation",
+            "docstring": "Padroniza seções de navegação",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 24
+          },
+          {
+            "name": "generate_standard_navigation",
+            "docstring": "Gera navegação padronizada baseada no tipo de documento",
+            "parameters": [
+              "self",
+              "filename"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 45
+          },
+          {
+            "name": "update_wiki_index",
+            "docstring": "Atualiza o índice da wiki com a nova estrutura",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          },
+          {
+            "name": "optimize_wiki_structure",
+            "docstring": "Otimiza a estrutura completa da wiki",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          }
+        ],
+        "attributes": [
+          "sections",
+          "section_pattern",
+          "network_files",
+          "merged_content",
+          "target_file",
+          "ui_guide",
+          "widget_ref",
+          "widget_pattern",
+          "matches",
+          "widget_sections",
+          "content",
+          "index_file",
+          "sections1",
+          "sections2",
+          "overlaps",
+          "match",
+          "file_path",
+          "old_file",
+          "widget_sections",
+          "line",
+          "deleted_files",
+          "content1",
+          "content2",
+          "content",
+          "section_title",
+          "ui_content",
+          "widget_content",
+          "lines",
+          "cleaned_lines",
+          "skip_section",
+          "cleaned_content",
+          "content",
+          "content",
+          "navigation",
+          "content",
+          "content",
+          "content",
+          "content",
+          "content",
+          "section_content",
+          "skip_section",
+          "skip_section"
+        ],
+        "inheritance": [],
+        "line_count": 363
+      }
+    ],
+    "imports": [
+      "os",
+      "json",
+      "re",
+      "datetime.datetime",
+      "pathlib.Path",
+      "typing.Dict",
+      "typing.List",
+      "typing.Any"
+    ],
+    "line_count": 384,
+    "complexity_score": 36
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:51.589713"
+}

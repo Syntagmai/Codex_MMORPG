@@ -1,0 +1,228 @@
+{
+  "module": {
+    "name": "fix_wiki_issues",
+    "path": "wiki\\update\\fix_wiki_issues.py",
+    "docstring": "Script para correção completa da wiki - Deixar 10/10\nCorrige links quebrados, melhora navegação e otimiza para IA e usuários brasileiros",
+    "functions": [
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "wiki_dir"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 17
+      },
+      {
+        "name": "fix_broken_links",
+        "docstring": "Corrige links quebrados em todos os documentos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 32
+      },
+      {
+        "name": "improve_wiki_index",
+        "docstring": "Melhora o índice principal da wiki",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 107
+      },
+      {
+        "name": "improve_document_aliases",
+        "docstring": "Melhora aliases dos documentos para melhor busca",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 45
+      },
+      {
+        "name": "improve_navigation_sections",
+        "docstring": "Melhora seções de navegação em todos os documentos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 44
+      },
+      {
+        "name": "optimize_maps_for_ai",
+        "docstring": "Otimiza mapas JSON para melhor consulta da IA",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 57
+      },
+      {
+        "name": "create_quick_search_guide",
+        "docstring": "Cria guia de busca rápida para brasileiros",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 92
+      },
+      {
+        "name": "fix_all_issues",
+        "docstring": "Executa todas as correções",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 23
+      }
+    ],
+    "classes": [
+      {
+        "name": "WikiFixer",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "wiki_dir"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 17
+          },
+          {
+            "name": "fix_broken_links",
+            "docstring": "Corrige links quebrados em todos os documentos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 32
+          },
+          {
+            "name": "improve_wiki_index",
+            "docstring": "Melhora o índice principal da wiki",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 107
+          },
+          {
+            "name": "improve_document_aliases",
+            "docstring": "Melhora aliases dos documentos para melhor busca",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 45
+          },
+          {
+            "name": "improve_navigation_sections",
+            "docstring": "Melhora seções de navegação em todos os documentos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 44
+          },
+          {
+            "name": "optimize_maps_for_ai",
+            "docstring": "Otimiza mapas JSON para melhor consulta da IA",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 57
+          },
+          {
+            "name": "create_quick_search_guide",
+            "docstring": "Cria guia de busca rápida para brasileiros",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 92
+          },
+          {
+            "name": "fix_all_issues",
+            "docstring": "Executa todas as correções",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 23
+          }
+        ],
+        "attributes": [
+          "index_content",
+          "alias_improvements",
+          "navigation_template",
+          "tags_file",
+          "relationships_file",
+          "search_guide",
+          "original_content",
+          "file_path",
+          "content",
+          "improved_tags",
+          "improved_relationships",
+          "content",
+          "content",
+          "content",
+          "content",
+          "tags_data",
+          "relationships_data",
+          "content",
+          "parts",
+          "frontmatter",
+          "content_body",
+          "current_aliases",
+          "content",
+          "existing",
+          "all_aliases",
+          "new_aliases_str",
+          "frontmatter"
+        ],
+        "inheritance": [],
+        "line_count": 432
+      }
+    ],
+    "imports": [
+      "os",
+      "json",
+      "re",
+      "datetime.datetime",
+      "pathlib.Path",
+      "typing.Dict",
+      "typing.List",
+      "typing.Any"
+    ],
+    "line_count": 449,
+    "complexity_score": 20
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:51.102761"
+}

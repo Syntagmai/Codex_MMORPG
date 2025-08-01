@@ -1,0 +1,18 @@
+{
+  "module_name": "wiki_indexer",
+  "description": "Indexação da documentação wiki",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "maps",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.745062",
+  "migrated_scripts": [
+    {
+      "name": "update_wiki_maps.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\update_wiki_maps.py",
+      "migration_date": "2025-08-01T12:21:35.664051",
+      "status": "migrated"
+    }
+  ]
+}

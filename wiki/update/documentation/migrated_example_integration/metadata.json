@@ -1,0 +1,48 @@
+{
+  "module": {
+    "name": "migrated_example_integration",
+    "path": "wiki\\update\\modules\\tools\\git_automation\\migrated_example_integration.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "exemplo_integracao_regras",
+        "docstring": "Exemplo de como o sistema integra auto-aprendizado com regras",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 125
+      },
+      {
+        "name": "exemplo_otimizacao_automatica_regras",
+        "docstring": "Exemplo de otimização automática de regras",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 43
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      }
+    ],
+    "classes": [],
+    "imports": [
+      ".GitautomationModule",
+      "datetime.datetime",
+      "time",
+      "time"
+    ],
+    "line_count": 222,
+    "complexity_score": 11
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:52.883111"
+}

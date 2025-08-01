@@ -1,3 +1,12 @@
+    import argparse
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, Any, List
+import logging
+import os
+import subprocess
+import sys
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -12,13 +21,6 @@ Data: 2025-01-28
 Versão: 1.0
 """
 
-import os
-import sys
-import subprocess
-import logging
-from pathlib import Path
-from typing import Dict, Any, List
-from datetime import datetime
 
 # Configuração de logging
 log_dir = Path.cwd() / 'wiki' / 'log'
@@ -428,7 +430,6 @@ A verificação final foi **concluída com sucesso total**!
 
 def main():
     """Função principal."""
-    import argparse
     
     parser = argparse.ArgumentParser(description='Sistema de Verificação Final de Commits')
     parser.add_argument('--verify', action='store_true', help='Executar verificação final completa')

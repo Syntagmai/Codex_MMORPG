@@ -1,3 +1,10 @@
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
+import json
+import logging
+import re
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -7,12 +14,6 @@ Este script integra a documentação habdel com a wiki principal do OTClient,
 criando links, índices e navegação unificada.
 """
 
-import json
-import logging
-import re
-from datetime import datetime
-from pathlib import Path
-from typing import Dict, List, Optional, Tuple
 
 class HabdelWikiIntegration:
     def __init__(self):

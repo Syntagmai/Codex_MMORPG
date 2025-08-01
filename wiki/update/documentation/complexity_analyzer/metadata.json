@@ -1,0 +1,277 @@
+{
+  "module": {
+    "name": "complexity_analyzer",
+    "path": "wiki\\update\\python_tools\\complexity_analyzer.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      },
+      {
+        "name": "analyze_file",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "_analyze_ast",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "tree",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "visit_FunctionDef",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "node"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "visit_ClassDef",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "node"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "visit_If",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "node"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      },
+      {
+        "name": "visit_While",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "node"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      },
+      {
+        "name": "visit_For",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "node"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      },
+      {
+        "name": "visit_ExceptHandler",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "node"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      }
+    ],
+    "classes": [
+      {
+        "name": "ComplexityAnalyzer",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          },
+          {
+            "name": "analyze_file",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "_analyze_ast",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "tree",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          }
+        ],
+        "attributes": [
+          "visitor",
+          "tree",
+          "content"
+        ],
+        "inheritance": [],
+        "line_count": 28
+      },
+      {
+        "name": "ComplexityVisitor",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "visit_FunctionDef",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "node"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          },
+          {
+            "name": "visit_ClassDef",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "node"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          },
+          {
+            "name": "visit_If",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "node"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          },
+          {
+            "name": "visit_While",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "node"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          },
+          {
+            "name": "visit_For",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "node"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          },
+          {
+            "name": "visit_ExceptHandler",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "node"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          }
+        ],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 40
+      }
+    ],
+    "imports": [
+      "ast",
+      "json",
+      "pathlib.Path",
+      "typing.Dict",
+      "typing.List",
+      "typing.Any",
+      "typing.Optional",
+      "datetime.datetime"
+    ],
+    "line_count": 93,
+    "complexity_score": 4
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:52.463045"
+}

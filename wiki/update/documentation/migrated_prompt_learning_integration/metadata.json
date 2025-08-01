@@ -1,0 +1,546 @@
+{
+  "module": {
+    "name": "migrated_prompt_learning_integration",
+    "path": "wiki\\update\\modules\\tools\\git_automation\\migrated_prompt_learning_integration.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "base_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "load_prompt_patterns",
+        "docstring": "Carrega padrões de prompt aprendidos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "load_optimization_history",
+        "docstring": "Carrega histórico de otimizações",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "load_learning_log",
+        "docstring": "Carrega log de aprendizado",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "save_prompt_patterns",
+        "docstring": "Salva padrões de prompt aprendidos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "save_optimization_history",
+        "docstring": "Salva histórico de otimizações",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "save_learning_log",
+        "docstring": "Salva log de aprendizado",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "record_prompt_optimization",
+        "docstring": "Registra resultado de otimização de prompt",
+        "parameters": [
+          "self",
+          "result"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 34
+      },
+      {
+        "name": "_update_prompt_patterns",
+        "docstring": "Atualiza padrões de prompt baseado em resultado bem-sucedido",
+        "parameters": [
+          "self",
+          "result"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 43
+      },
+      {
+        "name": "_detect_prompt_type",
+        "docstring": "Detecta tipo de prompt",
+        "parameters": [
+          "self",
+          "prompt"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "get_optimization_recommendation",
+        "docstring": "Obtém recomendação de otimização baseada em padrões aprendidos",
+        "parameters": [
+          "self",
+          "prompt",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 39
+      },
+      {
+        "name": "_calculate_context_relevance",
+        "docstring": "Calcula relevância de contexto para um padrão",
+        "parameters": [
+          "self",
+          "pattern",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 15
+      },
+      {
+        "name": "analyze_optimization_effectiveness",
+        "docstring": "Analisa efetividade das otimizações",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 42
+      },
+      {
+        "name": "get_learning_recommendations",
+        "docstring": "Gera recomendações baseadas no aprendizado",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 28
+      },
+      {
+        "name": "generate_learning_report",
+        "docstring": "Gera relatório de aprendizado",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 20
+      },
+      {
+        "name": "_get_top_patterns",
+        "docstring": "Retorna padrões mais bem-sucedidos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "apply_learned_optimizations",
+        "docstring": "Aplica otimizações aprendidas a um prompt",
+        "parameters": [
+          "self",
+          "prompt",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 18
+      },
+      {
+        "name": "_apply_role_prompting",
+        "docstring": "Aplica role prompting baseado em contexto",
+        "parameters": [
+          "self",
+          "prompt",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 18
+      },
+      {
+        "name": "_apply_chain_of_thought",
+        "docstring": "Aplica chain-of-thought",
+        "parameters": [
+          "self",
+          "prompt"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "_apply_specificity_improvement",
+        "docstring": "Aplica melhoria de especificidade",
+        "parameters": [
+          "self",
+          "prompt",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 12
+      },
+      {
+        "name": "_apply_clarity_enhancement",
+        "docstring": "Aplica melhoria de clareza",
+        "parameters": [
+          "self",
+          "prompt"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 13
+      }
+    ],
+    "classes": [
+      {
+        "name": "PromptLearningPattern",
+        "docstring": "Padrão aprendido sobre prompts",
+        "methods": [],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 9
+      },
+      {
+        "name": "PromptOptimizationResult",
+        "docstring": "Resultado de otimização de prompt",
+        "methods": [],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 7
+      },
+      {
+        "name": "PromptLearningIntegration",
+        "docstring": "Integração entre prompt engineering e auto-aprendizado",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "base_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          },
+          {
+            "name": "load_prompt_patterns",
+            "docstring": "Carrega padrões de prompt aprendidos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          },
+          {
+            "name": "load_optimization_history",
+            "docstring": "Carrega histórico de otimizações",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          },
+          {
+            "name": "load_learning_log",
+            "docstring": "Carrega log de aprendizado",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          },
+          {
+            "name": "save_prompt_patterns",
+            "docstring": "Salva padrões de prompt aprendidos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "save_optimization_history",
+            "docstring": "Salva histórico de otimizações",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "save_learning_log",
+            "docstring": "Salva log de aprendizado",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "record_prompt_optimization",
+            "docstring": "Registra resultado de otimização de prompt",
+            "parameters": [
+              "self",
+              "result"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 34
+          },
+          {
+            "name": "_update_prompt_patterns",
+            "docstring": "Atualiza padrões de prompt baseado em resultado bem-sucedido",
+            "parameters": [
+              "self",
+              "result"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 43
+          },
+          {
+            "name": "_detect_prompt_type",
+            "docstring": "Detecta tipo de prompt",
+            "parameters": [
+              "self",
+              "prompt"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "get_optimization_recommendation",
+            "docstring": "Obtém recomendação de otimização baseada em padrões aprendidos",
+            "parameters": [
+              "self",
+              "prompt",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 39
+          },
+          {
+            "name": "_calculate_context_relevance",
+            "docstring": "Calcula relevância de contexto para um padrão",
+            "parameters": [
+              "self",
+              "pattern",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 15
+          },
+          {
+            "name": "analyze_optimization_effectiveness",
+            "docstring": "Analisa efetividade das otimizações",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 42
+          },
+          {
+            "name": "get_learning_recommendations",
+            "docstring": "Gera recomendações baseadas no aprendizado",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 28
+          },
+          {
+            "name": "generate_learning_report",
+            "docstring": "Gera relatório de aprendizado",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 20
+          },
+          {
+            "name": "_get_top_patterns",
+            "docstring": "Retorna padrões mais bem-sucedidos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "apply_learned_optimizations",
+            "docstring": "Aplica otimizações aprendidas a um prompt",
+            "parameters": [
+              "self",
+              "prompt",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 18
+          },
+          {
+            "name": "_apply_role_prompting",
+            "docstring": "Aplica role prompting baseado em contexto",
+            "parameters": [
+              "self",
+              "prompt",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 18
+          },
+          {
+            "name": "_apply_chain_of_thought",
+            "docstring": "Aplica chain-of-thought",
+            "parameters": [
+              "self",
+              "prompt"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "_apply_specificity_improvement",
+            "docstring": "Aplica melhoria de especificidade",
+            "parameters": [
+              "self",
+              "prompt",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 12
+          },
+          {
+            "name": "_apply_clarity_enhancement",
+            "docstring": "Aplica melhoria de clareza",
+            "parameters": [
+              "self",
+              "prompt"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 13
+          }
+        ],
+        "attributes": [
+          "optimization_id",
+          "prompt_type",
+          "pattern_id",
+          "prompt_lower",
+          "prompt_type",
+          "relevant_patterns",
+          "relevance_scores",
+          "technique_stats",
+          "technique_analysis",
+          "recent_optimizations",
+          "recommendations",
+          "analysis",
+          "best_technique",
+          "most_used",
+          "recent_avg",
+          "analysis",
+          "recommendations",
+          "patterns_list",
+          "recommendation",
+          "technique",
+          "role",
+          "context_info",
+          "pattern",
+          "context_applicability",
+          "best_pattern",
+          "technique",
+          "recent_avg",
+          "recent_avg",
+          "techs",
+          "context_relevance",
+          "role",
+          "role",
+          "role"
+        ],
+        "inheritance": [],
+        "line_count": 417
+      }
+    ],
+    "imports": [
+      ".GitautomationModule",
+      "json",
+      "hashlib",
+      "datetime.datetime",
+      "datetime.timedelta",
+      "statistics"
+    ],
+    "line_count": 487,
+    "complexity_score": 50
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:53.024743"
+}

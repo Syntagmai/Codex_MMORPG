@@ -1,0 +1,373 @@
+{
+  "module": {
+    "name": "script_migration_agent",
+    "path": "wiki\\update\\script_migration_agent.py",
+    "docstring": "🚀 Script Migration Agent - Epic 12 Task 12.3\n=============================================\n\nScript para migrar 172 scripts Python existentes para 50 módulos organizados.\nBaseado na estrutura modular unificada criada na Task 12.2.\n\nResponsável: Migration Agent\nDuração: 5-7 dias\nDependência: Task 12.2 (Estrutura modular unificada)",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal do script.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 39
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 17
+      },
+      {
+        "name": "load_structure_config",
+        "docstring": "Carrega configuração da estrutura modular.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      },
+      {
+        "name": "load_script_mapping",
+        "docstring": "Carrega mapeamento de scripts para módulos.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      },
+      {
+        "name": "discover_python_scripts",
+        "docstring": "Descobre todos os scripts Python no projeto.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "analyze_script",
+        "docstring": "Analisa um script Python para extrair informações.",
+        "parameters": [
+          "self",
+          "script_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 68
+      },
+      {
+        "name": "determine_target_module",
+        "docstring": "Determina o módulo de destino para um script.",
+        "parameters": [
+          "self",
+          "script_analysis"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 49
+      },
+      {
+        "name": "migrate_script_to_module",
+        "docstring": "Migra um script para o módulo de destino.",
+        "parameters": [
+          "self",
+          "script_path",
+          "target_module"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 35
+      },
+      {
+        "name": "create_migrated_script",
+        "docstring": "Cria versão migrada do script.",
+        "parameters": [
+          "self",
+          "original_content",
+          "script_name",
+          "target_module"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 35
+      },
+      {
+        "name": "update_module_init",
+        "docstring": "Atualiza __init__.py do módulo para incluir script migrado.",
+        "parameters": [
+          "self",
+          "module_path",
+          "script_name",
+          "target_module"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 23
+      },
+      {
+        "name": "update_module_config",
+        "docstring": "Atualiza configuração do módulo.",
+        "parameters": [
+          "self",
+          "module_path",
+          "script_name",
+          "target_module"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 23
+      },
+      {
+        "name": "migrate_all_scripts",
+        "docstring": "Migra todos os scripts descobertos.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 41
+      },
+      {
+        "name": "generate_migration_report",
+        "docstring": "Gera relatório da migração.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "save_migration_report",
+        "docstring": "Salva relatório da migração.",
+        "parameters": [
+          "self",
+          "report"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      }
+    ],
+    "classes": [
+      {
+        "name": "ScriptMigrationAgent",
+        "docstring": "Agente para migração de scripts Python para módulos organizados.",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 17
+          },
+          {
+            "name": "load_structure_config",
+            "docstring": "Carrega configuração da estrutura modular.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          },
+          {
+            "name": "load_script_mapping",
+            "docstring": "Carrega mapeamento de scripts para módulos.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          },
+          {
+            "name": "discover_python_scripts",
+            "docstring": "Descobre todos os scripts Python no projeto.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "analyze_script",
+            "docstring": "Analisa um script Python para extrair informações.",
+            "parameters": [
+              "self",
+              "script_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 68
+          },
+          {
+            "name": "determine_target_module",
+            "docstring": "Determina o módulo de destino para um script.",
+            "parameters": [
+              "self",
+              "script_analysis"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 49
+          },
+          {
+            "name": "migrate_script_to_module",
+            "docstring": "Migra um script para o módulo de destino.",
+            "parameters": [
+              "self",
+              "script_path",
+              "target_module"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 35
+          },
+          {
+            "name": "create_migrated_script",
+            "docstring": "Cria versão migrada do script.",
+            "parameters": [
+              "self",
+              "original_content",
+              "script_name",
+              "target_module"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 35
+          },
+          {
+            "name": "update_module_init",
+            "docstring": "Atualiza __init__.py do módulo para incluir script migrado.",
+            "parameters": [
+              "self",
+              "module_path",
+              "script_name",
+              "target_module"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 23
+          },
+          {
+            "name": "update_module_config",
+            "docstring": "Atualiza configuração do módulo.",
+            "parameters": [
+              "self",
+              "module_path",
+              "script_name",
+              "target_module"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 23
+          },
+          {
+            "name": "migrate_all_scripts",
+            "docstring": "Migra todos os scripts descobertos.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 41
+          },
+          {
+            "name": "generate_migration_report",
+            "docstring": "Gera relatório da migração.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "save_migration_report",
+            "docstring": "Salva relatório da migração.",
+            "parameters": [
+              "self",
+              "report"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          }
+        ],
+        "attributes": [
+          "config_file",
+          "mapping_file",
+          "scripts",
+          "search_paths",
+          "script_name",
+          "script_path",
+          "script_content",
+          "keyword_mapping",
+          "migrated_content",
+          "init_file",
+          "config_file",
+          "scripts",
+          "report_file",
+          "content",
+          "analysis",
+          "module_path",
+          "migrated_content",
+          "migrated_file",
+          "import_line",
+          "script_info",
+          "analysis",
+          "target_module",
+          "tree",
+          "category_modules",
+          "script_content",
+          "init_content",
+          "lines",
+          "insert_index",
+          "init_content",
+          "config",
+          "success",
+          "content",
+          "insert_index"
+        ],
+        "inheritance": [],
+        "line_count": 375
+      }
+    ],
+    "imports": [
+      "os",
+      "json",
+      "shutil",
+      "ast",
+      "re",
+      "pathlib.Path",
+      "typing.Dict",
+      "typing.List",
+      "typing.Any",
+      "typing.Optional",
+      "typing.Tuple",
+      "datetime.datetime",
+      "logging"
+    ],
+    "line_count": 451,
+    "complexity_score": 49
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:52.081044"
+}

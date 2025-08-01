@@ -1,3 +1,10 @@
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
+import json
+import logging
+import re
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -7,12 +14,6 @@ Este script gera índices de navegação para facilitar a busca e navegação
 na documentação integrada habdel-wiki.
 """
 
-import json
-import logging
-import re
-from datetime import datetime
-from pathlib import Path
-from typing import Dict, List, Optional, Tuple
 
 class NavigationIndexGenerator:
     def __init__(self):

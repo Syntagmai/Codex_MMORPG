@@ -1,0 +1,5008 @@
+{
+  "category": "metrics",
+  "metadata": {
+    "total_functions": 70,
+    "total_classes": 29,
+    "created": "2025-08-01T12:30:28.920054"
+  },
+  "functions": {
+    "tools\\config_manager\\migrated_update_context_system.py.get_performance_metrics": {
+      "name": "get_performance_metrics",
+      "type": "function",
+      "docstring": "Obtém métricas de performance",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 438,
+      "end_line": 466,
+      "returns": null,
+      "async": false,
+      "module_path": "tools\\config_manager\\migrated_update_context_system.py",
+      "category": "metrics",
+      "file_name": "migrated_update_context_system.py"
+    },
+    "tools\\git_automation\\migrated_visualization_interface.py.generate_learning_dashboard": {
+      "name": "generate_learning_dashboard",
+      "type": "function",
+      "docstring": "Gera dashboard completo de aprendizado",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        },
+        {
+          "name": "learning_stats",
+          "annotation": "Dict[str, Any]"
+        },
+        {
+          "name": "feedback_stats",
+          "annotation": "Dict[str, Any]"
+        },
+        {
+          "name": "optimization_stats",
+          "annotation": "Dict[str, Any]"
+        }
+      ],
+      "decorators": [],
+      "start_line": 53,
+      "end_line": 64,
+      "returns": "str",
+      "async": false,
+      "module_path": "tools\\git_automation\\migrated_visualization_interface.py",
+      "category": "metrics",
+      "file_name": "migrated_visualization_interface.py"
+    },
+    "tools\\git_automation\\migrated_visualization_interface.py._create_dashboard_html": {
+      "name": "_create_dashboard_html",
+      "type": "private_method",
+      "docstring": "Cria HTML do dashboard",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        },
+        {
+          "name": "learning_stats",
+          "annotation": "Dict[str, Any]"
+        },
+        {
+          "name": "feedback_stats",
+          "annotation": "Dict[str, Any]"
+        },
+        {
+          "name": "optimization_stats",
+          "annotation": "Dict[str, Any]"
+        }
+      ],
+      "decorators": [],
+      "start_line": 66,
+      "end_line": 276,
+      "returns": "str",
+      "async": false,
+      "module_path": "tools\\git_automation\\migrated_visualization_interface.py",
+      "category": "metrics",
+      "file_name": "migrated_visualization_interface.py"
+    },
+    "python\\code_analyzer\\migrated_analyze_navigation_optimization.py.analyze_performance_metrics": {
+      "name": "analyze_performance_metrics",
+      "type": "function",
+      "docstring": "Analisa métricas de performance dos caminhos",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 273,
+      "end_line": 324,
+      "returns": null,
+      "async": false,
+      "module_path": "python\\code_analyzer\\migrated_analyze_navigation_optimization.py",
+      "category": "metrics",
+      "file_name": "migrated_analyze_navigation_optimization.py"
+    },
+    "metrics\\dashboard_monitor\\migrated_dashboard_monitoring.py.load_metrics_data": {
+      "name": "load_metrics_data",
+      "type": "function",
+      "docstring": "Carrega dados das métricas.\n\nReturns:\n    Dados das métricas",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 68,
+      "end_line": 106,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "metrics\\dashboard_monitor\\migrated_dashboard_monitoring.py",
+      "category": "metrics",
+      "file_name": "migrated_dashboard_monitoring.py"
+    },
+    "metrics\\dashboard_monitor\\migrated_dashboard_monitoring.py.create_dashboard_data": {
+      "name": "create_dashboard_data",
+      "type": "function",
+      "docstring": "Cria dados do dashboard.\n\nArgs:\n    metrics_data: Dados das métricas\n    status: Status do sistema\n    alerts: Alertas gerados\n    \nReturns:\n    Dados do dashboard",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        },
+        {
+          "name": "metrics_data",
+          "annotation": "Dict[str, Any]"
+        },
+        {
+          "name": "status",
+          "annotation": "Dict[str, Any]"
+        },
+        {
+          "name": "alerts",
+          "annotation": "List[Dict[str, Any]]"
+        }
+      ],
+      "decorators": [],
+      "start_line": 304,
+      "end_line": 383,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "metrics\\dashboard_monitor\\migrated_dashboard_monitoring.py",
+      "category": "metrics",
+      "file_name": "migrated_dashboard_monitoring.py"
+    },
+    "metrics\\dashboard_monitor\\migrated_dashboard_monitoring.py.save_dashboard_data": {
+      "name": "save_dashboard_data",
+      "type": "function",
+      "docstring": "Salva dados do dashboard.\n\nArgs:\n    dashboard_data: Dados do dashboard",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        },
+        {
+          "name": "dashboard_data",
+          "annotation": "Dict[str, Any]"
+        }
+      ],
+      "decorators": [],
+      "start_line": 475,
+      "end_line": 489,
+      "returns": null,
+      "async": false,
+      "module_path": "metrics\\dashboard_monitor\\migrated_dashboard_monitoring.py",
+      "category": "metrics",
+      "file_name": "migrated_dashboard_monitoring.py"
+    },
+    "metrics\\dashboard_monitor\\migrated_dashboard_monitoring.py.generate_dashboard_report": {
+      "name": "generate_dashboard_report",
+      "type": "function",
+      "docstring": "Gera relatório do dashboard.\n\nReturns:\n    Caminho do relatório",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 523,
+      "end_line": 571,
+      "returns": "str",
+      "async": false,
+      "module_path": "metrics\\dashboard_monitor\\migrated_dashboard_monitoring.py",
+      "category": "metrics",
+      "file_name": "migrated_dashboard_monitoring.py"
+    },
+    "metrics\\dashboard_monitor\\migrated_dashboard_monitoring.py.create_monitoring_dashboard": {
+      "name": "create_monitoring_dashboard",
+      "type": "function",
+      "docstring": "Cria dashboard completo de monitoramento.\n\nReturns:\n    Resultados da criação",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 573,
+      "end_line": 602,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "metrics\\dashboard_monitor\\migrated_dashboard_monitoring.py",
+      "category": "metrics",
+      "file_name": "migrated_dashboard_monitoring.py"
+    },
+    "metrics\\metrics_collector\\migrated_metrics_system.py.collect_system_metrics": {
+      "name": "collect_system_metrics",
+      "type": "function",
+      "docstring": "Coleta métricas do sistema.\n\nReturns:\n    Métricas do sistema",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 75,
+      "end_line": 132,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "metrics\\metrics_collector\\migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_system.py"
+    },
+    "metrics\\metrics_collector\\migrated_metrics_system.py.collect_performance_metrics": {
+      "name": "collect_performance_metrics",
+      "type": "function",
+      "docstring": "Coleta métricas de performance do sistema BMAD.\n\nReturns:\n    Métricas de performance",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 134,
+      "end_line": 199,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "metrics\\metrics_collector\\migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_system.py"
+    },
+    "metrics\\metrics_collector\\migrated_metrics_system.py.collect_usage_metrics": {
+      "name": "collect_usage_metrics",
+      "type": "function",
+      "docstring": "Coleta métricas de uso do sistema.\n\nReturns:\n    Métricas de uso",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 201,
+      "end_line": 247,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "metrics\\metrics_collector\\migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_system.py"
+    },
+    "metrics\\metrics_collector\\migrated_metrics_system.py.collect_quality_metrics": {
+      "name": "collect_quality_metrics",
+      "type": "function",
+      "docstring": "Coleta métricas de qualidade do sistema.\n\nReturns:\n    Métricas de qualidade",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 249,
+      "end_line": 296,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "metrics\\metrics_collector\\migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_system.py"
+    },
+    "metrics\\metrics_collector\\migrated_metrics_system.py.save_metrics": {
+      "name": "save_metrics",
+      "type": "function",
+      "docstring": "Salva métricas em arquivo JSON.\n\nArgs:\n    metrics_type: Tipo de métrica (performance, usage, quality)\n    metrics_data: Dados das métricas",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        },
+        {
+          "name": "metrics_type",
+          "annotation": "str"
+        },
+        {
+          "name": "metrics_data",
+          "annotation": "Dict[str, Any]"
+        }
+      ],
+      "decorators": [],
+      "start_line": 298,
+      "end_line": 342,
+      "returns": null,
+      "async": false,
+      "module_path": "metrics\\metrics_collector\\migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_system.py"
+    },
+    "metrics\\metrics_collector\\migrated_metrics_system.py.generate_metrics_report": {
+      "name": "generate_metrics_report",
+      "type": "function",
+      "docstring": "Gera relatório completo de métricas.\n\nReturns:\n    Caminho do relatório",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 444,
+      "end_line": 491,
+      "returns": "str",
+      "async": false,
+      "module_path": "metrics\\metrics_collector\\migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_system.py"
+    },
+    "metrics\\metrics_collector\\migrated_metrics_system.py.collect_all_metrics": {
+      "name": "collect_all_metrics",
+      "type": "function",
+      "docstring": "Coleta todas as métricas do sistema.",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 493,
+      "end_line": 513,
+      "returns": null,
+      "async": false,
+      "module_path": "metrics\\metrics_collector\\migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_system.py"
+    },
+    "metrics\\metrics_collector\\migrated_metrics_system.py.implement_metrics_system": {
+      "name": "implement_metrics_system",
+      "type": "function",
+      "docstring": "Implementa sistema completo de métricas.\n\nReturns:\n    Resultados da implementação",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 515,
+      "end_line": 546,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "metrics\\metrics_collector\\migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_system.py"
+    },
+    "maps\\map_updater\\migrated_auto_update_system.py.start_monitoring": {
+      "name": "start_monitoring",
+      "type": "function",
+      "docstring": "",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 43,
+      "end_line": 44,
+      "returns": null,
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_auto_update_system.py",
+      "category": "metrics",
+      "file_name": "migrated_auto_update_system.py"
+    },
+    "maps\\map_updater\\migrated_migrated_aaa_agent_specialization_system.py.generate_metrics_report": {
+      "name": "generate_metrics_report",
+      "type": "function",
+      "docstring": "Gera relatório de métricas",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 536,
+      "end_line": 538,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_aaa_agent_specialization_system.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_aaa_agent_specialization_system.py"
+    },
+    "maps\\map_updater\\migrated_migrated_aaa_agent_specialization_system.py.record_metric": {
+      "name": "record_metric",
+      "type": "function",
+      "docstring": "Registra métrica para análise",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        },
+        {
+          "name": "metric_type",
+          "annotation": "str"
+        },
+        {
+          "name": "value",
+          "annotation": "float"
+        }
+      ],
+      "decorators": [],
+      "start_line": 662,
+      "end_line": 673,
+      "returns": null,
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_aaa_agent_specialization_system.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_aaa_agent_specialization_system.py"
+    },
+    "maps\\map_updater\\migrated_migrated_analyze_navigation_optimization.py.analyze_performance_metrics": {
+      "name": "analyze_performance_metrics",
+      "type": "function",
+      "docstring": "Analisa métricas de performance dos caminhos",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 287,
+      "end_line": 338,
+      "returns": null,
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_analyze_navigation_optimization.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_analyze_navigation_optimization.py"
+    },
+    "maps\\map_updater\\migrated_migrated_auto_monitor.py.start_monitoring": {
+      "name": "start_monitoring",
+      "type": "function",
+      "docstring": "Inicia monitoramento contínuo",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 93,
+      "end_line": 121,
+      "returns": null,
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_auto_monitor.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_auto_monitor.py"
+    },
+    "maps\\map_updater\\migrated_migrated_auto_update_system.py.start_monitoring": {
+      "name": "start_monitoring",
+      "type": "function",
+      "docstring": "",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 57,
+      "end_line": 58,
+      "returns": null,
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_auto_update_system.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_auto_update_system.py"
+    },
+    "maps\\map_updater\\migrated_migrated_dashboard_monitoring.py.load_metrics_data": {
+      "name": "load_metrics_data",
+      "type": "function",
+      "docstring": "Carrega dados das métricas.\n\nReturns:\n    Dados das métricas",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 82,
+      "end_line": 120,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_dashboard_monitoring.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_dashboard_monitoring.py"
+    },
+    "maps\\map_updater\\migrated_migrated_dashboard_monitoring.py.create_dashboard_data": {
+      "name": "create_dashboard_data",
+      "type": "function",
+      "docstring": "Cria dados do dashboard.\n\nArgs:\n    metrics_data: Dados das métricas\n    status: Status do sistema\n    alerts: Alertas gerados\n    \nReturns:\n    Dados do dashboard",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        },
+        {
+          "name": "metrics_data",
+          "annotation": "Dict[str, Any]"
+        },
+        {
+          "name": "status",
+          "annotation": "Dict[str, Any]"
+        },
+        {
+          "name": "alerts",
+          "annotation": "List[Dict[str, Any]]"
+        }
+      ],
+      "decorators": [],
+      "start_line": 318,
+      "end_line": 397,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_dashboard_monitoring.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_dashboard_monitoring.py"
+    },
+    "maps\\map_updater\\migrated_migrated_dashboard_monitoring.py.save_dashboard_data": {
+      "name": "save_dashboard_data",
+      "type": "function",
+      "docstring": "Salva dados do dashboard.\n\nArgs:\n    dashboard_data: Dados do dashboard",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        },
+        {
+          "name": "dashboard_data",
+          "annotation": "Dict[str, Any]"
+        }
+      ],
+      "decorators": [],
+      "start_line": 489,
+      "end_line": 503,
+      "returns": null,
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_dashboard_monitoring.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_dashboard_monitoring.py"
+    },
+    "maps\\map_updater\\migrated_migrated_dashboard_monitoring.py.generate_dashboard_report": {
+      "name": "generate_dashboard_report",
+      "type": "function",
+      "docstring": "Gera relatório do dashboard.\n\nReturns:\n    Caminho do relatório",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 537,
+      "end_line": 585,
+      "returns": "str",
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_dashboard_monitoring.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_dashboard_monitoring.py"
+    },
+    "maps\\map_updater\\migrated_migrated_dashboard_monitoring.py.create_monitoring_dashboard": {
+      "name": "create_monitoring_dashboard",
+      "type": "function",
+      "docstring": "Cria dashboard completo de monitoramento.\n\nReturns:\n    Resultados da criação",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 587,
+      "end_line": 616,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_dashboard_monitoring.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_dashboard_monitoring.py"
+    },
+    "maps\\map_updater\\migrated_migrated_metrics_system.py.collect_system_metrics": {
+      "name": "collect_system_metrics",
+      "type": "function",
+      "docstring": "Coleta métricas do sistema.\n\nReturns:\n    Métricas do sistema",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 89,
+      "end_line": 146,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_metrics_system.py"
+    },
+    "maps\\map_updater\\migrated_migrated_metrics_system.py.collect_performance_metrics": {
+      "name": "collect_performance_metrics",
+      "type": "function",
+      "docstring": "Coleta métricas de performance do sistema BMAD.\n\nReturns:\n    Métricas de performance",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 148,
+      "end_line": 213,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_metrics_system.py"
+    },
+    "maps\\map_updater\\migrated_migrated_metrics_system.py.collect_usage_metrics": {
+      "name": "collect_usage_metrics",
+      "type": "function",
+      "docstring": "Coleta métricas de uso do sistema.\n\nReturns:\n    Métricas de uso",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 215,
+      "end_line": 261,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_metrics_system.py"
+    },
+    "maps\\map_updater\\migrated_migrated_metrics_system.py.collect_quality_metrics": {
+      "name": "collect_quality_metrics",
+      "type": "function",
+      "docstring": "Coleta métricas de qualidade do sistema.\n\nReturns:\n    Métricas de qualidade",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 263,
+      "end_line": 310,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_metrics_system.py"
+    },
+    "maps\\map_updater\\migrated_migrated_metrics_system.py.save_metrics": {
+      "name": "save_metrics",
+      "type": "function",
+      "docstring": "Salva métricas em arquivo JSON.\n\nArgs:\n    metrics_type: Tipo de métrica (performance, usage, quality)\n    metrics_data: Dados das métricas",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        },
+        {
+          "name": "metrics_type",
+          "annotation": "str"
+        },
+        {
+          "name": "metrics_data",
+          "annotation": "Dict[str, Any]"
+        }
+      ],
+      "decorators": [],
+      "start_line": 312,
+      "end_line": 356,
+      "returns": null,
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_metrics_system.py"
+    },
+    "maps\\map_updater\\migrated_migrated_metrics_system.py.generate_metrics_report": {
+      "name": "generate_metrics_report",
+      "type": "function",
+      "docstring": "Gera relatório completo de métricas.\n\nReturns:\n    Caminho do relatório",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 458,
+      "end_line": 505,
+      "returns": "str",
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_metrics_system.py"
+    },
+    "maps\\map_updater\\migrated_migrated_metrics_system.py.collect_all_metrics": {
+      "name": "collect_all_metrics",
+      "type": "function",
+      "docstring": "Coleta todas as métricas do sistema.",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 507,
+      "end_line": 527,
+      "returns": null,
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_metrics_system.py"
+    },
+    "maps\\map_updater\\migrated_migrated_metrics_system.py.implement_metrics_system": {
+      "name": "implement_metrics_system",
+      "type": "function",
+      "docstring": "Implementa sistema completo de métricas.\n\nReturns:\n    Resultados da implementação",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 529,
+      "end_line": 560,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_metrics_system.py"
+    },
+    "maps\\map_updater\\migrated_migrated_performance_monitor.py.load_metrics": {
+      "name": "load_metrics",
+      "type": "function",
+      "docstring": "Carrega métricas de performance existentes.",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 94,
+      "end_line": 117,
+      "returns": null,
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_performance_monitor.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_performance_monitor.py"
+    },
+    "maps\\map_updater\\migrated_migrated_performance_monitor.py.save_metrics": {
+      "name": "save_metrics",
+      "type": "function",
+      "docstring": "Salva métricas de performance.",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 119,
+      "end_line": 125,
+      "returns": null,
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_performance_monitor.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_performance_monitor.py"
+    },
+    "maps\\map_updater\\migrated_migrated_performance_monitor.py.collect_system_metrics": {
+      "name": "collect_system_metrics",
+      "type": "function",
+      "docstring": "Coleta métricas do sistema.",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 127,
+      "end_line": 174,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_performance_monitor.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_performance_monitor.py"
+    },
+    "maps\\map_updater\\migrated_migrated_performance_monitor.py.collect_project_metrics": {
+      "name": "collect_project_metrics",
+      "type": "function",
+      "docstring": "Coleta métricas específicas do projeto.",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 176,
+      "end_line": 235,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_performance_monitor.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_performance_monitor.py"
+    },
+    "maps\\map_updater\\migrated_migrated_performance_monitor.py.record_metrics": {
+      "name": "record_metrics",
+      "type": "function",
+      "docstring": "Registra métricas coletadas.",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        },
+        {
+          "name": "system_metrics",
+          "annotation": "Dict[str, Any]"
+        },
+        {
+          "name": "project_metrics",
+          "annotation": "Dict[str, Any]"
+        },
+        {
+          "name": "alerts",
+          "annotation": "List[Dict[str, Any]]"
+        }
+      ],
+      "decorators": [],
+      "start_line": 294,
+      "end_line": 314,
+      "returns": null,
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_performance_monitor.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_performance_monitor.py"
+    },
+    "maps\\map_updater\\migrated_migrated_performance_monitor.py._cleanup_old_metrics": {
+      "name": "_cleanup_old_metrics",
+      "type": "private_method",
+      "docstring": "Remove métricas antigas para economizar espaço.",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 316,
+      "end_line": 330,
+      "returns": null,
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_performance_monitor.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_performance_monitor.py"
+    },
+    "maps\\map_updater\\migrated_migrated_performance_monitor.py.start_monitoring": {
+      "name": "start_monitoring",
+      "type": "function",
+      "docstring": "Inicia o monitoramento contínuo.",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 332,
+      "end_line": 341,
+      "returns": null,
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_performance_monitor.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_performance_monitor.py"
+    },
+    "maps\\map_updater\\migrated_migrated_performance_monitor.py.stop_monitoring": {
+      "name": "stop_monitoring",
+      "type": "function",
+      "docstring": "Para o monitoramento contínuo.",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 343,
+      "end_line": 348,
+      "returns": null,
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_performance_monitor.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_performance_monitor.py"
+    },
+    "maps\\map_updater\\migrated_migrated_performance_monitor.py._monitoring_loop": {
+      "name": "_monitoring_loop",
+      "type": "private_method",
+      "docstring": "Loop principal de monitoramento.",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 350,
+      "end_line": 376,
+      "returns": null,
+      "async": false,
+      "module_path": "maps\\map_updater\\migrated_migrated_performance_monitor.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_performance_monitor.py"
+    },
+    "agents\\agent_monitor\\migrated_auto_monitor.py.start_monitoring": {
+      "name": "start_monitoring",
+      "type": "function",
+      "docstring": "Inicia monitoramento contínuo",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 79,
+      "end_line": 107,
+      "returns": null,
+      "async": false,
+      "module_path": "agents\\agent_monitor\\migrated_auto_monitor.py",
+      "category": "metrics",
+      "file_name": "migrated_auto_monitor.py"
+    },
+    "agents\\agent_orchestrator\\migrated_agents_orchestrator.py.analyze_dashboard": {
+      "name": "analyze_dashboard",
+      "type": "function",
+      "docstring": "Analisa o dashboard para identificar tarefas pendentes",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 118,
+      "end_line": 140,
+      "returns": "Dict",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_agents_orchestrator.py",
+      "category": "metrics",
+      "file_name": "migrated_agents_orchestrator.py"
+    },
+    "agents\\agent_orchestrator\\migrated_alert_agent.py.load_metrics_data": {
+      "name": "load_metrics_data",
+      "type": "function",
+      "docstring": "Carrega dados de métricas",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 102,
+      "end_line": 129,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_alert_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_alert_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_coverage_validation_agent.py.analyze_dashboard_coverage": {
+      "name": "analyze_dashboard_coverage",
+      "type": "function",
+      "docstring": "Analisa a cobertura atual do dashboard",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 45,
+      "end_line": 83,
+      "returns": null,
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_coverage_validation_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_coverage_validation_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_dashboard_agent.py.load_metrics_data": {
+      "name": "load_metrics_data",
+      "type": "function",
+      "docstring": "Carrega dados de métricas",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 82,
+      "end_line": 116,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_dashboard_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_dashboard_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_dashboard_agent.py.generate_html_dashboard": {
+      "name": "generate_html_dashboard",
+      "type": "function",
+      "docstring": "Gera dashboard HTML interativo",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        },
+        {
+          "name": "data",
+          "annotation": "Dict"
+        }
+      ],
+      "decorators": [],
+      "start_line": 118,
+      "end_line": 419,
+      "returns": "str",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_dashboard_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_dashboard_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_dashboard_agent.py.generate_markdown_dashboard": {
+      "name": "generate_markdown_dashboard",
+      "type": "function",
+      "docstring": "Gera dashboard em Markdown",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        },
+        {
+          "name": "data",
+          "annotation": "Dict"
+        }
+      ],
+      "decorators": [],
+      "start_line": 421,
+      "end_line": 528,
+      "returns": "str",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_dashboard_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_dashboard_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_dashboard_agent.py.save_dashboard": {
+      "name": "save_dashboard",
+      "type": "function",
+      "docstring": "Salva dashboards em arquivos",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        },
+        {
+          "name": "html_content",
+          "annotation": "str"
+        },
+        {
+          "name": "markdown_content",
+          "annotation": "str"
+        }
+      ],
+      "decorators": [],
+      "start_line": 530,
+      "end_line": 548,
+      "returns": "bool",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_dashboard_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_dashboard_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_metrics_agent.py.collect_system_metrics": {
+      "name": "collect_system_metrics",
+      "type": "function",
+      "docstring": "Coleta métricas do sistema operacional",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 96,
+      "end_line": 168,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_metrics_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_metrics_agent.py.collect_application_metrics": {
+      "name": "collect_application_metrics",
+      "type": "function",
+      "docstring": "Coleta métricas específicas da aplicação",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 170,
+      "end_line": 214,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_metrics_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_metrics_agent.py.get_task_metrics": {
+      "name": "get_task_metrics",
+      "type": "function",
+      "docstring": "Obtém métricas de tarefas",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 249,
+      "end_line": 275,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_metrics_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_metrics_agent.py.get_performance_metrics": {
+      "name": "get_performance_metrics",
+      "type": "function",
+      "docstring": "Obtém métricas de performance",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 277,
+      "end_line": 303,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_metrics_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_metrics_agent.py.save_metrics": {
+      "name": "save_metrics",
+      "type": "function",
+      "docstring": "Salva métricas em arquivo JSON",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        },
+        {
+          "name": "metrics",
+          "annotation": "Dict"
+        },
+        {
+          "name": "filename",
+          "annotation": "str"
+        }
+      ],
+      "decorators": [],
+      "start_line": 481,
+      "end_line": 493,
+      "returns": "bool",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_metrics_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_metrics_agent.py.generate_metrics_report": {
+      "name": "generate_metrics_report",
+      "type": "function",
+      "docstring": "Gera relatório de métricas",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 495,
+      "end_line": 583,
+      "returns": "str",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_metrics_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_metrics_validation_agent.py.collect_system_metrics": {
+      "name": "collect_system_metrics",
+      "type": "function",
+      "docstring": "Coleta métricas reais do sistema",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 47,
+      "end_line": 107,
+      "returns": null,
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_metrics_validation_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_validation_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_metrics_validation_agent.py.verify_dashboard_monitoring": {
+      "name": "verify_dashboard_monitoring",
+      "type": "function",
+      "docstring": "Verifica dashboard de monitoramento",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 204,
+      "end_line": 235,
+      "returns": null,
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_metrics_validation_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_validation_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_metrics_validation_agent.py.generate_metrics_report": {
+      "name": "generate_metrics_report",
+      "type": "function",
+      "docstring": "Gera relatório completo de métricas",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 237,
+      "end_line": 267,
+      "returns": null,
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_metrics_validation_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_validation_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_progress_tracker_agent.py.calculate_current_metrics": {
+      "name": "calculate_current_metrics",
+      "type": "function",
+      "docstring": "Calcula métricas atuais do sistema",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 82,
+      "end_line": 116,
+      "returns": "Dict",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_progress_tracker_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_progress_tracker_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_progress_tracker_agent.py.save_metrics": {
+      "name": "save_metrics",
+      "type": "function",
+      "docstring": "Salva métricas atuais",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        },
+        {
+          "name": "metrics",
+          "annotation": "Dict"
+        }
+      ],
+      "decorators": [],
+      "start_line": 378,
+      "end_line": 403,
+      "returns": "bool",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_progress_tracker_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_progress_tracker_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_progress_tracker_agent.py.generate_dashboard_report": {
+      "name": "generate_dashboard_report",
+      "type": "function",
+      "docstring": "Gera relatório de dashboard",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 405,
+      "end_line": 463,
+      "returns": "str",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_progress_tracker_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_progress_tracker_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_task_master_agent.py.analyze_dashboard": {
+      "name": "analyze_dashboard",
+      "type": "function",
+      "docstring": "Analisa o dashboard central e extrai informações",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 74,
+      "end_line": 105,
+      "returns": "Dict",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_task_master_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_task_master_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_task_supervisor_agent.py.start_monitoring": {
+      "name": "start_monitoring",
+      "type": "function",
+      "docstring": "Inicia monitoramento contínuo.\n\nArgs:\n    interval: Intervalo entre verificações em segundos",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        },
+        {
+          "name": "interval",
+          "annotation": "int"
+        }
+      ],
+      "decorators": [],
+      "start_line": 430,
+      "end_line": 462,
+      "returns": "None",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_task_supervisor_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_task_supervisor_agent.py"
+    },
+    "agents\\agent_orchestrator\\migrated_task_supervisor_agent.py.stop_monitoring": {
+      "name": "stop_monitoring",
+      "type": "function",
+      "docstring": "Para o monitoramento.",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 464,
+      "end_line": 469,
+      "returns": "None",
+      "async": false,
+      "module_path": "agents\\agent_orchestrator\\migrated_task_supervisor_agent.py",
+      "category": "metrics",
+      "file_name": "migrated_task_supervisor_agent.py"
+    },
+    "agents\\agent_specialist\\migrated_aaa_agent_specialization_system.py.generate_metrics_report": {
+      "name": "generate_metrics_report",
+      "type": "function",
+      "docstring": "Gera relatório de métricas",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        }
+      ],
+      "decorators": [],
+      "start_line": 522,
+      "end_line": 524,
+      "returns": "Dict[str, Any]",
+      "async": false,
+      "module_path": "agents\\agent_specialist\\migrated_aaa_agent_specialization_system.py",
+      "category": "metrics",
+      "file_name": "migrated_aaa_agent_specialization_system.py"
+    },
+    "agents\\agent_specialist\\migrated_aaa_agent_specialization_system.py.record_metric": {
+      "name": "record_metric",
+      "type": "function",
+      "docstring": "Registra métrica para análise",
+      "args": [
+        {
+          "name": "self",
+          "annotation": null
+        },
+        {
+          "name": "metric_type",
+          "annotation": "str"
+        },
+        {
+          "name": "value",
+          "annotation": "float"
+        }
+      ],
+      "decorators": [],
+      "start_line": 648,
+      "end_line": 659,
+      "returns": null,
+      "async": false,
+      "module_path": "agents\\agent_specialist\\migrated_aaa_agent_specialization_system.py",
+      "category": "metrics",
+      "file_name": "migrated_aaa_agent_specialization_system.py"
+    }
+  },
+  "classes": {
+    "tools\\git_automation\\migrated_prompt_evaluator.py.PromptMetrics": {
+      "name": "PromptMetrics",
+      "docstring": "Métricas de avaliação de prompt",
+      "methods": [],
+      "decorators": [
+        "dataclass"
+      ],
+      "bases": [],
+      "start_line": 31,
+      "end_line": 41,
+      "module_path": "tools\\git_automation\\migrated_prompt_evaluator.py",
+      "category": "metrics",
+      "file_name": "migrated_prompt_evaluator.py"
+    },
+    "metrics\\dashboard_monitor\\dashboard_monitor.py.DashboardmonitorModule": {
+      "name": "DashboardmonitorModule",
+      "docstring": "Módulo Monitoramento de dashboard",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 28,
+          "end_line": 32,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "execute",
+          "type": "function",
+          "docstring": "Executa o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 34,
+          "end_line": 44,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_execute_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 46,
+          "end_line": 50,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "validate",
+          "type": "function",
+          "docstring": "Valida o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 52,
+          "end_line": 62,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_validate_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica de validação específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 64,
+          "end_line": 68,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 25,
+      "end_line": 68,
+      "module_path": "metrics\\dashboard_monitor\\dashboard_monitor.py",
+      "category": "metrics",
+      "file_name": "dashboard_monitor.py"
+    },
+    "metrics\\dashboard_monitor\\migrated_dashboard_monitoring.py.DashboardMonitoring": {
+      "name": "DashboardMonitoring",
+      "docstring": "Dashboard de monitoramento do sistema",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "Inicializa o dashboard de monitoramento.\n\nArgs:\n    metrics_dir: Diretório das métricas\n    dashboard_dir: Diretório do dashboard",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "metrics_dir",
+              "annotation": "str"
+            },
+            {
+              "name": "dashboard_dir",
+              "annotation": "str"
+            }
+          ],
+          "decorators": [],
+          "start_line": 45,
+          "end_line": 66,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "load_metrics_data",
+          "type": "function",
+          "docstring": "Carrega dados das métricas.\n\nReturns:\n    Dados das métricas",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 68,
+          "end_line": 106,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "calculate_system_status",
+          "type": "function",
+          "docstring": "Calcula status geral do sistema.\n\nArgs:\n    metrics_data: Dados das métricas\n    \nReturns:\n    Status do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "metrics_data",
+              "annotation": "Dict[str, Any]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 108,
+          "end_line": 222,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "generate_alerts",
+          "type": "function",
+          "docstring": "Gera alertas baseados no status do sistema.\n\nArgs:\n    status: Status do sistema\n    \nReturns:\n    Lista de alertas",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "status",
+              "annotation": "Dict[str, Any]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 224,
+          "end_line": 302,
+          "returns": "List[Dict[str, Any]]",
+          "async": false
+        },
+        {
+          "name": "create_dashboard_data",
+          "type": "function",
+          "docstring": "Cria dados do dashboard.\n\nArgs:\n    metrics_data: Dados das métricas\n    status: Status do sistema\n    alerts: Alertas gerados\n    \nReturns:\n    Dados do dashboard",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "metrics_data",
+              "annotation": "Dict[str, Any]"
+            },
+            {
+              "name": "status",
+              "annotation": "Dict[str, Any]"
+            },
+            {
+              "name": "alerts",
+              "annotation": "List[Dict[str, Any]]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 304,
+          "end_line": 383,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "extract_performance_history",
+          "type": "function",
+          "docstring": "Extrai histórico de performance para gráficos.\n\nArgs:\n    performance_data: Dados de performance\n    \nReturns:\n    Dados para gráficos",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "performance_data",
+              "annotation": "List[Dict[str, Any]]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 385,
+          "end_line": 413,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "extract_usage_history",
+          "type": "function",
+          "docstring": "Extrai histórico de uso para gráficos.\n\nArgs:\n    usage_data: Dados de uso\n    \nReturns:\n    Dados para gráficos",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "usage_data",
+              "annotation": "List[Dict[str, Any]]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 415,
+          "end_line": 443,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "extract_quality_history",
+          "type": "function",
+          "docstring": "Extrai histórico de qualidade para gráficos.\n\nArgs:\n    quality_data: Dados de qualidade\n    \nReturns:\n    Dados para gráficos",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "quality_data",
+              "annotation": "List[Dict[str, Any]]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 445,
+          "end_line": 473,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "save_dashboard_data",
+          "type": "function",
+          "docstring": "Salva dados do dashboard.\n\nArgs:\n    dashboard_data: Dados do dashboard",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "dashboard_data",
+              "annotation": "Dict[str, Any]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 475,
+          "end_line": 489,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "save_alerts",
+          "type": "function",
+          "docstring": "Salva alertas do sistema.\n\nArgs:\n    alerts: Lista de alertas",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "alerts",
+              "annotation": "List[Dict[str, Any]]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 491,
+          "end_line": 505,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "save_system_status",
+          "type": "function",
+          "docstring": "Salva status do sistema.\n\nArgs:\n    status: Status do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "status",
+              "annotation": "Dict[str, Any]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 507,
+          "end_line": 521,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "generate_dashboard_report",
+          "type": "function",
+          "docstring": "Gera relatório do dashboard.\n\nReturns:\n    Caminho do relatório",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 523,
+          "end_line": 571,
+          "returns": "str",
+          "async": false
+        },
+        {
+          "name": "create_monitoring_dashboard",
+          "type": "function",
+          "docstring": "Cria dashboard completo de monitoramento.\n\nReturns:\n    Resultados da criação",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 573,
+          "end_line": 602,
+          "returns": "Dict[str, Any]",
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 42,
+      "end_line": 602,
+      "module_path": "metrics\\dashboard_monitor\\migrated_dashboard_monitoring.py",
+      "category": "metrics",
+      "file_name": "migrated_dashboard_monitoring.py"
+    },
+    "metrics\\dashboard_monitor\\__init__.py.DashboardmonitorModule": {
+      "name": "DashboardmonitorModule",
+      "docstring": "Módulo Monitoramento de dashboard",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 20,
+          "end_line": 23,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "execute",
+          "type": "function",
+          "docstring": "Executa o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 25,
+          "end_line": 27,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "validate",
+          "type": "function",
+          "docstring": "Valida o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 29,
+          "end_line": 31,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 17,
+      "end_line": 31,
+      "module_path": "metrics\\dashboard_monitor\\__init__.py",
+      "category": "metrics",
+      "file_name": "__init__.py"
+    },
+    "metrics\\metrics_analyzer\\metrics_analyzer.py.MetricsanalyzerModule": {
+      "name": "MetricsanalyzerModule",
+      "docstring": "Módulo Análise de métricas",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 28,
+          "end_line": 32,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "execute",
+          "type": "function",
+          "docstring": "Executa o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 34,
+          "end_line": 44,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_execute_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 46,
+          "end_line": 50,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "validate",
+          "type": "function",
+          "docstring": "Valida o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 52,
+          "end_line": 62,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_validate_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica de validação específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 64,
+          "end_line": 68,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 25,
+      "end_line": 68,
+      "module_path": "metrics\\metrics_analyzer\\metrics_analyzer.py",
+      "category": "metrics",
+      "file_name": "metrics_analyzer.py"
+    },
+    "metrics\\metrics_analyzer\\__init__.py.MetricsanalyzerModule": {
+      "name": "MetricsanalyzerModule",
+      "docstring": "Módulo Análise de métricas",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 20,
+          "end_line": 23,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "execute",
+          "type": "function",
+          "docstring": "Executa o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 25,
+          "end_line": 27,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "validate",
+          "type": "function",
+          "docstring": "Valida o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 29,
+          "end_line": 31,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 17,
+      "end_line": 31,
+      "module_path": "metrics\\metrics_analyzer\\__init__.py",
+      "category": "metrics",
+      "file_name": "__init__.py"
+    },
+    "metrics\\metrics_collector\\metrics_collector.py.MetricscollectorModule": {
+      "name": "MetricscollectorModule",
+      "docstring": "Módulo Coleta de métricas",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 28,
+          "end_line": 32,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "execute",
+          "type": "function",
+          "docstring": "Executa o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 34,
+          "end_line": 44,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_execute_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 46,
+          "end_line": 50,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "validate",
+          "type": "function",
+          "docstring": "Valida o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 52,
+          "end_line": 62,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_validate_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica de validação específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 64,
+          "end_line": 68,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 25,
+      "end_line": 68,
+      "module_path": "metrics\\metrics_collector\\metrics_collector.py",
+      "category": "metrics",
+      "file_name": "metrics_collector.py"
+    },
+    "metrics\\metrics_collector\\migrated_metrics_system.py.MetricsSystem": {
+      "name": "MetricsSystem",
+      "docstring": "Sistema de métricas e feedback",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "Inicializa o sistema de métricas.\n\nArgs:\n    metrics_dir: Diretório para armazenar métricas",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "metrics_dir",
+              "annotation": "str"
+            }
+          ],
+          "decorators": [],
+          "start_line": 47,
+          "end_line": 73,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "collect_system_metrics",
+          "type": "function",
+          "docstring": "Coleta métricas do sistema.\n\nReturns:\n    Métricas do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 75,
+          "end_line": 132,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "collect_performance_metrics",
+          "type": "function",
+          "docstring": "Coleta métricas de performance do sistema BMAD.\n\nReturns:\n    Métricas de performance",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 134,
+          "end_line": 199,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "collect_usage_metrics",
+          "type": "function",
+          "docstring": "Coleta métricas de uso do sistema.\n\nReturns:\n    Métricas de uso",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 201,
+          "end_line": 247,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "collect_quality_metrics",
+          "type": "function",
+          "docstring": "Coleta métricas de qualidade do sistema.\n\nReturns:\n    Métricas de qualidade",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 249,
+          "end_line": 296,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "save_metrics",
+          "type": "function",
+          "docstring": "Salva métricas em arquivo JSON.\n\nArgs:\n    metrics_type: Tipo de métrica (performance, usage, quality)\n    metrics_data: Dados das métricas",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "metrics_type",
+              "annotation": "str"
+            },
+            {
+              "name": "metrics_data",
+              "annotation": "Dict[str, Any]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 298,
+          "end_line": 342,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "analyze_trends",
+          "type": "function",
+          "docstring": "Analisa tendências das métricas coletadas.\n\nReturns:\n    Análise de tendências",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 344,
+          "end_line": 442,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "generate_metrics_report",
+          "type": "function",
+          "docstring": "Gera relatório completo de métricas.\n\nReturns:\n    Caminho do relatório",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 444,
+          "end_line": 491,
+          "returns": "str",
+          "async": false
+        },
+        {
+          "name": "collect_all_metrics",
+          "type": "function",
+          "docstring": "Coleta todas as métricas do sistema.",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 493,
+          "end_line": 513,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "implement_metrics_system",
+          "type": "function",
+          "docstring": "Implementa sistema completo de métricas.\n\nReturns:\n    Resultados da implementação",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 515,
+          "end_line": 546,
+          "returns": "Dict[str, Any]",
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 44,
+      "end_line": 546,
+      "module_path": "metrics\\metrics_collector\\migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_system.py"
+    },
+    "metrics\\metrics_collector\\__init__.py.MetricscollectorModule": {
+      "name": "MetricscollectorModule",
+      "docstring": "Módulo Coleta de métricas",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 20,
+          "end_line": 23,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "execute",
+          "type": "function",
+          "docstring": "Executa o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 25,
+          "end_line": 27,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "validate",
+          "type": "function",
+          "docstring": "Valida o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 29,
+          "end_line": 31,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 17,
+      "end_line": 31,
+      "module_path": "metrics\\metrics_collector\\__init__.py",
+      "category": "metrics",
+      "file_name": "__init__.py"
+    },
+    "metrics\\metrics_reporter\\metrics_reporter.py.MetricsreporterModule": {
+      "name": "MetricsreporterModule",
+      "docstring": "Módulo Relatórios de métricas",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 28,
+          "end_line": 32,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "execute",
+          "type": "function",
+          "docstring": "Executa o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 34,
+          "end_line": 44,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_execute_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 46,
+          "end_line": 50,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "validate",
+          "type": "function",
+          "docstring": "Valida o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 52,
+          "end_line": 62,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_validate_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica de validação específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 64,
+          "end_line": 68,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 25,
+      "end_line": 68,
+      "module_path": "metrics\\metrics_reporter\\metrics_reporter.py",
+      "category": "metrics",
+      "file_name": "metrics_reporter.py"
+    },
+    "metrics\\metrics_reporter\\__init__.py.MetricsreporterModule": {
+      "name": "MetricsreporterModule",
+      "docstring": "Módulo Relatórios de métricas",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 18,
+          "end_line": 21,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "execute",
+          "type": "function",
+          "docstring": "Executa o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 23,
+          "end_line": 25,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "validate",
+          "type": "function",
+          "docstring": "Valida o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 27,
+          "end_line": 29,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 15,
+      "end_line": 29,
+      "module_path": "metrics\\metrics_reporter\\__init__.py",
+      "category": "metrics",
+      "file_name": "__init__.py"
+    },
+    "metrics\\performance_monitor\\migrated_performance_monitor.py.PerformancemonitorModule": {
+      "name": "PerformancemonitorModule",
+      "docstring": "Módulo Monitoramento de performance",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 42,
+          "end_line": 46,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "execute",
+          "type": "function",
+          "docstring": "Executa o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 48,
+          "end_line": 58,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_execute_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 60,
+          "end_line": 64,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "validate",
+          "type": "function",
+          "docstring": "Valida o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 66,
+          "end_line": 76,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_validate_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica de validação específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 78,
+          "end_line": 82,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 39,
+      "end_line": 82,
+      "module_path": "metrics\\performance_monitor\\migrated_performance_monitor.py",
+      "category": "metrics",
+      "file_name": "migrated_performance_monitor.py"
+    },
+    "metrics\\performance_monitor\\performance_monitor.py.PerformancemonitorModule": {
+      "name": "PerformancemonitorModule",
+      "docstring": "Módulo Monitoramento de performance",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 28,
+          "end_line": 32,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "execute",
+          "type": "function",
+          "docstring": "Executa o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 34,
+          "end_line": 44,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_execute_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 46,
+          "end_line": 50,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "validate",
+          "type": "function",
+          "docstring": "Valida o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 52,
+          "end_line": 62,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_validate_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica de validação específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 64,
+          "end_line": 68,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 25,
+      "end_line": 68,
+      "module_path": "metrics\\performance_monitor\\performance_monitor.py",
+      "category": "metrics",
+      "file_name": "performance_monitor.py"
+    },
+    "metrics\\performance_monitor\\__init__.py.PerformancemonitorModule": {
+      "name": "PerformancemonitorModule",
+      "docstring": "Módulo Monitoramento de performance",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 20,
+          "end_line": 23,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "execute",
+          "type": "function",
+          "docstring": "Executa o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 25,
+          "end_line": 27,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "validate",
+          "type": "function",
+          "docstring": "Valida o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 29,
+          "end_line": 31,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 17,
+      "end_line": 31,
+      "module_path": "metrics\\performance_monitor\\__init__.py",
+      "category": "metrics",
+      "file_name": "__init__.py"
+    },
+    "maps\\map_updater\\migrated_auto_update_system.py.AutoMonitor": {
+      "name": "AutoMonitor",
+      "docstring": "",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 41,
+          "end_line": 42,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "start_monitoring",
+          "type": "function",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 43,
+          "end_line": 44,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "get_system_status",
+          "type": "function",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 45,
+          "end_line": 46,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 40,
+      "end_line": 46,
+      "module_path": "maps\\map_updater\\migrated_auto_update_system.py",
+      "category": "metrics",
+      "file_name": "migrated_auto_update_system.py"
+    },
+    "maps\\map_updater\\migrated_dashboard_monitor.py.DashboardmonitorModule": {
+      "name": "DashboardmonitorModule",
+      "docstring": "Módulo Monitoramento de dashboard",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 42,
+          "end_line": 46,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "execute",
+          "type": "function",
+          "docstring": "Executa o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 48,
+          "end_line": 58,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_execute_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 60,
+          "end_line": 64,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "validate",
+          "type": "function",
+          "docstring": "Valida o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 66,
+          "end_line": 76,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_validate_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica de validação específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 78,
+          "end_line": 82,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 39,
+      "end_line": 82,
+      "module_path": "maps\\map_updater\\migrated_dashboard_monitor.py",
+      "category": "metrics",
+      "file_name": "migrated_dashboard_monitor.py"
+    },
+    "maps\\map_updater\\migrated_metrics_analyzer.py.MetricsanalyzerModule": {
+      "name": "MetricsanalyzerModule",
+      "docstring": "Módulo Análise de métricas",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 42,
+          "end_line": 46,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "execute",
+          "type": "function",
+          "docstring": "Executa o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 48,
+          "end_line": 58,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_execute_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 60,
+          "end_line": 64,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "validate",
+          "type": "function",
+          "docstring": "Valida o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 66,
+          "end_line": 76,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_validate_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica de validação específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 78,
+          "end_line": 82,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 39,
+      "end_line": 82,
+      "module_path": "maps\\map_updater\\migrated_metrics_analyzer.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_analyzer.py"
+    },
+    "maps\\map_updater\\migrated_metrics_collector.py.MetricscollectorModule": {
+      "name": "MetricscollectorModule",
+      "docstring": "Módulo Coleta de métricas",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 42,
+          "end_line": 46,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "execute",
+          "type": "function",
+          "docstring": "Executa o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 48,
+          "end_line": 58,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_execute_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 60,
+          "end_line": 64,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "validate",
+          "type": "function",
+          "docstring": "Valida o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 66,
+          "end_line": 76,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_validate_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica de validação específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 78,
+          "end_line": 82,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 39,
+      "end_line": 82,
+      "module_path": "maps\\map_updater\\migrated_metrics_collector.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_collector.py"
+    },
+    "maps\\map_updater\\migrated_metrics_reporter.py.MetricsreporterModule": {
+      "name": "MetricsreporterModule",
+      "docstring": "Módulo Relatórios de métricas",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 42,
+          "end_line": 46,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "execute",
+          "type": "function",
+          "docstring": "Executa o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 48,
+          "end_line": 58,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_execute_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 60,
+          "end_line": 64,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "validate",
+          "type": "function",
+          "docstring": "Valida o módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 66,
+          "end_line": 76,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_validate_module_logic",
+          "type": "private_method",
+          "docstring": "Lógica de validação específica do módulo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 78,
+          "end_line": 82,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 39,
+      "end_line": 82,
+      "module_path": "maps\\map_updater\\migrated_metrics_reporter.py",
+      "category": "metrics",
+      "file_name": "migrated_metrics_reporter.py"
+    },
+    "maps\\map_updater\\migrated_migrated_aaa_agent_specialization_system.py.AAAMetrics": {
+      "name": "AAAMetrics",
+      "docstring": "Sistema de métricas AAA",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 655,
+          "end_line": 660,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "record_metric",
+          "type": "function",
+          "docstring": "Registra métrica para análise",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "metric_type",
+              "annotation": "str"
+            },
+            {
+              "name": "value",
+              "annotation": "float"
+            }
+          ],
+          "decorators": [],
+          "start_line": 662,
+          "end_line": 673,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "generate_report",
+          "type": "function",
+          "docstring": "Gera relatório de métricas",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 675,
+          "end_line": 685,
+          "returns": "Dict[str, Any]",
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 652,
+      "end_line": 685,
+      "module_path": "maps\\map_updater\\migrated_migrated_aaa_agent_specialization_system.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_aaa_agent_specialization_system.py"
+    },
+    "maps\\map_updater\\migrated_migrated_aaa_agent_specialization_system.py.QualityMonitor": {
+      "name": "QualityMonitor",
+      "docstring": "Monitor de qualidade AAA",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 691,
+          "end_line": 694,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "check_quality_gate",
+          "type": "function",
+          "docstring": "Verifica gate de qualidade",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "gate_name",
+              "annotation": "str"
+            }
+          ],
+          "decorators": [],
+          "start_line": 696,
+          "end_line": 699,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "alert_degradation",
+          "type": "function",
+          "docstring": "Alerta sobre degradação",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "metric",
+              "annotation": "str"
+            },
+            {
+              "name": "threshold",
+              "annotation": "float"
+            }
+          ],
+          "decorators": [],
+          "start_line": 701,
+          "end_line": 703,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 688,
+      "end_line": 703,
+      "module_path": "maps\\map_updater\\migrated_migrated_aaa_agent_specialization_system.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_aaa_agent_specialization_system.py"
+    },
+    "maps\\map_updater\\migrated_migrated_auto_monitor.py.AutoMonitor": {
+      "name": "AutoMonitor",
+      "docstring": "",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 48,
+          "end_line": 76,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "setup_logging",
+          "type": "function",
+          "docstring": "Configura sistema de logging",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 78,
+          "end_line": 91,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "start_monitoring",
+          "type": "function",
+          "docstring": "Inicia monitoramento contínuo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 93,
+          "end_line": 121,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "check_system_health",
+          "type": "function",
+          "docstring": "Verifica saúde geral do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 123,
+          "end_line": 143,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "check_maps_integrity",
+          "type": "function",
+          "docstring": "Verifica integridade dos mapas JSON",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 145,
+          "end_line": 172,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "check_rules_consistency",
+          "type": "function",
+          "docstring": "Verifica consistência das regras",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 174,
+          "end_line": 200,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "check_scripts_functionality",
+          "type": "function",
+          "docstring": "Verifica funcionalidade dos scripts Python",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 202,
+          "end_line": 236,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "check_file_permissions",
+          "type": "function",
+          "docstring": "Verifica permissões de arquivos",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 238,
+          "end_line": 259,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "check_json_validity",
+          "type": "function",
+          "docstring": "Verifica validade de arquivos JSON",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 261,
+          "end_line": 279,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "detect_changes",
+          "type": "function",
+          "docstring": "Detecta mudanças no sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 281,
+          "end_line": 319,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "analyze_performance",
+          "type": "function",
+          "docstring": "Analisa performance do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 321,
+          "end_line": 340,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "measure_response_time",
+          "type": "function",
+          "docstring": "Mede tempo de resposta do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 342,
+          "end_line": 365,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "measure_memory_usage",
+          "type": "function",
+          "docstring": "Mede uso de memória",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 367,
+          "end_line": 388,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "measure_file_access_speed",
+          "type": "function",
+          "docstring": "Mede velocidade de acesso a arquivos",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 390,
+          "end_line": 421,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "measure_script_execution_time",
+          "type": "function",
+          "docstring": "Mede tempo de execução de scripts",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 423,
+          "end_line": 454,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "check_and_trigger_actions",
+          "type": "function",
+          "docstring": "Verifica se ações automáticas são necessárias",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 456,
+          "end_line": 483,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "trigger_health_correction",
+          "type": "function",
+          "docstring": "Dispara correção de saúde do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 485,
+          "end_line": 494,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "trigger_performance_optimization",
+          "type": "function",
+          "docstring": "Dispara otimização de performance",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 496,
+          "end_line": 505,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "trigger_auto_update",
+          "type": "function",
+          "docstring": "Dispara atualização automática",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 507,
+          "end_line": 516,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "trigger_emergency_mode",
+          "type": "function",
+          "docstring": "Ativa modo de emergência",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 518,
+          "end_line": 532,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "save_system_state",
+          "type": "function",
+          "docstring": "Salva estado atual do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 534,
+          "end_line": 544,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "get_system_status",
+          "type": "function",
+          "docstring": "Retorna status atual do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 546,
+          "end_line": 555,
+          "returns": "Dict[str, Any]",
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 47,
+      "end_line": 555,
+      "module_path": "maps\\map_updater\\migrated_migrated_auto_monitor.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_auto_monitor.py"
+    },
+    "maps\\map_updater\\migrated_migrated_auto_update_system.py.AutoMonitor": {
+      "name": "AutoMonitor",
+      "docstring": "",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 55,
+          "end_line": 56,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "start_monitoring",
+          "type": "function",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 57,
+          "end_line": 58,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "get_system_status",
+          "type": "function",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 59,
+          "end_line": 60,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 54,
+      "end_line": 60,
+      "module_path": "maps\\map_updater\\migrated_migrated_auto_update_system.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_auto_update_system.py"
+    },
+    "maps\\map_updater\\migrated_migrated_dashboard_monitoring.py.DashboardMonitoring": {
+      "name": "DashboardMonitoring",
+      "docstring": "Dashboard de monitoramento do sistema",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "Inicializa o dashboard de monitoramento.\n\nArgs:\n    metrics_dir: Diretório das métricas\n    dashboard_dir: Diretório do dashboard",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "metrics_dir",
+              "annotation": "str"
+            },
+            {
+              "name": "dashboard_dir",
+              "annotation": "str"
+            }
+          ],
+          "decorators": [],
+          "start_line": 59,
+          "end_line": 80,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "load_metrics_data",
+          "type": "function",
+          "docstring": "Carrega dados das métricas.\n\nReturns:\n    Dados das métricas",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 82,
+          "end_line": 120,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "calculate_system_status",
+          "type": "function",
+          "docstring": "Calcula status geral do sistema.\n\nArgs:\n    metrics_data: Dados das métricas\n    \nReturns:\n    Status do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "metrics_data",
+              "annotation": "Dict[str, Any]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 122,
+          "end_line": 236,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "generate_alerts",
+          "type": "function",
+          "docstring": "Gera alertas baseados no status do sistema.\n\nArgs:\n    status: Status do sistema\n    \nReturns:\n    Lista de alertas",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "status",
+              "annotation": "Dict[str, Any]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 238,
+          "end_line": 316,
+          "returns": "List[Dict[str, Any]]",
+          "async": false
+        },
+        {
+          "name": "create_dashboard_data",
+          "type": "function",
+          "docstring": "Cria dados do dashboard.\n\nArgs:\n    metrics_data: Dados das métricas\n    status: Status do sistema\n    alerts: Alertas gerados\n    \nReturns:\n    Dados do dashboard",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "metrics_data",
+              "annotation": "Dict[str, Any]"
+            },
+            {
+              "name": "status",
+              "annotation": "Dict[str, Any]"
+            },
+            {
+              "name": "alerts",
+              "annotation": "List[Dict[str, Any]]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 318,
+          "end_line": 397,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "extract_performance_history",
+          "type": "function",
+          "docstring": "Extrai histórico de performance para gráficos.\n\nArgs:\n    performance_data: Dados de performance\n    \nReturns:\n    Dados para gráficos",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "performance_data",
+              "annotation": "List[Dict[str, Any]]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 399,
+          "end_line": 427,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "extract_usage_history",
+          "type": "function",
+          "docstring": "Extrai histórico de uso para gráficos.\n\nArgs:\n    usage_data: Dados de uso\n    \nReturns:\n    Dados para gráficos",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "usage_data",
+              "annotation": "List[Dict[str, Any]]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 429,
+          "end_line": 457,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "extract_quality_history",
+          "type": "function",
+          "docstring": "Extrai histórico de qualidade para gráficos.\n\nArgs:\n    quality_data: Dados de qualidade\n    \nReturns:\n    Dados para gráficos",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "quality_data",
+              "annotation": "List[Dict[str, Any]]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 459,
+          "end_line": 487,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "save_dashboard_data",
+          "type": "function",
+          "docstring": "Salva dados do dashboard.\n\nArgs:\n    dashboard_data: Dados do dashboard",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "dashboard_data",
+              "annotation": "Dict[str, Any]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 489,
+          "end_line": 503,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "save_alerts",
+          "type": "function",
+          "docstring": "Salva alertas do sistema.\n\nArgs:\n    alerts: Lista de alertas",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "alerts",
+              "annotation": "List[Dict[str, Any]]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 505,
+          "end_line": 519,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "save_system_status",
+          "type": "function",
+          "docstring": "Salva status do sistema.\n\nArgs:\n    status: Status do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "status",
+              "annotation": "Dict[str, Any]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 521,
+          "end_line": 535,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "generate_dashboard_report",
+          "type": "function",
+          "docstring": "Gera relatório do dashboard.\n\nReturns:\n    Caminho do relatório",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 537,
+          "end_line": 585,
+          "returns": "str",
+          "async": false
+        },
+        {
+          "name": "create_monitoring_dashboard",
+          "type": "function",
+          "docstring": "Cria dashboard completo de monitoramento.\n\nReturns:\n    Resultados da criação",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 587,
+          "end_line": 616,
+          "returns": "Dict[str, Any]",
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 56,
+      "end_line": 616,
+      "module_path": "maps\\map_updater\\migrated_migrated_dashboard_monitoring.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_dashboard_monitoring.py"
+    },
+    "maps\\map_updater\\migrated_migrated_metrics_system.py.MetricsSystem": {
+      "name": "MetricsSystem",
+      "docstring": "Sistema de métricas e feedback",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "Inicializa o sistema de métricas.\n\nArgs:\n    metrics_dir: Diretório para armazenar métricas",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "metrics_dir",
+              "annotation": "str"
+            }
+          ],
+          "decorators": [],
+          "start_line": 61,
+          "end_line": 87,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "collect_system_metrics",
+          "type": "function",
+          "docstring": "Coleta métricas do sistema.\n\nReturns:\n    Métricas do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 89,
+          "end_line": 146,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "collect_performance_metrics",
+          "type": "function",
+          "docstring": "Coleta métricas de performance do sistema BMAD.\n\nReturns:\n    Métricas de performance",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 148,
+          "end_line": 213,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "collect_usage_metrics",
+          "type": "function",
+          "docstring": "Coleta métricas de uso do sistema.\n\nReturns:\n    Métricas de uso",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 215,
+          "end_line": 261,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "collect_quality_metrics",
+          "type": "function",
+          "docstring": "Coleta métricas de qualidade do sistema.\n\nReturns:\n    Métricas de qualidade",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 263,
+          "end_line": 310,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "save_metrics",
+          "type": "function",
+          "docstring": "Salva métricas em arquivo JSON.\n\nArgs:\n    metrics_type: Tipo de métrica (performance, usage, quality)\n    metrics_data: Dados das métricas",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "metrics_type",
+              "annotation": "str"
+            },
+            {
+              "name": "metrics_data",
+              "annotation": "Dict[str, Any]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 312,
+          "end_line": 356,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "analyze_trends",
+          "type": "function",
+          "docstring": "Analisa tendências das métricas coletadas.\n\nReturns:\n    Análise de tendências",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 358,
+          "end_line": 456,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "generate_metrics_report",
+          "type": "function",
+          "docstring": "Gera relatório completo de métricas.\n\nReturns:\n    Caminho do relatório",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 458,
+          "end_line": 505,
+          "returns": "str",
+          "async": false
+        },
+        {
+          "name": "collect_all_metrics",
+          "type": "function",
+          "docstring": "Coleta todas as métricas do sistema.",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 507,
+          "end_line": 527,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "implement_metrics_system",
+          "type": "function",
+          "docstring": "Implementa sistema completo de métricas.\n\nReturns:\n    Resultados da implementação",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 529,
+          "end_line": 560,
+          "returns": "Dict[str, Any]",
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 58,
+      "end_line": 560,
+      "module_path": "maps\\map_updater\\migrated_migrated_metrics_system.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_metrics_system.py"
+    },
+    "maps\\map_updater\\migrated_migrated_performance_monitor.py.PerformanceMonitor": {
+      "name": "PerformanceMonitor",
+      "docstring": "Sistema de monitoramento de performance.",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "Inicializa o monitor de performance.\n\nArgs:\n    project_root: Diretório raiz do projeto\n    monitor_dir: Diretório para armazenar dados de monitoramento",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "project_root",
+              "annotation": "str"
+            },
+            {
+              "name": "monitor_dir",
+              "annotation": "str"
+            }
+          ],
+          "decorators": [],
+          "start_line": 62,
+          "end_line": 92,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "load_metrics",
+          "type": "function",
+          "docstring": "Carrega métricas de performance existentes.",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 94,
+          "end_line": 117,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "save_metrics",
+          "type": "function",
+          "docstring": "Salva métricas de performance.",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 119,
+          "end_line": 125,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "collect_system_metrics",
+          "type": "function",
+          "docstring": "Coleta métricas do sistema.",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 127,
+          "end_line": 174,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "collect_project_metrics",
+          "type": "function",
+          "docstring": "Coleta métricas específicas do projeto.",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 176,
+          "end_line": 235,
+          "returns": "Dict[str, Any]",
+          "async": false
+        },
+        {
+          "name": "check_performance_thresholds",
+          "type": "function",
+          "docstring": "Verifica se as métricas excedem os limites definidos.",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "system_metrics",
+              "annotation": "Dict[str, Any]"
+            },
+            {
+              "name": "project_metrics",
+              "annotation": "Dict[str, Any]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 237,
+          "end_line": 292,
+          "returns": "List[Dict[str, Any]]",
+          "async": false
+        },
+        {
+          "name": "record_metrics",
+          "type": "function",
+          "docstring": "Registra métricas coletadas.",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "system_metrics",
+              "annotation": "Dict[str, Any]"
+            },
+            {
+              "name": "project_metrics",
+              "annotation": "Dict[str, Any]"
+            },
+            {
+              "name": "alerts",
+              "annotation": "List[Dict[str, Any]]"
+            }
+          ],
+          "decorators": [],
+          "start_line": 294,
+          "end_line": 314,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_cleanup_old_metrics",
+          "type": "private_method",
+          "docstring": "Remove métricas antigas para economizar espaço.",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 316,
+          "end_line": 330,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "start_monitoring",
+          "type": "function",
+          "docstring": "Inicia o monitoramento contínuo.",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 332,
+          "end_line": 341,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "stop_monitoring",
+          "type": "function",
+          "docstring": "Para o monitoramento contínuo.",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 343,
+          "end_line": 348,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "_monitoring_loop",
+          "type": "private_method",
+          "docstring": "Loop principal de monitoramento.",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 350,
+          "end_line": 376,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "get_performance_report",
+          "type": "function",
+          "docstring": "Gera relatório de performance.",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 378,
+          "end_line": 420,
+          "returns": "Dict[str, Any]",
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 59,
+      "end_line": 420,
+      "module_path": "maps\\map_updater\\migrated_migrated_performance_monitor.py",
+      "category": "metrics",
+      "file_name": "migrated_migrated_performance_monitor.py"
+    },
+    "agents\\agent_monitor\\migrated_auto_monitor.py.AutoMonitor": {
+      "name": "AutoMonitor",
+      "docstring": "",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 34,
+          "end_line": 62,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "setup_logging",
+          "type": "function",
+          "docstring": "Configura sistema de logging",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 64,
+          "end_line": 77,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "start_monitoring",
+          "type": "function",
+          "docstring": "Inicia monitoramento contínuo",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 79,
+          "end_line": 107,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "check_system_health",
+          "type": "function",
+          "docstring": "Verifica saúde geral do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 109,
+          "end_line": 129,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "check_maps_integrity",
+          "type": "function",
+          "docstring": "Verifica integridade dos mapas JSON",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 131,
+          "end_line": 158,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "check_rules_consistency",
+          "type": "function",
+          "docstring": "Verifica consistência das regras",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 160,
+          "end_line": 186,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "check_scripts_functionality",
+          "type": "function",
+          "docstring": "Verifica funcionalidade dos scripts Python",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 188,
+          "end_line": 222,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "check_file_permissions",
+          "type": "function",
+          "docstring": "Verifica permissões de arquivos",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 224,
+          "end_line": 245,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "check_json_validity",
+          "type": "function",
+          "docstring": "Verifica validade de arquivos JSON",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 247,
+          "end_line": 265,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "detect_changes",
+          "type": "function",
+          "docstring": "Detecta mudanças no sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 267,
+          "end_line": 305,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "analyze_performance",
+          "type": "function",
+          "docstring": "Analisa performance do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 307,
+          "end_line": 326,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "measure_response_time",
+          "type": "function",
+          "docstring": "Mede tempo de resposta do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 328,
+          "end_line": 351,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "measure_memory_usage",
+          "type": "function",
+          "docstring": "Mede uso de memória",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 353,
+          "end_line": 374,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "measure_file_access_speed",
+          "type": "function",
+          "docstring": "Mede velocidade de acesso a arquivos",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 376,
+          "end_line": 407,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "measure_script_execution_time",
+          "type": "function",
+          "docstring": "Mede tempo de execução de scripts",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 409,
+          "end_line": 440,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "check_and_trigger_actions",
+          "type": "function",
+          "docstring": "Verifica se ações automáticas são necessárias",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 442,
+          "end_line": 469,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "trigger_health_correction",
+          "type": "function",
+          "docstring": "Dispara correção de saúde do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 471,
+          "end_line": 480,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "trigger_performance_optimization",
+          "type": "function",
+          "docstring": "Dispara otimização de performance",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 482,
+          "end_line": 491,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "trigger_auto_update",
+          "type": "function",
+          "docstring": "Dispara atualização automática",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 493,
+          "end_line": 502,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "trigger_emergency_mode",
+          "type": "function",
+          "docstring": "Ativa modo de emergência",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 504,
+          "end_line": 518,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "save_system_state",
+          "type": "function",
+          "docstring": "Salva estado atual do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 520,
+          "end_line": 530,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "get_system_status",
+          "type": "function",
+          "docstring": "Retorna status atual do sistema",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 532,
+          "end_line": 541,
+          "returns": "Dict[str, Any]",
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 33,
+      "end_line": 541,
+      "module_path": "agents\\agent_monitor\\migrated_auto_monitor.py",
+      "category": "metrics",
+      "file_name": "migrated_auto_monitor.py"
+    },
+    "agents\\agent_specialist\\migrated_aaa_agent_specialization_system.py.AAAMetrics": {
+      "name": "AAAMetrics",
+      "docstring": "Sistema de métricas AAA",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 641,
+          "end_line": 646,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "record_metric",
+          "type": "function",
+          "docstring": "Registra métrica para análise",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "metric_type",
+              "annotation": "str"
+            },
+            {
+              "name": "value",
+              "annotation": "float"
+            }
+          ],
+          "decorators": [],
+          "start_line": 648,
+          "end_line": 659,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "generate_report",
+          "type": "function",
+          "docstring": "Gera relatório de métricas",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 661,
+          "end_line": 671,
+          "returns": "Dict[str, Any]",
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 638,
+      "end_line": 671,
+      "module_path": "agents\\agent_specialist\\migrated_aaa_agent_specialization_system.py",
+      "category": "metrics",
+      "file_name": "migrated_aaa_agent_specialization_system.py"
+    },
+    "agents\\agent_specialist\\migrated_aaa_agent_specialization_system.py.QualityMonitor": {
+      "name": "QualityMonitor",
+      "docstring": "Monitor de qualidade AAA",
+      "methods": [
+        {
+          "name": "__init__",
+          "type": "magic_method",
+          "docstring": "",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            }
+          ],
+          "decorators": [],
+          "start_line": 677,
+          "end_line": 680,
+          "returns": null,
+          "async": false
+        },
+        {
+          "name": "check_quality_gate",
+          "type": "function",
+          "docstring": "Verifica gate de qualidade",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "gate_name",
+              "annotation": "str"
+            }
+          ],
+          "decorators": [],
+          "start_line": 682,
+          "end_line": 685,
+          "returns": "float",
+          "async": false
+        },
+        {
+          "name": "alert_degradation",
+          "type": "function",
+          "docstring": "Alerta sobre degradação",
+          "args": [
+            {
+              "name": "self",
+              "annotation": null
+            },
+            {
+              "name": "metric",
+              "annotation": "str"
+            },
+            {
+              "name": "threshold",
+              "annotation": "float"
+            }
+          ],
+          "decorators": [],
+          "start_line": 687,
+          "end_line": 689,
+          "returns": null,
+          "async": false
+        }
+      ],
+      "decorators": [],
+      "bases": [],
+      "start_line": 674,
+      "end_line": 689,
+      "module_path": "agents\\agent_specialist\\migrated_aaa_agent_specialization_system.py",
+      "category": "metrics",
+      "file_name": "migrated_aaa_agent_specialization_system.py"
+    }
+  }
+}

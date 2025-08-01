@@ -1,0 +1,117 @@
+{
+  "module": {
+    "name": "test_knowledge_consolidator",
+    "path": "wiki\\update\\modules\\analysis\\knowledge_consolidator\\test_knowledge_consolidator.py",
+    "docstring": "Testes para o módulo knowledge_consolidator\n\nMódulo: knowledge_consolidator\nDescrição: Consolidação de conhecimento",
+    "functions": [
+      {
+        "name": "setUp",
+        "docstring": "Configuração inicial dos testes",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      },
+      {
+        "name": "test_module_initialization",
+        "docstring": "Testa inicialização do módulo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 4
+      },
+      {
+        "name": "test_module_execution",
+        "docstring": "Testa execução do módulo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "test_module_validation",
+        "docstring": "Testa validação do módulo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      }
+    ],
+    "classes": [
+      {
+        "name": "TestKnowledgeconsolidatorModule",
+        "docstring": "Testes para o módulo knowledge_consolidator",
+        "methods": [
+          {
+            "name": "setUp",
+            "docstring": "Configuração inicial dos testes",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          },
+          {
+            "name": "test_module_initialization",
+            "docstring": "Testa inicialização do módulo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 4
+          },
+          {
+            "name": "test_module_execution",
+            "docstring": "Testa execução do módulo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "test_module_validation",
+            "docstring": "Testa validação do módulo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          }
+        ],
+        "attributes": [
+          "result",
+          "result"
+        ],
+        "inheritance": [],
+        "line_count": 21
+      }
+    ],
+    "imports": [
+      "unittest",
+      "pathlib.Path",
+      "sys",
+      "knowledge_consolidator.KnowledgeconsolidatorModule"
+    ],
+    "line_count": 45,
+    "complexity_score": 2
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:58.042277"
+}

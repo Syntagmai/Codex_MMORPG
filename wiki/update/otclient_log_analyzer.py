@@ -1,3 +1,13 @@
+from collections import defaultdict, Counter
+from datetime import datetime, timedelta
+from pathlib import Path
+from typing import Dict, List, Any, Optional, Tuple
+import argparse
+import json
+import os
+import re
+import sys
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -5,15 +15,6 @@ OTClient Log Analyzer
 Script especializado para análise de logs do OTClient e debug
 """
 
-import json
-import re
-import os
-import sys
-from datetime import datetime, timedelta
-from pathlib import Path
-from typing import Dict, List, Any, Optional, Tuple
-from collections import defaultdict, Counter
-import argparse
 
 class OTClientLogAnalyzer:
     """Analisador especializado de logs do OTClient"""

@@ -1,0 +1,24 @@
+{
+  "module_name": "research_manager",
+  "description": "Gerenciamento de pesquisa",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "analysis",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.835268",
+  "migrated_scripts": [
+    {
+      "name": "navigation_index_generator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\navigation_index_generator.py",
+      "migration_date": "2025-08-01T12:21:06.518556",
+      "status": "migrated"
+    },
+    {
+      "name": "navigation_index_generator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\navigation_index_generator.py",
+      "migration_date": "2025-08-01T12:21:34.966933",
+      "status": "migrated"
+    }
+  ]
+}

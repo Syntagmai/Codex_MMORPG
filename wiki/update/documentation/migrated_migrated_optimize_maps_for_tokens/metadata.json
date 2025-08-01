@@ -1,0 +1,224 @@
+{
+  "module": {
+    "name": "migrated_migrated_optimize_maps_for_tokens",
+    "path": "wiki\\update\\modules\\maps\\map_updater\\migrated_migrated_optimize_maps_for_tokens.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "wiki_dir"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 432
+      },
+      {
+        "name": "translate_text",
+        "docstring": "Traduz texto para inglês para otimizar tokens",
+        "parameters": [
+          "self",
+          "text"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "optimize_metadata",
+        "docstring": "Otimiza metadados convertendo para inglês",
+        "parameters": [
+          "self",
+          "metadata"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      },
+      {
+        "name": "optimize_tags_index",
+        "docstring": "Otimiza tags_index.json",
+        "parameters": [
+          "self",
+          "tags_data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 10
+      },
+      {
+        "name": "optimize_wiki_map",
+        "docstring": "Otimiza wiki_map.json",
+        "parameters": [
+          "self",
+          "wiki_data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 20
+      },
+      {
+        "name": "optimize_relationships",
+        "docstring": "Otimiza relationships.json",
+        "parameters": [
+          "self",
+          "rel_data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "optimize_all_maps",
+        "docstring": "Otimiza todos os mapas JSON",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 40
+      }
+    ],
+    "classes": [
+      {
+        "name": "TokenOptimizer",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "wiki_dir"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 432
+          },
+          {
+            "name": "translate_text",
+            "docstring": "Traduz texto para inglês para otimizar tokens",
+            "parameters": [
+              "self",
+              "text"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "optimize_metadata",
+            "docstring": "Otimiza metadados convertendo para inglês",
+            "parameters": [
+              "self",
+              "metadata"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          },
+          {
+            "name": "optimize_tags_index",
+            "docstring": "Otimiza tags_index.json",
+            "parameters": [
+              "self",
+              "tags_data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 10
+          },
+          {
+            "name": "optimize_wiki_map",
+            "docstring": "Otimiza wiki_map.json",
+            "parameters": [
+              "self",
+              "wiki_data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 20
+          },
+          {
+            "name": "optimize_relationships",
+            "docstring": "Otimiza relationships.json",
+            "parameters": [
+              "self",
+              "rel_data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "optimize_all_maps",
+            "docstring": "Otimiza todos os mapas JSON",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 40
+          }
+        ],
+        "attributes": [
+          "optimized",
+          "optimized",
+          "optimized",
+          "optimized",
+          "tags_path",
+          "wiki_path",
+          "rel_path",
+          "text",
+          "optimized_tags",
+          "optimized_wiki",
+          "optimized_rel",
+          "tags_data",
+          "wiki_data",
+          "rel_data"
+        ],
+        "inheritance": [],
+        "line_count": 539
+      }
+    ],
+    "imports": [
+      ".MapupdaterModule",
+      ".MapupdaterModule",
+      "json"
+    ],
+    "line_count": 616,
+    "complexity_score": 16
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:55.924345"
+}

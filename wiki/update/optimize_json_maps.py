@@ -1,3 +1,12 @@
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+import gzip
+import json
+import logging
+import os
+import shutil
+import time
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -11,14 +20,6 @@ Autor: Sistema BMAD - OTClient Documentation
 Data: 2024-12-19
 """
 
-import json
-import os
-import gzip
-import shutil
-from pathlib import Path
-from typing import Dict, List, Any, Optional
-import time
-import logging
 
 # Configuração de logging
 logging.basicConfig(

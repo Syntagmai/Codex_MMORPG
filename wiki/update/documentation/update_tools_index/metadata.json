@@ -1,0 +1,440 @@
+{
+  "module": {
+    "name": "update_tools_index",
+    "path": "wiki\\update\\update_tools_index.py",
+    "docstring": "Script para indexação das ferramentas do OTClient\nAtualiza: wiki/maps/tools_index.json",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "project_root"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 10
+      },
+      {
+        "name": "scan_tools",
+        "docstring": "Escaneia todas as ferramentas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 13
+      },
+      {
+        "name": "analyze_tool",
+        "docstring": "Analisa uma ferramenta",
+        "parameters": [
+          "self",
+          "tool_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 34
+      },
+      {
+        "name": "categorize_tool",
+        "docstring": "Categoriza uma ferramenta",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 15
+      },
+      {
+        "name": "extract_tool_info",
+        "docstring": "Extrai informações da ferramenta",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 36
+      },
+      {
+        "name": "extract_description",
+        "docstring": "Extrai descrição do conteúdo",
+        "parameters": [
+          "self",
+          "content"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 12
+      },
+      {
+        "name": "get_language",
+        "docstring": "Determina a linguagem do arquivo",
+        "parameters": [
+          "self",
+          "file_ext"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "extract_functions",
+        "docstring": "Extrai funções do arquivo",
+        "parameters": [
+          "self",
+          "content",
+          "file_ext"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "extract_dependencies",
+        "docstring": "Extrai dependências do arquivo",
+        "parameters": [
+          "self",
+          "content"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "count_lines",
+        "docstring": "Conta linhas de um arquivo",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 6
+      },
+      {
+        "name": "categorize_tools",
+        "docstring": "Categoriza todas as ferramentas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "generate_statistics",
+        "docstring": "Gera estatísticas das ferramentas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 32
+      },
+      {
+        "name": "generate_search_index",
+        "docstring": "Gera índice de busca",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 27
+      },
+      {
+        "name": "generate_tools_index",
+        "docstring": "Gera o índice completo das ferramentas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 36
+      },
+      {
+        "name": "save_index",
+        "docstring": "Salva o índice em arquivo JSON",
+        "parameters": [
+          "self",
+          "tools_index",
+          "output_file"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 13
+      },
+      {
+        "name": "update_index",
+        "docstring": "Atualiza o índice das ferramentas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      }
+    ],
+    "classes": [
+      {
+        "name": "ToolsIndexer",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "project_root"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 10
+          },
+          {
+            "name": "scan_tools",
+            "docstring": "Escaneia todas as ferramentas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 13
+          },
+          {
+            "name": "analyze_tool",
+            "docstring": "Analisa uma ferramenta",
+            "parameters": [
+              "self",
+              "tool_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 34
+          },
+          {
+            "name": "categorize_tool",
+            "docstring": "Categoriza uma ferramenta",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 15
+          },
+          {
+            "name": "extract_tool_info",
+            "docstring": "Extrai informações da ferramenta",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 36
+          },
+          {
+            "name": "extract_description",
+            "docstring": "Extrai descrição do conteúdo",
+            "parameters": [
+              "self",
+              "content"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 12
+          },
+          {
+            "name": "get_language",
+            "docstring": "Determina a linguagem do arquivo",
+            "parameters": [
+              "self",
+              "file_ext"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "extract_functions",
+            "docstring": "Extrai funções do arquivo",
+            "parameters": [
+              "self",
+              "content",
+              "file_ext"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          },
+          {
+            "name": "extract_dependencies",
+            "docstring": "Extrai dependências do arquivo",
+            "parameters": [
+              "self",
+              "content"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "count_lines",
+            "docstring": "Conta linhas de um arquivo",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 6
+          },
+          {
+            "name": "categorize_tools",
+            "docstring": "Categoriza todas as ferramentas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "generate_statistics",
+            "docstring": "Gera estatísticas das ferramentas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 32
+          },
+          {
+            "name": "generate_search_index",
+            "docstring": "Gera índice de busca",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 27
+          },
+          {
+            "name": "generate_tools_index",
+            "docstring": "Gera o índice completo das ferramentas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 36
+          },
+          {
+            "name": "save_index",
+            "docstring": "Salva o índice em arquivo JSON",
+            "parameters": [
+              "self",
+              "tools_index",
+              "output_file"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 13
+          },
+          {
+            "name": "update_index",
+            "docstring": "Atualiza o índice das ferramentas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          }
+        ],
+        "attributes": [
+          "tools",
+          "file_name",
+          "file_ext",
+          "info",
+          "lines",
+          "language_map",
+          "functions",
+          "dependencies",
+          "stats",
+          "type_counts",
+          "language_counts",
+          "search_index",
+          "tool_paths",
+          "statistics",
+          "search_index",
+          "tools_index",
+          "tools_index",
+          "item_path",
+          "item_name",
+          "is_file",
+          "is_dir",
+          "category",
+          "tool_info",
+          "stat",
+          "tool_data",
+          "line",
+          "patterns",
+          "category",
+          "tool_type",
+          "language",
+          "name",
+          "category",
+          "language",
+          "tool_info",
+          "output_path",
+          "file_ext",
+          "files",
+          "info",
+          "info",
+          "pattern",
+          "functions",
+          "matches",
+          "info",
+          "info",
+          "pattern",
+          "functions",
+          "content",
+          "pattern",
+          "functions"
+        ],
+        "inheritance": [],
+        "line_count": 329
+      }
+    ],
+    "imports": [
+      "os",
+      "json",
+      "re",
+      "datetime.datetime",
+      "pathlib.Path",
+      "typing.Dict",
+      "typing.List",
+      "typing.Any"
+    ],
+    "line_count": 362,
+    "complexity_score": 49
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:52.374919"
+}

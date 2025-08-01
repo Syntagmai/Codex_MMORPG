@@ -1,3 +1,12 @@
+from datetime import datetime
+from difflib import SequenceMatcher
+from pathlib import Path
+from typing import Dict, List, Any, Optional, Tuple
+import json
+import logging
+import os
+import re
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -11,14 +20,6 @@ Autor: Sistema BMAD - Search Agent
 Data: 2025-08-01
 """
 
-import json
-import os
-import re
-from pathlib import Path
-from typing import Dict, List, Any, Optional, Tuple
-from datetime import datetime
-import logging
-from difflib import SequenceMatcher
 
 # Configuração de logging
 logging.basicConfig(

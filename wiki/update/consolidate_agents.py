@@ -1,3 +1,11 @@
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+import json
+import logging
+import os
+import shutil
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -11,13 +19,6 @@ Autor: Sistema BMAD - Agent Organizer
 Data: 2025-08-01
 """
 
-import json
-import os
-import shutil
-from pathlib import Path
-from typing import Dict, List, Any, Optional
-from datetime import datetime
-import logging
 
 # Configuração de logging
 logging.basicConfig(

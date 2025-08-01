@@ -1,0 +1,29 @@
+{
+  "module": {
+    "name": "python_agent_integration_test",
+    "path": "wiki\\update\\python_agent_integration_test.py",
+    "docstring": "Teste de Integração do Agente Python\nTesta se o agente Python é selecionado corretamente",
+    "functions": [
+      {
+        "name": "test_python_agent_integration",
+        "docstring": "Testa integração do agente Python",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 94
+      }
+    ],
+    "classes": [],
+    "imports": [
+      "enhanced_intelligent_orchestrator.EnhancedIntelligentOrchestrator"
+    ],
+    "line_count": 108,
+    "complexity_score": 7
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:51.780829"
+}

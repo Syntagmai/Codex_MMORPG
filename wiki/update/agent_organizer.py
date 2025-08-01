@@ -1,3 +1,16 @@
+from datetime import datetime
+from datetime import datetime
+from pathlib import Path
+from pathlib import Path
+from typing import Dict, List, Any
+from typing import Dict, List, Any
+from {agent_name}.{agent_name} import {agent_name.replace('_', '').title()}Agent
+import json
+import json
+import os
+import os
+import shutil
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -5,12 +18,6 @@ Agent Organizer
 Script para organizar automaticamente agentes e migrar para estrutura BMAD
 """
 
-import os
-import json
-import shutil
-from datetime import datetime
-from pathlib import Path
-from typing import Dict, List, Any
 
 class AgentOrganizer:
     """Organizador automático de agentes"""
@@ -210,11 +217,6 @@ class AgentOrganizer:
 Agente especializado em {agent_type} development
 """
 
-import os
-import json
-from datetime import datetime
-from typing import Dict, List, Any
-from pathlib import Path
 
 class {agent_name.replace('_', '').title()}Agent:
     """Agente especializado em {agent_type}"""
@@ -291,7 +293,6 @@ Agente especializado em desenvolvimento e qualidade de código {agent_type}.
 ## 🚀 Uso
 
 ```python
-from {agent_name}.{agent_name} import {agent_name.replace('_', '').title()}Agent
 
 agent = {agent_name.replace('_', '').title()}Agent()
 result = agent.analyze("target_file")

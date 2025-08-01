@@ -1,9 +1,0 @@
-Module
-  name: Game UI Enhancement
-  description: Módulo para melhorias na interface do jogo
-  author: BMAD AI Agent
-  website: https://github.com/edubart/otclient
-  sandboxed: true
-  scripts: [ game_ui_enhancement ]
-  @onLoad: game_ui_enhancementController:init()
-  @onUnload: game_ui_enhancementController:terminate()

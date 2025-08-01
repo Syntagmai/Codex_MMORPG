@@ -1,0 +1,18 @@
+{
+  "module_name": "modules_indexer",
+  "description": "Indexação de módulos Lua",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "maps",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.752240",
+  "migrated_scripts": [
+    {
+      "name": "update_modules_index.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\update_modules_index.py",
+      "migration_date": "2025-08-01T12:21:35.600913",
+      "status": "migrated"
+    }
+  ]
+}

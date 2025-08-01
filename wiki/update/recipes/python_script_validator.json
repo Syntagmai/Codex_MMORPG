@@ -1,0 +1,33 @@
+{
+  "name": "python_script_validator",
+  "description": "Valida scripts Python usando ast.parse",
+  "version": "1.0.0",
+  "author": "Recipe Manager Agent",
+  "category": "validation",
+  "tags": [
+    "python",
+    "validation",
+    "syntax"
+  ],
+  "steps": [
+    {
+      "name": "validate_syntax",
+      "description": "Valida sintaxe do script Python",
+      "command": "python",
+      "args": [
+        "wiki/update/python_tools/complexity_analyzer.py"
+      ],
+      "timeout": 60,
+      "retry_count": 3,
+      "required": true,
+      "condition": null
+    }
+  ],
+  "dependencies": [
+    "ast"
+  ],
+  "created_at": "2025-08-01T15:01:07.057841",
+  "updated_at": "2025-08-01T15:01:07.361386",
+  "success_rate": 1.0,
+  "execution_count": 1
+}

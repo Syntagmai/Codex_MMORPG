@@ -1,0 +1,117 @@
+{
+  "module": {
+    "name": "test_habdel_indexer",
+    "path": "wiki\\update\\modules\\maps\\habdel_indexer\\test_habdel_indexer.py",
+    "docstring": "Testes para o módulo habdel_indexer\n\nMódulo: habdel_indexer\nDescrição: Indexação do sistema Habdel",
+    "functions": [
+      {
+        "name": "setUp",
+        "docstring": "Configuração inicial dos testes",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      },
+      {
+        "name": "test_module_initialization",
+        "docstring": "Testa inicialização do módulo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 4
+      },
+      {
+        "name": "test_module_execution",
+        "docstring": "Testa execução do módulo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "test_module_validation",
+        "docstring": "Testa validação do módulo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      }
+    ],
+    "classes": [
+      {
+        "name": "TestHabdelindexerModule",
+        "docstring": "Testes para o módulo habdel_indexer",
+        "methods": [
+          {
+            "name": "setUp",
+            "docstring": "Configuração inicial dos testes",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          },
+          {
+            "name": "test_module_initialization",
+            "docstring": "Testa inicialização do módulo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 4
+          },
+          {
+            "name": "test_module_execution",
+            "docstring": "Testa execução do módulo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "test_module_validation",
+            "docstring": "Testa validação do módulo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          }
+        ],
+        "attributes": [
+          "result",
+          "result"
+        ],
+        "inheritance": [],
+        "line_count": 21
+      }
+    ],
+    "imports": [
+      "unittest",
+      "pathlib.Path",
+      "sys",
+      "habdel_indexer.HabdelindexerModule"
+    ],
+    "line_count": 45,
+    "complexity_score": 2
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:54.042578"
+}

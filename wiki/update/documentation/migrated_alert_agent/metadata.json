@@ -1,0 +1,303 @@
+{
+  "module": {
+    "name": "migrated_alert_agent",
+    "path": "wiki\\update\\modules\\agents\\agent_orchestrator\\migrated_alert_agent.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 10
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "load_configuration",
+        "docstring": "Carrega configurações do sistema de alertas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 42
+      },
+      {
+        "name": "load_metrics_data",
+        "docstring": "Carrega dados de métricas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 27
+      },
+      {
+        "name": "check_system_alerts",
+        "docstring": "Verifica alertas do sistema",
+        "parameters": [
+          "self",
+          "data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 87
+      },
+      {
+        "name": "check_application_alerts",
+        "docstring": "Verifica alertas da aplicação",
+        "parameters": [
+          "self",
+          "data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 93
+      },
+      {
+        "name": "check_trend_alerts",
+        "docstring": "Verifica alertas baseados em tendências",
+        "parameters": [
+          "self",
+          "data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 34
+      },
+      {
+        "name": "generate_alert_summary",
+        "docstring": "Gera resumo dos alertas",
+        "parameters": [
+          "self",
+          "alerts"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 32
+      },
+      {
+        "name": "save_alerts",
+        "docstring": "Salva alertas em arquivo",
+        "parameters": [
+          "self",
+          "alerts"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 31
+      },
+      {
+        "name": "generate_alert_report",
+        "docstring": "Gera relatório detalhado de alertas",
+        "parameters": [
+          "self",
+          "alerts"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 82
+      },
+      {
+        "name": "run",
+        "docstring": "Executa o agente de alertas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 44
+      }
+    ],
+    "classes": [
+      {
+        "name": "AlertAgent",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "load_configuration",
+            "docstring": "Carrega configurações do sistema de alertas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 42
+          },
+          {
+            "name": "load_metrics_data",
+            "docstring": "Carrega dados de métricas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 27
+          },
+          {
+            "name": "check_system_alerts",
+            "docstring": "Verifica alertas do sistema",
+            "parameters": [
+              "self",
+              "data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 87
+          },
+          {
+            "name": "check_application_alerts",
+            "docstring": "Verifica alertas da aplicação",
+            "parameters": [
+              "self",
+              "data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 93
+          },
+          {
+            "name": "check_trend_alerts",
+            "docstring": "Verifica alertas baseados em tendências",
+            "parameters": [
+              "self",
+              "data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 34
+          },
+          {
+            "name": "generate_alert_summary",
+            "docstring": "Gera resumo dos alertas",
+            "parameters": [
+              "self",
+              "alerts"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 32
+          },
+          {
+            "name": "save_alerts",
+            "docstring": "Salva alertas em arquivo",
+            "parameters": [
+              "self",
+              "alerts"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 31
+          },
+          {
+            "name": "generate_alert_report",
+            "docstring": "Gera relatório detalhado de alertas",
+            "parameters": [
+              "self",
+              "alerts"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 82
+          },
+          {
+            "name": "run",
+            "docstring": "Executa o agente de alertas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 44
+          }
+        ],
+        "attributes": [
+          "alerts",
+          "system_metrics",
+          "alerts",
+          "kpis",
+          "app_kpis",
+          "alerts",
+          "summary",
+          "critical_alerts",
+          "warning_alerts",
+          "info_alerts",
+          "data",
+          "system_metrics_file",
+          "kpis_file",
+          "cpu_usage",
+          "memory_usage",
+          "disk_usage",
+          "task_completion",
+          "response_time",
+          "error_rate",
+          "history_file",
+          "active_alerts_file",
+          "history_file",
+          "history",
+          "report",
+          "data",
+          "system_alerts",
+          "app_alerts",
+          "trend_alerts",
+          "all_alerts",
+          "success",
+          "recent_alerts",
+          "history",
+          "summary",
+          "report",
+          "report_file",
+          "history",
+          "history",
+          "emoji"
+        ],
+        "inheritance": [],
+        "line_count": 510
+      }
+    ],
+    "imports": [
+      ".AgentorchestratorModule",
+      "json",
+      "logging",
+      "time",
+      "datetime.datetime",
+      "datetime.timedelta"
+    ],
+    "line_count": 580,
+    "complexity_score": 41
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:58.532252"
+}

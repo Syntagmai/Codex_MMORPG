@@ -1,0 +1,117 @@
+{
+  "module": {
+    "name": "test_agent_specialist",
+    "path": "wiki\\update\\modules\\agents\\agent_specialist\\test_agent_specialist.py",
+    "docstring": "Testes para o módulo agent_specialist\n\nMódulo: agent_specialist\nDescrição: Agentes especializados",
+    "functions": [
+      {
+        "name": "setUp",
+        "docstring": "Configuração inicial dos testes",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      },
+      {
+        "name": "test_module_initialization",
+        "docstring": "Testa inicialização do módulo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 4
+      },
+      {
+        "name": "test_module_execution",
+        "docstring": "Testa execução do módulo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "test_module_validation",
+        "docstring": "Testa validação do módulo",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      }
+    ],
+    "classes": [
+      {
+        "name": "TestAgentspecialistModule",
+        "docstring": "Testes para o módulo agent_specialist",
+        "methods": [
+          {
+            "name": "setUp",
+            "docstring": "Configuração inicial dos testes",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          },
+          {
+            "name": "test_module_initialization",
+            "docstring": "Testa inicialização do módulo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 4
+          },
+          {
+            "name": "test_module_execution",
+            "docstring": "Testa execução do módulo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "test_module_validation",
+            "docstring": "Testa validação do módulo",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          }
+        ],
+        "attributes": [
+          "result",
+          "result"
+        ],
+        "inheritance": [],
+        "line_count": 21
+      }
+    ],
+    "imports": [
+      "unittest",
+      "pathlib.Path",
+      "sys",
+      "agent_specialist.AgentspecialistModule"
+    ],
+    "line_count": 45,
+    "complexity_score": 2
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:59.509047"
+}

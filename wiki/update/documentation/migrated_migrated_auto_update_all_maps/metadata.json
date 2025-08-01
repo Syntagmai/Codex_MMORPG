@@ -1,0 +1,301 @@
+{
+  "module": {
+    "name": "migrated_migrated_auto_update_all_maps",
+    "path": "wiki\\update\\modules\\maps\\map_updater\\migrated_migrated_auto_update_all_maps.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "load_context_data",
+        "docstring": "Carrega dados de contexto detectado",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "get_context_scripts",
+        "docstring": "Retorna scripts baseados no contexto",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 36
+      },
+      {
+        "name": "get_context_maps",
+        "docstring": "Retorna mapas baseados no contexto",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 30
+      },
+      {
+        "name": "log",
+        "docstring": "Log com timestamp",
+        "parameters": [
+          "self",
+          "message",
+          "level"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "execute_script",
+        "docstring": "Executa um script específico",
+        "parameters": [
+          "self",
+          "script_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 38
+      },
+      {
+        "name": "validate_map",
+        "docstring": "Valida um mapa JSON",
+        "parameters": [
+          "self",
+          "map_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 23
+      },
+      {
+        "name": "update_all_maps",
+        "docstring": "Executa atualização de todos os mapas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 20
+      },
+      {
+        "name": "generate_report",
+        "docstring": "Gera relatório de atualização",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 22
+      },
+      {
+        "name": "save_report",
+        "docstring": "Salva relatório de atualização",
+        "parameters": [
+          "self",
+          "report_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "print_summary",
+        "docstring": "Imprime resumo da atualização",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 20
+      }
+    ],
+    "classes": [
+      {
+        "name": "AutoMapUpdater",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          },
+          {
+            "name": "load_context_data",
+            "docstring": "Carrega dados de contexto detectado",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "get_context_scripts",
+            "docstring": "Retorna scripts baseados no contexto",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 36
+          },
+          {
+            "name": "get_context_maps",
+            "docstring": "Retorna mapas baseados no contexto",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 30
+          },
+          {
+            "name": "log",
+            "docstring": "Log com timestamp",
+            "parameters": [
+              "self",
+              "message",
+              "level"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "execute_script",
+            "docstring": "Executa um script específico",
+            "parameters": [
+              "self",
+              "script_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 38
+          },
+          {
+            "name": "validate_map",
+            "docstring": "Valida um mapa JSON",
+            "parameters": [
+              "self",
+              "map_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 23
+          },
+          {
+            "name": "update_all_maps",
+            "docstring": "Executa atualização de todos os mapas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 20
+          },
+          {
+            "name": "generate_report",
+            "docstring": "Gera relatório de atualização",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 22
+          },
+          {
+            "name": "save_report",
+            "docstring": "Salva relatório de atualização",
+            "parameters": [
+              "self",
+              "report_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "print_summary",
+            "docstring": "Imprime resumo da atualização",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 20
+          }
+        ],
+        "attributes": [
+          "context_file",
+          "base_maps",
+          "timestamp",
+          "total_scripts",
+          "success_rate",
+          "total_files",
+          "total_scripts",
+          "executed_scripts",
+          "failed_scripts",
+          "success_rate",
+          "start_time",
+          "result",
+          "end_time",
+          "execution_time",
+          "data",
+          "data"
+        ],
+        "inheritance": [],
+        "line_count": 255
+      }
+    ],
+    "imports": [
+      ".MapupdaterModule",
+      ".MapupdaterModule",
+      "os",
+      "sys",
+      "json",
+      "subprocess",
+      "time",
+      "datetime.datetime"
+    ],
+    "line_count": 338,
+    "complexity_score": 27
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:55.378049"
+}

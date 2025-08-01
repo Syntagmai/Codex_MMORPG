@@ -1,13 +1,14 @@
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Any
+import json
+import os
+
 #!/usr/bin/env python3
 """
 Script para detecção automática de contexto do repositório
 Detecta se estamos em OTClient, Canary, ou futuro repositório unificado
 """
-import os
-import json
-from datetime import datetime
-from pathlib import Path
-from typing import Dict, List, Any
 
 # Indicadores de contexto para OTClient
 OTCLIENT_INDICATORS = [

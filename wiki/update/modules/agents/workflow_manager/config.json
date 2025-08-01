@@ -1,0 +1,36 @@
+{
+  "module_name": "workflow_manager",
+  "description": "Gerenciamento de workflows",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "agents",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.779657",
+  "migrated_scripts": [
+    {
+      "name": "intelligent_orchestrator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\intelligent_orchestrator.py",
+      "migration_date": "2025-08-01T12:21:06.402546",
+      "status": "migrated"
+    },
+    {
+      "name": "intelligent_orchestrator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\intelligent_orchestrator.py",
+      "migration_date": "2025-08-01T12:21:34.834955",
+      "status": "migrated"
+    },
+    {
+      "name": "run_module_workflow.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\run_module_workflow.py",
+      "migration_date": "2025-08-01T12:21:42.545751",
+      "status": "migrated"
+    },
+    {
+      "name": "integration_workflow.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\integration_workflow.py",
+      "migration_date": "2025-08-01T12:21:45.375639",
+      "status": "migrated"
+    }
+  ]
+}

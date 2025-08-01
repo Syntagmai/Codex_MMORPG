@@ -1,0 +1,665 @@
+{
+  "module": {
+    "name": "migrated_aaa_agent_specialization_system",
+    "path": "wiki\\update\\modules\\agents\\agent_specialist\\migrated_aaa_agent_specialization_system.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal para teste do sistema",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 34
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "base_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 20
+      },
+      {
+        "name": "create_directory_structure",
+        "docstring": "Cria estrutura de pastas necessária",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 12
+      },
+      {
+        "name": "initialize_agents",
+        "docstring": "Inicializa todos os agentes especializados AAA",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 246
+      },
+      {
+        "name": "initialize_workflows",
+        "docstring": "Inicializa workflows de nível AAA",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 31
+      },
+      {
+        "name": "detect_context_by_extension",
+        "docstring": "Detecta contexto baseado na extensão do arquivo",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 69
+      },
+      {
+        "name": "select_agents",
+        "docstring": "Seleciona agentes baseado no contexto",
+        "parameters": [
+          "self",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 17
+      },
+      {
+        "name": "execute_agent_workflow",
+        "docstring": "Executa workflow de agente para arquivo específico",
+        "parameters": [
+          "self",
+          "file_path",
+          "user_request"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 55
+      },
+      {
+        "name": "calculate_overall_quality",
+        "docstring": "Calcula qualidade geral dos resultados",
+        "parameters": [
+          "self",
+          "results"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 10
+      },
+      {
+        "name": "save_report",
+        "docstring": "Salva relatório de execução",
+        "parameters": [
+          "self",
+          "report"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "generate_metrics_report",
+        "docstring": "Gera relatório de métricas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      },
+      {
+        "name": "get_agent_info",
+        "docstring": "Obtém informações de um agente específico",
+        "parameters": [
+          "self",
+          "agent_id"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 11
+      },
+      {
+        "name": "list_all_agents",
+        "docstring": "Lista todos os agentes disponíveis",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "name",
+          "specialization",
+          "file_extensions",
+          "capabilities",
+          "tools"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      },
+      {
+        "name": "execute",
+        "docstring": "Executa análise e processamento do arquivo",
+        "parameters": [
+          "self",
+          "file_path",
+          "user_request",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 34
+      },
+      {
+        "name": "perform_analysis",
+        "docstring": "Realiza análise específica do arquivo",
+        "parameters": [
+          "self",
+          "file_path",
+          "user_request",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 10
+      },
+      {
+        "name": "perform_optimizations",
+        "docstring": "Realiza otimizações específicas",
+        "parameters": [
+          "self",
+          "file_path",
+          "analysis_result"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "validate_quality",
+        "docstring": "Valida qualidade do arquivo",
+        "parameters": [
+          "self",
+          "file_path",
+          "analysis_result",
+          "optimization_result"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 8
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "name",
+          "agents",
+          "phases",
+          "duration",
+          "quality_gates"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "record_metric",
+        "docstring": "Registra métrica para análise",
+        "parameters": [
+          "self",
+          "metric_type",
+          "value"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 11
+      },
+      {
+        "name": "generate_report",
+        "docstring": "Gera relatório de métricas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "check_quality_gate",
+        "docstring": "Verifica gate de qualidade",
+        "parameters": [
+          "self",
+          "gate_name"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "alert_degradation",
+        "docstring": "Alerta sobre degradação",
+        "parameters": [
+          "self",
+          "metric",
+          "threshold"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 2
+      }
+    ],
+    "classes": [
+      {
+        "name": "AAAAgentSpecializationSystem",
+        "docstring": "Sistema de agentes especializados de nível AAA",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "base_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 20
+          },
+          {
+            "name": "create_directory_structure",
+            "docstring": "Cria estrutura de pastas necessária",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 12
+          },
+          {
+            "name": "initialize_agents",
+            "docstring": "Inicializa todos os agentes especializados AAA",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 246
+          },
+          {
+            "name": "initialize_workflows",
+            "docstring": "Inicializa workflows de nível AAA",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 31
+          },
+          {
+            "name": "detect_context_by_extension",
+            "docstring": "Detecta contexto baseado na extensão do arquivo",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 69
+          },
+          {
+            "name": "select_agents",
+            "docstring": "Seleciona agentes baseado no contexto",
+            "parameters": [
+              "self",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 17
+          },
+          {
+            "name": "execute_agent_workflow",
+            "docstring": "Executa workflow de agente para arquivo específico",
+            "parameters": [
+              "self",
+              "file_path",
+              "user_request"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 55
+          },
+          {
+            "name": "calculate_overall_quality",
+            "docstring": "Calcula qualidade geral dos resultados",
+            "parameters": [
+              "self",
+              "results"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 10
+          },
+          {
+            "name": "save_report",
+            "docstring": "Salva relatório de execução",
+            "parameters": [
+              "self",
+              "report"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "generate_metrics_report",
+            "docstring": "Gera relatório de métricas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          },
+          {
+            "name": "get_agent_info",
+            "docstring": "Obtém informações de um agente específico",
+            "parameters": [
+              "self",
+              "agent_id"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 11
+          },
+          {
+            "name": "list_all_agents",
+            "docstring": "Lista todos os agentes disponíveis",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          }
+        ],
+        "attributes": [
+          "directories",
+          "extension",
+          "agent_mapping",
+          "primary_agent",
+          "context",
+          "primary_agent",
+          "secondary_agents",
+          "selected_agents",
+          "start_time",
+          "context",
+          "selected_agents",
+          "results",
+          "execution_time",
+          "report",
+          "quality_scores",
+          "timestamp",
+          "filename",
+          "filepath",
+          "agent",
+          "agent",
+          "agent_result",
+          "quality_score"
+        ],
+        "inheritance": [],
+        "line_count": 509
+      },
+      {
+        "name": "AAAAgent",
+        "docstring": "Agente especializado de nível AAA",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "name",
+              "specialization",
+              "file_extensions",
+              "capabilities",
+              "tools"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          },
+          {
+            "name": "execute",
+            "docstring": "Executa análise e processamento do arquivo",
+            "parameters": [
+              "self",
+              "file_path",
+              "user_request",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 34
+          },
+          {
+            "name": "perform_analysis",
+            "docstring": "Realiza análise específica do arquivo",
+            "parameters": [
+              "self",
+              "file_path",
+              "user_request",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 10
+          },
+          {
+            "name": "perform_optimizations",
+            "docstring": "Realiza otimizações específicas",
+            "parameters": [
+              "self",
+              "file_path",
+              "analysis_result"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "validate_quality",
+            "docstring": "Valida qualidade do arquivo",
+            "parameters": [
+              "self",
+              "file_path",
+              "analysis_result",
+              "optimization_result"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 8
+          }
+        ],
+        "attributes": [
+          "start_time",
+          "analysis_result",
+          "optimization_result",
+          "quality_result",
+          "execution_time",
+          "result"
+        ],
+        "inheritance": [],
+        "line_count": 78
+      },
+      {
+        "name": "AAAWorkflow",
+        "docstring": "Workflow de nível AAA",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "name",
+              "agents",
+              "phases",
+              "duration",
+              "quality_gates"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          }
+        ],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 10
+      },
+      {
+        "name": "AAAMetrics",
+        "docstring": "Sistema de métricas AAA",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          },
+          {
+            "name": "record_metric",
+            "docstring": "Registra métrica para análise",
+            "parameters": [
+              "self",
+              "metric_type",
+              "value"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 11
+          },
+          {
+            "name": "generate_report",
+            "docstring": "Gera relatório de métricas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          }
+        ],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 37
+      },
+      {
+        "name": "QualityMonitor",
+        "docstring": "Monitor de qualidade AAA",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "check_quality_gate",
+            "docstring": "Verifica gate de qualidade",
+            "parameters": [
+              "self",
+              "gate_name"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 3
+          },
+          {
+            "name": "alert_degradation",
+            "docstring": "Alerta sobre degradação",
+            "parameters": [
+              "self",
+              "metric",
+              "threshold"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 2
+          }
+        ],
+        "attributes": [],
+        "inheritance": [],
+        "line_count": 15
+      }
+    ],
+    "imports": [
+      ".AgentspecialistModule",
+      "os",
+      "json",
+      "time",
+      "datetime.datetime"
+    ],
+    "line_count": 747,
+    "complexity_score": 20
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:59.499808"
+}

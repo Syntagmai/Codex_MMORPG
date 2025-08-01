@@ -1,0 +1,24 @@
+{
+  "module_name": "agent_validator",
+  "description": "Validação de agentes",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "agents",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.785760",
+  "migrated_scripts": [
+    {
+      "name": "aaa_integration_validator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\aaa_integration_validator.py",
+      "migration_date": "2025-08-01T12:21:05.677602",
+      "status": "migrated"
+    },
+    {
+      "name": "aaa_integration_validator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\aaa_integration_validator.py",
+      "migration_date": "2025-08-01T12:21:33.825183",
+      "status": "migrated"
+    }
+  ]
+}

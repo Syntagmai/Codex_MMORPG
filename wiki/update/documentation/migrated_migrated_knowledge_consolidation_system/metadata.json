@@ -1,0 +1,234 @@
+{
+  "module": {
+    "name": "migrated_migrated_knowledge_consolidation_system",
+    "path": "wiki\\update\\modules\\maps\\map_updater\\migrated_migrated_knowledge_consolidation_system.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal do script.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 13
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "Inicializa o sistema de consolidação.\n\nArgs:\n    wiki_dir: Diretório da wiki",
+        "parameters": [
+          "self",
+          "wiki_dir"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 54
+      },
+      {
+        "name": "scan_documents",
+        "docstring": "Escaneia todos os documentos disponíveis.\n\nReturns:\n    Dicionário com documentos organizados por categoria",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 53
+      },
+      {
+        "name": "categorize_documents",
+        "docstring": "Categoriza documentos por tipo de conteúdo.\n\nArgs:\n    documents: Documentos escaneados\n    \nReturns:\n    Documentos categorizados",
+        "parameters": [
+          "self",
+          "documents"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 52
+      },
+      {
+        "name": "create_consolidation_structure",
+        "docstring": "Cria estrutura de consolidação organizada.\n\nArgs:\n    categorized_docs: Documentos categorizados",
+        "parameters": [
+          "self",
+          "categorized_docs"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 45
+      },
+      {
+        "name": "create_navigation_index",
+        "docstring": "Cria índice de navegação para a wiki consolidada.",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 48
+      },
+      {
+        "name": "create_consolidation_report",
+        "docstring": "Cria relatório de consolidação.\n\nArgs:\n    documents: Documentos originais\n    navigation_data: Dados de navegação\n    \nReturns:\n    Caminho do relatório",
+        "parameters": [
+          "self",
+          "documents",
+          "navigation_data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 36
+      },
+      {
+        "name": "consolidate_knowledge",
+        "docstring": "Executa consolidação completa do conhecimento.\n\nReturns:\n    Resultados da consolidação",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 38
+      }
+    ],
+    "classes": [
+      {
+        "name": "KnowledgeConsolidationSystem",
+        "docstring": "Sistema de consolidação automática de conhecimento",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "Inicializa o sistema de consolidação.\n\nArgs:\n    wiki_dir: Diretório da wiki",
+            "parameters": [
+              "self",
+              "wiki_dir"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 54
+          },
+          {
+            "name": "scan_documents",
+            "docstring": "Escaneia todos os documentos disponíveis.\n\nReturns:\n    Dicionário com documentos organizados por categoria",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 53
+          },
+          {
+            "name": "categorize_documents",
+            "docstring": "Categoriza documentos por tipo de conteúdo.\n\nArgs:\n    documents: Documentos escaneados\n    \nReturns:\n    Documentos categorizados",
+            "parameters": [
+              "self",
+              "documents"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 52
+          },
+          {
+            "name": "create_consolidation_structure",
+            "docstring": "Cria estrutura de consolidação organizada.\n\nArgs:\n    categorized_docs: Documentos categorizados",
+            "parameters": [
+              "self",
+              "categorized_docs"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 45
+          },
+          {
+            "name": "create_navigation_index",
+            "docstring": "Cria índice de navegação para a wiki consolidada.",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 48
+          },
+          {
+            "name": "create_consolidation_report",
+            "docstring": "Cria relatório de consolidação.\n\nArgs:\n    documents: Documentos originais\n    navigation_data: Dados de navegação\n    \nReturns:\n    Caminho do relatório",
+            "parameters": [
+              "self",
+              "documents",
+              "navigation_data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 36
+          },
+          {
+            "name": "consolidate_knowledge",
+            "docstring": "Executa consolidação completa do conhecimento.\n\nReturns:\n    Resultados da consolidação",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 38
+          }
+        ],
+        "attributes": [
+          "documents",
+          "categorized",
+          "mapping",
+          "navigation_data",
+          "navigation_file",
+          "report",
+          "report_file",
+          "documents",
+          "categorized_docs",
+          "navigation_data",
+          "report_path",
+          "results",
+          "path",
+          "filename",
+          "path",
+          "category_dir",
+          "category_dir",
+          "subcategory_dir",
+          "target_dir",
+          "source_path",
+          "target_path",
+          "subcategory_dir",
+          "files"
+        ],
+        "inheritance": [],
+        "line_count": 341
+      }
+    ],
+    "imports": [
+      ".MapupdaterModule",
+      ".KnowledgeconsolidatorModule",
+      "json",
+      "shutil",
+      "datetime.datetime",
+      "logging"
+    ],
+    "line_count": 448,
+    "complexity_score": 48
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:55.794123"
+}

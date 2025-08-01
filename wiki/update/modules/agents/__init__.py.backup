@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Sistema de agentes BMAD especializados
+
+Esta categoria contém módulos relacionados a sistema de agentes bmad especializados.
+"""
+
+__version__ = "1.0.0"
+__author__ = "Sistema BMAD"
+__description__ = "Sistema de agentes BMAD especializados"
+
+# Imports dos módulos da categoria

@@ -1,0 +1,372 @@
+{
+  "module": {
+    "name": "dashboard_monitoring",
+    "path": "wiki\\update\\dashboard_monitoring.py",
+    "docstring": "Dashboard de Monitoramento\n=========================\n\nEste script cria interface para visualizar métricas do sistema BMAD\ncom gráficos, alertas e visualizações em tempo real.\n\nAutor: Sistema BMAD - Dashboard Agent\nData: 2025-08-01",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal do script.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 15
+      },
+      {
+        "name": "__init__",
+        "docstring": "Inicializa o dashboard de monitoramento.\n\nArgs:\n    metrics_dir: Diretório das métricas\n    dashboard_dir: Diretório do dashboard",
+        "parameters": [
+          "self",
+          "metrics_dir",
+          "dashboard_dir"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 21
+      },
+      {
+        "name": "load_metrics_data",
+        "docstring": "Carrega dados das métricas.\n\nReturns:\n    Dados das métricas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 38
+      },
+      {
+        "name": "calculate_system_status",
+        "docstring": "Calcula status geral do sistema.\n\nArgs:\n    metrics_data: Dados das métricas\n    \nReturns:\n    Status do sistema",
+        "parameters": [
+          "self",
+          "metrics_data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 114
+      },
+      {
+        "name": "generate_alerts",
+        "docstring": "Gera alertas baseados no status do sistema.\n\nArgs:\n    status: Status do sistema\n    \nReturns:\n    Lista de alertas",
+        "parameters": [
+          "self",
+          "status"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 78
+      },
+      {
+        "name": "create_dashboard_data",
+        "docstring": "Cria dados do dashboard.\n\nArgs:\n    metrics_data: Dados das métricas\n    status: Status do sistema\n    alerts: Alertas gerados\n    \nReturns:\n    Dados do dashboard",
+        "parameters": [
+          "self",
+          "metrics_data",
+          "status",
+          "alerts"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 79
+      },
+      {
+        "name": "extract_performance_history",
+        "docstring": "Extrai histórico de performance para gráficos.\n\nArgs:\n    performance_data: Dados de performance\n    \nReturns:\n    Dados para gráficos",
+        "parameters": [
+          "self",
+          "performance_data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 28
+      },
+      {
+        "name": "extract_usage_history",
+        "docstring": "Extrai histórico de uso para gráficos.\n\nArgs:\n    usage_data: Dados de uso\n    \nReturns:\n    Dados para gráficos",
+        "parameters": [
+          "self",
+          "usage_data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 28
+      },
+      {
+        "name": "extract_quality_history",
+        "docstring": "Extrai histórico de qualidade para gráficos.\n\nArgs:\n    quality_data: Dados de qualidade\n    \nReturns:\n    Dados para gráficos",
+        "parameters": [
+          "self",
+          "quality_data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 28
+      },
+      {
+        "name": "save_dashboard_data",
+        "docstring": "Salva dados do dashboard.\n\nArgs:\n    dashboard_data: Dados do dashboard",
+        "parameters": [
+          "self",
+          "dashboard_data"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "save_alerts",
+        "docstring": "Salva alertas do sistema.\n\nArgs:\n    alerts: Lista de alertas",
+        "parameters": [
+          "self",
+          "alerts"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "save_system_status",
+        "docstring": "Salva status do sistema.\n\nArgs:\n    status: Status do sistema",
+        "parameters": [
+          "self",
+          "status"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "generate_dashboard_report",
+        "docstring": "Gera relatório do dashboard.\n\nReturns:\n    Caminho do relatório",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 48
+      },
+      {
+        "name": "create_monitoring_dashboard",
+        "docstring": "Cria dashboard completo de monitoramento.\n\nReturns:\n    Resultados da criação",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 29
+      }
+    ],
+    "classes": [
+      {
+        "name": "DashboardMonitoring",
+        "docstring": "Dashboard de monitoramento do sistema",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "Inicializa o dashboard de monitoramento.\n\nArgs:\n    metrics_dir: Diretório das métricas\n    dashboard_dir: Diretório do dashboard",
+            "parameters": [
+              "self",
+              "metrics_dir",
+              "dashboard_dir"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 21
+          },
+          {
+            "name": "load_metrics_data",
+            "docstring": "Carrega dados das métricas.\n\nReturns:\n    Dados das métricas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 38
+          },
+          {
+            "name": "calculate_system_status",
+            "docstring": "Calcula status geral do sistema.\n\nArgs:\n    metrics_data: Dados das métricas\n    \nReturns:\n    Status do sistema",
+            "parameters": [
+              "self",
+              "metrics_data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 114
+          },
+          {
+            "name": "generate_alerts",
+            "docstring": "Gera alertas baseados no status do sistema.\n\nArgs:\n    status: Status do sistema\n    \nReturns:\n    Lista de alertas",
+            "parameters": [
+              "self",
+              "status"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 78
+          },
+          {
+            "name": "create_dashboard_data",
+            "docstring": "Cria dados do dashboard.\n\nArgs:\n    metrics_data: Dados das métricas\n    status: Status do sistema\n    alerts: Alertas gerados\n    \nReturns:\n    Dados do dashboard",
+            "parameters": [
+              "self",
+              "metrics_data",
+              "status",
+              "alerts"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 79
+          },
+          {
+            "name": "extract_performance_history",
+            "docstring": "Extrai histórico de performance para gráficos.\n\nArgs:\n    performance_data: Dados de performance\n    \nReturns:\n    Dados para gráficos",
+            "parameters": [
+              "self",
+              "performance_data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 28
+          },
+          {
+            "name": "extract_usage_history",
+            "docstring": "Extrai histórico de uso para gráficos.\n\nArgs:\n    usage_data: Dados de uso\n    \nReturns:\n    Dados para gráficos",
+            "parameters": [
+              "self",
+              "usage_data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 28
+          },
+          {
+            "name": "extract_quality_history",
+            "docstring": "Extrai histórico de qualidade para gráficos.\n\nArgs:\n    quality_data: Dados de qualidade\n    \nReturns:\n    Dados para gráficos",
+            "parameters": [
+              "self",
+              "quality_data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 28
+          },
+          {
+            "name": "save_dashboard_data",
+            "docstring": "Salva dados do dashboard.\n\nArgs:\n    dashboard_data: Dados do dashboard",
+            "parameters": [
+              "self",
+              "dashboard_data"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "save_alerts",
+            "docstring": "Salva alertas do sistema.\n\nArgs:\n    alerts: Lista de alertas",
+            "parameters": [
+              "self",
+              "alerts"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "save_system_status",
+            "docstring": "Salva status do sistema.\n\nArgs:\n    status: Status do sistema",
+            "parameters": [
+              "self",
+              "status"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "generate_dashboard_report",
+            "docstring": "Gera relatório do dashboard.\n\nReturns:\n    Caminho do relatório",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 48
+          },
+          {
+            "name": "create_monitoring_dashboard",
+            "docstring": "Cria dashboard completo de monitoramento.\n\nReturns:\n    Resultados da criação",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 29
+          }
+        ],
+        "attributes": [
+          "metrics_data",
+          "status",
+          "alerts",
+          "dashboard_data",
+          "history",
+          "history",
+          "history",
+          "metrics_data",
+          "status",
+          "alerts",
+          "dashboard_data",
+          "report",
+          "report_file",
+          "report_path",
+          "files_created",
+          "results",
+          "critical_count",
+          "warning_count",
+          "latest_perf",
+          "total_files",
+          "total_size",
+          "latest_usage",
+          "total_docs",
+          "indexed_docs",
+          "latest_quality",
+          "quality_score",
+          "trends",
+          "recommendations",
+          "quality_data",
+          "usage_data",
+          "latest_perf",
+          "latest_usage",
+          "latest_quality",
+          "coverage",
+          "quality_status",
+          "quality_status",
+          "quality_status"
+        ],
+        "inheritance": [],
+        "line_count": 560
+      }
+    ],
+    "imports": [
+      "json",
+      "os",
+      "pathlib.Path",
+      "typing.Dict",
+      "typing.List",
+      "typing.Any",
+      "typing.Optional",
+      "datetime.datetime",
+      "datetime.timedelta",
+      "logging"
+    ],
+    "line_count": 608,
+    "complexity_score": 45
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:50.947111"
+}

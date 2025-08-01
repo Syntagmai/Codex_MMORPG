@@ -1,0 +1,252 @@
+{
+  "module": {
+    "name": "update_wiki_maps",
+    "path": "wiki\\update\\update_wiki_maps.py",
+    "docstring": "Script para atualização automática dos mapas JSON da wiki do OTClient\nAtualiza: maps/tags_index.json, maps/wiki_map.json, maps/relationships.json\nUsa contexto detectado automaticamente",
+    "functions": [
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "wiki_dir"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 10
+      },
+      {
+        "name": "load_context_data",
+        "docstring": "Carrega dados de contexto detectado",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "scan_markdown_files",
+        "docstring": "Escaneia todos os arquivos markdown na pasta de documentação",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 11
+      },
+      {
+        "name": "extract_frontmatter",
+        "docstring": "Extrai frontmatter de um arquivo markdown",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 46
+      },
+      {
+        "name": "generate_tags_index",
+        "docstring": "Gera índice de tags",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 25
+      },
+      {
+        "name": "generate_wiki_map",
+        "docstring": "Gera mapa da wiki",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 53
+      },
+      {
+        "name": "categorize_document",
+        "docstring": "Categoriza documento baseado no nome e tags",
+        "parameters": [
+          "self",
+          "file_name",
+          "frontmatter"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 36
+      },
+      {
+        "name": "generate_relationships",
+        "docstring": "Gera relacionamentos entre documentos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 28
+      },
+      {
+        "name": "update_all_json_files",
+        "docstring": "Atualiza todos os arquivos JSON",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 26
+      }
+    ],
+    "classes": [
+      {
+        "name": "WikiJSONUpdater",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "wiki_dir"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 10
+          },
+          {
+            "name": "load_context_data",
+            "docstring": "Carrega dados de contexto detectado",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "scan_markdown_files",
+            "docstring": "Escaneia todos os arquivos markdown na pasta de documentação",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 11
+          },
+          {
+            "name": "extract_frontmatter",
+            "docstring": "Extrai frontmatter de um arquivo markdown",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 46
+          },
+          {
+            "name": "generate_tags_index",
+            "docstring": "Gera índice de tags",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 25
+          },
+          {
+            "name": "generate_wiki_map",
+            "docstring": "Gera mapa da wiki",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 53
+          },
+          {
+            "name": "categorize_document",
+            "docstring": "Categoriza documento baseado no nome e tags",
+            "parameters": [
+              "self",
+              "file_name",
+              "frontmatter"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 36
+          },
+          {
+            "name": "generate_relationships",
+            "docstring": "Gera relacionamentos entre documentos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 28
+          },
+          {
+            "name": "update_all_json_files",
+            "docstring": "Atualiza todos os arquivos JSON",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 26
+          }
+        ],
+        "attributes": [
+          "context_file",
+          "md_files",
+          "docs_dir",
+          "frontmatter",
+          "tags_index",
+          "all_tags",
+          "wiki_map",
+          "file_lower",
+          "tags_lower",
+          "relationships",
+          "md_files",
+          "docs_dir",
+          "frontmatter",
+          "frontmatter",
+          "category",
+          "frontmatter",
+          "content",
+          "parts",
+          "frontmatter_text",
+          "tags_match",
+          "status_match",
+          "aliases_match",
+          "title_match",
+          "tags_str",
+          "aliases_str"
+        ],
+        "inheritance": [],
+        "line_count": 266
+      }
+    ],
+    "imports": [
+      "os",
+      "json",
+      "re",
+      "datetime.datetime",
+      "pathlib.Path",
+      "typing.Dict",
+      "typing.List",
+      "typing.Any"
+    ],
+    "line_count": 284,
+    "complexity_score": 35
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:52.399134"
+}

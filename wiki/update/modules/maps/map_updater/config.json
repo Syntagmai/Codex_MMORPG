@@ -1,0 +1,1002 @@
+{
+  "module_name": "map_updater",
+  "description": "Atualização automática de mapas JSON",
+  "version": "1.0.0",
+  "author": "Sistema BMAD",
+  "category": "maps",
+  "dependencies": [],
+  "config": {},
+  "created": "2025-08-01T12:08:30.727396",
+  "migrated_scripts": [
+    {
+      "name": "auto_updater.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\auto_updater.py",
+      "migration_date": "2025-08-01T12:21:05.844744",
+      "status": "migrated"
+    },
+    {
+      "name": "auto_update_all_maps.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\auto_update_all_maps.py",
+      "migration_date": "2025-08-01T12:21:05.887580",
+      "status": "migrated"
+    },
+    {
+      "name": "auto_update_system.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\auto_update_system.py",
+      "migration_date": "2025-08-01T12:21:05.937200",
+      "status": "migrated"
+    },
+    {
+      "name": "canary_analysis_preparator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\canary_analysis_preparator.py",
+      "migration_date": "2025-08-01T12:21:06.005870",
+      "status": "migrated"
+    },
+    {
+      "name": "consolidate_agents.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\consolidate_agents.py",
+      "migration_date": "2025-08-01T12:21:06.080004",
+      "status": "migrated"
+    },
+    {
+      "name": "final_commit_verification.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\final_commit_verification.py",
+      "migration_date": "2025-08-01T12:21:06.199367",
+      "status": "migrated"
+    },
+    {
+      "name": "git_atomic_commits.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\git_atomic_commits.py",
+      "migration_date": "2025-08-01T12:21:06.264993",
+      "status": "migrated"
+    },
+    {
+      "name": "implement_smart_cache.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\implement_smart_cache.py",
+      "migration_date": "2025-08-01T12:21:06.357510",
+      "status": "migrated"
+    },
+    {
+      "name": "modular_structure_creator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\modular_structure_creator.py",
+      "migration_date": "2025-08-01T12:21:06.492267",
+      "status": "migrated"
+    },
+    {
+      "name": "optimize_maps_for_tokens.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\optimize_maps_for_tokens.py",
+      "migration_date": "2025-08-01T12:21:06.582537",
+      "status": "migrated"
+    },
+    {
+      "name": "otclient_log_analyzer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\otclient_log_analyzer.py",
+      "migration_date": "2025-08-01T12:21:06.666719",
+      "status": "migrated"
+    },
+    {
+      "name": "prepare_canary_integration.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\prepare_canary_integration.py",
+      "migration_date": "2025-08-01T12:21:06.726347",
+      "status": "migrated"
+    },
+    {
+      "name": "auto_updater.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\auto_updater.py",
+      "migration_date": "2025-08-01T12:21:34.223876",
+      "status": "migrated"
+    },
+    {
+      "name": "auto_update_all_maps.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\auto_update_all_maps.py",
+      "migration_date": "2025-08-01T12:21:34.250812",
+      "status": "migrated"
+    },
+    {
+      "name": "auto_update_system.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\auto_update_system.py",
+      "migration_date": "2025-08-01T12:21:34.290036",
+      "status": "migrated"
+    },
+    {
+      "name": "canary_analysis_preparator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\canary_analysis_preparator.py",
+      "migration_date": "2025-08-01T12:21:34.345494",
+      "status": "migrated"
+    },
+    {
+      "name": "consolidate_agents.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\consolidate_agents.py",
+      "migration_date": "2025-08-01T12:21:34.426046",
+      "status": "migrated"
+    },
+    {
+      "name": "final_commit_verification.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\final_commit_verification.py",
+      "migration_date": "2025-08-01T12:21:34.606740",
+      "status": "migrated"
+    },
+    {
+      "name": "git_atomic_commits.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\git_atomic_commits.py",
+      "migration_date": "2025-08-01T12:21:34.660659",
+      "status": "migrated"
+    },
+    {
+      "name": "implement_smart_cache.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\implement_smart_cache.py",
+      "migration_date": "2025-08-01T12:21:34.766171",
+      "status": "migrated"
+    },
+    {
+      "name": "modular_structure_creator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\modular_structure_creator.py",
+      "migration_date": "2025-08-01T12:21:34.930011",
+      "status": "migrated"
+    },
+    {
+      "name": "optimize_maps_for_tokens.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\optimize_maps_for_tokens.py",
+      "migration_date": "2025-08-01T12:21:35.029433",
+      "status": "migrated"
+    },
+    {
+      "name": "otclient_log_analyzer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\otclient_log_analyzer.py",
+      "migration_date": "2025-08-01T12:21:35.127617",
+      "status": "migrated"
+    },
+    {
+      "name": "prepare_canary_integration.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\prepare_canary_integration.py",
+      "migration_date": "2025-08-01T12:21:35.190877",
+      "status": "migrated"
+    },
+    {
+      "name": "script_migration_agent.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\script_migration_agent.py",
+      "migration_date": "2025-08-01T12:21:35.369465",
+      "status": "migrated"
+    },
+    {
+      "name": "update_bmad_maps.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\update_bmad_maps.py",
+      "migration_date": "2025-08-01T12:21:35.539972",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:35.724492",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:35.770302",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:35.793685",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:35.826850",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:35.858766",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:35.889099",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:35.909818",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_backup_system.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_backup_system.py",
+      "migration_date": "2025-08-01T12:21:35.977969",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:36.019646",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_cleanup_system.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_cleanup_system.py",
+      "migration_date": "2025-08-01T12:21:36.091416",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:36.129865",
+      "status": "migrated"
+    },
+    {
+      "name": "config_manager.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\config_manager.py",
+      "migration_date": "2025-08-01T12:21:36.155732",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:36.208141",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:36.253922",
+      "status": "migrated"
+    },
+    {
+      "name": "git_automation.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\git_automation.py",
+      "migration_date": "2025-08-01T12:21:36.276064",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_git_task_integration.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_git_task_integration.py",
+      "migration_date": "2025-08-01T12:21:36.352044",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:36.388993",
+      "status": "migrated"
+    },
+    {
+      "name": "log_manager.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\log_manager.py",
+      "migration_date": "2025-08-01T12:21:36.410426",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_centralize_logs.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_centralize_logs.py",
+      "migration_date": "2025-08-01T12:21:36.489879",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:36.525461",
+      "status": "migrated"
+    },
+    {
+      "name": "code_analyzer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\code_analyzer.py",
+      "migration_date": "2025-08-01T12:21:36.552034",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_analyze_navigation_optimization.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_analyze_navigation_optimization.py",
+      "migration_date": "2025-08-01T12:21:36.621666",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:36.656541",
+      "status": "migrated"
+    },
+    {
+      "name": "code_optimizer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\code_optimizer.py",
+      "migration_date": "2025-08-01T12:21:36.679739",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_auto_optimizer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_auto_optimizer.py",
+      "migration_date": "2025-08-01T12:21:36.757538",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:36.792619",
+      "status": "migrated"
+    },
+    {
+      "name": "documentation_generator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\documentation_generator.py",
+      "migration_date": "2025-08-01T12:21:36.819524",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:36.858208",
+      "status": "migrated"
+    },
+    {
+      "name": "error_resolver.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\error_resolver.py",
+      "migration_date": "2025-08-01T12:21:36.885359",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:36.925426",
+      "status": "migrated"
+    },
+    {
+      "name": "python_agent.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\python_agent.py",
+      "migration_date": "2025-08-01T12:21:36.951446",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:37.005626",
+      "status": "migrated"
+    },
+    {
+      "name": "recipe_manager.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\recipe_manager.py",
+      "migration_date": "2025-08-01T12:21:37.032988",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:37.088530",
+      "status": "migrated"
+    },
+    {
+      "name": "script_executor.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\script_executor.py",
+      "migration_date": "2025-08-01T12:21:37.110991",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:37.155267",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_alert_system.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_alert_system.py",
+      "migration_date": "2025-08-01T12:21:37.215955",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:37.252673",
+      "status": "migrated"
+    },
+    {
+      "name": "dashboard_monitor.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\dashboard_monitor.py",
+      "migration_date": "2025-08-01T12:21:37.276993",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_dashboard_monitoring.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_dashboard_monitoring.py",
+      "migration_date": "2025-08-01T12:21:37.357365",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:37.403161",
+      "status": "migrated"
+    },
+    {
+      "name": "metrics_analyzer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\metrics_analyzer.py",
+      "migration_date": "2025-08-01T12:21:37.428681",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_analyze_cursor_performance.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_analyze_cursor_performance.py",
+      "migration_date": "2025-08-01T12:21:37.504770",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:37.555522",
+      "status": "migrated"
+    },
+    {
+      "name": "metrics_collector.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\metrics_collector.py",
+      "migration_date": "2025-08-01T12:21:37.578661",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_metrics_system.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_metrics_system.py",
+      "migration_date": "2025-08-01T12:21:37.661035",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:37.699573",
+      "status": "migrated"
+    },
+    {
+      "name": "metrics_reporter.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\metrics_reporter.py",
+      "migration_date": "2025-08-01T12:21:37.728233",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:37.778091",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_performance_monitor.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_performance_monitor.py",
+      "migration_date": "2025-08-01T12:21:37.844679",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:37.910272",
+      "status": "migrated"
+    },
+    {
+      "name": "habdel_indexer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\habdel_indexer.py",
+      "migration_date": "2025-08-01T12:21:37.942344",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:38.011905",
+      "status": "migrated"
+    },
+    {
+      "name": "map_optimizer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\map_optimizer.py",
+      "migration_date": "2025-08-01T12:21:38.044676",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_optimize_json_maps.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_optimize_json_maps.py",
+      "migration_date": "2025-08-01T12:21:38.122497",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:38.161074",
+      "status": "migrated"
+    },
+    {
+      "name": "map_updater.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\map_updater.py",
+      "migration_date": "2025-08-01T12:21:38.194141",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_auto_updater.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_auto_updater.py",
+      "migration_date": "2025-08-01T12:21:38.286153",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_auto_update_all_maps.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_auto_update_all_maps.py",
+      "migration_date": "2025-08-01T12:21:38.345830",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_auto_update_system.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_auto_update_system.py",
+      "migration_date": "2025-08-01T12:21:38.419659",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_canary_analysis_preparator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_canary_analysis_preparator.py",
+      "migration_date": "2025-08-01T12:21:38.478199",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_consolidate_agents.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_consolidate_agents.py",
+      "migration_date": "2025-08-01T12:21:38.553110",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_final_commit_verification.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_final_commit_verification.py",
+      "migration_date": "2025-08-01T12:21:38.608882",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_git_atomic_commits.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_git_atomic_commits.py",
+      "migration_date": "2025-08-01T12:21:38.675039",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_implement_smart_cache.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_implement_smart_cache.py",
+      "migration_date": "2025-08-01T12:21:38.757740",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_modular_structure_creator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_modular_structure_creator.py",
+      "migration_date": "2025-08-01T12:21:38.830293",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_optimize_maps_for_tokens.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_optimize_maps_for_tokens.py",
+      "migration_date": "2025-08-01T12:21:38.897746",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_otclient_log_analyzer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_otclient_log_analyzer.py",
+      "migration_date": "2025-08-01T12:21:38.973233",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_prepare_canary_integration.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_prepare_canary_integration.py",
+      "migration_date": "2025-08-01T12:21:39.039021",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:39.075863",
+      "status": "migrated"
+    },
+    {
+      "name": "map_validator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\map_validator.py",
+      "migration_date": "2025-08-01T12:21:39.104798",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:39.143563",
+      "status": "migrated"
+    },
+    {
+      "name": "modules_indexer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\modules_indexer.py",
+      "migration_date": "2025-08-01T12:21:39.169672",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:39.208177",
+      "status": "migrated"
+    },
+    {
+      "name": "resources_indexer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\resources_indexer.py",
+      "migration_date": "2025-08-01T12:21:39.234143",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:39.276192",
+      "status": "migrated"
+    },
+    {
+      "name": "source_indexer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\source_indexer.py",
+      "migration_date": "2025-08-01T12:21:39.306170",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:39.356906",
+      "status": "migrated"
+    },
+    {
+      "name": "styles_indexer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\styles_indexer.py",
+      "migration_date": "2025-08-01T12:21:39.388430",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:39.431342",
+      "status": "migrated"
+    },
+    {
+      "name": "tools_indexer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\tools_indexer.py",
+      "migration_date": "2025-08-01T12:21:39.459995",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:39.509330",
+      "status": "migrated"
+    },
+    {
+      "name": "wiki_indexer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\wiki_indexer.py",
+      "migration_date": "2025-08-01T12:21:39.544049",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:39.589435",
+      "status": "migrated"
+    },
+    {
+      "name": "content_validator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\content_validator.py",
+      "migration_date": "2025-08-01T12:21:39.616670",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:39.658452",
+      "status": "migrated"
+    },
+    {
+      "name": "documentation_organizer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\documentation_organizer.py",
+      "migration_date": "2025-08-01T12:21:39.684900",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_habdel_wiki_integration.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_habdel_wiki_integration.py",
+      "migration_date": "2025-08-01T12:21:39.758832",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:39.804075",
+      "status": "migrated"
+    },
+    {
+      "name": "markdown_processor.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\markdown_processor.py",
+      "migration_date": "2025-08-01T12:21:39.827986",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:39.870818",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_expand_wiki_comprehensive.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_expand_wiki_comprehensive.py",
+      "migration_date": "2025-08-01T12:21:39.921858",
+      "status": "migrated"
+    },
+    {
+      "name": "wiki_expander.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\wiki_expander.py",
+      "migration_date": "2025-08-01T12:21:39.961511",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:40.005099",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_fix_wiki_issues.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_fix_wiki_issues.py",
+      "migration_date": "2025-08-01T12:21:40.055159",
+      "status": "migrated"
+    },
+    {
+      "name": "wiki_fixer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\wiki_fixer.py",
+      "migration_date": "2025-08-01T12:21:40.105365",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:40.155793",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_optimize_wiki_structure.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_optimize_wiki_structure.py",
+      "migration_date": "2025-08-01T12:21:40.206846",
+      "status": "migrated"
+    },
+    {
+      "name": "wiki_optimizer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\wiki_optimizer.py",
+      "migration_date": "2025-08-01T12:21:40.251362",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:40.290768",
+      "status": "migrated"
+    },
+    {
+      "name": "advanced_searcher.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\advanced_searcher.py",
+      "migration_date": "2025-08-01T12:21:40.318382",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_advanced_search_system.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_advanced_search_system.py",
+      "migration_date": "2025-08-01T12:21:40.392169",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:40.431346",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_context_detector.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_context_detector.py",
+      "migration_date": "2025-08-01T12:21:40.493379",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:40.538678",
+      "status": "migrated"
+    },
+    {
+      "name": "intelligent_navigator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\intelligent_navigator.py",
+      "migration_date": "2025-08-01T12:21:40.569278",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_intelligent_navigation_system.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_intelligent_navigation_system.py",
+      "migration_date": "2025-08-01T12:21:40.638455",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:40.676316",
+      "status": "migrated"
+    },
+    {
+      "name": "knowledge_consolidator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\knowledge_consolidator.py",
+      "migration_date": "2025-08-01T12:21:40.711189",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_knowledge_consolidation_system.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_knowledge_consolidation_system.py",
+      "migration_date": "2025-08-01T12:21:40.836607",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:40.892857",
+      "status": "migrated"
+    },
+    {
+      "name": "research_manager.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\research_manager.py",
+      "migration_date": "2025-08-01T12:21:41.010053",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:41.040858",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_otclient_debug_tools.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_otclient_debug_tools.py",
+      "migration_date": "2025-08-01T12:21:41.104680",
+      "status": "migrated"
+    },
+    {
+      "name": "source_analyzer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\source_analyzer.py",
+      "migration_date": "2025-08-01T12:21:41.137764",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:41.211864",
+      "status": "migrated"
+    },
+    {
+      "name": "agent_integrator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\agent_integrator.py",
+      "migration_date": "2025-08-01T12:21:41.242507",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_aaa_compatibility_fixer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_aaa_compatibility_fixer.py",
+      "migration_date": "2025-08-01T12:21:41.352941",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:41.399920",
+      "status": "migrated"
+    },
+    {
+      "name": "agent_monitor.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\agent_monitor.py",
+      "migration_date": "2025-08-01T12:21:41.434110",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_auto_monitor.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_auto_monitor.py",
+      "migration_date": "2025-08-01T12:21:41.510254",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:41.551676",
+      "status": "migrated"
+    },
+    {
+      "name": "agent_optimizer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\agent_optimizer.py",
+      "migration_date": "2025-08-01T12:21:41.580553",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:41.630477",
+      "status": "migrated"
+    },
+    {
+      "name": "agent_orchestrator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\agent_orchestrator.py",
+      "migration_date": "2025-08-01T12:21:41.663958",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_enhanced_intelligent_orchestrator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_enhanced_intelligent_orchestrator.py",
+      "migration_date": "2025-08-01T12:21:41.753986",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:41.794089",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_agent_organizer.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_agent_organizer.py",
+      "migration_date": "2025-08-01T12:21:41.870414",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:41.910056",
+      "status": "migrated"
+    },
+    {
+      "name": "agent_specialist.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\agent_specialist.py",
+      "migration_date": "2025-08-01T12:21:41.937959",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_aaa_agent_specialization_system.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_aaa_agent_specialization_system.py",
+      "migration_date": "2025-08-01T12:21:42.024847",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:42.171714",
+      "status": "migrated"
+    },
+    {
+      "name": "agent_validator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\agent_validator.py",
+      "migration_date": "2025-08-01T12:21:42.198816",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_aaa_integration_validator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_aaa_integration_validator.py",
+      "migration_date": "2025-08-01T12:21:42.283620",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:42.324252",
+      "status": "migrated"
+    },
+    {
+      "name": "migrated_intelligent_orchestrator.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\migrated_intelligent_orchestrator.py",
+      "migration_date": "2025-08-01T12:21:42.377938",
+      "status": "migrated"
+    },
+    {
+      "name": "workflow_manager.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\workflow_manager.py",
+      "migration_date": "2025-08-01T12:21:42.427353",
+      "status": "migrated"
+    },
+    {
+      "name": "__init__.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\__init__.py",
+      "migration_date": "2025-08-01T12:21:42.487448",
+      "status": "migrated"
+    },
+    {
+      "name": "update_readme.py",
+      "original_path": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG\\wiki\\update\\update_readme.py",
+      "migration_date": "2025-08-01T12:21:45.643007",
+      "status": "migrated"
+    }
+  ]
+}

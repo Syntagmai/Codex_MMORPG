@@ -1,0 +1,397 @@
+{
+  "module": {
+    "name": "habdel_wiki_integration",
+    "path": "wiki\\update\\habdel_wiki_integration.py",
+    "docstring": "Habdel Wiki Integration Script\n\nEste script integra a documentação habdel com a wiki principal do OTClient,\ncriando links, índices e navegação unificada.",
+    "functions": [
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 50
+      },
+      {
+        "name": "analyze_habdel_structure",
+        "docstring": "Analisa a estrutura da documentação habdel",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 30
+      },
+      {
+        "name": "determine_category",
+        "docstring": "Determina a categoria do arquivo baseado no nome",
+        "parameters": [
+          "self",
+          "filename"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 13
+      },
+      {
+        "name": "extract_story_info",
+        "docstring": "Extrai informações da story do arquivo",
+        "parameters": [
+          "self",
+          "file_path"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 29
+      },
+      {
+        "name": "extract_title",
+        "docstring": "Extrai título do conteúdo",
+        "parameters": [
+          "self",
+          "content"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 6
+      },
+      {
+        "name": "extract_status",
+        "docstring": "Extrai status do conteúdo",
+        "parameters": [
+          "self",
+          "content"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "analyze_wiki_structure",
+        "docstring": "Analisa a estrutura da wiki principal",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 24
+      },
+      {
+        "name": "determine_wiki_category",
+        "docstring": "Determina a categoria do arquivo da wiki",
+        "parameters": [
+          "self",
+          "filename"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 13
+      },
+      {
+        "name": "create_integration_index",
+        "docstring": "Cria índice de integração entre habdel e wiki",
+        "parameters": [
+          "self",
+          "habdel_structure",
+          "wiki_structure"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 122
+      },
+      {
+        "name": "get_category_emoji",
+        "docstring": "Retorna emoji para categoria",
+        "parameters": [
+          "self",
+          "category"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "get_category_name",
+        "docstring": "Retorna nome completo da categoria",
+        "parameters": [
+          "self",
+          "category"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 9
+      },
+      {
+        "name": "get_status_emoji",
+        "docstring": "Retorna emoji para status",
+        "parameters": [
+          "self",
+          "status"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "create_navigation_links",
+        "docstring": "Cria links de navegação para arquivos habdel",
+        "parameters": [
+          "self",
+          "habdel_structure"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 71
+      },
+      {
+        "name": "save_integration_files",
+        "docstring": "Salva arquivos de integração",
+        "parameters": [
+          "self",
+          "habdel_structure",
+          "wiki_structure"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 30
+      },
+      {
+        "name": "run",
+        "docstring": "Executa a integração habdel-wiki",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 24
+      }
+    ],
+    "classes": [
+      {
+        "name": "HabdelWikiIntegration",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 50
+          },
+          {
+            "name": "analyze_habdel_structure",
+            "docstring": "Analisa a estrutura da documentação habdel",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 30
+          },
+          {
+            "name": "determine_category",
+            "docstring": "Determina a categoria do arquivo baseado no nome",
+            "parameters": [
+              "self",
+              "filename"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 13
+          },
+          {
+            "name": "extract_story_info",
+            "docstring": "Extrai informações da story do arquivo",
+            "parameters": [
+              "self",
+              "file_path"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 29
+          },
+          {
+            "name": "extract_title",
+            "docstring": "Extrai título do conteúdo",
+            "parameters": [
+              "self",
+              "content"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 6
+          },
+          {
+            "name": "extract_status",
+            "docstring": "Extrai status do conteúdo",
+            "parameters": [
+              "self",
+              "content"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "analyze_wiki_structure",
+            "docstring": "Analisa a estrutura da wiki principal",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 24
+          },
+          {
+            "name": "determine_wiki_category",
+            "docstring": "Determina a categoria do arquivo da wiki",
+            "parameters": [
+              "self",
+              "filename"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 13
+          },
+          {
+            "name": "create_integration_index",
+            "docstring": "Cria índice de integração entre habdel e wiki",
+            "parameters": [
+              "self",
+              "habdel_structure",
+              "wiki_structure"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 122
+          },
+          {
+            "name": "get_category_emoji",
+            "docstring": "Retorna emoji para categoria",
+            "parameters": [
+              "self",
+              "category"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "get_category_name",
+            "docstring": "Retorna nome completo da categoria",
+            "parameters": [
+              "self",
+              "category"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 9
+          },
+          {
+            "name": "get_status_emoji",
+            "docstring": "Retorna emoji para status",
+            "parameters": [
+              "self",
+              "status"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "create_navigation_links",
+            "docstring": "Cria links de navegação para arquivos habdel",
+            "parameters": [
+              "self",
+              "habdel_structure"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 71
+          },
+          {
+            "name": "save_integration_files",
+            "docstring": "Salva arquivos de integração",
+            "parameters": [
+              "self",
+              "habdel_structure",
+              "wiki_structure"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 30
+          },
+          {
+            "name": "run",
+            "docstring": "Executa a integração habdel-wiki",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 24
+          }
+        ],
+        "attributes": [
+          "structure",
+          "lines",
+          "structure",
+          "index_content",
+          "emojis",
+          "names",
+          "emojis",
+          "navigation_content",
+          "story_ids",
+          "saved_files",
+          "integration_index",
+          "integration_file",
+          "navigation_guide",
+          "navigation_file",
+          "story_patterns",
+          "file",
+          "story_info",
+          "status_emoji",
+          "habdel_structure",
+          "wiki_structure",
+          "saved_files",
+          "category",
+          "story_info",
+          "content",
+          "match",
+          "category",
+          "story_info",
+          "status_emoji",
+          "wiki_file",
+          "story_info",
+          "status_emoji"
+        ],
+        "inheritance": [],
+        "line_count": 473
+      }
+    ],
+    "imports": [
+      "json",
+      "logging",
+      "re",
+      "datetime.datetime",
+      "pathlib.Path",
+      "typing.Dict",
+      "typing.List",
+      "typing.Optional",
+      "typing.Tuple"
+    ],
+    "line_count": 499,
+    "complexity_score": 61
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:51.258820"
+}

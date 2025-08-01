@@ -1,0 +1,53 @@
+{
+  "specialist_stats": {
+    "agents_coordinated": 5,
+    "modules_analyzed": 47,
+    "code_improvements": 37,
+    "performance_gains": -33.57365967365967,
+    "execution_time_seconds": 2.16731333732605
+  },
+  "quality_metrics": {
+    "errors": 3,
+    "warnings": 0,
+    "average_quality_score": 36.42634032634033
+  },
+  "capabilities": {
+    "documentation_agent": {
+      "name": "Documentation Agent",
+      "description": "Gera documentação automática para scripts Python",
+      "status": "available",
+      "priority": 1,
+      "dependencies": []
+    },
+    "testing_agent": {
+      "name": "Testing Agent",
+      "description": "Gera e executa testes automáticos",
+      "status": "available",
+      "priority": 2,
+      "dependencies": [
+        "documentation_agent"
+      ]
+    },
+    "performance_optimizer_agent": {
+      "name": "Performance Optimizer Agent",
+      "description": "Otimiza performance de scripts Python",
+      "status": "available",
+      "priority": 3,
+      "dependencies": []
+    },
+    "script_executor_agent": {
+      "name": "Script Executor Agent",
+      "description": "Executa scripts Python de forma inteligente",
+      "status": "available",
+      "priority": 4,
+      "dependencies": []
+    },
+    "recipe_manager_agent": {
+      "name": "Recipe Manager Agent",
+      "description": "Gerencia receitas Python para tarefas comuns",
+      "status": "available",
+      "priority": 5,
+      "dependencies": []
+    }
+  }
+}

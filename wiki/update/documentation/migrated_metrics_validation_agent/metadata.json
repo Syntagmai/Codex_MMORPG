@@ -1,0 +1,249 @@
+{
+  "module": {
+    "name": "migrated_metrics_validation_agent",
+    "path": "wiki\\update\\modules\\agents\\agent_orchestrator\\migrated_metrics_validation_agent.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 5
+      },
+      {
+        "name": "log_message",
+        "docstring": "",
+        "parameters": [
+          "self",
+          "message",
+          "level"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 7
+      },
+      {
+        "name": "collect_system_metrics",
+        "docstring": "Coleta métricas reais do sistema",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 60
+      },
+      {
+        "name": "validate_kpis",
+        "docstring": "Valida KPIs atuais vs. objetivos",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 42
+      },
+      {
+        "name": "test_alert_system",
+        "docstring": "Testa o sistema de alertas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 49
+      },
+      {
+        "name": "verify_dashboard_monitoring",
+        "docstring": "Verifica dashboard de monitoramento",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 31
+      },
+      {
+        "name": "generate_metrics_report",
+        "docstring": "Gera relatório completo de métricas",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 30
+      },
+      {
+        "name": "execute",
+        "docstring": "Executa a validação de métricas completa",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 49
+      }
+    ],
+    "classes": [
+      {
+        "name": "MetricsValidationAgent",
+        "docstring": "",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 5
+          },
+          {
+            "name": "log_message",
+            "docstring": "",
+            "parameters": [
+              "self",
+              "message",
+              "level"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 7
+          },
+          {
+            "name": "collect_system_metrics",
+            "docstring": "Coleta métricas reais do sistema",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 60
+          },
+          {
+            "name": "validate_kpis",
+            "docstring": "Valida KPIs atuais vs. objetivos",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 42
+          },
+          {
+            "name": "test_alert_system",
+            "docstring": "Testa o sistema de alertas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 49
+          },
+          {
+            "name": "verify_dashboard_monitoring",
+            "docstring": "Verifica dashboard de monitoramento",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 31
+          },
+          {
+            "name": "generate_metrics_report",
+            "docstring": "Gera relatório completo de métricas",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 30
+          },
+          {
+            "name": "execute",
+            "docstring": "Executa a validação de métricas completa",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 49
+          }
+        ],
+        "attributes": [
+          "timestamp",
+          "log_entry",
+          "log_file",
+          "objectives",
+          "achieved",
+          "total",
+          "overall_percentage",
+          "kpi_report",
+          "alert_tests",
+          "passed_tests",
+          "total_tests",
+          "alert_report",
+          "dashboard_files",
+          "existing_files",
+          "missing_files",
+          "dashboard_report",
+          "system_metrics",
+          "kpi_report",
+          "alert_report",
+          "dashboard_report",
+          "metrics_report",
+          "report_file",
+          "cpu_percent",
+          "cpu_count",
+          "memory",
+          "memory_percent",
+          "memory_available",
+          "disk",
+          "disk_percent",
+          "disk_free",
+          "network",
+          "bytes_sent",
+          "bytes_recv",
+          "process_count",
+          "metrics",
+          "file_path",
+          "system_metrics",
+          "kpi_report",
+          "alert_report",
+          "dashboard_report",
+          "metrics_report",
+          "final_report",
+          "report_file"
+        ],
+        "inheritance": [],
+        "line_count": 288
+      }
+    ],
+    "imports": [
+      ".AgentorchestratorModule",
+      "json",
+      "psutil"
+    ],
+    "line_count": 340,
+    "complexity_score": 9
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:59.144796"
+}

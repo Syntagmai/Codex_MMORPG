@@ -1,0 +1,371 @@
+{
+  "module": {
+    "name": "migrated_migrated_intelligent_orchestrator",
+    "path": "wiki\\update\\modules\\maps\\map_updater\\migrated_migrated_intelligent_orchestrator.py",
+    "docstring": "",
+    "functions": [
+      {
+        "name": "main",
+        "docstring": "Função principal para teste do sistema",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 26
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "integrate_with_module",
+        "docstring": "Integra o script com o módulo de destino.",
+        "parameters": [],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 3
+      },
+      {
+        "name": "__init__",
+        "docstring": "",
+        "parameters": [
+          "self"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 161
+      },
+      {
+        "name": "analyze_context",
+        "docstring": "Analisa o contexto do pedido do usuário",
+        "parameters": [
+          "self",
+          "user_request"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 41
+      },
+      {
+        "name": "analyze_complexity",
+        "docstring": "Analisa a complexidade baseada no contexto",
+        "parameters": [
+          "self",
+          "text",
+          "keywords"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 19
+      },
+      {
+        "name": "identify_primary_workflow",
+        "docstring": "Identifica o workflow principal baseado nas palavras-chave",
+        "parameters": [
+          "self",
+          "keywords",
+          "workflows"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 14
+      },
+      {
+        "name": "select_agents",
+        "docstring": "Seleciona agentes baseado no contexto",
+        "parameters": [
+          "self",
+          "context"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 30
+      },
+      {
+        "name": "get_agent_role",
+        "docstring": "Define o papel específico do agente no workflow",
+        "parameters": [
+          "self",
+          "agent_id",
+          "workflow_type"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 30
+      },
+      {
+        "name": "execute_workflow",
+        "docstring": "Executa o workflow coordenado",
+        "parameters": [
+          "self",
+          "agent_workflow"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 47
+      },
+      {
+        "name": "get_agents_for_phase",
+        "docstring": "Identifica agentes responsáveis por cada fase",
+        "parameters": [
+          "self",
+          "phase",
+          "agents"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 15
+      },
+      {
+        "name": "report_phase_progress",
+        "docstring": "Reporta progresso da fase",
+        "parameters": [
+          "self",
+          "phase",
+          "agents",
+          "progress"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 4
+      },
+      {
+        "name": "generate_progress_report",
+        "docstring": "Gera relatório de progresso em tempo real",
+        "parameters": [
+          "self",
+          "execution_results"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 27
+      },
+      {
+        "name": "orchestrate_request",
+        "docstring": "Orquestra automaticamente o pedido do usuário",
+        "parameters": [
+          "self",
+          "user_request"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 25
+      },
+      {
+        "name": "save_execution_results",
+        "docstring": "Salva resultados da execução",
+        "parameters": [
+          "self",
+          "execution_results"
+        ],
+        "return_type": "Any",
+        "complexity": "Low",
+        "line_count": 34
+      }
+    ],
+    "classes": [
+      {
+        "name": "IntelligentOrchestrator",
+        "docstring": "Sistema de orquestração inteligente para agentes BMAD",
+        "methods": [
+          {
+            "name": "__init__",
+            "docstring": "",
+            "parameters": [
+              "self"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 161
+          },
+          {
+            "name": "analyze_context",
+            "docstring": "Analisa o contexto do pedido do usuário",
+            "parameters": [
+              "self",
+              "user_request"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 41
+          },
+          {
+            "name": "analyze_complexity",
+            "docstring": "Analisa a complexidade baseada no contexto",
+            "parameters": [
+              "self",
+              "text",
+              "keywords"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 19
+          },
+          {
+            "name": "identify_primary_workflow",
+            "docstring": "Identifica o workflow principal baseado nas palavras-chave",
+            "parameters": [
+              "self",
+              "keywords",
+              "workflows"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 14
+          },
+          {
+            "name": "select_agents",
+            "docstring": "Seleciona agentes baseado no contexto",
+            "parameters": [
+              "self",
+              "context"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 30
+          },
+          {
+            "name": "get_agent_role",
+            "docstring": "Define o papel específico do agente no workflow",
+            "parameters": [
+              "self",
+              "agent_id",
+              "workflow_type"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 30
+          },
+          {
+            "name": "execute_workflow",
+            "docstring": "Executa o workflow coordenado",
+            "parameters": [
+              "self",
+              "agent_workflow"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 47
+          },
+          {
+            "name": "get_agents_for_phase",
+            "docstring": "Identifica agentes responsáveis por cada fase",
+            "parameters": [
+              "self",
+              "phase",
+              "agents"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 15
+          },
+          {
+            "name": "report_phase_progress",
+            "docstring": "Reporta progresso da fase",
+            "parameters": [
+              "self",
+              "phase",
+              "agents",
+              "progress"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 4
+          },
+          {
+            "name": "generate_progress_report",
+            "docstring": "Gera relatório de progresso em tempo real",
+            "parameters": [
+              "self",
+              "execution_results"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 27
+          },
+          {
+            "name": "orchestrate_request",
+            "docstring": "Orquestra automaticamente o pedido do usuário",
+            "parameters": [
+              "self",
+              "user_request"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 25
+          },
+          {
+            "name": "save_execution_results",
+            "docstring": "Salva resultados da execução",
+            "parameters": [
+              "self",
+              "execution_results"
+            ],
+            "return_type": "Any",
+            "complexity": "Low",
+            "line_count": 34
+          }
+        ],
+        "attributes": [
+          "text",
+          "detected_keywords",
+          "detected_agents",
+          "detected_workflows",
+          "complexity",
+          "primary_workflow",
+          "context_analysis",
+          "performance_keywords",
+          "performance_count",
+          "feature_keywords",
+          "feature_count",
+          "bug_keywords",
+          "bug_count",
+          "primary_workflow",
+          "workflow_config",
+          "selected_agents",
+          "agent_workflow",
+          "roles",
+          "start_time",
+          "execution_results",
+          "phase_agent_mapping",
+          "agent_names",
+          "workflow",
+          "report",
+          "context",
+          "agent_workflow",
+          "execution_results",
+          "progress_report",
+          "agent_info",
+          "phase_agents",
+          "phase_result",
+          "progress",
+          "agent_names",
+          "history_file",
+          "execution_record",
+          "history",
+          "history"
+        ],
+        "inheritance": [],
+        "line_count": 472
+      }
+    ],
+    "imports": [
+      ".MapupdaterModule",
+      ".WorkflowmanagerModule",
+      "json",
+      "time",
+      "datetime.datetime"
+    ],
+    "line_count": 579,
+    "complexity_score": 35
+  },
+  "documentation_files": [
+    "docstring.py",
+    "README.md",
+    "TECHNICAL.md"
+  ],
+  "generated_at": "2025-08-01T15:05:55.762387"
+}

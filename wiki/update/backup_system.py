@@ -1,3 +1,16 @@
+    import argparse
+from datetime import datetime, timedelta
+from pathlib import Path
+from typing import Dict, List, Any, Optional
+import gzip
+import hashlib
+import json
+import logging
+import os
+import shutil
+import tarfile
+import time
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -12,17 +25,6 @@ Autor: Sistema BMAD - OTClient Documentation
 Data: 2024-12-19
 """
 
-import json
-import os
-import shutil
-import gzip
-import tarfile
-import hashlib
-import time
-from pathlib import Path
-from typing import Dict, List, Any, Optional
-from datetime import datetime, timedelta
-import logging
 
 # Configuração de logging
 logging.basicConfig(
@@ -403,7 +405,6 @@ class BackupSystem:
 
 def main():
     """Função principal do script."""
-    import argparse
     
     parser = argparse.ArgumentParser(description='Sistema de Backup OTClient')
     parser.add_argument('action', choices=['create', 'restore', 'list', 'status'],
