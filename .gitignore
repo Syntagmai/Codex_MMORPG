@@ -322,3 +322,4 @@ wiki/bmad/agents/__pycache__/git_automation_agent.cpython-312.pyc
 
 # mdBook generated files (comentado para GitHub Pages)
 # docs/book/
+*.spec
