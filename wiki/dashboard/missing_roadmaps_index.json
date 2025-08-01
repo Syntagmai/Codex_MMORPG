@@ -1,0 +1,9 @@
+{
+  "total_roadmaps": 2,
+  "roadmaps": [
+    "Documentation Roadmap",
+    "Integration Roadmap"
+  ],
+  "status": "INTEGRADOS",
+  "integracao_necessaria": true
+}

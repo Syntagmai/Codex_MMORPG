@@ -1,0 +1,10 @@
+{
+  "total_plans": 3,
+  "plans": [
+    "Plano de Documentação Habdel",
+    "Plano de Desenvolvimento Contínuo",
+    "Plano de Agentes Especializados"
+  ],
+  "status": "COBERTOS",
+  "integracao_necessaria": true
+}

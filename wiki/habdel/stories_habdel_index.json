@@ -1,0 +1,13 @@
+{
+  "total_stories": 60,
+  "completas": 22,
+  "pendentes": 38,
+  "categorias": {
+    "otclient": 20,
+    "canary": 20,
+    "integration": 10,
+    "methodology": 5,
+    "ui": 5
+  },
+  "status": "INTEGRADO"
+}

@@ -1,0 +1,45 @@
+{
+  "data_geracao": "2025-08-01T11:42:22.994264",
+  "pycache_cleanup": {
+    "removed_dirs": [],
+    "failed_removals": [],
+    "space_freed": 0
+  },
+  "start_supervisor_integration": {
+    "integration_success": false,
+    "backup_created": false,
+    "content_added": false,
+    "original_removed": false
+  },
+  "utility_integration": {
+    "integration_success": false,
+    "backup_created": false,
+    "content_added": false,
+    "original_removed": false
+  },
+  "backup_cleanup": {
+    "removed_files": [],
+    "failed_removals": [],
+    "space_freed": 0,
+    "backup_created": false
+  },
+  "final_validation": {
+    "total_files": 63,
+    "total_dirs": 13,
+    "file_types": {
+      ".py": 43,
+      ".backup": 3,
+      ".json": 10,
+      ".md": 7
+    },
+    "structure_clean": true,
+    "issues_found": []
+  },
+  "summary": {
+    "space_freed_mb": 0.0,
+    "files_integrated": 0,
+    "structure_clean": true,
+    "total_files_remaining": 63,
+    "overall_status": "LIMPO"
+  }
+}

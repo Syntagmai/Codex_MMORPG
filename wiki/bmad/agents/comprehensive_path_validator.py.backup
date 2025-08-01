@@ -927,31 +927,3 @@ def main():
 
 if __name__ == "__main__":
     main() 
-
-# === INTEGRATED FROM absolute_path_utility.py ===
-    def __init__(self):
-        # Determinar caminho base absoluto
-        self.base_path = self._find_project_root()
-    def _find_project_root(self) -> Path:
-        """
-        Encontra o diretório raiz do projeto (onde está cursor.md).
-    def get_path(self, path_name: str) -> Optional[Path]:
-        """
-        Obtém um caminho absoluto pelo nome.
-    def create_file_safely(self, path_name: str, filename: str, content: str) -> bool:
-        """
-        Cria um arquivo de forma segura usando caminhos absolutos.
-    def run_script_absolutely(self, script_name: str, *args) -> bool:
-        """
-        Executa um script Python usando caminho absoluto.
-    def log_message(self, message: str, level: str = "INFO"):
-        """
-        Registra uma mensagem no log usando caminho absoluto.
-def get_path(path_name: str) -> Optional[Path]:
-    return path_manager.get_path(path_name)
-def create_file_safely(path_name: str, filename: str, content: str) -> bool:
-    return path_manager.create_file_safely(path_name, filename, content)
-def run_script_absolutely(script_name: str, *args) -> bool:
-    return path_manager.run_script_absolutely(script_name, *args)
-def log_message(message: str, level: str = "INFO"):
-    path_manager.log_message(message, level)

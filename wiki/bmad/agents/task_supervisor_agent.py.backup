@@ -617,11 +617,3 @@ def main():
 
 if __name__ == "__main__":
     main() 
-
-# === INTEGRATED FROM start_task_supervisor.py ===
-def main():
-    """
-    Função principal para iniciar o Task Supervisor Agent.
-    """
-    print("🎯 Iniciando Task Supervisor Agent...")
-    print("=" * 50)

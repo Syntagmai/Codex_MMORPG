@@ -1,0 +1,11 @@
+{
+  "total_tasks": 4,
+  "tasks": [
+    "TASK_AGENT_SPECIALIZATION_AAA",
+    "TASK_DESENVOLVIMENTO_CONTINUO_CONCLUIDA",
+    "TASK_003_GIT_AUTOMATION",
+    "TASK_MELHORIA_ENGENHARIA_PROMPT"
+  ],
+  "status": "MAPEADAS",
+  "integracao_necessaria": true
+}

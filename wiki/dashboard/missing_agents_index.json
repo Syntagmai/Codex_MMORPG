@@ -1,0 +1,14 @@
+{
+  "total_agents": 7,
+  "agents": [
+    "Task Master Agent",
+    "Progress Tracker Agent",
+    "Agents Orchestrator",
+    "Code Generator Agent",
+    "Documentation Agent",
+    "Quality Assurance Agent",
+    "Git Automation Agent"
+  ],
+  "status": "DOCUMENTADOS",
+  "integracao_necessaria": true
+}

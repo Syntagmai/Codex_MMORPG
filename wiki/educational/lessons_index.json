@@ -1,0 +1,46 @@
+{
+  "data_criacao": "2025-08-01T11:25:14.231878",
+  "total_lições": 47,
+  "cursos": 4,
+  "estrutura": {
+    "fundamentals": {
+      "total": 12,
+      "categories": [
+        "introdução",
+        "conceitos_básicos",
+        "arquitetura",
+        "ferramentas"
+      ]
+    },
+    "otclient": {
+      "total": 15,
+      "categories": [
+        "core",
+        "ui",
+        "network",
+        "modules",
+        "lua"
+      ]
+    },
+    "canary": {
+      "total": 15,
+      "categories": [
+        "core",
+        "ui",
+        "network",
+        "modules",
+        "lua"
+      ]
+    },
+    "integration": {
+      "total": 5,
+      "categories": [
+        "comparação",
+        "migração",
+        "padrões",
+        "apis"
+      ]
+    }
+  },
+  "status": "IMPLEMENTADO"
+}
