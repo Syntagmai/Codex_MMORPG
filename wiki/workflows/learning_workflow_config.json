@@ -1,0 +1,54 @@
+{
+  "workflow_id": "learning_automation",
+  "name": "Sistema de Execução Automática de Lições",
+  "version": "1.0.0",
+  "status": "active",
+  "created_at": "2025-08-01T09:41:48.235112",
+  "features": {
+    "auto_progression": true,
+    "smart_scheduling": true,
+    "progress_tracking": true,
+    "adaptive_learning": true,
+    "certification_system": true
+  },
+  "execution_rules": {
+    "max_lessons_per_session": 3,
+    "session_duration_minutes": 90,
+    "break_duration_minutes": 15,
+    "auto_save_progress": true,
+    "adaptive_difficulty": true
+  },
+  "courses": {
+    "otclient_fundamentals": {
+      "status": "active",
+      "auto_start": true,
+      "prerequisites": [],
+      "estimated_duration": "20 horas"
+    },
+    "canary_fundamentals": {
+      "status": "active",
+      "auto_start": true,
+      "prerequisites": [
+        "otclient_fundamentals"
+      ],
+      "estimated_duration": "20 horas"
+    },
+    "comparative_analysis": {
+      "status": "active",
+      "auto_start": true,
+      "prerequisites": [
+        "otclient_fundamentals",
+        "canary_fundamentals"
+      ],
+      "estimated_duration": "30 horas"
+    },
+    "integration_guide": {
+      "status": "active",
+      "auto_start": true,
+      "prerequisites": [
+        "comparative_analysis"
+      ],
+      "estimated_duration": "25 horas"
+    }
+  }
+}

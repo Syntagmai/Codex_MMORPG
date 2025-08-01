@@ -1,0 +1,29 @@
+{
+  "timestamp": "2025-08-01T10:59:29.362275",
+  "system_kpis": {
+    "cpu_usage_percent": 25.2,
+    "memory_usage_percent": 69.9,
+    "disk_usage_percent": 58.09740659270655,
+    "uptime_hours": 1.6186113756895066,
+    "system_health_score": 50.930648351823365
+  },
+  "application_kpis": {
+    "task_completion_rate": 0,
+    "agent_availability": 0,
+    "response_time_seconds": 0.96,
+    "error_rate_percent": 1.2,
+    "cache_hit_rate_percent": 94.5,
+    "application_health_score": 33.050000000000004
+  },
+  "overall_score": 41.99032417591168,
+  "alerts": [
+    {
+      "type": "warning",
+      "component": "application",
+      "metric": "task_completion",
+      "value": 0,
+      "threshold": 95.0,
+      "message": "Taxa de conclusão de tarefas baixa: 0.0%"
+    }
+  ]
+}

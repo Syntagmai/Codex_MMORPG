@@ -1,0 +1,72 @@
+{
+  "system_status": "active",
+  "total_courses": 4,
+  "total_lessons": 47,
+  "total_duration": "95 horas",
+  "created_at": "2025-08-01T09:32:19.766740",
+  "courses": {
+    "otclient_fundamentals": {
+      "lessons": [
+        "01_introducao_otclient.md",
+        "02_arquitetura_core.md",
+        "03_sistema_graficos.md",
+        "04_sistema_rede.md",
+        "05_sistema_ui.md",
+        "06_sistema_modulos.md",
+        "07_sistema_lua.md",
+        "08_sistema_dados.md",
+        "09_sistema_animacoes.md",
+        "10_projeto_final.md"
+      ]
+    },
+    "canary_fundamentals": {
+      "lessons": [
+        "01_introducao_canary.md",
+        "02_arquitetura_core.md",
+        "03_sistema_graficos.md",
+        "04_sistema_rede.md",
+        "05_sistema_ui.md",
+        "06_sistema_modulos.md",
+        "07_sistema_lua.md",
+        "08_sistema_dados.md",
+        "09_sistema_animacoes.md",
+        "10_projeto_final.md"
+      ]
+    },
+    "comparative_analysis": {
+      "lessons": [
+        "01_comparacao_arquiteturas.md",
+        "02_comparacao_protocolos.md",
+        "03_comparacao_ui.md",
+        "04_comparacao_performance.md",
+        "05_comparacao_funcionalidades.md",
+        "06_padroes_comuns.md",
+        "07_apis_unificadas.md",
+        "08_guias_migracao.md",
+        "09_validacao_integracao.md",
+        "10_documentacao_final.md",
+        "11_projeto_comparativo.md",
+        "12_analise_benchmark.md",
+        "13_otimizacoes_cruzadas.md",
+        "14_padroes_melhor_pratica.md",
+        "15_projeto_final.md"
+      ]
+    },
+    "integration_guide": {
+      "lessons": [
+        "01_introducao_integracao.md",
+        "02_planejamento_migracao.md",
+        "03_implementacao_gradual.md",
+        "04_testes_integracao.md",
+        "05_otimizacao_performance.md",
+        "06_documentacao_processo.md",
+        "07_validacao_qualidade.md",
+        "08_deploy_producao.md",
+        "09_monitoramento_manutencao.md",
+        "10_troubleshooting.md",
+        "11_casos_uso_avancados.md",
+        "12_projeto_final.md"
+      ]
+    }
+  }
+}

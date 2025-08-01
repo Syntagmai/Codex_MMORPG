@@ -1,0 +1,86 @@
+{
+  "certification_id": "auto_certification",
+  "name": "Sistema de Certificação Automática",
+  "version": "1.0.0",
+  "status": "active",
+  "created_at": "2025-08-01T10:25:48.105824",
+  "certification_types": {
+    "course_completion": {
+      "name": "Conclusão de Curso",
+      "description": "Certificado por completar curso com sucesso",
+      "criteria": {
+        "min_score": 80,
+        "min_lessons_completed": 90,
+        "practical_projects_completed": true
+      },
+      "badge": "🎓",
+      "validity_days": 365
+    },
+    "skill_mastery": {
+      "name": "Domínio de Habilidade",
+      "description": "Certificado por dominar habilidade específica",
+      "criteria": {
+        "min_score": 90,
+        "skill_tests_passed": 3,
+        "practical_application": true
+      },
+      "badge": "⭐",
+      "validity_days": 730
+    },
+    "project_excellence": {
+      "name": "Excelência em Projetos",
+      "description": "Certificado por projetos de alta qualidade",
+      "criteria": {
+        "project_score": 95,
+        "code_quality": "excellent",
+        "documentation_complete": true
+      },
+      "badge": "🏆",
+      "validity_days": 1095
+    },
+    "continuous_learning": {
+      "name": "Aprendizado Contínuo",
+      "description": "Certificado por consistência no aprendizado",
+      "criteria": {
+        "days_active": 30,
+        "lessons_completed": 50,
+        "streak_maintained": true
+      },
+      "badge": "🔥",
+      "validity_days": 180
+    }
+  },
+  "badge_system": {
+    "bronze": {
+      "name": "Bronze",
+      "description": "Iniciante dedicado",
+      "criteria": "5 lições completadas",
+      "icon": "🥉"
+    },
+    "silver": {
+      "name": "Prata",
+      "description": "Estudante consistente",
+      "criteria": "15 lições completadas",
+      "icon": "🥈"
+    },
+    "gold": {
+      "name": "Ouro",
+      "description": "Mestre do conhecimento",
+      "criteria": "30 lições completadas",
+      "icon": "🥇"
+    },
+    "platinum": {
+      "name": "Platina",
+      "description": "Especialista reconhecido",
+      "criteria": "50 lições completadas",
+      "icon": "💎"
+    }
+  },
+  "achievement_tracking": {
+    "auto_generate_certificates": true,
+    "badge_progression": true,
+    "achievement_notifications": true,
+    "certificate_storage": "certificates/",
+    "backup_enabled": true
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "generation_date": "2025-08-01T10:46:13.257612",
+  "summary": {
+    "total_documents": 368,
+    "total_tags": 385,
+    "total_keywords": 2904,
+    "total_categories": 6,
+    "similarity_matrix_size": 368
+  },
+  "features": {
+    "text_search": "Busca por texto com scoring inteligente",
+    "tag_search": "Busca por tags específicas",
+    "category_search": "Busca por categorias e subcategorias",
+    "similarity_search": "Busca por documentos similares",
+    "metadata_search": "Busca por metadados (tipo, status, tamanho)",
+    "snippet_extraction": "Extração de snippets relevantes"
+  },
+  "statistics": {
+    "documents_by_type": {
+      "document": 134,
+      "verticalBox": 2,
+      "core_story": 4,
+      "practical_guide": 1,
+      "guide": 9,
+      "integration_index": 1,
+      "navigation_guide": 1,
+      "documentation": 23,
+      "module": 22,
+      "alphabetical_index": 1,
+      "categorical_index": 1,
+      "search_index": 1,
+      "story_based_index": 1,
+      "story": 29,
+      "lesson": 56,
+      "technical_documentation": 6,
+      "course": 4,
+      "workflow": 2,
+      "index": 1,
+      "cleanup_report": 1,
+      "analysis": 6,
+      "plan": 2,
+      "methodology": 6,
+      "migration_report": 1,
+      "research": 1,
+      "grid": 1,
+      "reorganization_plan": 1,
+      "canary_documentation": 10,
+      "research_story": 17,
+      "epic_report": 1,
+      "epic_task": 4,
+      "template": 2,
+      "task": 2,
+      "agent": 2,
+      "relatorio": 2,
+      "integration": 10
+    },
+    "documents_by_status": {
+      "completed": 93,
+      "active": 158,
+      "complete": 29,
+      "not_started": 50,
+      "pending": 6,
+      "in_progress": 19,
+      "initial": 5,
+      "published": 4,
+      "preparation": 1,
+      "template": 2,
+      "concluido": 1
+    },
+    "documents_by_size": {
+      "medium": 113,
+      "large": 77,
+      "small": 178
+    }
+  }
+}

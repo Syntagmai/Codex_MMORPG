@@ -1,0 +1,167 @@
+{
+  "generation_date": "2025-08-01T10:52:06.119213",
+  "system_status": {
+    "timestamp": "2025-08-01T10:52:06.119131",
+    "overall_status": "🟢 Operacional",
+    "components": {
+      "performance": {
+        "status": "🟢 Boa",
+        "files": 650,
+        "size_mb": 39.19,
+        "details": {
+          "timestamp": "2025-08-01T10:49:39.268307",
+          "consolidated": {
+            "files": 389,
+            "size_mb": 37.1
+          },
+          "agents": {
+            "files": 29,
+            "size_mb": 0.64
+          },
+          "logs": {
+            "files": 232,
+            "size_mb": 1.45
+          },
+          "total": {
+            "files": 650,
+            "size_mb": 39.19
+          }
+        }
+      },
+      "usage": {
+        "status": "🟢 Ativo",
+        "total_documents": 383,
+        "indexed_documents": 368,
+        "coverage_percent": 96.08,
+        "details": {
+          "timestamp": "2025-08-01T10:49:40.173215",
+          "documents": {
+            "total": 383,
+            "indexed": 368
+          },
+          "search": {
+            "tags": 385,
+            "keywords": 2904
+          },
+          "navigation": {
+            "has_index": true,
+            "has_search": true
+          }
+        }
+      },
+      "quality": {
+        "status": "🟢 Alta",
+        "quality_score": 100.0,
+        "total_files": 368,
+        "corrupted_files": 0,
+        "details": {
+          "timestamp": "2025-08-01T10:49:40.300505",
+          "integrity": {
+            "total_files": 368,
+            "corrupted_files": 0,
+            "empty_files": 0,
+            "quality_score": 100.0
+          },
+          "structure": {
+            "has_consolidated": true,
+            "has_navigation": true,
+            "has_search": true
+          }
+        }
+      }
+    },
+    "alerts": [],
+    "recommendations": []
+  },
+  "alerts": [],
+  "metrics_summary": {
+    "performance": {
+      "total_files": 650,
+      "total_size_mb": 39.19,
+      "consolidated_files": 389,
+      "agent_files": 29
+    },
+    "usage": {
+      "total_documents": 383,
+      "indexed_documents": 368,
+      "tags_count": 385,
+      "keywords_count": 2904
+    },
+    "quality": {
+      "quality_score": 100.0,
+      "total_files": 368,
+      "corrupted_files": 0,
+      "empty_files": 0
+    }
+  },
+  "charts_data": {
+    "performance_history": {
+      "timestamps": [
+        "2025-08-01T10:49:39.268307"
+      ],
+      "total_files": [
+        650
+      ],
+      "total_size": [
+        39.19
+      ],
+      "consolidated_files": [
+        389
+      ],
+      "agent_files": [
+        29
+      ]
+    },
+    "usage_history": {
+      "timestamps": [
+        "2025-08-01T10:49:40.173215"
+      ],
+      "total_documents": [
+        383
+      ],
+      "indexed_documents": [
+        368
+      ],
+      "tags_count": [
+        385
+      ],
+      "keywords_count": [
+        2904
+      ]
+    },
+    "quality_history": {
+      "timestamps": [
+        "2025-08-01T10:49:40.300505"
+      ],
+      "quality_score": [
+        100.0
+      ],
+      "total_files": [
+        368
+      ],
+      "corrupted_files": [
+        0
+      ],
+      "empty_files": [
+        0
+      ]
+    }
+  },
+  "quick_actions": [
+    {
+      "action": "refresh_metrics",
+      "description": "Atualizar métricas",
+      "command": "python wiki/update/metrics_system.py"
+    },
+    {
+      "action": "check_alerts",
+      "description": "Verificar alertas",
+      "command": "python wiki/update/dashboard_monitoring.py --check-alerts"
+    },
+    {
+      "action": "generate_report",
+      "description": "Gerar relatório",
+      "command": "python wiki/update/metrics_system.py --generate-report"
+    }
+  ]
+}

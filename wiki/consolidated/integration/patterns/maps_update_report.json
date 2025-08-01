@@ -1,0 +1,72 @@
+{
+  "timestamp": "2025-07-31T15:31:12.685995",
+  "context": "otclient",
+  "scripts_executed": [
+    {
+      "script": "wiki/update/update_source_index.py",
+      "execution_time": 2.199817657470703,
+      "status": "success"
+    },
+    {
+      "script": "wiki/update/update_habdel_index.py",
+      "execution_time": 0.12045621871948242,
+      "status": "success"
+    },
+    {
+      "script": "wiki/update/update_modules_index.py",
+      "execution_time": 0.10931634902954102,
+      "status": "success"
+    },
+    {
+      "script": "wiki/update/update_styles_index.py",
+      "execution_time": 0.10832071304321289,
+      "status": "success"
+    },
+    {
+      "script": "wiki/update/update_resources_index.py",
+      "execution_time": 0.10709834098815918,
+      "status": "success"
+    },
+    {
+      "script": "wiki/update/update_tools_index.py",
+      "execution_time": 0.10364580154418945,
+      "status": "success"
+    },
+    {
+      "script": "wiki/update/update_wiki_maps.py",
+      "execution_time": 0.19204425811767578,
+      "status": "success"
+    },
+    {
+      "script": "wiki/update/update_bmad_maps.py",
+      "execution_time": 0.1099236011505127,
+      "status": "success"
+    },
+    {
+      "script": "wiki/update/optimize_maps_for_tokens.py",
+      "execution_time": 0.15322232246398926,
+      "status": "success"
+    },
+    {
+      "script": "wiki/update/expand_wiki_comprehensive.py",
+      "execution_time": 0.10727858543395996,
+      "status": "success"
+    }
+  ],
+  "scripts_failed": [],
+  "maps_validated": [
+    "wiki/maps/otclient_source_index.json",
+    "wiki/maps/habdel_index.json",
+    "wiki/maps/modules_index.json",
+    "wiki/maps/styles_index.json",
+    "wiki/maps/resources_index.json",
+    "wiki/maps/tools_index.json",
+    "wiki/maps/tags_index.json",
+    "wiki/maps/wiki_map.json",
+    "wiki/maps/relationships.json"
+  ],
+  "maps_invalid": [],
+  "total_files_indexed": 768,
+  "performance_metrics": {},
+  "errors": []
+}

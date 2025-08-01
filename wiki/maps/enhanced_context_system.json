@@ -154,5 +154,10 @@
       "unified": "in_progress",
       "bmad": "active"
     }
+  },
+  "metadata": {
+    "optimized": true,
+    "optimization_date": "2025-08-01T10:35:20.672967",
+    "version": "1.0"
   }
 }

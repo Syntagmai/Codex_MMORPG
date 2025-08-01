@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-07-31T15:31:15.104020",
+    "total_modules": 0,
+    "description": "Índice dos módulos Lua do OTClient"
+  },
+  "categories": {
+    "client": {
+      "name": "Módulos do Cliente",
+      "modules": []
+    },
+    "game": {
+      "name": "Módulos de Jogo",
+      "modules": []
+    },
+    "core": {
+      "name": "Módulos Core",
+      "modules": []
+    },
+    "ui": {
+      "name": "Módulos de Interface",
+      "modules": []
+    },
+    "other": {
+      "name": "Outros Módulos",
+      "modules": []
+    }
+  },
+  "statistics": {
+    "total_modules": 0,
+    "by_category": {
+      "client": 0,
+      "game": 0,
+      "core": 0,
+      "ui": 0,
+      "other": 0
+    },
+    "total_files": 0,
+    "total_lua_files": 0,
+    "total_otmod_files": 0,
+    "total_otui_files": 0,
+    "total_lines": 0,
+    "total_size": 0
+  },
+  "search_index": {
+    "by_name": {},
+    "by_api": {},
+    "by_dependency": {}
+  }
+}

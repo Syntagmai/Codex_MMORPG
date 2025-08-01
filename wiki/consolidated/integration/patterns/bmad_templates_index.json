@@ -1,0 +1,147 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-07-31T15:31:15.728547",
+    "context": "otclient",
+    "total_templates": 6,
+    "description": "BMAD templates index for OTCLIENT context"
+  },
+  "templates": {
+    "Game Design Document": {
+      "name": "Game Design Document (GDD)",
+      "description": "Documentação de design de features",
+      "format": "Markdown with Obsidian formatting",
+      "sections": [
+        "Overview",
+        "Gameplay Mechanics",
+        "Balance",
+        "Progression",
+        "Technical Requirements"
+      ],
+      "agents": [
+        "game_designer"
+      ],
+      "workflows": [
+        "feature-development"
+      ],
+      "context_adaptation": {
+        "focus": "Design de features de cliente",
+        "context": "otclient"
+      }
+    },
+    "Technical Specification": {
+      "name": "Technical Specification",
+      "description": "Especificação técnica de sistemas",
+      "format": "Markdown with diagrams",
+      "sections": [
+        "Architecture",
+        "Implementation",
+        "Performance",
+        "Testing",
+        "Deployment"
+      ],
+      "agents": [
+        "engine_developer"
+      ],
+      "workflows": [
+        "feature-development",
+        "performance-optimization"
+      ],
+      "context_adaptation": {
+        "focus": "Especificação técnica de cliente",
+        "context": "otclient"
+      }
+    },
+    "Quest Design Document": {
+      "name": "Quest Design Document",
+      "description": "Documentação de design de quests",
+      "format": "Markdown with Lua scripts",
+      "sections": [
+        "Quest Overview",
+        "Objectives",
+        "Rewards",
+        "Scripts",
+        "Testing"
+      ],
+      "agents": [
+        "content_creator"
+      ],
+      "workflows": [
+        "content-pipeline"
+      ],
+      "context_adaptation": {
+        "focus": "Design de módulos e UI",
+        "context": "otclient"
+      }
+    },
+    "Level Design Document": {
+      "name": "Level Design Document",
+      "description": "Documentação de design de níveis",
+      "format": "Markdown with maps",
+      "sections": [
+        "Area Overview",
+        "Layout",
+        "Flow",
+        "Assets",
+        "Performance"
+      ],
+      "agents": [
+        "level_designer"
+      ],
+      "workflows": [
+        "content-pipeline"
+      ],
+      "context_adaptation": {
+        "focus": "Design de interfaces",
+        "context": "otclient"
+      }
+    },
+    "Test Plan": {
+      "name": "Test Plan",
+      "description": "Plano de testes para features",
+      "format": "Markdown with checklists",
+      "sections": [
+        "Test Scope",
+        "Test Cases",
+        "Test Environment",
+        "Test Execution",
+        "Results"
+      ],
+      "agents": [
+        "qa_tester"
+      ],
+      "workflows": [
+        "feature-development",
+        "content-pipeline",
+        "bug-fix"
+      ],
+      "context_adaptation": {
+        "focus": "Testes de cliente",
+        "context": "otclient"
+      }
+    },
+    "Deployment Guide": {
+      "name": "Deployment Guide",
+      "description": "Guia de deploy de features",
+      "format": "Markdown with scripts",
+      "sections": [
+        "Prerequisites",
+        "Deployment Steps",
+        "Verification",
+        "Rollback",
+        "Monitoring"
+      ],
+      "agents": [
+        "devops_engineer"
+      ],
+      "workflows": [
+        "feature-development",
+        "content-pipeline"
+      ],
+      "context_adaptation": {
+        "focus": "Deploy de cliente",
+        "context": "otclient"
+      }
+    }
+  }
+}

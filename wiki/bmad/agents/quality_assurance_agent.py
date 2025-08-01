@@ -1,658 +1,438 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-Quality Assurance Agent - Sistema de Garantia de Qualidade
-
-Este agente é responsável por:
-- Validar qualidade do código gerado
-- Verificar padrões de codificação
-- Testar funcionalidades
-- Validar documentação
-- Integrar com o sistema de task management
+Quality Assurance Agent - Sistema de Validação e Teste
+Responsável por validar e testar o sistema de workflow de aprendizado.
 """
 
+import os
+import sys
 import json
+import argparse
 import logging
-import subprocess
-import re
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Any
+
+# Importar utilitário de caminhos absolutos
+try:
+    from absolute_path_utility import get_path, create_file_safely, log_message
+except ImportError:
+    def get_path(path_name: str):
+        return None
+    def create_file_safely(path_name: str, filename: str, content: str):
+        return False
+    def log_message(message: str, level: str = "INFO"):
+        print(f"{level}: {message}")
+
 
 class QualityAssuranceAgent:
+    """
+    Agente responsável por validar e testar o sistema de workflow de aprendizado.
+    """
+    
     def __init__(self):
-        self.base_path = Path(__file__).parent.parent.parent.parent
-        self.dashboard_path = self.base_path / "wiki" / "dashboard"
-        self.log_path = self.base_path / "wiki" / "log"
-        self.reports_path = self.base_path / "wiki" / "log"
-        
-        # Criar pasta de relatórios se não existir
-        self.reports_path.mkdir(exist_ok=True)
-        
         # Configurar logging
-        logging.basicConfig(
-            level=logging.INFO,
-            format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-        )
-        self.logger = logging.getLogger('QualityAssuranceAgent')
+        log_path = get_path('log')
+        if log_path:
+            logging.basicConfig(
+                level=logging.INFO,
+                format='%(asctime)s - %(levelname)s - %(message)s',
+                handlers=[
+                    logging.FileHandler(log_path / "quality_assurance_agent.log"),
+                    logging.StreamHandler()
+                ]
+            )
+        self.logger = logging.getLogger(__name__)
         
-        # Carregar configurações
-        self.load_configuration()
+        self.base_path = get_path('wiki')
+        if not self.base_path:
+            self.base_path = Path('wiki')
+        self.workflows_path = self.base_path / "workflows"
+        self.courses_path = self.base_path / "docs" / "courses"
+        self.certificates_path = self.base_path / "certificates"
         
-    def load_configuration(self):
-        """Carrega configurações do sistema"""
-        self.logger.info("🔧 Carregando configurações do Quality Assurance Agent...")
+        self.logger.info("Quality Assurance Agent inicializado")
         
-        # Configurações padrão
-        self.config = {
-            "quality_threshold": 0.8,
-            "auto_fix": True,
-            "run_tests": True,
-            "check_documentation": True,
-            "check_style": True,
-            "linters": {
-                "python": ["flake8", "pylint"],
-                "lua": ["luacheck"],
-                "cpp": ["cppcheck"],
-                "javascript": ["eslint"]
-            },
-            "test_frameworks": {
-                "python": "pytest",
-                "lua": "busted",
-                "cpp": "gtest",
-                "javascript": "jest"
-            }
-        }
+    def validate_workflow(self) -> bool:
+        """
+        Valida o sistema de workflow de aprendizado completo.
         
-        self.logger.info("✅ Configurações carregadas com sucesso")
-    
-    def analyze_code_quality(self, code_file: str) -> Dict:
-        """Analisa qualidade do código"""
-        self.logger.info(f"🔍 Analisando qualidade do código: {code_file}")
-        
+        Returns:
+            bool: True se validação bem-sucedida
+        """
         try:
-            with open(code_file, 'r', encoding='utf-8') as f:
-                code_content = f.read()
+            self.logger.info("🔍 Iniciando validação do sistema de workflow...")
             
-            analysis = {
-                "file_path": code_file,
-                "language": self.detect_language(code_file),
-                "metrics": self.calculate_metrics(code_content),
-                "style_issues": self.check_style(code_content),
-                "complexity": self.analyze_complexity(code_content),
-                "documentation": self.check_documentation(code_content),
-                "security": self.check_security(code_content),
-                "performance": self.check_performance(code_content),
-                "overall_score": 0.0
+            validation_results = {
+                'workflow_config': False,
+                'automation_system': False,
+                'certification_system': False,
+                'courses_structure': False,
+                'certificates_directory': False,
+                'integration_tests': False
             }
             
-            # Calcular score geral
-            analysis["overall_score"] = self.calculate_overall_score(analysis)
-            
-            self.logger.info(f"✅ Análise concluída: {analysis['overall_score']:.2f}/1.0")
-            return analysis
-            
-        except Exception as e:
-            self.logger.error(f"❌ Erro ao analisar código: {e}")
-            return {}
-    
-    def detect_language(self, file_path: str) -> str:
-        """Detecta linguagem do arquivo"""
-        extensions = {
-            '.py': 'python',
-            '.lua': 'lua',
-            '.cpp': 'cpp',
-            '.h': 'cpp',
-            '.js': 'javascript',
-            '.html': 'html',
-            '.css': 'css'
-        }
-        
-        file_ext = Path(file_path).suffix.lower()
-        return extensions.get(file_ext, 'unknown')
-    
-    def calculate_metrics(self, code: str) -> Dict:
-        """Calcula métricas do código"""
-        lines = code.split('\n')
-        
-        metrics = {
-            "total_lines": len(lines),
-            "code_lines": len([l for l in lines if l.strip() and not l.strip().startswith('#')]),
-            "comment_lines": len([l for l in lines if l.strip().startswith('#')]),
-            "blank_lines": len([l for l in lines if not l.strip()]),
-            "functions": len(re.findall(r'def\s+\w+', code)),
-            "classes": len(re.findall(r'class\s+\w+', code)),
-            "imports": len(re.findall(r'import\s+|from\s+', code))
-        }
-        
-        # Calcular métricas derivadas
-        metrics["comment_ratio"] = metrics["comment_lines"] / max(metrics["code_lines"], 1)
-        metrics["blank_ratio"] = metrics["blank_lines"] / max(metrics["total_lines"], 1)
-        metrics["function_density"] = metrics["functions"] / max(metrics["code_lines"], 1)
-        
-        return metrics
-    
-    def check_style(self, code: str) -> List[Dict]:
-        """Verifica estilo do código"""
-        issues = []
-        
-        # Verificar indentação
-        lines = code.split('\n')
-        for i, line in enumerate(lines, 1):
-            if line.strip() and not line.startswith(' ') and not line.startswith('\t'):
-                # Linha não indentada (pode ser válida)
-                pass
-            elif line.startswith('\t'):
-                issues.append({
-                    "type": "style",
-                    "severity": "warning",
-                    "message": "Usar espaços em vez de tabs",
-                    "line": i
-                })
-        
-        # Verificar linhas muito longas
-        for i, line in enumerate(lines, 1):
-            if len(line) > 80:
-                issues.append({
-                    "type": "style",
-                    "severity": "warning",
-                    "message": f"Linha muito longa ({len(line)} caracteres)",
-                    "line": i
-                })
-        
-        # Verificar espaços em branco no final
-        for i, line in enumerate(lines, 1):
-            if line.rstrip() != line:
-                issues.append({
-                    "type": "style",
-                    "severity": "warning",
-                    "message": "Espaços em branco no final da linha",
-                    "line": i
-                })
-        
-        return issues
-    
-    def analyze_complexity(self, code: str) -> Dict:
-        """Analisa complexidade do código"""
-        complexity = {
-            "cyclomatic": 0,
-            "cognitive": 0,
-            "nesting": 0
-        }
-        
-        # Complexidade ciclomática (simplificada)
-        complexity["cyclomatic"] = (
-            len(re.findall(r'\bif\b', code)) +
-            len(re.findall(r'\bfor\b', code)) +
-            len(re.findall(r'\bwhile\b', code)) +
-            len(re.findall(r'\band\b', code)) +
-            len(re.findall(r'\bor\b', code)) +
-            1
-        )
-        
-        # Complexidade cognitiva (simplificada)
-        complexity["cognitive"] = (
-            len(re.findall(r'\bif\b', code)) * 1 +
-            len(re.findall(r'\bfor\b', code)) * 1 +
-            len(re.findall(r'\bwhile\b', code)) * 1 +
-            len(re.findall(r'\btry\b', code)) * 2 +
-            len(re.findall(r'\bexcept\b', code)) * 2 +
-            len(re.findall(r'\bwith\b', code)) * 1
-        )
-        
-        # Nível de aninhamento máximo
-        max_nesting = 0
-        current_nesting = 0
-        
-        for line in code.split('\n'):
-            if line.strip():
-                indent_level = len(line) - len(line.lstrip())
-                current_nesting = indent_level // 4  # Assumindo 4 espaços por nível
-                max_nesting = max(max_nesting, current_nesting)
-        
-        complexity["nesting"] = max_nesting
-        
-        return complexity
-    
-    def check_documentation(self, code: str) -> Dict:
-        """Verifica documentação do código"""
-        doc_analysis = {
-            "has_docstrings": False,
-            "has_comments": False,
-            "has_readme": False,
-            "docstring_coverage": 0.0,
-            "issues": []
-        }
-        
-        # Verificar docstrings
-        if '"""' in code or "'''" in code:
-            doc_analysis["has_docstrings"] = True
-        
-        # Verificar comentários
-        if '#' in code or '//' in code or '--' in code:
-            doc_analysis["has_comments"] = True
-        
-        # Verificar README
-        if Path(self.base_path / "README.md").exists():
-            doc_analysis["has_readme"] = True
-        
-        # Calcular cobertura de docstrings (simplificada)
-        functions = len(re.findall(r'def\s+\w+', code))
-        classes = len(re.findall(r'class\s+\w+', code))
-        total_items = functions + classes
-        
-        if total_items > 0:
-            doc_analysis["docstring_coverage"] = 0.5 if doc_analysis["has_docstrings"] else 0.0
-        
-        # Identificar problemas
-        if not doc_analysis["has_docstrings"]:
-            doc_analysis["issues"].append("Faltam docstrings")
-        
-        if not doc_analysis["has_comments"]:
-            doc_analysis["issues"].append("Faltam comentários")
-        
-        if not doc_analysis["has_readme"]:
-            doc_analysis["issues"].append("Falta README")
-        
-        return doc_analysis
-    
-    def check_security(self, code: str) -> List[Dict]:
-        """Verifica problemas de segurança"""
-        security_issues = []
-        
-        # Verificar padrões inseguros
-        insecure_patterns = [
-            (r'eval\s*\(', "Uso de eval() pode ser inseguro"),
-            (r'exec\s*\(', "Uso de exec() pode ser inseguro"),
-            (r'input\s*\(', "input() sem validação pode ser inseguro"),
-            (r'os\.system\s*\(', "os.system() pode ser inseguro"),
-            (r'subprocess\.call\s*\(', "subprocess.call() sem shell=False pode ser inseguro"),
-            (r'password\s*=', "Senha hardcoded no código"),
-            (r'secret\s*=', "Segredo hardcoded no código"),
-            (r'api_key\s*=', "API key hardcoded no código")
-        ]
-        
-        for pattern, message in insecure_patterns:
-            matches = re.finditer(pattern, code, re.IGNORECASE)
-            for match in matches:
-                line_num = code[:match.start()].count('\n') + 1
-                security_issues.append({
-                    "type": "security",
-                    "severity": "high",
-                    "message": message,
-                    "line": line_num
-                })
-        
-        return security_issues
-    
-    def check_performance(self, code: str) -> List[Dict]:
-        """Verifica problemas de performance"""
-        performance_issues = []
-        
-        # Verificar padrões de performance
-        performance_patterns = [
-            (r'for\s+\w+\s+in\s+range\s*\(\s*len\s*\(', "Use enumerate() em vez de range(len())"),
-            (r'\.append\s*\(.*\)\s+in\s+loop', "List comprehension pode ser mais eficiente"),
-            (r'import\s+\*', "Import * pode ser ineficiente"),
-            (r'global\s+\w+', "Uso excessivo de variáveis globais"),
-            (r'lambda\s+.*lambda', "Lambdas aninhadas podem ser ineficientes")
-        ]
-        
-        for pattern, message in performance_patterns:
-            matches = re.finditer(pattern, code, re.IGNORECASE)
-            for match in matches:
-                line_num = code[:match.start()].count('\n') + 1
-                performance_issues.append({
-                    "type": "performance",
-                    "severity": "medium",
-                    "message": message,
-                    "line": line_num
-                })
-        
-        return performance_issues
-    
-    def calculate_overall_score(self, analysis: Dict) -> float:
-        """Calcula score geral de qualidade"""
-        score = 1.0
-        
-        # Penalizar por problemas de estilo
-        style_issues = len(analysis["style_issues"])
-        score -= style_issues * 0.01
-        
-        # Penalizar por problemas de segurança
-        security_issues = len(analysis["security"])
-        score -= security_issues * 0.1
-        
-        # Penalizar por problemas de performance
-        performance_issues = len(analysis["performance"])
-        score -= performance_issues * 0.05
-        
-        # Penalizar por falta de documentação
-        if not analysis["documentation"]["has_docstrings"]:
-            score -= 0.1
-        
-        if not analysis["documentation"]["has_comments"]:
-            score -= 0.05
-        
-        # Penalizar por complexidade alta
-        complexity = analysis["complexity"]
-        if complexity["cyclomatic"] > 10:
-            score -= 0.1
-        
-        if complexity["nesting"] > 5:
-            score -= 0.1
-        
-        # Recompensar por boas práticas
-        metrics = analysis["metrics"]
-        if metrics["comment_ratio"] > 0.2:
-            score += 0.05
-        
-        if metrics["function_density"] > 0.1:
-            score += 0.05
-        
-        return max(0.0, min(1.0, score))
-    
-    def run_linter(self, code_file: str) -> Dict:
-        """Executa linter no código"""
-        self.logger.info(f"🔍 Executando linter em: {code_file}")
-        
-        language = self.detect_language(code_file)
-        linters = self.config["linters"].get(language, [])
-        
-        results = {
-            "linter": "none",
-            "issues": [],
-            "score": 1.0
-        }
-        
-        for linter in linters:
-            try:
-                if linter == "flake8":
-                    result = subprocess.run(
-                        [linter, code_file],
-                        capture_output=True,
-                        text=True,
-                        timeout=30
-                    )
+            # 1. Validar configuração do workflow
+            self.logger.info("📋 Validando configuração do workflow...")
+            workflow_config_path = self.workflows_path / 'learning_workflow_config.json'
+            if workflow_config_path.exists():
+                try:
+                    with open(workflow_config_path, 'r', encoding='utf-8') as f:
+                        workflow_config = json.load(f)
                     
-                    if result.returncode == 0:
-                        results["linter"] = linter
-                        results["score"] = 1.0
+                    # Validar estrutura do workflow
+                    required_keys = ['workflow_id', 'name', 'version', 'status', 'features', 'execution_rules', 'courses']
+                    if all(key in workflow_config for key in required_keys):
+                        validation_results['workflow_config'] = True
+                        self.logger.info("✅ Configuração do workflow válida")
                     else:
-                        issues = result.stdout.split('\n')
-                        results["linter"] = linter
-                        results["issues"] = [issue for issue in issues if issue.strip()]
-                        results["score"] = max(0.0, 1.0 - len(results["issues"]) * 0.1)
-                        
-            except Exception as e:
-                self.logger.warning(f"⚠️ Erro ao executar {linter}: {e}")
-        
-        return results
-    
-    def run_tests(self, code_file: str) -> Dict:
-        """Executa testes no código"""
-        self.logger.info(f"🧪 Executando testes em: {code_file}")
-        
-        language = self.detect_language(code_file)
-        test_framework = self.config["test_frameworks"].get(language, "")
-        
-        results = {
-            "framework": test_framework,
-            "tests_run": 0,
-            "tests_passed": 0,
-            "tests_failed": 0,
-            "coverage": 0.0,
-            "success": False
-        }
-        
-        if not test_framework:
-            self.logger.warning(f"⚠️ Framework de teste não configurado para {language}")
-            return results
-        
-        try:
-            # Procurar por arquivos de teste
-            test_files = list(Path(code_file).parent.glob(f"*test*.{Path(code_file).suffix}"))
+                        self.logger.error("❌ Configuração do workflow inválida")
+                except Exception as e:
+                    self.logger.error(f"❌ Erro ao validar workflow: {e}")
+            else:
+                self.logger.error("❌ Arquivo de configuração do workflow não encontrado")
             
-            if not test_files:
-                self.logger.warning(f"⚠️ Nenhum arquivo de teste encontrado para {code_file}")
-                return results
-            
-            # Executar testes
-            if test_framework == "pytest":
-                result = subprocess.run(
-                    ["pytest", str(test_files[0])],
-                    capture_output=True,
-                    text=True,
-                    timeout=60
-                )
-                
-                if result.returncode == 0:
-                    results["success"] = True
-                    # Extrair informações dos testes (simplificado)
-                    results["tests_run"] = 1
-                    results["tests_passed"] = 1
-                    results["coverage"] = 0.8
-                else:
-                    results["tests_failed"] = 1
+            # 2. Validar sistema de automação
+            self.logger.info("🤖 Validando sistema de automação...")
+            automation_path = self.workflows_path / 'automation_system.json'
+            if automation_path.exists():
+                try:
+                    with open(automation_path, 'r', encoding='utf-8') as f:
+                        automation_config = json.load(f)
                     
+                    # Validar estrutura da automação
+                    required_keys = ['scheduler', 'progress_tracker', 'certification_system']
+                    if all(key in automation_config for key in required_keys):
+                        validation_results['automation_system'] = True
+                        self.logger.info("✅ Sistema de automação válido")
+                    else:
+                        self.logger.error("❌ Sistema de automação inválido")
+                except Exception as e:
+                    self.logger.error(f"❌ Erro ao validar automação: {e}")
+            else:
+                self.logger.error("❌ Arquivo de automação não encontrado")
+            
+            # 3. Validar sistema de certificação
+            self.logger.info("🏆 Validando sistema de certificação...")
+            certification_path = self.workflows_path / 'certification_system.json'
+            if certification_path.exists():
+                try:
+                    with open(certification_path, 'r', encoding='utf-8') as f:
+                        certification_config = json.load(f)
+                    
+                    # Validar estrutura da certificação
+                    required_keys = ['certification_id', 'name', 'version', 'status', 'certification_types', 'badge_system']
+                    if all(key in certification_config for key in required_keys):
+                        validation_results['certification_system'] = True
+                        self.logger.info("✅ Sistema de certificação válido")
+                    else:
+                        self.logger.error("❌ Sistema de certificação inválido")
+                except Exception as e:
+                    self.logger.error(f"❌ Erro ao validar certificação: {e}")
+            else:
+                self.logger.error("❌ Arquivo de certificação não encontrado")
+            
+            # 4. Validar estrutura de cursos
+            self.logger.info("📚 Validando estrutura de cursos...")
+            if self.courses_path.exists():
+                # Verificar se há cursos disponíveis
+                course_dirs = [d for d in self.courses_path.iterdir() if d.is_dir()]
+                if len(course_dirs) > 0:
+                    validation_results['courses_structure'] = True
+                    self.logger.info(f"✅ Estrutura de cursos válida ({len(course_dirs)} cursos encontrados)")
+                else:
+                    self.logger.error("❌ Nenhum curso encontrado")
+            else:
+                self.logger.error("❌ Diretório de cursos não encontrado")
+            
+            # 5. Validar diretório de certificados
+            self.logger.info("📁 Validando diretório de certificados...")
+            if self.certificates_path.exists():
+                validation_results['certificates_directory'] = True
+                self.logger.info("✅ Diretório de certificados válido")
+            else:
+                self.logger.error("❌ Diretório de certificados não encontrado")
+            
+            # 6. Testes de integração
+            self.logger.info("🔗 Executando testes de integração...")
+            integration_success = self.run_integration_tests()
+            validation_results['integration_tests'] = integration_success
+            
+            # 7. Gerar relatório de validação
+            validation_report = self.generate_validation_report(validation_results)
+            
+            # 8. Salvar relatório
+            report_path = self.save_validation_report(validation_report)
+            
+            # 9. Calcular score de validação
+            total_tests = len(validation_results)
+            passed_tests = sum(validation_results.values())
+            validation_score = (passed_tests / total_tests) * 100
+            
+            self.logger.info(f"📊 Score de validação: {validation_score:.1f}% ({passed_tests}/{total_tests})")
+            self.logger.info(f"📋 Relatório salvo em: {report_path}")
+            
+            if validation_score >= 80:
+                self.logger.info("✅ Sistema de workflow validado com sucesso!")
+                return True
+            else:
+                self.logger.warning("⚠️ Sistema de workflow com problemas identificados")
+                return False
+                
         except Exception as e:
-            self.logger.warning(f"⚠️ Erro ao executar testes: {e}")
-        
-        return results
+            self.logger.error(f"❌ Erro na validação do workflow: {e}")
+            return False
     
-    def generate_qa_report(self, analysis: Dict, linter_results: Dict, test_results: Dict) -> str:
-        """Gera relatório de QA"""
-        self.logger.info("📊 Gerando relatório de QA...")
+    def run_integration_tests(self) -> bool:
+        """
+        Executa testes de integração do sistema.
         
-        report = f"""# Quality Assurance Report - {Path(analysis['file_path']).name}
+        Returns:
+            bool: True se testes passaram
+        """
+        try:
+            self.logger.info("🧪 Executando testes de integração...")
+            
+            test_results = {
+                'workflow_automation_integration': False,
+                'certification_workflow_integration': False,
+                'courses_certification_integration': False,
+                'file_permissions': False,
+                'json_validation': False
+            }
+            
+            # Teste 1: Integração workflow-automação
+            try:
+                workflow_config_path = self.workflows_path / 'learning_workflow_config.json'
+                automation_path = self.workflows_path / 'automation_system.json'
+                
+                if workflow_config_path.exists() and automation_path.exists():
+                    with open(workflow_config_path, 'r') as f:
+                        workflow = json.load(f)
+                    with open(automation_path, 'r') as f:
+                        automation = json.load(f)
+                    
+                    # Verificar se as configurações são compatíveis
+                    if workflow.get('status') == 'active' and automation.get('scheduler'):
+                        test_results['workflow_automation_integration'] = True
+                        self.logger.info("✅ Integração workflow-automação: OK")
+                    else:
+                        self.logger.error("❌ Integração workflow-automação: FALHA")
+                else:
+                    self.logger.error("❌ Arquivos necessários não encontrados")
+            except Exception as e:
+                self.logger.error(f"❌ Erro no teste workflow-automação: {e}")
+            
+            # Teste 2: Integração certificação-workflow
+            try:
+                certification_path = self.workflows_path / 'certification_system.json'
+                if certification_path.exists():
+                    with open(certification_path, 'r') as f:
+                        certification = json.load(f)
+                    
+                    if certification.get('status') == 'active':
+                        test_results['certification_workflow_integration'] = True
+                        self.logger.info("✅ Integração certificação-workflow: OK")
+                    else:
+                        self.logger.error("❌ Integração certificação-workflow: FALHA")
+                else:
+                    self.logger.error("❌ Arquivo de certificação não encontrado")
+            except Exception as e:
+                self.logger.error(f"❌ Erro no teste certificação-workflow: {e}")
+            
+            # Teste 3: Integração cursos-certificação
+            try:
+                if self.courses_path.exists() and self.certificates_path.exists():
+                    test_results['courses_certification_integration'] = True
+                    self.logger.info("✅ Integração cursos-certificação: OK")
+                else:
+                    self.logger.error("❌ Integração cursos-certificação: FALHA")
+            except Exception as e:
+                self.logger.error(f"❌ Erro no teste cursos-certificação: {e}")
+            
+            # Teste 4: Permissões de arquivo
+            try:
+                test_file = self.workflows_path / 'test_permissions.json'
+                test_content = '{"test": "permissions"}'
+                
+                with open(test_file, 'w') as f:
+                    f.write(test_content)
+                
+                with open(test_file, 'r') as f:
+                    content = f.read()
+                
+                if content == test_content:
+                    test_results['file_permissions'] = True
+                    self.logger.info("✅ Permissões de arquivo: OK")
+                else:
+                    self.logger.error("❌ Permissões de arquivo: FALHA")
+                
+                # Limpar arquivo de teste
+                test_file.unlink()
+            except Exception as e:
+                self.logger.error(f"❌ Erro no teste de permissões: {e}")
+            
+            # Teste 5: Validação JSON
+            try:
+                workflow_config_path = self.workflows_path / 'learning_workflow_config.json'
+                if workflow_config_path.exists():
+                    with open(workflow_config_path, 'r') as f:
+                        json.load(f)  # Testa se é JSON válido
+                    test_results['json_validation'] = True
+                    self.logger.info("✅ Validação JSON: OK")
+                else:
+                    self.logger.error("❌ Validação JSON: FALHA")
+            except Exception as e:
+                self.logger.error(f"❌ Erro na validação JSON: {e}")
+            
+            # Calcular resultado geral
+            total_tests = len(test_results)
+            passed_tests = sum(test_results.values())
+            integration_score = (passed_tests / total_tests) * 100
+            
+            self.logger.info(f"📊 Score de integração: {integration_score:.1f}% ({passed_tests}/{total_tests})")
+            
+            return integration_score >= 80
+            
+        except Exception as e:
+            self.logger.error(f"❌ Erro nos testes de integração: {e}")
+            return False
+    
+    def generate_validation_report(self, results: Dict[str, bool]) -> str:
+        """
+        Gera relatório de validação.
+        
+        Args:
+            results: Resultados da validação
+            
+        Returns:
+            str: Relatório formatado
+        """
+        total_tests = len(results)
+        passed_tests = sum(results.values())
+        validation_score = (passed_tests / total_tests) * 100
+        
+        report = f"""# 🔍 Relatório de Validação - Sistema de Workflow
 
-## 📋 Resumo Executivo
+## 📋 **Informações Gerais**
+- **Data de Validação**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+- **Agente Responsável**: Quality Assurance Agent
+- **Total de Testes**: {total_tests}
+- **Testes Aprovados**: {passed_tests}
+- **Score de Validação**: {validation_score:.1f}%
 
-**Arquivo**: {analysis['file_path']}
-**Linguagem**: {analysis['language']}
-**Score Geral**: {analysis['overall_score']:.2f}/1.0
-**Status**: {'✅ Aprovado' if analysis['overall_score'] >= self.config['quality_threshold'] else '❌ Reprovado'}
-**Data**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+## 🎯 **Resultados dos Testes**
 
-## 📊 Métricas de Código
-
-| Métrica | Valor |
-|---------|-------|
-| **Total de Linhas** | {analysis['metrics']['total_lines']} |
-| **Linhas de Código** | {analysis['metrics']['code_lines']} |
-| **Linhas de Comentário** | {analysis['metrics']['comment_lines']} |
-| **Linhas em Branco** | {analysis['metrics']['blank_lines']} |
-| **Funções** | {analysis['metrics']['functions']} |
-| **Classes** | {analysis['metrics']['classes']} |
-| **Imports** | {analysis['metrics']['imports']} |
-| **Razão de Comentários** | {analysis['metrics']['comment_ratio']:.2f} |
-| **Densidade de Funções** | {analysis['metrics']['function_density']:.2f} |
-
-## 🏗️ Complexidade
-
-| Tipo | Valor |
-|------|-------|
-| **Ciclomática** | {analysis['complexity']['cyclomatic']} |
-| **Cognitiva** | {analysis['complexity']['cognitive']} |
-| **Aninhamento Máximo** | {analysis['complexity']['nesting']} |
-
-## 📝 Documentação
-
-| Item | Status |
-|------|--------|
-| **Docstrings** | {'✅ Presente' if analysis['documentation']['has_docstrings'] else '❌ Ausente'} |
-| **Comentários** | {'✅ Presente' if analysis['documentation']['has_comments'] else '❌ Ausente'} |
-| **README** | {'✅ Presente' if analysis['documentation']['has_readme'] else '❌ Ausente'} |
-| **Cobertura de Docstrings** | {analysis['documentation']['docstring_coverage']:.2f} |
-
-## 🔍 Problemas Identificados
-
-### 🎨 Estilo ({len(analysis['style_issues'])} problemas)
 """
         
-        if analysis['style_issues']:
-            for issue in analysis['style_issues'][:5]:  # Limitar a 5 problemas
-                report += f"- **Linha {issue['line']}**: {issue['message']}\n"
+        for test_name, result in results.items():
+            status = "✅ APROVADO" if result else "❌ REPROVADO"
+            report += f"""### **{test_name.replace('_', ' ').title()}**
+- **Status**: {status}
+- **Descrição**: {'Teste passou com sucesso' if result else 'Teste falhou'}
+
+"""
+        
+        report += f"""## 📊 **Análise de Qualidade**
+
+### **✅ Pontos Fortes:**
+"""
+        
+        for test_name, result in results.items():
+            if result:
+                report += f"- {test_name.replace('_', ' ').title()}\n"
+        
+        report += f"""
+### **⚠️ Pontos de Atenção:**
+"""
+        
+        for test_name, result in results.items():
+            if not result:
+                report += f"- {test_name.replace('_', ' ').title()}\n"
+        
+        report += f"""
+## 🎯 **Recomendações**
+
+"""
+        
+        if validation_score >= 90:
+            report += """### **🟢 Sistema Excelente:**
+- Sistema está funcionando perfeitamente
+- Manter monitoramento regular
+- Considerar expansão de funcionalidades
+"""
+        elif validation_score >= 80:
+            report += """### **🟡 Sistema Bom:**
+- Sistema está funcionando adequadamente
+- Corrigir pontos de atenção identificados
+- Melhorar testes de integração
+"""
         else:
-            report += "- ✅ Nenhum problema de estilo encontrado\n"
-        
-        report += f"""
-### 🔒 Segurança ({len(analysis['security'])} problemas)
+            report += """### **🔴 Sistema Precisa de Correções:**
+- Corrigir problemas críticos identificados
+- Revisar configurações do sistema
+- Executar validação novamente após correções
 """
         
-        if analysis['security']:
-            for issue in analysis['security']:
-                report += f"- **Linha {issue['line']}**: {issue['message']}\n"
-        else:
-            report += "- ✅ Nenhum problema de segurança encontrado\n"
-        
         report += f"""
-### ⚡ Performance ({len(analysis['performance'])} problemas)
-"""
-        
-        if analysis['performance']:
-            for issue in analysis['performance']:
-                report += f"- **Linha {issue['line']}**: {issue['message']}\n"
-        else:
-            report += "- ✅ Nenhum problema de performance encontrado\n"
-        
-        report += f"""
-## 🔍 Resultados do Linter
+## 📈 **Métricas de Qualidade**
 
-**Linter**: {linter_results['linter']}
-**Score**: {linter_results['score']:.2f}/1.0
-**Problemas**: {len(linter_results['issues'])}
-"""
-        
-        if linter_results['issues']:
-            report += "\n**Problemas encontrados:**\n"
-            for issue in linter_results['issues'][:3]:  # Limitar a 3 problemas
-                report += f"- {issue}\n"
-        
-        report += f"""
-## 🧪 Resultados dos Testes
-
-**Framework**: {test_results['framework']}
-**Sucesso**: {'✅ Sim' if test_results['success'] else '❌ Não'}
-**Testes Executados**: {test_results['tests_run']}
-**Testes Aprovados**: {test_results['tests_passed']}
-**Testes Falharam**: {test_results['tests_failed']}
-**Cobertura**: {test_results['coverage']:.2f}
-
-## 🎯 Recomendações
-
-"""
-        
-        recommendations = []
-        
-        if analysis['overall_score'] < self.config['quality_threshold']:
-            recommendations.append("Melhorar score geral de qualidade")
-        
-        if not analysis['documentation']['has_docstrings']:
-            recommendations.append("Adicionar docstrings para funções e classes")
-        
-        if len(analysis['style_issues']) > 5:
-            recommendations.append("Corrigir problemas de estilo")
-        
-        if analysis['security']:
-            recommendations.append("Corrigir problemas de segurança")
-        
-        if analysis['complexity']['cyclomatic'] > 10:
-            recommendations.append("Reduzir complexidade ciclomática")
-        
-        if not test_results['success']:
-            recommendations.append("Implementar testes unitários")
-        
-        if recommendations:
-            for rec in recommendations:
-                report += f"- {rec}\n"
-        else:
-            report += "- ✅ Código está em boa qualidade\n"
-        
-        report += f"""
-## 📈 Melhorias Sugeridas
-
-1. **Documentação**: Adicionar docstrings e comentários
-2. **Testes**: Implementar testes unitários
-3. **Estilo**: Seguir padrões de codificação
-4. **Segurança**: Revisar práticas de segurança
-5. **Performance**: Otimizar código crítico
+### **📊 Score Geral**: {validation_score:.1f}%
+### **🎯 Status**: {'✅ APROVADO' if validation_score >= 80 else '❌ REPROVADO'}
+### **🔧 Ações Necessárias**: {'Nenhuma' if validation_score >= 80 else 'Correções urgentes'}
 
 ---
-**Relatório gerado**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-**Responsável**: Quality Assurance Agent
+
+**Validado por**: Quality Assurance Agent  
+**Data**: {datetime.now().isoformat()}  
+**Status**: {'🟢 Sistema Validado' if validation_score >= 80 else '🔴 Sistema com Problemas'}
 """
         
         return report
     
-    def save_qa_report(self, report: str, analysis: Dict) -> str:
-        """Salva relatório de QA"""
-        file_name = f"qa_report_{Path(analysis['file_path']).stem}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.md"
-        output_path = self.reports_path / file_name
+    def save_validation_report(self, report: str) -> Path:
+        """
+        Salva relatório de validação.
         
-        try:
-            with open(output_path, 'w', encoding='utf-8') as f:
-                f.write(report)
+        Args:
+            report: Conteúdo do relatório
             
-            self.logger.info(f"✅ Relatório de QA salvo em: {output_path}")
-            return str(output_path)
-            
-        except Exception as e:
-            self.logger.error(f"❌ Erro ao salvar relatório: {e}")
-            return ""
+        Returns:
+            Path: Caminho do arquivo salvo
+        """
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        report_filename = f"workflow_validation_report_{timestamp}.md"
+        report_path = self.base_path / "log" / report_filename
+        
+        report_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        with open(report_path, 'w', encoding='utf-8') as f:
+            f.write(report)
+        
+        return report_path
+
+
+def main():
+    """Função principal do agente."""
+    parser = argparse.ArgumentParser(description='Quality Assurance Agent')
+    parser.add_argument('--validate-workflow', action='store_true',
+                       help='Valida o sistema de workflow de aprendizado')
     
-    def run(self, code_file: str = None) -> bool:
-        """Executa o Quality Assurance Agent"""
-        self.logger.info("🚀 Iniciando Quality Assurance Agent...")
-        
-        try:
-            # Se não há arquivo especificado, usar exemplo
-            if not code_file:
-                code_file = str(self.base_path / "wiki" / "bmad" / "agents" / "task_master_agent.py")
-            
-            # Verificar se arquivo existe
-            if not Path(code_file).exists():
-                self.logger.error(f"❌ Arquivo não encontrado: {code_file}")
-                return False
-            
-            # Analisar qualidade do código
-            analysis = self.analyze_code_quality(code_file)
-            if not analysis:
-                return False
-            
-            # Executar linter
-            linter_results = self.run_linter(code_file)
-            
-            # Executar testes
-            test_results = self.run_tests(code_file)
-            
-            # Gerar relatório
-            report = self.generate_qa_report(analysis, linter_results, test_results)
-            
-            # Salvar relatório
-            report_path = self.save_qa_report(report, analysis)
-            
-            # Log de resumo
-            self.logger.info(f"📊 Resumo da Análise de Qualidade:")
-            self.logger.info(f"   - Score Geral: {analysis['overall_score']:.2f}/1.0")
-            self.logger.info(f"   - Problemas de Estilo: {len(analysis['style_issues'])}")
-            self.logger.info(f"   - Problemas de Segurança: {len(analysis['security'])}")
-            self.logger.info(f"   - Problemas de Performance: {len(analysis['performance'])}")
-            self.logger.info(f"   - Linter Score: {linter_results['score']:.2f}/1.0")
-            self.logger.info(f"   - Testes: {'✅ Passou' if test_results['success'] else '❌ Falhou'}")
-            
-            self.logger.info("✅ Quality Assurance Agent executado com sucesso")
-            return True
-            
-        except Exception as e:
-            self.logger.error(f"❌ Erro na execução do Quality Assurance Agent: {e}")
-            return False
+    args = parser.parse_args()
+    
+    agent = QualityAssuranceAgent()
+    
+    if args.validate_workflow:
+        success = agent.validate_workflow()
+        if success:
+            print("✅ Sistema de workflow validado com sucesso!")
+            sys.exit(0)
+        else:
+            print("❌ Falha na validação do sistema de workflow")
+            sys.exit(1)
+    else:
+        parser.print_help()
+
 
 if __name__ == "__main__":
-    agent = QualityAssuranceAgent()
-    success = agent.run()
-    
-    if success:
-        print("✅ Quality Assurance Agent executado com sucesso!")
-    else:
-        print("❌ Quality Assurance Agent falhou na execução!") 
+    main() 

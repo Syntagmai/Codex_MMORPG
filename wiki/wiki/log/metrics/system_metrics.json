@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-08-01T10:59:28.993996",
+  "cpu": {
+    "usage_percent": 25.2,
+    "count": 4,
+    "frequency_mhz": 2600.0,
+    "frequency_max_mhz": 3201.0
+  },
+  "memory": {
+    "total_gb": 7.9043731689453125,
+    "available_gb": 2.3759803771972656,
+    "used_gb": 5.528392791748047,
+    "usage_percent": 69.9,
+    "swap_total_gb": 6.5,
+    "swap_used_gb": 0.176605224609375,
+    "swap_usage_percent": 2.7
+  },
+  "disk": {
+    "total_gb": 446.47218322753906,
+    "used_gb": 259.3887596130371,
+    "free_gb": 187.08342361450195,
+    "usage_percent": 58.09740659270655,
+    "read_bytes": 12722906624,
+    "write_bytes": 4960669184
+  },
+  "network": {
+    "bytes_sent": 38899736,
+    "bytes_recv": 285875184,
+    "packets_sent": 169021,
+    "packets_recv": 281868
+  },
+  "system": {
+    "process_count": 177,
+    "uptime_seconds": 5827.0009524822235,
+    "uptime_hours": 1.6186113756895066,
+    "boot_time": "2025-08-01T09:22:21.993038"
+  }
+}

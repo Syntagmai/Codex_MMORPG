@@ -1,0 +1,25 @@
+{
+  "generation_date": "2025-08-01T10:44:19.024959",
+  "summary": {
+    "total_documents": 383,
+    "navigation_graph_nodes": 6,
+    "semantic_links_groups": 385,
+    "contextual_paths": 4,
+    "search_index_entries": 350
+  },
+  "features": {
+    "navigation_graph": "Grafo completo de navegação entre documentos",
+    "semantic_links": "Links baseados em tags e palavras-chave",
+    "contextual_paths": "Caminhos pré-definidos para aprendizado",
+    "quick_access": "Acesso rápido a documentos populares",
+    "search_index": "Índice de busca por título, tags e categorias",
+    "breadcrumbs": "Navegação hierárquica",
+    "related_documents": "Documentos relacionados por similaridade"
+  },
+  "statistics": {
+    "popular_documents": 20,
+    "api_references": 7,
+    "tutorials": 13,
+    "essential_guides": 2
+  }
+}

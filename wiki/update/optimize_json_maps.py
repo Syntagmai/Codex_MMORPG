@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 class JSONMapOptimizer:
     """Otimizador de mapas JSON para melhorar performance."""
     
-    def __init__(self, maps_dir: str = "../maps"):
+    def __init__(self, maps_dir: str = "wiki/maps"):
         """
         Inicializa o otimizador.
         

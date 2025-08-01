@@ -1,0 +1,15 @@
+{
+  "generation_date": "2025-08-01T10:52:06.127132",
+  "dashboard_summary": {
+    "overall_status": "🟢 Operacional",
+    "components_count": 3,
+    "alerts_count": 0,
+    "critical_alerts": 0,
+    "warning_alerts": 0
+  },
+  "files": {
+    "dashboard_file": "wiki\\dashboard\\monitoring_dashboard.json",
+    "alerts_file": "wiki\\dashboard\\system_alerts.json",
+    "status_file": "wiki\\dashboard\\system_status.json"
+  }
+}

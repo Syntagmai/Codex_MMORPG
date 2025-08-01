@@ -1,0 +1,96 @@
+{
+  "generation_date": "2025-08-01T10:49:42.091709",
+  "summary": {
+    "system_health": "✅ Operacional",
+    "performance_status": "✅ Boa",
+    "usage_status": "✅ Ativo",
+    "quality_status": "✅ Alta"
+  },
+  "current_metrics": {
+    "system": {
+      "timestamp": "2025-08-01T10:49:41.314018",
+      "cpu": {
+        "percent": 20.0,
+        "count": 4
+      },
+      "memory": {
+        "percent": 65.1,
+        "available_gb": 2.76,
+        "total_gb": 7.9
+      },
+      "disk": {
+        "percent": 58.1,
+        "free_gb": 187.09,
+        "total_gb": 446.47
+      },
+      "network": {
+        "bytes_sent": 34892262,
+        "bytes_recv": 202836870
+      },
+      "processes": {
+        "count": 173
+      }
+    },
+    "performance": {
+      "timestamp": "2025-08-01T10:49:41.406358",
+      "consolidated": {
+        "files": 389,
+        "size_mb": 37.1
+      },
+      "agents": {
+        "files": 29,
+        "size_mb": 0.64
+      },
+      "logs": {
+        "files": 232,
+        "size_mb": 1.45
+      },
+      "total": {
+        "files": 650,
+        "size_mb": 39.19
+      }
+    },
+    "usage": {
+      "timestamp": "2025-08-01T10:49:41.921738",
+      "documents": {
+        "total": 383,
+        "indexed": 368
+      },
+      "search": {
+        "tags": 385,
+        "keywords": 2904
+      },
+      "navigation": {
+        "has_index": true,
+        "has_search": true
+      }
+    },
+    "quality": {
+      "timestamp": "2025-08-01T10:49:42.048391",
+      "integrity": {
+        "total_files": 368,
+        "corrupted_files": 0,
+        "empty_files": 0,
+        "quality_score": 100.0
+      },
+      "structure": {
+        "has_consolidated": true,
+        "has_navigation": true,
+        "has_search": true
+      }
+    }
+  },
+  "trends": {
+    "timestamp": "2025-08-01T10:49:42.049183",
+    "performance_trends": {},
+    "usage_trends": {},
+    "quality_trends": {},
+    "recommendations": []
+  },
+  "files": {
+    "performance_file": "wiki\\metrics\\performance_metrics.json",
+    "usage_file": "wiki\\metrics\\usage_metrics.json",
+    "quality_file": "wiki\\metrics\\quality_metrics.json",
+    "trends_file": "wiki\\metrics\\trends_analysis.json"
+  }
+}

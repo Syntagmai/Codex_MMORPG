@@ -1,0 +1,1 @@
+{"frequently_accessed":{"files":["tags_index.json","wiki_map.json"],"duration":1800,"strategy":"memory_cache"},"context_data":{"files":["enhanced_context_system.json","intelligent_navigation.json"],"duration":900,"strategy":"file_cache"},"large_datasets":{"files":["otclient_source_index.json"],"duration":3600,"strategy":"lazy_cache"}}
