@@ -3,7 +3,7 @@ tags: [courses, education, structured, bmad]
 type: documentation
 status: initial
 priority: high
-created: 2025-07-29T02:12:26.697237
+created: 2025-08-01T02:45:41.409446
 ---
 
 # Cursos Estruturados - Sistema Educacional
@@ -129,6 +129,6 @@ Os **Cursos Estruturados** oferecem aprendizado sistemático e progressivo sobre
 
 ---
 
-**Documento Gerado**: 2025-07-29T02:12:26.697243  
+**Documento Gerado**: 2025-08-01T02:45:41.409452  
 **Responsável**: Professor Agent  
 **Status**: 🟡 **Cursos Estruturados**

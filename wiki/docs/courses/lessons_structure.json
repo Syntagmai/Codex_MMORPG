@@ -1,0 +1,22 @@
+{
+  "fundamentals_otclient": {
+    "name": "Fundamentos do OTClient",
+    "lessons": 10,
+    "duration": "20h"
+  },
+  "fundamentals_canary": {
+    "name": "Fundamentos do Canary",
+    "lessons": 10,
+    "duration": "20h"
+  },
+  "comparative_analysis": {
+    "name": "Análise Comparativa",
+    "lessons": 15,
+    "duration": "30h"
+  },
+  "integration_guide": {
+    "name": "Guia de Integração",
+    "lessons": 12,
+    "duration": "25h"
+  }
+} 

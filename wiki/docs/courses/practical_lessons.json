@@ -1,0 +1,73 @@
+{
+  "fundamentals_otclient": {
+    "name": "Fundamentos do OTClient",
+    "lessons": [
+      "Introdução ao OTClient e sua arquitetura",
+      "Sistema de gráficos e renderização",
+      "Sistema de rede e comunicação",
+      "Interface do usuário (UI)",
+      "Sistema de módulos Lua",
+      "Gerenciamento de dados e recursos",
+      "Sistema de animações",
+      "Sistema de som e áudio",
+      "Sistema de partículas",
+      "Integração com servidor"
+    ],
+    "total": 10
+  },
+  "fundamentals_canary": {
+    "name": "Fundamentos do Canary",
+    "lessons": [
+      "Introdução ao Canary Server",
+      "Arquitetura do servidor",
+      "Sistema de banco de dados",
+      "Gerenciamento de jogadores",
+      "Sistema de combate",
+      "Sistema de inventário",
+      "Sistema de NPCs e quests",
+      "Sistema de grupos e guilds",
+      "Sistema de chat",
+      "Configuração e logs"
+    ],
+    "total": 10
+  },
+  "comparative_analysis": {
+    "name": "Análise Comparativa",
+    "lessons": [
+      "Comparação de arquiteturas",
+      "Análise de protocolos de comunicação",
+      "Comparação de sistemas de UI",
+      "Análise de performance",
+      "Comparação de funcionalidades",
+      "Padrões de desenvolvimento",
+      "Sistemas de módulos",
+      "Gerenciamento de recursos",
+      "Sistemas de segurança",
+      "Escalabilidade e otimização",
+      "Integração de sistemas",
+      "Padrões de design",
+      "Sistemas de cache",
+      "Gerenciamento de memória",
+      "Sistemas de backup"
+    ],
+    "total": 15
+  },
+  "integration_guide": {
+    "name": "Guia de Integração",
+    "lessons": [
+      "Preparação para integração",
+      "Configuração de ambiente",
+      "Migração de dados",
+      "Integração de protocolos",
+      "Compatibilidade de sistemas",
+      "Testes de integração",
+      "Otimização de performance",
+      "Sistema de logs unificado",
+      "Monitoramento integrado",
+      "Deploy e manutenção",
+      "Troubleshooting",
+      "Documentação integrada"
+    ],
+    "total": 12
+  }
+} 

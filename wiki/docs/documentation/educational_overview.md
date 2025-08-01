@@ -3,7 +3,7 @@ tags: [education, courses, professor, bmad]
 type: documentation
 status: initial
 priority: high
-created: 2025-07-29T02:12:26.696414
+created: 2025-08-01T02:45:41.408753
 ---
 
 # Sistema Educacional Integrado - Visão Geral
@@ -96,6 +96,6 @@ wiki/docs/
 
 ---
 
-**Documento Gerado**: 2025-07-29T02:12:26.696424  
+**Documento Gerado**: 2025-08-01T02:45:41.408764  
 **Responsável**: Professor Agent  
 **Status**: 🟡 **Sistema Educacional Inicial**
