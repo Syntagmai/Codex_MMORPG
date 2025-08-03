@@ -18,7 +18,7 @@ opengl, glfw, imgui
 
 - **Linguagem**: cpp
 - **Tipo**: utility
-- **Gerado em**: 2025-08-01 16:05:12
+- **Gerado em**: 2025-08-02 20:59:52
 - **Agente**: Code Generator Agent
 
 ## 🔧 Como Usar
@@ -57,5 +57,5 @@ public:
 
 ---
 
-**Documentação gerada**: 2025-08-01 16:05:12
+**Documentação gerada**: 2025-08-02 20:59:52
 **Responsável**: Code Generator Agent

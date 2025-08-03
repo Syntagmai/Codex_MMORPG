@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from unicode_aliases import *
 """
 Script para iniciar automaticamente a pesquisa habdel
 Baseado na metodologia habdel para OTClient e Canary

@@ -1,3 +1,4 @@
+from unicode_aliases import *
 from collections import defaultdict, Counter
 from datetime import datetime, timedelta
 from pathlib import Path

@@ -1,3 +1,4 @@
+from unicode_aliases import *
 from dataclasses import dataclass, asdict
 from datetime import datetime
 from pathlib import Path

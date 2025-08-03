@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 🤖 Implementador de Tarefas OTClient
 Responsável por implementar as 7 tarefas modificando apenas módulos Lua

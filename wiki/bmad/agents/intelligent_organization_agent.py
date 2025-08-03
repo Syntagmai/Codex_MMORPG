@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import unicode_aliases
 """
 Agente de Organização Inteligente - Sistema de Code Cleanup e Integração Canary
 ===============================================================================

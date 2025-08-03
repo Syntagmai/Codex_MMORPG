@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Teste do Sistema de Orquestração Inteligente
 Demonstra como o sistema detecta contexto e coordena agentes automaticamente

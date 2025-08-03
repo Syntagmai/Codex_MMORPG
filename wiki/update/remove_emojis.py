@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from unicode_aliases import *
 """
 Script para remover emojis dos scripts de indexação
 """

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from unicode_aliases import *
 """
 Script para correção completa da wiki - Deixar 10/10
 Corrige links quebrados, melhora navegação e otimiza para IA e usuários brasileiros

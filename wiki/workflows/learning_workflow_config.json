@@ -3,7 +3,7 @@
   "name": "Sistema de Execução Automática de Lições",
   "version": "1.0.0",
   "status": "active",
-  "created_at": "2025-08-01T16:05:04.530846",
+  "created_at": "2025-08-02T20:59:04.937982",
   "features": {
     "auto_progression": true,
     "smart_scheduling": true,

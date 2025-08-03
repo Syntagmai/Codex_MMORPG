@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Teste de Integração do Agente Python
 Testa se o agente Python é selecionado corretamente

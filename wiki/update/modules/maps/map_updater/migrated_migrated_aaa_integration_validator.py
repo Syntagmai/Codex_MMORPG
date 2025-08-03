@@ -1,3 +1,4 @@
+from unicode_aliases import *
 # Constantes
 MAX_RETRIES = 8
 

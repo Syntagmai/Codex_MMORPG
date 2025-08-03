@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from unicode_aliases import *
 """
 Python Specialist Agent - Agente Especializado em Desenvolvimento Python
 

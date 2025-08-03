@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Script de Atualização do Sistema de Contexto e Navegação
 Atualiza automaticamente os mapas de contexto e navegação inteligente

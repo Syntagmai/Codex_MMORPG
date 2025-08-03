@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- coding:utf-8 -*-
+import unicode_aliases
 """
 Quality Assurance Agent - Epic 11 Task 11.6
 Validação Final e Certificação - Validação completa e certificação de qualidade total

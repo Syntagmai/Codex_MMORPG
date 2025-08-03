@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Sistema de Automação de Tarefas
 Cria tarefas temporárias, executa passo a passo e gera relatórios finais

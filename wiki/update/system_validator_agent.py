@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from unicode_aliases import *
 """
 System Validator Agent - Validador Completo do Sistema Python
 

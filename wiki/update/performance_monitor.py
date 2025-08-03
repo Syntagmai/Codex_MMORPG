@@ -1,3 +1,4 @@
+from unicode_aliases import *
     import argparse
 from datetime import datetime, timedelta
 from pathlib import Path

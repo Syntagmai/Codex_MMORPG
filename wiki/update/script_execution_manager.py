@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Gerenciador de Execução de Scripts Python
 Gerencia a execução de scripts Python com resolução automática de erros

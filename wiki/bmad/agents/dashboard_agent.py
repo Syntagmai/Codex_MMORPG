@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import unicode_aliases
 """
 Dashboard Agent - Interface de Visualização de Métricas
 

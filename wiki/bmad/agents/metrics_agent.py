@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import unicode_aliases
 """
 Metrics Agent - Sistema de Métricas e Feedback
 

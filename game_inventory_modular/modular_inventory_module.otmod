@@ -1,0 +1,27 @@
+Module
+  name: game_inventory_modular
+  description: Sistema de inventário modal com interface de janela comum
+  author: Sistema BMAD
+  website: https://github.com/edubart/otclient
+  version: 1.0.0
+  
+  # Configurações de carregamento
+  sandboxed: true
+  reloadable: true
+  
+  # Scripts para carregar (nome do arquivo sem extensão)
+  scripts: [ modular_inventory_system ]
+  
+  # Dependências obrigatórias
+  dependencies: [ gamelib, game_interface ]
+  
+  # Módulos que podem usar nossos recursos
+  load-later:
+    - game_containers
+    - game_market
+    - game_npctrade
+    - game_playertrade
+  
+  # Callbacks de ciclo de vida
+  @onLoad: ModularInventory.init()
+  @onUnload: ModularInventory.terminate() 

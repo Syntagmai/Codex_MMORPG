@@ -18,7 +18,7 @@ otclient, ui_framework
 
 - **Linguagem**: lua
 - **Tipo**: module
-- **Gerado em**: 2025-08-01 16:05:12
+- **Gerado em**: 2025-08-02 20:59:52
 - **Agente**: Code Generator Agent
 
 ## 🔧 Como Usar
@@ -51,5 +51,5 @@ function OTClientUIEnhancement:run()
 
 ---
 
-**Documentação gerada**: 2025-08-01 16:05:12
+**Documentação gerada**: 2025-08-02 20:59:52
 **Responsável**: Code Generator Agent

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import unicode_aliases
 """
 🎯 Workflow Orchestrator
 Orquestrador principal que coordena todos os agentes do workflow de módulos OTClient

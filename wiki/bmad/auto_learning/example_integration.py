@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Exemplo de Integração: Auto-Aprendizado com Sistema de Regras
 Demonstra como o sistema aprende e melhora regras automaticamente

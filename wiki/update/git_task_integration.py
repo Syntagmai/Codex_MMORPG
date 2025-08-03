@@ -1,3 +1,4 @@
+from unicode_aliases import *
     from git_automation_agent import GitAutomationAgent
     import argparse
 from datetime import datetime

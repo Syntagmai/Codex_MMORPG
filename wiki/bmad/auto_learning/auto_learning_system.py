@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Sistema de Auto-Aprendizado BMAD
 Sistema principal que coordena coleta de dados, análise de padrões e otimização automática

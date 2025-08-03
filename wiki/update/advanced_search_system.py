@@ -1,3 +1,4 @@
+from unicode_aliases import *
 from datetime import datetime
 from difflib import SequenceMatcher
 from pathlib import Path

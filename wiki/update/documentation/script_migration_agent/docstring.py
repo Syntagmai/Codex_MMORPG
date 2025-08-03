@@ -1,3 +1,4 @@
+from unicode_aliases import *
 """
 script_migration_agent
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from unicode_aliases import *
 """
 Monitoring Agent - Sistema de Monitoramento Inteligente para Scripts Python
 

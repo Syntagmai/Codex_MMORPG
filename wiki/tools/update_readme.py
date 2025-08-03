@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from unicode_aliases import *
 """
 Script para atualização automática do README.md
 Baseado na estrutura real do repositório Codex MMORPG

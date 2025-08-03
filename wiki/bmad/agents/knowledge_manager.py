@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import unicode_aliases
 """
 📚 Knowledge Manager Agent
 Responsável por gerenciar navegação da wiki e extrair insights dos resultados

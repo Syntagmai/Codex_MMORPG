@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Python Agent System
 Agente especializado em desenvolvimento Python com verificação de erros e otimização automática

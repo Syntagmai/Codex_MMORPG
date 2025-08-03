@@ -1,3 +1,4 @@
+from unicode_aliases import *
 # Constantes
 MAX_RETRIES = 8
 TIMEOUT_SECONDS = 60

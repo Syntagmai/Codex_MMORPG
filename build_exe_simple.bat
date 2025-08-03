@@ -86,32 +86,25 @@ if errorlevel 1 (
     exit /b 1
 )
 
-echo.
-echo ✅ Executavel criado com sucesso!
-echo.
-
-REM Verificar se o executável foi criado
+REM Mover executável para a raiz
 if exist "dist\BMAD_System_GUI.exe" (
-    echo 📁 Executavel criado em: dist\BMAD_System_GUI.exe
-    echo.
-    echo 🎯 Para testar:
-    echo   1. Vá para a pasta dist
-    echo   2. Execute BMAD_System_GUI.exe
-    echo.
-    
-    REM Perguntar se quer testar
-    set /p testar="Deseja testar o executavel agora? (s/n): "
-    if /i "%testar%"=="s" (
-        echo.
-        echo 🚀 Iniciando teste...
-        start "" "dist\BMAD_System_GUI.exe"
-    )
+    move /Y "dist\BMAD_System_GUI.exe" .
+    echo ✅ Executavel movido para a pasta raiz: BMAD_System_GUI.exe
 ) else (
     echo ❌ Executavel nao foi criado corretamente
+    pause
+    exit /b 1
 )
+
+REM Limpar arquivos e pastas gerados pela build
+if exist "build" rmdir /s /q build
+if exist "dist" rmdir /s /q dist
+if exist "BMAD_System_GUI.spec" del /q BMAD_System_GUI.spec
+if exist "*.spec" del /q *.spec
 
 echo.
 echo ========================================
-echo Processo concluido!
+echo ✅ Processo concluido!
 echo ========================================
+echo O executavel BMAD_System_GUI.exe esta na pasta raiz do projeto.
 pause 

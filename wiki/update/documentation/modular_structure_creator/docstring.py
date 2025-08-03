@@ -1,3 +1,4 @@
+from unicode_aliases import *
 """
 modular_structure_creator
 

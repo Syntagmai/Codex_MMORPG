@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import unicode_aliases
 """
 🤖 Module Creator Agent
 Responsável por criar módulos OTClient do zero baseado na wiki

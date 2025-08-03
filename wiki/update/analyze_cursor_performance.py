@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Script de Análise de Performance do cursor.md
 Analisa a eficiência do cursor.md como ponto de entrada para navegação da IA

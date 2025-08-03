@@ -1,0 +1,119 @@
+{
+  "total_tests": 9,
+  "passed_tests": 9,
+  "failed_tests": 0,
+  "test_details": [
+    {
+      "name": "Game Store Knowledge",
+      "status": "\u2705 PASSED",
+      "result": {
+        "success": true,
+        "files_checked": 2,
+        "content_validation": "passed",
+        "examples_found": 12,
+        "use_cases_found": 3
+      },
+      "timestamp": "2025-08-02T20:50:16.175514"
+    },
+    {
+      "name": "Extended Opcode Knowledge",
+      "status": "\u2705 PASSED",
+      "result": {
+        "success": true,
+        "files_checked": 2,
+        "fragmentation_examples": 5,
+        "callback_examples": 3,
+        "json_examples": 4
+      },
+      "timestamp": "2025-08-02T20:50:16.677546"
+    },
+    {
+      "name": "Communication Knowledge",
+      "status": "\u2705 PASSED",
+      "result": {
+        "success": true,
+        "files_checked": 2,
+        "authentication_examples": 1,
+        "sync_examples": 1,
+        "error_handling": 27
+      },
+      "timestamp": "2025-08-02T20:50:17.180203"
+    },
+    {
+      "name": "Coins Economy Knowledge",
+      "status": "\u2705 PASSED",
+      "result": {
+        "success": true,
+        "files_checked": 2,
+        "transfer_examples": 7,
+        "transaction_examples": 1,
+        "validation_examples": 5
+      },
+      "timestamp": "2025-08-02T20:50:17.682307"
+    },
+    {
+      "name": "UI Interface Knowledge",
+      "status": "\u2705 PASSED",
+      "result": {
+        "success": true,
+        "files_checked": 2,
+        "modal_examples": 5,
+        "controller_examples": 7,
+        "interface_examples": 9
+      },
+      "timestamp": "2025-08-02T20:50:18.184733"
+    },
+    {
+      "name": "Events Callbacks Knowledge",
+      "status": "\u2705 PASSED",
+      "result": {
+        "success": true,
+        "files_checked": 2,
+        "event_examples": 13,
+        "callback_examples": 10,
+        "g_game_examples": 8
+      },
+      "timestamp": "2025-08-02T20:50:18.717597"
+    },
+    {
+      "name": "Modules Loading Knowledge",
+      "status": "\u2705 PASSED",
+      "result": {
+        "success": true,
+        "files_checked": 2,
+        "module_examples": 18,
+        "dependency_examples": 3,
+        "loading_examples": 1
+      },
+      "timestamp": "2025-08-02T20:50:19.252942"
+    },
+    {
+      "name": "Validation Security Knowledge",
+      "status": "\u2705 PASSED",
+      "result": {
+        "success": true,
+        "files_checked": 2,
+        "validation_examples": 6,
+        "security_examples": 1,
+        "authentication_examples": 1
+      },
+      "timestamp": "2025-08-02T20:50:19.784917"
+    },
+    {
+      "name": "Knowledge Integration",
+      "status": "\u2705 PASSED",
+      "result": {
+        "success": true,
+        "files_checked": 2,
+        "template_examples": 27,
+        "generation_examples": 29,
+        "integration_examples": 1
+      },
+      "timestamp": "2025-08-02T20:50:20.327184"
+    }
+  ],
+  "start_time": "2025-08-02 20:50:16.174353",
+  "end_time": "2025-08-02 20:50:20.828033",
+  "duration": 4.65368,
+  "success_rate": 100.0
+}

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Analisador de Padrões para Auto-Aprendizado
 Identifica padrões de sucesso e falha nas interações do sistema

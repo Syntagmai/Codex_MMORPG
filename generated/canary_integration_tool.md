@@ -18,7 +18,7 @@ requests, json, sqlite3
 
 - **Linguagem**: python
 - **Tipo**: tool
-- **Gerado em**: 2025-08-01 16:05:12
+- **Gerado em**: 2025-08-02 20:59:52
 - **Agente**: Code Generator Agent
 
 ## 🔧 Como Usar
@@ -53,5 +53,5 @@ class CanaryIntegrationTool:
 
 ---
 
-**Documentação gerada**: 2025-08-01 16:05:12
+**Documentação gerada**: 2025-08-02 20:59:52
 **Responsável**: Code Generator Agent

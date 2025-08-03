@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Script Migrado: unified_navigation_agent.py
 Módulo de Destino: agents.agent_orchestrator

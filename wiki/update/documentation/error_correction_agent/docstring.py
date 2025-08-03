@@ -1,3 +1,4 @@
+from unicode_aliases import *
 """
 error_correction_agent
 

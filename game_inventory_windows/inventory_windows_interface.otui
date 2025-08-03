@@ -1,0 +1,679 @@
+--[[
+    Inventory Windows Interface - Interface UI do Sistema de Inventário com Windows Comum
+    ===================================================================================
+    
+    Interface de usuário para o módulo de inventário com windows comum,
+    mantendo 100% da funcionalidade do original mas adaptando para MainWindow.
+    
+    DIFERENÇAS DO ORIGINAL:
+    - ❌ PhantomMiniWindow → ✅ MainWindow
+    - ❌ Interface compacta → ✅ Interface expandida
+    - ❌ Layout minimalista → ✅ Layout organizado
+    - ❌ Tamanho fixo → ✅ Tamanho ajustável
+    
+    MANTIDO DO ORIGINAL:
+    - ✅ Todos os slots de equipamento
+    - ✅ Todos os botões e controles
+    - ✅ Sistema de ícones
+    - ✅ Painéis de informação
+    - ✅ Funcionalidades completas
+    
+    Autor: Sistema BMAD
+    Versão: 1.0.0
+    Data: 2025-01-27
+]]
+
+InventoryWindows < MainWindow
+  id: inventoryWindows
+  !text: tr('Inventory')
+  size: 400 300
+  @onEscape: inventoryWindows:hide()
+
+  // Painel Principal (ADAPTADO DO ORIGINAL)
+  Panel
+    id: mainPanel
+    anchors.fill: parent
+    padding: 5
+
+    // Painel Ligado (onPanel) - MANTIDO DO ORIGINAL
+    Panel
+      id: onPanel
+      anchors.fill: parent
+
+      // Botão de mudança de tamanho (MANTIDO DO ORIGINAL)
+      Button
+        id: changeSize
+        image-source: /images/inventory/min_button_small
+        image-clip: 0 0 12 12
+        anchors.top: parent.top
+        anchors.left: parent.left
+        margin-left: 8
+        margin-top: 5
+        size: 12 12
+        @onClick: changeInventorySize()
+
+        $pressed !disabled:
+          image-clip: 12 0 12 12
+
+      // Botão de bênçãos (MANTIDO DO ORIGINAL)
+      Button
+        id: blessings
+        image-source: /images/inventory/button_blessings_grey
+        image-clip: 0 0 12 12
+        anchors.top: changeSize.top
+        anchors.left: changeSize.right
+        margin-left: 3
+        size: 12 12
+        @onClick: modules.game_blessing.toggle()
+        $pressed !disabled:
+          image-clip: 12 0 12 12
+
+      // Botão da bolsa (MANTIDO DO ORIGINAL)
+      UIButton
+        id: purseButton
+        image-source: /images/inventory/purse
+        !tooltip: tr('Open purse')
+        anchors.left: backpack.left
+        anchors.bottom: backpack.top   
+        size: 34 12
+        image-clip: 0 0 34 12
+        margin-bottom: 3
+        @onClick: |
+          local purse = g_game.getLocalPlayer():getInventoryItem(InventorySlotPurse)
+          if purse then
+              g_game.use(purse)
+          end
+
+        $on:
+          image-clip: 0 12 34 12
+        $pressed:
+          image-clip: 0 12 34 12
+
+      // Botão de postura Stand (MANTIDO DO ORIGINAL)
+      TopToggleButton
+        id: standPosture
+        image-source: /images/inventory/buttons_general
+        image-clip: 0 0 20 20
+        anchors.right: parent.right
+        anchors.top: changeSize.top
+        margin-right: 7
+        size: 20 20
+        @onClick: |
+          selectPosture('stand')
+
+        $pressed !disabled:
+          image-clip: 20 0 20 20
+
+        $disabled:
+          image-clip: 20 0 20 20
+
+      // Botão de postura Follow (MANTIDO DO ORIGINAL)
+      TopToggleButton
+        id: followPosture
+        image-source: /images/inventory/buttons_general
+        image-clip: 0 20 20 20
+        anchors.right: standPosture.right
+        anchors.top: standPosture.bottom
+        margin-top: 4
+        size: 20 20
+        @onClick: |
+          selectPosture('follow')
+
+        $pressed !disabled:
+          image-clip: 20 20 20 20
+
+        $disabled:
+          image-clip: 20 20 20 20
+
+      // Checkbox Expert (MANTIDO DO ORIGINAL)
+      UICheckBox
+        id: expert
+        image-source: /images/inventory/buttons_general
+        image-clip: 0 40 20 20
+        anchors.right: followPosture.right
+        anchors.top: followPosture.bottom
+        margin-top: 4
+        size: 20 20
+        @onClick: |
+          expertMode(self, self:isChecked())
+
+        $checked:
+          image-clip: 20 40 20 20
+
+      // Checkbox PvP (MANTIDO DO ORIGINAL)
+      UICheckBox
+        id: pvp
+        image-source: /images/inventory/buttons_general
+        image-clip: 0 60 20 20
+        anchors.right: expert.right
+        anchors.top: expert.bottom
+        margin-top: 4
+        size: 20 20
+        @onClick: |
+          onSetSafeFight(self, self:isChecked())
+
+        $checked:
+          image-clip: 20 60 20 20
+
+      // Slots de equipamento (MANTIDO DO ORIGINAL)
+      // Cabeça
+      ItemBox
+        id: helmet
+        anchors.top: changeSize.bottom
+        anchors.left: parent.left
+        margin-top: 5
+        margin-left: 8
+        size: 34 34
+
+        ItemBox
+          id: helmet
+          anchors.fill: parent
+
+          Label
+            id: duration
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.bottom: parent.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: #ffffff
+            text-auto-resize: true
+
+          Label
+            id: charges
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.top: parent.top
+            anchors.right: parent.right
+            color: #ffffff
+            text-auto-resize: true
+
+      // Pescoço
+      ItemBox
+        id: amulet
+        anchors.top: helmet.top
+        anchors.left: helmet.right
+        margin-left: 3
+        size: 34 34
+
+        ItemBox
+          id: amulet
+          anchors.fill: parent
+
+          Label
+            id: duration
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.bottom: parent.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: #ffffff
+            text-auto-resize: true
+
+          Label
+            id: charges
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.top: parent.top
+            anchors.right: parent.right
+            color: #ffffff
+            text-auto-resize: true
+
+      // Mochila
+      ItemBox
+        id: backpack
+        anchors.top: amulet.top
+        anchors.left: amulet.right
+        margin-left: 3
+        size: 34 34
+
+        ItemBox
+          id: backpack
+          anchors.fill: parent
+
+          Label
+            id: duration
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.bottom: parent.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: #ffffff
+            text-auto-resize: true
+
+          Label
+            id: charges
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.top: parent.top
+            anchors.right: parent.right
+            color: #ffffff
+            text-auto-resize: true
+
+      // Armadura
+      ItemBox
+        id: armor
+        anchors.top: helmet.bottom
+        anchors.left: helmet.left
+        margin-top: 3
+        size: 34 34
+
+        ItemBox
+          id: armor
+          anchors.fill: parent
+
+          Label
+            id: duration
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.bottom: parent.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: #ffffff
+            text-auto-resize: true
+
+          Label
+            id: charges
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.top: parent.top
+            anchors.right: parent.right
+            color: #ffffff
+            text-auto-resize: true
+
+      // Escudo
+      ItemBox
+        id: shield
+        anchors.top: armor.top
+        anchors.left: armor.right
+        margin-left: 3
+        size: 34 34
+
+        ItemBox
+          id: shield
+          anchors.fill: parent
+
+          Label
+            id: duration
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.bottom: parent.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: #ffffff
+            text-auto-resize: true
+
+          Label
+            id: charges
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.top: parent.top
+            anchors.right: parent.right
+            color: #ffffff
+            text-auto-resize: true
+
+      // Espada
+      ItemBox
+        id: sword
+        anchors.top: shield.top
+        anchors.left: shield.right
+        margin-left: 3
+        size: 34 34
+
+        ItemBox
+          id: sword
+          anchors.fill: parent
+
+          Label
+            id: duration
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.bottom: parent.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: #ffffff
+            text-auto-resize: true
+
+          Label
+            id: charges
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.top: parent.top
+            anchors.right: parent.right
+            color: #ffffff
+            text-auto-resize: true
+
+      // Pernas
+      ItemBox
+        id: legs
+        anchors.top: armor.bottom
+        anchors.left: armor.left
+        margin-top: 3
+        size: 34 34
+
+        ItemBox
+          id: legs
+          anchors.fill: parent
+
+          Label
+            id: duration
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.bottom: parent.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: #ffffff
+            text-auto-resize: true
+
+          Label
+            id: charges
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.top: parent.top
+            anchors.right: parent.right
+            color: #ffffff
+            text-auto-resize: true
+
+      // Botas
+      ItemBox
+        id: boots
+        anchors.top: legs.top
+        anchors.left: legs.right
+        margin-left: 3
+        size: 34 34
+
+        ItemBox
+          id: boots
+          anchors.fill: parent
+
+          Label
+            id: duration
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.bottom: parent.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: #ffffff
+            text-auto-resize: true
+
+          Label
+            id: charges
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.top: parent.top
+            anchors.right: parent.right
+            color: #ffffff
+            text-auto-resize: true
+
+      // Anel
+      ItemBox
+        id: ring
+        anchors.top: boots.top
+        anchors.left: boots.right
+        margin-left: 3
+        size: 34 34
+
+        ItemBox
+          id: ring
+          anchors.fill: parent
+
+          Label
+            id: duration
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.bottom: parent.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: #ffffff
+            text-auto-resize: true
+
+          Label
+            id: charges
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.top: parent.top
+            anchors.right: parent.right
+            color: #ffffff
+            text-auto-resize: true
+
+      // Ferramentas
+      ItemBox
+        id: tools
+        anchors.top: legs.bottom
+        anchors.left: legs.left
+        margin-top: 3
+        size: 34 34
+
+        ItemBox
+          id: tools
+          anchors.fill: parent
+
+          Label
+            id: duration
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.bottom: parent.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: #ffffff
+            text-auto-resize: true
+
+          Label
+            id: charges
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.top: parent.top
+            anchors.right: parent.right
+            color: #ffffff
+            text-auto-resize: true
+
+      // Painel de ícones (MANTIDO DO ORIGINAL)
+      Panel
+        id: icons
+        anchors.top: tools.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        margin-top: 5
+        margin-left: 8
+        margin-right: 8
+        height: 20
+
+      // Painel de Soul (MANTIDO DO ORIGINAL)
+      Panel
+        id: soulPanel
+        anchors.top: icons.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        margin-top: 5
+        margin-left: 8
+        margin-right: 8
+        height: 15
+
+        Label
+          id: soul
+          font: verdana-11px-rounded
+          text-offset: 0 0
+          anchors.left: parent.left
+          color: #ffffff
+
+      // Painel de Capacidade (MANTIDO DO ORIGINAL)
+      Panel
+        id: capacityPanel
+        anchors.top: soulPanel.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        margin-top: 2
+        margin-left: 8
+        margin-right: 8
+        height: 15
+
+        Label
+          id: capacity
+          font: verdana-11px-rounded
+          text-offset: 0 0
+          anchors.left: parent.left
+          color: #ffffff
+
+      // Painel Soul e Capacidade (MANTIDO DO ORIGINAL)
+      Panel
+        id: soulAndCapacity
+        anchors.top: capacityPanel.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        margin-top: 2
+        margin-left: 8
+        margin-right: 8
+        height: 15
+
+        Label
+          id: soul
+          font: verdana-11px-rounded
+          text-offset: 0 0
+          anchors.left: parent.left
+          color: #ffffff
+
+        Label
+          id: capacity
+          font: verdana-11px-rounded
+          text-offset: 0 0
+          anchors.right: parent.right
+          color: #ffffff
+
+      // Botões de modo PvP (MANTIDO DO ORIGINAL)
+      WhiteDoveBox
+        id: whiteDoveBox
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        margin-left: 8
+        margin-bottom: 5
+        size: 20 20
+
+      WhiteHandBox
+        id: whiteHandBox
+        anchors.bottom: whiteDoveBox.bottom
+        anchors.left: whiteDoveBox.right
+        margin-left: 3
+        size: 20 20
+
+      YellowHandBox
+        id: yellowHandBox
+        anchors.bottom: whiteHandBox.bottom
+        anchors.left: whiteHandBox.right
+        margin-left: 3
+        size: 20 20
+
+      RedFistBox
+        id: redFistBox
+        anchors.bottom: yellowHandBox.bottom
+        anchors.left: yellowHandBox.right
+        margin-left: 3
+        size: 20 20
+
+      SafeFightBox
+        id: safeFightBox
+        anchors.bottom: redFistBox.bottom
+        anchors.left: redFistBox.right
+        margin-left: 3
+        size: 20 20
+
+    // Painel Desligado (offPanel) - MANTIDO DO ORIGINAL
+    Panel
+      id: offPanel
+      anchors.fill: parent
+      visible: false
+
+      // Botão de mudança de tamanho (MANTIDO DO ORIGINAL)
+      Button
+        id: changeSize
+        image-source: /images/inventory/min_button_small
+        image-clip: 0 0 12 12
+        anchors.top: parent.top
+        anchors.left: parent.left
+        margin-left: 8
+        margin-top: 5
+        size: 12 12
+        @onClick: changeInventorySize()
+
+        $pressed !disabled:
+          image-clip: 12 0 12 12
+
+      // Botão de bênçãos (MANTIDO DO ORIGINAL)
+      Button
+        id: blessings
+        image-source: /images/inventory/button_blessings_grey
+        image-clip: 0 0 12 12
+        anchors.top: changeSize.top
+        anchors.left: changeSize.right
+        margin-left: 3
+        size: 12 12
+        @onClick: modules.game_blessing.toggle()
+        $pressed !disabled:
+          image-clip: 12 0 12 12
+
+      // Botão da bolsa (MANTIDO DO ORIGINAL)
+      UIButton
+        id: purseButton
+        image-source: /images/inventory/purse
+        !tooltip: tr('Open purse')
+        anchors.left: backpack.left
+        anchors.bottom: backpack.top   
+        size: 34 12
+        image-clip: 0 0 34 12
+        margin-bottom: 3
+        @onClick: |
+          local purse = g_game.getLocalPlayer():getInventoryItem(InventorySlotPurse)
+          if purse then
+              g_game.use(purse)
+          end
+
+        $on:
+          image-clip: 0 12 34 12
+        $pressed:
+          image-clip: 0 12 34 12
+
+      // Mochila (versão compacta)
+      ItemBox
+        id: backpack
+        anchors.top: changeSize.bottom
+        anchors.left: parent.left
+        margin-top: 5
+        margin-left: 8
+        size: 34 34
+
+        ItemBox
+          id: backpack
+          anchors.fill: parent
+
+          Label
+            id: duration
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.bottom: parent.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            color: #ffffff
+            text-auto-resize: true
+
+          Label
+            id: charges
+            font: verdana-9px-rounded
+            text-offset: 0 0
+            anchors.top: parent.top
+            anchors.right: parent.right
+            color: #ffffff
+            text-auto-resize: true
+
+      // Checkbox PvP (MANTIDO DO ORIGINAL)
+      UICheckBox
+        id: pvp
+        image-source: /images/inventory/buttons_general
+        image-clip: 0 60 20 20
+        anchors.right: parent.right
+        anchors.top: changeSize.top
+        margin-right: 7
+        size: 20 20
+        @onClick: |
+          onSetSafeFight(self, self:isChecked())
+
+        $checked:
+          image-clip: 20 60 20 20
+
+      // Painel de ícones (MANTIDO DO ORIGINAL)
+      Panel
+        id: icons
+        anchors.top: backpack.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        margin-top: 5
+        margin-left: 8
+        margin-right: 8
+        height: 20 

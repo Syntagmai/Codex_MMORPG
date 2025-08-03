@@ -1,3 +1,4 @@
+from unicode_aliases import *
 """
 python_validator_agent
 

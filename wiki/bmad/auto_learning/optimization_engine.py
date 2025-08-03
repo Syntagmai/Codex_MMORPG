@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Motor de Otimização para Auto-Aprendizado
 Aplica otimizações automáticas baseadas nos padrões aprendidos

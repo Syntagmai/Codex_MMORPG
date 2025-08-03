@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Interface de Visualização para Auto-Aprendizado
 Mostra métricas, aprendizados e insights do sistema de auto aprendizado

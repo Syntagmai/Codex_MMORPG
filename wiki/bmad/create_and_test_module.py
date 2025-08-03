@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 🚀 Script para criar módulo do zero e testá-lo automaticamente
 """

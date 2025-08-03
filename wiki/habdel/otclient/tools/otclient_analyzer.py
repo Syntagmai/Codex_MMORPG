@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Ferramenta de Análise OTClient - 2025-07-31
 ===============================================================

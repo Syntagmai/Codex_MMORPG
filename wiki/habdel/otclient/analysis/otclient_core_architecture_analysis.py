@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Análise da Arquitetura Core OTClient - OTCLIENT-001
 ===================================================

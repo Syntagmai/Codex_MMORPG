@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Sistema de Agentes Especializados - Nível AAA
 Implementação do sistema de agentes especializados para orquestração de nível AAA

@@ -1,3 +1,4 @@
+from unicode_aliases import *
 """
 function_catalog_agent
 

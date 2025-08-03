@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 🚀 Python Validator Agent - Epic 12 Task 12.5
 =============================================

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Sistema de Feedback para Auto-Aprendizado
 Coleta e processa feedback dos usuários para melhorar o sistema

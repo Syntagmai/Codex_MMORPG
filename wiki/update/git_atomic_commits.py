@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Script para fazer commits atômicos organizados por categoria
 Seguindo as regras de automação Git do sistema BMAD

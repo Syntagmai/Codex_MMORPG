@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 BMAD System GUI - Módulo de Interface Principal
 Interface principal da aplicação

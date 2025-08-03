@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from unicode_aliases import *
 """
 Testing Agent - Sistema de Testes Automáticos para Módulos Python
 

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from unicode_aliases import *
 """
 Integração de Auto-Aprendizado com Sistema de Regras
 Permite que o sistema aprenda e melhore regras automaticamente baseado em interações

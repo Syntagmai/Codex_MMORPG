@@ -1,3 +1,4 @@
+from unicode_aliases import *
 from pathlib import Path
 from typing import Dict, List, Any, Optional
 import gzip
