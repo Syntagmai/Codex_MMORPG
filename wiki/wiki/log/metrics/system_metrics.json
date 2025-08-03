@@ -1,38 +1,38 @@
 {
-  "timestamp": "2025-08-01T16:05:18.863801",
+  "timestamp": "2025-08-02T21:07:37.884764",
   "cpu": {
-    "usage_percent": 70.5,
+    "usage_percent": 21.5,
     "count": 4,
     "frequency_mhz": 3201.0,
     "frequency_max_mhz": 3201.0
   },
   "memory": {
     "total_gb": 7.9043731689453125,
-    "available_gb": 1.9845657348632812,
-    "used_gb": 5.919807434082031,
-    "usage_percent": 74.9,
+    "available_gb": 2.7760848999023438,
+    "used_gb": 5.128288269042969,
+    "usage_percent": 64.9,
     "swap_total_gb": 6.5,
-    "swap_used_gb": 0.3435211181640625,
-    "swap_usage_percent": 5.3
+    "swap_used_gb": 0.2256126394495368,
+    "swap_usage_percent": 3.5
   },
   "disk": {
     "total_gb": 446.47218322753906,
-    "used_gb": 260.2992477416992,
-    "free_gb": 186.17293548583984,
-    "usage_percent": 58.3013360115743,
-    "read_bytes": 22338466816,
-    "write_bytes": 44307228160
+    "used_gb": 261.1708183288574,
+    "free_gb": 185.30136489868164,
+    "usage_percent": 58.49654875268118,
+    "read_bytes": 36707426304,
+    "write_bytes": 97314161664
   },
   "network": {
-    "bytes_sent": 179592572,
-    "bytes_recv": 2149427065,
-    "packets_sent": 848397,
-    "packets_recv": 1914310
+    "bytes_sent": 538086299,
+    "bytes_recv": 3749304673,
+    "packets_sent": 2034425,
+    "packets_recv": 1183115
   },
   "system": {
-    "process_count": 184,
-    "uptime_seconds": 24177.000522375107,
-    "uptime_hours": 6.7158334784375295,
-    "boot_time": "2025-08-01T09:22:21.863274"
+    "process_count": 170,
+    "uptime_seconds": 128716.00074076653,
+    "uptime_hours": 35.754444650212925,
+    "boot_time": "2025-08-01T09:22:21.884020"
   }
 }

@@ -26,5 +26,16 @@
     "message": "Taxa de conclusão de tarefas crítica: 0.0%",
     "recommendation": "Verifique se há tarefas travadas ou agentes inativos",
     "timestamp": "2025-08-01T16:04:47.161879"
+  },
+  {
+    "id": "task_completion_critical_1754179758",
+    "type": "critical",
+    "component": "application",
+    "metric": "task_completion_rate",
+    "value": 0,
+    "threshold": 70.0,
+    "message": "Taxa de conclusão de tarefas crítica: 0.0%",
+    "recommendation": "Verifique se há tarefas travadas ou agentes inativos",
+    "timestamp": "2025-08-02T21:09:18.831115"
   }
 ]

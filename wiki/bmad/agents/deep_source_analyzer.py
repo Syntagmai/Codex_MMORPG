@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import unicode_aliases
 """
 Deep Source Analyzer - Análise Profunda do Código-Fonte
 ======================================================

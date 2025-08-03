@@ -1,102 +1,36 @@
 {
   "patterns": {
-    "success_patterns": {
-      "modification_characteristics": {
-        "total_files_modified": 4,
-        "functions_added": 6,
-        "functions_modified": 6,
-        "variables_added": 10,
-        "widgets_modified": 0,
-        "structure_changes": 0
-      },
-      "naming_patterns": {
-        "_improved": 1,
-        "_basic": 1
-      },
-      "structure_characteristics": {}
-    },
     "code_patterns": {
       "function_patterns": {
-        "total_functions": 4,
+        "total_functions": 2,
         "common_function_names": [
-          [
-            "setMusic",
-            1
-          ],
-          [
-            "startup",
-            1
-          ],
           [
             "init",
             1
           ],
           [
-            "terminate",
+            "startup",
             1
           ]
         ]
       },
       "variable_patterns": {
-        "total_variables": 5,
-        "common_variable_names": [
-          [
-            "musicFilename",
-            1
-          ],
-          [
-            "musicChannel",
-            1
-          ],
-          [
-            "errtitle",
-            1
-          ],
-          [
-            "errmsg",
-            1
-          ],
-          [
-            "msgbox",
-            1
-          ]
-        ]
+        "total_variables": 0,
+        "common_variable_names": []
       },
       "api_usage_patterns": {
-        "total_api_calls": 14,
-        "common_apis": [
-          [
-            "g_app",
-            6
-          ],
-          [
-            "g_game",
-            2
-          ],
-          [
-            "isOnline",
-            1
-          ],
-          [
-            "getChannel",
-            1
-          ],
-          [
-            "stopAll",
-            1
-          ]
-        ]
+        "total_api_calls": 0,
+        "common_apis": []
       },
       "file_structure_patterns": {}
     },
     "structural_patterns": {
       "file_organization": {
         ".lua": 1,
-        ".otmod": 1,
-        ".ogg": 1
+        ".otmod": 1
       },
       "module_structure": {
-        "total_files": 3,
+        "total_files": 2,
         "has_lua_files": true,
         "has_otmod_files": true,
         "has_otui_files": false
@@ -107,193 +41,59 @@
   "insights": {
     "analysis": {
       "module_complexity": {
-        "overall_complexity": 9,
-        "coverage": 3,
-        "documentation_quality": 1.9230769230769231,
-        "pattern_diversity": 11
+        "overall_complexity": 10,
+        "coverage": 5,
+        "documentation_quality": 0,
+        "pattern_diversity": 0
       },
       "code_patterns": {
         "lua_patterns": {
           "function_patterns": [
-            "setMusic",
-            "startup",
             "init",
-            "terminate"
-          ],
-          "variable_patterns": [
-            "musicFilename",
-            "musicChannel",
-            "errtitle",
-            "errmsg",
-            "msgbox"
-          ],
-          "import_patterns": [],
-          "api_usage": [
-            "isOnline",
-            "getChannel",
-            "stopAll",
-            "setAudioEnabled",
-            "preload",
-            "getRenderer",
-            "g_game",
-            "g_game",
-            "g_app",
-            "g_app",
-            "g_app",
-            "g_app",
-            "g_app",
-            "g_app"
+            "startup"
           ]
         },
-        "otmod_patterns": {
-          "module_properties": [
-            [
-              "name",
-              "client"
-            ],
-            [
-              "description",
-              "Initialize the client and setups its main window"
-            ],
-            [
-              "author",
-              "edubart"
-            ],
-            [
-              "website",
-              "https://github.com/edubart/otclient"
-            ],
-            [
-              "reloadable",
-              "false"
-            ],
-            [
-              "sandboxed",
-              "true"
-            ],
-            [
-              "scripts",
-              "[ client ]"
-            ],
-            [
-              "onLoad",
-              "init()"
-            ],
-            [
-              "onUnload",
-              "terminate()"
-            ],
-            [
-              "later",
-              "- client_styles"
-            ]
-          ],
-          "script_patterns": [
-            "later",
-            "client_styles",
-            "client_locales",
-            "client_topmenu",
-            "client_bottommenu",
-            "client_background",
-            "client_options",
-            "client_entergame",
-            "client_terminal",
-            "client_debug_info",
-            "client_serverlist"
-          ],
-          "load_later_patterns": [],
-          "event_patterns": [
-            "onLoad",
-            "onUnload"
-          ]
-        },
+        "otmod_patterns": {},
         "otui_patterns": {},
-        "common_patterns": {
-          "file_structure": {
-            ".lua": 1,
-            ".otmod": 1,
-            ".ogg": 1
-          },
-          "naming_conventions": {
-            "snake_case": 183,
-            "camelCase": 194,
-            "PascalCase": 11
-          },
-          "code_style": {}
-        }
+        "common_patterns": {}
       },
       "dependencies": {
         "api_dependencies": [
-          "sounds",
           "game",
-          "graphics",
-          "app",
-          "settings"
+          "ui"
         ],
-        "module_dependencies": [
-          "client_bottommenu",
-          "client_entergame",
-          "client_terminal",
-          "client_locales",
-          "client_options",
-          "client_topmenu",
-          "client_styles",
-          "client_background",
-          "client_debug_info",
-          "later",
-          "client_serverlist"
-        ],
+        "module_dependencies": [],
         "internal_dependencies": []
       },
       "structure_insights": {
-        "file_count": 3,
+        "file_count": 2,
         "file_types": {
           ".lua": 1,
-          ".otmod": 1,
-          ".ogg": 1
+          ".otmod": 1
         },
-        "structure_complexity": {
-          "total_files": 3,
-          "file_types": {
-            ".lua": 1,
-            ".otmod": 1,
-            ".ogg": 1
-          },
-          "main_files": [
-            "client.lua",
-            "client.otmod"
-          ],
-          "dependencies": {},
-          "complexity": 9
-        }
+        "structure_complexity": {}
       },
       "quality_metrics": {}
     },
     "generation": {
       "generation_success": {
-        "total_variations": 2,
-        "successful_variations": 2,
+        "total_variations": 1,
+        "successful_variations": 1,
         "success_rate": 1.0
       },
       "variation_patterns": {
-        "improved": 1,
-        "basic": 1
+        "enhanced": 1
       },
       "modification_insights": {
-        "total_files_modified": 4,
-        "functions_added": 6,
-        "functions_modified": 6,
-        "variables_added": 10,
-        "widgets_modified": 0,
-        "structure_changes": 0
+        "functions_added": 2
       },
       "compatibility_insights": {
-        "average_score": 0.9,
-        "min_score": 0.9,
-        "max_score": 0.9,
+        "average_score": 0.8,
+        "min_score": 0.8,
+        "max_score": 0.8,
         "score_distribution": {
-          "excellent": 2,
-          "good": 0,
+          "excellent": 0,
+          "good": 1,
           "fair": 0,
           "poor": 0
         }
@@ -301,20 +101,17 @@
     },
     "testing": {
       "test_success": {
-        "total_variations": 2,
-        "passed_variations": 2,
+        "total_variations": 1,
+        "passed_variations": 1,
         "failed_variations": 0,
         "pass_rate": 1.0
       },
-      "error_patterns": {
-        "Funções e 'end' desbalanceados: 7 funções, 19 ends": 1,
-        "Funções e 'end' desbalanceados: 6 funções, 18 ends": 1
-      },
+      "error_patterns": {},
       "quality_insights": {
-        "average_quality_score": 1.0,
-        "average_compatibility_score": 0.9,
-        "average_performance_score": 0.9,
-        "total_errors": 2,
+        "average_quality_score": 0.85,
+        "average_compatibility_score": 0,
+        "average_performance_score": 0,
+        "total_errors": 0,
         "total_warnings": 0
       },
       "performance_insights": {},
@@ -324,9 +121,6 @@
   "rules": {
     "generation_rules": [
       "Manter padrões de geração atuais - alta taxa de sucesso"
-    ],
-    "best_practices": [
-      "Seguir padrões identificados em variações bem-sucedidas"
     ]
   },
   "best_practices": {},
