@@ -1,0 +1,1056 @@
+{
+  "timestamp": "2025-08-02T22:42:16.476424",
+  "obsolete_items_removed": [],
+  "empty_directories_removed": [
+    {
+      "path": ".git\\modules\\canary\\objects\\info",
+      "description": "Empty directory removed",
+      "backup_created": ".git\\modules\\canary\\objects\\info.backup"
+    },
+    {
+      "path": ".git\\modules\\canary\\refs\\tags",
+      "description": "Empty directory removed",
+      "backup_created": ".git\\modules\\canary\\refs\\tags.backup"
+    },
+    {
+      "path": ".git\\modules\\otclient\\objects\\info",
+      "description": "Empty directory removed",
+      "backup_created": ".git\\modules\\otclient\\objects\\info.backup"
+    },
+    {
+      "path": ".git\\modules\\otclient\\refs\\remotes\\origin\\docs",
+      "description": "Empty directory removed",
+      "backup_created": ".git\\modules\\otclient\\refs\\remotes\\origin\\docs.backup"
+    },
+    {
+      "path": ".git\\modules\\otclient\\refs\\tags",
+      "description": "Empty directory removed",
+      "backup_created": ".git\\modules\\otclient\\refs\\tags.backup"
+    },
+    {
+      "path": ".git\\objects\\info",
+      "description": "Empty directory removed",
+      "backup_created": ".git\\objects\\info.backup"
+    },
+    {
+      "path": ".git\\objects\\pack",
+      "description": "Empty directory removed",
+      "backup_created": ".git\\objects\\pack.backup"
+    },
+    {
+      "path": ".git\\refs\\tags",
+      "description": "Empty directory removed",
+      "backup_created": ".git\\refs\\tags.backup"
+    },
+    {
+      "path": ".venv\\Include",
+      "description": "Empty directory removed",
+      "backup_created": ".venv\\Include.backup"
+    },
+    {
+      "path": "docs\\src\\courses\\advanced",
+      "description": "Empty directory removed",
+      "backup_created": "docs\\src\\courses\\advanced.backup"
+    },
+    {
+      "path": "docs\\src\\courses\\beginner",
+      "description": "Empty directory removed",
+      "backup_created": "docs\\src\\courses\\beginner.backup"
+    },
+    {
+      "path": "docs\\src\\courses\\intermediate",
+      "description": "Empty directory removed",
+      "backup_created": "docs\\src\\courses\\intermediate.backup"
+    },
+    {
+      "path": "docs\\src\\integration\\workflows",
+      "description": "Empty directory removed",
+      "backup_created": "docs\\src\\integration\\workflows.backup"
+    },
+    {
+      "path": "docs\\src\\laboratory\\tests",
+      "description": "Empty directory removed",
+      "backup_created": "docs\\src\\laboratory\\tests.backup"
+    },
+    {
+      "path": "wiki\\bmad\\agents\\python_agent\\agents",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\bmad\\agents\\python_agent\\agents.backup"
+    },
+    {
+      "path": "wiki\\bmad\\agents\\python_agent\\logs",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\bmad\\agents\\python_agent\\logs.backup"
+    },
+    {
+      "path": "wiki\\bmad\\wiki\\bmad\\knowledge",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\bmad\\wiki\\bmad\\knowledge.backup"
+    },
+    {
+      "path": "wiki\\bmad\\wiki\\bmad\\results\\analysis",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\bmad\\wiki\\bmad\\results\\analysis.backup"
+    },
+    {
+      "path": "wiki\\bmad\\wiki\\bmad\\results\\generated_modules",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\bmad\\wiki\\bmad\\results\\generated_modules.backup"
+    },
+    {
+      "path": "wiki\\bmad\\wiki\\bmad\\results\\learning_data",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\bmad\\wiki\\bmad\\results\\learning_data.backup"
+    },
+    {
+      "path": "wiki\\bmad\\wiki\\bmad\\results\\test_reports",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\bmad\\wiki\\bmad\\results\\test_reports.backup"
+    },
+    {
+      "path": "wiki\\bmad\\wiki\\bmad\\templates",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\bmad\\wiki\\bmad\\templates.backup"
+    },
+    {
+      "path": "wiki\\certificates",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\certificates.backup"
+    },
+    {
+      "path": "wiki\\config",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\config.backup"
+    },
+    {
+      "path": "wiki\\consolidated\\bmad\\knowledge",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\consolidated\\bmad\\knowledge.backup"
+    },
+    {
+      "path": "wiki\\consolidated\\bmad\\tools",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\consolidated\\bmad\\tools.backup"
+    },
+    {
+      "path": "wiki\\consolidated\\bmad\\workflows",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\consolidated\\bmad\\workflows.backup"
+    },
+    {
+      "path": "wiki\\consolidated\\canary\\analysis",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\consolidated\\canary\\analysis.backup"
+    },
+    {
+      "path": "wiki\\consolidated\\canary\\documentation",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\consolidated\\canary\\documentation.backup"
+    },
+    {
+      "path": "wiki\\consolidated\\canary\\modules",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\consolidated\\canary\\modules.backup"
+    },
+    {
+      "path": "wiki\\consolidated\\education\\certifications",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\consolidated\\education\\certifications.backup"
+    },
+    {
+      "path": "wiki\\consolidated\\education\\exercises",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\consolidated\\education\\exercises.backup"
+    },
+    {
+      "path": "wiki\\consolidated\\education\\lessons",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\consolidated\\education\\lessons.backup"
+    },
+    {
+      "path": "wiki\\consolidated\\integration\\apis",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\consolidated\\integration\\apis.backup"
+    },
+    {
+      "path": "wiki\\consolidated\\integration\\guides",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\consolidated\\integration\\guides.backup"
+    },
+    {
+      "path": "wiki\\consolidated\\otclient\\analysis",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\consolidated\\otclient\\analysis.backup"
+    },
+    {
+      "path": "wiki\\consolidated\\otclient\\modules",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\consolidated\\otclient\\modules.backup"
+    },
+    {
+      "path": "wiki\\consolidated\\performance\\cache",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\consolidated\\performance\\cache.backup"
+    },
+    {
+      "path": "wiki\\consolidated\\performance\\logs",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\consolidated\\performance\\logs.backup"
+    },
+    {
+      "path": "wiki\\consolidated\\performance\\metrics",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\consolidated\\performance\\metrics.backup"
+    },
+    {
+      "path": "wiki\\cursor_core\\.bmad-game-core\\checklists",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\cursor_core\\.bmad-game-core\\checklists.backup"
+    },
+    {
+      "path": "wiki\\cursor_core\\.bmad-game-core\\utils",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\cursor_core\\.bmad-game-core\\utils.backup"
+    },
+    {
+      "path": "wiki\\docs\\canary\\architecture",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\canary\\architecture.backup"
+    },
+    {
+      "path": "wiki\\docs\\canary\\debugging",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\canary\\debugging.backup"
+    },
+    {
+      "path": "wiki\\docs\\canary\\development",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\canary\\development.backup"
+    },
+    {
+      "path": "wiki\\docs\\canary\\performance",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\canary\\performance.backup"
+    },
+    {
+      "path": "wiki\\docs\\courses\\advanced",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\courses\\advanced.backup"
+    },
+    {
+      "path": "wiki\\docs\\courses\\beginner",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\courses\\beginner.backup"
+    },
+    {
+      "path": "wiki\\docs\\courses\\expert",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\courses\\expert.backup"
+    },
+    {
+      "path": "wiki\\docs\\courses\\intermediate",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\courses\\intermediate.backup"
+    },
+    {
+      "path": "wiki\\docs\\dashboard\\progress",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\dashboard\\progress.backup"
+    },
+    {
+      "path": "wiki\\docs\\dashboard\\tasks",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\dashboard\\tasks.backup"
+    },
+    {
+      "path": "wiki\\docs\\integration\\best_practices",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\integration\\best_practices.backup"
+    },
+    {
+      "path": "wiki\\docs\\integration\\workflows",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\integration\\workflows.backup"
+    },
+    {
+      "path": "wiki\\docs\\laboratory\\analysis",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\laboratory\\analysis.backup"
+    },
+    {
+      "path": "wiki\\docs\\laboratory\\results",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\laboratory\\results.backup"
+    },
+    {
+      "path": "wiki\\docs\\lessons\\experimental",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\lessons\\experimental.backup"
+    },
+    {
+      "path": "wiki\\docs\\lessons\\practical",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\lessons\\practical.backup"
+    },
+    {
+      "path": "wiki\\docs\\lessons\\theoretical",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\lessons\\theoretical.backup"
+    },
+    {
+      "path": "wiki\\docs\\otclient\\api",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\otclient\\api.backup"
+    },
+    {
+      "path": "wiki\\docs\\otclient\\debugging",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\otclient\\debugging.backup"
+    },
+    {
+      "path": "wiki\\docs\\otclient\\development",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\otclient\\development.backup"
+    },
+    {
+      "path": "wiki\\docs\\otclient\\performance",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\otclient\\performance.backup"
+    },
+    {
+      "path": "wiki\\docs\\otclient\\ui",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\otclient\\ui.backup"
+    },
+    {
+      "path": "wiki\\docs\\research\\analysis",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\research\\analysis.backup"
+    },
+    {
+      "path": "wiki\\docs\\research\\reports",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\research\\reports.backup"
+    },
+    {
+      "path": "wiki\\docs\\templates\\development",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\templates\\development.backup"
+    },
+    {
+      "path": "wiki\\docs\\templates\\documentation",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\templates\\documentation.backup"
+    },
+    {
+      "path": "wiki\\docs\\templates\\guides",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\templates\\guides.backup"
+    },
+    {
+      "path": "wiki\\docs\\templates\\reports",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\docs\\templates\\reports.backup"
+    },
+    {
+      "path": "wiki\\habdel\\backup_20250730_145936",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\habdel\\backup_20250730_145936.backup"
+    },
+    {
+      "path": "wiki\\habdel\\backup_20250730_145939",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\habdel\\backup_20250730_145939.backup"
+    },
+    {
+      "path": "wiki\\habdel\\canary\\analysis",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\habdel\\canary\\analysis.backup"
+    },
+    {
+      "path": "wiki\\habdel\\canary\\comparisons",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\habdel\\canary\\comparisons.backup"
+    },
+    {
+      "path": "wiki\\habdel\\canary\\examples",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\habdel\\canary\\examples.backup"
+    },
+    {
+      "path": "wiki\\habdel\\canary\\stories",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\habdel\\canary\\stories.backup"
+    },
+    {
+      "path": "wiki\\habdel\\integration\\comparisons",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\habdel\\integration\\comparisons.backup"
+    },
+    {
+      "path": "wiki\\habdel\\integration\\documentation",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\habdel\\integration\\documentation.backup"
+    },
+    {
+      "path": "wiki\\habdel\\integration\\examples",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\habdel\\integration\\examples.backup"
+    },
+    {
+      "path": "wiki\\habdel\\integration\\templates",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\habdel\\integration\\templates.backup"
+    },
+    {
+      "path": "wiki\\habdel\\integration\\unified_docs",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\habdel\\integration\\unified_docs.backup"
+    },
+    {
+      "path": "wiki\\habdel\\integration\\workflows",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\habdel\\integration\\workflows.backup"
+    },
+    {
+      "path": "wiki\\habdel\\otclient\\stories",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\habdel\\otclient\\stories.backup"
+    },
+    {
+      "path": "wiki\\integration\\game_state",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\integration\\game_state.backup"
+    },
+    {
+      "path": "wiki\\integration\\network",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\integration\\network.backup"
+    },
+    {
+      "path": "wiki\\integration\\protocol",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\integration\\protocol.backup"
+    },
+    {
+      "path": "wiki\\integration\\testing",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\integration\\testing.backup"
+    },
+    {
+      "path": "wiki\\log\\aaa_fixes",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\aaa_fixes.backup"
+    },
+    {
+      "path": "wiki\\log\\aaa_validation",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\aaa_validation.backup"
+    },
+    {
+      "path": "wiki\\log\\agents\\analysis_agents",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\agents\\analysis_agents.backup"
+    },
+    {
+      "path": "wiki\\log\\agents\\documentation_agents",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\agents\\documentation_agents.backup"
+    },
+    {
+      "path": "wiki\\log\\agents\\git_agents",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\agents\\git_agents.backup"
+    },
+    {
+      "path": "wiki\\log\\agents\\integration_agents",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\agents\\integration_agents.backup"
+    },
+    {
+      "path": "wiki\\log\\agents\\module_agents",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\agents\\module_agents.backup"
+    },
+    {
+      "path": "wiki\\log\\agents\\navigation_agents",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\agents\\navigation_agents.backup"
+    },
+    {
+      "path": "wiki\\log\\agents\\organization_agents",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\agents\\organization_agents.backup"
+    },
+    {
+      "path": "wiki\\log\\agents\\research_agents",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\agents\\research_agents.backup"
+    },
+    {
+      "path": "wiki\\log\\agents\\validation_agents",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\agents\\validation_agents.backup"
+    },
+    {
+      "path": "wiki\\log\\archives\\historical_data",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\archives\\historical_data.backup"
+    },
+    {
+      "path": "wiki\\log\\archives\\obsolete_files",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\archives\\obsolete_files.backup"
+    },
+    {
+      "path": "wiki\\log\\archives\\old_reports",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\archives\\old_reports.backup"
+    },
+    {
+      "path": "wiki\\log\\backup",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\backup.backup"
+    },
+    {
+      "path": "wiki\\log\\backup_centralization\\aaa_fixes",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\backup_centralization\\aaa_fixes.backup"
+    },
+    {
+      "path": "wiki\\log\\backup_centralization\\aaa_validation",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\backup_centralization\\aaa_validation.backup"
+    },
+    {
+      "path": "wiki\\log\\backup_centralization\\backup_centralization\\aaa_fixes",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\backup_centralization\\backup_centralization\\aaa_fixes.backup"
+    },
+    {
+      "path": "wiki\\log\\backup_centralization\\backup_centralization\\aaa_validation",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\backup_centralization\\backup_centralization\\aaa_validation.backup"
+    },
+    {
+      "path": "wiki\\log\\backup_centralization\\backup_centralization\\completed_tasks",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\backup_centralization\\backup_centralization\\completed_tasks.backup"
+    },
+    {
+      "path": "wiki\\log\\backup_centralization\\backup_centralization\\learning",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\backup_centralization\\backup_centralization\\learning.backup"
+    },
+    {
+      "path": "wiki\\log\\backup_centralization\\backup_centralization\\recipes",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\backup_centralization\\backup_centralization\\recipes.backup"
+    },
+    {
+      "path": "wiki\\log\\backup_centralization\\backup_centralization\\reports\\2025-01",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\backup_centralization\\backup_centralization\\reports\\2025-01.backup"
+    },
+    {
+      "path": "wiki\\log\\backup_centralization\\backup_centralization\\reports\\2025-07",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\backup_centralization\\backup_centralization\\reports\\2025-07.backup"
+    },
+    {
+      "path": "wiki\\log\\backup_centralization\\backup_centralization\\reports\\current",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\backup_centralization\\backup_centralization\\reports\\current.backup"
+    },
+    {
+      "path": "wiki\\log\\backup_centralization\\completed_tasks",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\backup_centralization\\completed_tasks.backup"
+    },
+    {
+      "path": "wiki\\log\\backup_centralization\\learning",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\backup_centralization\\learning.backup"
+    },
+    {
+      "path": "wiki\\log\\backup_centralization\\recipes",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\backup_centralization\\recipes.backup"
+    },
+    {
+      "path": "wiki\\log\\backup_centralization\\reports\\2025-01",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\backup_centralization\\reports\\2025-01.backup"
+    },
+    {
+      "path": "wiki\\log\\backup_centralization\\reports\\2025-07",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\backup_centralization\\reports\\2025-07.backup"
+    },
+    {
+      "path": "wiki\\log\\backup_centralization\\reports\\current",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\backup_centralization\\reports\\current.backup"
+    },
+    {
+      "path": "wiki\\log\\completed_tasks\\bug_fixes",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\completed_tasks\\bug_fixes.backup"
+    },
+    {
+      "path": "wiki\\log\\completed_tasks\\feature_implementations",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\completed_tasks\\feature_implementations.backup"
+    },
+    {
+      "path": "wiki\\log\\completed_tasks\\system_updates",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\completed_tasks\\system_updates.backup"
+    },
+    {
+      "path": "wiki\\log\\learning",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\learning.backup"
+    },
+    {
+      "path": "wiki\\log\\python_agent",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\python_agent.backup"
+    },
+    {
+      "path": "wiki\\log\\recipes",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\recipes.backup"
+    },
+    {
+      "path": "wiki\\log\\reports\\2025-01",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\reports\\2025-01.backup"
+    },
+    {
+      "path": "wiki\\log\\reports\\2025-02",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\reports\\2025-02.backup"
+    },
+    {
+      "path": "wiki\\log\\reports\\2025-07",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\reports\\2025-07.backup"
+    },
+    {
+      "path": "wiki\\log\\reports\\current",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\reports\\current.backup"
+    },
+    {
+      "path": "wiki\\log\\system\\system_status",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\system\\system_status.backup"
+    },
+    {
+      "path": "wiki\\log\\temp",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\temp.backup"
+    },
+    {
+      "path": "wiki\\log\\temp_tasks",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\log\\temp_tasks.backup"
+    },
+    {
+      "path": "wiki\\teste\\game_cyclopedia\\tab\\charms",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\teste\\game_cyclopedia\\tab\\charms.backup"
+    },
+    {
+      "path": "wiki\\update\\python_specialist",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\update\\python_specialist.backup"
+    },
+    {
+      "path": "wiki\\update\\validation",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\update\\validation.backup"
+    },
+    {
+      "path": "wiki\\wiki\\bmad\\templates",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\wiki\\bmad\\templates.backup"
+    },
+    {
+      "path": "wiki\\wiki\\docs",
+      "description": "Empty directory removed",
+      "backup_created": "wiki\\wiki\\docs.backup"
+    }
+  ],
+  "naming_issues_fixed": [],
+  "duplicate_files_removed": [],
+  "backup_files_cleaned": [],
+  "temp_files_removed": [
+    {
+      "file": ".\\wiki\\log\\git_automation_fixed.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\agents\\core_agents\\professor_agent_20250801_103952.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\agents\\core_agents\\quality_assurance_agent_20250801_103952.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\agents\\core_agents\\task_supervisor_agent_20250801_103952.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\agents\\general\\workflow_orchestrator_agent_20250801_103952.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\archives\\uncategorized\\canary_researcher_20250801_103952.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\archives\\uncategorized\\comprehensive_path_validator_20250801_103952.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\archives\\uncategorized\\dashboard_creation_20250801_103952.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\archives\\uncategorized\\deep_source_analyzer_20250801_103952.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\archives\\uncategorized\\documentation_completer_20250801_103952.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\archives\\uncategorized\\final_commit_verification_20250801_103952.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\archives\\uncategorized\\git_automation_20250801_103952.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\archives\\uncategorized\\git_automation_fixed_20250801_103952.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\archives\\uncategorized\\git_task_integration_20250801_103952.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\archives\\uncategorized\\habdel_organization_20250801_103952.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\archives\\uncategorized\\integration_system_20250801_103952.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\archives\\uncategorized\\intelligent_organization_20250801_103952.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\archives\\uncategorized\\otclient_research_setup_20250801_103952.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\auto_optimizer.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\canary_researcher.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\comprehensive_path_validator.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\dashboard_creation.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\deep_source_analyzer.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\documentation_completer.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\final_commit_verification.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\git_automation.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\git_automation_fixed.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\git_task_integration.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\habdel_organization.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\integration_system.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\intelligent_organization.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\otclient_research_setup.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\professor_agent.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\quality_assurance_agent.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\task_supervisor_agent.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\backup_centralization\\workflow_orchestrator_agent.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\epic11_validation\\coverage_validation.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\epic11_validation\\educational_validation.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\epic11_validation\\integration_planning.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\epic11_validation\\maintenance_planning.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\epic11_validation\\metrics_validation.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\epic11_validation\\quality_assurance.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\file_organization\\file_organization.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\final_cleanup\\final_cleanup.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\intelligent_learning\\intelligent_learning.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\learning_workflow\\learning_workflow.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\navigation_validation\\navigation_validation.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\log\\system\\optimization\\auto_optimizer_20250801_103950.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\tools\\file_mover.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\update\\git_automation.log",
+      "pattern": "*.log"
+    },
+    {
+      "file": ".\\wiki\\update\\git_task_integration.log",
+      "pattern": "*.log"
+    }
+  ],
+  "files_modified": [
+    ".git\\modules\\canary\\objects\\info",
+    ".git\\modules\\canary\\refs\\tags",
+    ".git\\modules\\otclient\\objects\\info",
+    ".git\\modules\\otclient\\refs\\remotes\\origin\\docs",
+    ".git\\modules\\otclient\\refs\\tags",
+    ".git\\objects\\info",
+    ".git\\objects\\pack",
+    ".git\\refs\\tags",
+    ".venv\\Include",
+    "docs\\src\\courses\\advanced",
+    "docs\\src\\courses\\beginner",
+    "docs\\src\\courses\\intermediate",
+    "docs\\src\\integration\\workflows",
+    "docs\\src\\laboratory\\tests",
+    "wiki\\bmad\\agents\\python_agent\\agents",
+    "wiki\\bmad\\agents\\python_agent\\logs",
+    "wiki\\bmad\\wiki\\bmad\\knowledge",
+    "wiki\\bmad\\wiki\\bmad\\results\\analysis",
+    "wiki\\bmad\\wiki\\bmad\\results\\generated_modules",
+    "wiki\\bmad\\wiki\\bmad\\results\\learning_data",
+    "wiki\\bmad\\wiki\\bmad\\results\\test_reports",
+    "wiki\\bmad\\wiki\\bmad\\templates",
+    "wiki\\certificates",
+    "wiki\\config",
+    "wiki\\consolidated\\bmad\\knowledge",
+    "wiki\\consolidated\\bmad\\tools",
+    "wiki\\consolidated\\bmad\\workflows",
+    "wiki\\consolidated\\canary\\analysis",
+    "wiki\\consolidated\\canary\\documentation",
+    "wiki\\consolidated\\canary\\modules",
+    "wiki\\consolidated\\education\\certifications",
+    "wiki\\consolidated\\education\\exercises",
+    "wiki\\consolidated\\education\\lessons",
+    "wiki\\consolidated\\integration\\apis",
+    "wiki\\consolidated\\integration\\guides",
+    "wiki\\consolidated\\otclient\\analysis",
+    "wiki\\consolidated\\otclient\\modules",
+    "wiki\\consolidated\\performance\\cache",
+    "wiki\\consolidated\\performance\\logs",
+    "wiki\\consolidated\\performance\\metrics",
+    "wiki\\cursor_core\\.bmad-game-core\\checklists",
+    "wiki\\cursor_core\\.bmad-game-core\\utils",
+    "wiki\\docs\\canary\\architecture",
+    "wiki\\docs\\canary\\debugging",
+    "wiki\\docs\\canary\\development",
+    "wiki\\docs\\canary\\performance",
+    "wiki\\docs\\courses\\advanced",
+    "wiki\\docs\\courses\\beginner",
+    "wiki\\docs\\courses\\expert",
+    "wiki\\docs\\courses\\intermediate",
+    "wiki\\docs\\dashboard\\progress",
+    "wiki\\docs\\dashboard\\tasks",
+    "wiki\\docs\\integration\\best_practices",
+    "wiki\\docs\\integration\\workflows",
+    "wiki\\docs\\laboratory\\analysis",
+    "wiki\\docs\\laboratory\\results",
+    "wiki\\docs\\lessons\\experimental",
+    "wiki\\docs\\lessons\\practical",
+    "wiki\\docs\\lessons\\theoretical",
+    "wiki\\docs\\otclient\\api",
+    "wiki\\docs\\otclient\\debugging",
+    "wiki\\docs\\otclient\\development",
+    "wiki\\docs\\otclient\\performance",
+    "wiki\\docs\\otclient\\ui",
+    "wiki\\docs\\research\\analysis",
+    "wiki\\docs\\research\\reports",
+    "wiki\\docs\\templates\\development",
+    "wiki\\docs\\templates\\documentation",
+    "wiki\\docs\\templates\\guides",
+    "wiki\\docs\\templates\\reports",
+    "wiki\\habdel\\backup_20250730_145936",
+    "wiki\\habdel\\backup_20250730_145939",
+    "wiki\\habdel\\canary\\analysis",
+    "wiki\\habdel\\canary\\comparisons",
+    "wiki\\habdel\\canary\\examples",
+    "wiki\\habdel\\canary\\stories",
+    "wiki\\habdel\\integration\\comparisons",
+    "wiki\\habdel\\integration\\documentation",
+    "wiki\\habdel\\integration\\examples",
+    "wiki\\habdel\\integration\\templates",
+    "wiki\\habdel\\integration\\unified_docs",
+    "wiki\\habdel\\integration\\workflows",
+    "wiki\\habdel\\otclient\\stories",
+    "wiki\\integration\\game_state",
+    "wiki\\integration\\network",
+    "wiki\\integration\\protocol",
+    "wiki\\integration\\testing",
+    "wiki\\log\\aaa_fixes",
+    "wiki\\log\\aaa_validation",
+    "wiki\\log\\agents\\analysis_agents",
+    "wiki\\log\\agents\\documentation_agents",
+    "wiki\\log\\agents\\git_agents",
+    "wiki\\log\\agents\\integration_agents",
+    "wiki\\log\\agents\\module_agents",
+    "wiki\\log\\agents\\navigation_agents",
+    "wiki\\log\\agents\\organization_agents",
+    "wiki\\log\\agents\\research_agents",
+    "wiki\\log\\agents\\validation_agents",
+    "wiki\\log\\archives\\historical_data",
+    "wiki\\log\\archives\\obsolete_files",
+    "wiki\\log\\archives\\old_reports",
+    "wiki\\log\\backup",
+    "wiki\\log\\backup_centralization\\aaa_fixes",
+    "wiki\\log\\backup_centralization\\aaa_validation",
+    "wiki\\log\\backup_centralization\\backup_centralization\\aaa_fixes",
+    "wiki\\log\\backup_centralization\\backup_centralization\\aaa_validation",
+    "wiki\\log\\backup_centralization\\backup_centralization\\completed_tasks",
+    "wiki\\log\\backup_centralization\\backup_centralization\\learning",
+    "wiki\\log\\backup_centralization\\backup_centralization\\recipes",
+    "wiki\\log\\backup_centralization\\backup_centralization\\reports\\2025-01",
+    "wiki\\log\\backup_centralization\\backup_centralization\\reports\\2025-07",
+    "wiki\\log\\backup_centralization\\backup_centralization\\reports\\current",
+    "wiki\\log\\backup_centralization\\completed_tasks",
+    "wiki\\log\\backup_centralization\\learning",
+    "wiki\\log\\backup_centralization\\recipes",
+    "wiki\\log\\backup_centralization\\reports\\2025-01",
+    "wiki\\log\\backup_centralization\\reports\\2025-07",
+    "wiki\\log\\backup_centralization\\reports\\current",
+    "wiki\\log\\completed_tasks\\bug_fixes",
+    "wiki\\log\\completed_tasks\\feature_implementations",
+    "wiki\\log\\completed_tasks\\system_updates",
+    "wiki\\log\\learning",
+    "wiki\\log\\python_agent",
+    "wiki\\log\\recipes",
+    "wiki\\log\\reports\\2025-01",
+    "wiki\\log\\reports\\2025-02",
+    "wiki\\log\\reports\\2025-07",
+    "wiki\\log\\reports\\current",
+    "wiki\\log\\system\\system_status",
+    "wiki\\log\\temp",
+    "wiki\\log\\temp_tasks",
+    "wiki\\teste\\game_cyclopedia\\tab\\charms",
+    "wiki\\update\\python_specialist",
+    "wiki\\update\\validation",
+    "wiki\\wiki\\bmad\\templates",
+    "wiki\\wiki\\docs",
+    "wiki\\docs\\file_structure_guidelines.md"
+  ],
+  "directories_created": [
+    "src",
+    "tests",
+    "config",
+    "logs",
+    "temp",
+    "backup",
+    "assets",
+    "data",
+    "scripts"
+  ],
+  "total_cleanup_items": 187,
+  "statistics": {
+    "obsolete_items_removed": 0,
+    "empty_directories_removed": 136,
+    "naming_issues_fixed": 0,
+    "duplicate_files_removed": 0,
+    "backup_files_cleaned": 0,
+    "temp_files_removed": 51,
+    "directories_created": 9,
+    "files_modified": 137
+  }
+}

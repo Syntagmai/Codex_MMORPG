@@ -1,0 +1,152 @@
+{
+  "timestamp": "2025-08-02T22:22:13.762186",
+  "epic_17_summary": {},
+  "all_audit_results": {},
+  "critical_issues_summary": {
+    "security": {
+      "vulnerabilities": 397,
+      "authentication_issues": 54,
+      "permission_issues": 33,
+      "validation_issues": 460,
+      "sensitive_data_exposed": 0,
+      "security_score": 0
+    },
+    "python": {
+      "syntax_errors": 389,
+      "obsolete_imports": 418,
+      "missing_dependencies": 753,
+      "files_analyzed": 0
+    },
+    "structure": {
+      "obsolete_items": 104,
+      "empty_directories": 137,
+      "naming_issues": 0,
+      "total_directories": 2189,
+      "total_files": 19303
+    },
+    "documentation": {
+      "broken_links": 7208,
+      "incomplete_docs": 0,
+      "missing_critical_docs": 0,
+      "quality_issues": 21,
+      "files_analyzed": 0
+    },
+    "integration": {
+      "circular_dependencies": 661,
+      "broken_interfaces": 223,
+      "critical_integrations": 424,
+      "api_endpoints": 88,
+      "data_flows": 795
+    },
+    "performance": {
+      "large_files": 20,
+      "slow_scripts": 15,
+      "bottlenecks": 20,
+      "optimization_opportunities": 15,
+      "total_size_mb": 0
+    },
+    "configuration": {
+      "obsolete_configs": 0,
+      "inconsistent_params": 0,
+      "format_issues": 0,
+      "files_analyzed": 0
+    }
+  },
+  "recommendations": {
+    "immediate_actions": [
+      "Corrigir vulnerabilidades de segurança de alta severidade",
+      "Corrigir erros de sintaxe Python críticos",
+      "Resolver dependências circulares críticas"
+    ],
+    "short_term": [
+      "Remover imports obsoletos unicode_aliases",
+      "Instalar dependências Python faltantes",
+      "Corrigir links quebrados críticos"
+    ],
+    "medium_term": [
+      "Otimizar arquivos grandes para melhor performance",
+      "Refatorar scripts lentos identificados",
+      "Limpar itens obsoletos da estrutura"
+    ],
+    "long_term": [
+      "Completar interfaces quebradas"
+    ],
+    "epic_18_priorities": [
+      "18.1 - Correção de Vulnerabilidades de Segurança",
+      "18.2 - Correção de Erros de Sintaxe Python",
+      "18.4 - Correção de Integrações e Dependências",
+      "18.3 - Otimização de Performance e Recursos",
+      "18.7 - Correção de Documentação e Wikis",
+      "18.5 - Limpeza de Estrutura de Arquivos",
+      "18.6 - Correção de Configurações e Regras",
+      "18.8 - Atualização do README.md Principal",
+      "18.9 - Testes e Validação Completa",
+      "18.10 - Relatório Final de Correção e Otimização"
+    ]
+  },
+  "epic_18_plan": {},
+  "system_health_score": 33.0,
+  "optimization_opportunities": [
+    {
+      "category": "Segurança",
+      "description": "Corrigir 397 vulnerabilidades identificadas",
+      "impact": "Alto",
+      "effort": "Médio"
+    },
+    {
+      "category": "Python",
+      "description": "Corrigir 389 erros de sintaxe",
+      "impact": "Alto",
+      "effort": "Baixo"
+    },
+    {
+      "category": "Python",
+      "description": "Remover 418 imports obsoletos",
+      "impact": "Médio",
+      "effort": "Baixo"
+    },
+    {
+      "category": "Performance",
+      "description": "Otimizar 20 arquivos grandes",
+      "impact": "Médio",
+      "effort": "Médio"
+    },
+    {
+      "category": "Performance",
+      "description": "Refatorar 15 scripts lentos",
+      "impact": "Alto",
+      "effort": "Alto"
+    },
+    {
+      "category": "Documentação",
+      "description": "Corrigir 7208 links quebrados",
+      "impact": "Médio",
+      "effort": "Baixo"
+    },
+    {
+      "category": "Integração",
+      "description": "Resolver 661 dependências circulares",
+      "impact": "Alto",
+      "effort": "Alto"
+    }
+  ],
+  "next_steps": [
+    "Sistema com problemas significativos - Correções prioritárias necessárias",
+    "Executar Epic 18 seguindo ordem de prioridades",
+    "Implementar monitoramento contínuo de qualidade",
+    "Estabelecer processos de validação automática",
+    "Criar dashboard de métricas de saúde do sistema",
+    "Implementar testes automatizados para prevenção",
+    "Documentar lições aprendidas da Epic 17",
+    "Estabelecer rotina de auditorias periódicas"
+  ],
+  "category_scores": {
+    "security": 20,
+    "python": 40,
+    "integration": 20,
+    "performance": 40,
+    "documentation": 20,
+    "structure": 40,
+    "configuration": 100
+  }
+}

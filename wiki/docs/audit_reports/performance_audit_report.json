@@ -1,0 +1,495 @@
+{
+  "timestamp": "2025-08-02T21:51:08.579089",
+  "project_root": ".",
+  "performance_issues": [],
+  "large_files": [
+    {
+      "path": ".git\\modules\\canary\\objects\\pack\\pack-53fc412336e542ab67d43664e15f454ddae4f1a8.pack",
+      "size_mb": 153.4,
+      "type": ".pack"
+    },
+    {
+      "path": ".git\\modules\\canary\\objects\\pack\\pack-8bff4a71b5070c47489d0c84d423cabad8691e65.pack",
+      "size_mb": 153.39,
+      "type": ".pack"
+    },
+    {
+      "path": ".git\\modules\\otclient\\objects\\pack\\pack-7fd663487b19e2156731255c10bd6f26d202c582.pack",
+      "size_mb": 71.65,
+      "type": ".pack"
+    },
+    {
+      "path": ".git\\modules\\otclient\\objects\\pack\\pack-ec387c5629d22198a5362c3cb20ddebeb225c0a1.pack",
+      "size_mb": 71.64,
+      "type": ".pack"
+    },
+    {
+      "path": "wiki\\consolidated\\advanced_search_index.json",
+      "size_mb": 27.03,
+      "type": ".json"
+    },
+    {
+      "path": "canary\\data-canary\\world\\canary.otbm",
+      "size_mb": 18.81,
+      "type": ".otbm"
+    },
+    {
+      "path": "canary\\data-otservbr-global\\world\\otservbr-monster.xml",
+      "size_mb": 9.26,
+      "type": ".xml"
+    },
+    {
+      "path": "otclient\\data\\images\\game\\effects\\ki.png",
+      "size_mb": 5.54,
+      "type": ".png"
+    },
+    {
+      "path": "wiki\\update\\function_catalog\\function_catalog.json",
+      "size_mb": 5.46,
+      "type": ".json"
+    },
+    {
+      "path": "wiki\\consolidated\\intelligent_navigation.json",
+      "size_mb": 5.02,
+      "type": ".json"
+    },
+    {
+      "path": ".git\\objects\\3c\\b3a16954f11aa334729740518f9b528b5acc18",
+      "size_mb": 4.69,
+      "type": ""
+    },
+    {
+      "path": "canary\\data\\items\\appearances.dat",
+      "size_mb": 4.3,
+      "type": ".dat"
+    },
+    {
+      "path": "wiki\\update\\validation_results\\python_validation_results.json",
+      "size_mb": 3.44,
+      "type": ".json"
+    },
+    {
+      "path": "canary\\data\\items\\items.xml",
+      "size_mb": 3.37,
+      "type": ".xml"
+    },
+    {
+      "path": "otclient\\modules\\client\\sounds\\startup.ogg",
+      "size_mb": 3.01,
+      "type": ".ogg"
+    },
+    {
+      "path": "otclient\\data\\images\\background.png",
+      "size_mb": 2.17,
+      "type": ".png"
+    },
+    {
+      "path": "wiki\\update\\function_catalog\\search_index.json",
+      "size_mb": 1.91,
+      "type": ".json"
+    },
+    {
+      "path": "wiki\\log\\task_12_5_validation_report.json",
+      "size_mb": 1.87,
+      "type": ".json"
+    },
+    {
+      "path": "otclient\\modules\\game_cyclopedia\\images\\houses\\1002.png",
+      "size_mb": 1.77,
+      "type": ".png"
+    },
+    {
+      "path": "wiki\\update\\function_catalog\\catalog_python.json",
+      "size_mb": 1.75,
+      "type": ".json"
+    }
+  ],
+  "slow_scripts": [
+    {
+      "path": "canary\\data-otservbr-global\\lib\\core\\quests.lua",
+      "complexity_score": 1357.6,
+      "indicators": {
+        "loops": 312,
+        "file_operations": 16,
+        "network_calls": 2,
+        "database_queries": 1,
+        "complexity": 6716
+      }
+    },
+    {
+      "path": "canary\\data\\modules\\scripts\\gamestore\\gamestore.lua",
+      "complexity_score": 1074.8,
+      "indicators": {
+        "loops": 151,
+        "file_operations": 21,
+        "network_calls": 0,
+        "database_queries": 2,
+        "complexity": 7018
+      }
+    },
+    {
+      "path": ".venv\\Lib\\site-packages\\pip\\_vendor\\pkg_resources\\__init__.py",
+      "complexity_score": 891.7,
+      "indicators": {
+        "loops": 160,
+        "file_operations": 46,
+        "network_calls": 2,
+        "database_queries": 14,
+        "complexity": 3677
+      }
+    },
+    {
+      "path": ".venv\\Lib\\site-packages\\pip\\_vendor\\idna\\uts46data.py",
+      "complexity_score": 871.2,
+      "indicators": {
+        "loops": 0,
+        "file_operations": 1,
+        "network_calls": 0,
+        "database_queries": 0,
+        "complexity": 8682
+      }
+    },
+    {
+      "path": "otclient\\meta.lua",
+      "complexity_score": 803.7,
+      "indicators": {
+        "loops": 0,
+        "file_operations": 66,
+        "network_calls": 0,
+        "database_queries": 2,
+        "complexity": 5977
+      }
+    },
+    {
+      "path": ".venv\\Lib\\site-packages\\pip\\_vendor\\urllib3\\packages\\six.py",
+      "complexity_score": 763.7,
+      "indicators": {
+        "loops": 25,
+        "file_operations": 9,
+        "network_calls": 115,
+        "database_queries": 1,
+        "complexity": 1077
+      }
+    },
+    {
+      "path": ".venv\\Lib\\site-packages\\pip\\_vendor\\rich\\console.py",
+      "complexity_score": 660.1,
+      "indicators": {
+        "loops": 75,
+        "file_operations": 62,
+        "network_calls": 0,
+        "database_queries": 14,
+        "complexity": 2681
+      }
+    },
+    {
+      "path": "otclient\\modules\\game_shop\\serverSIDE\\data\\scripts\\game_shop.lua",
+      "complexity_score": 579.7,
+      "indicators": {
+        "loops": 138,
+        "file_operations": 1,
+        "network_calls": 0,
+        "database_queries": 44,
+        "complexity": 1247
+      }
+    },
+    {
+      "path": ".venv\\Lib\\site-packages\\pip\\_vendor\\rich\\progress.py",
+      "complexity_score": 571.6,
+      "indicators": {
+        "loops": 57,
+        "file_operations": 70,
+        "network_calls": 0,
+        "database_queries": 19,
+        "complexity": 1716
+      }
+    },
+    {
+      "path": ".venv\\Lib\\site-packages\\pip\\_vendor\\distlib\\util.py",
+      "complexity_score": 544.5,
+      "indicators": {
+        "loops": 96,
+        "file_operations": 30,
+        "network_calls": 8,
+        "database_queries": 6,
+        "complexity": 1985
+      }
+    },
+    {
+      "path": "canary\\data-otservbr-global\\lib\\core\\storages.lua",
+      "complexity_score": 527.2,
+      "indicators": {
+        "loops": 1,
+        "file_operations": 0,
+        "network_calls": 0,
+        "database_queries": 54,
+        "complexity": 3092
+      }
+    },
+    {
+      "path": ".venv\\Lib\\site-packages\\pip\\_vendor\\distro\\distro.py",
+      "complexity_score": 498.4,
+      "indicators": {
+        "loops": 56,
+        "file_operations": 76,
+        "network_calls": 2,
+        "database_queries": 2,
+        "complexity": 1404
+      }
+    },
+    {
+      "path": "canary\\data\\modules\\scripts\\gamestore\\init.lua",
+      "complexity_score": 481.2,
+      "indicators": {
+        "loops": 72,
+        "file_operations": 1,
+        "network_calls": 0,
+        "database_queries": 26,
+        "complexity": 2302
+      }
+    },
+    {
+      "path": "otclient\\modules\\game_console\\console.lua",
+      "complexity_score": 469.2,
+      "indicators": {
+        "loops": 44,
+        "file_operations": 8,
+        "network_calls": 0,
+        "database_queries": 27,
+        "complexity": 2492
+      }
+    },
+    {
+      "path": ".venv\\Lib\\site-packages\\pip\\_vendor\\idna\\idnadata.py",
+      "complexity_score": 427.4,
+      "indicators": {
+        "loops": 0,
+        "file_operations": 1,
+        "network_calls": 0,
+        "database_queries": 0,
+        "complexity": 4244
+      }
+    }
+  ],
+  "memory_usage": {
+    "rss_mb": 19.46,
+    "vms_mb": 13.6,
+    "percent": 0.24038600751706976
+  },
+  "bottlenecks": [
+    {
+      "type": "config_bottleneck",
+      "file": "canary\\.github\\workflows\\mysql-schema-check.yml",
+      "pattern": "timeout\\s*=\\s*\\d+",
+      "matches": 1
+    },
+    {
+      "type": "config_bottleneck",
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "pattern": "timeout\\s*=\\s*\\d+",
+      "matches": 24
+    },
+    {
+      "type": "config_bottleneck",
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "pattern": "cache_size\\s*=\\s*\\d+",
+      "matches": 4
+    },
+    {
+      "type": "config_bottleneck",
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "pattern": "buffer_size\\s*=\\s*\\d+",
+      "matches": 16
+    },
+    {
+      "type": "infinite_loop",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\utils\\retry.py",
+      "line": 35,
+      "code": "while True:"
+    },
+    {
+      "type": "infinite_loop",
+      "file": ".venv\\Lib\\site-packages\\pip\\_vendor\\distlib\\util.py",
+      "line": 205,
+      "code": "while True:"
+    },
+    {
+      "type": "infinite_loop",
+      "file": ".venv\\Lib\\site-packages\\pip\\_vendor\\msgpack\\fallback.py",
+      "line": 689,
+      "code": "while True:"
+    },
+    {
+      "type": "infinite_loop",
+      "file": ".venv\\Lib\\site-packages\\pip\\_vendor\\resolvelib\\resolvers\\resolution.py",
+      "line": 347,
+      "code": "while True:"
+    },
+    {
+      "type": "infinite_loop",
+      "file": ".venv\\Lib\\site-packages\\pip\\_vendor\\rich\\cells.py",
+      "line": 117,
+      "code": "while True:"
+    },
+    {
+      "type": "infinite_loop",
+      "file": ".venv\\Lib\\site-packages\\pip\\_vendor\\rich\\prompt.py",
+      "line": 289,
+      "code": "while True:"
+    },
+    {
+      "type": "infinite_loop",
+      "file": ".venv\\Lib\\site-packages\\pip\\_vendor\\rich\\segment.py",
+      "line": 134,
+      "code": "while True:"
+    },
+    {
+      "type": "infinite_loop",
+      "file": ".venv\\Lib\\site-packages\\pip\\_vendor\\rich\\spinner.py",
+      "line": 131,
+      "code": "while True:"
+    },
+    {
+      "type": "infinite_loop",
+      "file": ".venv\\Lib\\site-packages\\pip\\_vendor\\rich\\traceback.py",
+      "line": 461,
+      "code": "while True:"
+    },
+    {
+      "type": "infinite_loop",
+      "file": ".venv\\Lib\\site-packages\\pip\\_vendor\\tomli\\_parser.py",
+      "line": 160,
+      "code": "while True:"
+    },
+    {
+      "type": "infinite_loop",
+      "file": ".venv\\Lib\\site-packages\\pip\\_vendor\\tomli\\_parser.py",
+      "line": 354,
+      "code": "while True:"
+    },
+    {
+      "type": "infinite_loop",
+      "file": ".venv\\Lib\\site-packages\\pip\\_vendor\\tomli\\_parser.py",
+      "line": 459,
+      "code": "while True:"
+    },
+    {
+      "type": "infinite_loop",
+      "file": ".venv\\Lib\\site-packages\\pip\\_vendor\\tomli\\_parser.py",
+      "line": 503,
+      "code": "while True:"
+    },
+    {
+      "type": "infinite_loop",
+      "file": ".venv\\Lib\\site-packages\\pip\\_vendor\\tomli\\_parser.py",
+      "line": 530,
+      "code": "while True:"
+    },
+    {
+      "type": "infinite_loop",
+      "file": ".venv\\Lib\\site-packages\\pip\\_vendor\\tomli\\_parser.py",
+      "line": 649,
+      "code": "while True:"
+    },
+    {
+      "type": "infinite_loop",
+      "file": ".venv\\Lib\\site-packages\\pip\\_vendor\\tomli_w\\_writer.py",
+      "line": 194,
+      "code": "while True:"
+    }
+  ],
+  "optimization_opportunities": [
+    {
+      "type": "unused_import",
+      "file": "audit_file_structure.py",
+      "import": "pathlib"
+    },
+    {
+      "type": "unused_import",
+      "file": "bmad_system_gui_integrated.py",
+      "import": "unicode_aliases"
+    },
+    {
+      "type": "unused_import",
+      "file": "bmad_system_gui_integrated.py",
+      "import": "pathlib"
+    },
+    {
+      "type": "unused_import",
+      "file": "chat_learning_integration.py",
+      "import": "pathlib"
+    },
+    {
+      "type": "unused_import",
+      "file": "learn_command.py",
+      "import": "pathlib"
+    },
+    {
+      "type": "unused_import",
+      "file": "unicode_fix.py",
+      "import": "pathlib"
+    },
+    {
+      "type": "unused_import",
+      "file": ".venv\\Lib\\site-packages\\pip\\__init__.py",
+      "import": "__future__"
+    },
+    {
+      "type": "unused_import",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\build_env.py",
+      "import": "__future__"
+    },
+    {
+      "type": "unused_import",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\build_env.py",
+      "import": "types"
+    },
+    {
+      "type": "unused_import",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\build_env.py",
+      "import": "typing"
+    },
+    {
+      "type": "unused_import",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\cache.py",
+      "import": "__future__"
+    },
+    {
+      "type": "unused_import",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\cache.py",
+      "import": "pathlib"
+    },
+    {
+      "type": "unused_import",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\cache.py",
+      "import": "typing"
+    },
+    {
+      "type": "unused_import",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\configuration.py",
+      "import": "__future__"
+    },
+    {
+      "type": "unused_import",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\configuration.py",
+      "import": "typing"
+    }
+  ],
+  "metrics": {
+    "total_files": 19318,
+    "total_size_mb": 669.66,
+    "file_types": {
+      "": 5546,
+      ".lua": 5489,
+      ".md": 2598,
+      ".py": 1481,
+      ".png": 932,
+      ".json": 833,
+      ".pyc": 417,
+      ".cpp": 363,
+      ".backup": 307,
+      ".hpp": 254
+    },
+    "average_file_size_kb": 35.5
+  }
+}

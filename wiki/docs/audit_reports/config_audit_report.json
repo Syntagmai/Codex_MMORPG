@@ -1,0 +1,3018 @@
+{
+  "timestamp": "2025-08-02T21:29:43.166698",
+  "project_root": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG",
+  "config_files": [
+    "canary\\.luarc.json",
+    "canary\\CMakePresets.json",
+    "canary\\package.json",
+    "canary\\vcpkg.json",
+    "otclient\\CMakePresets.json",
+    "otclient\\vcpkg.json",
+    "wiki\\.obsidian\\app.json",
+    "wiki\\.obsidian\\appearance.json",
+    "wiki\\.obsidian\\core-plugins.json",
+    "wiki\\.obsidian\\graph.json",
+    "wiki\\.obsidian\\workspace.json",
+    "wiki\\alerts\\active_alerts.json",
+    "wiki\\alerts\\alert_actions.json",
+    "wiki\\alerts\\alert_history.json",
+    "wiki\\alerts\\alert_report.json",
+    "wiki\\alerts\\alert_rules.json",
+    "wiki\\consolidated\\advanced_search_index.json",
+    "wiki\\consolidated\\advanced_search_report.json",
+    "wiki\\consolidated\\consolidation_report.json",
+    "wiki\\consolidated\\intelligent_navigation.json",
+    "wiki\\consolidated\\intelligent_navigation_report.json",
+    "wiki\\consolidated\\navigation_index.json",
+    "wiki\\dashboard\\canary_integration_plan.json",
+    "wiki\\dashboard\\coverage_report_updated.json",
+    "wiki\\dashboard\\dashboard_report.json",
+    "wiki\\dashboard\\educational_validation_report.json",
+    "wiki\\dashboard\\final_validation_report.json",
+    "wiki\\dashboard\\maintenance_plan.json",
+    "wiki\\dashboard\\metrics_validation_report.json",
+    "wiki\\dashboard\\missing_agents_index.json",
+    "wiki\\dashboard\\missing_plans_index.json",
+    "wiki\\dashboard\\missing_roadmaps_index.json",
+    "wiki\\dashboard\\missing_tasks_index.json",
+    "wiki\\dashboard\\monitoring_dashboard.json",
+    "wiki\\dashboard\\navigation_validation_report.json",
+    "wiki\\dashboard\\system_alerts.json",
+    "wiki\\dashboard\\system_status.json",
+    "wiki\\educational\\lessons_index.json",
+    "wiki\\habdel\\research_plan.json",
+    "wiki\\habdel\\stories_habdel_index.json",
+    "wiki\\habdel\\story_system.json",
+    "wiki\\log\\centralization_results.json",
+    "wiki\\log\\centralized_logs_index.json",
+    "wiki\\log\\orchestration_report_20250801_160416.json",
+    "wiki\\log\\orchestration_report_20250801_160435.json",
+    "wiki\\log\\orchestration_report_20250801_160515.json",
+    "wiki\\log\\orchestration_report_20250802_210155.json",
+    "wiki\\log\\task_12_3_migration_report.json",
+    "wiki\\log\\task_12_4_function_catalog_report.json",
+    "wiki\\log\\task_12_5_validation_report.json",
+    "wiki\\log\\task_12_6_correction_report.json",
+    "wiki\\maps\\bmad_agents_index.json",
+    "wiki\\maps\\bmad_templates_index.json",
+    "wiki\\maps\\bmad_workflows_index.json",
+    "wiki\\maps\\cache_strategy.json",
+    "wiki\\maps\\canary_integration_map.json",
+    "wiki\\maps\\context_data.json",
+    "wiki\\maps\\context_update_report.json",
+    "wiki\\maps\\cursor_performance_analysis.json",
+    "wiki\\maps\\enhanced_context_system.json",
+    "wiki\\maps\\enhanced_orchestration_results.json",
+    "wiki\\maps\\habdel_index.json",
+    "wiki\\maps\\intelligent_navigation.json",
+    "wiki\\maps\\json_navigation_report.json",
+    "wiki\\maps\\maps_update_report.json",
+    "wiki\\maps\\modules_index.json",
+    "wiki\\maps\\navigation_cache.json",
+    "wiki\\maps\\navigation_optimization_report.json",
+    "wiki\\maps\\optimization_report.json",
+    "wiki\\maps\\otclient_source_index.json",
+    "wiki\\maps\\parallel_processing.json",
+    "wiki\\maps\\relationships.json",
+    "wiki\\maps\\resources_index.json",
+    "wiki\\maps\\search_index.json",
+    "wiki\\maps\\smart_cache_report.json",
+    "wiki\\maps\\styles_index.json",
+    "wiki\\maps\\tags_index.json",
+    "wiki\\maps\\tools_index.json",
+    "wiki\\maps\\wiki_map.json",
+    "wiki\\metrics\\metrics_report.json",
+    "wiki\\metrics\\performance_metrics.json",
+    "wiki\\metrics\\quality_metrics.json",
+    "wiki\\metrics\\trends_analysis.json",
+    "wiki\\metrics\\usage_metrics.json",
+    "wiki\\tools\\file_mover_example_config.json",
+    "wiki\\update\\python_tools_report.json",
+    "wiki\\update\\restructure_report.json",
+    "wiki\\workflows\\automation_system.json",
+    "wiki\\workflows\\certification_system.json",
+    "wiki\\workflows\\learning_workflow_config.json",
+    "wiki\\wiki\\log\\alerts\\active_alerts.json",
+    "wiki\\wiki\\log\\alerts\\alert_history.json",
+    "wiki\\wiki\\log\\metrics\\metrics_dashboard.json",
+    "wiki\\wiki\\log\\metrics\\system_metrics.json",
+    "wiki\\update\\correction_results\\correction_summary.json",
+    "wiki\\update\\correction_results\\python_correction_results.json",
+    "wiki\\update\\documentation_reports\\documentation_report.json",
+    "wiki\\update\\documentation_reports\\documentation_stats.json",
+    "wiki\\update\\executor_reports\\script_executor_report.json",
+    "wiki\\update\\function_catalog\\catalog_agents.json",
+    "wiki\\update\\function_catalog\\catalog_analysis.json",
+    "wiki\\update\\function_catalog\\catalog_documentation.json",
+    "wiki\\update\\function_catalog\\catalog_maps.json",
+    "wiki\\update\\function_catalog\\catalog_metrics.json",
+    "wiki\\update\\function_catalog\\catalog_python.json",
+    "wiki\\update\\function_catalog\\catalog_tools.json",
+    "wiki\\update\\function_catalog\\function_catalog.json",
+    "wiki\\update\\function_catalog\\search_index.json",
+    "wiki\\update\\modules\\script_mapping.json",
+    "wiki\\update\\modules\\structure_config.json",
+    "wiki\\update\\monitoring\\realtime_scripts.json",
+    "wiki\\update\\monitoring\\realtime_system.json",
+    "wiki\\update\\monitoring_reports\\monitoring_metrics.json",
+    "wiki\\update\\monitoring_reports\\monitoring_report.json",
+    "wiki\\update\\monitoring_reports\\monitoring_stats.json",
+    "wiki\\update\\performance_reports\\performance_optimizer_report.json",
+    "wiki\\update\\python_tools\\tools_stats.json",
+    "wiki\\update\\recipes\\backup_creator.json",
+    "wiki\\update\\recipes\\code_analyzer.json",
+    "wiki\\update\\recipes\\python_script_validator.json",
+    "wiki\\update\\recipe_reports\\recipe_manager_report.json",
+    "wiki\\update\\specialist_reports\\code_analyses.json",
+    "wiki\\update\\specialist_reports\\python_specialist_report.json",
+    "wiki\\update\\specialist_reports\\specialist_stats.json",
+    "wiki\\update\\testing_reports\\testing_report.json",
+    "wiki\\update\\validation_reports\\detailed_validation.json",
+    "wiki\\update\\validation_reports\\system_validation_report.json",
+    "wiki\\update\\validation_reports\\validation_stats.json",
+    "wiki\\update\\validation_results\\python_validation_results.json",
+    "wiki\\update\\validation_results\\validation_by_category.json",
+    "wiki\\update\\validation_results\\validation_summary.json",
+    "wiki\\update\\testing\\aaa_agent_specialization_system\\test_report.json",
+    "wiki\\update\\testing\\aaa_compatibility_fixer\\test_report.json",
+    "wiki\\update\\testing\\aaa_integration_validator\\test_report.json",
+    "wiki\\update\\testing\\advanced_search_system\\test_report.json",
+    "wiki\\update\\testing\\agent_organizer\\test_report.json",
+    "wiki\\update\\testing\\alert_system\\test_report.json",
+    "wiki\\update\\testing\\analyze_cursor_performance\\test_report.json",
+    "wiki\\update\\testing\\analyze_navigation_optimization\\test_report.json",
+    "wiki\\update\\testing\\auto_monitor\\test_report.json",
+    "wiki\\update\\testing\\auto_optimizer\\test_report.json",
+    "wiki\\update\\testing\\auto_updater\\test_report.json",
+    "wiki\\update\\testing\\auto_update_all_maps\\test_report.json",
+    "wiki\\update\\testing\\auto_update_system\\test_report.json",
+    "wiki\\update\\testing\\backup_system\\test_report.json",
+    "wiki\\update\\testing\\canary_analysis_preparator\\test_report.json",
+    "wiki\\update\\testing\\centralize_logs\\test_report.json",
+    "wiki\\update\\testing\\cleanup_system\\test_report.json",
+    "wiki\\update\\testing\\code_analyzer\\test_report.json",
+    "wiki\\update\\testing\\code_generator\\test_report.json",
+    "wiki\\update\\testing\\code_optimizer\\test_report.json",
+    "wiki\\update\\testing\\complexity_analyzer\\test_report.json",
+    "wiki\\update\\testing\\config_manager\\test_report.json",
+    "wiki\\update\\testing\\consolidate_agents\\test_report.json",
+    "wiki\\update\\testing\\context_detector\\test_report.json",
+    "wiki\\update\\testing\\dashboard_monitor\\test_report.json",
+    "wiki\\update\\testing\\dashboard_monitoring\\test_report.json",
+    "wiki\\update\\testing\\dependency_mapper\\test_report.json",
+    "wiki\\update\\testing\\documentation_agent\\test_report.json",
+    "wiki\\update\\testing\\documentation_generator\\test_report.json",
+    "wiki\\update\\testing\\enhanced_intelligent_orchestrator\\test_report.json",
+    "wiki\\update\\testing\\error_correction_agent\\test_report.json",
+    "wiki\\update\\testing\\error_resolver\\test_report.json",
+    "wiki\\update\\testing\\expand_wiki_comprehensive\\test_report.json",
+    "wiki\\update\\testing\\file_mover\\test_report.json",
+    "wiki\\update\\testing\\final_commit_verification\\test_report.json",
+    "wiki\\update\\testing\\fix_wiki_issues\\test_report.json",
+    "wiki\\update\\testing\\function_catalog_agent\\test_report.json",
+    "wiki\\update\\testing\\git_atomic_commits\\test_report.json",
+    "wiki\\update\\testing\\git_automation\\test_report.json",
+    "wiki\\update\\testing\\git_task_integration\\test_report.json",
+    "wiki\\update\\testing\\habdel_indexer\\test_report.json",
+    "wiki\\update\\testing\\habdel_wiki_integration\\test_report.json",
+    "wiki\\update\\testing\\implement_smart_cache\\test_report.json",
+    "wiki\\update\\testing\\intelligent_navigation_system\\test_report.json",
+    "wiki\\update\\testing\\intelligent_orchestrator\\test_report.json",
+    "wiki\\update\\testing\\knowledge_consolidation_system\\test_report.json",
+    "wiki\\update\\testing\\log_manager\\test_report.json",
+    "wiki\\update\\testing\\map_optimizer\\test_report.json",
+    "wiki\\update\\testing\\map_updater\\test_report.json",
+    "wiki\\update\\testing\\metrics_analyzer\\test_report.json",
+    "wiki\\update\\testing\\metrics_collector\\test_report.json",
+    "wiki\\update\\testing\\metrics_reporter\\test_report.json",
+    "wiki\\update\\testing\\metrics_system\\test_report.json",
+    "wiki\\update\\testing\\migrated_advanced_prompt_system\\test_report.json",
+    "wiki\\update\\testing\\migrated_advanced_searcher\\test_report.json",
+    "wiki\\update\\testing\\migrated_agent_integrator\\test_report.json",
+    "wiki\\update\\testing\\migrated_agent_monitor\\test_report.json",
+    "wiki\\update\\testing\\migrated_agent_optimizer\\test_report.json",
+    "wiki\\update\\testing\\migrated_agent_orchestrator\\test_report.json",
+    "wiki\\update\\testing\\migrated_agent_specialist\\test_report.json",
+    "wiki\\update\\testing\\migrated_agent_validator\\test_report.json",
+    "wiki\\update\\testing\\migrated_alert_system\\test_report.json",
+    "wiki\\update\\testing\\migrated_analyze_cursor_performance\\test_report.json",
+    "wiki\\update\\testing\\migrated_analyze_navigation_optimization\\test_report.json",
+    "wiki\\update\\testing\\migrated_auto_learning_system\\test_report.json",
+    "wiki\\update\\testing\\migrated_auto_optimizer\\test_report.json",
+    "wiki\\update\\testing\\migrated_auto_updater\\test_report.json",
+    "wiki\\update\\testing\\migrated_auto_update_all_maps\\test_report.json",
+    "wiki\\update\\testing\\migrated_backup_system\\test_report.json",
+    "wiki\\update\\testing\\migrated_canary_analysis_preparator\\test_report.json",
+    "wiki\\update\\testing\\migrated_centralize_logs\\test_report.json",
+    "wiki\\update\\testing\\migrated_cleanup_system\\test_report.json",
+    "wiki\\update\\testing\\migrated_code_analyzer\\test_report.json",
+    "wiki\\update\\testing\\migrated_code_optimizer\\test_report.json",
+    "wiki\\update\\testing\\migrated_config_manager\\test_report.json",
+    "wiki\\update\\testing\\migrated_consolidate_agents\\test_report.json",
+    "wiki\\update\\testing\\migrated_content_validator\\test_report.json",
+    "wiki\\update\\testing\\migrated_create_module_simple\\test_report.json",
+    "wiki\\update\\testing\\migrated_dashboard_monitor\\test_report.json",
+    "wiki\\update\\testing\\migrated_dashboard_monitoring\\test_report.json",
+    "wiki\\update\\testing\\migrated_data_collector\\test_report.json",
+    "wiki\\update\\testing\\migrated_documentation_generator\\test_report.json",
+    "wiki\\update\\testing\\migrated_documentation_organizer\\test_report.json",
+    "wiki\\update\\testing\\migrated_error_resolver\\test_report.json",
+    "wiki\\update\\testing\\migrated_example_integration\\test_report.json",
+    "wiki\\update\\testing\\migrated_feedback_system\\test_report.json",
+    "wiki\\update\\testing\\migrated_file_mover\\test_report.json",
+    "wiki\\update\\testing\\migrated_file_mover_usage_example\\test_report.json",
+    "wiki\\update\\testing\\migrated_git_atomic_commits\\test_report.json",
+    "wiki\\update\\testing\\migrated_git_automation\\test_report.json",
+    "wiki\\update\\testing\\migrated_habdel_indexer\\test_report.json",
+    "wiki\\update\\testing\\migrated_implement_smart_cache\\test_report.json",
+    "wiki\\update\\testing\\migrated_intelligent_navigator\\test_report.json",
+    "wiki\\update\\testing\\migrated_knowledge_consolidator\\test_report.json",
+    "wiki\\update\\testing\\migrated_log_manager\\test_report.json",
+    "wiki\\update\\testing\\migrated_map_optimizer\\test_report.json",
+    "wiki\\update\\testing\\migrated_map_updater\\test_report.json",
+    "wiki\\update\\testing\\migrated_map_validator\\test_report.json",
+    "wiki\\update\\testing\\migrated_markdown_processor\\test_report.json",
+    "wiki\\update\\testing\\migrated_metrics_analyzer\\test_report.json",
+    "wiki\\update\\testing\\migrated_metrics_system\\test_report.json",
+    "wiki\\update\\testing\\migrated_optimization_engine\\test_report.json",
+    "wiki\\update\\testing\\migrated_optimize_json_maps\\test_report.json",
+    "wiki\\update\\testing\\migrated_performance_monitor\\test_report.json",
+    "wiki\\update\\testing\\migrated_prompt_evaluator\\test_report.json",
+    "wiki\\update\\testing\\migrated_prompt_learning_integration\\test_report.json",
+    "wiki\\update\\testing\\migrated_prompt_optimizer\\test_report.json",
+    "wiki\\update\\testing\\migrated_python_agent_system\\test_report.json",
+    "wiki\\update\\testing\\migrated_python_error_resolver\\test_report.json",
+    "wiki\\update\\testing\\migrated_rules_learning_integration\\test_report.json",
+    "wiki\\update\\testing\\migrated_script_execution_manager\\test_report.json",
+    "wiki\\update\\testing\\migrated_task_automation_system\\test_report.json",
+    "wiki\\update\\testing\\migrated_update_context_system\\test_report.json",
+    "wiki\\update\\testing\\migrated_update_habdel_index\\test_report.json",
+    "wiki\\update\\testing\\modular_structure_creator\\test_report.json",
+    "wiki\\update\\testing\\navigation_index_generator\\test_report.json",
+    "wiki\\update\\testing\\optimize_json_maps\\test_report.json",
+    "wiki\\update\\testing\\optimize_maps_for_tokens\\test_report.json",
+    "wiki\\update\\testing\\optimize_wiki_structure\\test_report.json",
+    "wiki\\update\\testing\\otclient_debug_tools\\test_report.json",
+    "wiki\\update\\testing\\otclient_log_analyzer\\test_report.json",
+    "wiki\\update\\testing\\performance_monitor\\test_report.json",
+    "wiki\\update\\testing\\performance_optimizer_agent\\test_report.json",
+    "wiki\\update\\testing\\prepare_canary_integration\\test_report.json",
+    "wiki\\update\\testing\\python_agent\\test_report.json",
+    "wiki\\update\\testing\\python_agent_integration_test\\test_report.json",
+    "wiki\\update\\testing\\python_agent_system\\test_report.json",
+    "wiki\\update\\testing\\python_error_resolver\\test_report.json",
+    "wiki\\update\\testing\\python_tools_agent_simple_working\\test_report.json",
+    "wiki\\update\\testing\\python_validator_agent\\test_report.json",
+    "wiki\\update\\testing\\recipe_manager\\test_report.json",
+    "wiki\\update\\testing\\recipe_manager_agent\\test_report.json",
+    "wiki\\update\\testing\\remove_emojis\\test_report.json",
+    "wiki\\update\\testing\\script_execution_manager\\test_report.json",
+    "wiki\\update\\testing\\script_executor\\test_report.json",
+    "wiki\\update\\testing\\script_executor_agent\\test_report.json",
+    "wiki\\update\\testing\\script_migration_agent\\test_report.json",
+    "wiki\\update\\testing\\task_automation_system\\test_report.json",
+    "wiki\\update\\testing\\update_bmad_maps\\test_report.json",
+    "wiki\\update\\testing\\update_context_system\\test_report.json",
+    "wiki\\update\\testing\\update_habdel_index\\test_report.json",
+    "wiki\\update\\testing\\update_json_maps\\test_report.json",
+    "wiki\\update\\testing\\update_modules_index\\test_report.json",
+    "wiki\\update\\testing\\update_resources_index\\test_report.json",
+    "wiki\\update\\testing\\update_source_index\\test_report.json",
+    "wiki\\update\\testing\\update_styles_index\\test_report.json",
+    "wiki\\update\\testing\\update_tools_index\\test_report.json",
+    "wiki\\update\\testing\\update_wiki_maps\\test_report.json",
+    "wiki\\update\\modules\\tools\\backup_system\\config.json",
+    "wiki\\update\\modules\\tools\\cleanup_system\\config.json",
+    "wiki\\update\\modules\\tools\\config_manager\\config.json",
+    "wiki\\update\\modules\\tools\\file_mover\\config.json",
+    "wiki\\update\\modules\\tools\\git_automation\\config.json",
+    "wiki\\update\\modules\\tools\\log_manager\\config.json",
+    "wiki\\update\\modules\\python\\code_analyzer\\config.json",
+    "wiki\\update\\modules\\python\\code_optimizer\\config.json",
+    "wiki\\update\\modules\\python\\documentation_generator\\config.json",
+    "wiki\\update\\modules\\python\\error_resolver\\config.json",
+    "wiki\\update\\modules\\python\\python_agent\\config.json",
+    "wiki\\update\\modules\\python\\recipe_manager\\config.json",
+    "wiki\\update\\modules\\python\\script_executor\\config.json",
+    "wiki\\update\\modules\\python\\test_runner\\config.json",
+    "wiki\\update\\modules\\metrics\\alert_system\\config.json",
+    "wiki\\update\\modules\\metrics\\dashboard_monitor\\config.json",
+    "wiki\\update\\modules\\metrics\\metrics_analyzer\\config.json",
+    "wiki\\update\\modules\\metrics\\metrics_collector\\config.json",
+    "wiki\\update\\modules\\metrics\\metrics_reporter\\config.json",
+    "wiki\\update\\modules\\metrics\\performance_monitor\\config.json",
+    "wiki\\update\\modules\\maps\\habdel_indexer\\config.json",
+    "wiki\\update\\modules\\maps\\map_optimizer\\config.json",
+    "wiki\\update\\modules\\maps\\map_updater\\config.json",
+    "wiki\\update\\modules\\maps\\map_validator\\config.json",
+    "wiki\\update\\modules\\maps\\modules_indexer\\config.json",
+    "wiki\\update\\modules\\maps\\resources_indexer\\config.json",
+    "wiki\\update\\modules\\maps\\source_indexer\\config.json",
+    "wiki\\update\\modules\\maps\\styles_indexer\\config.json",
+    "wiki\\update\\modules\\maps\\tools_indexer\\config.json",
+    "wiki\\update\\modules\\maps\\wiki_indexer\\config.json",
+    "wiki\\update\\modules\\documentation\\content_validator\\config.json",
+    "wiki\\update\\modules\\documentation\\documentation_organizer\\config.json",
+    "wiki\\update\\modules\\documentation\\markdown_processor\\config.json",
+    "wiki\\update\\modules\\documentation\\wiki_expander\\config.json",
+    "wiki\\update\\modules\\documentation\\wiki_fixer\\config.json",
+    "wiki\\update\\modules\\documentation\\wiki_optimizer\\config.json",
+    "wiki\\update\\modules\\analysis\\advanced_searcher\\config.json",
+    "wiki\\update\\modules\\analysis\\context_detector\\config.json",
+    "wiki\\update\\modules\\analysis\\intelligent_navigator\\config.json",
+    "wiki\\update\\modules\\analysis\\knowledge_consolidator\\config.json",
+    "wiki\\update\\modules\\analysis\\research_manager\\config.json",
+    "wiki\\update\\modules\\analysis\\source_analyzer\\config.json",
+    "wiki\\update\\modules\\agents\\agent_integrator\\config.json",
+    "wiki\\update\\modules\\agents\\agent_monitor\\config.json",
+    "wiki\\update\\modules\\agents\\agent_optimizer\\config.json",
+    "wiki\\update\\modules\\agents\\agent_orchestrator\\config.json",
+    "wiki\\update\\modules\\agents\\agent_organizer\\config.json",
+    "wiki\\update\\modules\\agents\\agent_specialist\\config.json",
+    "wiki\\update\\modules\\agents\\agent_validator\\config.json",
+    "wiki\\update\\modules\\agents\\workflow_manager\\config.json",
+    "wiki\\update\\documentation\\aaa_agent_specialization_system\\metadata.json",
+    "wiki\\update\\documentation\\aaa_compatibility_fixer\\metadata.json",
+    "wiki\\update\\documentation\\aaa_integration_validator\\metadata.json",
+    "wiki\\update\\documentation\\advanced_searcher\\metadata.json",
+    "wiki\\update\\documentation\\advanced_search_system\\metadata.json",
+    "wiki\\update\\documentation\\agent_integrator\\metadata.json",
+    "wiki\\update\\documentation\\agent_monitor\\metadata.json",
+    "wiki\\update\\documentation\\agent_optimizer\\metadata.json",
+    "wiki\\update\\documentation\\agent_orchestrator\\metadata.json",
+    "wiki\\update\\documentation\\agent_organizer\\metadata.json",
+    "wiki\\update\\documentation\\agent_specialist\\metadata.json",
+    "wiki\\update\\documentation\\agent_validator\\metadata.json",
+    "wiki\\update\\documentation\\alert_system\\metadata.json",
+    "wiki\\update\\documentation\\analyze_cursor_performance\\metadata.json",
+    "wiki\\update\\documentation\\analyze_navigation_optimization\\metadata.json",
+    "wiki\\update\\documentation\\auto_monitor\\metadata.json",
+    "wiki\\update\\documentation\\auto_optimizer\\metadata.json",
+    "wiki\\update\\documentation\\auto_updater\\metadata.json",
+    "wiki\\update\\documentation\\auto_update_all_maps\\metadata.json",
+    "wiki\\update\\documentation\\auto_update_system\\metadata.json",
+    "wiki\\update\\documentation\\backup_system\\metadata.json",
+    "wiki\\update\\documentation\\canary_analysis_preparator\\metadata.json",
+    "wiki\\update\\documentation\\centralize_logs\\metadata.json",
+    "wiki\\update\\documentation\\cleanup_system\\metadata.json",
+    "wiki\\update\\documentation\\code_analyzer\\metadata.json",
+    "wiki\\update\\documentation\\code_generator\\metadata.json",
+    "wiki\\update\\documentation\\code_optimizer\\metadata.json",
+    "wiki\\update\\documentation\\complexity_analyzer\\metadata.json",
+    "wiki\\update\\documentation\\config_manager\\metadata.json",
+    "wiki\\update\\documentation\\consolidate_agents\\metadata.json",
+    "wiki\\update\\documentation\\content_validator\\metadata.json",
+    "wiki\\update\\documentation\\context_detector\\metadata.json",
+    "wiki\\update\\documentation\\dashboard_monitor\\metadata.json",
+    "wiki\\update\\documentation\\dashboard_monitoring\\metadata.json",
+    "wiki\\update\\documentation\\dependency_mapper\\metadata.json",
+    "wiki\\update\\documentation\\documentation_generator\\metadata.json",
+    "wiki\\update\\documentation\\documentation_organizer\\metadata.json",
+    "wiki\\update\\documentation\\enhanced_intelligent_orchestrator\\metadata.json",
+    "wiki\\update\\documentation\\error_correction_agent\\metadata.json",
+    "wiki\\update\\documentation\\error_resolver\\metadata.json",
+    "wiki\\update\\documentation\\expand_wiki_comprehensive\\metadata.json",
+    "wiki\\update\\documentation\\file_mover\\metadata.json",
+    "wiki\\update\\documentation\\final_commit_verification\\metadata.json",
+    "wiki\\update\\documentation\\fix_wiki_issues\\metadata.json",
+    "wiki\\update\\documentation\\function_catalog_agent\\metadata.json",
+    "wiki\\update\\documentation\\git_atomic_commits\\metadata.json",
+    "wiki\\update\\documentation\\git_automation\\metadata.json",
+    "wiki\\update\\documentation\\git_task_integration\\metadata.json",
+    "wiki\\update\\documentation\\habdel_indexer\\metadata.json",
+    "wiki\\update\\documentation\\habdel_wiki_integration\\metadata.json",
+    "wiki\\update\\documentation\\implement_smart_cache\\metadata.json",
+    "wiki\\update\\documentation\\intelligent_navigation_system\\metadata.json",
+    "wiki\\update\\documentation\\intelligent_navigator\\metadata.json",
+    "wiki\\update\\documentation\\intelligent_orchestrator\\metadata.json",
+    "wiki\\update\\documentation\\knowledge_consolidation_system\\metadata.json",
+    "wiki\\update\\documentation\\knowledge_consolidator\\metadata.json",
+    "wiki\\update\\documentation\\log_manager\\metadata.json",
+    "wiki\\update\\documentation\\map_optimizer\\metadata.json",
+    "wiki\\update\\documentation\\map_updater\\metadata.json",
+    "wiki\\update\\documentation\\map_validator\\metadata.json",
+    "wiki\\update\\documentation\\markdown_processor\\metadata.json",
+    "wiki\\update\\documentation\\metrics_analyzer\\metadata.json",
+    "wiki\\update\\documentation\\metrics_collector\\metadata.json",
+    "wiki\\update\\documentation\\metrics_reporter\\metadata.json",
+    "wiki\\update\\documentation\\metrics_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_aaa_agent_specialization_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_aaa_compatibility_fixer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_aaa_integration_validator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_advanced_prompt_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_advanced_searcher\\metadata.json",
+    "wiki\\update\\documentation\\migrated_advanced_search_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_agents_orchestrator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_agent_integrator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_agent_monitor\\metadata.json",
+    "wiki\\update\\documentation\\migrated_agent_optimizer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_agent_orchestrator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_agent_organizer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_agent_specialist\\metadata.json",
+    "wiki\\update\\documentation\\migrated_agent_validator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_alert_agent\\metadata.json",
+    "wiki\\update\\documentation\\migrated_alert_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_analisador_erros\\metadata.json",
+    "wiki\\update\\documentation\\migrated_analyzer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_analyze_cursor_performance\\metadata.json",
+    "wiki\\update\\documentation\\migrated_analyze_navigation_optimization\\metadata.json",
+    "wiki\\update\\documentation\\migrated_auto_learning_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_auto_monitor\\metadata.json",
+    "wiki\\update\\documentation\\migrated_auto_optimizer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_auto_updater\\metadata.json",
+    "wiki\\update\\documentation\\migrated_auto_update_all_maps\\metadata.json",
+    "wiki\\update\\documentation\\migrated_backup_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_canary_analysis_preparator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_centralize_logs\\metadata.json",
+    "wiki\\update\\documentation\\migrated_cleanup_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_code_analyzer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_code_generator_agent\\metadata.json",
+    "wiki\\update\\documentation\\migrated_code_optimizer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_config_manager\\metadata.json",
+    "wiki\\update\\documentation\\migrated_consolidate_agents\\metadata.json",
+    "wiki\\update\\documentation\\migrated_content_validator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_context_detector\\metadata.json",
+    "wiki\\update\\documentation\\migrated_coverage_validation_agent\\metadata.json",
+    "wiki\\update\\documentation\\migrated_create_module_simple\\metadata.json",
+    "wiki\\update\\documentation\\migrated_dashboard_agent\\metadata.json",
+    "wiki\\update\\documentation\\migrated_dashboard_monitor\\metadata.json",
+    "wiki\\update\\documentation\\migrated_dashboard_monitoring\\metadata.json",
+    "wiki\\update\\documentation\\migrated_data_collector\\metadata.json",
+    "wiki\\update\\documentation\\migrated_documentation_generator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_documentation_organizer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_educational_validation_agent\\metadata.json",
+    "wiki\\update\\documentation\\migrated_enhanced_intelligent_orchestrator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_error_resolver\\metadata.json",
+    "wiki\\update\\documentation\\migrated_example_integration\\metadata.json",
+    "wiki\\update\\documentation\\migrated_expand_wiki_comprehensive\\metadata.json",
+    "wiki\\update\\documentation\\migrated_feedback_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_file_mover\\metadata.json",
+    "wiki\\update\\documentation\\migrated_file_mover_usage_example\\metadata.json",
+    "wiki\\update\\documentation\\migrated_fix_wiki_issues\\metadata.json",
+    "wiki\\update\\documentation\\migrated_git_atomic_commits\\metadata.json",
+    "wiki\\update\\documentation\\migrated_git_automation\\metadata.json",
+    "wiki\\update\\documentation\\migrated_git_automation_agent\\metadata.json",
+    "wiki\\update\\documentation\\migrated_habdel_indexer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_habdel_wiki_integration\\metadata.json",
+    "wiki\\update\\documentation\\migrated_implement_smart_cache\\metadata.json",
+    "wiki\\update\\documentation\\migrated_integrated_navigation_agent\\metadata.json",
+    "wiki\\update\\documentation\\migrated_integration_agent\\metadata.json",
+    "wiki\\update\\documentation\\migrated_integration_planning_agent\\metadata.json",
+    "wiki\\update\\documentation\\migrated_integration_workflow\\metadata.json",
+    "wiki\\update\\documentation\\migrated_intelligent_navigator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_intelligent_orchestrator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_intelligent_organization_agent\\metadata.json",
+    "wiki\\update\\documentation\\migrated_knowledge_consolidation_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_knowledge_consolidator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_knowledge_manager\\metadata.json",
+    "wiki\\update\\documentation\\migrated_log_manager\\metadata.json",
+    "wiki\\update\\documentation\\migrated_maintenance_planning_agent\\metadata.json",
+    "wiki\\update\\documentation\\migrated_map_optimizer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_map_updater\\metadata.json",
+    "wiki\\update\\documentation\\migrated_map_validator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_markdown_processor\\metadata.json",
+    "wiki\\update\\documentation\\migrated_metrics_analyzer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_metrics_collector\\metadata.json",
+    "wiki\\update\\documentation\\migrated_metrics_reporter\\metadata.json",
+    "wiki\\update\\documentation\\migrated_metrics_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_metrics_validation_agent\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_aaa_agent_specialization_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_aaa_compatibility_fixer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_aaa_integration_validator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_advanced_search_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_agent_organizer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_alert_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_analyze_cursor_performance\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_analyze_navigation_optimization\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_auto_monitor\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_auto_optimizer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_auto_updater\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_auto_update_all_maps\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_backup_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_canary_analysis_preparator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_centralize_logs\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_cleanup_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_consolidate_agents\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_context_detector\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_dashboard_monitoring\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_enhanced_intelligent_orchestrator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_expand_wiki_comprehensive\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_fix_wiki_issues\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_git_atomic_commits\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_habdel_wiki_integration\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_implement_smart_cache\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_intelligent_orchestrator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_knowledge_consolidation_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_metrics_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_modular_structure_creator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_navigation_index_generator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_optimize_json_maps\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_optimize_maps_for_tokens\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_optimize_wiki_structure\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_otclient_debug_tools\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_otclient_log_analyzer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_migrated_performance_monitor\\metadata.json",
+    "wiki\\update\\documentation\\migrated_modular_structure_creator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_modules_indexer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_module_creator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_navigation_index_generator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_navigation_validation_agent\\metadata.json",
+    "wiki\\update\\documentation\\migrated_optimization_engine\\metadata.json",
+    "wiki\\update\\documentation\\migrated_optimizer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_optimize_json_maps\\metadata.json",
+    "wiki\\update\\documentation\\migrated_optimize_maps_for_tokens\\metadata.json",
+    "wiki\\update\\documentation\\migrated_optimize_wiki_structure\\metadata.json",
+    "wiki\\update\\documentation\\migrated_otclient_debug_tools\\metadata.json",
+    "wiki\\update\\documentation\\migrated_otclient_log_analyzer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_pattern_analyzer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_performance_monitor\\metadata.json",
+    "wiki\\update\\documentation\\migrated_progress_tracker_agent\\metadata.json",
+    "wiki\\update\\documentation\\migrated_prompt_evaluator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_prompt_learning_integration\\metadata.json",
+    "wiki\\update\\documentation\\migrated_prompt_optimizer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_python_agent\\metadata.json",
+    "wiki\\update\\documentation\\migrated_python_agent_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_python_error_resolver\\metadata.json",
+    "wiki\\update\\documentation\\migrated_quality_assurance_agent\\metadata.json",
+    "wiki\\update\\documentation\\migrated_recipe_manager\\metadata.json",
+    "wiki\\update\\documentation\\migrated_remove_emojis\\metadata.json",
+    "wiki\\update\\documentation\\migrated_research_manager\\metadata.json",
+    "wiki\\update\\documentation\\migrated_resources_indexer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_rules_learning_integration\\metadata.json",
+    "wiki\\update\\documentation\\migrated_script_execution_manager\\metadata.json",
+    "wiki\\update\\documentation\\migrated_script_executor\\metadata.json",
+    "wiki\\update\\documentation\\migrated_script_migration_agent\\metadata.json",
+    "wiki\\update\\documentation\\migrated_source_analyzer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_source_indexer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_styles_indexer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_task_automation_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_tools_indexer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_update_bmad_maps\\metadata.json",
+    "wiki\\update\\documentation\\migrated_update_context_system\\metadata.json",
+    "wiki\\update\\documentation\\migrated_update_habdel_index\\metadata.json",
+    "wiki\\update\\documentation\\migrated_update_json_maps\\metadata.json",
+    "wiki\\update\\documentation\\migrated_update_modules_index\\metadata.json",
+    "wiki\\update\\documentation\\migrated_update_readme\\metadata.json",
+    "wiki\\update\\documentation\\migrated_update_resources_index\\metadata.json",
+    "wiki\\update\\documentation\\migrated_update_source_index\\metadata.json",
+    "wiki\\update\\documentation\\migrated_update_styles_index\\metadata.json",
+    "wiki\\update\\documentation\\migrated_update_tools_index\\metadata.json",
+    "wiki\\update\\documentation\\migrated_update_wiki_maps\\metadata.json",
+    "wiki\\update\\documentation\\migrated_validator\\metadata.json",
+    "wiki\\update\\documentation\\migrated_wiki_expander\\metadata.json",
+    "wiki\\update\\documentation\\migrated_wiki_fixer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_wiki_indexer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_wiki_optimizer\\metadata.json",
+    "wiki\\update\\documentation\\migrated_workflow_manager\\metadata.json",
+    "wiki\\update\\documentation\\migrated_workflow_orchestrator_legacy\\metadata.json",
+    "wiki\\update\\documentation\\migrated___init__\\metadata.json",
+    "wiki\\update\\documentation\\modular_structure_creator\\metadata.json",
+    "wiki\\update\\documentation\\modules_indexer\\metadata.json",
+    "wiki\\update\\documentation\\navigation_index_generator\\metadata.json",
+    "wiki\\update\\documentation\\optimize_json_maps\\metadata.json",
+    "wiki\\update\\documentation\\optimize_maps_for_tokens\\metadata.json",
+    "wiki\\update\\documentation\\optimize_wiki_structure\\metadata.json",
+    "wiki\\update\\documentation\\otclient_debug_tools\\metadata.json",
+    "wiki\\update\\documentation\\otclient_log_analyzer\\metadata.json",
+    "wiki\\update\\documentation\\performance_monitor\\metadata.json",
+    "wiki\\update\\documentation\\performance_optimizer_agent\\metadata.json",
+    "wiki\\update\\documentation\\prepare_canary_integration\\metadata.json",
+    "wiki\\update\\documentation\\python_agent\\metadata.json",
+    "wiki\\update\\documentation\\python_agent_integration_test\\metadata.json",
+    "wiki\\update\\documentation\\python_agent_system\\metadata.json",
+    "wiki\\update\\documentation\\python_error_resolver\\metadata.json",
+    "wiki\\update\\documentation\\python_tools_agent_simple_working\\metadata.json",
+    "wiki\\update\\documentation\\python_validator_agent\\metadata.json",
+    "wiki\\update\\documentation\\recipe_manager\\metadata.json",
+    "wiki\\update\\documentation\\recipe_manager_agent\\metadata.json",
+    "wiki\\update\\documentation\\remove_emojis\\metadata.json",
+    "wiki\\update\\documentation\\research_manager\\metadata.json",
+    "wiki\\update\\documentation\\resources_indexer\\metadata.json",
+    "wiki\\update\\documentation\\script_execution_manager\\metadata.json",
+    "wiki\\update\\documentation\\script_executor\\metadata.json",
+    "wiki\\update\\documentation\\script_executor_agent\\metadata.json",
+    "wiki\\update\\documentation\\script_migration_agent\\metadata.json",
+    "wiki\\update\\documentation\\source_analyzer\\metadata.json",
+    "wiki\\update\\documentation\\source_indexer\\metadata.json",
+    "wiki\\update\\documentation\\styles_indexer\\metadata.json",
+    "wiki\\update\\documentation\\task_automation_system\\metadata.json",
+    "wiki\\update\\documentation\\test_advanced_searcher\\metadata.json",
+    "wiki\\update\\documentation\\test_agent_integrator\\metadata.json",
+    "wiki\\update\\documentation\\test_agent_monitor\\metadata.json",
+    "wiki\\update\\documentation\\test_agent_optimizer\\metadata.json",
+    "wiki\\update\\documentation\\test_agent_orchestrator\\metadata.json",
+    "wiki\\update\\documentation\\test_agent_organizer\\metadata.json",
+    "wiki\\update\\documentation\\test_agent_specialist\\metadata.json",
+    "wiki\\update\\documentation\\test_agent_validator\\metadata.json",
+    "wiki\\update\\documentation\\test_alert_system\\metadata.json",
+    "wiki\\update\\documentation\\test_backup_system\\metadata.json",
+    "wiki\\update\\documentation\\test_cleanup_system\\metadata.json",
+    "wiki\\update\\documentation\\test_code_analyzer\\metadata.json",
+    "wiki\\update\\documentation\\test_code_optimizer\\metadata.json",
+    "wiki\\update\\documentation\\test_config_manager\\metadata.json",
+    "wiki\\update\\documentation\\test_content_validator\\metadata.json",
+    "wiki\\update\\documentation\\test_context_detector\\metadata.json",
+    "wiki\\update\\documentation\\test_dashboard_monitor\\metadata.json",
+    "wiki\\update\\documentation\\test_documentation_generator\\metadata.json",
+    "wiki\\update\\documentation\\test_documentation_organizer\\metadata.json",
+    "wiki\\update\\documentation\\test_error_resolver\\metadata.json",
+    "wiki\\update\\documentation\\test_file_mover\\metadata.json",
+    "wiki\\update\\documentation\\test_generator\\metadata.json",
+    "wiki\\update\\documentation\\test_git_automation\\metadata.json",
+    "wiki\\update\\documentation\\test_habdel_indexer\\metadata.json",
+    "wiki\\update\\documentation\\test_intelligent_navigator\\metadata.json",
+    "wiki\\update\\documentation\\test_intelligent_orchestration\\metadata.json",
+    "wiki\\update\\documentation\\test_knowledge_consolidator\\metadata.json",
+    "wiki\\update\\documentation\\test_log_manager\\metadata.json",
+    "wiki\\update\\documentation\\test_map_optimizer\\metadata.json",
+    "wiki\\update\\documentation\\test_map_updater\\metadata.json",
+    "wiki\\update\\documentation\\test_map_validator\\metadata.json",
+    "wiki\\update\\documentation\\test_markdown_processor\\metadata.json",
+    "wiki\\update\\documentation\\test_metrics_analyzer\\metadata.json",
+    "wiki\\update\\documentation\\test_metrics_collector\\metadata.json",
+    "wiki\\update\\documentation\\test_metrics_reporter\\metadata.json",
+    "wiki\\update\\documentation\\test_modules_indexer\\metadata.json",
+    "wiki\\update\\documentation\\test_performance_monitor\\metadata.json",
+    "wiki\\update\\documentation\\test_python_agent\\metadata.json",
+    "wiki\\update\\documentation\\test_recipe_manager\\metadata.json",
+    "wiki\\update\\documentation\\test_research_manager\\metadata.json",
+    "wiki\\update\\documentation\\test_resources_indexer\\metadata.json",
+    "wiki\\update\\documentation\\test_runner\\metadata.json",
+    "wiki\\update\\documentation\\test_script_executor\\metadata.json",
+    "wiki\\update\\documentation\\test_source_analyzer\\metadata.json",
+    "wiki\\update\\documentation\\test_source_indexer\\metadata.json",
+    "wiki\\update\\documentation\\test_styles_indexer\\metadata.json",
+    "wiki\\update\\documentation\\test_test_runner\\metadata.json",
+    "wiki\\update\\documentation\\test_tools_indexer\\metadata.json",
+    "wiki\\update\\documentation\\test_wiki_expander\\metadata.json",
+    "wiki\\update\\documentation\\test_wiki_fixer\\metadata.json",
+    "wiki\\update\\documentation\\test_wiki_indexer\\metadata.json",
+    "wiki\\update\\documentation\\test_wiki_optimizer\\metadata.json",
+    "wiki\\update\\documentation\\test_workflow_manager\\metadata.json",
+    "wiki\\update\\documentation\\tools_indexer\\metadata.json",
+    "wiki\\update\\documentation\\update_bmad_maps\\metadata.json",
+    "wiki\\update\\documentation\\update_context_system\\metadata.json",
+    "wiki\\update\\documentation\\update_habdel_index\\metadata.json",
+    "wiki\\update\\documentation\\update_json_maps\\metadata.json",
+    "wiki\\update\\documentation\\update_modules_index\\metadata.json",
+    "wiki\\update\\documentation\\update_resources_index\\metadata.json",
+    "wiki\\update\\documentation\\update_source_index\\metadata.json",
+    "wiki\\update\\documentation\\update_styles_index\\metadata.json",
+    "wiki\\update\\documentation\\update_tools_index\\metadata.json",
+    "wiki\\update\\documentation\\update_wiki_maps\\metadata.json",
+    "wiki\\update\\documentation\\wiki_expander\\metadata.json",
+    "wiki\\update\\documentation\\wiki_fixer\\metadata.json",
+    "wiki\\update\\documentation\\wiki_indexer\\metadata.json",
+    "wiki\\update\\documentation\\wiki_optimizer\\metadata.json",
+    "wiki\\update\\documentation\\workflow_manager\\metadata.json",
+    "wiki\\update\\documentation\\__init__\\metadata.json",
+    "wiki\\maps\\backup\\bmad_agents_index_backup_1754055351.json",
+    "wiki\\maps\\backup\\bmad_templates_index_backup_1754055351.json",
+    "wiki\\maps\\backup\\bmad_workflows_index_backup_1754055351.json",
+    "wiki\\maps\\backup\\cache_strategy_backup_1754055351.json",
+    "wiki\\maps\\backup\\canary_integration_map_backup_1754055351.json",
+    "wiki\\maps\\backup\\context_data_backup_1754055351.json",
+    "wiki\\maps\\backup\\context_update_report_backup_1754055351.json",
+    "wiki\\maps\\backup\\cursor_performance_analysis_backup_1754055351.json",
+    "wiki\\maps\\backup\\enhanced_context_system_backup_1754055351.json",
+    "wiki\\maps\\backup\\enhanced_orchestration_results_backup_1754055351.json",
+    "wiki\\maps\\backup\\habdel_index_backup_1754055351.json",
+    "wiki\\maps\\backup\\intelligent_navigation_backup_1754055351.json",
+    "wiki\\maps\\backup\\json_navigation_report_backup_1754055351.json",
+    "wiki\\maps\\backup\\maps_update_report_backup_1754055351.json",
+    "wiki\\maps\\backup\\modules_index_backup_1754055351.json",
+    "wiki\\maps\\backup\\navigation_cache_backup_1754055351.json",
+    "wiki\\maps\\backup\\navigation_optimization_report_backup_1754055351.json",
+    "wiki\\maps\\backup\\otclient_source_index_backup_1754055351.json",
+    "wiki\\maps\\backup\\parallel_processing_backup_1754055351.json",
+    "wiki\\maps\\backup\\relationships_backup_1754055351.json",
+    "wiki\\maps\\backup\\resources_index_backup_1754055351.json",
+    "wiki\\maps\\backup\\search_index_backup_1754055351.json",
+    "wiki\\maps\\backup\\styles_index_backup_1754055351.json",
+    "wiki\\maps\\backup\\tags_index_backup_1754055351.json",
+    "wiki\\maps\\backup\\tools_index_backup_1754055351.json",
+    "wiki\\maps\\backup\\wiki_map_backup_1754055351.json",
+    "wiki\\maps\\optimized\\bmad_agents_index_optimized.json",
+    "wiki\\maps\\optimized\\bmad_templates_index_optimized.json",
+    "wiki\\maps\\optimized\\bmad_workflows_index_optimized.json",
+    "wiki\\maps\\optimized\\cache_strategy_optimized.json",
+    "wiki\\maps\\optimized\\canary_integration_map_optimized.json",
+    "wiki\\maps\\optimized\\context_data_optimized.json",
+    "wiki\\maps\\optimized\\context_update_report_optimized.json",
+    "wiki\\maps\\optimized\\cursor_performance_analysis_optimized.json",
+    "wiki\\maps\\optimized\\enhanced_context_system_optimized.json",
+    "wiki\\maps\\optimized\\enhanced_orchestration_results_optimized.json",
+    "wiki\\maps\\optimized\\habdel_index_optimized.json",
+    "wiki\\maps\\optimized\\intelligent_navigation_optimized.json",
+    "wiki\\maps\\optimized\\json_navigation_report_optimized.json",
+    "wiki\\maps\\optimized\\maps_update_report_optimized.json",
+    "wiki\\maps\\optimized\\modules_index_optimized.json",
+    "wiki\\maps\\optimized\\navigation_cache_optimized.json",
+    "wiki\\maps\\optimized\\navigation_optimization_report_optimized.json",
+    "wiki\\maps\\optimized\\otclient_source_index_optimized.json",
+    "wiki\\maps\\optimized\\parallel_processing_optimized.json",
+    "wiki\\maps\\optimized\\relationships_optimized.json",
+    "wiki\\maps\\optimized\\resources_index_optimized.json",
+    "wiki\\maps\\optimized\\search_index_optimized.json",
+    "wiki\\maps\\optimized\\styles_index_optimized.json",
+    "wiki\\maps\\optimized\\tags_index_optimized.json",
+    "wiki\\maps\\optimized\\tools_index_optimized.json",
+    "wiki\\maps\\optimized\\wiki_map_optimized.json",
+    "wiki\\log\\archives\\consolidation_results.json",
+    "wiki\\log\\backup_centralization\\auto_optimization_history.json",
+    "wiki\\log\\backup_centralization\\orchestration_report_20250729_221849.json",
+    "wiki\\log\\backup_centralization\\orchestration_report_20250731_123631.json",
+    "wiki\\log\\backup_centralization\\orchestration_report_20250731_123704.json",
+    "wiki\\log\\backup_centralization\\python_error_resolutions.json",
+    "wiki\\log\\backup_centralization\\readme_status_report.json",
+    "wiki\\log\\backup_centralization\\script_executions.json",
+    "wiki\\log\\epic11_validation\\epic11_final_report.json",
+    "wiki\\log\\epic11_validation\\task_11_1_complete.json",
+    "wiki\\log\\epic11_validation\\task_11_2_complete.json",
+    "wiki\\log\\epic11_validation\\task_11_3_complete.json",
+    "wiki\\log\\epic11_validation\\task_11_4_complete.json",
+    "wiki\\log\\epic11_validation\\task_11_5_complete.json",
+    "wiki\\log\\file_organization\\file_organization_complete.json",
+    "wiki\\log\\final_cleanup\\final_cleanup_complete.json",
+    "wiki\\log\\intelligent_learning\\learning_memory.json",
+    "wiki\\log\\navigation_validation\\navigation_validation_complete.json",
+    "wiki\\log\\system\\optimization\\auto_optimization_history_20250801_103950.json",
+    "wiki\\log\\system\\script_executions\\python_error_resolutions_20250801_103950.json",
+    "wiki\\log\\system\\script_executions\\script_executions_20250801_103950.json",
+    "wiki\\log\\reports\\general\\orchestration_report_20250729_221849_20250801_103951.json",
+    "wiki\\log\\reports\\general\\orchestration_report_20250731_123631_20250801_103951.json",
+    "wiki\\log\\reports\\general\\orchestration_report_20250731_123704_20250801_103951.json",
+    "wiki\\log\\reports\\general\\readme_status_report_20250801_103951.json",
+    "wiki\\log\\archives\\general\\aaa_compatibility_fix_results_20250729_000650_20250801_103951_20250801_103952.json",
+    "wiki\\log\\archives\\general\\aaa_compatibility_fix_results_20250729_000650_20250801_103952.json",
+    "wiki\\log\\archives\\general\\aaa_validation_results_20250729_000116_20250801_103951_20250801_103952.json",
+    "wiki\\log\\archives\\general\\aaa_validation_results_20250729_000116_20250801_103952.json",
+    "wiki\\log\\archives\\general\\aaa_validation_results_20250729_000653_20250801_103951_20250801_103952.json",
+    "wiki\\log\\archives\\general\\aaa_validation_results_20250729_000653_20250801_103952.json",
+    "wiki\\log\\archives\\general\\issues_log_20250801_103951_20250801_103952.json",
+    "wiki\\log\\archives\\general\\issues_log_20250801_103952.json",
+    "wiki\\habdel\\otclient\\analysis\\core_systems_data.json",
+    "wiki\\habdel\\otclient\\analysis\\game_logic_data.json",
+    "wiki\\habdel\\otclient\\analysis\\lua_integration_data.json",
+    "wiki\\habdel\\otclient\\analysis\\network_protocols_data.json",
+    "wiki\\habdel\\otclient\\analysis\\otclient_animation_analysis_results.json",
+    "wiki\\habdel\\otclient\\analysis\\otclient_core_analysis_results.json",
+    "wiki\\habdel\\otclient\\analysis\\otclient_data_analysis_results.json",
+    "wiki\\habdel\\otclient\\analysis\\otclient_graphics_analysis_results.json",
+    "wiki\\habdel\\otclient\\analysis\\otclient_lua_analysis_results.json",
+    "wiki\\habdel\\otclient\\analysis\\otclient_map_analysis_results.json",
+    "wiki\\habdel\\otclient\\analysis\\otclient_module_analysis_results.json",
+    "wiki\\habdel\\otclient\\analysis\\otclient_network_analysis_results.json",
+    "wiki\\habdel\\otclient\\analysis\\otclient_particle_analysis_results.json",
+    "wiki\\habdel\\otclient\\analysis\\otclient_sound_analysis_results.json",
+    "wiki\\habdel\\otclient\\analysis\\otclient_ui_analysis_results.json",
+    "wiki\\habdel\\otclient\\analysis\\phase2_complete_analysis.json",
+    "wiki\\habdel\\otclient\\analysis\\phase2_deep_analysis.json",
+    "wiki\\habdel\\otclient\\analysis\\phase2_refined_analysis.json",
+    "wiki\\habdel\\otclient\\analysis\\real_structure.json",
+    "wiki\\habdel\\otclient\\analysis\\resource_management_data.json",
+    "wiki\\habdel\\otclient\\analysis\\source_analysis.json",
+    "wiki\\habdel\\otclient\\analysis\\ui_components_data.json",
+    "wiki\\habdel\\methodology\\stories\\methodology_stories.json",
+    "wiki\\habdel\\integration\\stories\\integration_stories.json",
+    "wiki\\docs\\audit_reports\\file_structure_audit_report.json",
+    "wiki\\docs\\audit_reports\\python_audit_report.json",
+    "wiki\\docs\\courses\\courses_config.json",
+    "wiki\\docs\\courses\\course_structure.json",
+    "wiki\\docs\\courses\\lessons_structure.json",
+    "wiki\\docs\\courses\\practical_lessons.json",
+    "wiki\\docs\\validation_tests\\test_results.json",
+    "wiki\\docs\\research\\habdel\\canary_stories.json",
+    "wiki\\docs\\research\\habdel\\otclient_real_stories.json",
+    "wiki\\docs\\research\\habdel\\otclient_stories.json",
+    "wiki\\docs\\canary\\api\\analysis_structure.json",
+    "wiki\\docs\\canary\\api\\analysis_tools.json",
+    "wiki\\docs\\canary\\api\\comparison_framework.json",
+    "wiki\\docs\\canary\\api\\migration_guides.json",
+    "wiki\\consolidated\\integration\\patterns\\bmad_agents_index.json",
+    "wiki\\consolidated\\integration\\patterns\\bmad_templates_index.json",
+    "wiki\\consolidated\\integration\\patterns\\bmad_workflows_index.json",
+    "wiki\\consolidated\\integration\\patterns\\canary_integration_map.json",
+    "wiki\\consolidated\\integration\\patterns\\game_automap_enhanced_creation_report.json",
+    "wiki\\consolidated\\integration\\patterns\\habdel_index.json",
+    "wiki\\consolidated\\integration\\patterns\\maps_update_report.json",
+    "wiki\\consolidated\\integration\\patterns\\modules_index.json",
+    "wiki\\consolidated\\integration\\patterns\\otclient_source_index.json",
+    "wiki\\consolidated\\integration\\patterns\\resources_index.json",
+    "wiki\\consolidated\\integration\\patterns\\search_index.json",
+    "wiki\\consolidated\\integration\\patterns\\styles_index.json",
+    "wiki\\consolidated\\integration\\patterns\\tags_index.json",
+    "wiki\\consolidated\\integration\\patterns\\tools_index.json",
+    "wiki\\consolidated\\integration\\patterns\\wiki_map.json",
+    "wiki\\bmad\\agents\\file_organization_report.json",
+    "wiki\\bmad\\agents\\final_cleanup_report.json",
+    "wiki\\bmad\\knowledge\\knowledge_base.json",
+    "wiki\\bmad\\wiki\\bmad\\results\\workflow_logs\\workflow_client_1753914092_client_log.json",
+    "wiki\\bmad\\wiki\\bmad\\results\\workflow_logs\\workflow_client_1753914092_client_results.json",
+    "wiki\\bmad\\results\\analysis\\client_analysis.json",
+    "wiki\\bmad\\results\\created_modules\\game_achievements_creation_report.json",
+    "wiki\\bmad\\results\\created_modules\\game_automap_enhanced_creation_report.json",
+    "wiki\\bmad\\results\\created_modules\\game_combat_analyzer_creation_report.json",
+    "wiki\\bmad\\results\\created_modules\\game_party_manager_creation_report.json",
+    "wiki\\bmad\\results\\generated_modules\\client_variations.json",
+    "wiki\\bmad\\results\\learning_data\\client_learning_data.json",
+    "wiki\\bmad\\results\\test_reports\\client_test_report.json",
+    "wiki\\bmad\\agents\\python_agent\\knowledge\\py_patterns.json",
+    "wiki\\bmad\\agents\\agente_python_base_agent\\config\\agent_config.json",
+    "wiki\\bmad\\agents\\agente_python_base_agent\\config\\integration_config.json",
+    "wiki\\bmad\\agents\\agente_python_base_agent\\logs\\error_log.json",
+    "wiki\\bmad\\agents\\agente_python_base_agent\\logs\\improvement_log.json",
+    "wiki\\bmad\\agents\\agente_python_base_agent\\logs\\performance_log.json",
+    "wiki\\bmad\\agents\\agente_python_base_agent\\patterns\\context_patterns.json",
+    "wiki\\bmad\\agents\\agente_python_base_agent\\patterns\\error_patterns.json",
+    "wiki\\bmad\\agents\\agente_python_base_agent\\patterns\\quality_patterns.json",
+    "wiki\\backup\\python_scripts\\tools_stats.json",
+    "otclient\\mods\\game_bot\\default_configs\\cavebot_1.3\\storage.json",
+    "otclient\\browser\\overlay-ports\\abseil\\vcpkg.json",
+    "otclient\\browser\\overlay-ports\\physfs\\vcpkg.json",
+    "otclient\\browser\\overlay-ports\\protobuf\\vcpkg.json",
+    "canary\\.reviewdog.yml",
+    "canary\\GitVersion.yml",
+    "otclient\\.reviewdog.yml",
+    "canary\\docker\\docker-compose.yml",
+    "canary\\metrics\\docker-compose.yml",
+    "canary\\metrics\\prometheus\\prometheus.yml",
+    "canary\\.yamllint.yaml",
+    "wiki\\cursor_core\\.bmad-game-core\\core-config.yaml",
+    "wiki\\cursor_core\\.bmad-game-core\\templates\\game-feature-design-tmpl.yaml",
+    "wiki\\cursor_core\\.bmad-game-core\\workflows\\feature-development.yaml",
+    "canary\\tests\\docker-compose.yaml",
+    "docs\\book.toml",
+    "otclient\\mods\\game_bot\\default_configs\\cavebot_1.3\\cavebot_configs\\config_name.cfg",
+    "otclient\\mods\\game_bot\\default_configs\\cavebot_1.3\\cavebot_configs\\fast_walking.cfg",
+    "otclient\\mods\\game_bot\\default_configs\\cavebot_1.3\\cavebot_configs\\test_src.cfg",
+    "otclient\\sonar-project.properties",
+    "otclient\\android\\gradle.properties",
+    "otclient\\android\\gradle\\wrapper\\gradle-wrapper.properties",
+    "wiki\\bmad\\agents\\config_auditor_agent.py"
+  ],
+  "rules_files": [
+    "wiki\\dashboard\\task_master.md",
+    "wiki\\log\\backup_centralization\\qa_report_task_master_agent_20250729_221733.md",
+    "wiki\\log\\reports\\integration_reports\\AUTO_LEARNING_RULES_INTEGRATION_REPORT_1.md",
+    "wiki\\log\\reports\\integration_reports\\AUTO_LEARNING_RULES_INTEGRATION_REPORT_1_20250801_103951.md",
+    "wiki\\log\\reports\\organization_reports\\AGENT_ORGANIZATION_RULES_REPORT_1.md",
+    "wiki\\log\\reports\\organization_reports\\AGENT_ORGANIZATION_RULES_REPORT_1_20250801_103951.md",
+    "wiki\\log\\reports\\task_reports\\qa_report_task_master_agent_20250729_221733_20250801_103951.md",
+    "wiki\\bmad\\agents\\module_creation_rules.md",
+    ".cursor\\rules\\aaa-agent-specialization-rules.md",
+    ".cursor\\rules\\agent-organization-rules.md",
+    ".cursor\\rules\\auto-learning-rules.md",
+    ".cursor\\rules\\auto-update-maps-rules.md",
+    ".cursor\\rules\\bmad-system-rules.md",
+    ".cursor\\rules\\code-cleanup-rules.md",
+    ".cursor\\rules\\context-aware-rules.md",
+    ".cursor\\rules\\cross-project-integration-rules.md",
+    ".cursor\\rules\\documentation-rules.md",
+    ".cursor\\rules\\enhanced-prompt-engineering-rules.md",
+    ".cursor\\rules\\file-organization-rules.md",
+    ".cursor\\rules\\git-automation-rules.md",
+    ".cursor\\rules\\integrated-task-management-rules.md",
+    ".cursor\\rules\\intelligent-orchestration-rules.md",
+    ".cursor\\rules\\log-organization-rules.md",
+    ".cursor\\rules\\otclient-source-index-rules.md",
+    ".cursor\\rules\\performance-rules.md",
+    ".cursor\\rules\\prompt-engineering-rules.md",
+    ".cursor\\rules\\python-agent-rules.md",
+    ".cursor\\rules\\readme-maintenance-rules.md",
+    ".cursor\\rules\\report-cleanup-rules.md",
+    ".cursor\\rules\\rules.md",
+    ".cursor\\rules\\simplification-rules.md",
+    ".cursor\\rules\\system-rules.md",
+    ".cursor\\rules\\task-automation-rules.md",
+    ".cursor\\rules\\token-optimization-rules.md",
+    ".cursor\\rules\\wiki-comprehensive-rules.md",
+    ".cursor\\rules\\wiki-json-navigation-rules.md",
+    ".cursor\\rules\\wiki-rules.md"
+  ],
+  "issues": [
+    {
+      "file": "wiki\\alerts\\active_alerts.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\alerts\\alert_history.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\dashboard\\system_alerts.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\metrics\\performance_metrics.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\metrics\\quality_metrics.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\metrics\\usage_metrics.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\wiki\\log\\alerts\\active_alerts.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\wiki\\log\\alerts\\alert_history.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\backup_centralization\\auto_optimization_history.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\backup_centralization\\orchestration_report_20250729_221849.json",
+      "type": "json_syntax_error",
+      "error": "Expecting value: line 19 column 26 (char 2274)",
+      "severity": "high"
+    },
+    {
+      "file": "wiki\\log\\backup_centralization\\orchestration_report_20250731_123631.json",
+      "type": "json_syntax_error",
+      "error": "Expecting value: line 17 column 26 (char 1376)",
+      "severity": "high"
+    },
+    {
+      "file": "wiki\\log\\backup_centralization\\python_error_resolutions.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\backup_centralization\\script_executions.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\system\\optimization\\auto_optimization_history_20250801_103950.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\system\\script_executions\\python_error_resolutions_20250801_103950.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\system\\script_executions\\script_executions_20250801_103950.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\reports\\general\\orchestration_report_20250729_221849_20250801_103951.json",
+      "type": "json_syntax_error",
+      "error": "Expecting value: line 19 column 26 (char 2274)",
+      "severity": "high"
+    },
+    {
+      "file": "wiki\\log\\reports\\general\\orchestration_report_20250731_123631_20250801_103951.json",
+      "type": "json_syntax_error",
+      "error": "Expecting value: line 17 column 26 (char 1376)",
+      "severity": "high"
+    },
+    {
+      "file": "wiki\\log\\archives\\general\\issues_log_20250801_103951_20250801_103952.json",
+      "type": "config_read_error",
+      "error": "'utf-8' codec can't decode byte 0xff in position 0: invalid start byte",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\archives\\general\\issues_log_20250801_103952.json",
+      "type": "config_read_error",
+      "error": "'utf-8' codec can't decode byte 0xff in position 0: invalid start byte",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\docs\\canary\\api\\analysis_tools.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\bmad\\wiki\\bmad\\results\\workflow_logs\\workflow_client_1753914092_client_log.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\bmad\\results\\generated_modules\\client_variations.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\bmad\\agents\\python_agent\\knowledge\\py_patterns.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\bmad\\agents\\agente_python_base_agent\\logs\\error_log.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\bmad\\agents\\agente_python_base_agent\\logs\\improvement_log.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\bmad\\agents\\agente_python_base_agent\\logs\\performance_log.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\bmad\\agents\\agente_python_base_agent\\patterns\\context_patterns.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\bmad\\agents\\agente_python_base_agent\\patterns\\error_patterns.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\bmad\\agents\\agente_python_base_agent\\patterns\\quality_patterns.json",
+      "type": "config_read_error",
+      "error": "'list' object has no attribute 'items'",
+      "severity": "medium"
+    },
+    {
+      "file": "canary\\.reviewdog.yml",
+      "type": "yaml_format_issue",
+      "pattern": "^\\s*#",
+      "severity": "low"
+    },
+    {
+      "file": "canary\\GitVersion.yml",
+      "type": "yaml_format_issue",
+      "pattern": "^\\s*#",
+      "severity": "low"
+    },
+    {
+      "file": "otclient\\.reviewdog.yml",
+      "type": "yaml_format_issue",
+      "pattern": "^\\s*#",
+      "severity": "low"
+    },
+    {
+      "file": "canary\\metrics\\docker-compose.yml",
+      "type": "yaml_format_issue",
+      "pattern": "^\\s*#",
+      "severity": "low"
+    },
+    {
+      "file": "canary\\metrics\\prometheus\\prometheus.yml",
+      "type": "yaml_format_issue",
+      "pattern": "^\\s*#",
+      "severity": "low"
+    },
+    {
+      "file": "canary\\.yamllint.yaml",
+      "type": "yaml_format_issue",
+      "pattern": "^\\s*#",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\cursor_core\\.bmad-game-core\\core-config.yaml",
+      "type": "yaml_format_issue",
+      "pattern": "^\\s*#",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\cursor_core\\.bmad-game-core\\workflows\\feature-development.yaml",
+      "type": "yaml_format_issue",
+      "pattern": "^\\s*#",
+      "severity": "low"
+    },
+    {
+      "file": "canary\\tests\\docker-compose.yaml",
+      "type": "yaml_format_issue",
+      "pattern": "^\\s*#",
+      "severity": "low"
+    },
+    {
+      "file": "otclient\\mods\\game_bot\\default_configs\\cavebot_1.3\\cavebot_configs\\config_name.cfg",
+      "type": "generic_config_issue",
+      "pattern": "^\\s*#",
+      "severity": "low"
+    },
+    {
+      "file": "otclient\\mods\\game_bot\\default_configs\\cavebot_1.3\\cavebot_configs\\fast_walking.cfg",
+      "type": "generic_config_issue",
+      "pattern": "^\\s*#",
+      "severity": "low"
+    },
+    {
+      "file": "otclient\\mods\\game_bot\\default_configs\\cavebot_1.3\\cavebot_configs\\test_src.cfg",
+      "type": "generic_config_issue",
+      "pattern": "^\\s*#",
+      "severity": "low"
+    },
+    {
+      "file": "otclient\\sonar-project.properties",
+      "type": "generic_config_issue",
+      "pattern": "^\\s*[a-zA-Z_][a-zA-Z0-9_]*\\s*[=:]\\s*",
+      "severity": "low"
+    },
+    {
+      "file": "otclient\\sonar-project.properties",
+      "type": "generic_config_issue",
+      "pattern": "^\\s*#",
+      "severity": "low"
+    },
+    {
+      "file": "otclient\\android\\gradle.properties",
+      "type": "generic_config_issue",
+      "pattern": "^\\s*[a-zA-Z_][a-zA-Z0-9_]*\\s*[=:]\\s*",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\dashboard\\task_master.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\log\\backup_centralization\\qa_report_task_master_agent_20250729_221733.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\log\\backup_centralization\\qa_report_task_master_agent_20250729_221733.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\log\\reports\\integration_reports\\AUTO_LEARNING_RULES_INTEGRATION_REPORT_1.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\log\\reports\\integration_reports\\AUTO_LEARNING_RULES_INTEGRATION_REPORT_1.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\log\\reports\\integration_reports\\AUTO_LEARNING_RULES_INTEGRATION_REPORT_1_20250801_103951.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\log\\reports\\integration_reports\\AUTO_LEARNING_RULES_INTEGRATION_REPORT_1_20250801_103951.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\log\\reports\\organization_reports\\AGENT_ORGANIZATION_RULES_REPORT_1.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\log\\reports\\organization_reports\\AGENT_ORGANIZATION_RULES_REPORT_1.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\log\\reports\\organization_reports\\AGENT_ORGANIZATION_RULES_REPORT_1_20250801_103951.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\log\\reports\\organization_reports\\AGENT_ORGANIZATION_RULES_REPORT_1_20250801_103951.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\log\\reports\\task_reports\\qa_report_task_master_agent_20250729_221733_20250801_103951.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\log\\reports\\task_reports\\qa_report_task_master_agent_20250729_221733_20250801_103951.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\bmad\\agents\\module_creation_rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\aaa-agent-specialization-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\aaa-agent-specialization-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\aaa-agent-specialization-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "✅|❌|⏳",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\agent-organization-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\auto-learning-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\auto-learning-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\auto-learning-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "✅|❌|⏳",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\auto-update-maps-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\auto-update-maps-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\bmad-system-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\bmad-system-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\code-cleanup-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\code-cleanup-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\code-cleanup-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "✅|❌|⏳",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\context-aware-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\context-aware-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\cross-project-integration-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\documentation-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "###\\s*",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\documentation-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "✅|❌|⏳",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\enhanced-prompt-engineering-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\enhanced-prompt-engineering-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\enhanced-prompt-engineering-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "✅|❌|⏳",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\file-organization-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\file-organization-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\git-automation-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\integrated-task-management-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\integrated-task-management-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\intelligent-orchestration-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\intelligent-orchestration-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\log-organization-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\log-organization-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\otclient-source-index-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\otclient-source-index-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\performance-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\prompt-engineering-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\prompt-engineering-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "✅|❌|⏳",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\python-agent-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\python-agent-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\readme-maintenance-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\report-cleanup-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\simplification-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\system-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\system-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\task-automation-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\token-optimization-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\wiki-comprehensive-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\wiki-json-navigation-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "##\\s*Regras",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\wiki-json-navigation-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "-\\s*\\[.*\\]",
+      "severity": "low"
+    },
+    {
+      "file": ".cursor\\rules\\wiki-rules.md",
+      "type": "rules_format_issue",
+      "pattern": "✅|❌|⏳",
+      "severity": "low"
+    }
+  ],
+  "obsolete_configs": [
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/research/Cheat_Sheet.md.keywords.debug",
+      "value": 6,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/research/CORE-007_Debug_System.md.keywords.debug",
+      "value": 50,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/research/CORE-009_Logs_System.md.keywords.debug",
+      "value": 13,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/research/Debug_System_Guide.md.keywords.debug",
+      "value": 61,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/research/Developer_Practical_Guides.md.keywords.debug",
+      "value": 5,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/research/Getting_Started_Guide.md.keywords.debug",
+      "value": 7,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/research/GUIDE-004_Debugging_Avancado.md.keywords.debug",
+      "value": 42,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/research/GUIDE-010_Troubleshooting.md.keywords.test",
+      "value": 9,
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/research/Navigation_Index_Search.md.keywords.debug",
+      "value": 14,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/research/Navigation_Index_Story_Based.md.keywords.development",
+      "value": 1,
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/research/OTCLIENT-020.md.keywords.debug",
+      "value": 40,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/research/OTCLIENT-020_debug_system.md.keywords.debug",
+      "value": 11,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/research/OTCLIENT-021.md.keywords.debug",
+      "value": 11,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/research/otclient_canary_unified_documentation.md.keywords.test",
+      "value": 5,
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/research/otclient_network_system_analysis.md.keywords.debug",
+      "value": 7,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/research/otclient_wiki.md.keywords.debug",
+      "value": 5,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/documentation/CheatSheet.md.keywords.debug",
+      "value": 6,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/documentation/CoreDebug.md.keywords.debug",
+      "value": 10,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/documentation/GettingStarted.md.keywords.debug",
+      "value": 7,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/documentation/migration_guides.md.keywords.test",
+      "value": 11,
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/documentation/migration_report.md.keywords.development",
+      "value": 4,
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/documentation/ModuleSystem.md.keywords.debug",
+      "value": 6,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/documentation/MÓDULO-004_ferramentas_de_desenvolvimento.md.keywords.debug",
+      "value": 1,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/documentation/RELATORIO_IMPLEMENTACAO.md.keywords.debug",
+      "value": 4,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.otclient/documentation/wiki_reorganization_plan.md.keywords.development",
+      "value": 4,
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.canary/research/CANARY-020.md.keywords.debug",
+      "value": 25,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.canary/research/CANARY-020_debug_engine.md.keywords.debug",
+      "value": 11,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.bmad/agents/BMAD_System_Guide.md.keywords.development",
+      "value": 8,
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.integration/comparisons/INTEGRATION-004.md.keywords.test",
+      "value": 21,
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.integration/comparisons/INTEGRATION-006.md.keywords.test",
+      "value": 13,
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "semantic_index.education/courses/fundamentals_course.md.keywords.debug",
+      "value": 3,
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "tag_index.debug",
+      "value": [
+        {
+          "path": "otclient/research/CORE-007_Debug_System.md",
+          "title": "CORE-007: Sistema de Debug",
+          "type": "core_story"
+        },
+        {
+          "path": "otclient/research/CORE-009_Logs_System.md",
+          "title": "CORE-009: Sistema de Logs",
+          "type": "core_story"
+        },
+        {
+          "path": "otclient/research/Debug_System_Guide.md",
+          "title": "Debug System Guide",
+          "type": "document"
+        }
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "tag_index.development",
+      "value": [
+        {
+          "path": "otclient/research/CORE-007_Debug_System.md",
+          "title": "CORE-007: Sistema de Debug",
+          "type": "core_story"
+        },
+        {
+          "path": "otclient/research/Debug_System_Guide.md",
+          "title": "Debug System Guide",
+          "type": "document"
+        },
+        {
+          "path": "otclient/research/GUIDE-004_Debugging_Avancado.md",
+          "title": "🔍 Guia de Debugging Avançado - OTClient",
+          "type": "guide"
+        },
+        {
+          "path": "otclient/research/GUIDE-009_Contribuicao.md",
+          "title": "🤝 Guia de Contribuição - OTClient",
+          "type": "guide"
+        },
+        {
+          "path": "otclient/research/migration_canary_to_otclient.md",
+          "title": "🔄 Guia de Migração: Canary → OTClient",
+          "type": "documentation"
+        },
+        {
+          "path": "otclient/research/migration_otclient_to_canary.md",
+          "title": "🔄 Guia de Migração: OTClient → Canary",
+          "type": "documentation"
+        },
+        {
+          "path": "otclient/research/Navigation_Index_Story_Based.md",
+          "title": "📖 Índice Baseado em Stories - Desenvolvimento Organizado",
+          "type": "story_based_index"
+        },
+        {
+          "path": "otclient/research/OTUI_Module_Development_Guide.md",
+          "title": "Guia de Desenvolvimento de Módulos OTUI",
+          "type": "document"
+        }
+      ],
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "keyword_index.debug",
+      "value": [
+        {
+          "path": "otclient/research/Debug_System_Guide.md",
+          "frequency": 61,
+          "title": "Debug System Guide"
+        },
+        {
+          "path": "otclient/research/CORE-007_Debug_System.md",
+          "frequency": 50,
+          "title": "CORE-007: Sistema de Debug"
+        },
+        {
+          "path": "otclient/research/GUIDE-004_Debugging_Avancado.md",
+          "frequency": 42,
+          "title": "🔍 Guia de Debugging Avançado - OTClient"
+        },
+        {
+          "path": "otclient/research/OTCLIENT-020.md",
+          "frequency": 40,
+          "title": "OTCLIENT-020: Sistema de Logs"
+        },
+        {
+          "path": "canary/research/CANARY-020.md",
+          "frequency": 25,
+          "title": "CANARY-020: Sistema de Logs - Pesquisa Habdel"
+        },
+        {
+          "path": "otclient/research/Navigation_Index_Search.md",
+          "frequency": 14,
+          "title": "🔍 Índice de Busca - Palavras-Chave"
+        },
+        {
+          "path": "otclient/research/CORE-009_Logs_System.md",
+          "frequency": 13,
+          "title": "CORE-009: Sistema de Logs"
+        },
+        {
+          "path": "otclient/research/OTCLIENT-020_debug_system.md",
+          "frequency": 11,
+          "title": "Debug System"
+        },
+        {
+          "path": "otclient/research/OTCLIENT-021.md",
+          "frequency": 11,
+          "title": "OTCLIENT-021: Consolidar Documentação OTClient"
+        },
+        {
+          "path": "canary/research/CANARY-020_debug_engine.md",
+          "frequency": 11,
+          "title": "Debug Engine"
+        },
+        {
+          "path": "otclient/documentation/CoreDebug.md",
+          "frequency": 10,
+          "title": "Sistema de Debug"
+        },
+        {
+          "path": "otclient/research/Getting_Started_Guide.md",
+          "frequency": 7,
+          "title": "Getting Started - OTClient Redemption"
+        },
+        {
+          "path": "otclient/research/otclient_network_system_analysis.md",
+          "frequency": 7,
+          "title": "OTClient Network System - Análise Técnica"
+        },
+        {
+          "path": "otclient/documentation/GettingStarted.md",
+          "frequency": 7,
+          "title": "Getting Started - OTClient Redemption"
+        },
+        {
+          "path": "otclient/research/Cheat_Sheet.md",
+          "frequency": 6,
+          "title": "Cheat Sheet de Desenvolvimento - OTClient Redemption"
+        },
+        {
+          "path": "otclient/documentation/CheatSheet.md",
+          "frequency": 6,
+          "title": "Cheat Sheet de Desenvolvimento - OTClient Redemption"
+        },
+        {
+          "path": "otclient/documentation/ModuleSystem.md",
+          "frequency": 6,
+          "title": "Sistema de Módulos OTClient"
+        },
+        {
+          "path": "otclient/research/Developer_Practical_Guides.md",
+          "frequency": 5,
+          "title": "🛠️ Guias Práticos para Desenvolvedores - OTClient"
+        },
+        {
+          "path": "otclient/research/otclient_wiki.md",
+          "frequency": 5,
+          "title": "OTClient Wiki"
+        },
+        {
+          "path": "otclient/documentation/RELATORIO_IMPLEMENTACAO.md",
+          "frequency": 4,
+          "title": "Relatório de Implementação das Tarefas OTClient"
+        },
+        {
+          "path": "education/courses/fundamentals_course.md",
+          "frequency": 3,
+          "title": "Fundamentos de Desenvolvimento"
+        },
+        {
+          "path": "otclient/documentation/MÓDULO-004_ferramentas_de_desenvolvimento.md",
+          "frequency": 1,
+          "title": "Ferramentas de Desenvolvimento"
+        }
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "keyword_index.test",
+      "value": [
+        {
+          "path": "integration/comparisons/INTEGRATION-004.md",
+          "frequency": 21,
+          "title": "⚡ INTEGRATION-004: Análise de Performance"
+        },
+        {
+          "path": "integration/comparisons/INTEGRATION-006.md",
+          "frequency": 13,
+          "title": "🔄 INTEGRATION-006: Guias de Migração"
+        },
+        {
+          "path": "otclient/documentation/migration_guides.md",
+          "frequency": 11,
+          "title": "Guias de Migração OTClient ↔ Canary"
+        },
+        {
+          "path": "otclient/research/GUIDE-010_Troubleshooting.md",
+          "frequency": 9,
+          "title": "🔧 Guia de Troubleshooting - OTClient"
+        },
+        {
+          "path": "otclient/research/otclient_canary_unified_documentation.md",
+          "frequency": 5,
+          "title": "Documentação Unificada OTClient-Canary"
+        }
+      ],
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "path": "keyword_index.development",
+      "value": [
+        {
+          "path": "bmad/agents/BMAD_System_Guide.md",
+          "frequency": 8,
+          "title": "Sistema BMAD - Better Model-Assisted Development"
+        },
+        {
+          "path": "otclient/documentation/migration_report.md",
+          "frequency": 4,
+          "title": "📋 Relatório de Migração - Cofre Obsidian"
+        },
+        {
+          "path": "otclient/documentation/wiki_reorganization_plan.md",
+          "frequency": 4,
+          "title": "📁 Plano de Reorganização da Wiki - Transformar docs/ em Cofre Obsidian"
+        },
+        {
+          "path": "otclient/research/Navigation_Index_Story_Based.md",
+          "frequency": 1,
+          "title": "📖 Índice Baseado em Stories - Desenvolvimento Organizado"
+        }
+      ],
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\intelligent_navigation.json",
+      "path": "semantic_links.by_tags.debug",
+      "value": [
+        "otclient/research/CORE-007_Debug_System.md",
+        "otclient/research/CORE-009_Logs_System.md",
+        "otclient/research/Debug_System_Guide.md"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\intelligent_navigation.json",
+      "path": "semantic_links.by_tags.development",
+      "value": [
+        "otclient/research/CORE-007_Debug_System.md",
+        "otclient/research/Debug_System_Guide.md",
+        "otclient/research/GUIDE-004_Debugging_Avancado.md",
+        "otclient/research/GUIDE-009_Contribuicao.md",
+        "otclient/research/migration_canary_to_otclient.md",
+        "otclient/research/migration_otclient_to_canary.md",
+        "otclient/research/Navigation_Index_Story_Based.md",
+        "otclient/research/OTUI_Module_Development_Guide.md"
+      ],
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\intelligent_navigation.json",
+      "path": "semantic_links.by_keywords.debug",
+      "value": [
+        "otclient/research/CORE-007_Debug_System.md",
+        "otclient/research/CORE-009_Logs_System.md",
+        "otclient/research/Debug_System_Guide.md",
+        "otclient/research/Debug_System_Guide.md",
+        "otclient/research/Debug_System_Guide.md",
+        "otclient/documentation/CoreDebug.md",
+        "otclient/documentation/CoreDebug.md"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\intelligent_navigation.json",
+      "path": "semantic_links.by_keywords.development",
+      "value": [
+        "otclient/research/CORE-007_Debug_System.md",
+        "otclient/research/Debug_System_Guide.md",
+        "otclient/research/Debug_System_Guide.md",
+        "otclient/research/GUIDE-004_Debugging_Avancado.md",
+        "otclient/research/GUIDE-009_Contribuicao.md",
+        "otclient/research/migration_canary_to_otclient.md",
+        "otclient/research/migration_otclient_to_canary.md",
+        "otclient/research/Navigation_Index_Story_Based.md",
+        "otclient/research/OTUI_Module_Development_Guide.md",
+        "otclient/research/OTUI_Module_Development_Guide.md",
+        "bmad/agents/BMAD_System_Guide.md"
+      ],
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\intelligent_navigation.json",
+      "path": "search_index.by_tags.debug",
+      "value": [
+        "otclient/research/CORE-007_Debug_System.md",
+        "otclient/research/CORE-009_Logs_System.md",
+        "otclient/research/Debug_System_Guide.md"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\intelligent_navigation.json",
+      "path": "search_index.by_tags.development",
+      "value": [
+        "otclient/research/CORE-007_Debug_System.md",
+        "otclient/research/Debug_System_Guide.md",
+        "otclient/research/GUIDE-004_Debugging_Avancado.md",
+        "otclient/research/GUIDE-009_Contribuicao.md",
+        "otclient/research/migration_canary_to_otclient.md",
+        "otclient/research/migration_otclient_to_canary.md",
+        "otclient/research/Navigation_Index_Story_Based.md",
+        "otclient/research/OTUI_Module_Development_Guide.md"
+      ],
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\intelligent_navigation.json",
+      "path": "search_index.by_keywords.debug",
+      "value": [
+        "otclient/research/CORE-007_Debug_System.md",
+        "otclient/research/CORE-009_Logs_System.md",
+        "otclient/research/Debug_System_Guide.md",
+        "otclient/research/Debug_System_Guide.md",
+        "otclient/research/Debug_System_Guide.md",
+        "otclient/documentation/CoreDebug.md",
+        "otclient/documentation/CoreDebug.md"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\intelligent_navigation.json",
+      "path": "search_index.by_keywords.development",
+      "value": [
+        "otclient/research/CORE-007_Debug_System.md",
+        "otclient/research/Debug_System_Guide.md",
+        "otclient/research/Debug_System_Guide.md",
+        "otclient/research/GUIDE-004_Debugging_Avancado.md",
+        "otclient/research/GUIDE-009_Contribuicao.md",
+        "otclient/research/migration_canary_to_otclient.md",
+        "otclient/research/migration_otclient_to_canary.md",
+        "otclient/research/Navigation_Index_Story_Based.md",
+        "otclient/research/OTUI_Module_Development_Guide.md",
+        "otclient/research/OTUI_Module_Development_Guide.md",
+        "bmad/agents/BMAD_System_Guide.md"
+      ],
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\dashboard\\final_validation_report.json",
+      "path": "test_results.tests.coverage_tests.dashboard_coverage.test",
+      "value": "Verificar se dashboard reflete 100% da realidade",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\dashboard\\final_validation_report.json",
+      "path": "test_results.tests.coverage_tests.stories_integration.test",
+      "value": "Verificar se 60 Stories Habdel estão integradas",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\dashboard\\final_validation_report.json",
+      "path": "test_results.tests.coverage_tests.agents_documentation.test",
+      "value": "Verificar se 7 agentes BMAD estão documentados",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\dashboard\\final_validation_report.json",
+      "path": "test_results.tests.metrics_tests.system_metrics.test",
+      "value": "Verificar se métricas estão funcionando",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\dashboard\\final_validation_report.json",
+      "path": "test_results.tests.metrics_tests.kpi_validation.test",
+      "value": "Verificar se KPIs estão sendo monitorados",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\dashboard\\final_validation_report.json",
+      "path": "test_results.tests.metrics_tests.alert_system.test",
+      "value": "Verificar se sistema de alertas funciona",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\dashboard\\final_validation_report.json",
+      "path": "test_results.tests.educational_tests.lessons_functionality.test",
+      "value": "Verificar se 47 lições são funcionais",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\dashboard\\final_validation_report.json",
+      "path": "test_results.tests.educational_tests.course_progression.test",
+      "value": "Verificar se progressão dos cursos é lógica",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\dashboard\\final_validation_report.json",
+      "path": "test_results.tests.educational_tests.learning_effectiveness.test",
+      "value": "Verificar eficácia do aprendizado",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\dashboard\\final_validation_report.json",
+      "path": "test_results.tests.integration_tests.transition_plan.test",
+      "value": "Verificar se plano de transição Canary está completo",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\dashboard\\final_validation_report.json",
+      "path": "test_results.tests.integration_tests.success_criteria.test",
+      "value": "Verificar se critérios de sucesso estão definidos",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\dashboard\\final_validation_report.json",
+      "path": "test_results.tests.integration_tests.validation_processes.test",
+      "value": "Verificar se processos de validação estão estabelecidos",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\dashboard\\final_validation_report.json",
+      "path": "test_results.tests.maintenance_tests.update_processes.test",
+      "value": "Verificar se processos de atualização estão criados",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\dashboard\\final_validation_report.json",
+      "path": "test_results.tests.maintenance_tests.backup_system.test",
+      "value": "Verificar se sistema de backup está estabelecido",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\dashboard\\final_validation_report.json",
+      "path": "test_results.tests.maintenance_tests.evolution_roadmap.test",
+      "value": "Verificar se roadmap de evolução está criado",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\centralized_logs_index.json",
+      "path": "structure.temp",
+      "value": "Arquivos temporários",
+      "reason": "Chave obsoleta: temp",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\otclient_source_index.json",
+      "path": "search_index.functions.debug",
+      "value": [
+        "otclient\\modules\\client_options\\keybins.lua"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\otclient_source_index.json",
+      "path": "search_index.functions.test",
+      "value": [
+        "otclient\\modules\\game_cyclopedia\\tab\\bestiary\\bestiary.lua"
+      ],
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\search_index.json",
+      "path": "quick_search.debug",
+      "value": {
+        "files": [
+          "CORE-007_Debug_System.md",
+          "CORE-009_Logs_System.md",
+          "Debug_System_Guide.md"
+        ],
+        "count": 3,
+        "priority": "medium"
+      },
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\search_index.json",
+      "path": "quick_search.development",
+      "value": {
+        "files": [
+          "CORE-007_Debug_System.md",
+          "Debug_System_Guide.md",
+          "GUIDE-004_Debugging_Avancado.md",
+          "GUIDE-009_Contribuicao.md",
+          "Navigation_Index_Story_Based.md",
+          "OTUI_Module_Development_Guide.md"
+        ],
+        "count": 6,
+        "priority": "medium"
+      },
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\search_index.json",
+      "path": "exact_match.debug",
+      "value": [
+        "CORE-007_Debug_System.md",
+        "CORE-009_Logs_System.md",
+        "Debug_System_Guide.md"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\search_index.json",
+      "path": "exact_match.development",
+      "value": [
+        "CORE-007_Debug_System.md",
+        "Debug_System_Guide.md",
+        "GUIDE-004_Debugging_Avancado.md",
+        "GUIDE-009_Contribuicao.md",
+        "Navigation_Index_Story_Based.md",
+        "OTUI_Module_Development_Guide.md"
+      ],
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\tags_index.json",
+      "path": "files_by_tag.debug",
+      "value": [
+        "CORE-007_Debug_System.md",
+        "CORE-009_Logs_System.md",
+        "Debug_System_Guide.md"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\tags_index.json",
+      "path": "files_by_tag.development",
+      "value": [
+        "CORE-007_Debug_System.md",
+        "Debug_System_Guide.md",
+        "GUIDE-004_Debugging_Avancado.md",
+        "GUIDE-009_Contribuicao.md",
+        "Navigation_Index_Story_Based.md",
+        "OTUI_Module_Development_Guide.md"
+      ],
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\wiki_map.json",
+      "path": "categories.development",
+      "value": {
+        "name": "Development",
+        "documents": []
+      },
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\update\\python_tools_report.json",
+      "path": "tools_by_category.development",
+      "value": 1,
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\update\\function_catalog\\function_catalog.json",
+      "path": "search_index.by_keyword.debug",
+      "value": [
+        "maps\\map_updater\\migrated_migrated_otclient_debug_tools.py.check_debug_environment",
+        "maps\\map_updater\\migrated_migrated_otclient_debug_tools.py.generate_debug_report",
+        "maps\\map_updater\\migrated_migrated_otclient_debug_tools.py.save_debug_report",
+        "analysis\\source_analyzer\\migrated_otclient_debug_tools.py.check_debug_environment",
+        "analysis\\source_analyzer\\migrated_otclient_debug_tools.py.generate_debug_report",
+        "analysis\\source_analyzer\\migrated_otclient_debug_tools.py.save_debug_report"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\update\\function_catalog\\search_index.json",
+      "path": "by_keyword.debug",
+      "value": [
+        "maps\\map_updater\\migrated_migrated_otclient_debug_tools.py.check_debug_environment",
+        "maps\\map_updater\\migrated_migrated_otclient_debug_tools.py.generate_debug_report",
+        "maps\\map_updater\\migrated_migrated_otclient_debug_tools.py.save_debug_report",
+        "analysis\\source_analyzer\\migrated_otclient_debug_tools.py.check_debug_environment",
+        "analysis\\source_analyzer\\migrated_otclient_debug_tools.py.generate_debug_report",
+        "analysis\\source_analyzer\\migrated_otclient_debug_tools.py.save_debug_report"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\update\\python_tools\\tools_stats.json",
+      "path": "tools_by_category.development",
+      "value": 1,
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\backup\\otclient_source_index_backup_1754055351.json",
+      "path": "search_index.functions.debug",
+      "value": [
+        "otclient\\modules\\client_options\\keybins.lua"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\backup\\otclient_source_index_backup_1754055351.json",
+      "path": "search_index.functions.test",
+      "value": [
+        "otclient\\modules\\game_cyclopedia\\tab\\bestiary\\bestiary.lua"
+      ],
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\backup\\search_index_backup_1754055351.json",
+      "path": "quick_search.debug",
+      "value": {
+        "files": [
+          "CORE-007_Debug_System.md",
+          "CORE-009_Logs_System.md",
+          "Debug_System_Guide.md"
+        ],
+        "count": 3,
+        "priority": "medium"
+      },
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\backup\\search_index_backup_1754055351.json",
+      "path": "quick_search.development",
+      "value": {
+        "files": [
+          "CORE-007_Debug_System.md",
+          "Debug_System_Guide.md",
+          "GUIDE-004_Debugging_Avancado.md",
+          "GUIDE-009_Contribuicao.md",
+          "Navigation_Index_Story_Based.md",
+          "OTUI_Module_Development_Guide.md"
+        ],
+        "count": 6,
+        "priority": "medium"
+      },
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\backup\\search_index_backup_1754055351.json",
+      "path": "exact_match.debug",
+      "value": [
+        "CORE-007_Debug_System.md",
+        "CORE-009_Logs_System.md",
+        "Debug_System_Guide.md"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\backup\\search_index_backup_1754055351.json",
+      "path": "exact_match.development",
+      "value": [
+        "CORE-007_Debug_System.md",
+        "Debug_System_Guide.md",
+        "GUIDE-004_Debugging_Avancado.md",
+        "GUIDE-009_Contribuicao.md",
+        "Navigation_Index_Story_Based.md",
+        "OTUI_Module_Development_Guide.md"
+      ],
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\backup\\tags_index_backup_1754055351.json",
+      "path": "files_by_tag.debug",
+      "value": [
+        "CORE-007_Debug_System.md",
+        "CORE-009_Logs_System.md",
+        "Debug_System_Guide.md"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\backup\\tags_index_backup_1754055351.json",
+      "path": "files_by_tag.development",
+      "value": [
+        "CORE-007_Debug_System.md",
+        "Debug_System_Guide.md",
+        "GUIDE-004_Debugging_Avancado.md",
+        "GUIDE-009_Contribuicao.md",
+        "Navigation_Index_Story_Based.md",
+        "OTUI_Module_Development_Guide.md"
+      ],
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\backup\\wiki_map_backup_1754055351.json",
+      "path": "categories.development",
+      "value": {
+        "name": "Development",
+        "documents": []
+      },
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\optimized\\otclient_source_index_optimized.json",
+      "path": "search_index.functions.debug",
+      "value": [
+        "otclient\\modules\\client_options\\keybins.lua"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\optimized\\otclient_source_index_optimized.json",
+      "path": "search_index.functions.test",
+      "value": [
+        "otclient\\modules\\game_cyclopedia\\tab\\bestiary\\bestiary.lua"
+      ],
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\optimized\\search_index_optimized.json",
+      "path": "quick_search.debug",
+      "value": {
+        "files": [
+          "CORE-007_Debug_System.md",
+          "CORE-009_Logs_System.md",
+          "Debug_System_Guide.md"
+        ],
+        "count": 3,
+        "priority": "medium"
+      },
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\optimized\\search_index_optimized.json",
+      "path": "quick_search.development",
+      "value": {
+        "files": [
+          "CORE-007_Debug_System.md",
+          "Debug_System_Guide.md",
+          "GUIDE-004_Debugging_Avancado.md",
+          "GUIDE-009_Contribuicao.md",
+          "Navigation_Index_Story_Based.md",
+          "OTUI_Module_Development_Guide.md"
+        ],
+        "count": 6,
+        "priority": "medium"
+      },
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\optimized\\search_index_optimized.json",
+      "path": "exact_match.debug",
+      "value": [
+        "CORE-007_Debug_System.md",
+        "CORE-009_Logs_System.md",
+        "Debug_System_Guide.md"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\optimized\\search_index_optimized.json",
+      "path": "exact_match.development",
+      "value": [
+        "CORE-007_Debug_System.md",
+        "Debug_System_Guide.md",
+        "GUIDE-004_Debugging_Avancado.md",
+        "GUIDE-009_Contribuicao.md",
+        "Navigation_Index_Story_Based.md",
+        "OTUI_Module_Development_Guide.md"
+      ],
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\optimized\\tags_index_optimized.json",
+      "path": "files_by_tag.debug",
+      "value": [
+        "CORE-007_Debug_System.md",
+        "CORE-009_Logs_System.md",
+        "Debug_System_Guide.md"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\optimized\\tags_index_optimized.json",
+      "path": "files_by_tag.development",
+      "value": [
+        "CORE-007_Debug_System.md",
+        "Debug_System_Guide.md",
+        "GUIDE-004_Debugging_Avancado.md",
+        "GUIDE-009_Contribuicao.md",
+        "Navigation_Index_Story_Based.md",
+        "OTUI_Module_Development_Guide.md"
+      ],
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\maps\\optimized\\wiki_map_optimized.json",
+      "path": "categories.development",
+      "value": {
+        "name": "Development",
+        "documents": []
+      },
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.test_results.tests.coverage_tests.dashboard_coverage.test",
+      "value": "Verificar se dashboard reflete 100% da realidade",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.test_results.tests.coverage_tests.stories_integration.test",
+      "value": "Verificar se 60 Stories Habdel estão integradas",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.test_results.tests.coverage_tests.agents_documentation.test",
+      "value": "Verificar se 7 agentes BMAD estão documentados",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.test_results.tests.metrics_tests.system_metrics.test",
+      "value": "Verificar se métricas estão funcionando",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.test_results.tests.metrics_tests.kpi_validation.test",
+      "value": "Verificar se KPIs estão sendo monitorados",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.test_results.tests.metrics_tests.alert_system.test",
+      "value": "Verificar se sistema de alertas funciona",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.test_results.tests.educational_tests.lessons_functionality.test",
+      "value": "Verificar se 47 lições são funcionais",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.test_results.tests.educational_tests.course_progression.test",
+      "value": "Verificar se progressão dos cursos é lógica",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.test_results.tests.educational_tests.learning_effectiveness.test",
+      "value": "Verificar eficácia do aprendizado",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.test_results.tests.integration_tests.transition_plan.test",
+      "value": "Verificar se plano de transição Canary está completo",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.test_results.tests.integration_tests.success_criteria.test",
+      "value": "Verificar se critérios de sucesso estão definidos",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.test_results.tests.integration_tests.validation_processes.test",
+      "value": "Verificar se processos de validação estão estabelecidos",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.test_results.tests.maintenance_tests.update_processes.test",
+      "value": "Verificar se processos de atualização estão criados",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.test_results.tests.maintenance_tests.backup_system.test",
+      "value": "Verificar se sistema de backup está estabelecido",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.test_results.tests.maintenance_tests.evolution_roadmap.test",
+      "value": "Verificar se roadmap de evolução está criado",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.final_validation.test_results.tests.coverage_tests.dashboard_coverage.test",
+      "value": "Verificar se dashboard reflete 100% da realidade",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.final_validation.test_results.tests.coverage_tests.stories_integration.test",
+      "value": "Verificar se 60 Stories Habdel estão integradas",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.final_validation.test_results.tests.coverage_tests.agents_documentation.test",
+      "value": "Verificar se 7 agentes BMAD estão documentados",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.final_validation.test_results.tests.metrics_tests.system_metrics.test",
+      "value": "Verificar se métricas estão funcionando",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.final_validation.test_results.tests.metrics_tests.kpi_validation.test",
+      "value": "Verificar se KPIs estão sendo monitorados",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.final_validation.test_results.tests.metrics_tests.alert_system.test",
+      "value": "Verificar se sistema de alertas funciona",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.final_validation.test_results.tests.educational_tests.lessons_functionality.test",
+      "value": "Verificar se 47 lições são funcionais",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.final_validation.test_results.tests.educational_tests.course_progression.test",
+      "value": "Verificar se progressão dos cursos é lógica",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.final_validation.test_results.tests.educational_tests.learning_effectiveness.test",
+      "value": "Verificar eficácia do aprendizado",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.final_validation.test_results.tests.integration_tests.transition_plan.test",
+      "value": "Verificar se plano de transição Canary está completo",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.final_validation.test_results.tests.integration_tests.success_criteria.test",
+      "value": "Verificar se critérios de sucesso estão definidos",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.final_validation.test_results.tests.integration_tests.validation_processes.test",
+      "value": "Verificar se processos de validação estão estabelecidos",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.final_validation.test_results.tests.maintenance_tests.update_processes.test",
+      "value": "Verificar se processos de atualização estão criados",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.final_validation.test_results.tests.maintenance_tests.backup_system.test",
+      "value": "Verificar se sistema de backup está estabelecido",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\log\\epic11_validation\\epic11_final_report.json",
+      "path": "resultados_finais.final_validation.test_results.tests.maintenance_tests.evolution_roadmap.test",
+      "value": "Verificar se roadmap de evolução está criado",
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\integration\\patterns\\otclient_source_index.json",
+      "path": "search_index.functions.debug",
+      "value": [
+        "otclient\\modules\\client_options\\keybins.lua"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\integration\\patterns\\otclient_source_index.json",
+      "path": "search_index.functions.test",
+      "value": [
+        "otclient\\modules\\game_cyclopedia\\tab\\bestiary\\bestiary.lua"
+      ],
+      "reason": "Chave obsoleta: test",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\integration\\patterns\\search_index.json",
+      "path": "quick_search.debug",
+      "value": {
+        "files": [
+          "CORE-007_Debug_System.md",
+          "CORE-009_Logs_System.md",
+          "Debug_System_Guide.md"
+        ],
+        "count": 3,
+        "priority": "medium"
+      },
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\integration\\patterns\\search_index.json",
+      "path": "quick_search.development",
+      "value": {
+        "files": [
+          "CORE-007_Debug_System.md",
+          "Debug_System_Guide.md",
+          "GUIDE-004_Debugging_Avancado.md",
+          "GUIDE-009_Contribuicao.md",
+          "Navigation_Index_Story_Based.md",
+          "OTUI_Module_Development_Guide.md"
+        ],
+        "count": 6,
+        "priority": "medium"
+      },
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\integration\\patterns\\search_index.json",
+      "path": "exact_match.debug",
+      "value": [
+        "CORE-007_Debug_System.md",
+        "CORE-009_Logs_System.md",
+        "Debug_System_Guide.md"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\integration\\patterns\\search_index.json",
+      "path": "exact_match.development",
+      "value": [
+        "CORE-007_Debug_System.md",
+        "Debug_System_Guide.md",
+        "GUIDE-004_Debugging_Avancado.md",
+        "GUIDE-009_Contribuicao.md",
+        "Navigation_Index_Story_Based.md",
+        "OTUI_Module_Development_Guide.md"
+      ],
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\integration\\patterns\\tags_index.json",
+      "path": "files_by_tag.debug",
+      "value": [
+        "CORE-007_Debug_System.md",
+        "CORE-009_Logs_System.md",
+        "Debug_System_Guide.md"
+      ],
+      "reason": "Chave obsoleta: debug",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\integration\\patterns\\tags_index.json",
+      "path": "files_by_tag.development",
+      "value": [
+        "CORE-007_Debug_System.md",
+        "Debug_System_Guide.md",
+        "GUIDE-004_Debugging_Avancado.md",
+        "GUIDE-009_Contribuicao.md",
+        "Navigation_Index_Story_Based.md",
+        "OTUI_Module_Development_Guide.md"
+      ],
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\consolidated\\integration\\patterns\\wiki_map.json",
+      "path": "categories.development",
+      "value": {
+        "name": "Development",
+        "documents": []
+      },
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    },
+    {
+      "file": "wiki\\backup\\python_scripts\\tools_stats.json",
+      "path": "tools_by_category.development",
+      "value": 1,
+      "reason": "Chave obsoleta: development",
+      "severity": "medium"
+    }
+  ],
+  "inconsistent_params": [
+    {
+      "file": "wiki\\bmad\\wiki\\bmad\\results\\workflow_logs\\workflow_client_1753914092_client_results.json",
+      "path": "phases.analysis.results.files.client.otmod.structure.module_info.reloadable",
+      "value": "false",
+      "issue": "String booleana em vez de boolean",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\bmad\\wiki\\bmad\\results\\workflow_logs\\workflow_client_1753914092_client_results.json",
+      "path": "phases.analysis.results.files.client.otmod.structure.module_info.sandboxed",
+      "value": "true",
+      "issue": "String booleana em vez de boolean",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\bmad\\results\\analysis\\client_analysis.json",
+      "path": "files.client.otmod.structure.module_info.reloadable",
+      "value": "false",
+      "issue": "String booleana em vez de boolean",
+      "severity": "low"
+    },
+    {
+      "file": "wiki\\bmad\\results\\analysis\\client_analysis.json",
+      "path": "files.client.otmod.structure.module_info.sandboxed",
+      "value": "true",
+      "issue": "String booleana em vez de boolean",
+      "severity": "low"
+    }
+  ],
+  "missing_configs": [],
+  "recommendations": [
+    {
+      "category": "Limpeza",
+      "action": "Remover configurações obsoletas",
+      "priority": "medium",
+      "description": "Encontradas 131 configurações obsoletas"
+    },
+    {
+      "category": "Padronização",
+      "action": "Padronizar parâmetros de configuração",
+      "priority": "low",
+      "description": "Encontrados 4 parâmetros inconsistentes"
+    },
+    {
+      "category": "Documentação",
+      "action": "Documentar todas as configurações",
+      "priority": "medium",
+      "description": "Para melhor manutenibilidade"
+    },
+    {
+      "category": "Validação",
+      "action": "Implementar validação de configurações",
+      "priority": "medium",
+      "description": "Para evitar erros de configuração"
+    },
+    {
+      "category": "Versionamento",
+      "action": "Versionar configurações",
+      "priority": "low",
+      "description": "Para controle de mudanças"
+    }
+  ]
+}

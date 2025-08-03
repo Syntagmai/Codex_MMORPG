@@ -1,0 +1,418 @@
+{
+  "epic_number": 18,
+  "name": "Correção e Otimização do Sistema",
+  "status": "0%",
+  "priority": "Crítica",
+  "objective": "Corrigir todos os problemas identificados na Epic 17 e otimizar o sistema",
+  "created_date": "2025-08-02T22:10:13.441330",
+  "tasks": [
+    {
+      "task_number": "18.1",
+      "name": "Correção de Vulnerabilidades de Segurança",
+      "description": "Corrigir vulnerabilidades de alta e média severidade identificadas",
+      "priority": "Crítica",
+      "estimated_hours": 16,
+      "dependencies": [],
+      "subtasks": [
+        "Corrigir 5 vulnerabilidades de alta severidade",
+        "Corrigir 50 vulnerabilidades de média severidade",
+        "Implementar validações de entrada robustas",
+        "Corrigir problemas de autenticação",
+        "Corrigir problemas de permissão",
+        "Proteger dados sensíveis expostos"
+      ]
+    },
+    {
+      "task_number": "18.2",
+      "name": "Correção de Erros de Sintaxe Python",
+      "description": "Corrigir erros de sintaxe e imports obsoletos em scripts Python",
+      "priority": "Alta",
+      "estimated_hours": 12,
+      "dependencies": [],
+      "subtasks": [
+        "Corrigir 389 erros de sintaxe Python",
+        "Remover 418 imports obsoletos unicode_aliases",
+        "Instalar 753 dependências faltantes",
+        "Validar sintaxe de todos os scripts",
+        "Testar execução dos scripts corrigidos"
+      ]
+    },
+    {
+      "task_number": "18.3",
+      "name": "Otimização de Performance e Recursos",
+      "description": "Otimizar arquivos grandes, scripts lentos e gargalos identificados",
+      "priority": "Alta",
+      "estimated_hours": 20,
+      "dependencies": [
+        "18.2"
+      ],
+      "subtasks": [
+        "Otimizar 20 arquivos grandes (>1MB)",
+        "Melhorar 15 scripts lentos identificados",
+        "Corrigir 20 gargalos potenciais",
+        "Implementar 15 oportunidades de otimização",
+        "Reduzir uso de memória e CPU",
+        "Otimizar operações de I/O"
+      ]
+    },
+    {
+      "task_number": "18.4",
+      "name": "Correção de Integrações e Dependências",
+      "description": "Corrigir dependências circulares, interfaces quebradas e integrações críticas",
+      "priority": "Alta",
+      "estimated_hours": 18,
+      "dependencies": [
+        "18.2"
+      ],
+      "subtasks": [
+        "Resolver 661 dependências circulares",
+        "Corrigir 223 interfaces quebradas",
+        "Otimizar 424 integrações críticas",
+        "Melhorar 795 fluxos de dados",
+        "Corrigir 88 endpoints de API",
+        "Validar todas as integrações"
+      ]
+    },
+    {
+      "task_number": "18.5",
+      "name": "Limpeza de Estrutura de Arquivos",
+      "description": "Remover itens obsoletos, diretórios vazios e problemas de nomenclatura",
+      "priority": "Média",
+      "estimated_hours": 8,
+      "dependencies": [],
+      "subtasks": [
+        "Remover 104 itens obsoletos",
+        "Limpar 137 diretórios vazios",
+        "Corrigir 4 problemas de nomenclatura",
+        "Organizar estrutura de pastas",
+        "Validar organização final"
+      ]
+    },
+    {
+      "task_number": "18.6",
+      "name": "Correção de Configurações e Regras",
+      "description": "Corrigir configurações obsoletas e parâmetros inconsistentes",
+      "priority": "Média",
+      "estimated_hours": 6,
+      "dependencies": [],
+      "subtasks": [
+        "Remover 131 configurações obsoletas",
+        "Corrigir 4 parâmetros inconsistentes",
+        "Resolver 109 problemas gerais de configuração",
+        "Validar todas as configurações",
+        "Testar funcionamento do sistema"
+      ]
+    },
+    {
+      "task_number": "18.7",
+      "name": "Correção de Documentação e Wikis",
+      "description": "Corrigir links quebrados, documentos incompletos e problemas de qualidade",
+      "priority": "Média",
+      "estimated_hours": 10,
+      "dependencies": [],
+      "subtasks": [
+        "Corrigir 7,208 links quebrados",
+        "Completar 239 documentos incompletos",
+        "Criar 2 documentações críticas faltantes (CHANGELOG.md, LICENSE)",
+        "Corrigir 21 problemas de qualidade",
+        "Validar toda a documentação"
+      ]
+    },
+    {
+      "task_number": "18.8",
+      "name": "Atualização do README.md Principal",
+      "description": "Criar versão estável e transparente do README.md principal",
+      "priority": "Alta",
+      "estimated_hours": 4,
+      "dependencies": [
+        "18.7"
+      ],
+      "subtasks": [
+        "Criar estrutura clara e organizada",
+        "Documentar todas as funcionalidades",
+        "Incluir guias de instalação e uso",
+        "Adicionar exemplos práticos",
+        "Validar clareza e transparência"
+      ]
+    },
+    {
+      "task_number": "18.9",
+      "name": "Testes e Validação Completa",
+      "description": "Realizar testes abrangentes para validar todas as correções",
+      "priority": "Alta",
+      "estimated_hours": 12,
+      "dependencies": [
+        "18.1",
+        "18.2",
+        "18.3",
+        "18.4",
+        "18.5",
+        "18.6",
+        "18.7",
+        "18.8"
+      ],
+      "subtasks": [
+        "Testes de segurança",
+        "Testes de performance",
+        "Testes de integração",
+        "Testes de documentação",
+        "Validação final do sistema"
+      ]
+    },
+    {
+      "task_number": "18.10",
+      "name": "Relatório Final de Correção e Otimização",
+      "description": "Gerar relatório final consolidado com todas as correções realizadas",
+      "priority": "Média",
+      "estimated_hours": 3,
+      "dependencies": [
+        "18.9"
+      ],
+      "subtasks": [
+        "Consolidar resultados de todas as correções",
+        "Documentar melhorias implementadas",
+        "Criar métricas de antes e depois",
+        "Gerar relatório executivo",
+        "Arquivar Epic 18 como concluída"
+      ]
+    }
+  ],
+  "critical_issues": [
+    {
+      "type": "security_auth",
+      "description": "Problema de autenticação: authentication_method",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\network\\auth.py",
+      "priority": "Alta",
+      "epic_18_task": "18.1"
+    },
+    {
+      "type": "security_auth",
+      "description": "Problema de autenticação: authentication_method",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\network\\session.py",
+      "priority": "Alta",
+      "epic_18_task": "18.1"
+    },
+    {
+      "type": "security_auth",
+      "description": "Problema de autenticação: authentication_method",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\utils\\direct_url_helpers.py",
+      "priority": "Alta",
+      "epic_18_task": "18.1"
+    },
+    {
+      "type": "security_auth",
+      "description": "Problema de autenticação: authentication_method",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\vcs\\bazaar.py",
+      "priority": "Alta",
+      "epic_18_task": "18.1"
+    },
+    {
+      "type": "security_auth",
+      "description": "Problema de autenticação: authentication_method",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\vcs\\git.py",
+      "priority": "Alta",
+      "epic_18_task": "18.1"
+    },
+    {
+      "type": "security_permission",
+      "description": "Problema de permissão: permission_check",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\network\\cache.py",
+      "priority": "Alta",
+      "epic_18_task": "18.1"
+    },
+    {
+      "type": "security_permission",
+      "description": "Problema de permissão: permission_check",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\operations\\install\\wheel.py",
+      "priority": "Alta",
+      "epic_18_task": "18.1"
+    },
+    {
+      "type": "security_permission",
+      "description": "Problema de permissão: permission_check",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\utils\\filesystem.py",
+      "priority": "Alta",
+      "epic_18_task": "18.1"
+    },
+    {
+      "type": "security_permission",
+      "description": "Problema de permissão: permission_check",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\utils\\misc.py",
+      "priority": "Alta",
+      "epic_18_task": "18.1"
+    },
+    {
+      "type": "security_permission",
+      "description": "Problema de permissão: permission_check",
+      "file": ".venv\\Lib\\site-packages\\pip\\_internal\\utils\\unpacking.py",
+      "priority": "Alta",
+      "epic_18_task": "18.1"
+    },
+    {
+      "type": "python_syntax",
+      "description": "Erro de sintaxe Python: invalid syntax (<unknown>, line 8)",
+      "file": "wiki\\update\\agent_organizer.py",
+      "line": 8,
+      "priority": "Alta",
+      "epic_18_task": "18.2"
+    },
+    {
+      "type": "python_syntax",
+      "description": "Erro de sintaxe Python: unexpected indent (<unknown>, line 1)",
+      "file": "wiki\\update\\auto_monitor.py",
+      "line": 1,
+      "priority": "Alta",
+      "epic_18_task": "18.2"
+    },
+    {
+      "type": "python_syntax",
+      "description": "Erro de sintaxe Python: unexpected indent (<unknown>, line 1)",
+      "file": "wiki\\update\\auto_update_system.py",
+      "line": 1,
+      "priority": "Alta",
+      "epic_18_task": "18.2"
+    },
+    {
+      "type": "python_syntax",
+      "description": "Erro de sintaxe Python: unexpected indent (<unknown>, line 2)",
+      "file": "wiki\\update\\backup_system.py",
+      "line": 2,
+      "priority": "Alta",
+      "epic_18_task": "18.2"
+    },
+    {
+      "type": "python_syntax",
+      "description": "Erro de sintaxe Python: unexpected indent (<unknown>, line 2)",
+      "file": "wiki\\update\\centralize_logs.py",
+      "line": 2,
+      "priority": "Alta",
+      "epic_18_task": "18.2"
+    },
+    {
+      "type": "python_syntax",
+      "description": "Erro de sintaxe Python: unexpected indent (<unknown>, line 2)",
+      "file": "wiki\\update\\final_commit_verification.py",
+      "line": 2,
+      "priority": "Alta",
+      "epic_18_task": "18.2"
+    },
+    {
+      "type": "python_syntax",
+      "description": "Erro de sintaxe Python: unexpected indent (<unknown>, line 2)",
+      "file": "wiki\\update\\git_task_integration.py",
+      "line": 2,
+      "priority": "Alta",
+      "epic_18_task": "18.2"
+    },
+    {
+      "type": "python_syntax",
+      "description": "Erro de sintaxe Python: unexpected indent (<unknown>, line 2)",
+      "file": "wiki\\update\\otclient_debug_tools.py",
+      "line": 2,
+      "priority": "Alta",
+      "epic_18_task": "18.2"
+    },
+    {
+      "type": "python_syntax",
+      "description": "Erro de sintaxe Python: unexpected indent (<unknown>, line 2)",
+      "file": "wiki\\update\\performance_monitor.py",
+      "line": 2,
+      "priority": "Alta",
+      "epic_18_task": "18.2"
+    },
+    {
+      "type": "python_syntax",
+      "description": "Erro de sintaxe Python: invalid syntax (<unknown>, line 409)",
+      "file": "wiki\\update\\python_tools_agent.py",
+      "line": 409,
+      "priority": "Alta",
+      "epic_18_task": "18.2"
+    },
+    {
+      "type": "performance_large_file",
+      "description": "Arquivo muito grande: 153.4 MB",
+      "file": ".git\\modules\\canary\\objects\\pack\\pack-53fc412336e542ab67d43664e15f454ddae4f1a8.pack",
+      "priority": "Média",
+      "epic_18_task": "18.3"
+    },
+    {
+      "type": "performance_large_file",
+      "description": "Arquivo muito grande: 153.39 MB",
+      "file": ".git\\modules\\canary\\objects\\pack\\pack-8bff4a71b5070c47489d0c84d423cabad8691e65.pack",
+      "priority": "Média",
+      "epic_18_task": "18.3"
+    },
+    {
+      "type": "performance_large_file",
+      "description": "Arquivo muito grande: 71.65 MB",
+      "file": ".git\\modules\\otclient\\objects\\pack\\pack-7fd663487b19e2156731255c10bd6f26d202c582.pack",
+      "priority": "Média",
+      "epic_18_task": "18.3"
+    },
+    {
+      "type": "performance_large_file",
+      "description": "Arquivo muito grande: 71.64 MB",
+      "file": ".git\\modules\\otclient\\objects\\pack\\pack-ec387c5629d22198a5362c3cb20ddebeb225c0a1.pack",
+      "priority": "Média",
+      "epic_18_task": "18.3"
+    },
+    {
+      "type": "performance_large_file",
+      "description": "Arquivo muito grande: 27.03 MB",
+      "file": "wiki\\consolidated\\advanced_search_index.json",
+      "priority": "Média",
+      "epic_18_task": "18.3"
+    },
+    {
+      "type": "integration_circular",
+      "description": "Dependência circular: N/A",
+      "files": [],
+      "priority": "Alta",
+      "epic_18_task": "18.4"
+    },
+    {
+      "type": "integration_circular",
+      "description": "Dependência circular: N/A",
+      "files": [],
+      "priority": "Alta",
+      "epic_18_task": "18.4"
+    },
+    {
+      "type": "integration_circular",
+      "description": "Dependência circular: N/A",
+      "files": [],
+      "priority": "Alta",
+      "epic_18_task": "18.4"
+    },
+    {
+      "type": "integration_circular",
+      "description": "Dependência circular: N/A",
+      "files": [],
+      "priority": "Alta",
+      "epic_18_task": "18.4"
+    },
+    {
+      "type": "integration_circular",
+      "description": "Dependência circular: N/A",
+      "files": [],
+      "priority": "Alta",
+      "epic_18_task": "18.4"
+    }
+  ],
+  "optimization_opportunities": [],
+  "security_fixes": [],
+  "performance_improvements": [],
+  "documentation_updates": [],
+  "integration_fixes": [],
+  "metrics": {
+    "total_tasks": 10,
+    "total_estimated_hours": 109,
+    "critical_issues_to_fix": 0,
+    "priority_distribution": {
+      "Crítica": 1,
+      "Alta": 5,
+      "Média": 4,
+      "Baixa": 0
+    }
+  }
+}

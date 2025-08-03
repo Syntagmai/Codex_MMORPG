@@ -1,0 +1,760 @@
+{
+  "timestamp": "2025-08-02T21:25:18.940064",
+  "project_root": "C:\\Users\\Dell\\Documents\\GitHub\\Codex_MMORPG",
+  "total_files": 19303,
+  "total_directories": 2189,
+  "issues": [
+    {
+      "type": "spaces_in_filename",
+      "path": "canary\\data-otservbr-global\\scripts\\quests\\the_paradox_tower\\movement_strange_carvings_in _the_southeast.lua"
+    },
+    {
+      "type": "spaces_in_filename",
+      "path": "canary\\data-otservbr-global\\scripts\\quests\\the_paradox_tower\\move_let_the _quest.lua"
+    },
+    {
+      "type": "spaces_in_filename",
+      "path": "otclient\\data\\images\\game\\slots\\left-hand (2).png"
+    },
+    {
+      "type": "spaces_in_filename",
+      "path": "otclient\\data\\images\\game\\slots\\right-hand (2).png"
+    }
+  ],
+  "obsolete_items": [
+    {
+      "type": "directory",
+      "path": ".venv\\Lib\\site-packages\\pip\\_internal\\resolution\\legacy",
+      "pattern": "legacy"
+    },
+    {
+      "type": "directory",
+      "path": "canary\\.github\\ISSUE_TEMPLATE",
+      "pattern": "temp"
+    },
+    {
+      "type": "directory",
+      "path": "canary\\data\\libs\\debugging",
+      "pattern": "debug"
+    },
+    {
+      "type": "directory",
+      "path": "canary\\data-otservbr-global\\scripts\\quests\\barbarian_test",
+      "pattern": "_test"
+    },
+    {
+      "type": "directory",
+      "path": "docs\\src\\resources\\templates",
+      "pattern": "temp"
+    },
+    {
+      "type": "directory",
+      "path": "otclient\\.github\\ISSUE_TEMPLATE",
+      "pattern": "temp"
+    },
+    {
+      "type": "directory",
+      "path": "otclient\\modules\\client_debug_info",
+      "pattern": "debug"
+    },
+    {
+      "type": "directory",
+      "path": "otclient\\modules\\game_cooldown",
+      "pattern": "old"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\backup",
+      "pattern": "backup"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\legacy_docs",
+      "pattern": "legacy"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\bmad\\templates",
+      "pattern": "temp"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\bmad\\results\\test_reports",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\bmad\\wiki\\bmad\\templates",
+      "pattern": "temp"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\bmad\\wiki\\bmad\\results\\test_reports",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\cursor_core\\.bmad-game-core\\templates",
+      "pattern": "temp"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\docs\\templates",
+      "pattern": "temp"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\docs\\validation_tests",
+      "pattern": "_test"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\docs\\canary\\debugging",
+      "pattern": "debug"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\docs\\otclient\\debugging",
+      "pattern": "debug"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\docs\\resources\\templates",
+      "pattern": "temp"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\habdel\\backup_20250730_145936",
+      "pattern": "backup"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\habdel\\backup_20250730_145939",
+      "pattern": "backup"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\habdel\\integration\\templates",
+      "pattern": "temp"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\habdel\\methodology\\templates",
+      "pattern": "temp"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\habdel\\otclient\\templates",
+      "pattern": "temp"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\integration\\canary\\templates",
+      "pattern": "temp"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\legacy_docs\\src\\resources\\templates",
+      "pattern": "temp"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\log\\backup",
+      "pattern": "backup"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\log\\backup_centralization",
+      "pattern": "backup"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\log\\temp",
+      "pattern": "temp"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\log\\temp_tasks",
+      "pattern": "temp"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\log\\archives\\backup_consolidation_backup",
+      "pattern": "backup"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\log\\archives\\old_reports",
+      "pattern": "old"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\log\\backup_centralization\\backup_centralization",
+      "pattern": "backup"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\maps\\backup",
+      "pattern": "backup"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\legacy_tools",
+      "pattern": "legacy"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\backup_system",
+      "pattern": "backup"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\migrated_backup_system",
+      "pattern": "backup"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\migrated_migrated_backup_system",
+      "pattern": "backup"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\migrated_migrated_otclient_debug_tools",
+      "pattern": "debug"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\migrated_otclient_debug_tools",
+      "pattern": "debug"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\migrated_workflow_orchestrator_legacy",
+      "pattern": "legacy"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\otclient_debug_tools",
+      "pattern": "debug"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\python_agent_integration_test",
+      "pattern": "_test"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_advanced_searcher",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_agent_integrator",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_agent_monitor",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_agent_optimizer",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_agent_orchestrator",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_agent_organizer",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_agent_specialist",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_agent_validator",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_alert_system",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_backup_system",
+      "pattern": "backup"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_cleanup_system",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_code_analyzer",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_code_optimizer",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_config_manager",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_content_validator",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_context_detector",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_dashboard_monitor",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_documentation_generator",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_documentation_organizer",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_error_resolver",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_file_mover",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_generator",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_git_automation",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_habdel_indexer",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_intelligent_navigator",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_intelligent_orchestration",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_knowledge_consolidator",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_log_manager",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_map_optimizer",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_map_updater",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_map_validator",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_markdown_processor",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_metrics_analyzer",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_metrics_collector",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_metrics_reporter",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_modules_indexer",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_performance_monitor",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_python_agent",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_recipe_manager",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_research_manager",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_resources_indexer",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_runner",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_script_executor",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_source_analyzer",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_source_indexer",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_styles_indexer",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_test_runner",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_tools_indexer",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_wiki_expander",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_wiki_fixer",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_wiki_indexer",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_wiki_optimizer",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\documentation\\test_workflow_manager",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\modules\\python\\test_runner",
+      "pattern": "test_"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\modules\\tools\\backup_system",
+      "pattern": "backup"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\testing\\backup_system",
+      "pattern": "backup"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\testing\\migrated_backup_system",
+      "pattern": "backup"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\testing\\otclient_debug_tools",
+      "pattern": "debug"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\update\\testing\\python_agent_integration_test",
+      "pattern": "_test"
+    },
+    {
+      "type": "directory",
+      "path": "wiki\\wiki\\bmad\\templates",
+      "pattern": "temp"
+    }
+  ],
+  "empty_directories": [
+    ".git\\modules\\canary\\objects\\info",
+    ".git\\modules\\canary\\refs\\tags",
+    ".git\\modules\\otclient\\objects\\info",
+    ".git\\modules\\otclient\\refs\\remotes\\origin\\docs",
+    ".git\\modules\\otclient\\refs\\tags",
+    ".git\\objects\\info",
+    ".git\\objects\\pack",
+    ".git\\refs\\tags",
+    ".venv\\Include",
+    "docs\\src\\courses\\advanced",
+    "docs\\src\\courses\\beginner",
+    "docs\\src\\courses\\intermediate",
+    "docs\\src\\integration\\workflows",
+    "docs\\src\\laboratory\\tests",
+    "wiki\\bmad\\agents\\python_agent\\agents",
+    "wiki\\bmad\\agents\\python_agent\\logs",
+    "wiki\\bmad\\wiki\\bmad\\knowledge",
+    "wiki\\bmad\\wiki\\bmad\\results\\analysis",
+    "wiki\\bmad\\wiki\\bmad\\results\\generated_modules",
+    "wiki\\bmad\\wiki\\bmad\\results\\learning_data",
+    "wiki\\bmad\\wiki\\bmad\\results\\test_reports",
+    "wiki\\bmad\\wiki\\bmad\\templates",
+    "wiki\\certificates",
+    "wiki\\config",
+    "wiki\\consolidated\\bmad\\knowledge",
+    "wiki\\consolidated\\bmad\\tools",
+    "wiki\\consolidated\\bmad\\workflows",
+    "wiki\\consolidated\\canary\\analysis",
+    "wiki\\consolidated\\canary\\documentation",
+    "wiki\\consolidated\\canary\\modules",
+    "wiki\\consolidated\\education\\certifications",
+    "wiki\\consolidated\\education\\exercises",
+    "wiki\\consolidated\\education\\lessons",
+    "wiki\\consolidated\\integration\\apis",
+    "wiki\\consolidated\\integration\\guides",
+    "wiki\\consolidated\\otclient\\analysis",
+    "wiki\\consolidated\\otclient\\modules",
+    "wiki\\consolidated\\performance\\cache",
+    "wiki\\consolidated\\performance\\logs",
+    "wiki\\consolidated\\performance\\metrics",
+    "wiki\\cursor_core\\.bmad-game-core\\checklists",
+    "wiki\\cursor_core\\.bmad-game-core\\utils",
+    "wiki\\docs\\audit_reports",
+    "wiki\\docs\\canary\\architecture",
+    "wiki\\docs\\canary\\debugging",
+    "wiki\\docs\\canary\\development",
+    "wiki\\docs\\canary\\performance",
+    "wiki\\docs\\courses\\advanced",
+    "wiki\\docs\\courses\\beginner",
+    "wiki\\docs\\courses\\expert",
+    "wiki\\docs\\courses\\intermediate",
+    "wiki\\docs\\dashboard\\progress",
+    "wiki\\docs\\dashboard\\tasks",
+    "wiki\\docs\\integration\\best_practices",
+    "wiki\\docs\\integration\\workflows",
+    "wiki\\docs\\laboratory\\analysis",
+    "wiki\\docs\\laboratory\\results",
+    "wiki\\docs\\lessons\\experimental",
+    "wiki\\docs\\lessons\\practical",
+    "wiki\\docs\\lessons\\theoretical",
+    "wiki\\docs\\otclient\\api",
+    "wiki\\docs\\otclient\\debugging",
+    "wiki\\docs\\otclient\\development",
+    "wiki\\docs\\otclient\\performance",
+    "wiki\\docs\\otclient\\ui",
+    "wiki\\docs\\research\\analysis",
+    "wiki\\docs\\research\\reports",
+    "wiki\\docs\\templates\\development",
+    "wiki\\docs\\templates\\documentation",
+    "wiki\\docs\\templates\\guides",
+    "wiki\\docs\\templates\\reports",
+    "wiki\\habdel\\backup_20250730_145936",
+    "wiki\\habdel\\backup_20250730_145939",
+    "wiki\\habdel\\canary\\analysis",
+    "wiki\\habdel\\canary\\comparisons",
+    "wiki\\habdel\\canary\\examples",
+    "wiki\\habdel\\canary\\stories",
+    "wiki\\habdel\\integration\\comparisons",
+    "wiki\\habdel\\integration\\documentation",
+    "wiki\\habdel\\integration\\examples",
+    "wiki\\habdel\\integration\\templates",
+    "wiki\\habdel\\integration\\unified_docs",
+    "wiki\\habdel\\integration\\workflows",
+    "wiki\\habdel\\otclient\\stories",
+    "wiki\\integration\\game_state",
+    "wiki\\integration\\network",
+    "wiki\\integration\\protocol",
+    "wiki\\integration\\testing",
+    "wiki\\log\\aaa_fixes",
+    "wiki\\log\\aaa_validation",
+    "wiki\\log\\agents\\analysis_agents",
+    "wiki\\log\\agents\\documentation_agents",
+    "wiki\\log\\agents\\git_agents",
+    "wiki\\log\\agents\\integration_agents",
+    "wiki\\log\\agents\\module_agents",
+    "wiki\\log\\agents\\navigation_agents",
+    "wiki\\log\\agents\\organization_agents",
+    "wiki\\log\\agents\\research_agents",
+    "wiki\\log\\agents\\validation_agents",
+    "wiki\\log\\archives\\historical_data",
+    "wiki\\log\\archives\\obsolete_files",
+    "wiki\\log\\archives\\old_reports",
+    "wiki\\log\\backup",
+    "wiki\\log\\backup_centralization\\aaa_fixes",
+    "wiki\\log\\backup_centralization\\aaa_validation",
+    "wiki\\log\\backup_centralization\\backup_centralization\\aaa_fixes",
+    "wiki\\log\\backup_centralization\\backup_centralization\\aaa_validation",
+    "wiki\\log\\backup_centralization\\backup_centralization\\completed_tasks",
+    "wiki\\log\\backup_centralization\\backup_centralization\\learning",
+    "wiki\\log\\backup_centralization\\backup_centralization\\recipes",
+    "wiki\\log\\backup_centralization\\backup_centralization\\reports\\2025-01",
+    "wiki\\log\\backup_centralization\\backup_centralization\\reports\\2025-07",
+    "wiki\\log\\backup_centralization\\backup_centralization\\reports\\current",
+    "wiki\\log\\backup_centralization\\completed_tasks",
+    "wiki\\log\\backup_centralization\\learning",
+    "wiki\\log\\backup_centralization\\recipes",
+    "wiki\\log\\backup_centralization\\reports\\2025-01",
+    "wiki\\log\\backup_centralization\\reports\\2025-07",
+    "wiki\\log\\backup_centralization\\reports\\current",
+    "wiki\\log\\completed_tasks\\bug_fixes",
+    "wiki\\log\\completed_tasks\\feature_implementations",
+    "wiki\\log\\completed_tasks\\system_updates",
+    "wiki\\log\\learning",
+    "wiki\\log\\python_agent",
+    "wiki\\log\\recipes",
+    "wiki\\log\\reports\\2025-01",
+    "wiki\\log\\reports\\2025-02",
+    "wiki\\log\\reports\\2025-07",
+    "wiki\\log\\reports\\current",
+    "wiki\\log\\system\\system_status",
+    "wiki\\log\\temp",
+    "wiki\\log\\temp_tasks",
+    "wiki\\teste\\game_cyclopedia\\tab\\charms",
+    "wiki\\update\\python_specialist",
+    "wiki\\update\\validation",
+    "wiki\\wiki\\bmad\\templates",
+    "wiki\\wiki\\docs"
+  ],
+  "file_extensions": {
+    ".sh": 12,
+    ".py": 1476,
+    ".bat": 7,
+    ".md": 2597,
+    ".sample": 42,
+    ".idx": 4,
+    ".pack": 4,
+    ".rev": 4,
+    ".yml": 46,
+    ".cfg": 4,
+    ".typed": 14,
+    ".pyc": 413,
+    ".txt": 59,
+    ".pem": 3,
+    ".exe": 11,
+    ".apache": 1,
+    ".bsd": 1,
+    ".fish": 1,
+    ".ps1": 1,
+    ".json": 828,
+    ".yaml": 10,
+    ".rc": 4,
+    ".dist": 2,
+    ".sql": 3,
+    ".ico": 3,
+    ".in": 3,
+    ".cmake": 34,
+    ".lua": 5489,
+    ".xml": 131,
+    ".dat": 1,
+    ".otbm": 32,
+    ".arm": 1,
+    ".dev": 1,
+    ".x86": 1,
+    ".png": 932,
+    ".cpp": 363,
+    ".hpp": 254,
+    ".proto": 5,
+    ".database": 1,
+    ".sln": 2,
+    ".vcxproj": 2,
+    ".props": 5,
+    ".toml": 1,
+    ".html": 8,
+    ".otui": 198,
+    ".otmod": 78,
+    ".sublime-project": 2,
+    ".properties": 3,
+    ".gradle": 3,
+    ".pro": 1,
+    ".kt": 4,
+    ".webp": 10,
+    ".jar": 1,
+    ".h": 193,
+    ".c": 1,
+    ".a": 1,
+    ".patch": 8,
+    ".otml": 2,
+    ".otfont": 10,
+    ".psd": 3,
+    ".otps": 3,
+    ".ogg": 9,
+    ".css": 3,
+    ".vert": 2,
+    ".frag": 15,
+    ".cam": 1,
+    ".php": 2,
+    ".filters": 1,
+    ".backup": 307,
+    ".log": 51,
+    ".gz": 1,
+    ".cache": 28
+  },
+  "directory_structure": {}
+}

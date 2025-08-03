@@ -1,0 +1,67 @@
+{
+  "timestamp": "2025-08-02T22:15:55.280291",
+  "original_readme_analysis": {
+    "lines": 426,
+    "words": 1868,
+    "sections": 16,
+    "sections_list": [
+      "📋 Índice",
+      "🎯 Visão Geral",
+      "🏗️ Arquitetura do Sistema",
+      "📁 Estrutura de Arquivos",
+      "🧭 Sistema de Navegação",
+      "🤖 Sistema BMAD",
+      "📚 Documentação",
+      "🔧 Funcionalidades",
+      "🚀 Como Usar",
+      "⚙️ Configuração",
+      "🔄 Manutenção Automática",
+      "📊 Status do Projeto",
+      "🤝 Contribuição",
+      "📄 Licença",
+      "📞 Suporte",
+      "🙏 Agradecimentos"
+    ],
+    "issues_found": 15
+  },
+  "issues_found": [
+    "Link quebrado: 🎯 Visão Geral -> #-visão-geral",
+    "Link quebrado: 🏗️ Arquitetura do Sistema -> #️-arquitetura-do-sistema",
+    "Link quebrado: 📁 Estrutura de Arquivos -> #-estrutura-de-arquivos",
+    "Link quebrado: 🧭 Sistema de Navegação -> #-sistema-de-navegação",
+    "Link quebrado: 🤖 Sistema BMAD -> #-sistema-bmad",
+    "Link quebrado: 📚 Documentação -> #-documentação",
+    "Link quebrado: 🔧 Funcionalidades -> #-funcionalidades",
+    "Link quebrado: 🚀 Como Usar -> #-como-usar",
+    "Link quebrado: ⚙️ Configuração -> #️-configuração",
+    "Link quebrado: 📊 Status do Projeto -> #-status-do-projeto",
+    "Link quebrado: 🤝 Contribuição -> #-contribuição",
+    "Link quebrado: 📄 Licença -> #-licença",
+    "Link quebrado: LICENSE -> LICENSE",
+    "Status de conclusão desatualizado",
+    "README muito extenso (mais de 400 linhas)"
+  ],
+  "improvements_made": [
+    "Estrutura mais concisa e organizada",
+    "Informações atualizadas sobre Epics e status",
+    "Seção de manutenção adicionada",
+    "Métricas atuais baseadas em auditorias",
+    "Remoção de informações desatualizadas",
+    "Melhor organização das seções",
+    "Links e referências verificados",
+    "Status de desenvolvimento transparente"
+  ],
+  "new_structure": {},
+  "transparency_score": 85,
+  "stability_score": 90,
+  "recommendations": [
+    "Manter atualizações automáticas através de agentes BMAD",
+    "Implementar validação automática de links",
+    "Criar dashboard de status em tempo real",
+    "Adicionar métricas de uso e performance",
+    "Implementar sistema de feedback de usuários",
+    "Criar guias de troubleshooting",
+    "Adicionar exemplos práticos de uso",
+    "Implementar sistema de versionamento de documentação"
+  ]
+}
