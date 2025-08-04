@@ -10,7 +10,7 @@
 [submodule "canary"]
 	path = canary
 	url = https://github.com/Syntagmai/canary.git
-    branch = master
+    branch = main
     ignore = dirty
 
 # Notas:
@@ -18,3 +18,6 @@
 # - url: URL do repositório remoto
 # - branch: Branch padrão do submódulo
 # - ignore: Configuração de ignorar mudanças locais (dirty = não rastrear mudanças) 
+[submodule "forgottenmapeditor"]
+	path = forgottenmapeditor
+	url = https://github.com/Syntagmai/forgottenmapeditor.git

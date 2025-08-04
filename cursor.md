@@ -156,6 +156,7 @@ Este arquivo atua como **orquestrador** que referencia a **coletânea de regras*
 | `.cursor/rules/` | **Regras específicas** e templates do assistente | ✅ Modificação permitida |
 | `cursor.md` | **Arquivo orquestrador** das regras | ✅ Modificação permitida |
 | `git-task-manager-integration-rules.md` | **Regras de integração** Git-Task Manager | ✅ Modificação permitida |
+| `forgottenmapeditor/` | **Editor de mapa integrado** ao OTClient | ❌ Apenas leitura |
 | **TODOS OS OUTROS** | **Código-fonte, recursos e configurações** do OTClient | ❌ Apenas leitura |
 
 > [!warning] **LIMITAÇÃO IMPORTANTE**
@@ -197,6 +198,10 @@ Este arquivo atua como **orquestrador** que referencia a **coletânea de regras*
 ❌ canary_repository/ (FUTURO - SERÁ COPIADO)
    ├── 🔧 src/ (código Canary - futuro)
    └── 📚 wiki/ (documentação Canary - futuro)
+🗺️ forgottenmapeditor/ (SUBMÓDULO - EDITOR DE MAPA)
+   ├── 🔧 modules/ (módulos do editor)
+   ├── 📁 data/ (dados do editor)
+   └── 📚 docs/ (documentação do editor)
 ```
 
 ### 🎯 **Fluxo de Navegação Otimizado**
@@ -228,8 +233,9 @@ Este arquivo atua como **orquestrador** que referencia a **coletânea de regras*
 > - **Wiki**: Documentação OTClient disponível para modificação
 > - **Task Master**: Sistema principal de tarefas (58 tasks - pesquisa Habdel)
 > - **Integrated Task Manager**: Sistema de integração (15 tasks - 86.7% completa)
+> - **Forgotten Map Editor**: Editor de mapa integrado ao OTClient (submódulo)
 
-> [!warning] **DEFINIÇÃO CRÍTICA de "otclient"**: OTClient se refere a QUALQUER pasta, subpasta ou arquivo solto no repositório que NÃO seja `.cursor/`, `wiki/` e `cursor.md`. Isso inclui `src/`, `modules/`, `data/`, `tools/`, `docs/`, `README.md`, `LICENSE`, `CMakeLists.txt` e QUALQUER OUTRO ARQUIVO do repositório oficial.
+> [!warning] **DEFINIÇÃO CRÍTICA de "otclient"**: OTClient se refere a QUALQUER pasta, subpasta ou arquivo solto no repositório que NÃO seja `.cursor/`, `wiki/`, `cursor.md` e `forgottenmapeditor/`. Isso inclui `src/`, `modules/`, `data/`, `tools/`, `docs/`, `README.md`, `LICENSE`, `CMakeLists.txt` e QUALQUER OUTRO ARQUIVO do repositório oficial.
 
 ---
 
@@ -361,6 +367,7 @@ Este arquivo atua como **orquestrador** que referencia a **coletânea de regras*
 - **Pasta rules**: Contém regras e templates do assistente
 - **Pasta dashboard**: Contém sistema de tarefas principal (Task Master + Integrated Task Manager)
 - **Pastas/arquivos otclient**: Contém código-fonte, recursos e configurações do OTClient (apenas leitura)
+- **Pasta forgottenmapeditor**: Contém editor de mapa integrado ao OTClient (apenas leitura)
 
 > [!warning] **LIMITAÇÃO IMPORTANTE**
 > - **OTClient**: Código-fonte disponível para análise (somente leitura)
