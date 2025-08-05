@@ -1,18 +1,18 @@
 # Regras de Organização de Logs
 
 ## 📋 **Objetivo**
-Garantir que todos os logs sejam organizados na pasta `wiki/log/` e que scripts futuros sigam o padrão correto, mantendo a estrutura organizada e limpa.
+Garantir que todos os logs sejam organizados na pasta `logs/` e que scripts futuros sigam o padrão correto, mantendo a estrutura organizada e limpa.
 
 ## 🎯 **Regras Principais**
 
 ### **1. Localização de Logs**
-- **✅ Local Correto**: `wiki/log/` - Única pasta para todos os logs
+- **✅ Local Correto**: `logs/` - Única pasta para todos os logs
 - **❌ Local Incorreto**: Raiz do projeto (`*.log`)
-- **❌ Local Incorreto**: Qualquer outra pasta fora de `wiki/log/`
+- **❌ Local Incorreto**: Qualquer outra pasta fora de `logs/`
 
 ### **2. Estrutura de Logs**
 ```
-wiki/log/
+logs/
 ├── 📄 *.log (logs de scripts - NÃO MOVER)
 ├── 📄 *.md (relatórios - ORGANIZAR)
 ├── 📁 reports/ (relatórios organizados)
@@ -37,7 +37,7 @@ wiki/log/
 ### **3. Categorização de Arquivos**
 
 #### **📄 Logs de Scripts (NÃO MOVER)**
-- **Localização**: Raiz da pasta `wiki/log/`
+- **Localização**: Raiz da pasta `logs/`
 - **Padrão**: `*.log`
 - **Exemplos**: `git_automation.log`, `intelligent_organization.log`
 - **Regra**: Logs de scripts devem permanecer na raiz para fácil acesso
@@ -65,7 +65,7 @@ wiki/log/
 - **Destino**: `archives/obsolete_files/`
 
 ### **4. Limites de Arquivos na Raiz**
-- **Máximo**: 50 arquivos na raiz da pasta `wiki/log/`
+- **Máximo**: 50 arquivos na raiz da pasta `logs/`
 - **Ação**: Se exceder, executar organização imediata
 - **Exceção**: Logs de scripts não contam no limite
 
@@ -119,7 +119,7 @@ logging.basicConfig(
 
 ### **5. Verificação Obrigatória**
 Antes de criar qualquer script:
-1. ✅ Verificar se pasta `wiki/log/` existe
+1. ✅ Verificar se pasta `logs/` existe
 2. ✅ Criar pasta se não existir
 3. ✅ Usar caminho relativo correto
 4. ✅ Testar geração de log
@@ -127,17 +127,17 @@ Antes de criar qualquer script:
 ## 🔧 **Scripts Corrigidos**
 
 ### **Scripts de Update:**
-- ✅ `git_task_integration.py` → `wiki/log/git_task_integration.log`
-- ✅ `final_commit_verification.py` → `wiki/log/final_commit_verification.log`
+- ✅ `git_task_integration.py` → `logs/git_task_integration.log`
+- ✅ `final_commit_verification.py` → `logs/final_commit_verification.log`
 
 ### **Agentes BMAD:**
-- ✅ `intelligent_organization_agent.py` → `wiki/log/intelligent_organization.log`
-- ✅ `git_automation_agent.py` → `wiki/log/git_automation.log`
-- ✅ `researcher_agent.py` → `wiki/log/researcher_agent.log`
-- ✅ `path_validator_agent.py` → `wiki/log/path_validator.log`
+- ✅ `intelligent_organization_agent.py` → `logs/intelligent_organization.log`
+- ✅ `git_automation_agent.py` → `logs/git_automation.log`
+- ✅ `researcher_agent.py` → `logs/researcher_agent.log`
+- ✅ `path_validator_agent.py` → `logs/path_validator.log`
 
 ### **Ferramentas:**
-- ✅ `file_mover.py` → `wiki/log/file_mover.log`
+- ✅ `file_mover.py` → `logs/file_mover.log`
 
 ## 📝 **Template para Novos Scripts**
 
@@ -174,22 +174,22 @@ logging.basicConfig(
 
 ### **Organização Completa**
 ```bash
-python wiki/bmad/agents/intelligent_organization_agent.py --full
+python docs/bmad/agents/intelligent_organization_agent.py --full
 ```
 
 ### **Apenas Detecção de Problemas**
 ```bash
-python wiki/bmad/agents/intelligent_organization_agent.py --detect
+python docs/bmad/agents/intelligent_organization_agent.py --detect
 ```
 
 ### **Apenas Limpeza de Temporários**
 ```bash
-python wiki/bmad/agents/intelligent_organization_agent.py --cleanup
+python docs/bmad/agents/intelligent_organization_agent.py --cleanup
 ```
 
 ### **Apenas Organização por Categoria**
 ```bash
-python wiki/bmad/agents/intelligent_organization_agent.py --organize
+python docs/bmad/agents/intelligent_organization_agent.py --organize
 ```
 
 ## ⚠️ **Problemas Conhecidos e Soluções**
@@ -207,7 +207,7 @@ python wiki/bmad/agents/intelligent_organization_agent.py --organize
 ## 📊 **Execução Obrigatória**
 
 ### **Frequência**: Semanal (toda sexta-feira)
-### **Comando**: `python wiki/bmad/agents/intelligent_organization_agent.py --full`
+### **Comando**: `python docs/bmad/agents/intelligent_organization_agent.py --full`
 ### **Verificação**: Após cada execução, verificar se não há erros
 ### **Relatório**: Gerar relatório de organização após execução
 

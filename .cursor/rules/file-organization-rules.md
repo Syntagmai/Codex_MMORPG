@@ -80,7 +80,7 @@ otclient_doc/
 ### 4. **Categorização de Arquivos (APENAS em áreas permitidas)**
 **Categorize arquivos por função APENAS em áreas permitidas:**
 
-#### **📁 Scripts de Atualização (`wiki/update/`)**
+#### **📁 Scripts de Atualização (`scripts/`)**
 - `update_source_index.py`
 - `update_habdel_index.py`
 - `update_modules_index.py`
@@ -90,7 +90,7 @@ otclient_doc/
 - `auto_update_all_maps.py`
 - `remove_emojis.py`
 
-#### **🗺️ Mapas JSON (`wiki/maps/`)**
+#### **🗺️ Mapas JSON (`data/maps/`)**
 - `otclient_source_index.json`
 - `habdel_index.json`
 - `modules_index.json`
@@ -116,8 +116,8 @@ otclient_doc/
 
 ### 6. **Migração Automática (APENAS em áreas permitidas)**
 **SEMPRE migre arquivos APENAS dentro das áreas permitidas:**
-- ✅ Mover scripts para `wiki/update/`
-- ✅ Mover mapas JSON para `wiki/maps/`
+- ✅ Mover scripts para `scripts/`
+- ✅ Mover mapas JSON para `data/maps/`
 - ✅ Mover documentação para `wiki/docs/`
 - ✅ Atualizar referências nos scripts
 - ✅ Manter compatibilidade com caminhos existentes
@@ -141,14 +141,14 @@ Para qualquer novo arquivo criado:
 
 #### **Para Scripts de Atualização:**
 ```python
-# SEMPRE criar em wiki/update/
-# Exemplo: wiki/update/update_new_index.py
+# SEMPRE criar em scripts/
+# Exemplo: scripts/update_new_index.py
 ```
 
 #### **Para Mapas JSON:**
 ```python
-# SEMPRE criar em wiki/maps/
-# Exemplo: wiki/maps/new_index.json
+# SEMPRE criar em data/maps/
+# Exemplo: data/maps/new_index.json
 ```
 
 #### **Para Documentação:**
@@ -194,7 +194,7 @@ Arquivos gerados pelo build do OTClient NÃO podem ser modificados.
 # tools/update/new_script.py
 
 # ✅ CORRETO - Criar em área permitida
-# wiki/update/new_script.py
+# scripts/new_script.py
 ```
 
 ### 🗺️ **Criação de Novo Mapa**
@@ -203,7 +203,7 @@ Arquivos gerados pelo build do OTClient NÃO podem ser modificados.
 # tools/maps/new_map.json
 
 # ✅ CORRETO - Criar em área permitida
-# wiki/maps/new_map.json
+# data/maps/new_map.json
 ```
 
 ### 📖 **Criação de Nova Documentação**

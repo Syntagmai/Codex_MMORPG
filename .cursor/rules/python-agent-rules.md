@@ -123,12 +123,12 @@ O agente Python é ativado automaticamente quando:
 
 ### **Arquivos do Agente**
 ```
-wiki/update/python_agent/
+scripts/python_agent/
 ├── python_agent_system.py              # Sistema principal
 ├── update_orchestrator_with_python_agent.py  # Integração
 └── PYTHON_AGENT_IMPLEMENTATION_REPORT.md     # Relatório
 
-wiki/log/python_agent/
+logs/python_agent/
 ├── python_errors.json                  # Log de erros
 ├── python_improvements.json            # Log de melhorias
 └── python_agent_report.md              # Relatório de qualidade
@@ -267,7 +267,7 @@ except Exception as e:
 - **Organização** em pastas específicas
 
 ### **Sistema de Limpeza**
-- **Logs organizados** em `wiki/log/python_agent/`
+- **Logs organizados** em `logs/python_agent/`
 - **Relatórios arquivados** automaticamente
 - **Receitas** para reproduzir resultados
 
@@ -318,13 +318,13 @@ except Exception as e:
 - `wiki/agente_python_base/knowledge/py_patterns.json`
 
 ### **Sistema Principal**
-- `wiki/update/python_agent/python_agent_system.py`
-- `wiki/update/enhanced_intelligent_orchestrator.py`
-- `wiki/update/task_automation_system.py`
+- `scripts/python_agent/python_agent_system.py`
+- `scripts/enhanced_intelligent_orchestrator.py`
+- `scripts/task_automation_system.py`
 
 ### **Relatórios**
-- `wiki/update/python_agent/PYTHON_AGENT_IMPLEMENTATION_REPORT.md`
-- `wiki/log/python_agent/python_agent_report.md`
+- `scripts/python_agent/PYTHON_AGENT_IMPLEMENTATION_REPORT.md`
+- `logs/python_agent/python_agent_report.md`
 
 ---
 

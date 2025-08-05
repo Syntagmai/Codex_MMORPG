@@ -92,7 +92,7 @@ def organize_task_results(final_report):
 
 ## 📁 Estrutura de Arquivos de Tarefa
 
-### **Tarefa Temporária (`wiki/log/temp_tasks/`)**
+### **Tarefa Temporária (`logs/temp_tasks/`)**
 ```markdown
 # Tarefa: [TÍTULO DA TAREFA]
 **ID**: TASK_[TIMESTAMP]
@@ -134,7 +134,7 @@ def organize_task_results(final_report):
 - [Aprendizado 2]
 ```
 
-### **Relatório Final (`wiki/log/completed_tasks/`)**
+### **Relatório Final (`logs/completed_tasks/`)**
 ```markdown
 # Relatório: [TÍTULO DA TAREFA]
 **ID**: TASK_[TIMESTAMP]
@@ -180,7 +180,7 @@ def organize_task_results(final_report):
 ## 🎯 Regras de Execução
 
 ### **Criação Automática de Tarefa**
-- **SEMPRE crie** `wiki/log/temp_tasks/TASK_[TIMESTAMP].md` antes de iniciar
+- **SEMPRE crie** `logs/temp_tasks/TASK_[TIMESTAMP].md` antes de iniciar
 - **SEMPRE defina** objetivos claros e mensuráveis
 - **SEMPRE estabeleça** critérios de sucesso
 - **SEMPRE planeje** passos necessários
@@ -208,7 +208,7 @@ def organize_task_results(final_report):
 - **SEMPRE preserve** conhecimento gerado
 
 ### **Organização Automática**
-- **SEMPRE mova** tarefa para `wiki/log/completed_tasks/`
+- **SEMPRE mova** tarefa para `logs/completed_tasks/`
 - **SEMPRE atualize** índices de tarefas
 - **SEMPRE limpe** arquivos temporários
 - **SEMPRE preserve** conhecimento em formato reutilizável
@@ -288,7 +288,7 @@ def organize_task_results(final_report):
 ```python
 # Cria TASK_20241201_143022.md
 task_id = f"TASK_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
-temp_task_file = f"wiki/log/temp_tasks/{task_id}.md"
+temp_task_file = f"logs/temp_tasks/{task_id}.md"
 
 # Define objetivos
 objectives = [

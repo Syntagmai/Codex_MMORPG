@@ -26,9 +26,9 @@ Definir regras para **limpeza automática de código** e **organização intelig
 
 ## 📁 Estrutura de Organização Padrão
 
-### **Pasta `wiki/log/` - Estrutura Limpa**
+### **Pasta `logs/` - Estrutura Limpa**
 ```
-wiki/log/
+logs/
 ├── reports/                    # Relatórios organizados por data
 │   ├── 2025-01/               # Relatórios de janeiro 2025
 │   ├── 2025-02/               # Relatórios de fevereiro 2025
@@ -49,9 +49,9 @@ wiki/log/
 └── temp_tasks/                 # Tarefas temporárias
 ```
 
-### **Pasta `wiki/update/` - Scripts Organizados**
+### **Pasta `scripts/` - Scripts Organizados**
 ```
-wiki/update/
+scripts/
 ├── core/                       # Scripts principais
 │   ├── auto_update_all_maps.py
 │   ├── cleanup_system.py
@@ -106,19 +106,19 @@ def organize_by_category():
     categories = {
         "reports": {
             "patterns": ["*_REPORT.md", "*_report.md", "Relatório_*.md"],
-            "destination": "wiki/log/reports/current/"
+            "destination": "logs/reports/current/"
         },
         "completed_tasks": {
             "patterns": ["TASK_*.md", "*_task.md"],
-            "destination": "wiki/log/completed_tasks/"
+            "destination": "logs/completed_tasks/"
         },
         "recipes": {
             "patterns": ["*_recipe.md", "*_RECIPE.md"],
-            "destination": "wiki/log/recipes/"
+            "destination": "logs/recipes/"
         },
         "archives": {
             "patterns": ["*_old.md", "*_obsolete.md", "*_archive.md"],
-            "destination": "wiki/log/archives/"
+            "destination": "logs/archives/"
         }
     }
     
@@ -146,7 +146,7 @@ def organize_by_date():
     """Organiza relatórios por data automaticamente"""
     
     current_month = datetime.now().strftime("%Y-%m")
-    reports_dir = Path("wiki/log/reports")
+    reports_dir = Path("logs/reports")
     
     # Criar pasta do mês se não existir
     month_dir = reports_dir / current_month

@@ -144,19 +144,19 @@ wiki/
   "integration_enabled": true|false,
   "maps": {
     "otclient": {
-      "source_index": "wiki/maps/otclient_source_index.json",
-      "wiki_map": "wiki/maps/otclient_wiki_map.json",
-      "tags_index": "wiki/maps/otclient_tags_index.json"
+      "source_index": "data/maps/otclient_source_index.json",
+      "wiki_map": "data/maps/otclient_wiki_map.json",
+      "tags_index": "data/maps/otclient_tags_index.json"
     },
     "canary": {
-      "source_index": "wiki/maps/canary_source_index.json", 
-      "wiki_map": "wiki/maps/canary_wiki_map.json",
-      "tags_index": "wiki/maps/canary_tags_index.json"
+      "source_index": "data/maps/canary_source_index.json", 
+      "wiki_map": "data/maps/canary_wiki_map.json",
+      "tags_index": "data/maps/canary_tags_index.json"
     },
     "integration": {
-      "cross_project_map": "wiki/maps/integration_map.json",
-      "protocol_map": "wiki/maps/protocol_map.json",
-      "relationship_map": "wiki/maps/cross_project_relationships.json"
+      "cross_project_map": "data/maps/integration_map.json",
+      "protocol_map": "data/maps/protocol_map.json",
+      "relationship_map": "data/maps/cross_project_relationships.json"
     }
   }
 }
@@ -174,22 +174,22 @@ class ContextAwareUpdater:
     def get_context_scripts(self):
         if self.context == "otclient":
             return [
-                "wiki/update/update_otclient_source_index.py",
-                "wiki/update/update_otclient_wiki_maps.py",
-                "wiki/update/update_integration_maps.py"
+                "scripts/update_otclient_source_index.py",
+                "scripts/update_otclient_wiki_maps.py",
+                "scripts/update_integration_maps.py"
             ]
         elif self.context == "canary":
             return [
-                "wiki/update/update_canary_source_index.py",
-                "wiki/update/update_canary_wiki_maps.py", 
-                "wiki/update/update_integration_maps.py"
+                "scripts/update_canary_source_index.py",
+                "scripts/update_canary_wiki_maps.py", 
+                "scripts/update_integration_maps.py"
             ]
         elif self.context == "unified":
             return [
-                "wiki/update/update_unified_source_index.py",
-                "wiki/update/update_unified_wiki_maps.py",
-                "wiki/update/update_integration_maps.py",
-                "wiki/update/update_cross_project_maps.py"
+                "scripts/update_unified_source_index.py",
+                "scripts/update_unified_wiki_maps.py",
+                "scripts/update_integration_maps.py",
+                "scripts/update_cross_project_maps.py"
             ]
 ```
 

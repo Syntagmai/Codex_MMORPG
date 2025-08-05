@@ -29,7 +29,7 @@ Este arquivo define as regras para **organização automática** de agentes dura
 
 ### **🗂️ Estrutura BMAD para Agentes**
 ```
-wiki/bmad/
+docs/bmad/
 ├── agents/                          # Todos os agentes especializados
 │   ├── python_agent/               # Agente Python
 │   │   ├── python_agent.py         # Implementação principal
@@ -59,7 +59,7 @@ wiki/bmad/
 
 ### **📋 Estrutura Individual do Agente**
 ```
-wiki/bmad/agents/{agent_name}/
+docs/bmad/agents/{agent_name}/
 ├── {agent_name}.py                 # Implementação principal
 ├── patterns/                       # Padrões específicos
 │   ├── error_patterns.json         # Padrões de erro
@@ -109,7 +109,7 @@ def create_agent_structure(agent_name: str, agent_type: str):
     """Cria estrutura padrão para novo agente"""
     
     # 1. Criar pasta principal do agente
-    agent_path = f"wiki/bmad/agents/{agent_name}_agent"
+    agent_path = f"docs/bmad/agents/{agent_name}_agent"
     
     # 2. Criar subpastas padrão
     subfolders = [
@@ -236,12 +236,12 @@ def validate_agent_structure(agent_name: str):
     """Valida se agente está na estrutura correta"""
     
     required_structure = [
-        f"wiki/bmad/agents/{agent_name}_agent/",
-        f"wiki/bmad/agents/{agent_name}_agent/patterns/",
-        f"wiki/bmad/agents/{agent_name}_agent/scripts/",
-        f"wiki/bmad/agents/{agent_name}_agent/knowledge/",
-        f"wiki/bmad/agents/{agent_name}_agent/docs/",
-        f"wiki/bmad/agents/{agent_name}_agent/config/"
+        f"docs/bmad/agents/{agent_name}_agent/",
+        f"docs/bmad/agents/{agent_name}_agent/patterns/",
+        f"docs/bmad/agents/{agent_name}_agent/scripts/",
+        f"docs/bmad/agents/{agent_name}_agent/knowledge/",
+        f"docs/bmad/agents/{agent_name}_agent/docs/",
+        f"docs/bmad/agents/{agent_name}_agent/config/"
     ]
     
     for path in required_structure:
@@ -315,17 +315,17 @@ def validate_agent_organization():
 ## 📚 Referências
 
 ### **Arquivos BMAD**
-- `wiki/bmad/BMAD_System_Guide.md`
-- `wiki/bmad/agents/BMAD_Agents_Guide.md`
-- `wiki/bmad/workflows/`
-- `wiki/bmad/templates/`
+- `docs/bmad/BMAD_System_Guide.md`
+- `docs/bmad/agents/BMAD_Agents_Guide.md`
+- `docs/bmad/workflows/`
+- `docs/bmad/templates/`
 
 ### **Agentes Existentes**
-- `wiki/bmad/agents/python_agent/` (após migração)
+- `docs/bmad/agents/python_agent/` (após migração)
 - `wiki/agente_python_base/` (para migração)
 
 ### **Sistema de Orquestração**
-- `wiki/update/enhanced_intelligent_orchestrator.py`
+- `scripts/enhanced_intelligent_orchestrator.py`
 - `cursor.md`
 
 ---

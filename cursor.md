@@ -1,21 +1,82 @@
 # Comportamento do Assistente
 
 ## 🚀 **ÍNDICE DE NAVEGAÇÃO RÁPIDA**
+## 📁 **NOVA ESTRUTURA DO PROJETO (PÓS-REORGANIZAÇÃO)**
+
+### **🎯 Estrutura Atualizada:**
+- **`wiki/`** - Conteúdo educacional (Obsidian)
+- **`habdel/`** - Metodologia de pesquisa e stories
+- **`docs/`** - Documentação interna do sistema
+- **`logs/`** - Relatórios, monitoramento e alertas
+- **`data/`** - Dados do sistema
+- **`scripts/`** - Scripts e ferramentas
+- **`backup/`** - Sistema de backup
+- **`temp/`** - Arquivos temporários
+
+### **🔄 Mudanças Principais:**
+- **Task Master**: Movido para `logs/reports/task_master.md`
+- **Documentação**: Separada em `docs/` por categoria
+- **Guias**: Movidos para `docs/guides/`
+- **Sistemas**: Movidos para `docs/systems/`
+- **Relatórios**: Centralizados em `logs/reports/`
+- **Scripts**: Centralizados em `scripts/`
+
+### **📋 Navegação Atualizada:**
+- **Task Master**: `logs/reports/task_master.md`
+- **Dashboard**: `docs/dashboard/integrated_task_manager.md`
+- **Guias**: `docs/guides/`
+- **Sistemas**: `docs/systems/`
+- **Mapas**: `data/maps/`
+- **Scripts**: `scripts/`
+
+
+### **📁 NOVA ESTRUTURA DO PROJETO (PÓS-REORGANIZAÇÃO)**
+
+**🎯 Estrutura Atualizada:**
+- **`wiki/`** - Conteúdo educacional (Obsidian)
+- **`habdel/`** - Metodologia de pesquisa e stories
+- **`docs/`** - Documentação interna do sistema
+- **`logs/`** - Relatórios, monitoramento e alertas
+- **`data/`** - Dados do sistema
+- **`scripts/`** - Scripts e ferramentas
+- **`backup/`** - Sistema de backup
+- **`temp/`** - Arquivos temporários
+
+**🔄 Mudanças Principais:**
+- **Task Master**: Movido para `logs/reports/task_master.md`
+- **Documentação**: Separada em `docs/` por categoria
+- **Guias**: Movidos para `docs/guides/`
+- **Sistemas**: Movidos para `docs/systems/`
+- **Relatórios**: Centralizados em `logs/reports/`
+- **Scripts**: Centralizados em `scripts/`
+
+**📋 Navegação Atualizada:**
+- **Task Master**: `logs/reports/task_master.md`
+- **Dashboard**: `docs/dashboard/integrated_task_manager.md`
+- **Guias**: `docs/guides/`
+- **Sistemas**: `docs/systems/`
+- **Mapas**: `data/maps/`
+- **Scripts**: `scripts/`
+
 
 ### **🎯 Contextos Principais:**
 - **@otclient** → Desenvolvimento do cliente OTClient
 - **@bmad** → Sistema de agentes BMAD  
-- **@wiki** → Documentação da wiki
+- **@wiki** → Documentação educacional (Obsidian)
+- **@habdel** → Metodologia de pesquisa e stories
+- **@docs** → Documentação interna do sistema
 - **@integration** → Integração entre projetos
 
 ### **⚡ Ações Rápidas:**
-- **🎯 Dashboard** → `wiki/dashboard/integrated_task_manager.md` (Sistema Central)
-- **📋 Task Master** → `wiki/dashboard/task_master.md` (Sistema de Tarefas Principal)
+- **🎯 Dashboard** → `docs/dashboard/integrated_task_manager.md` (Sistema Central)
+- **📋 Task Master** → `logs/reports/task_master.md` (Sistema de Tarefas Principal)
 - **📋 Regras** → `.cursor/rules/` (30 arquivos)
-- **🗺️ Mapas** → `wiki/maps/` (23 arquivos JSON)
-- **📚 Wiki** → `wiki/` (documentação estruturada)
+- **🗺️ Mapas** → `data/maps/` (23 arquivos JSON)
+- **📚 Wiki** → `wiki/` (conteúdo educacional)
+- **🔬 Habdel** → `habdel/` (metodologia de pesquisa)
+- **📖 Docs** → `docs/` (documentação técnica)
 - **🔧 Código** → `src/` (código-fonte - somente leitura)
-- **🐍 Scripts** → `wiki/update/` (scripts Python com resolução automática)
+- **🐍 Scripts** → `scripts/` (scripts Python com resolução automática)
 
 ### **🎯 Hierarquia de Prioridades:**
 1. **CRÍTICO**: Dashboard Central, Task Master, Simplificação, Contexto, Permissões, Resolução de Erros
@@ -23,30 +84,31 @@
 3. **OPCIONAL**: BMAD Agents, Auto-Learning, Cross-Project Integration
 
 ### **🧭 Padrões de Navegação:**
-- **Dashboard Central**: `cursor.md` → `integrated_task_manager.md` → Sistema Completo
-- **Task Master**: `cursor.md` → `task_master.md` → Sistema de Tarefas Principal
-- **Análise de código**: `otclient_source_index.json` → `src/` → `modules/` → `wiki/otclient/`
-- **Busca de documentação**: `tags_index.json` → `wiki_map.json` → `wiki/` → `relationships.json`
-- **Navegação por grafos**: `navigation_graph.json` → Caminhos ótimos → Cache inteligente → Sugestões contextuais
-- **Consulta de regras**: `cursor.md` → `.cursor/rules/` → `enhanced_context_system.json`
-- **Workflow BMAD**: `bmad_agents.json` → `bmad_workflows.json` → `wiki/bmad/` → `bmad_rules.md`
-- **Execução de scripts**: `cursor.md` → `script_execution_manager.py` → `python_error_resolver.py` → script.py
+- **Dashboard Central**: `cursor.md` → `docs/dashboard/integrated_task_manager.md` → Sistema Completo
+- **Task Master**: `cursor.md` → `logs/reports/task_master.md` → Sistema de Tarefas Principal
+- **Análise de código OTClient**: `data/maps/otclient_source_index.json` → `otclient/src/` → `otclient/modules/` → `docs/systems/`
+- **Análise de código Canary**: `data/maps/canary_source_index.json` → `canary/src/` → `canary/data/` → `docs/systems/`
+- **Busca de documentação**: `data/maps/tags_index.json` → `data/maps/wiki_map.json` → `docs/` → `data/maps/relationships.json`
+- **Navegação por grafos**: `data/maps/navigation_graph.json` → Caminhos ótimos → Cache inteligente → Sugestões contextuais
+- **Consulta de regras**: `cursor.md` → `.cursor/rules/` → `data/maps/enhanced_context_system.json`
+- **Workflow BMAD**: `data/maps/bmad_agents.json` → `data/maps/bmad_workflows.json` → `docs/bmad/` → `docs/bmad/bmad_rules.md`
+- **Execução de scripts**: `cursor.md` → `scripts/script_execution_manager.py` → `scripts/python_error_resolver.py` → script.py
 
 ---
 
 ## ⚠️ **SISTEMA DE TAREFAS - REGRAS CRÍTICAS**
 
-### 🚨 **CONTEXTO IMPORTANTE - TAREFAS SÃO REFERENTES AO SISTEMA DA PASTA WIKI/DASHBOARD**
+### 🚨 **CONTEXTO IMPORTANTE - TAREFAS SÃO REFERENTES AO SISTEMA REORGANIZADO**
 
 **Este repositório possui DOIS sistemas principais de tarefas:**
 
-1. **📋 Task Master** (`wiki/dashboard/task_master.md`) - **SISTEMA PRINCIPAL**
+1. **📋 Task Master** (`logs/reports/task_master.md`) - **SISTEMA PRINCIPAL**
    - ✅ **Fonte única de verdade** para todas as tarefas
    - ✅ **58 tasks organizadas** em 5 Epics com prioridades claras
    - ✅ **Metodologia Habdel** para pesquisa profunda
    - ✅ **Sistema de prioridades** estruturado (Crítica → Alta → Média → Baixa)
 
-2. **🎯 Integrated Task Manager** (`wiki/dashboard/integrated_task_manager.md`) - **SISTEMA DE INTEGRAÇÃO**
+2. **🎯 Integrated Task Manager** (`docs/dashboard/integrated_task_manager.md`) - **SISTEMA DE INTEGRAÇÃO**
    - ✅ **Sistema de integração** OTClient-Canary
    - ✅ **15 tasks de integração** (86.7% completas)
    - ✅ **Foco em preparação** para integração total
@@ -54,13 +116,16 @@
 ### 📁 **Estrutura Real dos Sistemas de Tarefas**
 
 ```
-📁 wiki/dashboard/ (SISTEMA DE TAREFAS PRINCIPAL)
+📁 logs/reports/ (SISTEMA DE TAREFAS PRINCIPAL)
 ├── 📋 task_master.md (SISTEMA PRINCIPAL - 58 tasks)
 │   ├── 🔥 Epic 1: Pesquisa Profunda OTClient (23 tasks)
 │   ├── 🔥 Epic 2: Pesquisa Profunda Canary (23 tasks)
 │   ├── ⚡ Epic 3: Metodologia Habdel (5 tasks)
 │   ├── 🟡 Epic 4: Integração e Comparação (10 tasks)
 │   └── 🔵 Epic 5: Sistema de Agentes (5 tasks)
+├── 📊 Outros relatórios e logs
+
+📁 docs/dashboard/ (SISTEMA DE INTEGRAÇÃO)
 ├── 🎯 integrated_task_manager.md (SISTEMA DE INTEGRAÇÃO - 15 tasks)
 │   ├── ✅ Fase 1: Preparação (100% completa)
 │   ├── ✅ Fase 2: Otimização (100% completa)
@@ -141,7 +206,7 @@ Este arquivo atua como **orquestrador** que referencia a **coletânea de regras*
 | `integrated-task-management-rules.md` | **Regras do sistema integrado** de task management | ✅ Ativo |
 | `git-task-manager-integration-rules.md` | **Regras de integração** Git-Task Manager | ✅ Ativo |
 | `log-organization-rules.md` | **Regras de organização** de logs e arquivos de log | ✅ Ativo |
-| `wiki-log-organization-rules.md` | **Regras de organização** da pasta wiki/log/ | ✅ Ativo |
+| `wiki-log-organization-rules.md` | **Regras de organização** da pasta logs/ | ✅ Ativo |
 | `readme-maintenance-rules.md` | **Regras de manutenção** do README.md | ✅ Ativo |
 
 ### 📁 **Contexto das Pastas do Projeto**
@@ -150,8 +215,8 @@ Este arquivo atua como **orquestrador** que referencia a **coletânea de regras*
 |---------------|-----------|------------|
 | `wiki/` | **Documentação estruturada** da wiki do OTClient | ✅ Modificação permitida |
 | `wiki/dashboard/` | **Sistema de tarefas principal** (Task Master + Integrated Task Manager) | ✅ Modificação permitida |
-| `wiki/dashboard/task_master.md` | **Sistema principal de tarefas** (58 tasks - fonte única de verdade) | ✅ Modificação permitida |
-| `wiki/dashboard/integrated_task_manager.md` | **Sistema de integração** (15 tasks - 86.7% completa) | ✅ Modificação permitida |
+| `logs/reports/task_master.md` | **Sistema principal de tarefas** (58 tasks - fonte única de verdade) | ✅ Modificação permitida |
+| `docs/dashboard/integrated_task_manager.md` | **Sistema de integração** (15 tasks - 86.7% completa) | ✅ Modificação permitida |
 | `.cursor/` | **Regras e configurações** do assistente | ✅ Modificação permitida |
 | `.cursor/rules/` | **Regras específicas** e templates do assistente | ✅ Modificação permitida |
 | `cursor.md` | **Arquivo orquestrador** das regras | ✅ Modificação permitida |
@@ -159,21 +224,26 @@ Este arquivo atua como **orquestrador** que referencia a **coletânea de regras*
 | `forgottenmapeditor/` | **Editor de mapa integrado** ao OTClient | ❌ Apenas leitura |
 | **TODOS OS OUTROS** | **Código-fonte, recursos e configurações** do OTClient | ❌ Apenas leitura |
 
-> [!warning] **LIMITAÇÃO IMPORTANTE**
-> Este repositório contém **APENAS** o código-fonte do OTClient. O código-fonte do Canary **NÃO está disponível** para análise ou modificação.
+> [!info] **ESTRUTURA DE SUBMÓDULOS**
+> Este repositório contém **TRÊS submódulos Git** como fontes de verdade:
+> - **`otclient/`** - Código-fonte do cliente OTClient (submódulo)
+> - **`canary/`** - Código-fonte do servidor Canary (submódulo)
+> - **`forgottenmapeditor/`** - Editor de mapa integrado (submódulo)
 
 ### 🗺️ **Mapa Visual da Estrutura**
 
 ```
-📁 otclient_doc/
+📁 Codex_MMORPG/
 ├── 📋 cursor.md (ORQUESTRADOR PRINCIPAL)
-├── 📋 wiki/dashboard/ (SISTEMA DE TAREFAS PRINCIPAL)
+├── 📋 logs/reports/ (SISTEMA DE TAREFAS PRINCIPAL)
 │   ├── 📋 task_master.md (SISTEMA PRINCIPAL - 58 tasks)
 │   │   ├── 🔥 Epic 1: Pesquisa OTClient (23 tasks)
 │   │   ├── 🔥 Epic 2: Pesquisa Canary (23 tasks)
 │   │   ├── ⚡ Epic 3: Metodologia Habdel (5 tasks)
 │   │   ├── 🟡 Epic 4: Integração (10 tasks)
 │   │   └── 🔵 Epic 5: Agentes (5 tasks)
+│   └── 📊 Outros relatórios e logs
+├── 📋 docs/dashboard/ (SISTEMA DE INTEGRAÇÃO)
 │   └── 🎯 integrated_task_manager.md (SISTEMA DE INTEGRAÇÃO - 15 tasks)
 ├── 📘 .cursor/rules/ (30 regras)
 │   ├── 🎯 rules.md (regras principais)
@@ -182,22 +252,27 @@ Este arquivo atua como **orquestrador** que referencia a **coletânea de regras*
 │   ├── 🔍 otclient-source-index-rules.md
 │   ├── 🤖 bmad-system-rules.md
 │   └── ... (25 outras regras)
-├── 📚 wiki/ (documentação)
-│   ├── 🗺️ maps/ (23 arquivos JSON)
-│   │   ├── tags_index.json
-│   │   ├── wiki_map.json
-│   │   ├── enhanced_context_system.json
-│   │   └── intelligent_navigation.json
-│   ├── 🤖 bmad/ (sistema de agentes)
-│   ├── 📖 otclient/ (documentação do cliente)
-│   └── 🔗 integration/ (integração - preparação)
-├── 🔧 src/ (código-fonte OTClient - somente leitura)
-├── 📦 modules/ (módulos Lua - somente leitura)
-└── 📁 data/ (recursos - somente leitura)
+├── 📚 wiki/ (documentação educacional)
+├── 🔬 habdel/ (metodologia de pesquisa)
+├── 📖 docs/ (documentação técnica)
+├── 📊 logs/ (relatórios e monitoramento)
+├── 💾 data/ (dados e mapas)
+├── 🔧 scripts/ (scripts e ferramentas)
+├── 🔄 backup/ (sistema de backup)
+├── ⏳ temp/ (arquivos temporários)
 
-❌ canary_repository/ (FUTURO - SERÁ COPIADO)
-   ├── 🔧 src/ (código Canary - futuro)
-   └── 📚 wiki/ (documentação Canary - futuro)
+🔧 otclient/ (SUBMÓDULO - CLIENTE OTCLIENT)
+   ├── 🔧 src/ (código-fonte do cliente)
+   ├── 📦 modules/ (módulos Lua)
+   ├── 📁 data/ (recursos do cliente)
+   └── 📚 docs/ (documentação do cliente)
+
+🖥️ canary/ (SUBMÓDULO - SERVIDOR CANARY)
+   ├── 🔧 src/ (código-fonte do servidor)
+   ├── 📁 data/ (dados do servidor)
+   ├── 🗄️ schema.sql (esquema do banco)
+   └── 📚 docs/ (documentação do servidor)
+
 🗺️ forgottenmapeditor/ (SUBMÓDULO - EDITOR DE MAPA)
    ├── 🔧 modules/ (módulos do editor)
    ├── 📁 data/ (dados do editor)
@@ -227,15 +302,15 @@ Este arquivo atua como **orquestrador** que referencia a **coletânea de regras*
 ```
 
 > [!info] **CONTEXTO DE NAVEGAÇÃO**
-> - **OTClient**: Análise completa disponível (código + documentação)
-> - **Canary**: Preparação para integração total (futuro)
+> - **OTClient**: Análise completa disponível (código + documentação) - submódulo
+> - **Canary**: Análise completa disponível (código + documentação) - submódulo
 > - **BMAD**: Sistema de agentes disponível para desenvolvimento
-> - **Wiki**: Documentação OTClient disponível para modificação
+> - **Wiki**: Documentação educacional disponível para modificação
 > - **Task Master**: Sistema principal de tarefas (58 tasks - pesquisa Habdel)
 > - **Integrated Task Manager**: Sistema de integração (15 tasks - 86.7% completa)
-> - **Forgotten Map Editor**: Editor de mapa integrado ao OTClient (submódulo)
+> - **Forgotten Map Editor**: Editor de mapa integrado (submódulo)
 
-> [!warning] **DEFINIÇÃO CRÍTICA de "otclient"**: OTClient se refere a QUALQUER pasta, subpasta ou arquivo solto no repositório que NÃO seja `.cursor/`, `wiki/`, `cursor.md` e `forgottenmapeditor/`. Isso inclui `src/`, `modules/`, `data/`, `tools/`, `docs/`, `README.md`, `LICENSE`, `CMakeLists.txt` e QUALQUER OUTRO ARQUIVO do repositório oficial.
+> [!info] **DEFINIÇÃO ATUALIZADA de "otclient"**: OTClient se refere ao submódulo `otclient/` que contém o código-fonte oficial do cliente OTClient. O código-fonte está disponível para análise e documentação, mas modificações devem ser feitas no repositório original.
 
 ---
 
@@ -244,7 +319,7 @@ Este arquivo atua como **orquestrador** que referencia a **coletânea de regras*
 ### 🎯 **Hierarquia de Prioridades (NOVA)**
 
 **Nível 1 - CRÍTICO (Sempre aplicar):**
-1. **Task Master** - Consultar `wiki/dashboard/task_master.md` primeiro
+1. **Task Master** - Consultar `logs/reports/task_master.md` primeiro
 2. **Simplificação** - Evitar loops infinitos
 3. **Contexto** - Detectar repositório atual (OTClient apenas)
 4. **Permissões** - Respeitar restrições de modificação
@@ -292,10 +367,12 @@ Este arquivo atua como **orquestrador** que referencia a **coletânea de regras*
 - **Fallback automático** para modo simples em caso de problemas
 
 > [!info] **NAVEGAÇÃO DISPONÍVEL**
-> - **OTClient**: Análise completa (código + documentação)
+> - **OTClient**: Análise completa (código + documentação) - submódulo
+> - **Canary**: Análise completa (código + documentação) - submódulo
+> - **Forgotten Map Editor**: Análise completa (código + documentação) - submódulo
 > - **BMAD**: Desenvolvimento de agentes
-> - **Wiki**: Documentação OTClient
-> - **Canary**: Preparação para integração total (futuro)
+> - **Wiki**: Documentação educacional
+> - **Docs**: Documentação técnica
 > - **Git**: Automação de controle de versão
 > - **Task Master**: Sistema principal de tarefas (58 tasks)
 
@@ -314,8 +391,8 @@ Este arquivo atua como **orquestrador** que referencia a **coletânea de regras*
 ---
 
 1. **Este arquivo** (`cursor.md`) = Orquestrador/Referência
-2. **Task Master** (`wiki/dashboard/task_master.md`) = Sistema Principal de Tarefas (58 tasks)
-3. **Dashboard Central** (`wiki/dashboard/integrated_task_manager.md`) = Sistema de Integração (15 tasks)
+2. **Task Master** (`logs/reports/task_master.md`) = Sistema Principal de Tarefas (58 tasks)
+3. **Dashboard Central** (`docs/dashboard/integrated_task_manager.md`) = Sistema de Integração (15 tasks)
 4. **Pasta `.cursor/rules/`** = Coletânea de regras e templates
 5. **Antes de qualquer tarefa**, consulte o Task Master e siga todas as regras relevantes
 6. **Para cada prompt recebido**, aplique automaticamente as técnicas de engenharia de prompt
@@ -359,20 +436,30 @@ Este arquivo atua como **orquestrador** que referencia a **coletânea de regras*
 
 ### 📁 **Referências de Pastas**
 
-- **Quando mencionar "wiki"**: Refere-se à pasta `wiki/` do projeto
+- **Quando mencionar "wiki"**: Refere-se à pasta `wiki/` do projeto (conteúdo educacional)
+- **Quando mencionar "habdel"**: Refere-se à pasta `habdel/` do projeto (metodologia de pesquisa)
+- **Quando mencionar "docs"**: Refere-se à pasta `docs/` do projeto (documentação técnica)
 - **Quando mencionar "rules"**: Refere-se à pasta `.cursor/rules/` do projeto
-- **Quando mencionar "otclient"**: Refere-se a TODAS as pastas e arquivos que NÃO têm ✅ Modificação permitida
-- **Quando mencionar "taskmaster"**: Refere-se ao sistema principal de tarefas em `wiki/dashboard/task_master.md`
-- **Pasta wiki**: Contém documentação estruturada da wiki do OTClient
+- **Quando mencionar "otclient"**: Refere-se ao submódulo `otclient/` (código-fonte do cliente)
+- **Quando mencionar "canary"**: Refere-se ao submódulo `canary/` (código-fonte do servidor)
+- **Quando mencionar "forgottenmapeditor"**: Refere-se ao submódulo `forgottenmapeditor/` (editor de mapa)
+- **Quando mencionar "taskmaster"**: Refere-se ao sistema principal de tarefas em `logs/reports/task_master.md`
+- **Pasta wiki**: Contém conteúdo educacional para Obsidian
+- **Pasta habdel**: Contém metodologia de pesquisa e stories
+- **Pasta docs**: Contém documentação interna do sistema
+- **Pasta logs**: Contém relatórios, monitoramento e alertas
+- **Pasta data**: Contém dados do sistema e mapas
+- **Pasta scripts**: Contém scripts e ferramentas
 - **Pasta rules**: Contém regras e templates do assistente
-- **Pasta dashboard**: Contém sistema de tarefas principal (Task Master + Integrated Task Manager)
-- **Pastas/arquivos otclient**: Contém código-fonte, recursos e configurações do OTClient (apenas leitura)
-- **Pasta forgottenmapeditor**: Contém editor de mapa integrado ao OTClient (apenas leitura)
+- **Submódulo otclient**: Contém código-fonte oficial do cliente OTClient (análise permitida)
+- **Submódulo canary**: Contém código-fonte oficial do servidor Canary (análise permitida)
+- **Submódulo forgottenmapeditor**: Contém editor de mapa integrado (análise permitida)
 
-> [!warning] **LIMITAÇÃO IMPORTANTE**
-> - **OTClient**: Código-fonte disponível para análise (somente leitura)
-> - **Canary**: Código-fonte será integrado no futuro
-> - **Integração**: Apenas preparação e estrutura para futuro
+> [!info] **ESTRUTURA DE SUBMÓDULOS**
+> - **OTClient**: Código-fonte disponível para análise (submódulo)
+> - **Canary**: Código-fonte disponível para análise (submódulo)
+> - **Forgotten Map Editor**: Código-fonte disponível para análise (submódulo)
+> - **Integração**: Análise completa disponível para ambos os projetos
 > - **Tarefas**: Só podem ser criadas segundo o Task Master e as regras de tarefa
 
 ---
@@ -461,7 +548,7 @@ Este arquivo atua como **orquestrador** que referencia a **coletânea de regras*
 ## 📁 Regras de Organização (file-organization-rules.md)
 
 - **Organize arquivos** em pastas específicas por função
-- **Use estrutura padronizada**: tools/update/, wiki/maps/, wiki/docs/
+- **Use estrutura padronizada**: tools/update/, data/maps/, wiki/docs/
 - **Mantenha repositório limpo** sem arquivos soltos na raiz
 - **Atualize referências** nos scripts após reorganização
 - **Valide funcionamento** do sistema após mudanças
@@ -566,14 +653,14 @@ Quando um novo documento for criado na wiki:
 - **Referencie** documentação externa do Canary quando disponível
 
 > [!info] **CONTEXTO ATUALIZADO**
-> Integração com Canary é preparação para **integração total**. O código-fonte do Canary será integrado no futuro.
+> Integração com Canary é **ativa e disponível**. O código-fonte do Canary está disponível como submódulo para análise e documentação.
 
 ---
 
 ## 🧹 Regras de Limpeza e Organização (report-cleanup-rules.md)
 
 - **Identifique** arquivos temporários após conclusão de tarefas
-- **Mova** relatórios de conclusão para `wiki/log/`
+- **Mova** relatórios de conclusão para `logs/`
 - **Mantenha** apenas arquivos essenciais no sistema
 - **Organize** relatórios com estrutura padronizada
 - **Inclua** receitas para reproduzir resultados
@@ -610,10 +697,13 @@ Quando um novo documento for criado na wiki:
 ## 🧭 Sistema de Navegação Inteligente (intelligent-navigation.json)
 
 ### **Contextos Automáticos:**
-- **@otclient** - Desenvolvimento do cliente OTClient (código disponível)
+- **@otclient** - Desenvolvimento do cliente OTClient (submódulo disponível)
+- **@canary** - Desenvolvimento do servidor Canary (submódulo disponível)
+- **@forgottenmapeditor** - Editor de mapa integrado (submódulo disponível)
 - **@bmad** - Sistema de agentes BMAD (desenvolvimento permitido)
-- **@wiki** - Documentação da wiki OTClient (modificação permitida)
-- **@integration** - Preparação para integração total (Canary como futuro)
+- **@wiki** - Documentação educacional (modificação permitida)
+- **@docs** - Documentação técnica (modificação permitida)
+- **@integration** - Integração entre OTClient e Canary (análise completa)
 - **@git** - Operações de controle de versão (automação Git)
 - **@taskmaster** - Sistema principal de tarefas (Task Master)
 
@@ -621,7 +711,7 @@ Quando um novo documento for criado na wiki:
 - **Análise de código OTClient**: source_index → src/ → modules/ → wiki/otclient/
 - **Busca de documentação**: tags_index → wiki_map → wiki/ → relationships
 - **Consulta de regras**: cursor.md → .cursor/rules/ → enhanced_context_system
-- **Workflow BMAD**: bmad_agents → bmad_workflows → wiki/bmad/ → bmad_rules
+- **Workflow BMAD**: bmad_agents → bmad_workflows → docs/bmad/ → bmad_rules
 - **Sistema de tarefas**: cursor.md → task_master.md → integrated_task_manager.md
 
 > [!info] **NAVEGAÇÃO DISPONÍVEL**

@@ -1,6 +1,0 @@
-{
-  "performance_alert": "python wiki/update/metrics_system.py --collect-metrics",
-  "quality_alert": "python wiki/update/quality_check.py",
-  "usage_alert": "python wiki/update/advanced_search_system.py --rebuild-index",
-  "system_alert": "python wiki/update/system_health_check.py"
-}

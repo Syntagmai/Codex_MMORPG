@@ -9,7 +9,7 @@ Definir regras para o **Sistema Integrado de Task Management** que funciona como
 ## 🧠 Princípios Fundamentais
 
 ### **Dashboard Central**
-- **SEMPRE consulte** `wiki/dashboard/integrated_task_manager.md` antes de qualquer tarefa
+- **SEMPRE consulte** `logs/reports/integrated_task_manager.md` antes de qualquer tarefa
 - **SEMPRE atualize** o dashboard central após cada tarefa concluída
 - **SEMPRE mantenha** 100% de cobertura de todas as tarefas do sistema
 - **SEMPRE integre** novas tarefas ao dashboard central

@@ -23,7 +23,7 @@ Este arquivo define as regras para **navegação baseada em JSON** da wiki do OT
 ### 5. **Estrutura de Consulta Padronizada**
 **Use a estrutura de consulta estabelecida:**
 1. **Primeiro**: Consultar `wiki/tags_index.json` para localizar arquivos
-2. **Segundo**: Usar `wiki/maps/wiki_map.json` para metadados e status
+2. **Segundo**: Usar `data/maps/wiki_map.json` para metadados e status
 3. **Terceiro**: Consultar `wiki/relationships.json` para dependências
 4. **Quarto**: Acessar arquivo markdown apenas se necessário
 
@@ -36,7 +36,7 @@ Este arquivo define as regras para **navegação baseada em JSON** da wiki do OT
 | Arquivo | Propósito | Atualização |
 |---------|-----------|-------------|
 | `wiki/tags_index.json` | **Índice principal** de tags e arquivos | Automática |
-| `wiki/maps/wiki_map.json` | **Mapa completo** da wiki com metadados | Automática |
+| `data/maps/wiki_map.json` | **Mapa completo** da wiki com metadados | Automática |
 | `wiki/relationships.json` | **Relacionamentos** entre documentos | Automática |
 | `wiki/search_index.json` | **Índice de busca** otimizado | Automática |
 
@@ -122,7 +122,7 @@ curl -s wiki/tags_index.json | jq '.files_by_tag.ui'
 #### **Busca por Status**
 ```bash
 # Verificar documentos completos
-curl -s wiki/maps/wiki_map.json | jq '.categories[].documents[] | select(.status == "completed")'
+curl -s data/maps/wiki_map.json | jq '.categories[].documents[] | select(.status == "completed")'
 ```
 
 #### **Busca por Relacionamentos**
@@ -225,7 +225,7 @@ with open('wiki/tags_index.json', 'r') as f:
 ### 📊 **Análise de Progresso**
 ```python
 # Verificar progresso da documentação
-with open('wiki/maps/wiki_map.json', 'r') as f:
+with open('data/maps/wiki_map.json', 'r') as f:
     data = json.load(f)
     completed = sum(1 for cat in data['categories'].values() 
                    for doc in cat['documents'] 
@@ -250,7 +250,7 @@ with open('wiki/relationships.json', 'r') as f:
 **SEMPRE que uma consulta da wiki for solicitada:**
 
 1. **Consultar primeiro** `wiki/tags_index.json`
-2. **Usar metadados** de `wiki/maps/wiki_map.json`
+2. **Usar metadados** de `data/maps/wiki_map.json`
 3. **Verificar relacionamentos** em `wiki/relationships.json`
 4. **Acessar markdown** apenas se necessário
 5. **Atualizar JSONs** após qualquer modificação

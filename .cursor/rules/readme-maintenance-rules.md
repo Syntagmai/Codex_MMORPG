@@ -96,8 +96,8 @@ Manter o `README.md` sempre atualizado como um **retrato fiel** do repositório,
 ```bash
 # Verificar se todos os arquivos/pastas existem
 - .cursor/rules/ (26 arquivos)
-- wiki/maps/ (15 arquivos JSON)
-- wiki/bmad/ (sistema de agentes)
+- data/maps/ (15 arquivos JSON)
+- docs/bmad/ (sistema de agentes)
 - otclient/ (submódulo)
 - canary/ (submódulo)
 ```
@@ -134,7 +134,7 @@ Manter o `README.md` sempre atualizado como um **retrato fiel** do repositório,
 
 #### **1. Gatilhos de Atualização**
 - **Nova regra** criada em `.cursor/rules/`
-- **Novo mapa** criado em `wiki/maps/`
+- **Novo mapa** criado em `data/maps/`
 - **Nova funcionalidade** implementada
 - **Mudança** na estrutura de pastas
 - **Atualização** de status de componentes

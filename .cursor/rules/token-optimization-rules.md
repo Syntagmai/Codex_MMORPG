@@ -54,7 +54,7 @@ Implementar estratégia **20/80** para otimização de tokens:
 
 ### **Script de Otimização**
 ```python
-# wiki/update/optimize_maps_for_tokens.py
+# scripts/optimize_maps_for_tokens.py
 # Converte metadados para inglês mantendo tags em português
 ```
 

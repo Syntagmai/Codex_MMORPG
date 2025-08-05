@@ -1,0 +1,38 @@
+{
+  "structure": {
+    "wiki": "Conteúdo educacional (Obsidian)",
+    "habdel": "Metodologia de pesquisa e stories",
+    "docs": "Documentação interna do sistema",
+    "logs": "Relatórios, monitoramento e alertas",
+    "data": "Dados do sistema",
+    "scripts": "Scripts e ferramentas",
+    "backup": "Sistema de backup",
+    "temp": "Arquivos temporários"
+  },
+  "key_files": {
+    "task_master": "logs/reports/task_master.md",
+    "dashboard": "docs/dashboard/integrated_task_manager.md",
+    "cursor": "cursor.md",
+    "rules": ".cursor/rules/"
+  },
+  "documentation": {
+    "guides": "docs/guides/",
+    "systems": "docs/systems/",
+    "templates": "docs/templates/",
+    "workflows": "docs/workflows/",
+    "bmad": "docs/bmad/"
+  },
+  "data": {
+    "maps": "data/maps/",
+    "consolidated": "data/consolidated/"
+  },
+  "logs": {
+    "reports": "logs/reports/",
+    "monitoring": "logs/monitoring/",
+    "alerts": "logs/alerts/",
+    "metrics": "logs/metrics/"
+  },
+  "scripts": "scripts/",
+  "backup": "backup/",
+  "temp": "temp/"
+}

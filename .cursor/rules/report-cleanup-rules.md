@@ -2,7 +2,7 @@
 
 ## 🎯 Propósito
 
-Definir regras para **limpeza automática** de arquivos temporários e **organização estruturada** de relatórios de conclusão na pasta `wiki/log/`, incluindo receitas para reproduzir resultados.
+Definir regras para **limpeza automática** de arquivos temporários e **organização estruturada** de relatórios de conclusão na pasta `logs/`, incluindo receitas para reproduzir resultados.
 
 ---
 
@@ -10,7 +10,7 @@ Definir regras para **limpeza automática** de arquivos temporários e **organiz
 
 ### **Arquivos Temporários**
 - **SEMPRE identifique** arquivos temporários após conclusão de tarefas
-- **SEMPRE mova** relatórios de conclusão para `wiki/log/`
+- **SEMPRE mova** relatórios de conclusão para `logs/`
 - **SEMPRE mantenha** apenas arquivos essenciais no sistema
 - **SEMPRE organize** relatórios com estrutura padronizada
 - **SEMPRE inclua** receitas para reproduzir resultados
@@ -25,9 +25,9 @@ Definir regras para **limpeza automática** de arquivos temporários e **organiz
 
 ## 📁 Estrutura de Organização
 
-### **Pasta `wiki/log/`**
+### **Pasta `logs/`**
 ```
-wiki/log/
+logs/
 ├── completed_tasks/           # Tarefas concluídas
 │   ├── integration_tasks.md   # Tarefas de integração (arquivado)
 │   ├── system_updates.md      # Atualizações do sistema
@@ -51,14 +51,14 @@ wiki/log/
 
 ### **🔄 Após Conclusão de Tarefas**
 - **SEMPRE identifique** arquivos temporários criados durante a execução
-- **SEMPRE mova** relatórios de conclusão para `wiki/log/reports/`
-- **SEMPRE crie** receita na pasta `wiki/log/recipes/`
-- **SEMPRE arquive** arquivos de tarefas em `wiki/log/completed_tasks/`
+- **SEMPRE mova** relatórios de conclusão para `logs/reports/`
+- **SEMPRE crie** receita na pasta `logs/recipes/`
+- **SEMPRE arquive** arquivos de tarefas em `logs/completed_tasks/`
 - **SEMPRE remova** arquivos temporários desnecessários
 
 ### **📊 Após Relatórios de Status**
 - **SEMPRE consolide** informações em relatório final
-- **SEMPRE mova** para pasta `wiki/log/reports/`
+- **SEMPRE mova** para pasta `logs/reports/`
 - **SEMPRE crie** receita correspondente
 - **SEMPRE remova** arquivos temporários de status
 
@@ -101,7 +101,7 @@ wiki/log/
 - [Passos futuros opcionais]
 
 ## 🔗 **Receita Correspondente**
-- [Link para receita em `wiki/log/recipes/`]
+- [Link para receita em `logs/recipes/`]
 ```
 
 ---
@@ -162,20 +162,20 @@ wiki/log/
 ## 🧹 Regras de Limpeza Específicas
 
 ### **📁 Arquivos de Tarefas Temporárias**
-- **SEMPRE mova** `integration_tasks.md` para `wiki/log/completed_tasks/` após conclusão
-- **SEMPRE mova** `DEPENDENCY_INTEGRATION_PLAN.md` para `wiki/log/archives/` se obsoleto
+- **SEMPRE mova** `integration_tasks.md` para `logs/completed_tasks/` após conclusão
+- **SEMPRE mova** `DEPENDENCY_INTEGRATION_PLAN.md` para `logs/archives/` se obsoleto
 - **SEMPRE mantenha** apenas tarefas ativas na pasta raiz
 - **SEMPRE arquive** tarefas concluídas com data de conclusão
 
 ### **📊 Relatórios de Status**
 - **SEMPRE consolide** múltiplos relatórios em um relatório final
-- **SEMPRE mova** para `wiki/log/reports/` com nome descritivo
+- **SEMPRE mova** para `logs/reports/` com nome descritivo
 - **SEMPRE crie** receita correspondente
 - **SEMPRE remova** relatórios temporários
 
 ### **🔄 Arquivos de Sistema**
 - **SEMPRE mantenha** apenas arquivos essenciais do sistema
-- **SEMPRE arquive** versões antigas em `wiki/log/archives/`
+- **SEMPRE arquive** versões antigas em `logs/archives/`
 - **SEMPRE documente** mudanças significativas
 - **SEMPRE preserve** histórico de evolução
 
@@ -249,7 +249,7 @@ def cleanup_after_completion():
 
 ### **📝 Para Novos Relatórios**
 Quando novos relatórios forem criados:
-- ✅ Mover para pasta `wiki/log/reports/`
+- ✅ Mover para pasta `logs/reports/`
 - ✅ Criar receita correspondente
 - ✅ Atualizar índices de documentação
 - ✅ Remover arquivos temporários
