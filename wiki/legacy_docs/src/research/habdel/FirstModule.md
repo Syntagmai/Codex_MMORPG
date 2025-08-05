@@ -38,6 +38,31 @@ custom_modules/
 
 ### 🔧 **Setup Inicial**
 
+#### Nível Basic
+```lua
+-- modules/custom_modules/shared/utils.lua
+-- Utilitários compartilhados entre módulos
+local Utils = {}
+-- Função para criar janela padrão
+function Utils.createWindow(id, title, size, parent)
+    local window = g_ui.createWidget('MainWindow', parent or rootWidget)
+end
+-- Função para adicionar botão no menu
+function Utils.addMenuButton(id, text, icon, callback)
+    local topMenu = modules.client_topmenu.getTopMenu()
+    local button = topMenu:addLeftButton(id, text, icon)
+end
+-- Sistema de log customizado
+function Utils.log(module, message, level)
+    local timestamp = os.date('%H:%M:%S')
+    print(string.format('[%s][%s][%s] %s', timestamp, level, module, message))
+end
+-- Verificar se está em jogo
+function Utils.isInGame()
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- modules/custom_modules/shared/utils.lua
 -- Utilitários compartilhados entre módulos
@@ -75,6 +100,56 @@ function Utils.isInGame()
 end
 
 return Utils
+```
+
+#### Nível Advanced
+```lua
+-- modules/custom_modules/shared/utils.lua
+-- Utilitários compartilhados entre módulos
+
+local Utils = {}
+
+-- Função para criar janela padrão
+function Utils.createWindow(id, title, size, parent)
+    local window = g_ui.createWidget('MainWindow', parent or rootWidget)
+    window:setId(id)
+    window:setText(title)
+    window:setSize(size)
+    window:centerIn('parent')
+    return window
+end
+
+-- Função para adicionar botão no menu
+function Utils.addMenuButton(id, text, icon, callback)
+    local topMenu = modules.client_topmenu.getTopMenu()
+    local button = topMenu:addLeftButton(id, text, icon)
+    button.onClick = callback
+    return button
+end
+
+-- Sistema de log customizado
+function Utils.log(module, message, level)
+    level = level or 'INFO'
+    local timestamp = os.date('%H:%M:%S')
+    print(string.format('[%s][%s][%s] %s', timestamp, level, module, message))
+end
+
+-- Verificar se está em jogo
+function Utils.isInGame()
+    return g_game.isOnline() and g_game.getLocalPlayer()
+end
+
+return Utils
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🧩 Anatomia de um Módulo
@@ -258,6 +333,7 @@ ClickCounterWindow < MainWindow
 
 ### 💻 **3. Lógica Principal**
 
+#### Inicialização e Configuração
 ```lua
 -- modules/custom_modules/my_clickcounter/clickcounter.lua
 ClickCounter = {}
@@ -282,6 +358,10 @@ local config = {
     autoHide = false,
     saveInterval = 30000  -- 30 segundos
 }
+```
+
+#### Funcionalidade 1
+```lua
 
 -- Labels da interface
 local labels = {}
@@ -309,6 +389,10 @@ function ClickCounter.init()
         config.soundEnabled = checked
         ClickCounter.saveConfig()
     end
+```
+
+#### Funcionalidade 2
+```lua
     autoHideCheck.onCheckChange = function(widget, checked)
         config.autoHide = checked
         ClickCounter.saveConfig()
@@ -334,6 +418,10 @@ function ClickCounter.init()
     
     print("ClickCounter: Módulo iniciado com sucesso!")
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 function ClickCounter.terminate()
     -- Salvar dados antes de finalizar
@@ -355,6 +443,10 @@ function ClickCounter.onMouseClick(widget, pos, button)
     if button ~= MouseLeftButton then
         return
     end
+```
+
+#### Funcionalidade 4
+```lua
     
     local currentTime = g_clock.millis()
     
@@ -383,6 +475,10 @@ function ClickCounter.onMouseClick(widget, pos, button)
                     -- Tocar som de novo recorde (se existir)
                     -- g_sounds.playSoundFile('/sounds/achievement.ogg')
                 end
+```
+
+#### Funcionalidade 5
+```lua
             end
         end
     end
@@ -408,6 +504,10 @@ function ClickCounter.updateInterface()
     labels.cps:setText(tr('CPS: %.1f', stats.cps))
     labels.record:setText(tr('Recorde CPS: %.1f', stats.recordCPS))
 end
+```
+
+#### Funcionalidade 6
+```lua
 
 function ClickCounter.resetSession()
     stats.sessionClicks = 0
@@ -429,6 +529,10 @@ function ClickCounter.resetAll()
 end
 
 function ClickCounter.show()
+```
+
+#### Funcionalidade 7
+```lua
     clickCounterWindow:show()
     clickCounterWindow:raise()
     clickCounterWindow:focus()
@@ -451,6 +555,10 @@ function ClickCounter.saveStats()
     g_settings.setNode('clickcounter-stats', stats)
     g_settings.save()
 end
+```
+
+#### Funcionalidade 8
+```lua
 
 function ClickCounter.loadStats()
     local savedStats = g_settings.getNode('clickcounter-stats')
@@ -478,6 +586,10 @@ function ClickCounter.loadConfig()
         soundCheck:setChecked(config.soundEnabled)
         autoHideCheck:setChecked(config.autoHide)
     end
+```
+
+#### Funcionalidade 9
+```lua
 end
 
 function ClickCounter.scheduleAutoSave()
@@ -499,6 +611,10 @@ end
 function ClickCounter.getSessionClicks()
     return stats.sessionClicks
 end
+```
+
+#### Finalização
+```lua
 
 function ClickCounter.getCurrentCPS()
     return stats.cps
@@ -611,6 +727,7 @@ NotificationContainer < Panel
 
 ### 💻 **3. Sistema de Notificações**
 
+#### Inicialização e Configuração
 ```lua
 -- modules/custom_modules/my_notifications/notifications.lua
 Notifications = {}
@@ -636,6 +753,10 @@ Notifications.TYPES = {
         icon = '/images/icons/info',
         sound = '/sounds/notification_info.ogg'
     },
+```
+
+#### Funcionalidade 1
+```lua
     SUCCESS = {
         color = '#27ae60',
         icon = '/images/icons/success',
@@ -657,6 +778,10 @@ Notifications.TYPES = {
         sound = '/sounds/notification_achievement.ogg'
     }
 }
+```
+
+#### Funcionalidade 2
+```lua
 
 function Notifications.init()
     -- Criar container de notificações
@@ -681,6 +806,10 @@ function Notifications.init()
                     string.format('Parabéns! Você alcançou o level %d!', level), 
                     Notifications.TYPES.ACHIEVEMENT, 8000)
             end
+```
+
+#### Funcionalidade 3
+```lua
         end,
         onHealthChange = function(player, health, maxHealth)
             local healthPercent = (health / maxHealth) * 100
@@ -706,6 +835,10 @@ function Notifications.terminate()
         onTextMessage = Notifications.onTextMessage,
         onCreatureAppear = Notifications.onCreatureAppear
     })
+```
+
+#### Funcionalidade 4
+```lua
     
     -- Destruir container
     notificationContainer:destroy()
@@ -727,6 +860,10 @@ function Notifications.show(title, message, type, duration)
         })
         return
     end
+```
+
+#### Funcionalidade 5
+```lua
     
     -- Criar widget de notificação
     local notification = g_ui.createWidget('NotificationWidget', notificationContainer)
@@ -762,6 +899,10 @@ function Notifications.show(title, message, type, duration)
     if config.soundEnabled and type.sound then
         -- g_sounds.playSoundFile(type.sound)
     end
+```
+
+#### Funcionalidade 6
+```lua
     
     -- Agendar remoção automática
     scheduleEvent(function()
@@ -790,6 +931,10 @@ function Notifications.remove(notification)
         if not notification:isDestroyed() then
             notification:destroy()
         end
+```
+
+#### Funcionalidade 7
+```lua
         
         -- Processar fila se houver
         Notifications.processQueue()
@@ -812,6 +957,10 @@ function Notifications.clearAll()
     activeNotifications = {}
     notificationQueue = {}
 end
+```
+
+#### Funcionalidade 8
+```lua
 
 -- Event handlers para notificações automáticas
 function Notifications.onTextMessage(mode, text)
@@ -840,6 +989,10 @@ function Notifications.onCreatureAppear(creature)
             string.format('%s apareceu por perto', creature:getName()), 
             Notifications.TYPES.INFO, 3000)
     end
+```
+
+#### Funcionalidade 9
+```lua
 end
 
 -- API pública
@@ -862,6 +1015,10 @@ end
 function Notifications.achievement(title, message, duration)
     return Notifications.show(title, message, Notifications.TYPES.ACHIEVEMENT, duration)
 end
+```
+
+#### Finalização
+```lua
 
 function Notifications.configure(newConfig)
     for key, value in pairs(newConfig) do
@@ -1111,6 +1268,7 @@ StatusMonitorWindow < MiniWindow
 
 ### 💻 **3. Lógica do Monitor**
 
+#### Inicialização e Configuração
 ```lua
 -- modules/custom_modules/my_statusmonitor/statusmonitor.lua
 StatusMonitor = {}
@@ -1166,6 +1324,10 @@ function StatusMonitor.init()
         onGameStart = StatusMonitor.onGameStart,
         onGameEnd = StatusMonitor.onGameEnd
     })
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Conectar eventos do jogador
     connect(LocalPlayer, {
@@ -1188,6 +1350,10 @@ function StatusMonitor.init()
 end
 
 function StatusMonitor.terminate()
+```
+
+#### Funcionalidade 2
+```lua
     -- Parar timer
     StatusMonitor.stopUpdateTimer()
     
@@ -1213,6 +1379,10 @@ function StatusMonitor.terminate()
     
     print("StatusMonitor: Monitor finalizado!")
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 function StatusMonitor.onGameStart()
     StatusMonitor.startUpdateTimer()
@@ -1235,6 +1405,10 @@ function StatusMonitor.startUpdateTimer()
 end
 
 function StatusMonitor.stopUpdateTimer()
+```
+
+#### Funcionalidade 4
+```lua
     if updateTimer then
         removeEvent(updateTimer)
         updateTimer = nil
@@ -1263,6 +1437,10 @@ function StatusMonitor.updatePlayerInfo()
     local vocation = 'Unknown'
     widgets.playerVocation:setText(tr('Vocation: %s', vocation))
 end
+```
+
+#### Funcionalidade 5
+```lua
 
 function StatusMonitor.updateHealth()
     local player = g_game.getLocalPlayer()
@@ -1284,6 +1462,10 @@ function StatusMonitor.updateHealth()
 end
 
 function StatusMonitor.updateMana()
+```
+
+#### Funcionalidade 6
+```lua
     local player = g_game.getLocalPlayer()
     if not player then return end
     
@@ -1313,6 +1495,10 @@ function StatusMonitor.updateExperience()
     widgets.experienceBar:setPercent(experiencePercent)
     widgets.experienceLabel:setText(string.format('Level %d (%d%%)', level, experiencePercent))
 end
+```
+
+#### Funcionalidade 7
+```lua
 
 function StatusMonitor.updateAdditionalStats()
     local player = g_game.getLocalPlayer()
@@ -1347,6 +1533,10 @@ function StatusMonitor.updateAdditionalStats()
     local speed = player:getSpeed()
     widgets.speed:setText(tr('Speed: %d', speed))
 end
+```
+
+#### Funcionalidade 8
+```lua
 
 -- Event handlers
 function StatusMonitor.onHealthChange(player, health, maxHealth)
@@ -1370,6 +1560,10 @@ function StatusMonitor.onLevelChange(player, level, percent)
     StatusMonitor.updatePlayerInfo()
     StatusMonitor.updateExperience()
 end
+```
+
+#### Funcionalidade 9
+```lua
 
 function StatusMonitor.onExperienceChange(player, experience)
     StatusMonitor.updateExperience()
@@ -1393,6 +1587,10 @@ end
 
 -- Interface functions
 function StatusMonitor.show()
+```
+
+#### Funcionalidade 10
+```lua
     statusWindow:show()
     statusWindow:raise()
 end
@@ -1429,6 +1627,10 @@ function StatusMonitor.getPlayerStats()
         stamina = player:getStamina(),
         speed = player:getSpeed()
     }
+```
+
+#### Finalização
+```lua
 end
 
 function StatusMonitor.configure(newConfig)
@@ -1444,6 +1646,30 @@ end
 
 ### 🐛 **Sistema de Debug Integrado**
 
+#### Nível Basic
+```lua
+-- Adicionar ao início de cada módulo
+local DEBUG = true
+local function debugLog(module, message, level)
+    if not DEBUG then return end
+    local timestamp = os.date('%H:%M:%S')
+    local color = level == 'ERROR' and '#e74c3c' or 
+    print(string.format('[%s][%s][%s] %s', timestamp, level, module, message))
+    -- Também mostrar em notificação se disponível
+    if level == 'ERROR' and Notifications then
+        Notifications.error('Debug Error', message, 10000)
+    end
+end
+-- Função de teste para cada módulo
+function testModule()
+    -- Testes específicos aqui
+    local success = true
+    if success then
+    end
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Adicionar ao início de cada módulo
 local DEBUG = true
@@ -1479,8 +1705,94 @@ function testModule()
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Adicionar ao início de cada módulo
+local DEBUG = true
+
+local function debugLog(module, message, level)
+    if not DEBUG then return end
+    
+    level = level or 'DEBUG'
+    local timestamp = os.date('%H:%M:%S')
+    local color = level == 'ERROR' and '#e74c3c' or 
+                  level == 'WARN' and '#f39c12' or '#3498db'
+    
+    print(string.format('[%s][%s][%s] %s', timestamp, level, module, message))
+    
+    -- Também mostrar em notificação se disponível
+    if level == 'ERROR' and Notifications then
+        Notifications.error('Debug Error', message, 10000)
+    end
+end
+
+-- Função de teste para cada módulo
+function testModule()
+    debugLog('MODULE_NAME', 'Iniciando testes do módulo')
+    
+    -- Testes específicos aqui
+    local success = true
+    
+    if success then
+        debugLog('MODULE_NAME', 'Todos os testes passaram!', 'INFO')
+    else
+        debugLog('MODULE_NAME', 'Alguns testes falharam!', 'ERROR')
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔍 **Console de Desenvolvimento**
 
+#### Nível Basic
+```lua
+-- Comandos úteis para o console do OTClient (Ctrl+T)
+-- Recarregar módulo específico
+function reloadModule(moduleName)
+    local module = g_modules.getModule(moduleName)
+    if module then
+        print("Módulo " .. moduleName .. " recarregado!")
+        print("Módulo " .. moduleName .. " não encontrado!")
+    end
+end
+-- Listar módulos ativos
+function listModules()
+    print("Módulos carregados:")
+        local status = module:isLoaded() and "LOADED" or "UNLOADED"
+        print(string.format("  %s - %s", name, status))
+    end
+end
+-- Testar notificação
+function testNotification()
+    if Notifications then
+        Notifications.info('Teste', 'Esta é uma notificação de teste!')
+        print("Módulo de notificações não carregado!")
+    end
+end
+-- Ver estatísticas do contador
+function showClickStats()
+    if ClickCounter then
+        local stats = ClickCounter.getStats()
+        print("Estatísticas do Contador:")
+        print("  Total: " .. stats.totalClicks)
+        print("  Sessão: " .. stats.sessionClicks)
+        print("  CPS: " .. string.format("%.1f", stats.cps))
+        print("  Recorde: " .. string.format("%.1f", stats.recordCPS))
+        print("Módulo ClickCounter não carregado!")
+    end
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Comandos úteis para o console do OTClient (Ctrl+T)
 
@@ -1527,6 +1839,65 @@ function showClickStats()
         print("Módulo ClickCounter não carregado!")
     end
 end
+```
+
+#### Nível Advanced
+```lua
+-- Comandos úteis para o console do OTClient (Ctrl+T)
+
+-- Recarregar módulo específico
+function reloadModule(moduleName)
+    local module = g_modules.getModule(moduleName)
+    if module then
+        module:unload()
+        module:load()
+        print("Módulo " .. moduleName .. " recarregado!")
+    else
+        print("Módulo " .. moduleName .. " não encontrado!")
+    end
+end
+
+-- Listar módulos ativos
+function listModules()
+    print("Módulos carregados:")
+    for name, module in pairs(g_modules.getModules()) do
+        local status = module:isLoaded() and "LOADED" or "UNLOADED"
+        print(string.format("  %s - %s", name, status))
+    end
+end
+
+-- Testar notificação
+function testNotification()
+    if Notifications then
+        Notifications.info('Teste', 'Esta é uma notificação de teste!')
+    else
+        print("Módulo de notificações não carregado!")
+    end
+end
+
+-- Ver estatísticas do contador
+function showClickStats()
+    if ClickCounter then
+        local stats = ClickCounter.getStats()
+        print("Estatísticas do Contador:")
+        print("  Total: " .. stats.totalClicks)
+        print("  Sessão: " .. stats.sessionClicks)
+        print("  CPS: " .. string.format("%.1f", stats.cps))
+        print("  Recorde: " .. string.format("%.1f", stats.recordCPS))
+    else
+        print("Módulo ClickCounter não carregado!")
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 Parabéns! 🎉 Você agora possui conhecimento completo para criar módulos sofisticados para o OTClient. Cada projeto apresentado demonstra diferentes aspectos do desenvolvimento, desde interfaces simples até sistemas complexos com persistência de dados e integração entre módulos.

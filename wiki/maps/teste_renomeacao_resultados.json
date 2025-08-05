@@ -1,0 +1,68 @@
+{
+  "data_teste": "2025-08-04T19:16:14.255157",
+  "total_arquivos": 12,
+  "sucessos": 12,
+  "falhas": 0,
+  "resultados": [
+    {
+      "arquivo": "README.md",
+      "status": "sucesso",
+      "nome_novo": "leia_me.md"
+    },
+    {
+      "arquivo": "bmad/BMAD_System_Guide.md",
+      "status": "sucesso",
+      "nome_novo": "guia_sistema_bmad.md"
+    },
+    {
+      "arquivo": "bmad/autonomous_system.md",
+      "status": "sucesso",
+      "nome_novo": "sistema_autonomo.md"
+    },
+    {
+      "arquivo": "bmad/git_automation.md",
+      "status": "sucesso",
+      "nome_novo": "automacao_git.md"
+    },
+    {
+      "arquivo": "docs/readme_guidelines.md",
+      "status": "sucesso",
+      "nome_novo": "diretrizes_leia_me.md"
+    },
+    {
+      "arquivo": "docs/documentation_guidelines.md",
+      "status": "sucesso",
+      "nome_novo": "diretrizes_documentacao.md"
+    },
+    {
+      "arquivo": "docs/config_guidelines.md",
+      "status": "sucesso",
+      "nome_novo": "diretrizes_configuracao.md"
+    },
+    {
+      "arquivo": "docs/file_structure_guidelines.md",
+      "status": "sucesso",
+      "nome_novo": "diretrizes_estrutura_arquivos.md"
+    },
+    {
+      "arquivo": "docs/integration_guidelines.md",
+      "status": "sucesso",
+      "nome_novo": "diretrizes_integracao.md"
+    },
+    {
+      "arquivo": "docs/performance_guidelines.md",
+      "status": "sucesso",
+      "nome_novo": "diretrizes_desempenho.md"
+    },
+    {
+      "arquivo": "docs/python_guidelines.md",
+      "status": "sucesso",
+      "nome_novo": "diretrizes_python.md"
+    },
+    {
+      "arquivo": "docs/security_guidelines.md",
+      "status": "sucesso",
+      "nome_novo": "diretrizes_seguranca.md"
+    }
+  ]
+}

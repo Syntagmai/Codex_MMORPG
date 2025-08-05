@@ -84,6 +84,7 @@ enum ANIMATION_LOOP_TYPE {
 ```
 
 ### Exemplo Avançado - Carregamento de Animação
+#### Nível Basic
 ```cpp
 // Carregamento de animação de item
 bool Items::parseItemNode(const pugi::xml_node& itemNode, uint16_t id) {
@@ -121,6 +122,99 @@ void ProtocolGame::sendAddItem(const Position& pos, uint32_t stackpos, const Ite
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Carregamento de animação de item
+bool Items::parseItemNode(const pugi::xml_node& itemNode, uint16_t id) {
+    // ... código existente
+    
+    if (objectFrame.sprite_info().has_animation()) {
+        const auto& animation = objectFrame.sprite_info().animation();
+        
+        if (animation.random_start_phase()) {
+            iType.animationType = ANIMATION_RANDOM;
+        } else {
+            iType.animationType = ANIMATION_DESYNC;
+        }
+        
+        iType.hasAnimation = true;
+        iType.animationSpeed = animation.sprite_phase(0).duration_min();
+    }
+    
+    return true;
+}
+
+// Envio de animação para cliente
+void ProtocolGame::sendAddItem(const Position& pos, uint32_t stackpos, const Item* item) {
+    // ... código existente
+    
+    if (it.animationType == ANIMATION_RANDOM) {
+        // Animação com fase inicial aleatória
+        msg.add<uint8_t>(randomNumber(0, it.animationPhases - 1));
+    } else if (it.animationType == ANIMATION_DESYNC) {
+        // Animação dessincronizada
+        msg.add<uint8_t>((ticks % it.animationPhases));
+    }
+    
+    // ... resto do código
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Carregamento de animação de item
+bool Items::parseItemNode(const pugi::xml_node& itemNode, uint16_t id) {
+    // ... código existente
+    
+    if (objectFrame.sprite_info().has_animation()) {
+        const auto& animation = objectFrame.sprite_info().animation();
+        
+        if (animation.random_start_phase()) {
+            iType.animationType = ANIMATION_RANDOM;
+        } else {
+            iType.animationType = ANIMATION_DESYNC;
+        }
+        
+        iType.hasAnimation = true;
+        iType.animationSpeed = animation.sprite_phase(0).duration_min();
+    }
+    
+    return true;
+}
+
+// Envio de animação para cliente
+void ProtocolGame::sendAddItem(const Position& pos, uint32_t stackpos, const Item* item) {
+    // ... código existente
+    
+    if (it.animationType == ANIMATION_RANDOM) {
+        // Animação com fase inicial aleatória
+        msg.add<uint8_t>(randomNumber(0, it.animationPhases - 1));
+    } else if (it.animationType == ANIMATION_DESYNC) {
+        // Animação dessincronizada
+        msg.add<uint8_t>((ticks % it.animationPhases));
+    }
+    
+    // ... resto do código
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 💡 Conceitos-Chave
 
 **SpriteAnimation**: Definição de animações de sprites
@@ -152,6 +246,7 @@ message SpriteAnimation {
 ### Exercício 2: Intermediário
 Implementar carregamento de animação com verificação de suporte.
 
+#### Nível Basic
 ```cpp
 bool Items::loadAnimation(const pugi::xml_node& animationNode, ItemType& itemType) {
     // Verificar suporte a animação
@@ -174,11 +269,75 @@ bool Items::loadAnimation(const pugi::xml_node& animationNode, ItemType& itemTyp
 }
 ```
 
+#### Nível Intermediate
+```cpp
+bool Items::loadAnimation(const pugi::xml_node& animationNode, ItemType& itemType) {
+    // Verificar suporte a animação
+    bool supportAnimation = g_configManager().getBoolean(OLD_PROTOCOL);
+    
+    if (!supportAnimation) {
+        return false;
+    }
+    
+    if (animationNode.attribute("random_start_phase").as_bool()) {
+        itemType.animationType = ANIMATION_RANDOM;
+    } else {
+        itemType.animationType = ANIMATION_DESYNC;
+    }
+    
+    itemType.hasAnimation = true;
+    itemType.animationSpeed = animationNode.attribute("speed").as_uint();
+    
+    return true;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+bool Items::loadAnimation(const pugi::xml_node& animationNode, ItemType& itemType) {
+    // Verificar suporte a animação
+    bool supportAnimation = g_configManager().getBoolean(OLD_PROTOCOL);
+    
+    if (!supportAnimation) {
+        return false;
+    }
+    
+    if (animationNode.attribute("random_start_phase").as_bool()) {
+        itemType.animationType = ANIMATION_RANDOM;
+    } else {
+        itemType.animationType = ANIMATION_DESYNC;
+    }
+    
+    itemType.hasAnimation = true;
+    itemType.animationSpeed = animationNode.attribute("speed").as_uint();
+    
+    return true;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Exercício 3: Avançado
 Criar sistema de animação com múltiplas fases e controle de loop.
 
 ```cpp
 class AnimationManager {
+    -- Classe: AnimationManager
 private:
     struct AnimationData {
         AnimationType_t type;

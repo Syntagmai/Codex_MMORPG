@@ -197,6 +197,7 @@ export BACKUP_ENABLED="true"
 ```
 
 ### **Arquivo de Configuração**
+#### Nível Basic
 ```json
 {
   "scripts": {
@@ -217,6 +218,69 @@ export BACKUP_ENABLED="true"
     "max_size": "10MB"
   }
 }
+```
+
+#### Nível Intermediate
+```json
+{
+  "scripts": {
+    "auto_update_all_maps": {
+      "enabled": true,
+      "timeout": 3600,
+      "retry_attempts": 3
+    },
+    "optimize_json_maps": {
+      "enabled": true,
+      "compression_threshold": 100000,
+      "chunk_size": 1000
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "logs/script.log",
+    "max_size": "10MB"
+  }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```json
+{
+  "scripts": {
+    "auto_update_all_maps": {
+      "enabled": true,
+      "timeout": 3600,
+      "retry_attempts": 3
+    },
+    "optimize_json_maps": {
+      "enabled": true,
+      "compression_threshold": 100000,
+      "chunk_size": 1000
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "logs/script.log",
+    "max_size": "10MB"
+  }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 📈 Otimização de Performance

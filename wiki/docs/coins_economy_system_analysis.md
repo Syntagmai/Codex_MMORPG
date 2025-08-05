@@ -51,6 +51,7 @@ graph TD
 
 ### 📋 Definição dos Tipos
 
+#### Nível Basic
 ```cpp
 enum class CoinType : uint8_t {
     Normal = 1,        // Moeda normal para compras
@@ -64,8 +65,54 @@ enum class CoinTransactionType : uint8_t {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+enum class CoinType : uint8_t {
+    Normal = 1,        // Moeda normal para compras
+    Tournament = 2,    // Moeda para torneios
+    Transferable = 3   // Moeda transferível
+};
+
+enum class CoinTransactionType : uint8_t {
+    Add = 1,           // Adição de coins
+    Remove = 2         // Remoção de coins
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+enum class CoinType : uint8_t {
+    Normal = 1,        // Moeda normal para compras
+    Tournament = 2,    // Moeda para torneios
+    Transferable = 3   // Moeda transferível
+};
+
+enum class CoinTransactionType : uint8_t {
+    Add = 1,           // Adição de coins
+    Remove = 2         // Remoção de coins
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔧 Implementação C++ (Canary)
 
+#### Inicialização e Configuração
 ```cpp
 // Gerenciamento de coins na conta
 std::tuple<uint32_t, AccountErrors_t> Account::getCoins(CoinType type) const {
@@ -88,6 +135,10 @@ AccountErrors_t Account::addCoins(CoinType type, const uint32_t &amount, const s
     if (!m_accLoaded) {
         return NotInitialized;
     }
+```
+
+#### Funcionalidade 1
+```cpp
 
     if (amount == 0) {
         return Ok;
@@ -112,6 +163,10 @@ AccountErrors_t Account::removeCoins(CoinType type, const uint32_t &amount, cons
     if (!m_accLoaded) {
         return NotInitialized;
     }
+```
+
+#### Finalização
+```cpp
 
     if (amount == 0) {
         return Ok;
@@ -142,6 +197,7 @@ AccountErrors_t Account::removeCoins(CoinType type, const uint32_t &amount, cons
 
 ### 📋 Transferência de Coins Transferíveis
 
+#### Inicialização e Configuração
 ```cpp
 // Transferência de coins entre jogadores
 function parseTransferableCoins(playerId, msg)
@@ -166,6 +222,10 @@ function parseTransferableCoins(playerId, msg)
             GameStore.StoreErrors.STORE_ERROR_TRANSFER, 
             "You can't transfer coins to yourself.")
     end
+```
+
+#### Finalização
+```cpp
 
     -- Buscar conta do destinatário
     local resultId = db.storeQuery("SELECT `account_id` FROM `players` WHERE `name` = " .. 
@@ -205,6 +265,7 @@ end
 
 ### 🏦 Sistema Bancário
 
+#### Inicialização e Configuração
 ```cpp
 // Transferência bancária
 bool Bank::transferTo(const std::shared_ptr<Bank> &destination, uint64_t amount) {
@@ -237,6 +298,10 @@ bool Bank::transferTo(const std::shared_ptr<Bank> &destination, uint64_t amount)
             g_logger().warn("Bank::transferTo: denied name: {}", name);
             return false;
         }
+```
+
+#### Funcionalidade 1
+```cpp
 
         // Validação de cidades
         const auto destinationTownId = destinationPlayer->getTown()->getID();
@@ -260,6 +325,10 @@ bool Bank::transferTo(const std::shared_ptr<Bank> &destination, uint64_t amount)
         g_metrics().addCounter("balance_increase", amount, 
                               { { "player", destinationPlayer->getName() }, { "context", "bank_transfer" } });
     }
+```
+
+#### Finalização
+```cpp
 
     if (bankablePlayer) {
         g_metrics().addCounter("balance_decrease", amount, 
@@ -276,6 +345,7 @@ bool Bank::transferTo(const std::shared_ptr<Bank> &destination, uint64_t amount)
 
 ### 🔍 Sistema de Rastreamento
 
+#### Nível Basic
 ```cpp
 // Registro de transações
 void Account::registerCoinTransaction(CoinTransactionType transactionType, CoinType type, 
@@ -289,8 +359,54 @@ void Account::registerCoinTransaction(CoinTransactionType transactionType, CoinT
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Registro de transações
+void Account::registerCoinTransaction(CoinTransactionType transactionType, CoinType type, 
+                                     const uint32_t &amount, const std::string &detail) {
+    if (!m_accLoaded) {
+        return;
+    }
+
+    // Registrar transação no histórico
+    g_accountRepository().registerCoinTransaction(m_account->id, transactionType, type, amount, detail);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Registro de transações
+void Account::registerCoinTransaction(CoinTransactionType transactionType, CoinType type, 
+                                     const uint32_t &amount, const std::string &detail) {
+    if (!m_accLoaded) {
+        return;
+    }
+
+    // Registrar transação no histórico
+    g_accountRepository().registerCoinTransaction(m_account->id, transactionType, type, amount, detail);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 📋 Estrutura de Histórico
 
+#### Nível Basic
 ```cpp
 // Estrutura de transação
 struct CoinTransaction {
@@ -303,6 +419,49 @@ struct CoinTransaction {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+// Estrutura de transação
+struct CoinTransaction {
+    uint32_t accountId;
+    CoinTransactionType type;
+    CoinType coinType;
+    uint32_t amount;
+    std::string description;
+    std::chrono::system_clock::time_point timestamp;
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Estrutura de transação
+struct CoinTransaction {
+    uint32_t accountId;
+    CoinTransactionType type;
+    CoinType coinType;
+    uint32_t amount;
+    std::string description;
+    std::chrono::system_clock::time_point timestamp;
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🛡️ Segurança e Validação
@@ -310,6 +469,7 @@ struct CoinTransaction {
 ### 🔒 Validações de Segurança
 
 #### **1. Validação de Saldo**
+#### Nível Basic
 ```cpp
 // Verificação de saldo suficiente
 if (coins < amount) {
@@ -318,10 +478,46 @@ if (coins < amount) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Verificação de saldo suficiente
+if (coins < amount) {
+    g_logger().info("Account doesn't have enough coins! current[{}], remove:[{}]", coins, amount);
+    return RemoveCoins;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificação de saldo suficiente
+if (coins < amount) {
+    g_logger().info("Account doesn't have enough coins! current[{}], remove:[{}]", coins, amount);
+    return RemoveCoins;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Validação de Auto-Transferência**
 ```cpp
 // Prevenção de auto-transferência
 if (receiver:lower() == player:getName():lower() then
+    -- Verificação condicional
     return addPlayerEvent(sendStoreError, 350, playerId, 
         GameStore.StoreErrors.STORE_ERROR_TRANSFER, 
         "You can't transfer coins to yourself.")
@@ -332,6 +528,7 @@ end
 ```cpp
 // Prevenção de transferência para mesma conta
 if accountId == player:getAccountId() then
+    -- Verificação condicional
     return addPlayerEvent(sendStoreError, 350, playerId, 
         GameStore.StoreErrors.STORE_ERROR_TRANSFER, 
         "You cannot transfer coin to a character in the same account.")
@@ -341,6 +538,7 @@ end
 ### 🚨 Proteções Adicionais
 
 #### **1. Nomes Negados**
+#### Nível Basic
 ```cpp
 // Lista de nomes negados para transferência
 static const std::set<std::string> deniedNames = {
@@ -353,7 +551,51 @@ static const std::set<std::string> deniedNames = {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+// Lista de nomes negados para transferência
+static const std::set<std::string> deniedNames = {
+    "accountmanager",
+    "rooksample",
+    "druidsample",
+    "sorcerersample",
+    "knightsample",
+    "paladinsample"
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Lista de nomes negados para transferência
+static const std::set<std::string> deniedNames = {
+    "accountmanager",
+    "rooksample",
+    "druidsample",
+    "sorcerersample",
+    "knightsample",
+    "paladinsample"
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Validação de Cidades**
+#### Nível Basic
 ```cpp
 // Restrições de transferência entre cidades
 const auto minTownIdToTransferFromMain = g_configManager().getNumber(MIN_TOWN_ID_TO_BANK_TRANSFER_FROM_MAIN);
@@ -364,12 +606,52 @@ if (destinationTownId < minTownIdToTransferFromMain && bankableTownId >= minTown
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Restrições de transferência entre cidades
+const auto minTownIdToTransferFromMain = g_configManager().getNumber(MIN_TOWN_ID_TO_BANK_TRANSFER_FROM_MAIN);
+
+if (destinationTownId < minTownIdToTransferFromMain && bankableTownId >= minTownIdToTransferFromMain) {
+    g_logger().warn("Transfer from main town to non-main town blocked");
+    return false;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Restrições de transferência entre cidades
+const auto minTownIdToTransferFromMain = g_configManager().getNumber(MIN_TOWN_ID_TO_BANK_TRANSFER_FROM_MAIN);
+
+if (destinationTownId < minTownIdToTransferFromMain && bankableTownId >= minTownIdToTransferFromMain) {
+    g_logger().warn("Transfer from main town to non-main town blocked");
+    return false;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 📈 Métricas e Monitoramento
 
 ### 📊 Sistema de Métricas
 
+#### Nível Basic
 ```cpp
 // Métricas de transferência bancária
 if (destinationPlayer) {
@@ -383,8 +665,54 @@ if (bankablePlayer) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Métricas de transferência bancária
+if (destinationPlayer) {
+    g_metrics().addCounter("balance_increase", amount, 
+                          { { "player", destinationPlayer->getName() }, { "context", "bank_transfer" } });
+}
+
+if (bankablePlayer) {
+    g_metrics().addCounter("balance_decrease", amount, 
+                          { { "player", bankablePlayer->getName() }, { "context", "bank_transfer" } });
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Métricas de transferência bancária
+if (destinationPlayer) {
+    g_metrics().addCounter("balance_increase", amount, 
+                          { { "player", destinationPlayer->getName() }, { "context", "bank_transfer" } });
+}
+
+if (bankablePlayer) {
+    g_metrics().addCounter("balance_decrease", amount, 
+                          { { "player", bankablePlayer->getName() }, { "context", "bank_transfer" } });
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔍 Logging de Transações
 
+#### Nível Basic
 ```cpp
 // Log de transações
 g_logger().info("Coin transaction: Account[{}] {} {} coins of type {}", 
@@ -392,6 +720,43 @@ g_logger().info("Coin transaction: Account[{}] {} {} coins of type {}",
                 transactionType == CoinTransactionType::Add ? "added" : "removed",
                 amount, 
                 static_cast<uint8_t>(type));
+```
+
+#### Nível Intermediate
+```cpp
+// Log de transações
+g_logger().info("Coin transaction: Account[{}] {} {} coins of type {}", 
+                m_account->id, 
+                transactionType == CoinTransactionType::Add ? "added" : "removed",
+                amount, 
+                static_cast<uint8_t>(type));
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Log de transações
+g_logger().info("Coin transaction: Account[{}] {} {} coins of type {}", 
+                m_account->id, 
+                transactionType == CoinTransactionType::Add ? "added" : "removed",
+                amount, 
+                static_cast<uint8_t>(type));
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---
@@ -403,8 +768,10 @@ g_logger().info("Coin transaction: Account[{}] {} {} coins of type {}",
 ```cpp
 // Compra na Game Store
 function parseBuyStoreOffer(playerId, msg)
+    -- Função: parseBuyStoreOffer
     local player = Player(playerId)
     if not player then
+    -- Verificação condicional
         return false
     end
 
@@ -412,31 +779,38 @@ function parseBuyStoreOffer(playerId, msg)
     local offer = GameStore.retrieveOffer(offerId)
     
     if not offer then
+    -- Verificação condicional
         return addPlayerEvent(sendStoreError, 350, playerId, 
             GameStore.StoreErrors.STORE_ERROR_NETWORK, "Offer not found.")
     end
 
     -- Verificar saldo
+    --  Verificar saldo (traduzido)
     local playerCoins = 0
     if offer.coinType == GameStore.CoinType.Normal then
+    -- Verificação condicional
         playerCoins = player:getTibiaCoins()
     elseif offer.coinType == GameStore.CoinType.Transferable then
         playerCoins = player:getTransferableCoins()
     end
 
     if playerCoins < offer.price then
+    -- Verificação condicional
         return addPlayerEvent(sendStoreError, 350, playerId, 
             GameStore.StoreErrors.STORE_ERROR_NETWORK, "You don't have enough coins.")
     end
 
     -- Processar compra
+    --  Processar compra (traduzido)
     if offer.coinType == GameStore.CoinType.Normal then
+    -- Verificação condicional
         player:removeTibiaCoins(offer.price)
     elseif offer.coinType == GameStore.CoinType.Transferable then
         player:removeTransferableCoinsBalance(offer.price)
     end
 
     -- Entregar item
+    --  Entregar item (traduzido)
     GameStore.deliverPurchase(player, offer)
     
     -- Registrar transação
@@ -452,6 +826,7 @@ end
 
 ### 📋 1. Padrão de Validação
 
+#### Inicialização e Configuração
 ```cpp
 // Padrão de validação de transações
 class TransactionValidator {
@@ -476,6 +851,10 @@ public:
             result.errorCode = coinResult;
             return result;
         }
+```
+
+#### Funcionalidade 1
+```cpp
         
         if (coins < amount) {
             result.isValid = false;
@@ -499,6 +878,10 @@ public:
             result.errorCode = AccountErrors_t::InvalidInput;
             return result;
         }
+```
+
+#### Finalização
+```cpp
         
         result.isValid = true;
         return result;
@@ -511,6 +894,7 @@ public:
 ```cpp
 // Padrão de transação atômica
 class TransactionManager {
+    -- Classe: TransactionManager
 public:
     struct Transaction {
         uint32_t accountId;
@@ -566,6 +950,7 @@ public:
 
 ### 🎮 Exemplo 1: Sistema de Transferência Completo
 
+#### Inicialização e Configuração
 ```cpp
 // Sistema de transferência completo
 class CoinTransferSystem {
@@ -588,6 +973,10 @@ public:
             result.errorCode = validation.errorCode;
             return result;
         }
+```
+
+#### Funcionalidade 1
+```cpp
         
         // 2. Buscar destinatário
         auto receiverAccount = findReceiverAccount(receiverName);
@@ -612,6 +1001,10 @@ public:
             amount,
             "Transfer to " + receiverName
         };
+```
+
+#### Funcionalidade 2
+```cpp
         
         Transaction receiverTransaction{
             receiverAccount->getID(),
@@ -637,6 +1030,10 @@ public:
             receiverPlayer->sendTextMessage(MESSAGE_EVENT_ADVANCE, 
                                            "You have received " + std::to_string(amount) + " coins from " + sender->getName());
         }
+```
+
+#### Finalização
+```cpp
         
         result.success = true;
         return result;
@@ -652,6 +1049,7 @@ private:
 
 ### 🎮 Exemplo 2: Sistema de Histórico
 
+#### Inicialização e Configuração
 ```cpp
 // Sistema de histórico de transações
 class TransactionHistory {
@@ -677,6 +1075,10 @@ public:
         if (!result) {
             return history;
         }
+```
+
+#### Funcionalidade 1
+```cpp
         
         do {
             HistoryEntry entry;
@@ -705,6 +1107,10 @@ public:
         
         Database::getInstance().executeQuery(query.str());
     }
+```
+
+#### Finalização
+```cpp
 };
 ```
 

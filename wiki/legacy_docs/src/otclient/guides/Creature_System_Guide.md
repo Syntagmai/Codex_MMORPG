@@ -22,6 +22,7 @@ O sistema de criaturas do OTClient gerencia todas as entidades vivas do jogo, in
 
 ### Hierarquia de Criaturas
 
+#### Nível Basic
 ```lua
 -- Hierarquia básica
 Thing
@@ -32,8 +33,48 @@ Thing
     └── LocalPlayer (jogador local - herda de Player)
 ```
 
+#### Nível Intermediate
+```lua
+-- Hierarquia básica
+Thing
+├── Creature (base para todas as criaturas)
+    ├── Player (jogadores)
+    ├── Npc (NPCs)
+    ├── Monster (monstros)
+    └── LocalPlayer (jogador local - herda de Player)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Hierarquia básica
+Thing
+├── Creature (base para todas as criaturas)
+    ├── Player (jogadores)
+    ├── Npc (NPCs)
+    ├── Monster (monstros)
+    └── LocalPlayer (jogador local - herda de Player)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Constantes de Tipo
 
+#### Nível Basic
 ```lua
 -- Tipos de criatura
 CreatureTypePlayer = 0        -- Jogador
@@ -51,10 +92,88 @@ NpcIconQuest = 3             -- Tem quest
 NpcIconTradeQuest = 4        -- Comércio e quest
 ```
 
+#### Nível Intermediate
+```lua
+-- Tipos de criatura
+CreatureTypePlayer = 0        -- Jogador
+CreatureTypeMonster = 1       -- Monstro
+CreatureTypeNpc = 2          -- NPC
+CreatureTypeSummonOwn = 3    -- Summon próprio
+CreatureTypeSummonOther = 4  -- Summon de outro jogador
+CreatureTypeHidden = 5       -- Criatura oculta
+
+-- Ícones de NPC
+NpcIconNone = 0              -- Sem ícone
+NpcIconChat = 1              -- Pode conversar
+NpcIconTrade = 2             -- Pode comercializar
+NpcIconQuest = 3             -- Tem quest
+NpcIconTradeQuest = 4        -- Comércio e quest
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Tipos de criatura
+CreatureTypePlayer = 0        -- Jogador
+CreatureTypeMonster = 1       -- Monstro
+CreatureTypeNpc = 2          -- NPC
+CreatureTypeSummonOwn = 3    -- Summon próprio
+CreatureTypeSummonOther = 4  -- Summon de outro jogador
+CreatureTypeHidden = 5       -- Criatura oculta
+
+-- Ícones de NPC
+NpcIconNone = 0              -- Sem ícone
+NpcIconChat = 1              -- Pode conversar
+NpcIconTrade = 2             -- Pode comercializar
+NpcIconQuest = 3             -- Tem quest
+NpcIconTradeQuest = 4        -- Comércio e quest
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🧬 Creature Base
 
 ### Propriedades Básicas
 
+#### Nível Basic
+```lua
+-- Obter criatura
+local creature = g_map.getCreatureById(id)
+local player = g_game.getLocalPlayer()
+-- Informações básicas
+local id = creature:getId()               -- ID único da criatura
+local name = creature:getName()           -- Nome
+local pos = creature:getPosition()        -- Posição atual
+local direction = creature:getDirection() -- Direção (North, South, etc.)
+-- Tile e posicionamento
+local tile = creature:getTile()           -- Tile onde está
+-- Verificações de tipo
+local isPlayer = creature:isPlayer()      -- É jogador
+local isNpc = creature:isNpc()           -- É NPC
+local isMonster = creature:isMonster()    -- É monstro
+local isLocalPlayer = creature:isLocalPlayer() -- É o jogador local
+-- Estados básicos
+local dead = creature:isDead()            -- Está morto
+local walking = creature:isWalking()      -- Está andando
+local invisible = creature:isInvisible()  -- Está invisível
+local highlighted = creature:isHighlighted() -- Está destacado
+```
+
+#### Nível Intermediate
 ```lua
 -- Obter criatura
 local creature = g_map.getCreatureById(id)
@@ -83,8 +202,48 @@ local invisible = creature:isInvisible()  -- Está invisível
 local highlighted = creature:isHighlighted() -- Está destacado
 ```
 
+#### Nível Advanced
+```lua
+-- Obter criatura
+local creature = g_map.getCreatureById(id)
+local player = g_game.getLocalPlayer()
+
+-- Informações básicas
+local id = creature:getId()               -- ID único da criatura
+local name = creature:getName()           -- Nome
+local pos = creature:getPosition()        -- Posição atual
+local direction = creature:getDirection() -- Direção (North, South, etc.)
+
+-- Tile e posicionamento
+local tile = creature:getTile()           -- Tile onde está
+creature:setPosition(newPosition)         -- Define nova posição (apenas visual)
+
+-- Verificações de tipo
+local isPlayer = creature:isPlayer()      -- É jogador
+local isNpc = creature:isNpc()           -- É NPC
+local isMonster = creature:isMonster()    -- É monstro
+local isLocalPlayer = creature:isLocalPlayer() -- É o jogador local
+
+-- Estados básicos
+local dead = creature:isDead()            -- Está morto
+local walking = creature:isWalking()      -- Está andando
+local invisible = creature:isInvisible()  -- Está invisível
+local highlighted = creature:isHighlighted() -- Está destacado
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Saúde e Estatísticas
 
+#### Nível Basic
 ```lua
 -- Sistema de HP
 local health = creature:getHealth()       -- HP atual
@@ -112,6 +271,79 @@ if creature:isPlayer() then
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Sistema de HP
+local health = creature:getHealth()       -- HP atual
+local maxHealth = creature:getMaxHealth() -- HP máximo
+local healthPercent = creature:getHealthPercent() -- Percentual (0-100)
+
+-- Para jogadores (se aplicável)
+if creature:isPlayer() then
+    local mana = creature:getMana()       -- Mana atual
+    local maxMana = creature:getMaxMana() -- Mana máxima
+    local level = creature:getLevel()     -- Nível
+    local vocation = creature:getVocation() -- Vocação
+    local experience = creature:getExperience() -- Experiência
+    
+    -- Skills
+    local skillLevel = creature:getSkillLevel(Otc.Skill.Sword)
+    local skillPercent = creature:getSkillLevelPercent(Otc.Skill.Sword)
+    
+    -- Outros atributos
+    local soul = creature:getSoul()       -- Soul points
+    local stamina = creature:getStamina() -- Stamina (minutos)
+    local capacity = creature:getCapacity() -- Capacidade
+    local food = creature:getFood()       -- Food time
+    local blessings = creature:getBlessings() -- Número de blessings
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Sistema de HP
+local health = creature:getHealth()       -- HP atual
+local maxHealth = creature:getMaxHealth() -- HP máximo
+local healthPercent = creature:getHealthPercent() -- Percentual (0-100)
+
+-- Para jogadores (se aplicável)
+if creature:isPlayer() then
+    local mana = creature:getMana()       -- Mana atual
+    local maxMana = creature:getMaxMana() -- Mana máxima
+    local level = creature:getLevel()     -- Nível
+    local vocation = creature:getVocation() -- Vocação
+    local experience = creature:getExperience() -- Experiência
+    
+    -- Skills
+    local skillLevel = creature:getSkillLevel(Otc.Skill.Sword)
+    local skillPercent = creature:getSkillLevelPercent(Otc.Skill.Sword)
+    
+    -- Outros atributos
+    local soul = creature:getSoul()       -- Soul points
+    local stamina = creature:getStamina() -- Stamina (minutos)
+    local capacity = creature:getCapacity() -- Capacidade
+    local food = creature:getFood()       -- Food time
+    local blessings = creature:getBlessings() -- Número de blessings
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 👥 Tipos de Criaturas
 
 ### Player
@@ -119,22 +351,26 @@ end
 ```lua
 -- Verificar se é jogador
 if creature:isPlayer() then
+    -- Verificação condicional
     -- Propriedades específicas de jogador
     local vocation = creature:getVocation()
     local level = creature:getLevel()
     local experience = creature:getExperience()
     
     -- Guild
+    --  Guild (traduzido)
     local guildName = creature:getGuildName()
     local guildRank = creature:getGuildRank()
     
     -- Party
+    --  Party (traduzido)
     local inParty = creature:isInParty()
     local partyMember = creature:isPartyMember()
     local partyLeader = creature:isPartyLeader()
     local partySharedExp = creature:isPartySharedExperienceActive()
     
     -- Guerra
+    --  Guerra (traduzido)
     local isWar = creature:isWar()
     local enemy = creature:isEnemy()
     
@@ -144,6 +380,7 @@ end
 
 ### NPC
 
+#### Nível Basic
 ```lua
 -- Verificar se é NPC
 if creature:isNpc() then
@@ -167,18 +404,86 @@ if creature:isNpc() then
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Verificar se é NPC
+if creature:isNpc() then
+    -- Ícones de NPC
+    local iconId = creature:getIcon()
+    
+    -- Verificar tipo de interação disponível
+    if iconId == NpcIconChat then
+        print("NPC pode conversar")
+    elseif iconId == NpcIconTrade then
+        print("NPC pode comercializar")
+    elseif iconId == NpcIconQuest then
+        print("NPC tem quest")
+    elseif iconId == NpcIconTradeQuest then
+        print("NPC pode comercializar e tem quest")
+    end
+    
+    -- Interação
+    g_game.look(creature)  -- "Olhar" o NPC
+    g_game.talkChannel(TalkType.NpcTo, 0, "hi") -- Falar com NPC
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Verificar se é NPC
+if creature:isNpc() then
+    -- Ícones de NPC
+    local iconId = creature:getIcon()
+    
+    -- Verificar tipo de interação disponível
+    if iconId == NpcIconChat then
+        print("NPC pode conversar")
+    elseif iconId == NpcIconTrade then
+        print("NPC pode comercializar")
+    elseif iconId == NpcIconQuest then
+        print("NPC tem quest")
+    elseif iconId == NpcIconTradeQuest then
+        print("NPC pode comercializar e tem quest")
+    end
+    
+    -- Interação
+    g_game.look(creature)  -- "Olhar" o NPC
+    g_game.talkChannel(TalkType.NpcTo, 0, "hi") -- Falar com NPC
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Monster
 
 ```lua
 -- Verificar se é monstro
 if creature:isMonster() then
+    -- Verificação condicional
     -- Verificar se é summon
     local isSummon = creature:getType() == CreatureTypeSummonOwn or 
                      creature:getType() == CreatureTypeSummonOther
     
     if isSummon then
+    -- Verificação condicional
         print("É um summon")
         if creature:getType() == CreatureTypeSummonOwn then
+    -- Verificação condicional
             print("É seu summon")
         else
             print("É summon de outro jogador")
@@ -188,6 +493,7 @@ if creature:isMonster() then
     end
     
     -- Combate
+    --  Combate (traduzido)
     g_game.attack(creature)    -- Atacar
     g_game.follow(creature)    -- Seguir
     g_game.look(creature)      -- Examinar
@@ -196,6 +502,7 @@ end
 
 ### LocalPlayer (Jogador Local)
 
+#### Nível Basic
 ```lua
 -- O jogador local é especial
 local player = g_game.getLocalPlayer()
@@ -226,12 +533,92 @@ if player then
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- O jogador local é especial
+local player = g_game.getLocalPlayer()
+
+if player then
+    -- Todas as propriedades de Player, mais:
+    
+    -- Inventário
+    local item = player:getInventoryItem(InventorySlotHead)
+    local items = player:getInventoryItems()
+    
+    -- Containers
+    local containers = player:getContainers()
+    
+    -- Configurações
+    local chaseMode = player:getChaseMode()
+    local fightMode = player:getFightMode()
+    local pvpMode = player:getPvpMode()
+    
+    -- Estados especiais
+    local pz = player:isPzLocked()
+    local fighting = player:isFighting()
+    local mounted = player:isMounted()
+    
+    print("Jogador local:", player:getName())
+    print("HP:", player:getHealth() .. "/" .. player:getMaxHealth())
+    print("Level:", player:getLevel())
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- O jogador local é especial
+local player = g_game.getLocalPlayer()
+
+if player then
+    -- Todas as propriedades de Player, mais:
+    
+    -- Inventário
+    local item = player:getInventoryItem(InventorySlotHead)
+    local items = player:getInventoryItems()
+    
+    -- Containers
+    local containers = player:getContainers()
+    
+    -- Configurações
+    local chaseMode = player:getChaseMode()
+    local fightMode = player:getFightMode()
+    local pvpMode = player:getPvpMode()
+    
+    -- Estados especiais
+    local pz = player:isPzLocked()
+    local fighting = player:isFighting()
+    local mounted = player:isMounted()
+    
+    print("Jogador local:", player:getName())
+    print("HP:", player:getHealth() .. "/" .. player:getMaxHealth())
+    print("Level:", player:getLevel())
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🎨 Sistema Visual
 
 ### Skulls (Caveiras)
 
 ```lua
 -- Tipos de skull
+    --  Tipos de skull (traduzido)
 SkullNone = 0        -- Sem skull
 SkullYellow = 1      -- Amarela (jogador matou outros)
 SkullGreen = 2       -- Verde (pode ser atacado em áreas de PvP)
@@ -241,11 +628,14 @@ SkullBlack = 5       -- Preta (PK extremo)
 SkullOrange = 6      -- Laranja (special)
 
 -- Gerenciar skulls
+    --  Gerenciar skulls (traduzido)
 local skull = creature:getSkull()
 creature:setSkull(SkullRed)  -- Define skull (apenas visual)
 
 -- Obter imagem do skull
+    --  Obter imagem do skull (traduzido)
 function getSkullImagePath(skullId)
+    -- Função: getSkullImagePath
     local paths = {
         [SkullYellow] = '/images/game/skulls/skull_yellow',
         [SkullGreen] = '/images/game/skulls/skull_green',
@@ -260,6 +650,7 @@ end
 
 ### Shields (Guild)
 
+#### Nível Basic
 ```lua
 -- Tipos de shield (guild)
 ShieldNone = 0
@@ -297,10 +688,104 @@ function getShieldImagePathAndBlink(shieldId)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Tipos de shield (guild)
+ShieldNone = 0
+ShieldWhiteYellow = 1       -- Líder da guild
+ShieldWhiteBlue = 2         -- Vice-líder
+ShieldBlue = 3              -- Membro comum
+ShieldYellow = 4            -- Outro tipo de membro
+ShieldBlueSharedExp = 5     -- Com exp compartilhada
+ShieldYellowSharedExp = 6   -- Líder com exp compartilhada
+ShieldGray = 7              -- Membro sem rank
+
+-- Gerenciar shields
+local shield = creature:getShield()
+creature:setShield(ShieldBlue)
+
+-- Verificar se pisca
+function getShieldImagePathAndBlink(shieldId)
+    local shieldData = {
+        [ShieldWhiteYellow] = {'/images/game/shields/shield_yellow_white', false},
+        [ShieldWhiteBlue] = {'/images/game/shields/shield_blue_white', false},
+        [ShieldBlue] = {'/images/game/shields/shield_blue', false},
+        [ShieldYellow] = {'/images/game/shields/shield_yellow', false},
+        [ShieldBlueSharedExp] = {'/images/game/shields/shield_blue_shared', false},
+        [ShieldYellowSharedExp] = {'/images/game/shields/shield_yellow_shared', false},
+        [ShieldBlueNoSharedExpBlink] = {'/images/game/shields/shield_blue_not_shared', true},
+        [ShieldYellowNoSharedExpBlink] = {'/images/game/shields/shield_yellow_not_shared', true},
+        [ShieldGray] = {'/images/game/shields/shield_gray', false}
+    }
+    
+    local data = shieldData[shieldId]
+    if data then
+        return data[1], data[2] -- path, blink
+    end
+    return nil, false
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Tipos de shield (guild)
+ShieldNone = 0
+ShieldWhiteYellow = 1       -- Líder da guild
+ShieldWhiteBlue = 2         -- Vice-líder
+ShieldBlue = 3              -- Membro comum
+ShieldYellow = 4            -- Outro tipo de membro
+ShieldBlueSharedExp = 5     -- Com exp compartilhada
+ShieldYellowSharedExp = 6   -- Líder com exp compartilhada
+ShieldGray = 7              -- Membro sem rank
+
+-- Gerenciar shields
+local shield = creature:getShield()
+creature:setShield(ShieldBlue)
+
+-- Verificar se pisca
+function getShieldImagePathAndBlink(shieldId)
+    local shieldData = {
+        [ShieldWhiteYellow] = {'/images/game/shields/shield_yellow_white', false},
+        [ShieldWhiteBlue] = {'/images/game/shields/shield_blue_white', false},
+        [ShieldBlue] = {'/images/game/shields/shield_blue', false},
+        [ShieldYellow] = {'/images/game/shields/shield_yellow', false},
+        [ShieldBlueSharedExp] = {'/images/game/shields/shield_blue_shared', false},
+        [ShieldYellowSharedExp] = {'/images/game/shields/shield_yellow_shared', false},
+        [ShieldBlueNoSharedExpBlink] = {'/images/game/shields/shield_blue_not_shared', true},
+        [ShieldYellowNoSharedExpBlink] = {'/images/game/shields/shield_yellow_not_shared', true},
+        [ShieldGray] = {'/images/game/shields/shield_gray', false}
+    }
+    
+    local data = shieldData[shieldId]
+    if data then
+        return data[1], data[2] -- path, blink
+    end
+    return nil, false
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Emblems (Guerra)
 
 ```lua
 -- Tipos de emblem
+    --  Tipos de emblem (traduzido)
 EmblemNone = 0
 EmblemGreen = 1      -- Aliado
 EmblemRed = 2        -- Inimigo
@@ -309,10 +794,12 @@ EmblemMember = 4     -- Membro da guild
 EmblemOther = 5      -- Outro tipo
 
 -- Gerenciar emblems
+    --  Gerenciar emblems (traduzido)
 local emblem = creature:getEmblem()
 creature:setEmblem(EmblemRed)
 
 function getEmblemImagePath(emblemId)
+    -- Função: getEmblemImagePath
     local paths = {
         [EmblemGreen] = '/images/game/emblems/emblem_green',
         [EmblemRed] = '/images/game/emblems/emblem_red',
@@ -328,10 +815,12 @@ end
 
 ```lua
 -- Sistema de luz
+    --  Sistema de luz (traduzido)
 local light = creature:getLight()
 creature:setLight(light)  -- Define luz
 
 -- Efeitos visuais
+    --  Efeitos visuais (traduzido)
 creature:setHighlighted(true)  -- Destaca criatura
 local highlighted = creature:isHighlighted()
 
@@ -340,6 +829,7 @@ creature:setMarked(true)   -- Marca criatura
 local marked = creature:isMarked()
 
 -- Opacidade
+    --  Opacidade (traduzido)
 creature:setOpacity(0.5)   -- Semi-transparente
 local opacity = creature:getOpacity()
 ```
@@ -348,6 +838,7 @@ local opacity = creature:getOpacity()
 
 ### Speed e Movimento
 
+#### Nível Basic
 ```lua
 -- Velocidade
 local speed = creature:getSpeed()         -- Velocidade atual
@@ -363,8 +854,58 @@ local lastStepCost = creature:getLastStepCost() -- Custo do último passo
 local stepDuration = creature:getStepDuration() -- Duração do passo
 ```
 
+#### Nível Intermediate
+```lua
+-- Velocidade
+local speed = creature:getSpeed()         -- Velocidade atual
+creature:setSpeed(speed)                  -- Define velocidade (visual)
+
+-- Direção
+local direction = creature:getDirection() -- North, South, East, West
+creature:setDirection(North)              -- Define direção
+
+-- Movimento
+local walking = creature:isWalking()      -- Está se movendo
+local lastStepCost = creature:getLastStepCost() -- Custo do último passo
+local stepDuration = creature:getStepDuration() -- Duração do passo
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Velocidade
+local speed = creature:getSpeed()         -- Velocidade atual
+creature:setSpeed(speed)                  -- Define velocidade (visual)
+
+-- Direção
+local direction = creature:getDirection() -- North, South, East, West
+creature:setDirection(North)              -- Define direção
+
+-- Movimento
+local walking = creature:isWalking()      -- Está se movendo
+local lastStepCost = creature:getLastStepCost() -- Custo do último passo
+local stepDuration = creature:getStepDuration() -- Duração do passo
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Informações Avançadas
 
+#### Nível Basic
 ```lua
 -- Distância
 local distance = creature:getDistanceFromLocalPlayer() -- Distância do jogador
@@ -379,19 +920,70 @@ local following = creature:isFollowing()     -- Está seguindo alguém
 local blocking = creature:isBlocking()       -- Está bloqueando passagem
 ```
 
+#### Nível Intermediate
+```lua
+-- Distância
+local distance = creature:getDistanceFromLocalPlayer() -- Distância do jogador
+
+-- Master (para summons)
+local master = creature:getMaster()       -- Dono do summon (se aplicável)
+local hasMaster = creature:hasMaster()    -- Tem dono
+
+-- Verificações especiais
+local autowalking = creature:isAutoWalking() -- Está em auto-walk
+local following = creature:isFollowing()     -- Está seguindo alguém
+local blocking = creature:isBlocking()       -- Está bloqueando passagem
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Distância
+local distance = creature:getDistanceFromLocalPlayer() -- Distância do jogador
+
+-- Master (para summons)
+local master = creature:getMaster()       -- Dono do summon (se aplicável)
+local hasMaster = creature:hasMaster()    -- Tem dono
+
+-- Verificações especiais
+local autowalking = creature:isAutoWalking() -- Está em auto-walk
+local following = creature:isFollowing()     -- Está seguindo alguém
+local blocking = creature:isBlocking()       -- Está bloqueando passagem
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## ⚔️ Sistema de Battle
 
 ### Battle List
 
 ```lua
 -- Obter criaturas na battle list
+    --  Obter criaturas na battle list (traduzido)
 local battleCreatures = {}
 
 -- Filtrar criaturas na tela
+    --  Filtrar criaturas na tela (traduzido)
 local spectators = g_map.getSpectators(g_game.getLocalPlayer():getPosition(), false, 7, 7)
 
 for _, creature in ipairs(spectators) do
+    -- Loop de repetição
     if not creature:isLocalPlayer() then
+    -- Verificação condicional
         table.insert(battleCreatures, creature)
     end
 end
@@ -406,15 +998,19 @@ end)
 
 ```lua
 -- Atacar criatura
+    --  Atacar criatura (traduzido)
 g_game.attack(creature)
 
 -- Seguir criatura
+    --  Seguir criatura (traduzido)
 g_game.follow(creature)
 
 -- Parar combate
+    --  Parar combate (traduzido)
 g_game.stop()
 
 -- Verificar combate atual
+    --  Verificar combate atual (traduzido)
 local attacking = g_game.getAttackingCreature()
 local following = g_game.getFollowingCreature()
 
@@ -425,8 +1021,11 @@ g_game.setPvpMode(WhiteDove)           -- Modo PvP
 
 -- Modos disponíveis
 -- Chase: DontChase, ChaseOpponent
+    --  Chase: DontChase, ChaseOpponent (traduzido)
 -- Fight: FightOffensive, FightBalanced, FightDefensive
+    --  Fight: FightOffensive, FightBalanced, FightDefensive (traduzido)
 -- PvP: WhiteDove, WhiteHand, YellowHand, RedFist
+    --  PvP: WhiteDove, WhiteHand, YellowHand, RedFist (traduzido)
 ```
 
 ### Battle Button System
@@ -436,12 +1035,15 @@ g_game.setPvpMode(WhiteDove)           -- Modo PvP
 local battleButtons = {}
 
 function createBattleButton(creature)
+    -- Função: createBattleButton
     local button = g_ui.createWidget('BattleButton')
     button:setCreature(creature)
     button:setText(creature:getName())
     
     -- Cores baseadas no tipo
+    --  Cores baseadas no tipo (traduzido)
     if creature:isPlayer() then
+    -- Verificação condicional
         button:setColor('#FFFFFF')
     elseif creature:isNpc() then
         button:setColor('#FFFF00')
@@ -450,6 +1052,7 @@ function createBattleButton(creature)
     end
     
     -- Eventos
+    --  Eventos (traduzido)
     button.onClick = function()
         g_game.attack(creature)
     end
@@ -463,14 +1066,19 @@ function createBattleButton(creature)
 end
 
 function updateBattleButton(creature)
+    -- Função: updateBattleButton
     local button = battleButtons[creature:getId()]
     if button then
+    -- Verificação condicional
         -- Atualizar HP
+    --  Atualizar HP (traduzido)
         local healthPercent = creature:getHealthPercent()
         button:setHealthPercent(healthPercent)
         
         -- Cor baseada no HP
+    --  Cor baseada no HP (traduzido)
         if healthPercent < 30 then
+    -- Verificação condicional
             button:setHealthColor('#FF0000')
         elseif healthPercent < 70 then
             button:setHealthColor('#FFAA00')
@@ -485,6 +1093,7 @@ end
 
 ### Eventos Principais
 
+#### Inicialização e Configuração
 ```lua
 -- Conectar eventos de criatura
 connect(Creature, {
@@ -508,6 +1117,10 @@ connect(Creature, {
         print("HP mudou:", creature:getName(), healthPercent .. "%")
         updateBattleButton(creature)
     end,
+```
+
+#### Funcionalidade 1
+```lua
     
     onSkullChange = function(creature, skull)
         print("Skull mudou:", creature:getName(), skull)
@@ -532,6 +1145,10 @@ connect(Creature, {
     onWalk = function(creature, oldPos, newPos)
         print("Criatura andou:", creature:getName())
     end
+```
+
+#### Funcionalidade 2
+```lua
 })
 
 -- Eventos específicos do jogador local
@@ -555,6 +1172,10 @@ connect(LocalPlayer, {
     onExperienceChange = function(localPlayer, experience)
         print("Experiência:", experience)
     end,
+```
+
+#### Finalização
+```lua
     
     onSkillChange = function(localPlayer, skillId, level, levelPercent)
         print("Skill mudou:", skillId, "Level:", level, "Percent:", levelPercent)
@@ -568,18 +1189,21 @@ connect(LocalPlayer, {
 connect(g_game, {
     onAttackingCreatureChange = function(creature, oldCreature)
         if creature then
+    -- Verificação condicional
             print("Começou a atacar:", creature:getName())
         else
             print("Parou de atacar")
         end
         
         if oldCreature then
+    -- Verificação condicional
             print("Parou de atacar:", oldCreature:getName())
         end
     end,
     
     onFollowingCreatureChange = function(creature, oldCreature)
         if creature then
+    -- Verificação condicional
             print("Começou a seguir:", creature:getName())
         else
             print("Parou de seguir")
@@ -606,22 +1230,29 @@ connect(g_game, {
 
 ```lua
 -- Encontrar caminho para uma criatura
+    --  Encontrar caminho para uma criatura (traduzido)
 function findPathToCreature(creature)
+    -- Função: findPathToCreature
     local localPlayer = g_game.getLocalPlayer()
     if not localPlayer then return nil end
+    -- Verificação condicional
     
     local fromPos = localPlayer:getPosition()
     local toPos = creature:getPosition()
     
     -- Buscar caminho
+    --  Buscar caminho (traduzido)
     local path = g_map.findPath(fromPos, toPos, 100)
     return path
 end
 
 -- Auto-walk para criatura
+    --  Auto-walk para criatura (traduzido)
 function walkToCreature(creature)
+    -- Função: walkToCreature
     local path = findPathToCreature(creature)
     if path and #path > 0 then
+    -- Verificação condicional
         g_game.autoWalk(path)
         return true
     end
@@ -630,9 +1261,11 @@ end
 
 -- Verificar se pode alcançar criatura
 function canReachCreature(creature, maxDistance)
+    -- Função: canReachCreature
     maxDistance = maxDistance or 8
     local localPlayer = g_game.getLocalPlayer()
     if not localPlayer then return false end
+    -- Verificação condicional
     
     local fromPos = localPlayer:getPosition()
     local toPos = creature:getPosition()
@@ -643,6 +1276,38 @@ end
 
 ### Cálculos de Distância
 
+#### Nível Basic
+```lua
+-- Distância entre duas posições
+function getDistanceBetween(pos1, pos2)
+    local dx = math.abs(pos1.x - pos2.x)
+    local dy = math.abs(pos1.y - pos2.y)
+    local dz = math.abs(pos1.z - pos2.z)
+end
+-- Ordenar criaturas por distância
+function sortCreaturesByDistance(creatures)
+    local localPlayer = g_game.getLocalPlayer()
+    if not localPlayer then return creatures end
+    local playerPos = localPlayer:getPosition()
+    table.sort(creatures, function(a, b)
+        local distA = getDistanceBetween(playerPos, a:getPosition())
+        local distB = getDistanceBetween(playerPos, b:getPosition())
+    end)
+end
+-- Filtrar criaturas por distância máxima
+function filterCreaturesByDistance(creatures, maxDistance)
+    local localPlayer = g_game.getLocalPlayer()
+    if not localPlayer then return {} end
+    local playerPos = localPlayer:getPosition()
+    local filtered = {}
+        local distance = getDistanceBetween(playerPos, creature:getPosition())
+        if distance <= maxDistance then
+        end
+    end
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Distância entre duas posições
 function getDistanceBetween(pos1, pos2)
@@ -688,10 +1353,67 @@ function filterCreaturesByDistance(creatures, maxDistance)
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Distância entre duas posições
+function getDistanceBetween(pos1, pos2)
+    local dx = math.abs(pos1.x - pos2.x)
+    local dy = math.abs(pos1.y - pos2.y)
+    local dz = math.abs(pos1.z - pos2.z)
+    
+    return math.max(dx, dy, dz)
+end
+
+-- Ordenar criaturas por distância
+function sortCreaturesByDistance(creatures)
+    local localPlayer = g_game.getLocalPlayer()
+    if not localPlayer then return creatures end
+    
+    local playerPos = localPlayer:getPosition()
+    
+    table.sort(creatures, function(a, b)
+        local distA = getDistanceBetween(playerPos, a:getPosition())
+        local distB = getDistanceBetween(playerPos, b:getPosition())
+        return distA < distB
+    end)
+    
+    return creatures
+end
+
+-- Filtrar criaturas por distância máxima
+function filterCreaturesByDistance(creatures, maxDistance)
+    local localPlayer = g_game.getLocalPlayer()
+    if not localPlayer then return {} end
+    
+    local playerPos = localPlayer:getPosition()
+    local filtered = {}
+    
+    for _, creature in ipairs(creatures) do
+        local distance = getDistanceBetween(playerPos, creature:getPosition())
+        if distance <= maxDistance then
+            table.insert(filtered, creature)
+        end
+    end
+    
+    return filtered
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 👕 Sistema de Outfit
 
 ### Outfit Structure
 
+#### Nível Basic
 ```lua
 -- Estrutura básica de outfit
 local outfit = {
@@ -721,11 +1443,89 @@ local mountId = currentOutfit.mount
 -- Pés: 0-132
 ```
 
+#### Nível Intermediate
+```lua
+-- Estrutura básica de outfit
+local outfit = {
+    type = 128,        -- Tipo do outfit (ID)
+    head = 114,        -- Cor da cabeça
+    body = 114,        -- Cor do corpo
+    legs = 114,        -- Cor das pernas
+    feet = 114,        -- Cor dos pés
+    addons = 3,        -- Addons (0-3)
+    mount = 0,         -- ID da montaria (0 = sem montaria)
+    wings = 0,         -- ID das asas (se suportado)
+    aura = 0           -- ID da aura (se suportado)
+}
+
+-- Gerenciar outfit da criatura
+creature:setOutfit(outfit)
+local currentOutfit = creature:getOutfit()
+
+-- Verificar montaria
+local mounted = creature:isMounted()
+local mountId = currentOutfit.mount
+
+-- Cores disponíveis (HSI color system)
+-- Cabeça: 0-132
+-- Corpo: 0-132  
+-- Pernas: 0-132
+-- Pés: 0-132
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Estrutura básica de outfit
+local outfit = {
+    type = 128,        -- Tipo do outfit (ID)
+    head = 114,        -- Cor da cabeça
+    body = 114,        -- Cor do corpo
+    legs = 114,        -- Cor das pernas
+    feet = 114,        -- Cor dos pés
+    addons = 3,        -- Addons (0-3)
+    mount = 0,         -- ID da montaria (0 = sem montaria)
+    wings = 0,         -- ID das asas (se suportado)
+    aura = 0           -- ID da aura (se suportado)
+}
+
+-- Gerenciar outfit da criatura
+creature:setOutfit(outfit)
+local currentOutfit = creature:getOutfit()
+
+-- Verificar montaria
+local mounted = creature:isMounted()
+local mountId = currentOutfit.mount
+
+-- Cores disponíveis (HSI color system)
+-- Cabeça: 0-132
+-- Corpo: 0-132  
+-- Pernas: 0-132
+-- Pés: 0-132
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Outfit Utils
 
 ```lua
 -- Gerar outfit aleatório
 function generateRandomOutfit(baseType)
+    -- Função: generateRandomOutfit
     return {
         type = baseType or 128,
         head = math.random(0, 132),
@@ -740,12 +1540,16 @@ function generateRandomOutfit(baseType)
 end
 
 -- Copiar outfit de uma criatura
+    --  Copiar outfit de uma criatura (traduzido)
 function copyOutfit(creature)
+    -- Função: copyOutfit
     return creature:getOutfit()
 end
 
 -- Comparar outfits
+    --  Comparar outfits (traduzido)
 function compareOutfits(outfit1, outfit2)
+    -- Função: compareOutfits
     return outfit1.type == outfit2.type and
            outfit1.head == outfit2.head and
            outfit1.body == outfit2.body and
@@ -760,6 +1564,7 @@ end
 
 ### Exemplo 1: Sistema de Radar de Criaturas
 
+#### Inicialização e Configuração
 ```lua
 -- modules/creature_radar/creature_radar.lua
 creatureRadar = {}
@@ -785,6 +1590,10 @@ function creatureRadar.init()
         onDisappear = creatureRadar.onCreatureDisappear,
         onPositionChange = creatureRadar.onCreatureMove
     })
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Timer de atualização
     creatureRadar.updateEvent = scheduleEvent(creatureRadar.updateList, 1000)
@@ -814,6 +1623,10 @@ function creatureRadar.updateList()
             elseif filter == 'npcs' and creature:isNpc() then
                 include = true
             end
+```
+
+#### Funcionalidade 2
+```lua
             
             if include then
                 table.insert(filtered, creature)
@@ -848,6 +1661,10 @@ function creatureRadar.updateList()
         elseif creature:isMonster() then
             item:setColor('#FF6666')
         end
+```
+
+#### Funcionalidade 3
+```lua
         
         -- Eventos
         item.onClick = function()
@@ -870,6 +1687,10 @@ end
 function creatureRadar.onCreatureDisappear(creature)
     scheduleEvent(creatureRadar.updateList, 100)
 end
+```
+
+#### Finalização
+```lua
 
 function creatureRadar.onCreatureMove(creature, newPos, oldPos)
     scheduleEvent(creatureRadar.updateList, 100)
@@ -878,6 +1699,7 @@ end
 
 ### Exemplo 2: Auto-Target System
 
+#### Inicialização e Configuração
 ```lua
 -- modules/auto_target/auto_target.lua
 autoTarget = {}
@@ -900,6 +1722,10 @@ function autoTarget.init()
         onHealthPercentChange = autoTarget.onCreatureHealthChange
     })
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function autoTarget.setupInterface()
     autoTarget.window = g_ui.displayUI('auto_target')
@@ -923,6 +1749,10 @@ function autoTarget.addCurrentTarget()
         modules.game_textmessage.displayGameMessage('Nenhuma criatura sendo atacada!')
         return
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     local name = attacking:getName()
     if not autoTarget.targets[name] then
@@ -950,6 +1780,10 @@ function autoTarget.removeSelectedTarget()
         autoTarget.saveConfiguration()
         modules.game_textmessage.displayGameMessage('Alvo removido: ' .. targetName)
     end
+```
+
+#### Funcionalidade 3
+```lua
 end
 
 function autoTarget.updateTargetList()
@@ -988,6 +1822,10 @@ function autoTarget.findBestTarget()
                         priority = target.priority,
                         distance = creature:getDistanceFromLocalPlayer()
                     })
+```
+
+#### Funcionalidade 4
+```lua
                 end
             end
         end
@@ -1015,6 +1853,10 @@ function autoTarget.onAttackingCreatureChange(creature, oldCreature)
                 g_game.attack(newTarget)
                 autoTarget.currentTarget = newTarget
             end
+```
+
+#### Funcionalidade 5
+```lua
         end, 100)
     end
 end
@@ -1036,6 +1878,10 @@ function autoTarget.onCreatureDisappear(creature)
     if autoTarget.currentTarget == creature then
         autoTarget.currentTarget = nil
     end
+```
+
+#### Funcionalidade 6
+```lua
 end
 
 function autoTarget.onCreatureHealthChange(creature, healthPercent)
@@ -1059,6 +1905,10 @@ function autoTarget.loadConfiguration()
     autoTarget.enabledBox:setChecked(autoTarget.enabled)
     autoTarget.updateTargetList()
 end
+```
+
+#### Finalização
+```lua
 
 function autoTarget.saveConfiguration()
     g_settings.setNode('autoTarget', {
@@ -1071,6 +1921,7 @@ end
 
 ### Exemplo 3: Creature Info Tracker
 
+#### Inicialização e Configuração
 ```lua
 -- modules/creature_tracker/creature_tracker.lua
 creatureTracker = {}
@@ -1105,6 +1956,10 @@ function creatureTracker.onCreatureAppear(creature)
         lastSeen = os.time(),
         outfit = creature:getOutfit()
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     creatureTracker.creatures[id] = info
     creatureTracker.logEvent(creature, 'appeared')
@@ -1140,6 +1995,10 @@ function creatureTracker.onHealthChange(creature, healthPercent)
                 from = oldHealth,
                 to = healthPercent
             })
+```
+
+#### Funcionalidade 2
+```lua
         elseif oldHealth < healthPercent then
             creatureTracker.logEvent(creature, 'healed', {
                 from = oldHealth,
@@ -1168,6 +2027,10 @@ function creatureTracker.onPositionChange(creature, newPos, oldPos)
                 from = oldPos,
                 to = newPos
             })
+```
+
+#### Funcionalidade 3
+```lua
         else
             creatureTracker.logEvent(creature, 'moved', {
                 from = oldPos,
@@ -1189,6 +2052,10 @@ function creatureTracker.onOutfitChange(creature, outfit, oldOutfit)
             to = outfit
         })
     end
+```
+
+#### Funcionalidade 4
+```lua
 end
 
 function creatureTracker.logEvent(creature, eventType, data)
@@ -1211,6 +2078,10 @@ function creatureTracker.logEvent(creature, eventType, data)
 end
 
 function creatureTracker.updateDisplay()
+```
+
+#### Funcionalidade 5
+```lua
     local list = creatureTracker.window:getChildById('creatureList')
     list:destroyChildren()
     
@@ -1240,6 +2111,10 @@ function creatureTracker.updateDisplay()
         else
             item:setColor('#808080')
         end
+```
+
+#### Finalização
+```lua
     end
 end
 

@@ -54,6 +54,7 @@ canary/src/lua/functions/core/libs/
 ### **🏗️ Arquitetura do Sistema**
 
 #### **1. Classe Logger (logger.hpp)**
+#### Inicialização e Configuração
 ```cpp
 class Logger {
 public:
@@ -89,6 +90,10 @@ public:
 
         return result;
     }
+```
+
+#### Finalização
+```cpp
 
     // Métodos de debug (condicionais)
 #if defined(DEBUG_LOG)
@@ -128,6 +133,7 @@ private:
 #### **2. Classe LogWithSpdLog (log_with_spd_log.hpp)**
 ```cpp
 class LogWithSpdLog final : public Logger {
+    -- Classe: LogWithSpdLog
 public:
     LogWithSpdLog();
     ~LogWithSpdLog() override = default;
@@ -159,6 +165,7 @@ constexpr auto g_logger = LogWithSpdLog::getInstance;
 #### **3. Funções Lua (logger_functions.hpp)**
 ```cpp
 class LoggerFunctions {
+    -- Classe: LoggerFunctions
 public:
     static void init(lua_State* L);
 
@@ -181,6 +188,7 @@ private:
 ### **🔧 APIs e Interfaces**
 
 #### **1. Métodos de Logging**
+#### Nível Basic
 ```cpp
 // Logging básico
 void info(const std::string &msg) const;
@@ -197,7 +205,59 @@ void setLevel(const std::string &name) const;
 std::string getLevel() const;
 ```
 
+#### Nível Intermediate
+```cpp
+// Logging básico
+void info(const std::string &msg) const;
+void warn(const std::string &msg) const;
+void error(const std::string &msg) const;
+void critical(const std::string &msg) const;
+
+// Logging condicional
+void debug(const std::string &msg) const;  // Apenas em DEBUG_LOG
+void trace(const std::string &msg) const;  // Apenas em DEBUG_LOG
+
+// Controle de nível
+void setLevel(const std::string &name) const;
+std::string getLevel() const;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Logging básico
+void info(const std::string &msg) const;
+void warn(const std::string &msg) const;
+void error(const std::string &msg) const;
+void critical(const std::string &msg) const;
+
+// Logging condicional
+void debug(const std::string &msg) const;  // Apenas em DEBUG_LOG
+void trace(const std::string &msg) const;  // Apenas em DEBUG_LOG
+
+// Controle de nível
+void setLevel(const std::string &name) const;
+std::string getLevel() const;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Sistema de Profiling**
+#### Nível Basic
 ```cpp
 // Profiling manual
 void logProfile(const std::string &name, double duration_ms) const;
@@ -207,7 +267,45 @@ template <typename Func>
 auto profile(const std::string &name, Func func) -> decltype(func());
 ```
 
+#### Nível Intermediate
+```cpp
+// Profiling manual
+void logProfile(const std::string &name, double duration_ms) const;
+
+// Profiling automático
+template <typename Func>
+auto profile(const std::string &name, Func func) -> decltype(func());
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Profiling manual
+void logProfile(const std::string &name, double duration_ms) const;
+
+// Profiling automático
+template <typename Func>
+auto profile(const std::string &name, Func func) -> decltype(func());
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **3. Funções Lua**
+#### Nível Basic
 ```cpp
 // Spdlog (deprecated)
 Spdlog.info(text)
@@ -221,6 +319,55 @@ logger.warn(text)
 logger.error(text)
 logger.debug(text)
 logger.trace(text)
+```
+
+#### Nível Intermediate
+```cpp
+// Spdlog (deprecated)
+Spdlog.info(text)
+Spdlog.warn(text)
+Spdlog.error(text)
+Spdlog.debug(text)
+
+// Logger (recomendado)
+logger.info(text)
+logger.warn(text)
+logger.error(text)
+logger.debug(text)
+logger.trace(text)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Spdlog (deprecated)
+Spdlog.info(text)
+Spdlog.warn(text)
+Spdlog.error(text)
+Spdlog.debug(text)
+
+// Logger (recomendado)
+logger.info(text)
+logger.warn(text)
+logger.error(text)
+logger.debug(text)
+logger.trace(text)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **📊 Fluxo de Dados**
@@ -264,6 +411,12 @@ logger.trace(text)
 ## 💡 **Exemplos Práticos**
 
 ### **1. Logging Básico**
+#### Nível Basic
+```cpp
+    // Logging de diferentes níveis
+```
+
+#### Nível Intermediate
 ```cpp
 // Exemplo de logging básico
 void basicLogging() {
@@ -282,7 +435,43 @@ void basicLogging() {
 }
 ```
 
+#### Nível Advanced
+```cpp
+// Exemplo de logging básico
+void basicLogging() {
+    auto& logger = g_logger();
+    
+    // Logging de diferentes níveis
+    logger.info("Server started successfully");
+    logger.warn("High memory usage detected");
+    logger.error("Failed to connect to database");
+    logger.critical("Server crash imminent");
+    
+    // Logging com formatação
+    logger.info("Player {} joined the game", playerName);
+    logger.warn("{} players online, {}% capacity", onlinePlayers, capacity);
+    logger.error("Failed to save player {}: {}", playerName, errorMessage);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **2. Sistema de Profiling**
+#### Nível Basic
+```cpp
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration<double, std::milli>(end - start);
+```
+
+#### Nível Intermediate
 ```cpp
 // Exemplo de profiling automático
 void profilingExample() {
@@ -303,7 +492,39 @@ void profilingExample() {
 }
 ```
 
+#### Nível Advanced
+```cpp
+// Exemplo de profiling automático
+void profilingExample() {
+    auto& logger = g_logger();
+    
+    // Profiling automático
+    auto result = logger.profile("databaseQuery", [&]() {
+        return database.executeQuery("SELECT * FROM players");
+    });
+    
+    // Profiling manual
+    auto start = std::chrono::high_resolution_clock::now();
+    performComplexOperation();
+    auto end = std::chrono::high_resolution_clock::now();
+    
+    auto duration = std::chrono::duration<double, std::milli>(end - start);
+    logger.logProfile("complexOperation", duration.count());
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **3. Controle de Nível**
+#### Nível Basic
 ```cpp
 // Exemplo de controle de nível de log
 void levelControl() {
@@ -323,21 +544,81 @@ void levelControl() {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de controle de nível de log
+void levelControl() {
+    auto& logger = g_logger();
+    
+    // Verificar nível atual
+    std::string currentLevel = logger.getLevel();
+    logger.info("Current log level: {}", currentLevel);
+    
+    // Alterar nível
+    logger.setLevel("debug");
+    logger.debug("This will be logged in debug mode");
+    
+    logger.setLevel("warn");
+    logger.info("This will NOT be logged (level too low)");
+    logger.warn("This will be logged");
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de controle de nível de log
+void levelControl() {
+    auto& logger = g_logger();
+    
+    // Verificar nível atual
+    std::string currentLevel = logger.getLevel();
+    logger.info("Current log level: {}", currentLevel);
+    
+    // Alterar nível
+    logger.setLevel("debug");
+    logger.debug("This will be logged in debug mode");
+    
+    logger.setLevel("warn");
+    logger.info("This will NOT be logged (level too low)");
+    logger.warn("This will be logged");
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **4. Uso em Lua**
 ```lua
 -- Exemplo de uso das funções de log em Lua
 function logGameEvents()
+    -- Função: logGameEvents
     -- Logging básico
     logger.info("Game event started")
     logger.warn("Player count is high")
     logger.error("Failed to process event")
     
     -- Logging com contexto
+    --  Logging com contexto (traduzido)
     logger.info("Player {} performed action {}", playerName, actionType)
     logger.warn("Server load: {}%", serverLoad)
     logger.error("Database error: {}", errorMessage)
     
     -- Debug logging (apenas em modo debug)
+    --  Debug logging (apenas em modo debug) (traduzido)
     logger.debug("Processing event details")
     logger.trace("Event parameters: {}", eventParams)
 end
@@ -347,6 +628,7 @@ end
 ```cpp
 // Exemplo de integração com sistema de save
 class SaveManager {
+    -- Classe: SaveManager
 public:
     void savePlayer(const std::shared_ptr<Player>& player) {
         auto& logger = g_logger();
@@ -393,24 +675,111 @@ public:
 ### **Padrões de Design**
 
 #### **1. Singleton Pattern**
+#### Nível Basic
 ```cpp
 static Logger &getInstance();
 ```
 
+#### Nível Intermediate
+```cpp
+static Logger &getInstance();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+static Logger &getInstance();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Template Method Pattern**
+#### Nível Basic
 ```cpp
 template <typename Func>
 auto profile(const std::string &name, Func func) -> decltype(func());
 ```
 
+#### Nível Intermediate
+```cpp
+template <typename Func>
+auto profile(const std::string &name, Func func) -> decltype(func());
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+template <typename Func>
+auto profile(const std::string &name, Func func) -> decltype(func());
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **3. Strategy Pattern**
 ```cpp
 class LogWithSpdLog final : public Logger;
+    -- Classe: LogWithSpdLog
 ```
 
 #### **4. Factory Pattern**
+#### Nível Basic
 ```cpp
 constexpr auto g_logger = LogWithSpdLog::getInstance;
+```
+
+#### Nível Intermediate
+```cpp
+constexpr auto g_logger = LogWithSpdLog::getInstance;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+constexpr auto g_logger = LogWithSpdLog::getInstance;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🔍 **Insights Técnicos**
@@ -460,6 +829,7 @@ constexpr auto g_logger = LogWithSpdLog::getInstance;
 ### **3. Configuração e Customização**
 
 #### **Padrões de Formato**
+#### Nível Basic
 ```cpp
 // Padrão padrão
 spdlog::set_pattern("[%Y-%d-%m %H:%M:%S.%e] [%^%l%$] %v ");
@@ -468,7 +838,48 @@ spdlog::set_pattern("[%Y-%d-%m %H:%M:%S.%e] [%^%l%$] %v ");
 spdlog::set_pattern("[%Y-%d-%m %H:%M:%S.%e] [thread %t] [%^%l%$] %v ");
 ```
 
+#### Nível Intermediate
+```cpp
+// Padrão padrão
+spdlog::set_pattern("[%Y-%d-%m %H:%M:%S.%e] [%^%l%$] %v ");
+
+// Padrão debug
+spdlog::set_pattern("[%Y-%d-%m %H:%M:%S.%e] [thread %t] [%^%l%$] %v ");
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Padrão padrão
+spdlog::set_pattern("[%Y-%d-%m %H:%M:%S.%e] [%^%l%$] %v ");
+
+// Padrão debug
+spdlog::set_pattern("[%Y-%d-%m %H:%M:%S.%e] [thread %t] [%^%l%$] %v ");
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Níveis de Log**
+#### Nível Basic
+```cpp
+
+```
+
+#### Nível Intermediate
 ```cpp
 // Níveis disponíveis
 "trace"   // Mais detalhado
@@ -479,10 +890,61 @@ spdlog::set_pattern("[%Y-%d-%m %H:%M:%S.%e] [thread %t] [%^%l%$] %v ");
 "critical" // Crítico
 ```
 
+#### Nível Advanced
+```cpp
+// Níveis disponíveis
+"trace"   // Mais detalhado
+"debug"   // Debug
+"info"    // Informação
+"warn"    // Aviso
+"error"   // Erro
+"critical" // Crítico
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Sistema de Profiling**
+#### Nível Basic
 ```cpp
 // Arquivos de profile
 "log/profile_log-functionName.txt"
+```
+
+#### Nível Intermediate
+```cpp
+// Arquivos de profile
+"log/profile_log-functionName.txt"
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Arquivos de profile
+"log/profile_log-functionName.txt"
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🚀 **Recomendações e Melhorias**
@@ -493,6 +955,7 @@ spdlog::set_pattern("[%Y-%d-%m %H:%M:%S.%e] [thread %t] [%^%l%$] %v ");
 ```cpp
 // Sistema de logging assíncrono
 class AsyncLogger : public Logger {
+    -- Classe: AsyncLogger
 private:
     std::queue<LogMessage> messageQueue;
     std::mutex queueMutex;
@@ -508,6 +971,7 @@ public:
 ```cpp
 // Sistema de logging estruturado
 class StructuredLogger : public Logger {
+    -- Classe: StructuredLogger
 public:
     void logStructured(const std::string& level, 
                       const std::map<std::string, std::string>& fields);
@@ -519,6 +983,7 @@ public:
 ```cpp
 // Sistema de rotação de logs
 class LogRotator {
+    -- Classe: LogRotator
 public:
     void rotateLogs();
     void compressOldLogs();
@@ -532,6 +997,7 @@ public:
 ```cpp
 // Sistema de agregação de logs
 class LogAggregator {
+    -- Classe: LogAggregator
 public:
     void aggregateLogs();
     void generateReports();
@@ -544,6 +1010,7 @@ public:
 ```cpp
 // Analytics de performance
 class PerformanceAnalytics {
+    -- Classe: PerformanceAnalytics
 public:
     void analyzeProfileData();
     void identifyBottlenecks();
@@ -556,6 +1023,7 @@ public:
 ```cpp
 // Sistema de criptografia de logs
 class LogEncryption {
+    -- Classe: LogEncryption
 private:
     std::string encryptionKey;
     
@@ -571,6 +1039,7 @@ public:
 ```cpp
 // Monitoramento em tempo real
 class LogMonitor {
+    -- Classe: LogMonitor
 public:
     void monitorLogLevels();
     void detectErrorSpikes();
@@ -583,6 +1052,7 @@ public:
 ```cpp
 // Analytics de logs
 class LogAnalytics {
+    -- Classe: LogAnalytics
 public:
     void analyzeLogPatterns();
     void generateUsageReports();

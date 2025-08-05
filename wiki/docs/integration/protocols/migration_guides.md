@@ -53,7 +53,9 @@ local function checkCanaryResources()
     
     local available = {}
     for _, resource in ipairs(resources) do
+    -- Loop de repetição
         if isResourceAvailable(resource) then
+    -- Verificação condicional
             table.insert(available, resource)
         end
     end
@@ -78,6 +80,7 @@ python create_snapshot.py --name "otclient_pre_migration"
 
 #### 2.1 Adaptação de APIs
 
+#### Nível Basic
 ```lua
 -- Código original OTClient
 local function oldOTClientFunction()
@@ -109,18 +112,102 @@ local function newCanaryFunction()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Código original OTClient
+local function oldOTClientFunction()
+    local button = g_ui.createWidget('Button', parent)
+    button:setText("Clique aqui")
+    button.onClick = function()
+        print("Botão clicado!")
+    end
+end
+
+-- Código adaptado para Canary
+local function newCanaryFunction()
+    if Canary then
+        -- Usar API avançada do Canary
+        local button = g_ui.createWidget('AdvancedButton', parent)
+        button:setText("Clique aqui")
+        button:setStyle("modern")
+        button.onClick = function()
+            print("Botão clicado com estilo moderno!")
+        end
+    else
+        -- Fallback para OTClient
+        local button = g_ui.createWidget('Button', parent)
+        button:setText("Clique aqui")
+        button.onClick = function()
+            print("Botão clicado!")
+        end
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Código original OTClient
+local function oldOTClientFunction()
+    local button = g_ui.createWidget('Button', parent)
+    button:setText("Clique aqui")
+    button.onClick = function()
+        print("Botão clicado!")
+    end
+end
+
+-- Código adaptado para Canary
+local function newCanaryFunction()
+    if Canary then
+        -- Usar API avançada do Canary
+        local button = g_ui.createWidget('AdvancedButton', parent)
+        button:setText("Clique aqui")
+        button:setStyle("modern")
+        button.onClick = function()
+            print("Botão clicado com estilo moderno!")
+        end
+    else
+        -- Fallback para OTClient
+        local button = g_ui.createWidget('Button', parent)
+        button:setText("Clique aqui")
+        button.onClick = function()
+            print("Botão clicado!")
+        end
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### 2.2 Adaptação de Protocolos
 
 ```lua
 -- Protocolo OTClient
+    --  Protocolo OTClient (traduzido)
 local function otclientProtocol()
     local protocol = g_game.getProtocol()
     protocol:sendExtendedOpcode(0x01, "Hello OTClient")
 end
 
 -- Protocolo Canary
+    --  Protocolo Canary (traduzido)
 local function canaryProtocol()
     if Canary then
+    -- Verificação condicional
         local protocol = g_game.getProtocol()
         protocol:sendExtendedOpcode(0x01, "Hello Canary", {
             version = "2.0",
@@ -128,6 +215,7 @@ local function canaryProtocol()
         })
     else
         -- Fallback para OTClient
+    --  Fallback para OTClient (traduzido)
         local protocol = g_game.getProtocol()
         protocol:sendExtendedOpcode(0x01, "Hello OTClient")
     end
@@ -138,6 +226,7 @@ end
 
 ```lua
 -- UI OTClient
+    --  UI OTClient (traduzido)
 local function createOTClientUI()
     local window = g_ui.createWidget('Window', rootWidget)
     window:setText("Janela OTClient")
@@ -145,8 +234,10 @@ local function createOTClientUI()
 end
 
 -- UI Canary
+    --  UI Canary (traduzido)
 local function createCanaryUI()
     if Canary then
+    -- Verificação condicional
         local window = g_ui.createWidget('ModernWindow', rootWidget)
         window:setText("Janela Canary")
         window:setSize({width = 300, height = 200})
@@ -154,6 +245,7 @@ local function createCanaryUI()
         window:enableAnimations(true)
     else
         -- Fallback para OTClient
+    --  Fallback para OTClient (traduzido)
         local window = g_ui.createWidget('Window', rootWidget)
         window:setText("Janela OTClient")
         window:setSize({width = 300, height = 200})
@@ -167,6 +259,7 @@ end
 
 ```lua
 -- Teste de compatibilidade
+    --  Teste de compatibilidade (traduzido)
 local function testCompatibility()
     local tests = {
         "ui_components",
@@ -178,10 +271,12 @@ local function testCompatibility()
     
     local results = {}
     for _, test in ipairs(tests) do
+    -- Loop de repetição
         local result = runCompatibilityTest(test)
         results[test] = result
         
         if not result.success then
+    -- Verificação condicional
             print("❌ Falha no teste: " .. test)
             print("   Erro: " .. result.error)
         else
@@ -197,6 +292,7 @@ end
 
 ```lua
 -- Teste de performance
+    --  Teste de performance (traduzido)
 local function testPerformance()
     local metrics = {
         "fps",
@@ -207,10 +303,12 @@ local function testPerformance()
     
     local results = {}
     for _, metric in ipairs(metrics) do
+    -- Loop de repetição
         local value = measurePerformance(metric)
         results[metric] = value
         
         if value < getThreshold(metric) then
+    -- Verificação condicional
             print("⚠️ Performance baixa: " .. metric .. " = " .. value)
         else
             print("✅ Performance OK: " .. metric .. " = " .. value)
@@ -234,6 +332,7 @@ local function testIntegration()
     }
     
     for _, test in ipairs(integrationTests) do
+    -- Loop de repetição
         local result = executeIntegrationTest(test)
         validateTestResult(result)
     end
@@ -261,7 +360,9 @@ local function checkCanaryDependencies()
     
     local missing = {}
     for _, dep in ipairs(dependencies) do
+    -- Loop de repetição
         if not isDependencyAvailable(dep) then
+    -- Verificação condicional
             table.insert(missing, dep)
         end
     end
@@ -284,7 +385,9 @@ local function identifyAdvancedFeatures()
     
     local usedFeatures = {}
     for _, feature in ipairs(features) do
+    -- Loop de repetição
         if isFeatureUsed(feature) then
+    -- Verificação condicional
             table.insert(usedFeatures, feature)
         end
     end
@@ -297,6 +400,7 @@ end
 
 #### 2.1 Simplificação de UI
 
+#### Nível Basic
 ```lua
 -- UI Canary (avançada)
 local function createAdvancedCanaryUI()
@@ -323,10 +427,82 @@ local function createSimplifiedOTClientUI()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- UI Canary (avançada)
+local function createAdvancedCanaryUI()
+    local window = g_ui.createWidget('ModernWindow', rootWidget)
+    window:setText("Janela Avançada")
+    window:setSize({width = 400, height = 300})
+    window:setTheme("dark")
+    window:enableAnimations(true)
+    window:addShadow()
+    window:setOpacity(0.9)
+end
+
+-- UI OTClient (simplificada)
+local function createSimplifiedOTClientUI()
+    if OTClient then
+        local window = g_ui.createWidget('Window', rootWidget)
+        window:setText("Janela Simplificada")
+        window:setSize({width = 400, height = 300})
+        -- Funcionalidades avançadas removidas
+    else
+        -- Usar versão Canary completa
+        createAdvancedCanaryUI()
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- UI Canary (avançada)
+local function createAdvancedCanaryUI()
+    local window = g_ui.createWidget('ModernWindow', rootWidget)
+    window:setText("Janela Avançada")
+    window:setSize({width = 400, height = 300})
+    window:setTheme("dark")
+    window:enableAnimations(true)
+    window:addShadow()
+    window:setOpacity(0.9)
+end
+
+-- UI OTClient (simplificada)
+local function createSimplifiedOTClientUI()
+    if OTClient then
+        local window = g_ui.createWidget('Window', rootWidget)
+        window:setText("Janela Simplificada")
+        window:setSize({width = 400, height = 300})
+        -- Funcionalidades avançadas removidas
+    else
+        -- Usar versão Canary completa
+        createAdvancedCanaryUI()
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### 2.2 Adaptação de Protocolos
 
 ```lua
 -- Protocolo Canary (estendido)
+    --  Protocolo Canary (estendido) (traduzido)
 local function canaryExtendedProtocol()
     local protocol = g_game.getProtocol()
     protocol:sendExtendedOpcode(0x01, "Advanced Message", {
@@ -342,11 +518,13 @@ end
 -- Protocolo OTClient (compatível)
 local function otclientCompatibleProtocol()
     if OTClient then
+    -- Verificação condicional
         local protocol = g_game.getProtocol()
         protocol:sendExtendedOpcode(0x01, "Compatible Message")
         -- Metadados avançados removidos
     else
         -- Usar protocolo Canary completo
+    --  Usar protocolo Canary completo (traduzido)
         canaryExtendedProtocol()
     end
 end
@@ -354,6 +532,25 @@ end
 
 #### 2.3 Adaptação de Scripts
 
+#### Nível Basic
+```lua
+-- Script Canary (avançado)
+local function advancedCanaryScript()
+    -- Usar recursos avançados do Canary
+    local engine = getAdvancedScriptingEngine()
+end
+-- Script OTClient (compatível)
+local function compatibleOTClientScript()
+    if OTClient then
+        -- Versão simplificada para OTClient
+        local engine = getBasicScriptingEngine()
+        -- Recursos avançados removidos
+        -- Usar versão Canary completa
+    end
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Script Canary (avançado)
 local function advancedCanaryScript()
@@ -378,12 +575,48 @@ local function compatibleOTClientScript()
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Script Canary (avançado)
+local function advancedCanaryScript()
+    -- Usar recursos avançados do Canary
+    local engine = getAdvancedScriptingEngine()
+    engine:executeAsync("complex_script.lua")
+    engine:enableDebugMode(true)
+    engine:setPerformanceProfile("high")
+end
+
+-- Script OTClient (compatível)
+local function compatibleOTClientScript()
+    if OTClient then
+        -- Versão simplificada para OTClient
+        local engine = getBasicScriptingEngine()
+        engine:execute("simple_script.lua")
+        -- Recursos avançados removidos
+    else
+        -- Usar versão Canary completa
+        advancedCanaryScript()
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🧪 Fase 3: Validação e Testes
 
 #### 3.1 Testes de Compatibilidade Reversa
 
 ```lua
 -- Teste de compatibilidade reversa
+    --  Teste de compatibilidade reversa (traduzido)
 local function testReverseCompatibility()
     local tests = {
         "basic_ui_components",
@@ -393,8 +626,10 @@ local function testReverseCompatibility()
     }
     
     for _, test in ipairs(tests) do
+    -- Loop de repetição
         local result = runReverseCompatibilityTest(test)
         if not result.success then
+    -- Verificação condicional
             print("❌ Falha na compatibilidade reversa: " .. test)
             print("   Solução: " .. result.solution)
         else
@@ -416,8 +651,10 @@ local function testGracefulDegradation()
     }
     
     for _, feature in ipairs(features) do
+    -- Loop de repetição
         local result = testFeatureDegradation(feature)
         if result.degradation_successful then
+    -- Verificação condicional
             print("✅ Degradação graciosa: " .. feature)
         else
             print("❌ Falha na degradação: " .. feature)

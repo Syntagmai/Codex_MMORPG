@@ -1,15 +1,12 @@
----
-title: Modulesystem
-tags: [otclient, system, guide, documentation]
-status: completed
-aliases: [Modulesystem]
----
 
 # Sistema de Módulos OTClient
 
 O OTClient utiliza um sistema modular robusto que permite carregar, gerenciar e estender funcionalidades através de módulos Lua organizados hierarquicamente com controle de dependências e carregamento automático.
 
-## 📋 Índice
+
+---
+
+## 📋 Índice 📋
 
 1. [Visão Geral](#visão-geral)
 2. [Estrutura de Módulos](#estrutura-de-módulos)
@@ -22,7 +19,10 @@ O OTClient utiliza um sistema modular robusto que permite carregar, gerenciar e 
 9. [Melhores Práticas](#melhores-práticas)
 10. [Exemplos Práticos](#exemplos-práticos)
 
-## 🎯 Visão Geral
+
+---
+
+## 🎯 Visão Geral 🎯
 
 O sistema modular do OTClient oferece:
 
@@ -32,7 +32,7 @@ O sistema modular do OTClient oferece:
 - **Hot Reload**: Capacidade de recarregar módulos durante desenvolvimento
 - **Extensibilidade**: Fácil adição de novas funcionalidades
 
-### 🏗️ **Arquitetura do Sistema**
+### 🏗️ **Arquitetura do Sistema** 📝
 
 ```
 init.lua (ponto de entrada)
@@ -44,9 +44,12 @@ g_modules.autoLoadModules()     # Carrega por prioridade
 Módulos específicos via ensureModuleLoaded()
 ```
 
-## 📁 Estrutura de Módulos
 
-### 🗂️ **Organização de Diretórios**
+---
+
+## 📁 Estrutura de Módulos 📋
+
+### 🗂️ **Organização de Diretórios** 📝
 
 ```
 modules/
@@ -67,7 +70,7 @@ modules/
 └── mods/                  # 1000-9999: Modificações
 ```
 
-### 🏷️ **Categorias por Prioridade**
+### 🏷️ **Categorias por Prioridade** 📝
 
 | Prioridade | Categoria | Descrição | Exemplos |
 |-----------|-----------|-----------|----------|
@@ -76,11 +79,14 @@ modules/
 | **500-999** | **Game Modules** | Funcionalidades do jogo | game_*, jogabilidade |
 | **1000-9999** | **Mods** | Modificações e extensões | Customizações, plugins |
 
-## 📄 Arquivos .otmod
+
+---
+
+## 📄 Arquivos .otmod 📋
 
 Cada módulo possui um arquivo `.otmod` que define suas propriedades e comportamento.
 
-### 🔧 **Estrutura Básica**
+### 🔧 **Estrutura Básica** 🏗️
 
 ```otmod
 Module
@@ -111,7 +117,7 @@ Module
   @onUnload: terminate()
 ```
 
-### 📝 **Exemplo Detalhado**
+### 📝 **Exemplo Detalhado** 🎮
 
 ```otmod
 Module
@@ -150,16 +156,21 @@ Module
     g_keyboard.unbindKeyDown('Ctrl+I')
 ```
 
-## 🔢 Sistema de Prioridades
+
+---
+
+## 🔢 Sistema de Prioridades ⚙️
 
 O carregamento ocorre em fases baseadas na prioridade numérica definida no nome ou configuração.
 
-### 📊 **Fases de Carregamento**
+### 📊 **Fases de Carregamento** 📝
 
 ```lua
 -- No init.lua
+    --  No init.lua (traduzido)
 
 -- Fase 1: Core Libraries (0-99)
+    --  Fase 1: Core Libraries (0-99) (traduzido)
 g_modules.autoLoadModules(99)
 g_modules.ensureModuleLoaded('corelib')     -- Prioridade 0
 g_modules.ensureModuleLoaded('gamelib')     -- Prioridade 0
@@ -170,19 +181,22 @@ g_modules.autoLoadModules(999)
 g_modules.ensureModuleLoaded('game_shaders') -- Pré-carregamento
 
 -- Fase 3: Client Modules (100-499)
+    --  Fase 3: Client Modules (100-499) (traduzido)
 g_modules.autoLoadModules(499)
 g_modules.ensureModuleLoaded('client')
 
 -- Fase 4: Game Modules (500-999)  
+    --  Fase 4: Game Modules (500-999) (traduzido)
 g_modules.autoLoadModules(999)
 g_modules.ensureModuleLoaded('game_interface')
 
 -- Fase 5: Mods (1000-9999)
+    --  Fase 5: Mods (1000-9999) (traduzido)
 g_modules.autoLoadModules(9999)
 g_modules.ensureModuleLoaded('client_mods')
 ```
 
-### 🎯 **Definindo Prioridades**
+### 🎯 **Definindo Prioridades** 📝
 
 ```otmod
 # Método 1: Via nome do diretório
@@ -199,10 +213,14 @@ Module
 # game_*   -> 500-999 automaticamente
 ```
 
-## 🔄 Carregamento de Módulos
 
-### 🚀 **Processo de Inicialização**
+---
 
+## 🔄 Carregamento de Módulos 📋
+
+### 🚀 **Processo de Inicialização** 📝
+
+#### Nível Basic
 ```lua
 -- 1. Descoberta de módulos
 g_modules.discoverModules()
@@ -220,13 +238,67 @@ g_modules.ensureModuleLoaded('module_name')
 -- Automaticamente carrega dependências necessárias
 ```
 
-### 🔍 **Estados de Módulo**
+#### Nível Intermediate
+```lua
+-- 1. Descoberta de módulos
+g_modules.discoverModules()
+-- Varre diretórios procurando por arquivos .otmod
+
+-- 2. Carregamento automático por prioridade
+g_modules.autoLoadModules(999)
+-- Carrega todos os módulos com prioridade <= 999
+
+-- 3. Carregamento específico
+g_modules.ensureModuleLoaded('module_name')
+-- Força o carregamento de um módulo específico
+
+-- 4. Verificação de dependências
+-- Automaticamente carrega dependências necessárias
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- 1. Descoberta de módulos
+g_modules.discoverModules()
+-- Varre diretórios procurando por arquivos .otmod
+
+-- 2. Carregamento automático por prioridade
+g_modules.autoLoadModules(999)
+-- Carrega todos os módulos com prioridade <= 999
+
+-- 3. Carregamento específico
+g_modules.ensureModuleLoaded('module_name')
+-- Força o carregamento de um módulo específico
+
+-- 4. Verificação de dependências
+-- Automaticamente carrega dependências necessárias
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### 🔍 **Estados de Módulo** 📝
 
 ```lua
 -- Verificar estado de um módulo
 local module = g_modules.getModule('game_inventory')
 
 if module then
+    -- Verificação condicional
     print('Estado:', module:isLoaded())      -- true/false
     print('Sandbox:', module:isSandboxed()) -- true/false
     print('Reloadable:', module:isReloadable()) -- true/false
@@ -237,13 +309,17 @@ end
 -- Listar todos os módulos
 local allModules = g_modules.getModules()
 for _, mod in ipairs(allModules) do
+    -- Loop de repetição
     print(mod:getName(), mod:isLoaded())
 end
 ```
 
-## 🔗 Dependências e Load-Later
 
-### 📦 **Sistema de Dependências**
+---
+
+## 🔗 Dependências e Load-Later 📋
+
+### 📦 **Sistema de Dependências** 📝
 
 ```otmod
 # Módulo que depende de outros
@@ -259,7 +335,7 @@ Module
     Containers.init()
 ```
 
-### ⏱️ **Load-Later (Carregamento Tardio)**
+### ⏱️ **Load-Later (Carregamento Tardio)** 📝
 
 ```otmod
 # Módulo principal
@@ -282,8 +358,22 @@ Module
     end
 ```
 
-### 🎯 **Carregamento Condicional**
+### 🎯 **Carregamento Condicional** 📝
 
+#### Nível Basic
+```lua
+-- Carregar módulo apenas se condição for atendida
+local function loadOptionalModules()
+    -- Só carrega se o jogo suporta versão 13+
+    if g_game.getClientVersion() >= 1300 then
+    end
+    -- Só carrega se configuração permitir
+    if g_settings.getBoolean('enableAdvancedFeatures') then
+    end
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Carregar módulo apenas se condição for atendida
 local function loadOptionalModules()
@@ -300,10 +390,41 @@ local function loadOptionalModules()
 end
 ```
 
-## 🛠️ Gerenciamento de Módulos
+#### Nível Advanced
+```lua
+-- Carregar módulo apenas se condição for atendida
+local function loadOptionalModules()
+    -- Só carrega se o jogo suporta versão 13+
+    if g_game.getClientVersion() >= 1300 then
+        g_modules.ensureModuleLoaded('game_cyclopedia')
+        g_modules.ensureModuleLoaded('game_store')
+    end
+    
+    -- Só carrega se configuração permitir
+    if g_settings.getBoolean('enableAdvancedFeatures') then
+        g_modules.ensureModuleLoaded('game_advanced_ui')
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
 
-### 🔄 **Hot Reload durante Desenvolvimento**
 
+---
+
+## 🛠️ Gerenciamento de Módulos 📋
+
+### 🔄 **Hot Reload durante Desenvolvimento** 📝
+
+#### Nível Basic
 ```lua
 -- Habilitar auto-reload (apenas desenvolvimento)
 g_modules.enableAutoReload()
@@ -318,7 +439,54 @@ g_modules.unloadModule('game_inventory')
 g_modules.loadModule('game_inventory')
 ```
 
-### 📊 **Informações de Debug**
+#### Nível Intermediate
+```lua
+-- Habilitar auto-reload (apenas desenvolvimento)
+g_modules.enableAutoReload()
+
+-- Recarregar módulo específico
+g_modules.reloadModule('game_inventory')
+
+-- Descarregar módulo
+g_modules.unloadModule('game_inventory')
+
+-- Carregar módulo
+g_modules.loadModule('game_inventory')
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Habilitar auto-reload (apenas desenvolvimento)
+g_modules.enableAutoReload()
+
+-- Recarregar módulo específico
+g_modules.reloadModule('game_inventory')
+
+-- Descarregar módulo
+g_modules.unloadModule('game_inventory')
+
+-- Carregar módulo
+g_modules.loadModule('game_inventory')
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### 📊 **Informações de Debug** 📝
 
 ```lua
 -- Função de debug para módulos
@@ -331,6 +499,7 @@ local function debugModules()
     end)
     
     for _, module in ipairs(modules) do
+    -- Loop de repetição
         local status = module:isLoaded() and 'LOADED' or 'NOT_LOADED'
         local sandbox = module:isSandboxed() and '[SANDBOX]' or ''
         local reloadable = module:isReloadable() and '[RELOADABLE]' or ''
@@ -341,16 +510,19 @@ local function debugModules()
 end
 
 -- Usar durante desenvolvimento
+    --  Usar durante desenvolvimento (traduzido)
 debugModules()
 ```
 
-### 🔧 **Utilitários de Módulo**
+### 🔧 **Utilitários de Módulo** 📝
 
 ```lua
 -- ModuleManager - Classe helper
+    --  ModuleManager - Classe helper (traduzido)
 local ModuleManager = {}
 
 function ModuleManager.waitForModule(moduleName, callback, timeout)
+    -- Função: ModuleManager
     timeout = timeout or 5000  -- 5 segundos
     
     local startTime = g_clock.millis()
@@ -370,18 +542,23 @@ function ModuleManager.waitForModule(moduleName, callback, timeout)
 end
 
 -- Uso
+    --  Uso (traduzido)
 ModuleManager.waitForModule('game_inventory', function()
     print('Inventory carregado, pode usar!')
     Inventory.open()
 end)
 ```
 
-## 🏗️ Criando Módulos
 
-### 📝 **Módulo Básico**
+---
+
+## 🏗️ Criando Módulos 📋
+
+### 📝 **Módulo Básico** 📝
 
 ```lua
 -- modules/my_custom_module/my_custom_module.otmod
+    --  modules/my_custom_module/my_custom_module.otmod (traduzido)
 Module
   name: my_custom_module
   description: Meu módulo personalizado
@@ -393,6 +570,7 @@ Module
   @onUnload: MyModule.terminate()
 ```
 
+#### Inicialização e Configuração
 ```lua
 -- modules/my_custom_module/my_custom_module.lua
 MyModule = {}
@@ -421,6 +599,10 @@ function MyModule.terminate()
         MyModule.window:destroy()
         MyModule.window = nil
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Unbind teclas
     g_keyboard.unbindKeyDown('Ctrl+M')
@@ -443,16 +625,21 @@ end
 function MyModule.onGameStart()
     print('Game started, MyModule ready!')
 end
+```
+
+#### Finalização
+```lua
 
 function MyModule.onGameEnd()
     print('Game ended, MyModule cleanup!')
 end
 ```
 
-### 🎮 **Módulo de Jogo Avançado**
+### 🎮 **Módulo de Jogo Avançado** 📝
 
 ```lua
 -- modules/game_my_feature/game_my_feature.otmod
+    --  modules/game_my_feature/game_my_feature.otmod (traduzido)
 Module
   name: game_my_feature
   description: Advanced game feature module
@@ -471,6 +658,7 @@ Module
     MyGameFeature.init()
     
     -- Registrar protocolo customizado
+    --  Registrar protocolo customizado (traduzido)
     MyGameFeature.registerProtocol()
   
   @onUnload: |
@@ -478,6 +666,7 @@ Module
     MyGameFeature.unregisterProtocol()
 ```
 
+#### Inicialização e Configuração
 ```lua
 -- modules/game_my_feature/game_my_feature.lua
 MyGameFeature = {}
@@ -501,6 +690,10 @@ function MyGameFeature.init()
     
     print('MyGameFeature initialized')
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function MyGameFeature.terminate()
     -- Salvar configurações
@@ -523,6 +716,10 @@ function MyGameFeature.loadConfig()
 end
 
 function MyGameFeature.saveConfig()
+```
+
+#### Finalização
+```lua
     g_settings.setNode('MyGameFeature', MyGameFeature.config)
 end
 
@@ -547,7 +744,7 @@ function MyGameFeature.setupUI()
 end
 ```
 
-### 🔌 **Módulo Plugin System**
+### 🔌 **Módulo Plugin System** 📝
 
 ```lua
 -- Sistema de plugins para módulos
@@ -555,9 +752,11 @@ local PluginSystem = {}
 PluginSystem.plugins = {}
 
 function PluginSystem.registerPlugin(name, plugin)
+    -- Função: PluginSystem
     PluginSystem.plugins[name] = plugin
     
     if plugin.init then
+    -- Verificação condicional
         plugin.init()
     end
     
@@ -565,12 +764,16 @@ function PluginSystem.registerPlugin(name, plugin)
 end
 
 function PluginSystem.getPlugin(name)
+    -- Função: PluginSystem
     return PluginSystem.plugins[name]
 end
 
 function PluginSystem.callPlugins(method, ...)
+    -- Função: PluginSystem
     for name, plugin in pairs(PluginSystem.plugins) do
+    -- Loop de repetição
         if plugin[method] then
+    -- Verificação condicional
             plugin[method](...)
         end
     end
@@ -578,31 +781,40 @@ end
 
 -- Uso em módulos
 -- modules/plugin_example/plugin_example.lua
+    --  modules/plugin_example/plugin_example.lua (traduzido)
 local MyPlugin = {
     name = 'MyPlugin',
     version = '1.0'
 }
 
 function MyPlugin.init()
+    -- Função: MyPlugin
     print('MyPlugin initialized')
 end
 
 function MyPlugin.onPlayerLogin()
+    -- Função: MyPlugin
     print('Player logged in - MyPlugin')
 end
 
 function MyPlugin.onPlayerLogout()
+    -- Função: MyPlugin
     print('Player logged out - MyPlugin')
 end
 
 -- Registrar plugin
+    --  Registrar plugin (traduzido)
 PluginSystem.registerPlugin('MyPlugin', MyPlugin)
 ```
 
-## ✅ Melhores Práticas
 
-### 🎯 **Estrutura de Módulo**
+---
 
+## ✅ Melhores Práticas 📋
+
+### 🎯 **Estrutura de Módulo** 🏗️
+
+#### Nível Basic
 ```lua
 -- ✅ BOM: Estrutura organizada
 MyModule = {}
@@ -624,43 +836,116 @@ function MyModule.publicFunction() end
 local function privateFunction() end
 ```
 
-### 🔄 **Gerenciamento de Estado**
+#### Nível Intermediate
+```lua
+-- ✅ BOM: Estrutura organizada
+MyModule = {}
+
+-- Configurações
+MyModule.config = {}
+
+-- Estado interno
+MyModule.data = {}
+
+-- Funções de ciclo de vida
+function MyModule.init() end
+function MyModule.terminate() end
+
+-- Funções públicas
+function MyModule.publicFunction() end
+
+-- Funções privadas (locais)
+local function privateFunction() end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- ✅ BOM: Estrutura organizada
+MyModule = {}
+
+-- Configurações
+MyModule.config = {}
+
+-- Estado interno
+MyModule.data = {}
+
+-- Funções de ciclo de vida
+function MyModule.init() end
+function MyModule.terminate() end
+
+-- Funções públicas
+function MyModule.publicFunction() end
+
+-- Funções privadas (locais)
+local function privateFunction() end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### 🔄 **Gerenciamento de Estado** 📝
 
 ```lua
 -- ✅ BOM: Limpar estado adequadamente
+    --  ✅ BOM: Limpar estado adequadamente (traduzido)
 function MyModule.terminate()
+    -- Função: MyModule
     -- 1. Desconectar eventos
+    --  1. Desconectar eventos (traduzido)
     disconnect(g_game, {...})
     
     -- 2. Destruir UI
+    --  2. Destruir UI (traduzido)
     if MyModule.window then
+    -- Verificação condicional
         MyModule.window:destroy()
         MyModule.window = nil
     end
     
     -- 3. Cancelar timers/schedules
+    --  3. Cancelar timers/schedules (traduzido)
     if MyModule.timer then
+    -- Verificação condicional
         removeEvent(MyModule.timer)
         MyModule.timer = nil
     end
     
     -- 4. Limpar dados
+    --  4. Limpar dados (traduzido)
     MyModule.data = {}
 end
 ```
 
-### 📦 **Dependências**
+### 📦 **Dependências** 📝
 
 ```lua
 -- ✅ BOM: Verificar dependências
 function MyModule.init()
+    -- Função: MyModule
     -- Verificar se dependências estão disponíveis
     if not Inventory then
+    -- Verificação condicional
         error('MyModule requires game_inventory to be loaded')
     end
     
     if not g_game.isOnline() then
+    -- Verificação condicional
         -- Aguardar jogo iniciar
+    --  Aguardar jogo iniciar (traduzido)
         connect(g_game, {onGameStart = MyModule.onGameStart})
         return
     end
@@ -669,7 +954,7 @@ function MyModule.init()
 end
 ```
 
-### 🔧 **Configuração**
+### 🔧 **Configuração** 📝
 
 ```lua
 -- ✅ BOM: Sistema de configuração robusto
@@ -680,32 +965,38 @@ MyModule.defaultConfig = {
 }
 
 function MyModule.loadConfig()
+    -- Função: MyModule
     local saved = g_settings.getNode('MyModule') or {}
     MyModule.config = table.merge(MyModule.defaultConfig, saved)
 end
 
 function MyModule.saveConfig()
+    -- Função: MyModule
     g_settings.setNode('MyModule', MyModule.config)
 end
 ```
 
-### 🐛 **Debug e Logging**
+### 🐛 **Debug e Logging** 📝
 
 ```lua
 -- Sistema de debug para módulos
 MyModule.debug = false
 
 function MyModule.log(...)
+    -- Função: MyModule
     if MyModule.debug then
+    -- Verificação condicional
         print('[MyModule]', ...)
     end
 end
 
 function MyModule.error(msg)
+    -- Função: MyModule
     error('[MyModule] ' .. msg)
 end
 
 -- Usar
+    --  Usar (traduzido)
 MyModule.log('Initialized successfully')
 MyModule.error('Failed to load configuration')
 ```

@@ -86,12 +86,48 @@ Este relatório documenta a conclusão do desenvolvimento contínuo do sistema B
 ```
 
 ### **3. ⚙️ Configuração IDE**
+#### Nível Basic
 ```json
 # Atalhos de teclado implementados:
 - Ctrl+Shift+I: Commit inteligente
 - Ctrl+Shift+G: Mostrar grupos sugeridos
 - Ctrl+Shift+O: Detectar arquivos abertos
 - Ctrl+Shift+A: Análise de mudanças
+```
+
+#### Nível Intermediate
+```json
+# Atalhos de teclado implementados:
+- Ctrl+Shift+I: Commit inteligente
+- Ctrl+Shift+G: Mostrar grupos sugeridos
+- Ctrl+Shift+O: Detectar arquivos abertos
+- Ctrl+Shift+A: Análise de mudanças
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```json
+# Atalhos de teclado implementados:
+- Ctrl+Shift+I: Commit inteligente
+- Ctrl+Shift+G: Mostrar grupos sugeridos
+- Ctrl+Shift+O: Detectar arquivos abertos
+- Ctrl+Shift+A: Análise de mudanças
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---

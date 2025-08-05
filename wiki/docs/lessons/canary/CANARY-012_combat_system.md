@@ -78,6 +78,7 @@ O Sistema de Combate do Canary é responsável por gerenciar todas as interaçõ
 
 ```lua
 -- Criar combate de fogo
+    --  Criar combate de fogo (traduzido)
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_FIREAREA)
@@ -87,6 +88,7 @@ combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_FIRE)
 combat:setFormula(COMBAT_FORMULA_LEVELMAGIC, 5, 5, 10, 10)
 
 -- Executar combate
+    --  Executar combate (traduzido)
 combat:execute(caster, target)
 ```
 
@@ -94,6 +96,7 @@ combat:execute(caster, target)
 
 ```lua
 -- Criar combate de veneno
+    --  Criar combate de veneno (traduzido)
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_EARTHDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_GREEN_RINGS)
@@ -122,12 +125,14 @@ local area = {
 }
 
 -- Configurar combate
+    --  Configurar combate (traduzido)
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_ICEAREA)
 combat:setArea(createCombatArea(area))
 
 -- Executar combate
+    --  Executar combate (traduzido)
 combat:execute(caster, position)
 ```
 
@@ -135,11 +140,13 @@ combat:execute(caster, position)
 
 ```lua
 -- Configurar chain combat
+    --  Configurar chain combat (traduzido)
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_ENERGYAREA)
 
 -- Configurar chain
+    --  Configurar chain (traduzido)
 combat:setChainCallback(3, 3, true) -- 3 alvos, distância 3, backtracking
 
 combat:execute(caster, target)
@@ -150,12 +157,14 @@ combat:execute(caster, target)
 ```lua
 -- Criar callback para cálculo de dano
 function onGetPlayerMinMaxValues(player, level, maglevel)
+    -- Função: onGetPlayerMinMaxValues
     local min = level * 2 + maglevel * 3
     local max = level * 3 + maglevel * 4
     return min, max
 end
 
 -- Configurar combate
+    --  Configurar combate (traduzido)
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
 combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "onGetPlayerMinMaxValues")
@@ -168,6 +177,7 @@ combat:execute(caster, target)
 ```cpp
 // Exemplo 1: Arma corpo a corpo
 class WeaponMelee : public Weapon {
+    -- Classe: WeaponMelee
     int32_t getWeaponDamage(const std::shared_ptr<Player> &player, 
                            const std::shared_ptr<Creature> &target, 
                            const std::shared_ptr<Item> &item, 
@@ -181,6 +191,7 @@ class WeaponMelee : public Weapon {
 
 // Exemplo 2: Arma à distância
 class WeaponDistance : public Weapon {
+    -- Classe: WeaponDistance
     bool interruptSwing() const override { return true; }
     
     int32_t getWeaponDamage(const std::shared_ptr<Player> &player, 
@@ -200,6 +211,7 @@ class WeaponDistance : public Weapon {
 ```cpp
 // Exemplo 1: Condição de dano
 class ConditionDamage : public Condition {
+    -- Classe: ConditionDamage
     bool addDamage(int32_t rounds, int32_t time, int32_t value) {
         IntervalInfo info;
         info.timeLeft = time;
@@ -220,6 +232,7 @@ class ConditionDamage : public Condition {
 
 // Exemplo 2: Condição de velocidade
 class ConditionSpeed : public Condition {
+    -- Classe: ConditionSpeed
     bool startCondition(std::shared_ptr<Creature> creature) override {
         creature->setSpeed(creature->getSpeed() + speedDelta);
         return true;
@@ -233,6 +246,7 @@ class ConditionSpeed : public Condition {
 
 ### **8. Verificações de Combate**
 
+#### Nível Basic
 ```cpp
 // Exemplo 1: Verificar se pode fazer combate
 ReturnValue Combat::canDoCombat(const std::shared_ptr<Creature> &caster, 
@@ -272,8 +286,111 @@ ReturnValue Combat::canTargetCreature(const std::shared_ptr<Player> &player,
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo 1: Verificar se pode fazer combate
+ReturnValue Combat::canDoCombat(const std::shared_ptr<Creature> &caster, 
+                               const std::shared_ptr<Creature> &target, 
+                               bool aggressive) {
+    if (!aggressive) {
+        return RETURNVALUE_NOERROR;
+    }
+    
+    // Verificar zona de proteção
+    if (target->getTile()->hasFlag(TILESTATE_PROTECTIONZONE)) {
+        return RETURNVALUE_ACTIONNOTPERMITTEDINPROTECTIONZONE;
+    }
+    
+    // Verificar se pode atacar
+    if (!target->isAttackable()) {
+        return RETURNVALUE_YOUMAYNOTATTACKTHISCREATURE;
+    }
+    
+    return RETURNVALUE_NOERROR;
+}
+
+// Exemplo 2: Verificar alvo válido
+ReturnValue Combat::canTargetCreature(const std::shared_ptr<Player> &player, 
+                                     const std::shared_ptr<Creature> &target) {
+    // Verificar auto-ataque
+    if (player == target) {
+        return RETURNVALUE_YOUMAYNOTATTACKTHISPLAYER;
+    }
+    
+    // Verificar proteção
+    if (isProtected(player, target->getPlayer())) {
+        return RETURNVALUE_YOUMAYNOTATTACKTHISPLAYER;
+    }
+    
+    return RETURNVALUE_NOERROR;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo 1: Verificar se pode fazer combate
+ReturnValue Combat::canDoCombat(const std::shared_ptr<Creature> &caster, 
+                               const std::shared_ptr<Creature> &target, 
+                               bool aggressive) {
+    if (!aggressive) {
+        return RETURNVALUE_NOERROR;
+    }
+    
+    // Verificar zona de proteção
+    if (target->getTile()->hasFlag(TILESTATE_PROTECTIONZONE)) {
+        return RETURNVALUE_ACTIONNOTPERMITTEDINPROTECTIONZONE;
+    }
+    
+    // Verificar se pode atacar
+    if (!target->isAttackable()) {
+        return RETURNVALUE_YOUMAYNOTATTACKTHISCREATURE;
+    }
+    
+    return RETURNVALUE_NOERROR;
+}
+
+// Exemplo 2: Verificar alvo válido
+ReturnValue Combat::canTargetCreature(const std::shared_ptr<Player> &player, 
+                                     const std::shared_ptr<Creature> &target) {
+    // Verificar auto-ataque
+    if (player == target) {
+        return RETURNVALUE_YOUMAYNOTATTACKTHISPLAYER;
+    }
+    
+    // Verificar proteção
+    if (isProtected(player, target->getPlayer())) {
+        return RETURNVALUE_YOUMAYNOTATTACKTHISPLAYER;
+    }
+    
+    return RETURNVALUE_NOERROR;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **9. Sistema de Áreas**
 
+#### Nível Basic
+```cpp
+            if (x * x + y * y <= radius * radius) {
+```
+
+#### Nível Intermediate
 ```cpp
 // Exemplo 1: Configurar área circular
 void AreaCombat::setupArea(int32_t radius) {
@@ -296,8 +413,42 @@ void AreaCombat::setupArea(const std::list<uint32_t> &list, uint32_t rows) {
 }
 ```
 
+#### Nível Advanced
+```cpp
+// Exemplo 1: Configurar área circular
+void AreaCombat::setupArea(int32_t radius) {
+    for (int32_t y = -radius; y <= radius; ++y) {
+        for (int32_t x = -radius; x <= radius; ++x) {
+            if (x * x + y * y <= radius * radius) {
+                // Adicionar posição à área
+                setValue(y + radius, x + radius, true);
+            }
+        }
+    }
+}
+
+// Exemplo 2: Configurar área customizada
+void AreaCombat::setupArea(const std::list<uint32_t> &list, uint32_t rows) {
+    auto area = createArea(list, rows);
+    for (int32_t i = 0; i < Direction::DIRECTION_LAST + 1; ++i) {
+        areas[i] = area->clone();
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **10. Fórmulas de Dano**
 
+#### Nível Basic
 ```cpp
 // Exemplo 1: Fórmula de nível e magia
 int32_t levelFormula = player->getLevel() * 2 + 
@@ -321,12 +472,78 @@ if (weapon) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo 1: Fórmula de nível e magia
+int32_t levelFormula = player->getLevel() * 2 + 
+    (player->getMagicLevel() + player->getSpecializedMagicLevel(damage.primary.type, true)) * 3;
+
+damage.primary.value = normal_random(
+    static_cast<int32_t>(levelFormula * mina + minb),
+    static_cast<int32_t>(levelFormula * maxa + maxb)
+);
+
+// Exemplo 2: Fórmula de habilidade
+const auto &weapon = g_weapons().getWeapon(tool);
+if (weapon) {
+    damage.primary.value = normal_random(
+        static_cast<int32_t>(minb),
+        static_cast<int32_t>(weapon->getWeaponDamage(player, target, tool, true) * maxa + maxb)
+    );
+    
+    damage.secondary.type = weapon->getElementType();
+    damage.secondary.value = weapon->getElementDamage(player, target, tool);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo 1: Fórmula de nível e magia
+int32_t levelFormula = player->getLevel() * 2 + 
+    (player->getMagicLevel() + player->getSpecializedMagicLevel(damage.primary.type, true)) * 3;
+
+damage.primary.value = normal_random(
+    static_cast<int32_t>(levelFormula * mina + minb),
+    static_cast<int32_t>(levelFormula * maxa + maxb)
+);
+
+// Exemplo 2: Fórmula de habilidade
+const auto &weapon = g_weapons().getWeapon(tool);
+if (weapon) {
+    damage.primary.value = normal_random(
+        static_cast<int32_t>(minb),
+        static_cast<int32_t>(weapon->getWeaponDamage(player, target, tool, true) * maxa + maxb)
+    );
+    
+    damage.secondary.type = weapon->getElementType();
+    damage.secondary.value = weapon->getElementDamage(player, target, tool);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🎯 **Exercícios Práticos**
 
 ### **Exercício 1: Criar Magia de Cura**
 Crie uma magia que cura o alvo baseada no nível e magia do caster.
 
 **Solução:**
+#### Nível Basic
 ```lua
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_HEALING)
@@ -335,10 +552,46 @@ combat:setFormula(COMBAT_FORMULA_LEVELMAGIC, 10, 10, 20, 20)
 combat:execute(caster, target)
 ```
 
+#### Nível Intermediate
+```lua
+local combat = Combat()
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_HEALING)
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_BLUE)
+combat:setFormula(COMBAT_FORMULA_LEVELMAGIC, 10, 10, 20, 20)
+combat:execute(caster, target)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local combat = Combat()
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_HEALING)
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_BLUE)
+combat:setFormula(COMBAT_FORMULA_LEVELMAGIC, 10, 10, 20, 20)
+combat:execute(caster, target)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Exercício 2: Implementar Veneno Progressivo**
 Crie uma condição de veneno que aumenta o dano ao longo do tempo.
 
 **Solução:**
+#### Nível Basic
 ```lua
 local condition = Condition(CONDITION_POISON)
 condition:setParameter(CONDITION_PARAM_DELAYED, 1)
@@ -349,10 +602,50 @@ condition:setParameter(CONDITION_PARAM_TICKINTERVAL, 2000)
 condition:setParameter(CONDITION_PARAM_FORCEUPDATE, true)
 ```
 
+#### Nível Intermediate
+```lua
+local condition = Condition(CONDITION_POISON)
+condition:setParameter(CONDITION_PARAM_DELAYED, 1)
+condition:setParameter(CONDITION_PARAM_MINVALUE, 10)
+condition:setParameter(CONDITION_PARAM_MAXVALUE, 50)
+condition:setParameter(CONDITION_PARAM_STARTVALUE, 10)
+condition:setParameter(CONDITION_PARAM_TICKINTERVAL, 2000)
+condition:setParameter(CONDITION_PARAM_FORCEUPDATE, true)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local condition = Condition(CONDITION_POISON)
+condition:setParameter(CONDITION_PARAM_DELAYED, 1)
+condition:setParameter(CONDITION_PARAM_MINVALUE, 10)
+condition:setParameter(CONDITION_PARAM_MAXVALUE, 50)
+condition:setParameter(CONDITION_PARAM_STARTVALUE, 10)
+condition:setParameter(CONDITION_PARAM_TICKINTERVAL, 2000)
+condition:setParameter(CONDITION_PARAM_FORCEUPDATE, true)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Exercício 3: Sistema de Chain Lightning**
 Implemente um sistema de raio em cadeia que pula entre alvos.
 
 **Solução:**
+#### Nível Basic
 ```lua
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
@@ -361,10 +654,46 @@ combat:setChainCallback(5, 2, false) -- 5 alvos, distância 2, sem backtracking
 combat:execute(caster, target)
 ```
 
+#### Nível Intermediate
+```lua
+local combat = Combat()
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_ENERGYAREA)
+combat:setChainCallback(5, 2, false) -- 5 alvos, distância 2, sem backtracking
+combat:execute(caster, target)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local combat = Combat()
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_ENERGYAREA)
+combat:setChainCallback(5, 2, false) -- 5 alvos, distância 2, sem backtracking
+combat:execute(caster, target)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Exercício 4: Área de Efeito Customizada**
 Crie uma área de combate em formato de cruz.
 
 **Solução:**
+#### Nível Basic
 ```lua
 local area = {
     {0, 1, 0},
@@ -378,12 +707,58 @@ combat:setArea(createCombatArea(area))
 combat:execute(caster, position)
 ```
 
+#### Nível Intermediate
+```lua
+local area = {
+    {0, 1, 0},
+    {1, 3, 1},
+    {0, 1, 0}
+}
+
+local combat = Combat()
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
+combat:setArea(createCombatArea(area))
+combat:execute(caster, position)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local area = {
+    {0, 1, 0},
+    {1, 3, 1},
+    {0, 1, 0}
+}
+
+local combat = Combat()
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
+combat:setArea(createCombatArea(area))
+combat:execute(caster, position)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Exercício 5: Callback de Dano Dinâmico**
 Implemente um callback que calcula dano baseado na distância.
 
 **Solução:**
 ```lua
 function onGetPlayerMinMaxValues(player, level, maglevel)
+    -- Função: onGetPlayerMinMaxValues
     local distance = getDistanceBetween(player:getPosition(), target:getPosition())
     local multiplier = math.max(0.5, 1.0 - (distance * 0.1))
     
@@ -396,6 +771,7 @@ end
 ## 🔧 **Conceitos Avançados**
 
 ### **1. Sistema de Extensões**
+#### Nível Basic
 ```cpp
 // Aplicar extensões de dano
 void Combat::applyExtensions(const std::shared_ptr<Creature> &caster, 
@@ -407,7 +783,49 @@ void Combat::applyExtensions(const std::shared_ptr<Creature> &caster,
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Aplicar extensões de dano
+void Combat::applyExtensions(const std::shared_ptr<Creature> &caster, 
+                            const std::vector<std::shared_ptr<Creature>> targets, 
+                            CombatDamage &damage, 
+                            const CombatParams &params) {
+    // Aplicar modificações baseadas em extensões
+    // Ex: Wheel of Destiny, imbuements, etc.
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Aplicar extensões de dano
+void Combat::applyExtensions(const std::shared_ptr<Creature> &caster, 
+                            const std::vector<std::shared_ptr<Creature>> targets, 
+                            CombatDamage &damage, 
+                            const CombatParams &params) {
+    // Aplicar modificações baseadas em extensões
+    // Ex: Wheel of Destiny, imbuements, etc.
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **2. Imbuements**
+#### Nível Basic
 ```cpp
 // Aplicar dano elemental de imbuements
 CombatDamage Combat::applyImbuementElementalDamage(const std::shared_ptr<Player> &attackerPlayer, 
@@ -419,7 +837,49 @@ CombatDamage Combat::applyImbuementElementalDamage(const std::shared_ptr<Player>
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Aplicar dano elemental de imbuements
+CombatDamage Combat::applyImbuementElementalDamage(const std::shared_ptr<Player> &attackerPlayer, 
+                                                   std::shared_ptr<Item> item, 
+                                                   CombatDamage damage) {
+    // Calcular dano elemental baseado em imbuements
+    // Aplicar multiplicadores e modificadores
+    return damage;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Aplicar dano elemental de imbuements
+CombatDamage Combat::applyImbuementElementalDamage(const std::shared_ptr<Player> &attackerPlayer, 
+                                                   std::shared_ptr<Item> item, 
+                                                   CombatDamage damage) {
+    // Calcular dano elemental baseado em imbuements
+    // Aplicar multiplicadores e modificadores
+    return damage;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **3. Verificações de Segurança**
+#### Nível Basic
 ```cpp
 // Verificar se pode fazer combate
 ReturnValue Combat::canDoCombat(const std::shared_ptr<Creature> &caster, 
@@ -428,6 +888,45 @@ ReturnValue Combat::canDoCombat(const std::shared_ptr<Creature> &caster,
     // Verificações de zona, proteção, permissões
     // Validação de parâmetros e condições
 }
+```
+
+#### Nível Intermediate
+```cpp
+// Verificar se pode fazer combate
+ReturnValue Combat::canDoCombat(const std::shared_ptr<Creature> &caster, 
+                               const std::shared_ptr<Creature> &target, 
+                               bool aggressive) {
+    // Verificações de zona, proteção, permissões
+    // Validação de parâmetros e condições
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificar se pode fazer combate
+ReturnValue Combat::canDoCombat(const std::shared_ptr<Creature> &caster, 
+                               const std::shared_ptr<Creature> &target, 
+                               bool aggressive) {
+    // Verificações de zona, proteção, permissões
+    // Validação de parâmetros e condições
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 📋 **Boas Práticas**
@@ -482,8 +981,36 @@ ReturnValue Combat::canDoCombat(const std::shared_ptr<Creature> &caster,
 ## 📊 **Métricas e Performance**
 
 ### **1. Métricas Integradas**
+#### Nível Basic
 ```cpp
 metrics::method_latency measure(__METRICS_METHOD_NAME__);
+```
+
+#### Nível Intermediate
+```cpp
+metrics::method_latency measure(__METRICS_METHOD_NAME__);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+metrics::method_latency measure(__METRICS_METHOD_NAME__);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 - Monitoramento automático de performance
 - Identificação de gargalos

@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "785db7434bb975b5",
+        "id": "362dbd101c8113ef",
         "type": "tabs",
         "children": [
           {
-            "id": "a0c1528d3c374097",
+            "id": "0603d39037b720ce",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
             }
           }
         ]
@@ -70,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -165,43 +168,43 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a0c1528d3c374097",
+  "active": "0603d39037b720ce",
   "lastOpenFiles": [
-    "RELATORIO_MELHORIAS_WIKI.md",
-    "maps/deep_links_report.json",
-    "update/verify_deep_links.py",
+    "Conceitos_Basicos.md",
     "README.md",
+    "docs/otclient/guides/Getting_Started_Guide.md",
+    "Indice_Legacy.md",
+    "Indice_Tools.md",
+    "Indice_Documentation.md",
+    "Indice_Research.md",
+    "Indice_Integration.md",
+    "Indice_Task_Management.md",
+    "Indice_BMAD_System.md",
+    "Indice_Development.md",
+    "Indice_UI_Systems.md",
+    "Indice_Game_Systems.md",
+    "Indice_Core.md",
+    "Indice_Tags.md",
+    "Guia_Navegacao_Categoria.md",
+    "Indice_Principal_Categorias.md",
+    "update/generate_category_indices.py",
+    "log/categorization_stats.json",
+    "maps/tag_system.json",
+    "maps/category_indices.json",
+    "maps/files_categorized.json",
+    "maps/category_hierarchy.json",
+    "update/intelligent_categorization_system.py",
+    "Relatorio_Qualidade_Linkagem.md",
+    "Arquivos_Linkados.md",
+    "Arquivos_Orfaos.md",
+    "update/generate_link_map_visual.py",
+    "log/orphan_metrics_report.txt",
+    "update/orphan_metrics_report.py",
+    "RELATORIO_MELHORIAS_WIKI.md",
     "teste/COMPARACAO_SIMPLIFICADA.md",
     "teste/AGENTES_SIMPLIFICADOS.md",
     "teste/ESTRUTURA_FINAL.md",
     "teste/CHERRY_PICK_GUIDE.md",
-    "teste/game_outfit/outfit.lua",
-    "teste/client_locales/locales.otui",
-    "teste/client_locales/locales.lua",
-    "teste/game_cyclopedia/game_cyclopedia.otui",
-    "teste/game_cyclopedia/game_cyclopedia.lua",
-    "teste/game_npctrade/npctrade.otui",
-    "teste/game_npctrade/npctrade.lua",
-    "teste/game_interface/interface.otmod",
-    "otclient/Animation_System_Guide.md",
-    "otclient/otclient_wiki.md",
-    "log/otclient_improvements_priority.md",
-    "log/analysis_summary.md",
-    "log/otclient_analysis_report.md",
-    "Sistema_OTClient_BMAD_Relatorio_Geral.md",
-    "bmad/agents/BMAD_Agents_Guide.md",
-    "bmad/BMAD_System_Guide.md",
-    "integration_tasks.md",
-    "integration/OTClient_Canary_Integration.md",
-    "docs/Lua_API_Reference.md",
-    "otclient/integration/OTClient_Canary_Integration.md",
-    "otclient/World_System_Guide.md",
-    "otclient/Wiki_Optimization_Report.md",
-    "otclient/Wiki_Index.md",
-    "otclient/UI_System_Guide.md",
-    "otclient/Sound_System_Guide.md",
-    "otclient/Protocol_System_Guide.md",
-    "otclient/Performance_System_Guide.md",
-    "otclient/OTUI_Module_Development_Guide.md"
+    "otclient/Animation_System_Guide.md"
   ]
 }

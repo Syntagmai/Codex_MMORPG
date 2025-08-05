@@ -83,6 +83,25 @@ graph TD
 ## ⚙️ Configuração
 
 ### **Parâmetros de Execução**
+#### Nível Basic
+```json
+  "notification_enabled": true,
+```
+
+#### Nível Intermediate
+```json
+{
+  "timeout": 3600,
+  "max_retries": 2,
+  "parallel_execution": true,
+  "validation_required": true,
+  "notification_enabled": true,
+  "auto_backup": true,
+  "quality_threshold": 0.9
+}
+```
+
+#### Nível Advanced
 ```json
 {
   "timeout": 3600,
@@ -125,6 +144,7 @@ graph TD
 ## 🔧 Implementação
 
 ### **Código Principal**
+#### Nível Basic
 ```lua
 -- Workflow de documentação
 function executeDocumentationWorkflow(request)
@@ -146,7 +166,88 @@ function executeDocumentationWorkflow(request)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Workflow de documentação
+function executeDocumentationWorkflow(request)
+    local workflow = DocumentationWorkflow.new()
+    
+    -- Fase 1: Análise e Planejamento
+    local plan = workflow:analyzeAndPlan(request)
+    
+    -- Fase 2: Criação e Desenvolvimento
+    local document = workflow:createDocument(plan)
+    
+    -- Fase 3: Validação e Revisão
+    local validated = workflow:validateAndReview(document)
+    
+    -- Fase 4: Finalização e Distribuição
+    local result = workflow:finalizeAndDistribute(validated)
+    
+    return result
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Workflow de documentação
+function executeDocumentationWorkflow(request)
+    local workflow = DocumentationWorkflow.new()
+    
+    -- Fase 1: Análise e Planejamento
+    local plan = workflow:analyzeAndPlan(request)
+    
+    -- Fase 2: Criação e Desenvolvimento
+    local document = workflow:createDocument(plan)
+    
+    -- Fase 3: Validação e Revisão
+    local validated = workflow:validateAndReview(document)
+    
+    -- Fase 4: Finalização e Distribuição
+    local result = workflow:finalizeAndDistribute(validated)
+    
+    return result
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Funções de Suporte**
+#### Nível Basic
+```lua
+-- Análise de contexto
+function analyzeContext(request)
+    local context = {
+        dependencies = request.dependencies
+end
+-- Criação de documento
+function createDocument(plan)
+    local template = selectTemplate(plan.type)
+    local content = generateContent(plan)
+    local formatted = applyFormatting(content, template)
+end
+-- Validação de qualidade
+function validateQuality(document)
+    local score = 0
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Análise de contexto
 function analyzeContext(request)
@@ -177,6 +278,47 @@ function validateQuality(document)
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Análise de contexto
+function analyzeContext(request)
+    local context = {
+        type = request.document_type,
+        scope = request.scope,
+        priority = request.priority,
+        dependencies = request.dependencies
+    }
+    return context
+end
+
+-- Criação de documento
+function createDocument(plan)
+    local template = selectTemplate(plan.type)
+    local content = generateContent(plan)
+    local formatted = applyFormatting(content, template)
+    return formatted
+end
+
+-- Validação de qualidade
+function validateQuality(document)
+    local score = 0
+    score = score + validateFormatting(document)
+    score = score + validateLinks(document)
+    score = score + validateContent(document)
+    return score >= 0.9
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🚨 Tratamento de Erros
 
 ### **Cenários de Erro**
@@ -189,7 +331,9 @@ end
 ```lua
 -- Recuperação de erros
 function handleDocumentationError(error, context)
+    -- Função: handleDocumentationError
     if error.type == "template_missing" then
+    -- Verificação condicional
         return createBasicTemplate(context)
     elseif error.type == "insufficient_content" then
         return requestAdditionalInfo(context)
@@ -204,6 +348,7 @@ end
 ## 📝 Exemplos de Uso
 
 ### **Cenário 1: Criação de Guia**
+#### Nível Basic
 ```lua
 local request = {
     document_type = "guide",
@@ -216,7 +361,51 @@ local result = executeDocumentationWorkflow(request)
 print("Documento criado:", result.file_path)
 ```
 
+#### Nível Intermediate
+```lua
+local request = {
+    document_type = "guide",
+    title = "Guia de Configuração Avançada",
+    scope = "configuration",
+    priority = "high"
+}
+
+local result = executeDocumentationWorkflow(request)
+print("Documento criado:", result.file_path)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local request = {
+    document_type = "guide",
+    title = "Guia de Configuração Avançada",
+    scope = "configuration",
+    priority = "high"
+}
+
+local result = executeDocumentationWorkflow(request)
+print("Documento criado:", result.file_path)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Cenário 2: Atualização de Referência**
+#### Nível Basic
 ```lua
 local request = {
     document_type = "reference",
@@ -229,6 +418,53 @@ local request = {
 }
 
 local result = executeDocumentationWorkflow(request)
+```
+
+#### Nível Intermediate
+```lua
+local request = {
+    document_type = "reference",
+    action = "update",
+    file_path = "wiki/otclient/API_Reference.md",
+    changes = {
+        new_sections = ["section1", "section2"],
+        updated_content = "new_content"
+    }
+}
+
+local result = executeDocumentationWorkflow(request)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local request = {
+    document_type = "reference",
+    action = "update",
+    file_path = "wiki/otclient/API_Reference.md",
+    changes = {
+        new_sections = ["section1", "section2"],
+        updated_content = "new_content"
+    }
+}
+
+local result = executeDocumentationWorkflow(request)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🔗 Integração

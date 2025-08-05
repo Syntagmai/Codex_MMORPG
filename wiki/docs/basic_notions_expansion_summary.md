@@ -28,6 +28,7 @@ Este documento resume as **noções básicas fundamentais** que devem ser expand
 - **Tratamento de Erros**: Como lidar com falhas de comunicação e dados inválidos
 
 #### **Exemplo de Aplicação:**
+#### Nível Basic
 ```lua
 -- O criador de códigos saberá que um módulo de loja precisa:
 -- 1. Registrar extended opcodes para comunicação
@@ -35,6 +36,43 @@ Este documento resume as **noções básicas fundamentais** que devem ser expand
 -- 3. Sincronizar dados com o servidor
 -- 4. Tratar erros de rede e dados inválidos
 -- 5. Implementar interface responsiva e acessível
+```
+
+#### Nível Intermediate
+```lua
+-- O criador de códigos saberá que um módulo de loja precisa:
+-- 1. Registrar extended opcodes para comunicação
+-- 2. Implementar validações de saldo antes de compras
+-- 3. Sincronizar dados com o servidor
+-- 4. Tratar erros de rede e dados inválidos
+-- 5. Implementar interface responsiva e acessível
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- O criador de códigos saberá que um módulo de loja precisa:
+-- 1. Registrar extended opcodes para comunicação
+-- 2. Implementar validações de saldo antes de compras
+-- 3. Sincronizar dados com o servidor
+-- 4. Tratar erros de rede e dados inválidos
+-- 5. Implementar interface responsiva e acessível
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **2. 🔗 Extended Opcode Communication**
@@ -48,6 +86,7 @@ Este documento resume as **noções básicas fundamentais** que devem ser expand
 - **Performance**: Como otimizar comunicação e evitar spam
 
 #### **Exemplo de Aplicação:**
+#### Nível Basic
 ```lua
 -- O criador de códigos saberá que comunicação via extended opcode precisa:
 -- 1. Registrar opcodes únicos para evitar conflitos
@@ -55,6 +94,43 @@ Este documento resume as **noções básicas fundamentais** que devem ser expand
 -- 3. Validar dados JSON antes de processar
 -- 4. Implementar rate limiting para evitar spam
 -- 5. Tratar erros de rede e reconexão
+```
+
+#### Nível Intermediate
+```lua
+-- O criador de códigos saberá que comunicação via extended opcode precisa:
+-- 1. Registrar opcodes únicos para evitar conflitos
+-- 2. Implementar fragmentação para mensagens grandes
+-- 3. Validar dados JSON antes de processar
+-- 4. Implementar rate limiting para evitar spam
+-- 5. Tratar erros de rede e reconexão
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- O criador de códigos saberá que comunicação via extended opcode precisa:
+-- 1. Registrar opcodes únicos para evitar conflitos
+-- 2. Implementar fragmentação para mensagens grandes
+-- 3. Validar dados JSON antes de processar
+-- 4. Implementar rate limiting para evitar spam
+-- 5. Tratar erros de rede e reconexão
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **3. 🌐 Client-Server Communication**
@@ -68,6 +144,7 @@ Este documento resume as **noções básicas fundamentais** que devem ser expand
 - **Monitoramento**: Como debugar e monitorar comunicação
 
 #### **Exemplo de Aplicação:**
+#### Nível Basic
 ```lua
 -- O criador de códigos saberá que módulos precisam:
 -- 1. Verificar autenticação antes de operações sensíveis
@@ -75,6 +152,43 @@ Este documento resume as **noções básicas fundamentais** que devem ser expand
 -- 3. Tratar timeouts e reconexão automaticamente
 -- 4. Otimizar comunicação para reduzir latência
 -- 5. Implementar logs para debugging
+```
+
+#### Nível Intermediate
+```lua
+-- O criador de códigos saberá que módulos precisam:
+-- 1. Verificar autenticação antes de operações sensíveis
+-- 2. Implementar sincronização de estado
+-- 3. Tratar timeouts e reconexão automaticamente
+-- 4. Otimizar comunicação para reduzir latência
+-- 5. Implementar logs para debugging
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- O criador de códigos saberá que módulos precisam:
+-- 1. Verificar autenticação antes de operações sensíveis
+-- 2. Implementar sincronização de estado
+-- 3. Tratar timeouts e reconexão automaticamente
+-- 4. Otimizar comunicação para reduzir latência
+-- 5. Implementar logs para debugging
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---

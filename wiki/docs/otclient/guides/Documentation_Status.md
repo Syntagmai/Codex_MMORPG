@@ -1,19 +1,17 @@
----
-tags: [otclient, documentation, status, progress, wiki]
-status: completed
-aliases: [Status da Documentação, Progresso da Wiki, Documentação Completa]
----
 
 # Status da Documentação da Wiki
 
 > [!info] Este documento mostra o status atual da documentação da wiki do OTClient, incluindo documentos completos, em andamento e planejados.
 
-## 📊 Progresso Geral
+
+---
+
+## 📊 Progresso Geral 📋
 
 **Última Atualização:** 2025-01-27  
 **Progresso Geral:** 57% (17/30 documentos completos)
 
-### ✅ **Documentos Completos (17/30)**
+### ✅ **Documentos Completos (17/30)** 📝
 
 | Documento | Status | Categoria | Descrição |
 |-----------|--------|-----------|-----------|
@@ -37,11 +35,11 @@ aliases: [Status da Documentação, Progresso da Wiki, Documentação Completa]
 | `Game_Trading_System_Guide.md` | ✅ | GAME | Sistema de trade e economia |
 | `UI_Scroll_Pagination_System_Guide.md` | ✅ | UI | Sistema de scroll e paginação |
 
-### 🔄 **Documentos em Andamento (0/30)**
+### 🔄 **Documentos em Andamento (0/30)** 📝
 
 *Nenhum documento em andamento no momento*
 
-### 📋 **Documentos Planejados (13/30)**
+### 📋 **Documentos Planejados (13/30)** 📝
 
 #### 🎨 **Sistema UI (5 documentos)**
 1. **UI-016**: Sistema de Grid e Listas
@@ -64,9 +62,12 @@ aliases: [Status da Documentação, Progresso da Wiki, Documentação Completa]
 
 ---
 
-## 🎯 Categorias de Documentação
 
-### 🎨 **Sistema UI (64% completo)**
+---
+
+## 🎯 Categorias de Documentação 📋
+
+### 🎨 **Sistema UI (64% completo)** 📝
 - ✅ UI básico (4/4 documentos)
 - ✅ Animações e efeitos (2/2 documentos)
 - ✅ Drag & Drop (1/1 documento)
@@ -75,7 +76,7 @@ aliases: [Status da Documentação, Progresso da Wiki, Documentação Completa]
 - ✅ Scroll e paginação (1/1 documento)
 - 🔄 UI avançado (0/5 documentos)
 
-### 🎮 **Sistema de Jogo (40% completo)**
+### 🎮 **Sistema de Jogo (40% completo)** 📝
 - ✅ Mapas e mundo (1/1 documento)
 - ✅ Combate (1/1 documento)
 - ✅ Efeitos (1/1 documento)
@@ -83,14 +84,14 @@ aliases: [Status da Documentação, Progresso da Wiki, Documentação Completa]
 - ✅ Trade e economia (1/1 documento)
 - 🔄 Sistemas específicos (0/6 documentos)
 
-### 🔧 **Sistema Central (60% completo)**
+### 🔧 **Sistema Central (60% completo)** 📝
 - ✅ Módulos (1/1 documento)
 - ✅ Rede (1/1 documento)
 - ✅ Debug (1/1 documento)
 - ✅ Performance (1/1 documento)
 - 🔄 Sistemas avançados (0/3 documentos)
 
-### 📚 **Guias e Tutoriais (75% completo)**
+### 📚 **Guias e Tutoriais (75% completo)** 📝
 - ✅ Getting Started (1/1 documento)
 - ✅ Desenvolvimento de módulos (1/1 documento)
 - ✅ Referências (1/1 documento)
@@ -98,9 +99,12 @@ aliases: [Status da Documentação, Progresso da Wiki, Documentação Completa]
 
 ---
 
-## 📈 Métricas de Progresso
 
-### 📊 **KPIs de Documentação**
+---
+
+## 📈 Métricas de Progresso 📋
+
+### 📊 **KPIs de Documentação** 📝
 
 | Métrica | Meta | Atual | Status |
 |---------|------|-------|--------|
@@ -110,7 +114,7 @@ aliases: [Status da Documentação, Progresso da Wiki, Documentação Completa]
 | **Cobertura Core** | 100% | 60% | 🟡 |
 | **Guias Práticos** | 100% | 75% | 🟢 |
 
-### 🎯 **Marcos (Milestones)**
+### 🎯 **Marcos (Milestones)** 📝
 
 - **M1**: UI Básico Completo (UI-001 a UI-008) - *50% progresso*
 - **M1.5**: UI Interativo Completo (UI-009 a UI-013) - *100% progresso*
@@ -120,9 +124,12 @@ aliases: [Status da Documentação, Progresso da Wiki, Documentação Completa]
 
 ---
 
-## 🚀 Próximos Passos
 
-### 🔥 **Prioridade Alta (Próximos 5 documentos)**
+---
+
+## 🚀 Próximos Passos 📋
+
+### 🔥 **Prioridade Alta (Próximos 5 documentos)** 📝
 
 1. **Sistema de Grid e Listas** (UI-016)
    - Documentar sistema de grid
@@ -139,7 +146,7 @@ aliases: [Status da Documentação, Progresso da Wiki, Documentação Completa]
    - Interface de arena
    - Sistema de rankings
 
-### ⚡ **Prioridade Média (Próximos 10 documentos)**
+### ⚡ **Prioridade Média (Próximos 10 documentos)** 📝
 
 6. **Sistema de Crafting e Receitas** (GAME-011)
 7. **Sistema de Pets e Montarias** (GAME-012)
@@ -152,15 +159,18 @@ aliases: [Status da Documentação, Progresso da Wiki, Documentação Completa]
 14. **Guia de Debugging Avançado** (GUIDE-004)
 15. **Guia de Performance e Otimização** (GUIDE-005)
 
-### 🔵 **Prioridade Baixa (Últimos 0 documentos)**
+### 🔵 **Prioridade Baixa (Últimos 0 documentos)** 📝
 
 *Todos os documentos foram movidos para prioridades superiores*
 
 ---
 
-## 📝 Padrões de Documentação
 
-### 📄 **Template Padrão**
+---
+
+## 📝 Padrões de Documentação 📋
+
+### 📄 **Template Padrão** 📝
 
 Todos os documentos seguem o padrão estabelecido:
 
@@ -175,7 +185,10 @@ aliases: [Nome em Português, English Name, Related Terms]
 
 > [!info] Descrição breve do sistema e seu propósito.
 
-## 📋 Índice
+
+---
+
+## 📋 Índice 📋
 - [[#Visão Geral]]
 - [[#Componentes do Sistema]]
 - [[#Implementação Prática]]
@@ -184,11 +197,14 @@ aliases: [Nome em Português, English Name, Related Terms]
 
 ---
 
-## 🎯 Visão Geral
+
+---
+
+## 🎯 Visão Geral 🎯
 
 Descrição detalhada do sistema...
 
-### 🏗️ **Arquitetura do Sistema**
+### 🏗️ **Arquitetura do Sistema** 📝
 
 ```
 Diagrama da arquitetura
@@ -196,42 +212,82 @@ Diagrama da arquitetura
 
 ---
 
-## 🔧 Componentes do Sistema
 
-### 🎯 **Componente Principal**
+---
+
+## 🔧 Componentes do Sistema ⚙️
+
+### 🎯 **Componente Principal** 📝
 
 ```lua
 -- Exemplos de código
 function exemplo()
+    -- Função: exemplo
     -- implementação
 end
 ```
 
 ---
 
-## 💡 Exemplos Práticos
 
-### 🎮 **Exemplo Completo**
+---
 
+## 💡 Exemplos Práticos 💡
+
+### 🎮 **Exemplo Completo** 🎮
+
+#### Nível Basic
 ```lua
 -- Implementação completa
 ```
 
+#### Nível Intermediate
+```lua
+-- Implementação completa
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Implementação completa
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
-## ✅ Melhores Práticas
 
-### 🎯 **Uso Eficiente**
+---
+
+## ✅ Melhores Práticas 📋
+
+### 🎯 **Uso Eficiente** 📝
 
 ```lua
 -- ✅ BOM: Exemplo correto
+    --  ✅ BOM: Exemplo correto (traduzido)
 -- ❌ EVITE: Exemplo incorreto
+    --  ❌ EVITE: Exemplo incorreto (traduzido)
 ```
 
 O sistema oferece ferramentas poderosas...
 ```
 
-### 🏷️ **Convenções de Nomenclatura**
+### 🏷️ **Convenções de Nomenclatura** 📝
 
 - **Arquivos**: PascalCase + extensão `.md`
 - **Seções**: Usar emojis + títulos descritivos
@@ -240,16 +296,19 @@ O sistema oferece ferramentas poderosas...
 
 ---
 
-## 🔄 Sistema de Atualização
 
-### 📋 **Status Possíveis**
+---
+
+## 🔄 Sistema de Atualização ⚙️
+
+### 📋 **Status Possíveis** 📝
 - 🔴 **Not Started**: Não iniciado
 - 🟡 **In Progress**: Em andamento
 - 🟢 **Complete**: Completo
 - ⚪ **Blocked**: Bloqueado
 - 🔵 **Review**: Em revisão
 
-### 📝 **Log de Atividades**
+### 📝 **Log de Atividades** 📝
 
 ```
 2025-01-27:
@@ -267,9 +326,12 @@ O sistema oferece ferramentas poderosas...
 
 ---
 
-## 🤝 Contribuição
 
-### 📥 **Para Adicionar Novo Documento**
+---
+
+## 🤝 Contribuição 📋
+
+### 📥 **Para Adicionar Novo Documento** 📝
 
 1. Escolher categoria apropriada (UI/GAME/CORE/GUIDE)
 2. Seguir template estabelecido
@@ -277,7 +339,7 @@ O sistema oferece ferramentas poderosas...
 4. Incluir exemplos práticos
 5. Adicionar melhores práticas
 
-### ✅ **Para Marcar Documento como Completo**
+### ✅ **Para Marcar Documento como Completo** 📝
 
 1. Verificar formatação Obsidian
 2. Incluir exemplos práticos

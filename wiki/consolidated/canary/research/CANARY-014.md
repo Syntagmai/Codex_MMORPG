@@ -126,6 +126,7 @@ O sistema de NPCs do Canary é uma arquitetura complexa e modular que gerencia t
 #### **1.1 Classe Npc (Principal)**
 ```cpp
 class Npc final : public Creature {
+    -- Classe: Npc
 public:
     static std::shared_ptr<Npc> createNpc(const std::string &name);
     
@@ -172,6 +173,7 @@ private:
 #### **1.2 Classe NpcType**
 ```cpp
 class NpcType final : public SharedObject {
+    -- Classe: NpcType
     struct NpcInfo {
         Outfit_t outfit = {};
         RespawnType respawnType = {};
@@ -222,6 +224,7 @@ public:
 #### **2.1 Classe SpawnNpc**
 ```cpp
 class SpawnNpc final : public SharedObject {
+    -- Classe: SpawnNpc
 public:
     SpawnNpc(Position initPos, int32_t initRadius);
     
@@ -253,6 +256,7 @@ private:
 ```
 
 #### **2.2 Estrutura spawnBlockNpc_t**
+#### Nível Basic
 ```cpp
 struct spawnBlockNpc_t {
     Position pos;
@@ -263,9 +267,49 @@ struct spawnBlockNpc_t {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+struct spawnBlockNpc_t {
+    Position pos;
+    std::shared_ptr<NpcType> npcType;
+    int64_t lastSpawnNpc;
+    uint32_t interval;
+    Direction direction;
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+struct spawnBlockNpc_t {
+    Position pos;
+    std::shared_ptr<NpcType> npcType;
+    int64_t lastSpawnNpc;
+    uint32_t interval;
+    Direction direction;
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2.3 Classe SpawnsNpc**
 ```cpp
 class SpawnsNpc {
+    -- Classe: SpawnsNpc
 public:
     static bool isInZone(const Position &centerPos, int32_t radius, const Position &pos);
     
@@ -289,6 +333,7 @@ private:
 ### **3. Sistema de Eventos**
 
 #### **3.1 Tipos de Eventos**
+#### Nível Basic
 ```cpp
 enum NpcsEvent_t : uint8_t {
     NPCS_EVENT_NONE = 0,
@@ -304,9 +349,59 @@ enum NpcsEvent_t : uint8_t {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+enum NpcsEvent_t : uint8_t {
+    NPCS_EVENT_NONE = 0,
+    NPCS_EVENT_THINK = 1,
+    NPCS_EVENT_APPEAR = 2,
+    NPCS_EVENT_DISAPPEAR = 3,
+    NPCS_EVENT_MOVE = 4,
+    NPCS_EVENT_SAY = 5,
+    NPCS_EVENT_PLAYER_BUY = 6,
+    NPCS_EVENT_PLAYER_SELL = 7,
+    NPCS_EVENT_PLAYER_CHECK_ITEM = 8,
+    NPCS_EVENT_PLAYER_CLOSE_CHANNEL = 9
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+enum NpcsEvent_t : uint8_t {
+    NPCS_EVENT_NONE = 0,
+    NPCS_EVENT_THINK = 1,
+    NPCS_EVENT_APPEAR = 2,
+    NPCS_EVENT_DISAPPEAR = 3,
+    NPCS_EVENT_MOVE = 4,
+    NPCS_EVENT_SAY = 5,
+    NPCS_EVENT_PLAYER_BUY = 6,
+    NPCS_EVENT_PLAYER_SELL = 7,
+    NPCS_EVENT_PLAYER_CHECK_ITEM = 8,
+    NPCS_EVENT_PLAYER_CLOSE_CHANNEL = 9
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **3.2 Eventos na Classe Npc**
 ```cpp
 class Npc {
+    -- Classe: Npc
 public:
     // Eventos de criatura
     void onCreatureAppear(const std::shared_ptr<Creature> &creature, bool isLogin) override;
@@ -333,6 +428,7 @@ private:
 #### **4.1 Gerenciamento de Loja**
 ```cpp
 class Npc {
+    -- Classe: Npc
 public:
     const std::vector<ShopBlock> &getShopItemVector(uint32_t playerGUID) const;
     bool isShopPlayer(uint32_t playerGUID) const;
@@ -346,6 +442,7 @@ private:
 ```
 
 #### **4.2 Estrutura ShopBlock**
+#### Nível Basic
 ```cpp
 struct ShopBlock {
     uint16_t itemId {};
@@ -360,11 +457,59 @@ struct ShopBlock {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+struct ShopBlock {
+    uint16_t itemId {};
+    std::string itemName;
+    int32_t itemSubType {};
+    uint32_t itemBuyPrice {};
+    uint32_t itemSellPrice {};
+    int32_t itemStorageKey {};
+    int32_t itemStorageValue {};
+    
+    std::vector<ShopBlock> childShop;
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+struct ShopBlock {
+    uint16_t itemId {};
+    std::string itemName;
+    int32_t itemSubType {};
+    uint32_t itemBuyPrice {};
+    uint32_t itemSellPrice {};
+    int32_t itemStorageKey {};
+    int32_t itemStorageValue {};
+    
+    std::vector<ShopBlock> childShop;
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **5. Sistema de Interação**
 
 #### **5.1 Interação com Jogadores**
 ```cpp
 class Npc {
+    -- Classe: Npc
 public:
     void setPlayerInteraction(uint32_t playerId, uint16_t topicId = 0);
     void removePlayerInteraction(const std::shared_ptr<Player> &player);
@@ -385,6 +530,7 @@ private:
 #### **6.1 Movimento Inteligente**
 ```cpp
 class Npc {
+    -- Classe: Npc
 public:
     bool canWalkTo(const Position &fromPos, Direction dir);
     bool getNextStep(Direction &nextDirection, uint32_t &flags) override;
@@ -402,6 +548,7 @@ private:
 #### **7.1 Comportamentos Automáticos**
 ```cpp
 class Npc {
+    -- Classe: Npc
 private:
     void onThinkYell(uint32_t interval);
     void onThinkWalk(uint32_t interval);
@@ -418,6 +565,7 @@ private:
 #### **8.1 Classe Npcs**
 ```cpp
 class Npcs {
+    -- Classe: Npcs
 public:
     static Npcs &getInstance();
     
@@ -437,6 +585,7 @@ private:
 #### **9.1 Funções Lua de NPC**
 ```cpp
 class NpcFunctions {
+    -- Classe: NpcFunctions
 public:
     static int luaNpcCreate(lua_State* L);
     static int luaNpcIsNpc(lua_State* L);
@@ -470,6 +619,7 @@ public:
 #### **9.2 Funções Lua de NpcType**
 ```cpp
 class NpcTypeFunctions {
+    -- Classe: NpcTypeFunctions
 public:
     static int luaNpcTypeCreate(lua_State* L);
     static int luaNpcTypeIsPushable(lua_State* L);
@@ -518,6 +668,7 @@ O sistema de NPCs utiliza uma arquitetura bem definida:
 - **Npcs**: Gerenciamento global
 
 #### **1.2 Sistema de Eventos Robusto**
+#### Nível Basic
 ```cpp
 // Múltiplos tipos de eventos
 enum NpcsEvent_t : uint8_t {
@@ -532,11 +683,59 @@ enum NpcsEvent_t : uint8_t {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+// Múltiplos tipos de eventos
+enum NpcsEvent_t : uint8_t {
+    NPCS_EVENT_THINK = 1,
+    NPCS_EVENT_APPEAR = 2,
+    NPCS_EVENT_DISAPPEAR = 3,
+    NPCS_EVENT_MOVE = 4,
+    NPCS_EVENT_SAY = 5,
+    NPCS_EVENT_PLAYER_BUY = 6,
+    NPCS_EVENT_PLAYER_SELL = 7,
+    // ...
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Múltiplos tipos de eventos
+enum NpcsEvent_t : uint8_t {
+    NPCS_EVENT_THINK = 1,
+    NPCS_EVENT_APPEAR = 2,
+    NPCS_EVENT_DISAPPEAR = 3,
+    NPCS_EVENT_MOVE = 4,
+    NPCS_EVENT_SAY = 5,
+    NPCS_EVENT_PLAYER_BUY = 6,
+    NPCS_EVENT_PLAYER_SELL = 7,
+    // ...
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **2. Sistema de Spawns Inteligente**
 
 #### **2.1 Spawn Automático**
 ```cpp
 class SpawnNpc {
+    -- Classe: SpawnNpc
     // Verificação automática de spawn
     void checkSpawnNpc();
     
@@ -556,6 +755,7 @@ class SpawnNpc {
 ### **3. Sistema de Loja Avançado**
 
 #### **3.1 Loja por Jogador**
+#### Nível Basic
 ```cpp
 // Cada jogador tem sua própria loja
 std::unordered_map<uint32_t, std::vector<ShopBlock>> shopPlayers;
@@ -567,6 +767,47 @@ void addShopPlayer(uint32_t playerGUID, const std::vector<ShopBlock> &shopItems)
 bool isShopPlayer(uint32_t playerGUID) const;
 ```
 
+#### Nível Intermediate
+```cpp
+// Cada jogador tem sua própria loja
+std::unordered_map<uint32_t, std::vector<ShopBlock>> shopPlayers;
+
+// Adicionar jogador à loja
+void addShopPlayer(uint32_t playerGUID, const std::vector<ShopBlock> &shopItems);
+
+// Verificar se jogador está na loja
+bool isShopPlayer(uint32_t playerGUID) const;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Cada jogador tem sua própria loja
+std::unordered_map<uint32_t, std::vector<ShopBlock>> shopPlayers;
+
+// Adicionar jogador à loja
+void addShopPlayer(uint32_t playerGUID, const std::vector<ShopBlock> &shopItems);
+
+// Verificar se jogador está na loja
+bool isShopPlayer(uint32_t playerGUID) const;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **3.2 Sistema de Preços Dinâmicos**
 - Preços de compra e venda configuráveis
 - Sistema de storage para condições
@@ -575,6 +816,7 @@ bool isShopPlayer(uint32_t playerGUID) const;
 ### **4. Sistema de Interação Sofisticado**
 
 #### **4.1 Interação por Tópico**
+#### Nível Basic
 ```cpp
 // Interação com tópico específico
 void setPlayerInteraction(uint32_t playerId, uint16_t topicId = 0);
@@ -587,6 +829,49 @@ std::vector<uint32_t> playerInteractionsOrder;
 std::map<uint32_t, uint16_t> playerInteractions;
 ```
 
+#### Nível Intermediate
+```cpp
+// Interação com tópico específico
+void setPlayerInteraction(uint32_t playerId, uint16_t topicId = 0);
+
+// Verificar interação
+bool isPlayerInteractingOnTopic(uint32_t playerId, uint16_t topicId);
+
+// Ordem de interações
+std::vector<uint32_t> playerInteractionsOrder;
+std::map<uint32_t, uint16_t> playerInteractions;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Interação com tópico específico
+void setPlayerInteraction(uint32_t playerId, uint16_t topicId = 0);
+
+// Verificar interação
+bool isPlayerInteractingOnTopic(uint32_t playerId, uint16_t topicId);
+
+// Ordem de interações
+std::vector<uint32_t> playerInteractionsOrder;
+std::map<uint32_t, uint16_t> playerInteractions;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **4.2 Sistema de Conversação**
 - Múltiplos tópicos por NPC
 - Sistema de respostas condicionais
@@ -595,6 +880,7 @@ std::map<uint32_t, uint16_t> playerInteractions;
 ### **5. Sistema de Movimento Inteligente**
 
 #### **5.1 Movimento Aleatório**
+#### Nível Basic
 ```cpp
 // Movimento aleatório dentro do raio
 bool getRandomStep(Direction &moveDirection);
@@ -606,7 +892,49 @@ bool canWalkTo(const Position &fromPos, Direction dir);
 int32_t walkRadius = 10;
 ```
 
+#### Nível Intermediate
+```cpp
+// Movimento aleatório dentro do raio
+bool getRandomStep(Direction &moveDirection);
+
+// Verificação de caminho válido
+bool canWalkTo(const Position &fromPos, Direction dir);
+
+// Raio de movimento configurável
+int32_t walkRadius = 10;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Movimento aleatório dentro do raio
+bool getRandomStep(Direction &moveDirection);
+
+// Verificação de caminho válido
+bool canWalkTo(const Position &fromPos, Direction dir);
+
+// Raio de movimento configurável
+int32_t walkRadius = 10;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **5.2 Sistema de Spawn Range**
+#### Nível Basic
 ```cpp
 // Verificar se está dentro do raio de spawn
 bool isInSpawnRange(const Position &pos) const;
@@ -615,9 +943,45 @@ bool isInSpawnRange(const Position &pos) const;
 Position masterPos;
 ```
 
+#### Nível Intermediate
+```cpp
+// Verificar se está dentro do raio de spawn
+bool isInSpawnRange(const Position &pos) const;
+
+// Posição mestre do NPC
+Position masterPos;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificar se está dentro do raio de spawn
+bool isInSpawnRange(const Position &pos) const;
+
+// Posição mestre do NPC
+Position masterPos;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **6. Sistema de Comportamento Automático**
 
 #### **6.1 Comportamentos Temporizados**
+#### Nível Basic
 ```cpp
 // Ticks para diferentes comportamentos
 uint32_t yellTicks = 0;
@@ -630,7 +994,51 @@ void onThinkWalk(uint32_t interval);
 void onThinkSound(uint32_t interval);
 ```
 
+#### Nível Intermediate
+```cpp
+// Ticks para diferentes comportamentos
+uint32_t yellTicks = 0;
+uint32_t walkTicks = 0;
+uint32_t soundTicks = 0;
+
+// Eventos de pensamento
+void onThinkYell(uint32_t interval);
+void onThinkWalk(uint32_t interval);
+void onThinkSound(uint32_t interval);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Ticks para diferentes comportamentos
+uint32_t yellTicks = 0;
+uint32_t walkTicks = 0;
+uint32_t soundTicks = 0;
+
+// Eventos de pensamento
+void onThinkYell(uint32_t interval);
+void onThinkWalk(uint32_t interval);
+void onThinkSound(uint32_t interval);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **6.2 Sistema de Voz**
+#### Nível Basic
 ```cpp
 // Configurações de voz
 std::vector<voiceBlock_t> voiceVector;
@@ -638,6 +1046,43 @@ std::vector<voiceBlock_t> voiceVector;
 // Chance de falar
 uint32_t yellChance = 0;
 uint32_t yellSpeedTicks = 0;
+```
+
+#### Nível Intermediate
+```cpp
+// Configurações de voz
+std::vector<voiceBlock_t> voiceVector;
+
+// Chance de falar
+uint32_t yellChance = 0;
+uint32_t yellSpeedTicks = 0;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Configurações de voz
+std::vector<voiceBlock_t> voiceVector;
+
+// Chance de falar
+uint32_t yellChance = 0;
+uint32_t yellSpeedTicks = 0;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **7. Integração Lua Avançada**
@@ -649,6 +1094,7 @@ uint32_t yellSpeedTicks = 0;
 - Eventos e callbacks
 
 #### **7.2 Scripts Dinâmicos**
+#### Nível Basic
 ```cpp
 // Scripts por NPC
 std::set<std::string> scripts;
@@ -657,9 +1103,50 @@ std::set<std::string> scripts;
 bool loadCallback(LuaScriptInterface* scriptInterface);
 ```
 
+#### Nível Intermediate
+```cpp
+// Scripts por NPC
+std::set<std::string> scripts;
+
+// Carregamento de callbacks
+bool loadCallback(LuaScriptInterface* scriptInterface);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Scripts por NPC
+std::set<std::string> scripts;
+
+// Carregamento de callbacks
+bool loadCallback(LuaScriptInterface* scriptInterface);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **8. Sistema de Configuração Flexível**
 
 #### **8.1 Configurações de Aparência**
+#### Nível Basic
+```cpp
+
+```
+
+#### Nível Intermediate
 ```cpp
 // Outfit configurável
 Outfit_t outfit = {};
@@ -671,7 +1158,30 @@ LightInfo light = {};
 uint8_t speechBubble = SPEECHBUBBLE_NORMAL;
 ```
 
+#### Nível Advanced
+```cpp
+// Outfit configurável
+Outfit_t outfit = {};
+
+// Informações de luz
+LightInfo light = {};
+
+// Bolha de fala
+uint8_t speechBubble = SPEECHBUBBLE_NORMAL;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **8.2 Configurações de Comportamento**
+#### Nível Basic
 ```cpp
 // Velocidade base
 uint32_t baseSpeed = 55;
@@ -686,9 +1196,57 @@ bool pushable = false;
 bool floorChange = false;
 ```
 
+#### Nível Intermediate
+```cpp
+// Velocidade base
+uint32_t baseSpeed = 55;
+
+// Intervalo de caminhada
+uint32_t walkInterval = 2000;
+
+// Capacidades
+bool canPushItems = false;
+bool canPushCreatures = false;
+bool pushable = false;
+bool floorChange = false;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Velocidade base
+uint32_t baseSpeed = 55;
+
+// Intervalo de caminhada
+uint32_t walkInterval = 2000;
+
+// Capacidades
+bool canPushItems = false;
+bool canPushCreatures = false;
+bool pushable = false;
+bool floorChange = false;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **9. Sistema de Som**
 
 #### **9.1 Sons Automáticos**
+#### Nível Basic
 ```cpp
 // Configurações de som
 uint32_t soundChance = 0;
@@ -699,9 +1257,49 @@ std::vector<SoundEffect_t> soundVector;
 void onThinkSound(uint32_t interval);
 ```
 
+#### Nível Intermediate
+```cpp
+// Configurações de som
+uint32_t soundChance = 0;
+uint32_t soundSpeedTicks = 0;
+std::vector<SoundEffect_t> soundVector;
+
+// Evento de som
+void onThinkSound(uint32_t interval);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Configurações de som
+uint32_t soundChance = 0;
+uint32_t soundSpeedTicks = 0;
+std::vector<SoundEffect_t> soundVector;
+
+// Evento de som
+void onThinkSound(uint32_t interval);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **10. Sistema de Respawn**
 
 #### **10.1 Tipos de Respawn**
+#### Nível Basic
 ```cpp
 // Configuração de respawn
 RespawnType respawnType = {};
@@ -713,9 +1311,51 @@ RespawnPeriod_t period;
 bool underground;
 ```
 
+#### Nível Intermediate
+```cpp
+// Configuração de respawn
+RespawnType respawnType = {};
+
+// Período de respawn
+RespawnPeriod_t period;
+
+// Respawn subterrâneo
+bool underground;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Configuração de respawn
+RespawnType respawnType = {};
+
+// Período de respawn
+RespawnPeriod_t period;
+
+// Respawn subterrâneo
+bool underground;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **11. Padrões de Design Identificados**
 
 #### **11.1 Singleton Pattern**
+#### Nível Basic
 ```cpp
 // Instância única de Npcs
 static Npcs &getInstance();
@@ -724,7 +1364,43 @@ static Npcs &getInstance();
 static Npc &getInstance();
 ```
 
+#### Nível Intermediate
+```cpp
+// Instância única de Npcs
+static Npcs &getInstance();
+
+// Instância única de Npc
+static Npc &getInstance();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Instância única de Npcs
+static Npcs &getInstance();
+
+// Instância única de Npc
+static Npc &getInstance();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **11.2 Factory Pattern**
+#### Nível Basic
 ```cpp
 // Criação de NPCs
 static std::shared_ptr<Npc> createNpc(const std::string &name);
@@ -733,11 +1409,78 @@ static std::shared_ptr<Npc> createNpc(const std::string &name);
 std::shared_ptr<NpcType> getNpcType(const std::string &name, bool create = false);
 ```
 
+#### Nível Intermediate
+```cpp
+// Criação de NPCs
+static std::shared_ptr<Npc> createNpc(const std::string &name);
+
+// Obtenção de tipos
+std::shared_ptr<NpcType> getNpcType(const std::string &name, bool create = false);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Criação de NPCs
+static std::shared_ptr<Npc> createNpc(const std::string &name);
+
+// Obtenção de tipos
+std::shared_ptr<NpcType> getNpcType(const std::string &name, bool create = false);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **11.3 Observer Pattern**
+#### Nível Basic
 ```cpp
 // Eventos de criatura
 void onCreatureAppear(const std::shared_ptr<Creature> &creature, bool isLogin);
 void onCreatureSay(const std::shared_ptr<Creature> &creature, SpeakClasses type, const std::string &text);
+```
+
+#### Nível Intermediate
+```cpp
+// Eventos de criatura
+void onCreatureAppear(const std::shared_ptr<Creature> &creature, bool isLogin);
+void onCreatureSay(const std::shared_ptr<Creature> &creature, SpeakClasses type, const std::string &text);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Eventos de criatura
+void onCreatureAppear(const std::shared_ptr<Creature> &creature, bool isLogin);
+void onCreatureSay(const std::shared_ptr<Creature> &creature, SpeakClasses type, const std::string &text);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **12. Limitações e Considerações**
@@ -800,12 +1543,14 @@ O Sistema de NPCs do Canary é responsável por gerenciar todos os personagens n
 **1. Criando um NPC Básico**
 ```lua
 -- Criar tipo de NPC
+    --  Criar tipo de NPC (traduzido)
 local npcType = NpcType("Merchant")
 npcType:name("Merchant")
 npcType:nameDescription("a merchant")
 npcType:outfit({lookType = 128, lookHead = 0, lookBody = 0, lookLegs = 0, lookFeet = 0})
 
 -- Criar NPC
+    --  Criar NPC (traduzido)
 local npc = Npc("Merchant")
 npc:place({x = 100, y = 100, z = 7})
 ```
@@ -818,30 +1563,70 @@ npcType:addShopItem(ITEM_SWORD, 1000, 1, 1)
 npcType:addShopItem(ITEM_SHIELD, 500, 1, 1)
 
 -- Configurar moeda
+    --  Configurar moeda (traduzido)
 npcType:currency(ITEM_GOLD_COIN)
 ```
 
 **3. Sistema de Eventos**
 ```lua
 -- Evento de pensamento
+    --  Evento de pensamento (traduzido)
 function onThink(npc, interval)
+    -- Função: onThink
     if math.random(1, 100) <= 10 then
+    -- Verificação condicional
         npc:say("Welcome to my shop!")
     end
 end
 
 -- Evento de compra
+    --  Evento de compra (traduzido)
 function onPlayerBuy(npc, player, itemId, count, amount, ignore, inBackpacks)
+    -- Função: onPlayerBuy
     player:sendTextMessage(MESSAGE_INFO_DESCR, "Thank you for your purchase!")
 end
 ```
 
 **4. Sistema de Spawns**
+#### Nível Basic
 ```xml
 <!-- spawns.xml -->
 <spawn centerx="100" centery="100" centerz="7" radius="2">
     <npc name="Merchant" x="0" y="0" z="0" spawntime="60" />
 </spawn>
+```
+
+#### Nível Intermediate
+```xml
+<!-- spawns.xml -->
+<spawn centerx="100" centery="100" centerz="7" radius="2">
+    <npc name="Merchant" x="0" y="0" z="0" spawntime="60" />
+</spawn>
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```xml
+<!-- spawns.xml -->
+<spawn centerx="100" centery="100" centerz="7" radius="2">
+    <npc name="Merchant" x="0" y="0" z="0" spawntime="60" />
+</spawn>
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 **5. Sistema de Interação**
@@ -851,6 +1636,7 @@ npc:setPlayerInteraction(player:getId(), 1)
 
 -- Verificar interação
 if npc:isInteractingWithPlayer(player:getId()) then
+    -- Verificação condicional
     npc:say("Hello! How can I help you?")
 end
 ```
@@ -875,6 +1661,7 @@ Implemente um sistema de respawn inteligente que considera jogadores próximos.
 #### **Conceitos Avançados**
 
 **1. Sistema de Eventos**
+#### Nível Basic
 ```lua
 -- Múltiplos tipos de eventos
 NPCS_EVENT_THINK = 1
@@ -886,7 +1673,49 @@ NPCS_EVENT_PLAYER_BUY = 6
 NPCS_EVENT_PLAYER_SELL = 7
 ```
 
+#### Nível Intermediate
+```lua
+-- Múltiplos tipos de eventos
+NPCS_EVENT_THINK = 1
+NPCS_EVENT_APPEAR = 2
+NPCS_EVENT_DISAPPEAR = 3
+NPCS_EVENT_MOVE = 4
+NPCS_EVENT_SAY = 5
+NPCS_EVENT_PLAYER_BUY = 6
+NPCS_EVENT_PLAYER_SELL = 7
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Múltiplos tipos de eventos
+NPCS_EVENT_THINK = 1
+NPCS_EVENT_APPEAR = 2
+NPCS_EVENT_DISAPPEAR = 3
+NPCS_EVENT_MOVE = 4
+NPCS_EVENT_SAY = 5
+NPCS_EVENT_PLAYER_BUY = 6
+NPCS_EVENT_PLAYER_SELL = 7
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 **2. Sistema de Spawns Inteligente**
+#### Nível Basic
 ```cpp
 // Verificação automática de spawn
 void checkSpawnNpc();
@@ -895,14 +1724,52 @@ void checkSpawnNpc();
 void scheduleSpawnNpc(uint32_t spawnId, spawnBlockNpc_t &sb, uint16_t interval);
 ```
 
+#### Nível Intermediate
+```cpp
+// Verificação automática de spawn
+void checkSpawnNpc();
+
+// Agendamento de spawns
+void scheduleSpawnNpc(uint32_t spawnId, spawnBlockNpc_t &sb, uint16_t interval);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificação automática de spawn
+void checkSpawnNpc();
+
+// Agendamento de spawns
+void scheduleSpawnNpc(uint32_t spawnId, spawnBlockNpc_t &sb, uint16_t interval);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 **3. Sistema de Loja Dinâmica**
 ```lua
 -- Loja por jogador
+    --  Loja por jogador (traduzido)
 npc:addShopPlayer(player:getId(), shopItems)
 
 -- Verificar se jogador está na loja
 if npc:isShopPlayer(player:getId()) then
+    -- Verificação condicional
     -- Processar compra
+    --  Processar compra (traduzido)
 end
 ```
 

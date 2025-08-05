@@ -40,6 +40,7 @@ O sistema RSA implementa criptografia assimétrica para proteger a comunicação
 #### **Classe RSA (`canary/src/security/rsa.hpp`)**
 ```cpp
 class RSA {
+    -- Classe: RSA
 public:
     explicit RSA(Logger &logger);
     ~RSA();
@@ -61,7 +62,8 @@ private:
 #### **Funcionalidades Principais**
 
 1. **Inicialização de Chaves**
-   ```cpp
+   #### Inicialização e Configuração
+```cpp
    void RSA::start() {
        const auto p("14299623962416399520070177382898895550795403345466153217470516082934737582776038882967213386204600674145392845853859217990626450972452084065728686565928113");
        const auto q("7630979195970404721891201847792002125535401292779123937207447574596692788513647179235335529307251350570728407373705564708871762033017096809910315212884101");
@@ -86,6 +88,10 @@ private:
        std::fill(msg, msg + (128 - count), 0);
        mpz_export(msg + (128 - count), nullptr, 1, 1, 0, 0, m);
    }
+```
+
+#### Finalização
+```cpp
    ```
 
 3. **Suporte a Arquivos PEM**
@@ -184,6 +190,7 @@ private:
 - **Base64 encoding** para armazenamento seguro
 
 ---
+    -- - (traduzido)
 
 ## 🚫 3. Sistema de Banimento
 
@@ -228,7 +235,8 @@ public:
 #### **Funcionalidades Principais**
 
 1. **Controle de Conexões**
-   ```cpp
+   #### Inicialização e Configuração
+```cpp
    bool Ban::acceptConnection(uint32_t clientIP) {
        std::scoped_lock<std::recursive_mutex> lockClass(lock);
        
@@ -256,6 +264,10 @@ public:
                    connectBlock.blockTime = currentTime + 3000;
                    return false;
                }
+```
+
+#### Funcionalidade 1
+```cpp
            }
        } else {
            connectBlock.count = 1;
@@ -278,6 +290,10 @@ public:
        if (!result) {
            return false;
        }
+```
+
+#### Funcionalidade 2
+```cpp
        
        const auto expiresAt = result->getNumber<int64_t>("expires_at");
        if (expiresAt != 0 && time(nullptr) > expiresAt) {
@@ -300,6 +316,10 @@ public:
        banInfo.bannedBy = result->getString("name");
        return true;
    }
+```
+
+#### Funcionalidade 3
+```cpp
    ```
 
 3. **Verificação de Banimento de IP**
@@ -327,6 +347,10 @@ public:
            g_databaseTasks().execute(query.str());
            return false;
        }
+```
+
+#### Finalização
+```cpp
        
        banInfo.expiresAt = expiresAt;
        banInfo.reason = result->getString("reason");
@@ -395,6 +419,12 @@ NameEval_t validateName(const std::string &name) {
 ```
 
 #### **Validação de Checksum**
+#### Nível Basic
+```cpp
+
+```
+
+#### Nível Intermediate
 ```cpp
 uint32_t adlerChecksum(const uint8_t* data, size_t length) {
     uint32_t a = 1, b = 0;
@@ -406,6 +436,30 @@ uint32_t adlerChecksum(const uint8_t* data, size_t length) {
     
     return (b << 16) | a;
 }
+```
+
+#### Nível Advanced
+```cpp
+uint32_t adlerChecksum(const uint8_t* data, size_t length) {
+    uint32_t a = 1, b = 0;
+    
+    for (size_t i = 0; i < length; ++i) {
+        a = (a + data[i]) % 65521;
+        b = (b + a) % 65521;
+    }
+    
+    return (b << 16) | a;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **🔒 Características de Segurança**
@@ -426,13 +480,46 @@ O sistema de proteção de zonas implementa áreas seguras onde jogadores não p
 ### **🔧 Implementação**
 
 #### **Flags de Proteção**
+#### Nível Basic
 ```cpp
 // Definições em canary/src/items/items_definitions.hpp
 TILESTATE_PROTECTIONZONE = 1 << 7,
 ZONE_PROTECTION,
 ```
 
+#### Nível Intermediate
+```cpp
+// Definições em canary/src/items/items_definitions.hpp
+TILESTATE_PROTECTIONZONE = 1 << 7,
+ZONE_PROTECTION,
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Definições em canary/src/items/items_definitions.hpp
+TILESTATE_PROTECTIONZONE = 1 << 7,
+ZONE_PROTECTION,
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Verificação de Zonas de Proteção**
+#### Nível Basic
 ```cpp
 // Verificação em tiles
 if (hasFlag(TILESTATE_PROTECTIONZONE)) {
@@ -449,7 +536,64 @@ if (categoryImbuement && categoryImbuement->agressive &&
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Verificação em tiles
+if (hasFlag(TILESTATE_PROTECTIONZONE)) {
+    return ZONE_PROTECTION;
+}
+
+// Verificação em protocolo de jogo
+bool isInProtectionZone = playerTile && playerTile->hasFlag(TILESTATE_PROTECTIONZONE);
+
+// Validação de ações em zonas protegidas
+if (categoryImbuement && categoryImbuement->agressive && 
+    (isInProtectionZone || !isInFightMode)) {
+    // Ação não permitida
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificação em tiles
+if (hasFlag(TILESTATE_PROTECTIONZONE)) {
+    return ZONE_PROTECTION;
+}
+
+// Verificação em protocolo de jogo
+bool isInProtectionZone = playerTile && playerTile->hasFlag(TILESTATE_PROTECTIONZONE);
+
+// Validação de ações em zonas protegidas
+if (categoryImbuement && categoryImbuement->agressive && 
+    (isInProtectionZone || !isInFightMode)) {
+    // Ação não permitida
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Mensagens de Proteção**
+#### Nível Basic
+```cpp
+
+```
+
+#### Nível Intermediate
 ```cpp
 // Mensagens de retorno
 case RETURNVALUE_ACTIONNOTPERMITTEDINPROTECTIONZONE:
@@ -460,6 +604,29 @@ case RETURNVALUE_YOUMAYNOTATTACKAPERSONINPROTECTIONZONE:
 
 case RETURNVALUE_YOUMAYNOTATTACKAPERSONWHILEINPROTECTIONZONE:
     return "You may not attack a person while you are in a protection zone.";
+```
+
+#### Nível Advanced
+```cpp
+// Mensagens de retorno
+case RETURNVALUE_ACTIONNOTPERMITTEDINPROTECTIONZONE:
+    return "This action is not permitted in a protection zone.";
+
+case RETURNVALUE_YOUMAYNOTATTACKAPERSONINPROTECTIONZONE:
+    return "You may not attack a person in a protection zone.";
+
+case RETURNVALUE_YOUMAYNOTATTACKAPERSONWHILEINPROTECTIONZONE:
+    return "You may not attack a person while you are in a protection zone.";
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **🔒 Características de Segurança**
@@ -498,10 +665,12 @@ bool IOLoginData::gameWorldAuthentication(const std::string &accountDescriptor,
     // Autenticação por sessão ou senha
     if (g_configManager().getString(AUTH_TYPE) == "session") {
         if (!account.authenticate()) {
+    -- Verificação condicional
             return false;
         }
     } else {
         if (!account.authenticate(password)) {
+    -- Verificação condicional
             return false;
         }
     }
@@ -545,6 +714,7 @@ if (IOBan::isIpBanned(getIP(), banInfo)) {
 }
 
 if (!IOLoginData::gameWorldAuthentication(accountDescriptor, password, characterName, accountId, oldProtocol, getIP())) {
+    -- Verificação condicional
     ss.str(std::string());
     if (authType == "session") {
         ss << "Your session has expired. Please log in again.";
@@ -580,6 +750,7 @@ O sistema de proteção contra exploits implementa múltiplas camadas de defesa 
 ### **🔧 Implementação**
 
 #### **Rate Limiting de Conexões**
+#### Nível Basic
 ```cpp
 // Controle de tentativas de conexão
 const int64_t timeDiff = currentTime - connectBlock.lastAttempt;
@@ -594,7 +765,55 @@ if (timeDiff <= 5000) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Controle de tentativas de conexão
+const int64_t timeDiff = currentTime - connectBlock.lastAttempt;
+if (timeDiff <= 5000) {
+    if (++connectBlock.count > 5) {
+        connectBlock.count = 0;
+        if (timeDiff <= 500) {
+            connectBlock.blockTime = currentTime + 3000;
+            return false;  // Bloqueia conexão
+        }
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Controle de tentativas de conexão
+const int64_t timeDiff = currentTime - connectBlock.lastAttempt;
+if (timeDiff <= 5000) {
+    if (++connectBlock.count > 5) {
+        connectBlock.count = 0;
+        if (timeDiff <= 500) {
+            connectBlock.blockTime = currentTime + 3000;
+            return false;  // Bloqueia conexão
+        }
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Proteção contra Flood**
+#### Nível Basic
 ```cpp
 // Bloqueio progressivo de IPs
 if (connectBlock.blockTime > currentTime) {
@@ -603,7 +822,43 @@ if (connectBlock.blockTime > currentTime) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Bloqueio progressivo de IPs
+if (connectBlock.blockTime > currentTime) {
+    connectBlock.blockTime += 250;  // Aumenta tempo de bloqueio
+    return false;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Bloqueio progressivo de IPs
+if (connectBlock.blockTime > currentTime) {
+    connectBlock.blockTime += 250;  // Aumenta tempo de bloqueio
+    return false;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Validação de Dados de Entrada**
+#### Nível Basic
 ```cpp
 // Verificação de integridade de pacotes
 void ProtocolGame::parsePacket(NetworkMessage &msg) {
@@ -620,6 +875,61 @@ void ProtocolGame::parsePacket(NetworkMessage &msg) {
         return;
     }
 }
+```
+
+#### Nível Intermediate
+```cpp
+// Verificação de integridade de pacotes
+void ProtocolGame::parsePacket(NetworkMessage &msg) {
+    if (!acceptPackets || g_game().getGameState() == GAME_STATE_SHUTDOWN || msg.getLength() <= 0) {
+        return;
+    }
+    
+    uint8_t recvbyte = msg.getByte();
+    
+    if (!player || player->isRemoved()) {
+        if (recvbyte == 0x0F) {
+            disconnect();
+        }
+        return;
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificação de integridade de pacotes
+void ProtocolGame::parsePacket(NetworkMessage &msg) {
+    if (!acceptPackets || g_game().getGameState() == GAME_STATE_SHUTDOWN || msg.getLength() <= 0) {
+        return;
+    }
+    
+    uint8_t recvbyte = msg.getByte();
+    
+    if (!player || player->isRemoved()) {
+        if (recvbyte == 0x0F) {
+            disconnect();
+        }
+        return;
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **🔒 Características de Segurança**
@@ -640,6 +950,13 @@ O sistema de auditoria registra eventos de segurança para monitoramento e inves
 ### **🔧 Implementação**
 
 #### **Logs de Segurança**
+#### Nível Basic
+```cpp
+g_logger().warn("Invalid bit shift string format: '{}'", bitShiftStr);
+g_logger().warn("Error parsing bit shift string: '{}'", e.what());
+```
+
+#### Nível Intermediate
 ```cpp
 // Logs de tentativas de login
 g_logger().error("Couldn't load account [{}].", account.getDescriptor());
@@ -655,13 +972,75 @@ g_logger().warn("Invalid bit shift string format: '{}'", bitShiftStr);
 g_logger().warn("Error parsing bit shift string: '{}'", e.what());
 ```
 
+#### Nível Advanced
+```cpp
+// Logs de tentativas de login
+g_logger().error("Couldn't load account [{}].", account.getDescriptor());
+g_logger().warn("IP [{}] trying to connect into another account character", convertIPToString(ip));
+g_logger().error("Account [{}] player [{}] not found or deleted.", accountDescriptor, characterName);
+
+// Logs de banimento
+g_logger().error("Loading RSA Key from key.pem failed with error: {}", e.what());
+g_logger().error("Switching to a default key...");
+
+// Logs de validação
+g_logger().warn("Invalid bit shift string format: '{}'", bitShiftStr);
+g_logger().warn("Error parsing bit shift string: '{}'", e.what());
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Histórico de Banimentos**
+#### Nível Basic
 ```cpp
 // Movimento de banimentos expirados para histórico
 query << "INSERT INTO `account_ban_history` (`account_id`, `reason`, `banned_at`, `expired_at`, `banned_by`) "
       << "VALUES (" << accountId << ',' << db.escapeString(result->getString("reason")) 
       << ',' << result->getNumber<time_t>("banned_at") << ',' << expiresAt 
       << ',' << result->getNumber<uint32_t>("banned_by") << ')';
+```
+
+#### Nível Intermediate
+```cpp
+// Movimento de banimentos expirados para histórico
+query << "INSERT INTO `account_ban_history` (`account_id`, `reason`, `banned_at`, `expired_at`, `banned_by`) "
+      << "VALUES (" << accountId << ',' << db.escapeString(result->getString("reason")) 
+      << ',' << result->getNumber<time_t>("banned_at") << ',' << expiresAt 
+      << ',' << result->getNumber<uint32_t>("banned_by") << ')';
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Movimento de banimentos expirados para histórico
+query << "INSERT INTO `account_ban_history` (`account_id`, `reason`, `banned_at`, `expired_at`, `banned_by`) "
+      << "VALUES (" << accountId << ',' << db.escapeString(result->getString("reason")) 
+      << ',' << result->getNumber<time_t>("banned_at") << ',' << expiresAt 
+      << ',' << result->getNumber<uint32_t>("banned_by") << ')';
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **🔒 Características de Segurança**
@@ -682,6 +1061,7 @@ O sistema utiliza configurações centralizadas para controlar parâmetros de se
 ### **🔧 Configurações Principais**
 
 #### **Configurações de Autenticação**
+#### Nível Basic
 ```cpp
 // Tipo de autenticação
 AUTH_TYPE = "session" | "password"
@@ -692,7 +1072,47 @@ T_CONST = 3          // Custo de tempo
 PARALLELISM = 1      // Paralelismo
 ```
 
+#### Nível Intermediate
+```cpp
+// Tipo de autenticação
+AUTH_TYPE = "session" | "password"
+
+// Configurações Argon2
+M_CONST = "1 << 16"  // Custo de memória
+T_CONST = 3          // Custo de tempo
+PARALLELISM = 1      // Paralelismo
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Tipo de autenticação
+AUTH_TYPE = "session" | "password"
+
+// Configurações Argon2
+M_CONST = "1 << 16"  // Custo de memória
+T_CONST = 3          // Custo de tempo
+PARALLELISM = 1      // Paralelismo
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Configurações de Proteção**
+#### Nível Basic
 ```cpp
 // Tempo de proteção de login
 LOGIN_PROTECTION_TIME = 60000  // 60 segundos
@@ -702,6 +1122,47 @@ PROTECTION_LEVEL = 1
 
 // Limpeza de zonas de proteção
 CLEAN_PROTECTION_ZONES = true
+```
+
+#### Nível Intermediate
+```cpp
+// Tempo de proteção de login
+LOGIN_PROTECTION_TIME = 60000  // 60 segundos
+
+// Nível de proteção
+PROTECTION_LEVEL = 1
+
+// Limpeza de zonas de proteção
+CLEAN_PROTECTION_ZONES = true
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Tempo de proteção de login
+LOGIN_PROTECTION_TIME = 60000  // 60 segundos
+
+// Nível de proteção
+PROTECTION_LEVEL = 1
+
+// Limpeza de zonas de proteção
+CLEAN_PROTECTION_ZONES = true
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **🔒 Características de Segurança**
@@ -787,6 +1248,7 @@ flowchart TD
 
 ### **📊 Monitoramento em Tempo Real**
 
+#### Nível Basic
 ```cpp
 // Exemplo de métricas de segurança
 struct SecurityMetrics {
@@ -799,11 +1261,55 @@ struct SecurityMetrics {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de métricas de segurança
+struct SecurityMetrics {
+    uint64_t loginAttempts = 0;
+    uint64_t failedLogins = 0;
+    uint64_t bannedAccounts = 0;
+    uint64_t blockedConnections = 0;
+    uint64_t invalidPackets = 0;
+    uint64_t protectionZoneViolations = 0;
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de métricas de segurança
+struct SecurityMetrics {
+    uint64_t loginAttempts = 0;
+    uint64_t failedLogins = 0;
+    uint64_t bannedAccounts = 0;
+    uint64_t blockedConnections = 0;
+    uint64_t invalidPackets = 0;
+    uint64_t protectionZoneViolations = 0;
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🔧 12. Integração com Outros Sistemas
 
 ### **📊 Integração com Sistema de Contas**
+#### Nível Basic
 ```cpp
 // Verificação de tipo de conta
 uint8_t IOLoginData::getAccountType(uint32_t accountId) {
@@ -817,7 +1323,53 @@ uint8_t IOLoginData::getAccountType(uint32_t accountId) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Verificação de tipo de conta
+uint8_t IOLoginData::getAccountType(uint32_t accountId) {
+    std::ostringstream query;
+    query << "SELECT `type` FROM `accounts` WHERE `id` = " << accountId;
+    DBResult_ptr result = Database::getInstance().storeQuery(query.str());
+    if (!result) {
+        return ACCOUNT_TYPE_NORMAL;
+    }
+    return result->getNumber<uint8_t>("type");
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificação de tipo de conta
+uint8_t IOLoginData::getAccountType(uint32_t accountId) {
+    std::ostringstream query;
+    query << "SELECT `type` FROM `accounts` WHERE `id` = " << accountId;
+    DBResult_ptr result = Database::getInstance().storeQuery(query.str());
+    if (!result) {
+        return ACCOUNT_TYPE_NORMAL;
+    }
+    return result->getNumber<uint8_t>("type");
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **📊 Integração com Sistema de Protocolo**
+#### Nível Basic
 ```cpp
 // Verificação de banimento no protocolo
 if (IOBan::isIpBanned(getIP(), banInfo)) {
@@ -826,12 +1378,81 @@ if (IOBan::isIpBanned(getIP(), banInfo)) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Verificação de banimento no protocolo
+if (IOBan::isIpBanned(getIP(), banInfo)) {
+    disconnectClient(banInfo.reason);
+    return;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificação de banimento no protocolo
+if (IOBan::isIpBanned(getIP(), banInfo)) {
+    disconnectClient(banInfo.reason);
+    return;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **📊 Integração com Sistema de Jogo**
+#### Nível Basic
 ```cpp
 // Verificação de proteção em ações do jogo
 if (tile && !tile->hasFlag(TILESTATE_PROTECTIONZONE) && player->hasCondition(CONDITION_INFIGHT)) {
     // Ação permitida
 }
+```
+
+#### Nível Intermediate
+```cpp
+// Verificação de proteção em ações do jogo
+if (tile && !tile->hasFlag(TILESTATE_PROTECTIONZONE) && player->hasCondition(CONDITION_INFIGHT)) {
+    // Ação permitida
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificação de proteção em ações do jogo
+if (tile && !tile->hasFlag(TILESTATE_PROTECTIONZONE) && player->hasCondition(CONDITION_INFIGHT)) {
+    // Ação permitida
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---
@@ -841,8 +1462,11 @@ if (tile && !tile->hasFlag(TILESTATE_PROTECTIONZONE) && player->hasCondition(CON
 ### **📊 Comandos de Banimento**
 ```lua
 -- Script de banimento (canary/data/scripts/talkactions/gm/ban.lua)
+    --  Script de banimento (canary/data/scripts/talkactions/gm/ban.lua) (traduzido)
 function onSay(player, words, param)
+    -- Função: onSay
     if not player:getGroup():getAccess() then
+    -- Verificação condicional
         return true
     end
     
@@ -852,6 +1476,7 @@ function onSay(player, words, param)
     
     local target = Player(targetName)
     if not target then
+    -- Verificação condicional
         player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Player not found.")
         return true
     end
@@ -985,6 +1610,7 @@ CREATE TABLE `account_ban_history` (
 ### **📊 Códigos de Erro**
 
 #### **NameEval_t**
+#### Nível Basic
 ```cpp
 enum NameEval_t {
     VALID = 0,
@@ -995,7 +1621,47 @@ enum NameEval_t {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+enum NameEval_t {
+    VALID = 0,
+    INVALID_LENGTH = 1,
+    INVALID_CHARACTER = 2,
+    INVALID_TOKEN_LENGTH = 3,
+    INVALID_FORBIDDEN = 4
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+enum NameEval_t {
+    VALID = 0,
+    INVALID_LENGTH = 1,
+    INVALID_CHARACTER = 2,
+    INVALID_TOKEN_LENGTH = 3,
+    INVALID_FORBIDDEN = 4
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **ReturnValue**
+#### Nível Basic
 ```cpp
 enum ReturnValue {
     RETURNVALUE_ACTIONNOTPERMITTEDINPROTECTIONZONE = 82,
@@ -1004,9 +1670,45 @@ enum ReturnValue {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+enum ReturnValue {
+    RETURNVALUE_ACTIONNOTPERMITTEDINPROTECTIONZONE = 82,
+    RETURNVALUE_YOUMAYNOTATTACKAPERSONINPROTECTIONZONE = 84,
+    RETURNVALUE_YOUMAYNOTATTACKAPERSONWHILEINPROTECTIONZONE = 85
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+enum ReturnValue {
+    RETURNVALUE_ACTIONNOTPERMITTEDINPROTECTIONZONE = 82,
+    RETURNVALUE_YOUMAYNOTATTACKAPERSONINPROTECTIONZONE = 84,
+    RETURNVALUE_YOUMAYNOTATTACKAPERSONWHILEINPROTECTIONZONE = 85
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **📊 Configurações de Segurança**
 
 #### **config.lua**
+#### Nível Basic
 ```lua
 -- Configurações de autenticação
 authType = "session"  -- "session" ou "password"
@@ -1018,6 +1720,51 @@ cleanProtectionZones = true
 mConst = "1 << 16"  -- Custo de memória
 tConst = 3          -- Custo de tempo
 parallelism = 1     -- Paralelismo
+```
+
+#### Nível Intermediate
+```lua
+-- Configurações de autenticação
+authType = "session"  -- "session" ou "password"
+loginProtectionTime = 60000  -- 60 segundos
+protectionLevel = 1
+cleanProtectionZones = true
+
+-- Configurações Argon2
+mConst = "1 << 16"  -- Custo de memória
+tConst = 3          -- Custo de tempo
+parallelism = 1     -- Paralelismo
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Configurações de autenticação
+authType = "session"  -- "session" ou "password"
+loginProtectionTime = 60000  -- 60 segundos
+protectionLevel = 1
+cleanProtectionZones = true
+
+-- Configurações Argon2
+mConst = "1 << 16"  -- Custo de memória
+tConst = 3          -- Custo de tempo
+parallelism = 1     -- Paralelismo
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---

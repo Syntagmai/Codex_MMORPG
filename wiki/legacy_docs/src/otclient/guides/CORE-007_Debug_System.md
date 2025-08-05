@@ -61,6 +61,7 @@ Sistema de Debug
 
 ### 🎯 **Configuração de Logs**
 
+#### Nível Basic
 ```lua
 -- Sistema de logging principal
 local DebugLogger = {}
@@ -104,8 +105,114 @@ function DebugLogger.init()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Sistema de logging principal
+local DebugLogger = {}
+
+-- Níveis de log
+DebugLogger.LEVELS = {
+    TRACE = 0,
+    DEBUG = 1,
+    INFO = 2,
+    WARN = 3,
+    ERROR = 4,
+    FATAL = 5
+}
+
+-- Configuração padrão
+DebugLogger.config = {
+    level = DebugLogger.LEVELS.INFO,
+    enableConsole = true,
+    enableFile = true,
+    logFile = "otclient.log",
+    maxFileSize = 10 * 1024 * 1024,  -- 10MB
+    maxFiles = 5
+}
+
+-- Inicializar sistema de logging
+function DebugLogger.init()
+    -- Configurar nível de log
+    local logLevel = g_settings.getString("debug.logLevel", "INFO")
+    DebugLogger.config.level = DebugLogger.LEVELS[string.upper(logLevel)]
+    
+    -- Configurar saída
+    DebugLogger.config.enableConsole = g_settings.getBoolean("debug.enableConsole", true)
+    DebugLogger.config.enableFile = g_settings.getBoolean("debug.enableFile", true)
+    
+    -- Configurar arquivo de log
+    if DebugLogger.config.enableFile then
+        DebugLogger.config.logFile = g_settings.getString("debug.logFile", "otclient.log")
+    end
+    
+    print("Debug Logger inicializado com nível:", logLevel)
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Sistema de logging principal
+local DebugLogger = {}
+
+-- Níveis de log
+DebugLogger.LEVELS = {
+    TRACE = 0,
+    DEBUG = 1,
+    INFO = 2,
+    WARN = 3,
+    ERROR = 4,
+    FATAL = 5
+}
+
+-- Configuração padrão
+DebugLogger.config = {
+    level = DebugLogger.LEVELS.INFO,
+    enableConsole = true,
+    enableFile = true,
+    logFile = "otclient.log",
+    maxFileSize = 10 * 1024 * 1024,  -- 10MB
+    maxFiles = 5
+}
+
+-- Inicializar sistema de logging
+function DebugLogger.init()
+    -- Configurar nível de log
+    local logLevel = g_settings.getString("debug.logLevel", "INFO")
+    DebugLogger.config.level = DebugLogger.LEVELS[string.upper(logLevel)]
+    
+    -- Configurar saída
+    DebugLogger.config.enableConsole = g_settings.getBoolean("debug.enableConsole", true)
+    DebugLogger.config.enableFile = g_settings.getBoolean("debug.enableFile", true)
+    
+    -- Configurar arquivo de log
+    if DebugLogger.config.enableFile then
+        DebugLogger.config.logFile = g_settings.getString("debug.logFile", "otclient.log")
+    end
+    
+    print("Debug Logger inicializado com nível:", logLevel)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔧 **Funções de Logging**
 
+#### Inicialização e Configuração
 ```lua
 -- Funções de logging
 function DebugLogger.trace(message, ...)
@@ -129,6 +236,10 @@ function DebugLogger.error(message, ...)
 end
 
 function DebugLogger.fatal(message, ...)
+```
+
+#### Funcionalidade 1
+```lua
     DebugLogger.log(DebugLogger.LEVELS.FATAL, message, ...)
 end
 
@@ -156,6 +267,10 @@ function DebugLogger.log(level, message, ...)
             file:write(logEntry .. "\n")
             file:close()
         end
+```
+
+#### Finalização
+```lua
     end
 end
 ```
@@ -166,6 +281,7 @@ end
 
 ### 🎮 **Console de Debug**
 
+#### Inicialização e Configuração
 ```lua
 -- Console de debug avançado
 local DebugConsole = {}
@@ -192,6 +308,10 @@ function DebugConsole.setupCommands(console)
     console:addCommand("memory", function()
         DebugConsole.showMemoryInfo()
     end)
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Comando para mostrar informações de performance
     console:addCommand("perf", function()
@@ -217,6 +337,10 @@ function DebugConsole.showSystemInfo()
     for key, value in pairs(info) do
         DebugLogger.info("%s: %s", key, tostring(value))
     end
+```
+
+#### Finalização
+```lua
 end
 ```
 
@@ -224,16 +348,20 @@ end
 
 ```lua
 -- Inspetores de UI para debug
+    --  Inspetores de UI para debug (traduzido)
 local UIDebugger = {}
 
 function UIDebugger.init()
+    -- Função: UIDebugger
     -- Criar inspetores
+    --  Criar inspetores (traduzido)
     UIDebugger.createWidgetInspector()
     UIDebugger.createEventInspector()
     UIDebugger.createStyleInspector()
 end
 
 function UIDebugger.createWidgetInspector()
+    -- Função: UIDebugger
     local inspector = g_ui.createWidget("WidgetInspector", rootWidget)
     inspector:setId("widgetInspector")
     inspector:setVisible(false)
@@ -242,12 +370,14 @@ function UIDebugger.createWidgetInspector()
     inspector.onMousePress = function(self, mousePos, mouseButton)
         local widget = g_ui.getWidgetAt(mousePos)
         if widget then
+    -- Verificação condicional
             UIDebugger.inspectWidget(widget)
         end
     end
 end
 
 function UIDebugger.inspectWidget(widget)
+    -- Função: UIDebugger
     local info = {
         id = widget:getId(),
         className = widget:getClassName(),
@@ -260,6 +390,7 @@ function UIDebugger.inspectWidget(widget)
     
     DebugLogger.info("=== Widget Inspection ===")
     for key, value in pairs(info) do
+    -- Loop de repetição
         DebugLogger.info("%s: %s", key, tostring(value))
     end
 end
@@ -273,17 +404,21 @@ end
 
 ```lua
 -- Sistema de profiling para performance
+    --  Sistema de profiling para performance (traduzido)
 local PerformanceProfiler = {}
 
 PerformanceProfiler.timers = {}
 PerformanceProfiler.memorySnapshots = {}
 
 function PerformanceProfiler.startTimer(name)
+    -- Função: PerformanceProfiler
     PerformanceProfiler.timers[name] = g_clock.millis()
 end
 
 function PerformanceProfiler.endTimer(name)
+    -- Função: PerformanceProfiler
     if PerformanceProfiler.timers[name] then
+    -- Verificação condicional
         local duration = g_clock.millis() - PerformanceProfiler.timers[name]
         DebugLogger.info("Timer [%s]: %dms", name, duration)
         PerformanceProfiler.timers[name] = nil
@@ -293,6 +428,7 @@ function PerformanceProfiler.endTimer(name)
 end
 
 function PerformanceProfiler.takeMemorySnapshot(name)
+    -- Função: PerformanceProfiler
     local memory = collectgarbage("count")
     PerformanceProfiler.memorySnapshots[name] = memory
     DebugLogger.info("Memory Snapshot [%s]: %.2f KB", name, memory)
@@ -300,7 +436,9 @@ function PerformanceProfiler.takeMemorySnapshot(name)
 end
 
 function PerformanceProfiler.compareMemorySnapshots(snapshot1, snapshot2)
+    -- Função: PerformanceProfiler
     if PerformanceProfiler.memorySnapshots[snapshot1] and PerformanceProfiler.memorySnapshots[snapshot2] then
+    -- Verificação condicional
         local diff = PerformanceProfiler.memorySnapshots[snapshot2] - PerformanceProfiler.memorySnapshots[snapshot1]
         DebugLogger.info("Memory Difference [%s -> %s]: %.2f KB", snapshot1, snapshot2, diff)
         return diff
@@ -313,6 +451,7 @@ end
 
 ```lua
 -- Monitor de performance em tempo real
+    --  Monitor de performance em tempo real (traduzido)
 local PerformanceMonitor = {}
 
 PerformanceMonitor.enabled = false
@@ -320,29 +459,35 @@ PerformanceMonitor.interval = 1000  -- 1 segundo
 PerformanceMonitor.lastUpdate = 0
 
 function PerformanceMonitor.start()
+    -- Função: PerformanceMonitor
     PerformanceMonitor.enabled = true
     PerformanceMonitor.lastUpdate = g_clock.millis()
     DebugLogger.info("Performance Monitor iniciado")
 end
 
 function PerformanceMonitor.stop()
+    -- Função: PerformanceMonitor
     PerformanceMonitor.enabled = false
     DebugLogger.info("Performance Monitor parado")
 end
 
 function PerformanceMonitor.update()
+    -- Função: PerformanceMonitor
     if not PerformanceMonitor.enabled then
+    -- Verificação condicional
         return
     end
     
     local currentTime = g_clock.millis()
     if currentTime - PerformanceMonitor.lastUpdate >= PerformanceMonitor.interval then
+    -- Verificação condicional
         PerformanceMonitor.logPerformance()
         PerformanceMonitor.lastUpdate = currentTime
     end
 end
 
 function PerformanceMonitor.logPerformance()
+    -- Função: PerformanceMonitor
     local fps = g_app.getFps()
     local memory = collectgarbage("count")
     local uptime = g_clock.millis()
@@ -357,6 +502,7 @@ end
 
 ### ⚠️ **Captura de Exceções**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de captura e tratamento de erros
 local ErrorHandler = {}
@@ -381,6 +527,10 @@ function ErrorHandler.setupErrorHandling()
     connect(g_app, 'onError', function(error)
         ErrorHandler.handleCppError(error)
     end)
+```
+
+#### Funcionalidade 1
+```lua
 end
 
 function ErrorHandler.handleError(message, level)
@@ -408,6 +558,10 @@ function ErrorHandler.handleCppError(error)
     -- Salvar erro em arquivo
     ErrorHandler.saveErrorToFile(error, "C++ Error")
 end
+```
+
+#### Finalização
+```lua
 
 function ErrorHandler.saveErrorToFile(message, stackTrace)
     local file = io.open("errors.log", "a")
@@ -431,6 +585,7 @@ end
 
 ```lua
 -- Sistema de debug remoto
+    --  Sistema de debug remoto (traduzido)
 local RemoteDebugger = {}
 
 RemoteDebugger.enabled = false
@@ -438,27 +593,35 @@ RemoteDebugger.port = 8080
 RemoteDebugger.connections = {}
 
 function RemoteDebugger.init()
+    -- Função: RemoteDebugger
     -- Configurar debug remoto
+    --  Configurar debug remoto (traduzido)
     RemoteDebugger.enabled = g_settings.getBoolean("debug.remoteEnabled", false)
     RemoteDebugger.port = g_settings.getNumber("debug.remotePort", 8080)
     
     if RemoteDebugger.enabled then
+    -- Verificação condicional
         RemoteDebugger.startServer()
     end
 end
 
 function RemoteDebugger.startServer()
+    -- Função: RemoteDebugger
     -- Implementar servidor de debug remoto
+    --  Implementar servidor de debug remoto (traduzido)
     DebugLogger.info("Remote Debug Server iniciado na porta %d", RemoteDebugger.port)
 end
 
 function RemoteDebugger.sendDebugInfo(info)
+    -- Função: RemoteDebugger
     if not RemoteDebugger.enabled then
+    -- Verificação condicional
         return
     end
     
     -- Enviar informações de debug para clientes remotos
     for _, connection in pairs(RemoteDebugger.connections) do
+    -- Loop de repetição
         connection:send(info)
     end
 end
@@ -470,6 +633,31 @@ end
 
 ### 🎯 **Exemplo de Uso Completo**
 
+#### Nível Basic
+```lua
+-- Exemplo completo de uso do sistema de debug
+function setupDebugSystem()
+    -- Inicializar sistema de logging
+    -- Inicializar ferramentas de debug
+    -- Inicializar sistema de erros
+    -- Inicializar debug remoto
+    -- Iniciar monitor de performance
+end
+-- Exemplo de uso em desenvolvimento
+function debugExample()
+    -- Iniciar timer
+    -- Tomar snapshot de memória
+    -- Executar operação
+    local result = someComplexOperation()
+    -- Tomar snapshot de memória
+    -- Comparar snapshots
+    -- Finalizar timer
+    PerformanceProfiler.endTimer("exampleFunction")
+    -- Log do resultado
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Exemplo completo de uso do sistema de debug
 function setupDebugSystem()
@@ -519,38 +707,105 @@ function debugExample()
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Exemplo completo de uso do sistema de debug
+function setupDebugSystem()
+    -- Inicializar sistema de logging
+    DebugLogger.init()
+    
+    -- Inicializar ferramentas de debug
+    DebugConsole.init()
+    UIDebugger.init()
+    
+    -- Inicializar sistema de erros
+    ErrorHandler.init()
+    
+    -- Inicializar debug remoto
+    RemoteDebugger.init()
+    
+    -- Iniciar monitor de performance
+    PerformanceMonitor.start()
+    
+    DebugLogger.info("Sistema de debug inicializado com sucesso")
+end
+
+-- Exemplo de uso em desenvolvimento
+function debugExample()
+    -- Iniciar timer
+    PerformanceProfiler.startTimer("exampleFunction")
+    
+    -- Tomar snapshot de memória
+    PerformanceProfiler.takeMemorySnapshot("before")
+    
+    -- Executar operação
+    local result = someComplexOperation()
+    
+    -- Tomar snapshot de memória
+    PerformanceProfiler.takeMemorySnapshot("after")
+    
+    -- Comparar snapshots
+    PerformanceProfiler.compareMemorySnapshots("before", "after")
+    
+    -- Finalizar timer
+    PerformanceProfiler.endTimer("exampleFunction")
+    
+    -- Log do resultado
+    DebugLogger.info("Resultado da operação: %s", tostring(result))
+    
+    return result
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔧 **Configuração de Debug**
 
 ```lua
 -- Configuração de debug no arquivo de configuração
 local debugConfig = {
     -- Sistema de logging
+    --  Sistema de logging (traduzido)
     logLevel = "INFO",
     enableConsole = true,
     enableFile = true,
     logFile = "otclient.log",
     
     -- Ferramentas de debug
+    --  Ferramentas de debug (traduzido)
     enableConsole = true,
     enableWidgetInspector = true,
     enableEventInspector = true,
     
     -- Performance
+    --  Performance (traduzido)
     enablePerformanceMonitor = true,
     performanceMonitorInterval = 1000,
     
     -- Debug remoto
+    --  Debug remoto (traduzido)
     remoteEnabled = false,
     remotePort = 8080,
     
     -- Sistema de erros
+    --  Sistema de erros (traduzido)
     maxErrors = 100,
     saveErrorsToFile = true
 }
 
 -- Aplicar configuração
 function applyDebugConfig(config)
+    -- Função: applyDebugConfig
     for key, value in pairs(config) do
+    -- Loop de repetição
         g_settings.setValue("debug." .. key, value)
     end
 end
@@ -605,6 +860,12 @@ end
 
 ### 🔍 **Logs Estruturados**
 
+#### Nível Basic
+```json
+
+```
+
+#### Nível Intermediate
 ```json
 {
   "timestamp": "2025-01-27T10:30:00Z",
@@ -617,6 +878,31 @@ end
     "fps": 60
   }
 }
+```
+
+#### Nível Advanced
+```json
+{
+  "timestamp": "2025-01-27T10:30:00Z",
+  "level": "INFO",
+  "category": "performance",
+  "message": "Operation completed",
+  "data": {
+    "duration": 150,
+    "memory": 1024.5,
+    "fps": 60
+  }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---

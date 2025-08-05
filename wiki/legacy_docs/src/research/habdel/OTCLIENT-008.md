@@ -16,9 +16,39 @@ Analisar profundamente o sistema **Sistema de Animações** do OTClient usando m
 ## 🔍 **Análise Técnica**
 
 ### **Estrutura do Sistema**
+#### Nível Basic
 ```lua
 -- Exemplo de estrutura do sistema Sistema de Animações
 -- Será preenchido durante a análise
+```
+
+#### Nível Intermediate
+```lua
+-- Exemplo de estrutura do sistema Sistema de Animações
+-- Será preenchido durante a análise
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Exemplo de estrutura do sistema Sistema de Animações
+-- Será preenchido durante a análise
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **Principais Componentes**
@@ -29,6 +59,7 @@ Analisar profundamente o sistema **Sistema de Animações** do OTClient usando m
 ### **APIs e Interfaces**
 ```lua
 -- APIs principais do sistema
+    --  APIs principais do sistema (traduzido)
 -- Será documentado durante a análise
 ```
 

@@ -96,6 +96,7 @@ python setup_integration.py
 
 #### 2. Estrutura de Projeto
 
+#### Nível Basic
 ```lua
 -- Exemplo de módulo unificado
 local UnifiedModule = {}
@@ -119,35 +120,109 @@ end
 return UnifiedModule
 ```
 
+#### Nível Intermediate
+```lua
+-- Exemplo de módulo unificado
+local UnifiedModule = {}
+
+function UnifiedModule.init()
+    -- Inicialização compatível com ambos os sistemas
+    if OTClient then
+        -- Código específico OTClient
+    elseif Canary then
+        -- Código específico Canary
+    else
+        -- Código compartilhado
+    end
+end
+
+function UnifiedModule.integrate()
+    -- Lógica de integração
+    return true
+end
+
+return UnifiedModule
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Exemplo de módulo unificado
+local UnifiedModule = {}
+
+function UnifiedModule.init()
+    -- Inicialização compatível com ambos os sistemas
+    if OTClient then
+        -- Código específico OTClient
+    elseif Canary then
+        -- Código específico Canary
+    else
+        -- Código compartilhado
+    end
+end
+
+function UnifiedModule.integrate()
+    -- Lógica de integração
+    return true
+end
+
+return UnifiedModule
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### 3. APIs Unificadas
 
 ```lua
 -- API unificada para UI
+    --  API unificada para UI (traduzido)
 local UnifiedUI = {
     -- Componentes compartilhados
+    --  Componentes compartilhados (traduzido)
     Button = require('ui.unified.button'),
     TextEdit = require('ui.unified.textedit'),
     Window = require('ui.unified.window'),
     
     -- Sistema de eventos unificado
+    --  Sistema de eventos unificado (traduzido)
     EventSystem = require('events.unified'),
     
     -- Gerenciamento de estado
+    --  Gerenciamento de estado (traduzido)
     StateManager = require('state.unified')
 }
 
 -- API unificada para Game
+    --  API unificada para Game (traduzido)
 local UnifiedGame = {
     -- Sistema de criaturas
+    --  Sistema de criaturas (traduzido)
     Creature = require('game.unified.creature'),
     
     -- Sistema de itens
+    --  Sistema de itens (traduzido)
     Item = require('game.unified.item'),
     
     -- Sistema de magias
+    --  Sistema de magias (traduzido)
     Spell = require('game.unified.spell'),
     
     -- Sistema de combate
+    --  Sistema de combate (traduzido)
     Combat = require('game.unified.combat')
 }
 ```
@@ -162,6 +237,7 @@ local UnifiedGame = {
 
 ```lua
 -- Sistema de UI unificado
+    --  Sistema de UI unificado (traduzido)
 local UI = require('ui.unified')
 
 -- Criar botão
@@ -173,6 +249,7 @@ local button = UI.Button.create({
 })
 
 -- Criar janela
+    --  Criar janela (traduzido)
 local window = UI.Window.create({
     title = "Minha Janela",
     size = {width = 300, height = 200}
@@ -183,9 +260,11 @@ local window = UI.Window.create({
 
 ```lua
 -- Sistema de jogo unificado
+    --  Sistema de jogo unificado (traduzido)
 local Game = require('game.unified')
 
 -- Criar criatura
+    --  Criar criatura (traduzido)
 local creature = Game.Creature.create({
     name = "Monstro",
     health = 100,
@@ -193,6 +272,7 @@ local creature = Game.Creature.create({
 })
 
 -- Criar item
+    --  Criar item (traduzido)
 local item = Game.Item.create({
     id = 2160,
     count = 1,
@@ -204,9 +284,11 @@ local item = Game.Item.create({
 
 ```lua
 -- Sistema de rede unificado
+    --  Sistema de rede unificado (traduzido)
 local Network = require('network.unified')
 
 -- Conectar ao servidor
+    --  Conectar ao servidor (traduzido)
 Network.connect({
     host = "localhost",
     port = 7171,
@@ -223,6 +305,7 @@ Network.connect({
 
 #### Template de Módulo
 
+#### Nível Basic
 ```lua
 -- Template para módulo unificado
 local ModuleTemplate = {}
@@ -259,8 +342,100 @@ end
 return ModuleTemplate
 ```
 
+#### Nível Intermediate
+```lua
+-- Template para módulo unificado
+local ModuleTemplate = {}
+
+-- Metadados do módulo
+ModuleTemplate.metadata = {
+    name = "Meu Módulo",
+    version = "1.0.0",
+    author = "Desenvolvedor",
+    description = "Descrição do módulo",
+    compatible = {"otclient", "canary"}
+}
+
+-- Inicialização
+function ModuleTemplate.init()
+    -- Código de inicialização
+end
+
+-- Configuração
+function ModuleTemplate.configure(config)
+    -- Código de configuração
+end
+
+-- Execução
+function ModuleTemplate.execute()
+    -- Código de execução
+end
+
+-- Limpeza
+function ModuleTemplate.cleanup()
+    -- Código de limpeza
+end
+
+return ModuleTemplate
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Template para módulo unificado
+local ModuleTemplate = {}
+
+-- Metadados do módulo
+ModuleTemplate.metadata = {
+    name = "Meu Módulo",
+    version = "1.0.0",
+    author = "Desenvolvedor",
+    description = "Descrição do módulo",
+    compatible = {"otclient", "canary"}
+}
+
+-- Inicialização
+function ModuleTemplate.init()
+    -- Código de inicialização
+end
+
+-- Configuração
+function ModuleTemplate.configure(config)
+    -- Código de configuração
+end
+
+-- Execução
+function ModuleTemplate.execute()
+    -- Código de execução
+end
+
+-- Limpeza
+function ModuleTemplate.cleanup()
+    -- Código de limpeza
+end
+
+return ModuleTemplate
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### Template de Interface
 
+#### Nível Basic
 ```lua
 -- Template para interface unificada
 local InterfaceTemplate = {}
@@ -293,6 +468,89 @@ end
 return InterfaceTemplate
 ```
 
+#### Nível Intermediate
+```lua
+-- Template para interface unificada
+local InterfaceTemplate = {}
+
+function InterfaceTemplate.create()
+    local interface = {
+        -- Propriedades
+        visible = false,
+        draggable = true,
+        
+        -- Métodos
+        show = function(self)
+            self.visible = true
+            -- Código específico para mostrar
+        end,
+        
+        hide = function(self)
+            self.visible = false
+            -- Código específico para esconder
+        end,
+        
+        update = function(self)
+            -- Código de atualização
+        end
+    }
+    
+    return interface
+end
+
+return InterfaceTemplate
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Template para interface unificada
+local InterfaceTemplate = {}
+
+function InterfaceTemplate.create()
+    local interface = {
+        -- Propriedades
+        visible = false,
+        draggable = true,
+        
+        -- Métodos
+        show = function(self)
+            self.visible = true
+            -- Código específico para mostrar
+        end,
+        
+        hide = function(self)
+            self.visible = false
+            -- Código específico para esconder
+        end,
+        
+        update = function(self)
+            -- Código de atualização
+        end
+    }
+    
+    return interface
+end
+
+return InterfaceTemplate
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🔗 Guias de Integração
@@ -311,6 +569,7 @@ python generate_migration_report.py --source otclient --target canary
 
 #### 2. Adaptação de Código
 
+#### Nível Basic
 ```lua
 -- Código original OTClient
 local function oldFunction()
@@ -327,10 +586,62 @@ local function newFunction()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Código original OTClient
+local function oldFunction()
+    -- Código específico OTClient
+end
+
+-- Código adaptado para Canary
+local function newFunction()
+    if Canary then
+        -- Código específico Canary
+    else
+        -- Código original OTClient
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Código original OTClient
+local function oldFunction()
+    -- Código específico OTClient
+end
+
+-- Código adaptado para Canary
+local function newFunction()
+    if Canary then
+        -- Código específico Canary
+    else
+        -- Código original OTClient
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### 3. Testes de Migração
 
 ```lua
 -- Teste de compatibilidade
+    --  Teste de compatibilidade (traduzido)
 local function testCompatibility()
     local tests = {
         "ui_components",
@@ -340,8 +651,10 @@ local function testCompatibility()
     }
     
     for _, test in ipairs(tests) do
+    -- Loop de repetição
         local result = runTest(test)
         if not result.success then
+    -- Verificação condicional
             print("Falha no teste: " .. test)
         end
     end
@@ -362,7 +675,9 @@ local function checkResources()
     }
     
     for _, resource in ipairs(resources) do
+    -- Loop de repetição
         if not isResourceAvailable(resource) then
+    -- Verificação condicional
             print("Recurso não disponível: " .. resource)
         end
     end
@@ -371,6 +686,7 @@ end
 
 #### 2. Adaptação de Funcionalidades
 
+#### Nível Basic
 ```lua
 -- Adaptar funcionalidades avançadas
 local function adaptAdvancedFeatures()
@@ -382,6 +698,51 @@ local function adaptAdvancedFeatures()
         return implementAdvancedVersion()
     end
 end
+```
+
+#### Nível Intermediate
+```lua
+-- Adaptar funcionalidades avançadas
+local function adaptAdvancedFeatures()
+    if OTClient then
+        -- Implementar versão simplificada
+        return implementBasicVersion()
+    else
+        -- Usar versão completa Canary
+        return implementAdvancedVersion()
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Adaptar funcionalidades avançadas
+local function adaptAdvancedFeatures()
+    if OTClient then
+        -- Implementar versão simplificada
+        return implementBasicVersion()
+    else
+        -- Usar versão completa Canary
+        return implementAdvancedVersion()
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---
@@ -435,6 +796,38 @@ def test_integration():
 
 ### 📊 Métricas de Performance
 
+#### Nível Basic
+```lua
+-- Sistema de métricas unificado
+local Metrics = require('metrics.unified')
+-- Coletar métricas
+-- Gerar relatório
+```
+
+#### Nível Intermediate
+```lua
+-- Sistema de métricas unificado
+local Metrics = require('metrics.unified')
+
+-- Coletar métricas
+Metrics.collect({
+    category = "performance",
+    metrics = {
+        "fps",
+        "memory_usage", 
+        "network_latency",
+        "response_time"
+    }
+})
+
+-- Gerar relatório
+Metrics.generateReport({
+    format = "json",
+    include = {"performance", "compatibility", "integration"}
+})
+```
+
+#### Nível Advanced
 ```lua
 -- Sistema de métricas unificado
 local Metrics = require('metrics.unified')
@@ -464,6 +857,7 @@ Metrics.generateReport({
 local IntegrationMonitor = require('monitor.integration')
 
 -- Configurar monitoramento
+    --  Configurar monitoramento (traduzido)
 IntegrationMonitor.configure({
     check_interval = 5000, -- 5 segundos
     alert_threshold = 0.8, -- 80%
@@ -471,6 +865,7 @@ IntegrationMonitor.configure({
 })
 
 -- Iniciar monitoramento
+    --  Iniciar monitoramento (traduzido)
 IntegrationMonitor.start()
 ```
 

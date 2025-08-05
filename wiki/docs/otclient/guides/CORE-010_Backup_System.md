@@ -1,18 +1,13 @@
----
-tags: [otclient, core, backup, system, recovery, data, configuration, save, restore]
-type: core_story
-status: completed
-priority: critical
-story_id: CORE-010
-created: 2025-01-27
----
 
 # CORE-010: Sistema de Backup
 
 > [!info] **Sistema Completo de Backup e Recuperação**
 > Documentação completa do sistema de backup do OTClient, incluindo backup automático, recuperação de dados, versionamento, sincronização e proteção contra perda de dados.
 
-## 📋 Índice
+
+---
+
+## 📋 Índice 📋
 - [[#Visão Geral]]
 - [[#Sistema de Backup]]
 - [[#Tipos de Backup]]
@@ -25,11 +20,14 @@ created: 2025-01-27
 
 ---
 
-## 🎯 Visão Geral
+
+---
+
+## 🎯 Visão Geral 🎯
 
 O sistema de backup do OTClient oferece proteção completa contra perda de dados:
 
-### **💾 Componentes Principais:**
+### **💾 Componentes Principais:** 📝
 - **Backup Automático**: Backup programado e automático
 - **Múltiplos Tipos**: Completo, incremental, diferencial
 - **Versionamento**: Controle de versões dos backups
@@ -37,7 +35,7 @@ O sistema de backup do OTClient oferece proteção completa contra perda de dado
 - **Recuperação**: Recuperação rápida e confiável
 - **Monitoramento**: Acompanhamento de status e integridade
 
-### 🏗️ **Arquitetura do Sistema**
+### 🏗️ **Arquitetura do Sistema** 📝
 
 ```
 Sistema de Backup
@@ -69,10 +67,14 @@ Sistema de Backup
 
 ---
 
-## 💾 Sistema de Backup
 
-### 🎯 **Configuração Principal**
+---
 
+## 💾 Sistema de Backup ⚙️
+
+### 🎯 **Configuração Principal** 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Sistema de backup principal
 local BackupSystem = {}
@@ -100,6 +102,10 @@ BackupSystem.config = {
             path = "otclient_backups/",
             sync = true
         }
+```
+
+#### Funcionalidade 1
+```lua
     },
     
     -- Configuração de dados
@@ -122,6 +128,10 @@ BackupSystem.config = {
 
 -- Inicializar sistema de backup
 function BackupSystem.init()
+```
+
+#### Funcionalidade 2
+```lua
     BackupSystem.loadConfiguration()
     BackupSystem.setupDirectories()
     BackupSystem.setupScheduler()
@@ -147,6 +157,10 @@ function BackupSystem.loadConfiguration()
     BackupSystem.config.data.characters = g_settings.getBoolean("backup.data.characters", true)
     BackupSystem.config.data.modules = g_settings.getBoolean("backup.data.modules", true)
 end
+```
+
+#### Finalização
+```lua
 
 function BackupSystem.setupDirectories()
     -- Criar diretório de backup se não existir
@@ -168,8 +182,9 @@ function BackupSystem.setupDirectories()
 end
 ```
 
-### 🔧 **Sistema de Agendamento**
+### 🔧 **Sistema de Agendamento** 📝
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de agendamento de backups
 BackupSystem.scheduler = {}
@@ -193,6 +208,10 @@ function BackupSystem.startScheduler()
 end
 
 function BackupSystem.updateScheduler()
+```
+
+#### Funcionalidade 1
+```lua
     if not BackupSystem.scheduler.enabled then
         return
     end
@@ -221,6 +240,10 @@ function BackupSystem.performAutomaticBackup()
             print("ERRO: Espaço insuficiente para backup")
             return
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
     
     -- Executar backup
@@ -248,6 +271,10 @@ function BackupSystem.checkStorageSpace()
     
     return availableSpace >= requiredSpace
 end
+```
+
+#### Finalização
+```lua
 
 function BackupSystem.getAvailableSpace(path)
     -- Implementação simplificada - em produção usar APIs do sistema
@@ -257,10 +284,14 @@ end
 
 ---
 
-## 📦 Tipos de Backup
 
-### 🎯 **Backup Completo**
+---
 
+## 📦 Tipos de Backup 📋
+
+### 🎯 **Backup Completo** 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Sistema de backup completo
 BackupSystem.full = {}
@@ -285,6 +316,10 @@ function BackupSystem.createFullBackup(name)
     if BackupSystem.config.data.characters then
         success = success and BackupSystem.backupCharacters(backupPath)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Backup de módulos
     if BackupSystem.config.data.modules then
@@ -314,6 +349,10 @@ function BackupSystem.backupSettings(backupPath)
         "modules.otml",
         "keybind.otml"
     }
+```
+
+#### Funcionalidade 2
+```lua
     
     for _, file in ipairs(settingsFiles) do
         local source = file
@@ -351,6 +390,10 @@ function BackupSystem.backupCharacters(backupPath)
                 experience = character:getExperience(),
                 timestamp = os.date("%Y-%m-%d %H:%M:%S")
             }
+```
+
+#### Funcionalidade 3
+```lua
             
             local file = io.open(charactersPath .. "current_character.json", "w")
             if file then
@@ -375,6 +418,10 @@ function BackupSystem.backupModules(backupPath)
             print("ERRO: Falha ao copiar módulos")
             return false
         end
+```
+
+#### Finalização
+```lua
     end
     
     return true
@@ -398,8 +445,9 @@ function BackupSystem.backupLogs(backupPath)
 end
 ```
 
-### 🔄 **Backup Incremental**
+### 🔄 **Backup Incremental** 📝
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de backup incremental
 BackupSystem.incremental = {}
@@ -429,6 +477,10 @@ function BackupSystem.createIncrementalBackup(name)
     if success then
         BackupSystem.createBackupMetadata(backupPath, "incremental", name, lastFullBackup)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     return success
 end
@@ -450,6 +502,10 @@ function BackupSystem.findLastFullBackup()
     
     return nil
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 function BackupSystem.backupModifiedFiles(lastBackup, backupPath)
     local lastBackupPath = BackupSystem.config.storage.local.path .. lastBackup .. "/"
@@ -472,6 +528,10 @@ function BackupSystem.backupModifiedFiles(lastBackup, backupPath)
             print("ERRO: Falha ao copiar " .. file)
             return false
         end
+```
+
+#### Funcionalidade 3
+```lua
     end
     
     return true
@@ -495,6 +555,10 @@ function BackupSystem.getModifiedFiles(lastBackupPath)
     
     return modifiedFiles
 end
+```
+
+#### Finalização
+```lua
 
 function BackupSystem.isFileModified(source, backup)
     -- Verificar se arquivo foi modificado
@@ -520,10 +584,14 @@ end
 
 ---
 
-## 🔄 Versionamento
 
-### 🎯 **Sistema de Versões**
+---
 
+## 🔄 Versionamento 📋
+
+### 🎯 **Sistema de Versões** 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Sistema de versionamento de backups
 BackupSystem.versioning = {}
@@ -546,6 +614,10 @@ function BackupSystem.createBackupMetadata(backupPath, type, name, parent)
         file:close()
     end
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function BackupSystem.generateVersion()
     -- Gerar versão baseada em timestamp
@@ -570,6 +642,10 @@ function BackupSystem.calculateBackupSize(backupPath)
     calculateDirSize(backupPath)
     return size
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 function BackupSystem.calculateChecksum(backupPath)
     -- Calcular checksum do backup (simplificado)
@@ -603,6 +679,10 @@ function BackupSystem.getBackupHistory()
             if metadata then
                 table.insert(history, metadata)
             end
+```
+
+#### Funcionalidade 3
+```lua
         end
     end
     
@@ -624,6 +704,10 @@ function BackupSystem.rollbackToVersion(version)
         print("ERRO: Backup corrompido")
         return false
     end
+```
+
+#### Funcionalidade 4
+```lua
     
     -- Executar restauração
     local success = BackupSystem.restoreFromBackup(backup.path)
@@ -646,6 +730,10 @@ function BackupSystem.findBackupByVersion(version)
         if backup.version == version then
             return backup
         end
+```
+
+#### Finalização
+```lua
     end
     
     return nil
@@ -654,10 +742,14 @@ end
 
 ---
 
-## 🔄 Sincronização
 
-### 🎯 **Sistema de Sincronização**
+---
 
+## 🔄 Sincronização 📋
+
+### 🎯 **Sistema de Sincronização** 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Sistema de sincronização de backups
 BackupSystem.sync = {}
@@ -681,6 +773,10 @@ function BackupSystem.startSync()
 end
 
 function BackupSystem.updateSync()
+```
+
+#### Funcionalidade 1
+```lua
     if not BackupSystem.sync.enabled then
         return
     end
@@ -711,6 +807,10 @@ function BackupSystem.performSync()
         print("ERRO: Falha na sincronização")
         BackupSystem.logSync(false)
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 function BackupSystem.syncToCloud()
@@ -736,6 +836,10 @@ function BackupSystem.syncToLocalCloud(localPath, cloudPath)
     
     return result == 0
 end
+```
+
+#### Finalização
+```lua
 
 function BackupSystem.syncToDropbox(localPath, cloudPath)
     -- Sincronização para Dropbox (implementação específica)
@@ -752,10 +856,14 @@ end
 
 ---
 
-## 🔧 Recuperação
 
-### 🎯 **Sistema de Recuperação**
+---
 
+## 🔧 Recuperação 📋
+
+### 🎯 **Sistema de Recuperação** 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Sistema de recuperação de backups
 BackupSystem.recovery = {}
@@ -778,6 +886,10 @@ function BackupSystem.restoreFromBackup(backupPath)
     if BackupSystem.config.data.settings then
         success = success and BackupSystem.restoreSettings(backupPath)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Restaurar personagens
     if BackupSystem.config.data.characters then
@@ -807,6 +919,10 @@ function BackupSystem.restoreFromBackup(backupPath)
         -- Restaurar backup de segurança
         BackupSystem.restoreFromSafetyBackup(safetyBackup)
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     return success
 end
@@ -831,6 +947,10 @@ function BackupSystem.validateBackup(backupPath)
     if not metadata then
         return false
     end
+```
+
+#### Funcionalidade 3
+```lua
     
     -- Verificar checksum se habilitado
     if BackupSystem.config.validation.checksum then
@@ -853,6 +973,10 @@ function BackupSystem.createSafetyBackup()
 end
 
 function BackupSystem.removeSafetyBackup(safetyBackup)
+```
+
+#### Funcionalidade 4
+```lua
     if safetyBackup then
         local safetyPath = BackupSystem.config.storage.local.path .. safetyBackup
         os.execute("rm -rf " .. safetyPath)
@@ -878,6 +1002,10 @@ function BackupSystem.restoreSettings(backupPath)
         "modules.otml",
         "keybind.otml"
     }
+```
+
+#### Funcionalidade 5
+```lua
     
     for _, file in ipairs(settingsFiles) do
         local source = settingsPath .. file
@@ -908,6 +1036,10 @@ function BackupSystem.restoreCharacters(backupPath)
         if characterData then
             print("Dados do personagem restaurados: " .. characterData.name)
         end
+```
+
+#### Funcionalidade 6
+```lua
     end
     
     return true
@@ -929,6 +1061,10 @@ function BackupSystem.restoreModules(backupPath)
 end
 
 function BackupSystem.restoreLogs(backupPath)
+```
+
+#### Finalização
+```lua
     local logsPath = backupPath .. "logs/"
     
     -- Restaurar logs
@@ -946,10 +1082,14 @@ end
 
 ---
 
-## 📊 Monitoramento
 
-### 🎯 **Sistema de Monitoramento**
+---
 
+## 📊 Monitoramento 📋
+
+### 🎯 **Sistema de Monitoramento** 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Sistema de monitoramento de backups
 BackupSystem.monitoring = {}
@@ -973,6 +1113,10 @@ function BackupSystem.setupMonitoring()
 end
 
 function BackupSystem.startMonitoring()
+```
+
+#### Funcionalidade 1
+```lua
     -- Iniciar monitoramento em background
     connect(g_app, 'onRun', function()
         BackupSystem.updateMonitoring()
@@ -1001,6 +1145,10 @@ function BackupSystem.checkBackupMetrics()
     if BackupSystem.sync.enabled then
         metrics.syncStatus = BackupSystem.checkSyncStatus()
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     -- Verificar integridade dos backups
     BackupSystem.checkBackupIntegrity()
@@ -1022,6 +1170,10 @@ function BackupSystem.calculateStorageUsed()
                 f:close()
             end
         end
+```
+
+#### Funcionalidade 3
+```lua
     end
     
     return totalSize
@@ -1050,6 +1202,10 @@ function BackupSystem.checkBackupIntegrity()
         if not BackupSystem.validateBackup(backupFullPath) then
             table.insert(corruptedBackups, backup)
         end
+```
+
+#### Funcionalidade 4
+```lua
     end
     
     if #corruptedBackups > 0 then
@@ -1071,6 +1227,10 @@ function BackupSystem.generateMonitoringReport()
         storageUsed = metrics.storageUsed,
         syncStatus = metrics.syncStatus
     }
+```
+
+#### Finalização
+```lua
     
     -- Salvar relatório
     local reportFile = io.open(BackupSystem.config.storage.local.path .. "monitoring.log", "a")
@@ -1083,10 +1243,14 @@ end
 
 ---
 
-## 💡 Exemplos Práticos
 
-### 🎯 **Exemplo de Uso Completo**
+---
 
+## 💡 Exemplos Práticos 💡
+
+### 🎯 **Exemplo de Uso Completo** 🎮
+
+#### Inicialização e Configuração
 ```lua
 -- Exemplo completo de uso do sistema de backup
 function setupBackupSystem()
@@ -1119,6 +1283,10 @@ function manualBackupExample()
         for i, backup in ipairs(history) do
             print(string.format("  %d. %s (%s) - %s", i, backup.name, backup.type, backup.timestamp))
         end
+```
+
+#### Funcionalidade 1
+```lua
     else
         print("ERRO: Falha no backup manual")
     end
@@ -1147,6 +1315,10 @@ function restoreExample()
     else
         print("ERRO: Falha na restauração")
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 -- Exemplo de rollback
@@ -1171,6 +1343,10 @@ function rollbackExample()
         else
             print("ERRO: Falha no rollback")
         end
+```
+
+#### Finalização
+```lua
     else
         print("Nenhuma versão anterior disponível")
     end
@@ -1191,9 +1367,12 @@ end
 
 ---
 
-## ✅ Melhores Práticas
 
-### 🎯 **Recomendações de Backup**
+---
+
+## ✅ Melhores Práticas 📋
+
+### 🎯 **Recomendações de Backup** 📝
 
 1. **Frequência de Backup**
    - Backup automático a cada hora
@@ -1219,7 +1398,7 @@ end
    - Mantenha backups offline
    - Implemente controle de acesso
 
-### 🚨 **Considerações Importantes**
+### 🚨 **Considerações Importantes** 📝
 
 - **Espaço**: Monitore uso de espaço em disco
 - **Performance**: Evite backup durante uso intensivo
@@ -1228,9 +1407,12 @@ end
 
 ---
 
-## 📊 Métricas e KPIs
 
-### 📈 **Indicadores de Backup**
+---
+
+## 📊 Métricas e KPIs 📋
+
+### 📈 **Indicadores de Backup** 📝
 
 - **Backup Success Rate**: Taxa de sucesso dos backups (%)
 - **Recovery Time**: Tempo de recuperação (minutos)
@@ -1238,8 +1420,9 @@ end
 - **Data Loss Risk**: Risco de perda de dados (baixo/médio/alto)
 - **Backup Frequency**: Frequência de backups (por hora/dia)
 
-### 🔍 **Relatórios de Backup**
+### 🔍 **Relatórios de Backup** 📝
 
+#### Nível Basic
 ```json
 {
   "timestamp": "2025-01-27T10:30:00Z",
@@ -1266,9 +1449,103 @@ end
 }
 ```
 
+#### Nível Intermediate
+```json
+{
+  "timestamp": "2025-01-27T10:30:00Z",
+  "metrics": {
+    "totalBackups": 150,
+    "successfulBackups": 145,
+    "failedBackups": 5,
+    "successRate": 96.7,
+    "storageUsed": "2.5GB",
+    "lastBackup": "2025-01-27T09:30:00Z"
+  },
+  "backups": [
+    {
+      "name": "full_20250127_093000",
+      "type": "full",
+      "size": "150MB",
+      "status": "valid"
+    }
+  ],
+  "sync": {
+    "status": "synced",
+    "lastSync": "2025-01-27T10:25:00Z"
+  }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```json
+{
+  "timestamp": "2025-01-27T10:30:00Z",
+  "metrics": {
+    "totalBackups": 150,
+    "successfulBackups": 145,
+    "failedBackups": 5,
+    "successRate": 96.7,
+    "storageUsed": "2.5GB",
+    "lastBackup": "2025-01-27T09:30:00Z"
+  },
+  "backups": [
+    {
+      "name": "full_20250127_093000",
+      "type": "full",
+      "size": "150MB",
+      "status": "valid"
+    }
+  ],
+  "sync": {
+    "status": "synced",
+    "lastSync": "2025-01-27T10:25:00Z"
+  }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 **Story ID**: CORE-010  
 **Categoria**: CORE  
 **Status**: ✅ Completo  
 **Última Atualização**: 2025-01-27 
+
+---
+
+## 🧭 **NAVEGAÇÃO**
+
+### **📖 Guias Relacionados**
+
+- [Guia de Início Rápido](../Getting_Started_Guide.md)
+- [Guia de Configuração](../Configuration_Guide.md)
+- [Guia de Debug](../Debug_System_Guide.md)
+
+### **🔗 Links Úteis**
+
+- [Documentação Principal](../../../README.md)
+- [Índice da Wiki](../../../Wiki_Index.md)
+- [Sistema de Busca](../../../Navigation_Index_Search.md)
+
+### **📞 Suporte**
+
+Para dúvidas ou problemas:
+- Consulte a seção [Troubleshooting](#troubleshooting)
+- Verifique os [Exemplos Práticos](#exemplos-práticos)
+- Consulte a [Referência da API](#api)

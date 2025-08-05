@@ -1,0 +1,112 @@
+{
+  "Core": {
+    "description": "Sistemas fundamentais e núcleo do OTClient",
+    "subcategories": {
+      "Getting_Started": "Guias de início e primeiros passos",
+      "Module_System": "Sistema de módulos e extensões",
+      "Configuration": "Configuração e setup",
+      "Network": "Sistema de rede e comunicação",
+      "Debug": "Debugging e troubleshooting"
+    }
+  },
+  "Game_Systems": {
+    "description": "Sistemas específicos do jogo",
+    "subcategories": {
+      "Combat": "Sistema de combate e batalhas",
+      "Items": "Sistema de itens e inventário",
+      "Creatures": "Sistema de criaturas e NPCs",
+      "World": "Sistema de mundo e mapas",
+      "Effects": "Sistema de efeitos visuais"
+    }
+  },
+  "UI_Systems": {
+    "description": "Sistemas de interface e usuário",
+    "subcategories": {
+      "UI_Framework": "Framework de interface",
+      "OTUI": "Sistema OTUI",
+      "Animations": "Sistema de animações",
+      "Graphics": "Sistema gráfico",
+      "Drag_Drop": "Sistema drag & drop"
+    }
+  },
+  "Development": {
+    "description": "Ferramentas e guias de desenvolvimento",
+    "subcategories": {
+      "API_Reference": "Referências de API",
+      "Code_Examples": "Exemplos de código",
+      "Best_Practices": "Melhores práticas",
+      "Performance": "Otimização e performance",
+      "Deployment": "Deploy e distribuição"
+    }
+  },
+  "BMAD_System": {
+    "description": "Sistema de agentes inteligentes BMAD",
+    "subcategories": {
+      "Agents": "Agentes especializados",
+      "Workflows": "Fluxos de trabalho",
+      "Automation": "Automação e scripts",
+      "Templates": "Templates e modelos",
+      "Integration": "Integração com OTClient"
+    }
+  },
+  "Task_Management": {
+    "description": "Sistema de gerenciamento de tarefas",
+    "subcategories": {
+      "Task_Master": "Sistema principal de tarefas",
+      "Integrated_Manager": "Gerenciador integrado",
+      "Epics": "Epics e projetos",
+      "Reports": "Relatórios e métricas",
+      "Archives": "Arquivos e histórico"
+    }
+  },
+  "Integration": {
+    "description": "Sistema de integração OTClient-Canary",
+    "subcategories": {
+      "Architecture": "Comparação de arquiteturas",
+      "Protocols": "Análise de protocolos",
+      "UI_Frameworks": "Comparação de frameworks UI",
+      "Scripting": "Comparação de scripting",
+      "Migration": "Guias de migração"
+    }
+  },
+  "Research": {
+    "description": "Sistema de pesquisa Habdel",
+    "subcategories": {
+      "Canary_Research": "Pesquisa sobre Canary",
+      "OTClient_Research": "Pesquisa sobre OTClient",
+      "Integration_Research": "Pesquisa de integração",
+      "Educational": "Material educacional",
+      "Analysis": "Análises e relatórios"
+    }
+  },
+  "Documentation": {
+    "description": "Documentação geral e referências",
+    "subcategories": {
+      "Guides": "Guias e tutoriais",
+      "References": "Referências e APIs",
+      "Troubleshooting": "Solução de problemas",
+      "FAQ": "Perguntas frequentes",
+      "Glossary": "Glossários e termos"
+    }
+  },
+  "Tools": {
+    "description": "Ferramentas e scripts de manutenção",
+    "subcategories": {
+      "Analysis": "Scripts de análise",
+      "Validation": "Scripts de validação",
+      "Generation": "Scripts de geração",
+      "Maintenance": "Scripts de manutenção",
+      "Reports": "Scripts de relatórios"
+    }
+  },
+  "Legacy": {
+    "description": "Documentação legada e histórica",
+    "subcategories": {
+      "Old_Docs": "Documentação antiga",
+      "Archived": "Arquivos arquivados",
+      "Backup": "Backups e versões",
+      "Historical": "Material histórico",
+      "Deprecated": "Documentação obsoleta"
+    }
+  }
+}

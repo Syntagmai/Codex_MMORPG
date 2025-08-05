@@ -68,6 +68,7 @@ sequenceDiagram
 ### 🔑 Tipos de Autenticação
 
 #### **1. Autenticação por Senha**
+#### Nível Basic
 ```cpp
 // Estrutura de autenticação por senha
 struct PasswordAuth {
@@ -77,6 +78,47 @@ struct PasswordAuth {
     bool oldProtocol;              // Protocolo antigo
     uint32_t ip;                   // IP do cliente
 };
+```
+
+#### Nível Intermediate
+```cpp
+// Estrutura de autenticação por senha
+struct PasswordAuth {
+    std::string accountDescriptor;  // Email ou nome de usuário
+    std::string password;           // Senha criptografada
+    std::string characterName;      // Nome do personagem
+    bool oldProtocol;              // Protocolo antigo
+    uint32_t ip;                   // IP do cliente
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Estrutura de autenticação por senha
+struct PasswordAuth {
+    std::string accountDescriptor;  // Email ou nome de usuário
+    std::string password;           // Senha criptografada
+    std::string characterName;      // Nome do personagem
+    bool oldProtocol;              // Protocolo antigo
+    uint32_t ip;                   // IP do cliente
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 **Implementação C++ (Canary):**
@@ -98,10 +140,12 @@ bool IOLoginData::gameWorldAuthentication(const std::string &accountDescriptor,
     // Autenticação baseada no tipo configurado
     if (g_configManager().getString(AUTH_TYPE) == "session") {
         if (!account.authenticate()) {
+    -- Verificação condicional
             return false;
         }
     } else {
         if (!account.authenticate(password)) {
+    -- Verificação condicional
             return false;
         }
     }
@@ -118,6 +162,7 @@ bool IOLoginData::gameWorldAuthentication(const std::string &accountDescriptor,
 ```
 
 #### **2. Autenticação por Sessão**
+#### Nível Basic
 ```cpp
 // Estrutura de autenticação por sessão
 struct SessionAuth {
@@ -127,9 +172,47 @@ struct SessionAuth {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+// Estrutura de autenticação por sessão
+struct SessionAuth {
+    std::string sessionKey;        // Chave de sessão
+    std::string characterName;     // Nome do personagem
+    uint32_t accountId;           // ID da conta
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Estrutura de autenticação por sessão
+struct SessionAuth {
+    std::string sessionKey;        // Chave de sessão
+    std::string characterName;     // Nome do personagem
+    uint32_t accountId;           // ID da conta
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔒 Criptografia e Segurança
 
 #### **1. Criptografia RSA**
+#### Nível Basic
 ```cpp
 // Handshake RSA
 if (!Protocol::RSA_decrypt(msg)) {
@@ -139,7 +222,45 @@ if (!Protocol::RSA_decrypt(msg)) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Handshake RSA
+if (!Protocol::RSA_decrypt(msg)) {
+    g_logger().warn("[ProtocolGame::onRecvFirstMessage] - RSA Decrypt Failed");
+    disconnect();
+    return;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Handshake RSA
+if (!Protocol::RSA_decrypt(msg)) {
+    g_logger().warn("[ProtocolGame::onRecvFirstMessage] - RSA Decrypt Failed");
+    disconnect();
+    return;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Criptografia XTEA**
+#### Nível Basic
 ```cpp
 // Configuração da chave XTEA
 std::array<uint32_t, 4> key = {
@@ -153,6 +274,51 @@ enableXTEAEncryption();
 setXTEAKey(key.data());
 ```
 
+#### Nível Intermediate
+```cpp
+// Configuração da chave XTEA
+std::array<uint32_t, 4> key = {
+    msg.get<uint32_t>(),
+    msg.get<uint32_t>(),
+    msg.get<uint32_t>(),
+    msg.get<uint32_t>()
+};
+
+enableXTEAEncryption();
+setXTEAKey(key.data());
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Configuração da chave XTEA
+std::array<uint32_t, 4> key = {
+    msg.get<uint32_t>(),
+    msg.get<uint32_t>(),
+    msg.get<uint32_t>(),
+    msg.get<uint32_t>()
+};
+
+enableXTEAEncryption();
+setXTEAKey(key.data());
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🔄 Sincronização de Estado
@@ -160,6 +326,15 @@ setXTEAKey(key.data());
 ### 📊 Tipos de Sincronização
 
 #### **1. Sincronização de Login**
+#### Nível Basic
+```cpp
+    if (!IOLoginData::loadPlayerByName(player, name)) {
+    if (player->isNamlocked()) {
+    // 3. Verificar limites de conexão
+    if (g_game().getPlayersByAccount(accountId).size() >= maxOnline) {
+```
+
+#### Nível Intermediate
 ```cpp
 // Fluxo de sincronização durante login
 void ProtocolGame::login(const std::string &name, uint32_t accountId, OperatingSystem_t operatingSystem) {
@@ -189,7 +364,48 @@ void ProtocolGame::login(const std::string &name, uint32_t accountId, OperatingS
 }
 ```
 
+#### Nível Advanced
+```cpp
+// Fluxo de sincronização durante login
+void ProtocolGame::login(const std::string &name, uint32_t accountId, OperatingSystem_t operatingSystem) {
+    // 1. Carregar dados do jogador
+    auto player = std::make_shared<Player>(name);
+    if (!IOLoginData::loadPlayerByName(player, name)) {
+        disconnectClient("Your character could not be loaded.");
+        return;
+    }
+
+    // 2. Validar estado do jogador
+    if (player->isNamlocked()) {
+        disconnectClient("Your character has been namelocked.");
+        return;
+    }
+
+    // 3. Verificar limites de conexão
+    if (g_game().getPlayersByAccount(accountId).size() >= maxOnline) {
+        disconnectClient(fmt::format("You may only login with {} character{} of your account at the same time.", 
+                                   maxOnline, maxOnline > 1 ? "s" : ""));
+        return;
+    }
+
+    // 4. Sincronizar com o jogo
+    player->setOperatingSystem(operatingSystem);
+    g_game().playerLogin(player, true, true);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Sincronização de Estado do Jogo**
+#### Nível Basic
 ```cpp
 // Sincronização de dados do jogador
 void ProtocolGame::sendPlayerData() {
@@ -210,9 +426,69 @@ void ProtocolGame::sendPlayerData() {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Sincronização de dados do jogador
+void ProtocolGame::sendPlayerData() {
+    // Dados básicos
+    sendBasicData();
+    
+    // Habilidades
+    sendSkills();
+    
+    // Inventário
+    sendInventoryIds();
+    
+    // Status
+    sendStats();
+    
+    // Recursos
+    sendResourcesBalance();
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Sincronização de dados do jogador
+void ProtocolGame::sendPlayerData() {
+    // Dados básicos
+    sendBasicData();
+    
+    // Habilidades
+    sendSkills();
+    
+    // Inventário
+    sendInventoryIds();
+    
+    // Status
+    sendStats();
+    
+    // Recursos
+    sendResourcesBalance();
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎯 Padrões de Sincronização
 
 #### **1. Sincronização Push (Server → Client)**
+#### Nível Basic
 ```cpp
 // Envio de atualizações do servidor para o cliente
 void ProtocolGame::sendUpdateTile(const std::shared_ptr<Tile> &tile, const Position &pos) {
@@ -222,7 +498,45 @@ void ProtocolGame::sendUpdateTile(const std::shared_ptr<Tile> &tile, const Posit
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Envio de atualizações do servidor para o cliente
+void ProtocolGame::sendUpdateTile(const std::shared_ptr<Tile> &tile, const Position &pos) {
+    NetworkMessage msg;
+    GetTileDescription(tile, pos, msg);
+    writeToOutputBuffer(msg);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Envio de atualizações do servidor para o cliente
+void ProtocolGame::sendUpdateTile(const std::shared_ptr<Tile> &tile, const Position &pos) {
+    NetworkMessage msg;
+    GetTileDescription(tile, pos, msg);
+    writeToOutputBuffer(msg);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Sincronização Pull (Client → Server)**
+#### Nível Basic
 ```cpp
 // Solicitação de dados do cliente para o servidor
 void ProtocolGame::parseLookAt(NetworkMessage &msg) {
@@ -235,6 +549,49 @@ void ProtocolGame::parseLookAt(NetworkMessage &msg) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Solicitação de dados do cliente para o servidor
+void ProtocolGame::parseLookAt(NetworkMessage &msg) {
+    Position position = msg.getPosition();
+    uint16_t itemId = msg.get<uint16_t>();
+    uint8_t stackpos = msg.getByte();
+    
+    // Processar solicitação e enviar resposta
+    sendItemInspection(itemId, stackpos, g_game().getItemByPosition(position, stackpos), false);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Solicitação de dados do cliente para o servidor
+void ProtocolGame::parseLookAt(NetworkMessage &msg) {
+    Position position = msg.getPosition();
+    uint16_t itemId = msg.get<uint16_t>();
+    uint8_t stackpos = msg.getByte();
+    
+    // Processar solicitação e enviar resposta
+    sendItemInspection(itemId, stackpos, g_game().getItemByPosition(position, stackpos), false);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🚨 Tratamento de Erros
@@ -242,6 +599,7 @@ void ProtocolGame::parseLookAt(NetworkMessage &msg) {
 ### 📋 Sistema de Tratamento de Erros
 
 #### **1. Desconexão Controlada**
+#### Nível Basic
 ```cpp
 void ProtocolGame::disconnectClient(const std::string &message) const {
     auto output = OutputMessagePool::getOutputMessage();
@@ -252,7 +610,53 @@ void ProtocolGame::disconnectClient(const std::string &message) const {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+void ProtocolGame::disconnectClient(const std::string &message) const {
+    auto output = OutputMessagePool::getOutputMessage();
+    output->addByte(0x14);  // Opcode de erro
+    output->addString(message);
+    send(output);
+    disconnect();
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+void ProtocolGame::disconnectClient(const std::string &message) const {
+    auto output = OutputMessagePool::getOutputMessage();
+    output->addByte(0x14);  // Opcode de erro
+    output->addString(message);
+    send(output);
+    disconnect();
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Validação de Estado**
+#### Nível Basic
+```cpp
+if (g_game().getGameState() == GAME_STATE_STARTUP) {
+if (g_game().getGameState() == GAME_STATE_MAINTAIN) {
+```
+
+#### Nível Intermediate
 ```cpp
 // Validação do estado do servidor
 if (g_game().getGameState() == GAME_STATE_STARTUP) {
@@ -266,7 +670,40 @@ if (g_game().getGameState() == GAME_STATE_MAINTAIN) {
 }
 ```
 
+#### Nível Advanced
+```cpp
+// Validação do estado do servidor
+if (g_game().getGameState() == GAME_STATE_STARTUP) {
+    disconnectClient("Gameworld is starting up. Please wait.");
+    return;
+}
+
+if (g_game().getGameState() == GAME_STATE_MAINTAIN) {
+    disconnectClient("Gameworld is under maintenance. Please re-connect in a while.");
+    return;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **3. Validação de IP e Ban**
+#### Nível Basic
+```cpp
+// Verificação de IP banido
+if (IOBan::isIpBanned(getIP(), banInfo)) {
+    if (banInfo.reason.empty()) {
+       << " by " << banInfo.bannedBy << ".\n\nReason specified:\n" << banInfo.reason;
+```
+
+#### Nível Intermediate
 ```cpp
 // Verificação de IP banido
 BanInfo banInfo;
@@ -283,13 +720,42 @@ if (IOBan::isIpBanned(getIP(), banInfo)) {
 }
 ```
 
+#### Nível Advanced
+```cpp
+// Verificação de IP banido
+BanInfo banInfo;
+if (IOBan::isIpBanned(getIP(), banInfo)) {
+    if (banInfo.reason.empty()) {
+        banInfo.reason = "(none)";
+    }
+
+    std::ostringstream ss;
+    ss << "Your IP has been banned until " << formatDateShort(banInfo.expiresAt) 
+       << " by " << banInfo.bannedBy << ".\n\nReason specified:\n" << banInfo.reason;
+    disconnectClient(ss.str());
+    return;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔄 Recuperação de Erros
 
 #### **1. Reconexão Automática**
 ```cpp
 // Sistema de reconexão no cliente
 function ProtocolGame:onDisconnect()
+    -- Função: ProtocolGame
     if self.autoReconnect then
+    -- Verificação condicional
         scheduleEvent(function()
             self:connect()
         end, 5000)  -- Tentar reconectar em 5 segundos
@@ -298,6 +764,7 @@ end
 ```
 
 #### **2. Fallback de Protocolo**
+#### Nível Basic
 ```cpp
 // Fallback para protocolo antigo
 oldProtocol = g_configManager().getBoolean(OLD_PROTOCOL) && version <= 1100;
@@ -309,6 +776,47 @@ if (oldProtocol) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Fallback para protocolo antigo
+oldProtocol = g_configManager().getBoolean(OLD_PROTOCOL) && version <= 1100;
+
+if (oldProtocol) {
+    setChecksumMethod(CHECKSUM_METHOD_ADLER32);
+} else if (operatingSystem <= CLIENTOS_OTCLIENT_MAC) {
+    setChecksumMethod(CHECKSUM_METHOD_SEQUENCE);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Fallback para protocolo antigo
+oldProtocol = g_configManager().getBoolean(OLD_PROTOCOL) && version <= 1100;
+
+if (oldProtocol) {
+    setChecksumMethod(CHECKSUM_METHOD_ADLER32);
+} else if (operatingSystem <= CLIENTOS_OTCLIENT_MAC) {
+    setChecksumMethod(CHECKSUM_METHOD_SEQUENCE);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## ⚡ Otimizações de Performance
@@ -316,6 +824,7 @@ if (oldProtocol) {
 ### 🚀 Estratégias de Otimização
 
 #### **1. Buffer de Saída Otimizado**
+#### Nível Basic
 ```cpp
 void ProtocolGame::writeToOutputBuffer(NetworkMessage &msg) {
     if (g_dispatcher().context().isAsync()) {
@@ -328,7 +837,51 @@ void ProtocolGame::writeToOutputBuffer(NetworkMessage &msg) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+void ProtocolGame::writeToOutputBuffer(NetworkMessage &msg) {
+    if (g_dispatcher().context().isAsync()) {
+        g_dispatcher().addEvent([self = getThis(), msg] {
+            self->getOutputBuffer(msg.getLength())->append(msg);
+        }, __FUNCTION__);
+    } else {
+        getOutputBuffer(msg.getLength())->append(msg);
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+void ProtocolGame::writeToOutputBuffer(NetworkMessage &msg) {
+    if (g_dispatcher().context().isAsync()) {
+        g_dispatcher().addEvent([self = getThis(), msg] {
+            self->getOutputBuffer(msg.getLength())->append(msg);
+        }, __FUNCTION__);
+    } else {
+        getOutputBuffer(msg.getLength())->append(msg);
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Processamento Assíncrono**
+#### Nível Basic
 ```cpp
 // Processamento assíncrono de pacotes
 g_dispatcher().addEvent([self = getThis(), characterName, accountId, operatingSystem] { 
@@ -336,7 +889,41 @@ g_dispatcher().addEvent([self = getThis(), characterName, accountId, operatingSy
 }, __FUNCTION__);
 ```
 
+#### Nível Intermediate
+```cpp
+// Processamento assíncrono de pacotes
+g_dispatcher().addEvent([self = getThis(), characterName, accountId, operatingSystem] { 
+    self->login(characterName, accountId, operatingSystem); 
+}, __FUNCTION__);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Processamento assíncrono de pacotes
+g_dispatcher().addEvent([self = getThis(), characterName, accountId, operatingSystem] { 
+    self->login(characterName, accountId, operatingSystem); 
+}, __FUNCTION__);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **3. Cache de Dados**
+#### Nível Basic
 ```cpp
 // Cache de criaturas conhecidas
 void ProtocolGame::checkCreatureAsKnown(uint32_t id, bool &known, uint32_t &removedKnown) {
@@ -352,9 +939,59 @@ void ProtocolGame::checkCreatureAsKnown(uint32_t id, bool &known, uint32_t &remo
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Cache de criaturas conhecidas
+void ProtocolGame::checkCreatureAsKnown(uint32_t id, bool &known, uint32_t &removedKnown) {
+    auto it = knownCreatureSet.find(id);
+    if (it != knownCreatureSet.end()) {
+        known = true;
+        removedKnown = *it;
+        knownCreatureSet.erase(it);
+    } else {
+        known = false;
+        removedKnown = 0;
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Cache de criaturas conhecidas
+void ProtocolGame::checkCreatureAsKnown(uint32_t id, bool &known, uint32_t &removedKnown) {
+    auto it = knownCreatureSet.find(id);
+    if (it != knownCreatureSet.end()) {
+        known = true;
+        removedKnown = *it;
+        knownCreatureSet.erase(it);
+    } else {
+        known = false;
+        removedKnown = 0;
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 📊 Métricas de Performance
 
 #### **1. Latência de Comunicação**
+#### Nível Basic
 ```cpp
 // Medição de latência
 void ProtocolGame::sendPing() {
@@ -371,7 +1008,59 @@ void ProtocolGame::parsePingBack(NetworkMessage &msg) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Medição de latência
+void ProtocolGame::sendPing() {
+    auto output = OutputMessagePool::getOutputMessage();
+    output->addByte(0x1E);
+    send(output);
+    m_pingTime = std::chrono::steady_clock::now();
+}
+
+void ProtocolGame::parsePingBack(NetworkMessage &msg) {
+    auto now = std::chrono::steady_clock::now();
+    auto latency = std::chrono::duration_cast<std::chrono::milliseconds>(now - m_pingTime);
+    g_logger().trace("Ping: {}ms", latency.count());
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Medição de latência
+void ProtocolGame::sendPing() {
+    auto output = OutputMessagePool::getOutputMessage();
+    output->addByte(0x1E);
+    send(output);
+    m_pingTime = std::chrono::steady_clock::now();
+}
+
+void ProtocolGame::parsePingBack(NetworkMessage &msg) {
+    auto now = std::chrono::steady_clock::now();
+    auto latency = std::chrono::duration_cast<std::chrono::milliseconds>(now - m_pingTime);
+    g_logger().trace("Ping: {}ms", latency.count());
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Throughput de Dados**
+#### Nível Basic
 ```cpp
 // Controle de throughput
 void ProtocolGame::parsePacket(NetworkMessage &msg) {
@@ -385,6 +1074,51 @@ void ProtocolGame::parsePacket(NetworkMessage &msg) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Controle de throughput
+void ProtocolGame::parsePacket(NetworkMessage &msg) {
+    if (!acceptPackets || g_game().getGameState() == GAME_STATE_SHUTDOWN || msg.getLength() <= 0) {
+        return;
+    }
+    
+    // Processamento de pacotes com controle de taxa
+    uint8_t recvbyte = msg.getByte();
+    parsePacketFromDispatcher(msg, recvbyte);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Controle de throughput
+void ProtocolGame::parsePacket(NetworkMessage &msg) {
+    if (!acceptPackets || g_game().getGameState() == GAME_STATE_SHUTDOWN || msg.getLength() <= 0) {
+        return;
+    }
+    
+    // Processamento de pacotes com controle de taxa
+    uint8_t recvbyte = msg.getByte();
+    parsePacketFromDispatcher(msg, recvbyte);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🔧 Padrões de Implementação
@@ -394,6 +1128,7 @@ void ProtocolGame::parsePacket(NetworkMessage &msg) {
 ```cpp
 // Padrão de handshake cliente-servidor
 class ProtocolHandshake {
+    -- Classe: ProtocolHandshake
 private:
     enum HandshakeState {
         INITIAL,
@@ -436,6 +1171,7 @@ public:
 ```cpp
 // Padrão de gerenciamento de sessão
 class SessionManager {
+    -- Classe: SessionManager
 private:
     std::map<uint32_t, std::shared_ptr<Player>> activeSessions;
     std::mutex sessionMutex;
@@ -470,6 +1206,7 @@ public:
 ```cpp
 // Padrão de validação de entrada
 class InputValidator {
+    -- Classe: InputValidator
 public:
     struct ValidationResult {
         bool isValid;
@@ -532,6 +1269,7 @@ local ConnectionStatus = {
 }
 
 function updateConnectionStatus(status, message)
+    -- Função: updateConnectionStatus
     local statusWidget = g_ui.getWidget('connectionStatus')
     statusWidget:setText(message or status)
     statusWidget:setColor(getStatusColor(status))
@@ -542,6 +1280,7 @@ end
 ```lua
 -- Sistema de notificações de rede
 function showNetworkNotification(type, message)
+    -- Função: showNetworkNotification
     local notification = g_ui.createWidget('NetworkNotification')
     notification:setText(message)
     notification:setType(type)  -- 'info', 'warning', 'error'
@@ -560,16 +1299,19 @@ end
 ```lua
 -- Feedback visual de conexão
 function onConnectionAttempt()
+    -- Função: onConnectionAttempt
     showNetworkNotification('info', 'Connecting to server...')
     updateConnectionStatus(ConnectionStatus.CONNECTING)
 end
 
 function onConnectionSuccess()
+    -- Função: onConnectionSuccess
     showNetworkNotification('info', 'Connected successfully!')
     updateConnectionStatus(ConnectionStatus.CONNECTED)
 end
 
 function onConnectionError(message)
+    -- Função: onConnectionError
     showNetworkNotification('error', 'Connection failed: ' .. message)
     updateConnectionStatus(ConnectionStatus.ERROR, message)
 end
@@ -578,7 +1320,9 @@ end
 #### **2. Indicadores de Performance**
 ```lua
 -- Indicadores de performance de rede
+    --  Indicadores de performance de rede (traduzido)
 function updateNetworkMetrics(latency, packetLoss)
+    -- Função: updateNetworkMetrics
     local latencyWidget = g_ui.getWidget('latencyIndicator')
     local packetLossWidget = g_ui.getWidget('packetLossIndicator')
     
@@ -586,6 +1330,7 @@ function updateNetworkMetrics(latency, packetLoss)
     packetLossWidget:setText(packetLoss .. '%')
     
     -- Cores baseadas na qualidade
+    --  Cores baseadas na qualidade (traduzido)
     latencyWidget:setColor(getLatencyColor(latency))
     packetLossWidget:setColor(getPacketLossColor(packetLoss))
 end
@@ -598,6 +1343,7 @@ end
 ### ✅ Testes Unitários
 
 #### **1. Teste de Autenticação**
+#### Nível Basic
 ```cpp
 // Teste de autenticação
 TEST(AuthenticationTest, ValidCredentials) {
@@ -628,7 +1374,87 @@ TEST(AuthenticationTest, InvalidCredentials) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Teste de autenticação
+TEST(AuthenticationTest, ValidCredentials) {
+    std::string account = "test@example.com";
+    std::string password = "validpassword";
+    std::string character = "TestCharacter";
+    uint32_t accountId;
+    
+    bool result = IOLoginData::gameWorldAuthentication(
+        account, password, character, accountId, false, 127001
+    );
+    
+    EXPECT_TRUE(result);
+    EXPECT_GT(accountId, 0);
+}
+
+TEST(AuthenticationTest, InvalidCredentials) {
+    std::string account = "invalid@example.com";
+    std::string password = "wrongpassword";
+    std::string character = "TestCharacter";
+    uint32_t accountId;
+    
+    bool result = IOLoginData::gameWorldAuthentication(
+        account, password, character, accountId, false, 127001
+    );
+    
+    EXPECT_FALSE(result);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Teste de autenticação
+TEST(AuthenticationTest, ValidCredentials) {
+    std::string account = "test@example.com";
+    std::string password = "validpassword";
+    std::string character = "TestCharacter";
+    uint32_t accountId;
+    
+    bool result = IOLoginData::gameWorldAuthentication(
+        account, password, character, accountId, false, 127001
+    );
+    
+    EXPECT_TRUE(result);
+    EXPECT_GT(accountId, 0);
+}
+
+TEST(AuthenticationTest, InvalidCredentials) {
+    std::string account = "invalid@example.com";
+    std::string password = "wrongpassword";
+    std::string character = "TestCharacter";
+    uint32_t accountId;
+    
+    bool result = IOLoginData::gameWorldAuthentication(
+        account, password, character, accountId, false, 127001
+    );
+    
+    EXPECT_FALSE(result);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Teste de Protocolo**
+#### Nível Basic
 ```cpp
 // Teste de protocolo de comunicação
 TEST(ProtocolTest, HandshakeSequence) {
@@ -647,9 +1473,65 @@ TEST(ProtocolTest, HandshakeSequence) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Teste de protocolo de comunicação
+TEST(ProtocolTest, HandshakeSequence) {
+    ProtocolGame protocol;
+    NetworkMessage msg;
+    
+    // Simular handshake
+    msg.add<uint16_t>(CLIENTOS_OTCLIENT_LINUX);
+    msg.add<uint16_t>(CLIENT_VERSION);
+    msg.add<uint32_t>(CLIENT_VERSION);
+    
+    protocol.onRecvFirstMessage(msg);
+    
+    EXPECT_TRUE(protocol.isAuthenticated());
+    EXPECT_TRUE(protocol.isConnected());
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Teste de protocolo de comunicação
+TEST(ProtocolTest, HandshakeSequence) {
+    ProtocolGame protocol;
+    NetworkMessage msg;
+    
+    // Simular handshake
+    msg.add<uint16_t>(CLIENTOS_OTCLIENT_LINUX);
+    msg.add<uint16_t>(CLIENT_VERSION);
+    msg.add<uint32_t>(CLIENT_VERSION);
+    
+    protocol.onRecvFirstMessage(msg);
+    
+    EXPECT_TRUE(protocol.isAuthenticated());
+    EXPECT_TRUE(protocol.isConnected());
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔍 Testes de Integração
 
 #### **1. Teste Cliente-Servidor**
+#### Nível Basic
 ```cpp
 // Teste de comunicação cliente-servidor
 TEST(IntegrationTest, ClientServerCommunication) {
@@ -677,7 +1559,90 @@ TEST(IntegrationTest, ClientServerCommunication) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Teste de comunicação cliente-servidor
+TEST(IntegrationTest, ClientServerCommunication) {
+    // Iniciar servidor de teste
+    TestServer server;
+    server.start();
+    
+    // Conectar cliente
+    TestClient client;
+    bool connected = client.connect("localhost", 7172);
+    EXPECT_TRUE(connected);
+    
+    // Testar login
+    bool loggedIn = client.login("test@example.com", "password", "TestCharacter");
+    EXPECT_TRUE(loggedIn);
+    
+    // Testar comunicação
+    client.sendPing();
+    auto response = client.waitForResponse(1000);
+    EXPECT_EQ(response.type, "pong");
+    
+    // Limpeza
+    client.disconnect();
+    server.stop();
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Teste de comunicação cliente-servidor
+TEST(IntegrationTest, ClientServerCommunication) {
+    // Iniciar servidor de teste
+    TestServer server;
+    server.start();
+    
+    // Conectar cliente
+    TestClient client;
+    bool connected = client.connect("localhost", 7172);
+    EXPECT_TRUE(connected);
+    
+    // Testar login
+    bool loggedIn = client.login("test@example.com", "password", "TestCharacter");
+    EXPECT_TRUE(loggedIn);
+    
+    // Testar comunicação
+    client.sendPing();
+    auto response = client.waitForResponse(1000);
+    EXPECT_EQ(response.type, "pong");
+    
+    // Limpeza
+    client.disconnect();
+    server.stop();
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Teste de Performance**
+#### Nível Basic
+```cpp
+    client.connect("localhost", 7172);
+        client.sendPing();
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+    // Verificar que 1000 pings foram processados em menos de 10 segundos
+```
+
+#### Nível Intermediate
 ```cpp
 // Teste de performance de rede
 TEST(PerformanceTest, NetworkThroughput) {
@@ -706,6 +1671,45 @@ TEST(PerformanceTest, NetworkThroughput) {
 }
 ```
 
+#### Nível Advanced
+```cpp
+// Teste de performance de rede
+TEST(PerformanceTest, NetworkThroughput) {
+    TestServer server;
+    TestClient client;
+    
+    server.start();
+    client.connect("localhost", 7172);
+    
+    // Medir throughput
+    auto start = std::chrono::high_resolution_clock::now();
+    
+    for (int i = 0; i < 1000; i++) {
+        client.sendPing();
+        client.waitForResponse(100);
+    }
+    
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
+    
+    // Verificar que 1000 pings foram processados em menos de 10 segundos
+    EXPECT_LT(duration.count(), 10000);
+    
+    client.disconnect();
+    server.stop();
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 📊 Métricas e Monitoramento
@@ -716,6 +1720,7 @@ TEST(PerformanceTest, NetworkThroughput) {
 ```cpp
 // Sistema de métricas de latência
 class NetworkMetrics {
+    -- Classe: NetworkMetrics
 private:
     std::vector<uint32_t> latencyHistory;
     std::mutex metricsMutex;
@@ -760,6 +1765,7 @@ public:
 ```cpp
 // Estatísticas de conexão
 class ConnectionStats {
+    -- Classe: ConnectionStats
 private:
     std::atomic<uint32_t> totalConnections{0};
     std::atomic<uint32_t> activeConnections{0};
@@ -808,6 +1814,7 @@ public:
 ```cpp
 // Sistema de logging de erros
 class ErrorLogger {
+    -- Classe: ErrorLogger
 public:
     enum ErrorSeverity {
         INFO,
@@ -861,6 +1868,7 @@ private:
 ```cpp
 // Sistema de alertas
 class AlertSystem {
+    -- Classe: AlertSystem
 public:
     static void sendAlert(const std::string &component, const std::string &message, 
                          const std::string &details) {
@@ -890,6 +1898,7 @@ public:
 ```cpp
 // Implementação de compressão
 class DataCompression {
+    -- Classe: DataCompression
 public:
     static std::vector<uint8_t> compress(const std::vector<uint8_t> &data) {
         // Implementar compressão gzip/zlib
@@ -907,6 +1916,7 @@ public:
 ```cpp
 // Criptografia avançada
 class AdvancedEncryption {
+    -- Classe: AdvancedEncryption
 public:
     static std::vector<uint8_t> encrypt(const std::vector<uint8_t> &data, const std::string &key) {
         // Implementar criptografia AES-256-GCM
@@ -924,6 +1934,7 @@ public:
 ```cpp
 // Sistema de load balancing
 class LoadBalancer {
+    -- Classe: LoadBalancer
 private:
     std::vector<ServerEndpoint> servers;
     std::atomic<size_t> currentServer{0};
@@ -953,6 +1964,7 @@ public:
 ```cpp
 // Suporte a WebSocket
 class WebSocketProtocol {
+    -- Classe: WebSocketProtocol
 public:
     static bool upgradeToWebSocket(NetworkMessage &msg) {
         // Implementar upgrade para WebSocket
@@ -969,6 +1981,7 @@ public:
 ```cpp
 // Suporte a Protocol Buffers
 class ProtocolBufferSupport {
+    -- Classe: ProtocolBufferSupport
 public:
     static std::string serializeMessage(const google::protobuf::Message &message) {
         return message.SerializeAsString();
@@ -986,6 +1999,7 @@ public:
 
 ### 🎮 Exemplo 1: Sistema de Login Completo
 
+#### Inicialização e Configuração
 ```cpp
 // Sistema de login completo
 class LoginSystem {
@@ -1018,6 +2032,10 @@ public:
             result.errorMessage = "Invalid credentials";
             return result;
         }
+```
+
+#### Funcionalidade 1
+```cpp
         
         // 3. Criação de sessão
         auto player = std::make_shared<Player>(character);
@@ -1047,11 +2065,16 @@ public:
         
         return result;
     }
+```
+
+#### Finalização
+```cpp
 };
 ```
 
 ### 🎮 Exemplo 2: Sistema de Reconexão
 
+#### Inicialização e Configuração
 ```cpp
 // Sistema de reconexão automática
 class ReconnectionSystem {
@@ -1080,6 +2103,10 @@ public:
         // Restaurar estado do jogo
         restoreGameState();
     }
+```
+
+#### Funcionalidade 1
+```cpp
     
     void onConnectFailure() {
         int attempts = reconnectAttempts.fetch_add(1);
@@ -1103,6 +2130,10 @@ private:
         if (!isReconnecting.load()) {
             return;
         }
+```
+
+#### Finalização
+```cpp
         
         // Tentar reconectar
         g_game().connect();
@@ -1123,6 +2154,7 @@ private:
 
 ### 🎮 Exemplo 3: Sistema de Monitoramento
 
+#### Inicialização e Configuração
 ```cpp
 // Sistema de monitoramento de rede
 class NetworkMonitor {
@@ -1147,6 +2179,10 @@ public:
     void onPacketSent(uint32_t size) {
         stats->onDataSent(size);
     }
+```
+
+#### Funcionalidade 1
+```cpp
     
     void onConnectionEstablished() {
         stats->onConnectionEstablished();
@@ -1175,6 +2211,10 @@ public:
         
         g_logger().info(report.str());
     }
+```
+
+#### Finalização
+```cpp
 };
 ```
 
@@ -1187,6 +2227,7 @@ public:
 ```cpp
 // Integração com sistema de Game Store
 class GameStoreIntegration {
+    -- Classe: GameStoreIntegration
 public:
     static void sendStoreData(const std::shared_ptr<Player> &player) {
         // Enviar dados da loja via protocolo de comunicação
@@ -1203,6 +2244,7 @@ public:
 ```cpp
 // Integração com Extended Opcode
 class ExtendedOpcodeIntegration {
+    -- Classe: ExtendedOpcodeIntegration
 public:
     static void handleExtendedOpcode(const std::shared_ptr<Player> &player, 
                                    uint8_t opcode, const std::string &data) {

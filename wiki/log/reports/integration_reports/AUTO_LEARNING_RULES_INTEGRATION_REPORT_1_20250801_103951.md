@@ -96,6 +96,7 @@ auto_learning.record_interaction(interaction_data)
 ### **Cenário: Melhoria de Regra de Documentação**
 
 #### **1. Interações Registradas**
+#### Nível Basic
 ```json
 {
   "rule_file": "documentation-rules.md",
@@ -103,6 +104,43 @@ auto_learning.record_interaction(interaction_data)
   "success_score": 0.75,
   "feedback": "Regra muito genérica para Lua"
 }
+```
+
+#### Nível Intermediate
+```json
+{
+  "rule_file": "documentation-rules.md",
+  "context": {"task_type": "documentation", "technologies": ["Lua"]},
+  "success_score": 0.75,
+  "feedback": "Regra muito genérica para Lua"
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```json
+{
+  "rule_file": "documentation-rules.md",
+  "context": {"task_type": "documentation", "technologies": ["Lua"]},
+  "success_score": 0.75,
+  "feedback": "Regra muito genérica para Lua"
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 #### **2. Análise de Padrões**

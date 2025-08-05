@@ -68,6 +68,7 @@ python file_mover.py \
 
 Exemplo de configuração (`file_mover_example_config.json`):
 
+#### Nível Basic
 ```json
 {
   "source_dir": "/c/Users/Dell/Documents/GitHub/otclient_doc/wiki/habdel",
@@ -83,6 +84,59 @@ Exemplo de configuração (`file_mover_example_config.json`):
   "backup_enabled": true,
   "dry_run": false
 }
+```
+
+#### Nível Intermediate
+```json
+{
+  "source_dir": "/c/Users/Dell/Documents/GitHub/otclient_doc/wiki/habdel",
+  "destination_dir": "/c/Users/Dell/Documents/GitHub/otclient_doc/wiki/habdel/documentation",
+  "files": [
+    "EffectsSystem.md",
+    "NetworkSystem.md",
+    "ConfigurationAdvanced.md",
+    "SoundSystem.md",
+    "GraphicsSystem.md"
+  ],
+  "description": "Moving documentation files to organized structure",
+  "backup_enabled": true,
+  "dry_run": false
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```json
+{
+  "source_dir": "/c/Users/Dell/Documents/GitHub/otclient_doc/wiki/habdel",
+  "destination_dir": "/c/Users/Dell/Documents/GitHub/otclient_doc/wiki/habdel/documentation",
+  "files": [
+    "EffectsSystem.md",
+    "NetworkSystem.md",
+    "ConfigurationAdvanced.md",
+    "SoundSystem.md",
+    "GraphicsSystem.md"
+  ],
+  "description": "Moving documentation files to organized structure",
+  "backup_enabled": true,
+  "dry_run": false
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## Uso Programático

@@ -70,6 +70,7 @@ def analyze_compatibility(module_path: str) -> Dict[str, Any]:
 ### 📦 Módulos Core
 
 #### **Sistema de UI**
+#### Nível Basic
 ```lua
 -- Código original OTClient
 local function createOTClientUI()
@@ -101,7 +102,89 @@ local function createCanaryUI()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Código original OTClient
+local function createOTClientUI()
+    local button = g_ui.createWidget('Button', parent)
+    button:setText("Clique aqui")
+    button.onClick = function()
+        print("Botão clicado!")
+    end
+end
+
+-- Código adaptado para Canary
+local function createCanaryUI()
+    if Canary then
+        -- Implementação Canary
+        local button = UI.createButton({
+            text = "Clique aqui",
+            onClick = function()
+                print("Botão clicado!")
+            end
+        })
+    else
+        -- Fallback OTClient
+        local button = g_ui.createWidget('Button', parent)
+        button:setText("Clique aqui")
+        button.onClick = function()
+            print("Botão clicado!")
+        end
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Código original OTClient
+local function createOTClientUI()
+    local button = g_ui.createWidget('Button', parent)
+    button:setText("Clique aqui")
+    button.onClick = function()
+        print("Botão clicado!")
+    end
+end
+
+-- Código adaptado para Canary
+local function createCanaryUI()
+    if Canary then
+        -- Implementação Canary
+        local button = UI.createButton({
+            text = "Clique aqui",
+            onClick = function()
+                print("Botão clicado!")
+            end
+        })
+    else
+        -- Fallback OTClient
+        local button = g_ui.createWidget('Button', parent)
+        button:setText("Clique aqui")
+        button.onClick = function()
+            print("Botão clicado!")
+        end
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Sistema de Rede**
+#### Nível Basic
 ```lua
 -- Código original OTClient
 local function connectOTClient()
@@ -128,9 +211,81 @@ local function connectCanary()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Código original OTClient
+local function connectOTClient()
+    g_game.connect(server, port)
+    g_game.login(username, password)
+end
+
+-- Código adaptado para Canary
+local function connectCanary()
+    if Canary then
+        -- Implementação Canary
+        Network.connect({
+            host = server,
+            port = port,
+            onConnect = function()
+                Network.login(username, password)
+            end
+        })
+    else
+        -- Fallback OTClient
+        g_game.connect(server, port)
+        g_game.login(username, password)
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Código original OTClient
+local function connectOTClient()
+    g_game.connect(server, port)
+    g_game.login(username, password)
+end
+
+-- Código adaptado para Canary
+local function connectCanary()
+    if Canary then
+        -- Implementação Canary
+        Network.connect({
+            host = server,
+            port = port,
+            onConnect = function()
+                Network.login(username, password)
+            end
+        })
+    else
+        -- Fallback OTClient
+        g_game.connect(server, port)
+        g_game.login(username, password)
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎮 Sistemas de Jogo
 
 #### **Sistema de Criaturas**
+#### Nível Basic
 ```lua
 -- Código original OTClient
 local function createCreatureOTClient()
@@ -159,6 +314,85 @@ local function createCreatureCanary()
         end
     end
 end
+```
+
+#### Nível Intermediate
+```lua
+-- Código original OTClient
+local function createCreatureOTClient()
+    local creature = g_map.getCreatureById(creatureId)
+    if creature then
+        creature:setOutfit(outfit)
+        creature:setDirection(direction)
+    end
+end
+
+-- Código adaptado para Canary
+local function createCreatureCanary()
+    if Canary then
+        -- Implementação Canary
+        local creature = Game.Creature.getById(creatureId)
+        if creature then
+            creature:setOutfit(outfit)
+            creature:setDirection(direction)
+        end
+    else
+        -- Fallback OTClient
+        local creature = g_map.getCreatureById(creatureId)
+        if creature then
+            creature:setOutfit(outfit)
+            creature:setDirection(direction)
+        end
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Código original OTClient
+local function createCreatureOTClient()
+    local creature = g_map.getCreatureById(creatureId)
+    if creature then
+        creature:setOutfit(outfit)
+        creature:setDirection(direction)
+    end
+end
+
+-- Código adaptado para Canary
+local function createCreatureCanary()
+    if Canary then
+        -- Implementação Canary
+        local creature = Game.Creature.getById(creatureId)
+        if creature then
+            creature:setOutfit(outfit)
+            creature:setDirection(direction)
+        end
+    else
+        -- Fallback OTClient
+        local creature = g_map.getCreatureById(creatureId)
+        if creature then
+            creature:setOutfit(outfit)
+            creature:setDirection(direction)
+        end
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---
@@ -199,6 +433,7 @@ def test_migration_compatibility():
 #### **Testes de Performance**
 ```lua
 -- Teste de performance
+    --  Teste de performance (traduzido)
 local function testPerformance()
     local startTime = os.clock()
     
@@ -209,7 +444,9 @@ local function testPerformance()
     local duration = endTime - startTime
     
     -- Validar performance
+    --  Validar performance (traduzido)
     if duration > MAX_ACCEPTABLE_TIME then
+    -- Verificação condicional
         print("⚠️ Performance abaixo do esperado: " .. duration .. "s")
         return false
     else
@@ -266,9 +503,11 @@ echo "✅ Deploy concluído!"
 #### **Métricas de Monitoramento**
 ```lua
 -- Sistema de monitoramento
+    --  Sistema de monitoramento (traduzido)
 local MigrationMonitor = require('monitor.migration')
 
 -- Configurar monitoramento
+    --  Configurar monitoramento (traduzido)
 MigrationMonitor.configure({
     check_interval = 5000, -- 5 segundos
     alert_threshold = 0.9, -- 90%
@@ -281,6 +520,7 @@ MigrationMonitor.configure({
 })
 
 -- Iniciar monitoramento
+    --  Iniciar monitoramento (traduzido)
 MigrationMonitor.start()
 ```
 
@@ -296,7 +536,9 @@ MigrationMonitor.start()
 local CompatibilityWrapper = {}
 
 function CompatibilityWrapper.createUIElement(elementType, config)
+    -- Função: CompatibilityWrapper
     if Canary then
+    -- Verificação condicional
         return CanaryUI.create(elementType, config)
     else
         return g_ui.createWidget(elementType, config.parent)
@@ -310,7 +552,9 @@ end
 local ProtocolAdapter = {}
 
 function ProtocolAdapter.sendMessage(message)
+    -- Função: ProtocolAdapter
     if Canary then
+    -- Verificação condicional
         return CanaryProtocol.send(message)
     else
         return g_game.sendMessage(message)

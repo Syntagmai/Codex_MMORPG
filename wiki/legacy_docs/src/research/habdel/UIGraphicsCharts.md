@@ -97,6 +97,7 @@ Gráfico que conecta pontos de dados com linhas.
 
 ```lua
 -- Estrutura do LineChart
+    --  Estrutura do LineChart (traduzido)
 {
     type = 'line',
     data = {
@@ -120,6 +121,7 @@ Gráfico que representa dados com barras verticais ou horizontais.
 
 ```lua
 -- Estrutura do BarChart
+    --  Estrutura do BarChart (traduzido)
 {
     type = 'bar',
     data = {
@@ -143,6 +145,7 @@ Gráfico circular que representa proporções de um todo.
 
 ```lua
 -- Estrutura do PieChart
+    --  Estrutura do PieChart (traduzido)
 {
     type = 'pie',
     data = {
@@ -166,6 +169,7 @@ Gráfico de linha com área preenchida abaixo da linha.
 
 ```lua
 -- Estrutura do AreaChart
+    --  Estrutura do AreaChart (traduzido)
 {
     type = 'area',
     data = {
@@ -189,6 +193,7 @@ Gráfico que mostra correlação entre duas variáveis.
 
 ```lua
 -- Estrutura do ScatterChart
+    --  Estrutura do ScatterChart (traduzido)
 {
     type = 'scatter',
     data = {
@@ -214,20 +219,24 @@ Gráfico que mostra correlação entre duas variáveis.
 
 ```lua
 -- Sistema de coordenadas 2D
+    --  Sistema de coordenadas 2D (traduzido)
 local CoordinateSystem = {
     -- Coordenadas do widget
+    --  Coordenadas do widget (traduzido)
     widgetX = 0,
     widgetY = 0,
     widgetWidth = 400,
     widgetHeight = 300,
     
     -- Coordenadas dos dados
+    --  Coordenadas dos dados (traduzido)
     dataMinX = 0,
     dataMaxX = 100,
     dataMinY = 0,
     dataMaxY = 100,
     
     -- Margens
+    --  Margens (traduzido)
     marginLeft = 50,
     marginRight = 20,
     marginTop = 20,
@@ -235,7 +244,9 @@ local CoordinateSystem = {
 }
 
 -- Converter coordenadas de dados para pixels
+    --  Converter coordenadas de dados para pixels (traduzido)
 function CoordinateSystem.dataToPixel(x, y)
+    -- Função: CoordinateSystem
     local pixelX = CoordinateSystem.marginLeft + 
         (x - CoordinateSystem.dataMinX) / 
         (CoordinateSystem.dataMaxX - CoordinateSystem.dataMinX) * 
@@ -250,7 +261,9 @@ function CoordinateSystem.dataToPixel(x, y)
 end
 
 -- Converter coordenadas de pixels para dados
+    --  Converter coordenadas de pixels para dados (traduzido)
 function CoordinateSystem.pixelToData(pixelX, pixelY)
+    -- Função: CoordinateSystem
     local x = CoordinateSystem.dataMinX + 
         (pixelX - CoordinateSystem.marginLeft) / 
         (CoordinateSystem.widgetWidth - CoordinateSystem.marginLeft - CoordinateSystem.marginRight) * 
@@ -275,6 +288,7 @@ local GraphicsContext = {
 }
 
 function GraphicsContext.create(widget)
+    -- Função: GraphicsContext
     local context = {
         widget = widget,
         canvas = widget:getCanvas()
@@ -284,34 +298,42 @@ function GraphicsContext.create(widget)
 end
 
 function GraphicsContext:setColor(color)
+    -- Função: GraphicsContext
     self.canvas:setColor(color)
 end
 
 function GraphicsContext:setLineWidth(width)
+    -- Função: GraphicsContext
     self.canvas:setLineWidth(width)
 end
 
 function GraphicsContext:drawLine(x1, y1, x2, y2)
+    -- Função: GraphicsContext
     self.canvas:drawLine(x1, y1, x2, y2)
 end
 
 function GraphicsContext:drawRectangle(x, y, width, height)
+    -- Função: GraphicsContext
     self.canvas:drawRectangle(x, y, width, height)
 end
 
 function GraphicsContext:drawCircle(x, y, radius)
+    -- Função: GraphicsContext
     self.canvas:drawCircle(x, y, radius)
 end
 
 function GraphicsContext:drawText(text, x, y)
+    -- Função: GraphicsContext
     self.canvas:drawText(text, x, y)
 end
 
 function GraphicsContext:fillRectangle(x, y, width, height)
+    -- Função: GraphicsContext
     self.canvas:fillRectangle(x, y, width, height)
 end
 
 function GraphicsContext:fillCircle(x, y, radius)
+    -- Função: GraphicsContext
     self.canvas:fillCircle(x, y, radius)
 end
 ```
@@ -327,27 +349,34 @@ end
 local graphicsWidget = g_ui.createWidget('UIGraphicsWidget', parent)
 
 -- Configurar tamanho
+    --  Configurar tamanho (traduzido)
 graphicsWidget:setSize({width = 400, height = 300})
 
 -- Configurar dados
+    --  Configurar dados (traduzido)
 graphicsWidget:setData(chartData)
 
 -- Configurar estilo
+    --  Configurar estilo (traduzido)
 graphicsWidget:setStyle(chartStyle)
 
 -- Renderizar gráfico
 graphicsWidget:render()
 
 -- Eventos
+    --  Eventos (traduzido)
 graphicsWidget.onMouseMove = function(widget, mousePos)
     -- Implementar hover
+    --  Implementar hover (traduzido)
 end
 
 graphicsWidget.onClick = function(widget, mousePos)
     -- Implementar clique
+    --  Implementar clique (traduzido)
 end
 
 -- Propriedades
+    --  Propriedades (traduzido)
 graphicsWidget:getCanvas()
 graphicsWidget:getData()
 graphicsWidget:getStyle()
@@ -355,6 +384,7 @@ graphicsWidget:getStyle()
 
 ### 🎯 **Métodos de Charts**
 
+#### Nível Basic
 ```lua
 -- Criar gráfico de linha
 local lineChart = LineChart.create(parent, data, style)
@@ -375,8 +405,68 @@ chart:animateTo(newData, duration)
 chart:exportToImage(filename)
 ```
 
+#### Nível Intermediate
+```lua
+-- Criar gráfico de linha
+local lineChart = LineChart.create(parent, data, style)
+
+-- Criar gráfico de barras
+local barChart = BarChart.create(parent, data, style)
+
+-- Criar gráfico de pizza
+local pieChart = PieChart.create(parent, data, style)
+
+-- Atualizar dados
+chart:updateData(newData)
+
+-- Animar transição
+chart:animateTo(newData, duration)
+
+-- Exportar como imagem
+chart:exportToImage(filename)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Criar gráfico de linha
+local lineChart = LineChart.create(parent, data, style)
+
+-- Criar gráfico de barras
+local barChart = BarChart.create(parent, data, style)
+
+-- Criar gráfico de pizza
+local pieChart = PieChart.create(parent, data, style)
+
+-- Atualizar dados
+chart:updateData(newData)
+
+-- Animar transição
+chart:animateTo(newData, duration)
+
+-- Exportar como imagem
+chart:exportToImage(filename)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 📄 **Métodos de Sistema de Dados**
 
+#### Nível Basic
 ```lua
 -- Criar série de dados
 local dataSeries = DataSeries.create()
@@ -399,6 +489,69 @@ dataSeries:filter(predicate)
 dataSeries:sort(comparator)
 ```
 
+#### Nível Intermediate
+```lua
+-- Criar série de dados
+local dataSeries = DataSeries.create()
+
+-- Adicionar ponto
+dataSeries:addPoint(x, y)
+
+-- Adicionar múltiplos pontos
+dataSeries:addPoints(points)
+
+-- Obter estatísticas
+dataSeries:getMin()
+dataSeries:getMax()
+dataSeries:getAverage()
+
+-- Filtrar dados
+dataSeries:filter(predicate)
+
+-- Ordenar dados
+dataSeries:sort(comparator)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Criar série de dados
+local dataSeries = DataSeries.create()
+
+-- Adicionar ponto
+dataSeries:addPoint(x, y)
+
+-- Adicionar múltiplos pontos
+dataSeries:addPoints(points)
+
+-- Obter estatísticas
+dataSeries:getMin()
+dataSeries:getMax()
+dataSeries:getAverage()
+
+-- Filtrar dados
+dataSeries:filter(predicate)
+
+-- Ordenar dados
+dataSeries:sort(comparator)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 📊 UIGraphicsWidget
@@ -412,6 +565,7 @@ graphicsWidget:setId('myChart')
 graphicsWidget:setSize({width = 400, height = 300})
 
 -- Configurar dados
+    --  Configurar dados (traduzido)
 local chartData = {
     type = 'line',
     data = {
@@ -424,6 +578,7 @@ local chartData = {
 }
 
 -- Configurar estilo
+    --  Configurar estilo (traduzido)
 local chartStyle = {
     backgroundColor = '#FFFFFF',
     lineColor = '#2196F3',
@@ -441,11 +596,13 @@ graphicsWidget:setData(chartData)
 graphicsWidget:setStyle(chartStyle)
 
 -- Renderizar
+    --  Renderizar (traduzido)
 graphicsWidget:render()
 ```
 
 ### 🎨 **Implementação Avançada**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de gráficos avançado
 local AdvancedGraphics = {}
@@ -471,6 +628,10 @@ function AdvancedGraphics.create(parent, config)
     graphicsWidget.onRender = function(widget)
         AdvancedGraphics.customRender(widget)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Renderizar inicialmente
     graphicsWidget:render()
@@ -492,6 +653,10 @@ function AdvancedGraphics.handleMouseMove(widget, mousePos)
 end
 
 function AdvancedGraphics.handleClick(widget, mousePos)
+```
+
+#### Funcionalidade 2
+```lua
     local clickedData = AdvancedGraphics.getClickedData(widget, mousePos)
     if clickedData then
         print('Clicado em:', clickedData)
@@ -513,6 +678,10 @@ function AdvancedGraphics.customRender(widget)
         AdvancedGraphics.renderPieChart(canvas, data, style)
     end
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 function AdvancedGraphics.renderLineChart(canvas, data, style)
     -- Configurar estilo
@@ -536,6 +705,10 @@ function AdvancedGraphics.renderLineChart(canvas, data, style)
         local x, y = AdvancedGraphics.dataToPixel(point.x, point.y)
         canvas:fillCircle(x, y, style.pointSize or 4)
     end
+```
+
+#### Funcionalidade 4
+```lua
 end
 
 function AdvancedGraphics.renderBarChart(canvas, data, style)
@@ -563,6 +736,10 @@ function AdvancedGraphics.renderPieChart(canvas, data, style)
     for _, slice in ipairs(data.data) do
         total = total + slice.value
     end
+```
+
+#### Funcionalidade 5
+```lua
     
     local currentAngle = 0
     for _, slice in ipairs(data.data) do
@@ -584,6 +761,10 @@ function AdvancedGraphics.getTooltipData(widget, mousePos)
     -- Implementar detecção de tooltip
     return nil
 end
+```
+
+#### Funcionalidade 6
+```lua
 
 function AdvancedGraphics.showTooltip(widget, data, pos)
     -- Implementar exibição de tooltip
@@ -610,6 +791,10 @@ local chartConfig = {
             {x = 3, y = 8},
             {x = 4, y = 20}
         }
+```
+
+#### Finalização
+```lua
     },
     style = {
         lineColor = '#2196F3',
@@ -628,6 +813,7 @@ local chart = AdvancedGraphics.create(parent, chartConfig)
 
 ### 🎯 **LineChart**
 
+#### Inicialização e Configuração
 ```lua
 -- Implementação de gráfico de linha
 local LineChart = {}
@@ -656,6 +842,10 @@ function LineChart.create(parent, data, style)
         showLabels = true,
         labelColor = '#666666'
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Mesclar com estilo customizado
     if style then
@@ -677,6 +867,10 @@ function LineChart.create(parent, data, style)
 end
 
 function LineChart.render(widget)
+```
+
+#### Funcionalidade 2
+```lua
     local canvas = widget:getCanvas()
     local data = widget:getData()
     local style = widget:getStyle()
@@ -708,6 +902,10 @@ function LineChart.render(widget)
         
         canvas:drawLine(x1, y1, x2, y2)
     end
+```
+
+#### Funcionalidade 3
+```lua
     
     -- Desenhar pontos
     canvas:setColor(style.pointColor)
@@ -731,6 +929,10 @@ function LineChart.drawGrid(canvas, style)
         local pixelY = y * 30
         canvas:drawLine(50, pixelY, 350, pixelY)
     end
+```
+
+#### Funcionalidade 4
+```lua
     
     -- Linhas verticais
     for x = 0, 10 do
@@ -757,6 +959,10 @@ function LineChart.drawLabels(canvas, data, style)
         local x, y = LineChart.dataToPixel(widget, point.x, point.y)
         canvas:drawText(tostring(point.y), x + 5, y - 5)
     end
+```
+
+#### Funcionalidade 5
+```lua
 end
 
 function LineChart.dataToPixel(widget, x, y)
@@ -781,12 +987,17 @@ local lineStyle = {
     pointColor = '#FF5722',
     pointSize = 5
 }
+```
+
+#### Finalização
+```lua
 
 local lineChart = LineChart.create(parent, lineData, lineStyle)
 ```
 
 ### 📊 **BarChart**
 
+#### Inicialização e Configuração
 ```lua
 -- Implementação de gráfico de barras
 local BarChart = {}
@@ -815,6 +1026,10 @@ function BarChart.create(parent, data, style)
         showLabels = true,
         labelColor = '#666666'
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Mesclar com estilo customizado
     if style then
@@ -836,6 +1051,10 @@ function BarChart.create(parent, data, style)
 end
 
 function BarChart.render(widget)
+```
+
+#### Funcionalidade 2
+```lua
     local canvas = widget:getCanvas()
     local data = widget:getData()
     local style = widget:getStyle()
@@ -861,6 +1080,10 @@ function BarChart.render(widget)
         local x, y, width, height = BarChart.calculateBar(widget, i, bar, style)
         canvas:fillRectangle(x, y, width, height)
     end
+```
+
+#### Funcionalidade 3
+```lua
     
     -- Desenhar labels
     if style.showLabels then
@@ -882,6 +1105,10 @@ function BarChart.calculateBar(widget, index, bar, style)
 end
 
 function BarChart.getMaxValue(data)
+```
+
+#### Funcionalidade 4
+```lua
     local max = 0
     for _, bar in ipairs(data) do
         if bar.value > max then
@@ -903,6 +1130,10 @@ function BarChart.drawGrid(canvas, style)
 end
 
 function BarChart.drawAxes(canvas, style)
+```
+
+#### Funcionalidade 5
+```lua
     canvas:setColor(style.axisColor)
     canvas:setLineWidth(2)
     
@@ -930,6 +1161,10 @@ local barData = {
     {label = 'Mar', value = 120},
     {label = 'Abr', value = 200}
 }
+```
+
+#### Finalização
+```lua
 
 local barStyle = {
     barColor = '#4CAF50',
@@ -946,6 +1181,7 @@ local barChart = BarChart.create(parent, barData, barStyle)
 
 ### 📈 **Dashboard de Estatísticas**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de dashboard com múltiplos gráficos
 local StatisticsDashboard = {}
@@ -968,6 +1204,10 @@ function StatisticsDashboard.create(parent)
         lineColor = '#2196F3',
         lineWidth = 3
     })
+```
+
+#### Funcionalidade 1
+```lua
     salesChart:setPosition({x = 10, y = 30})
     salesChart:setSize({width = 380, height = 250})
     
@@ -991,6 +1231,10 @@ function StatisticsDashboard.create(parent)
         {label = 'Livros', value = 20, color = '#4CAF50'},
         {label = 'Outros', value = 10, color = '#FFC107'}
     })
+```
+
+#### Finalização
+```lua
     categoryChart:setPosition({x = 10, y = 300})
     categoryChart:setSize({width = 380, height = 250})
     
@@ -1003,6 +1247,7 @@ local dashboard = StatisticsDashboard.create(parent)
 
 ### 🎮 **Gráfico de Performance do Jogo**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de gráfico de performance para jogos
 local GamePerformanceChart = {}
@@ -1028,6 +1273,10 @@ function GamePerformanceChart.create(parent)
         showGrid = true,
         gridColor = '#E0E0E0'
     })
+```
+
+#### Funcionalidade 1
+```lua
     fpsChart:setPosition({x = 10, y = 30})
     fpsChart:setSize({width = 580, height = 360})
     
@@ -1057,6 +1306,10 @@ function GamePerformanceChart.startMonitoring(chart)
             if #fpsData > 60 then
                 table.remove(fpsData, 1)
             end
+```
+
+#### Finalização
+```lua
             
             -- Atualizar gráfico
             chart:setData({type = 'line', data = fpsData})
@@ -1086,7 +1339,9 @@ local performanceChart = GamePerformanceChart.create(parent)
 local ChartCache = {}
 
 function ChartCache.getCachedChart(chartId, data)
+    -- Função: ChartCache
     if not ChartCache[chartId] then
+    -- Verificação condicional
         ChartCache[chartId] = {
             data = data,
             lastUpdate = os.clock(),
@@ -1098,7 +1353,9 @@ function ChartCache.getCachedChart(chartId, data)
 end
 
 function ChartCache.updateChart(chartId, newData)
+    -- Função: ChartCache
     if ChartCache[chartId] then
+    -- Verificação condicional
         ChartCache[chartId].data = newData
         ChartCache[chartId].lastUpdate = os.clock()
         ChartCache[chartId].rendered = false
@@ -1107,16 +1364,20 @@ end
 
 -- ✅ BOM: Implementar renderização lazy
 function renderChartLazy(widget)
+    -- Função: renderChartLazy
     local cache = ChartCache.getCachedChart(widget:getId(), widget:getData())
     
     if not cache.rendered or os.clock() - cache.lastUpdate > 1.0 then
+    -- Verificação condicional
         widget:render()
         cache.rendered = true
     end
 end
 
 -- ❌ EVITE: Renderizar a cada frame
+    --  ❌ EVITE: Renderizar a cada frame (traduzido)
 function renderChartEveryFrame(widget)
+    -- Função: renderChartEveryFrame
     widget:render()  -- Muito custoso
 end
 ```
@@ -1125,6 +1386,7 @@ end
 
 ```lua
 -- ✅ BOM: Usar paleta de cores consistente
+    --  ✅ BOM: Usar paleta de cores consistente (traduzido)
 local CHART_COLORS = {
     PRIMARY = '#2196F3',
     SECONDARY = '#4CAF50',
@@ -1136,6 +1398,7 @@ local CHART_COLORS = {
 }
 
 -- ✅ BOM: Implementar temas
+    --  ✅ BOM: Implementar temas (traduzido)
 local ChartThemes = {
     light = {
         backgroundColor = '#FFFFFF',
@@ -1152,10 +1415,13 @@ local ChartThemes = {
 }
 
 function applyChartTheme(chart, themeName)
+    -- Função: applyChartTheme
     local theme = ChartThemes[themeName]
     if theme then
+    -- Verificação condicional
         local style = chart:getStyle()
         for key, value in pairs(theme) do
+    -- Loop de repetição
             style[key] = value
         end
         chart:setStyle(style)
@@ -1166,6 +1432,7 @@ end
 
 ### 🔧 **Estrutura**
 
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Organizar código em módulos
 local ChartSystem = {}
@@ -1202,6 +1469,10 @@ function ChartSystem.animateChart(chart, newData, duration)
         if progress < 1.0 then
             scheduleEvent(animate, 16)  -- ~60 FPS
         end
+```
+
+#### Funcionalidade 1
+```lua
     end
     
     animate()
@@ -1228,6 +1499,10 @@ local chart = ChartSystem.createChart(parent, {
     data = lineData,
     style = lineStyle
 })
+```
+
+#### Finalização
+```lua
 
 ChartSystem.animateChart(chart, newLineData, 1.0)  -- 1 segundo de animação
 ```
@@ -1246,6 +1521,7 @@ ChartSystem.animateChart(chart, newLineData, 1.0)  -- 1 segundo de animação
 
 ### ⚡ **Otimizações Recomendadas**
 
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Usar renderização por lotes
 function renderBatchCharts(charts)
@@ -1268,6 +1544,10 @@ function renderVisibleElements(canvas, elements, viewport)
 end
 
 function isElementVisible(element, viewport)
+```
+
+#### Funcionalidade 1
+```lua
     return element.x >= viewport.x and 
            element.x <= viewport.x + viewport.width and
            element.y >= viewport.y and 
@@ -1290,6 +1570,10 @@ function ElementPool.getElement()
         table.insert(ElementPool.inUse, element)
         return element
     end
+```
+
+#### Finalização
+```lua
 end
 
 function ElementPool.releaseElement(element)
@@ -1314,15 +1598,18 @@ local ChartPerformance = {
 }
 
 function ChartPerformance.startRender()
+    -- Função: ChartPerformance
     ChartPerformance.renderStart = os.clock()
 end
 
 function ChartPerformance.endRender()
+    -- Função: ChartPerformance
     ChartPerformance.renderTime = os.clock() - ChartPerformance.renderStart
     print('Chart render time:', ChartPerformance.renderTime * 1000, 'ms')
 end
 
 function ChartPerformance.updateStats(chartCount)
+    -- Função: ChartPerformance
     ChartPerformance.chartCount = chartCount
     ChartPerformance.memoryUsage = chartCount * 5 -- 5KB por gráfico
 end

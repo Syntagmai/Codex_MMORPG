@@ -95,6 +95,7 @@ wiki/teste/
 ### **1. Interceptação de Funções C++**
 ```lua
 -- Exemplo: Override de g_game.buyItem()
+    --  Exemplo: Override de g_game.buyItem() (traduzido)
 local originalBuyItem = g_game.buyItem
 g_game.buyItem = function(item, amount, ignoreCapacity, buyWithBackpack)
     return originalBuyItem(item, amount, ignoreCapacity, false)
@@ -104,6 +105,7 @@ end
 ### **2. UI Control**
 ```lua
 -- Exemplo: Ocultar widgets
+    --  Exemplo: Ocultar widgets (traduzido)
 buyWithBackpack:setVisible(false)
 ButtonBestiary:setVisible(false)
 ```
@@ -112,6 +114,7 @@ ButtonBestiary:setVisible(false)
 ```lua
 -- Exemplo: Desabilitar módulo locales
 function init()
+    -- Função: init
     print("🚫 Módulo Locales desabilitado")
     return
 end
@@ -123,6 +126,7 @@ end
 local originalCreateWidget = g_ui.createWidget
 g_ui.createWidget = function(widgetType, parent)
     if widgetType:find("Aura") or widgetType:find("Wing") then
+    -- Verificação condicional
         return nil
     end
     return originalCreateWidget(widgetType, parent)

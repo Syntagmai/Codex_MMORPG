@@ -136,6 +136,7 @@ data/scripts/
 ## 🎮 **Sistema de Ações**
 
 ### **📋 Actions Manager**
+#### Inicialização e Configuração
 ```lua
 -- data/scripts/actions/actions.lua
 local Actions = {}
@@ -158,6 +159,10 @@ function Actions.execute(player, actionId, ...)
         print("Unknown action: " .. actionId)
         return false
     end
+```
+
+#### Funcionalidade 1
+```lua
 end
 
 -- Ação de movimento
@@ -180,6 +185,10 @@ Actions.register("attack", function(player, targetId)
         target:takeDamage(damage, player)
         return true
     end
+```
+
+#### Finalização
+```lua
     return false
 end)
 
@@ -196,6 +205,7 @@ return Actions
 ```
 
 ### **⚔️ Combat System**
+#### Inicialização e Configuração
 ```lua
 -- data/scripts/actions/combat.lua
 local Combat = {}
@@ -224,6 +234,10 @@ function Combat.calculateDamage(attacker, target, weapon)
         damage = damage * Combat.config.criticalMultiplier
         attacker:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Critical hit!")
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     return math.max(1, math.floor(damage))
 end
@@ -250,6 +264,10 @@ function Combat.processAttack(attacker, target)
     if weapon then
         weapon:onHit(attacker, target, damage)
     end
+```
+
+#### Finalização
+```lua
     
     return true
 end
@@ -274,6 +292,7 @@ return Combat
 ## 🐉 **Sistema de Criaturas**
 
 ### **👤 Creature Manager**
+#### Inicialização e Configuração
 ```lua
 -- data/scripts/creatures/creatures.lua
 local CreatureManager = {}
@@ -308,6 +327,10 @@ function CreatureManager.create(creatureType, position)
     if config.behavior then
         creature:setBehavior(config.behavior)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Configurar loot
     if config.loot then
@@ -330,6 +353,10 @@ function CreatureManager.spawn(creatureType, position, respawnTime)
         
         return creature
     end
+```
+
+#### Finalização
+```lua
     return nil
 end
 
@@ -349,6 +376,7 @@ return CreatureManager
 ```
 
 ### **👹 Monster Definitions**
+#### Inicialização e Configuração
 ```lua
 -- data/scripts/creatures/monsters.lua
 local MonsterManager = require("creatures.creatures")
@@ -382,6 +410,10 @@ MonsterManager.register("dragon", {
         {itemId = 2393, chance = 50, count = 1},           -- Dragon shield
         {itemId = 2392, chance = 25, count = 1}            -- Dragon helmet
     },
+```
+
+#### Funcionalidade 1
+```lua
     abilities = {
         "fire_breath",
         "wing_buffet",
@@ -407,6 +439,10 @@ MonsterManager.register("demon", {
         "teleport",
         "summon_imps"
     }
+```
+
+#### Finalização
+```lua
 })
 ```
 
@@ -415,6 +451,7 @@ MonsterManager.register("demon", {
 ## 🎒 **Sistema de Itens**
 
 ### **📦 Item Manager**
+#### Inicialização e Configuração
 ```lua
 -- data/scripts/items/items.lua
 local ItemManager = {}
@@ -444,6 +481,10 @@ function ItemManager.create(itemId, count)
     if config.name then
         item:setName(config.name)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     if config.weight then
         item:setWeight(config.weight)
@@ -468,6 +509,10 @@ function ItemManager.generateLoot(lootTable)
             if type(count) == "table" then
                 count = math.random(count[1], count[2])
             end
+```
+
+#### Funcionalidade 2
+```lua
             
             local item = ItemManager.create(lootItem.itemId, count)
             if item then
@@ -492,6 +537,10 @@ function ItemManager.craft(recipe, player)
     for _, ingredient in ipairs(recipe.ingredients) do
         player:removeItem(ingredient.itemId, ingredient.count)
     end
+```
+
+#### Finalização
+```lua
     
     -- Criar resultado
     local result = ItemManager.create(recipe.result.itemId, recipe.result.count)
@@ -507,6 +556,7 @@ return ItemManager
 ```
 
 ### **⚔️ Weapon System**
+#### Inicialização e Configuração
 ```lua
 -- data/scripts/items/weapons.lua
 local WeaponManager = require("items.items")
@@ -532,6 +582,10 @@ WeaponManager.register(2407, { -- Steel Sword
         range = 1,
         weaponType = WEAPON_SWORD
     }
+```
+
+#### Funcionalidade 1
+```lua
 })
 
 -- Axe
@@ -556,6 +610,10 @@ WeaponManager.register(2380, { -- Iron Mace
         range = 1,
         weaponType = WEAPON_CLUB
     }
+```
+
+#### Finalização
+```lua
 })
 
 -- Distance
@@ -577,6 +635,7 @@ WeaponManager.register(2544, { -- Bow
 ## 🔮 **Sistema de Magias**
 
 ### **✨ Spell Manager**
+#### Inicialização e Configuração
 ```lua
 -- data/scripts/spells/spells.lua
 local SpellManager = {}
@@ -602,6 +661,10 @@ function SpellManager.cast(caster, spellName, target)
     if not SpellManager.checkRequirements(caster, spell) then
         return false
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Consumir recursos
     if spell.mana then
@@ -624,6 +687,10 @@ function SpellManager.cast(caster, spellName, target)
     
     return true
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 -- Verificar requisitos
 function SpellManager.checkRequirements(caster, spell)
@@ -646,6 +713,10 @@ function SpellManager.checkRequirements(caster, spell)
         caster:sendTextMessage(MESSAGE_EVENT_ADVANCE, "This spell is on cooldown.")
         return false
     end
+```
+
+#### Finalização
+```lua
     
     return true
 end
@@ -656,9 +727,11 @@ return SpellManager
 ### **⚡ Instant Spells**
 ```lua
 -- data/scripts/spells/instant.lua
+    --  data/scripts/spells/instant.lua (traduzido)
 local SpellManager = require("spells.spells")
 
 -- Light Healing
+    --  Light Healing (traduzido)
 SpellManager.register("exura", {
     level = 9,
     mana = 20,
@@ -671,6 +744,7 @@ SpellManager.register("exura", {
 })
 
 -- Heavy Magic Missile
+    --  Heavy Magic Missile (traduzido)
 SpellManager.register("adori gran", {
     level = 45,
     mana = 350,
@@ -683,6 +757,7 @@ SpellManager.register("adori gran", {
 })
 
 -- Fire Wave
+    --  Fire Wave (traduzido)
 SpellManager.register("exevo flam hur", {
     level = 18,
     mana = 170,
@@ -692,6 +767,7 @@ SpellManager.register("exevo flam hur", {
         local targets = caster:getTargetsInArea(target:getPosition(), 3)
         
         for _, t in ipairs(targets) do
+    -- Loop de repetição
             t:takeDamage(damage, caster)
         end
         
@@ -707,13 +783,17 @@ SpellManager.register("exevo flam hur", {
 ### **💬 TalkAction Manager**
 ```lua
 -- data/scripts/talkactions/talkactions.lua
+    --  data/scripts/talkactions/talkactions.lua (traduzido)
 local TalkActionManager = {}
 
 -- Registro de talkactions
+    --  Registro de talkactions (traduzido)
 TalkActionManager.registry = {}
 
 -- Registrar talkaction
+    --  Registrar talkaction (traduzido)
 function TalkActionManager.register(words, callback, access)
+    -- Função: TalkActionManager
     TalkActionManager.registry[words] = {
         callback = callback,
         access = access or 0
@@ -722,19 +802,25 @@ function TalkActionManager.register(words, callback, access)
 end
 
 -- Processar talkaction
+    --  Processar talkaction (traduzido)
 function TalkActionManager.process(player, words, param)
+    -- Função: TalkActionManager
     local talkAction = TalkActionManager.registry[words]
     if not talkAction then
+    -- Verificação condicional
         return false
     end
     
     -- Verificar acesso
+    --  Verificar acesso (traduzido)
     if player:getAccess() < talkAction.access then
+    -- Verificação condicional
         player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You don't have access to this command.")
         return false
     end
     
     -- Executar callback
+    --  Executar callback (traduzido)
     return talkAction.callback(player, param)
 end
 
@@ -744,12 +830,15 @@ return TalkActionManager
 ### **⚙️ Commands**
 ```lua
 -- data/scripts/talkactions/commands.lua
+    --  data/scripts/talkactions/commands.lua (traduzido)
 local TalkActionManager = require("talkactions.talkactions")
 
 -- Comando de teleporte
+    --  Comando de teleporte (traduzido)
 TalkActionManager.register("!go", function(player, param)
     local pos = Position(param)
     if pos:isValid() then
+    -- Verificação condicional
         player:teleportTo(pos)
         player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have been teleported.")
         return true
@@ -760,9 +849,11 @@ TalkActionManager.register("!go", function(player, param)
 end, 1)
 
 -- Comando de spawn
+    --  Comando de spawn (traduzido)
 TalkActionManager.register("!spawn", function(player, param)
     local creature = CreatureManager.create(param, player:getPosition())
     if creature then
+    -- Verificação condicional
         creature:spawn()
         player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Creature spawned: " .. param)
         return true
@@ -773,14 +864,17 @@ TalkActionManager.register("!spawn", function(player, param)
 end, 2)
 
 -- Comando de item
+    --  Comando de item (traduzido)
 TalkActionManager.register("!item", function(player, param)
     local itemId, count = param:match("(%d+)%s*(%d*)")
     itemId = tonumber(itemId)
     count = tonumber(count) or 1
     
     if itemId then
+    -- Verificação condicional
         local item = ItemManager.create(itemId, count)
         if item then
+    -- Verificação condicional
             player:addItem(item)
             player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You received: " .. item:getName())
             return true
@@ -799,14 +893,19 @@ end, 1)
 ### **📅 Event Manager**
 ```lua
 -- data/scripts/events/events.lua
+    --  data/scripts/events/events.lua (traduzido)
 local EventManager = {}
 
 -- Registro de eventos
+    --  Registro de eventos (traduzido)
 EventManager.registry = {}
 
 -- Registrar evento
+    --  Registrar evento (traduzido)
 function EventManager.register(eventType, callback)
+    -- Função: EventManager
     if not EventManager.registry[eventType] then
+    -- Verificação condicional
         EventManager.registry[eventType] = {}
     end
     table.insert(EventManager.registry[eventType], callback)
@@ -814,10 +913,14 @@ function EventManager.register(eventType, callback)
 end
 
 -- Disparar evento
+    --  Disparar evento (traduzido)
 function EventManager.trigger(eventType, ...)
+    -- Função: EventManager
     local callbacks = EventManager.registry[eventType]
     if callbacks then
+    -- Verificação condicional
         for _, callback in ipairs(callbacks) do
+    -- Loop de repetição
             callback(...)
         end
     end
@@ -827,6 +930,7 @@ return EventManager
 ```
 
 ### **👤 Player Events**
+#### Inicialização e Configuração
 ```lua
 -- data/scripts/events/player_events.lua
 local EventManager = require("events.events")
@@ -855,6 +959,10 @@ EventManager.register("playerLogout", function(player)
     -- Salvar dados
     player:save()
 end)
+```
+
+#### Finalização
+```lua
 
 -- Evento de morte
 EventManager.register("playerDeath", function(player, killer)
@@ -888,6 +996,7 @@ end)
 ## 🏰 **Sistema de Raids**
 
 ### **⚔️ Raid Manager**
+#### Inicialização e Configuração
 ```lua
 -- data/scripts/raids/raids.lua
 local RaidManager = {}
@@ -918,6 +1027,10 @@ function RaidManager.start(raidName, position)
         players = {},
         status = "active"
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Spawnar criaturas
     for _, spawn in ipairs(config.spawns) do
@@ -947,6 +1060,10 @@ function RaidManager.process()
             if raid.config.logic then
                 raid.config.logic(raid)
             end
+```
+
+#### Finalização
+```lua
         end
     end
 end
@@ -980,24 +1097,29 @@ return RaidManager
 -- APIs para interação com o jogo
 Game = {
     -- Jogadores
+    --  Jogadores (traduzido)
     getPlayer = function(name) end,
     getPlayers = function() end,
     broadcastMessage = function(message, type) end,
     
     -- Criaturas
+    --  Criaturas (traduzido)
     getCreature = function(id) end,
     getCreatures = function() end,
     createCreature = function(type, position) end,
     
     -- Itens
+    --  Itens (traduzido)
     getItem = function(id) end,
     createItem = function(itemId, count) end,
     
     -- Mundo
+    --  Mundo (traduzido)
     getTile = function(position) end,
     setTile = function(position, tile) end,
     
     -- Tempo
+    --  Tempo (traduzido)
     getTime = function() end,
     getUptime = function() end
 }
@@ -1006,8 +1128,10 @@ Game = {
 ### **🗄️ Database APIs**
 ```lua
 -- APIs para banco de dados
+    --  APIs para banco de dados (traduzido)
 Database = {
     -- Queries
+    --  Queries (traduzido)
     query = function(sql, ...) end,
     storeQuery = function(sql, ...) end,
     execute = function(sql, ...) end,
@@ -1018,6 +1142,7 @@ Database = {
     rollbackTransaction = function() end,
     
     -- Resultados
+    --  Resultados (traduzido)
     result = {
         getDataInt = function(column) end,
         getDataString = function(column) end,
@@ -1031,16 +1156,19 @@ Database = {
 ### **🌐 Network APIs**
 ```lua
 -- APIs para rede
+    --  APIs para rede (traduzido)
 Network = {
     -- Conexões
     connect = function(address, port) end,
     disconnect = function(connection) end,
     
     -- Envio de dados
+    --  Envio de dados (traduzido)
     send = function(connection, data) end,
     sendPacket = function(connection, packet) end,
     
     -- Recebimento de dados
+    --  Recebimento de dados (traduzido)
     receive = function(connection) end,
     receivePacket = function(connection) end
 }
@@ -1081,8 +1209,10 @@ Network = {
 #### **Código Compatível**
 ```lua
 -- Ambos suportam
+    --  Ambos suportam (traduzido)
 local player = Game.getPlayer("PlayerName")
 if player then
+    -- Verificação condicional
     player:setHealth(100)
     player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Hello!")
 end
@@ -1091,10 +1221,12 @@ end
 #### **Código Incompatível**
 ```lua
 -- Canary (servidor)
+    --  Canary (servidor) (traduzido)
 local creature = CreatureManager.create("dragon", position)
 creature:spawn()
 
 -- OTClient (cliente)
+    --  OTClient (cliente) (traduzido)
 local creature = g_ui.createWidget("CreatureWidget")
 creature:setCreature(creatureData)
 ```

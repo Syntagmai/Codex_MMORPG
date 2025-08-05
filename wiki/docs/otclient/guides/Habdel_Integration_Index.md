@@ -1,14 +1,10 @@
----
-tags: [integration, habdel, wiki, index, navigation]
-type: integration_index
-status: active
-priority: high
-created: 2025-07-29
----
 
 # 🔗 Índice de Integração Habdel-Wiki
 
-## 📋 Visão Geral
+
+---
+
+## 📋 Visão Geral 🎯
 
 Este índice conecta a **documentação habdel** com a **wiki principal** do OTClient, fornecendo navegação unificada e referências cruzadas.
 
@@ -18,13 +14,19 @@ Este índice conecta a **documentação habdel** com a **wiki principal** do OTC
 
 ---
 
-## 🎨 Sistema de Interface (UI)
 
-### **📚 Documentação Habdel:**
+---
 
-## 🎨 Sistema de Interface
+## 🎨 Sistema de Interface (UI) ⚙️
 
-### **📚 Documentação Habdel:**
+### **📚 Documentação Habdel:** 📝
+
+
+---
+
+## 🎨 Sistema de Interface ⚙️
+
+### **📚 Documentação Habdel:** 📝
 - 📋 **UIButton.md**
 - 📋 **UIEvents.md**
 - 📋 **UILayouts.md**
@@ -46,11 +48,11 @@ Este índice conecta a **documentação habdel** com a **wiki principal** do OTC
 - ✅ **UIReportWidgets.md** (UI-020) - Widgets de Relatórios
 - ✅ **UITooltips.md** (UI-013) - Sistema de Tooltips
 
-### **📖 Wiki Principal:**
+### **📖 Wiki Principal:** 📝
 - 📄 **OTUI_Module_Development_Guide.md**
 - 📄 **UI_System_Guide.md**
 
-### **🔗 Links de Integração:**
+### **🔗 Links de Integração:** 📝
 - 🔗 **UIButton.md** → **UI_System_Guide.md**
 - 🔗 **UIEvents.md** → **UI_System_Guide.md**
 - 🔗 **UILayouts.md** → **UI_System_Guide.md**
@@ -74,19 +76,22 @@ Este índice conecta a **documentação habdel** com a **wiki principal** do OTC
 
 ---
 
-## 🎮 Sistema de Jogo
 
-### **📚 Documentação Habdel:**
+---
+
+## 🎮 Sistema de Jogo ⚙️
+
+### **📚 Documentação Habdel:** 📝
 - 📋 **CreatureSystem.md**
 - 📋 **ItemSystem.md**
 - 📋 **Protocol.md**
 - 📋 **WorldSystem.md**
 
-### **📖 Wiki Principal:**
+### **📖 Wiki Principal:** 📝
 - 📄 **Combat_System_Guide.md**
 - 📄 **World_System_Guide.md**
 
-### **🔗 Links de Integração:**
+### **🔗 Links de Integração:** 📝
 - 🔗 **CreatureSystem.md** → **Creature_System_Guide.md**
 - 🔗 **ItemSystem.md** → **Item_System_Guide.md**
 - 🔗 **Protocol.md** → **Protocol_System_Guide.md**
@@ -94,22 +99,25 @@ Este índice conecta a **documentação habdel** com a **wiki principal** do OTC
 
 ---
 
-## 🔧 Sistema Central
 
-### **📚 Documentação Habdel:**
+---
+
+## 🔧 Sistema Central ⚙️
+
+### **📚 Documentação Habdel:** 📝
 - 📋 **Configuration.md**
 - 📋 **GraphicsSystem.md**
 - 📋 **ModuleSystem.md**
 - 📋 **NetworkSystem.md**
 - 📋 **SoundSystem.md**
 
-### **📖 Wiki Principal:**
+### **📖 Wiki Principal:** 📝
 - 📄 **Advanced_Configuration_Guide.md**
 - 📄 **Configuration_Guide.md**
 - 📄 **Module_Development_Guide.md**
 - 📄 **Module_System_Guide.md**
 
-### **🔗 Links de Integração:**
+### **🔗 Links de Integração:** 📝
 - 🔗 **Configuration.md** → **Configuration_Guide.md**
 - 🔗 **GraphicsSystem.md** → **Graphics_System_Guide.md**
 - 🔗 **ModuleSystem.md** → **Module_System_Guide.md**
@@ -118,14 +126,17 @@ Este índice conecta a **documentação habdel** com a **wiki principal** do OTC
 
 ---
 
-## 📚 Guias e Tutoriais
 
-### **📚 Documentação Habdel:**
+---
+
+## 📚 Guias e Tutoriais 📋
+
+### **📚 Documentação Habdel:** 📝
 - ✅ **BestPractices.md** (GUIDE-002) - Boas Práticas de Desenvolvimento - OTClient
 - 📋 **FirstModule.md**
 - 📋 **GettingStarted.md**
 
-### **📖 Wiki Principal:**
+### **📖 Wiki Principal:** 📝
 - 📄 **Animation_System_Guide.md**
 - 📄 **Creature_System_Guide.md**
 - 📄 **Debug_System_Guide.md**
@@ -140,54 +151,63 @@ Este índice conecta a **documentação habdel** com a **wiki principal** do OTC
 - 📄 **Protocol_System_Guide.md**
 - 📄 **Sound_System_Guide.md**
 
-### **🔗 Links de Integração:**
+### **🔗 Links de Integração:** 📝
 - 🔗 **BestPractices.md** → **Module_Development_Guide.md**
 - 🔗 **FirstModule.md** → **Module_Development_Guide.md**
 - 🔗 **GettingStarted.md** → **Getting_Started_Guide.md**
 
 ---
 
-## 🔍 Referências
 
-### **📚 Documentação Habdel:**
+---
+
+## 🔍 Referências 📚
+
+### **📚 Documentação Habdel:** 📝
 - 📋 **CheatSheet.md**
 - 📋 **LuaAPI.md**
 
-### **📖 Wiki Principal:**
+### **📖 Wiki Principal:** 📝
 - 📄 **Cheat_Sheet.md**
 - 📄 **Lua_API_Reference.md**
 
-### **🔗 Links de Integração:**
+### **🔗 Links de Integração:** 📝
 - 🔗 **CheatSheet.md** → **Cheat_Sheet.md**
 - 🔗 **LuaAPI.md** → **Lua_API_Reference.md**
 
 ---
 
-## 🧭 Navegação Rápida
 
-### **🎯 Por Categoria:**
+---
+
+## 🧭 Navegação Rápida 📋
+
+### **🎯 Por Categoria:** 📝
 - **UI**: 20 arquivos habdel → 2 arquivos wiki
 - **Game**: 4 arquivos habdel → 2 arquivos wiki
 - **Core**: 5 arquivos habdel → 4 arquivos wiki
 - **Guide**: 3 arquivos habdel → 13 arquivos wiki
 - **Reference**: 2 arquivos habdel → 2 arquivos wiki
 
-### **📊 Estatísticas:**
+### **📊 Estatísticas:** 📝
 - **Total de Mapeamentos**: 23
 - **Cobertura**: 20.4%
 - **Arquivos Sem Mapeamento**: 90
 
 ---
 
-## 🔧 Como Usar
 
-### **📖 Para Desenvolvedores:**
+---
+
+## 🔧 Como Usar 📋
+
+### **📖 Para Desenvolvedores:** 📝
 1. **Consulte a documentação habdel** para detalhes técnicos específicos
 2. **Use a wiki principal** para guias práticos e exemplos
 3. **Siga os links de integração** para navegação completa
 4. **Atualize ambos** quando fizer mudanças
 
-### **📝 Para Contribuidores:**
+### **📝 Para Contribuidores:** 📝
 1. **Mantenha sincronização** entre habdel e wiki
 2. **Atualize este índice** quando adicionar novos arquivos
 3. **Use padrões consistentes** de nomenclatura
@@ -195,16 +215,19 @@ Este índice conecta a **documentação habdel** com a **wiki principal** do OTC
 
 ---
 
-## 📈 Status da Integração
 
-### **✅ Integração Completa:**
+---
+
+## 📈 Status da Integração 📋
+
+### **✅ Integração Completa:** 📝
 - **UI System**: 8/20 arquivos
 - **Game System**: 4/4 arquivos
 - **Core System**: 5/5 arquivos
 - **Guide System**: 3/3 arquivos
 - **Reference System**: 2/2 arquivos
 
-### **🔄 Próximos Passos:**
+### **🔄 Próximos Passos:** 📝
 1. **Completar mapeamentos** faltantes
 2. **Validar links** de integração
 3. **Criar navegação** automática

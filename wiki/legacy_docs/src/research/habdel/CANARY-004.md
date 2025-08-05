@@ -42,6 +42,7 @@ O sistema de rede do Canary é responsável por toda a comunicação cliente-ser
 #### **1. Connection Manager**
 ```cpp
 class ConnectionManager {
+    -- Classe: ConnectionManager
 public:
     static ConnectionManager &getInstance();
     Connection_ptr createConnection(asio::io_service &io_service, 
@@ -64,6 +65,7 @@ private:
 #### **2. Connection Class**
 ```cpp
 class Connection : public std::enable_shared_from_this<Connection> {
+    -- Classe: Connection
 public:
     Connection(asio::io_service &initIoService, 
               ConstServicePort_ptr initservicePort);
@@ -99,6 +101,7 @@ private:
 #### **3. Protocol System**
 ```cpp
 class Protocol : public std::enable_shared_from_this<Protocol> {
+    -- Classe: Protocol
 public:
     explicit Protocol(const Connection_ptr &initConnection);
     
@@ -139,6 +142,7 @@ private:
 #### **4. Network Message System**
 ```cpp
 class NetworkMessage {
+    -- Classe: NetworkMessage
 public:
     using MsgSize_t = uint16_t;
     static constexpr MsgSize_t INITIAL_BUFFER_POSITION = 7;
@@ -185,10 +189,33 @@ private:
 ### **🔐 Sistema de Segurança**
 
 #### **Criptografia XTEA**
+#### Nível Basic
+```cpp
+
+```
+
+#### Nível Intermediate
 ```cpp
 void XTEA_transform(uint8_t* buffer, size_t messageLength, bool encrypt) const;
 void XTEA_encrypt(OutputMessage &msg) const;
 bool XTEA_decrypt(NetworkMessage &msg) const;
+```
+
+#### Nível Advanced
+```cpp
+void XTEA_transform(uint8_t* buffer, size_t messageLength, bool encrypt) const;
+void XTEA_encrypt(OutputMessage &msg) const;
+bool XTEA_decrypt(NetworkMessage &msg) const;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 **Características**:
@@ -198,8 +225,36 @@ bool XTEA_decrypt(NetworkMessage &msg) const;
 - **Performance**: Otimizado para jogos online
 
 #### **Compressão**
+#### Nível Basic
 ```cpp
 bool compression(OutputMessage &msg) const;
+```
+
+#### Nível Intermediate
+```cpp
+bool compression(OutputMessage &msg) const;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+bool compression(OutputMessage &msg) const;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 **Características**:
@@ -238,10 +293,42 @@ bool compression(OutputMessage &msg) const;
 ### **⚡ Performance e Otimizações**
 
 #### **1. ASIO Integration**
+#### Nível Basic
 ```cpp
 asio::ip::tcp::socket socket;
 asio::high_resolution_timer readTimer;
 asio::high_resolution_timer writeTimer;
+```
+
+#### Nível Intermediate
+```cpp
+asio::ip::tcp::socket socket;
+asio::high_resolution_timer readTimer;
+asio::high_resolution_timer writeTimer;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+asio::ip::tcp::socket socket;
+asio::high_resolution_timer readTimer;
+asio::high_resolution_timer writeTimer;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 **Benefícios**:
@@ -251,9 +338,39 @@ asio::high_resolution_timer writeTimer;
 - **Event-driven**: Baseado em eventos
 
 #### **2. Memory Management**
+#### Nível Basic
 ```cpp
 std::list<OutputMessage_ptr> messageQueue;
 std::array<uint8_t, NETWORKMESSAGE_MAXSIZE> buffer = {};
+```
+
+#### Nível Intermediate
+```cpp
+std::list<OutputMessage_ptr> messageQueue;
+std::array<uint8_t, NETWORKMESSAGE_MAXSIZE> buffer = {};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+std::list<OutputMessage_ptr> messageQueue;
+std::array<uint8_t, NETWORKMESSAGE_MAXSIZE> buffer = {};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 **Benefícios**:
@@ -263,9 +380,39 @@ std::array<uint8_t, NETWORKMESSAGE_MAXSIZE> buffer = {};
 - **Memory safety**: Proteção contra vazamentos
 
 #### **3. Thread Safety**
+#### Nível Basic
 ```cpp
 std::recursive_mutex connectionLock;
 phmap::parallel_flat_hash_set_m<Connection_ptr> connections;
+```
+
+#### Nível Intermediate
+```cpp
+std::recursive_mutex connectionLock;
+phmap::parallel_flat_hash_set_m<Connection_ptr> connections;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+std::recursive_mutex connectionLock;
+phmap::parallel_flat_hash_set_m<Connection_ptr> connections;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 **Benefícios**:
@@ -277,6 +424,7 @@ phmap::parallel_flat_hash_set_m<Connection_ptr> connections;
 ### **🔧 APIs Principais**
 
 #### **Connection Management**
+#### Nível Basic
 ```cpp
 // Criar conexão
 Connection_ptr conn = ConnectionManager::getInstance()
@@ -289,7 +437,51 @@ conn->send(outputMessage);
 conn->close();
 ```
 
+#### Nível Intermediate
+```cpp
+// Criar conexão
+Connection_ptr conn = ConnectionManager::getInstance()
+    .createConnection(io_service, servicePort);
+
+// Enviar mensagem
+conn->send(outputMessage);
+
+// Fechar conexão
+conn->close();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Criar conexão
+Connection_ptr conn = ConnectionManager::getInstance()
+    .createConnection(io_service, servicePort);
+
+// Enviar mensagem
+conn->send(outputMessage);
+
+// Fechar conexão
+conn->close();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Protocol Handling**
+#### Nível Basic
 ```cpp
 // Criar protocolo
 Protocol_ptr protocol = std::make_shared<ProtocolGame>(connection);
@@ -301,7 +493,49 @@ connection->accept(protocol);
 protocol->enableXTEAEncryption();
 ```
 
+#### Nível Intermediate
+```cpp
+// Criar protocolo
+Protocol_ptr protocol = std::make_shared<ProtocolGame>(connection);
+
+// Aceitar protocolo
+connection->accept(protocol);
+
+// Habilitar criptografia
+protocol->enableXTEAEncryption();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Criar protocolo
+Protocol_ptr protocol = std::make_shared<ProtocolGame>(connection);
+
+// Aceitar protocolo
+connection->accept(protocol);
+
+// Habilitar criptografia
+protocol->enableXTEAEncryption();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Message Creation**
+#### Nível Basic
 ```cpp
 // Criar mensagem de saída
 OutputMessage_ptr msg = protocol->getOutputBuffer(1024);
@@ -315,7 +549,53 @@ msg->addPosition(Position(100, 100, 7));
 protocol->send(msg);
 ```
 
+#### Nível Intermediate
+```cpp
+// Criar mensagem de saída
+OutputMessage_ptr msg = protocol->getOutputBuffer(1024);
+
+// Adicionar dados
+msg->addByte(0x01);
+msg->addString("Hello World");
+msg->addPosition(Position(100, 100, 7));
+
+// Enviar mensagem
+protocol->send(msg);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Criar mensagem de saída
+OutputMessage_ptr msg = protocol->getOutputBuffer(1024);
+
+// Adicionar dados
+msg->addByte(0x01);
+msg->addString("Hello World");
+msg->addPosition(Position(100, 100, 7));
+
+// Enviar mensagem
+protocol->send(msg);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Message Parsing**
+#### Nível Basic
 ```cpp
 // Receber mensagem
 NetworkMessage &msg = /* received message */;
@@ -324,6 +604,45 @@ NetworkMessage &msg = /* received message */;
 uint8_t opcode = msg.getByte();
 std::string text = msg.getString();
 Position pos = msg.getPosition();
+```
+
+#### Nível Intermediate
+```cpp
+// Receber mensagem
+NetworkMessage &msg = /* received message */;
+
+// Ler dados
+uint8_t opcode = msg.getByte();
+std::string text = msg.getString();
+Position pos = msg.getPosition();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Receber mensagem
+NetworkMessage &msg = /* received message */;
+
+// Ler dados
+uint8_t opcode = msg.getByte();
+std::string text = msg.getString();
+Position pos = msg.getPosition();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **📊 Métricas de Performance**

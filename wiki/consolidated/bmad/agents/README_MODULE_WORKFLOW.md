@@ -159,6 +159,7 @@ python wiki/bmad/run_module_workflow.py --status workflow_client_1234567890
 ```
 
 ### **4. Usar Arquivo de Configuração**
+#### Nível Basic
 ```json
 {
   "variation_count": 3,
@@ -167,6 +168,45 @@ python wiki/bmad/run_module_workflow.py --status workflow_client_1234567890
   "enable_learning": true,
   "log_level": "INFO"
 }
+```
+
+#### Nível Intermediate
+```json
+{
+  "variation_count": 3,
+  "test_all_variations": true,
+  "save_physical_files": false,
+  "enable_learning": true,
+  "log_level": "INFO"
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```json
+{
+  "variation_count": 3,
+  "test_all_variations": true,
+  "save_physical_files": false,
+  "enable_learning": true,
+  "log_level": "INFO"
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ```bash

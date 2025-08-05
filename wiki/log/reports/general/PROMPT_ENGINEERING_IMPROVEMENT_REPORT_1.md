@@ -253,6 +253,7 @@ print(f"Resposta mais consistente: {result['most_consistent_response']}")
 ## 🔧 Configurações e Personalização
 
 ### **Parâmetros Configuráveis:**
+#### Nível Basic
 ```json
 {
   "optimization_threshold": 0.6,
@@ -263,6 +264,49 @@ print(f"Resposta mais consistente: {result['most_consistent_response']}")
   "context_integration": true,
   "automatic_evaluation": true
 }
+```
+
+#### Nível Intermediate
+```json
+{
+  "optimization_threshold": 0.6,
+  "tree_of_thought_threshold": 0.7,
+  "self_consistency_samples": 5,
+  "max_optimization_attempts": 3,
+  "learning_enabled": true,
+  "context_integration": true,
+  "automatic_evaluation": true
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```json
+{
+  "optimization_threshold": 0.6,
+  "tree_of_thought_threshold": 0.7,
+  "self_consistency_samples": 5,
+  "max_optimization_attempts": 3,
+  "learning_enabled": true,
+  "context_integration": true,
+  "automatic_evaluation": true
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **Pesos de Avaliação Personalizáveis:**

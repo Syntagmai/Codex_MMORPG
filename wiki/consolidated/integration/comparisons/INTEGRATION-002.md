@@ -212,6 +212,7 @@ A **INTEGRATION-002** realiza uma análise comparativa profunda dos protocolos d
 ```cpp
 // Exemplo de implementação OTClient
 class OTClientProtocol {
+    -- Classe: OTClientProtocol
 private:
     RSA* rsa_key;
     AES_KEY aes_key;
@@ -234,6 +235,7 @@ private:
 ```cpp
 // Exemplo de implementação Canary
 class CanaryProtocol {
+    -- Classe: CanaryProtocol
 private:
     RSA* rsa_key;
     AES_KEY aes_key;
@@ -285,6 +287,7 @@ private:
 ```cpp
 // API Unificada para Protocolos
 class UnifiedProtocol {
+    -- Classe: UnifiedProtocol
 public:
     // Autenticação
     static bool authenticate(const std::string& username, const std::string& password);

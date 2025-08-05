@@ -23,10 +23,13 @@ Este guia apresenta as melhores práticas para desenvolvimento no OTClient, cobr
 
 ```lua
 -- ✅ PRINCÍPIO 1: KISS (Keep It Simple, Stupid)
+    --  ✅ PRINCÍPIO 1: KISS (Keep It Simple, Stupid) (traduzido)
 -- Preferir soluções simples e diretas
 
 -- ❌ Complexo desnecessariamente
+    --  ❌ Complexo desnecessariamente (traduzido)
 function calculateDamageComplex(attacker, defender, spell)
+    -- Função: calculateDamageComplex
     local baseFormula = (attacker:getLevel() * 2 + attacker:getMagicLevel() * 3) 
     local complexModifier = math.sin(attacker:getExperience() / 1000) * 
                            math.cos(defender:getHealth() / 100)
@@ -35,7 +38,9 @@ function calculateDamageComplex(attacker, defender, spell)
 end
 
 -- ✅ Simples e claro
+    --  ✅ Simples e claro (traduzido)
 function calculateDamage(attacker, defender, spell)
+    -- Função: calculateDamage
     local baseDamage = spell.minDamage + math.random(0, spell.maxDamage - spell.minDamage)
     local levelBonus = attacker:getLevel() * 0.5
     local magicBonus = attacker:getMagicLevel() * 2
@@ -44,6 +49,7 @@ function calculateDamage(attacker, defender, spell)
 end
 ```
 
+#### Nível Basic
 ```lua
 -- ✅ PRINCÍPIO 2: DRY (Don't Repeat Yourself)
 -- Evitar duplicação de código
@@ -79,6 +85,96 @@ local warriorWindow = createStatsInterface('Warrior')
 local mageWindow = createStatsInterface('Mage')
 ```
 
+#### Nível Intermediate
+```lua
+-- ✅ PRINCÍPIO 2: DRY (Don't Repeat Yourself)
+-- Evitar duplicação de código
+
+-- ❌ Código duplicado
+function createWarriorInterface()
+    local window = g_ui.createWidget('MainWindow', rootWidget)
+    window:setSize(300, 200)
+    window:centerIn('parent')
+    window:setText('Warrior Stats')
+    -- ... resto da configuração
+end
+
+function createMageInterface()
+    local window = g_ui.createWidget('MainWindow', rootWidget)
+    window:setSize(300, 200)
+    window:centerIn('parent')
+    window:setText('Mage Stats')
+    -- ... resto da configuração
+end
+
+-- ✅ Função reutilizável
+function createStatsInterface(className)
+    local window = g_ui.createWidget('MainWindow', rootWidget)
+    window:setSize(300, 200)
+    window:centerIn('parent')
+    window:setText(className .. ' Stats')
+    
+    return window
+end
+
+local warriorWindow = createStatsInterface('Warrior')
+local mageWindow = createStatsInterface('Mage')
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- ✅ PRINCÍPIO 2: DRY (Don't Repeat Yourself)
+-- Evitar duplicação de código
+
+-- ❌ Código duplicado
+function createWarriorInterface()
+    local window = g_ui.createWidget('MainWindow', rootWidget)
+    window:setSize(300, 200)
+    window:centerIn('parent')
+    window:setText('Warrior Stats')
+    -- ... resto da configuração
+end
+
+function createMageInterface()
+    local window = g_ui.createWidget('MainWindow', rootWidget)
+    window:setSize(300, 200)
+    window:centerIn('parent')
+    window:setText('Mage Stats')
+    -- ... resto da configuração
+end
+
+-- ✅ Função reutilizável
+function createStatsInterface(className)
+    local window = g_ui.createWidget('MainWindow', rootWidget)
+    window:setSize(300, 200)
+    window:centerIn('parent')
+    window:setText(className .. ' Stats')
+    
+    return window
+end
+
+local warriorWindow = createStatsInterface('Warrior')
+local mageWindow = createStatsInterface('Mage')
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+#### Inicialização e Configuração
 ```lua
 -- ✅ PRINCÍPIO 3: SOLID
 -- Single Responsibility: Cada função tem uma responsabilidade
@@ -107,6 +203,10 @@ function handlePlayerAction(action, player, target)
     -- Networking
     sendActionToServer(action, player, target)
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 -- ✅ Separação de responsabilidades
 function validateAction(action, player, target)
@@ -128,6 +228,10 @@ function executeAction(action, player, target)
 end
 
 function handlePlayerAction(action, player, target)
+```
+
+#### Finalização
+```lua
     local valid, error = validateAction(action, player, target)
     if not valid then return false, error end
     
@@ -177,6 +281,7 @@ my_module/
 
 ### 📝 **Template de Módulo Bem Estruturado**
 
+#### Inicialização e Configuração
 ```lua
 -- modules/my_module/init.lua
 local MyModule = {}
@@ -208,6 +313,10 @@ function MyModule.init()
         { name = 'Events', init = Events.init },
         { name = 'UI', init = UI.init }
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     for _, component in ipairs(initOrder) do
         local success, error = pcall(component.init)
@@ -238,6 +347,10 @@ function MyModule.terminate()
     initialized = false
     Utils.log('MyModule', 'Módulo finalizado', 'INFO')
 end
+```
+
+#### Finalização
+```lua
 
 -- API pública
 function MyModule.isInitialized()
@@ -255,6 +368,7 @@ return MyModule
 
 ### 🔧 **Sistema de Configuração Modular**
 
+#### Inicialização e Configuração
 ```lua
 -- modules/my_module/core/config.lua
 local Config = {}
@@ -277,6 +391,10 @@ local defaults = {
         logLevel = 'INFO',
         maxMemoryUsage = 50 * 1024 * 1024  -- 50MB
     }
+```
+
+#### Funcionalidade 1
+```lua
 }
 
 -- Estado atual
@@ -298,6 +416,10 @@ function Config.load()
 end
 
 function Config.save()
+```
+
+#### Funcionalidade 2
+```lua
     g_settings.setNode('mymodule-config', current)
     g_settings.save()
 end
@@ -326,6 +448,10 @@ function Config.set(path, value)
         if type(current_ref[key]) ~= 'table' then
             current_ref[key] = {}
         end
+```
+
+#### Funcionalidade 3
+```lua
         current_ref = current_ref[key]
     end
     
@@ -347,6 +473,10 @@ function Config.merge(target, source)
         end
     end
 end
+```
+
+#### Funcionalidade 4
+```lua
 
 function Config.validate()
     -- Validar tipos e ranges
@@ -368,6 +498,10 @@ function Config.validate()
             end
         end
     end
+```
+
+#### Finalização
+```lua
 end
 
 function Config.getDefault(path)
@@ -396,6 +530,7 @@ return Config
 
 ### 🎭 **Padrão Observer para Eventos**
 
+#### Inicialização e Configuração
 ```lua
 -- modules/my_module/core/events.lua
 local Events = {}
@@ -419,6 +554,10 @@ end
 
 -- Registrar listener
 function Events.on(eventName, callback, priority)
+```
+
+#### Funcionalidade 1
+```lua
     priority = priority or 0
     
     if not listeners[eventName] then
@@ -445,6 +584,10 @@ function Events.off(eventName, callback)
             table.remove(listeners[eventName], i)
             break
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
 end
 
@@ -471,6 +614,10 @@ function Events.emit(eventName, ...)
         else
             print('Erro no listener do evento ' .. eventName .. ': ' .. result)
         end
+```
+
+#### Funcionalidade 3
+```lua
     end
     
     return results
@@ -492,6 +639,10 @@ end
 
 -- Processar fila de eventos
 function Events.processQueue()
+```
+
+#### Funcionalidade 4
+```lua
     if processing then return end
     processing = true
     
@@ -513,6 +664,10 @@ end
 
 -- API de conveniência
 function Events.once(eventName, callback)
+```
+
+#### Funcionalidade 5
+```lua
     local function onceCallback(...)
         Events.off(eventName, onceCallback)
         return callback(...)
@@ -535,6 +690,10 @@ function Events.createNamespace(namespace)
         emitAsync = function(event, ...)
             Events.emitAsync(namespace .. '.' .. event, ...)
         end
+```
+
+#### Finalização
+```lua
     }
 end
 
@@ -543,6 +702,7 @@ return Events
 
 ### 🏭 **Padrão Factory para UI**
 
+#### Inicialização e Configuração
 ```lua
 -- modules/my_module/ui/factory.lua
 local UIFactory = {}
@@ -566,6 +726,10 @@ end
 
 -- Criar widget
 function UIFactory.create(typeName, parent, config)
+```
+
+#### Funcionalidade 1
+```lua
     config = config or {}
     local widgetConfig = widgetTypes[typeName]
     
@@ -589,6 +753,10 @@ function UIFactory.create(typeName, parent, config)
         if widget[property] then
             widget[property](widget, value)
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
     
     -- Aplicar configurações customizadas
@@ -616,6 +784,10 @@ function UIFactory.create(typeName, parent, config)
         type = typeName,
         config = widgetConfig
     }
+```
+
+#### Funcionalidade 3
+```lua
     
     -- Hook de destruição
     local originalDestroy = widget.destroy
@@ -637,6 +809,10 @@ end
 
 -- Widgets pré-definidos
 function UIFactory.setupDefaultWidgets()
+```
+
+#### Funcionalidade 4
+```lua
     -- Botão estilizado
     UIFactory.registerWidget('StyledButton', {
         baseClass = 'Button',
@@ -666,6 +842,10 @@ function UIFactory.setupDefaultWidgets()
             if config.centerInParent then
                 widget:centerIn('parent')
             end
+```
+
+#### Funcionalidade 5
+```lua
         end,
         validator = function(config)
             return type(config.title) == 'string'
@@ -690,6 +870,10 @@ function UIFactory.setupDefaultWidgets()
                 self.stats[name] = value
                 UIFactory.updateStatsDisplay(self)
             end
+```
+
+#### Funcionalidade 6
+```lua
             
             -- Método para atualizar estatística
             widget.updateStat = function(self, name, value)
@@ -721,6 +905,10 @@ function UIFactory.updateStatsDisplay(statsPanel)
         statsPanel.labels[name] = label
         y = y + 20
     end
+```
+
+#### Finalização
+```lua
 end
 
 return UIFactory
@@ -728,6 +916,7 @@ return UIFactory
 
 ### 🎮 **Padrão State Machine para Game Logic**
 
+#### Inicialização e Configuração
 ```lua
 -- modules/my_module/core/statemachine.lua
 local StateMachine = {}
@@ -753,6 +942,10 @@ function StateMachine:addState(name, config)
         onUpdate = config.onUpdate,
         data = config.data or {}
     }
+```
+
+#### Funcionalidade 1
+```lua
 end
 
 -- Adicionar transição
@@ -778,6 +971,10 @@ function StateMachine:canTransition(to)
             if not transition.condition or transition.condition(self.context) then
                 return true
             end
+```
+
+#### Funcionalidade 2
+```lua
         end
     end
     
@@ -805,6 +1002,10 @@ function StateMachine:transition(to)
             if transition.callback then
                 transition.callback(self.context, fromState, toState)
             end
+```
+
+#### Funcionalidade 3
+```lua
             break
         end
     end
@@ -829,6 +1030,10 @@ function StateMachine:update(deltaTime)
     if state and state.onUpdate then
         state.onUpdate(self.context, deltaTime)
     end
+```
+
+#### Funcionalidade 4
+```lua
     
     -- Verificar transições automáticas
     self:checkAutoTransitions()
@@ -852,6 +1057,10 @@ function StateMachine:on(event, callback)
     if not self.listeners[event] then
         self.listeners[event] = {}
     end
+```
+
+#### Funcionalidade 5
+```lua
     table.insert(self.listeners[event], callback)
 end
 
@@ -873,6 +1082,10 @@ function createCombatStateMachine()
         onEnter = function(ctx)
             print('Combat: Entrando em estado idle')
         end
+```
+
+#### Funcionalidade 6
+```lua
     })
     
     combat:addState('targeting', {
@@ -898,6 +1111,10 @@ function createCombatStateMachine()
                 -- Executar ataque
                 ctx.attackTimer = 0
             end
+```
+
+#### Funcionalidade 7
+```lua
         end,
         onExit = function(ctx)
             print('Combat: Parando ataque')
@@ -919,6 +1136,10 @@ function createCombatStateMachine()
     
     return combat
 end
+```
+
+#### Finalização
+```lua
 
 return StateMachine
 ```
@@ -927,6 +1148,7 @@ return StateMachine
 
 ### 🚀 **Otimização de Loops**
 
+#### Inicialização e Configuração
 ```lua
 -- ❌ Loop ineficiente
 function updateCreaturesSlowly()
@@ -951,6 +1173,10 @@ local cachedDistances = {}
 local UPDATE_INTERVAL = 100  -- ms
 
 function updateCreaturesEfficiently()
+```
+
+#### Funcionalidade 1
+```lua
     local currentTime = g_clock.millis()
     if currentTime - lastUpdateTime < UPDATE_INTERVAL then
         return  -- Skip se muito cedo
@@ -975,6 +1201,10 @@ function updateCreaturesEfficiently()
                 distance = distance,
                 needsUpdate = not cachedDistances[id] or cachedDistances[id] ~= distance
             }
+```
+
+#### Finalização
+```lua
             cachedDistances[id] = distance
         end
     end
@@ -992,6 +1222,7 @@ end
 
 ### 💾 **Pool de Objetos**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de pool para widgets temporários
 local WidgetPool = {}
@@ -1015,6 +1246,10 @@ function WidgetPool.new(widgetType, initialSize)
     setmetatable(pool, WidgetPool)
     return pool
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function WidgetPool:acquire()
     local widget
@@ -1037,6 +1272,10 @@ function WidgetPool:release(widget)
     if not self.inUse[widget] then
         return  -- Widget não pertence a este pool
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     -- Reset widget state
     widget:hide()
@@ -1061,6 +1300,10 @@ end
 local damageTextPool = WidgetPool.new('Label', 10)
 
 function showDamageText(position, damage)
+```
+
+#### Finalização
+```lua
     local label = damageTextPool:acquire()
     label:setText(tostring(damage))
     label:setPosition(position)
@@ -1075,6 +1318,44 @@ end
 
 ### 🔄 **Throttling e Debouncing**
 
+#### Nível Basic
+```lua
+-- Throttle: Limitar frequência de execução
+function createThrottle(func, delay)
+    local lastCall = 0
+    return function(...)
+        local now = g_clock.millis()
+        if now - lastCall >= delay then
+        end
+    end
+end
+-- Debounce: Executar apenas após período de inatividade
+function createDebounce(func, delay)
+    local timer = nil
+    return function(...)
+        local args = {...}
+        if timer then
+        end
+        timer = scheduleEvent(function()
+        end, delay)
+    end
+end
+-- Exemplos de uso
+local throttledSave = createThrottle(function()
+    print('Salvando configurações...')
+end, 5000)  -- Máximo uma vez a cada 5 segundos
+local debouncedSearch = createDebounce(function(query)
+    print('Pesquisando por:', query)
+    -- Fazer pesquisa pesada
+end, 300)  -- Aguardar 300ms sem input
+-- Conectar a eventos
+searchInput.onTextChange = function(widget, text)
+end
+playerDataChanged = function()
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Throttle: Limitar frequência de execução
 function createThrottle(func, delay)
@@ -1128,10 +1409,75 @@ playerDataChanged = function()
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Throttle: Limitar frequência de execução
+function createThrottle(func, delay)
+    local lastCall = 0
+    
+    return function(...)
+        local now = g_clock.millis()
+        if now - lastCall >= delay then
+            lastCall = now
+            return func(...)
+        end
+    end
+end
+
+-- Debounce: Executar apenas após período de inatividade
+function createDebounce(func, delay)
+    local timer = nil
+    
+    return function(...)
+        local args = {...}
+        
+        if timer then
+            removeEvent(timer)
+        end
+        
+        timer = scheduleEvent(function()
+            timer = nil
+            func(table.unpack(args))
+        end, delay)
+    end
+end
+
+-- Exemplos de uso
+local throttledSave = createThrottle(function()
+    print('Salvando configurações...')
+    g_settings.save()
+end, 5000)  -- Máximo uma vez a cada 5 segundos
+
+local debouncedSearch = createDebounce(function(query)
+    print('Pesquisando por:', query)
+    -- Fazer pesquisa pesada
+end, 300)  -- Aguardar 300ms sem input
+
+-- Conectar a eventos
+searchInput.onTextChange = function(widget, text)
+    debouncedSearch(text)
+end
+
+playerDataChanged = function()
+    throttledSave()
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🧠 Gerenciamento de Memória
 
 ### 🗑️ **Limpeza Automática**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de gerenciamento de memória
 local MemoryManager = {}
@@ -1160,6 +1506,10 @@ function MemoryManager.cleanup()
             if data.cleanupCallback then
                 pcall(data.cleanupCallback, data.object)
             end
+```
+
+#### Funcionalidade 1
+```lua
             
             -- Destruir objeto se for widget
             if data.object.destroy then
@@ -1183,6 +1533,10 @@ function MemoryManager.cleanup()
               math.floor(memoryUsage) .. 'KB -> ' .. 
               math.floor(collectgarbage('count')) .. 'KB')
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 -- Executar limpeza periodicamente
@@ -1204,6 +1558,10 @@ function createTemporaryWidget(widgetType, parent, lifetime)
     
     return widget
 end
+```
+
+#### Finalização
+```lua
 
 -- Exemplo de uso
 local notification = createTemporaryWidget('Label', rootWidget, 5000)
@@ -1213,6 +1571,7 @@ notification:setText('Mensagem temporária')
 
 ### 📊 **Monitoramento de Performance**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de profiling
 local Profiler = {}
@@ -1245,6 +1604,10 @@ function Profiler.stop(name)
             totalMemory = 0,
             maxMemory = 0
         }
+```
+
+#### Funcionalidade 1
+```lua
     end
     
     local p = profiles[name]
@@ -1269,6 +1632,10 @@ function Profiler.wrap(name, func)
         else
             error(results[2])
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
 end
 
@@ -1294,6 +1661,10 @@ local optimizedFunction = profile('my_heavy_function', function(data)
     for i = 1, #data do
         -- ... processamento ...
     end
+```
+
+#### Finalização
+```lua
 end)
 
 -- Relatório periódico
@@ -1307,6 +1678,7 @@ end, 60000)
 
 ### 🚨 **Sistema Robusto de Error Handling**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema centralizado de tratamento de erros
 local ErrorHandler = {}
@@ -1331,6 +1703,10 @@ function ErrorHandler.safeCall(func, ...)
     
     return result
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function ErrorHandler.safeCallWithDefault(func, defaultValue, ...)
     local result, error = ErrorHandler.safeCall(func, ...)
@@ -1352,6 +1728,10 @@ function ErrorHandler.logError(message, level, traceback)
         traceback = traceback,
         context = ErrorHandler.getCurrentContext()
     }
+```
+
+#### Funcionalidade 2
+```lua
     
     table.insert(errorLog, errorEntry)
     
@@ -1376,6 +1756,10 @@ function ErrorHandler.getCurrentContext()
         memoryUsage = collectgarbage('count'),
         fps = g_app.getFps()
     }
+```
+
+#### Funcionalidade 3
+```lua
     
     if context.hasPlayer then
         local player = g_game.getLocalPlayer()
@@ -1397,6 +1781,10 @@ end
 
 -- Wrappers para funções críticas
 function ErrorHandler.wrapModuleFunction(moduleName, funcName, func)
+```
+
+#### Funcionalidade 4
+```lua
     return function(...)
         local success, result = pcall(func, ...)
         
@@ -1418,6 +1806,10 @@ function ErrorHandler.wrapModuleFunction(moduleName, funcName, func)
 end
 
 function ErrorHandler.canRecover(moduleName, funcName)
+```
+
+#### Funcionalidade 5
+```lua
     -- Definir funções que podem ser recuperadas
     local recoverableFunctions = {
         ['UI.createWindow'] = true,
@@ -1440,6 +1832,10 @@ function ErrorHandler.attemptRecovery(moduleName, funcName, ...)
     
     return nil
 end
+```
+
+#### Finalização
+```lua
 
 -- Inicializar sistema
 ErrorHandler.init()
@@ -1447,6 +1843,7 @@ ErrorHandler.init()
 
 ### 🔄 **Validação de Dados**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de validação robusto
 local Validator = {}
@@ -1470,6 +1867,10 @@ local validators = {
         if type(value) ~= 'number' then
             return false, 'Deve ser um número'
         end
+```
+
+#### Funcionalidade 1
+```lua
         if min and value < min then
             return false, 'Muito baixo (mínimo ' .. min .. ')'
         end
@@ -1491,6 +1892,10 @@ local validators = {
         end
         return true
     end,
+```
+
+#### Funcionalidade 2
+```lua
     
     color = function(value)
         if type(value) == 'string' then
@@ -1512,6 +1917,10 @@ local validators = {
         return true
     end
 }
+```
+
+#### Funcionalidade 3
+```lua
 
 function Validator.validate(schema, data)
     local errors = {}
@@ -1538,6 +1947,10 @@ function Validator.validate(schema, data)
                 if not valid then
                     table.insert(errors, field .. ': ' .. message)
                 end
+```
+
+#### Funcionalidade 4
+```lua
             end
         end
         
@@ -1561,6 +1974,10 @@ local userSchema = {
         required = true,
         { type = 'string', min = 2, max = 20 }
     },
+```
+
+#### Funcionalidade 5
+```lua
     level = {
         required = true,
         { type = 'number', min = 1, max = 1000 }
@@ -1582,6 +1999,10 @@ local userSchema = {
             return true
         end
     }
+```
+
+#### Funcionalidade 6
+```lua
 }
 
 function createUser(userData)
@@ -1603,6 +2024,10 @@ function createUser(userData)
         favoriteColor = userData.favoriteColor or '#ffffff',
         email = userData.email
     }
+```
+
+#### Finalização
+```lua
 end
 ```
 

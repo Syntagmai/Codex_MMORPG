@@ -22,6 +22,7 @@ Este guia prático fornece exemplos funcionais, tutoriais e casos de uso para im
 local Configuração = {}
 
 function Configuração:init()
+    -- Função: Configuração
     self.settings = {
         enabled = true,
         timeout = 5000,
@@ -30,6 +31,7 @@ function Configuração:init()
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local configuração = Configuração:new()
 configuração:init()
 ```
@@ -41,6 +43,7 @@ configuração:init()
 local Sistema = {}
 
 function Sistema:init()
+    -- Função: Sistema
     self.settings = {
         enabled = true,
         timeout = 5000,
@@ -49,6 +52,7 @@ function Sistema:init()
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local sistema = Sistema:new()
 sistema:init()
 ```
@@ -60,6 +64,7 @@ sistema:init()
 local Tratamento = {}
 
 function Tratamento:init()
+    -- Função: Tratamento
     self.settings = {
         enabled = true,
         timeout = 5000,
@@ -68,6 +73,7 @@ function Tratamento:init()
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local tratamento = Tratamento:new()
 tratamento:init()
 ```
@@ -79,6 +85,7 @@ tratamento:init()
 local Otimizações = {}
 
 function Otimizações:init()
+    -- Função: Otimizações
     self.settings = {
         enabled = true,
         timeout = 5000,
@@ -87,6 +94,7 @@ function Otimizações:init()
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local otimizações = Otimizações:new()
 otimizações:init()
 ```
@@ -97,7 +105,9 @@ otimizações:init()
 
 ```lua
 -- Sistema de Login
+    --  Sistema de Login (traduzido)
 function Sistema:processLogin(data)
+    -- Função: Sistema
     local result = {
         success = false,
         data = nil,
@@ -106,11 +116,13 @@ function Sistema:processLogin(data)
     
     -- Validação
     if not data then
+    -- Verificação condicional
         result.error = "Data is required"
         return result
     end
     
     -- Processamento
+    --  Processamento (traduzido)
     result.success = true
     result.data = data
     
@@ -118,6 +130,7 @@ function Sistema:processLogin(data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = sistema:processLogin({
     type = "test",
     value = "example"
@@ -129,6 +142,7 @@ local result = sistema:processLogin({
 ```lua
 -- Sincronização de Dados
 function Sincronização:processDados(data)
+    -- Função: Sincronização
     local result = {
         success = false,
         data = nil,
@@ -137,11 +151,13 @@ function Sincronização:processDados(data)
     
     -- Validação
     if not data then
+    -- Verificação condicional
         result.error = "Data is required"
         return result
     end
     
     -- Processamento
+    --  Processamento (traduzido)
     result.success = true
     result.data = data
     
@@ -149,6 +165,7 @@ function Sincronização:processDados(data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = sincronização:processDados({
     type = "test",
     value = "example"
@@ -160,6 +177,7 @@ local result = sincronização:processDados({
 ```lua
 -- Recuperação de Conexão
 function Recuperação:processConexão(data)
+    -- Função: Recuperação
     local result = {
         success = false,
         data = nil,
@@ -168,11 +186,13 @@ function Recuperação:processConexão(data)
     
     -- Validação
     if not data then
+    -- Verificação condicional
         result.error = "Data is required"
         return result
     end
     
     -- Processamento
+    --  Processamento (traduzido)
     result.success = true
     result.data = data
     
@@ -180,6 +200,7 @@ function Recuperação:processConexão(data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = recuperação:processConexão({
     type = "test",
     value = "example"
@@ -191,6 +212,7 @@ local result = recuperação:processConexão({
 ```lua
 -- Métricas de Performance
 function Métricas:processPerformance(data)
+    -- Função: Métricas
     local result = {
         success = false,
         data = nil,
@@ -199,11 +221,13 @@ function Métricas:processPerformance(data)
     
     -- Validação
     if not data then
+    -- Verificação condicional
         result.error = "Data is required"
         return result
     end
     
     -- Processamento
+    --  Processamento (traduzido)
     result.success = true
     result.data = data
     
@@ -211,6 +235,7 @@ function Métricas:processPerformance(data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = métricas:processPerformance({
     type = "test",
     value = "example"
@@ -224,6 +249,7 @@ local result = métricas:processPerformance({
 ```lua
 -- Cenário: Implementação básica do sistema
 function System:basicImplementation()
+    -- Função: System
     local config = {
         enabled = true,
         timeout = 5000,
@@ -232,6 +258,7 @@ function System:basicImplementation()
     
     local result = self:initialize(config)
     if result.success then
+    -- Verificação condicional
         print("Sistema inicializado com sucesso")
     else
         print("Erro na inicialização:", result.error)
@@ -246,13 +273,16 @@ end
 ```lua
 -- Cenário: Validação de dados de entrada
 function System:validateData(data)
+    -- Função: System
     local errors = {}
     
     if not data then
+    -- Verificação condicional
         table.insert(errors, "Data is required")
     end
     
     if data and type(data) ~= "table" then
+    -- Verificação condicional
         table.insert(errors, "Data must be a table")
     end
     
@@ -268,6 +298,7 @@ end
 ```lua
 -- Cenário: Tratamento robusto de erros
 function System:handleError(error, context)
+    -- Função: System
     local errorInfo = {
         message = error,
         context = context,
@@ -276,6 +307,7 @@ function System:handleError(error, context)
     }
     
     -- Log do erro
+    --  Log do erro (traduzido)
     self:logError(errorInfo)
     
     -- Notificar usuário
@@ -292,6 +324,7 @@ end
 ```lua
 -- Teste de validação básica
 function System:testBasicValidation()
+    -- Função: System
     print("=== Teste de Validação Básica ===")
     
     local testData = {
@@ -303,6 +336,7 @@ function System:testBasicValidation()
     print("Validação:", validation.valid)
     
     if not validation.valid then
+    -- Verificação condicional
         print("Erros:", table.concat(validation.errors, ", "))
     end
     
@@ -315,6 +349,7 @@ end
 ```lua
 -- Simulação de funcionamento do sistema
 function System:simulateOperation()
+    -- Função: System
     print("=== Simulação de Operação ===")
     
     local data = {
@@ -355,6 +390,7 @@ SystemData = {{
 }}
 
 -- Estrutura de resultado
+    --  Estrutura de resultado (traduzido)
 Result = {{
     success = boolean,
     data = any,

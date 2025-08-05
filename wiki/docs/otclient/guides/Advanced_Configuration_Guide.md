@@ -1,15 +1,12 @@
----
-title: Configurationadvanced
-tags: [otclient, system, guide, documentation]
-status: completed
-aliases: [Configurationadvanced]
----
 
 # Sistema de Configuração Avançada
 
 Sistema de configuração com suporte a múltiplos tipos de dados, validação e callbacks personalizados.
 
-## 📋 Índice
+
+---
+
+## 📋 Índice 📋
 
 1. [Visão Geral](#visão-geral)
 2. [API C++](#api-c)
@@ -19,7 +16,10 @@ Sistema de configuração com suporte a múltiplos tipos de dados, validação e
 6. [Exemplos Práticos](#exemplos-práticos)
 7. [Melhores Práticas](#melhores-práticas)
 
-## 🎯 Visão Geral
+
+---
+
+## 🎯 Visão Geral 🎯
 
 O sistema de configuração avançada do OTClient permite gerenciar configurações complexas com:
 
@@ -29,17 +29,21 @@ O sistema de configuração avançada do OTClient permite gerenciar configuraç�
 - **Interface integrada**: UI automática para configurações
 - **Persistência**: Salvamento automático em g_settings
 
-### 🔧 Fluxo de Configuração
+### 🔧 Fluxo de Configuração 📝
 
 ```
 Definição de Opção → Validação → Callback (se definido) → Atualização UI → Persistência
 ```
 
-## 🔧 API C++
 
-### ConfigManager
+---
+
+## 🔧 API C++ 📚
+
+### ConfigManager 📝
 ```cpp
 class ConfigManager {
+    -- Classe: ConfigManager
 public:
     // Definir configuração
     static void defineOption(const std::string& key, 
@@ -82,7 +86,8 @@ struct ConfigValue {
 };
 ```
 
-### Validadores Predefinidos
+### Validadores Predefinidos 📝
+#### Nível Basic
 ```cpp
 // Validadores comuns
 ConfigValidator rangeValidator(double min, double max);
@@ -91,15 +96,54 @@ ConfigValidator regexValidator(const std::string& pattern);
 ConfigValidator compositeValidator(std::vector<ConfigValidator> validators);
 ```
 
-## 🐍 API Lua
+#### Nível Intermediate
+```cpp
+// Validadores comuns
+ConfigValidator rangeValidator(double min, double max);
+ConfigValidator enumValidator(std::vector<std::string> options);
+ConfigValidator regexValidator(const std::string& pattern);
+ConfigValidator compositeValidator(std::vector<ConfigValidator> validators);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
 
-### Funções Principais
+#### Nível Advanced
+```cpp
+// Validadores comuns
+ConfigValidator rangeValidator(double min, double max);
+ConfigValidator enumValidator(std::vector<std::string> options);
+ConfigValidator regexValidator(const std::string& pattern);
+ConfigValidator compositeValidator(std::vector<ConfigValidator> validators);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+
+---
+
+## 🐍 API Lua 📚
+
+### Funções Principais 📝
 
 #### `setOption(key, value, force)`
 Define valor de uma opção com validação automática.
 
 ```lua
 -- Definir valor
+    --  Definir valor (traduzido)
 setOption('masterVolume', 0.8)
 setOption('enableVSync', true)
 setOption('preferredLanguage', 'pt-BR')
@@ -111,14 +155,45 @@ setOption('debugMode', true, true)
 #### `getOption(key)`
 Obtém valor atual de uma opção.
 
+#### Nível Basic
 ```lua
 local volume = getOption('masterVolume')
 local isFullscreen = getOption('fullscreen')
 ```
 
+#### Nível Intermediate
+```lua
+local volume = getOption('masterVolume')
+local isFullscreen = getOption('fullscreen')
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local volume = getOption('masterVolume')
+local isFullscreen = getOption('fullscreen')
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### `defineOption(key, defaultValue, options)`
 Define nova opção com configurações avançadas.
 
+#### Nível Basic
 ```lua
 -- Opção simples
 defineOption('autoSave', true)
@@ -140,9 +215,71 @@ defineOption('theme', 'default', {
 })
 ```
 
+#### Nível Intermediate
+```lua
+-- Opção simples
+defineOption('autoSave', true)
+
+-- Opção com validação
+defineOption('maxFPS', 60, {
+    min = 30,
+    max = 240,
+    description = "Maximum frames per second",
+    category = "Graphics"
+})
+
+-- Opção com callback
+defineOption('theme', 'default', {
+    options = {'default', 'dark', 'light'},
+    callback = function(value)
+        g_ui.setTheme(value)
+    end
+})
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Opção simples
+defineOption('autoSave', true)
+
+-- Opção com validação
+defineOption('maxFPS', 60, {
+    min = 30,
+    max = 240,
+    description = "Maximum frames per second",
+    category = "Graphics"
+})
+
+-- Opção com callback
+defineOption('theme', 'default', {
+    options = {'default', 'dark', 'light'},
+    callback = function(value)
+        g_ui.setTheme(value)
+    end
+})
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### `registerOptionCallback(key, callback)`
 Registra callback para mudanças de opção.
 
+#### Nível Basic
 ```lua
 registerOptionCallback('language', function(newValue, oldValue)
     tr.setLanguage(newValue)
@@ -150,11 +287,45 @@ registerOptionCallback('language', function(newValue, oldValue)
 end)
 ```
 
-### Sistema de Categorias
+#### Nível Intermediate
+```lua
+registerOptionCallback('language', function(newValue, oldValue)
+    tr.setLanguage(newValue)
+    g_ui.reloadAll()
+end)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+registerOptionCallback('language', function(newValue, oldValue)
+    tr.setLanguage(newValue)
+    g_ui.reloadAll()
+end)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### Sistema de Categorias 📝
 
 #### `createOptionCategory(name, options)`
 Cria categoria de opções para organização.
 
+#### Nível Basic
 ```lua
 createOptionCategory('Graphics', {
     icon = '/images/icons/graphics',
@@ -163,18 +334,89 @@ createOptionCategory('Graphics', {
 })
 ```
 
+#### Nível Intermediate
+```lua
+createOptionCategory('Graphics', {
+    icon = '/images/icons/graphics',
+    priority = 100,
+    description = 'Graphics and rendering options'
+})
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+createOptionCategory('Graphics', {
+    icon = '/images/icons/graphics',
+    priority = 100,
+    description = 'Graphics and rendering options'
+})
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### `addOptionToCategory(category, optionKey)`
 Adiciona opção a uma categoria.
 
+#### Nível Basic
 ```lua
 addOptionToCategory('Graphics', 'fullscreen')
 addOptionToCategory('Graphics', 'vsync')
 addOptionToCategory('Graphics', 'maxFPS')
 ```
 
-## 🎛️ Tipos de Configuração
+#### Nível Intermediate
+```lua
+addOptionToCategory('Graphics', 'fullscreen')
+addOptionToCategory('Graphics', 'vsync')
+addOptionToCategory('Graphics', 'maxFPS')
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
 
-### 1. Boolean (Checkbox)
+#### Nível Advanced
+```lua
+addOptionToCategory('Graphics', 'fullscreen')
+addOptionToCategory('Graphics', 'vsync')
+addOptionToCategory('Graphics', 'maxFPS')
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+
+---
+
+## 🎛️ Tipos de Configuração 🔧
+
+### 1. Boolean (Checkbox) 📝
+#### Nível Basic
 ```lua
 defineOption('enableShadows', true, {
     description = "Enable dynamic shadows",
@@ -183,7 +425,43 @@ defineOption('enableShadows', true, {
 })
 ```
 
-### 2. Number (Slider/SpinBox)
+#### Nível Intermediate
+```lua
+defineOption('enableShadows', true, {
+    description = "Enable dynamic shadows",
+    category = "Graphics",
+    widget = "checkbox"
+})
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+defineOption('enableShadows', true, {
+    description = "Enable dynamic shadows",
+    category = "Graphics",
+    widget = "checkbox"
+})
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### 2. Number (Slider/SpinBox) 📝
+#### Nível Basic
 ```lua
 defineOption('masterVolume', 1.0, {
     min = 0.0,
@@ -201,9 +479,63 @@ defineOption('maxConnections', 100, {
 })
 ```
 
-### 3. String (LineEdit/ComboBox)
+#### Nível Intermediate
+```lua
+defineOption('masterVolume', 1.0, {
+    min = 0.0,
+    max = 1.0,
+    step = 0.1,
+    widget = "slider",
+    description = "Master audio volume"
+})
+
+defineOption('maxConnections', 100, {
+    min = 1,
+    max = 1000,
+    widget = "spinbox",
+    description = "Maximum concurrent connections"
+})
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+defineOption('masterVolume', 1.0, {
+    min = 0.0,
+    max = 1.0,
+    step = 0.1,
+    widget = "slider",
+    description = "Master audio volume"
+})
+
+defineOption('maxConnections', 100, {
+    min = 1,
+    max = 1000,
+    widget = "spinbox",
+    description = "Maximum concurrent connections"
+})
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### 3. String (LineEdit/ComboBox) 📝
 ```lua
 -- Texto livre
+    --  Texto livre (traduzido)
 defineOption('playerName', '', {
     maxLength = 32,
     pattern = '^[a-zA-Z ]+$',
@@ -217,7 +549,8 @@ defineOption('resolution', '1920x1080', {
 })
 ```
 
-### 4. Table (Estruturas Complexas)
+### 4. Table (Estruturas Complexas) 🏗️
+#### Nível Basic
 ```lua
 defineOption('hotkeys', {}, {
     structure = {
@@ -229,9 +562,54 @@ defineOption('hotkeys', {}, {
 })
 ```
 
-## ⚙️ Sistema de Opções
+#### Nível Intermediate
+```lua
+defineOption('hotkeys', {}, {
+    structure = {
+        key = 'string',
+        action = 'string',
+        modifier = 'string'
+    },
+    widget = "custom"
+})
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
 
-### Estrutura de Opção
+#### Nível Advanced
+```lua
+defineOption('hotkeys', {}, {
+    structure = {
+        key = 'string',
+        action = 'string',
+        modifier = 'string'
+    },
+    widget = "custom"
+})
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+
+---
+
+## ⚙️ Sistema de Opções ⚙️
+
+### Estrutura de Opção 🏗️
+#### Nível Basic
 ```lua
 local optionStructure = {
     value = defaultValue,      -- Valor atual
@@ -251,20 +629,81 @@ local optionStructure = {
 }
 ```
 
-### Integração com Interface
+#### Nível Intermediate
+```lua
+local optionStructure = {
+    value = defaultValue,      -- Valor atual
+    defaultValue = default,    -- Valor padrão
+    type = 'boolean',         -- Tipo da opção
+    description = 'desc',     -- Descrição
+    category = 'General',     -- Categoria
+    validator = function(),   -- Função de validação
+    callback = function(),    -- Callback de mudança
+    widget = 'checkbox',      -- Tipo de widget UI
+    min = 0,                 -- Valor mínimo (números)
+    max = 100,               -- Valor máximo (números)
+    step = 1,                -- Incremento (números)
+    options = {},            -- Lista de opções (string)
+    pattern = '^[a-z]+$',    -- Padrão regex (string)
+    maxLength = 255          -- Comprimento máximo (string)
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local optionStructure = {
+    value = defaultValue,      -- Valor atual
+    defaultValue = default,    -- Valor padrão
+    type = 'boolean',         -- Tipo da opção
+    description = 'desc',     -- Descrição
+    category = 'General',     -- Categoria
+    validator = function(),   -- Função de validação
+    callback = function(),    -- Callback de mudança
+    widget = 'checkbox',      -- Tipo de widget UI
+    min = 0,                 -- Valor mínimo (números)
+    max = 100,               -- Valor máximo (números)
+    step = 1,                -- Incremento (números)
+    options = {},            -- Lista de opções (string)
+    pattern = '^[a-z]+$',    -- Padrão regex (string)
+    maxLength = 255          -- Comprimento máximo (string)
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### Integração com Interface 📝
 
 #### Criação Automática de Widgets
 ```lua
 -- O sistema cria automaticamente widgets baseado no tipo
+    --  O sistema cria automaticamente widgets baseado no tipo (traduzido)
 function createWidgetForOption(optionKey, option)
+    -- Função: createWidgetForOption
     local widget
     
     if option.type == 'boolean' then
+    -- Verificação condicional
         widget = g_ui.createWidget('UICheckBox', parent)
         widget:setChecked(option.value)
         
     elseif option.type == 'number' then
         if option.widget == 'slider' then
+    -- Verificação condicional
             widget = g_ui.createWidget('UIScrollBar', parent)
             widget:setRange(option.min or 0, option.max or 100)
             widget:setValue(option.value)
@@ -274,8 +713,10 @@ function createWidgetForOption(optionKey, option)
         
     elseif option.type == 'string' then
         if option.options then
+    -- Verificação condicional
             widget = g_ui.createWidget('UIComboBox', parent)
             for _, opt in ipairs(option.options) do
+    -- Loop de repetição
                 widget:addOption(opt, opt)
             end
         else
@@ -287,11 +728,12 @@ function createWidgetForOption(optionKey, option)
 end
 ```
 
-### Validação Avançada
+### Validação Avançada 📝
 
 #### Validadores Compostos
 ```lua
 -- Validador para porta de rede
+    --  Validador para porta de rede (traduzido)
 defineOption('serverPort', 7171, {
     validators = {
         rangeValidator(1024, 65535),
@@ -302,6 +744,7 @@ defineOption('serverPort', 7171, {
 })
 
 -- Validador para caminho de arquivo
+    --  Validador para caminho de arquivo (traduzido)
 defineOption('logPath', '/var/log/otclient.log', {
     validators = {
         function(value)
@@ -315,9 +758,12 @@ defineOption('logPath', '/var/log/otclient.log', {
 })
 ```
 
-## 💡 Exemplos Práticos
 
-### 1. Sistema de Configuração de Gráficos
+---
+
+## 💡 Exemplos Práticos 💡
+
+### 1. Sistema de Configuração de Gráficos 📝
 ```lua
 -- Definir opções de gráficos
 local graphicsOptions = {
@@ -363,12 +809,14 @@ local graphicsOptions = {
 
 -- Registrar todas as opções
 for _, option in ipairs(graphicsOptions) do
+    -- Loop de repetição
     defineOption(option.key, option.default, option)
     addOptionToCategory('Graphics', option.key)
 end
 ```
 
-### 2. Sistema de Configuração de Audio
+### 2. Sistema de Configuração de Audio 📝
+#### Inicialização e Configuração
 ```lua
 -- Configuração avançada de audio
 local audioConfig = {
@@ -392,6 +840,10 @@ defineOption('audioConfig', audioConfig, {
         if type(config.channels) ~= 'table' then
             return false, "Invalid channels configuration"
         end
+```
+
+#### Funcionalidade 1
+```lua
         
         for name, channel in pairs(config.channels) do
             if type(channel.volume) ~= 'number' or 
@@ -415,6 +867,10 @@ defineOption('audioConfig', audioConfig, {
         g_sounds.setDevice(config.device)
         g_sounds.setSampleRate(config.sampleRate)
     end
+```
+
+#### Finalização
+```lua
 })
 
 -- Funções auxiliares para audio
@@ -435,7 +891,8 @@ function toggleChannel(channelName)
 end
 ```
 
-### 3. Sistema de Perfis de Configuração
+### 3. Sistema de Perfis de Configuração 📝
+#### Inicialização e Configuração
 ```lua
 local ConfigProfiles = {}
 
@@ -459,6 +916,10 @@ end
 
 -- Salvar perfil
 function ConfigProfiles.save(profileName)
+```
+
+#### Funcionalidade 1
+```lua
     local profile = {
         name = profileName,
         created = os.time(),
@@ -487,6 +948,10 @@ function ConfigProfiles.list()
             local name = file:gsub('%.json$', '')
             table.insert(profiles, name)
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
     
     return profiles
@@ -509,51 +974,58 @@ function createProfileManager()
             ConfigProfiles.load(profile)
             profileWindow:destroy()
         end
+```
+
+#### Finalização
+```lua
     end
     
     return profileWindow
 end
 ```
 
-## ✅ Melhores Práticas
 
-### 1. Definição de Opções
+---
+
+## ✅ Melhores Práticas 📋
+
+### 1. Definição de Opções 📝
 - **Use nomes descritivos**: `enableShadows` em vez de `shadows`
 - **Defina valores padrão sensatos**: Que funcionem na maioria dos casos
 - **Adicione descrições**: Para documentar o propósito da opção
 - **Agrupe em categorias**: Para melhor organização
 
-### 2. Validação
+### 2. Validação 📝
 - **Sempre valide entradas**: Especialmente valores críticos
 - **Mensagens de erro claras**: Explique o que está errado
 - **Validação em múltiplas camadas**: Interface + backend
 - **Teste valores extremos**: Min/max, strings vazias, etc.
 
-### 3. Callbacks
+### 3. Callbacks 📝
 - **Mantenha callbacks leves**: Evite operações custosas
 - **Trate erros gracefully**: Não quebrar por mudança de configuração
 - **Atualize interface**: Reflita mudanças visualmente
 - **Considere debouncing**: Para mudanças rápidas
 
-### 4. Performance
+### 4. Performance 📝
 - **Cache valores frequentes**: Evite getOption() excessivo
 - **Batch mudanças**: Agrupe múltiplas alterações
 - **Lazy loading**: Carregue configurações sob demanda
 - **Minimize persistência**: Salve apenas quando necessário
 
-### 5. Compatibilidade
+### 5. Compatibilidade 📝
 - **Versionamento**: Mantenha compatibilidade com versões antigas
 - **Migração automática**: Para mudanças de estrutura
 - **Valores padrão seguros**: Se configuração não existir
 - **Fallbacks**: Para quando algo der errado
 
-### 6. Segurança
+### 6. Segurança 📝
 - **Validação de tipos**: Nunca assuma tipos corretos
 - **Sanitização**: Para strings e caminhos de arquivo
 - **Limitação de recursos**: Evite configurações que quebrem o sistema
 - **Auditoria**: Log mudanças importantes
 
-### 7. Organização
+### 7. Organização 📝
 ```lua
 -- Estrutura recomendada para configurações
 local configs = {
@@ -573,8 +1045,11 @@ local configs = {
 }
 
 -- Registrar com prefixos
+    --  Registrar com prefixos (traduzido)
 for category, options in pairs(configs) do
+    -- Loop de repetição
     for key, value in pairs(options) do
+    -- Loop de repetição
         defineOption(category .. '.' .. key, value, {
             category = category:gsub("^%l", string.upper)
         })
@@ -582,9 +1057,34 @@ for category, options in pairs(configs) do
 end
 ```
 
-## 📊 Métricas e Monitoramento
 
-### Tracking de Mudanças
+---
+
+## 📊 Métricas e Monitoramento 📋
+
+### Tracking de Mudanças 📝
+#### Nível Basic
+```lua
+local configMetrics = {
+-- Interceptar mudanças
+local originalSetOption = setOption
+setOption = function(key, value, force)
+    -- Registrar mudança
+end
+-- Relatório de uso
+function generateConfigReport()
+    local report = {
+    -- Contar mudanças por chave
+    local changeCounts = {}
+    end
+    -- Ordenar por frequência
+    local sortedChanges = {}
+    end
+    table.sort(sortedChanges, function(a, b) return a.count > b.count end)
+end
+```
+
+#### Nível Intermediate
 ```lua
 local configMetrics = {
     changes = {},
@@ -631,6 +1131,65 @@ function generateConfigReport()
     report.mostChanged = sortedChanges
     return report
 end
+```
+
+#### Nível Advanced
+```lua
+local configMetrics = {
+    changes = {},
+    accessCount = {},
+    lastAccess = {}
+}
+
+-- Interceptar mudanças
+local originalSetOption = setOption
+setOption = function(key, value, force)
+    -- Registrar mudança
+    table.insert(configMetrics.changes, {
+        key = key,
+        oldValue = getOption(key),
+        newValue = value,
+        timestamp = os.time(),
+        forced = force or false
+    })
+    
+    return originalSetOption(key, value, force)
+end
+
+-- Relatório de uso
+function generateConfigReport()
+    local report = {
+        totalChanges = #configMetrics.changes,
+        mostChanged = {},
+        recentChanges = {}
+    }
+    
+    -- Contar mudanças por chave
+    local changeCounts = {}
+    for _, change in ipairs(configMetrics.changes) do
+        changeCounts[change.key] = (changeCounts[change.key] or 0) + 1
+    end
+    
+    -- Ordenar por frequência
+    local sortedChanges = {}
+    for key, count in pairs(changeCounts) do
+        table.insert(sortedChanges, {key = key, count = count})
+    end
+    table.sort(sortedChanges, function(a, b) return a.count > b.count end)
+    
+    report.mostChanged = sortedChanges
+    return report
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---

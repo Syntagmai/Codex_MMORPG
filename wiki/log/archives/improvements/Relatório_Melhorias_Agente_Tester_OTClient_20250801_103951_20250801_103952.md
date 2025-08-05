@@ -136,6 +136,12 @@ report = debug_tools.generate_debug_report(environment, crash_analysis, performa
 - ✅ Debug Tools Report
 
 **Especialização em Debug**:
+#### Nível Basic
+```json
+
+```
+
+#### Nível Intermediate
 ```json
 "debug_specialization": {
   "log_analysis": "Análise de logs otclient.log, debug.log, packet.log",
@@ -143,6 +149,26 @@ report = debug_tools.generate_debug_report(environment, crash_analysis, performa
   "performance_profiling": "Análise de FPS, memória, CPU e rede",
   "debug_tools": "Uso de debug info window, console debugger, UI inspector"
 }
+```
+
+#### Nível Advanced
+```json
+"debug_specialization": {
+  "log_analysis": "Análise de logs otclient.log, debug.log, packet.log",
+  "crash_investigation": "Investigação de crashes e segmentation faults",
+  "performance_profiling": "Análise de FPS, memória, CPU e rede",
+  "debug_tools": "Uso de debug info window, console debugger, UI inspector"
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---
@@ -162,6 +188,7 @@ ERROR = 4  -- Error conditions
 FATAL = 5  -- Fatal errors (client crash)
 
 -- Categorias de log
+    --  Categorias de log (traduzido)
 SYSTEM    -- Core system operations
 NETWORK   -- Network communication
 GAME      -- Game logic and state

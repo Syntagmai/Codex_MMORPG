@@ -80,6 +80,7 @@ Sistema de Upload/Download
 
 ```lua
 -- Estrutura do UIUploadWidget
+    --  Estrutura do UIUploadWidget (traduzido)
 {
     allowedTypes = {'.jpg', '.png', '.gif'},
     maxFileSize = 1024 * 1024,  -- 1MB
@@ -93,6 +94,7 @@ Sistema de Upload/Download
 
 ```lua
 -- Estrutura do UIDownloadWidget
+    --  Estrutura do UIDownloadWidget (traduzido)
 {
     downloadPath = '/downloads/',
     resumeDownloads = true,
@@ -109,9 +111,11 @@ Sistema de Upload/Download
 
 ```lua
 -- Criar widget de upload
+    --  Criar widget de upload (traduzido)
 local uploadWidget = g_ui.createWidget('UIUploadWidget', parent)
 
 -- Configurar tipos permitidos
+    --  Configurar tipos permitidos (traduzido)
 uploadWidget:setAllowedTypes({'.jpg', '.png', '.gif'})
 
 -- Configurar tamanho máximo
@@ -121,6 +125,7 @@ uploadWidget:setMaxFileSize(1024 * 1024)
 uploadWidget:setMultipleFiles(true)
 
 -- Eventos
+    --  Eventos (traduzido)
 uploadWidget.onFileSelected = function(widget, files)
     print('Arquivos selecionados:', #files)
 end
@@ -138,18 +143,23 @@ end
 
 ```lua
 -- Criar widget de download
+    --  Criar widget de download (traduzido)
 local downloadWidget = g_ui.createWidget('UIDownloadWidget', parent)
 
 -- Adicionar arquivo para download
+    --  Adicionar arquivo para download (traduzido)
 downloadWidget:addDownload(url, filename)
 
 -- Pausar download
+    --  Pausar download (traduzido)
 downloadWidget:pauseDownload(downloadId)
 
 -- Retomar download
+    --  Retomar download (traduzido)
 downloadWidget:resumeDownload(downloadId)
 
 -- Eventos
+    --  Eventos (traduzido)
 downloadWidget.onDownloadProgress = function(widget, downloadId, progress)
     print('Download progresso:', progress .. '%')
 end
@@ -165,6 +175,7 @@ end
 
 ### 📤 **Sistema de Upload de Imagens**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de upload de imagens
 local ImageUploader = {}
@@ -190,6 +201,10 @@ function ImageUploader.create(parent)
     uploadWidget.onFileSelected = function(widget, files)
         ImageUploader.handleFileSelection(files)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     uploadWidget.onUploadProgress = function(widget, file, progress)
         ImageUploader.updateProgress(file, progress)
@@ -212,6 +227,10 @@ end
 function ImageUploader.updateProgress(file, progress)
     print('Progresso de', file.name, ':', progress .. '%')
 end
+```
+
+#### Finalização
+```lua
 
 function ImageUploader.handleUploadComplete(file, response)
     print('Upload completo:', file.name)
@@ -228,6 +247,7 @@ local uploader = ImageUploader.create(parent)
 
 ### 📥 **Sistema de Download de Recursos**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de download de recursos
 local ResourceDownloader = {}
@@ -253,6 +273,10 @@ function ResourceDownloader.create(parent)
     downloadWidget.onDownloadProgress = function(widget, downloadId, progress)
         ResourceDownloader.updateProgress(downloadId, progress)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     downloadWidget.onDownloadComplete = function(widget, downloadId, filePath)
         ResourceDownloader.handleDownloadComplete(downloadId, filePath)
@@ -274,6 +298,10 @@ function ResourceDownloader.updateProgress(downloadId, progress)
 end
 
 function ResourceDownloader.handleDownloadComplete(downloadId, filePath)
+```
+
+#### Finalização
+```lua
     print('Download completo:', downloadId, '->', filePath)
 end
 
@@ -295,10 +323,13 @@ ResourceDownloader.addResource('https://example.com/sound.mp3', 'sound.mp3')
 
 ```lua
 -- ✅ BOM: Usar chunks para arquivos grandes
+    --  ✅ BOM: Usar chunks para arquivos grandes (traduzido)
 function uploadLargeFile(file, chunkSize)
+    -- Função: uploadLargeFile
     chunkSize = chunkSize or 1024 * 1024  -- 1MB chunks
     
     for i = 1, math.ceil(file.size / chunkSize) do
+    -- Loop de repetição
         local start = (i - 1) * chunkSize + 1
         local end_pos = math.min(i * chunkSize, file.size)
         local chunk = file:read(start, end_pos)
@@ -309,6 +340,7 @@ end
 
 -- ✅ BOM: Implementar retry automático
 function downloadWithRetry(url, filename, maxRetries)
+    -- Função: downloadWithRetry
     maxRetries = maxRetries or 3
     
     local function attemptDownload(attempt)
@@ -316,6 +348,7 @@ function downloadWithRetry(url, filename, maxRetries)
         
         downloadWidget.onDownloadError = function(widget, downloadId, error)
             if attempt < maxRetries then
+    -- Verificação condicional
                 print('Tentativa', attempt, 'falhou, tentando novamente...')
                 scheduleEvent(function() attemptDownload(attempt + 1) end, 1000)
             else
@@ -341,21 +374,28 @@ local UPLOAD_CONFIG = {
 
 -- ✅ BOM: Implementar validação robusta
 function validateFile(file)
+    -- Função: validateFile
     -- Verificar tipo
+    --  Verificar tipo (traduzido)
     local isValidType = false
     for _, allowedType in ipairs(UPLOAD_CONFIG.ALLOWED_TYPES) do
+    -- Loop de repetição
         if string.lower(file.name):endsWith(allowedType) then
+    -- Verificação condicional
             isValidType = true
             break
         end
     end
     
     if not isValidType then
+    -- Verificação condicional
         return false, 'Tipo de arquivo não permitido'
     end
     
     -- Verificar tamanho
+    --  Verificar tamanho (traduzido)
     if file.size > UPLOAD_CONFIG.MAX_FILE_SIZE then
+    -- Verificação condicional
         return false, 'Arquivo muito grande'
     end
     

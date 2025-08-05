@@ -240,6 +240,7 @@ Gravação de pacotes para debug
 ### **Conexão Básica com Servidor**
 Como estabelecer uma conexão básica com o servidor
 
+#### Nível Basic
 ```cpp
 // Exemplo de conexão básica
 #include "connection.h"
@@ -263,9 +264,75 @@ void connectToServer() {{
 }}
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de conexão básica
+#include "connection.h"
+#include "server.h"
+
+void connectToServer() {{
+    // Criar conexão
+    ConnectionPtr connection = Connection::create();
+    
+    // Configurar servidor
+    Server server;
+    server.setHost("localhost");
+    server.setPort(7172);
+    
+    // Conectar
+    if (connection->connect(server)) {{
+        std::cout << "Conectado ao servidor!" << std::endl;
+    }} else {{
+        std::cout << "Falha na conexão!" << std::endl;
+    }}
+}}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de conexão básica
+#include "connection.h"
+#include "server.h"
+
+void connectToServer() {{
+    // Criar conexão
+    ConnectionPtr connection = Connection::create();
+    
+    // Configurar servidor
+    Server server;
+    server.setHost("localhost");
+    server.setPort(7172);
+    
+    // Conectar
+    if (connection->connect(server)) {{
+        std::cout << "Conectado ao servidor!" << std::endl;
+    }} else {{
+        std::cout << "Falha na conexão!" << std::endl;
+    }}
+}}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Comunicação via Protocolo**
 Como enviar e receber mensagens usando o protocolo
 
+#### Nível Basic
 ```cpp
 // Exemplo de comunicação via protocolo
 #include "protocol.h"
@@ -304,6 +371,101 @@ void handleServerResponse() {{
 }}
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de comunicação via protocolo
+#include "protocol.h"
+#include "inputmessage.h"
+#include "outputmessage.h"
+
+void sendLoginRequest() {{
+    // Criar mensagem de saída
+    OutputMessagePtr msg = OutputMessage::create();
+    
+    // Adicionar dados do login
+    msg->addU8(0x01); // Login opcode
+    msg->addString("username");
+    msg->addString("password");
+    
+    // Enviar mensagem
+    g_protocol.send(msg);
+}}
+
+void handleServerResponse() {{
+    // Receber mensagem
+    InputMessagePtr msg = g_protocol.receive();
+    
+    if (msg) {{
+        uint8_t opcode = msg->getU8();
+        
+        switch (opcode) {{
+            case 0x0A: // Login response
+                handleLoginResponse(msg);
+                break;
+            case 0x0B: // Game data
+                handleGameData(msg);
+                break;
+        }}
+    }}
+}}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de comunicação via protocolo
+#include "protocol.h"
+#include "inputmessage.h"
+#include "outputmessage.h"
+
+void sendLoginRequest() {{
+    // Criar mensagem de saída
+    OutputMessagePtr msg = OutputMessage::create();
+    
+    // Adicionar dados do login
+    msg->addU8(0x01); // Login opcode
+    msg->addString("username");
+    msg->addString("password");
+    
+    // Enviar mensagem
+    g_protocol.send(msg);
+}}
+
+void handleServerResponse() {{
+    // Receber mensagem
+    InputMessagePtr msg = g_protocol.receive();
+    
+    if (msg) {{
+        uint8_t opcode = msg->getU8();
+        
+        switch (opcode) {{
+            case 0x0A: // Login response
+                handleLoginResponse(msg);
+                break;
+            case 0x0B: // Game data
+                handleGameData(msg);
+                break;
+        }}
+    }}
+}}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Login via HTTP**
 Como realizar login usando sistema HTTP
 
@@ -322,6 +484,7 @@ void performHTTPLogin() {{
     
     // Realizar login
     if (login.authenticate()) {{
+    -- Verificação condicional
         std::cout << "Login HTTP realizado com sucesso!" << std::endl;
         
         // Obter token de sessão
@@ -338,6 +501,12 @@ void performHTTPLogin() {{
 ### **Gravação de Pacotes**
 Como gravar e reproduzir pacotes para debug
 
+#### Nível Basic
+```cpp
+    if (player.loadFile("session.pcap")) {{
+```
+
+#### Nível Intermediate
 ```cpp
 // Exemplo de gravação de pacotes
 #include "packet_recorder.h"
@@ -373,6 +542,54 @@ void replayPackets() {{
         }}
     }}
 }}
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de gravação de pacotes
+#include "packet_recorder.h"
+#include "packet_player.h"
+
+void recordPackets() {{
+    // Criar gravador de pacotes
+    PacketRecorder recorder;
+    
+    // Iniciar gravação
+    recorder.startRecording("session.pcap");
+    
+    // Durante a sessão de jogo...
+    // Pacotes são automaticamente gravados
+    
+    // Parar gravação
+    recorder.stopRecording();
+}}
+
+void replayPackets() {{
+    // Criar player de pacotes
+    PacketPlayer player;
+    
+    // Carregar arquivo de pacotes
+    if (player.loadFile("session.pcap")) {{
+        // Reproduzir pacotes
+        player.startReplay();
+        
+        // Processar pacotes reproduzidos
+        while (player.hasNextPacket()) {{
+            InputMessagePtr packet = player.getNextPacket();
+            processPacket(packet);
+        }}
+    }}
+}}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 
@@ -421,6 +638,7 @@ Integração com ferramentas de debug e análise
 
 ### **Conexão com Servidor**
 
+#### Nível Basic
 ```cpp
 #include "connection.h"
 #include "server.h"
@@ -437,8 +655,60 @@ if (connection->connect(server)) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+#include "connection.h"
+#include "server.h"
+
+// Configurar servidor
+Server server;
+server.setHost("localhost");
+server.setPort(7172);
+
+// Criar conexão
+ConnectionPtr connection = Connection::create();
+if (connection->connect(server)) {
+    std::cout << "Conectado!" << std::endl;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+#include "connection.h"
+#include "server.h"
+
+// Configurar servidor
+Server server;
+server.setHost("localhost");
+server.setPort(7172);
+
+// Criar conexão
+ConnectionPtr connection = Connection::create();
+if (connection->connect(server)) {
+    std::cout << "Conectado!" << std::endl;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Envio de Mensagens**
 
+#### Nível Basic
 ```cpp
 #include "outputmessage.h"
 #include "protocol.h"
@@ -452,8 +722,54 @@ msg->addString("Hello Server");
 g_protocol.send(msg);
 ```
 
+#### Nível Intermediate
+```cpp
+#include "outputmessage.h"
+#include "protocol.h"
+
+// Criar mensagem
+OutputMessagePtr msg = OutputMessage::create();
+msg->addU8(0x01); // Opcode
+msg->addString("Hello Server");
+
+// Enviar via protocolo
+g_protocol.send(msg);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+#include "outputmessage.h"
+#include "protocol.h"
+
+// Criar mensagem
+OutputMessagePtr msg = OutputMessage::create();
+msg->addU8(0x01); // Opcode
+msg->addString("Hello Server");
+
+// Enviar via protocolo
+g_protocol.send(msg);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Recebimento de Mensagens**
 
+#### Nível Basic
 ```cpp
 #include "inputmessage.h"
 #include "protocol.h"
@@ -466,6 +782,53 @@ if (msg) {
     
     // Processar mensagem...
 }
+```
+
+#### Nível Intermediate
+```cpp
+#include "inputmessage.h"
+#include "protocol.h"
+
+// Receber mensagem
+InputMessagePtr msg = g_protocol.receive();
+if (msg) {
+    uint8_t opcode = msg->getU8();
+    std::string data = msg->getString();
+    
+    // Processar mensagem...
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+#include "inputmessage.h"
+#include "protocol.h"
+
+// Receber mensagem
+InputMessagePtr msg = g_protocol.receive();
+if (msg) {
+    uint8_t opcode = msg->getU8();
+    std::string data = msg->getString();
+    
+    // Processar mensagem...
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🌐 Protocolos Suportados
@@ -532,6 +895,7 @@ if (msg) {
 ## 🔄 Estados de Conexão
 
 ### **Connection States**
+#### Nível Basic
 ```cpp
 enum ConnectionState {
     CONNECTION_STATE_DISCONNECTED,
@@ -542,6 +906,49 @@ enum ConnectionState {
     CONNECTION_STATE_GAME,
     CONNECTION_STATE_ERROR
 };
+```
+
+#### Nível Intermediate
+```cpp
+enum ConnectionState {
+    CONNECTION_STATE_DISCONNECTED,
+    CONNECTION_STATE_CONNECTING,
+    CONNECTION_STATE_CONNECTED,
+    CONNECTION_STATE_AUTHENTICATING,
+    CONNECTION_STATE_AUTHENTICATED,
+    CONNECTION_STATE_GAME,
+    CONNECTION_STATE_ERROR
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+enum ConnectionState {
+    CONNECTION_STATE_DISCONNECTED,
+    CONNECTION_STATE_CONNECTING,
+    CONNECTION_STATE_CONNECTED,
+    CONNECTION_STATE_AUTHENTICATING,
+    CONNECTION_STATE_AUTHENTICATED,
+    CONNECTION_STATE_GAME,
+    CONNECTION_STATE_ERROR
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **Transições de Estado**

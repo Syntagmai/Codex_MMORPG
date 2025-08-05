@@ -111,6 +111,7 @@ canary/src/
 ### **Classe Map - Funções Principais**
 ```cpp
 class Map final : public MapCache {
+    -- Classe: Map
 public:
     // Carregamento de mapas
     void load(const std::string &identifier, const Position &pos = Position());
@@ -169,6 +170,7 @@ public:
 ```
 
 ### **Classe Tile - Funções Principais**
+#### Inicialização e Configuração
 ```cpp
 class Tile : public Cylinder, public SharedObject {
 public:
@@ -253,6 +255,10 @@ public:
     virtual std::shared_ptr<House> getHouse() {
         return nullptr;
     }
+```
+
+#### Finalização
+```cpp
     
 protected:
     std::shared_ptr<Item> ground = nullptr;
@@ -265,6 +271,7 @@ protected:
 ### **Sistema I/O - Funções Principais**
 ```cpp
 class IOMap {
+    -- Classe: IOMap
 public:
     // Carregamento de mapas
     static void loadMap(Map* map, const Position &pos = Position());
@@ -291,6 +298,7 @@ private:
 ```
 
 ### **Funções Lua - Tile**
+#### Nível Basic
 ```cpp
 // Criação de tile
 Tile(x, y, z)
@@ -336,9 +344,119 @@ tile:getHouse()
 tile:sweep()
 ```
 
+#### Nível Intermediate
+```cpp
+// Criação de tile
+Tile(x, y, z)
+Tile(position)
+
+// Propriedades
+tile:getPosition()
+tile:getGround()
+tile:getThing(index)
+tile:getThingCount()
+tile:getTopVisibleThing(creature)
+
+// Itens
+tile:getTopTopItem()
+tile:getTopDownItem()
+tile:getFieldItem()
+tile:getItemById(itemId)
+tile:getItemByType(itemType)
+tile:getItemByTopOrder(topOrder)
+tile:getItemCountById(itemId)
+tile:getItems()
+tile:getItemCount()
+tile:getDownItemCount()
+tile:getTopItemCount()
+
+// Criaturas
+tile:getBottomCreature()
+tile:getTopCreature()
+tile:getBottomVisibleCreature(creature)
+tile:getTopVisibleCreature(creature)
+tile:getCreatures()
+tile:getCreatureCount()
+
+// Propriedades
+tile:hasProperty(property)
+tile:hasFlag(flag)
+
+// Operações
+tile:queryAdd(index, thing, count, flags)
+tile:addItem(item)
+tile:addItemEx(item)
+tile:getHouse()
+tile:sweep()
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Criação de tile
+Tile(x, y, z)
+Tile(position)
+
+// Propriedades
+tile:getPosition()
+tile:getGround()
+tile:getThing(index)
+tile:getThingCount()
+tile:getTopVisibleThing(creature)
+
+// Itens
+tile:getTopTopItem()
+tile:getTopDownItem()
+tile:getFieldItem()
+tile:getItemById(itemId)
+tile:getItemByType(itemType)
+tile:getItemByTopOrder(topOrder)
+tile:getItemCountById(itemId)
+tile:getItems()
+tile:getItemCount()
+tile:getDownItemCount()
+tile:getTopItemCount()
+
+// Criaturas
+tile:getBottomCreature()
+tile:getTopCreature()
+tile:getBottomVisibleCreature(creature)
+tile:getTopVisibleCreature(creature)
+tile:getCreatures()
+tile:getCreatureCount()
+
+// Propriedades
+tile:hasProperty(property)
+tile:hasFlag(flag)
+
+// Operações
+tile:queryAdd(index, thing, count, flags)
+tile:addItem(item)
+tile:addItemEx(item)
+tile:getHouse()
+tile:sweep()
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 📝 **Exemplos Práticos**
 
 ### **1. Carregamento de Mapa**
+#### Nível Basic
 ```cpp
 // Carregamento do mapa principal
 void Game::loadMainMap() {
@@ -356,7 +474,61 @@ void Game::loadCustomMap(const std::string &mapName, int customMapIndex) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Carregamento do mapa principal
+void Game::loadMainMap() {
+    const std::string mapName = g_configManager().getString(MAP_NAME);
+    const std::string mapPath = "data/world/" + mapName + ".otbm";
+    
+    g_game().map.loadMap(mapPath, true, true, true, true, true);
+}
+
+// Carregamento de mapa customizado
+void Game::loadCustomMap(const std::string &mapName, int customMapIndex) {
+    const std::string mapPath = "data/world/custom/" + mapName + ".otbm";
+    
+    g_game().map.loadMapCustom(mapName, true, true, true, true, customMapIndex);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Carregamento do mapa principal
+void Game::loadMainMap() {
+    const std::string mapName = g_configManager().getString(MAP_NAME);
+    const std::string mapPath = "data/world/" + mapName + ".otbm";
+    
+    g_game().map.loadMap(mapPath, true, true, true, true, true);
+}
+
+// Carregamento de mapa customizado
+void Game::loadCustomMap(const std::string &mapName, int customMapIndex) {
+    const std::string mapPath = "data/world/custom/" + mapName + ".otbm";
+    
+    g_game().map.loadMapCustom(mapName, true, true, true, true, customMapIndex);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **2. Gerenciamento de Tiles**
+#### Nível Basic
 ```cpp
 // Obter tile existente
 std::shared_ptr<Tile> Game::getTileAt(const Position &pos) {
@@ -375,7 +547,63 @@ bool Game::isValidPosition(const Position &pos) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Obter tile existente
+std::shared_ptr<Tile> Game::getTileAt(const Position &pos) {
+    return g_game().map.getTile(pos);
+}
+
+// Criar tile se não existir
+std::shared_ptr<Tile> Game::getOrCreateTileAt(const Position &pos) {
+    return g_game().map.getOrCreateTile(pos, true); // isDynamic = true
+}
+
+// Verificar se posição é válida
+bool Game::isValidPosition(const Position &pos) {
+    auto tile = g_game().map.getTile(pos);
+    return tile != nullptr;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Obter tile existente
+std::shared_ptr<Tile> Game::getTileAt(const Position &pos) {
+    return g_game().map.getTile(pos);
+}
+
+// Criar tile se não existir
+std::shared_ptr<Tile> Game::getOrCreateTileAt(const Position &pos) {
+    return g_game().map.getOrCreateTile(pos, true); // isDynamic = true
+}
+
+// Verificar se posição é válida
+bool Game::isValidPosition(const Position &pos) {
+    auto tile = g_game().map.getTile(pos);
+    return tile != nullptr;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **3. Posicionamento de Criaturas**
+#### Nível Basic
 ```cpp
 // Posicionar jogador no mapa
 bool Game::placePlayer(const std::shared_ptr<Player> &player, const Position &pos) {
@@ -396,7 +624,67 @@ void Game::moveCreature(const std::shared_ptr<Creature> &creature, const Positio
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Posicionar jogador no mapa
+bool Game::placePlayer(const std::shared_ptr<Player> &player, const Position &pos) {
+    return g_game().map.placeCreature(pos, player, false, true);
+}
+
+// Posicionar monstro no mapa
+bool Game::spawnMonster(const std::shared_ptr<Monster> &monster, const Position &pos) {
+    return g_game().map.placeCreature(pos, monster, true, false);
+}
+
+// Mover criatura
+void Game::moveCreature(const std::shared_ptr<Creature> &creature, const Position &newPos) {
+    auto newTile = g_game().map.getTile(newPos);
+    if (newTile) {
+        g_game().map.moveCreature(creature, newTile, false);
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Posicionar jogador no mapa
+bool Game::placePlayer(const std::shared_ptr<Player> &player, const Position &pos) {
+    return g_game().map.placeCreature(pos, player, false, true);
+}
+
+// Posicionar monstro no mapa
+bool Game::spawnMonster(const std::shared_ptr<Monster> &monster, const Position &pos) {
+    return g_game().map.placeCreature(pos, monster, true, false);
+}
+
+// Mover criatura
+void Game::moveCreature(const std::shared_ptr<Creature> &creature, const Position &newPos) {
+    auto newTile = g_game().map.getTile(newPos);
+    if (newTile) {
+        g_game().map.moveCreature(creature, newTile, false);
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **4. Pathfinding e Navegação**
+#### Nível Basic
 ```cpp
 // Verificar se pode atirar objeto
 bool Game::canThrowObject(const Position &from, const Position &to) {
@@ -426,7 +714,85 @@ bool Game::findPath(const std::shared_ptr<Creature> &creature, const Position &t
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Verificar se pode atirar objeto
+bool Game::canThrowObject(const Position &from, const Position &to) {
+    return g_game().map.canThrowObjectTo(from, to);
+}
+
+// Verificar linha de visão
+bool Game::hasLineOfSight(const Position &from, const Position &to) {
+    return g_game().map.isSightClear(from, to, true);
+}
+
+// Verificar se pode andar
+std::shared_ptr<Tile> Game::canWalkTo(const std::shared_ptr<Creature> &creature, const Position &pos) {
+    return g_game().map.canWalkTo(creature, pos);
+}
+
+// Encontrar caminho
+bool Game::findPath(const std::shared_ptr<Creature> &creature, const Position &target, 
+                   std::vector<Direction> &path) {
+    FindPathParams fpp;
+    fpp.maxSearchDist = 50;
+    fpp.clearSight = true;
+    fpp.allowDiagonal = true;
+    
+    return g_game().map.getPathMatching(creature, path, 
+                                       FrozenPathingConditionCall(), fpp);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificar se pode atirar objeto
+bool Game::canThrowObject(const Position &from, const Position &to) {
+    return g_game().map.canThrowObjectTo(from, to);
+}
+
+// Verificar linha de visão
+bool Game::hasLineOfSight(const Position &from, const Position &to) {
+    return g_game().map.isSightClear(from, to, true);
+}
+
+// Verificar se pode andar
+std::shared_ptr<Tile> Game::canWalkTo(const std::shared_ptr<Creature> &creature, const Position &pos) {
+    return g_game().map.canWalkTo(creature, pos);
+}
+
+// Encontrar caminho
+bool Game::findPath(const std::shared_ptr<Creature> &creature, const Position &target, 
+                   std::vector<Direction> &path) {
+    FindPathParams fpp;
+    fpp.maxSearchDist = 50;
+    fpp.clearSight = true;
+    fpp.allowDiagonal = true;
+    
+    return g_game().map.getPathMatching(creature, path, 
+                                       FrozenPathingConditionCall(), fpp);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **5. Operações com Tiles**
+#### Nível Basic
 ```cpp
 // Adicionar item ao tile
 bool Game::addItemToTile(const Position &pos, const std::shared_ptr<Item> &item) {
@@ -476,48 +842,177 @@ bool Game::hasCreaturesOnTile(const Position &pos) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Adicionar item ao tile
+bool Game::addItemToTile(const Position &pos, const std::shared_ptr<Item> &item) {
+    auto tile = g_game().map.getTile(pos);
+    if (!tile) {
+        return false;
+    }
+    
+    ReturnValue ret = tile->queryAdd(0, item, 1, 0);
+    if (ret == RETURNVALUE_NOERROR) {
+        tile->addThing(item);
+        return true;
+    }
+    
+    return false;
+}
+
+// Remover item do tile
+bool Game::removeItemFromTile(const Position &pos, const std::shared_ptr<Item> &item) {
+    auto tile = g_game().map.getTile(pos);
+    if (!tile) {
+        return false;
+    }
+    
+    tile->removeThing(item, 1);
+    return true;
+}
+
+// Verificar propriedades do tile
+bool Game::isTileWalkable(const Position &pos) {
+    auto tile = g_game().map.getTile(pos);
+    if (!tile) {
+        return false;
+    }
+    
+    return tile->hasProperty(ItemProperty::WALKABLE);
+}
+
+// Verificar se tile tem criaturas
+bool Game::hasCreaturesOnTile(const Position &pos) {
+    auto tile = g_game().map.getTile(pos);
+    if (!tile) {
+        return false;
+    }
+    
+    return tile->getCreatureCount() > 0;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Adicionar item ao tile
+bool Game::addItemToTile(const Position &pos, const std::shared_ptr<Item> &item) {
+    auto tile = g_game().map.getTile(pos);
+    if (!tile) {
+        return false;
+    }
+    
+    ReturnValue ret = tile->queryAdd(0, item, 1, 0);
+    if (ret == RETURNVALUE_NOERROR) {
+        tile->addThing(item);
+        return true;
+    }
+    
+    return false;
+}
+
+// Remover item do tile
+bool Game::removeItemFromTile(const Position &pos, const std::shared_ptr<Item> &item) {
+    auto tile = g_game().map.getTile(pos);
+    if (!tile) {
+        return false;
+    }
+    
+    tile->removeThing(item, 1);
+    return true;
+}
+
+// Verificar propriedades do tile
+bool Game::isTileWalkable(const Position &pos) {
+    auto tile = g_game().map.getTile(pos);
+    if (!tile) {
+        return false;
+    }
+    
+    return tile->hasProperty(ItemProperty::WALKABLE);
+}
+
+// Verificar se tile tem criaturas
+bool Game::hasCreaturesOnTile(const Position &pos) {
+    auto tile = g_game().map.getTile(pos);
+    if (!tile) {
+        return false;
+    }
+    
+    return tile->getCreatureCount() > 0;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **6. Funções Lua**
 ```lua
 -- Obter tile em posição
 local tile = Tile(100, 100, 7)
 if tile then
+    -- Verificação condicional
     print("Tile encontrado em posição:", tile:getPosition())
 end
 
 -- Verificar propriedades do tile
+    --  Verificar propriedades do tile (traduzido)
 if tile:hasProperty(ITEM_PROPERTY_WALKABLE) then
+    -- Verificação condicional
     print("Tile é caminhável")
 end
 
 if tile:hasFlag(TILESTATE_PROTECTIONZONE) then
+    -- Verificação condicional
     print("Tile está em zona de proteção")
 end
 
 -- Adicionar item ao tile
+    --  Adicionar item ao tile (traduzido)
 local item = Item(2160) -- Gold coin
 if tile:addItem(item) then
+    -- Verificação condicional
     print("Item adicionado com sucesso")
 end
 
 -- Obter criaturas no tile
+    --  Obter criaturas no tile (traduzido)
 local creatures = tile:getCreatures()
 for _, creature in ipairs(creatures) do
+    -- Loop de repetição
     print("Criatura encontrada:", creature:getName())
 end
 
 -- Verificar se tile tem campo mágico
 local field = tile:getFieldItem()
 if field then
+    -- Verificação condicional
     print("Tile tem campo mágico:", field:getId())
 end
 
 -- Obter casa do tile
+    --  Obter casa do tile (traduzido)
 local house = tile:getHouse()
 if house then
+    -- Verificação condicional
     print("Tile pertence à casa:", house:getName())
 end
 
 -- Limpar tile
+    --  Limpar tile (traduzido)
 tile:sweep()
 ```
 
@@ -604,6 +1099,7 @@ tile:sweep()
 ## 🔧 **Otimizações e Performance**
 
 ### **Sistema de Cache**
+#### Nível Basic
 ```cpp
 // Cache de tiles básicos
 void MapCache::setBasicTile(uint16_t x, uint16_t y, uint8_t z, 
@@ -612,6 +1108,45 @@ void MapCache::setBasicTile(uint16_t x, uint16_t y, uint8_t z,
 // Cache de setores
 MapSector* MapCache::createMapSector(uint32_t x, uint32_t y);
 MapSector* MapCache::getBestMapSector(uint32_t x, uint32_t y);
+```
+
+#### Nível Intermediate
+```cpp
+// Cache de tiles básicos
+void MapCache::setBasicTile(uint16_t x, uint16_t y, uint8_t z, 
+                           const std::shared_ptr<BasicTile> &basicTile);
+
+// Cache de setores
+MapSector* MapCache::createMapSector(uint32_t x, uint32_t y);
+MapSector* MapCache::getBestMapSector(uint32_t x, uint32_t y);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Cache de tiles básicos
+void MapCache::setBasicTile(uint16_t x, uint16_t y, uint8_t z, 
+                           const std::shared_ptr<BasicTile> &basicTile);
+
+// Cache de setores
+MapSector* MapCache::createMapSector(uint32_t x, uint32_t y);
+MapSector* MapCache::getBestMapSector(uint32_t x, uint32_t y);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **Gerenciamento de Memória**
@@ -635,6 +1170,12 @@ MapSector* MapCache::getBestMapSector(uint32_t x, uint32_t y);
 - **Tempo de Carregamento**: Tempo para carregar mapas
 
 ### **Logs e Debug**
+#### Nível Basic
+```cpp
+g_logger().info("Loading map: {}", identifier);
+```
+
+#### Nível Intermediate
 ```cpp
 // Log de carregamento de mapa
 g_logger().info("Loading map: {}", identifier);
@@ -644,6 +1185,28 @@ g_logger().warn("Map loading failed: {}", e.what());
 
 // Log de performance
 g_logger().debug("Map sector created: {}x{}", x, y);
+```
+
+#### Nível Advanced
+```cpp
+// Log de carregamento de mapa
+g_logger().info("Loading map: {}", identifier);
+
+// Log de erro de carregamento
+g_logger().warn("Map loading failed: {}", e.what());
+
+// Log de performance
+g_logger().debug("Map sector created: {}x{}", x, y);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🔗 **Integração com Cliente**

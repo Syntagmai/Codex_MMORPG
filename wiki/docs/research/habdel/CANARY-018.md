@@ -56,6 +56,7 @@ canary/src/lua/functions/core/game/
 #### **1. Classe ChatChannel (chat.hpp)**
 ```cpp
 class ChatChannel {
+    -- Classe: ChatChannel
 public:
     ChatChannel() = default;
     ChatChannel(uint16_t channelId, std::string channelName);
@@ -105,6 +106,7 @@ protected:
 #### **2. Classe PrivateChatChannel (chat.hpp)**
 ```cpp
 class PrivateChatChannel final : public ChatChannel {
+    -- Classe: PrivateChatChannel
 public:
     PrivateChatChannel(uint16_t channelId, std::string channelName);
 
@@ -131,6 +133,7 @@ private:
 #### **3. Classe Chat (chat.hpp)**
 ```cpp
 class Chat {
+    -- Classe: Chat
 public:
     Chat();
     
@@ -177,6 +180,7 @@ private:
 ### **🔧 APIs e Interfaces**
 
 #### **1. Funções do Game (game.cpp)**
+#### Nível Basic
 ```cpp
 // Gerenciamento de canais privados
 void Game::playerCreatePrivateChannel(uint32_t playerId);
@@ -194,10 +198,93 @@ void Game::playerCloseNpcChannel(uint32_t playerId);
 void Game::playerSay(uint32_t playerId, uint16_t channelId, SpeakClasses type, const std::string &receiver, const std::string &text);
 ```
 
+#### Nível Intermediate
+```cpp
+// Gerenciamento de canais privados
+void Game::playerCreatePrivateChannel(uint32_t playerId);
+void Game::playerChannelInvite(uint32_t playerId, const std::string &name);
+void Game::playerChannelExclude(uint32_t playerId, const std::string &name);
+
+// Gerenciamento de canais
+void Game::playerRequestChannels(uint32_t playerId);
+void Game::playerOpenChannel(uint32_t playerId, uint16_t channelId);
+void Game::playerCloseChannel(uint32_t playerId, uint16_t channelId);
+void Game::playerOpenPrivateChannel(uint32_t playerId, std::string &receiver);
+void Game::playerCloseNpcChannel(uint32_t playerId);
+
+// Comunicação
+void Game::playerSay(uint32_t playerId, uint16_t channelId, SpeakClasses type, const std::string &receiver, const std::string &text);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Gerenciamento de canais privados
+void Game::playerCreatePrivateChannel(uint32_t playerId);
+void Game::playerChannelInvite(uint32_t playerId, const std::string &name);
+void Game::playerChannelExclude(uint32_t playerId, const std::string &name);
+
+// Gerenciamento de canais
+void Game::playerRequestChannels(uint32_t playerId);
+void Game::playerOpenChannel(uint32_t playerId, uint16_t channelId);
+void Game::playerCloseChannel(uint32_t playerId, uint16_t channelId);
+void Game::playerOpenPrivateChannel(uint32_t playerId, std::string &receiver);
+void Game::playerCloseNpcChannel(uint32_t playerId);
+
+// Comunicação
+void Game::playerSay(uint32_t playerId, uint16_t channelId, SpeakClasses type, const std::string &receiver, const std::string &text);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Funções Lua (global_functions.cpp)**
+#### Nível Basic
 ```cpp
 // Envio de mensagens para canais
 static int luaSendGuildChannelMessage(lua_State* L);
+```
+
+#### Nível Intermediate
+```cpp
+// Envio de mensagens para canais
+static int luaSendGuildChannelMessage(lua_State* L);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Envio de mensagens para canais
+static int luaSendGuildChannelMessage(lua_State* L);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **📊 Fluxo de Dados**
@@ -237,6 +324,7 @@ static int luaSendGuildChannelMessage(lua_State* L);
 ## 💡 **Exemplos Práticos**
 
 ### **1. Criando um Canal Privado**
+#### Nível Basic
 ```cpp
 // Exemplo de criação de canal privado
 void createPrivateChannel(Player* player) {
@@ -251,7 +339,55 @@ void createPrivateChannel(Player* player) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de criação de canal privado
+void createPrivateChannel(Player* player) {
+    if (!player->isPremium()) {
+        return; // Apenas jogadores premium podem criar canais privados
+    }
+    
+    auto channel = g_chat().createChannel(player, CHANNEL_PRIVATE);
+    if (channel && channel->addUser(player)) {
+        player->sendCreatePrivateChannel(channel->getId(), channel->getName());
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de criação de canal privado
+void createPrivateChannel(Player* player) {
+    if (!player->isPremium()) {
+        return; // Apenas jogadores premium podem criar canais privados
+    }
+    
+    auto channel = g_chat().createChannel(player, CHANNEL_PRIVATE);
+    if (channel && channel->addUser(player)) {
+        player->sendCreatePrivateChannel(channel->getId(), channel->getName());
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **2. Convidando Jogador para Canal**
+#### Nível Basic
 ```cpp
 // Exemplo de convite para canal privado
 void inviteToPrivateChannel(Player* owner, const std::string& inviteName) {
@@ -267,7 +403,57 @@ void inviteToPrivateChannel(Player* owner, const std::string& inviteName) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de convite para canal privado
+void inviteToPrivateChannel(Player* owner, const std::string& inviteName) {
+    auto channel = g_chat().getPrivateChannel(owner);
+    if (!channel) {
+        return;
+    }
+    
+    auto invitePlayer = g_game().getPlayerByName(inviteName);
+    if (invitePlayer && owner != invitePlayer) {
+        channel->invitePlayer(owner, invitePlayer);
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de convite para canal privado
+void inviteToPrivateChannel(Player* owner, const std::string& inviteName) {
+    auto channel = g_chat().getPrivateChannel(owner);
+    if (!channel) {
+        return;
+    }
+    
+    auto invitePlayer = g_game().getPlayerByName(inviteName);
+    if (invitePlayer && owner != invitePlayer) {
+        channel->invitePlayer(owner, invitePlayer);
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **3. Enviando Mensagem para Canal**
+#### Nível Basic
 ```cpp
 // Exemplo de envio de mensagem
 void sendChannelMessage(Player* player, uint16_t channelId, const std::string& message) {
@@ -278,13 +464,55 @@ void sendChannelMessage(Player* player, uint16_t channelId, const std::string& m
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de envio de mensagem
+void sendChannelMessage(Player* player, uint16_t channelId, const std::string& message) {
+    auto channel = g_chat().getChannel(player, channelId);
+    if (channel) {
+        channel->talk(player, TALKTYPE_CHANNEL_R1, message);
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de envio de mensagem
+void sendChannelMessage(Player* player, uint16_t channelId, const std::string& message) {
+    auto channel = g_chat().getChannel(player, channelId);
+    if (channel) {
+        channel->talk(player, TALKTYPE_CHANNEL_R1, message);
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **4. Sistema de Eventos Lua**
 ```cpp
 // Exemplo de evento Lua para canal
 function onSpeak(cid, type, message)
+    -- Função: onSpeak
     if type == TALKTYPE_CHANNEL_R1 then
+    -- Verificação condicional
         -- Verificar se mensagem contém palavras proibidas
         if string.find(message, "spam") then
+    -- Verificação condicional
             return false -- Bloquear mensagem
         end
     end
@@ -315,23 +543,135 @@ end
 ### **Padrões de Design**
 
 #### **1. Singleton Pattern**
+#### Nível Basic
 ```cpp
 static Chat &getInstance();
 ```
 
+#### Nível Intermediate
+```cpp
+static Chat &getInstance();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+static Chat &getInstance();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Factory Pattern**
+#### Nível Basic
 ```cpp
 std::shared_ptr<ChatChannel> createChannel(const std::shared_ptr<Player> &player, uint16_t channelId);
 ```
 
+#### Nível Intermediate
+```cpp
+std::shared_ptr<ChatChannel> createChannel(const std::shared_ptr<Player> &player, uint16_t channelId);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+std::shared_ptr<ChatChannel> createChannel(const std::shared_ptr<Player> &player, uint16_t channelId);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **3. Observer Pattern**
+#### Nível Basic
 ```cpp
 void sendToAll(const std::string &message, SpeakClasses type) const;
 ```
 
+#### Nível Intermediate
+```cpp
+void sendToAll(const std::string &message, SpeakClasses type) const;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+void sendToAll(const std::string &message, SpeakClasses type) const;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **4. Strategy Pattern**
+#### Nível Basic
 ```cpp
 bool executeOnSpeakEvent(const std::shared_ptr<Player> &player, SpeakClasses &type, const std::string &message) const;
+```
+
+#### Nível Intermediate
+```cpp
+bool executeOnSpeakEvent(const std::shared_ptr<Player> &player, SpeakClasses &type, const std::string &message) const;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+bool executeOnSpeakEvent(const std::shared_ptr<Player> &player, SpeakClasses &type, const std::string &message) const;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🔍 **Insights Técnicos**
@@ -378,6 +718,7 @@ bool executeOnSpeakEvent(const std::shared_ptr<Player> &player, SpeakClasses &ty
 ### **3. Configuração e Customização**
 
 #### **XML Configuration**
+#### Nível Basic
 ```xml
 <chatchannels>
     <channel id="1" name="Trade" public="1">
@@ -387,6 +728,47 @@ bool executeOnSpeakEvent(const std::shared_ptr<Player> &player, SpeakClasses &ty
         <script file="help.lua"/>
     </channel>
 </chatchannels>
+```
+
+#### Nível Intermediate
+```xml
+<chatchannels>
+    <channel id="1" name="Trade" public="1">
+        <script file="trade.lua"/>
+    </channel>
+    <channel id="2" name="Help" public="1">
+        <script file="help.lua"/>
+    </channel>
+</chatchannels>
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```xml
+<chatchannels>
+    <channel id="1" name="Trade" public="1">
+        <script file="trade.lua"/>
+    </channel>
+    <channel id="2" name="Help" public="1">
+        <script file="help.lua"/>
+    </channel>
+</chatchannels>
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 #### **Lua Scripting**
@@ -402,6 +784,7 @@ bool executeOnSpeakEvent(const std::shared_ptr<Player> &player, SpeakClasses &ty
 ```cpp
 // Implementar cache para canais frequentemente acessados
 class ChannelCache {
+    -- Classe: ChannelCache
     std::unordered_map<uint16_t, std::shared_ptr<ChatChannel>> cache;
     std::mutex cacheMutex;
 public:
@@ -411,6 +794,7 @@ public:
 ```
 
 #### **Async Operations**
+#### Nível Basic
 ```cpp
 // Operações assíncronas para chat
 std::future<bool> Chat::loadAsync() {
@@ -420,10 +804,48 @@ std::future<bool> Chat::loadAsync() {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Operações assíncronas para chat
+std::future<bool> Chat::loadAsync() {
+    return std::async(std::launch::async, [this]() {
+        return this->load();
+    });
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Operações assíncronas para chat
+std::future<bool> Chat::loadAsync() {
+    return std::async(std::launch::async, [this]() {
+        return this->load();
+    });
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Message Queue**
 ```cpp
 // Sistema de fila de mensagens
 class MessageQueue {
+    -- Classe: MessageQueue
     std::queue<ChatMessage> messageQueue;
     std::mutex queueMutex;
 public:
@@ -438,6 +860,7 @@ public:
 ```cpp
 // Sistema de filtros de chat
 class ChatFilter {
+    -- Classe: ChatFilter
     std::vector<std::string> bannedWords;
     std::function<bool(const std::string&)> customFilter;
 public:
@@ -449,6 +872,7 @@ public:
 ```cpp
 // Analytics para chat
 class ChatAnalytics {
+    -- Classe: ChatAnalytics
 public:
     void trackMessage(uint16_t channelId, const std::string& message);
     void generateChannelReport(uint16_t channelId);
@@ -460,6 +884,7 @@ public:
 ```cpp
 // Sistema avançado de moderação
 class ChatModeration {
+    -- Classe: ChatModeration
     std::vector<ModerationRule> rules;
 public:
     bool checkMessage(const std::string& message, const Player& player);
@@ -473,6 +898,7 @@ public:
 ```cpp
 // Monitoramento de performance
 class ChatPerformanceMonitor {
+    -- Classe: ChatPerformanceMonitor
 public:
     void trackMessageLatency();
     void trackChannelLoad();
@@ -484,6 +910,7 @@ public:
 ```cpp
 // Analytics de usuários
 class ChatUserAnalytics {
+    -- Classe: ChatUserAnalytics
 public:
     void trackUserActivity(uint32_t playerId);
     void analyzeChannelPopularity();

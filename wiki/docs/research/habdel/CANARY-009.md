@@ -95,6 +95,7 @@ canary/src/
 ## 🔧 **APIs e Interfaces**
 
 ### **Definições de Som**
+#### Nível Basic
 ```cpp
 enum SoundEffect_t : uint16_t {
     // Sons de Combate
@@ -146,7 +147,129 @@ enum class SourceEffect_t : uint8_t {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+enum SoundEffect_t : uint16_t {
+    // Sons de Combate
+    SILENCE = 0,
+    HUMAN_CLOSE_ATK_FIST = 1,
+    MONSTER_CLOSE_ATK_FIST = 2,
+    MELEE_ATK_SWORD = 3,
+    MELEE_ATK_CLUB = 4,
+    MELEE_ATK_AXE = 5,
+    DIST_ATK_BOW = 6,
+    DIST_ATK_CROSSBOW = 7,
+    DIST_ATK_THROW = 8,
+    MAGICAL_RANGE_ATK = 9,
+    
+    // Sons de Magia
+    SPELL_LIGHT_HEALING = 1001,
+    SPELL_INTENSE_HEALING = 1002,
+    SPELL_ULTIMATE_HEALING = 1003,
+    SPELL_FIREBALL_RUNE = 1015,
+    SPELL_EXPLOSION_RUNE = 1018,
+    
+    // Sons de Criaturas
+    MONSTER_MELEE_ATK_FIST = 100,
+    MONSTER_MELEE_ATK_CLAW = 101,
+    MONSTER_MELEE_ATK_BITE = 102,
+    
+    // Sons de Ambiente
+    ENV_INSECTS_BIRDS = 2651,
+    ENV_WIND_1 = 2652,
+    ENV_WATER_DEPTH = 2657,
+    ENV_FIRE = 2745,
+    
+    // Sons de Ações
+    ACTION_OPEN_DOOR = 2674,
+    ACTION_CLOSE_DOOR = 2675,
+    ACTION_NOTIFICATION = 2771,
+    
+    // Sons de Itens
+    ITEM_MOVE_BACKPACK = 2786,
+    ITEM_USE_POTION = 2787,
+    ITEM_MOVE_METALIC = 2790
+};
+
+enum class SourceEffect_t : uint8_t {
+    GLOBAL = 0,      // Som global
+    OWN = 1,         // Som próprio
+    OTHERS = 2,      // Som de outros
+    CREATURES = 3    // Som de criaturas
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+enum SoundEffect_t : uint16_t {
+    // Sons de Combate
+    SILENCE = 0,
+    HUMAN_CLOSE_ATK_FIST = 1,
+    MONSTER_CLOSE_ATK_FIST = 2,
+    MELEE_ATK_SWORD = 3,
+    MELEE_ATK_CLUB = 4,
+    MELEE_ATK_AXE = 5,
+    DIST_ATK_BOW = 6,
+    DIST_ATK_CROSSBOW = 7,
+    DIST_ATK_THROW = 8,
+    MAGICAL_RANGE_ATK = 9,
+    
+    // Sons de Magia
+    SPELL_LIGHT_HEALING = 1001,
+    SPELL_INTENSE_HEALING = 1002,
+    SPELL_ULTIMATE_HEALING = 1003,
+    SPELL_FIREBALL_RUNE = 1015,
+    SPELL_EXPLOSION_RUNE = 1018,
+    
+    // Sons de Criaturas
+    MONSTER_MELEE_ATK_FIST = 100,
+    MONSTER_MELEE_ATK_CLAW = 101,
+    MONSTER_MELEE_ATK_BITE = 102,
+    
+    // Sons de Ambiente
+    ENV_INSECTS_BIRDS = 2651,
+    ENV_WIND_1 = 2652,
+    ENV_WATER_DEPTH = 2657,
+    ENV_FIRE = 2745,
+    
+    // Sons de Ações
+    ACTION_OPEN_DOOR = 2674,
+    ACTION_CLOSE_DOOR = 2675,
+    ACTION_NOTIFICATION = 2771,
+    
+    // Sons de Itens
+    ITEM_MOVE_BACKPACK = 2786,
+    ITEM_USE_POTION = 2787,
+    ITEM_MOVE_METALIC = 2790
+};
+
+enum class SourceEffect_t : uint8_t {
+    GLOBAL = 0,      // Som global
+    OWN = 1,         // Som próprio
+    OTHERS = 2,      // Som de outros
+    CREATURES = 3    // Som de criaturas
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Funções Principais do Game**
+#### Nível Basic
 ```cpp
 // Envio de som único
 void Game::sendSingleSoundEffect(
@@ -164,7 +287,61 @@ void Game::sendDoubleSoundEffect(
 );
 ```
 
+#### Nível Intermediate
+```cpp
+// Envio de som único
+void Game::sendSingleSoundEffect(
+    const Position &pos, 
+    SoundEffect_t soundId, 
+    const std::shared_ptr<Creature> &actor = nullptr
+);
+
+// Envio de dois sons simultâneos
+void Game::sendDoubleSoundEffect(
+    const Position &pos, 
+    SoundEffect_t mainSoundEffect, 
+    SoundEffect_t secondarySoundEffect, 
+    const std::shared_ptr<Creature> &actor = nullptr
+);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Envio de som único
+void Game::sendSingleSoundEffect(
+    const Position &pos, 
+    SoundEffect_t soundId, 
+    const std::shared_ptr<Creature> &actor = nullptr
+);
+
+// Envio de dois sons simultâneos
+void Game::sendDoubleSoundEffect(
+    const Position &pos, 
+    SoundEffect_t mainSoundEffect, 
+    SoundEffect_t secondarySoundEffect, 
+    const std::shared_ptr<Creature> &actor = nullptr
+);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Funções do Protocolo**
+#### Nível Basic
 ```cpp
 // Envio de som único via protocolo
 void ProtocolGame::sendSingleSoundEffect(
@@ -183,9 +360,65 @@ void ProtocolGame::sendDoubleSoundEffect(
 );
 ```
 
+#### Nível Intermediate
+```cpp
+// Envio de som único via protocolo
+void ProtocolGame::sendSingleSoundEffect(
+    const Position &pos, 
+    SoundEffect_t id, 
+    SourceEffect_t source
+);
+
+// Envio de dois sons via protocolo
+void ProtocolGame::sendDoubleSoundEffect(
+    const Position &pos,
+    SoundEffect_t mainSoundId,
+    SourceEffect_t mainSource,
+    SoundEffect_t secondarySoundId,
+    SourceEffect_t secondarySource
+);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Envio de som único via protocolo
+void ProtocolGame::sendSingleSoundEffect(
+    const Position &pos, 
+    SoundEffect_t id, 
+    SourceEffect_t source
+);
+
+// Envio de dois sons via protocolo
+void ProtocolGame::sendDoubleSoundEffect(
+    const Position &pos,
+    SoundEffect_t mainSoundId,
+    SourceEffect_t mainSource,
+    SoundEffect_t secondarySoundId,
+    SourceEffect_t secondarySource
+);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 📝 **Exemplos Práticos**
 
 ### **1. Envio de Som Único**
+#### Nível Basic
 ```cpp
 // Envio de som de combate
 void Player::attack() {
@@ -208,7 +441,71 @@ void Player::castSpell() {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Envio de som de combate
+void Player::attack() {
+    // Som de ataque com espada
+    g_game().sendSingleSoundEffect(
+        getPosition(), 
+        SoundEffect_t::MELEE_ATK_SWORD, 
+        getPlayer()
+    );
+}
+
+// Envio de som de magia
+void Player::castSpell() {
+    // Som de magia de cura
+    g_game().sendSingleSoundEffect(
+        getPosition(), 
+        SoundEffect_t::SPELL_LIGHT_HEALING, 
+        getPlayer()
+    );
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Envio de som de combate
+void Player::attack() {
+    // Som de ataque com espada
+    g_game().sendSingleSoundEffect(
+        getPosition(), 
+        SoundEffect_t::MELEE_ATK_SWORD, 
+        getPlayer()
+    );
+}
+
+// Envio de som de magia
+void Player::castSpell() {
+    // Som de magia de cura
+    g_game().sendSingleSoundEffect(
+        getPosition(), 
+        SoundEffect_t::SPELL_LIGHT_HEALING, 
+        getPlayer()
+    );
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **2. Envio de Dois Sons Simultâneos**
+#### Nível Basic
 ```cpp
 // Combate com som de ataque e impacto
 void Player::meleeAttack() {
@@ -231,7 +528,71 @@ void Player::castRune() {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Combate com som de ataque e impacto
+void Player::meleeAttack() {
+    g_game().sendDoubleSoundEffect(
+        getPosition(),
+        getAttackSoundEffect(),    // Som de ataque
+        getHitSoundEffect(),       // Som de impacto
+        getPlayer()
+    );
+}
+
+// Magia com som de cast e impacto
+void Player::castRune() {
+    g_game().sendDoubleSoundEffect(
+        getPosition(),
+        SoundEffect_t::SPELL_FIREBALL_RUNE,  // Som de cast
+        SoundEffect_t::SPELL_EXPLOSION_RUNE, // Som de impacto
+        getPlayer()
+    );
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Combate com som de ataque e impacto
+void Player::meleeAttack() {
+    g_game().sendDoubleSoundEffect(
+        getPosition(),
+        getAttackSoundEffect(),    // Som de ataque
+        getHitSoundEffect(),       // Som de impacto
+        getPlayer()
+    );
+}
+
+// Magia com som de cast e impacto
+void Player::castRune() {
+    g_game().sendDoubleSoundEffect(
+        getPosition(),
+        SoundEffect_t::SPELL_FIREBALL_RUNE,  // Som de cast
+        SoundEffect_t::SPELL_EXPLOSION_RUNE, // Som de impacto
+        getPlayer()
+    );
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **3. Som de Ambiente**
+#### Nível Basic
 ```cpp
 // Som de ambiente (vento)
 void Game::addEnvironmentSound(const Position &pos) {
@@ -252,6 +613,65 @@ void Game::openDoor(const Position &pos) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Som de ambiente (vento)
+void Game::addEnvironmentSound(const Position &pos) {
+    g_game().sendSingleSoundEffect(
+        pos,
+        SoundEffect_t::ENV_WIND_1,
+        nullptr  // Sem ator específico
+    );
+}
+
+// Som de ação (abrir porta)
+void Game::openDoor(const Position &pos) {
+    g_game().sendSingleSoundEffect(
+        pos,
+        SoundEffect_t::ACTION_OPEN_DOOR,
+        nullptr
+    );
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Som de ambiente (vento)
+void Game::addEnvironmentSound(const Position &pos) {
+    g_game().sendSingleSoundEffect(
+        pos,
+        SoundEffect_t::ENV_WIND_1,
+        nullptr  // Sem ator específico
+    );
+}
+
+// Som de ação (abrir porta)
+void Game::openDoor(const Position &pos) {
+    g_game().sendSingleSoundEffect(
+        pos,
+        SoundEffect_t::ACTION_OPEN_DOOR,
+        nullptr
+    );
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **4. Funções Lua**
 ```lua
 -- Envio de som via Lua (posição)
@@ -265,9 +685,11 @@ pos:sendDoubleSoundEffect(
 )
 
 -- Envio de som via Lua (jogador)
+    --  Envio de som via Lua (jogador) (traduzido)
 player:sendSingleSoundEffect(SoundEffect_t.ACTION_NOTIFICATION, true)
 
 -- Envio de dois sons via Lua (jogador)
+    --  Envio de dois sons via Lua (jogador) (traduzido)
 player:sendDoubleSoundEffect(
     SoundEffect_t.SPELL_FIREBALL_RUNE,
     SoundEffect_t.SPELL_EXPLOSION_RUNE,
@@ -317,6 +739,15 @@ player:sendDoubleSoundEffect(
 4. **Network**: Transmissão via `NetworkMessage` para clientes
 
 ### **Controle de Espectadores**
+#### Nível Basic
+```cpp
+    if (!actor || actor->getNpc()) {
+    } else if (actor == spectator) {
+    } else if (actor->getPlayer()) {
+    spectator->getPlayer()->sendSingleSoundEffect(pos, soundId, source);
+```
+
+#### Nível Intermediate
 ```cpp
 // Encontrar espectadores na posição
 for (const auto &spectator : Spectators().find<Player>(pos)) {
@@ -336,7 +767,38 @@ for (const auto &spectator : Spectators().find<Player>(pos)) {
 }
 ```
 
+#### Nível Advanced
+```cpp
+// Encontrar espectadores na posição
+for (const auto &spectator : Spectators().find<Player>(pos)) {
+    SourceEffect_t source = CREATURES;
+    
+    // Determinar fonte do som
+    if (!actor || actor->getNpc()) {
+        source = GLOBAL;
+    } else if (actor == spectator) {
+        source = OWN;
+    } else if (actor->getPlayer()) {
+        source = OTHERS;
+    }
+    
+    // Enviar som para espectador
+    spectator->getPlayer()->sendSingleSoundEffect(pos, soundId, source);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Compatibilidade com Protocolos**
+#### Nível Basic
 ```cpp
 // Verificação de protocolo antigo
 if (oldProtocol) {
@@ -351,6 +813,57 @@ msg.addByte(0x06);                    // Tipo de efeito (som)
 msg.addByte(static_cast<uint8_t>(source)); // Fonte
 msg.add<uint16_t>(static_cast<uint16_t>(id)); // ID do som
 msg.addByte(0x00);                    // Fim dos efeitos
+```
+
+#### Nível Intermediate
+```cpp
+// Verificação de protocolo antigo
+if (oldProtocol) {
+    return; // Não enviar som para protocolos antigos
+}
+
+// Estrutura do pacote de som
+NetworkMessage msg;
+msg.addByte(0x83);                    // Tipo de pacote
+msg.addPosition(pos);                 // Posição
+msg.addByte(0x06);                    // Tipo de efeito (som)
+msg.addByte(static_cast<uint8_t>(source)); // Fonte
+msg.add<uint16_t>(static_cast<uint16_t>(id)); // ID do som
+msg.addByte(0x00);                    // Fim dos efeitos
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificação de protocolo antigo
+if (oldProtocol) {
+    return; // Não enviar som para protocolos antigos
+}
+
+// Estrutura do pacote de som
+NetworkMessage msg;
+msg.addByte(0x83);                    // Tipo de pacote
+msg.addPosition(pos);                 // Posição
+msg.addByte(0x06);                    // Tipo de efeito (som)
+msg.addByte(static_cast<uint8_t>(source)); // Fonte
+msg.add<uint16_t>(static_cast<uint16_t>(id)); // ID do som
+msg.addByte(0x00);                    // Fim dos efeitos
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🎯 **Integração com Outros Sistemas**
@@ -378,6 +891,7 @@ msg.addByte(0x00);                    // Fim dos efeitos
 ## 🔧 **Otimizações e Performance**
 
 ### **Controle de Silêncio**
+#### Nível Basic
 ```cpp
 // Verificação de som silencioso
 if (soundId == SoundEffect_t::SILENCE) {
@@ -389,6 +903,51 @@ if (secondarySoundEffect == SoundEffect_t::SILENCE) {
     sendSingleSoundEffect(pos, mainSoundEffect, actor);
     return;
 }
+```
+
+#### Nível Intermediate
+```cpp
+// Verificação de som silencioso
+if (soundId == SoundEffect_t::SILENCE) {
+    return; // Não processar som silencioso
+}
+
+// Verificação de som secundário silencioso
+if (secondarySoundEffect == SoundEffect_t::SILENCE) {
+    sendSingleSoundEffect(pos, mainSoundEffect, actor);
+    return;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificação de som silencioso
+if (soundId == SoundEffect_t::SILENCE) {
+    return; // Não processar som silencioso
+}
+
+// Verificação de som secundário silencioso
+if (secondarySoundEffect == SoundEffect_t::SILENCE) {
+    sendSingleSoundEffect(pos, mainSoundEffect, actor);
+    return;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **Gerenciamento de Espectadores**
@@ -410,6 +969,12 @@ if (secondarySoundEffect == SoundEffect_t::SILENCE) {
 - **Compatibilidade**: Uso de protocolos antigos vs novos
 
 ### **Logs e Debug**
+#### Nível Basic
+```cpp
+if (oldProtocol) {
+```
+
+#### Nível Intermediate
 ```cpp
 // Log de som enviado
 g_logger().debug("Sound sent: {} at position {} from source {}", 
@@ -422,6 +987,31 @@ g_logger().debug("Sound sent: {} at position {} from source {}",
 if (oldProtocol) {
     g_logger().debug("Sound skipped for old protocol");
 }
+```
+
+#### Nível Advanced
+```cpp
+// Log de som enviado
+g_logger().debug("Sound sent: {} at position {} from source {}", 
+    static_cast<uint16_t>(soundId), 
+    pos.toString(), 
+    static_cast<uint8_t>(source)
+);
+
+// Log de compatibilidade
+if (oldProtocol) {
+    g_logger().debug("Sound skipped for old protocol");
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🔗 **Integração com Cliente**

@@ -34,6 +34,7 @@ priority_factors: [facilidade, benefício, impacto]
 // Implementação: Muito Fácil
 // VCPKG já fornece: LZ4
 class MemoryCompressor {
+    -- Classe: MemoryCompressor
     // Comprime dados inativos em memória
     // Descomprime sob demanda
     // Economiza 25-40% de RAM
@@ -61,6 +62,7 @@ class MemoryCompressor {
 // Implementação: Fácil
 // VCPKG já fornece: ASIO
 class AsyncResourceLoader {
+    -- Classe: AsyncResourceLoader
     // Thread pool para carregamento
     // Priorização de recursos
     // Progress tracking
@@ -89,6 +91,7 @@ class AsyncResourceLoader {
 // Implementação: Fácil
 // Sistema interno transparente
 class SmartMemoryManager {
+    -- Classe: SmartMemoryManager
     // Reference counting automático
     // Memory pools especializados
     // Garbage collection inteligente
@@ -119,6 +122,7 @@ class SmartMemoryManager {
 // Implementação: Médio
 // Mudanças na UI, mas bem definidas
 class VirtualScrollView {
+    -- Classe: VirtualScrollView
     // Renderiza apenas itens visíveis
     // Reutiliza widgets
     // Scroll suave a 60 FPS
@@ -147,6 +151,7 @@ class VirtualScrollView {
 // Implementação: Médio
 // Shaders básicos para efeitos
 class GPUAcceleratedUI {
+    -- Classe: GPUAcceleratedUI
     // Shaders para animações
     // Hardware acceleration
     // Smooth transitions
@@ -175,6 +180,7 @@ class GPUAcceleratedUI {
 // Implementação: Médio
 // Sistema de cache inteligente
 class AdvancedCache {
+    -- Classe: AdvancedCache
     // Cache de texturas
     // Cache de sons
     // Cache de dados
@@ -205,6 +211,7 @@ class AdvancedCache {
 // Implementação: Médio
 // Sistema de monitoramento
 class AdvancedProfiler {
+    -- Classe: AdvancedProfiler
     // CPU profiling
     // Memory profiling
     // GPU profiling
@@ -233,6 +240,7 @@ class AdvancedProfiler {
 // Implementação: Difícil
 // Sistema de layouts adaptativos
 class ResponsiveUI {
+    -- Classe: ResponsiveUI
     // Breakpoints automáticos
     // Adaptive layouts
     // Touch optimization
@@ -263,6 +271,7 @@ class ResponsiveUI {
 // Implementação: Muito Difícil
 // Renderer completo
 class VulkanRenderer {
+    -- Classe: VulkanRenderer
     // Vulkan API
     // Multi-threaded rendering
     // Advanced shaders
@@ -291,6 +300,7 @@ class VulkanRenderer {
 // Implementação: Difícil
 // Sistema de áudio 3D
 class SpatialAudioSystem {
+    -- Classe: SpatialAudioSystem
     // 3D positional audio
     // Reverb simulation
     // Audio occlusion
@@ -319,8 +329,11 @@ class SpatialAudioSystem {
 ### **📅 Fase 1: Implementação Imediata (1-2 meses)**
 ```lua
 -- Semana 1-2: Memory Compression (LZ4)
+    --  Semana 1-2: Memory Compression (LZ4) (traduzido)
 -- Semana 3-4: Async Loading System
+    --  Semana 3-4: Async Loading System (traduzido)
 -- Semana 5-6: Smart Memory Management
+    --  Semana 5-6: Smart Memory Management (traduzido)
 -- Semana 7-8: Testing e otimização
 ```
 
@@ -331,11 +344,45 @@ class SpatialAudioSystem {
 - **+100% estabilidade**
 
 ### **📅 Fase 2: Implementação em Breve (2-4 meses)**
+#### Nível Basic
 ```lua
 -- Mês 1-2: Virtual Scrolling
 -- Mês 2-3: GPU-Accelerated UI (Básico)
 -- Mês 3-4: Advanced Caching System
 -- Mês 4: Testing e otimização
+```
+
+#### Nível Intermediate
+```lua
+-- Mês 1-2: Virtual Scrolling
+-- Mês 2-3: GPU-Accelerated UI (Básico)
+-- Mês 3-4: Advanced Caching System
+-- Mês 4: Testing e otimização
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Mês 1-2: Virtual Scrolling
+-- Mês 2-3: GPU-Accelerated UI (Básico)
+-- Mês 3-4: Advanced Caching System
+-- Mês 4: Testing e otimização
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 **Benefícios Esperados:**
@@ -345,11 +392,38 @@ class SpatialAudioSystem {
 - **+200% responsividade da UI**
 
 ### **📅 Fase 3: Implementação Futura (6-12 meses)**
+#### Nível Basic
 ```lua
 -- Mês 1-3: Performance Profiling
 -- Mês 3-6: Responsive UI System
 -- Mês 6-9: Vulkan Renderer
 -- Mês 9-12: Advanced Audio System
+```
+
+#### Nível Intermediate
+```lua
+-- Mês 1-3: Performance Profiling
+-- Mês 3-6: Responsive UI System
+-- Mês 6-9: Vulkan Renderer
+-- Mês 9-12: Advanced Audio System
+```
+
+#### Nível Advanced
+```lua
+-- Mês 1-3: Performance Profiling
+-- Mês 3-6: Responsive UI System
+-- Mês 6-9: Vulkan Renderer
+-- Mês 9-12: Advanced Audio System
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 **Benefícios Esperados:**

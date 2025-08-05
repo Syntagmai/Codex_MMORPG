@@ -86,10 +86,12 @@ Canary Server
 ```cpp
 // Padrão dominante para serviços globais
 class ConfigManager {
+    -- Classe: ConfigManager
     static ConfigManager &getInstance();
 };
 
 class Chat {
+    -- Classe: Chat
     static Chat &getInstance();
 };
 
@@ -100,10 +102,12 @@ constexpr auto g_logger = LogWithSpdLog::getInstance;
 ```cpp
 // Criação de objetos complexos
 class ItemFactory {
+    -- Classe: ItemFactory
     static std::shared_ptr<Item> createItem(uint16_t itemId);
 };
 
 class NpcFactory {
+    -- Classe: NpcFactory
     static std::shared_ptr<Npc> createNpc(uint16_t npcId);
 };
 ```
@@ -112,6 +116,7 @@ class NpcFactory {
 ```cpp
 // Sistema de eventos e callbacks
 class EventSystem {
+    -- Classe: EventSystem
     void addListener(EventType type, EventCallback callback);
     void dispatchEvent(EventType type, EventData data);
 };
@@ -121,12 +126,16 @@ class EventSystem {
 ```cpp
 // Algoritmos intercambiáveis
 class CombatStrategy {
+    -- Classe: CombatStrategy
     virtual void execute(CombatContext& context) = 0;
 };
 
 class MeleeStrategy : public CombatStrategy;
+    -- Classe: MeleeStrategy
 class RangedStrategy : public CombatStrategy;
+    -- Classe: RangedStrategy
 class MagicStrategy : public CombatStrategy;
+    -- Classe: MagicStrategy
 ```
 
 #### **3. Fluxos de Dados Principais**
@@ -221,6 +230,7 @@ class MagicStrategy : public CombatStrategy;
 ```cpp
 // Padrão consistente em todo o sistema
 class ServiceManager {
+    -- Classe: ServiceManager
     static ServiceManager &getInstance();
     void registerService(const std::string& name, std::shared_ptr<Service> service);
     template<typename T>
@@ -232,6 +242,7 @@ class ServiceManager {
 ```cpp
 // Padrão usado para criação de entidades do jogo
 class EntityFactory {
+    -- Classe: EntityFactory
     template<typename T>
     static std::shared_ptr<T> create(uint32_t id);
     
@@ -244,6 +255,7 @@ class EntityFactory {
 ```cpp
 // Sistema de eventos para comunicação entre sistemas
 class EventDispatcher {
+    -- Classe: EventDispatcher
     template<typename EventType>
     void subscribe(std::function<void(const EventType&)> callback);
     
@@ -316,6 +328,7 @@ Network Systems
 ```cpp
 // Interface compartilhada para comunicação cliente-servidor
 class ProtocolInterface {
+    -- Classe: ProtocolInterface
     virtual void sendMessage(const Message& msg) = 0;
     virtual void handleMessage(const Message& msg) = 0;
     virtual void onConnect() = 0;
@@ -327,6 +340,7 @@ class ProtocolInterface {
 ```cpp
 // Interface para sincronização de dados
 class DataSyncInterface {
+    -- Classe: DataSyncInterface
     virtual void syncPlayerData(const PlayerData& data) = 0;
     virtual void syncWorldData(const WorldData& data) = 0;
     virtual void syncInventoryData(const InventoryData& data) = 0;
@@ -337,6 +351,7 @@ class DataSyncInterface {
 ```cpp
 // Sistema de eventos para comunicação entre cliente e servidor
 class EventInterface {
+    -- Classe: EventInterface
     virtual void dispatchEvent(const GameEvent& event) = 0;
     virtual void subscribeToEvent(EventType type, EventCallback callback) = 0;
 };
@@ -348,6 +363,7 @@ class EventInterface {
 ```cpp
 // API unificada para funcionalidades do jogo
 class GameAPI {
+    -- Classe: GameAPI
     // Player Management
     PlayerManager& getPlayerManager();
     
@@ -368,6 +384,7 @@ class GameAPI {
 ```cpp
 // API unificada para sistemas de mídia
 class MediaAPI {
+    -- Classe: MediaAPI
     // Graphics
     GraphicsEngine& getGraphicsEngine();
     
@@ -386,6 +403,7 @@ class MediaAPI {
 ```cpp
 // API unificada para comunicação de rede
 class NetworkAPI {
+    -- Classe: NetworkAPI
     // Connection Management
     ConnectionManager& getConnectionManager();
     

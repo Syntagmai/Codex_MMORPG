@@ -93,6 +93,7 @@ Sistema simples de abas com funcionalidades básicas.
 
 ```lua
 -- Estrutura do UITabBar
+    --  Estrutura do UITabBar (traduzido)
 {
     tabs = {},              -- Lista de tabs
     currentTab = nil,       -- Tab ativo
@@ -105,6 +106,7 @@ Sistema simples de abas com funcionalidades básicas.
 
 Sistema avançado com drag & drop e navegação.
 
+#### Nível Basic
 ```lua
 -- Estrutura do UIMoveableTabBar
 {
@@ -118,8 +120,54 @@ Sistema avançado com drag & drop e navegação.
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Estrutura do UIMoveableTabBar
+{
+    tabs = {},              -- Tabs visíveis
+    preTabs = {},           -- Tabs ocultos à esquerda
+    postTabs = {},          -- Tabs ocultos à direita
+    currentTab = nil,       -- Tab ativo
+    tabSpacing = 0,         -- Espaçamento entre tabs
+    tabsMoveable = false,   -- Permite mover tabs
+    navigation = {}         -- Botões de navegação
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Estrutura do UIMoveableTabBar
+{
+    tabs = {},              -- Tabs visíveis
+    preTabs = {},           -- Tabs ocultos à esquerda
+    postTabs = {},          -- Tabs ocultos à direita
+    currentTab = nil,       -- Tab ativo
+    tabSpacing = 0,         -- Espaçamento entre tabs
+    tabsMoveable = false,   -- Permite mover tabs
+    navigation = {}         -- Botões de navegação
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎭 **Estilos Visuais**
 
+#### Nível Basic
 ```lua
 -- Tipos de TabBar disponíveis
 {
@@ -131,6 +179,47 @@ Sistema avançado com drag & drop e navegação.
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Tipos de TabBar disponíveis
+{
+    "TabBar",              -- Horizontal padrão
+    "TabBarRounded",       -- Horizontal arredondado
+    "TabBarVertical",      -- Vertical padrão
+    "TabBarQtVertical",    -- Vertical estilo Qt
+    "MoveableTabBar"       -- Movível com drag & drop
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Tipos de TabBar disponíveis
+{
+    "TabBar",              -- Horizontal padrão
+    "TabBarRounded",       -- Horizontal arredondado
+    "TabBarVertical",      -- Vertical padrão
+    "TabBarQtVertical",    -- Vertical estilo Qt
+    "MoveableTabBar"       -- Movível com drag & drop
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🐍 API Lua
@@ -139,19 +228,24 @@ Sistema avançado com drag & drop e navegação.
 
 ```lua
 -- Criar tab bar
+    --  Criar tab bar (traduzido)
 local tabBar = UITabBar.create()
 
 -- Adicionar tab
+    --  Adicionar tab (traduzido)
 local tab = tabBar:addTab(text, panel, icon)
 
 -- Selecionar tab
+    --  Selecionar tab (traduzido)
 tabBar:selectTab(tab)
 
 -- Navegar entre tabs
+    --  Navegar entre tabs (traduzido)
 tabBar:selectNextTab()
 tabBar:selectPrevTab()
 
 -- Gerenciar tabs
+    --  Gerenciar tabs (traduzido)
 tabBar:removeTab(tab)
 tabBar:getTab(text)
 tabBar:clearTabs()
@@ -162,6 +256,7 @@ tabBar:setContentWidget(widget)
 
 ### 🎯 **Métodos de UIMoveableTabBar**
 
+#### Nível Basic
 ```lua
 -- Criar tab bar movível
 local tabBar = UIMoveableTabBar.create()
@@ -181,16 +276,75 @@ tabBar.onTabDragLeave = function(tab, mousePos) end
 tabBar.onTabDrop = function(tab, mousePos) end
 ```
 
+#### Nível Intermediate
+```lua
+-- Criar tab bar movível
+local tabBar = UIMoveableTabBar.create()
+
+-- Configurações avançadas
+tabBar:setTabSpacing(spacing)
+tabBar:setTabsMoveable(true)
+
+-- Navegação avançada
+tabBar:moveTab(tab, units)
+tabBar:showPreTab()
+tabBar:showPostTab()
+
+-- Eventos de drag & drop
+tabBar.onTabDragEnter = function(tab, mousePos) end
+tabBar.onTabDragLeave = function(tab, mousePos) end
+tabBar.onTabDrop = function(tab, mousePos) end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Criar tab bar movível
+local tabBar = UIMoveableTabBar.create()
+
+-- Configurações avançadas
+tabBar:setTabSpacing(spacing)
+tabBar:setTabsMoveable(true)
+
+-- Navegação avançada
+tabBar:moveTab(tab, units)
+tabBar:showPreTab()
+tabBar:showPostTab()
+
+-- Eventos de drag & drop
+tabBar.onTabDragEnter = function(tab, mousePos) end
+tabBar.onTabDragLeave = function(tab, mousePos) end
+tabBar.onTabDrop = function(tab, mousePos) end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎨 **Métodos de Tab Individual**
 
 ```lua
 -- Propriedades da tab
+    --  Propriedades da tab (traduzido)
 tab:setText(text)
 tab:setIcon(icon)
 tab:setEnabled(enabled)
 tab:setChecked(checked)
 
 -- Eventos da tab
+    --  Eventos da tab (traduzido)
 tab.onClick = function(tab) end
 tab.onClose = function(tab) end
 tab.onDragEnter = function(tab, mousePos) end
@@ -202,6 +356,7 @@ tab.onDragEnter = function(tab, mousePos) end
 
 ### 🎯 **Implementação Completa**
 
+#### Inicialização e Configuração
 ```lua
 -- Classe UITabBar
 UITabBar = extends(UIWidget, 'UITabBar')
@@ -224,6 +379,10 @@ function UITabBar.create()
     tabbar.tabs = {}
     return tabbar
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 -- Configurar após criação
 function UITabBar:onSetup()
@@ -259,6 +418,10 @@ function UITabBar:addTab(text, panel, icon)
         if not tab.tabPanel:isDestroyed() then
             tab.tabPanel:destroy()
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
 
     table.insert(self.tabs, tab)
@@ -285,6 +448,10 @@ function UITabBar:addButton(text, func, icon)
     button.onClick = func
     return button
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 -- Remover tab
 function UITabBar:removeTab(tab)
@@ -306,6 +473,10 @@ function UITabBar:removeTab(tab)
     table.remove(self.tabs, index)
     tab:destroy()
 end
+```
+
+#### Funcionalidade 4
+```lua
 
 -- Buscar tab por texto
 function UITabBar:getTab(text)
@@ -327,6 +498,10 @@ function UITabBar:selectTab(tab)
         if selectedWidget and selectedWidget.isTab then
             self.contentWidget:removeChild(selectedWidget)
         end
+```
+
+#### Funcionalidade 5
+```lua
         self.contentWidget:addChild(tab.tabPanel)
         tab.tabPanel:fill('parent')
     end
@@ -348,6 +523,10 @@ end
 
 -- Navegar para próxima tab
 function UITabBar:selectNextTab()
+```
+
+#### Funcionalidade 6
+```lua
     if self.currentTab == nil then
         return
     end
@@ -370,6 +549,10 @@ function UITabBar:selectPrevTab()
     if self.currentTab == nil then
         return
     end
+```
+
+#### Funcionalidade 7
+```lua
     
     local index = table.find(self.tabs, self.currentTab)
     if index == nil then
@@ -391,6 +574,10 @@ end
 
 -- Obter panel da tab atual
 function UITabBar:getCurrentTabPanel()
+```
+
+#### Funcionalidade 8
+```lua
     if self.currentTab then
         return self.currentTab.tabPanel
     end
@@ -412,6 +599,10 @@ function UITabBar:getTabsPanel()
         return tab.tabPanel
     end)
 end
+```
+
+#### Finalização
+```lua
 
 -- Limpar todas as tabs
 function UITabBar:clearTabs()
@@ -474,6 +665,7 @@ TabBarButton < UIButton
 
 ### 🎯 **Implementação Avançada**
 
+#### Inicialização e Configuração
 ```lua
 -- Classe UIMoveableTabBar
 UIMoveableTabBar = extends(UITabBar, 'UIMoveableTabBar')
@@ -498,6 +690,10 @@ function UIMoveableTabBar.create()
         hideTabs(tabbar, true, tabbar.postTabs, 0)
         updateTabs(tabbar)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     return tabbar
 end
@@ -526,6 +722,10 @@ function UIMoveableTabBar:addTab(text, panel, menuCallback)
     if not tab.ignoreTextResize then
         tab:setWidth(tab:getTextSize().width + tab:getPaddingLeft() + tab:getPaddingRight())
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     tab.menuCallback = menuCallback or nil
     tab.onClick = onTabClick
@@ -547,6 +747,10 @@ function UIMoveableTabBar:addTab(text, panel, menuCallback)
         for i = 1, #self.tabs do
             newMargin = newMargin + self.tabs[i]:getWidth()
         end
+```
+
+#### Funcionalidade 3
+```lua
         tab:setMarginLeft(newMargin)
 
         hideTabs(self, true, self.postTabs, tab:getWidth())
@@ -573,6 +777,10 @@ function UIMoveableTabBar:moveTab(tab, units)
         self:selectPrevTab()
         focus = true
     end
+```
+
+#### Funcionalidade 4
+```lua
 
     table.remove(self.tabs, index)
 
@@ -595,6 +803,10 @@ function UIMoveableTabBar:onStyleApply(styleName, styleNode)
     if styleNode['tab-spacing'] then
         self:setTabSpacing(styleNode['tab-spacing'])
     end
+```
+
+#### Finalização
+```lua
 end
 ```
 
@@ -604,6 +816,34 @@ end
 
 ### 🎯 **Exemplo 1: Sistema de Tabs Básico**
 
+#### Nível Basic
+```lua
+local BasicTabSystem = {}
+function BasicTabSystem.createBasicTabs(parent)
+    local tabBar = g_ui.createWidget('TabBar', parent)
+    -- Widget de conteúdo
+    local contentWidget = g_ui.createWidget('Panel', parent)
+    -- Adicionar tabs
+    local tab1 = tabBar:addTab('Informações', nil, '/icons/info.png')
+    local tab2 = tabBar:addTab('Configurações', nil, '/icons/settings.png')
+    local tab3 = tabBar:addTab('Estatísticas', nil, '/icons/stats.png')
+    -- Configurar conteúdo das tabs
+    local panel1 = tab1.tabPanel
+    local label1 = g_ui.createWidget('Label', panel1)
+    local panel2 = tab2.tabPanel
+    local label2 = g_ui.createWidget('Label', panel2)
+    local panel3 = tab3.tabPanel
+    local label3 = g_ui.createWidget('Label', panel3)
+    -- Evento de mudança de tab
+    tabBar.onTabChange = function(tabBar, tab)
+        print('Tab alterada para:', tab:getText())
+    end
+end
+-- Uso
+local tabSystem = BasicTabSystem.createBasicTabs(parent)
+```
+
+#### Nível Intermediate
 ```lua
 local BasicTabSystem = {}
 
@@ -651,8 +891,67 @@ end
 local tabSystem = BasicTabSystem.createBasicTabs(parent)
 ```
 
+#### Nível Advanced
+```lua
+local BasicTabSystem = {}
+
+function BasicTabSystem.createBasicTabs(parent)
+    local tabBar = g_ui.createWidget('TabBar', parent)
+    tabBar:setSize({width = 400, height = 25})
+    
+    -- Widget de conteúdo
+    local contentWidget = g_ui.createWidget('Panel', parent)
+    contentWidget:setPosition({x = 0, y = 25})
+    contentWidget:setSize({width = 400, height = 300})
+    
+    tabBar:setContentWidget(contentWidget)
+    
+    -- Adicionar tabs
+    local tab1 = tabBar:addTab('Informações', nil, '/icons/info.png')
+    local tab2 = tabBar:addTab('Configurações', nil, '/icons/settings.png')
+    local tab3 = tabBar:addTab('Estatísticas', nil, '/icons/stats.png')
+    
+    -- Configurar conteúdo das tabs
+    local panel1 = tab1.tabPanel
+    local label1 = g_ui.createWidget('Label', panel1)
+    label1:setText('Informações do personagem')
+    label1:setPosition({x = 10, y = 10})
+    
+    local panel2 = tab2.tabPanel
+    local label2 = g_ui.createWidget('Label', panel2)
+    label2:setText('Configurações do jogo')
+    label2:setPosition({x = 10, y = 10})
+    
+    local panel3 = tab3.tabPanel
+    local label3 = g_ui.createWidget('Label', panel3)
+    label3:setText('Estatísticas detalhadas')
+    label3:setPosition({x = 10, y = 10})
+    
+    -- Evento de mudança de tab
+    tabBar.onTabChange = function(tabBar, tab)
+        print('Tab alterada para:', tab:getText())
+    end
+    
+    return tabBar
+end
+
+-- Uso
+local tabSystem = BasicTabSystem.createBasicTabs(parent)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎨 **Exemplo 2: Sistema de Tabs Avançado**
 
+#### Inicialização e Configuração
 ```lua
 local AdvancedTabSystem = {}
 
@@ -678,6 +977,10 @@ function AdvancedTabSystem.createAdvancedTabs(parent)
         {text = 'Chat', icon = '/icons/chat.png'},
         {text = 'Config', icon = '/icons/config.png'}
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     for i, tabData in ipairs(tabs) do
         local tab = tabBar:addTab(tabData.text, nil, tabData.icon)
@@ -703,6 +1006,10 @@ function AdvancedTabSystem.createAdvancedTabs(parent)
     tabBar.onTabChange = function(tabBar, tab)
         print('Tab ativa:', tab:getText())
     end
+```
+
+#### Finalização
+```lua
     
     tabBar.onTabLeftClick = function(tabBar, tab)
         print('Clique direito na tab:', tab:getText())
@@ -717,6 +1024,7 @@ local advancedTabs = AdvancedTabSystem.createAdvancedTabs(parent)
 
 ### 🪟 **Exemplo 3: Sistema de Tabs com Drag & Drop**
 
+#### Inicialização e Configuração
 ```lua
 local DragDropTabSystem = {}
 
@@ -741,6 +1049,10 @@ function DragDropTabSystem.createDragDropTabs(parent)
         print('Tab dropada:', tab:getText())
         -- Aqui você implementaria a lógica de reorganização
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Widget de conteúdo
     local contentWidget = g_ui.createWidget('Panel', parent)
@@ -768,6 +1080,10 @@ function DragDropTabSystem.createDragDropTabs(parent)
                 expBar:setSize({width = 200, height = 20})
                 expBar:setPercent(75)
             end
+```
+
+#### Funcionalidade 2
+```lua
         },
         {
             text = 'Inventário',
@@ -799,6 +1115,10 @@ function DragDropTabSystem.createDragDropTabs(parent)
                 for i, skill in ipairs(skills) do
                     skillsList:addOption(skill .. ': 50')
                 end
+```
+
+#### Finalização
+```lua
             end
         }
     }
@@ -823,7 +1143,9 @@ local dragDropTabs = DragDropTabSystem.createDragDropTabs(parent)
 
 ```lua
 -- ✅ BOM: Sempre definir content widget
+    --  ✅ BOM: Sempre definir content widget (traduzido)
 function createTabBarWithContent(parent)
+    -- Função: createTabBarWithContent
     local tabBar = g_ui.createWidget('TabBar', parent)
     local contentWidget = g_ui.createWidget('Panel', parent)
     
@@ -832,21 +1154,28 @@ function createTabBarWithContent(parent)
 end
 
 -- ✅ BOM: Gerenciar ciclo de vida das tabs
+    --  ✅ BOM: Gerenciar ciclo de vida das tabs (traduzido)
 function manageTabLifecycle(tabBar, tab)
+    -- Função: manageTabLifecycle
     tab.onDestroy = function()
         if tab.tabPanel and not tab.tabPanel:isDestroyed() then
+    -- Verificação condicional
             tab.tabPanel:destroy()
         end
     end
 end
 
 -- ✅ BOM: Validar antes de adicionar tabs
+    --  ✅ BOM: Validar antes de adicionar tabs (traduzido)
 function validateTabData(text, panel, icon)
+    -- Função: validateTabData
     if not text or type(text) ~= 'string' then
+    -- Verificação condicional
         error('Texto da tab deve ser uma string válida')
     end
     
     if panel and not panel:isInstanceOf('UIWidget') then
+    -- Verificação condicional
         error('Panel deve ser um widget válido')
     end
     
@@ -859,25 +1188,32 @@ end
 ```lua
 -- ✅ BOM: Organizar conteúdo por tabs
 function organizeContentByTabs(tabBar, contentMap)
+    -- Função: organizeContentByTabs
     for tabName, contentCreator in pairs(contentMap) do
+    -- Loop de repetição
         local tab = tabBar:addTab(tabName)
         contentCreator(tab.tabPanel)
     end
 end
 
 -- ✅ BOM: Usar callbacks para flexibilidade
+    --  ✅ BOM: Usar callbacks para flexibilidade (traduzido)
 function createTabWithCallbacks(tabBar, text, callbacks)
+    -- Função: createTabWithCallbacks
     local tab = tabBar:addTab(text)
     
     if callbacks.onCreate then
+    -- Verificação condicional
         callbacks.onCreate(tab)
     end
     
     if callbacks.onSelect then
+    -- Verificação condicional
         tab.onSelect = callbacks.onSelect
     end
     
     if callbacks.onClose then
+    -- Verificação condicional
         tab.onClose = callbacks.onClose
     end
     
@@ -890,6 +1226,7 @@ end
 ```lua
 -- ✅ BOM: Navegação por teclado
 function setupKeyboardNavigation(tabBar)
+    -- Função: setupKeyboardNavigation
     g_keyboard.bindKeyPress('Ctrl+Tab', function()
         tabBar:selectNextTab()
     end)
@@ -900,10 +1237,14 @@ function setupKeyboardNavigation(tabBar)
 end
 
 -- ✅ BOM: Sistema de atalhos
+    --  ✅ BOM: Sistema de atalhos (traduzido)
 function setupTabShortcuts(tabBar, shortcuts)
+    -- Função: setupTabShortcuts
     for key, tabIndex in pairs(shortcuts) do
+    -- Loop de repetição
         g_keyboard.bindKeyPress(key, function()
             if tabBar.tabs[tabIndex] then
+    -- Verificação condicional
                 tabBar:selectTab(tabBar.tabs[tabIndex])
             end
         end)
@@ -929,7 +1270,9 @@ end
 local contentCache = {}
 
 function loadTabContentLazy(tab, contentLoader)
+    -- Função: loadTabContentLazy
     if not contentCache[tab:getText()] then
+    -- Verificação condicional
         contentCache[tab:getText()] = contentLoader()
     end
     
@@ -940,7 +1283,9 @@ end
 local tabPool = {}
 
 function getTabFromPool(tabBar, text)
+    -- Função: getTabFromPool
     if #tabPool > 0 then
+    -- Verificação condicional
         local tab = table.remove(tabPool)
         tab:setText(text)
         return tab
@@ -950,6 +1295,7 @@ function getTabFromPool(tabBar, text)
 end
 
 function returnTabToPool(tab)
+    -- Função: returnTabToPool
     tab:hide()
     table.insert(tabPool, tab)
 end
@@ -965,6 +1311,7 @@ local function measureTabPerformance()
     local tabBar = g_ui.createWidget('TabBar')
     
     for i = 1, 10 do
+    -- Loop de repetição
         tabBar:addTab('Tab ' .. i)
     end
     
@@ -982,10 +1329,12 @@ local tabMetrics = {
 }
 
 function trackTabCreation()
+    -- Função: trackTabCreation
     tabMetrics.created = tabMetrics.created + 1
 end
 
 function trackTabSelection(duration)
+    -- Função: trackTabSelection
     tabMetrics.selected = tabMetrics.selected + 1
     tabMetrics.totalTime = tabMetrics.totalTime + duration
 end

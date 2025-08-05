@@ -23,6 +23,7 @@ O sistema de som do OTClient fornece uma API completa para reprodução de áudi
 
 ```lua
 -- Hierarquia do sistema de som
+    --  Hierarquia do sistema de som (traduzido)
 Audio Engine
 ├── g_sounds (Interface principal)
 ├── SoundChannels (Canais de áudio)
@@ -33,6 +34,7 @@ Audio Engine
 
 ### Canais de Áudio Predefinidos
 
+#### Nível Basic
 ```lua
 -- Constantes de canais de som
 SoundChannels = {
@@ -46,10 +48,66 @@ SoundChannels = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Constantes de canais de som
+SoundChannels = {
+    Master = 0,        -- Canal principal
+    Music = 1,         -- Música de fundo
+    Effects = 2,       -- Efeitos sonoros
+    Interface = 3,     -- Sons da interface
+    Environment = 4,   -- Sons ambientais
+    Voice = 5,         -- Voz/narração
+    Bot = 6           -- Sons de bots/automação
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Constantes de canais de som
+SoundChannels = {
+    Master = 0,        -- Canal principal
+    Music = 1,         -- Música de fundo
+    Effects = 2,       -- Efeitos sonoros
+    Interface = 3,     -- Sons da interface
+    Environment = 4,   -- Sons ambientais
+    Voice = 5,         -- Voz/narração
+    Bot = 6           -- Sons de bots/automação
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🔊 Sistema de Áudio
 
 ### g_sounds - Interface Principal
 
+#### Nível Basic
+```lua
+-- Controle geral do áudio
+local enabled = g_sounds.isAudioEnabled() -- Verifica se áudio está habilitado
+-- Parar todos os sons
+-- Informações do sistema
+local eaxEnabled = g_sounds.isEaxEnabled() -- Verifica suporte EAX
+-- Posição 3D do ouvinte
+```
+
+#### Nível Intermediate
 ```lua
 -- Controle geral do áudio
 g_sounds.enableAudio()                  -- Habilita sistema de áudio
@@ -66,27 +124,60 @@ local eaxEnabled = g_sounds.isEaxEnabled() -- Verifica suporte EAX
 g_sounds.setPosition(position)          -- Define posição do ouvinte
 ```
 
+#### Nível Advanced
+```lua
+-- Controle geral do áudio
+g_sounds.enableAudio()                  -- Habilita sistema de áudio
+g_sounds.disableAudio()                 -- Desabilita sistema de áudio
+local enabled = g_sounds.isAudioEnabled() -- Verifica se áudio está habilitado
+
+-- Parar todos os sons
+g_sounds.stopAll()                      -- Para todos os sons imediatamente
+
+-- Informações do sistema
+local eaxEnabled = g_sounds.isEaxEnabled() -- Verifica suporte EAX
+
+-- Posição 3D do ouvinte
+g_sounds.setPosition(position)          -- Define posição do ouvinte
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Inicialização do Sistema
 
 ```lua
 -- Inicializar sistema de áudio
 function initializeAudioSystem()
+    -- Função: initializeAudioSystem
     if not g_sounds.isAudioEnabled() then
+    -- Verificação condicional
         g_sounds.enableAudio()
         print("Sistema de áudio habilitado")
     end
     
     -- Carregar arquivos de som do cliente
+    --  Carregar arquivos de som do cliente (traduzido)
     g_sounds.loadClientFiles('sounds/')
     
     -- Configurar canais de volume
+    --  Configurar canais de volume (traduzido)
     setupVolumeChannels()
     
     print("Sistema de áudio inicializado")
 end
 
 -- Verificar compatibilidade
+    --  Verificar compatibilidade (traduzido)
 function checkAudioCompatibility()
+    -- Função: checkAudioCompatibility
     local compatible = g_sounds.isAudioEnabled()
     local eax = g_sounds.isEaxEnabled()
     
@@ -101,6 +192,7 @@ end
 
 ### SoundChannel - Interface de Canal
 
+#### Nível Basic
 ```lua
 -- Obter canal específico
 local musicChannel = g_sounds.getChannel(SoundChannels.Music)
@@ -126,11 +218,82 @@ local playing = musicChannel:isPlaying() -- Está reproduzindo
 local buffering = musicChannel:isBuffering() -- Está carregando
 ```
 
+#### Nível Intermediate
+```lua
+-- Obter canal específico
+local musicChannel = g_sounds.getChannel(SoundChannels.Music)
+local effectsChannel = g_sounds.getChannel(SoundChannels.Effects)
+local interfaceChannel = g_sounds.getChannel(SoundChannels.Interface)
+
+-- Controle do canal
+musicChannel:enable()                   -- Habilita canal
+musicChannel:disable()                  -- Desabilita canal
+local enabled = musicChannel:isEnabled() -- Verifica se habilitado
+
+-- Controle de volume do canal
+musicChannel:setGain(0.8)               -- Define volume (0.0 - 1.0)
+local gain = musicChannel:getGain()     -- Obtém volume atual
+
+-- Reprodução no canal
+musicChannel:play(fileName, fadeTime, gain, pitch)
+musicChannel:stop(fadeTime)             -- Para reprodução
+musicChannel:enqueue(fileName, fadeTime, gain, pitch) -- Adiciona à fila
+
+-- Estados do canal
+local playing = musicChannel:isPlaying() -- Está reproduzindo
+local buffering = musicChannel:isBuffering() -- Está carregando
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Obter canal específico
+local musicChannel = g_sounds.getChannel(SoundChannels.Music)
+local effectsChannel = g_sounds.getChannel(SoundChannels.Effects)
+local interfaceChannel = g_sounds.getChannel(SoundChannels.Interface)
+
+-- Controle do canal
+musicChannel:enable()                   -- Habilita canal
+musicChannel:disable()                  -- Desabilita canal
+local enabled = musicChannel:isEnabled() -- Verifica se habilitado
+
+-- Controle de volume do canal
+musicChannel:setGain(0.8)               -- Define volume (0.0 - 1.0)
+local gain = musicChannel:getGain()     -- Obtém volume atual
+
+-- Reprodução no canal
+musicChannel:play(fileName, fadeTime, gain, pitch)
+musicChannel:stop(fadeTime)             -- Para reprodução
+musicChannel:enqueue(fileName, fadeTime, gain, pitch) -- Adiciona à fila
+
+-- Estados do canal
+local playing = musicChannel:isPlaying() -- Está reproduzindo
+local buffering = musicChannel:isBuffering() -- Está carregando
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Gerenciamento de Canais
 
 ```lua
 -- Configurar todos os canais
+    --  Configurar todos os canais (traduzido)
 function setupVolumeChannels()
+    -- Função: setupVolumeChannels
     local channels = {
         {id = SoundChannels.Music, gain = 0.7, name = "Music"},
         {id = SoundChannels.Effects, gain = 0.9, name = "Effects"},
@@ -140,8 +303,10 @@ function setupVolumeChannels()
     }
     
     for _, channelInfo in ipairs(channels) do
+    -- Loop de repetição
         local channel = g_sounds.getChannel(channelInfo.id)
         if channel then
+    -- Verificação condicional
             channel:enable()
             channel:setGain(channelInfo.gain)
             print("Canal configurado:", channelInfo.name, "Volume:", channelInfo.gain)
@@ -150,17 +315,23 @@ function setupVolumeChannels()
 end
 
 -- Silenciar todos os canais
+    --  Silenciar todos os canais (traduzido)
 function muteAllChannels()
+    -- Função: muteAllChannels
     for channelId = SoundChannels.Master, SoundChannels.Bot do
+    -- Loop de repetição
         local channel = g_sounds.getChannel(channelId)
         if channel then
+    -- Verificação condicional
             channel:setGain(0.0)
         end
     end
 end
 
 -- Restaurar volumes dos canais
+    --  Restaurar volumes dos canais (traduzido)
 function restoreChannelVolumes()
+    -- Função: restoreChannelVolumes
     local volumes = {
         [SoundChannels.Music] = 0.7,
         [SoundChannels.Effects] = 0.9,
@@ -170,8 +341,10 @@ function restoreChannelVolumes()
     }
     
     for channelId, volume in pairs(volumes) do
+    -- Loop de repetição
         local channel = g_sounds.getChannel(channelId)
         if channel then
+    -- Verificação condicional
             channel:setGain(volume)
         end
     end
@@ -182,6 +355,7 @@ end
 
 ### Reprodução Básica
 
+#### Nível Basic
 ```lua
 -- Reprodução simples
 g_sounds.play("sounds/click.ogg")       -- Som simples
@@ -202,8 +376,82 @@ local effectsChannel = g_sounds.getChannel(SoundChannels.Effects)
 effectsChannel:play("sounds/sword_hit.ogg", 0, 1.0, 1.0)
 ```
 
+#### Nível Intermediate
+```lua
+-- Reprodução simples
+g_sounds.play("sounds/click.ogg")       -- Som simples
+g_sounds.play("sounds/music.ogg", 1000) -- Com fade in de 1 segundo
+
+-- Reprodução com parâmetros
+g_sounds.play(fileName, fadeTime, gain, pitch)
+-- fileName: caminho do arquivo
+-- fadeTime: tempo de fade in/out em ms
+-- gain: volume (0.0 - 1.0)
+-- pitch: pitch/velocidade (0.5 - 2.0)
+
+-- Pré-carregar som
+g_sounds.preload("sounds/explosion.ogg") -- Carrega na memória
+
+-- Reprodução em canal específico
+local effectsChannel = g_sounds.getChannel(SoundChannels.Effects)
+effectsChannel:play("sounds/sword_hit.ogg", 0, 1.0, 1.0)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Reprodução simples
+g_sounds.play("sounds/click.ogg")       -- Som simples
+g_sounds.play("sounds/music.ogg", 1000) -- Com fade in de 1 segundo
+
+-- Reprodução com parâmetros
+g_sounds.play(fileName, fadeTime, gain, pitch)
+-- fileName: caminho do arquivo
+-- fadeTime: tempo de fade in/out em ms
+-- gain: volume (0.0 - 1.0)
+-- pitch: pitch/velocidade (0.5 - 2.0)
+
+-- Pré-carregar som
+g_sounds.preload("sounds/explosion.ogg") -- Carrega na memória
+
+-- Reprodução em canal específico
+local effectsChannel = g_sounds.getChannel(SoundChannels.Effects)
+effectsChannel:play("sounds/sword_hit.ogg", 0, 1.0, 1.0)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Fila de Reprodução
 
+#### Nível Basic
+```lua
+-- Enfileirar sons para reprodução sequencial
+local musicChannel = g_sounds.getChannel(SoundChannels.Music)
+-- Playlist de música
+function playMusicPlaylist(playlist)
+    local musicChannel = g_sounds.getChannel(SoundChannels.Music)
+        local fadeTime = i == 1 and 2000 or 0 -- Fade in apenas na primeira
+    end
+end
+-- Exemplo de playlist
+local gameplayPlaylist = {
+```
+
+#### Nível Intermediate
 ```lua
 -- Enfileirar sons para reprodução sequencial
 local musicChannel = g_sounds.getChannel(SoundChannels.Music)
@@ -233,28 +481,75 @@ local gameplayPlaylist = {
 playMusicPlaylist(gameplayPlaylist)
 ```
 
+#### Nível Advanced
+```lua
+-- Enfileirar sons para reprodução sequencial
+local musicChannel = g_sounds.getChannel(SoundChannels.Music)
+
+musicChannel:enqueue("sounds/intro.ogg", 1000, 0.8, 1.0)
+musicChannel:enqueue("sounds/main_theme.ogg", 2000, 0.8, 1.0)
+musicChannel:enqueue("sounds/outro.ogg", 1000, 0.8, 1.0)
+
+-- Playlist de música
+function playMusicPlaylist(playlist)
+    local musicChannel = g_sounds.getChannel(SoundChannels.Music)
+    musicChannel:stop(1000) -- Para música atual com fade out
+    
+    for i, track in ipairs(playlist) do
+        local fadeTime = i == 1 and 2000 or 0 -- Fade in apenas na primeira
+        musicChannel:enqueue(track.file, fadeTime, track.volume or 0.8, track.pitch or 1.0)
+    end
+end
+
+-- Exemplo de playlist
+local gameplayPlaylist = {
+    {file = "sounds/music/ambient1.ogg", volume = 0.6},
+    {file = "sounds/music/ambient2.ogg", volume = 0.7},
+    {file = "sounds/music/combat.ogg", volume = 0.8, pitch = 1.1}
+}
+
+playMusicPlaylist(gameplayPlaylist)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🔈 Controle de Volume
 
 ### Volume Global
 
 ```lua
 -- Controle do volume master
+    --  Controle do volume master (traduzido)
 function setMasterVolume(volume)
+    -- Função: setMasterVolume
     local masterChannel = g_sounds.getChannel(SoundChannels.Master)
     if masterChannel then
+    -- Verificação condicional
         masterChannel:setGain(volume)
     end
 end
 
 function getMasterVolume()
+    -- Função: getMasterVolume
     local masterChannel = g_sounds.getChannel(SoundChannels.Master)
     return masterChannel and masterChannel:getGain() or 0.0
 end
 
 -- Fade global
+    --  Fade global (traduzido)
 function fadeToVolume(targetVolume, duration)
+    -- Função: fadeToVolume
     local masterChannel = g_sounds.getChannel(SoundChannels.Master)
     if not masterChannel then return end
+    -- Verificação condicional
     
     local startVolume = masterChannel:getGain()
     local startTime = g_clock.millis()
@@ -268,6 +563,7 @@ function fadeToVolume(targetVolume, duration)
         masterChannel:setGain(currentVolume)
         
         if progress < 1.0 then
+    -- Verificação condicional
             updateEvent = scheduleEvent(updateFade, 50)
         end
     end
@@ -279,6 +575,7 @@ end
 
 ### Volume por Canal
 
+#### Inicialização e Configuração
 ```lua
 -- Configurações de volume por categoria
 local VolumeSettings = {
@@ -302,6 +599,10 @@ function applyVolumeSettings(settings)
         [SoundChannels.Environment] = settings.environment,
         [SoundChannels.Voice] = settings.voice
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     for channelId, volume in pairs(channels) do
         local channel = g_sounds.getChannel(channelId)
@@ -323,6 +624,10 @@ function saveVolumeSettings()
         environment = SoundChannels.Environment,
         voice = SoundChannels.Voice
     }
+```
+
+#### Finalização
+```lua
     
     for name, channelId in pairs(channels) do
         local channel = g_sounds.getChannel(channelId)
@@ -344,6 +649,7 @@ end
 
 ### Sons de Interface
 
+#### Inicialização e Configuração
 ```lua
 -- Sons de UI comuns
 local InterfaceSounds = {
@@ -366,6 +672,10 @@ function playInterfaceSound(soundType)
         interfaceChannel:play(soundFile, 0, 1.0, 1.0)
     end
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 -- Conectar sons à interface
 function setupInterfaceSounds()
@@ -393,6 +703,10 @@ function setupInterfaceSounds()
             else
                 playInterfaceSound('close')
             end
+```
+
+#### Finalização
+```lua
         end
     })
 end
@@ -400,6 +714,7 @@ end
 
 ### Sons de Jogo
 
+#### Inicialização e Configuração
 ```lua
 -- Sons de combate
 local CombatSounds = {
@@ -429,6 +744,10 @@ function playCombatSound(soundType, position)
         if position then
             g_sounds.setPosition(position)
         end
+```
+
+#### Funcionalidade 1
+```lua
         effectsChannel:play(soundFile, 0, 1.0, 1.0)
     end
 end
@@ -455,6 +774,10 @@ function setupGameSounds()
             local missileType = getMissileType(missile:getId())
             playCombatSound(missileType)
         end,
+```
+
+#### Finalização
+```lua
         
         onAnimatedTextAppear = function(animatedText)
             -- Sons para diferentes tipos de texto animado
@@ -473,6 +796,7 @@ end
 
 ### Sistema de Som Ambiental
 
+#### Inicialização e Configuração
 ```lua
 -- Sons ambientais por localização
 local AmbientSounds = {
@@ -496,6 +820,10 @@ local AmbientSounds = {
         volume = 0.6,
         loop = true
     }
+```
+
+#### Funcionalidade 1
+```lua
 }
 
 -- Gerenciador de som ambiental
@@ -519,6 +847,10 @@ function AmbientManager.onPositionChange(localPlayer, newPos, oldPos)
         AmbientManager.changeAmbient(newAmbient)
         AmbientManager.currentAmbient = newAmbient
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 function AmbientManager.detectAmbientZone(position)
@@ -552,6 +884,10 @@ function AmbientManager.changeAmbient(ambientType)
                 1.0
             )
         end, 1000) -- Delay para fade out completar
+```
+
+#### Finalização
+```lua
         
         print("Som ambiental alterado para:", ambientType)
     end
@@ -562,6 +898,7 @@ end
 
 ### Sistema de Notificações Sonoras
 
+#### Inicialização e Configuração
 ```lua
 -- Sons de notificação
 local NotificationSounds = {
@@ -584,6 +921,10 @@ function playNotificationSound(type)
         interfaceChannel:play(soundFile, 0, 1.0, 1.0)
     end
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 -- Integrar com eventos do jogo
 function setupGameNotifications()
@@ -605,6 +946,10 @@ function setupGameNotifications()
         onLocalPlayerLevelChange = function(localPlayer, level)
             playNotificationSound('level_up')
         end,
+```
+
+#### Finalização
+```lua
         
         onLocalPlayerDeath = function()
             playNotificationSound('death')
@@ -623,6 +968,7 @@ end
 
 ### Sistema de Feedback Sonoro
 
+#### Nível Basic
 ```lua
 -- Feedback sonoro para ações
 local ActionSounds = {
@@ -669,10 +1015,122 @@ function setupActionFeedback()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Feedback sonoro para ações
+local ActionSounds = {
+    spell_cast = "sounds/actions/spell_cast.ogg",
+    item_use = "sounds/actions/item_use.ogg",
+    door_open = "sounds/actions/door_open.ogg",
+    chest_open = "sounds/actions/chest_open.ogg",
+    buy_item = "sounds/actions/buy.ogg",
+    sell_item = "sounds/actions/sell.ogg"
+}
+
+-- Reproduzir feedback sonoro
+function playActionFeedback(action, success)
+    local soundFile = ActionSounds[action]
+    if not soundFile then return end
+    
+    local effectsChannel = g_sounds.getChannel(SoundChannels.Effects)
+    if effectsChannel then
+        local pitch = success and 1.0 or 0.8 -- Pitch mais baixo para falha
+        effectsChannel:play(soundFile, 0, 1.0, pitch)
+    end
+end
+
+-- Integrar com protocolo
+function setupActionFeedback()
+    -- Esta seria uma integração com o sistema de protocolo
+    -- para detectar ações e seu resultado
+    
+    connect(g_game, {
+        onSpellCast = function(spell, success)
+            playActionFeedback('spell_cast', success)
+        end,
+        
+        onItemUse = function(item, success)
+            playActionFeedback('item_use', success)
+        end,
+        
+        onContainerOpen = function(container)
+            if container:getItem():getId() == 1740 then -- chest
+                playActionFeedback('chest_open', true)
+            end
+        end
+    })
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Feedback sonoro para ações
+local ActionSounds = {
+    spell_cast = "sounds/actions/spell_cast.ogg",
+    item_use = "sounds/actions/item_use.ogg",
+    door_open = "sounds/actions/door_open.ogg",
+    chest_open = "sounds/actions/chest_open.ogg",
+    buy_item = "sounds/actions/buy.ogg",
+    sell_item = "sounds/actions/sell.ogg"
+}
+
+-- Reproduzir feedback sonoro
+function playActionFeedback(action, success)
+    local soundFile = ActionSounds[action]
+    if not soundFile then return end
+    
+    local effectsChannel = g_sounds.getChannel(SoundChannels.Effects)
+    if effectsChannel then
+        local pitch = success and 1.0 or 0.8 -- Pitch mais baixo para falha
+        effectsChannel:play(soundFile, 0, 1.0, pitch)
+    end
+end
+
+-- Integrar com protocolo
+function setupActionFeedback()
+    -- Esta seria uma integração com o sistema de protocolo
+    -- para detectar ações e seu resultado
+    
+    connect(g_game, {
+        onSpellCast = function(spell, success)
+            playActionFeedback('spell_cast', success)
+        end,
+        
+        onItemUse = function(item, success)
+            playActionFeedback('item_use', success)
+        end,
+        
+        onContainerOpen = function(container)
+            if container:getItem():getId() == 1740 then -- chest
+                playActionFeedback('chest_open', true)
+            end
+        end
+    })
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## ⚙️ Configurações de Áudio
 
 ### Interface de Configurações
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de configurações de áudio
 local AudioSettings = {
@@ -699,6 +1157,10 @@ function applyAudioSettings(settings)
         g_sounds.disableAudio()
         return
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Aplicar volumes
     local volumes = {
@@ -723,6 +1185,10 @@ function applyAudioSettings(settings)
         if envChannel then
             envChannel:stop()
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
 end
 
@@ -745,6 +1211,10 @@ local AudioPresets = {
         enabled = false,
         masterVolume = 0.0
     },
+```
+
+#### Funcionalidade 3
+```lua
     
     minimal = {
         enabled = true,
@@ -775,6 +1245,10 @@ local AudioPresets = {
         environmentVolume = 0.8,
         enableAmbient = true
     }
+```
+
+#### Finalização
+```lua
 }
 
 -- Aplicar preset
@@ -792,6 +1266,7 @@ end
 
 ### Exemplo 1: Gerenciador de Áudio
 
+#### Inicialização e Configuração
 ```lua
 -- modules/audio_manager/audio_manager.lua
 audioManager = {}
@@ -851,6 +1326,10 @@ function audioManager.setupInterface()
     audioManager.presetCombo:addOption('Balanceado', 'balanced')
     audioManager.presetCombo:addOption('Imersivo', 'immersive')
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function audioManager.onMasterVolumeChange(slider, value)
     local volume = value / 100.0
@@ -872,6 +1351,10 @@ function audioManager.onMusicVolumeChange(slider, value)
     if musicChannel then
         musicChannel:setGain(volume)
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     audioManager.updateVolumeLabel('musicLabel', volume)
 end
@@ -893,6 +1376,10 @@ function audioManager.updateVolumeLabel(labelId, volume)
     if label then
         label:setText(string.format('%d%%', math.floor(volume * 100)))
     end
+```
+
+#### Funcionalidade 3
+```lua
 end
 
 function audioManager.onEnabledChange(checkbox, checked)
@@ -919,6 +1406,10 @@ function audioManager.updateInterfaceState()
     audioManager.environmentSlider:setEnabled(enabled)
     audioManager.testButton:setEnabled(enabled)
 end
+```
+
+#### Funcionalidade 4
+```lua
 
 function audioManager.playTestSounds()
     -- Tocar sons de teste para cada canal
@@ -940,6 +1431,10 @@ function audioManager.playTestSounds()
 end
 
 function audioManager.toggleMute()
+```
+
+#### Funcionalidade 5
+```lua
     local currentVolume = audioManager.settings.masterVolume
     
     if currentVolume > 0 then
@@ -962,6 +1457,10 @@ function audioManager.onPresetChange(combo, option)
     if presetName ~= 'custom' then
         audioManager.applyPreset(presetName)
     end
+```
+
+#### Funcionalidade 6
+```lua
 end
 
 function audioManager.applyPreset(presetName)
@@ -983,6 +1482,10 @@ function audioManager.applyPreset(presetName)
             interfaceVolume = 0.7,
             environmentVolume = 0.4
         },
+```
+
+#### Funcionalidade 7
+```lua
         immersive = {
             enabled = true,
             masterVolume = 1.0,
@@ -1006,6 +1509,10 @@ function audioManager.applyPreset(presetName)
         
         modules.game_textmessage.displayGameMessage('Preset aplicado: ' .. presetName)
     end
+```
+
+#### Funcionalidade 8
+```lua
 end
 
 function audioManager.applyAllSettings()
@@ -1030,6 +1537,10 @@ function audioManager.applyAllSettings()
         if channel then
             channel:setGain(volume or 0.0)
         end
+```
+
+#### Funcionalidade 9
+```lua
     end
 end
 
@@ -1059,6 +1570,10 @@ function audioManager.setupChannels()
         SoundChannels.Environment,
         SoundChannels.Voice
     }
+```
+
+#### Funcionalidade 10
+```lua
     
     for _, channelId in ipairs(channels) do
         local channel = g_sounds.getChannel(channelId)
@@ -1083,6 +1598,10 @@ function audioManager.setupGameIntegration()
             if mode == TalkType.PrivateFrom and audioManager.settings.enableNotifications then
                 audioManager.playNotification('message')
             end
+```
+
+#### Funcionalidade 11
+```lua
         end
     })
 end
@@ -1104,6 +1623,10 @@ function audioManager.playNotification(type)
         end
     end
 end
+```
+
+#### Funcionalidade 12
+```lua
 
 function audioManager.loadSettings()
     audioManager.settings = g_settings.getNode('audioManager') or {
@@ -1125,6 +1648,10 @@ function audioManager.saveSettings()
     g_settings.setNode('audioManager', audioManager.settings)
     g_settings.save()
 end
+```
+
+#### Finalização
+```lua
 
 function audioManager.terminate()
     audioManager.saveSettings()
@@ -1134,6 +1661,7 @@ end
 
 ### Exemplo 2: Sistema de Música Dinâmica
 
+#### Inicialização e Configuração
 ```lua
 -- modules/dynamic_music/dynamic_music.lua
 dynamicMusic = {}
@@ -1158,6 +1686,10 @@ function dynamicMusic.loadMusicLibrary()
             volume = 0.6,
             fadeTime = 3000
         },
+```
+
+#### Funcionalidade 1
+```lua
         
         combat = {
             files = {
@@ -1182,6 +1714,10 @@ function dynamicMusic.loadMusicLibrary()
                 "sounds/music/dungeon1.ogg",
                 "sounds/music/dungeon2.ogg"
             },
+```
+
+#### Funcionalidade 2
+```lua
             volume = 0.7,
             fadeTime = 2500
         }
@@ -1204,6 +1740,10 @@ end
 function dynamicMusic.onGameEnd()
     dynamicMusic.stopAllMusic()
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 function dynamicMusic.onCombatChange(creature, oldCreature)
     if creature then
@@ -1232,6 +1772,10 @@ function dynamicMusic.getMusicTypeForPosition(position)
     elseif position.z >= 8 then
         return 'dungeon'
     end
+```
+
+#### Funcionalidade 4
+```lua
     
     return 'ambient'
 end
@@ -1259,6 +1803,10 @@ function dynamicMusic.switchToMusic(musicType)
         print("Arquivo de música não encontrado:", selectedFile)
         return
     end
+```
+
+#### Funcionalidade 5
+```lua
     
     -- Fade in nova música
     scheduleEvent(function()
@@ -1281,6 +1829,10 @@ function dynamicMusic.switchToAmbientMusic()
     else
         dynamicMusic.switchToMusic('ambient')
     end
+```
+
+#### Funcionalidade 6
+```lua
 end
 
 function dynamicMusic.startAmbientMusic()
@@ -1306,6 +1858,10 @@ function dynamicMusic.setMusicVolume(volume)
     for _, musicData in pairs(dynamicMusic.musicLibrary) do
         musicData.volume = volume
     end
+```
+
+#### Funcionalidade 7
+```lua
 end
 
 function dynamicMusic.addMusicTrack(category, file, volume)
@@ -1328,12 +1884,17 @@ function dynamicMusic.terminate()
     for _, event in ipairs(dynamicMusic.fadeEvents) do
         removeEvent(event)
     end
+```
+
+#### Finalização
+```lua
     dynamicMusic.fadeEvents = {}
 end
 ```
 
 ### Exemplo 3: Sistema de Efeitos Sonoros 3D
 
+#### Inicialização e Configuração
 ```lua
 -- modules/spatial_audio/spatial_audio.lua
 spatialAudio = {}
@@ -1370,6 +1931,10 @@ function spatialAudio.onMissileAppear(missile)
         [8] = "sounds/missiles/holy.ogg",       -- Holy
         [9] = "sounds/missiles/death.ogg"       -- Death
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     local soundFile = missileSounds[missileId]
     if soundFile then
@@ -1392,6 +1957,10 @@ function spatialAudio.onAnimatedTextAppear(animatedText)
 end
 
 function spatialAudio.onEffectAppear(effect)
+```
+
+#### Funcionalidade 2
+```lua
     local position = effect:getPosition()
     local effectId = effect:getId()
     
@@ -1414,6 +1983,10 @@ function spatialAudio.onEffectAppear(effect)
 end
 
 function spatialAudio.playPositionalSound(soundFile, position, volume, pitch)
+```
+
+#### Funcionalidade 3
+```lua
     if not g_resources.fileExists(soundFile) then
         return
     end
@@ -1443,6 +2016,10 @@ function spatialAudio.playPositionalSound(soundFile, position, volume, pitch)
         -- effectsChannel:playWithPan(soundFile, 0, finalVolume, pitch, pan)
         effectsChannel:play(soundFile, 0, finalVolume, pitch)
     end
+```
+
+#### Funcionalidade 4
+```lua
     
     -- Registrar fonte sonora
     local sourceId = spatialAudio.generateSourceId()
@@ -1467,6 +2044,10 @@ function spatialAudio.calculateDistance(pos1, pos2)
     
     return math.sqrt(dx * dx + dy * dy + dz * dz)
 end
+```
+
+#### Funcionalidade 5
+```lua
 
 function spatialAudio.calculateSterePan(listenerPos, sourcePos)
     local dx = sourcePos.x - listenerPos.x
@@ -1492,6 +2073,10 @@ function spatialAudio.updateListenerPosition(localPlayer, newPos, oldPos)
             local distanceVolume = 1.0 - (distance / spatialAudio.maxDistance)
             source.volume = source.originalVolume * distanceVolume
         end
+```
+
+#### Funcionalidade 6
+```lua
     end
 end
 
@@ -1530,6 +2115,10 @@ function spatialAudio.getTerrainSound(groundId)
         [5406] = "sounds/terrain/sand.ogg",
         [5407] = "sounds/terrain/sand.ogg"
     }
+```
+
+#### Funcionalidade 7
+```lua
     
     return terrainSounds[groundId]
 end
@@ -1551,6 +2140,10 @@ function spatialAudio.getActiveSources()
 end
 
 function spatialAudio.terminate()
+```
+
+#### Finalização
+```lua
     spatialAudio.soundSources = {}
 end
 ```

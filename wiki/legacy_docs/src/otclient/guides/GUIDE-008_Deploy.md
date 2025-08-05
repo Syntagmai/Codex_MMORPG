@@ -18,6 +18,7 @@ Este guia fornece informações detalhadas sobre o processo de deploy do OTClien
 
 ### **1.1 Build Manager**
 
+#### Inicialização e Configuração
 ```lua
 -- Gerenciador de build
 local BuildManager = {
@@ -41,6 +42,10 @@ local BuildManager = {
 }
 
 function BuildManager:build(platform, configuration, target)
+```
+
+#### Funcionalidade 1
+```lua
     local buildDir = self:getBuildDirectory(platform, configuration)
     local sourceDir = self:getSourceDirectory()
     
@@ -64,6 +69,10 @@ function BuildManager:build(platform, configuration, target)
     if not success then
         return false, "Falha na compilação"
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     return true
 end
@@ -94,6 +103,10 @@ function BuildManager:generateCMakeCommand(platform, configuration, sourceDir, b
         table.insert(cmakeArgs, "-DANDROID_ABI=arm64-v8a")
         table.insert(cmakeArgs, "-DANDROID_PLATFORM=android-21")
     end
+```
+
+#### Funcionalidade 3
+```lua
     
     return "cmake " .. table.concat(cmakeArgs, " ")
 end
@@ -116,6 +129,10 @@ function BuildManager:getToolchainFile(platform)
     
     return toolchainFiles[platform] or ""
 end
+```
+
+#### Finalização
+```lua
 
 function BuildManager:executeCommand(command)
     -- Implementar execução de comando
@@ -139,6 +156,7 @@ end
 
 ### **1.2 Build Configuration**
 
+#### Inicialização e Configuração
 ```lua
 -- Configuração de build
 local BuildConfig = {
@@ -165,6 +183,10 @@ local BuildConfig = {
             pkg_config = true,
             system_libs = {"SDL2", "OpenGL", "ALSA"}
         },
+```
+
+#### Funcionalidade 1
+```lua
         
         macos = {
             compiler = "Clang",
@@ -219,6 +241,10 @@ set(BUILD_DOCS %s)
     if platformConfig then
         cmakeContent = cmakeContent .. self:generatePlatformConfig(platformConfig)
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     -- Adicionar targets
     cmakeContent = cmakeContent .. self:generateTargets()
@@ -241,6 +267,10 @@ function BuildConfig:generatePlatformConfig(platformConfig)
         for _, lib in ipairs(platformConfig.system_libs) do
             config = config .. string.format("find_package(%s REQUIRED)\n", lib)
         end
+```
+
+#### Funcionalidade 3
+```lua
     end
     
     return config
@@ -269,6 +299,10 @@ if(BUILD_TESTS)
     enable_testing()
     add_subdirectory(tests)
 endif()
+```
+
+#### Finalização
+```lua
 
 if(BUILD_DOCS)
     add_subdirectory(docs)
@@ -283,6 +317,7 @@ end
 
 ### **2.1 Package Manager**
 
+#### Inicialização e Configuração
 ```lua
 -- Gerenciador de pacotes
 local PackageManager = {
@@ -318,6 +353,10 @@ function PackageManager:createPackage(platform, format, buildDir)
     -- Criar pacote final
     return self:createFinalPackage(platform, format, packageDir)
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function PackageManager:getPackageDirectory(platform, format)
     return string.format("packages/%s/%s", platform, format)
@@ -339,6 +378,10 @@ function PackageManager:copyBuildFiles(buildDir, packageDir)
 end
 
 function PackageManager:addDependencies(platform, packageDir)
+```
+
+#### Funcionalidade 2
+```lua
     local deps = self.dependencies[platform]
     if not deps then return end
     
@@ -365,6 +408,10 @@ function PackageManager:addResources(packageDir)
             local command = string.format("cp -r %s %s/", resource, packageDir)
             self:executeCommand(command)
         end
+```
+
+#### Funcionalidade 3
+```lua
     end
 end
 
@@ -387,6 +434,10 @@ function PackageManager:createFinalPackage(platform, format, packageDir)
     elseif format == "apk" then
         return self:createApkPackage(packageDir, outputFile)
     end
+```
+
+#### Funcionalidade 4
+```lua
     
     return false, "Formato de pacote não suportado"
 end
@@ -409,6 +460,10 @@ function PackageManager:createDebPackage(packageDir, outputFile)
 end
 
 function PackageManager:generateDebControl()
+```
+
+#### Funcionalidade 5
+```lua
     return [
 Package: otclient
 Version: ](
@@ -434,6 +489,10 @@ function PackageManager:getVersion()
         versionFile:close()
         return version or "1.0.0"
     end
+```
+
+#### Funcionalidade 6
+```lua
     return "1.0.0"
 end
 
@@ -455,6 +514,10 @@ function PackageManager:findDependency(depName)
     
     return nil
 end
+```
+
+#### Finalização
+```lua
 
 function PackageManager:fileExists(path)
     local file = io.open(path, "r")
@@ -473,6 +536,7 @@ end
 
 ### **2.2 Installer Generator**
 
+#### Inicialização e Configuração
 ```lua
 -- Gerador de instaladores
 local InstallerGenerator = {
@@ -496,6 +560,10 @@ function InstallerGenerator:createInstaller(platform, packageDir, outputFile)
     elseif installerType == "gradle" then
         return self:createGradleInstaller(packageDir, outputFile)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     return false, "Tipo de instalador não suportado"
 end
@@ -517,6 +585,10 @@ function InstallerGenerator:createNsisInstaller(packageDir, outputFile)
 end
 
 function InstallerGenerator:generateNsisScript(packageDir)
+```
+
+#### Funcionalidade 2
+```lua
     return string.format([
 !include "MUI2.nsh"
 
@@ -599,6 +671,10 @@ Section "Uninstall"
 SectionEnd
 .md), packageDir)
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 function InstallerGenerator:createMakeselfInstaller(packageDir, outputFile)
     local command = string.format("makeself %s %s 'OTClient Installer' ./install.sh", 
@@ -654,6 +730,10 @@ chmod +x "$INSTDIR/otclient"
 echo "Package created successfully"
 .md), self:getVersion(), packageDir)
 end
+```
+
+#### Finalização
+```lua
 
 function InstallerGenerator:executeCommand(command)
     local result = os.execute(command)
@@ -677,6 +757,7 @@ end
 
 ### **3.1 Release Manager**
 
+#### Inicialização e Configuração
 ```lua
 -- Gerenciador de releases
 local ReleaseManager = {
@@ -709,6 +790,10 @@ function ReleaseManager:createRelease(version, channel, packages)
     
     return release
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function ReleaseManager:generateChangelog(version)
     local changelog = ""
@@ -731,6 +816,10 @@ function ReleaseManager:generateChangelog(version)
 end
 
 function ReleaseManager:calculateChecksums(packages)
+```
+
+#### Funcionalidade 2
+```lua
     local checksums = {}
     
     for _, package in ipairs(packages) do
@@ -752,6 +841,10 @@ function ReleaseManager:calculateFileChecksum(filePath)
     end
     return ""
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 function ReleaseManager:saveRelease(release)
     local releaseFile = string.format("releases/release-%s.json", release.version)
@@ -783,6 +876,10 @@ function ReleaseManager:serializeRelease(release)
     "changelog": "%s",
     "checksums": %s
 }
+```
+
+#### Funcionalidade 4
+```lua
 ](
 {
     "version": "%s",
@@ -807,6 +904,10 @@ function ReleaseManager:serializeTable(tbl)
     for k, v in pairs(tbl) do
         table.insert(items, string.format('"%s": "%s"', k, v))
     end
+```
+
+#### Funcionalidade 5
+```lua
     return "{" .. table.concat(items, ", ") .. "}"
 end
 
@@ -833,6 +934,10 @@ function ReleaseManager:getLatestRelease(channel)
             if not latest or self:compareVersions(release.version, latest.version) > 0 then
                 latest = release
             end
+```
+
+#### Funcionalidade 6
+```lua
         end
     end
     
@@ -856,6 +961,10 @@ function ReleaseManager:compareVersions(version1, version2)
     
     return 0
 end
+```
+
+#### Finalização
+```lua
 
 function ReleaseManager:parseVersion(version)
     local parts = {}
@@ -868,6 +977,7 @@ end
 
 ### **3.2 Update Manager**
 
+#### Inicialização e Configuração
 ```lua
 -- Gerenciador de atualizações
 local UpdateManager = {
@@ -891,6 +1001,10 @@ function UpdateManager:checkForUpdates()
 end
 
 function UpdateManager:getLatestRelease()
+```
+
+#### Funcionalidade 1
+```lua
     local url = string.format("%s/latest-%s.json", self.updateUrl, self.updateChannel)
     
     -- Fazer requisição HTTP (implementação simplificada)
@@ -913,6 +1027,10 @@ function UpdateManager:httpGet(url)
     end
     return nil
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 function UpdateManager:parseReleaseJson(json)
     -- Implementar parsing de JSON (simplificado)
@@ -953,6 +1071,10 @@ function UpdateManager:downloadUpdate(release)
         else
             return false, "Checksum inválido"
         end
+```
+
+#### Funcionalidade 3
+```lua
     end
     
     return false, "Falha no download"
@@ -974,6 +1096,10 @@ function UpdateManager:installUpdate(packagePath)
     elseif platform == "macos" then
         return self:installMacosUpdate(packagePath)
     end
+```
+
+#### Funcionalidade 4
+```lua
     
     return false, "Plataforma não suportada"
 end
@@ -996,6 +1122,10 @@ function UpdateManager:installLinuxUpdate(packagePath)
     
     return false, "Formato de pacote não suportado"
 end
+```
+
+#### Funcionalidade 5
+```lua
 
 function UpdateManager:installMacosUpdate(packagePath)
     -- Implementar instalação no macOS
@@ -1017,6 +1147,10 @@ function UpdateManager:getCurrentPlatform()
         return "linux"
     end
 end
+```
+
+#### Funcionalidade 6
+```lua
 
 function UpdateManager:createDirectory(path)
     os.execute("mkdir -p " .. path)
@@ -1046,6 +1180,10 @@ function UpdateManager:compareVersions(version1, version2)
         elseif v1 < v2 then
             return -1
         end
+```
+
+#### Finalização
+```lua
     end
     
     return 0
@@ -1066,6 +1204,7 @@ end
 
 ### **4.1 CI/CD Pipeline**
 
+#### Inicialização e Configuração
 ```lua
 -- Pipeline de CI/CD
 local CICDPipeline = {
@@ -1092,6 +1231,10 @@ function CICDPipeline:runPipeline(trigger, branch, commit)
         status = "running",
         startTime = os.time()
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Executar estágios
     for _, stage in ipairs(self.stages) do
@@ -1121,6 +1264,10 @@ function CICDPipeline:runPipeline(trigger, branch, commit)
     
     return pipeline
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 function CICDPipeline:runStage(stage, pipeline)
     local startTime = os.time()
@@ -1145,6 +1292,10 @@ function CICDPipeline:runStage(stage, pipeline)
         output = output,
         duration = duration
     }
+```
+
+#### Funcionalidade 3
+```lua
 end
 
 function CICDPipeline:runBuildStage(pipeline)
@@ -1166,6 +1317,10 @@ function CICDPipeline:runBuildStage(pipeline)
 end
 
 function CICDPipeline:runTestStage(pipeline)
+```
+
+#### Funcionalidade 4
+```lua
     local testCommand = "ctest --output-on-failure"
     local result = os.execute(testCommand)
     
@@ -1193,6 +1348,10 @@ function CICDPipeline:runPackageStage(pipeline)
             success = false
             output = output .. string.format("Package failed for %s\n", platform)
         end
+```
+
+#### Funcionalidade 5
+```lua
     end
     
     pipeline.packages = packages
@@ -1214,6 +1373,10 @@ function CICDPipeline:runDeployStage(pipeline)
         return true, "Skipped deployment (not main branch or tag)"
     end
 end
+```
+
+#### Funcionalidade 6
+```lua
 
 function CICDPipeline:extractVersion(commit)
     -- Extrair versão do commit ou tag
@@ -1235,6 +1398,10 @@ function CICDPipeline:savePipelineResult(pipeline)
         file:close()
     end
 end
+```
+
+#### Funcionalidade 7
+```lua
 
 function CICDPipeline:serializePipeline(pipeline)
     -- Implementar serialização do pipeline
@@ -1260,6 +1427,10 @@ function CICDPipeline:serializePipeline(pipeline)
     "duration": %d,
     "stages": %s
 }
+```
+
+#### Finalização
+```lua
 .md), 
         pipeline.trigger,
         pipeline.branch,
@@ -1296,6 +1467,7 @@ end
 
 ### **5.2 Checklist de Deploy**
 
+#### Nível Basic
 ```lua
 local deployChecklist = {
     "Verificar dependências do sistema",
@@ -1309,8 +1481,54 @@ local deployChecklist = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+local deployChecklist = {
+    "Verificar dependências do sistema",
+    "Executar testes automatizados",
+    "Validar configurações de build",
+    "Verificar assinaturas digitais",
+    "Testar instaladores",
+    "Validar compatibilidade",
+    "Verificar documentação",
+    "Testar processo de rollback"
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local deployChecklist = {
+    "Verificar dependências do sistema",
+    "Executar testes automatizados",
+    "Validar configurações de build",
+    "Verificar assinaturas digitais",
+    "Testar instaladores",
+    "Validar compatibilidade",
+    "Verificar documentação",
+    "Testar processo de rollback"
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **5.3 Estratégias de Deploy**
 
+#### Nível Basic
 ```lua
 -- Estratégias de deploy
 local DeployStrategies = {
@@ -1337,6 +1555,81 @@ local DeployStrategies = {
         -- Expandir gradualmente se tudo OK
     end
 }
+```
+
+#### Nível Intermediate
+```lua
+-- Estratégias de deploy
+local DeployStrategies = {
+    -- Blue-Green Deployment
+    blueGreen = function(oldVersion, newVersion)
+        -- Manter versão antiga ativa
+        -- Deploy nova versão em ambiente paralelo
+        -- Testar nova versão
+        -- Trocar tráfego para nova versão
+        -- Desativar versão antiga
+    end,
+    
+    -- Rolling Deployment
+    rolling = function(version, instances)
+        -- Deploy em instâncias uma por vez
+        -- Verificar saúde de cada instância
+        -- Continuar com próxima instância
+    end,
+    
+    -- Canary Deployment
+    canary = function(version, percentage)
+        -- Deploy para pequena porcentagem de usuários
+        -- Monitorar métricas
+        -- Expandir gradualmente se tudo OK
+    end
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Estratégias de deploy
+local DeployStrategies = {
+    -- Blue-Green Deployment
+    blueGreen = function(oldVersion, newVersion)
+        -- Manter versão antiga ativa
+        -- Deploy nova versão em ambiente paralelo
+        -- Testar nova versão
+        -- Trocar tráfego para nova versão
+        -- Desativar versão antiga
+    end,
+    
+    -- Rolling Deployment
+    rolling = function(version, instances)
+        -- Deploy em instâncias uma por vez
+        -- Verificar saúde de cada instância
+        -- Continuar com próxima instância
+    end,
+    
+    -- Canary Deployment
+    canary = function(version, percentage)
+        -- Deploy para pequena porcentagem de usuários
+        -- Monitorar métricas
+        -- Expandir gradualmente se tudo OK
+    end
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---

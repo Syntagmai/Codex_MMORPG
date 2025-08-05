@@ -64,6 +64,7 @@ graph TD
 ```lua
 -- Criação de Mini-Window
 function UIMiniWindow.create()
+    -- Função: UIMiniWindow
     local miniwindow = UIMiniWindow.internalCreate()
     miniwindow.UIMiniWindowContainer = true
     return miniwindow
@@ -71,14 +72,17 @@ end
 
 -- Operações Principais
 function UIMiniWindow:open(dontSave)
+    -- Função: UIMiniWindow
     self:setVisible(true)
     if not dontSave then
+    -- Verificação condicional
         self:setSettings({ closed = false })
     end
     signalcall(self.onOpen, self)
 end
 
 function UIMiniWindow:minimize(dontSave)
+    -- Função: UIMiniWindow
     self:setOn(true)
     self:getChildById('contentsPanel'):hide()
     self:getChildById('miniwindowScrollBar'):hide()
@@ -88,6 +92,7 @@ function UIMiniWindow:minimize(dontSave)
     self:setHeight(self.minimizedHeight)
     
     if not dontSave then
+    -- Verificação condicional
         self:setSettings({ minimized = true })
     end
     signalcall(self.onMinimize, self)
@@ -98,6 +103,7 @@ end
 
 ```lua
 -- Estrutura do Controller
+    --  Estrutura do Controller (traduzido)
 Controller = {
     ui = nil,
     name = nil,
@@ -112,24 +118,32 @@ Controller = {
 }
 
 -- Ciclo de Vida
+    --  Ciclo de Vida (traduzido)
 function Controller:init()
+    -- Função: Controller
     if self.dataUI ~= nil then
+    -- Verificação condicional
         self:loadUI()
     end
     
     if self.onInit then
+    -- Verificação condicional
         self.currentTypeEvent = TypeEvent.MODULE_INIT
         self:onInit()
     end
 end
 
 -- Gerenciamento de UI
+    --  Gerenciamento de UI (traduzido)
 function Controller:loadUI(name, parent)
+    -- Função: Controller
     if self.ui then
+    -- Verificação condicional
         return
     end
     
     if not self.dataUI then
+    -- Verificação condicional
         self:setUI(name, parent)
     end
     
@@ -145,12 +159,14 @@ end
 UIButton = extends(UIWidget, 'UIButton')
 
 function UIButton.create()
+    -- Função: UIButton
     local button = UIButton.internalCreate()
     button:setFocusable(false)
     return button
 end
 
 function UIButton:onMouseRelease(pos, button)
+    -- Função: UIButton
     return self:isPressed()
 end
 ```
@@ -160,6 +176,7 @@ end
 UIWindow = extends(UIWidget, 'UIWindow')
 
 function UIWindow.create()
+    -- Função: UIWindow
     local window = UIWindow.internalCreate()
     window:setTextAlign(AlignTopCenter)
     window:setDraggable(true)

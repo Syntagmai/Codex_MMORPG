@@ -24,6 +24,17 @@ Este documento fornece **guias práticos de integração** para preparação da 
 ## 🎯 **1. Guia de Configuração Inicial**
 
 ### **📋 Pré-requisitos**
+#### Nível Basic
+```lua
+-- Pré-requisitos para integração
+local Prerequisites = {
+    -- Software necessário
+    -- Dependências
+    dependencies = {
+    -- Configurações de sistema
+```
+
+#### Nível Intermediate
 ```lua
 -- Pré-requisitos para integração
 local Prerequisites = {
@@ -62,7 +73,57 @@ local Prerequisites = {
 }
 ```
 
+#### Nível Advanced
+```lua
+-- Pré-requisitos para integração
+local Prerequisites = {
+    -- Software necessário
+    software = {
+        otclient = "Latest version",
+        canary = "Latest version",
+        lua = "5.1 or higher",
+        cmake = "3.10 or higher",
+        git = "Latest version"
+    },
+    
+    -- Dependências
+    dependencies = {
+        libraries = {
+            "asio",
+            "protobuf",
+            "lua51",
+            "physfs"
+        },
+        
+        tools = {
+            "compiler",
+            "debugger",
+            "profiler"
+        }
+    },
+    
+    -- Configurações de sistema
+    system = {
+        os = "Windows/Linux/macOS",
+        memory = "4GB minimum",
+        storage = "2GB free space",
+        network = "Stable internet connection"
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🔧 Configuração do Ambiente**
+#### Nível Basic
 ```lua
 -- Configuração do ambiente de desenvolvimento
 local EnvironmentSetup = {
@@ -92,11 +153,89 @@ local EnvironmentSetup = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Configuração do ambiente de desenvolvimento
+local EnvironmentSetup = {
+    -- Configuração do OTClient
+    otclient_setup = {
+        clone_repository = "git clone https://github.com/edubart/otclient.git",
+        install_dependencies = "cmake --build . --target install",
+        configure_build = "cmake -DCMAKE_BUILD_TYPE=Release .",
+        build_project = "make -j$(nproc)"
+    },
+    
+    -- Configuração do Canary (quando disponível)
+    canary_setup = {
+        clone_repository = "git clone https://github.com/otland/canary.git",
+        install_dependencies = "composer install",
+        configure_database = "php artisan migrate",
+        start_server = "php artisan serve"
+    },
+    
+    -- Configuração da integração
+    integration_setup = {
+        create_workspace = "mkdir otclient-canary-integration",
+        setup_config = "cp config.example.json config.json",
+        configure_apis = "Edit API endpoints in config.json",
+        test_connection = "Run integration tests"
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Configuração do ambiente de desenvolvimento
+local EnvironmentSetup = {
+    -- Configuração do OTClient
+    otclient_setup = {
+        clone_repository = "git clone https://github.com/edubart/otclient.git",
+        install_dependencies = "cmake --build . --target install",
+        configure_build = "cmake -DCMAKE_BUILD_TYPE=Release .",
+        build_project = "make -j$(nproc)"
+    },
+    
+    -- Configuração do Canary (quando disponível)
+    canary_setup = {
+        clone_repository = "git clone https://github.com/otland/canary.git",
+        install_dependencies = "composer install",
+        configure_database = "php artisan migrate",
+        start_server = "php artisan serve"
+    },
+    
+    -- Configuração da integração
+    integration_setup = {
+        create_workspace = "mkdir otclient-canary-integration",
+        setup_config = "cp config.example.json config.json",
+        configure_apis = "Edit API endpoints in config.json",
+        test_connection = "Run integration tests"
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🔗 **2. Guia de Conectividade**
 
 ### **🌐 Configuração de Rede**
+#### Nível Basic
 ```lua
 -- Configuração de conectividade entre OTClient e Canary
 local NetworkConfiguration = {
@@ -127,7 +266,87 @@ local NetworkConfiguration = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Configuração de conectividade entre OTClient e Canary
+local NetworkConfiguration = {
+    -- Configuração de servidor
+    server_config = {
+        host = "localhost",
+        port = 7171,
+        protocol = "TCP",
+        encryption = "AES-256",
+        compression = "gzip"
+    },
+    
+    -- Configuração de cliente
+    client_config = {
+        connection_timeout = 5000,  -- ms
+        retry_attempts = 3,
+        heartbeat_interval = 30000, -- ms
+        buffer_size = 1024          -- bytes
+    },
+    
+    -- Configuração de proxy (se necessário)
+    proxy_config = {
+        enabled = false,
+        host = "proxy.example.com",
+        port = 8080,
+        authentication = "basic"
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Configuração de conectividade entre OTClient e Canary
+local NetworkConfiguration = {
+    -- Configuração de servidor
+    server_config = {
+        host = "localhost",
+        port = 7171,
+        protocol = "TCP",
+        encryption = "AES-256",
+        compression = "gzip"
+    },
+    
+    -- Configuração de cliente
+    client_config = {
+        connection_timeout = 5000,  -- ms
+        retry_attempts = 3,
+        heartbeat_interval = 30000, -- ms
+        buffer_size = 1024          -- bytes
+    },
+    
+    -- Configuração de proxy (se necessário)
+    proxy_config = {
+        enabled = false,
+        host = "proxy.example.com",
+        port = 8080,
+        authentication = "basic"
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🔐 Configuração de Segurança**
+#### Nível Basic
 ```lua
 -- Configuração de segurança para integração
 local SecurityConfiguration = {
@@ -156,11 +375,87 @@ local SecurityConfiguration = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Configuração de segurança para integração
+local SecurityConfiguration = {
+    -- Autenticação
+    authentication = {
+        method = "JWT",
+        token_expiry = 3600,  -- seconds
+        refresh_token = true,
+        session_management = true
+    },
+    
+    -- Criptografia
+    encryption = {
+        transport = "TLS_1.3",
+        data = "AES-256-GCM",
+        key_exchange = "ECDHE",
+        certificate_validation = true
+    },
+    
+    -- Autorização
+    authorization = {
+        role_based = true,
+        permission_system = true,
+        access_control = true
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Configuração de segurança para integração
+local SecurityConfiguration = {
+    -- Autenticação
+    authentication = {
+        method = "JWT",
+        token_expiry = 3600,  -- seconds
+        refresh_token = true,
+        session_management = true
+    },
+    
+    -- Criptografia
+    encryption = {
+        transport = "TLS_1.3",
+        data = "AES-256-GCM",
+        key_exchange = "ECDHE",
+        certificate_validation = true
+    },
+    
+    -- Autorização
+    authorization = {
+        role_based = true,
+        permission_system = true,
+        access_control = true
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 📡 **3. Guia de APIs**
 
 ### **🔌 Configuração de APIs REST**
+#### Nível Basic
 ```lua
 -- Configuração de APIs REST para integração
 local RESTAPIConfiguration = {
@@ -206,7 +501,133 @@ local RESTAPIConfiguration = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Configuração de APIs REST para integração
+local RESTAPIConfiguration = {
+    -- Configuração base
+    base_config = {
+        base_url = "http://localhost:8000/api",
+        version = "v1",
+        timeout = 5000,
+        retry_count = 3
+    },
+    
+    -- Headers padrão
+    default_headers = {
+        "Content-Type: application/json",
+        "Accept: application/json",
+        "User-Agent: OTClient-Canary-Integration/1.0"
+    },
+    
+    -- Endpoints principais
+    endpoints = {
+        -- Autenticação
+        auth = {
+            login = "/auth/login",
+            logout = "/auth/logout",
+            refresh = "/auth/refresh"
+        },
+        
+        -- Jogo
+        game = {
+            world = "/game/world",
+            creatures = "/game/creatures",
+            items = "/game/items",
+            players = "/game/players"
+        },
+        
+        -- Sistema
+        system = {
+            config = "/system/config",
+            modules = "/system/modules",
+            logs = "/system/logs"
+        }
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Configuração de APIs REST para integração
+local RESTAPIConfiguration = {
+    -- Configuração base
+    base_config = {
+        base_url = "http://localhost:8000/api",
+        version = "v1",
+        timeout = 5000,
+        retry_count = 3
+    },
+    
+    -- Headers padrão
+    default_headers = {
+        "Content-Type: application/json",
+        "Accept: application/json",
+        "User-Agent: OTClient-Canary-Integration/1.0"
+    },
+    
+    -- Endpoints principais
+    endpoints = {
+        -- Autenticação
+        auth = {
+            login = "/auth/login",
+            logout = "/auth/logout",
+            refresh = "/auth/refresh"
+        },
+        
+        -- Jogo
+        game = {
+            world = "/game/world",
+            creatures = "/game/creatures",
+            items = "/game/items",
+            players = "/game/players"
+        },
+        
+        -- Sistema
+        system = {
+            config = "/system/config",
+            modules = "/system/modules",
+            logs = "/system/logs"
+        }
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🔌 Configuração de APIs WebSocket**
+#### Nível Basic
+```lua
+-- Configuração de APIs WebSocket para integração
+local WebSocketConfiguration = {
+    -- Configuração de conexão
+        url = "ws://localhost:8000/ws",
+    -- Configuração de mensagens
+        -- Tipos de mensagem
+            "authenticate",
+        -- Formato de mensagem
+    -- Configuração de eventos
+        -- Eventos de jogo
+            "combat_end"
+        -- Eventos de sistema
+```
+
+#### Nível Intermediate
 ```lua
 -- Configuração de APIs WebSocket para integração
 local WebSocketConfiguration = {
@@ -260,11 +681,76 @@ local WebSocketConfiguration = {
 }
 ```
 
+#### Nível Advanced
+```lua
+-- Configuração de APIs WebSocket para integração
+local WebSocketConfiguration = {
+    -- Configuração de conexão
+    connection = {
+        url = "ws://localhost:8000/ws",
+        protocols = {"otclient-canary-v1"},
+        auto_reconnect = true,
+        reconnect_interval = 5000
+    },
+    
+    -- Configuração de mensagens
+    messages = {
+        -- Tipos de mensagem
+        types = {
+            "connect",
+            "authenticate",
+            "heartbeat",
+            "event",
+            "error"
+        },
+        
+        -- Formato de mensagem
+        format = {
+            type = "string",
+            data = "object",
+            timestamp = "string",
+            id = "string"
+        }
+    },
+    
+    -- Configuração de eventos
+    events = {
+        -- Eventos de jogo
+        game_events = {
+            "player_move",
+            "creature_spawn",
+            "item_drop",
+            "combat_start",
+            "combat_end"
+        },
+        
+        -- Eventos de sistema
+        system_events = {
+            "module_load",
+            "module_unload",
+            "config_change",
+            "error_occurred"
+        }
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🎮 **4. Guia de Sistemas de Jogo**
 
 ### **🌍 Integração de Mundo**
+#### Nível Basic
 ```lua
 -- Guia para integração de sistemas de mundo
 local WorldIntegrationGuide = {
@@ -316,13 +802,136 @@ local WorldIntegrationGuide = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Guia para integração de sistemas de mundo
+local WorldIntegrationGuide = {
+    -- Sincronização de mapa
+    map_sync = {
+        -- Estrutura de dados do mapa
+        map_structure = {
+            width = "integer",
+            height = "integer",
+            layers = "array",
+            tiles = "array"
+        },
+        
+        -- Protocolo de sincronização
+        sync_protocol = {
+            full_sync = "Initial map load",
+            delta_sync = "Incremental updates",
+            tile_update = "Single tile update"
+        },
+        
+        -- Otimizações
+        optimizations = {
+            compression = "LZ4 compression",
+            caching = "Client-side caching",
+            streaming = "Progressive loading"
+        }
+    },
+    
+    -- Sincronização de criaturas
+    creature_sync = {
+        -- Dados de criatura
+        creature_data = {
+            id = "integer",
+            name = "string",
+            position = "object",
+            health = "integer",
+            mana = "integer"
+        },
+        
+        -- Eventos de criatura
+        creature_events = {
+            "spawn",
+            "move",
+            "attack",
+            "death",
+            "despawn"
+        }
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Guia para integração de sistemas de mundo
+local WorldIntegrationGuide = {
+    -- Sincronização de mapa
+    map_sync = {
+        -- Estrutura de dados do mapa
+        map_structure = {
+            width = "integer",
+            height = "integer",
+            layers = "array",
+            tiles = "array"
+        },
+        
+        -- Protocolo de sincronização
+        sync_protocol = {
+            full_sync = "Initial map load",
+            delta_sync = "Incremental updates",
+            tile_update = "Single tile update"
+        },
+        
+        -- Otimizações
+        optimizations = {
+            compression = "LZ4 compression",
+            caching = "Client-side caching",
+            streaming = "Progressive loading"
+        }
+    },
+    
+    -- Sincronização de criaturas
+    creature_sync = {
+        -- Dados de criatura
+        creature_data = {
+            id = "integer",
+            name = "string",
+            position = "object",
+            health = "integer",
+            mana = "integer"
+        },
+        
+        -- Eventos de criatura
+        creature_events = {
+            "spawn",
+            "move",
+            "attack",
+            "death",
+            "despawn"
+        }
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **⚔️ Integração de Combate**
 ```lua
 -- Guia para integração de sistemas de combate
 local CombatIntegrationGuide = {
     -- Sistema de ataques
+    --  Sistema de ataques (traduzido)
     attack_system = {
         -- Tipos de ataque
+    --  Tipos de ataque (traduzido)
         attack_types = {
             "melee",
             "ranged",
@@ -339,6 +948,7 @@ local CombatIntegrationGuide = {
         },
         
         -- Efeitos de combate
+    --  Efeitos de combate (traduzido)
         combat_effects = {
             "bleeding",
             "poison",
@@ -348,8 +958,10 @@ local CombatIntegrationGuide = {
     },
     
     -- Sistema de magias
+    --  Sistema de magias (traduzido)
     spell_system = {
         -- Tipos de magia
+    --  Tipos de magia (traduzido)
         spell_types = {
             "attack",
             "heal",
@@ -359,6 +971,7 @@ local CombatIntegrationGuide = {
         },
         
         -- Requisitos de magia
+    --  Requisitos de magia (traduzido)
         spell_requirements = {
             "mana_cost",
             "level_requirement",
@@ -374,6 +987,7 @@ local CombatIntegrationGuide = {
 ## 🔧 **5. Guia de Sistemas Core**
 
 ### **⚙️ Integração de Configuração**
+#### Inicialização e Configuração
 ```lua
 -- Guia para integração de sistemas de configuração
 local ConfigIntegrationGuide = {
@@ -397,6 +1011,10 @@ local ConfigIntegrationGuide = {
                 keybindings = "object",
                 mouse_sensitivity = "float"
             }
+```
+
+#### Funcionalidade 1
+```lua
         },
         
         -- Configurações do servidor
@@ -423,6 +1041,10 @@ local ConfigIntegrationGuide = {
             "server_override",
             "hybrid_approach"
         },
+```
+
+#### Finalização
+```lua
         
         -- Resolução de conflitos
         conflict_resolution = {
@@ -435,6 +1057,74 @@ local ConfigIntegrationGuide = {
 ```
 
 ### **📦 Integração de Módulos**
+#### Nível Basic
+```lua
+-- Guia para integração de sistemas de módulos
+local ModuleIntegrationGuide = {
+    -- Estrutura de módulo
+        -- Metadados do módulo
+        -- Dependências
+        dependencies = {
+        -- Arquivos do módulo
+    -- Sistema de carregamento
+        -- Ordem de carregamento
+            "dependencies",
+        -- Validação de módulos
+            "dependency_check",
+```
+
+#### Nível Intermediate
+```lua
+-- Guia para integração de sistemas de módulos
+local ModuleIntegrationGuide = {
+    -- Estrutura de módulo
+    module_structure = {
+        -- Metadados do módulo
+        metadata = {
+            name = "string",
+            version = "string",
+            author = "string",
+            description = "string"
+        },
+        
+        -- Dependências
+        dependencies = {
+            required = "array",
+            optional = "array",
+            conflicts = "array"
+        },
+        
+        -- Arquivos do módulo
+        files = {
+            main = "string",
+            ui = "array",
+            data = "array",
+            config = "string"
+        }
+    },
+    
+    -- Sistema de carregamento
+    loading_system = {
+        -- Ordem de carregamento
+        load_order = {
+            "dependencies",
+            "core_modules",
+            "game_modules",
+            "ui_modules"
+        },
+        
+        -- Validação de módulos
+        validation = {
+            "syntax_check",
+            "dependency_check",
+            "security_check",
+            "performance_check"
+        }
+    }
+}
+```
+
+#### Nível Advanced
 ```lua
 -- Guia para integração de sistemas de módulos
 local ModuleIntegrationGuide = {
@@ -490,6 +1180,7 @@ local ModuleIntegrationGuide = {
 ## 🧪 **6. Guia de Testes**
 
 ### **🔬 Testes de Integração**
+#### Inicialização e Configuração
 ```lua
 -- Guia para testes de integração
 local IntegrationTestingGuide = {
@@ -515,6 +1206,10 @@ local IntegrationTestingGuide = {
             "performance_tests",
             "stress_tests"
         }
+```
+
+#### Funcionalidade 1
+```lua
     },
     
     -- Ferramentas de teste
@@ -540,11 +1235,16 @@ local IntegrationTestingGuide = {
             "wrk",
             "artillery"
         }
+```
+
+#### Finalização
+```lua
     }
 }
 ```
 
 ### **🎮 Testes de Jogo**
+#### Nível Basic
 ```lua
 -- Guia para testes específicos de jogo
 local GameTestingGuide = {
@@ -585,11 +1285,111 @@ local GameTestingGuide = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Guia para testes específicos de jogo
+local GameTestingGuide = {
+    -- Testes de gameplay
+    gameplay_tests = {
+        -- Testes de mecânicas
+        mechanics_tests = {
+            "movement_tests",
+            "combat_tests",
+            "trade_tests",
+            "quest_tests"
+        },
+        
+        -- Testes de balanceamento
+        balance_tests = {
+            "experience_rate_tests",
+            "damage_calculation_tests",
+            "economy_tests"
+        }
+    },
+    
+    -- Testes de rede
+    network_tests = {
+        -- Testes de latência
+        latency_tests = {
+            "ping_tests",
+            "lag_simulation_tests",
+            "connection_stability_tests"
+        },
+        
+        -- Testes de throughput
+        throughput_tests = {
+            "bandwidth_tests",
+            "concurrent_connection_tests",
+            "data_transfer_tests"
+        }
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Guia para testes específicos de jogo
+local GameTestingGuide = {
+    -- Testes de gameplay
+    gameplay_tests = {
+        -- Testes de mecânicas
+        mechanics_tests = {
+            "movement_tests",
+            "combat_tests",
+            "trade_tests",
+            "quest_tests"
+        },
+        
+        -- Testes de balanceamento
+        balance_tests = {
+            "experience_rate_tests",
+            "damage_calculation_tests",
+            "economy_tests"
+        }
+    },
+    
+    -- Testes de rede
+    network_tests = {
+        -- Testes de latência
+        latency_tests = {
+            "ping_tests",
+            "lag_simulation_tests",
+            "connection_stability_tests"
+        },
+        
+        -- Testes de throughput
+        throughput_tests = {
+            "bandwidth_tests",
+            "concurrent_connection_tests",
+            "data_transfer_tests"
+        }
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🚀 **7. Guia de Deploy**
 
 ### **📦 Preparação para Deploy**
+#### Nível Basic
 ```lua
 -- Guia para preparação de deploy
 local DeployPreparationGuide = {
@@ -642,7 +1442,131 @@ local DeployPreparationGuide = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Guia para preparação de deploy
+local DeployPreparationGuide = {
+    -- Checklist de deploy
+    deploy_checklist = {
+        -- Preparação do código
+        code_preparation = {
+            "code_review_completed",
+            "tests_passed",
+            "documentation_updated",
+            "version_tagged"
+        },
+        
+        -- Preparação do ambiente
+        environment_preparation = {
+            "server_configured",
+            "database_migrated",
+            "ssl_certificates_installed",
+            "backup_system_configured"
+        },
+        
+        -- Preparação de monitoramento
+        monitoring_preparation = {
+            "logging_configured",
+            "metrics_collection_setup",
+            "alerting_configured",
+            "dashboard_created"
+        }
+    },
+    
+    -- Estratégias de deploy
+    deploy_strategies = {
+        -- Deploy blue-green
+        blue_green = {
+            "prepare_green_environment",
+            "deploy_to_green",
+            "run_tests",
+            "switch_traffic",
+            "monitor_health"
+        },
+        
+        -- Deploy canário
+        canary = {
+            "deploy_to_small_percentage",
+            "monitor_metrics",
+            "gradually_increase",
+            "full_deploy_if_successful"
+        }
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Guia para preparação de deploy
+local DeployPreparationGuide = {
+    -- Checklist de deploy
+    deploy_checklist = {
+        -- Preparação do código
+        code_preparation = {
+            "code_review_completed",
+            "tests_passed",
+            "documentation_updated",
+            "version_tagged"
+        },
+        
+        -- Preparação do ambiente
+        environment_preparation = {
+            "server_configured",
+            "database_migrated",
+            "ssl_certificates_installed",
+            "backup_system_configured"
+        },
+        
+        -- Preparação de monitoramento
+        monitoring_preparation = {
+            "logging_configured",
+            "metrics_collection_setup",
+            "alerting_configured",
+            "dashboard_created"
+        }
+    },
+    
+    -- Estratégias de deploy
+    deploy_strategies = {
+        -- Deploy blue-green
+        blue_green = {
+            "prepare_green_environment",
+            "deploy_to_green",
+            "run_tests",
+            "switch_traffic",
+            "monitor_health"
+        },
+        
+        -- Deploy canário
+        canary = {
+            "deploy_to_small_percentage",
+            "monitor_metrics",
+            "gradually_increase",
+            "full_deploy_if_successful"
+        }
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🔧 Configuração de Produção**
+#### Nível Basic
 ```lua
 -- Guia para configuração de produção
 local ProductionConfigurationGuide = {
@@ -684,11 +1608,113 @@ local ProductionConfigurationGuide = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Guia para configuração de produção
+local ProductionConfigurationGuide = {
+    -- Configuração de servidor
+    server_configuration = {
+        -- Configuração de hardware
+        hardware = {
+            cpu = "4+ cores",
+            memory = "8GB+ RAM",
+            storage = "SSD recommended",
+            network = "High bandwidth"
+        },
+        
+        -- Configuração de software
+        software = {
+            os = "Linux/Windows Server",
+            web_server = "Nginx/Apache",
+            database = "MySQL/PostgreSQL",
+            cache = "Redis/Memcached"
+        }
+    },
+    
+    -- Configuração de segurança
+    security_configuration = {
+        -- Firewall
+        firewall = {
+            "block_unnecessary_ports",
+            "configure_ddos_protection",
+            "setup_intrusion_detection"
+        },
+        
+        -- SSL/TLS
+        ssl_tls = {
+            "install_ssl_certificates",
+            "configure_https_redirect",
+            "setup_certificate_renewal"
+        }
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Guia para configuração de produção
+local ProductionConfigurationGuide = {
+    -- Configuração de servidor
+    server_configuration = {
+        -- Configuração de hardware
+        hardware = {
+            cpu = "4+ cores",
+            memory = "8GB+ RAM",
+            storage = "SSD recommended",
+            network = "High bandwidth"
+        },
+        
+        -- Configuração de software
+        software = {
+            os = "Linux/Windows Server",
+            web_server = "Nginx/Apache",
+            database = "MySQL/PostgreSQL",
+            cache = "Redis/Memcached"
+        }
+    },
+    
+    -- Configuração de segurança
+    security_configuration = {
+        -- Firewall
+        firewall = {
+            "block_unnecessary_ports",
+            "configure_ddos_protection",
+            "setup_intrusion_detection"
+        },
+        
+        -- SSL/TLS
+        ssl_tls = {
+            "install_ssl_certificates",
+            "configure_https_redirect",
+            "setup_certificate_renewal"
+        }
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 📝 **8. Exemplos Práticos**
 
 ### **🎯 Exemplo de Integração Básica**
+#### Inicialização e Configuração
 ```lua
 -- Exemplo básico de integração OTClient-Canary
 local BasicIntegrationExample = {
@@ -718,6 +1744,10 @@ local BasicIntegrationExample = {
             status = "connecting",
             timestamp = os.time()
         }
+```
+
+#### Funcionalidade 1
+```lua
         
         -- Autenticar
         local auth_result = authenticate(client, server)
@@ -740,10 +1770,15 @@ local BasicIntegrationExample = {
         -- Sincronizar dados de jogo
         sync_game_data(connection)
     end
+```
+
+#### Finalização
+```lua
 }
 ```
 
 ### **🔧 Exemplo de API Integration**
+#### Inicialização e Configuração
 ```lua
 -- Exemplo de integração de APIs
 local APIIntegrationExample = {
@@ -771,6 +1806,10 @@ local APIIntegrationExample = {
                 headers = headers or {},
                 timeout = 5000
             }
+```
+
+#### Funcionalidade 1
+```lua
             
             -- Implementar requisição HTTP
             return make_http_request(response)
@@ -799,6 +1838,10 @@ local APIIntegrationExample = {
                 timestamp = os.time(),
                 id = generate_message_id()
             }
+```
+
+#### Finalização
+```lua
             
             -- Implementar envio de mensagem
             return send_websocket_message(connection, message_data)
@@ -812,6 +1855,7 @@ local APIIntegrationExample = {
 ## 🎯 **9. Troubleshooting**
 
 ### **🔍 Problemas Comuns**
+#### Inicialização e Configuração
 ```lua
 -- Guia de resolução de problemas comuns
 local TroubleshootingGuide = {
@@ -842,6 +1886,10 @@ local TroubleshootingGuide = {
                 "Server overload",
                 "Client performance issues"
             },
+```
+
+#### Funcionalidade 1
+```lua
             solutions = {
                 "Check network bandwidth",
                 "Monitor server resources",
@@ -865,6 +1913,10 @@ local TroubleshootingGuide = {
                 "Refresh authentication token",
                 "Check server configuration"
             }
+```
+
+#### Finalização
+```lua
         }
     }
 }

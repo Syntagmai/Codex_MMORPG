@@ -98,19 +98,24 @@ Sistema Drag & Drop
 ```lua
 -- Configurar widget para ser arrastável
 function setupDraggableWidget(widget, dragData)
+    -- Função: setupDraggableWidget
     widget:setDraggable(true)
     
     -- Configurar dados do drag
+    --  Configurar dados do drag (traduzido)
     widget.dragData = dragData or {}
     
     -- Eventos de drag
+    --  Eventos de drag (traduzido)
     widget.onDragEnter = function(widget, mousePos)
         print("Drag iniciado em:", mousePos.x, mousePos.y)
         
         -- Configurar cursor de drag
+    --  Configurar cursor de drag (traduzido)
         g_mouse.pushCursor("target")
         
         -- Criar preview do item sendo arrastado
+    --  Criar preview do item sendo arrastado (traduzido)
         createDragPreview(widget, dragData)
         
         return true  -- Permitir drag
@@ -125,17 +130,21 @@ function setupDraggableWidget(widget, dragData)
         print("Drag finalizado em:", mousePos.x, mousePos.y)
         
         -- Restaurar cursor
+    --  Restaurar cursor (traduzido)
         g_mouse.popCursor("target")
         
         -- Remover preview
+    --  Remover preview (traduzido)
         removeDragPreview()
         
         -- Processar drop
+    --  Processar drop (traduzido)
         processDrop(mousePos, dragData)
     end
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local draggableItem = g_ui.createWidget('UIWidget', parent)
 setupDraggableWidget(draggableItem, {
     type = 'item',
@@ -149,7 +158,9 @@ setupDraggableWidget(draggableItem, {
 
 ```lua
 -- Criar preview visual do item sendo arrastado
+    --  Criar preview visual do item sendo arrastado (traduzido)
 function createDragPreview(widget, dragData)
+    -- Função: createDragPreview
     local preview = g_ui.createWidget('UIWidget', rootWidget)
     preview:setSize({width = 32, height = 32})
     preview:setImageSource(widget:getImageSource())
@@ -157,9 +168,11 @@ function createDragPreview(widget, dragData)
     preview:setId('dragPreview')
     
     -- Configurar dados do preview
+    --  Configurar dados do preview (traduzido)
     preview.dragData = dragData
     
     -- Posicionar no cursor
+    --  Posicionar no cursor (traduzido)
     local mousePos = g_mouse.getPosition()
     preview:setPosition({x = mousePos.x - 16, y = mousePos.y - 16})
     
@@ -168,16 +181,21 @@ end
 
 -- Atualizar posição do preview
 function updateDragPreview(mousePos)
+    -- Função: updateDragPreview
     local preview = g_ui.getRootWidget():getChildById('dragPreview')
     if preview then
+    -- Verificação condicional
         preview:setPosition({x = mousePos.x - 16, y = mousePos.y - 16})
     end
 end
 
 -- Remover preview
+    --  Remover preview (traduzido)
 function removeDragPreview()
+    -- Função: removeDragPreview
     local preview = g_ui.getRootWidget():getChildById('dragPreview')
     if preview then
+    -- Verificação condicional
         preview:destroy()
     end
 end
@@ -189,6 +207,7 @@ end
 
 ### 🎯 **Configurando Drop Zones**
 
+#### Inicialização e Configuração
 ```lua
 -- Criar zona de drop
 function createDropZone(parent, zoneData)
@@ -214,6 +233,10 @@ function createDropZone(parent, zoneData)
         else
             widget:setBackgroundColor('#FF0000')
         end
+```
+
+#### Funcionalidade 1
+```lua
     end
     
     dropZone.onDragLeave = function(widget, mousePos)
@@ -235,6 +258,10 @@ function createDropZone(parent, zoneData)
             return false  -- Drop rejeitado
         end
     end
+```
+
+#### Finalização
+```lua
     
     return dropZone
 end
@@ -263,14 +290,17 @@ end
 widget:setDraggable(true)
 
 -- Eventos de drag
+    --  Eventos de drag (traduzido)
 widget.onDragEnter = function(widget, mousePos) end
 widget.onDragLeave = function(widget, mousePos) end
 widget.onDragMove = function(widget, mousePos) end
 
 -- Eventos de drop
+    --  Eventos de drop (traduzido)
 widget.onDrop = function(widget, mousePos) end
 
 -- Controle de cursor
+    --  Controle de cursor (traduzido)
 g_mouse.pushCursor("target")
 g_mouse.popCursor("target")
 
@@ -283,14 +313,18 @@ g_mouse.bindOnDrop(widget, callback)
 #### UIItem (Itens do Jogo)
 ```lua
 -- Configurar drag & drop para itens
+    --  Configurar drag & drop para itens (traduzido)
 function setupItemDragDrop(itemWidget)
+    -- Função: setupItemDragDrop
     itemWidget:setDraggable(true)
     
     itemWidget.onDragEnter = function(widget, mousePos)
         if widget:isVirtual() then return false end
+    -- Verificação condicional
         
         local item = widget:getItem()
         if not item then return false end
+    -- Verificação condicional
         
         widget:setBorderWidth(1)
         widget:setBorderColor('#00FF00')
@@ -301,6 +335,7 @@ function setupItemDragDrop(itemWidget)
     
     itemWidget.onDragLeave = function(widget, mousePos)
         if widget:isVirtual() then return false end
+    -- Verificação condicional
         
         widget.currentDragThing = nil
         g_mouse.popCursor('target')
@@ -311,16 +346,20 @@ function setupItemDragDrop(itemWidget)
     itemWidget.onDrop = function(widget, mousePos)
         local draggedItem = widget.currentDragThing
         if not draggedItem or not draggedItem:isItem() then return false end
+    -- Verificação condicional
         
         local toPos = widget:getPosition()
         local fromPos = draggedItem:getPosition()
         
         if fromPos.x == toPos.x and fromPos.y == toPos.y and fromPos.z == toPos.z then
+    -- Verificação condicional
             return false
         end
         
         -- Mover item
+    --  Mover item (traduzido)
         if draggedItem:getCount() > 1 then
+    -- Verificação condicional
             modules.game_interface.moveStackableItem(draggedItem, toPos)
         else
             g_game.move(draggedItem, toPos, 1)
@@ -335,13 +374,17 @@ end
 #### UIGameMap (Mapa do Jogo)
 ```lua
 -- Configurar drag & drop para mapa
+    --  Configurar drag & drop para mapa (traduzido)
 function setupMapDragDrop(mapWidget)
+    -- Função: setupMapDragDrop
     mapWidget.onDragEnter = function(widget, mousePos)
         local tile = widget:getTile(mousePos)
         if not tile then return false end
+    -- Verificação condicional
         
         local thing = tile:getTopMoveThing()
         if not thing then return false end
+    -- Verificação condicional
         
         widget.currentDragThing = thing
         g_mouse.pushCursor('target')
@@ -356,22 +399,27 @@ function setupMapDragDrop(mapWidget)
     
     mapWidget.onDrop = function(widget, mousePos)
         if not widget:canAcceptDrop(widget, mousePos) then
+    -- Verificação condicional
             return false
         end
         
         local tile = widget:getTile(mousePos)
         if not tile then return false end
+    -- Verificação condicional
         
         local thing = widget.currentDragThing
         local thingPos = thing:getPosition()
         if not thingPos then return false end
+    -- Verificação condicional
         
         local toPos = tile:getPosition()
         if thingPos.x == toPos.x and thingPos.y == toPos.y and thingPos.z == toPos.z then
+    -- Verificação condicional
             return false
         end
         
         if thing:isItem() and thing:getCount() > 1 then
+    -- Verificação condicional
             modules.game_interface.moveStackableItem(thing, toPos)
         else
             g_game.move(thing, toPos, 1)
@@ -391,11 +439,13 @@ end
 ```lua
 -- Setup para slots de inventário
 function setupInventorySlot(slotWidget, slotIndex)
+    -- Função: setupInventorySlot
     slotWidget:setDraggable(true)
     
     slotWidget.onDragEnter = function(widget, mousePos)
         local item = widget:getItem()
         if not item then return false end
+    -- Verificação condicional
         
         widget:setBorderWidth(2)
         widget:setBorderColor('#00FF00')
@@ -414,6 +464,7 @@ function setupInventorySlot(slotWidget, slotIndex)
     slotWidget.onDrop = function(widget, mousePos)
         local draggedItem = widget.currentDragThing
         if not draggedItem then return false end
+    -- Verificação condicional
         
         -- Processar movimento no inventário
         g_game.moveInventoryItem(slotIndex, draggedItem:getId(), draggedItem:getCount())
@@ -428,12 +479,15 @@ end
 
 ```lua
 -- Setup para container slots
+    --  Setup para container slots (traduzido)
 function setupContainerSlot(slotWidget, containerId, slotIndex)
+    -- Função: setupContainerSlot
     slotWidget:setDraggable(true)
     
     slotWidget.onDragEnter = function(widget, mousePos)
         local item = widget:getItem()
         if not item then return false end
+    -- Verificação condicional
         
         widget:setBorderWidth(2)
         widget:setBorderColor('#00FF00')
@@ -452,8 +506,10 @@ function setupContainerSlot(slotWidget, containerId, slotIndex)
     slotWidget.onDrop = function(widget, mousePos)
         local draggedItem = widget.currentDragThing
         if not draggedItem then return false end
+    -- Verificação condicional
         
         -- Processar movimento no container
+    --  Processar movimento no container (traduzido)
         g_game.moveContainerItem(containerId, slotIndex, draggedItem:getId(), draggedItem:getCount())
         
         widget:setBorderWidth(0)
@@ -468,6 +524,7 @@ end
 
 ### 🎯 **Exemplo 1: Sistema de Drag & Drop Customizado**
 
+#### Inicialização e Configuração
 ```lua
 local CustomDragDrop = {}
 
@@ -496,6 +553,10 @@ function CustomDragDrop.createDraggableItem(parent, itemData)
         
         return true
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     item.onDragMove = function(widget, mousePos)
         local preview = g_ui.getRootWidget():getChildById('customDragPreview')
@@ -519,6 +580,10 @@ function CustomDragDrop.createDraggableItem(parent, itemData)
     
     return item
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 function CustomDragDrop.createDropZone(parent, zoneData)
     local dropZone = g_ui.createWidget('UIWidget', parent)
@@ -547,6 +612,10 @@ function CustomDragDrop.createDropZone(parent, zoneData)
         if zoneData.onDropCallback then
             zoneData.onDropCallback(widget, mousePos)
         end
+```
+
+#### Finalização
+```lua
         
         widget:setBackgroundColor('#444444')
         widget:setOpacity(0.3)
@@ -576,12 +645,14 @@ local dropZone = CustomDragDrop.createDropZone(parent, {
 local InterfaceDragDrop = {}
 
 function InterfaceDragDrop.createMovableWindow(parent, windowData)
+    -- Função: InterfaceDragDrop
     local window = g_ui.createWidget('MainWindow', parent)
     window:setSize({width = 200, height = 150})
     window:setText(windowData.title)
     window:setDraggable(true)
     
     -- Configurar dados da janela
+    --  Configurar dados da janela (traduzido)
     window.windowData = windowData
     
     window.onDragEnter = function(widget, mousePos)
@@ -601,11 +672,14 @@ function InterfaceDragDrop.createMovableWindow(parent, windowData)
 end
 
 function InterfaceDragDrop.createTabBar(parent)
+    -- Função: InterfaceDragDrop
     local tabBar = g_ui.createWidget('TabBar', parent)
     tabBar:setDraggable(true)
     
     -- Adicionar tabs
+    --  Adicionar tabs (traduzido)
     for i, tabName in ipairs({'Tab 1', 'Tab 2', 'Tab 3'}) do
+    -- Loop de repetição
         local tab = tabBar:addTab(tabName)
         tab:setDraggable(true)
         
@@ -631,12 +705,16 @@ end
 
 ```lua
 -- ✅ BOM: Validar dados antes do drag
+    --  ✅ BOM: Validar dados antes do drag (traduzido)
 function validateDragData(widget, dragData)
+    -- Função: validateDragData
     if not dragData or not dragData.type then
+    -- Verificação condicional
         return false
     end
     
     if dragData.type == 'item' and not dragData.id then
+    -- Verificação condicional
         return false
     end
     
@@ -645,29 +723,36 @@ end
 
 -- ✅ BOM: Limpar recursos após drag
 function cleanupDrag(widget)
+    -- Função: cleanupDrag
     widget.currentDragThing = nil
     widget:setBorderWidth(0)
     g_mouse.popCursor('target')
     
     local preview = g_ui.getRootWidget():getChildById('dragPreview')
     if preview then
+    -- Verificação condicional
         preview:destroy()
     end
 end
 
 -- ✅ BOM: Usar callbacks para flexibilidade
+    --  ✅ BOM: Usar callbacks para flexibilidade (traduzido)
 function setupDragDropWithCallback(widget, callbacks)
+    -- Função: setupDragDropWithCallback
     widget:setDraggable(true)
     
     if callbacks.onDragStart then
+    -- Verificação condicional
         widget.onDragEnter = callbacks.onDragStart
     end
     
     if callbacks.onDragEnd then
+    -- Verificação condicional
         widget.onDragLeave = callbacks.onDragEnd
     end
     
     if callbacks.onDrop then
+    -- Verificação condicional
         widget.onDrop = callbacks.onDrop
     end
 end
@@ -677,8 +762,11 @@ end
 
 ```lua
 -- ✅ BOM: Feedback visual consistente
+    --  ✅ BOM: Feedback visual consistente (traduzido)
 function setDragFeedback(widget, isValid)
+    -- Função: setDragFeedback
     if isValid then
+    -- Verificação condicional
         widget:setBorderColor('#00FF00')
         widget:setBackgroundColor('#004400')
     else
@@ -688,7 +776,9 @@ function setDragFeedback(widget, isValid)
 end
 
 -- ✅ BOM: Indicadores de estado
+    --  ✅ BOM: Indicadores de estado (traduzido)
 function updateDropZoneState(dropZone, state)
+    -- Função: updateDropZoneState
     local colors = {
         idle = '#444444',
         hover = '#666666',
@@ -705,25 +795,32 @@ end
 ```lua
 -- ✅ BOM: Validação completa de drop
 function validateDrop(dropZone, dragData)
+    -- Função: validateDrop
     -- Verificar tipo
+    --  Verificar tipo (traduzido)
     if not dropZone.zoneData.acceptedTypes then
+    -- Verificação condicional
         return false
     end
     
     local accepted = false
     for _, acceptedType in ipairs(dropZone.zoneData.acceptedTypes) do
+    -- Loop de repetição
         if dragData.type == acceptedType then
+    -- Verificação condicional
             accepted = true
             break
         end
     end
     
     if not accepted then
+    -- Verificação condicional
         return false
     end
     
     -- Verificar regras específicas
     if dropZone.zoneData.validationCallback then
+    -- Verificação condicional
         return dropZone.zoneData.validationCallback(dropZone, dragData)
     end
     
@@ -746,10 +843,13 @@ end
 
 ```lua
 -- Lazy loading de preview
+    --  Lazy loading de preview (traduzido)
 local previewCache = {}
 
 function getDragPreview(itemId)
+    -- Função: getDragPreview
     if not previewCache[itemId] then
+    -- Verificação condicional
         previewCache[itemId] = createPreviewForItem(itemId)
     end
     return previewCache[itemId]
@@ -759,11 +859,13 @@ end
 local validationTimers = {}
 
 function debouncedValidation(dropZone, dragData, delay)
+    -- Função: debouncedValidation
     delay = delay or 100
     
     local zoneId = dropZone:getId()
     
     if validationTimers[zoneId] then
+    -- Verificação condicional
         removeEvent(validationTimers[zoneId])
     end
     
@@ -782,10 +884,12 @@ local function measureDragDropPerformance()
     local startTime = g_clock.millis()
     
     -- Simular drag & drop
+    --  Simular drag & drop (traduzido)
     local widget = g_ui.createWidget('UIWidget')
     widget:setDraggable(true)
     
     -- Simular eventos
+    --  Simular eventos (traduzido)
     widget:onDragEnter({x = 100, y = 100})
     widget:onDragMove({x = 200, y = 200})
     widget:onDragLeave({x = 300, y = 300})

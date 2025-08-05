@@ -22,6 +22,7 @@ Este guia prático fornece exemplos funcionais, tutoriais e casos de uso para im
 local Uso = {}
 
 function Uso:init()
+    -- Função: Uso
     self.settings = {
         enabled = true,
         timeout = 5000,
@@ -30,6 +31,7 @@ function Uso:init()
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local uso = Uso:new()
 uso:init()
 ```
@@ -41,6 +43,7 @@ uso:init()
 local Templates = {}
 
 function Templates:init()
+    -- Função: Templates
     self.settings = {
         enabled = true,
         timeout = 5000,
@@ -49,6 +52,7 @@ function Templates:init()
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local templates = Templates:new()
 templates:init()
 ```
@@ -60,6 +64,7 @@ templates:init()
 local Validação = {}
 
 function Validação:init()
+    -- Função: Validação
     self.settings = {
         enabled = true,
         timeout = 5000,
@@ -68,6 +73,7 @@ function Validação:init()
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local validação = Validação:new()
 validação:init()
 ```
@@ -79,6 +85,7 @@ validação:init()
 local Geração = {}
 
 function Geração:init()
+    -- Função: Geração
     self.settings = {
         enabled = true,
         timeout = 5000,
@@ -87,6 +94,7 @@ function Geração:init()
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local geração = Geração:new()
 geração:init()
 ```
@@ -98,6 +106,7 @@ geração:init()
 ```lua
 -- Template de Módulo
 function Template:processMódulo(data)
+    -- Função: Template
     local result = {
         success = false,
         data = nil,
@@ -106,11 +115,13 @@ function Template:processMódulo(data)
     
     -- Validação
     if not data then
+    -- Verificação condicional
         result.error = "Data is required"
         return result
     end
     
     -- Processamento
+    --  Processamento (traduzido)
     result.success = true
     result.data = data
     
@@ -118,6 +129,7 @@ function Template:processMódulo(data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = template:processMódulo({
     type = "test",
     value = "example"
@@ -126,6 +138,62 @@ local result = template:processMódulo({
 
 ### **Exemplo 2: Geração de Código**
 
+#### Nível Basic
+```lua
+-- Geração de Código
+function CodeGenerator:generateCode(template, data)
+    local result = {
+    -- Validação do template
+    if not template then
+    end
+    -- Geração do código
+    local generatedCode = self:processTemplate(template, data)
+    if generatedCode then
+    end
+end
+-- Exemplo de uso
+local generator = CodeGenerator:new()
+local code = generator:generateCode("module_template", {
+    dependencies = {"core", "utils"}
+```
+
+#### Nível Intermediate
+```lua
+-- Geração de Código
+function CodeGenerator:generateCode(template, data)
+    local result = {
+        success = false,
+        code = nil,
+        error = nil
+    }
+    
+    -- Validação do template
+    if not template then
+        result.error = "Template is required"
+        return result
+    end
+    
+    -- Geração do código
+    local generatedCode = self:processTemplate(template, data)
+    if generatedCode then
+        result.success = true
+        result.code = generatedCode
+    else
+        result.error = "Failed to generate code"
+    end
+    
+    return result
+end
+
+-- Exemplo de uso
+local generator = CodeGenerator:new()
+local code = generator:generateCode("module_template", {
+    name = "MyModule",
+    dependencies = {"core", "utils"}
+})
+```
+
+#### Nível Advanced
 ```lua
 -- Geração de Código
 function CodeGenerator:generateCode(template, data)
@@ -191,6 +259,7 @@ local result = template:processMódulo({
 ```lua
 -- Validação de Código
 function Validação:processCódigo(data)
+    -- Função: Validação
     local result = {
         success = false,
         data = nil,
@@ -199,11 +268,13 @@ function Validação:processCódigo(data)
     
     -- Validação
     if not data then
+    -- Verificação condicional
         result.error = "Data is required"
         return result
     end
     
     -- Processamento
+    --  Processamento (traduzido)
     result.success = true
     result.data = data
     
@@ -211,6 +282,7 @@ function Validação:processCódigo(data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = validação:processCódigo({
     type = "test",
     value = "example"
@@ -222,6 +294,7 @@ local result = validação:processCódigo({
 ```lua
 -- Geração Automática
 function Geração:processAutomática(data)
+    -- Função: Geração
     local result = {
         success = false,
         data = nil,
@@ -230,11 +303,13 @@ function Geração:processAutomática(data)
     
     -- Validação
     if not data then
+    -- Verificação condicional
         result.error = "Data is required"
         return result
     end
     
     -- Processamento
+    --  Processamento (traduzido)
     result.success = true
     result.data = data
     
@@ -242,6 +317,7 @@ function Geração:processAutomática(data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = geração:processAutomática({
     type = "test",
     value = "example"
@@ -253,6 +329,7 @@ local result = geração:processAutomática({
 ```lua
 -- Integração com BMAD
 function Integração:processBMAD(data)
+    -- Função: Integração
     local result = {
         success = false,
         data = nil,
@@ -261,11 +338,13 @@ function Integração:processBMAD(data)
     
     -- Validação
     if not data then
+    -- Verificação condicional
         result.error = "Data is required"
         return result
     end
     
     -- Processamento
+    --  Processamento (traduzido)
     result.success = true
     result.data = data
     
@@ -273,6 +352,7 @@ function Integração:processBMAD(data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = integração:processBMAD({
     type = "test",
     value = "example"
@@ -281,6 +361,62 @@ local result = integração:processBMAD({
 
 ### **Exemplo 5: Geração de Código Inteligente**
 
+#### Nível Basic
+```lua
+-- Geração de Código Inteligente
+function IntelligentCodeGenerator:generateCode(template, data)
+    local result = {
+    -- Validação do template
+    if not template then
+    end
+    -- Geração inteligente do código
+    local generatedCode = self:processTemplate(template, data)
+    if generatedCode then
+    end
+end
+-- Exemplo de uso
+local intelligentGen = IntelligentCodeGenerator:new()
+local code = intelligentGen:generateCode("module_template", {
+    dependencies = {"core", "utils"}
+```
+
+#### Nível Intermediate
+```lua
+-- Geração de Código Inteligente
+function IntelligentCodeGenerator:generateCode(template, data)
+    local result = {
+        success = false,
+        code = nil,
+        error = nil
+    }
+    
+    -- Validação do template
+    if not template then
+        result.error = "Template is required"
+        return result
+    end
+    
+    -- Geração inteligente do código
+    local generatedCode = self:processTemplate(template, data)
+    if generatedCode then
+        result.success = true
+        result.code = generatedCode
+    else
+        result.error = "Failed to generate code"
+    end
+    
+    return result
+end
+
+-- Exemplo de uso
+local intelligentGen = IntelligentCodeGenerator:new()
+local code = intelligentGen:generateCode("module_template", {
+    name = "MyModule",
+    dependencies = {"core", "utils"}
+})
+```
+
+#### Nível Advanced
 ```lua
 -- Geração de Código Inteligente
 function IntelligentCodeGenerator:generateCode(template, data)
@@ -323,6 +459,7 @@ local code = intelligentGen:generateCode("module_template", {
 ```lua
 -- Cenário: Implementação básica do sistema
 function System:basicImplementation()
+    -- Função: System
     local config = {
         enabled = true,
         timeout = 5000,
@@ -331,6 +468,7 @@ function System:basicImplementation()
     
     local result = self:initialize(config)
     if result.success then
+    -- Verificação condicional
         print("Sistema inicializado com sucesso")
     else
         print("Erro na inicialização:", result.error)
@@ -345,13 +483,16 @@ end
 ```lua
 -- Cenário: Validação de dados de entrada
 function System:validateData(data)
+    -- Função: System
     local errors = {}
     
     if not data then
+    -- Verificação condicional
         table.insert(errors, "Data is required")
     end
     
     if data and type(data) ~= "table" then
+    -- Verificação condicional
         table.insert(errors, "Data must be a table")
     end
     
@@ -367,6 +508,7 @@ end
 ```lua
 -- Cenário: Tratamento robusto de erros
 function System:handleError(error, context)
+    -- Função: System
     local errorInfo = {
         message = error,
         context = context,
@@ -375,6 +517,7 @@ function System:handleError(error, context)
     }
     
     -- Log do erro
+    --  Log do erro (traduzido)
     self:logError(errorInfo)
     
     -- Notificar usuário
@@ -391,6 +534,7 @@ end
 ```lua
 -- Teste de validação básica
 function System:testBasicValidation()
+    -- Função: System
     print("=== Teste de Validação Básica ===")
     
     local testData = {
@@ -402,6 +546,7 @@ function System:testBasicValidation()
     print("Validação:", validation.valid)
     
     if not validation.valid then
+    -- Verificação condicional
         print("Erros:", table.concat(validation.errors, ", "))
     end
     
@@ -414,6 +559,7 @@ end
 ```lua
 -- Simulação de funcionamento do sistema
 function System:simulateOperation()
+    -- Função: System
     print("=== Simulação de Operação ===")
     
     local data = {
@@ -454,6 +600,7 @@ SystemData = {{
 }}
 
 -- Estrutura de resultado
+    --  Estrutura de resultado (traduzido)
 Result = {{
     success = boolean,
     data = any,

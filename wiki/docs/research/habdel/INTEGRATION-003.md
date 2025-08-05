@@ -278,6 +278,7 @@ A **INTEGRATION-003** realiza uma análise comparativa profunda dos sistemas de 
 ```cpp
 // Exemplo de implementação OTClient UI
 class OTClientUI {
+    -- Classe: OTClientUI
 private:
     OpenGLRenderer renderer;
     EventSystem event_system;
@@ -300,6 +301,7 @@ private:
 ```cpp
 // Exemplo de implementação Canary UI
 class CanaryUI {
+    -- Classe: CanaryUI
 private:
     ConsoleRenderer console;
     CommandParser command_parser;
@@ -324,6 +326,7 @@ private:
 ```cpp
 // API Unificada para UI
 class UnifiedUI {
+    -- Classe: UnifiedUI
 public:
     // Renderização
     static bool render(const std::string& content);

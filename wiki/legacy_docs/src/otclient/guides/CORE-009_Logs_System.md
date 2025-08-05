@@ -65,6 +65,7 @@ Sistema de Logs
 
 ### 🎯 **Configuração Principal**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de logging principal
 local LogSystem = {}
@@ -91,6 +92,10 @@ LogSystem.config = {
         maxFiles = 5,
         compress = true
     },
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Configuração de console
     console = {
@@ -117,6 +122,10 @@ function LogSystem.init()
     
     print("Sistema de logs inicializado")
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 function LogSystem.loadConfiguration()
     -- Carregar configuração das settings
@@ -139,12 +148,17 @@ function LogSystem.setupDirectories()
         if not io.open(path, "r") then
             os.execute("mkdir -p " .. path)
         end
+```
+
+#### Finalização
+```lua
     end
 end
 ```
 
 ### 🔧 **Handlers de Log**
 
+#### Inicialização e Configuração
 ```lua
 -- Handlers de log
 LogSystem.handlers = {}
@@ -167,6 +181,10 @@ function LogSystem.setupHandlers()
 end
 
 function LogSystem.createFileHandler()
+```
+
+#### Funcionalidade 1
+```lua
     local handler = {}
     
     handler.write = function(level, message, metadata)
@@ -199,6 +217,10 @@ function LogSystem.createConsoleHandler()
         FATAL = "\27[35m",  -- Magenta
         RESET = "\27[0m"    -- Reset
     }
+```
+
+#### Funcionalidade 2
+```lua
     
     handler.write = function(level, message, metadata)
         local logEntry = LogSystem.formatLogEntry(level, message, metadata)
@@ -226,6 +248,10 @@ function LogSystem.createStructuredHandler()
             file:write(structuredLog .. "\n")
             file:close()
         end
+```
+
+#### Finalização
+```lua
     end
     
     return handler
@@ -238,6 +264,7 @@ end
 
 ### 🎯 **Definição de Níveis**
 
+#### Inicialização e Configuração
 ```lua
 -- Níveis de log detalhados
 LogSystem.LEVEL_DEFINITIONS = {
@@ -262,6 +289,10 @@ LogSystem.LEVEL_DEFINITIONS = {
         color = "green",
         enabled = true
     },
+```
+
+#### Funcionalidade 1
+```lua
     WARN = {
         level = 3,
         name = "WARN",
@@ -283,6 +314,10 @@ LogSystem.LEVEL_DEFINITIONS = {
         color = "magenta",
         enabled = true
     }
+```
+
+#### Funcionalidade 2
+```lua
 }
 
 -- Funções de logging por nível
@@ -305,6 +340,10 @@ end
 function LogSystem.error(message, ...)
     LogSystem.log("ERROR", message, ...)
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 function LogSystem.fatal(message, ...)
     LogSystem.log("FATAL", message, ...)
@@ -328,6 +367,10 @@ function LogSystem.log(level, message, ...)
         if handler.write then
             handler.write(level, formattedMessage, metadata)
         end
+```
+
+#### Finalização
+```lua
     end
     
     -- Ações especiais para níveis críticos
@@ -348,6 +391,7 @@ end
 
 ### 🔍 **Metadados e Contexto**
 
+#### Inicialização e Configuração
 ```lua
 -- Coleta de metadados
 function LogSystem.collectMetadata(level, message)
@@ -371,6 +415,10 @@ function LogSystem.collectMetadata(level, message)
         metadata.game = {
             online = false
         }
+```
+
+#### Funcionalidade 1
+```lua
     end
     
     -- Adicionar informações do sistema
@@ -400,6 +448,10 @@ function LogSystem.handleError(message, metadata)
         errorFile:write(errorEntry .. "\n")
         errorFile:close()
     end
+```
+
+#### Finalização
+```lua
     
     -- Notificar sistema de monitoramento
     LogSystem.notifyMonitoring("ERROR", message, metadata)
@@ -428,6 +480,7 @@ end
 
 ### 🎯 **Sistema de Rotação**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de rotação de arquivos
 LogSystem.rotation = {}
@@ -457,6 +510,10 @@ function LogSystem.checkRotation(filepath)
     if size > LogSystem.rotation.maxSize then
         LogSystem.rotateFile(filepath)
     end
+```
+
+#### Funcionalidade 1
+```lua
 end
 
 function LogSystem.rotateFile(filepath)
@@ -480,6 +537,10 @@ function LogSystem.rotateFile(filepath)
         if io.open(oldFile, "r") then
             os.rename(oldFile, newFile)
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
     
     -- Mover arquivo atual
@@ -501,6 +562,10 @@ function LogSystem.rotateFile(filepath)
     
     LogSystem.info("Log file rotated: %s", filepath)
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 function LogSystem.compressFile(source, destination)
     -- Comprimir arquivo usando gzip
@@ -527,6 +592,10 @@ function LogSystem.cleanupOldLogs()
         os.remove(files[i])
         LogSystem.info("Removed old log file: %s", files[i])
     end
+```
+
+#### Finalização
+```lua
 end
 ```
 
@@ -536,6 +605,7 @@ end
 
 ### 🎯 **Formato JSON**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de logs estruturados
 LogSystem.structured = {}
@@ -562,6 +632,10 @@ function LogSystem.encodeJSON(data)
         if not first then
             json = json .. ","
         end
+```
+
+#### Funcionalidade 1
+```lua
         first = false
         
         if type(value) == "string" then
@@ -584,6 +658,10 @@ function LogSystem.escapeJSON(str)
 end
 
 function LogSystem.getCorrelationId()
+```
+
+#### Funcionalidade 2
+```lua
     -- Gerar ID de correlação para rastrear operações
     if not LogSystem.correlationId then
         LogSystem.correlationId = LogSystem.generateUUID()
@@ -606,6 +684,10 @@ function LogSystem.generateUUID()
         local v = (c == "x") and math.random(0, 0xf) or math.random(8, 0xb)
         return string.format("%x", v)
     end)
+```
+
+#### Finalização
+```lua
 end
 ```
 
@@ -615,6 +697,7 @@ end
 
 ### 🎯 **Monitor em Tempo Real**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de monitoramento de logs
 LogSystem.monitoring = {}
@@ -637,6 +720,10 @@ function LogSystem.setupMonitoring()
 end
 
 function LogSystem.startMonitoring()
+```
+
+#### Funcionalidade 1
+```lua
     -- Iniciar monitoramento em background
     connect(g_app, 'onRun', function()
         LogSystem.updateMonitoring()
@@ -662,6 +749,10 @@ function LogSystem.checkLogMetrics()
     if metrics.errors > 10 then
         LogSystem.warn("High error rate detected: %d errors", metrics.errors)
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     -- Verificar último erro
     if metrics.lastError and g_clock.millis() - metrics.lastError.timestamp > 300000 then  -- 5 minutos
@@ -688,6 +779,10 @@ function LogSystem.generateMetricsReport()
         reportFile:write(LogSystem.encodeJSON(report) .. "\n")
         reportFile:close()
     end
+```
+
+#### Funcionalidade 3
+```lua
 end
 
 function LogSystem.notifyMonitoring(level, message, metadata)
@@ -712,6 +807,10 @@ function LogSystem.notifyMonitoring(level, message, metadata)
             timestamp = g_clock.millis(),
             metadata = metadata
         }
+```
+
+#### Finalização
+```lua
     end
 end
 ```
@@ -722,6 +821,7 @@ end
 
 ### 🎯 **Ferramentas de Análise**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de análise de logs
 LogSystem.analysis = {}
@@ -744,6 +844,10 @@ function LogSystem.analyzeLogs(options)
         performance = {},
         patterns = {}
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Ler arquivo de log
     local file = io.open(analysis.file, "r")
@@ -771,6 +875,10 @@ function LogSystem.analyzeLogs(options)
             -- Análise de padrões
             LogSystem.analyzePatterns(entry, results)
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
     
     file:close()
@@ -793,6 +901,10 @@ function LogSystem.parseLogEntry(line)
             message = message,
             raw = line
         }
+```
+
+#### Funcionalidade 3
+```lua
     end
     
     return nil
@@ -816,6 +928,10 @@ function LogSystem.analyzePerformance(entry, results)
             timestamp = entry.timestamp,
             fps = tonumber(fps)
         })
+```
+
+#### Funcionalidade 4
+```lua
     end
     
     if memory then
@@ -840,6 +956,10 @@ function LogSystem.analyzePatterns(entry, results)
         if entry.message:lower():find(pattern) then
             results.patterns[pattern] = (results.patterns[pattern] or 0) + 1
         end
+```
+
+#### Funcionalidade 5
+```lua
     end
 end
 
@@ -863,6 +983,10 @@ function LogSystem.generateAnalysisReport(results)
     for i = 1, math.min(5, #sortedErrors) do
         LogSystem.info("  %d. %s (%d vezes)", i, sortedErrors[i].error, sortedErrors[i].count)
     end
+```
+
+#### Finalização
+```lua
     
     -- Padrões
     LogSystem.info("Padrões Detectados:")
@@ -878,6 +1002,7 @@ end
 
 ### 🎯 **Exemplo de Uso Completo**
 
+#### Inicialização e Configuração
 ```lua
 -- Exemplo completo de uso do sistema de logs
 function setupLogSystem()
@@ -901,6 +1026,10 @@ end
 
 -- Exemplo de logging em diferentes contextos
 function exampleLogging()
+```
+
+#### Funcionalidade 1
+```lua
     -- Log de informação geral
     LogSystem.info("Iniciando operação de exemplo")
     
@@ -925,6 +1054,10 @@ function exampleLogging()
     if someCondition then
         LogSystem.warn("Condição de atenção detectada")
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 -- Exemplo de análise de logs
@@ -956,6 +1089,10 @@ function continuousLogging()
             g_game.getWorldName()
         )
     end
+```
+
+#### Finalização
+```lua
     
     -- Log de performance
     LogSystem.debug("Performance - Frame time: %dms", g_app.getFrameTime())
@@ -1015,6 +1152,12 @@ end
 
 ### 🔍 **Relatórios de Logs**
 
+#### Nível Basic
+```json
+
+```
+
+#### Nível Intermediate
 ```json
 {
   "timestamp": "2025-01-27T10:30:00Z",
@@ -1034,6 +1177,38 @@ end
     "avgMemory": 24500.2
   }
 }
+```
+
+#### Nível Advanced
+```json
+{
+  "timestamp": "2025-01-27T10:30:00Z",
+  "metrics": {
+    "totalLogs": 1500,
+    "errors": 15,
+    "warnings": 45,
+    "errorRate": 1.0,
+    "storageUsed": "25MB"
+  },
+  "topErrors": [
+    {"error": "Connection timeout", "count": 8},
+    {"error": "Memory allocation failed", "count": 4}
+  ],
+  "performance": {
+    "avgFPS": 58.5,
+    "avgMemory": 24500.2
+  }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---

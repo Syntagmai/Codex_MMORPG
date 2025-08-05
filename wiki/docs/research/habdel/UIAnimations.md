@@ -102,6 +102,7 @@ Sistema de Animações
 
 O sistema de tweening permite animar propriedades de widgets de forma suave e controlada.
 
+#### Nível Basic
 ```lua
 -- Tween simples de posição
 local widget = g_ui.createWidget('UIWidget', parent)
@@ -121,8 +122,66 @@ local opacityTween = widget:addAnchoredTween(easeInOut, 600)
 opacityTween:setOpacity(0.5)
 ```
 
+#### Nível Intermediate
+```lua
+-- Tween simples de posição
+local widget = g_ui.createWidget('UIWidget', parent)
+local tween = widget:addAnchoredTween(easeInOut, 1000)  -- 1 segundo
+tween:setPosition({x = 100, y = 100})
+
+-- Tween de escala
+local scaleTween = widget:addAnchoredTween(easeOutBack, 500)
+scaleTween:setScale(1.5)
+
+-- Tween de rotação
+local rotationTween = widget:addAnchoredTween(easeInOut, 800)
+rotationTween:setRotation(360)  -- Rotação completa
+
+-- Tween de opacidade
+local opacityTween = widget:addAnchoredTween(easeInOut, 600)
+opacityTween:setOpacity(0.5)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Tween simples de posição
+local widget = g_ui.createWidget('UIWidget', parent)
+local tween = widget:addAnchoredTween(easeInOut, 1000)  -- 1 segundo
+tween:setPosition({x = 100, y = 100})
+
+-- Tween de escala
+local scaleTween = widget:addAnchoredTween(easeOutBack, 500)
+scaleTween:setScale(1.5)
+
+-- Tween de rotação
+local rotationTween = widget:addAnchoredTween(easeInOut, 800)
+rotationTween:setRotation(360)  -- Rotação completa
+
+-- Tween de opacidade
+local opacityTween = widget:addAnchoredTween(easeInOut, 600)
+opacityTween:setOpacity(0.5)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔄 **Tweens Múltiplos**
 
+#### Nível Basic
 ```lua
 -- Animar múltiplas propriedades simultaneamente
 function animateWidget(widget, targetPos, targetScale, duration)
@@ -161,6 +220,101 @@ function animateSequence(widget)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Animar múltiplas propriedades simultaneamente
+function animateWidget(widget, targetPos, targetScale, duration)
+    duration = duration or 1000
+    
+    -- Tween de posição
+    local posTween = widget:addAnchoredTween(easeOutBack, duration)
+    posTween:setPosition(targetPos)
+    
+    -- Tween de escala
+    local scaleTween = widget:addAnchoredTween(easeOutBack, duration)
+    scaleTween:setScale(targetScale)
+    
+    -- Tween de rotação
+    local rotationTween = widget:addAnchoredTween(easeInOut, duration)
+    rotationTween:setRotation(180)
+end
+
+-- Sequência de tweens
+function animateSequence(widget)
+    -- Primeiro: mover
+    local moveTween = widget:addAnchoredTween(easeInOut, 500)
+    moveTween:setPosition({x = 200, y = 200})
+    
+    -- Segundo: escalar (após mover)
+    scheduleEvent(function()
+        local scaleTween = widget:addAnchoredTween(easeOutBack, 300)
+        scaleTween:setScale(1.2)
+    end, 500)
+    
+    -- Terceiro: rotacionar (após escalar)
+    scheduleEvent(function()
+        local rotationTween = widget:addAnchoredTween(easeInOut, 400)
+        rotationTween:setRotation(360)
+    end, 800)
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Animar múltiplas propriedades simultaneamente
+function animateWidget(widget, targetPos, targetScale, duration)
+    duration = duration or 1000
+    
+    -- Tween de posição
+    local posTween = widget:addAnchoredTween(easeOutBack, duration)
+    posTween:setPosition(targetPos)
+    
+    -- Tween de escala
+    local scaleTween = widget:addAnchoredTween(easeOutBack, duration)
+    scaleTween:setScale(targetScale)
+    
+    -- Tween de rotação
+    local rotationTween = widget:addAnchoredTween(easeInOut, duration)
+    rotationTween:setRotation(180)
+end
+
+-- Sequência de tweens
+function animateSequence(widget)
+    -- Primeiro: mover
+    local moveTween = widget:addAnchoredTween(easeInOut, 500)
+    moveTween:setPosition({x = 200, y = 200})
+    
+    -- Segundo: escalar (após mover)
+    scheduleEvent(function()
+        local scaleTween = widget:addAnchoredTween(easeOutBack, 300)
+        scaleTween:setScale(1.2)
+    end, 500)
+    
+    -- Terceiro: rotacionar (após escalar)
+    scheduleEvent(function()
+        local rotationTween = widget:addAnchoredTween(easeInOut, 400)
+        rotationTween:setRotation(360)
+    end, 800)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎭 **Callbacks de Tween**
 
 ```lua
@@ -172,6 +326,7 @@ tween.onStart = function()
 end
 
 -- Tween com callback de progresso
+    --  Tween com callback de progresso (traduzido)
 local progressTween = widget:addAnchoredTween(easeInOut, 2000)
 progressTween:setScale(2.0)
 progressTween.onUpdate = function(progress)
@@ -195,6 +350,7 @@ end
 
 As funções de easing controlam como a animação progride ao longo do tempo, criando curvas de animação naturais.
 
+#### Nível Basic
 ```lua
 -- Easing Linear (sem aceleração)
 local linearTween = widget:addAnchoredTween(linear, 1000)
@@ -218,11 +374,78 @@ local easeOutBounceTween = widget:addAnchoredTween(easeOutBounce, 1000)
 local easeOutElasticTween = widget:addAnchoredTween(easeOutElastic, 1000)
 ```
 
+#### Nível Intermediate
+```lua
+-- Easing Linear (sem aceleração)
+local linearTween = widget:addAnchoredTween(linear, 1000)
+
+-- Easing In (aceleração)
+local easeInTween = widget:addAnchoredTween(easeIn, 1000)
+
+-- Easing Out (desaceleração)
+local easeOutTween = widget:addAnchoredTween(easeOut, 1000)
+
+-- Easing In-Out (aceleração + desaceleração)
+local easeInOutTween = widget:addAnchoredTween(easeInOut, 1000)
+
+-- Easing Back (efeito de "volta")
+local easeOutBackTween = widget:addAnchoredTween(easeOutBack, 1000)
+
+-- Easing Bounce (efeito de "quicar")
+local easeOutBounceTween = widget:addAnchoredTween(easeOutBounce, 1000)
+
+-- Easing Elastic (efeito elástico)
+local easeOutElasticTween = widget:addAnchoredTween(easeOutElastic, 1000)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Easing Linear (sem aceleração)
+local linearTween = widget:addAnchoredTween(linear, 1000)
+
+-- Easing In (aceleração)
+local easeInTween = widget:addAnchoredTween(easeIn, 1000)
+
+-- Easing Out (desaceleração)
+local easeOutTween = widget:addAnchoredTween(easeOut, 1000)
+
+-- Easing In-Out (aceleração + desaceleração)
+local easeInOutTween = widget:addAnchoredTween(easeInOut, 1000)
+
+-- Easing Back (efeito de "volta")
+local easeOutBackTween = widget:addAnchoredTween(easeOutBack, 1000)
+
+-- Easing Bounce (efeito de "quicar")
+local easeOutBounceTween = widget:addAnchoredTween(easeOutBounce, 1000)
+
+-- Easing Elastic (efeito elástico)
+local easeOutElasticTween = widget:addAnchoredTween(easeOutElastic, 1000)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎨 **Aplicações Específicas**
 
 ```lua
 -- Entrada suave (easeOut)
+    --  Entrada suave (easeOut) (traduzido)
 function animateEntry(widget)
+    -- Função: animateEntry
     widget:setScale(0.0)
     widget:setOpacity(0.0)
     
@@ -233,13 +456,16 @@ end
 
 -- Saída suave (easeIn)
 function animateExit(widget)
+    -- Função: animateExit
     local tween = widget:addAnchoredTween(easeInOut, 400)
     tween:setScale(0.8)
     tween:setOpacity(0.0)
 end
 
 -- Bounce para feedback (easeOutBounce)
+    --  Bounce para feedback (easeOutBounce) (traduzido)
 function animateBounce(widget)
+    -- Função: animateBounce
     local tween = widget:addAnchoredTween(easeOutBounce, 800)
     tween:setScale(1.1)
     
@@ -250,7 +476,9 @@ function animateBounce(widget)
 end
 
 -- Elastic para destaque (easeOutElastic)
+    --  Elastic para destaque (easeOutElastic) (traduzido)
 function animateElastic(widget)
+    -- Função: animateElastic
     local tween = widget:addAnchoredTween(easeOutElastic, 1200)
     tween:setScale(1.3)
     
@@ -267,6 +495,7 @@ end
 
 ### 📦 **Métodos de Animação**
 
+#### Nível Basic
 ```lua
 -- Criar tween básico
 local tween = widget:addAnchoredTween(easing, duration)
@@ -287,8 +516,68 @@ widget:stopAllTweens()  -- Parar todas as animações
 widget:stopTween(tween) -- Parar animação específica
 ```
 
+#### Nível Intermediate
+```lua
+-- Criar tween básico
+local tween = widget:addAnchoredTween(easing, duration)
+
+-- Propriedades animáveis
+tween:setPosition({x = 100, y = 100})
+tween:setScale(1.5)
+tween:setRotation(180)
+tween:setOpacity(0.8)
+
+-- Callbacks
+tween.onStart = function() end
+tween.onUpdate = function(progress) end
+tween.onComplete = function() end
+
+-- Controle de animação
+widget:stopAllTweens()  -- Parar todas as animações
+widget:stopTween(tween) -- Parar animação específica
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Criar tween básico
+local tween = widget:addAnchoredTween(easing, duration)
+
+-- Propriedades animáveis
+tween:setPosition({x = 100, y = 100})
+tween:setScale(1.5)
+tween:setRotation(180)
+tween:setOpacity(0.8)
+
+-- Callbacks
+tween.onStart = function() end
+tween.onUpdate = function(progress) end
+tween.onComplete = function() end
+
+-- Controle de animação
+widget:stopAllTweens()  -- Parar todas as animações
+widget:stopTween(tween) -- Parar animação específica
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎯 **Animações Especializadas**
 
+#### Inicialização e Configuração
 ```lua
 -- Animação de fade in/out
 function fadeWidget(widget, fadeIn, duration)
@@ -312,6 +601,10 @@ end
 
 -- Animação de slide
 function slideWidget(widget, direction, slideIn, duration)
+```
+
+#### Funcionalidade 1
+```lua
     duration = duration or 400
     
     local startPos = widget:getPosition()
@@ -340,6 +633,10 @@ function slideWidget(widget, direction, slideIn, duration)
         scheduleEvent(function()
             widget:hide()
         end, duration)
+```
+
+#### Finalização
+```lua
     end
 end
 ```
@@ -350,6 +647,7 @@ end
 
 ### 🎭 **Transições de Widgets**
 
+#### Inicialização e Configuração
 ```lua
 -- Fade in/out
 function fadeWidget(widget, fadeIn, duration)
@@ -373,6 +671,10 @@ end
 
 -- Slide in/out
 function slideWidget(widget, direction, slideIn, duration)
+```
+
+#### Funcionalidade 1
+```lua
     duration = duration or 400
     
     local startPos = widget:getPosition()
@@ -401,6 +703,10 @@ function slideWidget(widget, direction, slideIn, duration)
         scheduleEvent(function()
             widget:hide()
         end, duration)
+```
+
+#### Funcionalidade 2
+```lua
     end
 end
 
@@ -426,6 +732,10 @@ function scaleTransition(fromWidget, toWidget, duration)
         scheduleEvent(function()
             fromWidget:hide()
         end, duration)
+```
+
+#### Finalização
+```lua
     end, duration)
 end
 ```
@@ -434,7 +744,9 @@ end
 
 ```lua
 -- Spinning loader
+    --  Spinning loader (traduzido)
 function createSpinner(parent)
+    -- Função: createSpinner
     local spinner = g_ui.createWidget('UIWidget', parent)
     spinner:setSize({width = 32, height = 32})
     spinner:setImageSource('/images/ui/spinner')
@@ -450,7 +762,9 @@ function createSpinner(parent)
 end
 
 -- Pulsing loader
+    --  Pulsing loader (traduzido)
 function createPulsingLoader(parent)
+    -- Função: createPulsingLoader
     local loader = g_ui.createWidget('UIWidget', parent)
     loader:setSize({width = 40, height = 40})
     loader:setImageSource('/images/ui/loader')
@@ -474,7 +788,9 @@ function createPulsingLoader(parent)
 end
 
 -- Progress bar animation
+    --  Progress bar animation (traduzido)
 function animateProgressBar(progressBar, targetValue, duration)
+    -- Função: animateProgressBar
     duration = duration or 1000
     
     local currentValue = progressBar:getValue() or 0
@@ -489,6 +805,7 @@ end
 
 ### 🎯 **Exemplo 1: Sistema de Notificações Animadas**
 
+#### Nível Basic
 ```lua
 local NotificationSystem = {}
 
@@ -531,12 +848,116 @@ end
 NotificationSystem.show('Mensagem de sucesso!', 'success', 3000)
 ```
 
+#### Nível Intermediate
+```lua
+local NotificationSystem = {}
+
+function NotificationSystem.show(text, type, duration)
+    duration = duration or 3000
+    
+    -- Criar notificação
+    local notification = g_ui.createWidget('Panel')
+    notification:setSize({width = 300, height = 60})
+    notification:setPosition({x = 50, y = 50})
+    notification:setBackgroundColor('#2C3E50')
+    notification:setOpacity(0)
+    
+    -- Adicionar texto
+    local textWidget = g_ui.createWidget('Label', notification)
+    textWidget:setText(text)
+    textWidget:setPosition({x = 10, y = 20})
+    textWidget:setColor('#FFFFFF')
+    
+    -- Animação de entrada
+    local entryTween = notification:addAnchoredTween(easeOutBack, 500)
+    entryTween:setOpacity(1.0)
+    entryTween:setPosition({x = 50, y = 100})
+    
+    -- Animação de saída
+    scheduleEvent(function()
+        local exitTween = notification:addAnchoredTween(easeInOut, 300)
+        exitTween:setOpacity(0)
+        exitTween:setPosition({x = 50, y = 50})
+        
+        exitTween.onComplete = function()
+            notification:destroy()
+        end
+    end, duration)
+    
+    return notification
+end
+
+-- Uso
+NotificationSystem.show('Mensagem de sucesso!', 'success', 3000)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local NotificationSystem = {}
+
+function NotificationSystem.show(text, type, duration)
+    duration = duration or 3000
+    
+    -- Criar notificação
+    local notification = g_ui.createWidget('Panel')
+    notification:setSize({width = 300, height = 60})
+    notification:setPosition({x = 50, y = 50})
+    notification:setBackgroundColor('#2C3E50')
+    notification:setOpacity(0)
+    
+    -- Adicionar texto
+    local textWidget = g_ui.createWidget('Label', notification)
+    textWidget:setText(text)
+    textWidget:setPosition({x = 10, y = 20})
+    textWidget:setColor('#FFFFFF')
+    
+    -- Animação de entrada
+    local entryTween = notification:addAnchoredTween(easeOutBack, 500)
+    entryTween:setOpacity(1.0)
+    entryTween:setPosition({x = 50, y = 100})
+    
+    -- Animação de saída
+    scheduleEvent(function()
+        local exitTween = notification:addAnchoredTween(easeInOut, 300)
+        exitTween:setOpacity(0)
+        exitTween:setPosition({x = 50, y = 50})
+        
+        exitTween.onComplete = function()
+            notification:destroy()
+        end
+    end, duration)
+    
+    return notification
+end
+
+-- Uso
+NotificationSystem.show('Mensagem de sucesso!', 'success', 3000)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎨 **Exemplo 2: Menu Animado**
 
 ```lua
 local AnimatedMenu = {}
 
 function AnimatedMenu.create(parent)
+    -- Função: AnimatedMenu
     local menu = g_ui.createWidget('Panel', parent)
     menu:setSize({width = 200, height = 300})
     menu:setPosition({x = 0, y = 0})
@@ -545,9 +966,11 @@ function AnimatedMenu.create(parent)
     menu:setScale(0.8)
     
     -- Adicionar itens do menu
+    --  Adicionar itens do menu (traduzido)
     local menuItems = {'Início', 'Perfil', 'Configurações', 'Sair'}
     
     for i, itemText in ipairs(menuItems) do
+    -- Loop de repetição
         local item = g_ui.createWidget('Button', menu)
         item:setText(itemText)
         item:setPosition({x = 10, y = (i-1) * 50 + 20})
@@ -572,6 +995,7 @@ function AnimatedMenu.create(parent)
 end
 
 function AnimatedMenu.hide(menu)
+    -- Função: AnimatedMenu
     local menuTween = menu:addAnchoredTween(easeInOut, 400)
     menuTween:setOpacity(0)
     menuTween:setScale(0.8)
@@ -588,6 +1012,7 @@ end
 local LoadingSystem = {}
 
 function LoadingSystem.create(parent)
+    -- Função: LoadingSystem
     local loading = g_ui.createWidget('Panel', parent)
     loading:setSize({width = 200, height = 100})
     loading:setPosition({x = 50, y = 50})
@@ -605,6 +1030,7 @@ function LoadingSystem.create(parent)
     text:setColor('#FFFFFF')
     
     -- Rotate spinner
+    --  Rotate spinner (traduzido)
     local function rotate()
         local currentRotation = spinner:getRotation()
         spinner:setRotation(currentRotation + 30)
@@ -614,6 +1040,7 @@ function LoadingSystem.create(parent)
     rotate()
     
     -- Pulse text
+    --  Pulse text (traduzido)
     local function pulseText()
         local tween = text:addAnchoredTween(easeInOut, 1000)
         tween:setOpacity(0.5)
@@ -649,7 +1076,9 @@ end
 local AnimationPool = {}
 
 function AnimationPool.get()
+    -- Função: AnimationPool
     if #AnimationPool > 0 then
+    -- Verificação condicional
         return table.remove(AnimationPool)
     else
         return {}
@@ -657,6 +1086,7 @@ function AnimationPool.get()
 end
 
 function AnimationPool.release(animation)
+    -- Função: AnimationPool
     animation:reset()
     table.insert(AnimationPool, animation)
 end
@@ -664,10 +1094,12 @@ end
 -- Lazy loading de animações
 local function createAnimationOnDemand(widget, animationType)
     if not widget.animations then
+    -- Verificação condicional
         widget.animations = {}
     end
     
     if not widget.animations[animationType] then
+    -- Verificação condicional
         widget.animations[animationType] = createAnimation(animationType)
     end
     
@@ -675,6 +1107,7 @@ local function createAnimationOnDemand(widget, animationType)
 end
 
 -- Controle de performance
+    --  Controle de performance (traduzido)
 local function shouldAnimate()
     return g_clock.millis() - lastAnimationTime > 16  -- 60 FPS
 end
@@ -689,6 +1122,7 @@ local function measureAnimationPerformance(animationCount)
     
     local widgets = {}
     for i = 1, animationCount do
+    -- Loop de repetição
         widgets[i] = g_ui.createWidget('UIWidget')
         local tween = widgets[i]:addAnchoredTween(easeInOut, 1000)
         tween:setPosition({x = math.random(100), y = math.random(100)})
@@ -699,12 +1133,15 @@ local function measureAnimationPerformance(animationCount)
     -- Medir tempo de execução
     startTime = g_clock.millis()
     for _, widget in ipairs(widgets) do
+    -- Loop de repetição
         widget:stopAllTweens()
     end
     local executionTime = g_clock.millis() - startTime
     
     -- Limpeza
+    --  Limpeza (traduzido)
     for _, widget in ipairs(widgets) do
+    -- Loop de repetição
         widget:destroy()
     end
     
@@ -718,6 +1155,31 @@ end
 
 ### 🎯 **Uso Eficiente de Animações**
 
+#### Nível Basic
+```lua
+-- ✅ BOM: Usar durações apropriadas
+local SHORT_ANIMATION = 200   -- Feedback rápido
+local MEDIUM_ANIMATION = 500  -- Transições normais
+local LONG_ANIMATION = 1000   -- Animações complexas
+-- ✅ BOM: Usar easing apropriado
+function animateEntry(widget)
+    local tween = widget:addAnchoredTween(easeOutBack, MEDIUM_ANIMATION)
+end
+function animateExit(widget)
+    local tween = widget:addAnchoredTween(easeInOut, SHORT_ANIMATION)
+end
+-- ✅ BOM: Limpar animações automaticamente
+function safeAnimate(widget, animation)
+    if widget:isDestroyed() then return end
+end
+-- ❌ EVITE: Animações muito longas
+local tween = widget:addAnchoredTween(easeInOut, 5000)  -- 5s é muito
+-- ❌ EVITE: Muitas animações simultâneas
+    local tween = widget:addAnchoredTween(easeInOut, 1000)
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- ✅ BOM: Usar durações apropriadas
 local SHORT_ANIMATION = 200   -- Feedback rápido
@@ -751,17 +1213,64 @@ for i = 1, 100 do
 end
 ```
 
+#### Nível Advanced
+```lua
+-- ✅ BOM: Usar durações apropriadas
+local SHORT_ANIMATION = 200   -- Feedback rápido
+local MEDIUM_ANIMATION = 500  -- Transições normais
+local LONG_ANIMATION = 1000   -- Animações complexas
+
+-- ✅ BOM: Usar easing apropriado
+function animateEntry(widget)
+    local tween = widget:addAnchoredTween(easeOutBack, MEDIUM_ANIMATION)
+    tween:setScale(1.0)
+end
+
+function animateExit(widget)
+    local tween = widget:addAnchoredTween(easeInOut, SHORT_ANIMATION)
+    tween:setOpacity(0)
+end
+
+-- ✅ BOM: Limpar animações automaticamente
+function safeAnimate(widget, animation)
+    if widget:isDestroyed() then return end
+    
+    animation(widget)
+end
+
+-- ❌ EVITE: Animações muito longas
+local tween = widget:addAnchoredTween(easeInOut, 5000)  -- 5s é muito
+
+-- ❌ EVITE: Muitas animações simultâneas
+for i = 1, 100 do
+    local tween = widget:addAnchoredTween(easeInOut, 1000)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔧 **Configuração Adequada**
 
 ```lua
 -- ✅ BOM: Verificar performance
+    --  ✅ BOM: Verificar performance (traduzido)
 if shouldAnimate() then
+    -- Verificação condicional
     startAnimation(widget, myAnimation)
 else
     applyFinalState(widget)
 end
 
 -- ✅ BOM: Usar callbacks apropriados
+    --  ✅ BOM: Usar callbacks apropriados (traduzido)
 local tween = widget:addAnchoredTween(easeInOut, 1000)
 tween.onComplete = function()
     widget:hide()
@@ -770,6 +1279,7 @@ end
 
 -- ✅ BOM: Cancelar animações quando necessário
 function cancelWidgetAnimations(widget)
+    -- Função: cancelWidgetAnimations
     widget:stopAllTweens()
 end
 ```
@@ -786,6 +1296,7 @@ local ANIMATION_CONFIG = {
 }
 
 -- ✅ BOM: Usar easing consistente
+    --  ✅ BOM: Usar easing consistente (traduzido)
 local ANIMATION_EASING = {
     ENTRY = easeOutBack,
     EXIT = easeInOut,
@@ -795,12 +1306,14 @@ local ANIMATION_EASING = {
 
 -- ✅ BOM: Funções de animação padronizadas
 function animateWidgetEntry(widget)
+    -- Função: animateWidgetEntry
     local tween = widget:addAnchoredTween(ANIMATION_EASING.ENTRY, ANIMATION_CONFIG.ENTRY_DURATION)
     tween:setScale(1.0)
     tween:setOpacity(1.0)
 end
 
 function animateWidgetExit(widget)
+    -- Função: animateWidgetExit
     local tween = widget:addAnchoredTween(ANIMATION_EASING.EXIT, ANIMATION_CONFIG.EXIT_DURATION)
     tween:setScale(0.8)
     tween:setOpacity(0)

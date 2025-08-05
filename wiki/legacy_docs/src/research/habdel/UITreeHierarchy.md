@@ -96,6 +96,7 @@ Estrutura básica com nós pai e filhos.
 
 ```lua
 -- Estrutura de Árvore Simples
+    --  Estrutura de Árvore Simples (traduzido)
 {
     root = {
         id = 'root',
@@ -126,6 +127,7 @@ Estrutura básica com nós pai e filhos.
 
 Estrutura com metadados e funcionalidades avançadas.
 
+#### Nível Basic
 ```lua
 -- Estrutura de Árvore Avançada
 {
@@ -144,12 +146,68 @@ Estrutura com metadados e funcionalidades avançadas.
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Estrutura de Árvore Avançada
+{
+    root = {
+        id = 'root',
+        text = 'Root',
+        icon = '/icons/folder.png',
+        expanded = true,
+        selected = false,
+        data = {type = 'folder', size = 0},
+        children = {},
+        onExpand = function(node) end,
+        onSelect = function(node) end,
+        onDoubleClick = function(node) end
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Estrutura de Árvore Avançada
+{
+    root = {
+        id = 'root',
+        text = 'Root',
+        icon = '/icons/folder.png',
+        expanded = true,
+        selected = false,
+        data = {type = 'folder', size = 0},
+        children = {},
+        onExpand = function(node) end,
+        onSelect = function(node) end,
+        onDoubleClick = function(node) end
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 📋 **Hierarquia de Widgets**
 
 Estrutura hierárquica de widgets da interface.
 
 ```lua
 -- Estrutura de Hierarquia de Widgets
+    --  Estrutura de Hierarquia de Widgets (traduzido)
 {
     rootWidget = {
         id = 'root',
@@ -182,6 +240,7 @@ Estrutura hierárquica de widgets da interface.
 
 ### 🎯 **Estrutura de Nó**
 
+#### Nível Basic
 ```lua
 -- Estrutura básica de um nó
 local TreeNode = {
@@ -197,11 +256,62 @@ local TreeNode = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Estrutura básica de um nó
+local TreeNode = {
+    id = 'unique_id',           -- Identificador único
+    text = 'Node Text',         -- Texto exibido
+    icon = '/path/to/icon.png', -- Ícone do nó
+    expanded = false,           -- Estado expandido
+    selected = false,           -- Estado selecionado
+    children = {},              -- Lista de filhos
+    parent = nil,               -- Nó pai
+    data = {},                  -- Dados customizados
+    level = 0                   -- Nível na hierarquia
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Estrutura básica de um nó
+local TreeNode = {
+    id = 'unique_id',           -- Identificador único
+    text = 'Node Text',         -- Texto exibido
+    icon = '/path/to/icon.png', -- Ícone do nó
+    expanded = false,           -- Estado expandido
+    selected = false,           -- Estado selecionado
+    children = {},              -- Lista de filhos
+    parent = nil,               -- Nó pai
+    data = {},                  -- Dados customizados
+    level = 0                   -- Nível na hierarquia
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎨 **Operações de Nó**
 
 ```lua
 -- Adicionar filho
+    --  Adicionar filho (traduzido)
 function addChild(parentNode, childData)
+    -- Função: addChild
     local child = {
         id = childData.id,
         text = childData.text,
@@ -215,9 +325,13 @@ function addChild(parentNode, childData)
 end
 
 -- Remover filho
+    --  Remover filho (traduzido)
 function removeChild(parentNode, childId)
+    -- Função: removeChild
     for i, child in ipairs(parentNode.children) do
+    -- Loop de repetição
         if child.id == childId then
+    -- Verificação condicional
             table.remove(parentNode.children, i)
             return true
         end
@@ -227,13 +341,17 @@ end
 
 -- Encontrar nó por ID
 function findNode(rootNode, nodeId)
+    -- Função: findNode
     if rootNode.id == nodeId then
+    -- Verificação condicional
         return rootNode
     end
     
     for _, child in ipairs(rootNode.children) do
+    -- Loop de repetição
         local found = findNode(child, nodeId)
         if found then
+    -- Verificação condicional
             return found
         end
     end
@@ -250,6 +368,7 @@ end
 
 ```lua
 -- Criar tree view
+    --  Criar tree view (traduzido)
 local treeView = g_ui.createWidget('UITreeView', parent)
 
 -- Adicionar nó raiz
@@ -262,6 +381,7 @@ local childNode = rootNode:addChild('Child')
 childNode:setIcon('/icons/file.png')
 
 -- Configurar eventos
+    --  Configurar eventos (traduzido)
 rootNode.onExpand = function(node)
     print('Nó expandido:', node:getText())
 end
@@ -271,6 +391,7 @@ rootNode.onSelect = function(node)
 end
 
 -- Propriedades
+    --  Propriedades (traduzido)
 treeView:getRootNode()
 treeView:getSelectedNode()
 treeView:expandAll()
@@ -294,6 +415,7 @@ node:isSelected()
 node:setSelected(true)
 
 -- Hierarquia
+    --  Hierarquia (traduzido)
 node:getParent()
 node:getChildren()
 node:getChildCount()
@@ -301,6 +423,7 @@ node:addChild('Child Text')
 node:removeChild(childNode)
 
 -- Dados customizados
+    --  Dados customizados (traduzido)
 node:getData()
 node:setData({key = 'value'})
 ```
@@ -309,6 +432,7 @@ node:setData({key = 'value'})
 
 ```lua
 -- Gerenciamento de hierarquia
+    --  Gerenciamento de hierarquia (traduzido)
 widget:addChild(childWidget)
 widget:removeChild(childWidget)
 widget:getChildById('childId')
@@ -322,6 +446,7 @@ widget:findChildById('childId')
 widget:recursiveGetChildById('childId')
 
 -- Eventos de hierarquia
+    --  Eventos de hierarquia (traduzido)
 widget.onChildAdded = function(parent, child) end
 widget.onChildRemoved = function(parent, child) end
 widget.onParentChanged = function(widget, oldParent, newParent) end
@@ -357,6 +482,7 @@ local personalNode = rootNode:addChild('Personal')
 personalNode:setIcon('/icons/folder.png')
 
 -- Eventos
+    --  Eventos (traduzido)
 rootNode.onExpand = function(node)
     print('Pasta expandida:', node:getText())
 end
@@ -368,6 +494,7 @@ end
 
 ### 🎨 **Implementação Avançada**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de árvore avançado
 local AdvancedTree = {}
@@ -394,6 +521,10 @@ function AdvancedTree.create(parent, data)
     
     return treeView
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function AdvancedTree.buildTree(treeView, data)
     local function createNode(parentNode, nodeData)
@@ -419,6 +550,10 @@ function AdvancedTree.buildTree(treeView, data)
             for _, childData in ipairs(nodeData.children) do
                 createNode(node, childData)
             end
+```
+
+#### Funcionalidade 2
+```lua
         end
         
         return node
@@ -445,6 +580,10 @@ function AdvancedTree.onNodeSelect(node)
     if data.type == 'file' then
         AdvancedTree.openFile(data.path)
     end
+```
+
+#### Funcionalidade 3
+```lua
 end
 
 function AdvancedTree.onNodeExpand(node)
@@ -466,6 +605,10 @@ function AdvancedTree.onNodeDoubleClick(node)
         AdvancedTree.editFile(data.path)
     end
 end
+```
+
+#### Funcionalidade 4
+```lua
 
 function AdvancedTree.openFile(path)
     print('Abrindo arquivo:', path)
@@ -497,6 +640,10 @@ local treeData = {
                     type = 'file',
                     data = {path = '/documents/report.txt'}
                 }
+```
+
+#### Finalização
+```lua
             }
         }
     }
@@ -513,6 +660,7 @@ local tree = AdvancedTree.create(parent, treeData)
 
 ```lua
 -- Criar hierarquia de widgets
+    --  Criar hierarquia de widgets (traduzido)
 local mainWindow = g_ui.createWidget('MainWindow', rootWidget)
 mainWindow:setId('mainWindow')
 mainWindow:setText('Main Window')
@@ -536,6 +684,7 @@ button2:setText('Button 2')
 button2:setPosition({x = 10, y = 40})
 
 -- Navegar pela hierarquia
+    --  Navegar pela hierarquia (traduzido)
 local parent = button1:getParent()
 print('Pai do botão 1:', parent:getId())  -- 'contentPanel'
 
@@ -548,6 +697,7 @@ print('Filhos do painel:', #children)     -- 2
 
 ### 🎨 **Implementação Avançada**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de hierarquia avançado
 local WidgetHierarchy = {}
@@ -574,6 +724,10 @@ function WidgetHierarchy.createHierarchy(parent, hierarchyData)
         if widgetData.onClick then
             widget.onClick = widgetData.onClick
         end
+```
+
+#### Funcionalidade 1
+```lua
         
         -- Criar filhos recursivamente
         if widgetData.children then
@@ -599,6 +753,10 @@ function WidgetHierarchy.traverseHierarchy(widget, callback, level)
     for _, child in ipairs(children) do
         WidgetHierarchy.traverseHierarchy(child, callback, level + 1)
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 function WidgetHierarchy.findWidgetById(rootWidget, widgetId)
@@ -624,6 +782,10 @@ function WidgetHierarchy.printHierarchy(rootWidget)
         
         print(indent .. className .. ' (id: ' .. id .. ') "' .. text .. '"')
     end)
+```
+
+#### Funcionalidade 3
+```lua
 end
 
 -- Uso
@@ -648,6 +810,10 @@ local hierarchyData = {
                     onClick = function(widget)
                         print('Save clicked')
                     end
+```
+
+#### Funcionalidade 4
+```lua
                 },
                 {
                     id = 'loadButton',
@@ -669,6 +835,10 @@ local hierarchyData = {
         }
     }
 }
+```
+
+#### Finalização
+```lua
 
 local mainWindow = WidgetHierarchy.createHierarchy(rootWidget, hierarchyData)
 WidgetHierarchy.printHierarchy(mainWindow)
@@ -680,6 +850,7 @@ WidgetHierarchy.printHierarchy(mainWindow)
 
 ### 📁 **Explorador de Arquivos**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de explorador de arquivos
 local FileExplorer = {}
@@ -710,6 +881,10 @@ function FileExplorer.create(parent)
     treeView.onNodeSelect = function(node)
         FileExplorer.showFileDetails(node, detailsPanel)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     return window
 end
@@ -739,6 +914,10 @@ function FileExplorer.buildFileTree(treeView)
     mainNode:setIcon('/icons/file.png')
     mainNode:setData({type = 'file', size = 2048, path = 'C:/Documents/Work/Project 1/src/main.cpp'})
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 function FileExplorer.showFileDetails(node, detailsPanel)
     -- Limpar painel de detalhes
@@ -771,6 +950,10 @@ function FileExplorer.showFileDetails(node, detailsPanel)
     openButton.onClick = function(widget)
         FileExplorer.openFile(data.path)
     end
+```
+
+#### Finalização
+```lua
 end
 
 function FileExplorer.openFile(path)
@@ -784,6 +967,7 @@ local explorer = FileExplorer.create(parent)
 
 ### 🎮 **Menu de Jogo Hierárquico**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de menu hierárquico para jogo
 local GameMenu = {}
@@ -806,6 +990,10 @@ function GameMenu.create(parent)
     
     return window
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function GameMenu.buildMenuTree(treeView)
     -- Menu principal
@@ -860,6 +1048,10 @@ function GameMenu.buildMenuTree(treeView)
     treeView.onNodeSelect = function(node)
         GameMenu.handleMenuAction(node)
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 function GameMenu.handleMenuAction(node)
@@ -888,6 +1080,10 @@ function GameMenu.handleMenuAction(node)
     elseif action == 'exitGame' then
         GameMenu.exitGame()
     end
+```
+
+#### Funcionalidade 3
+```lua
 end
 
 function GameMenu.showStatistics()
@@ -909,6 +1105,10 @@ function GameMenu.showOptions()
     print('Mostrando opções do jogo')
     -- Implementar exibição de opções
 end
+```
+
+#### Finalização
+```lua
 
 function GameMenu.showControls()
     print('Mostrando controles do jogo')
@@ -940,6 +1140,31 @@ local menu = GameMenu.create(parent)
 
 ### 🎯 **Performance**
 
+#### Nível Basic
+```lua
+-- ✅ BOM: Usar lazy loading para árvores grandes
+function createLazyTree(treeView, rootData)
+    local rootNode = treeView:addNode(rootData.text)
+    -- Adicionar placeholder para filhos
+    if rootData.hasChildren then
+        local placeholderNode = rootNode:addChild('Loading...')
+        -- Carregar filhos quando expandir
+        rootNode.onExpand = function(node)
+            if node:getChildCount() == 1 and node:getChildByIndex(1):getText() == 'Loading...' then
+            end
+        end
+    end
+end
+-- ❌ EVITE: Carregar toda a árvore de uma vez
+function createFullTree(treeView, data)
+    -- Isso pode ser lento para árvores grandes
+        local node = treeView:addNode('Node ' .. i)
+        -- Adicionar muitos nós de uma vez
+    end
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- ✅ BOM: Usar lazy loading para árvores grandes
 function createLazyTree(treeView, rootData)
@@ -971,8 +1196,51 @@ function createFullTree(treeView, data)
 end
 ```
 
+#### Nível Advanced
+```lua
+-- ✅ BOM: Usar lazy loading para árvores grandes
+function createLazyTree(treeView, rootData)
+    local rootNode = treeView:addNode(rootData.text)
+    rootNode:setIcon(rootData.icon)
+    
+    -- Adicionar placeholder para filhos
+    if rootData.hasChildren then
+        local placeholderNode = rootNode:addChild('Loading...')
+        placeholderNode:setIcon('/icons/loading.png')
+        
+        -- Carregar filhos quando expandir
+        rootNode.onExpand = function(node)
+            if node:getChildCount() == 1 and node:getChildByIndex(1):getText() == 'Loading...' then
+                node:removeChild(node:getChildByIndex(1))
+                loadChildrenAsync(node, rootData.path)
+            end
+        end
+    end
+end
+
+-- ❌ EVITE: Carregar toda a árvore de uma vez
+function createFullTree(treeView, data)
+    -- Isso pode ser lento para árvores grandes
+    for i = 1, 10000 do
+        local node = treeView:addNode('Node ' .. i)
+        -- Adicionar muitos nós de uma vez
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎨 **Design**
 
+#### Nível Basic
 ```lua
 -- ✅ BOM: Usar ícones consistentes
 local TREE_ICONS = {
@@ -1002,8 +1270,86 @@ function highlightTreeNode(node)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- ✅ BOM: Usar ícones consistentes
+local TREE_ICONS = {
+    FOLDER = '/icons/folder.png',
+    FILE = '/icons/file.png',
+    DRIVE = '/icons/drive.png',
+    EXPANDED = '/icons/folder_open.png',
+    COLLAPSED = '/icons/folder_closed.png'
+}
+
+-- ✅ BOM: Implementar seleção visual
+function selectTreeNode(node)
+    -- Deselecionar nó anterior
+    if GameMenu.selectedNode then
+        GameMenu.selectedNode:setBackgroundColor('#333333')
+    end
+    
+    -- Selecionar novo nó
+    node:setBackgroundColor('#666666')
+    GameMenu.selectedNode = node
+end
+
+-- ✅ BOM: Usar feedback visual
+function highlightTreeNode(node)
+    node:setBorderColor('#FFFF00')
+    node:setBorderWidth(2)
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- ✅ BOM: Usar ícones consistentes
+local TREE_ICONS = {
+    FOLDER = '/icons/folder.png',
+    FILE = '/icons/file.png',
+    DRIVE = '/icons/drive.png',
+    EXPANDED = '/icons/folder_open.png',
+    COLLAPSED = '/icons/folder_closed.png'
+}
+
+-- ✅ BOM: Implementar seleção visual
+function selectTreeNode(node)
+    -- Deselecionar nó anterior
+    if GameMenu.selectedNode then
+        GameMenu.selectedNode:setBackgroundColor('#333333')
+    end
+    
+    -- Selecionar novo nó
+    node:setBackgroundColor('#666666')
+    GameMenu.selectedNode = node
+end
+
+-- ✅ BOM: Usar feedback visual
+function highlightTreeNode(node)
+    node:setBorderColor('#FFFF00')
+    node:setBorderWidth(2)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔧 **Estrutura**
 
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Organizar código em módulos
 local TreeSystem = {}
@@ -1030,6 +1376,10 @@ function TreeSystem.addNode(treeView, nodeData)
     
     return node
 end
+```
+
+#### Finalização
+```lua
 
 function TreeSystem.handleNodeSelect(node)
     local data = node:getData()
@@ -1072,6 +1422,7 @@ TreeSystem.addNode(tree, {
 
 ### ⚡ **Otimizações Recomendadas**
 
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Usar virtual scrolling para árvores grandes
 function createVirtualTree(parent, totalNodes)
@@ -1095,6 +1446,10 @@ function createVirtualTree(parent, totalNodes)
         node:setText('Node ' .. i)
         node:setHeight(nodeHeight)
     end
+```
+
+#### Funcionalidade 1
+```lua
 end
 
 -- ✅ BOM: Implementar object pooling para nós
@@ -1116,6 +1471,10 @@ function NodePool.getNode()
 end
 
 function NodePool.releaseNode(node)
+```
+
+#### Finalização
+```lua
     for i, usedNode in ipairs(NodePool.inUse) do
         if usedNode == node then
             table.remove(NodePool.inUse, i)
@@ -1137,15 +1496,18 @@ local TreePerformance = {
 }
 
 function TreePerformance.startRender()
+    -- Função: TreePerformance
     TreePerformance.renderStart = os.clock()
 end
 
 function TreePerformance.endRender()
+    -- Função: TreePerformance
     TreePerformance.renderTime = os.clock() - TreePerformance.renderStart
     print('Tree render time:', TreePerformance.renderTime * 1000, 'ms')
 end
 
 function TreePerformance.updateStats(nodeCount)
+    -- Função: TreePerformance
     TreePerformance.nodeCount = nodeCount
     TreePerformance.memoryUsage = nodeCount * 1 -- 1KB por nó
 end

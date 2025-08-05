@@ -387,12 +387,15 @@ Sets the margin of the widget. This function can take one, two, or four argument
 
 ```lua
 -- Set all margins to 10
+    --  Set all margins to 10 (traduzido)
 widget:setMargin(10)
 
 -- Set vertical margin to 10 and horizontal margin to 20
+    --  Set vertical margin to 10 and horizontal margin to 20 (traduzido)
 widget:setMargin(10, 20)
 
 -- Set top, right, bottom, and left margins
+    --  Set top, right, bottom, and left margins (traduzido)
 widget:setMargin(10, 20, 30, 40)
 ```
 
@@ -402,6 +405,34 @@ Parses a string with colored text and applies it to the widget. The text should 
 
 **Example:**
 
+#### Nível Basic
 ```lua
 widget:parseColoredText("This is [color=#ff0000]red[/color] and this is [color=#00ff00]green[/color].")
+```
+
+#### Nível Intermediate
+```lua
+widget:parseColoredText("This is [color=#ff0000]red[/color] and this is [color=#00ff00]green[/color].")
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+widget:parseColoredText("This is [color=#ff0000]red[/color] and this is [color=#00ff00]green[/color].")
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```

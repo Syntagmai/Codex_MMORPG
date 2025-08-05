@@ -1,15 +1,12 @@
----
-title: Effectssystem
-tags: [otclient, system, guide, documentation]
-status: completed
-aliases: [Effectssystem]
----
 
 # Sistema de Efeitos
 
 Sistema completo de efeitos visuais incluindo efeitos animados, anexados e UI com suporte a shaders e transformações.
 
-## 📋 Índice
+
+---
+
+## 📋 Índice 📋
 
 1. [Visão Geral](#visão-geral)
 2. [API C++](#api-c)
@@ -20,7 +17,10 @@ Sistema completo de efeitos visuais incluindo efeitos animados, anexados e UI co
 7. [Exemplos Práticos](#exemplos-práticos)
 8. [Melhores Práticas](#melhores-práticas)
 
-## 🎯 Visão Geral
+
+---
+
+## 🎯 Visão Geral 🎯
 
 O sistema de efeitos do OTClient oferece múltiplas camadas de efeitos visuais:
 
@@ -30,7 +30,7 @@ O sistema de efeitos do OTClient oferece múltiplas camadas de efeitos visuais:
 - **Shaders**: Efeitos de pós-processamento
 - **Transformações**: Mudanças visuais temporárias
 
-### 🔧 Tipos de Efeitos
+### 🔧 Tipos de Efeitos 📝
 
 ```
 Efeito Básico → Posição fixa no mapa, temporário
@@ -39,11 +39,15 @@ Efeito UI → Interface do usuário, interativo
 Shader → Pós-processamento, global/local
 ```
 
-## 🔧 API C++
 
-### Effect Class
+---
+
+## 🔧 API C++ 📚
+
+### Effect Class 📝
 ```cpp
 class Effect : public Thing {
+    -- Classe: Effect
 public:
     // Renderização
     void draw(const Point& dest, bool drawThings = true, 
@@ -72,9 +76,10 @@ private:
 };
 ```
 
-### AttachedEffect Class
+### AttachedEffect Class 📝
 ```cpp
 class AttachedEffect {
+    -- Classe: AttachedEffect
 public:
     // Criação
     static AttachedEffectPtr create(uint16_t thingId, ThingCategory category);
@@ -121,9 +126,10 @@ public:
 };
 ```
 
-### EffectManager
+### EffectManager 📝
 ```cpp
 class EffectManager {
+    -- Classe: EffectManager
 public:
     // Registro
     static void registerEffect(uint16_t id, const std::string& name,
@@ -147,19 +153,24 @@ public:
 };
 ```
 
-## 🐍 API Lua
 
-### Efeitos Básicos
+---
+
+## 🐍 API Lua 📚
+
+### Efeitos Básicos 📝
 
 #### `Effect.create()`
 Cria um novo efeito básico.
 
 ```lua
 -- Criar efeito
+    --  Criar efeito (traduzido)
 local effect = Effect.create()
 effect:setId(50)  -- ID do efeito
 
 -- Adicionar ao mapa
+    --  Adicionar ao mapa (traduzido)
 local tile = g_map.getTile(position)
 tile:addThing(effect)
 
@@ -172,6 +183,7 @@ effect2:setPosition(player:getPosition())
 #### Efeitos Predefinidos
 ```lua
 -- Efeitos comuns
+    --  Efeitos comuns (traduzido)
 local EFFECT_IDS = {
     POFF = 3,
     YELLOW_RINGS = 12,
@@ -186,6 +198,7 @@ local EFFECT_IDS = {
 
 -- Função auxiliar
 function createMapEffect(effectId, position)
+    -- Função: createMapEffect
     local effect = Effect.create()
     effect:setId(effectId)
     effect:setPosition(position)
@@ -193,30 +206,57 @@ function createMapEffect(effectId, position)
 end
 
 -- Uso
+    --  Uso (traduzido)
 createMapEffect(EFFECT_IDS.FIRE, player:getPosition())
 ```
 
-### Efeitos Anexados
+### Efeitos Anexados 📝
 
 #### `g_attachedEffects` Interface
 ```lua
 -- Registrar efeito por sprite
+    --  Registrar efeito por sprite (traduzido)
 g_attachedEffects.registerByThing(id, name, thingId, category)
 
 -- Registrar efeito por imagem
+    --  Registrar efeito por imagem (traduzido)
 g_attachedEffects.registerByImage(id, name, imagePath, smooth)
 
 -- Obter efeito
+    --  Obter efeito (traduzido)
 local effect = g_attachedEffects.getById(id)
 
 -- Remover efeito
+    --  Remover efeito (traduzido)
 g_attachedEffects.remove(id)
 
 -- Limpar todos
+    --  Limpar todos (traduzido)
 g_attachedEffects.clear()
 ```
 
 #### `AttachedEffectManager` Sistema
+#### Nível Basic
+```lua
+-- Registrar efeito com configuração completa
+-- Configuração de efeito
+local config = {
+    -- Animação
+    -- Visual
+    -- Posicionamento
+    -- Animações especiais
+    fade = {start, end, speed},           -- Animação de fade
+    -- Iluminação
+    -- Callbacks
+    onAttach = function(effect, owner)
+        -- Quando anexado
+    end,
+    onDetach = function(effect, oldOwner)
+        -- Quando desanexado
+    end
+```
+
+#### Nível Intermediate
 ```lua
 -- Registrar efeito com configuração completa
 AttachedEffectManager.register(id, name, thingId, category, config)
@@ -266,54 +306,126 @@ local config = {
 }
 ```
 
+#### Nível Advanced
+```lua
+-- Registrar efeito com configuração completa
+AttachedEffectManager.register(id, name, thingId, category, config)
+
+-- Configuração de efeito
+local config = {
+    -- Animação
+    speed = 1.0,                    -- Velocidade da animação
+    duration = 5000,                -- Duração em ms (0 = infinito)
+    loop = 1,                       -- Número de loops (0 = infinito)
+    
+    -- Visual
+    opacity = 1.0,                  -- Opacidade (0.0 - 1.0)
+    shader = "OutfitGrayscale",     -- Nome do shader
+    size = {width, height},         -- Tamanho personalizado
+    hideOwner = false,              -- Esconder dono
+    transform = false,              -- Transformar dono
+    drawOnUI = true,                -- Desenhar na UI
+    
+    -- Posicionamento
+    offset = {x, y, onTop},         -- Offset padrão
+    dirOffset = {                   -- Offset por direção
+        [North] = {x, y, onTop},
+        [East] = {x, y, onTop},
+        [South] = {x, y, onTop},
+        [West] = {x, y, onTop}
+    },
+    
+    -- Animações especiais
+    bounce = {minHeight, height, speed},  -- Animação de pulo
+    pulse = {minScale, scale, speed},     -- Animação de pulso
+    fade = {start, end, speed},           -- Animação de fade
+    
+    -- Iluminação
+    light = {
+        color = 0xFFFFFF,           -- Cor da luz
+        intensity = 5               -- Intensidade
+    },
+    
+    -- Callbacks
+    onAttach = function(effect, owner)
+        -- Quando anexado
+    end,
+    onDetach = function(effect, oldOwner)
+        -- Quando desanexado
+    end
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### Anexar/Desanexar Efeitos
 ```lua
 -- Anexar efeito a criatura
+    --  Anexar efeito a criatura (traduzido)
 local effect = g_attachedEffects.getById(1)
 player:attachEffect(effect)
 
 -- Desanexar efeito
+    --  Desanexar efeito (traduzido)
 player:detachEffect(effect)
 
 -- Desanexar todos os efeitos
+    --  Desanexar todos os efeitos (traduzido)
 player:detachAllEffects()
 
 -- Verificar se tem efeito
+    --  Verificar se tem efeito (traduzido)
 local hasEffect = player:hasAttachedEffect(effectId)
 
 -- Obter efeitos anexados
+    --  Obter efeitos anexados (traduzido)
 local effects = player:getAttachedEffects()
 ```
 
-### Efeitos de UI
+### Efeitos de UI 📝
 
 #### `g_effects` Interface para UI
 ```lua
 -- Fade in
+    --  Fade in (traduzido)
 g_effects.fadeIn(widget, time, elapsed)
 
 -- Fade out  
+    --  Fade out (traduzido)
 g_effects.fadeOut(widget, time, elapsed)
 
 -- Cancelar fade
+    --  Cancelar fade (traduzido)
 g_effects.cancelFade(widget)
 
 -- Piscar
+    --  Piscar (traduzido)
 g_effects.startBlink(widget, duration, interval, clickCancel)
 
 -- Parar de piscar
+    --  Parar de piscar (traduzido)
 g_effects.stopBlink(widget)
 ```
 
 #### Exemplos de Uso
 ```lua
 -- Fade in em janela
+    --  Fade in em janela (traduzido)
 local window = g_ui.createWidget('MainWindow')
 window:setOpacity(0)
 window:show()
 g_effects.fadeIn(window, 500)
 
 -- Fade out e destruir
+    --  Fade out e destruir (traduzido)
 g_effects.fadeOut(window, 300)
 scheduleEvent(function()
     window:destroy()
@@ -324,9 +436,13 @@ local button = g_ui.createWidget('UIButton', parent)
 g_effects.startBlink(button, 3000, 250)  -- 3 segundos, 250ms intervalo
 ```
 
-## 🎮 Efeitos Básicos
 
-### Criação e Gerenciamento
+---
+
+## 🎮 Efeitos Básicos 📋
+
+### Criação e Gerenciamento 📝
+#### Inicialização e Configuração
 ```lua
 local EffectHelper = {}
 
@@ -355,6 +471,10 @@ function EffectHelper.createArea(effectId, centerPos, radius)
                 y = centerPos.y + y,
                 z = centerPos.z
             }
+```
+
+#### Funcionalidade 1
+```lua
             
             local distance = math.sqrt(x*x + y*y)
             if distance <= radius then
@@ -378,6 +498,10 @@ function EffectHelper.createLine(effectId, fromPos, toPos, interval)
             y = fromPos.y + math.floor(dy * progress),
             z = fromPos.z
         }
+```
+
+#### Finalização
+```lua
         
         EffectHelper.createAt(effectId, pos, i * (interval or 50))
     end
@@ -391,9 +515,13 @@ EffectHelper.createLine(EFFECT_IDS.MAGIC_MISSILE,
                        target:getPosition(), 100)
 ```
 
-## 🔗 Efeitos Anexados
 
-### Sistema de Registro
+---
+
+## 🔗 Efeitos Anexados 📋
+
+### Sistema de Registro 📝
+#### Nível Basic
 ```lua
 -- Efeito simples
 AttachedEffectManager.register(1, 'Glow', 50, ThingCategoryEffect, {
@@ -434,24 +562,127 @@ AttachedEffectManager.register(5, 'Custom Aura', '/images/effects/aura', ThingEx
 })
 ```
 
-### Efeitos Compostos
+#### Nível Intermediate
+```lua
+-- Efeito simples
+AttachedEffectManager.register(1, 'Glow', 50, ThingCategoryEffect, {
+    opacity = 0.8,
+    offset = {0, -10}
+})
+
+-- Efeito com shader
+AttachedEffectManager.register(2, 'Rainbow Aura', 307, ThingCategoryCreature, {
+    shader = 'Outfit - Rainbow',
+    speed = 2.0,
+    offset = {0, 0, true}  -- onTop = true
+})
+
+-- Efeito com animações
+AttachedEffectManager.register(3, 'Floating', 40, ThingCategoryEffect, {
+    bounce = {10, 30, 2000},      -- Flutuar entre 10-30 pixels
+    pulse = {80, 120, 1500},      -- Pulsação 80%-120%
+    fade = {50, 100, 1000},       -- Fade 50%-100%
+    duration = 10000              -- 10 segundos
+})
+
+-- Efeito com direções
+AttachedEffectManager.register(4, 'Wings', 308, ThingCategoryCreature, {
+    disableWalkAnimation = true,
+    dirOffset = {
+        [North] = {0, -15, true},
+        [East] = {10, -10, true},
+        [South] = {0, -5, true},
+        [West] = {-10, -10, true}
+    }
+})
+
+-- Efeito por imagem externa
+AttachedEffectManager.register(5, 'Custom Aura', '/images/effects/aura', ThingExternalTexture, {
+    size = {64, 64},
+    offset = {32, 32}
+})
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Efeito simples
+AttachedEffectManager.register(1, 'Glow', 50, ThingCategoryEffect, {
+    opacity = 0.8,
+    offset = {0, -10}
+})
+
+-- Efeito com shader
+AttachedEffectManager.register(2, 'Rainbow Aura', 307, ThingCategoryCreature, {
+    shader = 'Outfit - Rainbow',
+    speed = 2.0,
+    offset = {0, 0, true}  -- onTop = true
+})
+
+-- Efeito com animações
+AttachedEffectManager.register(3, 'Floating', 40, ThingCategoryEffect, {
+    bounce = {10, 30, 2000},      -- Flutuar entre 10-30 pixels
+    pulse = {80, 120, 1500},      -- Pulsação 80%-120%
+    fade = {50, 100, 1000},       -- Fade 50%-100%
+    duration = 10000              -- 10 segundos
+})
+
+-- Efeito com direções
+AttachedEffectManager.register(4, 'Wings', 308, ThingCategoryCreature, {
+    disableWalkAnimation = true,
+    dirOffset = {
+        [North] = {0, -15, true},
+        [East] = {10, -10, true},
+        [South] = {0, -5, true},
+        [West] = {-10, -10, true}
+    }
+})
+
+-- Efeito por imagem externa
+AttachedEffectManager.register(5, 'Custom Aura', '/images/effects/aura', ThingExternalTexture, {
+    size = {64, 64},
+    offset = {32, 32}
+})
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### Efeitos Compostos 📝
 ```lua
 -- Efeito principal que gerencia sub-efeitos
+    --  Efeito principal que gerencia sub-efeitos (traduzido)
 AttachedEffectManager.register(10, 'Elemental Aura', 0, 0, {
     onAttach = function(effect, owner)
         -- Fogo
+    --  Fogo (traduzido)
         local fireEffect = g_attachedEffects.getById(1):clone()
         fireEffect:setOffset(-20, -20, true)
         fireEffect:setShader('Fire')
         effect:attachEffect(fireEffect)
         
         -- Gelo
+    --  Gelo (traduzido)
         local iceEffect = g_attachedEffects.getById(2):clone()
         iceEffect:setOffset(20, -20, true)
         iceEffect:setShader('Ice')
         effect:attachEffect(iceEffect)
         
         -- Raio
+    --  Raio (traduzido)
         local lightningEffect = g_attachedEffects.getById(3):clone()
         lightningEffect:setOffset(0, -30, true)
         lightningEffect:setShader('Lightning')
@@ -460,6 +691,7 @@ AttachedEffectManager.register(10, 'Elemental Aura', 0, 0, {
     
     onDetach = function(effect, oldOwner)
         -- Efeito de desaparecimento
+    --  Efeito de desaparecimento (traduzido)
         local dispelEffect = Effect.create()
         dispelEffect:setId(20)
         oldOwner:getTile():addThing(dispelEffect)
@@ -467,7 +699,8 @@ AttachedEffectManager.register(10, 'Elemental Aura', 0, 0, {
 })
 ```
 
-### Sistema Dinâmico de Efeitos
+### Sistema Dinâmico de Efeitos 📝
+#### Inicialização e Configuração
 ```lua
 local DynamicEffects = {}
 
@@ -494,6 +727,10 @@ function DynamicEffects.healthAura(creature)
     if effect then
         creature:attachEffect(effect)
     end
+```
+
+#### Funcionalidade 1
+```lua
 end
 
 -- Efeito baseado no status
@@ -519,6 +756,10 @@ function DynamicEffects.statusEffects(creature)
             else
                 creature:detachEffectById(effectId)
             end
+```
+
+#### Finalização
+```lua
         end
     end
 end
@@ -536,9 +777,13 @@ end
 updateDynamicEffects()
 ```
 
-## 🎨 Efeitos de UI
 
-### Sistema de Transições
+---
+
+## 🎨 Efeitos de UI 📋
+
+### Sistema de Transições 📝
+#### Inicialização e Configuração
 ```lua
 local UIEffects = {}
 
@@ -578,6 +823,10 @@ function UIEffects.slideIn(widget, direction, duration)
         if progress < 1 then
             scheduleEvent(animate, 16)  -- ~60fps
         end
+```
+
+#### Funcionalidade 1
+```lua
     end
     
     animate()
@@ -608,6 +857,10 @@ function UIEffects.scaleIn(widget, duration)
         if progress < 1 then
             scheduleEvent(animate, 16)
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
     
     animate()
@@ -635,6 +888,10 @@ function UIEffects.rotateIn(widget, duration)
             widget:setRotation(0)
             widget:setScale(1)
         end
+```
+
+#### Funcionalidade 3
+```lua
     end
     
     animate()
@@ -657,6 +914,10 @@ function UIEffects.showNotification(text, type, duration)
         warning = {backgroundColor = '#f39c12', textColor = '#ffffff'},
         error = {backgroundColor = '#e74c3c', textColor = '#ffffff'}
     }
+```
+
+#### Funcionalidade 4
+```lua
     
     local style = styles[type] or styles.info
     notification:setBackgroundColor(style.backgroundColor)
@@ -678,6 +939,10 @@ function UIEffects.showNotification(text, type, duration)
         scheduleEvent(function()
             notification:destroy()
         end, 400)
+```
+
+#### Finalização
+```lua
     end, duration)
     
     return notification
@@ -690,9 +955,13 @@ UIEffects.rotateIn(icon, 600)
 UIEffects.showNotification('Conectado com sucesso!', 'success')
 ```
 
-## 💡 Exemplos Práticos
 
-### 1. Sistema de Buff Visual
+---
+
+## 💡 Exemplos Práticos 💡
+
+### 1. Sistema de Buff Visual 📝
+#### Inicialização e Configuração
 ```lua
 local BuffEffects = {}
 
@@ -725,6 +994,10 @@ for condition, config in pairs(BUFF_EFFECTS) do
             color = tonumber(config.color:sub(2), 16),
             intensity = 3
         },
+```
+
+#### Funcionalidade 1
+```lua
         pulse = {90, 110, 1000}
     })
 end
@@ -751,13 +1024,18 @@ connect(LocalPlayer, {
     onConditionAdd = function(localPlayer, condition)
         BuffEffects.updatePlayer(localPlayer)
     end,
+```
+
+#### Finalização
+```lua
     onConditionRemove = function(localPlayer, condition)
         BuffEffects.updatePlayer(localPlayer)
     end
 })
 ```
 
-### 2. Sistema de Efeitos de Combate
+### 2. Sistema de Efeitos de Combate 📝
+#### Inicialização e Configuração
 ```lua
 local CombatEffects = {}
 
@@ -789,6 +1067,10 @@ function CombatEffects.showDamage(creature, damage, damageType)
         x = screenPos.x - 50,
         y = screenPos.y - 40
     })
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Animar movimento para cima e fade
     local startTime = g_clock.millis()
@@ -810,6 +1092,10 @@ function CombatEffects.showDamage(creature, damage, damageType)
         else
             textEffect:destroy()
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
     
     animate()
@@ -831,6 +1117,10 @@ function CombatEffects.showDamage(creature, damage, damageType)
         effect:setPosition(creature:getPosition())
     end
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 -- Efeitos de spell
 function CombatEffects.castSpell(creature, spellId)
@@ -860,6 +1150,10 @@ function CombatEffects.castSpell(creature, spellId)
     
     return config  -- Retorna configuração para usar nos próximos efeitos
 end
+```
+
+#### Finalização
+```lua
 
 -- Conectar aos eventos de combate
 connect(g_game, {
@@ -873,7 +1167,8 @@ connect(g_game, {
 })
 ```
 
-### 3. Efeitos Ambientais Dinâmicos
+### 3. Efeitos Ambientais Dinâmicos 📝
+#### Inicialização e Configuração
 ```lua
 local EnvironmentalEffects = {}
 
@@ -901,6 +1196,10 @@ function EnvironmentalEffects.setWeather(weatherType, intensity)
         g_shaders.setGlobalShader('Darkness')
         g_shaders.setShaderParam('Darkness', 'level', intensity or 0.6)
     end
+```
+
+#### Funcionalidade 1
+```lua
 end
 
 -- Efeitos baseados no horário
@@ -923,6 +1222,10 @@ end
 
 -- Efeitos de área especiais
 function EnvironmentalEffects.createAreaEffect(centerPos, radius, effectType)
+```
+
+#### Funcionalidade 2
+```lua
     local function createEffect(pos, delay)
         scheduleEvent(function()
             local effect = Effect.create()
@@ -944,6 +1247,10 @@ function EnvironmentalEffects.createAreaEffect(centerPos, radius, effectType)
         end
     end
 end
+```
+
+#### Finalização
+```lua
 
 -- Atualizar efeitos a cada minuto do jogo
 connect(g_game, {
@@ -957,9 +1264,12 @@ EnvironmentalEffects.setWeather('rain', 0.7)
 EnvironmentalEffects.createAreaEffect(player:getPosition(), 5, 12)
 ```
 
-## ✅ Melhores Práticas
 
-### 1. Performance
+---
+
+## ✅ Melhores Práticas 📋
+
+### 1. Performance 📝
 - **Limite efeitos simultâneos**: Máximo 50-100 efeitos ativos
 - **Pool de objetos**: Reutilize efeitos em vez de criar novos
 - **LOD (Level of Detail)**: Reduza qualidade para efeitos distantes
@@ -973,7 +1283,9 @@ local EffectPool = {
 }
 
 function EffectPool.get()
+    -- Função: EffectPool
     if #EffectPool.available > 0 then
+    -- Verificação condicional
         return table.remove(EffectPool.available)
     else
         return Effect.create()
@@ -981,14 +1293,16 @@ function EffectPool.get()
 end
 
 function EffectPool.release(effect)
+    -- Função: EffectPool
     if #EffectPool.active < EffectPool.maxEffects then
+    -- Verificação condicional
         effect:setId(0)  -- Reset
         table.insert(EffectPool.available, effect)
     end
 end
 ```
 
-### 2. Organização
+### 2. Organização 📝
 - **IDs consistentes**: Use ranges para diferentes tipos
 - **Nomes descritivos**: Facilita manutenção
 - **Configuração centralizada**: Um lugar para todos os efeitos
@@ -996,6 +1310,7 @@ end
 
 ```lua
 -- IDs organizados por categoria
+    --  IDs organizados por categoria (traduzido)
 local EFFECT_IDS = {
     -- Efeitos básicos (1-99)
     DAMAGE = {
@@ -1005,6 +1320,7 @@ local EFFECT_IDS = {
     },
     
     -- Efeitos anexados (100-199)  
+    --  Efeitos anexados (100-199) (traduzido)
     AURAS = {
         HEALTH = 100,
         MANA = 101,
@@ -1012,6 +1328,7 @@ local EFFECT_IDS = {
     },
     
     -- Efeitos especiais (200-299)
+    --  Efeitos especiais (200-299) (traduzido)
     SPECIAL = {
         TRANSFORMATION = 200,
         INVISIBILITY = 201
@@ -1019,7 +1336,7 @@ local EFFECT_IDS = {
 }
 ```
 
-### 3. Configuração
+### 3. Configuração 📝
 - **Valores padrão sensatos**: Que funcionem na maioria dos casos
 - **Validação**: Verifique parâmetros antes de usar
 - **Fallbacks**: Para quando recursos não existem
@@ -1027,6 +1344,7 @@ local EFFECT_IDS = {
 
 ```lua
 function validateEffectConfig(config)
+    -- Função: validateEffectConfig
     local defaults = {
         speed = 1.0,
         opacity = 1.0,
@@ -1036,12 +1354,15 @@ function validateEffectConfig(config)
     
     -- Aplicar padrões
     for key, value in pairs(defaults) do
+    -- Loop de repetição
         if config[key] == nil then
+    -- Verificação condicional
             config[key] = value
         end
     end
     
     -- Validar ranges
+    --  Validar ranges (traduzido)
     config.speed = math.max(0.1, math.min(config.speed, 10.0))
     config.opacity = math.max(0.0, math.min(config.opacity, 1.0))
     
@@ -1049,7 +1370,7 @@ function validateEffectConfig(config)
 end
 ```
 
-### 4. Debugging
+### 4. Debugging 📝
 - **Sistema de log**: Para rastrear problemas
 - **Visualização**: Debug visual de offsets e áreas
 - **Profiling**: Monitore performance
@@ -1063,21 +1384,26 @@ local EffectDebug = {
 }
 
 function EffectDebug.log(level, message)
+    -- Função: EffectDebug
     if EffectDebug.enabled and EffectDebug.logLevel == level then
+    -- Verificação condicional
         print('[Effect Debug]', level, ':', message)
     end
 end
 
 function EffectDebug.drawBounds(effect)
+    -- Função: EffectDebug
     if EffectDebug.showBounds then
+    -- Verificação condicional
         -- Desenhar caixa delimitadora do efeito
+    --  Desenhar caixa delimitadora do efeito (traduzido)
         local bounds = effect:getBounds()
         g_painter.drawRect(bounds, 'red')
     end
 end
 ```
 
-### 5. Compatibilidade
+### 5. Compatibilidade 📝
 - **Versioning**: Para mudanças de API
 - **Graceful degradation**: Funcione mesmo sem recursos
 - **Platform differences**: Mobile vs Desktop
@@ -1090,7 +1416,9 @@ local EffectConfig = {
 }
 
 function getEffectQuality()
+    -- Função: getEffectQuality
     if g_platform.isMobile() then
+    -- Verificação condicional
         return 'low'
     elseif EffectConfig.qualityLevel == 'high' and g_graphics.canUseShaders() then
         return 'high'
@@ -1100,10 +1428,12 @@ function getEffectQuality()
 end
 
 function createEffectForQuality(baseConfig)
+    -- Função: createEffectForQuality
     local quality = getEffectQuality()
     local config = table.copy(baseConfig)
     
     if quality == 'low' then
+    -- Verificação condicional
         config.shader = nil
         config.opacity = config.opacity * 0.7
     elseif quality == 'medium' then

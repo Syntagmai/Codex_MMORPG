@@ -1,14 +1,10 @@
----
-tags: [index, categorical, navigation, organization]
-type: categorical_index
-status: active
-priority: high
-created: 2025-07-29
----
 
 # 🗂️ Índice por Categorias - Documentação Organizada
 
-## 📋 Visão Geral
+
+---
+
+## 📋 Visão Geral 🎯
 
 Este índice organiza todos os documentos por categorias funcionais, facilitando a navegação por área de interesse.
 
@@ -18,11 +14,14 @@ Este índice organiza todos os documentos por categorias funcionais, facilitando
 
 ---
 
-## 🎨 UI
+
+---
+
+## 🎨 UI 📋
 
 **Total de Documentos**: 49
 
-### **📚 Documentação Habdel:**
+### **📚 Documentação Habdel:** 📝
 - ✅ **[UIButton](habdel\UIButton.md)**
 - ✅ **[Sistema de Eventos UIWidget](habdel\UIEvents.md)**
 - ✅ **[Sistema de Layouts UIWidget](habdel\UILayouts.md)**
@@ -50,7 +49,7 @@ Este índice organiza todos os documentos por categorias funcionais, facilitando
 - 📋 **[Sem título](habdel\otclient\documentation\OTCLIENT-005_ui_framework.md)**
 - 📋 **[Análise Detalhada - Canary UI](habdel\canary\analysis\ui_analysis.md)**
 
-### **📖 Wiki Principal:**
+### **📖 Wiki Principal:** 📝
 - 📋 **[Sistema de Configuração Avançada](otclient\Advanced_Configuration_Guide.md)**
 - 📋 **[Animation System Guide](otclient\Animation_System_Guide.md)**
 - 📋 **[Sem título](otclient\Combat_System_Guide.md)**
@@ -77,11 +76,14 @@ Este índice organiza todos os documentos por categorias funcionais, facilitando
 
 ---
 
-## 🎮 Game
+
+---
+
+## 🎮 Game 📋
 
 **Total de Documentos**: 20
 
-### **📚 Documentação Habdel:**
+### **📚 Documentação Habdel:** 📝
 - ✅ **[Sistema de Criaturas - OTClient Redemption](habdel\CreatureSystem.md)**
 - ✅ **[Sistema de Itens - OTClient Redemption](habdel\ItemSystem.md)**
 - ✅ **[Sistema de Mundo e Mapas OTClient](habdel\WorldSystem.md)**
@@ -105,11 +107,14 @@ Este índice organiza todos os documentos por categorias funcionais, facilitando
 
 ---
 
-## 🔧 Core
+
+---
+
+## 🔧 Core 📋
 
 **Total de Documentos**: 19
 
-### **📚 Documentação Habdel:**
+### **📚 Documentação Habdel:** 📝
 - ✅ **[Sistema de Configuração OTClient](habdel\Configuration.md)**
 - ✅ **[Sistema de Configuração Avançada](habdel\ConfigurationAdvanced.md)**
 - ✅ **[Criando Seu Primeiro Módulo - OTClient](habdel\FirstModule.md)**
@@ -132,11 +137,14 @@ Este índice organiza todos os documentos por categorias funcionais, facilitando
 
 ---
 
-## 📚 Guide
+
+---
+
+## 📚 Guide 📋
 
 **Total de Documentos**: 4
 
-### **📚 Documentação Habdel:**
+### **📚 Documentação Habdel:** 📝
 - ✅ **[Boas Práticas de Desenvolvimento - OTClient](habdel\BestPractices.md)** (GUIDE-002)
 - ✅ **[Getting Started - OTClient Redemption](habdel\GettingStarted.md)**
 - ✅ **[Tutorial de Eventos](habdel\documentation\EventTutorial.md)** (GUIDE-005)
@@ -144,27 +152,33 @@ Este índice organiza todos os documentos por categorias funcionais, facilitando
 
 ---
 
-## 🔍 Reference
+
+---
+
+## 🔍 Reference 📚
 
 **Total de Documentos**: 6
 
-### **📚 Documentação Habdel:**
+### **📚 Documentação Habdel:** 📝
 - ✅ **[Cheat Sheet de Desenvolvimento - OTClient Redemption](habdel\CheatSheet.md)**
 - ✅ **[Lua API Reference - OTClient Redemption](habdel\LuaAPI.md)**
 - ✅ **[API Reference Completa](habdel\documentation\CompleteAPIReference.md)** (REF-003)
 - ✅ **[Análise Detalhada - LUA_INTEGRATION](habdel\otclient\analysis\lua_integration_detailed_analysis.md)**
 
-### **📖 Wiki Principal:**
+### **📖 Wiki Principal:** 📝
 - 📋 **[Cheat Sheet de Desenvolvimento - OTClient Redemption](otclient\Cheat_Sheet.md)**
 - ✅ **[Lua API Reference - OTClient](otclient\Lua_API_Reference.md)**
 
 ---
 
-## 📄 Other
+
+---
+
+## 📄 Other 📋
 
 **Total de Documentos**: 45
 
-### **📚 Documentação Habdel:**
+### **📚 Documentação Habdel:** 📝
 - ✅ **[Plano de Documentação OTClient - Redemption](habdel\DOCUMENTATION_PLAN.md)** (UI-001)
 - ✅ **[Sistema de Efeitos](habdel\EffectsSystem.md)**
 - ✅ **[Sistema de Protocolo de Comunicação OTClient](habdel\Protocol.md)**
@@ -206,7 +220,7 @@ Este índice organiza todos os documentos por categorias funcionais, facilitando
 - ✅ **[Canary - Documentation](habdel\canary\documentation\README.md)**
 - ✅ **[Canary - Stories](habdel\canary\stories\README.md)**
 
-### **📖 Wiki Principal:**
+### **📖 Wiki Principal:** 📝
 - 📋 **[Status da Documentação da Wiki](otclient\Documentation_Status.md)**
 - ✅ **[🔗 Índice de Integração Habdel-Wiki](otclient\Habdel_Integration_Index.md)**
 - ✅ **[OTClient Wiki](otclient\otclient_wiki.md)**
@@ -216,7 +230,10 @@ Este índice organiza todos os documentos por categorias funcionais, facilitando
 ---
 
 
-## 📊 Estatísticas por Categoria
+
+---
+
+## 📊 Estatísticas por Categoria 📋
 
 - **UI**: 49 documentos
 - **Game**: 20 documentos

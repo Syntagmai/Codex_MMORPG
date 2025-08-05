@@ -38,6 +38,7 @@ O **Sistema de Grupos** é um componente essencial do OTClient, responsável por
 
 ### **1. Classe Party**
 
+#### Inicialização e Configuração
 ```cpp
 class Party final : public SharedObject {
 public:
@@ -98,6 +99,10 @@ private:
         SHAREDEXP_MEMBERINACTIVE,
         SHAREDEXP_EMPTYPARTY
     };
+```
+
+#### Finalização
+```cpp
     
     // Métodos privados
     const char* getSharedExpReturnMessage(SharedExpStatus_t value) const;
@@ -139,6 +144,7 @@ struct Group {
 };
 
 class Groups {
+    -- Classe: Groups
 public:
     static uint8_t getFlagNumber(PlayerFlags_t playerFlags);
     static PlayerFlags_t getFlagFromNumber(uint8_t value);
@@ -155,6 +161,7 @@ private:
 
 ### **3. Estruturas de Análise**
 
+#### Nível Basic
 ```cpp
 struct PartyAnalyzer {
     std::shared_ptr<Player> player;
@@ -174,10 +181,68 @@ enum PartyAnalyzer_t : uint8_t {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+struct PartyAnalyzer {
+    std::shared_ptr<Player> player;
+    uint64_t lootPrice = 0;
+    uint64_t supplyPrice = 0;
+    uint64_t damage = 0;
+    uint64_t healing = 0;
+    uint64_t balance = 0;
+    
+    PartyAnalyzer(const std::shared_ptr<Player> &p) : player(p) {}
+};
+
+enum PartyAnalyzer_t : uint8_t {
+    MARKET_PRICE = 0,
+    LAST_PRICE = 1,
+    SELL_PRICE = 2
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+struct PartyAnalyzer {
+    std::shared_ptr<Player> player;
+    uint64_t lootPrice = 0;
+    uint64_t supplyPrice = 0;
+    uint64_t damage = 0;
+    uint64_t healing = 0;
+    uint64_t balance = 0;
+    
+    PartyAnalyzer(const std::shared_ptr<Player> &p) : player(p) {}
+};
+
+enum PartyAnalyzer_t : uint8_t {
+    MARKET_PRICE = 0,
+    LAST_PRICE = 1,
+    SELL_PRICE = 2
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## ⚙️ **Mecânicas do Sistema**
 
 ### **1. Criação de Party**
 
+#### Nível Basic
 ```cpp
 std::shared_ptr<Party> Party::create(const std::shared_ptr<Player> &leader) {
     auto party = std::make_shared<Party>();
@@ -193,8 +258,58 @@ std::shared_ptr<Party> Party::create(const std::shared_ptr<Player> &leader) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+std::shared_ptr<Party> Party::create(const std::shared_ptr<Player> &leader) {
+    auto party = std::make_shared<Party>();
+    party->m_leader = leader;
+    leader->setParty(party);
+    
+    // Configurar experiência compartilhada automática
+    if (g_configManager().getBoolean(PARTY_AUTO_SHARE_EXPERIENCE)) {
+        party->setSharedExperience(leader, true);
+    }
+    
+    return party;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+std::shared_ptr<Party> Party::create(const std::shared_ptr<Player> &leader) {
+    auto party = std::make_shared<Party>();
+    party->m_leader = leader;
+    leader->setParty(party);
+    
+    // Configurar experiência compartilhada automática
+    if (g_configManager().getBoolean(PARTY_AUTO_SHARE_EXPERIENCE)) {
+        party->setSharedExperience(leader, true);
+    }
+    
+    return party;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **2. Sistema de Convites**
 
+#### Nível Basic
 ```cpp
 bool Party::invitePlayer(const std::shared_ptr<Player> &player) {
     const auto &leader = getLeader();
@@ -236,8 +351,110 @@ bool Party::invitePlayer(const std::shared_ptr<Player> &player) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+bool Party::invitePlayer(const std::shared_ptr<Player> &player) {
+    const auto &leader = getLeader();
+    if (!leader) {
+        return false;
+    }
+    
+    if (!player || player->getParty()) {
+        return false;
+    }
+    
+    // Verificar se já foi convidado
+    if (isPlayerInvited(player)) {
+        return false;
+    }
+    
+    // Verificar se é membro
+    if (std::ranges::find(memberList, player) != memberList.end()) {
+        return false;
+    }
+    
+    // Adicionar à lista de convites
+    inviteList.emplace_back(player);
+    
+    // Atualizar ícones
+    leader->sendCreatureShield(player);
+    player->sendCreatureShield(leader);
+    
+    // Enviar mensagem de convite
+    std::ostringstream ss;
+    ss << leader->getName() << " has invited you to " << leader->getPossessivePronoun() << " party.";
+    player->sendTextMessage(MESSAGE_PARTY_MANAGEMENT, ss.str());
+    
+    ss.str(std::string());
+    ss << "You have invited " << player->getName() << " to your party.";
+    leader->sendTextMessage(MESSAGE_PARTY_MANAGEMENT, ss.str());
+    
+    return true;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+bool Party::invitePlayer(const std::shared_ptr<Player> &player) {
+    const auto &leader = getLeader();
+    if (!leader) {
+        return false;
+    }
+    
+    if (!player || player->getParty()) {
+        return false;
+    }
+    
+    // Verificar se já foi convidado
+    if (isPlayerInvited(player)) {
+        return false;
+    }
+    
+    // Verificar se é membro
+    if (std::ranges::find(memberList, player) != memberList.end()) {
+        return false;
+    }
+    
+    // Adicionar à lista de convites
+    inviteList.emplace_back(player);
+    
+    // Atualizar ícones
+    leader->sendCreatureShield(player);
+    player->sendCreatureShield(leader);
+    
+    // Enviar mensagem de convite
+    std::ostringstream ss;
+    ss << leader->getName() << " has invited you to " << leader->getPossessivePronoun() << " party.";
+    player->sendTextMessage(MESSAGE_PARTY_MANAGEMENT, ss.str());
+    
+    ss.str(std::string());
+    ss << "You have invited " << player->getName() << " to your party.";
+    leader->sendTextMessage(MESSAGE_PARTY_MANAGEMENT, ss.str());
+    
+    return true;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **3. Sistema de Entrada**
 
+#### Inicialização e Configuração
 ```cpp
 bool Party::joinParty(const std::shared_ptr<Player> &player) {
     const auto &leader = getLeader();
@@ -278,6 +495,10 @@ bool Party::joinParty(const std::shared_ptr<Player> &player) {
         member->sendPlayerPartyIcons(player);
         player->sendPlayerPartyIcons(member);
     }
+```
+
+#### Finalização
+```cpp
     
     leader->sendCreatureSkull(player);
     player->sendCreatureSkull(player);
@@ -312,6 +533,7 @@ bool Party::joinParty(const std::shared_ptr<Player> &player) {
 
 ### **4. Sistema de Saída**
 
+#### Inicialização e Configuração
 ```cpp
 bool Party::leaveParty(const std::shared_ptr<Player> &player, bool forceRemove) {
     if (!player) {
@@ -336,6 +558,10 @@ bool Party::leaveParty(const std::shared_ptr<Player> &player, bool forceRemove) 
     if (!g_callbacks().checkCallback(EventCallback_t::partyOnLeave, &EventCallback::partyOnLeave, getParty(), player)) {
         return false;
     }
+```
+
+#### Funcionalidade 1
+```cpp
     
     // Gerenciar liderança se necessário
     bool missingLeader = false;
@@ -357,6 +583,10 @@ bool Party::leaveParty(const std::shared_ptr<Player> &player, bool forceRemove) 
                     passPartyLeadership(newLeader);
                 }
             }
+```
+
+#### Funcionalidade 2
+```cpp
         } else {
             missingLeader = true;
         }
@@ -381,6 +611,10 @@ bool Party::leaveParty(const std::shared_ptr<Player> &player, bool forceRemove) 
         member->sendPartyCreatureUpdate(player);
         g_game().updatePlayerHelpers(member);
     }
+```
+
+#### Finalização
+```cpp
     
     // Enviar mensagens
     player->sendTextMessage(MESSAGE_PARTY_MANAGEMENT, "You have left the party.");
@@ -404,6 +638,22 @@ bool Party::leaveParty(const std::shared_ptr<Player> &player, bool forceRemove) 
 
 ### **5. Sistema de Liderança**
 
+#### Nível Basic
+```cpp
+    if (!leader || !player || leader == player || player->getParty().get() != this) {
+    if (it != memberList.end()) {
+    // Notificar mudança de liderança
+        member->sendPartyCreatureShield(oldLeader);
+        member->sendPartyCreatureShield(player);
+        invitee->sendCreatureShield(oldLeader);
+        invitee->sendCreatureShield(player);
+    player->sendPartyCreatureShield(oldLeader);
+    player->sendPartyCreatureShield(player);
+    // Notificar novo líder
+    player->sendTextMessage(MESSAGE_PARTY_MANAGEMENT, "You are now the leader of the party.");
+```
+
+#### Nível Intermediate
 ```cpp
 bool Party::passPartyLeadership(const std::shared_ptr<Player> &player) {
     const auto &leader = getLeader();
@@ -451,6 +701,64 @@ bool Party::passPartyLeadership(const std::shared_ptr<Player> &player) {
 }
 ```
 
+#### Nível Advanced
+```cpp
+bool Party::passPartyLeadership(const std::shared_ptr<Player> &player) {
+    const auto &leader = getLeader();
+    if (!leader || !player || leader == player || player->getParty().get() != this) {
+        return false;
+    }
+    
+    // Remover da lista de membros antes de broadcastar
+    auto it = std::ranges::find(memberList, player);
+    if (it != memberList.end()) {
+        memberList.erase(it);
+    }
+    
+    // Notificar mudança de liderança
+    std::ostringstream ss;
+    ss << player->getName() << " is now the leader of the party.";
+    broadcastPartyMessage(MESSAGE_PARTY_MANAGEMENT, ss.str(), true);
+    
+    // Transferir liderança
+    const auto &oldLeader = leader;
+    m_leader = player;
+    memberList.insert(memberList.begin(), oldLeader);
+    
+    // Atualizar sistemas
+    updateSharedExperience();
+    updateTrackerAnalyzer();
+    
+    // Atualizar ícones
+    for (const auto &member : getMembers()) {
+        member->sendPartyCreatureShield(oldLeader);
+        member->sendPartyCreatureShield(player);
+    }
+    
+    for (const auto &invitee : getInvitees()) {
+        invitee->sendCreatureShield(oldLeader);
+        invitee->sendCreatureShield(player);
+    }
+    
+    player->sendPartyCreatureShield(oldLeader);
+    player->sendPartyCreatureShield(player);
+    
+    // Notificar novo líder
+    player->sendTextMessage(MESSAGE_PARTY_MANAGEMENT, "You are now the leader of the party.");
+    return true;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🎮 **Fluxo de Grupos**
 
 ### **1. Criação de Party**
@@ -481,6 +789,7 @@ graph TD
 
 ### **3. Experiência Compartilhada**
 
+#### Inicialização e Configuração
 ```cpp
 void Party::shareExperience(uint64_t experience, const std::shared_ptr<Creature> &target, const std::shared_ptr<Player> &source) {
     if (!isSharedExperienceActive()) {
@@ -503,6 +812,10 @@ void Party::shareExperience(uint64_t experience, const std::shared_ptr<Creature>
         if (member && member->getPosition().getDistance(target->getPosition()) <= 30) {
             member->onGainSharedExperience(sharedExp, target);
         }
+```
+
+#### Funcionalidade 1
+```cpp
     }
 }
 
@@ -527,6 +840,10 @@ SharedExpStatus_t Party::getSharedExperienceStatus() {
     if (highestLevel - lowestLevel > 100) {
         return SHAREDEXP_LEVELDIFFTOOLARGE;
     }
+```
+
+#### Finalização
+```cpp
     
     for (const auto &member : members) {
         if (!isPlayerActive(member)) {
@@ -542,6 +859,7 @@ SharedExpStatus_t Party::getSharedExperienceStatus() {
 
 ### **1. Protocolo de Party**
 
+#### Nível Basic
 ```cpp
 // Envio de convite de party
 void ProtocolGame::sendPartyInvite(uint32_t playerId) {
@@ -583,8 +901,110 @@ void ProtocolGame::sendPartyRevokeInvite(uint32_t playerId) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Envio de convite de party
+void ProtocolGame::sendPartyInvite(uint32_t playerId) {
+    NetworkMessage msg;
+    msg.addByte(0x7C);
+    msg.add<uint32_t>(playerId);
+    sendNetworkMessage(msg);
+}
+
+// Envio de aceite de convite
+void ProtocolGame::sendPartyJoin(uint32_t leaderId) {
+    NetworkMessage msg;
+    msg.addByte(0x7D);
+    msg.add<uint32_t>(leaderId);
+    sendNetworkMessage(msg);
+}
+
+// Envio de saída de party
+void ProtocolGame::sendPartyLeave() {
+    NetworkMessage msg;
+    msg.addByte(0x7E);
+    sendNetworkMessage(msg);
+}
+
+// Envio de passagem de liderança
+void ProtocolGame::sendPartyLeadership(uint32_t playerId) {
+    NetworkMessage msg;
+    msg.addByte(0x7F);
+    msg.add<uint32_t>(playerId);
+    sendNetworkMessage(msg);
+}
+
+// Envio de revogação de convite
+void ProtocolGame::sendPartyRevokeInvite(uint32_t playerId) {
+    NetworkMessage msg;
+    msg.addByte(0x80);
+    msg.add<uint32_t>(playerId);
+    sendNetworkMessage(msg);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Envio de convite de party
+void ProtocolGame::sendPartyInvite(uint32_t playerId) {
+    NetworkMessage msg;
+    msg.addByte(0x7C);
+    msg.add<uint32_t>(playerId);
+    sendNetworkMessage(msg);
+}
+
+// Envio de aceite de convite
+void ProtocolGame::sendPartyJoin(uint32_t leaderId) {
+    NetworkMessage msg;
+    msg.addByte(0x7D);
+    msg.add<uint32_t>(leaderId);
+    sendNetworkMessage(msg);
+}
+
+// Envio de saída de party
+void ProtocolGame::sendPartyLeave() {
+    NetworkMessage msg;
+    msg.addByte(0x7E);
+    sendNetworkMessage(msg);
+}
+
+// Envio de passagem de liderança
+void ProtocolGame::sendPartyLeadership(uint32_t playerId) {
+    NetworkMessage msg;
+    msg.addByte(0x7F);
+    msg.add<uint32_t>(playerId);
+    sendNetworkMessage(msg);
+}
+
+// Envio de revogação de convite
+void ProtocolGame::sendPartyRevokeInvite(uint32_t playerId) {
+    NetworkMessage msg;
+    msg.addByte(0x80);
+    msg.add<uint32_t>(playerId);
+    sendNetworkMessage(msg);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **2. Parsing de Party**
 
+#### Nível Basic
 ```cpp
 // Parsing de convite de party
 void ProtocolGame::parsePartyInvite(const InputMessagePtr& msg) {
@@ -616,8 +1036,90 @@ void ProtocolGame::parsePartyRevokeInvite(const InputMessagePtr& msg) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Parsing de convite de party
+void ProtocolGame::parsePartyInvite(const InputMessagePtr& msg) {
+    uint32_t playerId = msg->getU32();
+    g_game.processPartyInvite(playerId);
+}
+
+// Parsing de aceite de convite
+void ProtocolGame::parsePartyJoin(const InputMessagePtr& msg) {
+    uint32_t leaderId = msg->getU32();
+    g_game.processPartyJoin(leaderId);
+}
+
+// Parsing de saída de party
+void ProtocolGame::parsePartyLeave(const InputMessagePtr& msg) {
+    g_game.processPartyLeave();
+}
+
+// Parsing de passagem de liderança
+void ProtocolGame::parsePartyLeadership(const InputMessagePtr& msg) {
+    uint32_t playerId = msg->getU32();
+    g_game.processPartyLeadership(playerId);
+}
+
+// Parsing de revogação de convite
+void ProtocolGame::parsePartyRevokeInvite(const InputMessagePtr& msg) {
+    uint32_t playerId = msg->getU32();
+    g_game.processPartyRevokeInvite(playerId);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Parsing de convite de party
+void ProtocolGame::parsePartyInvite(const InputMessagePtr& msg) {
+    uint32_t playerId = msg->getU32();
+    g_game.processPartyInvite(playerId);
+}
+
+// Parsing de aceite de convite
+void ProtocolGame::parsePartyJoin(const InputMessagePtr& msg) {
+    uint32_t leaderId = msg->getU32();
+    g_game.processPartyJoin(leaderId);
+}
+
+// Parsing de saída de party
+void ProtocolGame::parsePartyLeave(const InputMessagePtr& msg) {
+    g_game.processPartyLeave();
+}
+
+// Parsing de passagem de liderança
+void ProtocolGame::parsePartyLeadership(const InputMessagePtr& msg) {
+    uint32_t playerId = msg->getU32();
+    g_game.processPartyLeadership(playerId);
+}
+
+// Parsing de revogação de convite
+void ProtocolGame::parsePartyRevokeInvite(const InputMessagePtr& msg) {
+    uint32_t playerId = msg->getU32();
+    g_game.processPartyRevokeInvite(playerId);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **3. Processamento de Party**
 
+#### Nível Basic
 ```cpp
 // Processamento de convite
 void Game::processPartyInvite(uint32_t playerId) {
@@ -660,10 +1162,114 @@ void Game::processPartyLeave() {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Processamento de convite
+void Game::processPartyInvite(uint32_t playerId) {
+    const auto &player = getPlayerByID(playerId);
+    if (!player) {
+        return;
+    }
+    
+    const auto &leader = getPlayerByID(getLocalPlayer()->getID());
+    if (!leader || !leader->getParty()) {
+        return;
+    }
+    
+    leader->getParty()->invitePlayer(player);
+}
+
+// Processamento de aceite
+void Game::processPartyJoin(uint32_t leaderId) {
+    const auto &player = getPlayerByID(getLocalPlayer()->getID());
+    if (!player) {
+        return;
+    }
+    
+    const auto &leader = getPlayerByID(leaderId);
+    if (!leader || !leader->getParty()) {
+        return;
+    }
+    
+    leader->getParty()->joinParty(player);
+}
+
+// Processamento de saída
+void Game::processPartyLeave() {
+    const auto &player = getPlayerByID(getLocalPlayer()->getID());
+    if (!player || !player->getParty()) {
+        return;
+    }
+    
+    player->getParty()->leaveParty(player);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Processamento de convite
+void Game::processPartyInvite(uint32_t playerId) {
+    const auto &player = getPlayerByID(playerId);
+    if (!player) {
+        return;
+    }
+    
+    const auto &leader = getPlayerByID(getLocalPlayer()->getID());
+    if (!leader || !leader->getParty()) {
+        return;
+    }
+    
+    leader->getParty()->invitePlayer(player);
+}
+
+// Processamento de aceite
+void Game::processPartyJoin(uint32_t leaderId) {
+    const auto &player = getPlayerByID(getLocalPlayer()->getID());
+    if (!player) {
+        return;
+    }
+    
+    const auto &leader = getPlayerByID(leaderId);
+    if (!leader || !leader->getParty()) {
+        return;
+    }
+    
+    leader->getParty()->joinParty(player);
+}
+
+// Processamento de saída
+void Game::processPartyLeave() {
+    const auto &player = getPlayerByID(getLocalPlayer()->getID());
+    if (!player || !player->getParty()) {
+        return;
+    }
+    
+    player->getParty()->leaveParty(player);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🔧 **Sistema de Análise**
 
 ### **1. Party Analyzer**
 
+#### Inicialização e Configuração
 ```cpp
 class PartyAnalyzer {
 private:
@@ -688,6 +1294,10 @@ public:
             it->second->supplyPrice += price * count;
             it->second->balance -= price * count;
         }
+```
+
+#### Funcionalidade 1
+```cpp
     }
     
     void addPlayerDamage(const std::shared_ptr<Player> &player, uint64_t damage) {
@@ -716,6 +1326,10 @@ public:
                 priceType = MARKET_PRICE;
                 break;
         }
+```
+
+#### Funcionalidade 2
+```cpp
     }
     
     void reset() {
@@ -747,12 +1361,26 @@ private:
             default:
                 return 0;
         }
+```
+
+#### Finalização
+```cpp
     }
 };
 ```
 
 ### **2. Sistema de Tracking**
 
+#### Nível Basic
+```cpp
+    if (membersData.empty()) {
+        if (analyzer->player == player) {
+        if (analyzer->player == player) {
+        if (analyzer->player == player) {
+        if (analyzer->player == player) {
+```
+
+#### Nível Intermediate
 ```cpp
 void Party::updateTrackerAnalyzer() {
     if (membersData.empty()) {
@@ -801,12 +1429,72 @@ void Party::addPlayerHealing(const std::shared_ptr<Player> &player, uint64_t hea
 }
 ```
 
+#### Nível Advanced
+```cpp
+void Party::updateTrackerAnalyzer() {
+    if (membersData.empty()) {
+        for (const auto &member : getPlayers()) {
+            membersData.emplace_back(std::make_shared<PartyAnalyzer>(member));
+        }
+    }
+    
+    trackerTime = time(nullptr);
+}
+
+void Party::addPlayerLoot(const std::shared_ptr<Player> &player, const std::shared_ptr<Item> &item, uint64_t count) {
+    for (auto &analyzer : membersData) {
+        if (analyzer->player == player) {
+            analyzer->addPlayerLoot(player, item, count);
+            break;
+        }
+    }
+}
+
+void Party::addPlayerSupply(const std::shared_ptr<Player> &player, const std::shared_ptr<Item> &item, uint64_t count) {
+    for (auto &analyzer : membersData) {
+        if (analyzer->player == player) {
+            analyzer->addPlayerSupply(player, item, count);
+            break;
+        }
+    }
+}
+
+void Party::addPlayerDamage(const std::shared_ptr<Player> &player, uint64_t damage) {
+    for (auto &analyzer : membersData) {
+        if (analyzer->player == player) {
+            analyzer->addPlayerDamage(player, damage);
+            break;
+        }
+    }
+}
+
+void Party::addPlayerHealing(const std::shared_ptr<Player> &player, uint64_t healing) {
+    for (auto &analyzer : membersData) {
+        if (analyzer->player == player) {
+            analyzer->addPlayerHealing(player, healing);
+            break;
+        }
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 📊 **Sistema de Gerenciamento**
 
 ### **1. Cache de Party**
 
 ```cpp
 class PartyCache {
+    -- Classe: PartyCache
 private:
     std::map<uint32_t, std::shared_ptr<Party>> partyCache;
     std::mutex cacheMutex;
@@ -839,6 +1527,7 @@ public:
 
 ```cpp
 class PartyEventHandler {
+    -- Classe: PartyEventHandler
 public:
     virtual void onPartyCreate(const std::shared_ptr<Party> &party) = 0;
     virtual void onPartyJoin(const std::shared_ptr<Party> &party, const std::shared_ptr<Player> &player) = 0;
@@ -854,6 +1543,7 @@ public:
 
 ### **1. Validações de Party**
 
+#### Inicialização e Configuração
 ```cpp
 class PartyValidator {
 public:
@@ -876,6 +1566,10 @@ public:
         
         return true;
     }
+```
+
+#### Funcionalidade 1
+```cpp
     
     bool canJoinParty(const std::shared_ptr<Player> &player, const std::shared_ptr<Party> &party) const {
         if (!player || !party) {
@@ -897,6 +1591,10 @@ public:
         if (!player || !player->getParty()) {
             return false;
         }
+```
+
+#### Finalização
+```cpp
         
         // Verificar se está em combate
         if (player->hasCondition(CONDITION_INFIGHT) && !player->getZoneType() == ZONE_PROTECTION) {
@@ -912,6 +1610,7 @@ public:
 
 ```cpp
 class PartyIntegrityChecker {
+    -- Classe: PartyIntegrityChecker
 public:
     bool validatePartyStructure(const std::shared_ptr<Party> &party) {
         if (!party) {
@@ -963,6 +1662,7 @@ public:
 
 ```cpp
 class PartyMemberCache {
+    -- Classe: PartyMemberCache
 private:
     std::map<uint32_t, std::shared_ptr<Player>> memberCache;
     std::map<uint32_t, std::shared_ptr<Player>> inviteeCache;
@@ -1013,6 +1713,7 @@ public:
 
 ```cpp
 class LazyPartyData {
+    -- Classe: LazyPartyData
 private:
     std::map<uint32_t, bool> loadedData;
     std::mutex dataMutex;
@@ -1046,6 +1747,7 @@ public:
 
 ```cpp
 class AutoPartySystem {
+    -- Classe: AutoPartySystem
 private:
     std::map<uint32_t, time_t> lastInviteTime;
     uint32_t inviteCooldown = 30; // 30 segundos
@@ -1089,6 +1791,7 @@ public:
 
 ### **2. Sistema de Party Finder**
 
+#### Inicialização e Configuração
 ```cpp
 class PartyFinder {
 private:
@@ -1118,6 +1821,10 @@ public:
         
         requests.push_back(request);
     }
+```
+
+#### Funcionalidade 1
+```cpp
     
     void removeRequest(uint32_t playerId) {
         std::lock_guard<std::mutex> lock(requestsMutex);
@@ -1140,6 +1847,10 @@ public:
         
         return filtered;
     }
+```
+
+#### Finalização
+```cpp
     
     void cleanup() {
         std::lock_guard<std::mutex> lock(requestsMutex);
@@ -1154,6 +1865,7 @@ public:
 
 ```cpp
 class PartyRewardSystem {
+    -- Classe: PartyRewardSystem
 private:
     struct Reward {
         uint32_t itemId;

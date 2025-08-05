@@ -107,6 +107,7 @@ enum ANIMATION_LOOP_TYPE {
 ```
 
 ### **Tipos de Animação**
+#### Nível Basic
 ```cpp
 enum AnimationType_t {
     ANIMATION_NONE = 0,
@@ -115,7 +116,43 @@ enum AnimationType_t {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+enum AnimationType_t {
+    ANIMATION_NONE = 0,
+    ANIMATION_RANDOM = 1,
+    ANIMATION_DESYNC = 2
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+enum AnimationType_t {
+    ANIMATION_NONE = 0,
+    ANIMATION_RANDOM = 1,
+    ANIMATION_DESYNC = 2
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Estrutura de Item**
+#### Nível Basic
 ```cpp
 struct ItemType {
     // ... outros campos
@@ -125,9 +162,47 @@ struct ItemType {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+struct ItemType {
+    // ... outros campos
+    AnimationType_t animationType = ANIMATION_NONE;
+    uint32_t animationSpeed = 0;
+    bool hasAnimation = false;
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+struct ItemType {
+    // ... outros campos
+    AnimationType_t animationType = ANIMATION_NONE;
+    uint32_t animationSpeed = 0;
+    bool hasAnimation = false;
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 📝 **Exemplos Práticos**
 
 ### **1. Carregamento de Animação**
+#### Nível Basic
 ```cpp
 // Carregamento de animação de item
 bool Items::parseItemNode(const pugi::xml_node& itemNode, uint16_t id) {
@@ -150,7 +225,71 @@ bool Items::parseItemNode(const pugi::xml_node& itemNode, uint16_t id) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Carregamento de animação de item
+bool Items::parseItemNode(const pugi::xml_node& itemNode, uint16_t id) {
+    // ... código existente
+    
+    if (objectFrame.sprite_info().has_animation()) {
+        const auto& animation = objectFrame.sprite_info().animation();
+        
+        if (animation.random_start_phase()) {
+            iType.animationType = ANIMATION_RANDOM;
+        } else {
+            iType.animationType = ANIMATION_DESYNC;
+        }
+        
+        iType.hasAnimation = true;
+        iType.animationSpeed = animation.sprite_phase(0).duration_min();
+    }
+    
+    return true;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Carregamento de animação de item
+bool Items::parseItemNode(const pugi::xml_node& itemNode, uint16_t id) {
+    // ... código existente
+    
+    if (objectFrame.sprite_info().has_animation()) {
+        const auto& animation = objectFrame.sprite_info().animation();
+        
+        if (animation.random_start_phase()) {
+            iType.animationType = ANIMATION_RANDOM;
+        } else {
+            iType.animationType = ANIMATION_DESYNC;
+        }
+        
+        iType.hasAnimation = true;
+        iType.animationSpeed = animation.sprite_phase(0).duration_min();
+    }
+    
+    return true;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **2. Processamento de Animação no Protocolo**
+#### Nível Basic
 ```cpp
 // Envio de animação para cliente
 void ProtocolGame::sendAddItem(const Position& pos, uint32_t stackpos, const Item* item) {
@@ -166,6 +305,59 @@ void ProtocolGame::sendAddItem(const Position& pos, uint32_t stackpos, const Ite
     
     // ... resto do código
 }
+```
+
+#### Nível Intermediate
+```cpp
+// Envio de animação para cliente
+void ProtocolGame::sendAddItem(const Position& pos, uint32_t stackpos, const Item* item) {
+    // ... código existente
+    
+    if (it.animationType == ANIMATION_RANDOM) {
+        // Animação com fase inicial aleatória
+        msg.add<uint8_t>(randomNumber(0, it.animationPhases - 1));
+    } else if (it.animationType == ANIMATION_DESYNC) {
+        // Animação dessincronizada
+        msg.add<uint8_t>((ticks % it.animationPhases));
+    }
+    
+    // ... resto do código
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Envio de animação para cliente
+void ProtocolGame::sendAddItem(const Position& pos, uint32_t stackpos, const Item* item) {
+    // ... código existente
+    
+    if (it.animationType == ANIMATION_RANDOM) {
+        // Animação com fase inicial aleatória
+        msg.add<uint8_t>(randomNumber(0, it.animationPhases - 1));
+    } else if (it.animationType == ANIMATION_DESYNC) {
+        // Animação dessincronizada
+        msg.add<uint8_t>((ticks % it.animationPhases));
+    }
+    
+    // ... resto do código
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **3. Configuração de SpriteInfo**
@@ -238,6 +430,7 @@ enum ANIMATION_LOOP_TYPE {
 - **Vantagem**: Diversidade visual
 
 ### **Controle de Performance**
+#### Nível Basic
 ```cpp
 // Verificação de suporte a animação
 bool supportAnimation = g_configManager().getBoolean(OLD_PROTOCOL);
@@ -248,6 +441,49 @@ if (supportAnimation) {
         // Configurar animação
     }
 }
+```
+
+#### Nível Intermediate
+```cpp
+// Verificação de suporte a animação
+bool supportAnimation = g_configManager().getBoolean(OLD_PROTOCOL);
+
+if (supportAnimation) {
+    // Processar animação apenas se suportado
+    if (objectFrame.sprite_info().has_animation()) {
+        // Configurar animação
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificação de suporte a animação
+bool supportAnimation = g_configManager().getBoolean(OLD_PROTOCOL);
+
+if (supportAnimation) {
+    // Processar animação apenas se suportado
+    if (objectFrame.sprite_info().has_animation()) {
+        // Configurar animação
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🎯 **Integração com Outros Sistemas**
@@ -276,11 +512,45 @@ if (supportAnimation) {
 4. **Seleção Condicional**: Animação apenas quando necessário
 
 ### **Controle de Memória**
+#### Nível Basic
 ```cpp
 // Verificação de suporte antes de processar
 if (!objectFrame.sprite_info().has_animation()) {
     return; // Pular processamento se não há animação
 }
+```
+
+#### Nível Intermediate
+```cpp
+// Verificação de suporte antes de processar
+if (!objectFrame.sprite_info().has_animation()) {
+    return; // Pular processamento se não há animação
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificação de suporte antes de processar
+if (!objectFrame.sprite_info().has_animation()) {
+    return; // Pular processamento se não há animação
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **Performance de Rede**
@@ -297,6 +567,12 @@ if (!objectFrame.sprite_info().has_animation()) {
 - **Tempo de Processamento**: Por frame
 
 ### **Logs e Debug**
+#### Nível Basic
+```cpp
+if (animation.random_start_phase()) {
+```
+
+#### Nível Intermediate
 ```cpp
 // Log de animação carregada
 if (animation.random_start_phase()) {
@@ -304,6 +580,26 @@ if (animation.random_start_phase()) {
 } else {
     g_logger().debug("Animation loaded: DESYNC type for item {}", id);
 }
+```
+
+#### Nível Advanced
+```cpp
+// Log de animação carregada
+if (animation.random_start_phase()) {
+    g_logger().debug("Animation loaded: RANDOM type for item {}", id);
+} else {
+    g_logger().debug("Animation loaded: DESYNC type for item {}", id);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🔗 **Integração com Cliente**

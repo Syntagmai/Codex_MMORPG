@@ -21,6 +21,20 @@ Referência completa da API Lua do OTClient, incluindo todas as funções globai
 
 **Descrição**: Interface principal da aplicação.
 
+#### Nível Basic
+```lua
+-- Informações da aplicação
+local name = g_app.getName()              -- "OTClient - Redemption"
+local version = g_app.getVersion()        -- "1.0.0"
+local revision = g_app.getBuildRevision() -- Revisão do build
+local commit = g_app.getBuildCommit()     -- Hash do commit
+local date = g_app.getBuildDate()         -- Data do build
+local arch = g_app.getBuildArch()         -- Arquitetura (x64, x86)
+-- Configuração da aplicação
+-- Controle da aplicação
+```
+
+#### Nível Intermediate
 ```lua
 -- Informações da aplicação
 local name = g_app.getName()              -- "OTClient - Redemption"
@@ -42,10 +56,59 @@ g_app.minimize()                          -- Minimiza a janela
 g_app.maximize()                          -- Maximiza a janela
 ```
 
+#### Nível Advanced
+```lua
+-- Informações da aplicação
+local name = g_app.getName()              -- "OTClient - Redemption"
+local version = g_app.getVersion()        -- "1.0.0"
+local revision = g_app.getBuildRevision() -- Revisão do build
+local commit = g_app.getBuildCommit()     -- Hash do commit
+local date = g_app.getBuildDate()         -- Data do build
+local arch = g_app.getBuildArch()         -- Arquitetura (x64, x86)
+
+-- Configuração da aplicação
+g_app.setName("Meu Cliente")
+g_app.setCompactName("meuclient")
+g_app.setOrganizationName("minhaorg")
+
+-- Controle da aplicação
+g_app.exit()                              -- Fecha a aplicação
+g_app.restart()                           -- Reinicia a aplicação
+g_app.minimize()                          -- Minimiza a janela
+g_app.maximize()                          -- Maximiza a janela
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### g_platform (Platform)
 
 **Descrição**: Funções específicas da plataforma.
 
+#### Nível Basic
+```lua
+-- Informações do sistema
+local osName = g_platform.getOSName()     -- "Windows", "Linux", "Mac"
+local cpuName = g_platform.getCPUName()   -- Nome do processador
+local totalMem = g_platform.getTotalSystemMemory() -- Memória total
+-- Clipboard
+local text = g_platform.getClipboardText() -- Obtém texto do clipboard
+-- Diretórios especiais
+local home = g_platform.getHomeDir()      -- Diretório home
+local desktop = g_platform.getDesktopDir() -- Área de trabalho
+local temp = g_platform.getTempDir()      -- Diretório temporário
+-- Processamento
+local cores = g_platform.getProcessorCount() -- Número de cores
+```
+
+#### Nível Intermediate
 ```lua
 -- Informações do sistema
 local osName = g_platform.getOSName()     -- "Windows", "Linux", "Mac"
@@ -65,10 +128,51 @@ local temp = g_platform.getTempDir()      -- Diretório temporário
 local cores = g_platform.getProcessorCount() -- Número de cores
 ```
 
+#### Nível Advanced
+```lua
+-- Informações do sistema
+local osName = g_platform.getOSName()     -- "Windows", "Linux", "Mac"
+local cpuName = g_platform.getCPUName()   -- Nome do processador
+local totalMem = g_platform.getTotalSystemMemory() -- Memória total
+
+-- Clipboard
+g_platform.setClipboardText("Texto")     -- Define texto do clipboard
+local text = g_platform.getClipboardText() -- Obtém texto do clipboard
+
+-- Diretórios especiais
+local home = g_platform.getHomeDir()      -- Diretório home
+local desktop = g_platform.getDesktopDir() -- Área de trabalho
+local temp = g_platform.getTempDir()      -- Diretório temporário
+
+-- Processamento
+local cores = g_platform.getProcessorCount() -- Número de cores
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### g_logger (Logger)
 
 **Descrição**: Sistema de logging.
 
+#### Nível Basic
+```lua
+-- Configuração
+-- Logging
+-- Funções auxiliares
+g_logger.onLog = function(level, message, time)
+    -- Callback personalizado para logs
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Configuração
 g_logger.setLogFile("meulog.log")         -- Define arquivo de log
@@ -88,10 +192,41 @@ g_logger.onLog = function(level, message, time)
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Configuração
+g_logger.setLogFile("meulog.log")         -- Define arquivo de log
+g_logger.setLevel(LogLevel.Debug)         -- Define nível de log
+
+-- Logging
+g_logger.debug("Mensagem de debug")       -- Nível DEBUG
+g_logger.info("Informação importante")    -- Nível INFO
+g_logger.warning("Aviso importante")      -- Nível WARNING
+g_logger.error("Erro encontrado")         -- Nível ERROR
+g_logger.fatal("Erro fatal!")             -- Nível FATAL
+
+-- Funções auxiliares
+g_logger.fireOldMessages()                -- Dispara mensagens antigas
+g_logger.onLog = function(level, message, time)
+    -- Callback personalizado para logs
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### g_resources (Resources)
 
 **Descrição**: Gerenciamento de recursos e arquivos.
 
+#### Nível Basic
 ```lua
 -- Configuração de diretórios
 g_resources.setupUserWriteDir("otclient/") -- Define diretório de escrita
@@ -122,10 +257,110 @@ g_resources.makeDir("novapasta")                            -- Cria diretório
 g_resources.downloadFile("http://exemplo.com/arquivo.zip", "local.zip")
 ```
 
+#### Nível Intermediate
+```lua
+-- Configuração de diretórios
+g_resources.setupUserWriteDir("otclient/") -- Define diretório de escrita
+local workDir = g_resources.getWorkDir()   -- Diretório de trabalho
+local writeDir = g_resources.getWriteDir() -- Diretório de escrita
+
+-- Caminhos de busca
+g_resources.addSearchPath("/data", true)   -- Adiciona caminho de busca
+g_resources.removeSearchPath("/data")      -- Remove caminho
+
+-- Busca de pacotes
+g_resources.searchAndAddPackages("/", ".otpkg", true) -- Busca pacotes
+
+-- Verificação de arquivos
+local exists = g_resources.fileExists("arquivo.lua") -- Verifica se existe
+local size = g_resources.getFileSize("arquivo.lua")  -- Tamanho do arquivo
+local time = g_resources.getFileTime("arquivo.lua")  -- Timestamp do arquivo
+
+-- Operações de arquivo
+local content = g_resources.readFileContents("arquivo.txt") -- Lê conteúdo
+g_resources.writeFileContents("arquivo.txt", "conteúdo")    -- Escreve conteúdo
+
+-- Diretórios
+local files = g_resources.listDirectoryFiles("/data")       -- Lista arquivos
+g_resources.makeDir("novapasta")                            -- Cria diretório
+
+-- URLs e downloads
+g_resources.downloadFile("http://exemplo.com/arquivo.zip", "local.zip")
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Configuração de diretórios
+g_resources.setupUserWriteDir("otclient/") -- Define diretório de escrita
+local workDir = g_resources.getWorkDir()   -- Diretório de trabalho
+local writeDir = g_resources.getWriteDir() -- Diretório de escrita
+
+-- Caminhos de busca
+g_resources.addSearchPath("/data", true)   -- Adiciona caminho de busca
+g_resources.removeSearchPath("/data")      -- Remove caminho
+
+-- Busca de pacotes
+g_resources.searchAndAddPackages("/", ".otpkg", true) -- Busca pacotes
+
+-- Verificação de arquivos
+local exists = g_resources.fileExists("arquivo.lua") -- Verifica se existe
+local size = g_resources.getFileSize("arquivo.lua")  -- Tamanho do arquivo
+local time = g_resources.getFileTime("arquivo.lua")  -- Timestamp do arquivo
+
+-- Operações de arquivo
+local content = g_resources.readFileContents("arquivo.txt") -- Lê conteúdo
+g_resources.writeFileContents("arquivo.txt", "conteúdo")    -- Escreve conteúdo
+
+-- Diretórios
+local files = g_resources.listDirectoryFiles("/data")       -- Lista arquivos
+g_resources.makeDir("novapasta")                            -- Cria diretório
+
+-- URLs e downloads
+g_resources.downloadFile("http://exemplo.com/arquivo.zip", "local.zip")
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### g_modules (Modules)
 
 **Descrição**: Sistema de módulos do cliente.
 
+#### Nível Basic
+```lua
+-- Descoberta e carregamento
+-- Controle de módulos
+-- Informações de módulos
+local module = g_modules.getModule("meu_modulo") -- Obtém instância do módulo
+local loaded = g_modules.isModuleLoaded("meu_modulo") -- Verifica se carregado
+local modules = g_modules.getModules()    -- Lista todos os módulos
+-- Propriedades do módulo
+if module then
+    local name = module:getName()         -- Nome do módulo
+    local desc = module:getDescription()  -- Descrição
+    local author = module:getAuthor()     -- Autor
+    local version = module:getVersion()   -- Versão
+    local deps = module:getDependencies() -- Dependências
+    local loaded = module:isLoaded()      -- Status de carregamento
+    local sandboxed = module:isSandboxed() -- Executando em sandbox
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Descoberta e carregamento
 g_modules.discoverModules()               -- Descobre módulos disponíveis
@@ -154,12 +389,52 @@ if module then
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Descoberta e carregamento
+g_modules.discoverModules()               -- Descobre módulos disponíveis
+g_modules.autoLoadModules(999)            -- Carrega módulos até prioridade 999
+g_modules.ensureModuleLoaded("game_interface") -- Garante que módulo está carregado
+
+-- Controle de módulos
+g_modules.reloadModule("meu_modulo")      -- Recarrega módulo específico
+g_modules.unloadModule("meu_modulo")      -- Descarrega módulo
+g_modules.enableAutoReload()             -- Habilita recarga automática
+
+-- Informações de módulos
+local module = g_modules.getModule("meu_modulo") -- Obtém instância do módulo
+local loaded = g_modules.isModuleLoaded("meu_modulo") -- Verifica se carregado
+local modules = g_modules.getModules()    -- Lista todos os módulos
+
+-- Propriedades do módulo
+if module then
+    local name = module:getName()         -- Nome do módulo
+    local desc = module:getDescription()  -- Descrição
+    local author = module:getAuthor()     -- Autor
+    local version = module:getVersion()   -- Versão
+    local deps = module:getDependencies() -- Dependências
+    local loaded = module:isLoaded()      -- Status de carregamento
+    local sandboxed = module:isSandboxed() -- Executando em sandbox
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### g_clock (Clock)
 
 **Descrição**: Funções de tempo e temporização.
 
 ```lua
 -- Tempo atual
+    --  Tempo atual (traduzido)
 local millis = g_clock.millis()           -- Tempo em milissegundos
 local micros = g_clock.micros()           -- Tempo em microssegundos
 local seconds = g_clock.seconds()         -- Tempo em segundos
@@ -174,10 +449,12 @@ local realTime = g_clock.millisToString(millis) -- Converte para string legível
 
 ```lua
 -- RSA
+    --  RSA (traduzido)
 local rsa = g_crypt.genRSAKey(1024)       -- Gera chave RSA
 g_crypt.setRSAPublicKey(key, exponent)    -- Define chave pública
 
 -- Hashing
+    --  Hashing (traduzido)
 local md5 = g_crypt.md5Encode("texto")    -- Hash MD5
 local sha1 = g_crypt.sha1Encode("texto")  -- Hash SHA1
 local sha256 = g_crypt.sha256Encode("texto") -- Hash SHA256
@@ -193,6 +470,7 @@ local decoded = g_crypt.base64Decode(base64)  -- Decodifica Base64
 
 **Descrição**: Gerenciamento de interface gráfica.
 
+#### Nível Basic
 ```lua
 -- Carregamento de UI
 local window = g_ui.loadUI("janela.otui", rootWidget) -- Carrega UI de arquivo
@@ -218,10 +496,80 @@ g_ui.setKeyboardReceiver(widget)         -- Define receptor de teclado
 g_ui.importStyle("styles.otui")          -- Importa estilos
 ```
 
+#### Nível Intermediate
+```lua
+-- Carregamento de UI
+local window = g_ui.loadUI("janela.otui", rootWidget) -- Carrega UI de arquivo
+local widget = g_ui.createWidget("UIPushButton")      -- Cria widget específico
+local display = g_ui.displayUI("janela.otui")         -- Exibe UI como janela
+
+-- Widgets especiais
+local tooltip = g_ui.createTooltip()     -- Cria tooltip
+local messagebox = g_ui.createMessageBox("Título", "Mensagem", MessageBoxOk)
+
+-- Estados
+local focused = g_ui.getFocusedChild()   -- Widget com foco
+g_ui.setRootWidget(widget)               -- Define widget raiz
+
+-- Mouse
+local grabbing = g_ui.isMouseGrabbed()   -- Verifica se mouse está capturado
+local position = g_ui.getMousePosition() -- Posição do mouse
+
+-- Teclado
+g_ui.setKeyboardReceiver(widget)         -- Define receptor de teclado
+
+-- Importação de estilos
+g_ui.importStyle("styles.otui")          -- Importa estilos
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Carregamento de UI
+local window = g_ui.loadUI("janela.otui", rootWidget) -- Carrega UI de arquivo
+local widget = g_ui.createWidget("UIPushButton")      -- Cria widget específico
+local display = g_ui.displayUI("janela.otui")         -- Exibe UI como janela
+
+-- Widgets especiais
+local tooltip = g_ui.createTooltip()     -- Cria tooltip
+local messagebox = g_ui.createMessageBox("Título", "Mensagem", MessageBoxOk)
+
+-- Estados
+local focused = g_ui.getFocusedChild()   -- Widget com foco
+g_ui.setRootWidget(widget)               -- Define widget raiz
+
+-- Mouse
+local grabbing = g_ui.isMouseGrabbed()   -- Verifica se mouse está capturado
+local position = g_ui.getMousePosition() -- Posição do mouse
+
+-- Teclado
+g_ui.setKeyboardReceiver(widget)         -- Define receptor de teclado
+
+-- Importação de estilos
+g_ui.importStyle("styles.otui")          -- Importa estilos
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Widget Base
 
 **Descrição**: Funcionalidades básicas de todos os widgets.
 
+#### Inicialização e Configuração
 ```lua
 -- Hierarquia
 local parent = widget:getParent()        -- Widget pai
@@ -272,6 +620,10 @@ local focused = widget:isFocused()       -- Verifica se tem foco
 widget.onClick = function(widget)
     print("Widget clicado!")
 end
+```
+
+#### Finalização
+```lua
 
 widget.onDoubleClick = function(widget)
     print("Widget duplo-clicado!")
@@ -293,6 +645,7 @@ widget:destroy()                         -- Destroi o widget
 
 **Descrição**: Janelas da interface.
 
+#### Nível Basic
 ```lua
 local window = g_ui.createWidget("UIWindow", rootWidget)
 
@@ -322,10 +675,88 @@ window.onMinimize = function(window)
 end
 ```
 
+#### Nível Intermediate
+```lua
+local window = g_ui.createWidget("UIWindow", rootWidget)
+
+-- Configuração da janela
+window:setTitle("Minha Janela")          -- Título da janela
+local title = window:getTitle()          -- Obtém título
+
+-- Controles da janela
+window:setResizable(true)                -- Permite redimensionamento
+window:setMoveable(true)                 -- Permite movimento
+window:setCloseable(true)                -- Permite fechar
+
+-- Estados
+window:show()                            -- Exibe janela
+window:hide()                            -- Oculta janela
+window:raise()                           -- Traz para frente
+window:minimize()                        -- Minimiza
+window:maximize()                        -- Maximiza
+
+-- Eventos específicos
+window.onClose = function(window)
+    print("Janela fechada!")
+end
+
+window.onMinimize = function(window)
+    print("Janela minimizada!")
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local window = g_ui.createWidget("UIWindow", rootWidget)
+
+-- Configuração da janela
+window:setTitle("Minha Janela")          -- Título da janela
+local title = window:getTitle()          -- Obtém título
+
+-- Controles da janela
+window:setResizable(true)                -- Permite redimensionamento
+window:setMoveable(true)                 -- Permite movimento
+window:setCloseable(true)                -- Permite fechar
+
+-- Estados
+window:show()                            -- Exibe janela
+window:hide()                            -- Oculta janela
+window:raise()                           -- Traz para frente
+window:minimize()                        -- Minimiza
+window:maximize()                        -- Maximiza
+
+-- Eventos específicos
+window.onClose = function(window)
+    print("Janela fechada!")
+end
+
+window.onMinimize = function(window)
+    print("Janela minimizada!")
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### UIButton
 
 **Descrição**: Botões clicáveis.
 
+#### Nível Basic
 ```lua
 local button = g_ui.createWidget("UIButton", parent)
 
@@ -349,10 +780,94 @@ button.onCheckChange = function(button, checked)
 end
 ```
 
+#### Nível Intermediate
+```lua
+local button = g_ui.createWidget("UIButton", parent)
+
+-- Configuração
+button:setText("Clique Aqui")            -- Texto do botão
+button:setIcon("/icons/button.png")      -- Ícone do botão
+
+-- Estados
+button:setCheckable(true)                -- Permite ser checkable
+button:setChecked(true)                  -- Define como checked
+local checked = button:isChecked()       -- Verifica se checked
+button:setPressed(true)                  -- Estado pressionado
+
+-- Eventos
+button.onClick = function(button)
+    print("Botão clicado: " .. button:getText())
+end
+
+button.onCheckChange = function(button, checked)
+    print("Estado alterado: " .. tostring(checked))
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local button = g_ui.createWidget("UIButton", parent)
+
+-- Configuração
+button:setText("Clique Aqui")            -- Texto do botão
+button:setIcon("/icons/button.png")      -- Ícone do botão
+
+-- Estados
+button:setCheckable(true)                -- Permite ser checkable
+button:setChecked(true)                  -- Define como checked
+local checked = button:isChecked()       -- Verifica se checked
+button:setPressed(true)                  -- Estado pressionado
+
+-- Eventos
+button.onClick = function(button)
+    print("Botão clicado: " .. button:getText())
+end
+
+button.onCheckChange = function(button, checked)
+    print("Estado alterado: " .. tostring(checked))
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### UITextEdit
 
 **Descrição**: Campos de entrada de texto.
 
+#### Nível Basic
+```lua
+local textEdit = g_ui.createWidget("UITextEdit", parent)
+-- Configuração de texto
+local text = textEdit:getText()          -- Obtém texto
+textEdit:appendText(" mais texto")       -- Adiciona texto
+-- Cursor e seleção
+local pos = textEdit:getCursorPos()      -- Obtém posição do cursor
+-- Configurações
+-- Eventos
+textEdit.onTextChange = function(textEdit, text, oldText)
+    print("Texto alterado de '" .. oldText .. "' para '" .. text .. "'")
+end
+textEdit.onEnterPressed = function(textEdit)
+    print("Enter pressionado com texto: " .. textEdit:getText())
+end
+```
+
+#### Nível Intermediate
 ```lua
 local textEdit = g_ui.createWidget("UITextEdit", parent)
 
@@ -384,10 +899,53 @@ textEdit.onEnterPressed = function(textEdit)
 end
 ```
 
+#### Nível Advanced
+```lua
+local textEdit = g_ui.createWidget("UITextEdit", parent)
+
+-- Configuração de texto
+textEdit:setText("Texto inicial")        -- Define texto
+local text = textEdit:getText()          -- Obtém texto
+textEdit:clearText()                     -- Limpa texto
+textEdit:appendText(" mais texto")       -- Adiciona texto
+
+-- Cursor e seleção
+textEdit:setCursorPos(5)                 -- Posição do cursor
+local pos = textEdit:getCursorPos()      -- Obtém posição do cursor
+textEdit:setSelection(0, 10)             -- Seleciona texto
+textEdit:selectAll()                     -- Seleciona tudo
+
+-- Configurações
+textEdit:setMaxLength(100)               -- Tamanho máximo
+textEdit:setEditable(true)               -- Permite edição
+textEdit:setMultiline(true)              -- Permite múltiplas linhas
+textEdit:setPasswordMode(true)           -- Modo senha
+
+-- Eventos
+textEdit.onTextChange = function(textEdit, text, oldText)
+    print("Texto alterado de '" .. oldText .. "' para '" .. text .. "'")
+end
+
+textEdit.onEnterPressed = function(textEdit)
+    print("Enter pressionado com texto: " .. textEdit:getText())
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### UILabel
 
 **Descrição**: Labels para exibição de texto.
 
+#### Nível Basic
 ```lua
 local label = g_ui.createWidget("UILabel", parent)
 
@@ -402,10 +960,58 @@ label:setTextColor("#FF0000")            -- Cor do texto
 label:setColoredText("Texto {#FF0000}vermelho{#FFFFFF} e branco")
 ```
 
+#### Nível Intermediate
+```lua
+local label = g_ui.createWidget("UILabel", parent)
+
+-- Configuração
+label:setText("Meu Label")               -- Define texto
+label:setTextAlign(AlignCenter)          -- Alinhamento do texto
+label:setTextWrap(true)                  -- Quebra de linha automática
+label:setAutoResize(true)                -- Redimensiona automaticamente
+
+-- Colorização
+label:setTextColor("#FF0000")            -- Cor do texto
+label:setColoredText("Texto {#FF0000}vermelho{#FFFFFF} e branco")
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local label = g_ui.createWidget("UILabel", parent)
+
+-- Configuração
+label:setText("Meu Label")               -- Define texto
+label:setTextAlign(AlignCenter)          -- Alinhamento do texto
+label:setTextWrap(true)                  -- Quebra de linha automática
+label:setAutoResize(true)                -- Redimensiona automaticamente
+
+-- Colorização
+label:setTextColor("#FF0000")            -- Cor do texto
+label:setColoredText("Texto {#FF0000}vermelho{#FFFFFF} e branco")
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### UIProgressBar
 
 **Descrição**: Barras de progresso.
 
+#### Nível Basic
 ```lua
 local progressBar = g_ui.createWidget("UIProgressBar", parent)
 
@@ -421,10 +1027,60 @@ progressBar:setBackgroundColor("#808080") -- Cor de fundo
 progressBar:setForegroundColor("#00FF00") -- Cor do progresso
 ```
 
+#### Nível Intermediate
+```lua
+local progressBar = g_ui.createWidget("UIProgressBar", parent)
+
+-- Configuração
+progressBar:setMinimum(0)                -- Valor mínimo
+progressBar:setMaximum(100)              -- Valor máximo
+progressBar:setValue(50)                 -- Valor atual (50%)
+local value = progressBar:getValue()     -- Obtém valor atual
+local percent = progressBar:getPercent() -- Percentual (0.0 - 1.0)
+
+-- Visual
+progressBar:setBackgroundColor("#808080") -- Cor de fundo
+progressBar:setForegroundColor("#00FF00") -- Cor do progresso
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local progressBar = g_ui.createWidget("UIProgressBar", parent)
+
+-- Configuração
+progressBar:setMinimum(0)                -- Valor mínimo
+progressBar:setMaximum(100)              -- Valor máximo
+progressBar:setValue(50)                 -- Valor atual (50%)
+local value = progressBar:getValue()     -- Obtém valor atual
+local percent = progressBar:getPercent() -- Percentual (0.0 - 1.0)
+
+-- Visual
+progressBar:setBackgroundColor("#808080") -- Cor de fundo
+progressBar:setForegroundColor("#00FF00") -- Cor do progresso
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### UIComboBox
 
 **Descrição**: Caixas de seleção dropdown.
 
+#### Nível Basic
 ```lua
 local comboBox = g_ui.createWidget("UIComboBox", parent)
 
@@ -447,10 +1103,74 @@ comboBox.onOptionChange = function(comboBox, optionText, optionData)
 end
 ```
 
+#### Nível Intermediate
+```lua
+local comboBox = g_ui.createWidget("UIComboBox", parent)
+
+-- Gerenciamento de opções
+comboBox:addOption("Opção 1", "valor1")  -- Adiciona opção
+comboBox:addOption("Opção 2", "valor2")
+comboBox:removeOption("Opção 1")         -- Remove opção
+comboBox:clearOptions()                  -- Limpa todas as opções
+
+-- Seleção
+comboBox:setCurrentIndex(0)              -- Seleciona por índice
+comboBox:setCurrentOption("Opção 1")     -- Seleciona por texto
+comboBox:setCurrentOptionByData("valor1") -- Seleciona por data
+local selected = comboBox:getCurrentOption() -- Opção selecionada
+local index = comboBox:getCurrentIndex() -- Índice selecionado
+
+-- Eventos
+comboBox.onOptionChange = function(comboBox, optionText, optionData)
+    print("Selecionado: " .. optionText .. " (data: " .. optionData .. ")")
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local comboBox = g_ui.createWidget("UIComboBox", parent)
+
+-- Gerenciamento de opções
+comboBox:addOption("Opção 1", "valor1")  -- Adiciona opção
+comboBox:addOption("Opção 2", "valor2")
+comboBox:removeOption("Opção 1")         -- Remove opção
+comboBox:clearOptions()                  -- Limpa todas as opções
+
+-- Seleção
+comboBox:setCurrentIndex(0)              -- Seleciona por índice
+comboBox:setCurrentOption("Opção 1")     -- Seleciona por texto
+comboBox:setCurrentOptionByData("valor1") -- Seleciona por data
+local selected = comboBox:getCurrentOption() -- Opção selecionada
+local index = comboBox:getCurrentIndex() -- Índice selecionado
+
+-- Eventos
+comboBox.onOptionChange = function(comboBox, optionText, optionData)
+    print("Selecionado: " .. optionText .. " (data: " .. optionData .. ")")
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### UIListWidget
 
 **Descrição**: Listas de itens.
 
+#### Nível Basic
 ```lua
 local listWidget = g_ui.createWidget("UIListWidget", parent)
 
@@ -477,6 +1197,77 @@ listWidget.onChildFocusChange = function(listWidget, focusedChild)
 end
 ```
 
+#### Nível Intermediate
+```lua
+local listWidget = g_ui.createWidget("UIListWidget", parent)
+
+-- Adição de itens
+local item1 = g_ui.createWidget("UIListItem")
+item1:setText("Item 1")
+listWidget:addChild(item1)
+
+-- Seleção
+listWidget:focusChild(item1)             -- Foca item
+local focused = listWidget:getFocusedChild() -- Item focado
+listWidget:selectAll()                   -- Seleciona tudo
+listWidget:clearSelection()              -- Limpa seleção
+
+-- Navegação
+listWidget:focusNextChild()              -- Próximo item
+listWidget:focusPreviousChild()          -- Item anterior
+
+-- Eventos
+listWidget.onChildFocusChange = function(listWidget, focusedChild)
+    if focusedChild then
+        print("Item focado: " .. focusedChild:getText())
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local listWidget = g_ui.createWidget("UIListWidget", parent)
+
+-- Adição de itens
+local item1 = g_ui.createWidget("UIListItem")
+item1:setText("Item 1")
+listWidget:addChild(item1)
+
+-- Seleção
+listWidget:focusChild(item1)             -- Foca item
+local focused = listWidget:getFocusedChild() -- Item focado
+listWidget:selectAll()                   -- Seleciona tudo
+listWidget:clearSelection()              -- Limpa seleção
+
+-- Navegação
+listWidget:focusNextChild()              -- Próximo item
+listWidget:focusPreviousChild()          -- Item anterior
+
+-- Eventos
+listWidget.onChildFocusChange = function(listWidget, focusedChild)
+    if focusedChild then
+        print("Item focado: " .. focusedChild:getText())
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### UIItem
 
 **Descrição**: Widgets para exibição de itens do jogo.
@@ -491,10 +1282,12 @@ itemWidget:setItemSubType(5)             -- Subtipo (para fluidos)
 local item = itemWidget:getItem()        -- Objeto Item
 
 -- Estados
+    --  Estados (traduzido)
 itemWidget:setVirtual(true)              -- Item virtual (não real)
 local virtual = itemWidget:isVirtual()   -- Verifica se virtual
 
 -- Eventos
+    --  Eventos (traduzido)
 itemWidget.onDrop = function(itemWidget, mousePos, item)
     print("Item dropado: " .. item:getId())
 end
@@ -502,6 +1295,7 @@ end
 itemWidget.onDoubleClick = function(itemWidget)
     local item = itemWidget:getItem()
     if item then
+    -- Verificação condicional
         g_game.use(item)
     end
 end
@@ -519,12 +1313,14 @@ scrollArea:setVerticalScrollBar(scrollBar) -- Barra de rolagem vertical
 scrollArea:setHorizontalScrollBar(scrollBar) -- Barra de rolagem horizontal
 
 -- Controle de rolagem
+    --  Controle de rolagem (traduzido)
 scrollArea:setVerticalScrollStep(10)     -- Passo da rolagem vertical
 scrollArea:setHorizontalScrollStep(10)   -- Passo da rolagem horizontal
 scrollArea:scrollToTop()                 -- Rola para o topo
 scrollArea:scrollToBottom()              -- Rola para baixo
 
 -- Estado
+    --  Estado (traduzido)
 local offset = scrollArea:getScrollOffset() -- Offset atual
 scrollArea:setScrollOffset(offset)       -- Define offset
 ```
@@ -535,6 +1331,7 @@ scrollArea:setScrollOffset(offset)       -- Define offset
 
 **Descrição**: Interface principal do jogo.
 
+#### Inicialização e Configuração
 ```lua
 -- Estado da conexão
 local online = g_game.isOnline()         -- Verifica se está online
@@ -560,6 +1357,10 @@ g_game.autoWalk({                       -- Caminhada automática
     {x = 100, y = 100, z = 7},
     {x = 101, y = 100, z = 7}
 })
+```
+
+#### Funcionalidade 1
+```lua
 g_game.stop()                           -- Para movimento
 
 -- Combate
@@ -602,6 +1403,10 @@ connect(g_game, {
     onGameStart = function()
         print("Jogo iniciado!")
     end,
+```
+
+#### Finalização
+```lua
     onGameEnd = function()
         print("Jogo finalizado!")
     end,
@@ -629,6 +1434,39 @@ connect(g_game, {
 
 **Descrição**: Sistema de mapa e tiles.
 
+#### Nível Basic
+```lua
+-- Informações do mapa
+local centerPos = g_map.getCentralPosition() -- Posição central
+local cameraPos = g_map.getCameraPosition() -- Posição da câmera
+-- Tiles
+local tile = g_map.getTile(position)     -- Obtém tile na posição
+local tiles = g_map.getTiles(fromPos, toPos) -- Tiles em área
+-- Criaturas
+local creatures = g_map.getCreatures()   -- Todas as criaturas
+local spectators = g_map.getSpectators(centerPos, multifloor, xRange, yRange)
+-- Path finding
+local path = g_map.findPath(fromPos, toPos, maxDistance)
+local reachable = g_map.canReach(fromPos, toPos, maxDistance)
+-- Informações de tile
+if tile then
+    local walkable = tile:isWalkable()   -- Verificar se é caminhável
+    local ground = tile:getGround()      -- Item do chão
+    local items = tile:getItems()        -- Itens no tile
+    local creature = tile:getTopCreature() -- Criatura no topo
+    local moveThing = tile:getTopMoveThing() -- Coisa movível no topo
+    -- Verificações
+    local hasCreature = tile:hasCreature() -- Tem criatura
+    local isEmpty = tile:isEmpty()        -- Está vazio
+    local isBlocking = tile:isBlocking()  -- Está bloqueando
+end
+-- Eventos do mapa
+    onTileUpdate = function(tile)
+        print("Tile atualizado: " .. tile:getPosition().x .. "," .. tile:getPosition().y)
+    end
+```
+
+#### Nível Intermediate
 ```lua
 -- Informações do mapa
 local centerPos = g_map.getCentralPosition() -- Posição central
@@ -672,10 +1510,115 @@ connect(g_map, {
 })
 ```
 
+#### Nível Advanced
+```lua
+-- Informações do mapa
+local centerPos = g_map.getCentralPosition() -- Posição central
+g_map.setCentralPosition(position)       -- Define posição central
+local cameraPos = g_map.getCameraPosition() -- Posição da câmera
+
+-- Tiles
+local tile = g_map.getTile(position)     -- Obtém tile na posição
+local tiles = g_map.getTiles(fromPos, toPos) -- Tiles em área
+g_map.cleanTile(position)                -- Limpa tile
+
+-- Criaturas
+local creatures = g_map.getCreatures()   -- Todas as criaturas
+local spectators = g_map.getSpectators(centerPos, multifloor, xRange, yRange)
+g_map.addCreature(creature)              -- Adiciona criatura
+g_map.removeCreature(creature)           -- Remove criatura
+
+-- Path finding
+local path = g_map.findPath(fromPos, toPos, maxDistance)
+local reachable = g_map.canReach(fromPos, toPos, maxDistance)
+
+-- Informações de tile
+if tile then
+    local walkable = tile:isWalkable()   -- Verificar se é caminhável
+    local ground = tile:getGround()      -- Item do chão
+    local items = tile:getItems()        -- Itens no tile
+    local creature = tile:getTopCreature() -- Criatura no topo
+    local moveThing = tile:getTopMoveThing() -- Coisa movível no topo
+    
+    -- Verificações
+    local hasCreature = tile:hasCreature() -- Tem criatura
+    local isEmpty = tile:isEmpty()        -- Está vazio
+    local isBlocking = tile:isBlocking()  -- Está bloqueando
+end
+
+-- Eventos do mapa
+connect(g_map, {
+    onTileUpdate = function(tile)
+        print("Tile atualizado: " .. tile:getPosition().x .. "," .. tile:getPosition().y)
+    end
+})
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Creature
 
 **Descrição**: Entidades do jogo (jogadores, NPCs, monstros).
 
+#### Nível Basic
+```lua
+local creature = g_game.getLocalPlayer() -- Exemplo: jogador local
+-- Informações básicas
+local id = creature:getId()              -- ID único da criatura
+local name = creature:getName()          -- Nome
+local pos = creature:getPosition()       -- Posição atual
+local direction = creature:getDirection() -- Direção que está olhando
+-- Estados
+local health = creature:getHealth()      -- HP atual
+local maxHealth = creature:getMaxHealth() -- HP máximo
+local healthPercent = creature:getHealthPercent() -- Percentual de HP
+local mana = creature:getMana()          -- Mana atual (se jogador)
+local maxMana = creature:getMaxMana()    -- Mana máxima
+-- Visual
+local outfit = creature:getOutfit()      -- Outfit atual
+local light = creature:getLight()        -- Luz da criatura
+local speed = creature:getSpeed()        -- Velocidade
+local skull = creature:getSkull()        -- Skull (PK)
+local shield = creature:getShield()      -- Shield (guild)
+local emblem = creature:getEmblem()      -- Emblem (guild)
+-- Verificações de tipo
+local isPlayer = creature:isPlayer()     -- É jogador
+local isNpc = creature:isNpc()           -- É NPC  
+local isMonster = creature:isMonster()   -- É monstro
+local isLocalPlayer = creature:isLocalPlayer() -- É o jogador local
+-- Estados especiais
+local dead = creature:isDead()           -- Está morto
+local walking = creature:isWalking()     -- Está andando
+local invisible = creature:isInvisible() -- Está invisível
+-- Tile relacionado
+local tile = creature:getTile()          -- Tile onde está
+-- Para jogadores específicos
+if creature:isPlayer() then
+    local vocation = creature:getVocation() -- Vocação
+    local level = creature:getLevel()     -- Nível
+    local experience = creature:getExperience() -- Experiência
+    local soul = creature:getSoul()       -- Soul points
+    local capacity = creature:getCapacity() -- Capacidade
+    local freeCapacity = creature:getFreeCapacity() -- Capacidade livre
+    -- Skills
+    local skillLevel = creature:getSkillLevel(Otc.Skill.Fist) -- Nível de skill
+    local skillPercent = creature:getSkillLevelPercent(Otc.Skill.Fist) -- %
+    -- Estados
+    local stamina = creature:getStamina()  -- Stamina
+    local food = creature:getFood()        -- Food time
+    local blessings = creature:getBlessings() -- Blessings count
+end
+```
+
+#### Nível Intermediate
 ```lua
 local creature = g_game.getLocalPlayer() -- Exemplo: jogador local
 
@@ -736,10 +1679,124 @@ if creature:isPlayer() then
 end
 ```
 
+#### Nível Advanced
+```lua
+local creature = g_game.getLocalPlayer() -- Exemplo: jogador local
+
+-- Informações básicas
+local id = creature:getId()              -- ID único da criatura
+local name = creature:getName()          -- Nome
+local pos = creature:getPosition()       -- Posição atual
+local direction = creature:getDirection() -- Direção que está olhando
+
+-- Estados
+local health = creature:getHealth()      -- HP atual
+local maxHealth = creature:getMaxHealth() -- HP máximo
+local healthPercent = creature:getHealthPercent() -- Percentual de HP
+local mana = creature:getMana()          -- Mana atual (se jogador)
+local maxMana = creature:getMaxMana()    -- Mana máxima
+
+-- Visual
+local outfit = creature:getOutfit()      -- Outfit atual
+creature:setOutfit(outfit)               -- Define outfit
+local light = creature:getLight()        -- Luz da criatura
+local speed = creature:getSpeed()        -- Velocidade
+local skull = creature:getSkull()        -- Skull (PK)
+local shield = creature:getShield()      -- Shield (guild)
+local emblem = creature:getEmblem()      -- Emblem (guild)
+
+-- Verificações de tipo
+local isPlayer = creature:isPlayer()     -- É jogador
+local isNpc = creature:isNpc()           -- É NPC  
+local isMonster = creature:isMonster()   -- É monstro
+local isLocalPlayer = creature:isLocalPlayer() -- É o jogador local
+
+-- Estados especiais
+local dead = creature:isDead()           -- Está morto
+local walking = creature:isWalking()     -- Está andando
+local invisible = creature:isInvisible() -- Está invisível
+
+-- Tile relacionado
+local tile = creature:getTile()          -- Tile onde está
+creature:setPosition(newPosition)        -- Define nova posição
+
+-- Para jogadores específicos
+if creature:isPlayer() then
+    local vocation = creature:getVocation() -- Vocação
+    local level = creature:getLevel()     -- Nível
+    local experience = creature:getExperience() -- Experiência
+    local soul = creature:getSoul()       -- Soul points
+    local capacity = creature:getCapacity() -- Capacidade
+    local freeCapacity = creature:getFreeCapacity() -- Capacidade livre
+    
+    -- Skills
+    local skillLevel = creature:getSkillLevel(Otc.Skill.Fist) -- Nível de skill
+    local skillPercent = creature:getSkillLevelPercent(Otc.Skill.Fist) -- %
+    
+    -- Estados
+    local stamina = creature:getStamina()  -- Stamina
+    local food = creature:getFood()        -- Food time
+    local blessings = creature:getBlessings() -- Blessings count
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Item
 
 **Descrição**: Itens do jogo.
 
+#### Nível Basic
+```lua
+local item = Item.create(2160) -- Cria item (gold coin)
+-- Informações básicas
+local id = item:getId()                  -- ID do item
+local count = item:getCount()            -- Quantidade
+local subType = item:getSubType()        -- Subtipo
+local description = item:getDescription() -- Descrição
+-- Propriedades
+local stackable = item:isStackable()     -- É empilhável
+local moveable = item:isMoveable()       -- É movível
+local pickupable = item:isPickupable()   -- Pode ser pego
+local rotatable = item:isRotatable()     -- Pode ser rotacionado
+local readable = item:isReadable()       -- Pode ser lido
+local writable = item:isWritable()       -- Pode ser escrito
+-- Propriedades especiais
+local multiUse = item:isMultiUse()       -- Uso múltiplo
+local fluidContainer = item:isFluidContainer() -- Container de fluido
+local container = item:isContainer()     -- É container
+local weapon = item:isWeapon()           -- É arma
+local ammo = item:isAmmo()               -- É munição
+local armor = item:isArmor()             -- É armadura
+local charged = item:isCharged()         -- Tem cargas
+-- Container específico
+if item:isContainer() then
+    local capacity = item:getCapacity()  -- Capacidade
+    local size = item:getSize()          -- Itens dentro
+    local items = item:getItems()        -- Lista de itens
+    local hasParent = item:hasParent()   -- Tem container pai
+end
+-- Posição e localização
+local pos = item:getPosition()           -- Posição no mapa
+local tile = item:getTile()              -- Tile onde está
+local container = item:getContainer()    -- Container onde está
+-- Texto (para itens com texto)
+local text = item:getText()              -- Texto do item
+-- Eventos
+    onPositionChange = function(item, newPos, oldPos)
+        print("Item movido para: " .. newPos.x .. "," .. newPos.y .. "," .. newPos.z)
+    end
+```
+
+#### Nível Intermediate
 ```lua
 local item = Item.create(2160) -- Cria item (gold coin)
 
@@ -792,12 +1849,98 @@ connect(item, {
 })
 ```
 
+#### Nível Advanced
+```lua
+local item = Item.create(2160) -- Cria item (gold coin)
+
+-- Informações básicas
+local id = item:getId()                  -- ID do item
+local count = item:getCount()            -- Quantidade
+item:setCount(100)                       -- Define quantidade
+local subType = item:getSubType()        -- Subtipo
+local description = item:getDescription() -- Descrição
+
+-- Propriedades
+local stackable = item:isStackable()     -- É empilhável
+local moveable = item:isMoveable()       -- É movível
+local pickupable = item:isPickupable()   -- Pode ser pego
+local rotatable = item:isRotatable()     -- Pode ser rotacionado
+local readable = item:isReadable()       -- Pode ser lido
+local writable = item:isWritable()       -- Pode ser escrito
+
+-- Propriedades especiais
+local multiUse = item:isMultiUse()       -- Uso múltiplo
+local fluidContainer = item:isFluidContainer() -- Container de fluido
+local container = item:isContainer()     -- É container
+local weapon = item:isWeapon()           -- É arma
+local ammo = item:isAmmo()               -- É munição
+local armor = item:isArmor()             -- É armadura
+local charged = item:isCharged()         -- Tem cargas
+
+-- Container específico
+if item:isContainer() then
+    local capacity = item:getCapacity()  -- Capacidade
+    local size = item:getSize()          -- Itens dentro
+    local items = item:getItems()        -- Lista de itens
+    local hasParent = item:hasParent()   -- Tem container pai
+end
+
+-- Posição e localização
+local pos = item:getPosition()           -- Posição no mapa
+local tile = item:getTile()              -- Tile onde está
+local container = item:getContainer()    -- Container onde está
+
+-- Texto (para itens com texto)
+local text = item:getText()              -- Texto do item
+item:setText("Novo texto")               -- Define texto
+
+-- Eventos
+connect(item, {
+    onPositionChange = function(item, newPos, oldPos)
+        print("Item movido para: " .. newPos.x .. "," .. newPos.y .. "," .. newPos.z)
+    end
+})
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🌐 Sistema de Rede
 
 ### g_game (Network functions)
 
 **Descrição**: Funções de rede do jogo.
 
+#### Nível Basic
+```lua
+-- Conexão
+-- Informações da conexão
+local host = g_game.getWorldHost()       -- Host do mundo
+local port = g_game.getWorldPort()       -- Porta do mundo
+local ping = g_game.getPing()            -- Ping atual
+-- Configurações de protocolo
+-- Pacotes customizados
+g_game.sendExtendedOpcode(opcode, buffer) -- Envia opcode estendido
+-- Callbacks de rede
+    onPingUpdate = function(ping)
+        print("Ping atualizado: " .. ping .. "ms")
+    end,
+    onConnectionError = function(message, code)
+        print("Erro de conexão: " .. message)
+    end,
+    onProtocolError = function(message, code)
+        print("Erro de protocolo: " .. message)
+    end
+```
+
+#### Nível Intermediate
 ```lua
 -- Conexão
 g_game.loginWorld("account", "password", "world", "127.0.0.1", 7171, "character")
@@ -832,10 +1975,56 @@ connect(g_game, {
 })
 ```
 
+#### Nível Advanced
+```lua
+-- Conexão
+g_game.loginWorld("account", "password", "world", "127.0.0.1", 7171, "character")
+g_game.cancelLogin()                     -- Cancela login
+g_game.forceLogout()                     -- Força logout
+g_game.safeLogout()                      -- Logout seguro
+
+-- Informações da conexão
+local host = g_game.getWorldHost()       -- Host do mundo
+local port = g_game.getWorldPort()       -- Porta do mundo
+local ping = g_game.getPing()            -- Ping atual
+
+-- Configurações de protocolo
+g_game.setProtocolVersion(1412)          -- Versão do protocolo
+g_game.setClientVersion(1412)            -- Versão do cliente
+g_game.enableFeature(GameFeature.Feature) -- Habilita feature
+
+-- Pacotes customizados
+g_game.sendExtendedOpcode(opcode, buffer) -- Envia opcode estendido
+
+-- Callbacks de rede
+connect(g_game, {
+    onPingUpdate = function(ping)
+        print("Ping atualizado: " .. ping .. "ms")
+    end,
+    onConnectionError = function(message, code)
+        print("Erro de conexão: " .. message)
+    end,
+    onProtocolError = function(message, code)
+        print("Erro de protocolo: " .. message)
+    end
+})
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### HTTP Requests
 
 **Descrição**: Requisições HTTP (se módulo HTTP estiver disponível).
 
+#### Nível Basic
 ```lua
 -- Requisição GET simples
 HTTP.get("http://api.exemplo.com/data", function(data, err)
@@ -869,12 +2058,114 @@ HTTP.request({
 end)
 ```
 
+#### Nível Intermediate
+```lua
+-- Requisição GET simples
+HTTP.get("http://api.exemplo.com/data", function(data, err)
+    if err then
+        print("Erro: " .. err)
+        return
+    end
+    print("Dados recebidos: " .. data)
+end)
+
+-- Requisição POST
+HTTP.post("http://api.exemplo.com/submit", {
+    name = "João",
+    level = 50
+}, function(response, err)
+    if not err then
+        print("Resposta: " .. response)
+    end
+end)
+
+-- Requisição com headers customizados
+HTTP.request({
+    url = "http://api.exemplo.com/protected",
+    method = "GET",
+    headers = {
+        ["Authorization"] = "Bearer token123",
+        ["Content-Type"] = "application/json"
+    }
+}, function(response, err)
+    -- Processar resposta
+end)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Requisição GET simples
+HTTP.get("http://api.exemplo.com/data", function(data, err)
+    if err then
+        print("Erro: " .. err)
+        return
+    end
+    print("Dados recebidos: " .. data)
+end)
+
+-- Requisição POST
+HTTP.post("http://api.exemplo.com/submit", {
+    name = "João",
+    level = 50
+}, function(response, err)
+    if not err then
+        print("Resposta: " .. response)
+    end
+end)
+
+-- Requisição com headers customizados
+HTTP.request({
+    url = "http://api.exemplo.com/protected",
+    method = "GET",
+    headers = {
+        ["Authorization"] = "Bearer token123",
+        ["Content-Type"] = "application/json"
+    }
+}, function(response, err)
+    -- Processar resposta
+end)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🎨 Sistema de Gráficos
 
 ### g_graphics (Graphics)
 
 **Descrição**: Controle de gráficos e renderização.
 
+#### Nível Basic
+```lua
+-- Informações gráficas
+local vendor = g_graphics.getVendor()    -- Fabricante da GPU
+local renderer = g_graphics.getRenderer() -- Renderizador
+local version = g_graphics.getVersion()  -- Versão OpenGL
+-- Configurações
+local vsync = g_graphics.isVSyncEnabled() -- Verifica VSync
+-- Resolução
+local size = g_graphics.getViewportSize() -- Tamanho da viewport
+-- Screenshots
+-- Performance
+local fps = g_graphics.getAverageFPS()   -- FPS médio
+local maxFps = g_graphics.getMaxFPS()    -- FPS máximo
+```
+
+#### Nível Intermediate
 ```lua
 -- Informações gráficas
 local vendor = g_graphics.getVendor()    -- Fabricante da GPU
@@ -898,22 +2189,59 @@ local maxFps = g_graphics.getMaxFPS()    -- FPS máximo
 g_graphics.setMaxFPS(60)                 -- Define FPS máximo
 ```
 
+#### Nível Advanced
+```lua
+-- Informações gráficas
+local vendor = g_graphics.getVendor()    -- Fabricante da GPU
+local renderer = g_graphics.getRenderer() -- Renderizador
+local version = g_graphics.getVersion()  -- Versão OpenGL
+
+-- Configurações
+g_graphics.setVSync(true)                -- Ativa VSync
+local vsync = g_graphics.isVSyncEnabled() -- Verifica VSync
+
+-- Resolução
+local size = g_graphics.getViewportSize() -- Tamanho da viewport
+g_graphics.resize(1920, 1080)            -- Redimensiona
+
+-- Screenshots
+g_graphics.screenshot("screenshot.png")   -- Captura tela
+
+-- Performance
+local fps = g_graphics.getAverageFPS()   -- FPS médio
+local maxFps = g_graphics.getMaxFPS()    -- FPS máximo
+g_graphics.setMaxFPS(60)                 -- Define FPS máximo
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### g_shaders (Shaders)
 
 **Descrição**: Sistema de shaders (se disponível).
 
 ```lua
 -- Carregamento de shaders
+    --  Carregamento de shaders (traduzido)
 local shader = g_shaders.createShader("vertex.glsl", "fragment.glsl")
 g_shaders.setShader(shader)              -- Ativa shader
 g_shaders.clearShader()                  -- Remove shader ativo
 
 -- Uniforms
+    --  Uniforms (traduzido)
 g_shaders.setUniform("time", g_clock.seconds())
 g_shaders.setUniform("resolution", {1920, 1080})
 g_shaders.setUniform("color", {1.0, 0.0, 0.0, 1.0})
 
 -- Texturas
+    --  Texturas (traduzido)
 g_shaders.bindTexture(texture, 0)        -- Bind texture na unidade 0
 ```
 
@@ -923,6 +2251,24 @@ g_shaders.bindTexture(texture, 0)        -- Bind texture na unidade 0
 
 **Descrição**: Sistema de áudio e sons.
 
+#### Nível Basic
+```lua
+-- Configurações gerais
+local enabled = g_sounds.isAudioEnabled() -- Verifica se habilitado
+-- Volume
+local volume = g_sounds.getMasterVolume() -- Obtém volume master
+-- Canais de volume
+-- Reprodução de sons
+local soundId = g_sounds.playSoundFile("sound.ogg") -- Reproduz arquivo
+-- Sons com configurações
+local soundId = g_sounds.playSoundFile("music.ogg", {
+-- Efeitos sonoros simples
+-- Informações
+local playing = g_sounds.isSoundPlaying(soundId) -- Verifica se tocando
+local duration = g_sounds.getSoundDuration(soundId) -- Duração do som
+```
+
+#### Nível Intermediate
 ```lua
 -- Configurações gerais
 g_sounds.setAudioEnabled(true)           -- Habilita áudio
@@ -957,12 +2303,58 @@ local playing = g_sounds.isSoundPlaying(soundId) -- Verifica se tocando
 local duration = g_sounds.getSoundDuration(soundId) -- Duração do som
 ```
 
+#### Nível Advanced
+```lua
+-- Configurações gerais
+g_sounds.setAudioEnabled(true)           -- Habilita áudio
+local enabled = g_sounds.isAudioEnabled() -- Verifica se habilitado
+
+-- Volume
+g_sounds.setMasterVolume(0.8)            -- Volume master (0.0 - 1.0)
+local volume = g_sounds.getMasterVolume() -- Obtém volume master
+
+-- Canais de volume
+g_sounds.setChannelVolume(SoundChannel.Music, 0.7)    -- Volume música
+g_sounds.setChannelVolume(SoundChannel.Effects, 0.9)  -- Volume efeitos
+
+-- Reprodução de sons
+local soundId = g_sounds.playSoundFile("sound.ogg") -- Reproduz arquivo
+g_sounds.stopSound(soundId)              -- Para som específico
+g_sounds.stopAll()                       -- Para todos os sons
+
+-- Sons com configurações
+local soundId = g_sounds.playSoundFile("music.ogg", {
+    volume = 0.5,
+    loop = true,
+    channel = SoundChannel.Music
+})
+
+-- Efeitos sonoros simples
+g_sounds.playEffect("click.wav")         -- Efeito simples
+g_sounds.playMusic("background.ogg", true) -- Música em loop
+
+-- Informações
+local playing = g_sounds.isSoundPlaying(soundId) -- Verifica se tocando
+local duration = g_sounds.getSoundDuration(soundId) -- Duração do som
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## ⚙️ Sistema de Configuração
 
 ### g_settings (Settings)
 
 **Descrição**: Configurações persistentes da aplicação.
 
+#### Nível Basic
 ```lua
 -- Configurações simples
 g_settings.set("graphics.fullscreen", true) -- Define configuração
@@ -994,10 +2386,92 @@ connect(g_settings, {
 })
 ```
 
+#### Nível Intermediate
+```lua
+-- Configurações simples
+g_settings.set("graphics.fullscreen", true) -- Define configuração
+local fullscreen = g_settings.getBoolean("graphics.fullscreen", false) -- Obtém boolean
+local volume = g_settings.getNumber("audio.volume", 1.0) -- Obtém número
+local username = g_settings.getString("login.username", "") -- Obtém string
+
+-- Configurações de lista
+g_settings.setList("hotkeys.f1", {"exura", "auto"}) -- Define lista
+local hotkey = g_settings.getList("hotkeys.f1") -- Obtém lista
+
+-- Nós complexos
+g_settings.setNode("ui.windows", {
+    inventory = {x = 100, y = 50, visible = true},
+    minimap = {x = 200, y = 100, visible = false}
+})
+local windows = g_settings.getNode("ui.windows") -- Obtém nó completo
+
+-- Operações de arquivo
+g_settings.save()                        -- Salva configurações
+g_settings.load()                        -- Recarrega configurações
+g_settings.clear()                       -- Limpa todas as configurações
+
+-- Eventos
+connect(g_settings, {
+    onSettingChange = function(key, value)
+        print("Configuração alterada: " .. key .. " = " .. tostring(value))
+    end
+})
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Configurações simples
+g_settings.set("graphics.fullscreen", true) -- Define configuração
+local fullscreen = g_settings.getBoolean("graphics.fullscreen", false) -- Obtém boolean
+local volume = g_settings.getNumber("audio.volume", 1.0) -- Obtém número
+local username = g_settings.getString("login.username", "") -- Obtém string
+
+-- Configurações de lista
+g_settings.setList("hotkeys.f1", {"exura", "auto"}) -- Define lista
+local hotkey = g_settings.getList("hotkeys.f1") -- Obtém lista
+
+-- Nós complexos
+g_settings.setNode("ui.windows", {
+    inventory = {x = 100, y = 50, visible = true},
+    minimap = {x = 200, y = 100, visible = false}
+})
+local windows = g_settings.getNode("ui.windows") -- Obtém nó completo
+
+-- Operações de arquivo
+g_settings.save()                        -- Salva configurações
+g_settings.load()                        -- Recarrega configurações
+g_settings.clear()                       -- Limpa todas as configurações
+
+-- Eventos
+connect(g_settings, {
+    onSettingChange = function(key, value)
+        print("Configuração alterada: " .. key .. " = " .. tostring(value))
+    end
+})
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### g_configs (Configs)
 
 **Descrição**: Configurações específicas do jogo.
 
+#### Nível Basic
 ```lua
 -- Carregamento
 g_configs.loadSettings("/config.otml")   -- Carrega configurações
@@ -1016,12 +2490,68 @@ g_configs.set("game.rememberPassword", false)
 g_configs.save()                         -- Salva configurações
 ```
 
+#### Nível Intermediate
+```lua
+-- Carregamento
+g_configs.loadSettings("/config.otml")   -- Carrega configurações
+
+-- Acesso a configurações
+local autoChase = g_configs.getBoolean("autoChase", false)
+local moveSpeed = g_configs.getNumber("moveSpeed", 1000)
+local serverList = g_configs.getList("servers")
+
+-- Configurações de jogo
+g_configs.set("game.autoLogin", true)
+g_configs.set("game.defaultServer", "localhost")
+g_configs.set("game.rememberPassword", false)
+
+-- Salvar
+g_configs.save()                         -- Salva configurações
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Carregamento
+g_configs.loadSettings("/config.otml")   -- Carrega configurações
+
+-- Acesso a configurações
+local autoChase = g_configs.getBoolean("autoChase", false)
+local moveSpeed = g_configs.getNumber("moveSpeed", 1000)
+local serverList = g_configs.getList("servers")
+
+-- Configurações de jogo
+g_configs.set("game.autoLogin", true)
+g_configs.set("game.defaultServer", "localhost")
+g_configs.set("game.rememberPassword", false)
+
+-- Salvar
+g_configs.save()                         -- Salva configurações
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🛠️ Utilitários
 
 ### g_keyboard (Keyboard)
 
 **Descrição**: Gerenciamento de teclado e teclas.
 
+#### Nível Basic
 ```lua
 -- Bind de teclas
 g_keyboard.bindKeyDown("Ctrl+S", function()
@@ -1053,10 +2583,92 @@ local keyText = g_keyboard.getKeyText(KeyCode.F1) -- "F1"
 local keyCode = g_keyboard.getKeyCode("F1")   -- KeyCode.F1
 ```
 
+#### Nível Intermediate
+```lua
+-- Bind de teclas
+g_keyboard.bindKeyDown("Ctrl+S", function()
+    print("Ctrl+S pressionado!")
+end)
+
+g_keyboard.bindKeyPress("F1", function()
+    print("F1 pressionado!")
+end, widget)  -- Bind específico para widget
+
+g_keyboard.bindKeyUp("Space", function()
+    print("Space liberado!")
+end)
+
+-- Unbind
+g_keyboard.unbindKeyDown("Ctrl+S")       -- Remove bind específico
+g_keyboard.clearKeyboardBindings()       -- Remove todos os binds
+
+-- Estado das teclas
+local ctrlPressed = g_keyboard.isCtrlPressed() -- Ctrl pressionado
+local shiftPressed = g_keyboard.isShiftPressed() -- Shift pressionado
+local altPressed = g_keyboard.isAltPressed() -- Alt pressionado
+
+-- Modificadores
+local modifiers = g_keyboard.getModifiers() -- Todos os modificadores
+
+-- Conversão de teclas
+local keyText = g_keyboard.getKeyText(KeyCode.F1) -- "F1"
+local keyCode = g_keyboard.getKeyCode("F1")   -- KeyCode.F1
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Bind de teclas
+g_keyboard.bindKeyDown("Ctrl+S", function()
+    print("Ctrl+S pressionado!")
+end)
+
+g_keyboard.bindKeyPress("F1", function()
+    print("F1 pressionado!")
+end, widget)  -- Bind específico para widget
+
+g_keyboard.bindKeyUp("Space", function()
+    print("Space liberado!")
+end)
+
+-- Unbind
+g_keyboard.unbindKeyDown("Ctrl+S")       -- Remove bind específico
+g_keyboard.clearKeyboardBindings()       -- Remove todos os binds
+
+-- Estado das teclas
+local ctrlPressed = g_keyboard.isCtrlPressed() -- Ctrl pressionado
+local shiftPressed = g_keyboard.isShiftPressed() -- Shift pressionado
+local altPressed = g_keyboard.isAltPressed() -- Alt pressionado
+
+-- Modificadores
+local modifiers = g_keyboard.getModifiers() -- Todos os modificadores
+
+-- Conversão de teclas
+local keyText = g_keyboard.getKeyText(KeyCode.F1) -- "F1"
+local keyCode = g_keyboard.getKeyCode("F1")   -- KeyCode.F1
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### g_mouse (Mouse)
 
 **Descrição**: Gerenciamento do mouse.
 
+#### Nível Basic
 ```lua
 -- Posição
 local pos = g_mouse.getPosition()        -- Posição atual
@@ -1085,10 +2697,99 @@ end)
 g_mouse.unbindMousePress(MouseLeftButton)
 ```
 
+#### Nível Intermediate
+```lua
+-- Posição
+local pos = g_mouse.getPosition()        -- Posição atual
+g_mouse.setPosition(100, 200)            -- Define posição
+
+-- Cursor
+g_mouse.pushCursor("target")             -- Empilha cursor
+g_mouse.popCursor()                      -- Remove cursor do topo
+g_mouse.setCursor("hand")                -- Define cursor direto
+
+-- Estados
+local leftPressed = g_mouse.isPressed(MouseLeftButton)   -- Botão esquerdo
+local rightPressed = g_mouse.isPressed(MouseRightButton) -- Botão direito
+local middlePressed = g_mouse.isPressed(MouseMiddleButton) -- Botão do meio
+
+-- Bind de eventos globais
+g_mouse.bindMousePress(MouseLeftButton, function(mousePos)
+    print("Clique esquerdo em: " .. mousePos.x .. "," .. mousePos.y)
+end)
+
+g_mouse.bindMouseRelease(MouseRightButton, function(mousePos)
+    print("Botão direito liberado")
+end)
+
+-- Unbind
+g_mouse.unbindMousePress(MouseLeftButton)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Posição
+local pos = g_mouse.getPosition()        -- Posição atual
+g_mouse.setPosition(100, 200)            -- Define posição
+
+-- Cursor
+g_mouse.pushCursor("target")             -- Empilha cursor
+g_mouse.popCursor()                      -- Remove cursor do topo
+g_mouse.setCursor("hand")                -- Define cursor direto
+
+-- Estados
+local leftPressed = g_mouse.isPressed(MouseLeftButton)   -- Botão esquerdo
+local rightPressed = g_mouse.isPressed(MouseRightButton) -- Botão direito
+local middlePressed = g_mouse.isPressed(MouseMiddleButton) -- Botão do meio
+
+-- Bind de eventos globais
+g_mouse.bindMousePress(MouseLeftButton, function(mousePos)
+    print("Clique esquerdo em: " .. mousePos.x .. "," .. mousePos.y)
+end)
+
+g_mouse.bindMouseRelease(MouseRightButton, function(mousePos)
+    print("Botão direito liberado")
+end)
+
+-- Unbind
+g_mouse.unbindMousePress(MouseLeftButton)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### g_textures (Textures)
 
 **Descrição**: Gerenciamento de texturas.
 
+#### Nível Basic
+```lua
+-- Carregamento
+local texture = g_textures.getTexture("/images/icon.png") -- Carrega textura
+-- Informações
+local size = texture:getSize()           -- Tamanho da textura
+local width = texture:getWidth()         -- Largura
+local height = texture:getHeight()       -- Altura
+-- Estados
+local loaded = texture:isLoaded()        -- Está carregada
+local smooth = texture:isSmooth()        -- Suavização ativa
+```
+
+#### Nível Intermediate
 ```lua
 -- Carregamento
 local texture = g_textures.getTexture("/images/icon.png") -- Carrega textura
@@ -1105,10 +2806,50 @@ local smooth = texture:isSmooth()        -- Suavização ativa
 texture:setSmooth(true)                  -- Ativa suavização
 ```
 
+#### Nível Advanced
+```lua
+-- Carregamento
+local texture = g_textures.getTexture("/images/icon.png") -- Carrega textura
+g_textures.preload("/images/")           -- Pré-carrega diretório
+
+-- Informações
+local size = texture:getSize()           -- Tamanho da textura
+local width = texture:getWidth()         -- Largura
+local height = texture:getHeight()       -- Altura
+
+-- Estados
+local loaded = texture:isLoaded()        -- Está carregada
+local smooth = texture:isSmooth()        -- Suavização ativa
+texture:setSmooth(true)                  -- Ativa suavização
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### g_fonts (Fonts)
 
 **Descrição**: Gerenciamento de fontes.
 
+#### Nível Basic
+```lua
+-- Carregamento
+local font = g_fonts.getFont("verdana-11px-rounded") -- Obtém fonte
+-- Informações
+local glyphHeight = font:getGlyphHeight() -- Altura dos glyphs
+local textSize = font:calculateTextRectSize("Meu texto") -- Tamanho do texto
+local spacing = font:getGlyphSpacing()    -- Espaçamento entre glyphs
+-- Renderização de texto
+font:renderText("Texto", {x = 100, y = 50}, "#FFFFFF") -- Renderiza texto
+```
+
+#### Nível Intermediate
 ```lua
 -- Carregamento
 local font = g_fonts.getFont("verdana-11px-rounded") -- Obtém fonte
@@ -1123,12 +2864,38 @@ local spacing = font:getGlyphSpacing()    -- Espaçamento entre glyphs
 font:renderText("Texto", {x = 100, y = 50}, "#FFFFFF") -- Renderiza texto
 ```
 
+#### Nível Advanced
+```lua
+-- Carregamento
+local font = g_fonts.getFont("verdana-11px-rounded") -- Obtém fonte
+g_fonts.importFont("/fonts/myfont.otfont") -- Importa fonte personalizada
+
+-- Informações
+local glyphHeight = font:getGlyphHeight() -- Altura dos glyphs
+local textSize = font:calculateTextRectSize("Meu texto") -- Tamanho do texto
+local spacing = font:getGlyphSpacing()    -- Espaçamento entre glyphs
+
+-- Renderização de texto
+font:renderText("Texto", {x = 100, y = 50}, "#FFFFFF") -- Renderiza texto
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 📞 Callbacks e Eventos
 
 ### Sistema de Conexão de Eventos
 
 **Descrição**: Como conectar e desconectar eventos.
 
+#### Nível Basic
 ```lua
 -- Conexão básica
 connect(g_game, {
@@ -1161,8 +2928,92 @@ connectOnce(g_game, "onGameStart", function()
 end)
 ```
 
+#### Nível Intermediate
+```lua
+-- Conexão básica
+connect(g_game, {
+    onGameStart = function()
+        print("Jogo iniciado!")
+    end,
+    onGameEnd = function()
+        print("Jogo finalizado!")
+    end
+})
+
+-- Conexão individual
+local callback = function(player)
+    print("Player criado: " .. player:getName())
+end
+connect(g_game, "onCreatureAppear", callback)
+
+-- Desconexão
+disconnect(g_game, {
+    onGameStart = onGameStartCallback,
+    onGameEnd = onGameEndCallback
+})
+
+-- Desconexão individual
+disconnect(g_game, "onCreatureAppear", callback)
+
+-- Eventos únicos (executam apenas uma vez)
+connectOnce(g_game, "onGameStart", function()
+    print("Primeira vez que o jogo inicia!")
+end)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Conexão básica
+connect(g_game, {
+    onGameStart = function()
+        print("Jogo iniciado!")
+    end,
+    onGameEnd = function()
+        print("Jogo finalizado!")
+    end
+})
+
+-- Conexão individual
+local callback = function(player)
+    print("Player criado: " .. player:getName())
+end
+connect(g_game, "onCreatureAppear", callback)
+
+-- Desconexão
+disconnect(g_game, {
+    onGameStart = onGameStartCallback,
+    onGameEnd = onGameEndCallback
+})
+
+-- Desconexão individual
+disconnect(g_game, "onCreatureAppear", callback)
+
+-- Eventos únicos (executam apenas uma vez)
+connectOnce(g_game, "onGameStart", function()
+    print("Primeira vez que o jogo inicia!")
+end)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Principais Eventos do Jogo
 
+#### Inicialização e Configuração
 ```lua
 -- Eventos de conexão
 connect(g_game, {
@@ -1185,6 +3036,10 @@ connect(g_game, {
     onCreatureAppear = function(creature)
         -- Nova criatura apareceu
     end,
+```
+
+#### Funcionalidade 1
+```lua
     onCreatureDisappear = function(creature)
         -- Criatura desapareceu
     end,
@@ -1207,6 +3062,10 @@ connect(g_game, {
     onLocalPlayerSkillChange = function(skillId, level, levelPercent)
         -- Skill do jogador mudou
     end,
+```
+
+#### Funcionalidade 2
+```lua
     onLocalPlayerVocationChange = function(vocation)
         -- Vocação mudou
     end
@@ -1230,6 +3089,10 @@ connect(g_game, {
     onOpenChannel = function(channelId, channelName)
         -- Canal aberto
     end
+```
+
+#### Funcionalidade 3
+```lua
 })
 
 -- Eventos de container
@@ -1256,6 +3119,10 @@ connect(g_game, {
     onOpenNpcTrade = function(items)
         -- Trade com NPC aberto
     end,
+```
+
+#### Finalização
+```lua
     onCloseNpcTrade = function()
         -- Trade com NPC fechado
     end,
@@ -1273,6 +3140,7 @@ connect(g_game, {
 
 ### Eventos de Interface
 
+#### Inicialização e Configuração
 ```lua
 -- Eventos de widget
 widget.onClick = function(widget)
@@ -1298,6 +3166,10 @@ end
 widget.onFocusChange = function(widget, focused)
     -- Estado de foco mudou
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 widget.onStyleApply = function(widget, styleName, styleNode)
     -- Estilo aplicado
@@ -1319,6 +3191,10 @@ end
 textEdit.onEnterPressed = function(textEdit)
     -- Enter pressionado
 end
+```
+
+#### Finalização
+```lua
 
 textEdit.onEscapePressed = function(textEdit)
     -- Escape pressionado
@@ -1338,6 +3214,7 @@ end
 
 ### Exemplo 1: Sistema de Auto-Login
 
+#### Inicialização e Configuração
 ```lua
 -- modules/auto_login/auto_login.lua
 autoLogin = {}
@@ -1361,6 +3238,10 @@ function autoLogin.init()
         onLoginError = autoLogin.onLoginError,
         onGameStart = autoLogin.onGameStart
     })
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Menu
     autoLogin.button = modules.client_topmenu.addLeftButton(
@@ -1383,6 +3264,10 @@ function autoLogin.terminate()
 end
 
 function autoLogin.toggle()
+```
+
+#### Funcionalidade 2
+```lua
     if autoLogin.window:isVisible() then
         autoLogin.window:hide()
     else
@@ -1405,6 +3290,10 @@ function autoLogin.loadSettings()
 end
 
 function autoLogin.saveSettings()
+```
+
+#### Funcionalidade 3
+```lua
     g_settings.set('autoLogin.account', autoLogin.accountEdit:getText())
     g_settings.set('autoLogin.password', autoLogin.passwordEdit:getText())
     g_settings.set('autoLogin.server', autoLogin.serverCombo:getCurrentOption().text)
@@ -1427,6 +3316,10 @@ function autoLogin.performLogin()
 end
 
 function autoLogin.onLoginError(message)
+```
+
+#### Finalização
+```lua
     print("Auto-login falhou: " .. message)
     -- Tentar novamente em 5 segundos
     scheduleEvent(autoLogin.performLogin, 5000)
@@ -1439,6 +3332,7 @@ end
 
 ### Exemplo 2: Monitor de Status
 
+#### Inicialização e Configuração
 ```lua
 -- modules/status_monitor/status_monitor.lua
 statusMonitor = {}
@@ -1469,6 +3363,10 @@ function statusMonitor.init()
         onGameEnd = statusMonitor.onGameEnd,
         onLocalPlayerStatsChange = statusMonitor.updateStats
     })
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Timer para atualização
     statusMonitor.updateEvent = nil
@@ -1490,6 +3388,10 @@ function statusMonitor.startUpdating()
     statusMonitor.updateStats()
     statusMonitor.updateEvent = scheduleEvent(statusMonitor.startUpdating, 1000)
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 function statusMonitor.stopUpdating()
     if statusMonitor.updateEvent then
@@ -1526,6 +3428,10 @@ function statusMonitor.updateStats()
     local exp = player:getExperience()
     statusMonitor.expLabel:setText(string.format("Exp: %s", statusMonitor.formatNumber(exp)))
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 function statusMonitor.getHealthColor(percent)
     if percent >= 80 then
@@ -1547,6 +3453,10 @@ function statusMonitor.getManaColor(percent)
     else
         return "#FF0080"  -- Rosa
     end
+```
+
+#### Finalização
+```lua
 end
 
 function statusMonitor.formatNumber(num)
@@ -1563,6 +3473,7 @@ end
 
 ### Exemplo 3: Sistema de Hotkeys Customizado
 
+#### Inicialização e Configuração
 ```lua
 -- modules/custom_hotkeys/custom_hotkeys.lua
 customHotkeys = {}
@@ -1600,6 +3511,10 @@ function customHotkeys.setupInterface()
     
     customHotkeys.updateBindingsList()
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function customHotkeys.toggle()
     if customHotkeys.window:isVisible() then
@@ -1629,6 +3544,10 @@ function customHotkeys.addBinding()
         action = action,
         value = value
     }
+```
+
+#### Funcionalidade 2
+```lua
     
     customHotkeys.bindings[key] = binding
     
@@ -1651,6 +3570,10 @@ function customHotkeys.removeBinding()
     customHotkeys.removeKeyBinding(key)
     customHotkeys.updateBindingsList()
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 function customHotkeys.removeKeyBinding(key)
     if customHotkeys.bindings[key] then
@@ -1673,6 +3596,10 @@ function customHotkeys.executeBinding(binding)
         if itemId then
             g_game.useInventoryItem(itemId)
         end
+```
+
+#### Funcionalidade 4
+```lua
     elseif binding.action == 'command' then
         modules.game_console.sendMessage(binding.value)
     end
@@ -1696,6 +3623,10 @@ function customHotkeys.updateBindingsList()
         elseif binding.action == 'command' then
             label:setColor('#FF0080')
         end
+```
+
+#### Funcionalidade 5
+```lua
     end
 end
 
@@ -1719,6 +3650,10 @@ function customHotkeys.loadBindings()
             g_keyboard.bindKeyPress(key, function()
                 customHotkeys.executeBinding(binding)
             end)
+```
+
+#### Finalização
+```lua
         end
     end
 end
@@ -1726,6 +3661,7 @@ end
 
 ### Exemplo 4: Sistema de Notificações
 
+#### Inicialização e Configuração
 ```lua
 -- modules/notifications/notifications.lua
 notifications = {}
@@ -1768,6 +3704,10 @@ function notifications.show(title, message, type, duration)
     elseif type == 'info' then
         borderColor = '#0080FF'
     end
+```
+
+#### Funcionalidade 1
+```lua
     notification:setBorderColor(borderColor)
     
     -- Título
@@ -1803,6 +3743,10 @@ function notifications.show(title, message, type, duration)
     scheduleEvent(function()
         notifications.remove(notification)
     end, duration)
+```
+
+#### Funcionalidade 2
+```lua
     
     -- Clique para remover
     notification.onClick = function()
@@ -1828,6 +3772,10 @@ function notifications.remove(notification)
     g_effects.fadeOut(notification, 200, function()
         notification:destroy()
     end)
+```
+
+#### Funcionalidade 3
+```lua
 end
 
 -- Funções de conveniência
@@ -1852,6 +3800,10 @@ connect(g_game, {
     onGameStart = function()
         notifications.success('Conectado', 'Conectado ao servidor com sucesso!')
     end,
+```
+
+#### Finalização
+```lua
     onGameEnd = function()
         notifications.info('Desconectado', 'Desconectado do servidor')
     end,
@@ -1875,6 +3827,7 @@ _G.notify = notifications
 
 ```lua
 -- Teclas especiais
+    --  Teclas especiais (traduzido)
 KeyCode.Escape, KeyCode.Tab, KeyCode.Return, KeyCode.Space
 KeyCode.Shift, KeyCode.Ctrl, KeyCode.Alt
 KeyCode.Insert, KeyCode.Delete, KeyCode.Home, KeyCode.End
@@ -1888,6 +3841,7 @@ KeyCode.F1, KeyCode.F2, ..., KeyCode.F12
 KeyCode.Key0, KeyCode.Key1, ..., KeyCode.Key9
 
 -- Letras
+    --  Letras (traduzido)
 KeyCode.A, KeyCode.B, ..., KeyCode.Z
 ```
 
@@ -1905,6 +3859,7 @@ KeyCode.A, KeyCode.B, ..., KeyCode.Z
 "#00FFFF" -- Ciano
 
 -- Cores do chat
+    --  Cores do chat (traduzido)
 "#FFFF00" -- Amarelo (say)
 "#A5F1FF" -- Azul claro (whisper) 
 "#FF6060" -- Vermelho claro (yell)
@@ -1913,6 +3868,7 @@ KeyCode.A, KeyCode.B, ..., KeyCode.Z
 
 ### Enums Importantes
 
+#### Nível Basic
 ```lua
 -- Direções
 North, South, East, West, Northeast, Northwest, Southeast, Southwest
@@ -1936,6 +3892,75 @@ InventorySlotHead, InventorySlotNecklace, InventorySlotBack
 InventorySlotBody, InventorySlotRight, InventorySlotLeft
 InventorySlotLegs, InventorySlotFeet, InventorySlotFinger
 InventorySlotAmmo
+```
+
+#### Nível Intermediate
+```lua
+-- Direções
+North, South, East, West, Northeast, Northwest, Southeast, Southwest
+
+-- Modos de luta  
+FightOffensive, FightBalanced, FightDefensive
+
+-- Modos de perseguição
+DontChase, ChaseOpponent
+
+-- Tipos de canal
+ChannelType.Say, ChannelType.Whisper, ChannelType.Yell
+ChannelType.Private, ChannelType.NpcTo, ChannelType.Party
+
+-- Skills
+Otc.Skill.Fist, Otc.Skill.Club, Otc.Skill.Sword, Otc.Skill.Axe
+Otc.Skill.Distance, Otc.Skill.Shielding, Otc.Skill.Fishing
+
+-- Slots de inventário  
+InventorySlotHead, InventorySlotNecklace, InventorySlotBack
+InventorySlotBody, InventorySlotRight, InventorySlotLeft
+InventorySlotLegs, InventorySlotFeet, InventorySlotFinger
+InventorySlotAmmo
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Direções
+North, South, East, West, Northeast, Northwest, Southeast, Southwest
+
+-- Modos de luta  
+FightOffensive, FightBalanced, FightDefensive
+
+-- Modos de perseguição
+DontChase, ChaseOpponent
+
+-- Tipos de canal
+ChannelType.Say, ChannelType.Whisper, ChannelType.Yell
+ChannelType.Private, ChannelType.NpcTo, ChannelType.Party
+
+-- Skills
+Otc.Skill.Fist, Otc.Skill.Club, Otc.Skill.Sword, Otc.Skill.Axe
+Otc.Skill.Distance, Otc.Skill.Shielding, Otc.Skill.Fishing
+
+-- Slots de inventário  
+InventorySlotHead, InventorySlotNecklace, InventorySlotBack
+InventorySlotBody, InventorySlotRight, InventorySlotLeft
+InventorySlotLegs, InventorySlotFeet, InventorySlotFinger
+InventorySlotAmmo
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 Esta referência da API Lua cobre as principais funcionalidades disponíveis no OTClient. Para casos específicos ou funcionalidades avançadas, consulte também a documentação dos módulos individuais e os exemplos práticos fornecidos.

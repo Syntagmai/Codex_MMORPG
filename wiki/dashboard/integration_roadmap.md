@@ -151,6 +151,7 @@ Estabelecer uma **integração completa e robusta** entre OTClient e Canary, cri
 ## 📋 **Protocolos de Comunicação**
 
 ### **🔌 OpenCode Protocol**
+#### Nível Basic
 ```lua
 -- Protocolo básico de comunicação
 local function sendOpenCodeMessage(type, data)
@@ -166,7 +167,57 @@ local function sendOpenCodeMessage(type, data)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Protocolo básico de comunicação
+local function sendOpenCodeMessage(type, data)
+    local message = {
+        protocol = "OpenCode",
+        version = "1.0",
+        type = type,
+        data = data,
+        timestamp = os.time(),
+        checksum = calculateChecksum(data)
+    }
+    return sendToServer(message)
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Protocolo básico de comunicação
+local function sendOpenCodeMessage(type, data)
+    local message = {
+        protocol = "OpenCode",
+        version = "1.0",
+        type = type,
+        data = data,
+        timestamp = os.time(),
+        checksum = calculateChecksum(data)
+    }
+    return sendToServer(message)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🔌 ExtendedOpen Protocol**
+#### Nível Basic
 ```lua
 -- Protocolo estendido com recursos avançados
 local function sendExtendedOpenMessage(type, data, options)
@@ -184,9 +235,63 @@ local function sendExtendedOpenMessage(type, data, options)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Protocolo estendido com recursos avançados
+local function sendExtendedOpenMessage(type, data, options)
+    local message = {
+        protocol = "ExtendedOpen",
+        version = "2.0",
+        type = type,
+        data = data,
+        options = options,
+        timestamp = os.time(),
+        checksum = calculateChecksum(data),
+        signature = signMessage(data)
+    }
+    return sendToServer(message)
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Protocolo estendido com recursos avançados
+local function sendExtendedOpenMessage(type, data, options)
+    local message = {
+        protocol = "ExtendedOpen",
+        version = "2.0",
+        type = type,
+        data = data,
+        options = options,
+        timestamp = os.time(),
+        checksum = calculateChecksum(data),
+        signature = signMessage(data)
+    }
+    return sendToServer(message)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🔌 Game API Protocol**
 ```lua
 -- API para funcionalidades do jogo
+    --  API para funcionalidades do jogo (traduzido)
 local GameAPI = {
     world = {
         getMap = function(x, y, z) end,
@@ -226,6 +331,7 @@ local function authenticateUser(credentials)
     })
     
     if response.success then
+    -- Verificação condicional
         storeToken(response.token)
         return true
     end
@@ -241,7 +347,9 @@ local function checkPermission(action, resource)
     local userRoles = decodeToken(token).roles
     
     for _, role in ipairs(userRoles) do
+    -- Loop de repetição
         if hasPermission(role, action, resource) then
+    -- Verificação condicional
             return true
         end
     end
@@ -252,9 +360,11 @@ end
 ### **🔐 Criptografia**
 ```lua
 -- Sistema de criptografia de dados
+    --  Sistema de criptografia de dados (traduzido)
 local function encryptData(data, key)
     local encrypted = {}
     for k, v in pairs(data) do
+    -- Loop de repetição
         encrypted[k] = encrypt(v, key)
     end
     return encrypted
@@ -263,6 +373,7 @@ end
 local function decryptData(encryptedData, key)
     local decrypted = {}
     for k, v in pairs(encryptedData) do
+    -- Loop de repetição
         decrypted[k] = decrypt(v, key)
     end
     return decrypted
@@ -274,6 +385,7 @@ end
 ## 📊 **Sistema de Validação**
 
 ### **🔍 Validação de Conectividade**
+#### Nível Basic
 ```lua
 -- Teste de conectividade básica
 local function testConnectivity()
@@ -289,7 +401,57 @@ local function testConnectivity()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Teste de conectividade básica
+local function testConnectivity()
+    local startTime = os.time()
+    local response = sendPing()
+    local endTime = os.time()
+    
+    return {
+        success = response ~= nil,
+        latency = endTime - startTime,
+        timestamp = os.time()
+    }
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Teste de conectividade básica
+local function testConnectivity()
+    local startTime = os.time()
+    local response = sendPing()
+    local endTime = os.time()
+    
+    return {
+        success = response ~= nil,
+        latency = endTime - startTime,
+        timestamp = os.time()
+    }
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🔍 Validação de Protocolo**
+#### Nível Basic
 ```lua
 -- Validação de protocolos de comunicação
 local function validateProtocol(protocol)
@@ -307,6 +469,59 @@ local function validateProtocol(protocol)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Validação de protocolos de comunicação
+local function validateProtocol(protocol)
+    local tests = {
+        basic = testBasicProtocol(protocol),
+        extended = testExtendedProtocol(protocol),
+        security = testSecurityProtocol(protocol)
+    }
+    
+    return {
+        protocol = protocol,
+        tests = tests,
+        overall = calculateOverallScore(tests)
+    }
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Validação de protocolos de comunicação
+local function validateProtocol(protocol)
+    local tests = {
+        basic = testBasicProtocol(protocol),
+        extended = testExtendedProtocol(protocol),
+        security = testSecurityProtocol(protocol)
+    }
+    
+    return {
+        protocol = protocol,
+        tests = tests,
+        overall = calculateOverallScore(tests)
+    }
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🔍 Validação de Performance**
 ```lua
 -- Teste de performance da integração
@@ -317,9 +532,11 @@ local function testPerformance()
     results.latency = testLatency()
     
     -- Teste de throughput
+    --  Teste de throughput (traduzido)
     results.throughput = testThroughput()
     
     -- Teste de carga
+    --  Teste de carga (traduzido)
     results.load = testLoadHandling()
     
     return results
@@ -331,6 +548,14 @@ end
 ## 📈 **Sistema de Monitoramento**
 
 ### **📊 Métricas de Performance**
+#### Nível Basic
+```lua
+-- Coleta de métricas de performance
+local function collectPerformanceMetrics()
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Coleta de métricas de performance
 local function collectPerformanceMetrics()
@@ -344,7 +569,32 @@ local function collectPerformanceMetrics()
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Coleta de métricas de performance
+local function collectPerformanceMetrics()
+    return {
+        latency = measureLatency(),
+        throughput = measureThroughput(),
+        errorRate = calculateErrorRate(),
+        uptime = calculateUptime(),
+        timestamp = os.time()
+    }
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **📊 Métricas de Negócio**
+#### Nível Basic
 ```lua
 -- Coleta de métricas de negócio
 local function collectBusinessMetrics()
@@ -358,7 +608,53 @@ local function collectBusinessMetrics()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Coleta de métricas de negócio
+local function collectBusinessMetrics()
+    return {
+        activeUsers = countActiveUsers(),
+        transactions = countTransactions(),
+        revenue = calculateRevenue(),
+        satisfaction = measureSatisfaction(),
+        timestamp = os.time()
+    }
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Coleta de métricas de negócio
+local function collectBusinessMetrics()
+    return {
+        activeUsers = countActiveUsers(),
+        transactions = countTransactions(),
+        revenue = calculateRevenue(),
+        satisfaction = measureSatisfaction(),
+        timestamp = os.time()
+    }
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **📊 Alertas e Notificações**
+#### Nível Basic
 ```lua
 -- Sistema de alertas automáticos
 local function setupAlerts()
@@ -371,6 +667,53 @@ local function setupAlerts()
     
     return alerts
 end
+```
+
+#### Nível Intermediate
+```lua
+-- Sistema de alertas automáticos
+local function setupAlerts()
+    local alerts = {
+        highLatency = { threshold = 1000, action = "notify" },
+        highErrorRate = { threshold = 0.05, action = "notify" },
+        lowUptime = { threshold = 0.99, action = "notify" },
+        securityBreach = { threshold = 0, action = "block" }
+    }
+    
+    return alerts
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Sistema de alertas automáticos
+local function setupAlerts()
+    local alerts = {
+        highLatency = { threshold = 1000, action = "notify" },
+        highErrorRate = { threshold = 0.05, action = "notify" },
+        lowUptime = { threshold = 0.99, action = "notify" },
+        securityBreach = { threshold = 0, action = "block" }
+    }
+    
+    return alerts
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---

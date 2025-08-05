@@ -35,6 +35,7 @@ Cliente → Resolver DNS → Conectar → Handshake → Troca de Dados → Desco
 ### Connection Class
 ```cpp
 class Connection : public LuaObject {
+    -- Classe: Connection
 public:
     // Configurações de timeout
     enum {
@@ -95,6 +96,7 @@ private:
 ### Protocol Class
 ```cpp
 class Protocol : public LuaObject {
+    -- Classe: Protocol
 public:
     Protocol();
     ~Protocol() override;
@@ -151,6 +153,7 @@ private:
 ```cpp
 // Mensagem de entrada
 class InputMessage {
+    -- Classe: InputMessage
 public:
     // Leitura de dados
     uint8_t getU8();
@@ -172,6 +175,7 @@ public:
 
 // Mensagem de saída
 class OutputMessage {
+    -- Classe: OutputMessage
 public:
     // Escrita de dados
     void addU8(uint8_t value);
@@ -207,10 +211,13 @@ Conecta ao servidor especificado.
 local protocol = Protocol.create()
 
 -- Conectar ao servidor
+    --  Conectar ao servidor (traduzido)
 protocol:connect("127.0.0.1", 7171)
 
 -- Verificar estado
+    --  Verificar estado (traduzido)
 if protocol:isConnecting() then
+    -- Verificação condicional
     print("Conectando...")
 elseif protocol:isConnected() then
     print("Conectado!")
@@ -220,18 +227,48 @@ end
 #### `Protocol:disconnect()`
 Desconecta do servidor.
 
+#### Nível Basic
 ```lua
 protocol:disconnect()
+```
+
+#### Nível Intermediate
+```lua
+protocol:disconnect()
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+protocol:disconnect()
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 #### Estado da Conexão
 ```lua
 -- Verificar estado
+    --  Verificar estado (traduzido)
 local isConnected = protocol:isConnected()
 local isConnecting = protocol:isConnecting()
 local lastRead = protocol:getElapsedTicksSinceLastRead()
 
 -- Callback de erro
+    --  Callback de erro (traduzido)
 protocol.onError = function(protocol, error)
     print("Erro de conexão:", error)
 end
@@ -247,12 +284,14 @@ end
 #### Enviando Mensagens
 ```lua
 -- Criar mensagem
+    --  Criar mensagem (traduzido)
 local msg = OutputMessage.create()
 msg:addU8(0x14)  -- Opcode
 msg:addString("Hello Server")
 msg:addU32(12345)
 
 -- Enviar
+    --  Enviar (traduzido)
 protocol:send(msg)
 ```
 
@@ -262,6 +301,7 @@ protocol.onRecv = function(protocol, msg)
     local opcode = msg:getU8()
     
     if opcode == 0x14 then
+    -- Verificação condicional
         local text = msg:getString()
         local number = msg:getU32()
         print("Recebido:", text, number)
@@ -280,9 +320,11 @@ protocol:generateXteaKey()
 protocol:setXteaKey(0x12345678, 0x9ABCDEF0, 0x11111111, 0x22222222)
 
 -- Habilitar criptografia
+    --  Habilitar criptografia (traduzido)
 protocol:enableXteaEncryption()
 
 -- Obter chave atual
+    --  Obter chave atual (traduzido)
 local key = protocol:getXteaKey()
 print("Chave XTEA:", table.unpack(key))
 ```
@@ -290,9 +332,11 @@ print("Chave XTEA:", table.unpack(key))
 #### Recursos Adicionais
 ```lua
 -- Habilitar checksum
+    --  Habilitar checksum (traduzido)
 protocol:enableChecksum()
 
 -- Habilitar pacotes sequenciados
+    --  Habilitar pacotes sequenciados (traduzido)
 protocol:enabledSequencedPackets()
 ```
 
@@ -319,6 +363,7 @@ protocol:enabledSequencedPackets()
 ```
 
 ### Lifecycle da Conexão
+#### Nível Basic
 ```lua
 -- 1. Criação
 local protocol = Protocol.create()
@@ -348,11 +393,89 @@ end
 protocol:disconnect()
 ```
 
+#### Nível Intermediate
+```lua
+-- 1. Criação
+local protocol = Protocol.create()
+
+-- 2. Configuração
+protocol:setXteaKey(...)
+protocol:enableChecksum()
+
+-- 3. Conexão
+protocol:connect("server.com", 7171)
+
+-- 4. Handshake
+protocol.onConnect = function()
+    local loginMsg = OutputMessage.create()
+    loginMsg:addU8(GameClientOpcodes.GameServerLoginRequest)
+    loginMsg:addString(username)
+    loginMsg:addString(password)
+    protocol:send(loginMsg)
+end
+
+-- 5. Comunicação
+protocol.onRecv = function(protocol, msg)
+    -- Processar mensagens recebidas
+end
+
+-- 6. Desconexão
+protocol:disconnect()
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- 1. Criação
+local protocol = Protocol.create()
+
+-- 2. Configuração
+protocol:setXteaKey(...)
+protocol:enableChecksum()
+
+-- 3. Conexão
+protocol:connect("server.com", 7171)
+
+-- 4. Handshake
+protocol.onConnect = function()
+    local loginMsg = OutputMessage.create()
+    loginMsg:addU8(GameClientOpcodes.GameServerLoginRequest)
+    loginMsg:addString(username)
+    loginMsg:addString(password)
+    protocol:send(loginMsg)
+end
+
+-- 5. Comunicação
+protocol.onRecv = function(protocol, msg)
+    -- Processar mensagens recebidas
+end
+
+-- 6. Desconexão
+protocol:disconnect()
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🔐 Sistema de Protocolo
 
 ### Opcodes do Jogo
 ```lua
 -- Opcodes do cliente para servidor
+    --  Opcodes do cliente para servidor (traduzido)
 GameClientOpcodes = {
     GameServerLoginRequest = 1,
     GameServerLogout = 2,
@@ -363,9 +486,11 @@ GameClientOpcodes = {
     GameServerRotateItem = 7,
     GameServerMove = 8,
     -- ... mais opcodes
+    --  ... mais opcodes (traduzido)
 }
 
 -- Opcodes do servidor para cliente
+    --  Opcodes do servidor para cliente (traduzido)
 GameServerOpcodes = {
     GameServerInitGame = 10,
     GameServerLoginError = 20,
@@ -374,6 +499,7 @@ GameServerOpcodes = {
     GameServerFullMap = 100,
     GameServerTextMessage = 180,
     -- ... mais opcodes
+    --  ... mais opcodes (traduzido)
 }
 ```
 
@@ -383,10 +509,12 @@ local MyProtocol = {}
 MyProtocol.__index = MyProtocol
 
 function MyProtocol.create()
+    -- Função: MyProtocol
     local protocol = Protocol.create()
     setmetatable(protocol, MyProtocol)
     
     -- Configurar handlers
+    --  Configurar handlers (traduzido)
     protocol.onConnect = MyProtocol.onConnect
     protocol.onRecv = MyProtocol.onRecv
     protocol.onError = MyProtocol.onError
@@ -395,11 +523,13 @@ function MyProtocol.create()
 end
 
 function MyProtocol:onConnect()
+    -- Função: MyProtocol
     print("Conectado ao servidor personalizado")
     self:sendHandshake()
 end
 
 function MyProtocol:onRecv(msg)
+    -- Função: MyProtocol
     local opcode = msg:getU8()
     
     -- Dispatch para handlers específicos
@@ -411,6 +541,7 @@ function MyProtocol:onRecv(msg)
     
     local handler = handlers[opcode]
     if handler then
+    -- Verificação condicional
         handler(self, msg)
     else
         print("Opcode desconhecido:", opcode)
@@ -418,6 +549,7 @@ function MyProtocol:onRecv(msg)
 end
 
 function MyProtocol:sendHandshake()
+    -- Função: MyProtocol
     local msg = OutputMessage.create()
     msg:addU8(0x01)  -- Login opcode
     msg:addString("myusername")
@@ -435,23 +567,28 @@ end
 local XTEAManager = {}
 
 function XTEAManager.generateKey()
+    -- Função: XTEAManager
     local key = {}
     for i = 1, 4 do
+    -- Loop de repetição
         key[i] = math.random(0, 0xFFFFFFFF)
     end
     return key
 end
 
 function XTEAManager.rotateKey(key)
+    -- Função: XTEAManager
     -- Rotação de chave para segurança adicional
     local newKey = {}
     for i = 1, 4 do
+    -- Loop de repetição
         newKey[i] = ((key[i] << 1) | (key[i] >> 31)) & 0xFFFFFFFF
     end
     return newKey
 end
 
 -- Uso em protocolo
+    --  Uso em protocolo (traduzido)
 local protocol = Protocol.create()
 local xteaKey = XTEAManager.generateKey()
 
@@ -470,12 +607,15 @@ local function validateMessage(msg)
     local actualSize = msg:getUnreadSize()
     
     if expectedSize ~= actualSize then
+    -- Verificação condicional
         error("Tamanho de mensagem inválido")
     end
     
     -- Verificar magic number
+    --  Verificar magic number (traduzido)
     local magic = msg:getU32()
     if magic ~= 0x12345678 then
+    -- Verificação condicional
         error("Magic number inválido")
     end
     
@@ -486,6 +626,7 @@ end
 ## 💡 Exemplos Práticos
 
 ### 1. Cliente de Chat Simples
+#### Inicialização e Configuração
 ```lua
 local ChatClient = {}
 ChatClient.__index = ChatClient
@@ -510,6 +651,10 @@ function ChatClient:connect(host, port, username, password)
     print("Conectando a", host .. ":" .. port)
     self.protocol:connect(host, port)
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function ChatClient:onConnect()
     print("Conectado! Enviando login...")
@@ -534,6 +679,10 @@ function ChatClient:onRecv(msg)
             local errorMsg = msg:getString()
             print("Erro de login:", errorMsg)
         end
+```
+
+#### Funcionalidade 2
+```lua
         
     elseif opcode == 2 then  -- Chat message
         local sender = msg:getString()
@@ -555,6 +704,10 @@ function ChatClient:sendMessage(message)
         print("Não está logado!")
         return
     end
+```
+
+#### Finalização
+```lua
     
     local msg = OutputMessage.create()
     msg:addU8(2)  -- Chat opcode
@@ -579,6 +732,7 @@ end, 2000)
 ```
 
 ### 2. Sistema de Reconexão Automática
+#### Inicialização e Configuração
 ```lua
 local AutoReconnect = {}
 AutoReconnect.__index = AutoReconnect
@@ -606,6 +760,10 @@ function AutoReconnect.create(protocol, config)
     protocol.connect = function(host, port)
         self:connect(host, port)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     protocol.onError = function(protocol, error)
         self:onError(error)
@@ -628,6 +786,10 @@ function AutoReconnect:onError(error)
     if self.originalOnError then
         self.originalOnError(self.protocol, error)
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     -- Tentar reconectar se apropriado
     if self:shouldReconnect(error) then
@@ -653,6 +815,10 @@ function AutoReconnect:shouldReconnect(error)
         "Invalid credentials",
         "Banned"
     }
+```
+
+#### Funcionalidade 3
+```lua
     
     for _, errorType in ipairs(noReconnectErrors) do
         if string.find(error, errorType) then
@@ -683,6 +849,10 @@ function AutoReconnect:scheduleReconnect()
     scheduleEvent(function()
         self:attemptReconnect()
     end, delay)
+```
+
+#### Finalização
+```lua
 end
 
 function AutoReconnect:attemptReconnect()
@@ -704,6 +874,7 @@ protocol:connect("server.com", 7171)
 ```
 
 ### 3. Monitor de Latência e Performance
+#### Inicialização e Configuração
 ```lua
 local NetworkMonitor = {}
 NetworkMonitor.__index = NetworkMonitor
@@ -733,6 +904,10 @@ function NetworkMonitor.create(protocol)
         self:onSend(msg)
         return self.originalSend(protocol, msg)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     protocol.onRecv = function(protocol, msg)
         self:onRecv(msg)
@@ -757,6 +932,10 @@ function NetworkMonitor:onSend(msg)
         if opcode == 0x1E then  -- Ping opcode
             self.stats.lastPingTime = g_clock.millis()
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
 end
 
@@ -788,6 +967,10 @@ function NetworkMonitor:updateLatency()
         if #self.stats.pingHistory > 100 then
             table.remove(self.stats.pingHistory, 1)
         end
+```
+
+#### Funcionalidade 3
+```lua
         
         -- Calcular média
         local sum = 0
@@ -810,6 +993,10 @@ function NetworkMonitor:startPingMonitor()
         
         scheduleEvent(sendPing, 5000)  -- Ping a cada 5 segundos
     end
+```
+
+#### Funcionalidade 4
+```lua
     
     sendPing()
 end
@@ -838,6 +1025,10 @@ function NetworkMonitor:getConnectionQuality()
     else
         return "Ruim"
     end
+```
+
+#### Funcionalidade 5
+```lua
 end
 
 -- UI para exibir estatísticas
@@ -867,6 +1058,10 @@ function NetworkMonitor:createStatsWindow()
         statsLabel:setText(text)
         scheduleEvent(updateDisplay, 1000)
     end
+```
+
+#### Finalização
+```lua
     
     updateDisplay()
     return window
@@ -921,17 +1116,21 @@ monitor:createStatsWindow()
 ### 5. Debugging e Logging
 ```lua
 -- Sistema de logging para rede
+    --  Sistema de logging para rede (traduzido)
 local NetworkLogger = {
     levels = { DEBUG = 1, INFO = 2, WARN = 3, ERROR = 4 },
     currentLevel = 2
 }
 
 function NetworkLogger.log(level, message, data)
+    -- Função: NetworkLogger
     if NetworkLogger.levels[level] >= NetworkLogger.currentLevel then
+    -- Verificação condicional
         local timestamp = os.date("%H:%M:%S")
         local logMsg = string.format("[%s] %s: %s", timestamp, level, message)
         
         if data then
+    -- Verificação condicional
             logMsg = logMsg .. " | Data: " .. tostring(data)
         end
         
@@ -939,12 +1138,14 @@ function NetworkLogger.log(level, message, data)
         
         -- Salvar em arquivo se necessário
         if level == "ERROR" then
+    -- Verificação condicional
             g_logger.error(logMsg)
         end
     end
 end
 
 -- Uso
+    --  Uso (traduzido)
 NetworkLogger.log("INFO", "Conectando ao servidor", "127.0.0.1:7171")
 NetworkLogger.log("DEBUG", "Enviando mensagem", "Opcode: 0x14")
 NetworkLogger.log("ERROR", "Falha na conexão", error)
@@ -953,18 +1154,23 @@ NetworkLogger.log("ERROR", "Falha na conexão", error)
 ### 6. Tratamento de Erro Robusto
 ```lua
 function createRobustProtocol()
+    -- Função: createRobustProtocol
     local protocol = Protocol.create()
     
     protocol.onError = function(protocol, error)
         -- Categorizar erro
+    --  Categorizar erro (traduzido)
         local errorType = categorizeError(error)
         
         -- Ações baseadas no tipo
         if errorType == "NETWORK" then
+    -- Verificação condicional
             -- Problema de rede - tentar reconectar
+    --  Problema de rede - tentar reconectar (traduzido)
             scheduleReconnect()
         elseif errorType == "PROTOCOL" then
             -- Erro de protocolo - log e continue
+    --  Erro de protocolo - log e continue (traduzido)
             NetworkLogger.log("ERROR", "Protocol error", error)
         elseif errorType == "SECURITY" then
             -- Problema de segurança - desconectar imediatamente
@@ -977,7 +1183,9 @@ function createRobustProtocol()
 end
 
 function categorizeError(error)
+    -- Função: categorizeError
     if string.find(error, "Connection") then
+    -- Verificação condicional
         return "NETWORK"
     elseif string.find(error, "Invalid") or string.find(error, "Malformed") then
         return "PROTOCOL"

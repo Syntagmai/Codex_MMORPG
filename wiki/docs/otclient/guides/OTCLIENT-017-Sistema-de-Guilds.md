@@ -1,22 +1,56 @@
----
-tags: [otclient, sistema_guilds, guild_system, member, rank, leader, war, habdel_research]
-type: technical_documentation
-status: complete
-priority: critical
-created: 2025-01-27
-updated: 2025-01-27
-aliases: [guild_system, member_system, rank_system]
----
 
 # 🏰 OTCLIENT-017: Sistema de Guilds
 
-## 🎯 **Visão Geral**
+## 📋 **ÍNDICE DETALHADO**
+
+### **🎯 Navegação Rápida**
+
+1. [🎯](#🎯)
+2. [⚙️](#⚙️)
+3. [📋](#📋)
+4. [⚙️](#⚙️)
+5. [📋](#📋)
+6. [📋](#📋)
+7. [⚙️](#⚙️)
+8. [⚙️](#⚙️)
+9. [⚙️](#⚙️)
+10. [⚡](#⚡)
+11. [📋](#📋)
+12. [📋](#📋)
+13. [📚](#📚)
+
+### **📚 Seções Principais**
+
+| Seção | Descrição |
+|-------|-----------|
+| 🎯 | Documentação e referência |
+| ⚙️ | Documentação e referência |
+| 📋 | Documentação e referência |
+| ⚙️ | Documentação e referência |
+| 📋 | Documentação e referência |
+| 📋 | Documentação e referência |
+| ⚙️ | Documentação e referência |
+| ⚙️ | Documentação e referência |
+| ⚙️ | Documentação e referência |
+| ⚡ | Documentação e referência |
+| 📋 | Documentação e referência |
+| 📋 | Documentação e referência |
+| 📚 | Documentação e referência |
+
+
+
+---
+
+## 🎯 **Visão Geral** 🎯
 
 O **Sistema de Guilds** é um componente fundamental do OTClient, responsável por gerenciar todas as guilds, membros, ranks, guerras e funcionalidades relacionadas. Este sistema trabalha em conjunto com o servidor Canary para fornecer um sistema completo de guilds com hierarquia, comunicação e conflitos.
 
-## 🏗️ **Arquitetura do Sistema**
 
-### **📁 Estrutura de Arquivos**
+---
+
+## 🏗️ **Arquitetura do Sistema** ⚙️
+
+### **📁 Estrutura de Arquivos** 🏗️
 
 ```
 📁 src/creatures/players/grouping/
@@ -38,7 +72,7 @@ O **Sistema de Guilds** é um componente fundamental do OTClient, responsável p
 └── ioguild.hpp            # Definições de I/O
 ```
 
-### **🔗 Dependências Principais**
+### **🔗 Dependências Principais** 📝
 
 - **Player System**: Sistema base de jogadores
 - **Bank System**: Sistema bancário de guilds
@@ -46,12 +80,16 @@ O **Sistema de Guilds** é um componente fundamental do OTClient, responsável p
 - **Lua Scripting**: Scripts de guild
 - **Database System**: Persistência de dados
 
-## 🏰 **Componentes Principais**
 
-### **1. Classe Guild**
+---
+
+## 🏰 **Componentes Principais** 📋
+
+### **1. Classe Guild** 📝
 
 ```cpp
 class Guild final : public Bankable {
+    -- Classe: Guild
 public:
     Guild(uint32_t initId, std::string initName);
     
@@ -97,8 +135,9 @@ private:
 };
 ```
 
-### **2. Estrutura GuildRank**
+### **2. Estrutura GuildRank** 🏗️
 
+#### Nível Basic
 ```cpp
 struct GuildRank {
     uint32_t id;
@@ -112,8 +151,54 @@ struct GuildRank {
 using GuildRank_ptr = std::shared_ptr<GuildRank>;
 ```
 
-### **3. Sistema de Guild War**
+#### Nível Intermediate
+```cpp
+struct GuildRank {
+    uint32_t id;
+    std::string name;
+    uint8_t level;
+    
+    GuildRank(uint32_t initId, std::string initName, uint8_t initLevel) :
+        id(initId), name(std::move(initName)), level(initLevel) {}
+};
 
+using GuildRank_ptr = std::shared_ptr<GuildRank>;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+struct GuildRank {
+    uint32_t id;
+    std::string name;
+    uint8_t level;
+    
+    GuildRank(uint32_t initId, std::string initName, uint8_t initLevel) :
+        id(initId), name(std::move(initName)), level(initLevel) {}
+};
+
+using GuildRank_ptr = std::shared_ptr<GuildRank>;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### **3. Sistema de Guild War** 📝
+
+#### Nível Basic
 ```cpp
 struct GuildWar {
     uint32_t guildId;
@@ -134,10 +219,70 @@ struct GuildWar {
 using GuildWarVector = std::vector<GuildWar>;
 ```
 
-### **4. Sistema de I/O**
+#### Nível Intermediate
+```cpp
+struct GuildWar {
+    uint32_t guildId;
+    uint32_t enemyGuildId;
+    std::string guildName;
+    std::string enemyGuildName;
+    time_t startTime;
+    time_t endTime;
+    uint32_t kills;
+    uint32_t deaths;
+    bool active;
+    
+    GuildWar(uint32_t gId, uint32_t eId, const std::string &gName, const std::string &eName) :
+        guildId(gId), enemyGuildId(eId), guildName(gName), enemyGuildName(eName),
+        startTime(time(nullptr)), endTime(0), kills(0), deaths(0), active(true) {}
+};
+
+using GuildWarVector = std::vector<GuildWar>;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+struct GuildWar {
+    uint32_t guildId;
+    uint32_t enemyGuildId;
+    std::string guildName;
+    std::string enemyGuildName;
+    time_t startTime;
+    time_t endTime;
+    uint32_t kills;
+    uint32_t deaths;
+    bool active;
+    
+    GuildWar(uint32_t gId, uint32_t eId, const std::string &gName, const std::string &eName) :
+        guildId(gId), enemyGuildId(eId), guildName(gName), enemyGuildName(eName),
+        startTime(time(nullptr)), endTime(0), kills(0), deaths(0), active(true) {}
+};
+
+using GuildWarVector = std::vector<GuildWar>;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### **4. Sistema de I/O** 📝
 
 ```cpp
 class IOGuild {
+    -- Classe: IOGuild
 public:
     static std::shared_ptr<Guild> loadGuild(uint32_t guildId);
     static bool saveGuild(const std::shared_ptr<Guild> &guild);
@@ -152,10 +297,14 @@ private:
 };
 ```
 
-## ⚙️ **Mecânicas do Sistema**
 
-### **1. Criação de Guild**
+---
 
+## ⚙️ **Mecânicas do Sistema** ⚙️
+
+### **1. Criação de Guild** 📝
+
+#### Nível Basic
 ```cpp
 std::shared_ptr<Guild> Guild::create(uint32_t id, const std::string &name) {
     auto guild = std::make_shared<Guild>(id, name);
@@ -169,8 +318,54 @@ std::shared_ptr<Guild> Guild::create(uint32_t id, const std::string &name) {
 }
 ```
 
-### **2. Sistema de Membros**
+#### Nível Intermediate
+```cpp
+std::shared_ptr<Guild> Guild::create(uint32_t id, const std::string &name) {
+    auto guild = std::make_shared<Guild>(id, name);
+    
+    // Adicionar ranks padrão
+    guild->addRank(1, "Leader", 3);
+    guild->addRank(2, "Vice Leader", 2);
+    guild->addRank(3, "Member", 1);
+    
+    return guild;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
 
+#### Nível Advanced
+```cpp
+std::shared_ptr<Guild> Guild::create(uint32_t id, const std::string &name) {
+    auto guild = std::make_shared<Guild>(id, name);
+    
+    // Adicionar ranks padrão
+    guild->addRank(1, "Leader", 3);
+    guild->addRank(2, "Vice Leader", 2);
+    guild->addRank(3, "Member", 1);
+    
+    return guild;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### **2. Sistema de Membros** 📝
+
+#### Inicialização e Configuração
 ```cpp
 void Guild::addMember(const std::shared_ptr<Player> &player) {
     if (!player) {
@@ -196,6 +391,10 @@ void Guild::addMember(const std::shared_ptr<Player> &player) {
     ss << player->getName() << " has joined the guild.";
     broadcastGuildMessage(MESSAGE_GUILD, ss.str());
 }
+```
+
+#### Funcionalidade 1
+```cpp
 
 void Guild::removeMember(const std::shared_ptr<Player> &player) {
     if (!player) {
@@ -222,11 +421,23 @@ void Guild::removeMember(const std::shared_ptr<Player> &player) {
     if (membersOnline.empty()) {
         g_game().removeGuild(id);
     }
+```
+
+#### Finalização
+```cpp
 }
 ```
 
-### **3. Sistema de Ranks**
+### **3. Sistema de Ranks** 📝
 
+#### Nível Basic
+```cpp
+        if (rank->id == rankId) {
+        if (rank->name == rankName) {
+        if (rank->level == level) {
+```
+
+#### Nível Intermediate
 ```cpp
 GuildRank_ptr Guild::getRankById(uint32_t rankId) const {
     for (const auto &rank : ranks) {
@@ -260,8 +471,53 @@ void Guild::addRank(uint32_t rankId, const std::string &rankName, uint8_t level)
 }
 ```
 
-### **4. Sistema Bancário**
+#### Nível Advanced
+```cpp
+GuildRank_ptr Guild::getRankById(uint32_t rankId) const {
+    for (const auto &rank : ranks) {
+        if (rank->id == rankId) {
+            return rank;
+        }
+    }
+    return nullptr;
+}
 
+GuildRank_ptr Guild::getRankByName(const std::string &rankName) const {
+    for (const auto &rank : ranks) {
+        if (rank->name == rankName) {
+            return rank;
+        }
+    }
+    return nullptr;
+}
+
+GuildRank_ptr Guild::getRankByLevel(uint8_t level) const {
+    for (const auto &rank : ranks) {
+        if (rank->level == level) {
+            return rank;
+        }
+    }
+    return nullptr;
+}
+
+void Guild::addRank(uint32_t rankId, const std::string &rankName, uint8_t level) {
+    ranks.emplace_back(std::make_shared<GuildRank>(rankId, rankName, level));
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### **4. Sistema Bancário** 📝
+
+#### Nível Basic
 ```cpp
 uint64_t Guild::getBankBalance() const {
     return bankBalance;
@@ -285,8 +541,81 @@ void Guild::depositMoney(uint64_t amount) {
 }
 ```
 
-### **5. Sistema de Mensagens**
+#### Nível Intermediate
+```cpp
+uint64_t Guild::getBankBalance() const {
+    return bankBalance;
+}
 
+void Guild::setBankBalance(uint64_t balance) {
+    bankBalance = balance;
+}
+
+bool Guild::withdrawMoney(uint64_t amount) {
+    if (bankBalance < amount) {
+        return false;
+    }
+    
+    bankBalance -= amount;
+    return true;
+}
+
+void Guild::depositMoney(uint64_t amount) {
+    bankBalance += amount;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+uint64_t Guild::getBankBalance() const {
+    return bankBalance;
+}
+
+void Guild::setBankBalance(uint64_t balance) {
+    bankBalance = balance;
+}
+
+bool Guild::withdrawMoney(uint64_t amount) {
+    if (bankBalance < amount) {
+        return false;
+    }
+    
+    bankBalance -= amount;
+    return true;
+}
+
+void Guild::depositMoney(uint64_t amount) {
+    bankBalance += amount;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### **5. Sistema de Mensagens** 📝
+
+#### Nível Basic
+```cpp
+    // Notificar todos os membros online
+        if (member && member->isOnline()) {
+            member->sendTextMessage(msgClass, msg);
+```
+
+#### Nível Intermediate
 ```cpp
 const std::string &Guild::getMotd() const {
     return motd;
@@ -310,9 +639,46 @@ void Guild::broadcastGuildMessage(MessageClasses msgClass, const std::string &ms
 }
 ```
 
-## 🎮 **Fluxo de Guilds**
+#### Nível Advanced
+```cpp
+const std::string &Guild::getMotd() const {
+    return motd;
+}
 
-### **1. Criação de Guild**
+void Guild::setMotd(const std::string &newMotd) {
+    this->motd = newMotd;
+    
+    // Notificar todos os membros online
+    std::ostringstream ss;
+    ss << "Guild MOTD has been updated: " << newMotd;
+    broadcastGuildMessage(MESSAGE_GUILD, ss.str());
+}
+
+void Guild::broadcastGuildMessage(MessageClasses msgClass, const std::string &msg) {
+    for (const auto &member : membersOnline) {
+        if (member && member->isOnline()) {
+            member->sendTextMessage(msgClass, msg);
+        }
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+
+---
+
+## 🎮 **Fluxo de Guilds** 📋
+
+### **1. Criação de Guild** 📝
 
 ```mermaid
 graph TD
@@ -326,7 +692,7 @@ graph TD
     H --> I[Notificar Criação]
 ```
 
-### **2. Sistema de Membros**
+### **2. Sistema de Membros** 📝
 
 ```mermaid
 graph TD
@@ -339,8 +705,9 @@ graph TD
     G --> H[Notificar Membros]
 ```
 
-### **3. Sistema de Guerra**
+### **3. Sistema de Guerra** 📝
 
+#### Inicialização e Configuração
 ```cpp
 class GuildWarManager {
 private:
@@ -369,6 +736,10 @@ public:
                     war.endTime = time(nullptr);
                     break;
                 }
+```
+
+#### Funcionalidade 1
+```cpp
             }
         }
         
@@ -390,6 +761,10 @@ public:
             }
         }
     }
+```
+
+#### Funcionalidade 2
+```cpp
     
     void addDeath(uint32_t guildId, uint32_t enemyGuildId) {
         auto it = guildWars.find(guildId);
@@ -411,6 +786,10 @@ public:
                 if (war.active) {
                     activeWars.push_back(war);
                 }
+```
+
+#### Funcionalidade 3
+```cpp
             }
             return activeWars;
         }
@@ -433,6 +812,10 @@ private:
             ss << "War has been declared by " << guild->getName() << "!";
             enemyGuild->broadcastGuildMessage(MESSAGE_GUILD, ss.str());
         }
+```
+
+#### Finalização
+```cpp
     }
     
     void notifyGuildWarEnded(uint32_t guildId, uint32_t enemyGuildId) {
@@ -454,10 +837,14 @@ private:
 };
 ```
 
-## 🎨 **Interface do Cliente**
 
-### **1. Protocolo de Guild**
+---
 
+## 🎨 **Interface do Cliente** 📋
+
+### **1. Protocolo de Guild** 📝
+
+#### Inicialização e Configuração
 ```cpp
 // Envio de criação de guild
 void ProtocolGame::sendCreateGuild(const std::string &name) {
@@ -482,6 +869,10 @@ void ProtocolGame::sendGuildJoin(uint32_t guildId) {
     msg.add<uint32_t>(guildId);
     sendNetworkMessage(msg);
 }
+```
+
+#### Funcionalidade 1
+```cpp
 
 // Envio de saída de guild
 void ProtocolGame::sendGuildLeave() {
@@ -506,6 +897,10 @@ void ProtocolGame::sendGuildDeclareWar(uint32_t enemyGuildId) {
     msg.add<uint32_t>(enemyGuildId);
     sendNetworkMessage(msg);
 }
+```
+
+#### Finalização
+```cpp
 
 // Envio de fim de guerra
 void ProtocolGame::sendGuildEndWar(uint32_t enemyGuildId) {
@@ -516,8 +911,9 @@ void ProtocolGame::sendGuildEndWar(uint32_t enemyGuildId) {
 }
 ```
 
-### **2. Parsing de Guild**
+### **2. Parsing de Guild** 📝
 
+#### Nível Basic
 ```cpp
 // Parsing de criação de guild
 void ProtocolGame::parseCreateGuild(const InputMessagePtr& msg) {
@@ -562,8 +958,116 @@ void ProtocolGame::parseGuildEndWar(const InputMessagePtr& msg) {
 }
 ```
 
-### **3. Processamento de Guild**
+#### Nível Intermediate
+```cpp
+// Parsing de criação de guild
+void ProtocolGame::parseCreateGuild(const InputMessagePtr& msg) {
+    std::string name = msg->getString();
+    g_game.processCreateGuild(name);
+}
 
+// Parsing de convite para guild
+void ProtocolGame::parseGuildInvite(const InputMessagePtr& msg) {
+    std::string playerName = msg->getString();
+    g_game.processGuildInvite(playerName);
+}
+
+// Parsing de aceite de convite
+void ProtocolGame::parseGuildJoin(const InputMessagePtr& msg) {
+    uint32_t guildId = msg->getU32();
+    g_game.processGuildJoin(guildId);
+}
+
+// Parsing de saída de guild
+void ProtocolGame::parseGuildLeave(const InputMessagePtr& msg) {
+    g_game.processGuildLeave();
+}
+
+// Parsing de mudança de rank
+void ProtocolGame::parseGuildChangeRank(const InputMessagePtr& msg) {
+    uint32_t playerId = msg->getU32();
+    uint32_t rankId = msg->getU32();
+    g_game.processGuildChangeRank(playerId, rankId);
+}
+
+// Parsing de declaração de guerra
+void ProtocolGame::parseGuildDeclareWar(const InputMessagePtr& msg) {
+    uint32_t enemyGuildId = msg->getU32();
+    g_game.processGuildDeclareWar(enemyGuildId);
+}
+
+// Parsing de fim de guerra
+void ProtocolGame::parseGuildEndWar(const InputMessagePtr& msg) {
+    uint32_t enemyGuildId = msg->getU32();
+    g_game.processGuildEndWar(enemyGuildId);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Parsing de criação de guild
+void ProtocolGame::parseCreateGuild(const InputMessagePtr& msg) {
+    std::string name = msg->getString();
+    g_game.processCreateGuild(name);
+}
+
+// Parsing de convite para guild
+void ProtocolGame::parseGuildInvite(const InputMessagePtr& msg) {
+    std::string playerName = msg->getString();
+    g_game.processGuildInvite(playerName);
+}
+
+// Parsing de aceite de convite
+void ProtocolGame::parseGuildJoin(const InputMessagePtr& msg) {
+    uint32_t guildId = msg->getU32();
+    g_game.processGuildJoin(guildId);
+}
+
+// Parsing de saída de guild
+void ProtocolGame::parseGuildLeave(const InputMessagePtr& msg) {
+    g_game.processGuildLeave();
+}
+
+// Parsing de mudança de rank
+void ProtocolGame::parseGuildChangeRank(const InputMessagePtr& msg) {
+    uint32_t playerId = msg->getU32();
+    uint32_t rankId = msg->getU32();
+    g_game.processGuildChangeRank(playerId, rankId);
+}
+
+// Parsing de declaração de guerra
+void ProtocolGame::parseGuildDeclareWar(const InputMessagePtr& msg) {
+    uint32_t enemyGuildId = msg->getU32();
+    g_game.processGuildDeclareWar(enemyGuildId);
+}
+
+// Parsing de fim de guerra
+void ProtocolGame::parseGuildEndWar(const InputMessagePtr& msg) {
+    uint32_t enemyGuildId = msg->getU32();
+    g_game.processGuildEndWar(enemyGuildId);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### **3. Processamento de Guild** 📝
+
+#### Inicialização e Configuração
 ```cpp
 // Processamento de criação de guild
 void Game::processCreateGuild(const std::string &name) {
@@ -598,6 +1102,10 @@ void Game::processCreateGuild(const std::string &name) {
     
     player->sendTextMessage(MESSAGE_GUILD, "Guild created successfully!");
 }
+```
+
+#### Funcionalidade 1
+```cpp
 
 // Processamento de convite para guild
 void Game::processGuildInvite(const std::string &playerName) {
@@ -622,6 +1130,10 @@ void Game::processGuildInvite(const std::string &playerName) {
         player->sendTextMessage(MESSAGE_GUILD, "Player is already in a guild.");
         return;
     }
+```
+
+#### Finalização
+```cpp
     
     // Enviar convite
     targetPlayer->sendTextMessage(MESSAGE_GUILD, player->getName() + " has invited you to join " + player->getGuild()->getName() + ".");
@@ -629,9 +1141,12 @@ void Game::processGuildInvite(const std::string &playerName) {
 }
 ```
 
-## 🔧 **Sistema de Eventos**
 
-### **1. Eventos de Guild**
+---
+
+## 🔧 **Sistema de Eventos** ⚙️
+
+### **1. Eventos de Guild** 📝
 
 ```cpp
 enum GuildEventType {
@@ -645,6 +1160,7 @@ enum GuildEventType {
 };
 
 class GuildEventHandler {
+    -- Classe: GuildEventHandler
 public:
     virtual void onGuildCreate(const std::shared_ptr<Guild> &guild) = 0;
     virtual void onGuildJoin(const std::shared_ptr<Guild> &guild, const std::shared_ptr<Player> &player) = 0;
@@ -656,10 +1172,11 @@ public:
 };
 ```
 
-### **2. Sistema de Notificações**
+### **2. Sistema de Notificações** 📝
 
 ```cpp
 class GuildNotification {
+    -- Classe: GuildNotification
 public:
     void showGuildCreated(const std::string &guildName) {
         std::string message = "Guild '" + guildName + "' has been created!";
@@ -688,12 +1205,16 @@ public:
 };
 ```
 
-## 📊 **Sistema de Gerenciamento**
 
-### **1. Cache de Guilds**
+---
+
+## 📊 **Sistema de Gerenciamento** ⚙️
+
+### **1. Cache de Guilds** 📝
 
 ```cpp
 class GuildCache {
+    -- Classe: GuildCache
 private:
     std::map<uint32_t, std::shared_ptr<Guild>> guildCache;
     std::mutex cacheMutex;
@@ -731,10 +1252,11 @@ public:
 };
 ```
 
-### **2. Sistema de Persistência**
+### **2. Sistema de Persistência** 📝
 
 ```cpp
 class GuildPersistence {
+    -- Classe: GuildPersistence
 private:
     std::string saveFile;
     
@@ -773,10 +1295,14 @@ public:
 };
 ```
 
-## 🛡️ **Sistema de Segurança**
 
-### **1. Validações de Guild**
+---
 
+## 🛡️ **Sistema de Segurança** ⚙️
+
+### **1. Validações de Guild** 📝
+
+#### Inicialização e Configuração
 ```cpp
 class GuildValidator {
 public:
@@ -799,6 +1325,10 @@ public:
         if (!player) {
             return false;
         }
+```
+
+#### Funcionalidade 1
+```cpp
         
         if (player->getGuild()) {
             return false; // Já está em uma guild
@@ -823,6 +1353,10 @@ public:
         if (!leader->getGuild()) {
             return false;
         }
+```
+
+#### Funcionalidade 2
+```cpp
         
         if (leader->getGuildRank()->level < 2) {
             return false; // Rank insuficiente
@@ -847,6 +1381,10 @@ public:
         if (leader->getGuildRank()->level < 3) {
             return false; // Apenas líder pode mudar ranks
         }
+```
+
+#### Finalização
+```cpp
         
         if (newRank >= leader->getGuildRank()->level) {
             return false; // Não pode dar rank igual ou superior
@@ -857,8 +1395,9 @@ public:
 };
 ```
 
-### **2. Verificações de Integridade**
+### **2. Verificações de Integridade** 📝
 
+#### Inicialização e Configuração
 ```cpp
 class GuildIntegrityChecker {
 public:
@@ -882,6 +1421,10 @@ public:
                 hasLeader = true;
                 break;
             }
+```
+
+#### Funcionalidade 1
+```cpp
         }
         
         return hasLeader;
@@ -904,6 +1447,10 @@ public:
                     rankExists = true;
                     break;
                 }
+```
+
+#### Funcionalidade 2
+```cpp
             }
             
             if (!rankExists) {
@@ -927,6 +1474,10 @@ public:
             if (war.endTime > 0 && war.endTime < war.startTime) {
                 return false; // Data de fim antes do início
             }
+```
+
+#### Finalização
+```cpp
         }
         
         return true;
@@ -934,12 +1485,16 @@ public:
 };
 ```
 
-## 📈 **Otimizações de Performance**
 
-### **1. Cache de Membros**
+---
+
+## 📈 **Otimizações de Performance** ⚡
+
+### **1. Cache de Membros** 📝
 
 ```cpp
 class GuildMemberCache {
+    -- Classe: GuildMemberCache
 private:
     std::map<uint32_t, std::shared_ptr<Player>> memberCache;
     std::map<uint32_t, GuildRank_ptr> rankCache;
@@ -978,10 +1533,11 @@ public:
 };
 ```
 
-### **2. Lazy Loading de Dados**
+### **2. Lazy Loading de Dados** 📝
 
 ```cpp
 class LazyGuildData {
+    -- Classe: LazyGuildData
 private:
     std::map<uint32_t, bool> loadedGuilds;
     std::map<uint32_t, bool> loadedWars;
@@ -1022,12 +1578,16 @@ public:
 };
 ```
 
-## 🎯 **Casos de Uso Específicos**
 
-### **1. Sistema de Guild Hall**
+---
+
+## 🎯 **Casos de Uso Específicos** 📋
+
+### **1. Sistema de Guild Hall** 📝
 
 ```cpp
 class GuildHall {
+    -- Classe: GuildHall
 private:
     uint32_t guildId;
     uint32_t houseId;
@@ -1070,10 +1630,11 @@ public:
 };
 ```
 
-### **2. Sistema de Guild Events**
+### **2. Sistema de Guild Events** 📝
 
 ```cpp
 class GuildEvent {
+    -- Classe: GuildEvent
 private:
     uint32_t guildId;
     std::string name;
@@ -1118,10 +1679,11 @@ public:
 };
 ```
 
-### **3. Sistema de Guild Achievements**
+### **3. Sistema de Guild Achievements** 📝
 
 ```cpp
 class GuildAchievement {
+    -- Classe: GuildAchievement
 private:
     uint32_t id;
     std::string name;
@@ -1166,42 +1728,48 @@ public:
 };
 ```
 
-## 🔮 **Futuras Melhorias**
 
-### **1. Sistema de Guild Avançado**
+---
+
+## 🔮 **Futuras Melhorias** 📋
+
+### **1. Sistema de Guild Avançado** 📝
 
 - **Guild Alliances**: Sistema de alianças entre guilds
 - **Guild Territories**: Territórios controlados por guilds
 - **Guild Skills**: Skills específicas de guild
 
-### **2. Sistema de Guild Economy**
+### **2. Sistema de Guild Economy** 📝
 
 - **Guild Shops**: Lojas específicas de guild
 - **Guild Crafting**: Sistema de crafting de guild
 - **Guild Trading**: Sistema de trading entre guilds
 
-### **3. Sistema de Guild Analytics**
+### **3. Sistema de Guild Analytics** 📝
 
 - **Guild Statistics**: Estatísticas detalhadas de guild
 - **Member Performance**: Performance individual de membros
 - **Guild Rankings**: Rankings de guilds
 
-## 📚 **Referências Técnicas**
 
-### **1. Arquivos Principais**
+---
+
+## 📚 **Referências Técnicas** 📚
+
+### **1. Arquivos Principais** 📝
 
 - `canary/src/creatures/players/grouping/guild.hpp`: Definições de Guild
 - `canary/src/creatures/players/grouping/guild.cpp`: Implementação de Guild
 - `canary/src/io/ioguild.cpp`: I/O de guilds
 - `canary/src/lua/functions/creatures/player/guild_functions.hpp`: Funções Lua
 
-### **2. Documentação Relacionada**
+### **2. Documentação Relacionada** 📝
 
 - [OTCLIENT-016: Sistema de Grupos](../OTCLIENT-016-Sistema-de-Grupos.md)
 - [OTCLIENT-018: Sistema de Chat](../OTCLIENT-018-Sistema-de-Chat.md)
 - [OTCLIENT-019: Sistema de Chat](../OTCLIENT-019-Sistema-de-Chat.md)
 
-### **3. APIs e Interfaces**
+### **3. APIs e Interfaces** 📝
 
 - **Guild API**: Interface principal de guilds
 - **Member API**: Interface do sistema de membros

@@ -57,6 +57,7 @@ UI Components      ←→ Enums ←→   Validações
 
 ### **🪙 Tipos de Moeda (CoinType)**
 
+#### Nível Basic
 ```lua
 GameStore.CoinType = {
     Coin = 0,           -- Moedas normais
@@ -64,8 +65,42 @@ GameStore.CoinType = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+GameStore.CoinType = {
+    Coin = 0,           -- Moedas normais
+    Transferable = 1    -- Moedas transferíveis
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+GameStore.CoinType = {
+    Coin = 0,           -- Moedas normais
+    Transferable = 1    -- Moedas transferíveis
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **📦 Tipos de Oferta (OfferTypes)**
 
+#### Nível Basic
 ```lua
 GameStore.OfferTypes = {
     OFFER_TYPE_NONE = 0,
@@ -98,8 +133,92 @@ GameStore.OfferTypes = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+GameStore.OfferTypes = {
+    OFFER_TYPE_NONE = 0,
+    OFFER_TYPE_ITEM = 1,
+    OFFER_TYPE_STACKABLE = 2,
+    OFFER_TYPE_CHARGES = 3,
+    OFFER_TYPE_OUTFIT = 4,
+    OFFER_TYPE_OUTFIT_ADDON = 5,
+    OFFER_TYPE_MOUNT = 6,
+    OFFER_TYPE_NAMECHANGE = 7,
+    OFFER_TYPE_SEXCHANGE = 8,
+    OFFER_TYPE_HOUSE = 9,
+    OFFER_TYPE_EXPBOOST = 10,
+    OFFER_TYPE_PREYSLOT = 11,
+    OFFER_TYPE_PREYBONUS = 12,
+    OFFER_TYPE_TEMPLE = 13,
+    OFFER_TYPE_BLESSINGS = 14,
+    OFFER_TYPE_PREMIUM = 15,
+    OFFER_TYPE_ALLBLESSINGS = 17,
+    OFFER_TYPE_INSTANT_REWARD_ACCESS = 18,
+    OFFER_TYPE_CHARMS = 19,
+    OFFER_TYPE_HIRELING = 20,
+    OFFER_TYPE_HIRELING_NAMECHANGE = 21,
+    OFFER_TYPE_HIRELING_SEXCHANGE = 22,
+    OFFER_TYPE_HIRELING_SKILL = 23,
+    OFFER_TYPE_HIRELING_OUTFIT = 24,
+    OFFER_TYPE_HUNTINGSLOT = 25,
+    OFFER_TYPE_ITEM_BED = 26,
+    OFFER_TYPE_ITEM_UNIQUE = 27
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+GameStore.OfferTypes = {
+    OFFER_TYPE_NONE = 0,
+    OFFER_TYPE_ITEM = 1,
+    OFFER_TYPE_STACKABLE = 2,
+    OFFER_TYPE_CHARGES = 3,
+    OFFER_TYPE_OUTFIT = 4,
+    OFFER_TYPE_OUTFIT_ADDON = 5,
+    OFFER_TYPE_MOUNT = 6,
+    OFFER_TYPE_NAMECHANGE = 7,
+    OFFER_TYPE_SEXCHANGE = 8,
+    OFFER_TYPE_HOUSE = 9,
+    OFFER_TYPE_EXPBOOST = 10,
+    OFFER_TYPE_PREYSLOT = 11,
+    OFFER_TYPE_PREYBONUS = 12,
+    OFFER_TYPE_TEMPLE = 13,
+    OFFER_TYPE_BLESSINGS = 14,
+    OFFER_TYPE_PREMIUM = 15,
+    OFFER_TYPE_ALLBLESSINGS = 17,
+    OFFER_TYPE_INSTANT_REWARD_ACCESS = 18,
+    OFFER_TYPE_CHARMS = 19,
+    OFFER_TYPE_HIRELING = 20,
+    OFFER_TYPE_HIRELING_NAMECHANGE = 21,
+    OFFER_TYPE_HIRELING_SEXCHANGE = 22,
+    OFFER_TYPE_HIRELING_SKILL = 23,
+    OFFER_TYPE_HIRELING_OUTFIT = 24,
+    OFFER_TYPE_HUNTINGSLOT = 25,
+    OFFER_TYPE_ITEM_BED = 26,
+    OFFER_TYPE_ITEM_UNIQUE = 27
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🎯 Tipos de Cliente (ClientOfferTypes)**
 
+#### Nível Basic
 ```lua
 GameStore.ClientOfferTypes = {
     CLIENT_STORE_OFFER_OTHER = 0,
@@ -112,8 +231,52 @@ GameStore.ClientOfferTypes = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+GameStore.ClientOfferTypes = {
+    CLIENT_STORE_OFFER_OTHER = 0,
+    CLIENT_STORE_OFFER_NAMECHANGE = 1,
+    CLIENT_STORE_OFFER_WORLD_TRANSFER = 2,
+    CLIENT_STORE_OFFER_HIRELING = 3,
+    CLIENT_STORE_OFFER_CHARACTER = 4,
+    CLIENT_STORE_OFFER_TOURNAMENT = 5,
+    CLIENT_STORE_OFFER_CONFIRM = 6
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+GameStore.ClientOfferTypes = {
+    CLIENT_STORE_OFFER_OTHER = 0,
+    CLIENT_STORE_OFFER_NAMECHANGE = 1,
+    CLIENT_STORE_OFFER_WORLD_TRANSFER = 2,
+    CLIENT_STORE_OFFER_HIRELING = 3,
+    CLIENT_STORE_OFFER_CHARACTER = 4,
+    CLIENT_STORE_OFFER_TOURNAMENT = 5,
+    CLIENT_STORE_OFFER_CONFIRM = 6
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **📊 Estados de Produto (States)**
 
+#### Nível Basic
 ```lua
 GameStore.States = {
     STATE_NONE = 0,    -- Estado normal
@@ -123,12 +286,50 @@ GameStore.States = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+GameStore.States = {
+    STATE_NONE = 0,    -- Estado normal
+    STATE_NEW = 1,     -- Produto novo
+    STATE_SALE = 2,    -- Produto em promoção
+    STATE_TIMED = 3    -- Produto com tempo limitado
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+GameStore.States = {
+    STATE_NONE = 0,    -- Estado normal
+    STATE_NEW = 1,     -- Produto novo
+    STATE_SALE = 2,    -- Produto em promoção
+    STATE_TIMED = 3    -- Produto com tempo limitado
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 📡 **Protocolos de Comunicação**
 
 ### **📤 Pacotes Enviados pelo Servidor (SendingPackets)**
 
+#### Nível Basic
 ```lua
 GameStore.SendingPackets = {
     S_CoinBalance = 0xDF,           -- 223 - Saldo de moedas
@@ -142,8 +343,54 @@ GameStore.SendingPackets = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+GameStore.SendingPackets = {
+    S_CoinBalance = 0xDF,           -- 223 - Saldo de moedas
+    S_StoreError = 0xE0,            -- 224 - Erro da loja
+    S_RequestPurchaseData = 0xE1,   -- 225 - Dados de compra
+    S_CoinBalanceUpdating = 0xF2,   -- 242 - Atualização de saldo
+    S_OpenStore = 0xFB,             -- 251 - Abrir loja
+    S_StoreOffers = 0xFC,           -- 252 - Ofertas da loja
+    S_OpenTransactionHistory = 0xFD, -- 253 - Histórico de transações
+    S_CompletePurchase = 0xFE       -- 254 - Compra completa
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+GameStore.SendingPackets = {
+    S_CoinBalance = 0xDF,           -- 223 - Saldo de moedas
+    S_StoreError = 0xE0,            -- 224 - Erro da loja
+    S_RequestPurchaseData = 0xE1,   -- 225 - Dados de compra
+    S_CoinBalanceUpdating = 0xF2,   -- 242 - Atualização de saldo
+    S_OpenStore = 0xFB,             -- 251 - Abrir loja
+    S_StoreOffers = 0xFC,           -- 252 - Ofertas da loja
+    S_OpenTransactionHistory = 0xFD, -- 253 - Histórico de transações
+    S_CompletePurchase = 0xFE       -- 254 - Compra completa
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **📥 Pacotes Recebidos pelo Servidor (ReceivedPackets)**
 
+#### Nível Basic
 ```lua
 GameStore.RecivedPackets = {
     C_StoreEvent = 0xE9,                    -- 233 - Evento da loja
@@ -157,6 +404,51 @@ GameStore.RecivedPackets = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+GameStore.RecivedPackets = {
+    C_StoreEvent = 0xE9,                    -- 233 - Evento da loja
+    C_TransferCoins = 0xEF,                 -- 239 - Transferir moedas
+    C_ParseHirelingName = 0xEC,             -- 236 - Nome do hireling
+    C_OpenStore = 0xFA,                     -- 250 - Abrir loja
+    C_RequestStoreOffers = 0xFB,            -- 251 - Solicitar ofertas
+    C_BuyStoreOffer = 0xFC,                 -- 252 - Comprar oferta
+    C_OpenTransactionHistory = 0xFD,        -- 253 - Abrir histórico
+    C_RequestTransactionHistory = 0xFE      -- 254 - Solicitar histórico
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+GameStore.RecivedPackets = {
+    C_StoreEvent = 0xE9,                    -- 233 - Evento da loja
+    C_TransferCoins = 0xEF,                 -- 239 - Transferir moedas
+    C_ParseHirelingName = 0xEC,             -- 236 - Nome do hireling
+    C_OpenStore = 0xFA,                     -- 250 - Abrir loja
+    C_RequestStoreOffers = 0xFB,            -- 251 - Solicitar ofertas
+    C_BuyStoreOffer = 0xFC,                 -- 252 - Comprar oferta
+    C_OpenTransactionHistory = 0xFD,        -- 253 - Abrir histórico
+    C_RequestTransactionHistory = 0xFE      -- 254 - Solicitar histórico
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🔧 **Implementação no OTClient**
@@ -165,14 +457,47 @@ GameStore.RecivedPackets = {
 
 #### **🎮 Controller Principal**
 
+#### Nível Basic
 ```lua
 controllerShop = Controller:new()
 g_ui.importStyle("style/ui.otui")
 controllerShop:setUI('game_store')
 ```
 
+#### Nível Intermediate
+```lua
+controllerShop = Controller:new()
+g_ui.importStyle("style/ui.otui")
+controllerShop:setUI('game_store')
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+controllerShop = Controller:new()
+g_ui.importStyle("style/ui.otui")
+controllerShop:setUI('game_store')
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **🔄 Eventos Registrados**
 
+#### Nível Basic
 ```lua
 controllerShop:registerEvents(g_game, {
     onParseStoreGetCoin = onParseStoreGetCoin,
@@ -187,12 +512,60 @@ controllerShop:registerEvents(g_game, {
 })
 ```
 
+#### Nível Intermediate
+```lua
+controllerShop:registerEvents(g_game, {
+    onParseStoreGetCoin = onParseStoreGetCoin,
+    onParseStoreGetCategories = onParseStoreGetCategories,
+    onParseStoreCreateHome = onParseStoreCreateHome,
+    onParseStoreCreateProducts = onParseStoreCreateProducts,
+    onParseStoreGetHistory = onParseStoreGetHistory,
+    onParseStoreGetPurchaseStatus = onParseStoreGetPurchaseStatus,
+    onParseStoreOfferDescriptions = onParseStoreOfferDescriptions,
+    onParseStoreError = onParseStoreError,
+    onStoreInit = onStoreInit
+})
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+controllerShop:registerEvents(g_game, {
+    onParseStoreGetCoin = onParseStoreGetCoin,
+    onParseStoreGetCategories = onParseStoreGetCategories,
+    onParseStoreCreateHome = onParseStoreCreateHome,
+    onParseStoreCreateProducts = onParseStoreCreateProducts,
+    onParseStoreGetHistory = onParseStoreGetHistory,
+    onParseStoreGetPurchaseStatus = onParseStoreGetPurchaseStatus,
+    onParseStoreOfferDescriptions = onParseStoreOfferDescriptions,
+    onParseStoreError = onParseStoreError,
+    onStoreInit = onStoreInit
+})
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **📊 Funções de Parse**
 
 #### **💰 Parse de Saldo de Moedas**
 
 ```lua
 function onParseStoreGetCoin(getTibiaCoins, getTransferableCoins)
+    -- Função: onParseStoreGetCoin
     a0xF2 = false
     controllerShop.ui.lblCoins.lblTibiaCoins:setText(formatNumberWithCommas(getTibiaCoins))
     controllerShop.ui.lblCoins.lblTibiaTransfer:setText(string.format("(Including: %s",
@@ -202,6 +575,7 @@ end
 
 #### **📂 Parse de Categorias**
 
+#### Nível Basic
 ```lua
 function onParseStoreGetCategories(buttons)
     -- Criação dinâmica de categorias e subcategorias
@@ -210,12 +584,49 @@ function onParseStoreGetCategories(buttons)
 end
 ```
 
+#### Nível Intermediate
+```lua
+function onParseStoreGetCategories(buttons)
+    -- Criação dinâmica de categorias e subcategorias
+    -- Organização hierárquica
+    -- Interface de navegação
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+function onParseStoreGetCategories(buttons)
+    -- Criação dinâmica de categorias e subcategorias
+    -- Organização hierárquica
+    -- Interface de navegação
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **🏠 Parse da Página Inicial**
 
 ```lua
 function onParseStoreCreateHome(offer)
+    -- Função: onParseStoreCreateHome
     -- Criação de produtos em destaque
     -- Banners rotativos
+    --  Banners rotativos (traduzido)
     -- Interface da página inicial
 end
 ```
@@ -224,9 +635,12 @@ end
 
 ```lua
 function onParseStoreCreateProducts(storeProducts)
+    -- Função: onParseStoreCreateProducts
     -- Listagem de produtos
+    --  Listagem de produtos (traduzido)
     -- Filtros e ordenação
     -- Interface de compra
+    --  Interface de compra (traduzido)
 end
 ```
 
@@ -238,6 +652,7 @@ end
 
 #### **🎯 Configuração do Módulo**
 
+#### Nível Basic
 ```lua
 GameStore = {
     ModuleName = "GameStore",
@@ -247,8 +662,46 @@ GameStore = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+GameStore = {
+    ModuleName = "GameStore",
+    Developers = { "Cjaker", "metabob", "Rick" },
+    Version = "1.1",
+    LastUpdated = "25-07-2020 11:52AM",
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+GameStore = {
+    ModuleName = "GameStore",
+    Developers = { "Cjaker", "metabob", "Rick" },
+    Version = "1.1",
+    LastUpdated = "25-07-2020 11:52AM",
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **🔄 Sub-Ações (SubActions)**
 
+#### Nível Basic
 ```lua
 GameStore.SubActions = {
     PREY_THIRDSLOT_REAL = 0,
@@ -268,6 +721,67 @@ GameStore.SubActions = {
     TASKHUNTING_THIRDSLOT = 14,
     PREY_THIRDSLOT_REDIRECT = 15,
 }
+```
+
+#### Nível Intermediate
+```lua
+GameStore.SubActions = {
+    PREY_THIRDSLOT_REAL = 0,
+    PREY_WILDCARD = 1,
+    INSTANT_REWARD = 2,
+    BLESSING_TWIST = 3,
+    BLESSING_SOLITUDE = 4,
+    BLESSING_PHOENIX = 5,
+    BLESSING_SUNS = 6,
+    BLESSING_SPIRITUAL = 7,
+    BLESSING_EMBRACE = 8,
+    BLESSING_BLOOD = 9,
+    BLESSING_HEART = 10,
+    BLESSING_ALL_PVE = 11,
+    BLESSING_ALL_PVP = 12,
+    CHARM_EXPANSION = 13,
+    TASKHUNTING_THIRDSLOT = 14,
+    PREY_THIRDSLOT_REDIRECT = 15,
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+GameStore.SubActions = {
+    PREY_THIRDSLOT_REAL = 0,
+    PREY_WILDCARD = 1,
+    INSTANT_REWARD = 2,
+    BLESSING_TWIST = 3,
+    BLESSING_SOLITUDE = 4,
+    BLESSING_PHOENIX = 5,
+    BLESSING_SUNS = 6,
+    BLESSING_SPIRITUAL = 7,
+    BLESSING_EMBRACE = 8,
+    BLESSING_BLOOD = 9,
+    BLESSING_HEART = 10,
+    BLESSING_ALL_PVE = 11,
+    BLESSING_ALL_PVP = 12,
+    CHARM_EXPANSION = 13,
+    TASKHUNTING_THIRDSLOT = 14,
+    PREY_THIRDSLOT_REDIRECT = 15,
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---
@@ -357,7 +871,9 @@ GameStore.SubActions = {
 #### **🔍 Sistema de Busca**
 ```lua
 function search()
+    -- Função: search
     if controllerShop.ui.openedCategory ~= nil then
+    -- Verificação condicional
         close(controllerShop.ui.openedCategory)
     end
     g_game.sendRequestStoreSearch(controllerShop.ui.SearchEdit:getText(), 0, 1)
@@ -367,13 +883,16 @@ end
 #### **🔄 Navegação por Categorias**
 ```lua
 function toggleSubCategories(parent, isOpen)
+    -- Função: toggleSubCategories
     -- Expansão/contração de subcategorias
     -- Navegação hierárquica
     -- Interface responsiva
+    --  Interface responsiva (traduzido)
 end
 ```
 
 #### **💰 Transferência de Moedas**
+#### Nível Basic
 ```lua
 function transferPoints()
     -- Interface de transferência
@@ -381,6 +900,43 @@ function transferPoints()
     -- Confirmação de destinatário
     -- Processamento da transferência
 end
+```
+
+#### Nível Intermediate
+```lua
+function transferPoints()
+    -- Interface de transferência
+    -- Validação de saldo
+    -- Confirmação de destinatário
+    -- Processamento da transferência
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+function transferPoints()
+    -- Interface de transferência
+    -- Validação de saldo
+    -- Confirmação de destinatário
+    -- Processamento da transferência
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---
@@ -394,10 +950,12 @@ end
 local function getCoinsBalance()
     local function extractNumber(text)
         if type(text) ~= "string" then 
+    -- Verificação condicional
             return 0 
         end
         local numberStr = text:match("%d[%d,]*")
         if not numberStr then 
+    -- Verificação condicional
             return 0 
         end
         local cleanNumber = numberStr:gsub("[^%d]", "")
@@ -416,12 +974,14 @@ end
 #### **🛡️ Validação de Produtos Desabilitados**
 ```lua
 if offer.disabled then
+    -- Verificação condicional
     local btnBuy = offerPanel:getChildById('btnBuy')
     btnBuy:disable()
     btnBuy:setOpacity(0.8)
     
     -- Exibição de motivo da desabilitação
     if offer.reasonIdDisable then
+    -- Verificação condicional
         -- Tooltip com explicação
     end
 end
@@ -446,6 +1006,7 @@ end
 ### **📡 Pacotes de Comunicação**
 
 #### **🔄 Abertura da Loja**
+#### Nível Basic
 ```cpp
 void ProtocolGame::sendOpenStore(const uint8_t serviceType, const std::string_view category)
 {
@@ -461,7 +1022,57 @@ void ProtocolGame::sendOpenStore(const uint8_t serviceType, const std::string_vi
 }
 ```
 
+#### Nível Intermediate
+```cpp
+void ProtocolGame::sendOpenStore(const uint8_t serviceType, const std::string_view category)
+{
+    const auto& msg = std::make_shared<OutputMessage>();
+    msg->addU8(Proto::ClientOpenStore);
+
+    if (g_game.getFeature(Otc::GameIngameStoreServiceType)) {
+        msg->addU8(serviceType);
+        msg->addString(category);
+    }
+
+    send(msg);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+void ProtocolGame::sendOpenStore(const uint8_t serviceType, const std::string_view category)
+{
+    const auto& msg = std::make_shared<OutputMessage>();
+    msg->addU8(Proto::ClientOpenStore);
+
+    if (g_game.getFeature(Otc::GameIngameStoreServiceType)) {
+        msg->addU8(serviceType);
+        msg->addString(category);
+    }
+
+    send(msg);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **📦 Compra de Produto**
+#### Nível Basic
 ```cpp
 void ProtocolGame::sendBuyStoreOffer(const uint32_t offerId, const uint8_t action, const std::string_view& name, const uint8_t type, const std::string_view& location)
 {
@@ -476,7 +1087,55 @@ void ProtocolGame::sendBuyStoreOffer(const uint32_t offerId, const uint8_t actio
 }
 ```
 
+#### Nível Intermediate
+```cpp
+void ProtocolGame::sendBuyStoreOffer(const uint32_t offerId, const uint8_t action, const std::string_view& name, const uint8_t type, const std::string_view& location)
+{
+    const auto& msg = std::make_shared<OutputMessage>();
+    msg->addU8(Proto::ClientBuyStoreOffer);
+    msg->addU32(offerId);
+    msg->addU8(action);
+    msg->addString(name);
+    msg->addU8(type);
+    msg->addString(location);
+    send(msg);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+void ProtocolGame::sendBuyStoreOffer(const uint32_t offerId, const uint8_t action, const std::string_view& name, const uint8_t type, const std::string_view& location)
+{
+    const auto& msg = std::make_shared<OutputMessage>();
+    msg->addU8(Proto::ClientBuyStoreOffer);
+    msg->addU32(offerId);
+    msg->addU8(action);
+    msg->addString(name);
+    msg->addU8(type);
+    msg->addString(location);
+    send(msg);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **💰 Transferência de Moedas**
+#### Nível Basic
 ```cpp
 void ProtocolGame::sendTransferCoins(const std::string_view recipient, const uint16_t amount)
 {
@@ -488,9 +1147,56 @@ void ProtocolGame::sendTransferCoins(const std::string_view recipient, const uin
 }
 ```
 
+#### Nível Intermediate
+```cpp
+void ProtocolGame::sendTransferCoins(const std::string_view recipient, const uint16_t amount)
+{
+    const auto& msg = std::make_shared<OutputMessage>();
+    msg->addU8(Proto::ClientTransferCoins);
+    msg->addString(recipient);
+    msg->addU16(amount);
+    send(msg);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+void ProtocolGame::sendTransferCoins(const std::string_view recipient, const uint16_t amount)
+{
+    const auto& msg = std::make_shared<OutputMessage>();
+    msg->addU8(Proto::ClientTransferCoins);
+    msg->addString(recipient);
+    msg->addU16(amount);
+    send(msg);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **📊 Parse de Respostas**
 
 #### **🏪 Parse da Loja**
+#### Nível Basic
+```cpp
+    if (g_game.getClientVersion() <= 1100) {
+```
+
+#### Nível Intermediate
 ```cpp
 void ProtocolGame::parseStore(const InputMessagePtr& msg) const
 {
@@ -511,7 +1217,39 @@ void ProtocolGame::parseStore(const InputMessagePtr& msg) const
 }
 ```
 
+#### Nível Advanced
+```cpp
+void ProtocolGame::parseStore(const InputMessagePtr& msg) const
+{
+    if (g_game.getClientVersion() <= 1100) {
+        parseCoinBalance(msg);
+    }
+
+    const uint16_t categoryCount = msg->getU16();
+    std::vector<StoreCategory> categories;
+
+    for (auto i = 0; i < categoryCount; ++i) {
+        StoreCategory category;
+        category.name = msg->getString();
+        // ... processamento de categorias
+    }
+
+    g_lua.callGlobalField("g_game", "onParseStoreGetCategories", organizedCategories);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **📦 Parse de Ofertas**
+#### Nível Basic
 ```cpp
 void ProtocolGame::parseStoreOffers(const InputMessagePtr& msg)
 {
@@ -522,6 +1260,49 @@ void ProtocolGame::parseStoreOffers(const InputMessagePtr& msg)
         // ... processamento de ofertas
     }
 }
+```
+
+#### Nível Intermediate
+```cpp
+void ProtocolGame::parseStoreOffers(const InputMessagePtr& msg)
+{
+    if (g_game.getClientVersion() >= 1291) {
+        StoreData storeData;
+        storeData.categoryName = msg->getString();
+        storeData.redirectId = msg->getU32();
+        // ... processamento de ofertas
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+void ProtocolGame::parseStoreOffers(const InputMessagePtr& msg)
+{
+    if (g_game.getClientVersion() >= 1291) {
+        StoreData storeData;
+        storeData.categoryName = msg->getString();
+        storeData.redirectId = msg->getU32();
+        // ... processamento de ofertas
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---
@@ -568,17 +1349,51 @@ void ProtocolGame::parseStoreOffers(const InputMessagePtr& msg)
 GameStore.website = {
     WEBSITE_GETCOINS = "https://github.com/mehah/otclient",
     --IMAGES_URL = "http://localhost/images/store/"
+    -- IMAGES_URL = "http://localhost/images/store/" (traduzido)
 }
 ```
 
 #### **📊 Valores Padrão**
+#### Nível Basic
 ```lua
 GameStore.DefaultValues = {
     DEFAULT_VALUE_ENTRIES_PER_PAGE = 26,
 }
 ```
 
+#### Nível Intermediate
+```lua
+GameStore.DefaultValues = {
+    DEFAULT_VALUE_ENTRIES_PER_PAGE = 26,
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+GameStore.DefaultValues = {
+    DEFAULT_VALUE_ENTRIES_PER_PAGE = 26,
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **🎯 Boost de Experiência**
+#### Nível Basic
 ```lua
 GameStore.ExpBoostValues = {
     [1] = 30,
@@ -587,6 +1402,45 @@ GameStore.ExpBoostValues = {
     [4] = 180,
     [5] = 360,
 }
+```
+
+#### Nível Intermediate
+```lua
+GameStore.ExpBoostValues = {
+    [1] = 30,
+    [2] = 45,
+    [3] = 90,
+    [4] = 180,
+    [5] = 360,
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+GameStore.ExpBoostValues = {
+    [1] = 30,
+    [2] = 45,
+    [3] = 90,
+    [4] = 180,
+    [5] = 360,
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **🎨 Personalização de Interface**
@@ -635,6 +1489,7 @@ GameStore.ExpBoostValues = {
 
 ### **❌ Tipos de Erro**
 
+#### Nível Basic
 ```lua
 GameStore.StoreErrors = {
     STORE_ERROR_PURCHASE = 0,
@@ -643,6 +1498,45 @@ GameStore.StoreErrors = {
     STORE_ERROR_TRANSFER = 3,
     STORE_ERROR_INFORMATION = 4,
 }
+```
+
+#### Nível Intermediate
+```lua
+GameStore.StoreErrors = {
+    STORE_ERROR_PURCHASE = 0,
+    STORE_ERROR_NETWORK = 1,
+    STORE_ERROR_HISTORY = 2,
+    STORE_ERROR_TRANSFER = 3,
+    STORE_ERROR_INFORMATION = 4,
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+GameStore.StoreErrors = {
+    STORE_ERROR_PURCHASE = 0,
+    STORE_ERROR_NETWORK = 1,
+    STORE_ERROR_HISTORY = 2,
+    STORE_ERROR_TRANSFER = 3,
+    STORE_ERROR_INFORMATION = 4,
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **🛡️ Estratégias de Recuperação**

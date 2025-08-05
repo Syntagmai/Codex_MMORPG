@@ -274,6 +274,7 @@ A **INTEGRATION-007** identifica e documenta os padrões comuns entre OTClient e
 ## 🔧 **Implementações de Padrões Comuns**
 
 ### **💻 Implementação de Padrões Compartilhados**
+#### Inicialização e Configuração
 ```cpp
 // Padrões comuns implementados
 class CommonPatterns {
@@ -304,6 +305,10 @@ private:
     std::unique_ptr<Strategy> current_strategy;
     std::stack<std::unique_ptr<Command>> command_history;
 };
+```
+
+#### Funcionalidade 1
+```cpp
 
 // Padrões de comunicação comuns
 class CommonCommunication {
@@ -327,6 +332,10 @@ public:
 
 // Padrões de dados comuns
 class CommonDataPatterns {
+```
+
+#### Finalização
+```cpp
 public:
     // DTOs
     template<typename T>
@@ -350,6 +359,7 @@ public:
 ```cpp
 // API unificada para padrões comuns
 class UnifiedPatterns {
+    -- Classe: UnifiedPatterns
 public:
     // Design Patterns
     static SingletonManager& getSingletonManager();

@@ -1,0 +1,2876 @@
+{
+  "metadata": {
+    "optimization_date": "2025-08-04 20:35:19",
+    "files_processed": 2,
+    "files_optimized": 2,
+    "total_optimizations": 482
+  },
+  "optimizations_applied": [
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "optimizations": [
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 103 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 245 linhas em 19 partes",
+          "language": "lua"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 76 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 259 linhas em 15 partes",
+          "language": "lua"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 206 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 327 linhas em 26 partes",
+          "language": "lua"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 105 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 53 linhas em 2 partes",
+          "language": "lua"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 78 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 60 linhas em 2 partes",
+          "language": "lua"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 208 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 57 linhas em 2 partes",
+          "language": "lua"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 107 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 53 linhas em 2 partes",
+          "language": "lua"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 80 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 60 linhas em 2 partes",
+          "language": "lua"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 210 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 57 linhas em 2 partes",
+          "language": "lua"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 109 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 53 linhas em 2 partes",
+          "language": "lua"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 82 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 60 linhas em 2 partes",
+          "language": "lua"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 212 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 57 linhas em 2 partes",
+          "language": "lua"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 111 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 53 linhas em 2 partes",
+          "language": "lua"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 84 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 60 linhas em 2 partes",
+          "language": "lua"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 214 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 57 linhas em 2 partes",
+          "language": "lua"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em yaml",
+          "language": "yaml",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em lua",
+          "language": "lua",
+          "code_type": "ui_definition"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 113 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 53 linhas em 2 partes",
+          "language": "lua"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 86 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 60 linhas em 2 partes",
+          "language": "lua"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 216 linhas em 1 partes",
+          "language": "yaml"
+        },
+        {
+          "type": "split_long_block",
+          "description": "Dividido bloco de 57 linhas em 2 partes",
+          "language": "lua"
+        }
+      ]
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "optimizations": [
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "other"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em ",
+          "language": "",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em xml",
+          "language": "xml",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        },
+        {
+          "type": "add_comments",
+          "description": "Adicionados comentários explicativos em bash",
+          "language": "bash",
+          "code_type": "setup_commands"
+        }
+      ]
+    }
+  ]
+}

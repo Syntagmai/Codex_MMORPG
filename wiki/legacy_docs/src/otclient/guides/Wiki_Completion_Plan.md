@@ -267,6 +267,7 @@ Diagrama da arquitetura
 ```lua
 -- Exemplos de código
 function exemplo()
+    -- Função: exemplo
     -- implementação
 end
 ```
@@ -277,8 +278,36 @@ end
 
 ### 🎮 **Exemplo Completo**
 
+#### Nível Basic
 ```lua
 -- Implementação completa
+```
+
+#### Nível Intermediate
+```lua
+-- Implementação completa
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Implementação completa
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---
@@ -289,7 +318,9 @@ end
 
 ```lua
 -- ✅ BOM: Exemplo correto
+    --  ✅ BOM: Exemplo correto (traduzido)
 -- ❌ EVITE: Exemplo incorreto
+    --  ❌ EVITE: Exemplo incorreto (traduzido)
 ```
 
 O sistema oferece ferramentas poderosas...

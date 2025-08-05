@@ -115,6 +115,7 @@ src/server/
 #### **Game Class**
 ```cpp
 class Game {
+    -- Classe: Game
 private:
     std::unique_ptr<CombatSystem> combat;
     std::unique_ptr<InventorySystem> inventory;
@@ -148,6 +149,7 @@ public:
 #### **CombatSystem Class**
 ```cpp
 class CombatSystem {
+    -- Classe: CombatSystem
 private:
     std::vector<CombatEvent> pendingEvents;
     std::unique_ptr<WeaponSystem> weapons;
@@ -173,6 +175,7 @@ public:
 #### **InventorySystem Class**
 ```cpp
 class InventorySystem {
+    -- Classe: InventorySystem
 private:
     std::map<uint32_t, Item*> items;
     std::unique_ptr<ItemFactory> factory;
@@ -202,6 +205,7 @@ public:
 #### **NetworkManager Class**
 ```cpp
 class NetworkManager {
+    -- Classe: NetworkManager
 private:
     std::unique_ptr<asio::io_context> ioContext;
     std::unique_ptr<ConnectionPool> connectionPool;
@@ -233,6 +237,7 @@ public:
 #### **ProtocolHandler Class**
 ```cpp
 class ProtocolHandler {
+    -- Classe: ProtocolHandler
 private:
     std::map<uint16_t, PacketHandler> handlers;
     std::unique_ptr<PacketParser> parser;
@@ -260,6 +265,7 @@ public:
 #### **DatabaseManager Class**
 ```cpp
 class DatabaseManager {
+    -- Classe: DatabaseManager
 private:
     std::unique_ptr<MySQLConnection> mysql;
     std::unique_ptr<CacheManager> cache;
@@ -298,6 +304,7 @@ public:
 ### **🎮 Game APIs**
 
 #### **Player API**
+#### Nível Basic
 ```cpp
 // Criação e gerenciamento de jogadores
 Player* createPlayer(const std::string& name, const std::string& password);
@@ -320,7 +327,71 @@ Item* getPlayerItem(Player* player, uint32_t slot);
 std::vector<Item*> getPlayerInventory(Player* player);
 ```
 
+#### Nível Intermediate
+```cpp
+// Criação e gerenciamento de jogadores
+Player* createPlayer(const std::string& name, const std::string& password);
+bool deletePlayer(const std::string& name);
+Player* getPlayer(const std::string& name);
+std::vector<Player*> getAllPlayers();
+
+// Propriedades do jogador
+void setPlayerPosition(Player* player, const Position& pos);
+Position getPlayerPosition(Player* player);
+void setPlayerHealth(Player* player, uint32_t health);
+uint32_t getPlayerHealth(Player* player);
+void setPlayerMana(Player* player, uint32_t mana);
+uint32_t getPlayerMana(Player* player);
+
+// Inventário do jogador
+bool addItemToPlayer(Player* player, Item* item, uint32_t slot);
+bool removeItemFromPlayer(Player* player, uint32_t slot);
+Item* getPlayerItem(Player* player, uint32_t slot);
+std::vector<Item*> getPlayerInventory(Player* player);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Criação e gerenciamento de jogadores
+Player* createPlayer(const std::string& name, const std::string& password);
+bool deletePlayer(const std::string& name);
+Player* getPlayer(const std::string& name);
+std::vector<Player*> getAllPlayers();
+
+// Propriedades do jogador
+void setPlayerPosition(Player* player, const Position& pos);
+Position getPlayerPosition(Player* player);
+void setPlayerHealth(Player* player, uint32_t health);
+uint32_t getPlayerHealth(Player* player);
+void setPlayerMana(Player* player, uint32_t mana);
+uint32_t getPlayerMana(Player* player);
+
+// Inventário do jogador
+bool addItemToPlayer(Player* player, Item* item, uint32_t slot);
+bool removeItemFromPlayer(Player* player, uint32_t slot);
+Item* getPlayerItem(Player* player, uint32_t slot);
+std::vector<Item*> getPlayerInventory(Player* player);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Creature API**
+#### Nível Basic
 ```cpp
 // Criação e gerenciamento de criaturas
 Creature* createCreature(const CreatureType& type, const Position& pos);
@@ -343,7 +414,71 @@ void setCreatureSpeed(Creature* creature, uint32_t speed);
 uint32_t getCreatureSpeed(Creature* creature);
 ```
 
+#### Nível Intermediate
+```cpp
+// Criação e gerenciamento de criaturas
+Creature* createCreature(const CreatureType& type, const Position& pos);
+bool deleteCreature(Creature* creature);
+Creature* getCreature(uint32_t id);
+std::vector<Creature*> getCreaturesInArea(const Position& center, uint32_t radius);
+
+// Propriedades da criatura
+void setCreaturePosition(Creature* creature, const Position& pos);
+Position getCreaturePosition(Creature* creature);
+void setCreatureHealth(Creature* creature, uint32_t health);
+uint32_t getCreatureHealth(Creature* creature);
+void setCreatureDirection(Creature* creature, Direction dir);
+Direction getCreatureDirection(Creature* creature);
+
+// Comportamento da criatura
+void setCreatureTarget(Creature* creature, Creature* target);
+Creature* getCreatureTarget(Creature* creature);
+void setCreatureSpeed(Creature* creature, uint32_t speed);
+uint32_t getCreatureSpeed(Creature* creature);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Criação e gerenciamento de criaturas
+Creature* createCreature(const CreatureType& type, const Position& pos);
+bool deleteCreature(Creature* creature);
+Creature* getCreature(uint32_t id);
+std::vector<Creature*> getCreaturesInArea(const Position& center, uint32_t radius);
+
+// Propriedades da criatura
+void setCreaturePosition(Creature* creature, const Position& pos);
+Position getCreaturePosition(Creature* creature);
+void setCreatureHealth(Creature* creature, uint32_t health);
+uint32_t getCreatureHealth(Creature* creature);
+void setCreatureDirection(Creature* creature, Direction dir);
+Direction getCreatureDirection(Creature* creature);
+
+// Comportamento da criatura
+void setCreatureTarget(Creature* creature, Creature* target);
+Creature* getCreatureTarget(Creature* creature);
+void setCreatureSpeed(Creature* creature, uint32_t speed);
+uint32_t getCreatureSpeed(Creature* creature);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Item API**
+#### Nível Basic
 ```cpp
 // Criação e gerenciamento de itens
 Item* createItem(const ItemType& type);
@@ -365,9 +500,71 @@ bool splitItem(Item* item, uint32_t count);
 bool mergeItems(Item* item1, Item* item2);
 ```
 
+#### Nível Intermediate
+```cpp
+// Criação e gerenciamento de itens
+Item* createItem(const ItemType& type);
+bool deleteItem(Item* item);
+Item* getItem(uint32_t id);
+std::vector<Item*> getItemsInArea(const Position& center, uint32_t radius);
+
+// Propriedades do item
+void setItemPosition(Item* item, const Position& pos);
+Position getItemPosition(Item* item);
+void setItemCount(Item* item, uint32_t count);
+uint32_t getItemCount(Item* item);
+void setItemAttribute(Item* item, const std::string& attr, const std::string& value);
+std::string getItemAttribute(Item* item, const std::string& attr);
+
+// Manipulação de itens
+bool moveItem(Item* item, const Position& newPos);
+bool splitItem(Item* item, uint32_t count);
+bool mergeItems(Item* item1, Item* item2);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Criação e gerenciamento de itens
+Item* createItem(const ItemType& type);
+bool deleteItem(Item* item);
+Item* getItem(uint32_t id);
+std::vector<Item*> getItemsInArea(const Position& center, uint32_t radius);
+
+// Propriedades do item
+void setItemPosition(Item* item, const Position& pos);
+Position getItemPosition(Item* item);
+void setItemCount(Item* item, uint32_t count);
+uint32_t getItemCount(Item* item);
+void setItemAttribute(Item* item, const std::string& attr, const std::string& value);
+std::string getItemAttribute(Item* item, const std::string& attr);
+
+// Manipulação de itens
+bool moveItem(Item* item, const Position& newPos);
+bool splitItem(Item* item, uint32_t count);
+bool mergeItems(Item* item1, Item* item2);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🌐 Network APIs**
 
 #### **Connection API**
+#### Nível Basic
 ```cpp
 // Gerenciamento de conexões
 Connection* createConnection(const std::string& address, uint16_t port);
@@ -387,7 +584,65 @@ void setConnectionBufferSize(Connection* connection, uint32_t size);
 uint32_t getConnectionBufferSize(Connection* connection);
 ```
 
+#### Nível Intermediate
+```cpp
+// Gerenciamento de conexões
+Connection* createConnection(const std::string& address, uint16_t port);
+bool closeConnection(Connection* connection);
+bool isConnected(Connection* connection);
+std::string getConnectionAddress(Connection* connection);
+
+// Envio e recebimento de dados
+bool sendPacket(Connection* connection, const Packet& packet);
+Packet receivePacket(Connection* connection);
+bool hasData(Connection* connection);
+
+// Configuração de conexão
+void setConnectionTimeout(Connection* connection, uint32_t timeout);
+uint32_t getConnectionTimeout(Connection* connection);
+void setConnectionBufferSize(Connection* connection, uint32_t size);
+uint32_t getConnectionBufferSize(Connection* connection);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Gerenciamento de conexões
+Connection* createConnection(const std::string& address, uint16_t port);
+bool closeConnection(Connection* connection);
+bool isConnected(Connection* connection);
+std::string getConnectionAddress(Connection* connection);
+
+// Envio e recebimento de dados
+bool sendPacket(Connection* connection, const Packet& packet);
+Packet receivePacket(Connection* connection);
+bool hasData(Connection* connection);
+
+// Configuração de conexão
+void setConnectionTimeout(Connection* connection, uint32_t timeout);
+uint32_t getConnectionTimeout(Connection* connection);
+void setConnectionBufferSize(Connection* connection, uint32_t size);
+uint32_t getConnectionBufferSize(Connection* connection);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Protocol API**
+#### Nível Basic
 ```cpp
 // Criação de pacotes
 Packet createLoginPacket(const std::string& username, const std::string& password);
@@ -407,6 +662,63 @@ bool validatePacketData(const Packet& packet);
 bool authenticatePacket(const Packet& packet, Player* player);
 ```
 
+#### Nível Intermediate
+```cpp
+// Criação de pacotes
+Packet createLoginPacket(const std::string& username, const std::string& password);
+Packet createMovePacket(const Position& from, const Position& to);
+Packet createAttackPacket(uint32_t targetId);
+Packet createUseItemPacket(uint32_t itemId, const Position& pos);
+
+// Processamento de pacotes
+bool processLoginPacket(const Packet& packet, Player* player);
+bool processMovePacket(const Packet& packet, Player* player);
+bool processAttackPacket(const Packet& packet, Player* player);
+bool processUseItemPacket(const Packet& packet, Player* player);
+
+// Validação de pacotes
+bool validatePacketStructure(const Packet& packet);
+bool validatePacketData(const Packet& packet);
+bool authenticatePacket(const Packet& packet, Player* player);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Criação de pacotes
+Packet createLoginPacket(const std::string& username, const std::string& password);
+Packet createMovePacket(const Position& from, const Position& to);
+Packet createAttackPacket(uint32_t targetId);
+Packet createUseItemPacket(uint32_t itemId, const Position& pos);
+
+// Processamento de pacotes
+bool processLoginPacket(const Packet& packet, Player* player);
+bool processMovePacket(const Packet& packet, Player* player);
+bool processAttackPacket(const Packet& packet, Player* player);
+bool processUseItemPacket(const Packet& packet, Player* player);
+
+// Validação de pacotes
+bool validatePacketStructure(const Packet& packet);
+bool validatePacketData(const Packet& packet);
+bool authenticatePacket(const Packet& packet, Player* player);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🔄 **Padrões de Design**
@@ -415,6 +727,7 @@ bool authenticatePacket(const Packet& packet, Player* player);
 **Uso**: Sistema de eventos do jogo
 ```cpp
 class EventSystem {
+    -- Classe: EventSystem
 private:
     std::map<EventType, std::vector<EventListener>> listeners;
     
@@ -426,6 +739,7 @@ public:
 
 // Exemplo de uso
 class PlayerDeathEvent : public Event {
+    -- Classe: PlayerDeathEvent
 public:
     Player* player;
     Creature* killer;
@@ -442,6 +756,7 @@ eventSystem.subscribe(EventType::PLAYER_DEATH, [](const EventData& data) {
 **Uso**: Criação de objetos de jogo
 ```cpp
 class GameObjectFactory {
+    -- Classe: GameObjectFactory
 public:
     virtual Player* createPlayer(const PlayerConfig& config) = 0;
     virtual Monster* createMonster(const MonsterConfig& config) = 0;
@@ -450,6 +765,7 @@ public:
 };
 
 class CanaryGameObjectFactory : public GameObjectFactory {
+    -- Classe: CanaryGameObjectFactory
 public:
     Player* createPlayer(const PlayerConfig& config) override {
         return new CanaryPlayer(config);
@@ -473,6 +789,7 @@ public:
 **Uso**: Sistemas globais
 ```cpp
 class GameManager {
+    -- Classe: GameManager
 private:
     static GameManager* instance;
     std::unique_ptr<Game> game;
@@ -502,6 +819,7 @@ auto game = gameManager->getGame();
 **Uso**: Sistema de ações do jogo
 ```cpp
 class GameCommand {
+    -- Classe: GameCommand
 public:
     virtual ~GameCommand() = default;
     virtual bool execute() = 0;
@@ -509,6 +827,7 @@ public:
 };
 
 class MoveCommand : public GameCommand {
+    -- Classe: MoveCommand
 private:
     Creature* creature;
     Position fromPos;
@@ -528,6 +847,7 @@ public:
 };
 
 class CommandManager {
+    -- Classe: CommandManager
 private:
     std::stack<std::unique_ptr<GameCommand>> commandHistory;
     
@@ -597,6 +917,7 @@ public:
 ```cpp
 template<typename T>
 class ObjectPool {
+    -- Classe: ObjectPool
 private:
     std::queue<T*> available;
     std::vector<std::unique_ptr<T>> owned;
@@ -628,6 +949,7 @@ packetPool.release(packet);
 #### **Memory Pool para Strings**
 ```cpp
 class StringPool {
+    -- Classe: StringPool
 private:
     std::unordered_map<std::string, std::string*> pool;
     
@@ -650,6 +972,7 @@ public:
 #### **Spatial Partitioning**
 ```cpp
 class SpatialGrid {
+    -- Classe: SpatialGrid
 private:
     std::vector<std::vector<Creature*>> grid;
     uint32_t cellSize;
@@ -678,6 +1001,7 @@ public:
 #### **Event Batching**
 ```cpp
 class EventBatcher {
+    -- Classe: EventBatcher
 private:
     std::vector<Event> pendingEvents;
     uint32_t batchSize;
@@ -706,6 +1030,7 @@ public:
 #### **Packet Compression**
 ```cpp
 class PacketCompressor {
+    -- Classe: PacketCompressor
 public:
     static std::vector<uint8_t> compress(const Packet& packet) {
         std::vector<uint8_t> compressed;
@@ -724,6 +1049,7 @@ public:
 #### **Connection Pooling**
 ```cpp
 class ConnectionPool {
+    -- Classe: ConnectionPool
 private:
     std::queue<Connection*> available;
     std::vector<std::unique_ptr<Connection>> connections;

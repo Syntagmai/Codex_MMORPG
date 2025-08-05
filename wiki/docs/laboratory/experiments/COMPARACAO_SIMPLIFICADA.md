@@ -26,6 +26,7 @@
 ### **Tarefa 2: NPC Backpack**
 
 #### **❌ Abordagem Complexa (Lua)**
+#### Nível Basic
 ```lua
 -- 15 linhas de código complexo
 function onTradeTypeChange(radioTabs, selected, deselected)
@@ -53,6 +54,79 @@ g_game.buyItem = function(item, amount, ignoreCapacity, buyWithBackpack)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- 15 linhas de código complexo
+function onTradeTypeChange(radioTabs, selected, deselected)
+    tradeButton:setText(selected:getText())
+    selected:setOn(true)
+    deselected:setOn(false)
+
+    local currentTradeType = getCurrentTradeType()
+    -- SEMPRE ocultar buyWithBackpack (modificação)
+    buyWithBackpack:setVisible(false)
+    ignoreCapacity:setVisible(currentTradeType == BUY)
+    ignoreEquipped:setVisible(currentTradeType == SELL)
+    showAllItems:setVisible(currentTradeType == SELL)
+    sellAllButton:setVisible(currentTradeType == SELL)
+
+    refreshTradeItems()
+    refreshPlayerGoods()
+end
+
+-- Interceptar função de compra para sempre usar false
+local originalBuyItem = g_game.buyItem
+g_game.buyItem = function(item, amount, ignoreCapacity, buyWithBackpack)
+    -- Sempre usar false para buyWithBackpack
+    return originalBuyItem(item, amount, ignoreCapacity, false)
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- 15 linhas de código complexo
+function onTradeTypeChange(radioTabs, selected, deselected)
+    tradeButton:setText(selected:getText())
+    selected:setOn(true)
+    deselected:setOn(false)
+
+    local currentTradeType = getCurrentTradeType()
+    -- SEMPRE ocultar buyWithBackpack (modificação)
+    buyWithBackpack:setVisible(false)
+    ignoreCapacity:setVisible(currentTradeType == BUY)
+    ignoreEquipped:setVisible(currentTradeType == SELL)
+    showAllItems:setVisible(currentTradeType == SELL)
+    sellAllButton:setVisible(currentTradeType == SELL)
+
+    refreshTradeItems()
+    refreshPlayerGoods()
+end
+
+-- Interceptar função de compra para sempre usar false
+local originalBuyItem = g_game.buyItem
+g_game.buyItem = function(item, amount, ignoreCapacity, buyWithBackpack)
+    -- Sempre usar false para buyWithBackpack
+    return originalBuyItem(item, amount, ignoreCapacity, false)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **✅ Abordagem Simplificada (.otui)**
 ```otui
 CheckBox
@@ -74,6 +148,26 @@ CheckBox
 ### **Tarefa 3: Bosstiary Hide**
 
 #### **❌ Abordagem Complexa (Lua)**
+#### Nível Basic
+```lua
+-- 20 linhas de código complexo
+-- Interceptar criação do botão bosstiary
+local originalAddToggleButton = modules.game_mainpanel.addToggleButton
+modules.game_mainpanel.addToggleButton = function(id, text, image, callback, checked, priority)
+    -- Se for o botão bosstiary, não criar
+    if id == "bosstiary" then
+        print("🚫 Botão Bosstiary ocultado")
+    end
+end
+-- Ocultar botão bosstiary se já existir
+if ButtonBestiary then
+end
+-- Remover bosstiary da lista de windowTypes
+if windowTypes and windowTypes.bosstiary then
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- 20 linhas de código complexo
 -- Interceptar criação do botão bosstiary
@@ -100,6 +194,43 @@ if windowTypes and windowTypes.bosstiary then
 end
 ```
 
+#### Nível Advanced
+```lua
+-- 20 linhas de código complexo
+-- Interceptar criação do botão bosstiary
+local originalAddToggleButton = modules.game_mainpanel.addToggleButton
+modules.game_mainpanel.addToggleButton = function(id, text, image, callback, checked, priority)
+    -- Se for o botão bosstiary, não criar
+    if id == "bosstiary" then
+        print("🚫 Botão Bosstiary ocultado")
+        return nil
+    end
+    return originalAddToggleButton(id, text, image, callback, checked, priority)
+end
+
+-- Ocultar botão bosstiary se já existir
+if ButtonBestiary then
+    ButtonBestiary:setVisible(false)
+    ButtonBestiary:destroy()
+    ButtonBestiary = nil
+end
+
+-- Remover bosstiary da lista de windowTypes
+if windowTypes and windowTypes.bosstiary then
+    windowTypes.bosstiary = nil
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **✅ Abordagem Simplificada (.otui)**
 ```otui
 UIButton
@@ -118,6 +249,37 @@ UIButton
 ### **Tarefa 5: Auras/Asas**
 
 #### **❌ Abordagem Complexa (Lua)**
+#### Nível Basic
+```lua
+-- 25 linhas de código complexo
+-- Interceptar criação de widgets de auras e asas
+local originalCreateWidget = g_ui.createWidget
+g_ui.createWidget = function(widgetType, parent)
+    -- Bloquear criação de widgets de auras e asas
+    if widgetType:find("Aura") or widgetType:find("Wing") or widgetType:find("Effect") then
+        print("🚫 Widget de aura/asa bloqueado: " .. widgetType)
+    end
+end
+-- Ocultar elementos de auras e asas na tela de Customize Character
+function hideAurasAndWings()
+    local outfitWindow = g_ui.getRootWidget():recursiveGetChildById('outfitWindow')
+    if outfitWindow then
+        -- Ocultar seções de auras e asas
+        local auraSection = outfitWindow:recursiveGetChildById('auraSection')
+        local wingSection = outfitWindow:recursiveGetChildById('wingSection')
+        if auraSection then
+        end
+        if wingSection then
+        end
+    end
+end
+-- Chamar função de ocultação quando outfit window for criada
+local originalShow = show
+function show()
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- 25 linhas de código complexo
 -- Interceptar criação de widgets de auras e asas
@@ -154,6 +316,55 @@ function show()
     originalShow()
     hideAurasAndWings()
 end
+```
+
+#### Nível Advanced
+```lua
+-- 25 linhas de código complexo
+-- Interceptar criação de widgets de auras e asas
+local originalCreateWidget = g_ui.createWidget
+g_ui.createWidget = function(widgetType, parent)
+    -- Bloquear criação de widgets de auras e asas
+    if widgetType:find("Aura") or widgetType:find("Wing") or widgetType:find("Effect") then
+        print("🚫 Widget de aura/asa bloqueado: " .. widgetType)
+        return nil
+    end
+    return originalCreateWidget(widgetType, parent)
+end
+
+-- Ocultar elementos de auras e asas na tela de Customize Character
+function hideAurasAndWings()
+    local outfitWindow = g_ui.getRootWidget():recursiveGetChildById('outfitWindow')
+    if outfitWindow then
+        -- Ocultar seções de auras e asas
+        local auraSection = outfitWindow:recursiveGetChildById('auraSection')
+        local wingSection = outfitWindow:recursiveGetChildById('wingSection')
+        
+        if auraSection then
+            auraSection:setVisible(false)
+        end
+        if wingSection then
+            wingSection:setVisible(false)
+        end
+    end
+end
+
+-- Chamar função de ocultação quando outfit window for criada
+local originalShow = show
+function show()
+    originalShow()
+    hideAurasAndWings()
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 #### **✅ Abordagem Simplificada (.otui)**

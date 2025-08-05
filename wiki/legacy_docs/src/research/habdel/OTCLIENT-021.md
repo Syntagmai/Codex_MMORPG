@@ -76,6 +76,7 @@ OTClient System Architecture
 ```cpp
 // Application Manager
 class Application {
+    -- Classe: Application
     void init();
     void run();
     void terminate();
@@ -84,6 +85,7 @@ class Application {
 
 // Event System
 class EventDispatcher {
+    -- Classe: EventDispatcher
     void addEvent(std::function<void()> event);
     void poll();
     void shutdown();
@@ -110,6 +112,7 @@ class EventDispatcher {
 ```cpp
 // Graphics Engine
 class GraphicsEngine {
+    -- Classe: GraphicsEngine
     void init();
     void resize(int width, int height);
     void clear();
@@ -118,6 +121,7 @@ class GraphicsEngine {
 
 // Texture Manager
 class TextureManager {
+    -- Classe: TextureManager
     TexturePtr getTexture(const std::string& name);
     void preloadTextures();
     void releaseTextures();
@@ -144,6 +148,7 @@ class TextureManager {
 ```cpp
 // Network Manager
 class NetworkManager {
+    -- Classe: NetworkManager
     void connect(const std::string& host, int port);
     void disconnect();
     void send(const OutputMessage& msg);
@@ -152,6 +157,7 @@ class NetworkManager {
 
 // Protocol Handler
 class ProtocolGame {
+    -- Classe: ProtocolGame
     void sendLogin(const std::string& account, const std::string& password);
     void sendLogout();
     void sendTalk(MessageMode mode, const std::string& message);
@@ -177,15 +183,24 @@ class ProtocolGame {
 **APIs Principais**:
 ```lua
 -- UI Manager
+    --  UI Manager (traduzido)
 function g_ui.createWidget(widgetType, parent)
+    -- Função: g_ui
 function g_ui.destroyWidget(widget)
+    -- Função: g_ui
 function g_ui.getRootWidget()
+    -- Função: g_ui
 
 -- Widget System
+    --  Widget System (traduzido)
 function widget:setText(text)
+    -- Função: widget
 function widget:setVisible(visible)
+    -- Função: widget
 function widget:setEnabled(enabled)
+    -- Função: widget
 function widget:setSize(size)
+    -- Função: widget
 ```
 
 **Integração**: Interface para todos os sistemas do jogo
@@ -207,16 +222,26 @@ function widget:setSize(size)
 **APIs Principais**:
 ```lua
 -- Module Manager
+    --  Module Manager (traduzido)
 function g_modules.loadModule(name)
+    -- Função: g_modules
 function g_modules.unloadModule(name)
+    -- Função: g_modules
 function g_modules.reloadModule(name)
+    -- Função: g_modules
 function g_modules.getModule(name)
+    -- Função: g_modules
 
 -- Module API
+    --  Module API (traduzido)
 function Module.init()
+    -- Função: Module
 function Module.terminate()
+    -- Função: Module
 function Module.load()
+    -- Função: Module
 function Module.unload()
+    -- Função: Module
 ```
 
 **Integração**: Extensibilidade e customização do cliente
@@ -238,14 +263,22 @@ function Module.unload()
 **APIs Principais**:
 ```lua
 -- Lua Engine
+    --  Lua Engine (traduzido)
 function g_lua.loadScript(script)
+    -- Função: g_lua
 function g_lua.callFunction(functionName, ...)
+    -- Função: g_lua
 function g_lua.evaluate(expression)
+    -- Função: g_lua
 
 -- Event System
+    --  Event System (traduzido)
 function connect(eventName, callback)
+    -- Função: connect
 function disconnect(eventName, callback)
+    -- Função: disconnect
 function fire(eventName, ...)
+    -- Função: fire
 ```
 
 **Integração**: Scripting e automação de funcionalidades
@@ -269,10 +302,15 @@ function fire(eventName, ...)
 **APIs Principais**:
 ```lua
 -- Data Manager
+    --  Data Manager (traduzido)
 function g_data.loadData(dataType, id)
+    -- Função: g_data
 function g_data.saveData(dataType, id, data)
+    -- Função: g_data
 function g_data.deleteData(dataType, id)
+    -- Função: g_data
 function g_data.listData(dataType)
+    -- Função: g_data
 ```
 
 **Integração**: Persistência e gerenciamento de dados do jogo
@@ -294,11 +332,17 @@ function g_data.listData(dataType)
 **APIs Principais**:
 ```lua
 -- Animation Engine
+    --  Animation Engine (traduzido)
 function g_animations.createAnimation(duration, easing)
+    -- Função: g_animations
 function animation:addProperty(property, startValue, endValue)
+    -- Função: animation
 function animation:start()
+    -- Função: animation
 function animation:stop()
+    -- Função: animation
 function animation:setLoop(loop)
+    -- Função: animation
 ```
 
 **Integração**: Animações para UI e elementos visuais
@@ -320,11 +364,17 @@ function animation:setLoop(loop)
 **APIs Principais**:
 ```lua
 -- Audio Engine
+    --  Audio Engine (traduzido)
 function g_sounds.play(soundName)
+    -- Função: g_sounds
 function g_sounds.stop(soundName)
+    -- Função: g_sounds
 function g_sounds.setVolume(volume)
+    -- Função: g_sounds
 function g_sounds.setMusicVolume(volume)
+    -- Função: g_sounds
 function g_sounds.setEffectVolume(volume)
+    -- Função: g_sounds
 ```
 
 **Integração**: Áudio para feedback e imersão
@@ -346,11 +396,17 @@ function g_sounds.setEffectVolume(volume)
 **APIs Principais**:
 ```lua
 -- Particle Engine
+    --  Particle Engine (traduzido)
 function g_particles.createSystem()
+    -- Função: g_particles
 function particleSystem:addEmitter(emitter)
+    -- Função: particleSystem
 function particleSystem:start()
+    -- Função: particleSystem
 function particleSystem:stop()
+    -- Função: particleSystem
 function particleSystem:setPosition(position)
+    -- Função: particleSystem
 ```
 
 **Integração**: Efeitos visuais para combate e magias
@@ -374,11 +430,17 @@ function particleSystem:setPosition(position)
 **APIs Principais**:
 ```lua
 -- Map Engine
+    --  Map Engine (traduzido)
 function g_map.getTile(position)
+    -- Função: g_map
 function g_map.getCreature(position)
+    -- Função: g_map
 function g_map.getTopCreature(position)
+    -- Função: g_map
 function g_map.getItems(position)
+    -- Função: g_map
 function g_map.getTopItem(position)
+    -- Função: g_map
 ```
 
 **Integração**: Navegação e exploração do mundo
@@ -400,11 +462,17 @@ function g_map.getTopItem(position)
 **APIs Principais**:
 ```lua
 -- Combat Engine
+    --  Combat Engine (traduzido)
 function g_game.attack(creature)
+    -- Função: g_game
 function g_game.follow(creature)
+    -- Função: g_game
 function g_game.stopAttack()
+    -- Função: g_game
 function g_game.stopFollow()
+    -- Função: g_game
 function g_game.use(item, position)
+    -- Função: g_game
 ```
 
 **Integração**: Mecânicas de combate e interação
@@ -426,11 +494,17 @@ function g_game.use(item, position)
 **APIs Principais**:
 ```lua
 -- Inventory Manager
+    --  Inventory Manager (traduzido)
 function g_game.getInventoryItem(slot)
+    -- Função: g_game
 function g_game.move(item, count, fromPosition, toPosition)
+    -- Função: g_game
 function g_game.useInventoryItem(slot, item)
+    -- Função: g_game
 function g_game.open(item, position)
+    -- Função: g_game
 function g_game.close(container)
+    -- Função: g_game
 ```
 
 **Integração**: Gerenciamento de itens e equipamentos
@@ -452,10 +526,15 @@ function g_game.close(container)
 **APIs Principais**:
 ```lua
 -- NPC Manager
+    --  NPC Manager (traduzido)
 function g_game.talk(creature, message)
+    -- Função: g_game
 function g_game.talkPrivate(creature, message)
+    -- Função: g_game
 function g_game.talkChannel(channelId, message)
+    -- Função: g_game
 function g_game.talkNpc(npcId, message)
+    -- Função: g_game
 ```
 
 **Integração**: Interações com NPCs e comércio
@@ -477,10 +556,15 @@ function g_game.talkNpc(npcId, message)
 **APIs Principais**:
 ```lua
 -- Quest Manager
+    --  Quest Manager (traduzido)
 function g_game.getQuestLog()
+    -- Função: g_game
 function g_game.getQuestLine(questId)
+    -- Função: g_game
 function g_game.showQuestLog()
+    -- Função: g_game
 function g_game.showQuestLine(questId)
+    -- Função: g_game
 ```
 
 **Integração**: Sistema de missões e progressão
@@ -502,11 +586,17 @@ function g_game.showQuestLine(questId)
 **APIs Principais**:
 ```lua
 -- Party Manager
+    --  Party Manager (traduzido)
 function g_game.inviteToParty(creature)
+    -- Função: g_game
 function g_game.joinParty(creature)
+    -- Função: g_game
 function g_game.leaveParty()
+    -- Função: g_game
 function g_game.passPartyLeadership(creature)
+    -- Função: g_game
 function g_game.enableSharedExperience(enabled)
+    -- Função: g_game
 ```
 
 **Integração**: Sistema de grupos e colaboração
@@ -530,11 +620,17 @@ function g_game.enableSharedExperience(enabled)
 **APIs Principais**:
 ```lua
 -- Guild Manager
+    --  Guild Manager (traduzido)
 function g_game.getGuild()
+    -- Função: g_game
 function g_game.getGuildMembers()
+    -- Função: g_game
 function g_game.getGuildRanks()
+    -- Função: g_game
 function g_game.getGuildMotd()
+    -- Função: g_game
 function g_game.setGuildMotd(motd)
+    -- Função: g_game
 ```
 
 **Integração**: Organizações e hierarquias sociais
@@ -556,11 +652,17 @@ function g_game.setGuildMotd(motd)
 **APIs Principais**:
 ```lua
 -- Chat Manager
+    --  Chat Manager (traduzido)
 function g_game.talk(message)
+    -- Função: g_game
 function g_game.whisper(message)
+    -- Função: g_game
 function g_game.yell(message)
+    -- Função: g_game
 function g_game.talkPrivate(creature, message)
+    -- Função: g_game
 function g_game.talkChannel(channelId, message)
+    -- Função: g_game
 ```
 
 **Integração**: Comunicação e interação social
@@ -582,11 +684,17 @@ function g_game.talkChannel(channelId, message)
 **APIs Principais**:
 ```lua
 -- Config Manager
+    --  Config Manager (traduzido)
 function g_settings.set(key, value)
+    -- Função: g_settings
 function g_settings.get(key, defaultValue)
+    -- Função: g_settings
 function g_settings.remove(key)
+    -- Função: g_settings
 function g_settings.save()
+    -- Função: g_settings
 function g_settings.load()
+    -- Função: g_settings
 ```
 
 **Integração**: Personalização e configuração do cliente
@@ -610,6 +718,7 @@ function g_settings.load()
 **APIs Principais**:
 ```lua
 -- Logger Engine
+    --  Logger Engine (traduzido)
 g_logger.debug("Debug message")
 g_logger.info("Info message")
 g_logger.warning("Warning message")
@@ -636,10 +745,15 @@ g_logger.fatal("Fatal message")
 **APIs Principais**:
 ```lua
 -- Debug Console
+    --  Debug Console (traduzido)
 function g_debug.print(message)
+    -- Função: g_debug
 function g_debug.trace()
+    -- Função: g_debug
 function g_debug.breakpoint()
+    -- Função: g_debug
 function g_debug.getPerformanceStats()
+    -- Função: g_debug
 ```
 
 **Integração**: Desenvolvimento e troubleshooting

@@ -183,6 +183,7 @@ Operações com matrizes
 ### **Sistema de Armazenamento Dinâmico**
 Como usar o sistema de armazenamento dinâmico
 
+#### Nível Basic
 ```cpp
 // Exemplo de uso do sistema de armazenamento dinâmico
 #include "stdext/storage.h"
@@ -225,9 +226,113 @@ void useDynamicStorage() {{
 }}
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de uso do sistema de armazenamento dinâmico
+#include "stdext/storage.h"
+
+// Definir enum para chaves
+enum class PlayerData {
+    Name,
+    Level,
+    Health,
+    Position,
+    Inventory
+};
+
+void useDynamicStorage() {{
+    // Criar storage dinâmico
+    stdext::dynamic_storage<PlayerData> playerStorage;
+    
+    // Armazenar dados
+    playerStorage.set(PlayerData::Name, std::string("Player1"));
+    playerStorage.set(PlayerData::Level, 10);
+    playerStorage.set(PlayerData::Health, 100.0f);
+    playerStorage.set(PlayerData::Position, Point(100, 200));
+    
+    // Recuperar dados
+    std::string name = playerStorage.get<std::string>(PlayerData::Name, "Unknown");
+    int level = playerStorage.get<int>(PlayerData::Level, 1);
+    float health = playerStorage.get<float>(PlayerData::Health, 0.0f);
+    Point pos = playerStorage.get<Point>(PlayerData::Position, Point(0, 0));
+    
+    // Verificar se existe
+    if (playerStorage.has(PlayerData::Inventory)) {{
+        // Dados existem
+    }}
+    
+    // Remover dados
+    playerStorage.remove(PlayerData::Health);
+    
+    // Limpar tudo
+    playerStorage.clear();
+}}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de uso do sistema de armazenamento dinâmico
+#include "stdext/storage.h"
+
+// Definir enum para chaves
+enum class PlayerData {
+    Name,
+    Level,
+    Health,
+    Position,
+    Inventory
+};
+
+void useDynamicStorage() {{
+    // Criar storage dinâmico
+    stdext::dynamic_storage<PlayerData> playerStorage;
+    
+    // Armazenar dados
+    playerStorage.set(PlayerData::Name, std::string("Player1"));
+    playerStorage.set(PlayerData::Level, 10);
+    playerStorage.set(PlayerData::Health, 100.0f);
+    playerStorage.set(PlayerData::Position, Point(100, 200));
+    
+    // Recuperar dados
+    std::string name = playerStorage.get<std::string>(PlayerData::Name, "Unknown");
+    int level = playerStorage.get<int>(PlayerData::Level, 1);
+    float health = playerStorage.get<float>(PlayerData::Health, 0.0f);
+    Point pos = playerStorage.get<Point>(PlayerData::Position, Point(0, 0));
+    
+    // Verificar se existe
+    if (playerStorage.has(PlayerData::Inventory)) {{
+        // Dados existem
+    }}
+    
+    // Remover dados
+    playerStorage.remove(PlayerData::Health);
+    
+    // Limpar tudo
+    playerStorage.clear();
+}}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Sistema de Conversão de Tipos**
 Como usar o sistema de conversão de tipos
 
+#### Nível Basic
 ```cpp
 // Exemplo de conversão de tipos
 #include "stdext/cast.h"
@@ -270,9 +375,113 @@ void useTypeCasting() {{
 }}
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de conversão de tipos
+#include "stdext/cast.h"
+
+void useTypeCasting() {{
+    // Conversão de string para tipos básicos
+    std::string strValue = "42";
+    int intValue;
+    if (stdext::cast(strValue, intValue)) {{
+        std::cout << "Converted: " << intValue << std::endl;
+    }}
+    
+    // Conversão de string para float
+    std::string floatStr = "3.14";
+    float floatValue;
+    if (stdext::cast(floatStr, floatValue)) {{
+        std::cout << "Float: " << floatValue << std::endl;
+    }}
+    
+    // Conversão de string para bool
+    std::string boolStr = "true";
+    bool boolValue;
+    if (stdext::cast(boolStr, boolValue)) {{
+        std::cout << "Boolean: " << boolValue << std::endl;
+    }}
+    
+    // Conversão de tipos para string
+    int number = 123;
+    std::string result;
+    if (stdext::cast(number, result)) {{
+        std::cout << "String: " << result << std::endl;
+    }}
+    
+    // Conversão de Point para string
+    Point point(100, 200);
+    std::string pointStr;
+    if (stdext::cast(point, pointStr)) {{
+        std::cout << "Point: " << pointStr << std::endl;
+    }}
+}}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de conversão de tipos
+#include "stdext/cast.h"
+
+void useTypeCasting() {{
+    // Conversão de string para tipos básicos
+    std::string strValue = "42";
+    int intValue;
+    if (stdext::cast(strValue, intValue)) {{
+        std::cout << "Converted: " << intValue << std::endl;
+    }}
+    
+    // Conversão de string para float
+    std::string floatStr = "3.14";
+    float floatValue;
+    if (stdext::cast(floatStr, floatValue)) {{
+        std::cout << "Float: " << floatValue << std::endl;
+    }}
+    
+    // Conversão de string para bool
+    std::string boolStr = "true";
+    bool boolValue;
+    if (stdext::cast(boolStr, boolValue)) {{
+        std::cout << "Boolean: " << boolValue << std::endl;
+    }}
+    
+    // Conversão de tipos para string
+    int number = 123;
+    std::string result;
+    if (stdext::cast(number, result)) {{
+        std::cout << "String: " << result << std::endl;
+    }}
+    
+    // Conversão de Point para string
+    Point point(100, 200);
+    std::string pointStr;
+    if (stdext::cast(point, pointStr)) {{
+        std::cout << "Point: " << pointStr << std::endl;
+    }}
+}}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Tipos Geométricos**
 Como usar os tipos geométricos
 
+#### Nível Basic
 ```cpp
 // Exemplo de uso dos tipos geométricos
 #include "util/point.h"
@@ -320,9 +529,123 @@ void useGeometricTypes() {{
 }}
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de uso dos tipos geométricos
+#include "util/point.h"
+#include "util/rect.h"
+#include "util/size.h"
+
+void useGeometricTypes() {{
+    // Point - Ponto 2D
+    Point p1(10, 20);
+    Point p2(30, 40);
+    
+    // Operações com Point
+    Point sum = p1 + p2;  // (40, 60)
+    Point diff = p2 - p1; // (20, 20)
+    Point scaled = p1 * 2; // (20, 40)
+    
+    // Rect - Retângulo
+    Rect rect1(Point(0, 0), Size(100, 100));
+    Rect rect2(Point(50, 50), Size(100, 100));
+    
+    // Verificar se ponto está dentro do retângulo
+    if (rect1.contains(p1)) {{
+        std::cout << "Point is inside rect" << std::endl;
+    }}
+    
+    // Verificar interseção entre retângulos
+    if (rect1.intersects(rect2)) {{
+        std::cout << "Rectangles intersect" << std::endl;
+        Rect intersection = rect1.intersection(rect2);
+        std::cout << "Intersection: " << intersection.toString() << std::endl;
+    }}
+    
+    // Size - Tamanho
+    Size size1(100, 200);
+    Size size2(50, 100);
+    
+    // Operações com Size
+    Size sumSize = size1 + size2;  // (150, 300)
+    Size diffSize = size1 - size2; // (50, 100)
+    Size scaledSize = size1 * 2;   // (200, 400)
+    
+    // Área e perímetro
+    int area = size1.area();       // 20000
+    int perimeter = size1.perimeter(); // 600
+}}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de uso dos tipos geométricos
+#include "util/point.h"
+#include "util/rect.h"
+#include "util/size.h"
+
+void useGeometricTypes() {{
+    // Point - Ponto 2D
+    Point p1(10, 20);
+    Point p2(30, 40);
+    
+    // Operações com Point
+    Point sum = p1 + p2;  // (40, 60)
+    Point diff = p2 - p1; // (20, 20)
+    Point scaled = p1 * 2; // (20, 40)
+    
+    // Rect - Retângulo
+    Rect rect1(Point(0, 0), Size(100, 100));
+    Rect rect2(Point(50, 50), Size(100, 100));
+    
+    // Verificar se ponto está dentro do retângulo
+    if (rect1.contains(p1)) {{
+        std::cout << "Point is inside rect" << std::endl;
+    }}
+    
+    // Verificar interseção entre retângulos
+    if (rect1.intersects(rect2)) {{
+        std::cout << "Rectangles intersect" << std::endl;
+        Rect intersection = rect1.intersection(rect2);
+        std::cout << "Intersection: " << intersection.toString() << std::endl;
+    }}
+    
+    // Size - Tamanho
+    Size size1(100, 200);
+    Size size2(50, 100);
+    
+    // Operações com Size
+    Size sumSize = size1 + size2;  // (150, 300)
+    Size diffSize = size1 - size2; // (50, 100)
+    Size scaledSize = size1 * 2;   // (200, 400)
+    
+    // Área e perímetro
+    int area = size1.area();       // 20000
+    int perimeter = size1.perimeter(); // 600
+}}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Sistema de Cores**
 Como usar o sistema de cores
 
+#### Nível Basic
 ```cpp
 // Exemplo de uso do sistema de cores
 #include "util/color.h"
@@ -372,9 +695,140 @@ void useColorSystem() {{
 }}
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de uso do sistema de cores
+#include "util/color.h"
+
+void useColorSystem() {{
+    // Criar cores
+    Color red(255, 0, 0, 255);      // Vermelho opaco
+    Color green(0, 255, 0, 128);    // Verde semi-transparente
+    Color blue(0, 0, 255, 255);     // Azul opaco
+    Color white = Color::white;      // Branco predefinido
+    Color black = Color::black;      // Preto predefinido
+    
+    // Manipular componentes
+    Color customColor;
+    customColor.setRed(128);
+    customColor.setGreen(64);
+    customColor.setBlue(32);
+    customColor.setAlpha(255);
+    
+    // Obter componentes
+    uint8_t r = customColor.red();
+    uint8_t g = customColor.green();
+    uint8_t b = customColor.blue();
+    uint8_t a = customColor.alpha();
+    
+    // Operações com cores
+    Color mixed = red.blend(green);  // Misturar cores
+    Color lighter = red.lighter();   // Versão mais clara
+    Color darker = red.darker();     // Versão mais escura
+    
+    // Converter para string
+    std::string colorStr = customColor.toString();
+    std::cout << "Color: " << colorStr << std::endl;
+    
+    // Converter de string
+    Color fromString;
+    if (Color::fromString("#FF0000", fromString)) {{
+        std::cout << "Parsed color: " << fromString.toString() << std::endl;
+    }}
+    
+    // Cores predefinidas
+    Color transparent = Color::alpha;
+    Color gray = Color::gray;
+    Color yellow = Color::yellow;
+    Color cyan = Color::cyan;
+    Color magenta = Color::magenta;
+}}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de uso do sistema de cores
+#include "util/color.h"
+
+void useColorSystem() {{
+    // Criar cores
+    Color red(255, 0, 0, 255);      // Vermelho opaco
+    Color green(0, 255, 0, 128);    // Verde semi-transparente
+    Color blue(0, 0, 255, 255);     // Azul opaco
+    Color white = Color::white;      // Branco predefinido
+    Color black = Color::black;      // Preto predefinido
+    
+    // Manipular componentes
+    Color customColor;
+    customColor.setRed(128);
+    customColor.setGreen(64);
+    customColor.setBlue(32);
+    customColor.setAlpha(255);
+    
+    // Obter componentes
+    uint8_t r = customColor.red();
+    uint8_t g = customColor.green();
+    uint8_t b = customColor.blue();
+    uint8_t a = customColor.alpha();
+    
+    // Operações com cores
+    Color mixed = red.blend(green);  // Misturar cores
+    Color lighter = red.lighter();   // Versão mais clara
+    Color darker = red.darker();     // Versão mais escura
+    
+    // Converter para string
+    std::string colorStr = customColor.toString();
+    std::cout << "Color: " << colorStr << std::endl;
+    
+    // Converter de string
+    Color fromString;
+    if (Color::fromString("#FF0000", fromString)) {{
+        std::cout << "Parsed color: " << fromString.toString() << std::endl;
+    }}
+    
+    // Cores predefinidas
+    Color transparent = Color::alpha;
+    Color gray = Color::gray;
+    Color yellow = Color::yellow;
+    Color cyan = Color::cyan;
+    Color magenta = Color::magenta;
+}}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Utilitários de String**
 Como usar os utilitários de string
 
+#### Nível Basic
+```cpp
+    std::cout << "Trimmed: '" << trimmed << "'" << std::endl;
+    // Verificar se contém
+    if (stdext::contains(text, "Hello")) {{
+        std::cout << "Contains 'Hello'" << std::endl;
+    // Verificar se começa/termina com
+    if (stdext::starts_with(text, "  Hello")) {{
+        std::cout << "Starts with '  Hello'" << std::endl;
+    if (stdext::ends_with(text, "!  ")) {{
+        std::cout << "Ends with '!  '" << std::endl;
+```
+
+#### Nível Intermediate
 ```cpp
 // Exemplo de uso dos utilitários de string
 #include "stdext/string.h"
@@ -426,9 +880,80 @@ void useStringUtilities() {{
 }}
 ```
 
+#### Nível Advanced
+```cpp
+// Exemplo de uso dos utilitários de string
+#include "stdext/string.h"
+
+void useStringUtilities() {{
+    std::string text = "  Hello, World!  ";
+    
+    // Remover espaços em branco
+    std::string trimmed = stdext::trim(text);
+    std::cout << "Trimmed: '" << trimmed << "'" << std::endl;
+    
+    // Converter para maiúsculas/minúsculas
+    std::string upper = stdext::to_upper(text);
+    std::string lower = stdext::to_lower(text);
+    
+    // Substituir texto
+    std::string replaced = stdext::replace(text, "World", "OTClient");
+    
+    // Dividir string
+    std::string csv = "apple,banana,orange";
+    std::vector<std::string> fruits = stdext::split(csv, ",");
+    
+    // Juntar strings
+    std::string joined = stdext::join(fruits, " | ");
+    
+    // Verificar se contém
+    if (stdext::contains(text, "Hello")) {{
+        std::cout << "Contains 'Hello'" << std::endl;
+    }}
+    
+    // Verificar se começa/termina com
+    if (stdext::starts_with(text, "  Hello")) {{
+        std::cout << "Starts with '  Hello'" << std::endl;
+    }}
+    
+    if (stdext::ends_with(text, "!  ")) {{
+        std::cout << "Ends with '!  '" << std::endl;
+    }}
+    
+    // Formatação
+    std::string formatted = stdext::format("Player: %s, Level: %d", "Player1", 10);
+    
+    // Conversão de números
+    std::string numberStr = "42";
+    int number = stdext::to_number<int>(numberStr);
+    
+    // Conversão para string
+    std::string result = stdext::to_string(3.14159);
+}}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Operações com Matrizes**
 Como usar operações com matrizes
 
+#### Nível Basic
+```cpp
+    // Verificar se é invertível
+    if (result.isInvertible()) {{
+        std::cout << "Matrix is invertible" << std::endl;
+    std::cout << "Matrix: " << matrixStr << std::endl;
+```
+
+#### Nível Intermediate
 ```cpp
 // Exemplo de uso de operações com matrizes
 #include "util/matrix.h"
@@ -475,6 +1000,65 @@ void useMatrixOperations() {{
     std::string matrixStr = result.toString();
     std::cout << "Matrix: " << matrixStr << std::endl;
 }}
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de uso de operações com matrizes
+#include "util/matrix.h"
+
+void useMatrixOperations() {{
+    // Criar matriz 3x3
+    Matrix3D matrix1;
+    matrix1.setIdentity();  // Matriz identidade
+    
+    // Criar matriz de rotação
+    Matrix3D rotationMatrix;
+    rotationMatrix.setRotation(45.0f);  // Rotação de 45 graus
+    
+    // Criar matriz de translação
+    Matrix3D translationMatrix;
+    translationMatrix.setTranslation(Point(100, 200));
+    
+    // Criar matriz de escala
+    Matrix3D scaleMatrix;
+    scaleMatrix.setScale(2.0f, 2.0f);
+    
+    // Multiplicar matrizes
+    Matrix3D result = rotationMatrix * translationMatrix * scaleMatrix;
+    
+    // Aplicar transformação a um ponto
+    Point originalPoint(10, 20);
+    Point transformedPoint = result * originalPoint;
+    
+    // Inverter matriz
+    Matrix3D inverse = result.inverse();
+    
+    // Transpor matriz
+    Matrix3D transposed = result.transpose();
+    
+    // Obter determinante
+    float det = result.determinant();
+    
+    // Verificar se é invertível
+    if (result.isInvertible()) {{
+        std::cout << "Matrix is invertible" << std::endl;
+    }}
+    
+    // Converter para string
+    std::string matrixStr = result.toString();
+    std::cout << "Matrix: " << matrixStr << std::endl;
+}}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 
@@ -529,6 +1113,7 @@ Conversão de dados de eventos
 
 ### **Sistema de Armazenamento Dinâmico**
 
+#### Nível Basic
 ```cpp
 #include "stdext/storage.h"
 
@@ -542,8 +1127,54 @@ std::string name = storage.get<std::string>(DataKey::Name);
 int level = storage.get<int>(DataKey::Level, 1);
 ```
 
+#### Nível Intermediate
+```cpp
+#include "stdext/storage.h"
+
+enum class DataKey { Name, Level, Position };
+
+stdext::dynamic_storage<DataKey> storage;
+storage.set(DataKey::Name, std::string("Player1"));
+storage.set(DataKey::Level, 10);
+
+std::string name = storage.get<std::string>(DataKey::Name);
+int level = storage.get<int>(DataKey::Level, 1);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+#include "stdext/storage.h"
+
+enum class DataKey { Name, Level, Position };
+
+stdext::dynamic_storage<DataKey> storage;
+storage.set(DataKey::Name, std::string("Player1"));
+storage.set(DataKey::Level, 10);
+
+std::string name = storage.get<std::string>(DataKey::Name);
+int level = storage.get<int>(DataKey::Level, 1);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Conversão de Tipos**
 
+#### Nível Basic
 ```cpp
 #include "stdext/cast.h"
 
@@ -554,8 +1185,48 @@ if (stdext::cast(str, value)) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+#include "stdext/cast.h"
+
+std::string str = "42";
+int value;
+if (stdext::cast(str, value)) {
+    // Conversão bem-sucedida
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+#include "stdext/cast.h"
+
+std::string str = "42";
+int value;
+if (stdext::cast(str, value)) {
+    // Conversão bem-sucedida
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Tipos Geométricos**
 
+#### Nível Basic
 ```cpp
 #include "util/point.h"
 #include "util/rect.h"
@@ -568,6 +1239,53 @@ Rect rect(Point(0, 0), Size(100, 100));
 if (rect.contains(p1)) {
     // Ponto está dentro do retângulo
 }
+```
+
+#### Nível Intermediate
+```cpp
+#include "util/point.h"
+#include "util/rect.h"
+
+Point p1(10, 20);
+Point p2(30, 40);
+Point sum = p1 + p2;
+
+Rect rect(Point(0, 0), Size(100, 100));
+if (rect.contains(p1)) {
+    // Ponto está dentro do retângulo
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+#include "util/point.h"
+#include "util/rect.h"
+
+Point p1(10, 20);
+Point p2(30, 40);
+Point sum = p1 + p2;
+
+Rect rect(Point(0, 0), Size(100, 100));
+if (rect.contains(p1)) {
+    // Ponto está dentro do retângulo
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 📊 Tipos de Dados Disponíveis

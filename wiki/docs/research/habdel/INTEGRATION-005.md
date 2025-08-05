@@ -431,6 +431,7 @@ A **INTEGRATION-005** realiza uma análise comparativa profunda das funcionalida
 ```cpp
 // Exemplo de implementação OTClient Features
 class OTClientFeatures {
+    -- Classe: OTClientFeatures
 private:
     Renderer renderer;
     AudioSystem audio_system;
@@ -459,6 +460,7 @@ private:
 ```cpp
 // Exemplo de implementação Canary Features
 class CanaryFeatures {
+    -- Classe: CanaryFeatures
 private:
     GameServer game_server;
     DatabaseManager database_manager;
@@ -489,6 +491,7 @@ private:
 ```cpp
 // API Unificada para Funcionalidades
 class UnifiedFeatures {
+    -- Classe: UnifiedFeatures
 public:
     // Inicialização
     static bool initialize(const std::string& component);

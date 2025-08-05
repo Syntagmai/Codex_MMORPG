@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "1.0",
-    "last_updated": "2025-07-31T15:31:15.591836",
+    "last_updated": "2025-08-04T23:07:46.071386",
     "context": "otclient",
     "description": "OTCLIENT document relationships"
   },
@@ -9,89 +9,67 @@
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Animation_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "CORE-007_Debug_System.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "CORE-008_Performance_System.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "CORE-009_Logs_System.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "CORE-010_Backup_System.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Cheat_Sheet.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Combat_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Configuration_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Creature_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Debug_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Developer_Practical_Guides.md": {
     "prerequisites": [],
@@ -102,130 +80,104 @@
   "Documentation_Status.md": {
     "prerequisites": [],
     "next_steps": [],
-    "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md"
+    ],
+    "integration_links": []
   },
   "Drag_Drop_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Effects_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "GUIDE-004_Debugging_Avancado.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "GUIDE-005_Performance_Otimizacao.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "GUIDE-006_UI_Avancada.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "GUIDE-007_Game_Systems.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "GUIDE-008_Deploy.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "GUIDE-009_Contribuicao.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "GUIDE-010_Troubleshooting.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Game_Quests_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Game_Trading_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Getting_Started_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Graphics_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Guia_Busca_Rapida.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Habdel_Integration_Index.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Habdel_Navigation_Guide.md": {
     "prerequisites": [],
@@ -236,18 +188,20 @@
   "Habdel_Wiki_Integration_Report.md": {
     "prerequisites": [],
     "next_steps": [],
-    "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md"
+    ],
+    "integration_links": []
   },
   "Item_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Lua_API_Reference.md": {
     "prerequisites": [],
@@ -259,25 +213,19 @@
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Module_Development_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Module_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Navigation_Index_Alphabetical.md": {
     "prerequisites": [],
@@ -307,81 +255,67 @@
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "OTUI_Module_Development_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Performance_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Protocol_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Sound_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "UI_Modals_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "UI_Scroll_Pagination_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "UI_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "UI_Tabs_System_Guide.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "Wiki_Completion_Plan.md": {
     "prerequisites": [],
     "next_steps": [],
-    "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md"
+    ],
+    "integration_links": []
   },
   "Wiki_Index.md": {
     "prerequisites": [],
@@ -399,16 +333,6338 @@
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
   },
   "otclient_wiki.md": {
     "prerequisites": [],
     "next_steps": [],
     "related": [],
-    "integration_links": [
-      "OTClient_Canary_Integration.md"
-    ]
+    "integration_links": []
+  },
+  "Conceitos_Basicos.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Exemplos_Progressivos_OTClient.md",
+      "Glossario_Tecnico.md",
+      "Guia_Inicio_Rapido.md",
+      "Developer_Practical_Guides.md",
+      "Developer_Practical_Guides_backup_20250804_194251.md"
+    ],
+    "integration_links": []
+  },
+  "Exemplos_Progressivos_OTClient.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Conceitos_Basicos.md",
+      "Guia_Inicio_Rapido.md",
+      "Developer_Practical_Guides.md",
+      "Developer_Practical_Guides_backup_20250804_194251.md",
+      "guide_template.md"
+    ],
+    "integration_links": []
+  },
+  "GLOSSARIO_TERMINOLOGIA_TECNICA.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Glossario_Tecnico.md",
+      "tags_update_verification_report.md",
+      "task_19_4_completion_report.md"
+    ],
+    "integration_links": []
+  },
+  "Glossario_Tecnico.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Conceitos_Basicos.md",
+      "GLOSSARIO_TERMINOLOGIA_TECNICA.md",
+      "task_19_4_completion_report.md"
+    ],
+    "integration_links": []
+  },
+  "Guia_Inicio_Rapido.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Conceitos_Basicos.md",
+      "Exemplos_Progressivos_OTClient.md",
+      "Developer_Practical_Guides.md",
+      "Developer_Practical_Guides_backup_20250804_194251.md",
+      "guide_template.md"
+    ],
+    "integration_links": []
+  },
+  "RELATORIO_MELHORIAS_WIKI.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "researcher_agent.md",
+      "task_researcher_agent.md",
+      "Documentation_Status.md",
+      "Guia_Busca_Rapida.md"
+    ],
+    "integration_links": []
+  },
+  "Sistema_OTClient_BMAD_Relatorio_Geral.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "Sistema_Orquestracao_Inteligente_Guia.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "Troubleshooting_Comum.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CORE-007_Debug_System.md",
+      "CORE-009_Logs_System.md",
+      "Debug_System_Guide.md",
+      "GUIDE-004_Debugging_Avancado.md",
+      "GUIDE-010_Troubleshooting.md"
+    ],
+    "integration_links": []
+  },
+  "README_MODULE_WORKFLOW.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md",
+      "guia_sistema_bmad.md"
+    ],
+    "integration_links": []
+  },
+  "RELATORIO_CRIACAO_MODULO_ZERO.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md",
+      "guia_sistema_bmad.md"
+    ],
+    "integration_links": []
+  },
+  "RELATORIO_WORKFLOW_MODULOS.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "automacao_git.md",
+      "guia_sistema_bmad.md"
+    ],
+    "integration_links": []
+  },
+  "INTELLIGENT_CREATION_GUIDE.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTELLIGENT_SYSTEM_TASKS.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "API.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "README.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "examples.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "best_practices.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "common_errors.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "integration_guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "optimization_tips.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "module_creation_rules.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "organization_completion_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "automacao_git.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md"
+    ],
+    "integration_links": []
+  },
+  "guia_sistema_bmad.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "Advanced_Prompt_Engineering_Guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "Auto_Learning_Guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "git_automation_guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "script_usage_guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "otclient_module_workflow.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "practical_modules_creation_20250801_102304.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "sistema_autonomo.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "specialized_agents_plan.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "DOCUMENTATION_PLAN.md",
+      "continuous_development_plan.md",
+      "documentation_roadmap.md",
+      "integration_roadmap.md",
+      "DOCUMENTATION_PLAN.md"
+    ],
+    "integration_links": []
+  },
+  "agent_template.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "workflow_template.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "documentation_workflow.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "AGENTES_SIMPLIFICADOS.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "BMAD_Agents_Guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "BMAD_System_Guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "autonomous_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "consolidation_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "dashboard_completion_task.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "epic_4_4_autonomy_complete_task.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "game_stories_priority_task.md",
+      "ui_stories_priority_task.md",
+      "epic_2_1_canary_analysis_task.md",
+      "epic_2_1_canary_analysis_task.md",
+      "game_stories_priority_task.md"
+    ],
+    "integration_links": []
+  },
+  "game_stories_priority_task.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "epic_4_4_autonomy_complete_task.md",
+      "ui_stories_priority_task.md",
+      "epic_2_1_canary_analysis_task.md",
+      "epic_2_1_canary_analysis_task.md",
+      "epic_4_4_autonomy_complete_task.md"
+    ],
+    "integration_links": []
+  },
+  "git_automation.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "git_automation_agent.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "researcher_agent.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md"
+    ],
+    "integration_links": []
+  },
+  "task_researcher_agent.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md"
+    ],
+    "integration_links": []
+  },
+  "ui_stories_priority_task.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "epic_4_4_autonomy_complete_task.md",
+      "game_stories_priority_task.md",
+      "epic_2_1_canary_analysis_task.md",
+      "epic_2_1_canary_analysis_task.md",
+      "epic_4_4_autonomy_complete_task.md"
+    ],
+    "integration_links": []
+  },
+  "CANARY-001.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-001_core_architecture.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-002.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-002_graphics_engine.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-003.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-003_network_protocol.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-004.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-004_audio_engine.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-005.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-005_ui_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-006.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-006_scripting_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-007.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-007_game_mechanics.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-007_lua_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "guia_sistema_bmad.md",
+      "BMAD_System_Guide.md",
+      "CANARY-001.md",
+      "CANARY-001_core_architecture.md",
+      "CANARY-002.md"
+    ],
+    "integration_links": []
+  },
+  "CANARY-008.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-008_animation_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "guia_sistema_bmad.md",
+      "BMAD_System_Guide.md",
+      "CANARY-001.md",
+      "CANARY-001_core_architecture.md",
+      "CANARY-002.md"
+    ],
+    "integration_links": []
+  },
+  "CANARY-008_resource_engine.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-009.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-009_config_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-009_sound_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "guia_sistema_bmad.md",
+      "BMAD_System_Guide.md",
+      "CANARY-001.md",
+      "CANARY-001_core_architecture.md",
+      "CANARY-002.md"
+    ],
+    "integration_links": []
+  },
+  "CANARY-010.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-010_event_engine.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-010_particle_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-010.md",
+      "CANARY-011_map_system.md",
+      "CANARY-012_combat_system.md",
+      "CANARY-011_map_system.md",
+      "CANARY-012_combat_system.md"
+    ],
+    "integration_links": []
+  },
+  "CANARY-011.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-011_animation_engine.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-011_map_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-010_particle_system.md",
+      "CANARY-011.md",
+      "CANARY-012_combat_system.md",
+      "Map_System_Guide.md",
+      "CANARY-010_particle_system.md"
+    ],
+    "integration_links": []
+  },
+  "CANARY-012.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-012_combat_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-010_particle_system.md",
+      "CANARY-011_map_system.md",
+      "CANARY-012.md",
+      "OTCLIENT-012-Sistema-de-Combate.md",
+      "CANARY-010_particle_system.md"
+    ],
+    "integration_links": []
+  },
+  "CANARY-012_effect_engine.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-013.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-013_world_engine.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-014.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-014_creature_engine.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-015.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-015_item_engine.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-016.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-016_combat_engine.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-017.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-017_database_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-018.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-018_security_engine.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-019.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-019_performance_engine.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-020.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-020_debug_engine.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CANARY-021.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-007.md",
+      "CANARY-008.md",
+      "CANARY-009.md",
+      "CANARY-009_sound_system.md",
+      "CANARY-010.md"
+    ],
+    "integration_links": []
+  },
+  "CANARY-022.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-007.md",
+      "CANARY-008.md",
+      "CANARY-009.md",
+      "CANARY-009_sound_system.md",
+      "CANARY-010.md"
+    ],
+    "integration_links": []
+  },
+  "CANARY-023.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-007.md",
+      "CANARY-008.md",
+      "CANARY-009.md",
+      "CANARY-009_sound_system.md",
+      "CANARY-010.md"
+    ],
+    "integration_links": []
+  },
+  "Documentation_Template.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-001_introdução_ao_canary.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-002_arquitetura_core.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-003_engine_de_gráficos.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-004_protocolo_de_rede.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-005_sistema_de_scripting.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-006_mecânicas_do_jogo.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "api_reference.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "architecture_diagram.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "canary_course.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "canary_overview.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "cpp_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "dependencies.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "design_patterns.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "epic_2_1_3_lua_analysis_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "epic_2_1_canary_analysis_task.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "epic_4_4_autonomy_complete_task.md",
+      "game_stories_priority_task.md",
+      "ui_stories_priority_task.md",
+      "api_reference.md",
+      "architecture_diagram.md"
+    ],
+    "integration_links": []
+  },
+  "lua_api_reference.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "lua_modules.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "lua_usage_guides.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "project_structure.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "courses_index.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "courses_overview.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "educational_overview.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "fundamentals_course.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-001.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-001_architecture_comparison.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-002.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-002_protocol_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-003.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-003_ui_framework_comparison.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-004.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-004_scripting_comparison.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-005.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-005_performance_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-006.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-006_migration_guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-007.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-007_integration_patterns.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-008.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-008_best_practices.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-009.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-009_tooling_comparison.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-010.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION-010_future_roadmap.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "integration_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "integration_course.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "integration_overview.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "lua_integration_detailed_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "AdvancedUseCases.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "BestPractices.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CHERRY_PICK_GUIDE.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "COMPARACAO_SIMPLIFICADA.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CheatSheet.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CodeExamples.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CompleteAPIReference.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "Configuration.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "ConfigurationAdvanced.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CoreDebug.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CoreLogs.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CoreProfiling.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CreatureSystem.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "DOCUMENTATION_PLAN.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "ESTRUTURA_FINAL.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "EffectsSystem.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "EventTutorial.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "FAQ.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "FirstModule.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "GameAchievements.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "GameChat.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "GameCombat.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "GameCrafting.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "GameEffects.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "GameGuilds.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "GameInventory.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "GameMinimap.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "GamePvP.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "GameQuests.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "GameTrading.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "GettingStarted.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "GraphicsSystem.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "ItemSystem.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "LayoutTutorial.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "LuaAPI.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "METHODOLOGY-001.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "METHODOLOGY-002.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "METHODOLOGY-003.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "METHODOLOGY-004.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md"
+    ],
+    "integration_links": []
+  },
+  "METHODOLOGY-005.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "guia_sistema_bmad.md",
+      "BMAD_System_Guide.md",
+      "researcher_agent.md",
+      "task_researcher_agent.md"
+    ],
+    "integration_links": []
+  },
+  "METHODOLOGY-006.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "researcher_agent.md",
+      "task_researcher_agent.md",
+      "CANARY-001.md",
+      "CANARY-002.md"
+    ],
+    "integration_links": []
+  },
+  "ModuleSystem.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-001_comparação_de_arquiteturas.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-001_introdução_à_lua.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-002_análise_de_protocolos.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-002_c++_para_jogos.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-003_desenvolvimento_de_jogos.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-003_migração_de_código.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-004_ferramentas_de_desenvolvimento.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-004_padrões_de_integração.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "NetworkSystem.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "Protocol.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "RELATORIO_FINAL_CORRIGIDO.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "RELATORIO_IMPLEMENTACAO.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "SoundSystem.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "ThemeTutorial.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "Troubleshooting.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIAccessibility.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIAdvancedWidgets.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIAnimations.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIButton.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UICalendarDates.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIDragDrop.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIEvents.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIFormWidgets.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIGraphicsCharts.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIGraphicsWidgets.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIGridList.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UILayouts.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIListWidgets.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIMenuWidgets.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIModals.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIPlugins.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIReportWidgets.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIScrollPagination.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIStyling.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UITabs.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UITextEdit.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UITooltips.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UITreeHierarchy.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIUploadDownload.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIWidget.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIWidget_Reference.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "UIWidgetsSpecialized.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "WidgetTutorial.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "WorldSystem.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "cleanup_and_path_update_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "core_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "core_systems_detailed_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "epic_1_1_status_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "game_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "game_logic_detailed_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "migration_guides.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "migration_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "network_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "network_protocols_detailed_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "phase2_real_progress_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "phase2_refined_documentation.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "phase2_refinement_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "professor_status_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "report_template.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "research_plan.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "research_template.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "resource_management_detailed_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "status_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "ui_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "ui_components_detailed_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "unified_workflows.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "wiki_reorganization_plan.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-001_introdução_ao_otclient.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-002_sistema_core.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-003_sistema_de_gráficos.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-004_sistema_de_rede.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-005_sistema_de_áudio.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-006_framework_ui.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-007_sistema_de_módulos.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MÓDULO-008_lógica_do_jogo.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-001.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-001_core_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-002.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-002_graphics_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-003.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-003_network_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-004.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-004_audio_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-005.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-005_ui_framework.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-006.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-006_module_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-007.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-007_game_logic.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-008.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-008_resource_management.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-009.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-009_configuration_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-010.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-010_event_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-011.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-011_animation_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-012-Sistema-de-Combate.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-012.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-012_effect_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-013-Sistema-de-Inventario.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-013.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-013_world_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-014-Sistema-de-NPCs.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-014.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-014_creature_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-015-Sistema-de-Quests.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-015.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-015_item_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-016-Sistema-de-Grupos.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-016.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-016_combat_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-017-Sistema-de-Guilds.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-017.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-017_storage_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-018.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-018_security_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-019.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-019_performance_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-020.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-020_debug_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-021.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "OTCLIENT-022.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "migration_canary_to_otclient.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "migration_otclient_to_canary.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "otclient_animation_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "otclient_canary_unified_documentation.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "otclient_core_architecture_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "otclient_course.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "otclient_data_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "otclient_graphics_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "otclient_lua_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "otclient_map_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "otclient_module_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "otclient_network_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "otclient_particle_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "otclient_sound_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "otclient_ui_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CoreOptimization.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "PerformanceTips.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "DEPENDENCY_INTEGRATION_PLAN.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "content-creator.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "devops-engineer.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "engine-developer.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "game-designer.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "game-team-orchestrator.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "level-designer.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "qa-tester-enhanced.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "qa-tester.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "canary-architecture.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "game-dev-kb.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "coordinate-team.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "EMERGENCY_GIT_SYSTEM_FIX.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "agents_roadmap.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "atomic_git_sync_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "continuous_integration_system.md",
+      "dashboard_checkup_report.md",
+      "emergency_git_task.md",
+      "project_cleanup_report.md",
+      "system_completion_report.md"
+    ],
+    "integration_links": []
+  },
+  "canary_server_diagnosis_task.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "canary_server_executive_summary.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "continuous_development_plan.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "continuous_integration_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-007.md",
+      "CANARY-008.md",
+      "CANARY-009.md",
+      "CANARY-009_sound_system.md",
+      "CANARY-010.md"
+    ],
+    "integration_links": []
+  },
+  "dashboard_checkup_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "atomic_git_sync_system.md",
+      "continuous_integration_system.md",
+      "emergency_git_task.md",
+      "emergency_mdbook_task.md",
+      "project_cleanup_report.md"
+    ],
+    "integration_links": []
+  },
+  "dashboard_coverage_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "documentation_roadmap.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "emergency_git_task.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "atomic_git_sync_system.md",
+      "continuous_integration_system.md",
+      "dashboard_checkup_report.md",
+      "emergency_mdbook_task.md",
+      "project_cleanup_report.md"
+    ],
+    "integration_links": []
+  },
+  "emergency_mdbook_task.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md",
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md",
+      "researcher_agent.md"
+    ],
+    "integration_links": []
+  },
+  "epic_12_python_system.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "automacao_git.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md",
+      "sistema_autonomo.md",
+      "autonomous_system.md"
+    ],
+    "integration_links": []
+  },
+  "epic_12_summary.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "INTEGRATION-010.md",
+      "epic_12_python_system.md",
+      "epic_12_validation_report.md",
+      "epic_12_validation_summary.md",
+      "INTEGRATION-010.md"
+    ],
+    "integration_links": []
+  },
+  "epic_12_validation_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "INTEGRATION-009.md",
+      "METHODOLOGY-004.md",
+      "METHODOLOGY-005.md",
+      "Navigation_Index_Categorical.md",
+      "OTCLIENT-022.md"
+    ],
+    "integration_links": []
+  },
+  "epic_12_validation_summary.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "epic_12_python_system.md",
+      "epic_12_summary.md",
+      "epic_12_validation_report.md"
+    ],
+    "integration_links": []
+  },
+  "epic_14_activation_guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "epic_18_correction_plan.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "integrated_task_manager.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "integration_roadmap.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "progress_metrics.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "project_cleanup_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "cleanup_and_path_update_report.md",
+      "atomic_git_sync_system.md",
+      "continuous_integration_system.md",
+      "dashboard_checkup_report.md",
+      "emergency_git_task.md"
+    ],
+    "integration_links": []
+  },
+  "system_completion_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-023.md",
+      "atomic_git_sync_system.md",
+      "continuous_integration_system.md",
+      "dashboard_checkup_report.md",
+      "emergency_git_task.md"
+    ],
+    "integration_links": []
+  },
+  "system_dashboard.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "task_execution_plan.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "task_master.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "task_master_archived.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "epic_17_audit_consolidated_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "epic_17_final_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "epic_18_final_correction_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "basic_notions_expansion_summary.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "epic_16_completion_report.md",
+      "system_internal_knowledge_expansion.md"
+    ],
+    "integration_links": []
+  },
+  "client_server_communication_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "coins_economy_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "config_validation_rules.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "diretrizes_configuracao.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "diretrizes_desempenho.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "diretrizes_documentacao.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Documentation_Status.md",
+      "Habdel_Wiki_Integration_Report.md",
+      "Wiki_Completion_Plan.md",
+      "Documentation_Status.md",
+      "Habdel_Wiki_Integration_Report.md"
+    ],
+    "integration_links": []
+  },
+  "diretrizes_estrutura_arquivos.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "diretrizes_integracao.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "diretrizes_leia_me.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "diretrizes_python.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "diretrizes_seguranca.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "epic_14_activation_documentation.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "guia_sistema_bmad.md",
+      "sistema_autonomo.md",
+      "documentation_workflow.md",
+      "BMAD_System_Guide.md"
+    ],
+    "integration_links": []
+  },
+  "events_callbacks_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "extended_opcode_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "epic_14_completion_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "guia_sistema_bmad.md",
+      "sistema_autonomo.md",
+      "BMAD_System_Guide.md",
+      "autonomous_system.md",
+      "Wiki_Completion_Plan.md"
+    ],
+    "integration_links": []
+  },
+  "epic_16_completion_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "system_completion_report.md",
+      "basic_notions_expansion_summary.md",
+      "knowledge_usage_guide.md",
+      "epic_2_1_2_cpp_analysis_completion_report_1.md",
+      "epic_2_1_2_cpp_analysis_completion_report_1_20250801_103950.md"
+    ],
+    "integration_links": []
+  },
+  "knowledge_usage_guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "git_automation_guide.md",
+      "script_usage_guide.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md",
+      "METHODOLOGY-001.md"
+    ],
+    "integration_links": []
+  },
+  "game_store_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md",
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md",
+      "researcher_agent.md"
+    ],
+    "integration_links": []
+  },
+  "knowledge_integration_code_creator_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "modules_loading_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "Advanced_Configuration_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Animation_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "CORE-007_Debug_System_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Troubleshooting_Comum.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "CORE-008_Performance_System_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "Auto_Learning_Guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "CORE-009_Logs_System_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Troubleshooting_Comum.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "CORE-010_Backup_System_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "script_usage_guide.md",
+      "otclient_module_workflow.md"
+    ],
+    "integration_links": []
+  },
+  "Cheat_Sheet_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Combat_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Configuration_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Creature_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Debug_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Troubleshooting_Comum.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Developer_Practical_Guides_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Conceitos_Basicos.md",
+      "Exemplos_Progressivos_OTClient.md",
+      "Guia_Inicio_Rapido.md",
+      "INTEGRATION-006.md",
+      "Developer_Practical_Guides.md"
+    ],
+    "integration_links": []
+  },
+  "Documentation_Status_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md"
+    ],
+    "integration_links": []
+  },
+  "Drag_Drop_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Effects_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "GUIDE-004_Debugging_Avancado_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Troubleshooting_Comum.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md"
+    ],
+    "integration_links": []
+  },
+  "GUIDE-005_Performance_Otimizacao_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "Auto_Learning_Guide.md",
+      "git_automation_guide.md"
+    ],
+    "integration_links": []
+  },
+  "GUIDE-006_UI_Avancada_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "GUIDE-007_Game_Systems_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "GUIDE-008_Deploy_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "GUIDE-009_Contribuicao_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "GUIDE-010_Troubleshooting_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Troubleshooting_Comum.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Game_Quests_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Game_Trading_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Getting_Started_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Graphics_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Guia_Busca_Rapida_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Troubleshooting_Comum.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md"
+    ],
+    "integration_links": []
+  },
+  "Habdel_Integration_Index_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "guia_sistema_bmad.md",
+      "BMAD_System_Guide.md",
+      "researcher_agent.md"
+    ],
+    "integration_links": []
+  },
+  "Habdel_Navigation_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "researcher_agent.md",
+      "task_researcher_agent.md",
+      "CANARY-001.md",
+      "CANARY-002.md"
+    ],
+    "integration_links": []
+  },
+  "Habdel_Wiki_Integration_Report_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md"
+    ],
+    "integration_links": []
+  },
+  "Item_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Lua_API_Reference_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "Map_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Module_Development_Guide_backup_20250804_194202.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "Module_Development_Guide_backup_20250804_194202_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Module_Development_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Module_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Navigation_Index_Alphabetical_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Habdel_Integration_Index.md",
+      "Habdel_Navigation_Guide.md",
+      "Navigation_Index_Alphabetical.md",
+      "Navigation_Index_Categorical.md",
+      "Navigation_Index_Search.md"
+    ],
+    "integration_links": []
+  },
+  "Navigation_Index_Categorical_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Habdel_Integration_Index.md",
+      "Habdel_Navigation_Guide.md",
+      "Navigation_Index_Alphabetical.md",
+      "Navigation_Index_Categorical.md",
+      "Navigation_Index_Search.md"
+    ],
+    "integration_links": []
+  },
+  "Navigation_Index_Search_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Habdel_Integration_Index.md",
+      "Habdel_Navigation_Guide.md",
+      "Navigation_Index_Alphabetical.md",
+      "Navigation_Index_Categorical.md",
+      "Navigation_Index_Search.md"
+    ],
+    "integration_links": []
+  },
+  "Navigation_Index_Story_Based_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CORE-007_Debug_System.md",
+      "Debug_System_Guide.md",
+      "GUIDE-004_Debugging_Avancado.md",
+      "GUIDE-009_Contribuicao.md",
+      "Habdel_Integration_Index.md"
+    ],
+    "integration_links": []
+  },
+  "Network_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "OTCLIENT-012-Sistema-de-Combate_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md",
+      "BMAD_System_Guide.md"
+    ],
+    "integration_links": []
+  },
+  "OTCLIENT-013-Sistema-de-Inventario_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md",
+      "BMAD_System_Guide.md"
+    ],
+    "integration_links": []
+  },
+  "OTCLIENT-014-Sistema-de-NPCs_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md",
+      "BMAD_System_Guide.md"
+    ],
+    "integration_links": []
+  },
+  "OTCLIENT-015-Sistema-de-Quests_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md",
+      "BMAD_System_Guide.md"
+    ],
+    "integration_links": []
+  },
+  "OTCLIENT-016-Sistema-de-Grupos_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md",
+      "BMAD_System_Guide.md"
+    ],
+    "integration_links": []
+  },
+  "OTCLIENT-017-Sistema-de-Guilds_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md",
+      "BMAD_System_Guide.md"
+    ],
+    "integration_links": []
+  },
+  "OTUI_Module_Development_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Performance_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "Auto_Learning_Guide.md",
+      "git_automation_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Protocol_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Sound_System_Guide_backup_20250804_194127.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "Sound_System_Guide_backup_20250804_194127_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Sound_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "UI_Modals_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "UI_Scroll_Pagination_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "UI_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "UI_Tabs_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "Wiki_Completion_Plan_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md"
+    ],
+    "integration_links": []
+  },
+  "Wiki_Index_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "Wiki_Optimization_Report_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "World_System_Guide_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md"
+    ],
+    "integration_links": []
+  },
+  "otclient_wiki_backup_20250804_194251.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "git_automation_guide.md"
+    ],
+    "integration_links": []
+  },
+  "coins_economy_practical_guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Game_Trading_System_Guide.md",
+      "Game_Trading_System_Guide_backup_20250804_194251.md",
+      "README.md",
+      "communication_practical_guide.md",
+      "events_callbacks_practical_guide.md"
+    ],
+    "integration_links": []
+  },
+  "communication_practical_guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "INTEGRATION-002.md",
+      "game_store_system_analysis.md",
+      "README.md",
+      "coins_economy_practical_guide.md",
+      "events_callbacks_practical_guide.md"
+    ],
+    "integration_links": []
+  },
+  "events_callbacks_practical_guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "UI_System_Guide.md",
+      "UI_System_Guide_backup_20250804_194251.md",
+      "README.md",
+      "coins_economy_practical_guide.md",
+      "communication_practical_guide.md"
+    ],
+    "integration_links": []
+  },
+  "extended_opcode_practical_guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "INTEGRATION-002.md",
+      "knowledge_usage_guide.md",
+      "game_store_system_analysis.md",
+      "README.md",
+      "coins_economy_practical_guide.md"
+    ],
+    "integration_links": []
+  },
+  "game_store_practical_guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "knowledge_usage_guide.md",
+      "game_store_system_analysis.md",
+      "README.md",
+      "coins_economy_practical_guide.md",
+      "communication_practical_guide.md"
+    ],
+    "integration_links": []
+  },
+  "knowledge_integration_practical_guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "guia_sistema_bmad.md",
+      "BMAD_System_Guide.md",
+      "researcher_agent.md",
+      "task_researcher_agent.md",
+      "INTEGRATION-001.md"
+    ],
+    "integration_links": []
+  },
+  "modules_loading_practical_guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "otclient_module_workflow.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md"
+    ],
+    "integration_links": []
+  },
+  "ui_interface_practical_guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "INTEGRATION-003.md",
+      "INTEGRATION-008.md",
+      "UIAdvancedWidgets.md",
+      "UIAnimations.md",
+      "UICalendarDates.md"
+    ],
+    "integration_links": []
+  },
+  "validation_security_practical_guide.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "INTEGRATION-009.md",
+      "METHODOLOGY-004.md",
+      "METHODOLOGY-005.md",
+      "OTCLIENT-022.md",
+      "epic_12_validation_report.md"
+    ],
+    "integration_links": []
+  },
+  "system_internal_knowledge_expansion.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "INTEGRATION-002.md",
+      "basic_notions_expansion_summary.md",
+      "game_store_system_analysis.md",
+      "README.md",
+      "communication_practical_guide.md"
+    ],
+    "integration_links": []
+  },
+  "ui_interface_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "validation_security_system_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "knowledge_validation_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "otclient_module_workflow.md",
+      "INTEGRATION-009.md",
+      "METHODOLOGY-004.md",
+      "METHODOLOGY-005.md",
+      "OTCLIENT-022.md"
+    ],
+    "integration_links": []
+  },
+  "OTClient_Canary_Integration.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md",
+      "BMAD_System_Guide.md"
+    ],
+    "integration_links": []
+  },
+  "api_template.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md",
+      "agent_template.md"
+    ],
+    "integration_links": []
+  },
+  "documentation_template.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md",
+      "agent_template.md"
+    ],
+    "integration_links": []
+  },
+  "guide_template.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Conceitos_Basicos.md",
+      "Exemplos_Progressivos_OTClient.md",
+      "Guia_Inicio_Rapido.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md"
+    ],
+    "integration_links": []
+  },
+  "reference_template.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md",
+      "agent_template.md"
+    ],
+    "integration_links": []
+  },
+  "communication_protocols.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md",
+      "BMAD_System_Guide.md"
+    ],
+    "integration_links": []
+  },
+  "external_documentation_references.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "guia_sistema_bmad.md",
+      "documentation_workflow.md",
+      "BMAD_System_Guide.md",
+      "README_MODULE_WORKFLOW.md"
+    ],
+    "integration_links": []
+  },
+  "integration_guides.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md",
+      "BMAD_System_Guide.md"
+    ],
+    "integration_links": []
+  },
+  "integration_patterns.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "Auto_Learning_Guide.md",
+      "otclient_module_workflow.md"
+    ],
+    "integration_links": []
+  },
+  "unified_api_templates.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md",
+      "BMAD_System_Guide.md"
+    ],
+    "integration_links": []
+  },
+  "validation_structure.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md",
+      "BMAD_System_Guide.md"
+    ],
+    "integration_links": []
+  },
+  "SUMMARY.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "test.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "trigger.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "leia_me.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md"
+    ],
+    "integration_links": []
+  },
+  "CORRECAO_LIMITACOES_CANARY_20250801_103951_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "git_task_manager_integration_report_1.md",
+      "git_task_manager_integration_report_1_20250801_103951.md"
+    ],
+    "integration_links": []
+  },
+  "correcao_modulos_teste_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "correcao_organizacao_logs_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "RELATORIO_FINAL_100_PORCENTO_ENTREGUE_20250801_103951_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "RELATORIO_FINAL_CODE_CLEANUP_IMPLEMENTACAO_20250801_103951_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "RELATORIO_FINAL_SISTEMA_GIT_AUTOMATICO_20250801_103951_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "Relatório_Final_Commits_Completos_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "Relatório_Final_Commits_Completos_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "Relatório_Final_Sincronização_Completa_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "Relatório_Final_Sincronização_Completa_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "relatorio_final_analise_completa_sistema_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "relatorio_final_organizacao_wiki_log_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "RELATORIO_ACAO_IMEDIATA_AGENTE_GIT_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "RELATORIO_ACAO_IMEDIATA_AGENTE_GIT_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "RELATORIO_ACAO_IMEDIATA_PRIORIZAR_STORIES_HABDEL_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md"
+    ],
+    "integration_links": []
+  },
+  "RELATORIO_ACAO_IMEDIATA_PRIORIZAR_STORIES_HABDEL_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md"
+    ],
+    "integration_links": []
+  },
+  "RELATORIO_DESENVOLVIMENTO_CONTINUO_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "RELATORIO_DESENVOLVIMENTO_CONTINUO_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "RELATORIO_INVESTIGACAO_AGENTE_GIT_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "RELATORIO_INVESTIGACAO_AGENTE_GIT_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "RELATORIO_VERIFICACAO_SISTEMA_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "RELATORIO_VERIFICACAO_SISTEMA_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "RELATORIO_VERIFICACAO_TAREFAS_COMPLETAS_INCOMPLETAS_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "RELATORIO_VERIFICACAO_TAREFAS_COMPLETAS_INCOMPLETAS_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "Relatorio_Progresso_Guide_Stories_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "dashboard_coverage_analysis.md"
+    ],
+    "integration_links": []
+  },
+  "Relatorio_Progresso_Guide_Stories_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "dashboard_coverage_analysis.md"
+    ],
+    "integration_links": []
+  },
+  "Relatório_Analise_Debug_Modules_OTClient_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "Troubleshooting_Comum.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md"
+    ],
+    "integration_links": []
+  },
+  "Relatório_Analise_Debug_Modules_OTClient_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "Troubleshooting_Comum.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md"
+    ],
+    "integration_links": []
+  },
+  "Relatório_Commit_Analise_Debug_Modules_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "Troubleshooting_Comum.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md"
+    ],
+    "integration_links": []
+  },
+  "Relatório_Commit_Analise_Debug_Modules_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "Troubleshooting_Comum.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md"
+    ],
+    "integration_links": []
+  },
+  "TASK_003_GIT_AUTOMATION_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "TASK_003_GIT_AUTOMATION_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "TASK_6.1_CONCLUIDA_PROFESSOR_AGENT_ATIVADO_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "TASK_AGENT_SPECIALIZATION_AAA_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "TASK_AGENT_SPECIALIZATION_AAA_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "TASK_AUTO_LEARNING_SYSTEM_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "TASK_AUTO_LEARNING_SYSTEM_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "TASK_DESENVOLVIMENTO_CONTINUO_CONCLUIDA_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "TASK_DESENVOLVIMENTO_CONTINUO_CONCLUIDA_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "TASK_SUPERVISOR_AGENT_CRIADO_E_TESTADO_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "Tarefa_Temporaria_Guide_Stories_Prioridade_Maxima_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "dashboard_coverage_analysis.md",
+      "integrated_task_manager.md",
+      "system_dashboard.md",
+      "RELATORIO_ACAO_IMEDIATA_PRIORIZAR_STORIES_HABDEL_20250801_103951_20250801_103952.md",
+      "RELATORIO_ACAO_IMEDIATA_PRIORIZAR_STORIES_HABDEL_20250801_103952.md"
+    ],
+    "integration_links": []
+  },
+  "analise_completa_regras_templates_workflows_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "analise_organizacao_wiki_log_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "analise_repeticoes_cursor_md_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "canary_core_progress_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "canary_game_progress_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "canary_integration_progress_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "canary_network_progress_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "canary_ui_progress_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "desenvolvimento_continuo_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "integration_tasks_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "integration_tasks_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "intelligent_orchestration_recipe_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "intelligent_orchestration_recipe_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "practical_projects_execution_20250801_100451_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "relatorio_progresso_integracao_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "tasks_completas_faltantes_analysis_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "otclient_module_workflow.md",
+      "Documentation_Template.md",
+      "api_reference.md",
+      "architecture_diagram.md",
+      "cpp_analysis.md"
+    ],
+    "integration_links": []
+  },
+  "tasks_prioritarias_integracao_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "teste_verificacao_sistema_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "Relatório_Commit_Melhorias_QA_Tester_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "Troubleshooting_Comum.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md"
+    ],
+    "integration_links": []
+  },
+  "Relatório_Commit_Melhorias_QA_Tester_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "Troubleshooting_Comum.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md"
+    ],
+    "integration_links": []
+  },
+  "Relatório_Melhorias_Agente_Tester_OTClient_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "Troubleshooting_Comum.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md"
+    ],
+    "integration_links": []
+  },
+  "Relatório_Melhorias_Agente_Tester_OTClient_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "Troubleshooting_Comum.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md"
+    ],
+    "integration_links": []
+  },
+  "TASK_MELHORIA_ENGENHARIA_PROMPT_20250801_103951_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "TASK_MELHORIA_ENGENHARIA_PROMPT_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "otclient_improvements_priority_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md"
+    ],
+    "integration_links": []
+  },
+  "auto_update_system_plan_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "habdel_organization_plan_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md",
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md"
+    ],
+    "integration_links": []
+  },
+  "plano_estruturado_execution_progress_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "api_reference.md",
+      "architecture_diagram.md",
+      "cpp_analysis.md",
+      "dependencies.md",
+      "design_patterns.md"
+    ],
+    "integration_links": []
+  },
+  "plano_integracao_total_wikis_20250801_103952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "atualizacao_titulos_relatorio.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "TASK_6.1_CONCLUIDA_PROFESSOR_AGENT_ATIVADO.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "TASK_SUPERVISOR_AGENT_CRIADO_E_TESTADO.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "Tarefa_Temporaria_Guide_Stories_Prioridade_Maxima.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "dashboard_coverage_analysis.md",
+      "integrated_task_manager.md",
+      "system_dashboard.md",
+      "RELATORIO_ACAO_IMEDIATA_PRIORIZAR_STORIES_HABDEL_20250801_103951_20250801_103952.md",
+      "RELATORIO_ACAO_IMEDIATA_PRIORIZAR_STORIES_HABDEL_20250801_103952.md"
+    ],
+    "integration_links": []
+  },
+  "analise_completa_regras_templates_workflows.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "analise_organizacao_wiki_log.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "analise_repeticoes_cursor_md.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "auto_update_system_plan.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "canary_core_progress.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "canary_game_progress.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "canary_integration_progress.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "canary_network_progress.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "canary_ui_progress.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "certification_activation_report_20250801_102548.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "correcao_modulos_teste.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "correcao_organizacao_logs.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "desenvolvimento_continuo.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "education_validation_report_20250801_093425.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "habdel_organization_plan.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md",
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md"
+    ],
+    "integration_links": []
+  },
+  "otclient_improvements_priority.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "guia_sistema_bmad.md",
+      "otclient_module_workflow.md"
+    ],
+    "integration_links": []
+  },
+  "plano_estruturado_execution_progress.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "api_reference.md",
+      "architecture_diagram.md",
+      "cpp_analysis.md",
+      "dependencies.md",
+      "design_patterns.md"
+    ],
+    "integration_links": []
+  },
+  "plano_integracao_total_wikis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "practical_projects_execution_20250801_100451.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "professor_initialization_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "professor_phase4.1_final_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "professor_phase4.2_lessons_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "progress_update_report_2025_01_27.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "plano_estruturado_execution_progress_20250801_103952.md",
+      "plano_estruturado_execution_progress.md",
+      "epic_2_1_2_cpp_analysis_completion_report_1.md",
+      "epic_2_1_2_cpp_analysis_completion_report_1_20250801_103950.md",
+      "epic_2_1_2_cpp_analysis_completion_report_1_20250801_103951.md"
+    ],
+    "integration_links": []
+  },
+  "qa_report_task_master_agent_20250729_221733.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "relatorio_final_analise_completa_sistema.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "relatorio_final_organizacao_wiki_log.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "relatorio_progresso_integracao.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "task_supervisor_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "tasks_completas_faltantes_analysis.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "otclient_module_workflow.md",
+      "Documentation_Template.md",
+      "api_reference.md",
+      "architecture_diagram.md",
+      "cpp_analysis.md"
+    ],
+    "integration_links": []
+  },
+  "tasks_prioritarias_integracao.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "teste_verificacao_sistema.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "workflow_activation_report_20250801_094148.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "workflow_validation_report_20250801_102832.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "centralization_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "certification_activation_report_20250801_160426.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "certification_activation_report_20250801_160506.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "certification_activation_report_20250802_205907.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "map_editor_module_future_task.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "forgottenmapeditor_submodule_report.md"
+    ],
+    "integration_links": []
+  },
+  "mapeamento_arquivos_ingles_relatorio.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "practical_projects_execution_20250801_160433.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "practical_projects_execution_20250801_160512.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "practical_projects_execution_20250802_205952.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "deep_source_analysis_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "deep_source_analysis_report_1_20250801_103950.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "deep_source_analysis_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "epic_2_1_2_cpp_analysis_completion_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "cpp_analysis.md",
+      "system_completion_report.md",
+      "cpp_analysis.md",
+      "epic_16_completion_report.md",
+      "plano_estruturado_execution_progress_20250801_103952.md"
+    ],
+    "integration_links": []
+  },
+  "epic_2_1_2_cpp_analysis_completion_report_1_20250801_103950.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "cpp_analysis.md",
+      "system_completion_report.md",
+      "cpp_analysis.md",
+      "epic_16_completion_report.md",
+      "plano_estruturado_execution_progress_20250801_103952.md"
+    ],
+    "integration_links": []
+  },
+  "epic_2_1_2_cpp_analysis_completion_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "cpp_analysis.md",
+      "system_completion_report.md",
+      "cpp_analysis.md",
+      "epic_16_completion_report.md",
+      "plano_estruturado_execution_progress_20250801_103952.md"
+    ],
+    "integration_links": []
+  },
+  "professor_initialization_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "professor_initialization_report_1_20250801_103950.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "professor_initialization_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "professor_initialization_report_20250801_103950.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "professor_phase4.1_final_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "professor_phase4.1_final_report_1_20250801_103950.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "professor_phase4.1_final_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "professor_phase4.1_final_report_20250801_103950.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "professor_phase4.2_lessons_report_20250801_103950.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "AUTO_LEARNING_SYSTEM_IMPLEMENTATION_REPORT_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "AUTO_LEARNING_SYSTEM_IMPLEMENTATION_REPORT_1_20250801_103950.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "AUTO_LEARNING_SYSTEM_IMPLEMENTATION_REPORT_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "CORE_STORIES_COMPLETION_REPORT_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Troubleshooting_Comum.md",
+      "epic_2_1_3_lua_analysis_report.md",
+      "INTEGRATION-004.md",
+      "core_analysis.md",
+      "CORE-007_Debug_System.md"
+    ],
+    "integration_links": []
+  },
+  "CORE_STORIES_COMPLETION_REPORT_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Troubleshooting_Comum.md",
+      "epic_2_1_3_lua_analysis_report.md",
+      "INTEGRATION-004.md",
+      "core_analysis.md",
+      "CORE-007_Debug_System.md"
+    ],
+    "integration_links": []
+  },
+  "DESENVOLVIMENTO_CONTINUO_FINAL_REPORT_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "DESENVOLVIMENTO_CONTINUO_FINAL_REPORT_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "ENHANCED_AGENT_SYSTEM_REPORT_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "ENHANCED_AGENT_SYSTEM_REPORT_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "FINAL_VERIFICATION_REPORT_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "FINAL_VERIFICATION_REPORT_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "GIT_AUTOMATION_REPORT_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "GIT_AUTOMATION_REPORT_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MIGRATION_COMPLETED_REPORT_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "MIGRATION_COMPLETED_REPORT_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "PROMPT_ENGINEERING_IMPROVEMENT_REPORT_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "PROMPT_ENGINEERING_IMPROVEMENT_REPORT_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "PYTHON_AGENT_FINAL_REPORT_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "PYTHON_AGENT_FINAL_REPORT_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "aaa_compatibility_fix_report_20250729_000650.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "aaa_compatibility_fix_report_20250729_000650_20250801_103950.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "aaa_compatibility_fix_report_20250729_000650_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "auto_update_system_implementation_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "auto_update_system_implementation_report_1_20250801_103950.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "auto_update_system_implementation_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "canary_007_completion_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-007.md",
+      "CANARY-007_lua_system.md",
+      "CANARY-008.md",
+      "CANARY-009.md",
+      "CANARY-009_sound_system.md"
+    ],
+    "integration_links": []
+  },
+  "canary_007_completion_report_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-007.md",
+      "CANARY-007_lua_system.md",
+      "CANARY-008.md",
+      "CANARY-009.md",
+      "CANARY-009_sound_system.md"
+    ],
+    "integration_links": []
+  },
+  "canary_008_completion_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-007.md",
+      "CANARY-008.md",
+      "CANARY-008_animation_system.md",
+      "CANARY-009.md",
+      "CANARY-009_sound_system.md"
+    ],
+    "integration_links": []
+  },
+  "canary_008_completion_report_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-007.md",
+      "CANARY-008.md",
+      "CANARY-008_animation_system.md",
+      "CANARY-009.md",
+      "CANARY-009_sound_system.md"
+    ],
+    "integration_links": []
+  },
+  "canary_009_completion_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-007.md",
+      "CANARY-008.md",
+      "CANARY-009.md",
+      "CANARY-009_sound_system.md",
+      "CANARY-010.md"
+    ],
+    "integration_links": []
+  },
+  "canary_009_completion_report_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-007.md",
+      "CANARY-008.md",
+      "CANARY-009.md",
+      "CANARY-009_sound_system.md",
+      "CANARY-010.md"
+    ],
+    "integration_links": []
+  },
+  "canary_010_completion_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-007.md",
+      "CANARY-008.md",
+      "CANARY-009.md",
+      "CANARY-009_sound_system.md",
+      "CANARY-010.md"
+    ],
+    "integration_links": []
+  },
+  "canary_010_completion_report_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-007.md",
+      "CANARY-008.md",
+      "CANARY-009.md",
+      "CANARY-009_sound_system.md",
+      "CANARY-010.md"
+    ],
+    "integration_links": []
+  },
+  "canary_011_completion_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-007.md",
+      "CANARY-008.md",
+      "CANARY-009.md",
+      "CANARY-009_sound_system.md",
+      "CANARY-010.md"
+    ],
+    "integration_links": []
+  },
+  "canary_011_completion_report_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-007.md",
+      "CANARY-008.md",
+      "CANARY-009.md",
+      "CANARY-009_sound_system.md",
+      "CANARY-010.md"
+    ],
+    "integration_links": []
+  },
+  "canary_012_completion_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-007.md",
+      "CANARY-008.md",
+      "CANARY-009.md",
+      "CANARY-009_sound_system.md",
+      "CANARY-010.md"
+    ],
+    "integration_links": []
+  },
+  "canary_012_completion_report_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-007.md",
+      "CANARY-008.md",
+      "CANARY-009.md",
+      "CANARY-009_sound_system.md",
+      "CANARY-010.md"
+    ],
+    "integration_links": []
+  },
+  "canary_initialization_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "canary_initialization_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "canary_phase3_final_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "canary_phase3_final_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "certification_activation_report_20250801_102548_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "cleanup_implementation_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "cleanup_implementation_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "commit_success_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "commit_success_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "commit_system_verification_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "automacao_git.md",
+      "git_automation_guide.md",
+      "git_automation.md",
+      "git_automation_agent.md"
+    ],
+    "integration_links": []
+  },
+  "commit_system_verification_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "automacao_git.md",
+      "git_automation_guide.md",
+      "git_automation.md",
+      "git_automation_agent.md"
+    ],
+    "integration_links": []
+  },
+  "dashboard_creation_final_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "dashboard_creation_final_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "deep_source_final_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "deep_source_final_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "documentation_completion_final_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "documentation_completion_final_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "documentation_completion_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "documentation_completion_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "file_mover_script_creation_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "file_mover_script_creation_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "final_implementation_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "specialized_agents_plan.md",
+      "specialized_agents_plan.md",
+      "epic_2_1_3_lua_analysis_report.md",
+      "Habdel_Wiki_Integration_Report.md",
+      "epic_2_1_3_lua_analysis_report.md"
+    ],
+    "integration_links": []
+  },
+  "final_implementation_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "specialized_agents_plan.md",
+      "specialized_agents_plan.md",
+      "epic_2_1_3_lua_analysis_report.md",
+      "Habdel_Wiki_Integration_Report.md",
+      "epic_2_1_3_lua_analysis_report.md"
+    ],
+    "integration_links": []
+  },
+  "git_commit_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "git_commit_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "git_operations_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "git_operations_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "habdel_stories_completion_final_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md",
+      "README_MODULE_WORKFLOW.md"
+    ],
+    "integration_links": []
+  },
+  "habdel_stories_completion_final_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md",
+      "README_MODULE_WORKFLOW.md"
+    ],
+    "integration_links": []
+  },
+  "next_steps_implementation_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "guia_sistema_bmad.md",
+      "sistema_autonomo.md",
+      "BMAD_System_Guide.md",
+      "autonomous_system.md",
+      "epic_2_1_3_lua_analysis_report.md"
+    ],
+    "integration_links": []
+  },
+  "next_steps_implementation_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "guia_sistema_bmad.md",
+      "sistema_autonomo.md",
+      "BMAD_System_Guide.md",
+      "autonomous_system.md",
+      "epic_2_1_3_lua_analysis_report.md"
+    ],
+    "integration_links": []
+  },
+  "plano_estruturado_execution_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "epic_4_4_autonomy_complete_task.md",
+      "game_stories_priority_task.md",
+      "ui_stories_priority_task.md",
+      "epic_2_1_canary_analysis_task.md",
+      "epic_2_1_canary_analysis_task.md"
+    ],
+    "integration_links": []
+  },
+  "plano_estruturado_execution_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "epic_4_4_autonomy_complete_task.md",
+      "game_stories_priority_task.md",
+      "ui_stories_priority_task.md",
+      "epic_2_1_canary_analysis_task.md",
+      "epic_2_1_canary_analysis_task.md"
+    ],
+    "integration_links": []
+  },
+  "python_error_resolution_system_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "python_error_resolution_system_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "ui_009_completion_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md",
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md"
+    ],
+    "integration_links": []
+  },
+  "ui_009_completion_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md",
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md"
+    ],
+    "integration_links": []
+  },
+  "AUTO_LEARNING_RULES_INTEGRATION_REPORT_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "AUTO_LEARNING_RULES_INTEGRATION_REPORT_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION_STATUS_REPORT_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "INTEGRATION_STATUS_REPORT_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "integration_initialization_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "integration_initialization_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "integration_phase4_final_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "integration_phase4_final_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "AGENT_ORGANIZATION_RULES_REPORT_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "AGENT_ORGANIZATION_RULES_REPORT_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "ORGANIZATION_REPORT_20250729_004607.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "ORGANIZATION_REPORT_20250729_004607_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "ORGANIZATION_REPORT_20250731_101417.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "ORGANIZATION_REPORT_20250731_101417_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "habdel_organization_completion_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md",
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md"
+    ],
+    "integration_links": []
+  },
+  "habdel_organization_completion_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md",
+      "README_MODULE_WORKFLOW.md",
+      "documentation_workflow.md"
+    ],
+    "integration_links": []
+  },
+  "habdel_organization_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "habdel_organization_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "habdel_progress_analysis_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "researcher_agent.md",
+      "task_researcher_agent.md",
+      "CANARY-001.md",
+      "CANARY-002.md"
+    ],
+    "integration_links": []
+  },
+  "habdel_progress_analysis_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "researcher_agent.md",
+      "task_researcher_agent.md",
+      "CANARY-001.md",
+      "CANARY-002.md"
+    ],
+    "integration_links": []
+  },
+  "progress_update_report_2025_01_27_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "plano_estruturado_execution_progress_20250801_103952.md",
+      "plano_estruturado_execution_progress.md",
+      "progress_update_report_2025_01_27.md",
+      "epic_2_1_2_cpp_analysis_completion_report_1.md",
+      "epic_2_1_2_cpp_analysis_completion_report_1_20250801_103950.md"
+    ],
+    "integration_links": []
+  },
+  "git_task_manager_integration_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "automacao_git.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md",
+      "sistema_autonomo.md",
+      "autonomous_system.md"
+    ],
+    "integration_links": []
+  },
+  "git_task_manager_integration_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "automacao_git.md",
+      "git_automation_guide.md",
+      "script_usage_guide.md",
+      "sistema_autonomo.md",
+      "autonomous_system.md"
+    ],
+    "integration_links": []
+  },
+  "integrated_task_manager_implementation_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "dashboard_completion_task.md",
+      "epic_2_1_3_lua_analysis_report.md",
+      "Habdel_Wiki_Integration_Report.md",
+      "dashboard_coverage_analysis.md",
+      "integrated_task_manager.md"
+    ],
+    "integration_links": []
+  },
+  "integrated_task_manager_implementation_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "dashboard_completion_task.md",
+      "epic_2_1_3_lua_analysis_report.md",
+      "Habdel_Wiki_Integration_Report.md",
+      "dashboard_coverage_analysis.md",
+      "integrated_task_manager.md"
+    ],
+    "integration_links": []
+  },
+  "qa_report_task_master_agent_20250729_221733_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "task_supervisor_report_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "aaa_validation_report_20250729_000116.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "aaa_validation_report_20250729_000116_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "aaa_validation_report_20250729_000653.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "aaa_validation_report_20250729_000653_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "comprehensive_validation_report_1.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "comprehensive_validation_report_1_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "education_validation_report_20250801_093425_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "workflow_activation_report_20250801_094148_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "workflow_validation_report_20250801_102832_20250801_103951.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "task_12_2_module_structure_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "task_12_3_migration_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "task_12_4_function_catalog_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "task_12_5_validation_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "task_12_6_correction_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "task_19_5_completion_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "RELATORIO_ACAO_IMEDIATA_PRIORIZAR_STORIES_HABDEL_20250801_103951_20250801_103952.md"
+    ],
+    "integration_links": []
+  },
+  "teste_renomeacao_relatorio.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "workflow_activation_report_20250801_160424.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "workflow_activation_report_20250801_160504.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "workflow_activation_report_20250802_205904.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "README_file_mover.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "ACAO_IMEDIATA_PRIORIZAR_STORIES_HABDEL.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "researcher_agent.md",
+      "task_researcher_agent.md",
+      "CANARY-001.md"
+    ],
+    "integration_links": []
+  },
+  "comprehensive_validation_final_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "continue_priority_plan.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-023.md",
+      "epic_2_1_3_lua_analysis_report.md",
+      "OTUI_Module_Development_Guide.md",
+      "atomic_git_sync_system.md",
+      "continuous_integration_system.md"
+    ],
+    "integration_links": []
+  },
+  "dashboard_completion_task_final_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "deep_source_analysis_final_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "TECHNICAL.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "documentation_100_percent_complete_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "documentation_completion_final_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "epic_2_canary_integration_task.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "forgottenmapeditor_submodule_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md"
+    ],
+    "integration_links": []
+  },
+  "habdel_documentation_organization_final_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "integrated_system_final_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "canary_integration_tool.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "network_protocol_validator.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "otclient_ui_enhancement.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "performance_analyzer.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "STRUCTURE_DOCUMENTATION.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "phase2_1_final_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "phase2_completion_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "phase3_completion_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "automacao_git.md"
+    ],
+    "integration_links": []
+  },
+  "priority_maximum_execution_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "epic_2_1_3_lua_analysis_report.md",
+      "Habdel_Wiki_Integration_Report.md",
+      "dashboard_coverage_analysis.md",
+      "integrated_task_manager.md",
+      "system_dashboard.md"
+    ],
+    "integration_links": []
+  },
+  "PYTHON_AGENT_IMPLEMENTATION_REPORT.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "researcher_agent_task_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md"
+    ],
+    "integration_links": []
+  },
+  "researcher_professor_task_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_MELHORIAS_WIKI.md",
+      "Sistema_OTClient_BMAD_Relatorio_Geral.md",
+      "README_MODULE_WORKFLOW.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md"
+    ],
+    "integration_links": []
+  },
+  "restructure_final_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "tags_update_verification_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "GLOSSARIO_TERMINOLOGIA_TECNICA.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md"
+    ],
+    "integration_links": []
+  },
+  "task_19_3_completion_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "RELATORIO_ACAO_IMEDIATA_PRIORIZAR_STORIES_HABDEL_20250801_103951_20250801_103952.md"
+    ],
+    "integration_links": []
+  },
+  "task_19_4_completion_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "GLOSSARIO_TERMINOLOGIA_TECNICA.md",
+      "Glossario_Tecnico.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md",
+      "RELATORIO_WORKFLOW_MODULOS.md",
+      "RELATORIO_CRIACAO_MODULO_ZERO.md"
+    ],
+    "integration_links": []
+  },
+  "task_ui_stories_priority.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [
+      "CANARY-023.md",
+      "epic_2_1_3_lua_analysis_report.md",
+      "OTUI_Module_Development_Guide.md",
+      "atomic_git_sync_system.md",
+      "continuous_integration_system.md"
+    ],
+    "integration_links": []
+  },
+  "metrics_dashboard.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "alert_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
+  },
+  "metrics_report.md": {
+    "prerequisites": [],
+    "next_steps": [],
+    "related": [],
+    "integration_links": []
   }
 }

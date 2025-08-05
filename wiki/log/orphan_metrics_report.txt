@@ -1,0 +1,6 @@
+RELATÓRIO DE MÉTRICAS - ARQUIVOS ÓRFÃOS
+Data: 04/08/2025 23:55:19
+
+Total de arquivos .md: 2,257
+Arquivos órfãos: 1,571 (69.6%)
+Arquivos com links: 686 (30.4%)

@@ -22,6 +22,7 @@ Este guia prático fornece exemplos funcionais, tutoriais e casos de uso para im
 local Criação = {}
 
 function Criação:init()
+    -- Função: Criação
     self.settings = {
         enabled = true,
         timeout = 5000,
@@ -30,6 +31,7 @@ function Criação:init()
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local criação = Criação:new()
 criação:init()
 ```
@@ -41,6 +43,7 @@ criação:init()
 local Sistema = {}
 
 function Sistema:init()
+    -- Função: Sistema
     self.settings = {
         enabled = true,
         timeout = 5000,
@@ -49,6 +52,7 @@ function Sistema:init()
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local sistema = Sistema:new()
 sistema:init()
 ```
@@ -60,6 +64,7 @@ sistema:init()
 local Padrões = {}
 
 function Padrões:init()
+    -- Função: Padrões
     self.settings = {
         enabled = true,
         timeout = 5000,
@@ -68,6 +73,7 @@ function Padrões:init()
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local padrões = Padrões:new()
 padrões:init()
 ```
@@ -79,6 +85,7 @@ padrões:init()
 local Ciclo = {}
 
 function Ciclo:init()
+    -- Função: Ciclo
     self.settings = {
         enabled = true,
         timeout = 5000,
@@ -87,6 +94,7 @@ function Ciclo:init()
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local ciclo = Ciclo:new()
 ciclo:init()
 ```
@@ -98,6 +106,7 @@ ciclo:init()
 ```lua
 -- Modal de Confirmação
 function Modal:processConfirmação(data)
+    -- Função: Modal
     local result = {
         success = false,
         data = nil,
@@ -106,11 +115,13 @@ function Modal:processConfirmação(data)
     
     -- Validação
     if not data then
+    -- Verificação condicional
         result.error = "Data is required"
         return result
     end
     
     -- Processamento
+    --  Processamento (traduzido)
     result.success = true
     result.data = data
     
@@ -118,6 +129,7 @@ function Modal:processConfirmação(data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = modal:processConfirmação({
     type = "test",
     value = "example"
@@ -129,6 +141,7 @@ local result = modal:processConfirmação({
 ```lua
 -- Controller de Formulário
 function Controller:processFormulário(data)
+    -- Função: Controller
     local result = {
         success = false,
         data = nil,
@@ -137,11 +150,13 @@ function Controller:processFormulário(data)
     
     -- Validação
     if not data then
+    -- Verificação condicional
         result.error = "Data is required"
         return result
     end
     
     -- Processamento
+    --  Processamento (traduzido)
     result.success = true
     result.data = data
     
@@ -149,6 +164,7 @@ function Controller:processFormulário(data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = controller:processFormulário({
     type = "test",
     value = "example"
@@ -159,7 +175,9 @@ local result = controller:processFormulário({
 
 ```lua
 -- Interface Responsiva
+    --  Interface Responsiva (traduzido)
 function Interface:processResponsiva(data)
+    -- Função: Interface
     local result = {
         success = false,
         data = nil,
@@ -168,11 +186,13 @@ function Interface:processResponsiva(data)
     
     -- Validação
     if not data then
+    -- Verificação condicional
         result.error = "Data is required"
         return result
     end
     
     -- Processamento
+    --  Processamento (traduzido)
     result.success = true
     result.data = data
     
@@ -180,6 +200,7 @@ function Interface:processResponsiva(data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = interface:processResponsiva({
     type = "test",
     value = "example"
@@ -190,7 +211,9 @@ local result = interface:processResponsiva({
 
 ```lua
 -- Sistema de Estados
+    --  Sistema de Estados (traduzido)
 function Sistema:processEstados(data)
+    -- Função: Sistema
     local result = {
         success = false,
         data = nil,
@@ -199,11 +222,13 @@ function Sistema:processEstados(data)
     
     -- Validação
     if not data then
+    -- Verificação condicional
         result.error = "Data is required"
         return result
     end
     
     -- Processamento
+    --  Processamento (traduzido)
     result.success = true
     result.data = data
     
@@ -211,6 +236,7 @@ function Sistema:processEstados(data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = sistema:processEstados({
     type = "test",
     value = "example"
@@ -224,6 +250,7 @@ local result = sistema:processEstados({
 ```lua
 -- Cenário: Implementação básica do sistema
 function System:basicImplementation()
+    -- Função: System
     local config = {
         enabled = true,
         timeout = 5000,
@@ -232,6 +259,7 @@ function System:basicImplementation()
     
     local result = self:initialize(config)
     if result.success then
+    -- Verificação condicional
         print("Sistema inicializado com sucesso")
     else
         print("Erro na inicialização:", result.error)
@@ -246,13 +274,16 @@ end
 ```lua
 -- Cenário: Validação de dados de entrada
 function System:validateData(data)
+    -- Função: System
     local errors = {}
     
     if not data then
+    -- Verificação condicional
         table.insert(errors, "Data is required")
     end
     
     if data and type(data) ~= "table" then
+    -- Verificação condicional
         table.insert(errors, "Data must be a table")
     end
     
@@ -268,6 +299,7 @@ end
 ```lua
 -- Cenário: Tratamento robusto de erros
 function System:handleError(error, context)
+    -- Função: System
     local errorInfo = {
         message = error,
         context = context,
@@ -276,6 +308,7 @@ function System:handleError(error, context)
     }
     
     -- Log do erro
+    --  Log do erro (traduzido)
     self:logError(errorInfo)
     
     -- Notificar usuário
@@ -292,6 +325,7 @@ end
 ```lua
 -- Teste de validação básica
 function System:testBasicValidation()
+    -- Função: System
     print("=== Teste de Validação Básica ===")
     
     local testData = {
@@ -303,6 +337,7 @@ function System:testBasicValidation()
     print("Validação:", validation.valid)
     
     if not validation.valid then
+    -- Verificação condicional
         print("Erros:", table.concat(validation.errors, ", "))
     end
     
@@ -315,6 +350,7 @@ end
 ```lua
 -- Simulação de funcionamento do sistema
 function System:simulateOperation()
+    -- Função: System
     print("=== Simulação de Operação ===")
     
     local data = {
@@ -355,6 +391,7 @@ SystemData = {{
 }}
 
 -- Estrutura de resultado
+    --  Estrutura de resultado (traduzido)
 Result = {{
     success = boolean,
     data = any,

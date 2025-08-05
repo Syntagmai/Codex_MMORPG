@@ -27,6 +27,7 @@ Analisar profundamente o sistema **Sistema de Rede** do OTClient usando metodolo
 ### **Estrutura do Sistema**
 ```lua
 -- Exemplo de estrutura do sistema Sistema de Rede
+    --  Exemplo de estrutura do sistema Sistema de Rede (traduzido)
 -- Será preenchido durante a análise
 ```
 
@@ -38,6 +39,7 @@ Analisar profundamente o sistema **Sistema de Rede** do OTClient usando metodolo
 ### **APIs e Interfaces**
 ```lua
 -- APIs principais do sistema
+    --  APIs principais do sistema (traduzido)
 -- Será documentado durante a análise
 ```
 

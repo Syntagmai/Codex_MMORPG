@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "fix_date": "2025-08-04 20:30:05",
+    "files_processed": 5,
+    "files_fixed": 1,
+    "total_fixes": 7
+  },
+  "fixes_applied": [
+    {
+      "file": "leia_me.md",
+      "fixes": [
+        {
+          "old": "[[docs/otclient/guides/Getting_Started_Guide|🚀 Guia de Primeiros Passos]]",
+          "new": "[[docs/otclient/guides/Getting_Started_Guide.md|🚀 Guia de Primeiros Passos]]",
+          "type": "wiki_link"
+        },
+        {
+          "old": "[[docs/otclient/guides/Getting_Started_Guide|Guia de Primeiros Passos]]",
+          "new": "[[docs/otclient/guides/Getting_Started_Guide.md|Guia de Primeiros Passos]]",
+          "type": "wiki_link"
+        },
+        {
+          "old": "[[docs/otclient/guides/Module_Development_Guide|🧩 Criando Seu Primeiro Módulo]]",
+          "new": "[[docs/otclient/guides/Module_Development_Guide.md|🧩 Criando Seu Primeiro Módulo]]",
+          "type": "wiki_link"
+        },
+        {
+          "old": "[[docs/otclient/guides/Cheat_Sheet|📋 Cheat Sheet]]",
+          "new": "[[docs/otclient/guides/Cheat_Sheet.md|📋 Cheat Sheet]]",
+          "type": "wiki_link"
+        },
+        {
+          "old": "[[docs/otclient/guides/Cheat_Sheet|Cheat Sheet]]",
+          "new": "[[docs/otclient/guides/Cheat_Sheet.md|Cheat Sheet]]",
+          "type": "wiki_link"
+        },
+        {
+          "old": "[[docs/otclient/guides/UI_System_Guide|Sistema de Interface]]",
+          "new": "[[docs/otclient/guides/UI_System_Guide.md|Sistema de Interface]]",
+          "type": "wiki_link"
+        },
+        {
+          "old": "[[docs/otclient/guides/Combat_System_Guide|⚔️ Sistema de Combate]]",
+          "new": "[[docs/otclient/guides/Combat_System_Guide.md|⚔️ Sistema de Combate]]",
+          "type": "wiki_link"
+        }
+      ]
+    }
+  ],
+  "link_fixes_mapping": {
+    "docs/otclient/guides/Getting_Started_Guide|🚀 Guia de Primeiros Passos": "docs/otclient/guides/Getting_Started_Guide.md",
+    "docs/otclient/guides/Getting_Started_Guide|Guia de Primeiros Passos": "docs/otclient/guides/Getting_Started_Guide.md",
+    "docs/otclient/guides/Module_Development_Guide|🧩 Criando Seu Primeiro Módulo": "docs/otclient/guides/Module_Development_Guide.md",
+    "docs/otclient/guides/Cheat_Sheet|📋 Cheat Sheet": "docs/otclient/guides/Cheat_Sheet.md",
+    "docs/otclient/guides/Cheat_Sheet|Cheat Sheet": "docs/otclient/guides/Cheat_Sheet.md",
+    "docs/otclient/guides/UI_System_Guide|Sistema de Interface": "docs/otclient/guides/UI_System_Guide.md",
+    "docs/otclient/guides/Combat_System_Guide|⚔️ Sistema de Combate": "docs/otclient/guides/Combat_System_Guide.md",
+    "Conceitos_Basicos": "Conceitos_Basicos.md",
+    "Troubleshooting_Comum": "Troubleshooting_Comum.md",
+    "Glossario_Tecnico": "Glossario_Tecnico.md"
+  }
+}

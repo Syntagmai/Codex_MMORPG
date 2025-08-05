@@ -58,6 +58,7 @@ O Sistema de Partículas do Canary é responsável por gerenciar todos os efeito
 
 ### **1. Efeitos Básicos de Combate**
 
+#### Nível Basic
 ```cpp
 // Exemplo 1: Dano com sangue
 void Player::takeDamage(int32_t damage) {
@@ -80,8 +81,72 @@ void Player::dodgeAttack() {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo 1: Dano com sangue
+void Player::takeDamage(int32_t damage) {
+    if (damage > 0) {
+        // Efeito visual de sangue
+        g_game().addMagicEffect(getPosition(), CONST_ME_DRAWBLOOD);
+    }
+}
+
+// Exemplo 2: Bloqueio de ataque
+void Player::blockAttack() {
+    // Efeito visual de bloqueio
+    g_game().addMagicEffect(getPosition(), CONST_ME_BLOCKHIT);
+}
+
+// Exemplo 3: Esquiva de ataque
+void Player::dodgeAttack() {
+    // Efeito visual de esquiva
+    g_game().addMagicEffect(getPosition(), CONST_ME_DODGE);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo 1: Dano com sangue
+void Player::takeDamage(int32_t damage) {
+    if (damage > 0) {
+        // Efeito visual de sangue
+        g_game().addMagicEffect(getPosition(), CONST_ME_DRAWBLOOD);
+    }
+}
+
+// Exemplo 2: Bloqueio de ataque
+void Player::blockAttack() {
+    // Efeito visual de bloqueio
+    g_game().addMagicEffect(getPosition(), CONST_ME_BLOCKHIT);
+}
+
+// Exemplo 3: Esquiva de ataque
+void Player::dodgeAttack() {
+    // Efeito visual de esquiva
+    g_game().addMagicEffect(getPosition(), CONST_ME_DODGE);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **2. Efeitos de Magia**
 
+#### Nível Basic
 ```cpp
 // Exemplo 1: Magia de cura
 void Player::castHealSpell() {
@@ -102,8 +167,68 @@ void Player::castProtectionSpell() {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo 1: Magia de cura
+void Player::castHealSpell() {
+    // Efeito azul para magias de cura
+    g_game().addMagicEffect(getPosition(), CONST_ME_MAGIC_BLUE);
+}
+
+// Exemplo 2: Magia de ataque
+void Player::castAttackSpell() {
+    // Efeito vermelho para magias de ataque
+    g_game().addMagicEffect(getPosition(), CONST_ME_MAGIC_RED);
+}
+
+// Exemplo 3: Magia de proteção
+void Player::castProtectionSpell() {
+    // Efeito verde para magias de proteção
+    g_game().addMagicEffect(getPosition(), CONST_ME_MAGIC_GREEN);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo 1: Magia de cura
+void Player::castHealSpell() {
+    // Efeito azul para magias de cura
+    g_game().addMagicEffect(getPosition(), CONST_ME_MAGIC_BLUE);
+}
+
+// Exemplo 2: Magia de ataque
+void Player::castAttackSpell() {
+    // Efeito vermelho para magias de ataque
+    g_game().addMagicEffect(getPosition(), CONST_ME_MAGIC_RED);
+}
+
+// Exemplo 3: Magia de proteção
+void Player::castProtectionSpell() {
+    // Efeito verde para magias de proteção
+    g_game().addMagicEffect(getPosition(), CONST_ME_MAGIC_GREEN);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **3. Efeitos de Teleporte**
 
+#### Nível Basic
 ```cpp
 // Exemplo 1: Teleporte normal
 void Player::teleport(const Position &newPos) {
@@ -127,8 +252,74 @@ void Player::specialTeleport(const Position &newPos) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo 1: Teleporte normal
+void Player::teleport(const Position &newPos) {
+    // Efeito no local de origem
+    g_game().addMagicEffect(getPosition(), CONST_ME_TELEPORT);
+    
+    // Lógica de teleporte
+    setPosition(newPos);
+    
+    // Efeito no local de destino
+    g_game().addMagicEffect(newPos, CONST_ME_TELEPORT);
+}
+
+// Exemplo 2: Teleporte especial
+void Player::specialTeleport(const Position &newPos) {
+    // Efeito roxo para teleporte especial
+    g_game().addMagicEffect(getPosition(), CONST_ME_PURPLETELEPORT);
+    
+    setPosition(newPos);
+    g_game().addMagicEffect(newPos, CONST_ME_PURPLETELEPORT);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo 1: Teleporte normal
+void Player::teleport(const Position &newPos) {
+    // Efeito no local de origem
+    g_game().addMagicEffect(getPosition(), CONST_ME_TELEPORT);
+    
+    // Lógica de teleporte
+    setPosition(newPos);
+    
+    // Efeito no local de destino
+    g_game().addMagicEffect(newPos, CONST_ME_TELEPORT);
+}
+
+// Exemplo 2: Teleporte especial
+void Player::specialTeleport(const Position &newPos) {
+    // Efeito roxo para teleporte especial
+    g_game().addMagicEffect(getPosition(), CONST_ME_PURPLETELEPORT);
+    
+    setPosition(newPos);
+    g_game().addMagicEffect(newPos, CONST_ME_PURPLETELEPORT);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **4. Projéteis (Distance Effects)**
 
+#### Nível Basic
 ```cpp
 // Exemplo 1: Tiro de arco
 void Player::shootArrow(const Position &target) {
@@ -149,8 +340,68 @@ void Player::shootBolt(const Position &target) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo 1: Tiro de arco
+void Player::shootArrow(const Position &target) {
+    // Efeito de projétil de arco
+    g_game().addDistanceEffect(getPosition(), target, CONST_ANI_ARROW);
+}
+
+// Exemplo 2: Magia de distância
+void Player::castDistanceSpell(const Position &target) {
+    // Efeito de energia mágica
+    g_game().addDistanceEffect(getPosition(), target, CONST_ANI_ENERGY);
+}
+
+// Exemplo 3: Tiro de crossbow
+void Player::shootBolt(const Position &target) {
+    // Efeito de projétil de crossbow
+    g_game().addDistanceEffect(getPosition(), target, CONST_ANI_BOLT);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo 1: Tiro de arco
+void Player::shootArrow(const Position &target) {
+    // Efeito de projétil de arco
+    g_game().addDistanceEffect(getPosition(), target, CONST_ANI_ARROW);
+}
+
+// Exemplo 2: Magia de distância
+void Player::castDistanceSpell(const Position &target) {
+    // Efeito de energia mágica
+    g_game().addDistanceEffect(getPosition(), target, CONST_ANI_ENERGY);
+}
+
+// Exemplo 3: Tiro de crossbow
+void Player::shootBolt(const Position &target) {
+    // Efeito de projétil de crossbow
+    g_game().addDistanceEffect(getPosition(), target, CONST_ANI_BOLT);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **5. Uso via Lua**
 
+#### Nível Basic
 ```lua
 -- Exemplo 1: Efeito básico
 local pos = Position(100, 100, 7)
@@ -168,6 +419,63 @@ pos:sendDistanceEffect(Position(105, 105, 7), CONST_ANI_ARROW)
 
 -- Exemplo 5: Efeito de área
 pos:sendMagicEffect(CONST_ME_FIREAREA)
+```
+
+#### Nível Intermediate
+```lua
+-- Exemplo 1: Efeito básico
+local pos = Position(100, 100, 7)
+pos:sendMagicEffect(CONST_ME_MAGIC_BLUE)
+
+-- Exemplo 2: Remoção de efeito
+pos:removeMagicEffect(CONST_ME_MAGIC_BLUE)
+
+-- Exemplo 3: Efeito para jogador específico
+local player = Player("TestPlayer")
+pos:sendMagicEffect(CONST_ME_TELEPORT, player)
+
+-- Exemplo 4: Projétil
+pos:sendDistanceEffect(Position(105, 105, 7), CONST_ANI_ARROW)
+
+-- Exemplo 5: Efeito de área
+pos:sendMagicEffect(CONST_ME_FIREAREA)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Exemplo 1: Efeito básico
+local pos = Position(100, 100, 7)
+pos:sendMagicEffect(CONST_ME_MAGIC_BLUE)
+
+-- Exemplo 2: Remoção de efeito
+pos:removeMagicEffect(CONST_ME_MAGIC_BLUE)
+
+-- Exemplo 3: Efeito para jogador específico
+local player = Player("TestPlayer")
+pos:sendMagicEffect(CONST_ME_TELEPORT, player)
+
+-- Exemplo 4: Projétil
+pos:sendDistanceEffect(Position(105, 105, 7), CONST_ANI_ARROW)
+
+-- Exemplo 5: Efeito de área
+pos:sendMagicEffect(CONST_ME_FIREAREA)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🎮 **Categorias de Efeitos**
@@ -211,6 +519,7 @@ pos:sendMagicEffect(CONST_ME_FIREAREA)
 
 ### **Funções Principais**
 
+#### Nível Basic
 ```cpp
 // Adicionar magic effect
 void Game::addMagicEffect(const Position &pos, uint16_t effect);
@@ -225,8 +534,56 @@ void Game::addDistanceEffect(const Position &fromPos, const Position &toPos, uin
 void Game::addDistanceEffect(const CreatureVector &spectators, const Position &fromPos, const Position &toPos, uint16_t effect);
 ```
 
+#### Nível Intermediate
+```cpp
+// Adicionar magic effect
+void Game::addMagicEffect(const Position &pos, uint16_t effect);
+void Game::addMagicEffect(const CreatureVector &spectators, const Position &pos, uint16_t effect);
+
+// Remover magic effect
+void Game::removeMagicEffect(const Position &pos, uint16_t effect);
+void Game::removeMagicEffect(const CreatureVector &spectators, const Position &pos, uint16_t effect);
+
+// Adicionar efeito de distância
+void Game::addDistanceEffect(const Position &fromPos, const Position &toPos, uint16_t effect);
+void Game::addDistanceEffect(const CreatureVector &spectators, const Position &fromPos, const Position &toPos, uint16_t effect);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Adicionar magic effect
+void Game::addMagicEffect(const Position &pos, uint16_t effect);
+void Game::addMagicEffect(const CreatureVector &spectators, const Position &pos, uint16_t effect);
+
+// Remover magic effect
+void Game::removeMagicEffect(const Position &pos, uint16_t effect);
+void Game::removeMagicEffect(const CreatureVector &spectators, const Position &pos, uint16_t effect);
+
+// Adicionar efeito de distância
+void Game::addDistanceEffect(const Position &fromPos, const Position &toPos, uint16_t effect);
+void Game::addDistanceEffect(const CreatureVector &spectators, const Position &fromPos, const Position &toPos, uint16_t effect);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Protocolo de Rede**
 
+#### Nível Basic
 ```cpp
 // Envio de magic effect
 void ProtocolGame::sendMagicEffect(const Position &pos, uint16_t type) {
@@ -250,8 +607,74 @@ void ProtocolGame::sendMagicEffect(const Position &pos, uint16_t type) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Envio de magic effect
+void ProtocolGame::sendMagicEffect(const Position &pos, uint16_t type) {
+    if (!canSee(pos) || (oldProtocol && type > 0xFF)) {
+        return;
+    }
+
+    NetworkMessage msg;
+    if (oldProtocol) {
+        msg.addByte(0x83);
+        msg.addPosition(pos);
+        msg.addByte(static_cast<uint8_t>(type));
+    } else {
+        msg.addByte(0x83);
+        msg.addPosition(pos);
+        msg.addByte(MAGIC_EFFECTS_CREATE_EFFECT);
+        msg.add<uint16_t>(type);
+        msg.addByte(MAGIC_EFFECTS_END_LOOP);
+    }
+    writeToOutputBuffer(msg);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Envio de magic effect
+void ProtocolGame::sendMagicEffect(const Position &pos, uint16_t type) {
+    if (!canSee(pos) || (oldProtocol && type > 0xFF)) {
+        return;
+    }
+
+    NetworkMessage msg;
+    if (oldProtocol) {
+        msg.addByte(0x83);
+        msg.addPosition(pos);
+        msg.addByte(static_cast<uint8_t>(type));
+    } else {
+        msg.addByte(0x83);
+        msg.addPosition(pos);
+        msg.addByte(MAGIC_EFFECTS_CREATE_EFFECT);
+        msg.add<uint16_t>(type);
+        msg.addByte(MAGIC_EFFECTS_END_LOOP);
+    }
+    writeToOutputBuffer(msg);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Funções Lua**
 
+#### Nível Basic
 ```cpp
 // Envio de magic effect via Lua
 int PositionFunctions::luaPositionSendMagicEffect(lua_State* L) {
@@ -287,11 +710,101 @@ int PositionFunctions::luaPositionSendMagicEffect(lua_State* L) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Envio de magic effect via Lua
+int PositionFunctions::luaPositionSendMagicEffect(lua_State* L) {
+    // position:sendMagicEffect(magicEffect[, player = nullptr])
+    CreatureVector spectators;
+    if (lua_gettop(L) >= 3) {
+        const auto &player = Lua::getPlayer(L, 3);
+        if (!player) {
+            Lua::reportErrorFunc(Lua::getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
+            return 1;
+        }
+        spectators.emplace_back(player);
+    }
+
+    MagicEffectClasses magicEffect = Lua::getNumber<MagicEffectClasses>(L, 2);
+    if (g_configManager().getBoolean(WARN_UNSAFE_SCRIPTS) && 
+        !g_game().isMagicEffectRegistered(magicEffect)) {
+        g_logger().warn("Unregistered magic effect type '{}' was blocked", 
+            fmt::underlying(magicEffect));
+        Lua::pushBoolean(L, false);
+        return 1;
+    }
+
+    const Position &position = Lua::getPosition(L, 1);
+    if (!spectators.empty()) {
+        Game::addMagicEffect(spectators, position, magicEffect);
+    } else {
+        g_game().addMagicEffect(position, magicEffect);
+    }
+
+    Lua::pushBoolean(L, true);
+    return 1;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Envio de magic effect via Lua
+int PositionFunctions::luaPositionSendMagicEffect(lua_State* L) {
+    // position:sendMagicEffect(magicEffect[, player = nullptr])
+    CreatureVector spectators;
+    if (lua_gettop(L) >= 3) {
+        const auto &player = Lua::getPlayer(L, 3);
+        if (!player) {
+            Lua::reportErrorFunc(Lua::getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
+            return 1;
+        }
+        spectators.emplace_back(player);
+    }
+
+    MagicEffectClasses magicEffect = Lua::getNumber<MagicEffectClasses>(L, 2);
+    if (g_configManager().getBoolean(WARN_UNSAFE_SCRIPTS) && 
+        !g_game().isMagicEffectRegistered(magicEffect)) {
+        g_logger().warn("Unregistered magic effect type '{}' was blocked", 
+            fmt::underlying(magicEffect));
+        Lua::pushBoolean(L, false);
+        return 1;
+    }
+
+    const Position &position = Lua::getPosition(L, 1);
+    if (!spectators.empty()) {
+        Game::addMagicEffect(spectators, position, magicEffect);
+    } else {
+        g_game().addMagicEffect(position, magicEffect);
+    }
+
+    Lua::pushBoolean(L, true);
+    return 1;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 📝 **Exercícios Práticos**
 
 ### **Exercício 1: Sistema de Combate Básico**
 Crie um sistema de combate que use diferentes efeitos visuais para diferentes tipos de dano:
 
+#### Nível Basic
 ```cpp
 // Implemente esta função
 void Player::takeDamage(CombatType_t combatType, int32_t damage) {
@@ -305,9 +818,60 @@ void Player::takeDamage(CombatType_t combatType, int32_t damage) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Implemente esta função
+void Player::takeDamage(CombatType_t combatType, int32_t damage) {
+    // TODO: Adicione efeitos visuais baseados no tipo de combate
+    // - Físico: CONST_ME_DRAWBLOOD
+    // - Fogo: CONST_ME_HITBYFIRE
+    // - Gelo: CONST_ME_ICEATTACK
+    // - Energia: CONST_ME_ENERGYHIT
+    // - Sagrado: CONST_ME_HOLYDAMAGE
+    // - Morte: CONST_ME_MORTAREA
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Implemente esta função
+void Player::takeDamage(CombatType_t combatType, int32_t damage) {
+    // TODO: Adicione efeitos visuais baseados no tipo de combate
+    // - Físico: CONST_ME_DRAWBLOOD
+    // - Fogo: CONST_ME_HITBYFIRE
+    // - Gelo: CONST_ME_ICEATTACK
+    // - Energia: CONST_ME_ENERGYHIT
+    // - Sagrado: CONST_ME_HOLYDAMAGE
+    // - Morte: CONST_ME_MORTAREA
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Exercício 2: Sistema de Magias**
 Crie um sistema de magias com efeitos visuais apropriados:
 
+#### Nível Basic
+```cpp
+
+```
+
+#### Nível Intermediate
 ```cpp
 // Implemente esta função
 void Player::castSpell(SpellType_t spellType) {
@@ -320,9 +884,33 @@ void Player::castSpell(SpellType_t spellType) {
 }
 ```
 
+#### Nível Advanced
+```cpp
+// Implemente esta função
+void Player::castSpell(SpellType_t spellType) {
+    // TODO: Adicione efeitos visuais baseados no tipo de magia
+    // - Cura: CONST_ME_MAGIC_BLUE
+    // - Ataque: CONST_ME_MAGIC_RED
+    // - Proteção: CONST_ME_MAGIC_GREEN
+    // - Energia: CONST_ME_PURPLEENERGY
+    // - Transformação: CONST_ME_MAGIC_POWDER
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Exercício 3: Sistema de Teleporte**
 Crie um sistema de teleporte com diferentes efeitos:
 
+#### Nível Basic
 ```cpp
 // Implemente esta função
 void Player::teleport(const Position &newPos, TeleportType_t type) {
@@ -334,9 +922,51 @@ void Player::teleport(const Position &newPos, TeleportType_t type) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Implemente esta função
+void Player::teleport(const Position &newPos, TeleportType_t type) {
+    // TODO: Adicione efeitos visuais baseados no tipo de teleporte
+    // - Normal: CONST_ME_TELEPORT
+    // - VIP: CONST_ME_PURPLETELEPORT
+    // - Emergência: CONST_ME_REDTELEPORT
+    // - Especial: CONST_ME_ORANGETELEPORT
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Implemente esta função
+void Player::teleport(const Position &newPos, TeleportType_t type) {
+    // TODO: Adicione efeitos visuais baseados no tipo de teleporte
+    // - Normal: CONST_ME_TELEPORT
+    // - VIP: CONST_ME_PURPLETELEPORT
+    // - Emergência: CONST_ME_REDTELEPORT
+    // - Especial: CONST_ME_ORANGETELEPORT
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Exercício 4: Sistema de Projéteis**
 Crie um sistema de projéteis com diferentes tipos:
 
+#### Nível Basic
 ```cpp
 // Implemente esta função
 void Player::shootProjectile(const Position &target, ProjectileType_t type) {
@@ -349,9 +979,53 @@ void Player::shootProjectile(const Position &target, ProjectileType_t type) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Implemente esta função
+void Player::shootProjectile(const Position &target, ProjectileType_t type) {
+    // TODO: Adicione efeitos de projétil baseados no tipo
+    // - Flecha: CONST_ANI_ARROW
+    // - Bolt: CONST_ANI_BOLT
+    // - Spear: CONST_ANI_SPEAR
+    // - Energy: CONST_ANI_ENERGY
+    // - Fire: CONST_ANI_FIRE
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Implemente esta função
+void Player::shootProjectile(const Position &target, ProjectileType_t type) {
+    // TODO: Adicione efeitos de projétil baseados no tipo
+    // - Flecha: CONST_ANI_ARROW
+    // - Bolt: CONST_ANI_BOLT
+    // - Spear: CONST_ANI_SPEAR
+    // - Energy: CONST_ANI_ENERGY
+    // - Fire: CONST_ANI_FIRE
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Exercício 5: Sistema Lua**
 Crie scripts Lua que usem o sistema de partículas:
 
+#### Nível Basic
 ```lua
 -- TODO: Implemente estas funções Lua
 
@@ -374,6 +1048,73 @@ end
 function combinedMagicEffect(position, spellType1, spellType2)
     -- Adicione dois efeitos mágicos simultâneos
 end
+```
+
+#### Nível Intermediate
+```lua
+-- TODO: Implemente estas funções Lua
+
+-- 1. Função para criar efeito de explosão
+function createExplosion(position)
+    -- Adicione efeito de explosão
+end
+
+-- 2. Função para criar efeito de chuva
+function createRainEffect(area)
+    -- Adicione efeito de chuva na área
+end
+
+-- 3. Função para criar efeito de teleporte especial
+function specialTeleport(player, targetPosition)
+    -- Adicione efeito de teleporte especial
+end
+
+-- 4. Função para criar efeito de magia combinada
+function combinedMagicEffect(position, spellType1, spellType2)
+    -- Adicione dois efeitos mágicos simultâneos
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- TODO: Implemente estas funções Lua
+
+-- 1. Função para criar efeito de explosão
+function createExplosion(position)
+    -- Adicione efeito de explosão
+end
+
+-- 2. Função para criar efeito de chuva
+function createRainEffect(area)
+    -- Adicione efeito de chuva na área
+end
+
+-- 3. Função para criar efeito de teleporte especial
+function specialTeleport(player, targetPosition)
+    -- Adicione efeito de teleporte especial
+end
+
+-- 4. Função para criar efeito de magia combinada
+function combinedMagicEffect(position, spellType1, spellType2)
+    -- Adicione dois efeitos mágicos simultâneos
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🎯 **Conceitos-Chave**

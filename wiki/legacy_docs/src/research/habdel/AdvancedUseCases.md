@@ -15,23 +15,84 @@ Visão geral e conceitos fundamentais do casos de uso avançados.
 
 ## 🔧 Conceitos
 
+#### Nível Basic
 ```cpp
 // Exemplo de API C++
 // Implementação específica será adicionada
+```
+
+#### Nível Intermediate
+```cpp
+// Exemplo de API C++
+// Implementação específica será adicionada
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de API C++
+// Implementação específica será adicionada
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🐍 Implementação
 
 ```lua
 -- Exemplo de API Lua
+    --  Exemplo de API Lua (traduzido)
 -- Implementação específica será adicionada
 ```
 
 ## 💡 Exemplos
 
+#### Nível Basic
 ```lua
 -- Exemplos práticos
 -- Serão adicionados exemplos específicos
+```
+
+#### Nível Intermediate
+```lua
+-- Exemplos práticos
+-- Serão adicionados exemplos específicos
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Exemplos práticos
+-- Serão adicionados exemplos específicos
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## ✅ Melhores Práticas

@@ -34,6 +34,7 @@ O sistema Canary possui uma arquitetura core robusta e modular, baseada em C++ m
 **Estrutura Principal**:
 ```cpp
 class CanaryServer {
+    -- Classe: CanaryServer
 public:
     explicit CanaryServer(
         Logger &logger,
@@ -70,6 +71,7 @@ private:
 ```
 
 **Fluxo de Inicialização**:
+#### Nível Basic
 ```cpp
 int CanaryServer::run() {
     g_dispatcher().addEvent([this] {
@@ -92,6 +94,69 @@ int CanaryServer::run() {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+int CanaryServer::run() {
+    g_dispatcher().addEvent([this] {
+        try {
+            loadConfigLua();           // 1. Carregar configuração
+            validateDatapack();        // 2. Validar datapack
+            initializeDatabase();      // 3. Inicializar banco de dados
+            loadModules();             // 4. Carregar módulos
+            setWorldType();            // 5. Configurar tipo de mundo
+            loadMaps();                // 6. Carregar mapas
+            setupHousesRent();         // 7. Configurar casas
+            
+            g_game().start(&serviceManager);  // 8. Iniciar jogo
+            g_game().setGameState(GAME_STATE_NORMAL);
+        } catch (FailedToInitializeCanary &err) {
+            loaderStatus = LoaderStatus::FAILED;
+            logger.error(err.what());
+        }
+    });
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+int CanaryServer::run() {
+    g_dispatcher().addEvent([this] {
+        try {
+            loadConfigLua();           // 1. Carregar configuração
+            validateDatapack();        // 2. Validar datapack
+            initializeDatabase();      // 3. Inicializar banco de dados
+            loadModules();             // 4. Carregar módulos
+            setWorldType();            // 5. Configurar tipo de mundo
+            loadMaps();                // 6. Carregar mapas
+            setupHousesRent();         // 7. Configurar casas
+            
+            g_game().start(&serviceManager);  // 8. Iniciar jogo
+            g_game().setGameState(GAME_STATE_NORMAL);
+        } catch (FailedToInitializeCanary &err) {
+            loaderStatus = LoaderStatus::FAILED;
+            logger.error(err.what());
+        }
+    });
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. ServiceManager (Gerenciador de Serviços)**
 
 **Localização**: `src/server/server.hpp`
@@ -105,6 +170,7 @@ int CanaryServer::run() {
 **Estrutura Principal**:
 ```cpp
 class ServiceManager {
+    -- Classe: ServiceManager
 public:
     void run();
     void stop();
@@ -128,6 +194,7 @@ private:
 **ServicePort (Porta de Serviço)**:
 ```cpp
 class ServicePort : public std::enable_shared_from_this<ServicePort> {
+    -- Classe: ServicePort
 public:
     explicit ServicePort(asio::io_service &init_io_service);
     
@@ -159,6 +226,7 @@ private:
 **Estrutura Principal**:
 ```cpp
 class ConfigManager {
+    -- Classe: ConfigManager
 public:
     static ConfigManager &getInstance();
     
@@ -188,8 +256,36 @@ private:
 ```
 
 **Tipos de Configuração Suportados**:
+#### Nível Basic
 ```cpp
 using ConfigValue = std::variant<std::string, int32_t, bool, float>;
+```
+
+#### Nível Intermediate
+```cpp
+using ConfigValue = std::variant<std::string, int32_t, bool, float>;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+using ConfigValue = std::variant<std::string, int32_t, bool, float>;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 #### **4. DatabaseManager (Gerenciador de Banco de Dados)**
@@ -205,6 +301,7 @@ using ConfigValue = std::variant<std::string, int32_t, bool, float>;
 **Estrutura Principal**:
 ```cpp
 class DatabaseManager {
+    -- Classe: DatabaseManager
 public:
     // Verificação de estrutura
     static bool tableExists(const std::string &table);
@@ -225,6 +322,7 @@ public:
 
 #### **Inicialização do Servidor**
 
+#### Nível Basic
 ```cpp
 // Criação do servidor
 CanaryServer server(logger, rsa, serviceManager);
@@ -240,8 +338,58 @@ if (result == EXIT_SUCCESS) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Criação do servidor
+CanaryServer server(logger, rsa, serviceManager);
+
+// Execução do servidor
+int result = server.run();
+
+// Verificação de status
+if (result == EXIT_SUCCESS) {
+    // Servidor iniciado com sucesso
+} else {
+    // Erro na inicialização
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Criação do servidor
+CanaryServer server(logger, rsa, serviceManager);
+
+// Execução do servidor
+int result = server.run();
+
+// Verificação de status
+if (result == EXIT_SUCCESS) {
+    // Servidor iniciado com sucesso
+} else {
+    // Erro na inicialização
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Gerenciamento de Serviços**
 
+#### Nível Basic
 ```cpp
 // Adicionar serviço em porta específica
 serviceManager.add<ProtocolLogin>(7171);  // Porta de login
@@ -256,8 +404,56 @@ if (serviceManager.is_running()) {
 serviceManager.stop();
 ```
 
+#### Nível Intermediate
+```cpp
+// Adicionar serviço em porta específica
+serviceManager.add<ProtocolLogin>(7171);  // Porta de login
+serviceManager.add<ProtocolGame>(7172);   // Porta do jogo
+
+// Verificar se está rodando
+if (serviceManager.is_running()) {
+    // Serviços ativos
+}
+
+// Parar serviços
+serviceManager.stop();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Adicionar serviço em porta específica
+serviceManager.add<ProtocolLogin>(7171);  // Porta de login
+serviceManager.add<ProtocolGame>(7172);   // Porta do jogo
+
+// Verificar se está rodando
+if (serviceManager.is_running()) {
+    // Serviços ativos
+}
+
+// Parar serviços
+serviceManager.stop();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Configuração**
 
+#### Nível Basic
 ```cpp
 // Carregar configuração
 g_configManager().load();
@@ -272,8 +468,56 @@ float experienceRate = g_configManager().getFloat(EXPERIENCE_RATE);
 g_configManager().reload();
 ```
 
+#### Nível Intermediate
+```cpp
+// Carregar configuração
+g_configManager().load();
+
+// Obter valores de configuração
+std::string serverName = g_configManager().getString(SERVER_NAME);
+int32_t maxPlayers = g_configManager().getNumber(MAX_PLAYERS);
+bool allowOldProtocol = g_configManager().getBoolean(ALLOW_OLD_PROTOCOL);
+float experienceRate = g_configManager().getFloat(EXPERIENCE_RATE);
+
+// Recarregar configuração
+g_configManager().reload();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Carregar configuração
+g_configManager().load();
+
+// Obter valores de configuração
+std::string serverName = g_configManager().getString(SERVER_NAME);
+int32_t maxPlayers = g_configManager().getNumber(MAX_PLAYERS);
+bool allowOldProtocol = g_configManager().getBoolean(ALLOW_OLD_PROTOCOL);
+float experienceRate = g_configManager().getFloat(EXPERIENCE_RATE);
+
+// Recarregar configuração
+g_configManager().reload();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Banco de Dados**
 
+#### Nível Basic
 ```cpp
 // Verificar estrutura
 if (DatabaseManager::isDatabaseSetup()) {
@@ -288,6 +532,57 @@ DatabaseManager::optimizeTables();
 
 // Atualizar banco
 DatabaseManager::updateDatabase();
+```
+
+#### Nível Intermediate
+```cpp
+// Verificar estrutura
+if (DatabaseManager::isDatabaseSetup()) {
+    // Banco configurado
+}
+
+// Obter versão
+int32_t version = DatabaseManager::getDatabaseVersion();
+
+// Otimizar tabelas
+DatabaseManager::optimizeTables();
+
+// Atualizar banco
+DatabaseManager::updateDatabase();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificar estrutura
+if (DatabaseManager::isDatabaseSetup()) {
+    // Banco configurado
+}
+
+// Obter versão
+int32_t version = DatabaseManager::getDatabaseVersion();
+
+// Otimizar tabelas
+DatabaseManager::optimizeTables();
+
+// Atualizar banco
+DatabaseManager::updateDatabase();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **📊 Estrutura de Inicialização**
@@ -326,6 +621,7 @@ DatabaseManager::updateDatabase();
 
 #### **Estados do Servidor**
 
+#### Nível Basic
 ```cpp
 enum GameState_t : uint8_t {
     GAME_STATE_STARTUP = 0,
@@ -337,10 +633,52 @@ enum GameState_t : uint8_t {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+enum GameState_t : uint8_t {
+    GAME_STATE_STARTUP = 0,
+    GAME_STATE_INIT = 1,
+    GAME_STATE_NORMAL = 2,
+    GAME_STATE_CLOSED = 3,
+    GAME_STATE_SHUTDOWN = 4,
+    GAME_STATE_CLOSING = 5
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+enum GameState_t : uint8_t {
+    GAME_STATE_STARTUP = 0,
+    GAME_STATE_INIT = 1,
+    GAME_STATE_NORMAL = 2,
+    GAME_STATE_CLOSED = 3,
+    GAME_STATE_SHUTDOWN = 4,
+    GAME_STATE_CLOSING = 5
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Tratamento de Erros**
 
 ```cpp
 class FailedToInitializeCanary : public std::exception {
+    -- Classe: FailedToInitializeCanary
 private:
     std::string message;
 
@@ -369,6 +707,7 @@ public:
 
 #### **Inicialização de Subsistemas**
 
+#### Nível Basic
 ```cpp
 // 1. Configuração
 loadConfigLua();
@@ -385,6 +724,61 @@ loadMaps();
 
 // 5. Jogo
 g_game().start(&serviceManager);
+```
+
+#### Nível Intermediate
+```cpp
+// 1. Configuração
+loadConfigLua();
+
+// 2. Banco de Dados
+initializeDatabase();
+
+// 3. Módulos Lua
+loadModules();
+
+// 4. Mundo e Mapas
+setWorldType();
+loadMaps();
+
+// 5. Jogo
+g_game().start(&serviceManager);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// 1. Configuração
+loadConfigLua();
+
+// 2. Banco de Dados
+initializeDatabase();
+
+// 3. Módulos Lua
+loadModules();
+
+// 4. Mundo e Mapas
+setWorldType();
+loadMaps();
+
+// 5. Jogo
+g_game().start(&serviceManager);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **📈 Métricas de Performance**
@@ -411,15 +805,19 @@ g_game().start(&serviceManager);
 
 ```lua
 -- config.lua
+    --  config.lua (traduzido)
 -- Core settings
+    --  Core settings (traduzido)
 useAnyDatapackFolder = false
 dataPackDirectory = "data-otservbr-global"
 coreDirectory = "data"
 
 -- Log level
+    --  Log level (traduzido)
 logLevel = "info"
 
 -- Connection Config
+    --  Connection Config (traduzido)
 ip = "127.0.0.1"
 loginProtocolPort = 7171
 gameProtocolPort = 7172
@@ -428,12 +826,14 @@ maxPlayers = 0
 serverName = "OTServBR-Global"
 
 -- World settings
+    --  World settings (traduzido)
 worldType = "pvp"
 protectionLevel = 7
 ```
 
 #### **Inicialização Programática**
 
+#### Nível Basic
 ```cpp
 #include "canary_server.hpp"
 #include "server/server.hpp"
@@ -451,6 +851,63 @@ int main() {
     // Executar servidor
     return server.run();
 }
+```
+
+#### Nível Intermediate
+```cpp
+#include "canary_server.hpp"
+#include "server/server.hpp"
+#include "config/configmanager.hpp"
+
+int main() {
+    // Inicializar componentes
+    Logger logger;
+    RSA rsa;
+    ServiceManager serviceManager;
+    
+    // Criar servidor
+    CanaryServer server(logger, rsa, serviceManager);
+    
+    // Executar servidor
+    return server.run();
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+#include "canary_server.hpp"
+#include "server/server.hpp"
+#include "config/configmanager.hpp"
+
+int main() {
+    // Inicializar componentes
+    Logger logger;
+    RSA rsa;
+    ServiceManager serviceManager;
+    
+    // Criar servidor
+    CanaryServer server(logger, rsa, serviceManager);
+    
+    // Executar servidor
+    return server.run();
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **Referência de API**
@@ -490,6 +947,7 @@ int main() {
 
 #### **Exemplo 1: Servidor Básico**
 
+#### Nível Basic
 ```cpp
 #include "canary_server.hpp"
 
@@ -503,8 +961,54 @@ int main() {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+#include "canary_server.hpp"
+
+int main() {
+    Logger logger;
+    RSA rsa;
+    ServiceManager serviceManager;
+    
+    CanaryServer server(logger, rsa, serviceManager);
+    return server.run();
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+#include "canary_server.hpp"
+
+int main() {
+    Logger logger;
+    RSA rsa;
+    ServiceManager serviceManager;
+    
+    CanaryServer server(logger, rsa, serviceManager);
+    return server.run();
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Exemplo 2: Configuração Customizada**
 
+#### Nível Basic
 ```cpp
 // Carregar configuração customizada
 g_configManager().setConfigFileLua("custom_config.lua");
@@ -522,8 +1026,62 @@ if (maxPlayers == 0) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Carregar configuração customizada
+g_configManager().setConfigFileLua("custom_config.lua");
+g_configManager().load();
+
+// Verificar configurações críticas
+if (!g_configManager().getBoolean(ALLOW_OLD_PROTOCOL)) {
+    logger.warn("Old protocol disabled");
+}
+
+// Configurar limites
+int32_t maxPlayers = g_configManager().getNumber(MAX_PLAYERS);
+if (maxPlayers == 0) {
+    logger.info("No player limit set");
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Carregar configuração customizada
+g_configManager().setConfigFileLua("custom_config.lua");
+g_configManager().load();
+
+// Verificar configurações críticas
+if (!g_configManager().getBoolean(ALLOW_OLD_PROTOCOL)) {
+    logger.warn("Old protocol disabled");
+}
+
+// Configurar limites
+int32_t maxPlayers = g_configManager().getNumber(MAX_PLAYERS);
+if (maxPlayers == 0) {
+    logger.info("No player limit set");
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Exemplo 3: Gerenciamento de Serviços**
 
+#### Nível Basic
 ```cpp
 // Adicionar serviços em portas diferentes
 serviceManager.add<ProtocolLogin>(7171);
@@ -538,8 +1096,56 @@ if (serviceManager.is_running()) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Adicionar serviços em portas diferentes
+serviceManager.add<ProtocolLogin>(7171);
+serviceManager.add<ProtocolGame>(7172);
+serviceManager.add<ProtocolStatus>(7171);
+
+// Verificar status
+if (serviceManager.is_running()) {
+    logger.info("All services running");
+} else {
+    logger.error("Services not running");
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Adicionar serviços em portas diferentes
+serviceManager.add<ProtocolLogin>(7171);
+serviceManager.add<ProtocolGame>(7172);
+serviceManager.add<ProtocolStatus>(7171);
+
+// Verificar status
+if (serviceManager.is_running()) {
+    logger.info("All services running");
+} else {
+    logger.error("Services not running");
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Exemplo 4: Tratamento de Erros**
 
+#### Nível Basic
 ```cpp
 try {
     CanaryServer server(logger, rsa, serviceManager);
@@ -551,6 +1157,51 @@ try {
     logger.error("Unexpected error: {}", e.what());
     return EXIT_FAILURE;
 }
+```
+
+#### Nível Intermediate
+```cpp
+try {
+    CanaryServer server(logger, rsa, serviceManager);
+    return server.run();
+} catch (const FailedToInitializeCanary &e) {
+    logger.error("Failed to initialize: {}", e.what());
+    return EXIT_FAILURE;
+} catch (const std::exception &e) {
+    logger.error("Unexpected error: {}", e.what());
+    return EXIT_FAILURE;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+try {
+    CanaryServer server(logger, rsa, serviceManager);
+    return server.run();
+} catch (const FailedToInitializeCanary &e) {
+    logger.error("Failed to initialize: {}", e.what());
+    return EXIT_FAILURE;
+} catch (const std::exception &e) {
+    logger.error("Unexpected error: {}", e.what());
+    return EXIT_FAILURE;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🔗 **Integração**

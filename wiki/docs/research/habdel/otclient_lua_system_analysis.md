@@ -150,11 +150,13 @@ Como criar e executar um script Lua básico
 ```cpp
 -- Exemplo de script Lua básico
 function hello_world()
+    -- Função: hello_world
     print("Hello from Lua!")
     return "Hello World"
 end
 
 function calculate_sum(a, b)
+    -- Função: calculate_sum
     return a + b
 end
 
@@ -163,6 +165,7 @@ player_name = "Player1"
 player_level = 10
 
 -- Tabelas
+    --  Tabelas (traduzido)
 player_stats = {{
     health = 100,
     mana = 50,
@@ -170,6 +173,7 @@ player_stats = {{
 }}
 
 -- Retornar valores para C++
+    --  Retornar valores para C++ (traduzido)
 return {{
     message = "Script loaded successfully",
     functions = {{
@@ -182,6 +186,7 @@ return {{
 ### **Uso da Interface Lua**
 Como usar a interface Lua do C++
 
+#### Nível Basic
 ```cpp
 // Exemplo de uso da interface Lua
 #include "luainterface.h"
@@ -207,9 +212,79 @@ void useLuaInterface() {{
 }}
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de uso da interface Lua
+#include "luainterface.h"
+
+void useLuaInterface() {{
+    // Carregar script Lua
+    g_lua.loadFile("scripts/player.lua");
+    
+    // Executar função Lua
+    g_lua.execute("hello_world()");
+    
+    // Chamar função com parâmetros
+    int result = g_lua.call<int>("calculate_sum", 10, 20);
+    std::cout << "Result: " << result << std::endl;
+    
+    // Acessar variável Lua
+    std::string playerName = g_lua.get<std::string>("player_name");
+    std::cout << "Player: " << playerName << std::endl;
+    
+    // Acessar tabela Lua
+    int health = g_lua.get<int>("player_stats.health");
+    std::cout << "Health: " << health << std::endl;
+}}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de uso da interface Lua
+#include "luainterface.h"
+
+void useLuaInterface() {{
+    // Carregar script Lua
+    g_lua.loadFile("scripts/player.lua");
+    
+    // Executar função Lua
+    g_lua.execute("hello_world()");
+    
+    // Chamar função com parâmetros
+    int result = g_lua.call<int>("calculate_sum", 10, 20);
+    std::cout << "Result: " << result << std::endl;
+    
+    // Acessar variável Lua
+    std::string playerName = g_lua.get<std::string>("player_name");
+    std::cout << "Player: " << playerName << std::endl;
+    
+    // Acessar tabela Lua
+    int health = g_lua.get<int>("player_stats.health");
+    std::cout << "Health: " << health << std::endl;
+}}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Wrapper de Objeto Lua**
 Como usar o wrapper de objetos Lua
 
+#### Nível Basic
 ```cpp
 // Exemplo de wrapper de objeto Lua
 #include "luaobject.h"
@@ -236,6 +311,81 @@ void useLuaObject() {{
         std::cout << "Object is valid" << std::endl;
     }}
 }}
+```
+
+#### Nível Intermediate
+```cpp
+// Exemplo de wrapper de objeto Lua
+#include "luaobject.h"
+
+void useLuaObject() {{
+    // Criar objeto Lua
+    LuaObjectPtr obj = g_lua.createObject("Player");
+    
+    // Definir propriedades
+    obj->set("name", "Player1");
+    obj->set("level", 10);
+    obj->set("health", 100);
+    
+    // Chamar métodos
+    obj->call("setPosition", 100, 200);
+    obj->call("addItem", "sword");
+    
+    // Obter propriedades
+    std::string name = obj->get<std::string>("name");
+    int level = obj->get<int>("level");
+    
+    // Verificar se objeto é válido
+    if (obj->isValid()) {{
+        std::cout << "Object is valid" << std::endl;
+    }}
+}}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de wrapper de objeto Lua
+#include "luaobject.h"
+
+void useLuaObject() {{
+    // Criar objeto Lua
+    LuaObjectPtr obj = g_lua.createObject("Player");
+    
+    // Definir propriedades
+    obj->set("name", "Player1");
+    obj->set("level", 10);
+    obj->set("health", 100);
+    
+    // Chamar métodos
+    obj->call("setPosition", 100, 200);
+    obj->call("addItem", "sword");
+    
+    // Obter propriedades
+    std::string name = obj->get<std::string>("name");
+    int level = obj->get<int>("level");
+    
+    // Verificar se objeto é válido
+    if (obj->isValid()) {{
+        std::cout << "Object is valid" << std::endl;
+    }}
+}}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **Binding de Funções C++ para Lua**
@@ -273,14 +423,19 @@ void bindFunctions() {{
 
 // Agora no Lua:
 -- cpp_print("Hello from Lua!")
+    --  cpp_print("Hello from Lua!") (traduzido)
 -- local result = cpp_multiply(5, 3)
+    --  local result = cpp_multiply(5, 3) (traduzido)
 -- player:setHealth(50)
+    --  player:setHealth(50) (traduzido)
 -- local health = player:getHealth()
+    --  local health = player:getHealth() (traduzido)
 ```
 
 ### **Tratamento de Exceções Lua**
 Como tratar exceções do Lua
 
+#### Nível Basic
 ```cpp
 // Exemplo de tratamento de exceções Lua
 #include "luaexception.h"
@@ -309,6 +464,85 @@ bool checkLuaErrors() {{
     }}
     return false;
 }}
+```
+
+#### Nível Intermediate
+```cpp
+// Exemplo de tratamento de exceções Lua
+#include "luaexception.h"
+
+void handleLuaExceptions() {{
+    try {{
+        // Executar código Lua que pode gerar erro
+        g_lua.execute("undefined_function()");
+    }} catch (const LuaException& e) {{
+        std::cout << "Lua error: " << e.what() << std::endl;
+        
+        // Obter stack trace
+        std::string stackTrace = e.getStackTrace();
+        std::cout << "Stack trace: " << stackTrace << std::endl;
+    }} catch (const std::exception& e) {{
+        std::cout << "General error: " << e.what() << std::endl;
+    }}
+}}
+
+// Função para verificar se há erros
+bool checkLuaErrors() {{
+    if (g_lua.hasError()) {{
+        std::string error = g_lua.getLastError();
+        std::cout << "Lua error detected: " << error << std::endl;
+        return true;
+    }}
+    return false;
+}}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de tratamento de exceções Lua
+#include "luaexception.h"
+
+void handleLuaExceptions() {{
+    try {{
+        // Executar código Lua que pode gerar erro
+        g_lua.execute("undefined_function()");
+    }} catch (const LuaException& e) {{
+        std::cout << "Lua error: " << e.what() << std::endl;
+        
+        // Obter stack trace
+        std::string stackTrace = e.getStackTrace();
+        std::cout << "Stack trace: " << stackTrace << std::endl;
+    }} catch (const std::exception& e) {{
+        std::cout << "General error: " << e.what() << std::endl;
+    }}
+}}
+
+// Função para verificar se há erros
+bool checkLuaErrors() {{
+    if (g_lua.hasError()) {{
+        std::string error = g_lua.getLastError();
+        std::cout << "Lua error detected: " << error << std::endl;
+        return true;
+    }}
+    return false;
+}}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **Conversão de Valores Lua**
@@ -352,9 +586,13 @@ void valueConversion() {{
 
 // No Lua:
 -- local point = topoint("100,200")
+    --  local point = topoint("100,200") (traduzido)
 -- local color = tocolor("255,0,0,255")
+    --  local color = tocolor("255,0,0,255") (traduzido)
 -- local size = tosize("800,600")
+    --  local size = tosize("800,600") (traduzido)
 -- local rect = torect("0,0,100,100")
+    --  local rect = torect("0,0,100,100") (traduzido)
 ```
 
 
@@ -409,6 +647,7 @@ Integração com gerenciamento de recursos
 
 ### **Carregamento de Scripts**
 
+#### Nível Basic
 ```cpp
 #include "luainterface.h"
 
@@ -419,8 +658,48 @@ g_lua.loadFile("scripts/player.lua");
 g_lua.execute("print('Hello from Lua!')");
 ```
 
+#### Nível Intermediate
+```cpp
+#include "luainterface.h"
+
+// Carregar script Lua
+g_lua.loadFile("scripts/player.lua");
+
+// Executar código Lua
+g_lua.execute("print('Hello from Lua!')");
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+#include "luainterface.h"
+
+// Carregar script Lua
+g_lua.loadFile("scripts/player.lua");
+
+// Executar código Lua
+g_lua.execute("print('Hello from Lua!')");
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Binding de Funções**
 
+#### Nível Basic
 ```cpp
 // Expor função C++ para Lua
 g_lua.bindGlobalFunction("cpp_function", [](const std::string& msg) {
@@ -430,8 +709,46 @@ g_lua.bindGlobalFunction("cpp_function", [](const std::string& msg) {
 // No Lua: cpp_function("Hello from Lua!")
 ```
 
+#### Nível Intermediate
+```cpp
+// Expor função C++ para Lua
+g_lua.bindGlobalFunction("cpp_function", [](const std::string& msg) {
+    std::cout << "C++: " << msg << std::endl;
+});
+
+// No Lua: cpp_function("Hello from Lua!")
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Expor função C++ para Lua
+g_lua.bindGlobalFunction("cpp_function", [](const std::string& msg) {
+    std::cout << "C++: " << msg << std::endl;
+});
+
+// No Lua: cpp_function("Hello from Lua!")
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Conversão de Tipos**
 
+#### Nível Basic
 ```cpp
 // Converter tipos básicos
 g_lua.push(42);                    // int
@@ -441,6 +758,47 @@ g_lua.push(true);                  // bool
 // Converter estruturas
 Point point(100, 200);
 g_lua.push(point);
+```
+
+#### Nível Intermediate
+```cpp
+// Converter tipos básicos
+g_lua.push(42);                    // int
+g_lua.push("Hello");               // string
+g_lua.push(true);                  // bool
+
+// Converter estruturas
+Point point(100, 200);
+g_lua.push(point);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Converter tipos básicos
+g_lua.push(42);                    // int
+g_lua.push("Hello");               // string
+g_lua.push(true);                  // bool
+
+// Converter estruturas
+Point point(100, 200);
+g_lua.push(point);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🐍 Funções Lua Disponíveis
@@ -515,6 +873,7 @@ g_lua.push(point);
 
 ### **Sistema de Exceções**
 
+#### Nível Basic
 ```cpp
 try {
     g_lua.execute("undefined_function()");
@@ -522,6 +881,43 @@ try {
     std::cout << "Lua error: " << e.what() << std::endl;
     std::cout << "Stack trace: " << e.getStackTrace() << std::endl;
 }
+```
+
+#### Nível Intermediate
+```cpp
+try {
+    g_lua.execute("undefined_function()");
+} catch (const LuaException& e) {
+    std::cout << "Lua error: " << e.what() << std::endl;
+    std::cout << "Stack trace: " << e.getStackTrace() << std::endl;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+try {
+    g_lua.execute("undefined_function()");
+} catch (const LuaException& e) {
+    std::cout << "Lua error: " << e.what() << std::endl;
+    std::cout << "Stack trace: " << e.getStackTrace() << std::endl;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🔧 Performance

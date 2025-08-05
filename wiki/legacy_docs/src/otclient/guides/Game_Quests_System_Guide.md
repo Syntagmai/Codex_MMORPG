@@ -62,6 +62,7 @@ Sistema de Quests
 
 #### 📋 **Quest Data**
 
+#### Nível Basic
 ```lua
 -- Estrutura de uma quest
 {
@@ -74,8 +75,52 @@ Sistema de Quests
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Estrutura de uma quest
+{
+    id = questId,           -- ID único da quest
+    name = questName,       -- Nome da quest
+    completed = false,      -- Status de conclusão
+    missions = {},          -- Lista de missões
+    description = "",       -- Descrição detalhada
+    icon = "/path/to/icon"  -- Ícone da quest
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Estrutura de uma quest
+{
+    id = questId,           -- ID único da quest
+    name = questName,       -- Nome da quest
+    completed = false,      -- Status de conclusão
+    missions = {},          -- Lista de missões
+    description = "",       -- Descrição detalhada
+    icon = "/path/to/icon"  -- Ícone da quest
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### 🎯 **Mission Data**
 
+#### Nível Basic
 ```lua
 -- Estrutura de uma missão
 {
@@ -88,10 +133,54 @@ Sistema de Quests
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Estrutura de uma missão
+{
+    id = missionId,         -- ID da missão
+    name = missionName,     -- Nome da missão
+    description = "",       -- Descrição detalhada
+    questId = questId,      -- ID da quest pai
+    completed = false,      -- Status de conclusão
+    progress = 0           -- Progresso atual
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Estrutura de uma missão
+{
+    id = missionId,         -- ID da missão
+    name = missionName,     -- Nome da missão
+    description = "",       -- Descrição detalhada
+    questId = questId,      -- ID da quest pai
+    completed = false,      -- Status de conclusão
+    progress = 0           -- Progresso atual
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### 📊 **Quest Cache**
 
 ```lua
 -- Cache de quests
+    --  Cache de quests (traduzido)
 questLogCache = {
     items = {},            -- Lista de items de quest
     completed = 0,         -- Contador de quests completas
@@ -110,9 +199,11 @@ questLogCache = {
 
 ```lua
 -- Solicitar lista de quests
+    --  Solicitar lista de quests (traduzido)
 g_game.requestQuestLog()
 
 -- Solicitar detalhes de uma quest
+    --  Solicitar detalhes de uma quest (traduzido)
 g_game.requestQuestLine(questId)
 
 -- Enviar configurações de tracking
@@ -123,18 +214,23 @@ g_game.sendRequestTrackerQuestLog(trackingMap)
 
 ```lua
 -- Mostrar quest log
+    --  Mostrar quest log (traduzido)
 questLogController:show()
 
 -- Ocultar quest log
+    --  Ocultar quest log (traduzido)
 questLogController:hide()
 
 -- Alternar visibilidade
+    --  Alternar visibilidade (traduzido)
 questLogController:toggle()
 
 -- Filtrar quests
+    --  Filtrar quests (traduzido)
 questLogController:filterQuestList(searchText)
 
 -- Ordenar quests
+    --  Ordenar quests (traduzido)
 questLogController:sortQuestList(sortOrder)
 ```
 
@@ -142,20 +238,25 @@ questLogController:sortQuestList(sortOrder)
 
 ```lua
 -- Mostrar quest tracker
+    --  Mostrar quest tracker (traduzido)
 questLogController:showQuestTracker()
 
 -- Alternar tracker
+    --  Alternar tracker (traduzido)
 questLogController:toggleMiniWindowsTracker()
 
 -- Adicionar quest ao tracker
+    --  Adicionar quest ao tracker (traduzido)
 questLogController:addQuestToTracker(questId, questName)
 
 -- Remover quest do tracker
+    --  Remover quest do tracker (traduzido)
 questLogController:removeQuestFromTracker(questId)
 ```
 
 ### 🎮 **Implementação Completa do Controller**
 
+#### Inicialização e Configuração
 ```lua
 -- Controller principal do Quest Log
 questLogController = Controller:new()
@@ -183,6 +284,10 @@ local COLORS = {
     BASE_2 = "#414141",
     SELECTED = "#585858"
 }
+```
+
+#### Funcionalidade 1
+```lua
 
 -- Funções de ordenação
 local sortFunctions = {
@@ -204,6 +309,10 @@ local sortFunctions = {
             return a:getText() < b:getText()
         end
     end,
+```
+
+#### Funcionalidade 2
+```lua
     ["Completed on Bottom"] = function(a, b)
         local aCompleted = a.isComplete or false
         local bCompleted = b.isComplete or false
@@ -233,6 +342,10 @@ local function createQuestItem(parent, id, text, color, icon)
     if icon then
         item:setIcon(icon)
     end
+```
+
+#### Funcionalidade 3
+```lua
     
     if parent == UITextList.questLogList then
         table.insert(questLogCache.items, item)
@@ -261,6 +374,10 @@ local function setupQuestItemClickHandler(item, isQuestList)
         else
             UITextList.questLogInfo:setText(self.description)
         end
+```
+
+#### Funcionalidade 4
+```lua
         
         UICheckBox.showInQuestTracker:setChecked(
             isIdInTracker(g_game.getCharacterName():lower(), tonumber(self:getId())))
@@ -285,6 +402,10 @@ local function sortQuestList(questList, sortOrder)
     if sortFunc then
         table.sort(regularItems, sortFunc)
     end
+```
+
+#### Funcionalidade 5
+```lua
     
     questLogCache.items = {}
     local index = 1
@@ -322,6 +443,10 @@ local function filterQuestList(searchText)
         if searchPattern and text then
             visible = string.find(string.lower(text), searchPattern) ~= nil
         end
+```
+
+#### Finalização
+```lua
         
         if not showComplete and isCompleted then
             visible = false
@@ -488,14 +613,18 @@ QuestTrackerLabel < Label
 local QuestSystem = {}
 
 function QuestSystem.createBasicQuestSystem()
+    -- Função: QuestSystem
     -- Criar interface de quest log
+    --  Criar interface de quest log (traduzido)
     local questWindow = g_ui.createWidget('QuestLogWindow', rootWidget)
     questWindow:hide()
     
     -- Configurar lista de quests
+    --  Configurar lista de quests (traduzido)
     local questList = questWindow:getChildById('questList')
     
     -- Adicionar quests de exemplo
+    --  Adicionar quests de exemplo (traduzido)
     local quests = {
         {id = 1, name = "The Lost Sword", completed = false},
         {id = 2, name = "Dragon Slayer", completed = true},
@@ -503,11 +632,13 @@ function QuestSystem.createBasicQuestSystem()
     }
     
     for _, questData in ipairs(quests) do
+    -- Loop de repetição
         local questItem = g_ui.createWidget('QuestLogLabel', questList)
         questItem:setId(questData.id)
         questItem:setText(questData.name)
         
         if questData.completed then
+    -- Verificação condicional
             questItem:setIcon('/images/checkmark-icon')
             questItem.isComplete = true
         end
@@ -521,16 +652,20 @@ function QuestSystem.createBasicQuestSystem()
 end
 
 function QuestSystem.showQuestDetails(questId)
+    -- Função: QuestSystem
     -- Solicitar detalhes da quest ao servidor
+    --  Solicitar detalhes da quest ao servidor (traduzido)
     g_game.requestQuestLine(questId)
 end
 
 -- Uso
+    --  Uso (traduzido)
 local questSystem = QuestSystem.createBasicQuestSystem()
 ```
 
 ### 🎨 **Exemplo 2: Sistema de Quest Tracker**
 
+#### Inicialização e Configuração
 ```lua
 local QuestTrackerSystem = {}
 
@@ -556,6 +691,10 @@ function QuestTrackerSystem.createQuestTracker()
         progressBar:setSize({width = 200, height = 15})
         progressBar:setPosition({x = 5, y = 25})
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     return trackerWindow
 end
@@ -580,6 +719,10 @@ function QuestTrackerSystem.saveTrackingConfig(questId, questName)
     if not settings.trackedQuests then
         settings.trackedQuests = {}
     end
+```
+
+#### Finalização
+```lua
     
     table.insert(settings.trackedQuests, {
         id = questId,
@@ -596,6 +739,7 @@ local questTracker = QuestTrackerSystem.createQuestTracker()
 
 ### 🪟 **Exemplo 3: Sistema de Quest Avançado**
 
+#### Inicialização e Configuração
 ```lua
 local AdvancedQuestSystem = {}
 
@@ -618,6 +762,10 @@ function AdvancedQuestSystem.createAdvancedQuestSystem()
         showHidden = false,
         searchText = ""
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Configurar eventos
     questSystem:setupEvents()
@@ -639,6 +787,10 @@ function AdvancedQuestSystem:setupEvents()
         onQuestTracker = function(remainingQuests, missions)
             self:onQuestTrackerReceived(remainingQuests, missions)
         end
+```
+
+#### Funcionalidade 2
+```lua
     })
 end
 
@@ -663,6 +815,10 @@ function AdvancedQuestSystem:onQuestLogReceived(questList)
         questItem.onClick = function()
             self:selectQuest(id, questName)
         end
+```
+
+#### Funcionalidade 3
+```lua
         
         table.insert(self.questList, questItem)
     end
@@ -690,6 +846,10 @@ function AdvancedQuestSystem:applyFilters()
             local searchText = self.filters.searchText:lower()
             visible = string.find(questName, searchText) ~= nil
         end
+```
+
+#### Funcionalidade 4
+```lua
         
         -- Filtro de quests completas
         if not self.filters.showComplete and questItem.isComplete then
@@ -713,6 +873,10 @@ function AdvancedQuestSystem:sortQuestList()
         ["Alphabetically (A-Z)"] = function(a, b)
             return a:getText() < b:getText()
         end,
+```
+
+#### Funcionalidade 5
+```lua
         ["Alphabetically (Z-A)"] = function(a, b)
             return a:getText() > b:getText()
         end,
@@ -735,6 +899,10 @@ function AdvancedQuestSystem:sortQuestList()
         for i, item in ipairs(items) do
             questListWidget:moveChildToIndex(item, i)
         end
+```
+
+#### Finalização
+```lua
     end
 end
 
@@ -748,6 +916,7 @@ local advancedQuestSystem = AdvancedQuestSystem.createAdvancedQuestSystem()
 
 ### 🎯 **Uso Eficiente**
 
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Sempre verificar se a janela existe
 function showQuestLog()
@@ -776,6 +945,10 @@ function updateQuestCache(questList)
         if questCompleted then
             questLogCache.completed = questLogCache.completed + 1
         end
+```
+
+#### Funcionalidade 1
+```lua
     end
 end
 
@@ -799,6 +972,10 @@ end
 
 -- ❌ EVITE: Não gerenciar cache
 function badUpdateQuests(questList)
+```
+
+#### Finalização
+```lua
     -- Sem gerenciamento de cache - pode causar vazamentos
     for _, quest in ipairs(questList) do
         createQuestItem(questList, quest.id, quest.name)
@@ -808,6 +985,7 @@ end
 
 ### 🎨 **Organização de Código**
 
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Separar responsabilidades
 local QuestDataManager = {
@@ -834,6 +1012,10 @@ function QuestDataManager:saveSettings()
         filters = self.settings.filters,
         sortOrder = self.settings.sortOrder
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     g_resources.writeFileContents('/settings/quests.json', json.encode(settingsData))
 end
@@ -856,6 +1038,10 @@ function createQuestWithCallbacks(questData, callbacks)
     
     return questItem
 end
+```
+
+#### Finalização
+```lua
 
 -- ✅ BOM: Sistema de eventos
 local QuestEventSystem = {
@@ -881,6 +1067,7 @@ end
 
 ### 🔧 **Performance e Otimização**
 
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Lazy loading de quests
 local QuestLazyLoader = {
@@ -903,6 +1090,10 @@ function QuestLazyLoader:loadQuest(questId)
     self.loadedQuests[questId] = placeholder
     return placeholder
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 -- ✅ BOM: Debounce para busca
 local searchDebounce = nil
@@ -925,6 +1116,10 @@ local QuestWidgetPool = {
 }
 
 function QuestWidgetPool:getWidget()
+```
+
+#### Finalização
+```lua
     if #self.available > 0 then
         local widget = table.remove(self.available)
         table.insert(self.inUse, widget)
@@ -948,6 +1143,7 @@ end
 
 ### 🎨 **Estilização e Temas**
 
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Sistema de temas para quests
 local questThemes = {
@@ -974,6 +1170,10 @@ local questThemes = {
         completedColor = '#4caf50',
         hiddenColor = '#9e9e9e'
     }
+```
+
+#### Funcionalidade 1
+```lua
 }
 
 function applyQuestTheme(themeName)
@@ -995,6 +1195,10 @@ end
 
 -- ✅ BOM: Animações suaves
 function createAnimatedQuestSystem()
+```
+
+#### Finalização
+```lua
     local questSystem = createBasicQuestSystem()
     
     -- Animação de entrada

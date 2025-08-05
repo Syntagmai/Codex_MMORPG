@@ -17,6 +17,7 @@ Este documento define o **sistema de automação Git** para os agentes BMAD, est
 ## 🎯 **1. Arquitetura de Automação Git**
 
 ### **🔧 Sistema de Controle de Versão Inteligente**
+#### Inicialização e Configuração
 ```lua
 -- Sistema de controle de versão inteligente
 local IntelligentVersionControl = {
@@ -45,6 +46,10 @@ local IntelligentVersionControl = {
             "branch_creation",
             "merge_management"
         },
+```
+
+#### Funcionalidade 1
+```lua
         
         -- Workflow automation
         workflow_automation = {
@@ -70,10 +75,15 @@ local IntelligentVersionControl = {
         branch_naming_convention = "{task_type}/{task_id}-{description}",
         merge_strategy = "squash_and_merge"
     }
+```
+
+#### Finalização
+```lua
 }
 ```
 
 ### **🔄 Workflow de Automação**
+#### Inicialização e Configuração
 ```lua
 -- Workflow de automação Git
 local GitAutomationWorkflow = {
@@ -102,6 +112,10 @@ local GitAutomationWorkflow = {
             "request_code_review",
             "prepare_deployment"
         }
+```
+
+#### Funcionalidade 1
+```lua
     },
     
     -- Integração contínua
@@ -129,6 +143,10 @@ local GitAutomationWorkflow = {
             "rollback_capability",
             "monitoring_integration"
         }
+```
+
+#### Finalização
+```lua
     }
 }
 ```
@@ -138,6 +156,7 @@ local GitAutomationWorkflow = {
 ## 🔧 **2. Capacidades de Automação**
 
 ### **📝 Automação de Commits**
+#### Inicialização e Configuração
 ```lua
 -- Sistema de automação de commits
 local CommitAutomation = {
@@ -162,6 +181,10 @@ local CommitAutomation = {
                 "configuration_changes",
                 "asset_modifications"
             },
+```
+
+#### Funcionalidade 1
+```lua
             
             -- Categorização de mudanças
             change_categorization = {
@@ -189,6 +212,10 @@ local CommitAutomation = {
                     "feat: API - Implement user authentication endpoint",
                     "feat: Database - Add user preferences table"
                 }
+```
+
+#### Funcionalidade 2
+```lua
             },
             
             -- Template para bug fixes
@@ -211,6 +238,10 @@ local CommitAutomation = {
                     "docs: UI - Add component usage examples",
                     "docs: Setup - Update installation guide"
                 }
+```
+
+#### Funcionalidade 3
+```lua
             }
         }
     },
@@ -232,6 +263,10 @@ local CommitAutomation = {
             "ensure_complete_implementation",
             "track_feature_progress"
         },
+```
+
+#### Finalização
+```lua
         
         -- Commit por tempo
         time_based_commit = {
@@ -245,6 +280,7 @@ local CommitAutomation = {
 ```
 
 ### **🌿 Automação de Branches**
+#### Inicialização e Configuração
 ```lua
 -- Sistema de automação de branches
 local BranchAutomation = {
@@ -269,6 +305,10 @@ local BranchAutomation = {
                 "maintain_feature_isolation",
                 "track_feature_development"
             },
+```
+
+#### Funcionalidade 1
+```lua
             
             -- Estratégia baseada em hotfixes
             hotfix_based_branching = {
@@ -298,6 +338,10 @@ local BranchAutomation = {
                     "fix/API-005-auth-validation",
                     "fix/DB-006-query-optimization"
                 }
+```
+
+#### Funcionalidade 2
+```lua
             },
             
             -- Convenção para hotfixes
@@ -325,6 +369,10 @@ local BranchAutomation = {
                 "initialize_branch_context",
                 "prepare_development_tools"
             },
+```
+
+#### Finalização
+```lua
             
             -- Sincronização automática
             automatic_sync = {
@@ -351,6 +399,7 @@ local BranchAutomation = {
 ## 🔄 **3. Integração com Task Manager**
 
 ### **📋 Integração Task-Git**
+#### Inicialização e Configuração
 ```lua
 -- Integração entre Task Manager e Git
 local TaskGitIntegration = {
@@ -375,6 +424,10 @@ local TaskGitIntegration = {
                 "track_milestone_progress",
                 "ensure_milestone_completion"
             },
+```
+
+#### Funcionalidade 1
+```lua
             
             -- Mapeamento por epic
             epic_mapping = {
@@ -401,6 +454,10 @@ local TaskGitIntegration = {
                 "milestone_achievement",
                 "deadline_compliance"
             }
+```
+
+#### Funcionalidade 2
+```lua
         }
     },
     
@@ -425,6 +482,10 @@ local TaskGitIntegration = {
                 "update_task_status",
                 "track_development_metrics"
             },
+```
+
+#### Finalização
+```lua
             
             -- Revisão
             review = {
@@ -447,6 +508,7 @@ local TaskGitIntegration = {
 ```
 
 ### **📊 Tracking de Progresso**
+#### Inicialização e Configuração
 ```lua
 -- Sistema de tracking de progresso Git
 local GitProgressTracking = {
@@ -471,6 +533,10 @@ local GitProgressTracking = {
                 "merge_frequency",
                 "conflict_resolution_time"
             },
+```
+
+#### Funcionalidade 1
+```lua
             
             -- Métricas de código
             code_metrics = {
@@ -495,6 +561,10 @@ local GitProgressTracking = {
                 "deadline_compliance",
                 "trend_analysis"
             },
+```
+
+#### Finalização
+```lua
             
             -- Análise de qualidade
             quality_analysis = {
@@ -521,6 +591,7 @@ local GitProgressTracking = {
 ## 🤖 **4. Automação Inteligente**
 
 ### **🧠 Tomada de Decisão Git**
+#### Inicialização e Configuração
 ```lua
 -- Sistema de tomada de decisão Git inteligente
 local IntelligentGitDecision = {
@@ -545,6 +616,10 @@ local IntelligentGitDecision = {
                 "merge_conflict_history",
                 "development_trends"
             },
+```
+
+#### Funcionalidade 1
+```lua
             
             -- Análise de equipe
             team_analysis = {
@@ -569,6 +644,10 @@ local IntelligentGitDecision = {
                 "conflict_prevention",
                 "workflow_optimization"
             },
+```
+
+#### Finalização
+```lua
             
             -- Estratégia de commit
             commit_strategy = {
@@ -591,6 +670,7 @@ local IntelligentGitDecision = {
 ```
 
 ### **🔄 Aprendizado e Adaptação**
+#### Inicialização e Configuração
 ```lua
 -- Sistema de aprendizado e adaptação Git
 local GitLearningAdaptation = {
@@ -615,6 +695,10 @@ local GitLearningAdaptation = {
                 "merge_patterns",
                 "conflict_patterns"
             },
+```
+
+#### Funcionalidade 1
+```lua
             
             -- Aprendizado de workflow
             workflow_learning = {
@@ -639,6 +723,10 @@ local GitLearningAdaptation = {
                 "enhance_conflict_resolution",
                 "streamline_workflow"
             },
+```
+
+#### Finalização
+```lua
             
             -- Adaptação de commits
             commit_adaptation = {
@@ -665,6 +753,7 @@ local GitLearningAdaptation = {
 ## 🔒 **5. Segurança e Controle**
 
 ### **🛡️ Controles de Segurança Git**
+#### Inicialização e Configuração
 ```lua
 -- Controles de segurança para automação Git
 local GitSecurityControls = {
@@ -689,6 +778,10 @@ local GitSecurityControls = {
                 "commit_authorization",
                 "merge_authorization"
             },
+```
+
+#### Funcionalidade 1
+```lua
             
             -- Auditoria
             auditing = {
@@ -713,6 +806,10 @@ local GitSecurityControls = {
                 "code_quality_checks",
                 "security_scanning"
             },
+```
+
+#### Finalização
+```lua
             
             -- Proteção de branches
             branch_protection = {
@@ -735,6 +832,7 @@ local GitSecurityControls = {
 ```
 
 ### **🎛️ Controles de Supervisão**
+#### Inicialização e Configuração
 ```lua
 -- Controles de supervisão para automação Git
 local GitSupervisionControls = {
@@ -759,6 +857,10 @@ local GitSupervisionControls = {
                 "review_quality_assurance",
                 "review_process_optimization"
             },
+```
+
+#### Funcionalidade 1
+```lua
             
             -- Controle de emergência
             emergency_control = {
@@ -783,6 +885,10 @@ local GitSupervisionControls = {
                 "security_validation",
                 "performance_validation"
             },
+```
+
+#### Finalização
+```lua
             
             -- Correção automática
             automated_correction = {
@@ -809,6 +915,7 @@ local GitSupervisionControls = {
 ## 📊 **6. Métricas e Relatórios**
 
 ### **📈 Métricas de Automação Git**
+#### Inicialização e Configuração
 ```lua
 -- Métricas para automação Git
 local GitAutomationMetrics = {
@@ -833,6 +940,10 @@ local GitAutomationMetrics = {
                 "test_coverage_enhancement",
                 "documentation_quality"
             },
+```
+
+#### Funcionalidade 1
+```lua
             
             -- Métricas de produtividade
             productivity_metrics = {
@@ -857,6 +968,10 @@ local GitAutomationMetrics = {
                 "response_time_consistency",
                 "error_rate_monitoring"
             },
+```
+
+#### Finalização
+```lua
             
             -- Métricas de segurança
             security_metrics = {
@@ -879,6 +994,7 @@ local GitAutomationMetrics = {
 ```
 
 ### **📋 Relatórios de Automação**
+#### Inicialização e Configuração
 ```lua
 -- Sistema de relatórios para automação Git
 local GitAutomationReports = {
@@ -903,6 +1019,10 @@ local GitAutomationReports = {
                 "quality_metrics",
                 "team_collaboration"
             },
+```
+
+#### Funcionalidade 1
+```lua
             
             -- Relatório mensal
             monthly_report = {
@@ -927,6 +1047,10 @@ local GitAutomationReports = {
                 "productivity_trends",
                 "collaboration_trends"
             },
+```
+
+#### Finalização
+```lua
             
             -- Análise de performance
             performance_analysis = {

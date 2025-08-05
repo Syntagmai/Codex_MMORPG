@@ -19,6 +19,7 @@ Este documento detalha os **padrões de design** utilizados no projeto Canary, i
 Permite que objetos se inscrevam para receber notificações quando outros objetos mudam de estado, promovendo desacoplamento entre componentes.
 
 #### **🏗️ Implementação no Canary**
+#### Inicialização e Configuração
 ```cpp
 // Interface base para eventos
 class Event {
@@ -49,6 +50,10 @@ public:
             typeListeners.end()
         );
     }
+```
+
+#### Funcionalidade 1
+```cpp
     
     // Notifica todos os listeners de um evento
     void notify(EventType type, const EventData& data) {
@@ -72,6 +77,10 @@ public:
     
     EventType getType() const override { return EventType::PLAYER_DEATH; }
 };
+```
+
+#### Finalização
+```cpp
 
 class ItemUseEvent : public Event {
 public:
@@ -92,6 +101,14 @@ public:
 ```
 
 #### **📝 Exemplo de Uso**
+#### Nível Basic
+```cpp
+    // Notificar outros jogadores
+        player->sendMessage("You see " + event->player->getName() + " die.");
+eventSystem.notify(EventType::PLAYER_DEATH, deathEvent);
+```
+
+#### Nível Intermediate
 ```cpp
 // Sistema de eventos global
 EventSystem eventSystem;
@@ -135,12 +152,67 @@ deathEvent.deathPosition = player->getPosition();
 eventSystem.notify(EventType::PLAYER_DEATH, deathEvent);
 ```
 
+#### Nível Advanced
+```cpp
+// Sistema de eventos global
+EventSystem eventSystem;
+
+// Registrar handlers para eventos
+eventSystem.subscribe(EventType::PLAYER_DEATH, [](const EventData& data) {
+    auto event = static_cast<const PlayerDeathEvent*>(&data);
+    
+    // Salvar log de morte
+    LogManager::getInstance()->logPlayerDeath(
+        event->player->getName(),
+        event->killer ? event->killer->getName() : "Unknown",
+        event->damage,
+        event->deathPosition
+    );
+    
+    // Notificar outros jogadores
+    auto nearbyPlayers = GameManager::getInstance()->getGame()
+        ->getPlayersInArea(event->deathPosition, 10);
+    
+    for (auto player : nearbyPlayers) {
+        player->sendMessage("You see " + event->player->getName() + " die.");
+    }
+});
+
+eventSystem.subscribe(EventType::ITEM_USE, [](const EventData& data) {
+    auto event = static_cast<const ItemUseEvent*>(&data);
+    
+    // Executar script Lua associado ao item
+    auto luaManager = LuaManager::getInstance();
+    luaManager->executeScript("onItemUse('" + event->item->getName() + "')");
+});
+
+// Disparar eventos
+PlayerDeathEvent deathEvent;
+deathEvent.player = player;
+deathEvent.killer = monster;
+deathEvent.damage = 50;
+deathEvent.deathPosition = player->getPosition();
+
+eventSystem.notify(EventType::PLAYER_DEATH, deathEvent);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **📋 Command Pattern**
 
 #### **🎯 Propósito**
 Encapsula uma solicitação como um objeto, permitindo parametrizar clientes com diferentes solicitações, enfileirar operações e suportar operações desfazer.
 
 #### **🏗️ Implementação no Canary**
+#### Inicialização e Configuração
 ```cpp
 // Interface base para comandos
 class GameCommand {
@@ -170,6 +242,10 @@ public:
             executed = success;
             return success;
         }
+```
+
+#### Funcionalidade 1
+```cpp
         return false;
     }
     
@@ -207,6 +283,10 @@ public:
                 executed = true;
                 return true;
             }
+```
+
+#### Funcionalidade 2
+```cpp
         }
         return false;
     }
@@ -251,6 +331,10 @@ public:
                 executed = success;
                 return success;
             }
+```
+
+#### Funcionalidade 3
+```cpp
         }
         return false;
     }
@@ -280,6 +364,10 @@ public:
             std::lock_guard<std::mutex> lock(historyMutex);
             commandHistory.push(std::move(command));
         }
+```
+
+#### Funcionalidade 4
+```cpp
     }
     
     // Adiciona comando à fila
@@ -305,6 +393,10 @@ public:
             commandHistory.top()->undo();
             commandHistory.pop();
         }
+```
+
+#### Funcionalidade 5
+```cpp
     }
     
     // Limpa histórico
@@ -329,10 +421,22 @@ public:
         std::reverse(history.begin(), history.end());
         return history;
     }
+```
+
+#### Finalização
+```cpp
 };
 ```
 
 #### **📝 Exemplo de Uso**
+#### Nível Basic
+```cpp
+if (player && monster) {
+    if (item) {
+    std::cout << "Executed: " << cmd << std::endl;
+```
+
+#### Nível Intermediate
 ```cpp
 // Gerenciador de comandos global
 CommandManager commandManager;
@@ -371,6 +475,55 @@ for (const auto& cmd : history) {
 }
 ```
 
+#### Nível Advanced
+```cpp
+// Gerenciador de comandos global
+CommandManager commandManager;
+
+// Criar e executar comandos
+auto player = game->getPlayer("PlayerName");
+auto monster = game->createCreature(CreatureType::RAT, Position(101, 100, 7));
+
+if (player && monster) {
+    // Comando de movimento
+    auto moveCmd = std::make_unique<MoveCommand>(player, Position(100, 101, 7));
+    commandManager.executeCommand(std::move(moveCmd));
+    
+    // Comando de ataque
+    auto attackCmd = std::make_unique<AttackCommand>(player, monster);
+    commandManager.executeCommand(std::move(attackCmd));
+    
+    // Comando de uso de item
+    auto item = player->getItem(0); // Primeiro item do inventário
+    if (item) {
+        auto useItemCmd = std::make_unique<UseItemCommand>(player, item, Position(100, 101, 7));
+        commandManager.executeCommand(std::move(useItemCmd));
+    }
+}
+
+// Desfazer último comando
+commandManager.undoLastCommand();
+
+// Processar fila de comandos
+commandManager.processQueue();
+
+// Obter histórico
+auto history = commandManager.getCommandHistory();
+for (const auto& cmd : history) {
+    std::cout << "Executed: " << cmd << std::endl;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🏗️ **Padrões Criacionais**
@@ -381,6 +534,7 @@ for (const auto& cmd : history) {
 Define uma interface para criar objetos, mas permite que as subclasses decidam qual classe instanciar, promovendo flexibilidade na criação de objetos.
 
 #### **🏗️ Implementação no Canary**
+#### Inicialização e Configuração
 ```cpp
 // Interface base para fábrica de objetos de jogo
 class GameObjectFactory {
@@ -404,6 +558,10 @@ public:
     CanaryGameObjectFactory() {
         registerCreators();
     }
+```
+
+#### Funcionalidade 1
+```cpp
     
     void registerCreators() {
         // Registra criadores de jogadores
@@ -428,6 +586,10 @@ public:
         itemCreators["sword"] = [](const ItemConfig& config) {
             return new CanarySword(config);
         };
+```
+
+#### Funcionalidade 2
+```cpp
         
         itemCreators["potion"] = [](const ItemConfig& config) {
             return new CanaryPotion(config);
@@ -449,6 +611,10 @@ public:
         }
         throw std::runtime_error("Unknown monster type: " + config.type);
     }
+```
+
+#### Funcionalidade 3
+```cpp
     
     Item* createItem(const ItemConfig& config) override {
         auto it = itemCreators.find(config.type);
@@ -473,6 +639,10 @@ public:
     virtual ~AbstractGameObjectFactory() = default;
     virtual std::unique_ptr<GameObjectFactory> createFactory() = 0;
 };
+```
+
+#### Finalização
+```cpp
 
 // Fábrica para servidor PvP
 class PvPFactory : public AbstractGameObjectFactory {
@@ -492,6 +662,7 @@ public:
 ```
 
 #### **📝 Exemplo de Uso**
+#### Nível Basic
 ```cpp
 // Configurar fábrica baseada no tipo de servidor
 std::unique_ptr<AbstractGameObjectFactory> factoryCreator;
@@ -530,12 +701,108 @@ itemConfig.durability = 100;
 auto sword = factory->createItem(itemConfig);
 ```
 
+#### Nível Intermediate
+```cpp
+// Configurar fábrica baseada no tipo de servidor
+std::unique_ptr<AbstractGameObjectFactory> factoryCreator;
+if (serverConfig.type == "pvp") {
+    factoryCreator = std::make_unique<PvPFactory>();
+} else {
+    factoryCreator = std::make_unique<PvEFactory>();
+}
+
+auto factory = factoryCreator->createFactory();
+
+// Criar objetos usando a fábrica
+PlayerConfig playerConfig;
+playerConfig.name = "PlayerName";
+playerConfig.type = "vip";
+playerConfig.level = 1;
+playerConfig.health = 150;
+playerConfig.mana = 50;
+
+auto player = factory->createPlayer(playerConfig);
+
+MonsterConfig monsterConfig;
+monsterConfig.type = "dragon";
+monsterConfig.level = 50;
+monsterConfig.health = 1000;
+monsterConfig.position = Position(100, 100, 7);
+
+auto monster = factory->createMonster(monsterConfig);
+
+ItemConfig itemConfig;
+itemConfig.type = "sword";
+itemConfig.level = 10;
+itemConfig.damage = 25;
+itemConfig.durability = 100;
+
+auto sword = factory->createItem(itemConfig);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Configurar fábrica baseada no tipo de servidor
+std::unique_ptr<AbstractGameObjectFactory> factoryCreator;
+if (serverConfig.type == "pvp") {
+    factoryCreator = std::make_unique<PvPFactory>();
+} else {
+    factoryCreator = std::make_unique<PvEFactory>();
+}
+
+auto factory = factoryCreator->createFactory();
+
+// Criar objetos usando a fábrica
+PlayerConfig playerConfig;
+playerConfig.name = "PlayerName";
+playerConfig.type = "vip";
+playerConfig.level = 1;
+playerConfig.health = 150;
+playerConfig.mana = 50;
+
+auto player = factory->createPlayer(playerConfig);
+
+MonsterConfig monsterConfig;
+monsterConfig.type = "dragon";
+monsterConfig.level = 50;
+monsterConfig.health = 1000;
+monsterConfig.position = Position(100, 100, 7);
+
+auto monster = factory->createMonster(monsterConfig);
+
+ItemConfig itemConfig;
+itemConfig.type = "sword";
+itemConfig.level = 10;
+itemConfig.damage = 25;
+itemConfig.durability = 100;
+
+auto sword = factory->createItem(itemConfig);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🔒 Singleton Pattern**
 
 #### **🎯 Propósito**
 Garante que uma classe tenha apenas uma instância e fornece um ponto de acesso global a essa instância.
 
 #### **🏗️ Implementação no Canary**
+#### Inicialização e Configuração
 ```cpp
 // Singleton thread-safe para GameManager
 class GameManager {
@@ -565,6 +832,10 @@ public:
         if (!instance) {
             instance = std::make_unique<GameManager>();
         }
+```
+
+#### Funcionalidade 1
+```cpp
         return instance.get();
     }
     
@@ -593,6 +864,10 @@ public:
                    network->initialize(config.network) &&
                    database->initialize(config.database);
         } catch (const std::exception& e) {
+```
+
+#### Funcionalidade 2
+```cpp
             std::cerr << "Failed to initialize GameManager: " << e.what() << std::endl;
             return false;
         }
@@ -630,6 +905,10 @@ public:
         if (!instance) {
             instance = std::make_unique<LogManager>();
         }
+```
+
+#### Funcionalidade 3
+```cpp
         return instance.get();
     }
     
@@ -654,6 +933,10 @@ public:
                    << " [" << getLevelString(level) << "] "
                    << message << std::endl;
         }
+```
+
+#### Finalização
+```cpp
     }
     
     void setLogLevel(LogLevel level) {
@@ -677,6 +960,7 @@ std::mutex LogManager::instanceMutex;
 ```
 
 #### **📝 Exemplo de Uso**
+#### Nível Basic
 ```cpp
 // Inicializar GameManager
 auto gameManager = GameManager::getInstance();
@@ -704,6 +988,79 @@ GameManager::destroyInstance();
 LogManager::destroyInstance();
 ```
 
+#### Nível Intermediate
+```cpp
+// Inicializar GameManager
+auto gameManager = GameManager::getInstance();
+if (gameManager->initialize(config)) {
+    std::cout << "GameManager initialized successfully!" << std::endl;
+    
+    // Usar componentes
+    auto game = gameManager->getGame();
+    auto network = gameManager->getNetwork();
+    auto database = gameManager->getDatabase();
+    
+    // Criar jogador
+    auto player = game->createPlayer("PlayerName");
+    
+    // Log de atividade
+    auto logManager = LogManager::getInstance();
+    logManager->log(LogLevel::INFO, "Player " + player->getName() + " created");
+    
+} else {
+    std::cerr << "Failed to initialize GameManager!" << std::endl;
+}
+
+// Cleanup no final
+GameManager::destroyInstance();
+LogManager::destroyInstance();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Inicializar GameManager
+auto gameManager = GameManager::getInstance();
+if (gameManager->initialize(config)) {
+    std::cout << "GameManager initialized successfully!" << std::endl;
+    
+    // Usar componentes
+    auto game = gameManager->getGame();
+    auto network = gameManager->getNetwork();
+    auto database = gameManager->getDatabase();
+    
+    // Criar jogador
+    auto player = game->createPlayer("PlayerName");
+    
+    // Log de atividade
+    auto logManager = LogManager::getInstance();
+    logManager->log(LogLevel::INFO, "Player " + player->getName() + " created");
+    
+} else {
+    std::cerr << "Failed to initialize GameManager!" << std::endl;
+}
+
+// Cleanup no final
+GameManager::destroyInstance();
+LogManager::destroyInstance();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🏗️ **Padrões Estruturais**
@@ -714,6 +1071,7 @@ LogManager::destroyInstance();
 Permite adicionar comportamentos a objetos individuais dinamicamente, sem afetar outros objetos da mesma classe.
 
 #### **🏗️ Implementação no Canary**
+#### Inicialização e Configuração
 ```cpp
 // Interface base para itens
 class Item {
@@ -743,6 +1101,10 @@ public:
     bool canUse() const override { return false; }
     void use(Player* player) override {}
 };
+```
+
+#### Funcionalidade 1
+```cpp
 
 // Decorator base
 class ItemDecorator : public Item {
@@ -772,6 +1134,10 @@ public:
     std::string getName() const override {
         return item->getName() + " of " + enchantment;
     }
+```
+
+#### Funcionalidade 2
+```cpp
     
     uint32_t getValue() const override {
         return item->getValue() + (magicPower * 100);
@@ -794,6 +1160,10 @@ public:
             } else if (enchantment == "Strength") {
                 player->addTemporaryEffect("strength_boost", magicPower, 300); // 5 minutos
             }
+```
+
+#### Funcionalidade 3
+```cpp
         }
         item->use(player);
     }
@@ -815,6 +1185,10 @@ public:
         else if (rarity == "Legendary") rarityMultiplier = 5.0;
         else rarityMultiplier = 1.0;
     }
+```
+
+#### Funcionalidade 4
+```cpp
     
     std::string getName() const override {
         return "[" + rarity + "] " + item->getName();
@@ -843,6 +1217,10 @@ public:
         return item->getDescription() + " Durability: " + 
                std::to_string(currentDurability) + "/" + std::to_string(maxDurability);
     }
+```
+
+#### Funcionalidade 5
+```cpp
     
     bool canUse() const override {
         return item->canUse() && currentDurability > 0;
@@ -865,6 +1243,10 @@ public:
     void repair() {
         currentDurability = maxDurability;
     }
+```
+
+#### Finalização
+```cpp
     
     double getDurabilityPercentage() const {
         return static_cast<double>(currentDurability) / maxDurability * 100.0;
@@ -873,6 +1255,7 @@ public:
 ```
 
 #### **📝 Exemplo de Uso**
+#### Nível Basic
 ```cpp
 // Criar item base
 auto baseSword = std::make_unique<BaseItem>("Iron Sword", 100, "A basic iron sword");
@@ -907,6 +1290,93 @@ if (durableDecorator) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Criar item base
+auto baseSword = std::make_unique<BaseItem>("Iron Sword", 100, "A basic iron sword");
+
+// Adicionar decorators
+auto magicalSword = std::make_unique<MagicalItemDecorator>(
+    std::move(baseSword), "Fire", 25
+);
+
+auto rareMagicalSword = std::make_unique<RareItemDecorator>(
+    std::move(magicalSword), "Epic"
+);
+
+auto durableRareMagicalSword = std::make_unique<DurableItemDecorator>(
+    std::move(rareMagicalSword), 1000
+);
+
+// Usar o item decorado
+auto player = game->getPlayer("PlayerName");
+if (durableRareMagicalSword->canUse()) {
+    durableRareMagicalSword->use(player);
+    
+    std::cout << "Item: " << durableRareMagicalSword->getName() << std::endl;
+    std::cout << "Value: " << durableRareMagicalSword->getValue() << std::endl;
+    std::cout << "Description: " << durableRareMagicalSword->getDescription() << std::endl;
+}
+
+// Verificar durabilidade
+auto durableDecorator = dynamic_cast<DurableItemDecorator*>(durableRareMagicalSword.get());
+if (durableDecorator) {
+    std::cout << "Durability: " << durableDecorator->getDurabilityPercentage() << "%" << std::endl;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Criar item base
+auto baseSword = std::make_unique<BaseItem>("Iron Sword", 100, "A basic iron sword");
+
+// Adicionar decorators
+auto magicalSword = std::make_unique<MagicalItemDecorator>(
+    std::move(baseSword), "Fire", 25
+);
+
+auto rareMagicalSword = std::make_unique<RareItemDecorator>(
+    std::move(magicalSword), "Epic"
+);
+
+auto durableRareMagicalSword = std::make_unique<DurableItemDecorator>(
+    std::move(rareMagicalSword), 1000
+);
+
+// Usar o item decorado
+auto player = game->getPlayer("PlayerName");
+if (durableRareMagicalSword->canUse()) {
+    durableRareMagicalSword->use(player);
+    
+    std::cout << "Item: " << durableRareMagicalSword->getName() << std::endl;
+    std::cout << "Value: " << durableRareMagicalSword->getValue() << std::endl;
+    std::cout << "Description: " << durableRareMagicalSword->getDescription() << std::endl;
+}
+
+// Verificar durabilidade
+auto durableDecorator = dynamic_cast<DurableItemDecorator*>(durableRareMagicalSword.get());
+if (durableDecorator) {
+    std::cout << "Durability: " << durableDecorator->getDurabilityPercentage() << "%" << std::endl;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🔄 **Padrões de Arquitetura**
@@ -917,6 +1387,7 @@ if (durableDecorator) {
 Separa a lógica de negócio (Model) da interface do usuário (View) e do controle de fluxo (Controller), promovendo modularidade e reutilização.
 
 #### **🏗️ Implementação no Canary**
+#### Inicialização e Configuração
 ```cpp
 // Model - Representa os dados e lógica de negócio
 class PlayerModel {
@@ -948,6 +1419,10 @@ public:
         experience += exp;
         checkLevelUp();
     }
+```
+
+#### Funcionalidade 1
+```cpp
     
     void addItem(Item* item) {
         inventory.push_back(item);
@@ -969,6 +1444,10 @@ private:
     uint64_t getExperienceForLevel(uint32_t lvl) {
         return lvl * lvl * 100; // Fórmula simples
     }
+```
+
+#### Funcionalidade 2
+```cpp
 };
 
 // View - Interface para exibição
@@ -1000,6 +1479,10 @@ public:
             std::cout << "Inventory: " << model.getInventory().size() << " items" << std::endl;
             std::cout << "===================" << std::endl;
         }
+```
+
+#### Funcionalidade 3
+```cpp
     }
     
     void show() override { visible = true; }
@@ -1022,6 +1505,10 @@ public:
                         std::to_string(model.getLevel());
             std::cout << lastUpdate << std::endl;
         }
+```
+
+#### Funcionalidade 4
+```cpp
     }
     
     void show() override { visible = true; }
@@ -1047,6 +1534,10 @@ public:
             model->setPosition(newPos);
             notifyViews();
         }
+```
+
+#### Funcionalidade 5
+```cpp
     }
     
     void attack(Creature* target) {
@@ -1071,6 +1562,10 @@ public:
                     item->use(nullptr); // Player seria passado aqui
                     notifyViews();
                 }
+```
+
+#### Funcionalidade 6
+```cpp
             }
         }
     }
@@ -1096,6 +1591,10 @@ private:
         for (auto& view : views) {
             view->update(*model);
         }
+```
+
+#### Finalização
+```cpp
     }
     
     bool isValidPosition(const Position& pos) {
@@ -1111,6 +1610,12 @@ private:
 ```
 
 #### **📝 Exemplo de Uso**
+#### Nível Basic
+```cpp
+
+```
+
+#### Nível Intermediate
 ```cpp
 // Criar modelo
 auto playerModel = std::make_unique<PlayerModel>("PlayerName");
@@ -1142,6 +1647,50 @@ playerModel->addItem(sword);
 
 // Usar item
 controller.useItem(0);
+```
+
+#### Nível Advanced
+```cpp
+// Criar modelo
+auto playerModel = std::make_unique<PlayerModel>("PlayerName");
+
+// Criar views
+auto textView = std::make_unique<TextPlayerView>();
+auto guiView = std::make_unique<GUIPlayerView>();
+
+// Criar controller
+PlayerController controller(playerModel.get());
+
+// Adicionar views ao controller
+controller.addView(std::move(textView));
+controller.addView(std::move(guiView));
+
+// Mostrar views
+for (auto& view : controller.getViews()) {
+    view->show();
+}
+
+// Executar ações
+controller.move(Position(100, 100, 7));
+controller.heal(50);
+controller.castSpell(20);
+
+// Adicionar item ao inventário
+auto sword = new BaseItem("Iron Sword", 100, "A basic sword");
+playerModel->addItem(sword);
+
+// Usar item
+controller.useItem(0);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---

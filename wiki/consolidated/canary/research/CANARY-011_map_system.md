@@ -59,6 +59,7 @@ O Sistema de Mapas do Canary é responsável por gerenciar todo o mundo do jogo,
 
 ### **1. Carregamento de Mapa**
 
+#### Nível Basic
 ```cpp
 // Exemplo 1: Carregamento do mapa principal
 void Game::loadMainMap() {
@@ -84,8 +85,78 @@ void Game::loadMapComponents(const std::string &mapPath) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo 1: Carregamento do mapa principal
+void Game::loadMainMap() {
+    const std::string mapName = g_configManager().getString(MAP_NAME);
+    const std::string mapPath = "data/world/" + mapName + ".otbm";
+    
+    // Carrega mapa com todos os componentes
+    g_game().map.loadMap(mapPath, true, true, true, true, true);
+}
+
+// Exemplo 2: Carregamento de mapa customizado
+void Game::loadCustomMap(const std::string &mapName, int customMapIndex) {
+    const std::string mapPath = "data/world/custom/" + mapName + ".otbm";
+    
+    // Carrega mapa customizado
+    g_game().map.loadMapCustom(mapName, true, true, true, true, customMapIndex);
+}
+
+// Exemplo 3: Carregamento seletivo
+void Game::loadMapComponents(const std::string &mapPath) {
+    // Carrega apenas componentes específicos
+    g_game().map.loadMap(mapPath, false, false, true, false, false);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo 1: Carregamento do mapa principal
+void Game::loadMainMap() {
+    const std::string mapName = g_configManager().getString(MAP_NAME);
+    const std::string mapPath = "data/world/" + mapName + ".otbm";
+    
+    // Carrega mapa com todos os componentes
+    g_game().map.loadMap(mapPath, true, true, true, true, true);
+}
+
+// Exemplo 2: Carregamento de mapa customizado
+void Game::loadCustomMap(const std::string &mapName, int customMapIndex) {
+    const std::string mapPath = "data/world/custom/" + mapName + ".otbm";
+    
+    // Carrega mapa customizado
+    g_game().map.loadMapCustom(mapName, true, true, true, true, customMapIndex);
+}
+
+// Exemplo 3: Carregamento seletivo
+void Game::loadMapComponents(const std::string &mapPath) {
+    // Carrega apenas componentes específicos
+    g_game().map.loadMap(mapPath, false, false, true, false, false);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **2. Gerenciamento de Tiles**
 
+#### Nível Basic
 ```cpp
 // Exemplo 1: Obter tile existente
 std::shared_ptr<Tile> Game::getTileAt(const Position &pos) {
@@ -113,8 +184,88 @@ std::vector<std::shared_ptr<Tile>> Game::getSurroundingTiles(const Position &pos
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo 1: Obter tile existente
+std::shared_ptr<Tile> Game::getTileAt(const Position &pos) {
+    return g_game().map.getTile(pos);
+}
+
+// Exemplo 2: Criar tile se não existir
+std::shared_ptr<Tile> Game::getOrCreateTileAt(const Position &pos) {
+    return g_game().map.getOrCreateTile(pos, true); // isDynamic = true
+}
+
+// Exemplo 3: Verificar se posição é válida
+bool Game::isValidPosition(const Position &pos) {
+    auto tile = g_game().map.getTile(pos);
+    return tile != nullptr;
+}
+
+// Exemplo 4: Obter tiles vizinhos
+std::vector<std::shared_ptr<Tile>> Game::getSurroundingTiles(const Position &pos) {
+    auto tile = g_game().map.getTile(pos);
+    if (tile) {
+        return tile->getSurroundingTiles();
+    }
+    return {};
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo 1: Obter tile existente
+std::shared_ptr<Tile> Game::getTileAt(const Position &pos) {
+    return g_game().map.getTile(pos);
+}
+
+// Exemplo 2: Criar tile se não existir
+std::shared_ptr<Tile> Game::getOrCreateTileAt(const Position &pos) {
+    return g_game().map.getOrCreateTile(pos, true); // isDynamic = true
+}
+
+// Exemplo 3: Verificar se posição é válida
+bool Game::isValidPosition(const Position &pos) {
+    auto tile = g_game().map.getTile(pos);
+    return tile != nullptr;
+}
+
+// Exemplo 4: Obter tiles vizinhos
+std::vector<std::shared_ptr<Tile>> Game::getSurroundingTiles(const Position &pos) {
+    auto tile = g_game().map.getTile(pos);
+    if (tile) {
+        return tile->getSurroundingTiles();
+    }
+    return {};
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **3. Posicionamento de Criaturas**
 
+#### Nível Basic
+```cpp
+    if (newTile) {
+            if (g_game().map.placeCreature(pos, creature, false, false)) {
+```
+
+#### Nível Intermediate
 ```cpp
 // Exemplo 1: Posicionar jogador no mapa
 bool Game::placePlayer(const std::shared_ptr<Player> &player, const Position &pos) {
@@ -149,8 +300,54 @@ bool Game::placeCreatureNear(const std::shared_ptr<Creature> &creature, const Po
 }
 ```
 
+#### Nível Advanced
+```cpp
+// Exemplo 1: Posicionar jogador no mapa
+bool Game::placePlayer(const std::shared_ptr<Player> &player, const Position &pos) {
+    return g_game().map.placeCreature(pos, player, false, true);
+}
+
+// Exemplo 2: Posicionar monstro no mapa
+bool Game::spawnMonster(const std::shared_ptr<Monster> &monster, const Position &pos) {
+    return g_game().map.placeCreature(pos, monster, true, false);
+}
+
+// Exemplo 3: Mover criatura
+void Game::moveCreature(const std::shared_ptr<Creature> &creature, const Position &newPos) {
+    auto newTile = g_game().map.getTile(newPos);
+    if (newTile) {
+        g_game().map.moveCreature(creature, newTile, false);
+    }
+}
+
+// Exemplo 4: Posicionamento com busca de posição livre
+bool Game::placeCreatureNear(const std::shared_ptr<Creature> &creature, const Position &center) {
+    // Busca posição livre próxima
+    for (int dx = -2; dx <= 2; dx++) {
+        for (int dy = -2; dy <= 2; dy++) {
+            Position pos = center + Position(dx, dy, 0);
+            if (g_game().map.placeCreature(pos, creature, false, false)) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **4. Pathfinding e Navegação**
 
+#### Nível Basic
 ```cpp
 // Exemplo 1: Verificar se pode atirar objeto
 bool Game::canThrowObject(const Position &from, const Position &to) {
@@ -186,8 +383,98 @@ bool Game::isInRange(const Position &from, const Position &to, int range) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo 1: Verificar se pode atirar objeto
+bool Game::canThrowObject(const Position &from, const Position &to) {
+    return g_game().map.canThrowObjectTo(from, to);
+}
+
+// Exemplo 2: Verificar linha de visão
+bool Game::hasLineOfSight(const Position &from, const Position &to) {
+    return g_game().map.isSightClear(from, to, true);
+}
+
+// Exemplo 3: Verificar se pode andar
+std::shared_ptr<Tile> Game::canWalkTo(const std::shared_ptr<Creature> &creature, const Position &pos) {
+    return g_game().map.canWalkTo(creature, pos);
+}
+
+// Exemplo 4: Encontrar caminho
+bool Game::findPath(const std::shared_ptr<Creature> &creature, const Position &target, 
+                   std::vector<Direction> &path) {
+    FindPathParams fpp;
+    fpp.maxSearchDist = 50;
+    fpp.clearSight = true;
+    fpp.allowDiagonal = true;
+    
+    return g_game().map.getPathMatching(creature, path, 
+                                       FrozenPathingConditionCall(), fpp);
+}
+
+// Exemplo 5: Verificar distância
+bool Game::isInRange(const Position &from, const Position &to, int range) {
+    int distance = std::max(std::abs(from.x - to.x), std::abs(from.y - to.y));
+    return distance <= range;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo 1: Verificar se pode atirar objeto
+bool Game::canThrowObject(const Position &from, const Position &to) {
+    return g_game().map.canThrowObjectTo(from, to);
+}
+
+// Exemplo 2: Verificar linha de visão
+bool Game::hasLineOfSight(const Position &from, const Position &to) {
+    return g_game().map.isSightClear(from, to, true);
+}
+
+// Exemplo 3: Verificar se pode andar
+std::shared_ptr<Tile> Game::canWalkTo(const std::shared_ptr<Creature> &creature, const Position &pos) {
+    return g_game().map.canWalkTo(creature, pos);
+}
+
+// Exemplo 4: Encontrar caminho
+bool Game::findPath(const std::shared_ptr<Creature> &creature, const Position &target, 
+                   std::vector<Direction> &path) {
+    FindPathParams fpp;
+    fpp.maxSearchDist = 50;
+    fpp.clearSight = true;
+    fpp.allowDiagonal = true;
+    
+    return g_game().map.getPathMatching(creature, path, 
+                                       FrozenPathingConditionCall(), fpp);
+}
+
+// Exemplo 5: Verificar distância
+bool Game::isInRange(const Position &from, const Position &to, int range) {
+    int distance = std::max(std::abs(from.x - to.x), std::abs(from.y - to.y));
+    return distance <= range;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **5. Operações com Tiles**
 
+#### Inicialização e Configuração
 ```cpp
 // Exemplo 1: Adicionar item ao tile
 bool Game::addItemToTile(const Position &pos, const std::shared_ptr<Item> &item) {
@@ -211,6 +498,10 @@ bool Game::removeItemFromTile(const Position &pos, const std::shared_ptr<Item> &
     if (!tile) {
         return false;
     }
+```
+
+#### Funcionalidade 1
+```cpp
     
     tile->removeThing(item, 1);
     return true;
@@ -232,6 +523,10 @@ bool Game::hasCreaturesOnTile(const Position &pos) {
     if (!tile) {
         return false;
     }
+```
+
+#### Finalização
+```cpp
     
     return tile->getCreatureCount() > 0;
 }
@@ -259,6 +554,7 @@ std::shared_ptr<MagicField> Game::getMagicField(const Position &pos) {
 
 ### **6. Uso via Lua**
 
+#### Inicialização e Configuração
 ```lua
 -- Exemplo 1: Obter tile em posição
 local tile = Tile(100, 100, 7)
@@ -286,6 +582,10 @@ local creatures = tile:getCreatures()
 for _, creature in ipairs(creatures) do
     print("Criatura encontrada:", creature:getName())
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 -- Exemplo 5: Verificar se tile tem campo mágico
 local field = tile:getFieldItem()
@@ -307,6 +607,10 @@ local items = tile:getItems()
 for _, item in ipairs(items) do
     print("Item encontrado:", item:getId())
 end
+```
+
+#### Finalização
+```lua
 
 -- Exemplo 9: Obter contagem de itens
 local itemCount = tile:getItemCount()
@@ -357,6 +661,7 @@ Crie um sistema que carregue diferentes tipos de mapas:
 ```cpp
 // Implemente esta função
 class MapManager {
+    -- Classe: MapManager
 public:
     // TODO: Implemente carregamento de mapa principal
     bool loadMainMap(const std::string &mapName);
@@ -379,6 +684,7 @@ Crie um sistema de posicionamento inteligente:
 ```cpp
 // Implemente esta função
 class PositionManager {
+    -- Classe: PositionManager
 public:
     // TODO: Implemente busca de posição livre
     Position findFreePosition(const Position &center, int radius);
@@ -402,6 +708,7 @@ Crie um sistema de navegação avançado:
 ```cpp
 // Implemente esta função
 class PathfindingManager {
+    -- Classe: PathfindingManager
 public:
     // TODO: Implemente busca de caminho com obstáculos
     std::vector<Direction> findPathWithObstacles(const Position &start, 
@@ -427,6 +734,7 @@ Crie um sistema de gerenciamento de tiles:
 ```cpp
 // Implemente esta função
 class TileManager {
+    -- Classe: TileManager
 public:
     // TODO: Implemente criação de tile dinâmico
     std::shared_ptr<Tile> createDynamicTile(const Position &pos);
@@ -448,6 +756,7 @@ public:
 ### **Exercício 5: Sistema Lua**
 Crie scripts Lua que usem o sistema de mapas:
 
+#### Nível Basic
 ```lua
 -- TODO: Implemente estas funções Lua
 
@@ -490,6 +799,113 @@ end
 function getTileProperties(position)
     -- Retorna todas as propriedades de um tile
 end
+```
+
+#### Nível Intermediate
+```lua
+-- TODO: Implemente estas funções Lua
+
+-- 1. Função para criar área de spawn
+function createSpawnArea(centerPosition, radius, creatureType, count)
+    -- Cria área de spawn de criaturas
+end
+
+-- 2. Função para verificar área segura
+function isSafeArea(position, radius)
+    -- Verifica se área é segura para jogadores
+end
+
+-- 3. Função para criar teleporte
+function createTeleport(position, destination)
+    -- Cria teleporte entre duas posições
+end
+
+-- 4. Função para criar campo mágico
+function createMagicField(position, fieldType, damage)
+    -- Cria campo mágico com dano específico
+end
+
+-- 5. Função para verificar linha de visão
+function checkLineOfSight(fromPos, toPos)
+    -- Verifica se há linha de visão entre posições
+end
+
+-- 6. Função para encontrar caminho
+function findPath(startPos, endPos, maxDistance)
+    -- Encontra caminho entre duas posições
+end
+
+-- 7. Função para criar zona de proteção
+function createProtectionZone(topLeft, bottomRight)
+    -- Cria zona de proteção
+end
+
+-- 8. Função para verificar propriedades de tile
+function getTileProperties(position)
+    -- Retorna todas as propriedades de um tile
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- TODO: Implemente estas funções Lua
+
+-- 1. Função para criar área de spawn
+function createSpawnArea(centerPosition, radius, creatureType, count)
+    -- Cria área de spawn de criaturas
+end
+
+-- 2. Função para verificar área segura
+function isSafeArea(position, radius)
+    -- Verifica se área é segura para jogadores
+end
+
+-- 3. Função para criar teleporte
+function createTeleport(position, destination)
+    -- Cria teleporte entre duas posições
+end
+
+-- 4. Função para criar campo mágico
+function createMagicField(position, fieldType, damage)
+    -- Cria campo mágico com dano específico
+end
+
+-- 5. Função para verificar linha de visão
+function checkLineOfSight(fromPos, toPos)
+    -- Verifica se há linha de visão entre posições
+end
+
+-- 6. Função para encontrar caminho
+function findPath(startPos, endPos, maxDistance)
+    -- Encontra caminho entre duas posições
+end
+
+-- 7. Função para criar zona de proteção
+function createProtectionZone(topLeft, bottomRight)
+    -- Cria zona de proteção
+end
+
+-- 8. Função para verificar propriedades de tile
+function getTileProperties(position)
+    -- Retorna todas as propriedades de um tile
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🎯 **Conceitos-Chave**

@@ -352,6 +352,7 @@ A **INTEGRATION-004** realiza uma análise comparativa profunda da performance d
 ```cpp
 // Exemplo de implementação OTClient Performance
 class OTClientPerformance {
+    -- Classe: OTClientPerformance
 private:
     MemoryPool memory_pool;
     TextureAtlas texture_atlas;
@@ -374,6 +375,7 @@ private:
 ```cpp
 // Exemplo de implementação Canary Performance
 class CanaryPerformance {
+    -- Classe: CanaryPerformance
 private:
     ConnectionPool connection_pool;
     QueryCache query_cache;
@@ -398,6 +400,7 @@ private:
 ```cpp
 // API Unificada para Performance
 class UnifiedPerformance {
+    -- Classe: UnifiedPerformance
 public:
     // Monitoramento
     static PerformanceMetrics getMetrics();

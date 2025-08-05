@@ -67,6 +67,7 @@ Sistema de Configuração OTClient
 **API Principal**:
 ```cpp
 class ConfigManager {
+    -- Classe: ConfigManager
 public:
     void init();
     void terminate();
@@ -84,6 +85,7 @@ public:
 **Interface Lua**:
 ```lua
 -- Acesso ao ConfigManager
+    --  Acesso ao ConfigManager (traduzido)
 local settings = g_configs.getSettings()
 local myConfig = g_configs.get("myconfig.otml")
 local newConfig = g_configs.create("data/myapp.otml")
@@ -104,6 +106,7 @@ g_configs.unload("myconfig.otml")
 **API Principal**:
 ```cpp
 class Config : public LuaObject {
+    -- Classe: Config
 public:
     bool load(const std::string& file);
     bool unload();
@@ -127,6 +130,7 @@ public:
 ```
 
 **Interface Lua**:
+#### Nível Basic
 ```lua
 -- Operações com Config
 config:save()
@@ -136,6 +140,47 @@ local value = config:getValue("window.width")
 local list = config:getList("recent.servers")
 config:exists("window.width")
 config:remove("window.width")
+```
+
+#### Nível Intermediate
+```lua
+-- Operações com Config
+config:save()
+config:setValue("window.width", "1024")
+config:setList("recent.servers", {"server1.com", "server2.com"})
+local value = config:getValue("window.width")
+local list = config:getList("recent.servers")
+config:exists("window.width")
+config:remove("window.width")
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Operações com Config
+config:save()
+config:setValue("window.width", "1024")
+config:setList("recent.servers", {"server1.com", "server2.com"})
+local value = config:getValue("window.width")
+local list = config:getList("recent.servers")
+config:exists("window.width")
+config:remove("window.width")
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 #### **3. GameConfig (g_gameConfig)**
@@ -151,6 +196,7 @@ config:remove("window.width")
 **Configurações Principais**:
 ```cpp
 class GameConfig {
+    -- Classe: GameConfig
 public:
     // Game
     uint8_t getSpriteSize();                    // Tamanho dos sprites
@@ -208,6 +254,7 @@ public:
 **Estrutura de Opções**:
 ```lua
 -- data_options.lua
+    --  data_options.lua (traduzido)
 return {
     vsync = {
         value = true,
@@ -231,9 +278,11 @@ return {
         value = true,
         action = function(value, options, controller, panels, extraWidgets)
             if g_sounds then
+    -- Verificação condicional
                 g_sounds.setAudioEnabled(value)
             end
             if value then
+    -- Verificação condicional
                 extraWidgets.audioButton:setIcon('/images/topbuttons/button_mute_up')
             else
                 extraWidgets.audioButton:setIcon('/images/topbuttons/button_mute_pressed')
@@ -309,6 +358,7 @@ font
 - `OTMLEmitter`: Emissor para gerar OTML
 
 **Operações**:
+#### Nível Basic
 ```cpp
 // Criar documento
 OTMLDocumentPtr doc = OTMLDocument::create();
@@ -324,10 +374,60 @@ OTMLNodePtr node = OTMLNode::create("key", "value");
 doc->addChild(node);
 ```
 
+#### Nível Intermediate
+```cpp
+// Criar documento
+OTMLDocumentPtr doc = OTMLDocument::create();
+
+// Parse de arquivo
+OTMLDocumentPtr doc = OTMLDocument::parse("config.otml");
+
+// Salvar documento
+doc->save("config.otml");
+
+// Manipular nós
+OTMLNodePtr node = OTMLNode::create("key", "value");
+doc->addChild(node);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Criar documento
+OTMLDocumentPtr doc = OTMLDocument::create();
+
+// Parse de arquivo
+OTMLDocumentPtr doc = OTMLDocument::parse("config.otml");
+
+// Salvar documento
+doc->save("config.otml");
+
+// Manipular nós
+OTMLNodePtr node = OTMLNode::create("key", "value");
+doc->addChild(node);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🎮 Configurações de Jogo**
 
 #### **Configurações de Gráficos**
 
+#### Nível Basic
 ```lua
 -- Configurações de vídeo
 vsync = true                    -- Sincronização vertical
@@ -342,8 +442,56 @@ ambientLight = 100              -- Luz ambiente
 limitVisibleDimension = false   -- Limitar dimensão visível
 ```
 
+#### Nível Intermediate
+```lua
+-- Configurações de vídeo
+vsync = true                    -- Sincronização vertical
+fullscreen = false              -- Tela cheia
+showFps = false                 -- Mostrar FPS
+showPing = false                -- Mostrar ping
+backgroundFrameRate = 201       -- FPS em background
+
+-- Configurações de renderização
+enableLights = true             -- Habilitar iluminação
+ambientLight = 100              -- Luz ambiente
+limitVisibleDimension = false   -- Limitar dimensão visível
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Configurações de vídeo
+vsync = true                    -- Sincronização vertical
+fullscreen = false              -- Tela cheia
+showFps = false                 -- Mostrar FPS
+showPing = false                -- Mostrar ping
+backgroundFrameRate = 201       -- FPS em background
+
+-- Configurações de renderização
+enableLights = true             -- Habilitar iluminação
+ambientLight = 100              -- Luz ambiente
+limitVisibleDimension = false   -- Limitar dimensão visível
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Configurações de Áudio**
 
+#### Nível Basic
 ```lua
 -- Configurações de som
 enableAudio = true              -- Habilitar áudio
@@ -353,8 +501,46 @@ enableEffectSound = true        -- Habilitar efeitos
 effectSoundVolume = 100         -- Volume dos efeitos
 ```
 
+#### Nível Intermediate
+```lua
+-- Configurações de som
+enableAudio = true              -- Habilitar áudio
+enableMusicSound = true         -- Habilitar música
+musicSoundVolume = 100          -- Volume da música
+enableEffectSound = true        -- Habilitar efeitos
+effectSoundVolume = 100         -- Volume dos efeitos
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Configurações de som
+enableAudio = true              -- Habilitar áudio
+enableMusicSound = true         -- Habilitar música
+musicSoundVolume = 100          -- Volume da música
+enableEffectSound = true        -- Habilitar efeitos
+effectSoundVolume = 100         -- Volume dos efeitos
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Configurações de Interface**
 
+#### Nível Basic
 ```lua
 -- Configurações de HUD
 displayNames = true             -- Mostrar nomes
@@ -367,14 +553,93 @@ showTimestampsInConsole = true
 showLevelsInConsole = true
 ```
 
+#### Nível Intermediate
+```lua
+-- Configurações de HUD
+displayNames = true             -- Mostrar nomes
+displayHealth = true            -- Mostrar vida
+displayMana = true              -- Mostrar mana
+showStatusMessagesInConsole = true
+showEventMessagesInConsole = true
+showInfoMessagesInConsole = true
+showTimestampsInConsole = true
+showLevelsInConsole = true
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Configurações de HUD
+displayNames = true             -- Mostrar nomes
+displayHealth = true            -- Mostrar vida
+displayMana = true              -- Mostrar mana
+showStatusMessagesInConsole = true
+showEventMessagesInConsole = true
+showInfoMessagesInConsole = true
+showTimestampsInConsole = true
+showLevelsInConsole = true
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Configurações de Controle**
 
+#### Nível Basic
 ```lua
 -- Configurações de movimento
 classicControl = false          -- Controle clássico
 smartWalk = false               -- Movimento inteligente
 autoChaseOverride = true        -- Override de perseguição
 moveStack = false               -- Mover pilha
+```
+
+#### Nível Intermediate
+```lua
+-- Configurações de movimento
+classicControl = false          -- Controle clássico
+smartWalk = false               -- Movimento inteligente
+autoChaseOverride = true        -- Override de perseguição
+moveStack = false               -- Mover pilha
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Configurações de movimento
+classicControl = false          -- Controle clássico
+smartWalk = false               -- Movimento inteligente
+autoChaseOverride = true        -- Override de perseguição
+moveStack = false               -- Mover pilha
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **🔧 Implementação Prática**
@@ -393,6 +658,7 @@ local function createCustomConfig()
     config:setValue("audio.volume", "0.8")
     
     -- Definir lista de servidores
+    --  Definir lista de servidores (traduzido)
     config:setList("recent.servers", {
         "server1.com",
         "server2.com", 
@@ -400,6 +666,7 @@ local function createCustomConfig()
     })
     
     -- Salvar no disco
+    --  Salvar no disco (traduzido)
     config:save()
     
     return config
@@ -408,6 +675,21 @@ end
 
 #### **Exemplo 2: Ler Configurações**
 
+#### Nível Basic
+```lua
+-- Ler configurações existentes
+local function readConfigValues(config)
+    local width = config:getValue("window.width")
+    local height = config:getValue("window.height")
+    local vsync = config:getValue("graphics.vsync")
+    local servers = config:getList("recent.servers")
+    print("Window: " .. width .. "x" .. height)
+    print("VSync: " .. vsync)
+    print("Servers: " .. table.concat(servers, ", "))
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Ler configurações existentes
 local function readConfigValues(config)
@@ -422,8 +704,34 @@ local function readConfigValues(config)
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Ler configurações existentes
+local function readConfigValues(config)
+    local width = config:getValue("window.width")
+    local height = config:getValue("window.height")
+    local vsync = config:getValue("graphics.vsync")
+    local servers = config:getList("recent.servers")
+    
+    print("Window: " .. width .. "x" .. height)
+    print("VSync: " .. vsync)
+    print("Servers: " .. table.concat(servers, ", "))
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Exemplo 3: Sistema de Opções Dinâmico**
 
+#### Nível Basic
 ```lua
 -- Definir opção dinâmica
 local function defineDynamicOption()
@@ -444,8 +752,68 @@ local function defineDynamicOption()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Definir opção dinâmica
+local function defineDynamicOption()
+    local option = {
+        value = true,
+        action = function(value, options, controller, panels, extraWidgets)
+            -- Ação executada quando valor muda
+            if value then
+                g_window.setFullscreen(true)
+            else
+                g_window.setFullscreen(false)
+            end
+        end
+    }
+    
+    -- Adicionar à interface
+    panels.graphicsPanel:addOption("fullscreen", option)
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Definir opção dinâmica
+local function defineDynamicOption()
+    local option = {
+        value = true,
+        action = function(value, options, controller, panels, extraWidgets)
+            -- Ação executada quando valor muda
+            if value then
+                g_window.setFullscreen(true)
+            else
+                g_window.setFullscreen(false)
+            end
+        end
+    }
+    
+    -- Adicionar à interface
+    panels.graphicsPanel:addOption("fullscreen", option)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Exemplo 4: Backup e Restauração**
 
+#### Nível Basic
 ```lua
 -- Backup de configurações
 local function backupSettings()
@@ -470,12 +838,80 @@ local function restoreSettings(backupDir)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Backup de configurações
+local function backupSettings()
+    local backupDir = "/backup/" .. os.date("%Y%m%d_%H%M%S")
+    g_resources.makeDir(backupDir)
+    
+    local settingsContent = g_resources.readFileContents("/settings.otml")
+    g_resources.writeFileContents(backupDir .. "/settings.otml", settingsContent)
+    
+    print("Backup criado em: " .. backupDir)
+end
+
+-- Restaurar configurações
+local function restoreSettings(backupDir)
+    local settingsContent = g_resources.readFileContents(backupDir .. "/settings.otml")
+    g_resources.writeFileContents("/settings.otml", settingsContent)
+    
+    g_configs.unload("/settings.otml")
+    g_configs.loadSettings("/settings.otml")
+    
+    print("Configurações restauradas de: " .. backupDir)
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Backup de configurações
+local function backupSettings()
+    local backupDir = "/backup/" .. os.date("%Y%m%d_%H%M%S")
+    g_resources.makeDir(backupDir)
+    
+    local settingsContent = g_resources.readFileContents("/settings.otml")
+    g_resources.writeFileContents(backupDir .. "/settings.otml", settingsContent)
+    
+    print("Backup criado em: " .. backupDir)
+end
+
+-- Restaurar configurações
+local function restoreSettings(backupDir)
+    local settingsContent = g_resources.readFileContents(backupDir .. "/settings.otml")
+    g_resources.writeFileContents("/settings.otml", settingsContent)
+    
+    g_configs.unload("/settings.otml")
+    g_configs.loadSettings("/settings.otml")
+    
+    print("Configurações restauradas de: " .. backupDir)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🎯 Integração com Outros Sistemas**
 
 #### **Integração com Lua**
 
 ```lua
 -- Acesso direto via g_settings
+    --  Acesso direto via g_settings (traduzido)
 local windowSize = g_settings.getSize('window-size', Size(800, 600))
 local windowPos = g_settings.getPoint('window-pos', Point(100, 100))
 local maximized = g_settings.getBoolean('window-maximized', false)
@@ -489,6 +925,7 @@ g_settings.save()
 
 #### **Integração com UI**
 
+#### Nível Basic
 ```lua
 -- Interface de opções
 local function setupOptionsInterface()
@@ -508,6 +945,67 @@ local function setupOptionsInterface()
         action = function(value) g_sounds.setAudioEnabled(value) end
     })
 end
+```
+
+#### Nível Intermediate
+```lua
+-- Interface de opções
+local function setupOptionsInterface()
+    local optionsWindow = g_ui.createWidget('OptionsWindow')
+    
+    -- Painel de gráficos
+    local graphicsPanel = optionsWindow:getChildById('graphicsPanel')
+    graphicsPanel:addOption('vsync', {
+        value = true,
+        action = function(value) g_window.setVerticalSync(value) end
+    })
+    
+    -- Painel de áudio
+    local soundPanel = optionsWindow:getChildById('soundPanel')
+    soundPanel:addOption('enableAudio', {
+        value = true,
+        action = function(value) g_sounds.setAudioEnabled(value) end
+    })
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Interface de opções
+local function setupOptionsInterface()
+    local optionsWindow = g_ui.createWidget('OptionsWindow')
+    
+    -- Painel de gráficos
+    local graphicsPanel = optionsWindow:getChildById('graphicsPanel')
+    graphicsPanel:addOption('vsync', {
+        value = true,
+        action = function(value) g_window.setVerticalSync(value) end
+    })
+    
+    -- Painel de áudio
+    local soundPanel = optionsWindow:getChildById('soundPanel')
+    soundPanel:addOption('enableAudio', {
+        value = true,
+        action = function(value) g_sounds.setAudioEnabled(value) end
+    })
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **📊 Métricas e Performance**
@@ -538,10 +1036,12 @@ local function validateConfig(config)
     local height = tonumber(config:getValue("window.height"))
     
     if not width or width < 800 or width > 4096 then
+    -- Verificação condicional
         return false, "Largura inválida"
     end
     
     if not height or height < 600 or height > 4096 then
+    -- Verificação condicional
         return false, "Altura inválida"
     end
     
@@ -551,6 +1051,7 @@ end
 
 #### **Backup Automático**
 
+#### Nível Basic
 ```lua
 -- Backup automático antes de mudanças
 local function safeConfigChange(config, key, value)
@@ -571,12 +1072,72 @@ local function safeConfigChange(config, key, value)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Backup automático antes de mudanças
+local function safeConfigChange(config, key, value)
+    -- Backup automático
+    local backup = config:getValue(key)
+    
+    -- Aplicar mudança
+    config:setValue(key, value)
+    
+    -- Validar mudança
+    if not validateConfig(config) then
+        config:setValue(key, backup)  -- Reverter
+        return false
+    end
+    
+    config:save()
+    return true
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Backup automático antes de mudanças
+local function safeConfigChange(config, key, value)
+    -- Backup automático
+    local backup = config:getValue(key)
+    
+    -- Aplicar mudança
+    config:setValue(key, value)
+    
+    -- Validar mudança
+    if not validateConfig(config) then
+        config:setValue(key, backup)  -- Reverter
+        return false
+    end
+    
+    config:save()
+    return true
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 📚 **Documentação Técnica**
 
 ### **APIs Principais**
 
 #### **ConfigManager API**
 
+#### Nível Basic
 ```cpp
 // C++
 ConfigManager g_configs;
@@ -602,8 +1163,78 @@ g_configs.unload("file.otml");
 g_configs.terminate();
 ```
 
+#### Nível Intermediate
+```cpp
+// C++
+ConfigManager g_configs;
+
+// Inicialização
+g_configs.init();
+
+// Obter configurações
+ConfigPtr settings = g_configs.getSettings();
+ConfigPtr config = g_configs.get("file.otml");
+
+// Carregar configurações
+ConfigPtr newConfig = g_configs.load("file.otml");
+ConfigPtr settings = g_configs.loadSettings("settings.otml");
+
+// Criar configuração
+ConfigPtr config = g_configs.create("file.otml");
+
+// Descarregar
+g_configs.unload("file.otml");
+
+// Finalização
+g_configs.terminate();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// C++
+ConfigManager g_configs;
+
+// Inicialização
+g_configs.init();
+
+// Obter configurações
+ConfigPtr settings = g_configs.getSettings();
+ConfigPtr config = g_configs.get("file.otml");
+
+// Carregar configurações
+ConfigPtr newConfig = g_configs.load("file.otml");
+ConfigPtr settings = g_configs.loadSettings("settings.otml");
+
+// Criar configuração
+ConfigPtr config = g_configs.create("file.otml");
+
+// Descarregar
+g_configs.unload("file.otml");
+
+// Finalização
+g_configs.terminate();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Config API**
 
+#### Nível Basic
 ```cpp
 // C++
 Config config;
@@ -632,8 +1263,89 @@ bool loaded = config.isLoaded();
 std::string filename = config.getFileName();
 ```
 
+#### Nível Intermediate
+```cpp
+// C++
+Config config;
+
+// Carregar/Salvar
+bool loaded = config.load("file.otml");
+bool saved = config.save();
+config.unload();
+
+// Valores simples
+config.setValue("key", "value");
+std::string value = config.getValue("key");
+
+// Listas
+config.setList("key", {"item1", "item2"});
+std::vector<std::string> list = config.getList("key");
+
+// Nós
+config.setNode("key", node);
+OTMLNodePtr node = config.getNode("key");
+
+// Verificações
+bool exists = config.exists("key");
+config.remove("key");
+bool loaded = config.isLoaded();
+std::string filename = config.getFileName();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// C++
+Config config;
+
+// Carregar/Salvar
+bool loaded = config.load("file.otml");
+bool saved = config.save();
+config.unload();
+
+// Valores simples
+config.setValue("key", "value");
+std::string value = config.getValue("key");
+
+// Listas
+config.setList("key", {"item1", "item2"});
+std::vector<std::string> list = config.getList("key");
+
+// Nós
+config.setNode("key", node);
+OTMLNodePtr node = config.getNode("key");
+
+// Verificações
+bool exists = config.exists("key");
+config.remove("key");
+bool loaded = config.isLoaded();
+std::string filename = config.getFileName();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **GameConfig API**
 
+#### Nível Basic
+```cpp
+// Configurações de renderização
+```
+
+#### Nível Intermediate
 ```cpp
 // C++
 GameConfig g_gameConfig;
@@ -670,10 +1382,58 @@ BitmapFontPtr staticFont = g_gameConfig.getStaticTextFont();
 BitmapFontPtr widgetFont = g_gameConfig.getWidgetTextFont();
 ```
 
+#### Nível Advanced
+```cpp
+// C++
+GameConfig g_gameConfig;
+
+// Configurações de jogo
+uint8_t spriteSize = g_gameConfig.getSpriteSize();
+uint16_t version = g_gameConfig.getLastSupportedVersion();
+bool drawTyping = g_gameConfig.drawTyping();
+
+// Configurações de mapa
+Size viewport = g_gameConfig.getMapViewPort();
+uint8_t maxZ = g_gameConfig.getMapMaxZ();
+uint8_t seaFloor = g_gameConfig.getMapSeaFloor();
+
+// Configurações de tile
+uint8_t maxElevation = g_gameConfig.getTileMaxElevation();
+uint8_t maxThings = g_gameConfig.getTileMaxThings();
+
+// Configurações de criatura
+bool drawInfo = g_gameConfig.isDrawingInformationByWidget();
+bool newFormula = g_gameConfig.isForcingNewWalkingFormula();
+uint16_t shieldTicks = g_gameConfig.getShieldBlinkTicks();
+
+// Configurações de renderização
+bool drawCovered = g_gameConfig.isDrawingCoveredThings();
+uint16_t invisibleTicks = g_gameConfig.getInvisibleTicksPerFrame();
+uint16_t itemTicks = g_gameConfig.getItemTicksPerFrame();
+uint16_t effectTicks = g_gameConfig.getEffectTicksPerFrame();
+
+// Fontes
+BitmapFontPtr creatureFont = g_gameConfig.getCreatureNameFont();
+BitmapFontPtr animatedFont = g_gameConfig.getAnimatedTextFont();
+BitmapFontPtr staticFont = g_gameConfig.getStaticTextFont();
+BitmapFontPtr widgetFont = g_gameConfig.getWidgetTextFont();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Interface Lua**
 
 #### **g_configs (ConfigManager)**
 
+#### Nível Basic
 ```lua
 -- Lua
 -- Obter configurações
@@ -691,20 +1451,77 @@ local config = g_configs.create("file.otml")
 g_configs.unload("file.otml")
 ```
 
+#### Nível Intermediate
+```lua
+-- Lua
+-- Obter configurações
+local settings = g_configs.getSettings()
+local config = g_configs.get("file.otml")
+
+-- Carregar configurações
+local newConfig = g_configs.load("file.otml")
+local settings = g_configs.loadSettings("settings.otml")
+
+-- Criar configuração
+local config = g_configs.create("file.otml")
+
+-- Descarregar
+g_configs.unload("file.otml")
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Lua
+-- Obter configurações
+local settings = g_configs.getSettings()
+local config = g_configs.get("file.otml")
+
+-- Carregar configurações
+local newConfig = g_configs.load("file.otml")
+local settings = g_configs.loadSettings("settings.otml")
+
+-- Criar configuração
+local config = g_configs.create("file.otml")
+
+-- Descarregar
+g_configs.unload("file.otml")
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Config Object**
 
 ```lua
 -- Lua
+    --  Lua (traduzido)
 -- Carregar/Salvar
+    --  Carregar/Salvar (traduzido)
 local loaded = config:load("file.otml")
 local saved = config:save()
 config:unload()
 
 -- Valores simples
+    --  Valores simples (traduzido)
 config:setValue("key", "value")
 local value = config:getValue("key")
 
 -- Listas
+    --  Listas (traduzido)
 config:setList("key", {"item1", "item2"})
 local list = config:getList("key")
 
@@ -721,6 +1538,7 @@ local filename = config:getFileName()
 
 #### **g_settings (Settings)**
 
+#### Nível Basic
 ```lua
 -- Lua
 -- Tipos básicos
@@ -747,8 +1565,111 @@ g_settings.mergeNode('key', node)
 g_settings.save()
 ```
 
+#### Nível Intermediate
+```lua
+-- Lua
+-- Tipos básicos
+local value = g_settings.get('key')
+g_settings.set('key', 'value')
+g_settings.remove('key')
+
+-- Tipos específicos
+local number = g_settings.getNumber('key', defaultValue)
+local boolean = g_settings.getBoolean('key', defaultValue)
+local string = g_settings.getString('key', defaultValue)
+
+-- Tipos complexos
+local size = g_settings.getSize('key', defaultSize)
+local point = g_settings.getPoint('key', defaultPoint)
+local color = g_settings.getColor('key', defaultColor)
+
+-- Nós
+local node = g_settings.getNode('key')
+g_settings.setNode('key', node)
+g_settings.mergeNode('key', node)
+
+-- Persistência
+g_settings.save()
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Lua
+-- Tipos básicos
+local value = g_settings.get('key')
+g_settings.set('key', 'value')
+g_settings.remove('key')
+
+-- Tipos específicos
+local number = g_settings.getNumber('key', defaultValue)
+local boolean = g_settings.getBoolean('key', defaultValue)
+local string = g_settings.getString('key', defaultValue)
+
+-- Tipos complexos
+local size = g_settings.getSize('key', defaultSize)
+local point = g_settings.getPoint('key', defaultPoint)
+local color = g_settings.getColor('key', defaultColor)
+
+-- Nós
+local node = g_settings.getNode('key')
+g_settings.setNode('key', node)
+g_settings.mergeNode('key', node)
+
+-- Persistência
+g_settings.save()
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **g_gameConfig (GameConfig)**
 
+#### Nível Basic
+```lua
+-- Lua
+-- Configurações de jogo
+local spriteSize = g_gameConfig.getSpriteSize()
+local version = g_gameConfig.getLastSupportedVersion()
+local drawTyping = g_gameConfig.drawTyping()
+local typingIcon = g_gameConfig.getTypingIcon()
+-- Configurações de mapa
+local viewport = g_gameConfig.getMapViewPort()
+local maxZ = g_gameConfig.getMapMaxZ()
+local seaFloor = g_gameConfig.getMapSeaFloor()
+-- Configurações de tile
+local maxElevation = g_gameConfig.getTileMaxElevation()
+local maxThings = g_gameConfig.getTileMaxThings()
+-- Configurações de criatura
+local drawInfo = g_gameConfig.isDrawingInformationByWidget()
+local newFormula = g_gameConfig.isForcingNewWalkingFormula()
+local shieldTicks = g_gameConfig.getShieldBlinkTicks()
+-- Configurações de renderização
+local drawCovered = g_gameConfig.isDrawingCoveredThings()
+local invisibleTicks = g_gameConfig.getInvisibleTicksPerFrame()
+local itemTicks = g_gameConfig.getItemTicksPerFrame()
+local effectTicks = g_gameConfig.getEffectTicksPerFrame()
+-- Fontes
+local creatureFont = g_gameConfig.getCreatureNameFont()
+local animatedFont = g_gameConfig.getAnimatedTextFont()
+local staticFont = g_gameConfig.getStaticTextFont()
+local widgetFont = g_gameConfig.getWidgetTextFont()
+```
+
+#### Nível Intermediate
 ```lua
 -- Lua
 -- Configurações de jogo
@@ -784,10 +1705,57 @@ local staticFont = g_gameConfig.getStaticTextFont()
 local widgetFont = g_gameConfig.getWidgetTextFont()
 ```
 
+#### Nível Advanced
+```lua
+-- Lua
+-- Configurações de jogo
+local spriteSize = g_gameConfig.getSpriteSize()
+local version = g_gameConfig.getLastSupportedVersion()
+local drawTyping = g_gameConfig.drawTyping()
+local typingIcon = g_gameConfig.getTypingIcon()
+
+-- Configurações de mapa
+local viewport = g_gameConfig.getMapViewPort()
+local maxZ = g_gameConfig.getMapMaxZ()
+local seaFloor = g_gameConfig.getMapSeaFloor()
+
+-- Configurações de tile
+local maxElevation = g_gameConfig.getTileMaxElevation()
+local maxThings = g_gameConfig.getTileMaxThings()
+
+-- Configurações de criatura
+local drawInfo = g_gameConfig.isDrawingInformationByWidget()
+local newFormula = g_gameConfig.isForcingNewWalkingFormula()
+local shieldTicks = g_gameConfig.getShieldBlinkTicks()
+
+-- Configurações de renderização
+local drawCovered = g_gameConfig.isDrawingCoveredThings()
+local invisibleTicks = g_gameConfig.getInvisibleTicksPerFrame()
+local itemTicks = g_gameConfig.getItemTicksPerFrame()
+local effectTicks = g_gameConfig.getEffectTicksPerFrame()
+
+-- Fontes
+local creatureFont = g_gameConfig.getCreatureNameFont()
+local animatedFont = g_gameConfig.getAnimatedTextFont()
+local staticFont = g_gameConfig.getStaticTextFont()
+local widgetFont = g_gameConfig.getWidgetTextFont()
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🎯 **Exemplos Práticos**
 
 ### **Exemplo 1: Sistema de Configuração Completo**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de configuração completo
 local ConfigurationSystem = {}
@@ -810,6 +1778,10 @@ function ConfigurationSystem.init()
     
     print("Sistema de configuração inicializado")
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function ConfigurationSystem.setDefaults()
     local settings = g_configs.getSettings()
@@ -831,6 +1803,10 @@ function ConfigurationSystem.setDefaults()
     if not settings:exists("audio-volume") then
         settings:setValue("audio-volume", "100")
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     -- Configurações de gráficos
     if not settings:exists("vsync") then
@@ -857,6 +1833,10 @@ function ConfigurationSystem.getWindowConfig()
         size = Size(tonumber(width), tonumber(height)),
         position = Point(tonumber(x), tonumber(y))
     }
+```
+
+#### Funcionalidade 3
+```lua
 end
 
 function ConfigurationSystem.setWindowConfig(size, position)
@@ -878,6 +1858,10 @@ function ConfigurationSystem.getAudioConfig()
 end
 
 function ConfigurationSystem.setAudioConfig(enabled, volume)
+```
+
+#### Finalização
+```lua
     local settings = g_configs.getSettings()
     
     settings:setValue("audio-enabled", tostring(enabled))
@@ -891,6 +1875,7 @@ return ConfigurationSystem
 
 ### **Exemplo 2: Interface de Configuração**
 
+#### Inicialização e Configuração
 ```lua
 -- Interface de configuração
 local ConfigUI = {}
@@ -916,6 +1901,10 @@ function ConfigUI.create()
     
     return window
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function ConfigUI.setupGraphicsPanel(panel)
     local settings = g_configs.getSettings()
@@ -937,6 +1926,10 @@ function ConfigUI.setupGraphicsPanel(panel)
         settings:save()
         g_window.setFullscreen(checked)
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     -- FPS
     local fpsCheckbox = panel:getChildById('fpsCheckbox')
@@ -960,6 +1953,10 @@ function ConfigUI.setupAudioPanel(panel)
         if g_sounds then
             g_sounds.setAudioEnabled(checked)
         end
+```
+
+#### Funcionalidade 3
+```lua
     end
     
     -- Volume
@@ -985,6 +1982,10 @@ function ConfigUI.setupInterfacePanel(panel)
         settings:setValue("displayNames", tostring(checked))
         settings:save()
     end
+```
+
+#### Funcionalidade 4
+```lua
     
     -- Mostrar vida
     local healthCheckbox = panel:getChildById('healthCheckbox')
@@ -1013,6 +2014,10 @@ function ConfigUI.setupControlsPanel(panel)
         settings:setValue("classicControl", tostring(checked))
         settings:save()
     end
+```
+
+#### Finalização
+```lua
     
     -- Movimento inteligente
     local smartWalkCheckbox = panel:getChildById('smartWalkCheckbox')
@@ -1028,6 +2033,7 @@ return ConfigUI
 
 ### **Exemplo 3: Sistema de Perfis**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de perfis de configuração
 local ProfileSystem = {}
@@ -1051,6 +2057,10 @@ function ProfileSystem.createProfile(name)
         enabled = settings:getValue("audio-enabled"),
         volume = settings:getValue("audio-volume")
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Configurações de gráficos
     currentConfig.graphics = {
@@ -1073,6 +2083,10 @@ function ProfileSystem.loadProfile(name)
         print("Perfil não encontrado: " .. name)
         return false
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     local settings = g_configs.getSettings()
     local profileConfig = config:getNode("profile")
@@ -1097,6 +2111,10 @@ function ProfileSystem.loadProfile(name)
             settings:setValue("fullscreen", profileConfig.graphics.fullscreen)
             settings:setValue("showFps", profileConfig.graphics.showFps)
         end
+```
+
+#### Funcionalidade 3
+```lua
         
         settings:save()
         print("Perfil carregado: " .. name)
@@ -1119,6 +2137,10 @@ function ProfileSystem.listProfiles()
     
     return profiles
 end
+```
+
+#### Finalização
+```lua
 
 function ProfileSystem.deleteProfile(name)
     local config = g_configs.get("profiles/" .. name .. ".otml")

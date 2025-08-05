@@ -1,18 +1,46 @@
----
-tags: [otclient, guide, ui, advanced, interface, widgets, animations, layouts]
-type: guide
-status: complete
-priority: maxima
-created: 2025-01-27
----
 
 # 🎨 Guia de UI Avançada - OTClient
 
-## 🎯 **Visão Geral**
+## 📋 **ÍNDICE DETALHADO**
+
+### **🎯 Navegação Rápida**
+
+1. [🎯](#🎯)
+2. [📋](#📋)
+3. [📋](#📋)
+4. [⚙️](#⚙️)
+5. [📋](#📋)
+6. [⚙️](#⚙️)
+7. [📋](#📋)
+8. [⚙️](#⚙️)
+9. [📋](#📋)
+
+### **📚 Seções Principais**
+
+| Seção | Descrição |
+|-------|-----------|
+| 🎯 | Documentação e referência |
+| 📋 | Documentação e referência |
+| 📋 | Documentação e referência |
+| ⚙️ | Documentação e referência |
+| 📋 | Documentação e referência |
+| ⚙️ | Documentação e referência |
+| 📋 | Documentação e referência |
+| ⚙️ | Documentação e referência |
+| 📋 | Documentação e referência |
+
+
+
+---
+
+## 🎯 **Visão Geral** 🎯
 
 Este guia fornece técnicas avançadas de desenvolvimento de interface do usuário para o OTClient, incluindo widgets customizados, animações, layouts responsivos, temas e melhores práticas para desenvolvedores e agentes de IA.
 
-## 📚 **Pré-requisitos**
+
+---
+
+## 📚 **Pré-requisitos** 📋
 
 - ✅ Conhecimento básico do OTClient
 - ✅ Familiaridade com Lua
@@ -21,10 +49,14 @@ Este guia fornece técnicas avançadas de desenvolvimento de interface do usuár
 
 ---
 
-## 🧩 **1. Widgets Avançados**
 
-### **1.1 Widget Customizado Base**
+---
 
+## 🧩 **1. Widgets Avançados** 📋
+
+### **1.1 Widget Customizado Base** 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Classe base para widgets customizados
 local CustomWidget = {}
@@ -47,6 +79,10 @@ function CustomWidget:setProperty(name, value)
 end
 
 function CustomWidget:getProperty(name)
+```
+
+#### Funcionalidade 1
+```lua
     return self.properties[name]
 end
 
@@ -69,6 +105,10 @@ end
 function CustomWidget:onEvent(eventType, callback)
     self.events[eventType] = callback
 end
+```
+
+#### Finalização
+```lua
 
 function CustomWidget:triggerEvent(eventType, data)
     if self.events[eventType] then
@@ -85,8 +125,9 @@ function CustomWidget:updateLayout()
 end
 ```
 
-### **1.2 Widget de Progresso Avançado**
+### **1.2 Widget de Progresso Avançado** 📝
 
+#### Inicialização e Configuração
 ```lua
 -- Widget de progresso com animações e temas
 local AdvancedProgressBar = CustomWidget:new()
@@ -113,6 +154,10 @@ function AdvancedProgressBar:setValue(value)
     if oldValue ~= self.value then
         self:animateValueChange(oldValue, self.value)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     self:updateDisplay()
 end
@@ -140,6 +185,10 @@ function AdvancedProgressBar:animateValueChange(fromValue, toValue)
         if progress < 1 then
             scheduleEvent(animate, 16) -- ~60 FPS
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
     
     animate()
@@ -167,6 +216,10 @@ function AdvancedProgressBar:updateDisplay()
         text = text:gsub("{percentage}", math.floor(percentage * 100))
         self.textLabel:setText(text)
     end
+```
+
+#### Funcionalidade 3
+```lua
     
     -- Aplicar tema
     self:applyTheme()
@@ -189,6 +242,10 @@ function AdvancedProgressBar:applyTheme()
             progress = "#2196F3",
             text = "#FFFFFF"
         },
+```
+
+#### Funcionalidade 4
+```lua
         experience = {
             background = "#2C2C2C",
             progress = "#FF9800",
@@ -210,6 +267,10 @@ function AdvancedProgressBar:applyTheme()
         self.textLabel:setColor(theme.text)
     end
 end
+```
+
+#### Finalização
+```lua
 
 function AdvancedProgressBar:setTheme(theme)
     self.theme = theme
@@ -217,8 +278,9 @@ function AdvancedProgressBar:setTheme(theme)
 end
 ```
 
-### **1.3 Widget de Tooltip Avançado**
+### **1.3 Widget de Tooltip Avançado** 📝
 
+#### Inicialização e Configuração
 ```lua
 -- Widget de tooltip com formatação rica e animações
 local AdvancedTooltip = CustomWidget:new()
@@ -241,6 +303,10 @@ function AdvancedTooltip:setContent(content)
     self.content = content
     self:updateDisplay()
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function AdvancedTooltip:addSection(title, items)
     table.insert(self.content, {
@@ -262,6 +328,10 @@ function AdvancedTooltip:addItem(text, color, icon)
 end
 
 function AdvancedTooltip:show(target, position)
+```
+
+#### Funcionalidade 2
+```lua
     self.target = target
     self.position = position or self:calculatePosition(target)
     
@@ -285,6 +355,10 @@ function AdvancedTooltip:showImmediate()
     self:setPosition(self.position)
     self:fadeIn()
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 function AdvancedTooltip:fadeIn()
     self:setOpacity(0)
@@ -307,6 +381,10 @@ function AdvancedTooltip:fadeIn()
 end
 
 function AdvancedTooltip:fadeOut()
+```
+
+#### Funcionalidade 4
+```lua
     local duration = self.fadeOutDuration
     local startTime = os.clock()
     local startOpacity = self:getOpacity()
@@ -328,6 +406,10 @@ function AdvancedTooltip:fadeOut()
 end
 
 function AdvancedTooltip:calculatePosition(target)
+```
+
+#### Funcionalidade 5
+```lua
     local targetPos = target:getPosition()
     local targetSize = target:getSize()
     local screenSize = g_graphics.getScreenSize()
@@ -370,6 +452,10 @@ function AdvancedTooltip:updateDisplay()
                 itemLabel:setPosition({x = 15, y = y})
                 y = y + itemLabel:getHeight() + 2
             end
+```
+
+#### Finalização
+```lua
         elseif item.type == "item" then
             -- Criar item simples
             local itemLabel = g_ui.createWidget('Label', self)
@@ -387,10 +473,14 @@ end
 
 ---
 
-## 🎭 **2. Sistema de Animações**
 
-### **2.1 Animation Manager**
+---
 
+## 🎭 **2. Sistema de Animações** ⚙️
+
+### **2.1 Animation Manager** 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Gerenciador de animações
 local AnimationManager = {
@@ -418,6 +508,10 @@ function AnimationManager:createAnimation(target, properties, duration, easing)
         animation.startValues[property] = self:getPropertyValue(target, property)
         animation.endValues[property] = endValue
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     self.nextId = self.nextId + 1
     table.insert(self.animations, animation)
@@ -441,6 +535,10 @@ function AnimationManager:getPropertyValue(target, property)
     else
         return target[property]
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 function AnimationManager:setPropertyValue(target, property, value)
@@ -462,6 +560,10 @@ function AnimationManager:setPropertyValue(target, property, value)
         target[property] = value
     end
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 function AnimationManager:update()
     local currentTime = os.clock()
@@ -483,6 +585,10 @@ function AnimationManager:update()
                 
                 self:setPropertyValue(animation.target, property, currentValue)
             end
+```
+
+#### Funcionalidade 4
+```lua
             
             -- Chamar callback de atualização
             if animation.onUpdate then
@@ -505,6 +611,10 @@ function AnimationManager:update()
     for i = #completedAnimations, 1, -1 do
         table.remove(self.animations, completedAnimations[i])
     end
+```
+
+#### Funcionalidade 5
+```lua
 end
 
 function AnimationManager:applyEasing(progress, easing)
@@ -530,6 +640,10 @@ function AnimationManager:applyEasing(progress, easing)
         else
             return 7.5625 * (progress - 2.625/2.75) * (progress - 2.625/2.75) + 0.984375
         end
+```
+
+#### Finalização
+```lua
     end
     
     return progress
@@ -554,8 +668,9 @@ scheduleEvent(function()
 end, 16) -- ~60 FPS
 ```
 
-### **2.2 Animações Pré-definidas**
+### **2.2 Animações Pré-definidas** 📝
 
+#### Inicialização e Configuração
 ```lua
 -- Biblioteca de animações pré-definidas
 local AnimationLibrary = {}
@@ -579,6 +694,10 @@ function AnimationLibrary:slideIn(target, direction, duration, callback)
     elseif direction == "right" then
         target:setPosition({x = startPos.x + target:getWidth(), y = startPos.y})
         endPos.x = startPos.x
+```
+
+#### Funcionalidade 1
+```lua
     elseif direction == "up" then
         target:setPosition({x = startPos.x, y = startPos.y - target:getHeight()})
         endPos.y = startPos.y
@@ -600,6 +719,10 @@ function AnimationLibrary:slideOut(target, direction, duration, callback)
         endPos.x = startPos.x + target:getWidth()
     elseif direction == "up" then
         endPos.y = startPos.y - target:getHeight()
+```
+
+#### Funcionalidade 2
+```lua
     elseif direction == "down" then
         endPos.y = startPos.y + target:getHeight()
     end
@@ -622,6 +745,10 @@ function AnimationLibrary:pulse(target, duration, callback)
     AnimationManager:createAnimation(target, {scale = originalScale * 1.1}, duration or 150, "easeOut", function()
         AnimationManager:createAnimation(target, {scale = originalScale}, duration or 150, "easeIn", callback)
     end)
+```
+
+#### Funcionalidade 3
+```lua
 end
 
 function AnimationLibrary:shake(target, intensity, duration, callback)
@@ -646,6 +773,10 @@ function AnimationLibrary:shake(target, intensity, duration, callback)
         scheduleEvent(function()
             shake(remaining - 1)
         end, 50)
+```
+
+#### Finalização
+```lua
     end
     
     shake(shakeCount)
@@ -654,10 +785,14 @@ end
 
 ---
 
-## 📐 **3. Layouts Responsivos**
 
-### **3.1 Layout Manager**
+---
 
+## 📐 **3. Layouts Responsivos** 📋
+
+### **3.1 Layout Manager** 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Gerenciador de layouts responsivos
 local LayoutManager = {
@@ -680,6 +815,10 @@ function LayoutManager:createLayout(name, config)
     self.layouts[name] = layout
     return layout
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function LayoutManager:addContainer(layoutName, container)
     local layout = self.layouts[layoutName]
@@ -707,6 +846,10 @@ function LayoutManager:applyLayout(layoutName)
     for _, container in ipairs(layout.containers) do
         self:applyContainerLayout(container, layout.config, breakpoint)
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     for _, rule in ipairs(layout.rules) do
         self:applyRule(rule, breakpoint)
@@ -731,6 +874,10 @@ function LayoutManager:applyContainerLayout(container, config, breakpoint)
     if layoutConfig.position then
         container:setPosition(layoutConfig.position)
     end
+```
+
+#### Funcionalidade 3
+```lua
     
     if layoutConfig.size then
         container:setSize(layoutConfig.size)
@@ -754,13 +901,18 @@ function LayoutManager:applyRule(rule, breakpoint)
             if ruleConfig.apply then
                 ruleConfig.apply(widget, ruleConfig)
             end
+```
+
+#### Finalização
+```lua
         end
     end
 end
 ```
 
-### **3.2 Grid Layout**
+### **3.2 Grid Layout** 📝
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de grid responsivo
 local GridLayout = {
@@ -784,6 +936,10 @@ function GridLayout:createGrid(name, columns, gap)
     self.grids[name] = grid
     return grid
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function GridLayout:addItem(gridName, widget, row, col, rowSpan, colSpan)
     local grid = self.grids[gridName]
@@ -818,6 +974,10 @@ function GridLayout:updateGrid(gridName)
         if position then
             item.widget:setPosition(position)
         end
+```
+
+#### Finalização
+```lua
     end
 end
 
@@ -844,10 +1004,14 @@ end
 
 ---
 
-## 🎨 **4. Sistema de Temas**
 
-### **4.1 Theme Manager**
+---
 
+## 🎨 **4. Sistema de Temas** ⚙️
+
+### **4.1 Theme Manager** 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Gerenciador de temas
 local ThemeManager = {
@@ -875,6 +1039,10 @@ function ThemeManager:setTheme(name)
     self.currentTheme = name
     self:applyTheme(theme)
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function ThemeManager:applyTheme(theme)
     -- Aplicar variáveis CSS
@@ -897,6 +1065,10 @@ function ThemeManager:setCSSVariable(name, value)
 end
 
 function ThemeManager:applyComponentStyles(component, styles)
+```
+
+#### Funcionalidade 2
+```lua
     local widgets = g_ui.getWidgetsByClass(component)
     
     for _, widget in ipairs(widgets) do
@@ -918,6 +1090,10 @@ function ThemeManager:setWidgetProperty(widget, property, value)
     elseif property == "fontFamily" then
         widget:setFontFamily(value)
     end
+```
+
+#### Finalização
+```lua
 end
 
 function ThemeManager:notifyThemeChange(theme)
@@ -939,8 +1115,9 @@ function ThemeManager:getThemeVariable(name)
 end
 ```
 
-### **4.2 Temas Pré-definidos**
+### **4.2 Temas Pré-definidos** 📝
 
+#### Inicialização e Configuração
 ```lua
 -- Temas pré-definidos
 local PredefinedThemes = {
@@ -964,6 +1141,10 @@ local PredefinedThemes = {
                 color = "#FFFFFF",
                 borderColor = "#45A049"
             },
+```
+
+#### Funcionalidade 1
+```lua
             Label = {
                 color = "#FFFFFF"
             },
@@ -988,6 +1169,10 @@ local PredefinedThemes = {
             "--success-color" = "#03DAC6",
             "--warning-color" = "#FF7597"
         }
+```
+
+#### Finalização
+```lua
     },
     
     light = {
@@ -1015,9 +1200,12 @@ end
 
 ---
 
-## 🎯 **5. Melhores Práticas de UI**
 
-### **5.1 Princípios de Design**
+---
+
+## 🎯 **5. Melhores Práticas de UI** 📋
+
+### **5.1 Princípios de Design** 📝
 
 1. **Consistência**: Manter padrões visuais consistentes
 2. **Hierarquia**: Usar tamanhos e cores para estabelecer hierarquia
@@ -1025,8 +1213,9 @@ end
 4. **Acessibilidade**: Garantir que a interface seja acessível
 5. **Performance**: Otimizar renderização e animações
 
-### **5.2 Padrões de UI**
+### **5.2 Padrões de UI** 📝
 
+#### Inicialização e Configuração
 ```lua
 -- Padrões de UI comuns
 local UIPatterns = {
@@ -1060,6 +1249,10 @@ local UIPatterns = {
             btn:setPosition({x = 10 + (i-1) * 100, y = buttonY})
             btn.onClick = button.onClick
         end
+```
+
+#### Funcionalidade 1
+```lua
         
         return modal
     end,
@@ -1081,6 +1274,10 @@ local UIPatterns = {
             warning = "#FF9800",
             info = "#2196F3"
         }
+```
+
+#### Funcionalidade 2
+```lua
         
         toast:setBackgroundColor(colors[type] or colors.info)
         
@@ -1105,14 +1302,28 @@ local UIPatterns = {
             angle = angle + 10
             spinner:setRotation(angle)
         end, 50)
+```
+
+#### Finalização
+```lua
         
         return spinner
     end
 }
 ```
 
-### **5.3 Checklist de UI**
+### **5.3 Checklist de UI** 📝
 
+#### Nível Basic
+```lua
+local uiChecklist = {
+    "Verificar responsividade em diferentes resoluções",
+    "Verificar consistência de cores e fontes",
+    "Testar em diferentes temas",
+    "Verificar performance de renderização"
+```
+
+#### Nível Intermediate
 ```lua
 local uiChecklist = {
     "Verificar responsividade em diferentes resoluções",
@@ -1126,11 +1337,38 @@ local uiChecklist = {
 }
 ```
 
+#### Nível Advanced
+```lua
+local uiChecklist = {
+    "Verificar responsividade em diferentes resoluções",
+    "Testar acessibilidade (contraste, tamanho de fonte)",
+    "Validar feedback visual para ações",
+    "Verificar consistência de cores e fontes",
+    "Testar animações e transições",
+    "Validar hierarquia visual",
+    "Testar em diferentes temas",
+    "Verificar performance de renderização"
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
-## 🔄 **6. Integração com Sistema de UI**
 
-### **6.1 Uso com UI Stories**
+---
+
+## 🔄 **6. Integração com Sistema de UI** ⚙️
+
+### **6.1 Uso com UI Stories** 📝
 
 Este guia complementa as UI Stories documentadas no sistema, fornecendo:
 
@@ -1141,7 +1379,7 @@ Este guia complementa as UI Stories documentadas no sistema, fornecendo:
 - ✅ Melhores práticas de design
 - ✅ Padrões de UI reutilizáveis
 
-### **6.2 Benefícios para Agentes**
+### **6.2 Benefícios para Agentes** 📝
 
 - **Autonomia**: Agentes podem criar interfaces complexas
 - **Consistência**: Sistema de temas garante consistência visual
@@ -1150,9 +1388,12 @@ Este guia complementa as UI Stories documentadas no sistema, fornecendo:
 
 ---
 
-## 📊 **Status do Guia**
 
-### **✅ Concluído:**
+---
+
+## 📊 **Status do Guia** 📋
+
+### **✅ Concluído:** 📝
 - ✅ Widgets avançados
 - ✅ Sistema de animações
 - ✅ Layouts responsivos
@@ -1161,7 +1402,7 @@ Este guia complementa as UI Stories documentadas no sistema, fornecendo:
 - ✅ Padrões de UI
 - ✅ Integração com UI Stories
 
-### **🎯 Próximo:**
+### **🎯 Próximo:** 📝
 - 🔄 GUIDE-007: Guia de Game Systems
 
 ---

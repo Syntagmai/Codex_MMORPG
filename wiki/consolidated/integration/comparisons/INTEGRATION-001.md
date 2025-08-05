@@ -276,6 +276,7 @@ graph TD
 ```cpp
 // API Unificada para Autenticação
 class UnifiedAuth {
+    -- Classe: UnifiedAuth
 public:
     static bool authenticate(const std::string& username, const std::string& password);
     static bool authorize(const std::string& username, const std::string& resource);
@@ -284,6 +285,7 @@ public:
 
 // API Unificada para Logging
 class UnifiedLogger {
+    -- Classe: UnifiedLogger
 public:
     static void info(const std::string& message);
     static void warn(const std::string& message);
@@ -293,6 +295,7 @@ public:
 
 // API Unificada para Configuração
 class UnifiedConfig {
+    -- Classe: UnifiedConfig
 public:
     static std::string get(const std::string& key);
     static void set(const std::string& key, const std::string& value);

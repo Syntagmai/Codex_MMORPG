@@ -17,6 +17,7 @@ Este documento define o **sistema de autonomia completa** para os agentes BMAD, 
 ## 🎯 **1. Arquitetura de Autonomia**
 
 ### **🧠 Sistema de Decisão Autônoma**
+#### Inicialização e Configuração
 ```lua
 -- Sistema de tomada de decisão autônoma
 local AutonomousDecisionSystem = {
@@ -45,6 +46,10 @@ local AutonomousDecisionSystem = {
             "rule_application",
             "heuristic_evaluation"
         },
+```
+
+#### Funcionalidade 1
+```lua
         
         -- Geração de ações
         action_generation = {
@@ -70,10 +75,15 @@ local AutonomousDecisionSystem = {
         adaptation_speed = 0.05,     -- Velocidade de adaptação
         safety_margin = 0.2          -- Margem de segurança
     }
+```
+
+#### Finalização
+```lua
 }
 ```
 
 ### **🔄 Sistema de Aprendizado Autônomo**
+#### Inicialização e Configuração
 ```lua
 -- Sistema de aprendizado autônomo
 local AutonomousLearningSystem = {
@@ -102,6 +112,10 @@ local AutonomousLearningSystem = {
             "exploration_exploitation",
             "value_function_learning"
         },
+```
+
+#### Funcionalidade 1
+```lua
         
         -- Aprendizado adaptativo
         adaptive_learning = {
@@ -127,6 +141,10 @@ local AutonomousLearningSystem = {
             validation_required = true,      -- Validação obrigatória
             rollback_capability = true       -- Capacidade de reversão
         },
+```
+
+#### Finalização
+```lua
         
         -- Otimização de performance
         performance_optimization = {
@@ -143,6 +161,7 @@ local AutonomousLearningSystem = {
 ## 🔧 **2. Capacidades Autônomas**
 
 ### **🎯 Tomada de Decisão Independente**
+#### Inicialização e Configuração
 ```lua
 -- Capacidades de tomada de decisão independente
 local IndependentDecisionCapabilities = {
@@ -167,6 +186,10 @@ local IndependentDecisionCapabilities = {
                 "dependency_mapping",
                 "timeline_estimation"
             },
+```
+
+#### Funcionalidade 1
+```lua
             
             -- Análise de riscos
             risk_analysis = {
@@ -191,6 +214,10 @@ local IndependentDecisionCapabilities = {
                 "timeline_optimization",
                 "contingency_planning"
             },
+```
+
+#### Finalização
+```lua
             
             -- Otimização de estratégias
             strategy_optimization = {
@@ -213,6 +240,7 @@ local IndependentDecisionCapabilities = {
 ```
 
 ### **🔄 Execução Autônoma**
+#### Inicialização e Configuração
 ```lua
 -- Capacidades de execução autônoma
 local AutonomousExecutionCapabilities = {
@@ -237,6 +265,10 @@ local AutonomousExecutionCapabilities = {
                 "dependency_resolution",
                 "synchronization_handling"
             },
+```
+
+#### Funcionalidade 1
+```lua
             
             -- Execução adaptativa
             adaptive_execution = {
@@ -261,6 +293,10 @@ local AutonomousExecutionCapabilities = {
                 "efficiency_optimization",
                 "conflict_resolution"
             },
+```
+
+#### Finalização
+```lua
             
             -- Monitoramento de recursos
             resource_monitoring = {
@@ -287,6 +323,7 @@ local AutonomousExecutionCapabilities = {
 ## 🧠 **3. Inteligência Autônoma**
 
 ### **🔍 Percepção Autônoma**
+#### Inicialização e Configuração
 ```lua
 -- Sistema de percepção autônoma
 local AutonomousPerception = {
@@ -315,6 +352,10 @@ local AutonomousPerception = {
             "preference_detection",
             "satisfaction_metrics"
         },
+```
+
+#### Funcionalidade 1
+```lua
         
         -- Sensor de contexto
         context_sensor = {
@@ -342,6 +383,10 @@ local AutonomousPerception = {
             "anomaly_detection",
             "context_integration"
         },
+```
+
+#### Finalização
+```lua
         
         -- Síntese de informação
         information_synthesis = {
@@ -355,6 +400,7 @@ local AutonomousPerception = {
 ```
 
 ### **🎯 Compreensão Autônoma**
+#### Inicialização e Configuração
 ```lua
 -- Sistema de compreensão autônoma
 local AutonomousComprehension = {
@@ -383,6 +429,10 @@ local AutonomousComprehension = {
             "performance_patterns",
             "interaction_patterns"
         }
+```
+
+#### Funcionalidade 1
+```lua
     },
     
     -- Síntese de conhecimento
@@ -410,6 +460,10 @@ local AutonomousComprehension = {
             "action_guidance",
             "learning_integration"
         }
+```
+
+#### Finalização
+```lua
     }
 }
 ```
@@ -419,6 +473,7 @@ local AutonomousComprehension = {
 ## 🔄 **4. Adaptação Autônoma**
 
 ### **🔄 Aprendizado Contínuo**
+#### Inicialização e Configuração
 ```lua
 -- Sistema de aprendizado contínuo
 local ContinuousLearning = {
@@ -447,6 +502,10 @@ local ContinuousLearning = {
             "strategy_adjustment",
             "continuous_improvement"
         },
+```
+
+#### Funcionalidade 1
+```lua
         
         -- Aprendizado por exploração
         exploratory_learning = {
@@ -474,6 +533,10 @@ local ContinuousLearning = {
             "efficiency_optimization",
             "innovation_integration"
         },
+```
+
+#### Finalização
+```lua
         
         -- Melhoria de capacidades
         capability_improvement = {
@@ -487,6 +550,7 @@ local ContinuousLearning = {
 ```
 
 ### **🎯 Adaptação Dinâmica**
+#### Inicialização e Configuração
 ```lua
 -- Sistema de adaptação dinâmica
 local DynamicAdaptation = {
@@ -515,6 +579,10 @@ local DynamicAdaptation = {
             "resource_optimization",
             "outcome_maximization"
         }
+```
+
+#### Funcionalidade 1
+```lua
     },
     
     -- Adaptação ao usuário
@@ -542,6 +610,10 @@ local DynamicAdaptation = {
             "proactive_suggestions",
             "automatic_assistance"
         }
+```
+
+#### Finalização
+```lua
     }
 }
 ```
@@ -551,6 +623,7 @@ local DynamicAdaptation = {
 ## 🤖 **5. Agentes Autônomos Especializados**
 
 ### **📋 Task Master Autônomo**
+#### Inicialização e Configuração
 ```lua
 -- Agente Task Master com autonomia completa
 local AutonomousTaskMaster = {
@@ -579,6 +652,10 @@ local AutonomousTaskMaster = {
             "efficiency_improvement",
             "automation_implementation"
         }
+```
+
+#### Funcionalidade 1
+```lua
     },
     
     -- Tomada de decisão
@@ -606,11 +683,16 @@ local AutonomousTaskMaster = {
             "strategy_refinement",
             "continuous_improvement"
         }
+```
+
+#### Finalização
+```lua
     }
 }
 ```
 
 ### **📊 Progress Tracker Autônomo**
+#### Inicialização e Configuração
 ```lua
 -- Agente Progress Tracker com autonomia completa
 local AutonomousProgressTracker = {
@@ -639,6 +721,10 @@ local AutonomousProgressTracker = {
             "recommendation_generation",
             "visualization_creation"
         }
+```
+
+#### Funcionalidade 1
+```lua
     },
     
     -- Inteligência analítica
@@ -666,11 +752,16 @@ local AutonomousProgressTracker = {
             "issue_identification",
             "solution_suggestions"
         }
+```
+
+#### Finalização
+```lua
     }
 }
 ```
 
 ### **🔄 Agents Orchestrator Autônomo**
+#### Inicialização e Configuração
 ```lua
 -- Agente Orchestrator com autonomia completa
 local AutonomousAgentsOrchestrator = {
@@ -699,6 +790,10 @@ local AutonomousAgentsOrchestrator = {
             "optimization_implementation",
             "continuous_monitoring"
         }
+```
+
+#### Funcionalidade 1
+```lua
     },
     
     -- Inteligência de coordenação
@@ -726,6 +821,10 @@ local AutonomousAgentsOrchestrator = {
             "negotiation_facilitation",
             "consensus_building"
         }
+```
+
+#### Finalização
+```lua
     }
 }
 ```
@@ -735,6 +834,7 @@ local AutonomousAgentsOrchestrator = {
 ## 🔒 **6. Segurança e Controle**
 
 ### **🛡️ Controles de Segurança**
+#### Inicialização e Configuração
 ```lua
 -- Controles de segurança para autonomia
 local AutonomousSecurityControls = {
@@ -763,6 +863,10 @@ local AutonomousSecurityControls = {
             "compliance_monitoring",
             "security_reporting"
         }
+```
+
+#### Funcionalidade 1
+```lua
     },
     
     -- Controles de comportamento
@@ -790,11 +894,16 @@ local AutonomousSecurityControls = {
             "deviation_alerting",
             "intervention_triggering"
         }
+```
+
+#### Finalização
+```lua
     }
 }
 ```
 
 ### **🎛️ Controles de Supervisão**
+#### Inicialização e Configuração
 ```lua
 -- Controles de supervisão para autonomia
 local AutonomousSupervisionControls = {
@@ -823,6 +932,10 @@ local AutonomousSupervisionControls = {
             "system_shutdown_procedures",
             "recovery_mechanisms"
         }
+```
+
+#### Funcionalidade 1
+```lua
     },
     
     -- Supervisão automática
@@ -850,6 +963,10 @@ local AutonomousSupervisionControls = {
             "behavior_refinement",
             "capability_enhancement"
         }
+```
+
+#### Finalização
+```lua
     }
 }
 ```
@@ -859,6 +976,7 @@ local AutonomousSupervisionControls = {
 ## 📊 **7. Métricas de Autonomia**
 
 ### **🎯 Indicadores de Performance**
+#### Inicialização e Configuração
 ```lua
 -- Métricas de performance para autonomia
 local AutonomyPerformanceMetrics = {
@@ -887,6 +1005,10 @@ local AutonomyPerformanceMetrics = {
             "network_usage",
             "storage_usage"
         }
+```
+
+#### Funcionalidade 1
+```lua
     },
     
     -- Métricas de qualidade
@@ -914,11 +1036,16 @@ local AutonomyPerformanceMetrics = {
             "learning_efficiency",
             "innovation_capability"
         }
+```
+
+#### Finalização
+```lua
     }
 }
 ```
 
 ### **📈 Métricas de Aprendizado**
+#### Inicialização e Configuração
 ```lua
 -- Métricas de aprendizado para autonomia
 local AutonomyLearningMetrics = {
@@ -947,6 +1074,10 @@ local AutonomyLearningMetrics = {
             "knowledge_consolidation",
             "long_term_retention"
         }
+```
+
+#### Funcionalidade 1
+```lua
     },
     
     -- Métricas de adaptação
@@ -974,6 +1105,10 @@ local AutonomyLearningMetrics = {
             "innovation_capability",
             "problem_solving_range"
         }
+```
+
+#### Finalização
+```lua
     }
 }
 ```

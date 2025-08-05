@@ -184,6 +184,7 @@ dependencies:
 ```cpp
 // Class naming: PascalCase
 class PlayerManager {
+    -- Classe: PlayerManager
 public:
     // Method naming: camelCase
     bool addPlayer(std::shared_ptr<Player> player);

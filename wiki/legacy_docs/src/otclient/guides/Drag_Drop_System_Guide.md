@@ -64,19 +64,24 @@ Sistema Drag & Drop
 ```lua
 -- Configurar widget para ser arrastável
 function setupDraggableWidget(widget, dragData)
+    -- Função: setupDraggableWidget
     widget:setDraggable(true)
     
     -- Configurar dados do drag
+    --  Configurar dados do drag (traduzido)
     widget.dragData = dragData or {}
     
     -- Eventos de drag
+    --  Eventos de drag (traduzido)
     widget.onDragStart = function(widget, mousePos)
         print("Drag iniciado em:", mousePos.x, mousePos.y)
         
         -- Configurar cursor de drag
+    --  Configurar cursor de drag (traduzido)
         g_mouse.setCursor("drag")
         
         -- Criar preview do item sendo arrastado
+    --  Criar preview do item sendo arrastado (traduzido)
         createDragPreview(widget, dragData)
         
         return true  -- Permitir drag
@@ -91,17 +96,21 @@ function setupDraggableWidget(widget, dragData)
         print("Drag finalizado em:", mousePos.x, mousePos.y)
         
         -- Restaurar cursor
+    --  Restaurar cursor (traduzido)
         g_mouse.setCursor("default")
         
         -- Remover preview
+    --  Remover preview (traduzido)
         removeDragPreview()
         
         -- Processar drop
+    --  Processar drop (traduzido)
         processDrop(mousePos, dragData)
     end
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local draggableItem = g_ui.createWidget('UIWidget', parent)
 setupDraggableWidget(draggableItem, {
     type = 'item',
@@ -115,7 +124,9 @@ setupDraggableWidget(draggableItem, {
 
 ```lua
 -- Criar preview visual do item sendo arrastado
+    --  Criar preview visual do item sendo arrastado (traduzido)
 function createDragPreview(widget, dragData)
+    -- Função: createDragPreview
     local preview = g_ui.createWidget('UIWidget', rootWidget)
     preview:setSize({width = 32, height = 32})
     preview:setImageSource(widget:getImageSource())
@@ -123,9 +134,11 @@ function createDragPreview(widget, dragData)
     preview:setId('dragPreview')
     
     -- Configurar dados do preview
+    --  Configurar dados do preview (traduzido)
     preview.dragData = dragData
     
     -- Posicionar no cursor
+    --  Posicionar no cursor (traduzido)
     local mousePos = g_mouse.getPosition()
     preview:setPosition({x = mousePos.x - 16, y = mousePos.y - 16})
     
@@ -134,16 +147,21 @@ end
 
 -- Atualizar posição do preview
 function updateDragPreview(mousePos)
+    -- Função: updateDragPreview
     local preview = g_ui.getRootWidget():getChildById('dragPreview')
     if preview then
+    -- Verificação condicional
         preview:setPosition({x = mousePos.x - 16, y = mousePos.y - 16})
     end
 end
 
 -- Remover preview
+    --  Remover preview (traduzido)
 function removeDragPreview()
+    -- Função: removeDragPreview
     local preview = g_ui.getRootWidget():getChildById('dragPreview')
     if preview then
+    -- Verificação condicional
         preview:destroy()
     end
 end
@@ -155,6 +173,7 @@ end
 
 ### 🎯 **Configurando Drop Zones**
 
+#### Inicialização e Configuração
 ```lua
 -- Criar zona de drop
 function createDropZone(parent, zoneData)
@@ -180,6 +199,10 @@ function createDropZone(parent, zoneData)
         else
             widget:setBackgroundColor('#FF0000')
         end
+```
+
+#### Funcionalidade 1
+```lua
     end
     
     dropZone.onDropLeave = function(widget, dragData)
@@ -201,6 +224,10 @@ function createDropZone(parent, zoneData)
             return false  -- Drop rejeitado
         end
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     return dropZone
 end
@@ -225,6 +252,10 @@ function canAcceptDrop(dropZone, dragData)
             if dragData.id == acceptedId then
                 return true
             end
+```
+
+#### Finalização
+```lua
         end
         return false
     end
@@ -237,16 +268,21 @@ end
 
 ```lua
 -- Processar drop na zona
+    --  Processar drop na zona (traduzido)
 function processDrop(dropZone, dragData)
+    -- Função: processDrop
     local zoneData = dropZone.zoneData
     
     -- Executar callback personalizado
+    --  Executar callback personalizado (traduzido)
     if zoneData.onDropCallback then
+    -- Verificação condicional
         zoneData.onDropCallback(dropZone, dragData)
     end
     
     -- Ações específicas por tipo
     if dragData.type == 'item' then
+    -- Verificação condicional
         processItemDrop(dropZone, dragData)
     elseif dragData.type == 'spell' then
         processSpellDrop(dropZone, dragData)
@@ -256,23 +292,30 @@ function processDrop(dropZone, dragData)
 end
 
 -- Processar drop de item
+    --  Processar drop de item (traduzido)
 function processItemDrop(dropZone, dragData)
+    -- Função: processItemDrop
     local zoneData = dropZone.zoneData
     
     if zoneData.action == 'move' then
+    -- Verificação condicional
         -- Mover item
+    --  Mover item (traduzido)
         moveItem(dragData.source, zoneData.target, dragData.id, dragData.count)
         
     elseif zoneData.action == 'use' then
         -- Usar item
+    --  Usar item (traduzido)
         useItem(dragData.id, dragData.count)
         
     elseif zoneData.action == 'equip' then
         -- Equipar item
+    --  Equipar item (traduzido)
         equipItem(dragData.id)
         
     elseif zoneData.action == 'trade' then
         -- Adicionar ao trade
+    --  Adicionar ao trade (traduzido)
         addToTrade(dragData.id, dragData.count)
     end
 end
@@ -284,6 +327,33 @@ end
 
 ### 📦 **Zona de Inventário**
 
+#### Nível Basic
+```lua
+-- Criar zona de drop para inventário
+function createInventoryDropZone(parent, slotId)
+    local dropZone = createDropZone(parent, {
+        onDropCallback = function(zone, dragData)
+            print("Item dropado no slot", slotId)
+            -- Mover item para o slot
+            if dragData.source == 'inventory' then
+                -- Movimento interno do inventário
+            elseif dragData.source == 'container' then
+                -- Do container para inventário
+            end
+        end
+end
+-- Setup completo do inventário
+function setupInventoryDragDrop()
+    local inventory = modules.game_inventory.getInventoryPanel()
+    -- Criar zonas de drop para cada slot
+        local slot = inventory:getChildById('slot' .. i)
+        if slot then
+        end
+    end
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Criar zona de drop para inventário
 function createInventoryDropZone(parent, slotId)
@@ -324,11 +394,64 @@ function setupInventoryDragDrop()
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Criar zona de drop para inventário
+function createInventoryDropZone(parent, slotId)
+    local dropZone = createDropZone(parent, {
+        type = 'inventory',
+        slotId = slotId,
+        acceptedTypes = {'item'},
+        action = 'move',
+        onDropCallback = function(zone, dragData)
+            print("Item dropado no slot", slotId)
+            
+            -- Mover item para o slot
+            if dragData.source == 'inventory' then
+                -- Movimento interno do inventário
+                g_game.moveItem(dragData.id, dragData.count, slotId)
+            elseif dragData.source == 'container' then
+                -- Do container para inventário
+                g_game.moveItemFromContainer(dragData.containerId, dragData.id, dragData.count, slotId)
+            end
+        end
+    })
+    
+    dropZone:setId('inventorySlot_' .. slotId)
+    return dropZone
+end
+
+-- Setup completo do inventário
+function setupInventoryDragDrop()
+    local inventory = modules.game_inventory.getInventoryPanel()
+    
+    -- Criar zonas de drop para cada slot
+    for i = 1, 20 do  -- 20 slots de inventário
+        local slot = inventory:getChildById('slot' .. i)
+        if slot then
+            createInventoryDropZone(slot, i)
+        end
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎒 **Zona de Container**
 
 ```lua
 -- Criar zona de drop para container
+    --  Criar zona de drop para container (traduzido)
 function createContainerDropZone(parent, containerId, slotId)
+    -- Função: createContainerDropZone
     local dropZone = createDropZone(parent, {
         type = 'container',
         containerId = containerId,
@@ -339,11 +462,14 @@ function createContainerDropZone(parent, containerId, slotId)
             print("Item dropado no container", containerId, "slot", slotId)
             
             -- Mover item para o container
+    --  Mover item para o container (traduzido)
             if dragData.source == 'inventory' then
+    -- Verificação condicional
                 -- Do inventário para container
                 g_game.moveItemToContainer(dragData.id, dragData.count, containerId, slotId)
             elseif dragData.source == 'container' then
                 -- Entre containers
+    --  Entre containers (traduzido)
                 g_game.moveItemBetweenContainers(dragData.containerId, dragData.id, dragData.count, containerId, slotId)
             end
         end
@@ -354,16 +480,22 @@ function createContainerDropZone(parent, containerId, slotId)
 end
 
 -- Setup de container
+    --  Setup de container (traduzido)
 function setupContainerDragDrop(containerId)
+    -- Função: setupContainerDragDrop
     local container = modules.game_containers.getContainer(containerId)
     if not container then return end
+    -- Verificação condicional
     
     local containerPanel = container:getContainerPanel()
     
     -- Criar zonas de drop para cada slot do container
+    --  Criar zonas de drop para cada slot do container (traduzido)
     for i = 1, 20 do  -- 20 slots por container
+    -- Loop de repetição
         local slot = containerPanel:getChildById('slot' .. i)
         if slot then
+    -- Verificação condicional
             createContainerDropZone(slot, containerId, i)
         end
     end
@@ -374,7 +506,9 @@ end
 
 ```lua
 -- Criar zona de drop para hotkey
+    --  Criar zona de drop para hotkey (traduzido)
 function createHotkeyDropZone(parent, hotkeyId)
+    -- Função: createHotkeyDropZone
     local dropZone = createDropZone(parent, {
         type = 'hotkey',
         hotkeyId = hotkeyId,
@@ -384,10 +518,13 @@ function createHotkeyDropZone(parent, hotkeyId)
             print("Item/spell dropado no hotkey", hotkeyId)
             
             if dragData.type == 'item' then
+    -- Verificação condicional
                 -- Atribuir item ao hotkey
+    --  Atribuir item ao hotkey (traduzido)
                 g_game.assignHotkey(hotkeyId, 'item', dragData.id)
             elseif dragData.type == 'spell' then
                 -- Atribuir spell ao hotkey
+    --  Atribuir spell ao hotkey (traduzido)
                 g_game.assignHotkey(hotkeyId, 'spell', dragData.id)
             end
         end
@@ -398,13 +535,18 @@ function createHotkeyDropZone(parent, hotkeyId)
 end
 
 -- Setup de hotkeys
+    --  Setup de hotkeys (traduzido)
 function setupHotkeyDragDrop()
+    -- Função: setupHotkeyDragDrop
     local hotkeyPanel = modules.game_hotkeys.getHotkeyPanel()
     
     -- Criar zonas de drop para cada hotkey
+    --  Criar zonas de drop para cada hotkey (traduzido)
     for i = 1, 12 do  -- 12 hotkeys
+    -- Loop de repetição
         local hotkey = hotkeyPanel:getChildById('hotkey' .. i)
         if hotkey then
+    -- Verificação condicional
             createHotkeyDropZone(hotkey, i)
         end
     end
@@ -419,20 +561,28 @@ end
 
 ```lua
 -- Configurar cursor de drag
+    --  Configurar cursor de drag (traduzido)
 function setupDragCursor()
+    -- Função: setupDragCursor
     -- Cursor para item
+    --  Cursor para item (traduzido)
     g_mouse.setCursorImage("drag_item", "/images/cursors/drag_item")
     
     -- Cursor para spell
+    --  Cursor para spell (traduzido)
     g_mouse.setCursorImage("drag_spell", "/images/cursors/drag_spell")
     
     -- Cursor para hotkey
+    --  Cursor para hotkey (traduzido)
     g_mouse.setCursorImage("drag_hotkey", "/images/cursors/drag_hotkey")
 end
 
 -- Mudar cursor baseado no tipo de drag
+    --  Mudar cursor baseado no tipo de drag (traduzido)
 function updateDragCursor(dragData)
+    -- Função: updateDragCursor
     if dragData.type == 'item' then
+    -- Verificação condicional
         g_mouse.setCursor("drag_item")
     elseif dragData.type == 'spell' then
         g_mouse.setCursor("drag_spell")
@@ -446,6 +596,7 @@ end
 
 ### 🎯 **Indicadores de Drop**
 
+#### Inicialização e Configuração
 ```lua
 -- Criar indicador de drop válido
 function createValidDropIndicator()
@@ -468,6 +619,10 @@ function createInvalidDropIndicator()
     
     return indicator
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 -- Mostrar indicador de drop
 function showDropIndicator(mousePos, isValid)
@@ -490,6 +645,10 @@ function showDropIndicator(mousePos, isValid)
         if indicator then
             indicator:hide()
         end
+```
+
+#### Finalização
+```lua
     end
 end
 
@@ -513,6 +672,7 @@ end
 
 ### 📦 **Sistema de Inventário Drag & Drop**
 
+#### Inicialização e Configuração
 ```lua
 -- Configurar item do inventário para drag
 function setupInventoryItemDrag(itemWidget, itemData)
@@ -543,6 +703,10 @@ function setupInventoryItemDrag(itemWidget, itemData)
         else
             hideDropIndicators()
         end
+```
+
+#### Funcionalidade 1
+```lua
     end
     
     itemWidget.onDragEnd = function(widget, mousePos)
@@ -577,6 +741,10 @@ function setupInventoryDragDrop()
                     count = item:getItemCount(),
                     slotId = i
                 }
+```
+
+#### Finalização
+```lua
                 setupInventoryItemDrag(item, itemData)
             end
         end
@@ -590,6 +758,7 @@ end
 
 ### 🎒 **Sistema de Container Drag & Drop**
 
+#### Inicialização e Configuração
 ```lua
 -- Configurar item do container para drag
 function setupContainerItemDrag(itemWidget, containerData)
@@ -620,6 +789,10 @@ function setupContainerItemDrag(itemWidget, containerData)
         else
             hideDropIndicators()
         end
+```
+
+#### Funcionalidade 1
+```lua
     end
     
     itemWidget.onDragEnd = function(widget, mousePos)
@@ -657,6 +830,10 @@ function setupContainerDragDrop(containerId)
                     containerId = containerId,
                     slotId = i
                 }
+```
+
+#### Finalização
+```lua
                 setupContainerItemDrag(item, itemData)
             end
         end
@@ -670,6 +847,7 @@ end
 
 ### 🎭 **Sistema de Drag Personalizado**
 
+#### Inicialização e Configuração
 ```lua
 -- Drag customizado para spells
 function setupSpellDrag(spellWidget, spellData)
@@ -696,6 +874,10 @@ function setupSpellDrag(spellWidget, spellData)
         
         return true
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     spellWidget.onDragMove = function(widget, mousePos)
         local preview = g_ui.getRootWidget():getChildById('spellDragPreview')
@@ -717,6 +899,10 @@ function setupSpellDrag(spellWidget, spellData)
         if dropZone and dropZone.zoneData.type == 'hotkey' then
             g_game.assignHotkey(dropZone.zoneData.hotkeyId, 'spell', spellData.id)
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
 end
 
@@ -745,6 +931,10 @@ function setupHotkeyDrag(hotkeyWidget, hotkeyData)
         
         return true
     end
+```
+
+#### Funcionalidade 3
+```lua
     
     hotkeyWidget.onDragMove = function(widget, mousePos)
         local preview = g_ui.getRootWidget():getChildById('hotkeyDragPreview')
@@ -769,6 +959,10 @@ function setupHotkeyDrag(hotkeyWidget, hotkeyData)
             local targetId = dropZone.zoneData.hotkeyId
             g_game.swapHotkeys(sourceId, targetId)
         end
+```
+
+#### Finalização
+```lua
     end
 end
 ```
@@ -785,7 +979,9 @@ local PreviewPool = {}
 PreviewPool.previews = {}
 
 function PreviewPool.getPreview()
+    -- Função: PreviewPool
     if #PreviewPool.previews > 0 then
+    -- Verificação condicional
         return table.remove(PreviewPool.previews)
     else
         return g_ui.createWidget('UIWidget', rootWidget)
@@ -793,21 +989,27 @@ function PreviewPool.getPreview()
 end
 
 function PreviewPool.releasePreview(preview)
+    -- Função: PreviewPool
     preview:hide()
     table.insert(PreviewPool.previews, preview)
 end
 
 -- Cache de drop zones
+    --  Cache de drop zones (traduzido)
 local DropZoneCache = {}
 DropZoneCache.zones = {}
 
 function cacheDropZone(zone)
+    -- Função: cacheDropZone
     table.insert(DropZoneCache.zones, zone)
 end
 
 function getDropZoneAtPosition(pos)
+    -- Função: getDropZoneAtPosition
     for _, zone in ipairs(DropZoneCache.zones) do
+    -- Loop de repetição
         if zone:containsPoint(pos) then
+    -- Verificação condicional
             return zone
         end
     end
@@ -819,8 +1021,10 @@ local lastDropCheck = 0
 local DROP_CHECK_INTERVAL = 50  -- ms
 
 function shouldCheckDrop()
+    -- Função: shouldCheckDrop
     local currentTime = g_clock.millis()
     if currentTime - lastDropCheck > DROP_CHECK_INTERVAL then
+    -- Verificação condicional
         lastDropCheck = currentTime
         return true
     end
@@ -833,6 +1037,7 @@ end
 ```lua
 -- Desabilitar drag em configurações baixas
 function shouldEnableDrag()
+    -- Função: shouldEnableDrag
     local fps = g_app.getFps()
     local quality = g_settings.getString("graphics.quality")
     
@@ -840,11 +1045,15 @@ function shouldEnableDrag()
 end
 
 -- Configurar drag condicional
+    --  Configurar drag condicional (traduzido)
 function setupConditionalDrag(widget, dragData)
+    -- Função: setupConditionalDrag
     if shouldEnableDrag() then
+    -- Verificação condicional
         setupDraggableWidget(widget, dragData)
     else
         -- Fallback para clique simples
+    --  Fallback para clique simples (traduzido)
         widget.onClick = function()
             handleItemClick(dragData)
         end
@@ -856,6 +1065,30 @@ end
 
 ### 🎮 **Sistema de Trade Drag & Drop**
 
+#### Nível Basic
+```lua
+-- Setup de trade com drag & drop
+function setupTradeDragDrop()
+    local tradeWindow = modules.game_trade.getTradeWindow()
+    -- Setup do inventário do jogador
+    local playerInventory = tradeWindow:getChildById('playerInventory')
+        local slot = playerInventory:getChildById('slot' .. i)
+        if slot then
+                onDropCallback = function(zone, dragData)
+                end
+        end
+    end
+    -- Setup do inventário do outro jogador (só visual)
+    local otherInventory = tradeWindow:getChildById('otherInventory')
+        local slot = otherInventory:getChildById('slot' .. i)
+        if slot then
+            -- Slot só para visualização, não aceita drops
+        end
+    end
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Setup de trade com drag & drop
 function setupTradeDragDrop()
@@ -890,11 +1123,58 @@ function setupTradeDragDrop()
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Setup de trade com drag & drop
+function setupTradeDragDrop()
+    local tradeWindow = modules.game_trade.getTradeWindow()
+    
+    -- Setup do inventário do jogador
+    local playerInventory = tradeWindow:getChildById('playerInventory')
+    for i = 1, 20 do
+        local slot = playerInventory:getChildById('slot' .. i)
+        if slot then
+            createDropZone(slot, {
+                type = 'trade_player',
+                slotId = i,
+                acceptedTypes = {'item'},
+                action = 'add_to_trade',
+                onDropCallback = function(zone, dragData)
+                    g_game.addToTrade(dragData.id, dragData.count, i)
+                end
+            })
+        end
+    end
+    
+    -- Setup do inventário do outro jogador (só visual)
+    local otherInventory = tradeWindow:getChildById('otherInventory')
+    for i = 1, 20 do
+        local slot = otherInventory:getChildById('slot' .. i)
+        if slot then
+            -- Slot só para visualização, não aceita drops
+            slot:setBackgroundColor('#222222')
+        end
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎒 **Sistema de Container Drag & Drop**
 
 ```lua
 -- Setup de container com drag & drop
+    --  Setup de container com drag & drop (traduzido)
 function setupContainerSystem()
+    -- Função: setupContainerSystem
     -- Quando container é aberto
     connect(g_game, {
         onContainerOpen = function(containerId, container)
@@ -907,12 +1187,15 @@ function setupContainerSystem()
         onContainerAddItem = function(containerId, item, slotId)
             local container = modules.game_containers.getContainer(containerId)
             if container then
+    -- Verificação condicional
                 local containerPanel = container:getContainerPanel()
                 local slot = containerPanel:getChildById('slot' .. slotId)
                 
                 if slot and item then
+    -- Verificação condicional
                     local itemWidget = slot:getChildById('item')
                     if itemWidget then
+    -- Verificação condicional
                         local itemData = {
                             id = item:getId(),
                             count = item:getCount(),
@@ -932,19 +1215,26 @@ end
 
 ```lua
 -- Setup de hotkeys com drag & drop
+    --  Setup de hotkeys com drag & drop (traduzido)
 function setupHotkeySystem()
+    -- Função: setupHotkeySystem
     local hotkeyPanel = modules.game_hotkeys.getHotkeyPanel()
     
     -- Configurar cada hotkey
+    --  Configurar cada hotkey (traduzido)
     for i = 1, 12 do
+    -- Loop de repetição
         local hotkey = hotkeyPanel:getChildById('hotkey' .. i)
         if hotkey then
+    -- Verificação condicional
             -- Criar zona de drop
+    --  Criar zona de drop (traduzido)
             createHotkeyDropZone(hotkey, i)
             
             -- Configurar para drag (se tem conteúdo)
             local content = hotkey:getChildById('content')
             if content then
+    -- Verificação condicional
                 local hotkeyData = {
                     id = i,
                     action = content:getData('action'),
@@ -960,8 +1250,10 @@ function setupHotkeySystem()
         onHotkeyAssigned = function(hotkeyId, action, data)
             local hotkey = hotkeyPanel:getChildById('hotkey' .. hotkeyId)
             if hotkey then
+    -- Verificação condicional
                 local content = hotkey:getChildById('content')
                 if content then
+    -- Verificação condicional
                     local hotkeyData = {
                         id = hotkeyId,
                         action = action,
@@ -983,27 +1275,36 @@ end
 
 ```lua
 -- ✅ BOM: Usar pool de previews
+    --  ✅ BOM: Usar pool de previews (traduzido)
 local preview = PreviewPool.getPreview()
 preview:setImageSource('/images/items/' .. itemId)
 -- ... usar preview ...
+    --  ... usar preview ... (traduzido)
 PreviewPool.releasePreview(preview)
 
 -- ✅ BOM: Cache de drop zones
+    --  ✅ BOM: Cache de drop zones (traduzido)
 cacheDropZone(dropZone)
 local zone = getDropZoneAtPosition(mousePos)
 
 -- ✅ BOM: Verificar performance
+    --  ✅ BOM: Verificar performance (traduzido)
 if shouldEnableDrag() then
+    -- Verificação condicional
     setupDraggableWidget(widget, dragData)
 end
 
 -- ❌ EVITE: Criar muitos previews
+    --  ❌ EVITE: Criar muitos previews (traduzido)
 for i = 1, 100 do
+    -- Loop de repetição
     local preview = g_ui.createWidget('UIWidget', rootWidget)  -- Muito custoso
 end
 
 -- ❌ EVITE: Verificar drop constantemente
+    --  ❌ EVITE: Verificar drop constantemente (traduzido)
 function onDragMove(widget, mousePos)
+    -- Função: onDragMove
     -- Verificar a cada frame é custoso
     local dropZone = getDropZoneAtPosition(mousePos)  -- Sem cache
 end
@@ -1013,6 +1314,7 @@ end
 
 ```lua
 -- ✅ BOM: Configurar dados completos
+    --  ✅ BOM: Configurar dados completos (traduzido)
 widget.dragData = {
     type = 'item',
     id = itemId,
@@ -1022,21 +1324,29 @@ widget.dragData = {
 }
 
 -- ✅ BOM: Validar drop adequadamente
+    --  ✅ BOM: Validar drop adequadamente (traduzido)
 function canAcceptDrop(dropZone, dragData)
+    -- Função: canAcceptDrop
     if not dropZone or not dragData then
+    -- Verificação condicional
         return false
     end
     
     -- Verificar tipo
+    --  Verificar tipo (traduzido)
     if dropZone.zoneData.acceptedTypes then
+    -- Verificação condicional
         local accepted = false
         for _, type in ipairs(dropZone.zoneData.acceptedTypes) do
+    -- Loop de repetição
             if dragData.type == type then
+    -- Verificação condicional
                 accepted = true
                 break
             end
         end
         if not accepted then
+    -- Verificação condicional
             return false
         end
     end
@@ -1045,7 +1355,9 @@ function canAcceptDrop(dropZone, dragData)
 end
 
 -- ✅ BOM: Limpar recursos adequadamente
+    --  ✅ BOM: Limpar recursos adequadamente (traduzido)
 function cleanupDragSystem()
+    -- Função: cleanupDragSystem
     removeDragPreview()
     hideDropIndicators()
     g_mouse.setCursor("default")
@@ -1064,6 +1376,7 @@ local DRAG_CONFIG = {
 }
 
 -- ✅ BOM: Usar cores consistentes
+    --  ✅ BOM: Usar cores consistentes (traduzido)
 local DROP_ZONE_COLORS = {
     DEFAULT = '#444444',
     HOVER = '#666666',
@@ -1073,12 +1386,14 @@ local DROP_ZONE_COLORS = {
 
 -- ✅ BOM: Funções padronizadas
 function createStandardDropZone(parent, zoneData)
+    -- Função: createStandardDropZone
     local dropZone = createDropZone(parent, zoneData)
     dropZone:setBackgroundColor(DROP_ZONE_COLORS.DEFAULT)
     return dropZone
 end
 
 function createStandardDragPreview(widget, dragData)
+    -- Função: createStandardDragPreview
     local preview = PreviewPool.getPreview()
     preview:setSize({width = DRAG_CONFIG.PREVIEW_SIZE, height = DRAG_CONFIG.PREVIEW_SIZE})
     preview:setOpacity(DRAG_CONFIG.PREVIEW_OPACITY)

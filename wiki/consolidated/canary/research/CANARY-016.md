@@ -54,6 +54,7 @@ canary/src/creatures/players/grouping/
 ### **🏗️ Arquitetura do Sistema**
 
 #### **1. Estrutura Group (groups.hpp)**
+#### Nível Basic
 ```cpp
 struct Group {
     std::string name;                    // Nome do grupo
@@ -65,9 +66,51 @@ struct Group {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+struct Group {
+    std::string name;                    // Nome do grupo
+    std::array<bool, magic_enum::enum_integer(PlayerFlags_t::FlagLast)> flags { false }; // Flags do jogador
+    uint32_t maxDepotItems;              // Máximo de itens no depósito
+    uint32_t maxVipEntries;              // Máximo de entradas VIP
+    uint16_t id;                         // ID único do grupo
+    bool access;                         // Permissão de acesso
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+struct Group {
+    std::string name;                    // Nome do grupo
+    std::array<bool, magic_enum::enum_integer(PlayerFlags_t::FlagLast)> flags { false }; // Flags do jogador
+    uint32_t maxDepotItems;              // Máximo de itens no depósito
+    uint32_t maxVipEntries;              // Máximo de entradas VIP
+    uint16_t id;                         // ID único do grupo
+    bool access;                         // Permissão de acesso
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Classe Groups (groups.hpp)**
 ```cpp
 class Groups {
+    -- Classe: Groups
 public:
     static uint8_t getFlagNumber(PlayerFlags_t playerFlags);
     static PlayerFlags_t getFlagFromNumber(uint8_t value);
@@ -84,6 +127,7 @@ private:
 #### **3. Sistema de Party (party.hpp)**
 ```cpp
 class Party final : public SharedObject {
+    -- Classe: Party
 public:
     static std::shared_ptr<Party> create(const std::shared_ptr<Player> &leader);
     
@@ -121,6 +165,7 @@ public:
 #### **1. Funções Lua para Grupos (group_functions.hpp)**
 ```cpp
 class GroupFunctions {
+    -- Classe: GroupFunctions
 public:
     static void init(lua_State* L);
 
@@ -137,6 +182,7 @@ private:
 ```
 
 #### **2. Funções Lua para Players (player_functions.hpp)**
+#### Nível Basic
 ```cpp
 // Funções relacionadas a grupos
 static int luaPlayerGetGroup(lua_State* L);
@@ -146,7 +192,45 @@ static int luaPlayerSetGroupFlag(lua_State* L);
 static int luaPlayerRemoveGroupFlag(lua_State* L);
 ```
 
+#### Nível Intermediate
+```cpp
+// Funções relacionadas a grupos
+static int luaPlayerGetGroup(lua_State* L);
+static int luaPlayerSetGroup(lua_State* L);
+static int luaPlayerHasGroupFlag(lua_State* L);
+static int luaPlayerSetGroupFlag(lua_State* L);
+static int luaPlayerRemoveGroupFlag(lua_State* L);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Funções relacionadas a grupos
+static int luaPlayerGetGroup(lua_State* L);
+static int luaPlayerSetGroup(lua_State* L);
+static int luaPlayerHasGroupFlag(lua_State* L);
+static int luaPlayerSetGroupFlag(lua_State* L);
+static int luaPlayerRemoveGroupFlag(lua_State* L);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **3. Funções do Game (game.cpp)**
+#### Nível Basic
 ```cpp
 // Gerenciamento de party
 void Game::playerInviteToParty(uint32_t playerId, uint32_t invitedId);
@@ -155,6 +239,45 @@ void Game::playerRevokePartyInvitation(uint32_t playerId, uint32_t invitedId);
 void Game::playerPassPartyLeadership(uint32_t playerId, uint32_t newLeaderId);
 void Game::playerLeaveParty(uint32_t playerId);
 void Game::playerEnableSharedPartyExperience(uint32_t playerId, bool sharedExpActive);
+```
+
+#### Nível Intermediate
+```cpp
+// Gerenciamento de party
+void Game::playerInviteToParty(uint32_t playerId, uint32_t invitedId);
+void Game::playerJoinParty(uint32_t playerId, uint32_t leaderId);
+void Game::playerRevokePartyInvitation(uint32_t playerId, uint32_t invitedId);
+void Game::playerPassPartyLeadership(uint32_t playerId, uint32_t newLeaderId);
+void Game::playerLeaveParty(uint32_t playerId);
+void Game::playerEnableSharedPartyExperience(uint32_t playerId, bool sharedExpActive);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Gerenciamento de party
+void Game::playerInviteToParty(uint32_t playerId, uint32_t invitedId);
+void Game::playerJoinParty(uint32_t playerId, uint32_t leaderId);
+void Game::playerRevokePartyInvitation(uint32_t playerId, uint32_t invitedId);
+void Game::playerPassPartyLeadership(uint32_t playerId, uint32_t newLeaderId);
+void Game::playerLeaveParty(uint32_t playerId);
+void Game::playerEnableSharedPartyExperience(uint32_t playerId, bool sharedExpActive);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **📊 Fluxo de Dados**
@@ -186,6 +309,7 @@ void Game::playerEnableSharedPartyExperience(uint32_t playerId, bool sharedExpAc
 ## 💡 **Exemplos Práticos**
 
 ### **1. Criando um Grupo Personalizado**
+#### Nível Basic
 ```cpp
 // Exemplo de criação de grupo via Lua
 local group = Group.create()
@@ -198,7 +322,51 @@ group:setFlag(PlayerFlag_CanReportBugs, true)
 group:setFlag(PlayerFlag_CanSeeSpecialDescription, true)
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de criação de grupo via Lua
+local group = Group.create()
+group:setId(10)
+group:setName("Vip Premium")
+group:setAccess(true)
+group:setMaxDepotItems(2000)
+group:setMaxVipEntries(100)
+group:setFlag(PlayerFlag_CanReportBugs, true)
+group:setFlag(PlayerFlag_CanSeeSpecialDescription, true)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de criação de grupo via Lua
+local group = Group.create()
+group:setId(10)
+group:setName("Vip Premium")
+group:setAccess(true)
+group:setMaxDepotItems(2000)
+group:setMaxVipEntries(100)
+group:setFlag(PlayerFlag_CanReportBugs, true)
+group:setFlag(PlayerFlag_CanSeeSpecialDescription, true)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **2. Gerenciando Party**
+#### Nível Basic
 ```cpp
 // Exemplo de gerenciamento de party
 local player = Player("Leader")
@@ -218,6 +386,63 @@ party:shareExperience(1000, monster)
 party:passPartyLeadership(player, member)
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de gerenciamento de party
+local player = Player("Leader")
+local party = Party.create(player)
+
+-- Convitar jogador
+local member = Player("Member")
+party:invitePlayer(member)
+
+-- Ativar experiência compartilhada
+party:setSharedExperience(player, true)
+
+-- Compartilhar experiência
+party:shareExperience(1000, monster)
+
+-- Passar liderança
+party:passPartyLeadership(player, member)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de gerenciamento de party
+local player = Player("Leader")
+local party = Party.create(player)
+
+-- Convitar jogador
+local member = Player("Member")
+party:invitePlayer(member)
+
+-- Ativar experiência compartilhada
+party:setSharedExperience(player, true)
+
+-- Compartilhar experiência
+party:shareExperience(1000, monster)
+
+-- Passar liderança
+party:passPartyLeadership(player, member)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **3. Verificando Permissões de Grupo**
 ```cpp
 // Exemplo de verificação de permissões
@@ -225,10 +450,12 @@ local player = Player("TestPlayer")
 local group = player:getGroup()
 
 if group:hasFlag(PlayerFlag_CanReportBugs) then
+    -- Verificação condicional
     print("Jogador pode reportar bugs")
 end
 
 if group:hasFlag(PlayerFlag_CanSeeSpecialDescription) then
+    -- Verificação condicional
     print("Jogador pode ver descrições especiais")
 end
 ```
@@ -256,17 +483,76 @@ end
 ### **Padrões de Design**
 
 #### **1. Factory Pattern**
+#### Nível Basic
 ```cpp
 static std::shared_ptr<Party> create(const std::shared_ptr<Player> &leader);
 ```
 
+#### Nível Intermediate
+```cpp
+static std::shared_ptr<Party> create(const std::shared_ptr<Player> &leader);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+static std::shared_ptr<Party> create(const std::shared_ptr<Player> &leader);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Observer Pattern**
+#### Nível Basic
 ```cpp
 void updateAllPartyIcons();
 void updatePlayerStatus(const std::shared_ptr<Player> &player);
 ```
 
+#### Nível Intermediate
+```cpp
+void updateAllPartyIcons();
+void updatePlayerStatus(const std::shared_ptr<Player> &player);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+void updateAllPartyIcons();
+void updatePlayerStatus(const std::shared_ptr<Player> &player);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **3. State Pattern**
+#### Nível Basic
 ```cpp
 enum SharedExpStatus_t : uint8_t {
     SHAREDEXP_OK,
@@ -275,6 +561,45 @@ enum SharedExpStatus_t : uint8_t {
     SHAREDEXP_MEMBERINACTIVE,
     SHAREDEXP_EMPTYPARTY
 };
+```
+
+#### Nível Intermediate
+```cpp
+enum SharedExpStatus_t : uint8_t {
+    SHAREDEXP_OK,
+    SHAREDEXP_TOOFARAWAY,
+    SHAREDEXP_LEVELDIFFTOOLARGE,
+    SHAREDEXP_MEMBERINACTIVE,
+    SHAREDEXP_EMPTYPARTY
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+enum SharedExpStatus_t : uint8_t {
+    SHAREDEXP_OK,
+    SHAREDEXP_TOOFARAWAY,
+    SHAREDEXP_LEVELDIFFTOOLARGE,
+    SHAREDEXP_MEMBERINACTIVE,
+    SHAREDEXP_EMPTYPARTY
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🔍 **Insights Técnicos**
@@ -316,6 +641,7 @@ enum SharedExpStatus_t : uint8_t {
 ### **3. Configuração e Customização**
 
 #### **XML Configuration**
+#### Nível Basic
 ```xml
 <groups>
     <group id="1" name="Player" access="0" maxdepotitems="1000" maxvipentries="100" flags="0">
@@ -325,6 +651,47 @@ enum SharedExpStatus_t : uint8_t {
         </flags>
     </group>
 </groups>
+```
+
+#### Nível Intermediate
+```xml
+<groups>
+    <group id="1" name="Player" access="0" maxdepotitems="1000" maxvipentries="100" flags="0">
+        <flags>
+            <flag name="canreportbugs" value="1"/>
+            <flag name="canseespecialdescription" value="1"/>
+        </flags>
+    </group>
+</groups>
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```xml
+<groups>
+    <group id="1" name="Player" access="0" maxdepotitems="1000" maxvipentries="100" flags="0">
+        <flags>
+            <flag name="canreportbugs" value="1"/>
+            <flag name="canseespecialdescription" value="1"/>
+        </flags>
+    </group>
+</groups>
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 #### **Lua Scripting**
@@ -340,6 +707,7 @@ enum SharedExpStatus_t : uint8_t {
 ```cpp
 // Implementar cache para grupos frequentemente acessados
 class GroupCache {
+    -- Classe: GroupCache
     std::unordered_map<uint16_t, std::shared_ptr<Group>> cache;
     std::mutex cacheMutex;
 public:
@@ -349,6 +717,7 @@ public:
 ```
 
 #### **Async Loading**
+#### Nível Basic
 ```cpp
 // Carregamento assíncrono de grupos
 std::future<bool> Groups::loadAsync() {
@@ -358,10 +727,77 @@ std::future<bool> Groups::loadAsync() {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Carregamento assíncrono de grupos
+std::future<bool> Groups::loadAsync() {
+    return std::async(std::launch::async, [this]() {
+        return this->load();
+    });
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Carregamento assíncrono de grupos
+std::future<bool> Groups::loadAsync() {
+    return std::async(std::launch::async, [this]() {
+        return this->load();
+    });
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Batch Operations**
+#### Nível Basic
 ```cpp
 // Operações em lote para múltiplos grupos
 void Groups::updateMultipleGroups(const std::vector<GroupUpdate>& updates);
+```
+
+#### Nível Intermediate
+```cpp
+// Operações em lote para múltiplos grupos
+void Groups::updateMultipleGroups(const std::vector<GroupUpdate>& updates);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Operações em lote para múltiplos grupos
+void Groups::updateMultipleGroups(const std::vector<GroupUpdate>& updates);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **2. Funcionalidades Avançadas**
@@ -370,6 +806,7 @@ void Groups::updateMultipleGroups(const std::vector<GroupUpdate>& updates);
 ```cpp
 // Sistema de permissões dinâmicas
 class DynamicPermission {
+    -- Classe: DynamicPermission
     std::function<bool(const Player&)> condition;
     std::string permission;
 public:
@@ -381,6 +818,7 @@ public:
 ```cpp
 // Hierarquia de grupos
 class GroupHierarchy {
+    -- Classe: GroupHierarchy
     std::map<uint16_t, std::vector<uint16_t>> inheritance;
 public:
     bool inheritsFrom(uint16_t child, uint16_t parent);
@@ -392,6 +830,7 @@ public:
 ```cpp
 // Funcionalidades avançadas de party
 class AdvancedParty : public Party {
+    -- Classe: AdvancedParty
 public:
     void setPartyRoles(const std::map<Player*, PartyRole>& roles);
     void setPartyRules(const PartyRules& rules);
@@ -405,6 +844,7 @@ public:
 ```cpp
 // Analytics para grupos
 class GroupAnalytics {
+    -- Classe: GroupAnalytics
 public:
     void trackGroupActivity(uint16_t groupId, const std::string& action);
     void generateGroupReport(uint16_t groupId);
@@ -416,6 +856,7 @@ public:
 ```cpp
 // Monitoramento de performance
 class GroupPerformanceMonitor {
+    -- Classe: GroupPerformanceMonitor
 public:
     void trackGroupLoadTime();
     void trackPermissionCheckTime();

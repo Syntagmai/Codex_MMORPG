@@ -79,13 +79,16 @@ O sistema de quests do Canary é composto por:
 ### **4. Exemplos Práticos**
 ```lua
 -- Exemplo: Solicitar o Quest Log
+    --  Exemplo: Solicitar o Quest Log (traduzido)
 player:showQuestLog()
 
 -- Exemplo: Solicitar o progresso de uma quest específica
 player:showQuestLine(questId)
 
 -- Exemplo: Callback customizado em Lua
+    --  Exemplo: Callback customizado em Lua (traduzido)
 function onPlayerRequestQuestLog(player)
+    -- Função: onPlayerRequestQuestLog
   -- lógica customizada
 end
 ```

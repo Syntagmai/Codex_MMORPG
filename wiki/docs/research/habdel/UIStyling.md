@@ -459,6 +459,7 @@ HealthBar < UIWidget
 
 ```lua
 -- Aplicar estilo por nome
+    --  Aplicar estilo por nome (traduzido)
 widget:setStyle('ButtonRedBig')
 
 -- Aplicar estilo de um nó OTML
@@ -469,6 +470,7 @@ widget:applyStyle(styleNode)
 widget:mergeStyle(styleNode)
 
 -- Definir propriedades individuais
+    --  Definir propriedades individuais (traduzido)
 widget:setBackgroundColor('#ff0000')
 widget:setBorderWidth(2)
 widget:setBorderColor('#000000')
@@ -477,6 +479,24 @@ widget:setFont('verdana-11px-antialised')
 
 ### 🎨 **Criando Estilos Dinamicamente**
 
+#### Nível Basic
+```lua
+-- Função para criar estilo dinâmico
+local function createDynamicStyle(baseColor, size)
+    local style = {
+end
+-- Aplicar estilo dinâmico
+local widget = g_ui.createWidget('UIWidget', parent)
+local dynamicStyle = createDynamicStyle('#ff00ff', {width = 100, height = 50})
+    -- Converter propriedade CSS para método Lua
+    if property == 'background-color' then
+    elseif property == 'border-width' then
+    -- ... outros mapeamentos
+    end
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Função para criar estilo dinâmico
 local function createDynamicStyle(baseColor, size)
@@ -505,6 +525,45 @@ for property, value in pairs(dynamicStyle) do
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Função para criar estilo dinâmico
+local function createDynamicStyle(baseColor, size)
+    local style = {
+        ['background-color'] = baseColor,
+        ['size'] = size.width .. ' ' .. size.height,
+        ['border-width'] = '1',
+        ['border-color'] = '#000000'
+    }
+    
+    return style
+end
+
+-- Aplicar estilo dinâmico
+local widget = g_ui.createWidget('UIWidget', parent)
+local dynamicStyle = createDynamicStyle('#ff00ff', {width = 100, height = 50})
+
+for property, value in pairs(dynamicStyle) do
+    -- Converter propriedade CSS para método Lua
+    if property == 'background-color' then
+        widget:setBackgroundColor(value)
+    elseif property == 'border-width' then
+        widget:setBorderWidth(tonumber(value))
+    -- ... outros mapeamentos
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎭 **Sistema de Temas Dinâmico**
 
 ```lua
@@ -513,18 +572,24 @@ ThemeManager.currentTheme = 'dark'
 ThemeManager.themes = {}
 
 -- Registrar tema
+    --  Registrar tema (traduzido)
 function ThemeManager.registerTheme(name, styleFile)
+    -- Função: ThemeManager
     ThemeManager.themes[name] = styleFile
 end
 
 -- Aplicar tema
+    --  Aplicar tema (traduzido)
 function ThemeManager.applyTheme(themeName)
+    -- Função: ThemeManager
     if not ThemeManager.themes[themeName] then
+    -- Verificação condicional
         print('Tema não encontrado:', themeName)
         return
     end
     
     -- Carregar arquivo de estilo
+    --  Carregar arquivo de estilo (traduzido)
     local styleFile = ThemeManager.themes[themeName]
     g_ui.importStyle(styleFile)
     
@@ -535,24 +600,32 @@ function ThemeManager.applyTheme(themeName)
 end
 
 -- Atualizar widgets recursivamente
+    --  Atualizar widgets recursivamente (traduzido)
 function ThemeManager.updateAllWidgets(widget)
+    -- Função: ThemeManager
     -- Re-aplicar estilo atual
+    --  Re-aplicar estilo atual (traduzido)
     if widget:getStyleName() and widget:getStyleName() ~= '' then
+    -- Verificação condicional
         widget:setStyle(widget:getStyleName())
     end
     
     -- Processar filhos
+    --  Processar filhos (traduzido)
     for _, child in ipairs(widget:getChildren()) do
+    -- Loop de repetição
         ThemeManager.updateAllWidgets(child)
     end
 end
 
 -- Registrar temas
+    --  Registrar temas (traduzido)
 ThemeManager.registerTheme('dark', 'dark_theme')
 ThemeManager.registerTheme('light', 'light_theme')
 ThemeManager.registerTheme('game', 'game_theme')
 
 -- Aplicar tema
+    --  Aplicar tema (traduzido)
 ThemeManager.applyTheme('dark')
 ```
 

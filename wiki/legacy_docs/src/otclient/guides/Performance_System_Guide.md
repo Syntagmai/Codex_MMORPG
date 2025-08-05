@@ -60,6 +60,7 @@ Sistema de Performance
 
 ### 📊 **CPU Profiling**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de profiling de CPU
 local CPUProfiler = {}
@@ -82,6 +83,10 @@ function CPUProfiler.measureTime(name, func)
     if not CPUProfiler.enabled then
         return func()
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     local startTime = g_clock.millis()
     local result = func()
@@ -108,6 +113,10 @@ function CPUProfiler.measureTime(name, func)
     
     return result
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 -- Medir tempo com callback
 function CPUProfiler.measureTimeCallback(name, callback)
@@ -129,6 +138,10 @@ function CPUProfiler.measureTimeCallback(name, callback)
                 maxTime = 0,
                 avgTime = 0
             }
+```
+
+#### Funcionalidade 3
+```lua
         end
         
         local timer = CPUProfiler.timers[name]
@@ -153,6 +166,10 @@ function CPUProfiler.generateReport()
     for name, timer in pairs(CPUProfiler.timers) do
         table.insert(sortedTimers, {name = name, timer = timer})
     end
+```
+
+#### Finalização
+```lua
     
     table.sort(sortedTimers, function(a, b)
         return a.timer.totalTime > b.timer.totalTime
@@ -177,6 +194,7 @@ end
 
 ### 💾 **Memory Profiling**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de profiling de memória
 local MemoryProfiler = {}
@@ -202,6 +220,10 @@ function MemoryProfiler.takeSnapshot(name)
     if #MemoryProfiler.snapshots > MemoryProfiler.maxSnapshots then
         table.remove(MemoryProfiler.snapshots, 1)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     return snapshot
 end
@@ -224,6 +246,10 @@ end
 
 -- Comparar snapshots
 function MemoryProfiler.compareSnapshots(snapshot1, snapshot2)
+```
+
+#### Funcionalidade 2
+```lua
     local diff = {
         memoryDiff = snapshot2.memoryUsage - snapshot1.memoryUsage,
         textureDiff = snapshot2.textureCount - snapshot1.textureCount,
@@ -246,6 +272,10 @@ function MemoryProfiler.generateReport()
         table.insert(report, "Pelo menos 2 snapshots necessários para comparação")
         return table.concat(report, "\n")
     end
+```
+
+#### Finalização
+```lua
     
     local firstSnapshot = MemoryProfiler.snapshots[1]
     local lastSnapshot = MemoryProfiler.snapshots[#MemoryProfiler.snapshots]
@@ -268,6 +298,7 @@ end
 
 ### 🗑️ **Garbage Collection**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de garbage collection
 local GarbageCollector = {}
@@ -299,6 +330,10 @@ function GarbageCollector.startAutoCollect()
             -- Coleta normal
             collectgarbage("step", 100)
         end
+```
+
+#### Funcionalidade 1
+```lua
         
         scheduleEvent(autoCollect, GarbageCollector.config.collectInterval)
     end
@@ -320,6 +355,10 @@ end
 
 -- Verificar vazamentos de memória
 function GarbageCollector.checkMemoryLeaks()
+```
+
+#### Finalização
+```lua
     local snapshots = {}
     
     -- Tirar snapshots por 30 segundos
@@ -342,6 +381,7 @@ end
 
 ### 🏊 **Memory Pools**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de memory pools
 local MemoryPool = {}
@@ -364,6 +404,10 @@ function MemoryPool.createPool(name, createFunc, resetFunc, initialSize)
         local obj = createFunc()
         table.insert(pool.objects, obj)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     MemoryPool.pools[name] = pool
     return pool
@@ -386,6 +430,10 @@ function MemoryPool.getObject(poolName)
     pool.activeObjects[obj] = true
     return obj
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 -- Retornar objeto ao pool
 function MemoryPool.returnObject(poolName, obj)
@@ -407,6 +455,10 @@ end
 
 -- Estatísticas do pool
 function MemoryPool.getPoolStats(poolName)
+```
+
+#### Funcionalidade 3
+```lua
     local pool = MemoryPool.pools[poolName]
     if not pool then
         return nil
@@ -430,6 +482,10 @@ function MemoryPool.createEffectPool()
         effect:setId(0)
         effect:setPosition({x = 0, y = 0, z = 0})
     end
+```
+
+#### Finalização
+```lua
     
     return MemoryPool.createPool("effects", createEffect, resetEffect, 20)
 end
@@ -441,6 +497,7 @@ end
 
 ### 🖼️ **Texture Cache**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de cache de texturas
 local TextureCache = {}
@@ -467,6 +524,10 @@ function TextureCache.getTexture(path)
         if TextureCache.currentSize + size > TextureCache.maxSize then
             TextureCache.evictOldTextures()
         end
+```
+
+#### Funcionalidade 1
+```lua
         
         -- Adicionar ao cache
         TextureCache.cache[path] = texture
@@ -494,6 +555,10 @@ function TextureCache.evictOldTextures()
             accessCount = TextureCache.accessCount[path] or 0,
             size = TextureCache.estimateTextureSize(texture)
         })
+```
+
+#### Funcionalidade 2
+```lua
     end
     
     -- Ordenar por acesso (menos acessados primeiro)
@@ -517,6 +582,10 @@ end
 
 -- Limpar cache
 function TextureCache.clear()
+```
+
+#### Finalização
+```lua
     TextureCache.cache = {}
     TextureCache.accessCount = {}
     TextureCache.currentSize = 0
@@ -540,6 +609,7 @@ end
 
 ### 🔊 **Sound Cache**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de cache de sons
 local SoundCache = {}
@@ -566,6 +636,10 @@ function SoundCache.getSound(path)
         if SoundCache.currentSize + size > SoundCache.maxSize then
             SoundCache.evictOldSounds()
         end
+```
+
+#### Funcionalidade 1
+```lua
         
         -- Adicionar ao cache
         SoundCache.cache[path] = sound
@@ -589,6 +663,10 @@ end
 
 -- Remover sons antigos
 function SoundCache.evictOldSounds()
+```
+
+#### Funcionalidade 2
+```lua
     local sounds = {}
     for path, sound in pairs(SoundCache.cache) do
         table.insert(sounds, {
@@ -611,6 +689,10 @@ function SoundCache.evictOldSounds()
         if SoundCache.currentSize <= targetSize then
             break
         end
+```
+
+#### Finalização
+```lua
         
         SoundCache.cache[item.path] = nil
         SoundCache.accessCount[item.path] = nil
@@ -625,6 +707,7 @@ end
 
 ### 🎯 **Sistema de Lazy Loading**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de lazy loading
 local LazyLoader = {}
@@ -648,6 +731,10 @@ function LazyLoader.queueLoad(loadFunc, priority)
     table.sort(LazyLoader.loadQueue, function(a, b)
         return a.priority > b.priority
     end)
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Iniciar carregamento se não estiver ativo
     if not LazyLoader.loading then
@@ -678,6 +765,10 @@ function LazyLoader.startLoading()
         if not success then
             print("Erro no lazy loading:", result)
         end
+```
+
+#### Funcionalidade 2
+```lua
         
         LazyLoader.currentLoads = LazyLoader.currentLoads - 1
         
@@ -700,6 +791,10 @@ end
 
 -- Lazy loading de sons
 function LazyLoader.loadSound(path, callback)
+```
+
+#### Finalização
+```lua
     LazyLoader.queueLoad(function()
         local sound = SoundCache.getSound(path)
         if callback then
@@ -725,6 +820,7 @@ end
 
 ### 🖼️ **Render Optimization**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de otimização de renderização
 local RenderOptimizer = {}
@@ -753,6 +849,10 @@ function RenderOptimizer.isInFrustum(position, camera)
     
     return distance <= RenderOptimizer.config.maxDrawDistance
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 -- Occlusion culling
 function RenderOptimizer.isOccluded(position, camera)
@@ -782,6 +882,10 @@ function RenderOptimizer.getLODLevel(distance)
     else
         return 4  -- Mínimo detalhe
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 -- Otimizar renderização de criaturas
@@ -805,6 +909,10 @@ function RenderOptimizer.optimizeCreatureRendering(creature, camera)
         creature:setVisible(false)
         return false
     end
+```
+
+#### Finalização
+```lua
     
     -- Aplicar LOD
     local lodLevel = RenderOptimizer.getLODLevel(distance)
@@ -821,6 +929,7 @@ end
 
 ### 📡 **Network Optimization**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de otimização de rede
 local NetworkOptimizer = {}
@@ -851,6 +960,10 @@ function NetworkOptimizer.compressData(data)
             if count > 0 then
                 table.insert(compressed, {value = lastValue, count = count})
             end
+```
+
+#### Funcionalidade 1
+```lua
             lastValue = value
             count = 1
         end
@@ -875,6 +988,10 @@ function NetworkOptimizer.decompressData(compressedData)
         for i = 1, item.count do
             table.insert(data, item.value)
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
     
     return data
@@ -897,6 +1014,10 @@ function CommandBatcher.addCommand(command)
 end
 
 function CommandBatcher.flush()
+```
+
+#### Finalização
+```lua
     if #CommandBatcher.batch > 0 then
         local batchData = NetworkOptimizer.compressData(CommandBatcher.batch)
         g_game.sendBatch(batchData)
@@ -916,6 +1037,7 @@ end
 
 ### 🎯 **Performance Monitor**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de monitoramento de performance
 local PerformanceMonitor = {}
@@ -943,6 +1065,10 @@ function PerformanceMonitor.startMonitoring()
         
         scheduleEvent(monitor, 1000)  -- 1 segundo
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     monitor()
 end
@@ -968,6 +1094,10 @@ function PerformanceMonitor.updateMetrics(metrics)
     if #PerformanceMonitor.metrics > 60 then
         table.remove(PerformanceMonitor.metrics, 1)
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 -- Verificar alertas
@@ -995,6 +1125,10 @@ function PerformanceMonitor.countWidgets()
         for _, child in ipairs(children) do
             countWidget(child)
         end
+```
+
+#### Funcionalidade 3
+```lua
     end
     
     countWidget(g_ui.getRootWidget())
@@ -1016,6 +1150,10 @@ end
 
 -- Gerar relatório de performance
 function PerformanceMonitor.generateReport()
+```
+
+#### Finalização
+```lua
     if #PerformanceMonitor.metrics == 0 then
         return "Nenhuma métrica disponível"
     end
@@ -1053,6 +1191,7 @@ end
 
 ### 🎮 **Sistema de Performance Completo**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de performance principal
 local PerformanceSystem = {}
@@ -1077,6 +1216,10 @@ function PerformanceSystem.init()
     
     print("Sistema de performance inicializado")
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function PerformanceSystem.onGameStart()
     -- Iniciar monitoramento específico do jogo
@@ -1100,6 +1243,10 @@ function PerformanceSystem.startGameMonitoring()
         if fps < 30 then
             PerformanceSystem.optimizeForLowFPS()
         end
+```
+
+#### Funcionalidade 2
+```lua
         
         if memory > 150 * 1024 then  -- 150MB
             PerformanceSystem.optimizeForHighMemory()
@@ -1123,6 +1270,10 @@ function PerformanceSystem.optimizeForLowFPS()
     
     print("Otimizações aplicadas para FPS baixo")
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 function PerformanceSystem.optimizeForHighMemory()
     -- Forçar garbage collection
@@ -1151,6 +1302,10 @@ function PerformanceSystem.generateReports()
         reportFile:write(table.concat(reports, "\n\n"))
         reportFile:close()
     end
+```
+
+#### Finalização
+```lua
 end
 ```
 
@@ -1160,6 +1315,29 @@ end
 
 ### 🎯 **Uso Eficiente do Sistema**
 
+#### Nível Basic
+```lua
+-- ✅ BOM: Usar profiling seletivamente
+if g_settings.getBoolean("performance.enableProfiling", false) then
+    CPUProfiler.measureTime("expensiveOperation", function()
+        -- operação custosa
+    end)
+end
+-- ✅ BOM: Usar cache adequadamente
+local texture = TextureCache.getTexture("/images/icon.png")
+-- ✅ BOM: Usar lazy loading
+LazyLoader.loadTexture("/images/background.png", function(texture)
+end)
+-- ✅ BOM: Monitorar performance
+-- ❌ EVITE: Profiling excessivo
+CPUProfiler.measureTime("simpleOperation", function()
+    local x = 1 + 1  -- Operação muito simples
+end)
+-- ❌ EVITE: Cache desnecessário
+-- ❌ EVITE: Lazy loading desnecessário
+```
+
+#### Nível Intermediate
 ```lua
 -- ✅ BOM: Usar profiling seletivamente
 if g_settings.getBoolean("performance.enableProfiling", false) then
@@ -1191,10 +1369,53 @@ TextureCache.getTexture("/images/temp.png")  -- Arquivo temporário
 LazyLoader.loadTexture("/images/small_icon.png")  -- Ícone pequeno
 ```
 
+#### Nível Advanced
+```lua
+-- ✅ BOM: Usar profiling seletivamente
+if g_settings.getBoolean("performance.enableProfiling", false) then
+    CPUProfiler.measureTime("expensiveOperation", function()
+        -- operação custosa
+    end)
+end
+
+-- ✅ BOM: Usar cache adequadamente
+local texture = TextureCache.getTexture("/images/icon.png")
+
+-- ✅ BOM: Usar lazy loading
+LazyLoader.loadTexture("/images/background.png", function(texture)
+    widget:setImageSource(texture)
+end)
+
+-- ✅ BOM: Monitorar performance
+PerformanceMonitor.init()
+
+-- ❌ EVITE: Profiling excessivo
+CPUProfiler.measureTime("simpleOperation", function()
+    local x = 1 + 1  -- Operação muito simples
+end)
+
+-- ❌ EVITE: Cache desnecessário
+TextureCache.getTexture("/images/temp.png")  -- Arquivo temporário
+
+-- ❌ EVITE: Lazy loading desnecessário
+LazyLoader.loadTexture("/images/small_icon.png")  -- Ícone pequeno
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔧 **Configuração Adequada**
 
 ```lua
 -- ✅ BOM: Configurar baseado em hardware
+    --  ✅ BOM: Configurar baseado em hardware (traduzido)
 local PERFORMANCE_CONFIG = {
     lowEnd = {
         enableProfiling = false,
@@ -1217,11 +1438,14 @@ local PERFORMANCE_CONFIG = {
 }
 
 -- ✅ BOM: Detectar hardware
+    --  ✅ BOM: Detectar hardware (traduzido)
 function detectHardware()
+    -- Função: detectHardware
     local fps = g_app.getFps()
     local memory = collectgarbage("count")
     
     if fps < 30 or memory > 100 * 1024 then
+    -- Verificação condicional
         return "lowEnd"
     elseif fps < 60 or memory > 200 * 1024 then
         return "midEnd"
@@ -1232,10 +1456,12 @@ end
 
 -- ✅ BOM: Aplicar configuração
 function applyPerformanceConfig()
+    -- Função: applyPerformanceConfig
     local hardware = detectHardware()
     local config = PERFORMANCE_CONFIG[hardware]
     
     for key, value in pairs(config) do
+    -- Loop de repetição
         g_settings.set("performance." .. key, value)
     end
 end
@@ -1243,6 +1469,27 @@ end
 
 ### 🎨 **Design Consistente**
 
+#### Nível Basic
+```lua
+-- ✅ BOM: Usar constantes para configurações
+local PERFORMANCE_CONSTANTS = {
+-- ✅ BOM: Usar funções padronizadas
+function optimizePerformance()
+    local fps = g_app.getFps()
+    local memory = collectgarbage("count")
+    if fps < PERFORMANCE_CONSTANTS.FPS_THRESHOLD then
+    end
+    if memory > PERFORMANCE_CONSTANTS.MEMORY_THRESHOLD then
+    end
+end
+-- ✅ BOM: Monitoramento contínuo
+function setupPerformanceMonitoring()
+    scheduleEvent(function()
+    end, 5000)  -- 5 segundos
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- ✅ BOM: Usar constantes para configurações
 local PERFORMANCE_CONSTANTS = {
@@ -1273,6 +1520,49 @@ function setupPerformanceMonitoring()
         setupPerformanceMonitoring()
     end, 5000)  -- 5 segundos
 end
+```
+
+#### Nível Advanced
+```lua
+-- ✅ BOM: Usar constantes para configurações
+local PERFORMANCE_CONSTANTS = {
+    MEMORY_THRESHOLD = 100 * 1024,  -- 100MB
+    FPS_THRESHOLD = 30,
+    CACHE_MAX_SIZE = 50 * 1024 * 1024,  -- 50MB
+    BATCH_TIMEOUT = 50  -- ms
+}
+
+-- ✅ BOM: Usar funções padronizadas
+function optimizePerformance()
+    local fps = g_app.getFps()
+    local memory = collectgarbage("count")
+    
+    if fps < PERFORMANCE_CONSTANTS.FPS_THRESHOLD then
+        applyLowFPSOptimizations()
+    end
+    
+    if memory > PERFORMANCE_CONSTANTS.MEMORY_THRESHOLD then
+        applyHighMemoryOptimizations()
+    end
+end
+
+-- ✅ BOM: Monitoramento contínuo
+function setupPerformanceMonitoring()
+    scheduleEvent(function()
+        optimizePerformance()
+        setupPerformanceMonitoring()
+    end, 5000)  -- 5 segundos
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 O sistema de performance do OTClient oferece ferramentas poderosas para otimização e monitoramento. Use estas práticas para garantir performance máxima em suas aplicações. 

@@ -1,15 +1,12 @@
----
-title: Itemsystem
-tags: [otclient, system, guide, documentation]
-status: completed
-aliases: [Itemsystem]
----
 
 # Sistema de Itens - OTClient Redemption
 
 Documentação completa do sistema de itens do OTClient, incluindo criação, manipulação, inventário, containers e market.
 
-## 📋 Índice
+
+---
+
+## 📋 Índice 📋
 
 1. [Visão Geral](#-visão-geral)
 2. [Item Base](#-item-base)
@@ -22,12 +19,16 @@ Documentação completa do sistema de itens do OTClient, incluindo criação, ma
 9. [Durabilidade e Cargas](#-durabilidade-e-cargas)
 10. [Exemplos Práticos](#-exemplos-práticos)
 
-## 🎯 Visão Geral
+
+---
+
+## 🎯 Visão Geral 🎯
 
 O sistema de itens do OTClient gerencia todos os objetos do jogo, desde equipamentos e consumíveis até containers e itens especiais. Cada item possui propriedades específicas como ID, contagem, subtipo e atributos especiais.
 
-### Slots de Inventário
+### Slots de Inventário 📝
 
+#### Nível Basic
 ```lua
 -- Constantes de slots do inventário
 InventorySlotHead = 1      -- Capacete
@@ -47,25 +48,86 @@ function isValidSlot(slot)
 end
 ```
 
-### IDs de Itens Comuns
+#### Nível Intermediate
+```lua
+-- Constantes de slots do inventário
+InventorySlotHead = 1      -- Capacete
+InventorySlotNeck = 2      -- Amuleto
+InventorySlotBack = 3      -- Backpack
+InventorySlotBody = 4      -- Armadura
+InventorySlotRight = 5     -- Mão direita (escudo/weapon)
+InventorySlotLeft = 6      -- Mão esquerda (weapon/escudo)
+InventorySlotLeg = 7       -- Calças
+InventorySlotFeet = 8      -- Botas
+InventorySlotFinger = 9    -- Anel
+InventorySlotAmmo = 10     -- Munição/Tools
+
+-- Verificar se é slot válido
+function isValidSlot(slot)
+    return slot >= InventorySlotHead and slot <= InventorySlotAmmo
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Constantes de slots do inventário
+InventorySlotHead = 1      -- Capacete
+InventorySlotNeck = 2      -- Amuleto
+InventorySlotBack = 3      -- Backpack
+InventorySlotBody = 4      -- Armadura
+InventorySlotRight = 5     -- Mão direita (escudo/weapon)
+InventorySlotLeft = 6      -- Mão esquerda (weapon/escudo)
+InventorySlotLeg = 7       -- Calças
+InventorySlotFeet = 8      -- Botas
+InventorySlotFinger = 9    -- Anel
+InventorySlotAmmo = 10     -- Munição/Tools
+
+-- Verificar se é slot válido
+function isValidSlot(slot)
+    return slot >= InventorySlotHead and slot <= InventorySlotAmmo
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### IDs de Itens Comuns 📝
 
 ```lua
 -- Moedas
+    --  Moedas (traduzido)
 local GOLD_COIN = 2160
 local PLATINUM_COIN = 2157
 local CRYSTAL_COIN = 2159
 
 -- Containers
+    --  Containers (traduzido)
 local BACKPACK = 1988
 local BAG = 1987
 local DEPOT_CHEST = 2594
 
 -- Runas
+    --  Runas (traduzido)
 local UH_RUNE = 2273        -- Ultimate Healing
 local IH_RUNE = 2265        -- Intense Healing
 local SD_RUNE = 2268        -- Sudden Death
 
 -- Potions
+    --  Potions (traduzido)
 local HEALTH_POTION = 7618
 local MANA_POTION = 7620
 local STRONG_HEALTH = 7588
@@ -76,16 +138,21 @@ local ULTIMATE_HEALTH = 8473
 local GREAT_SPIRIT = 8472
 
 -- Foods
+    --  Foods (traduzido)
 local BREAD = 2689
 local CHEESE = 2696
 local HAM = 2671
 local MEAT = 2666
 ```
 
-## 🧬 Item Base
 
-### Criação e Propriedades Básicas
+---
 
+## 🧬 Item Base 📋
+
+### Criação e Propriedades Básicas 📝
+
+#### Nível Basic
 ```lua
 -- Criar item
 local item = Item.create(2160)         -- Gold coin
@@ -112,8 +179,103 @@ local exists = item:isValid()           -- Item existe/é válido
 local nil_item = item:isNull()          -- É item nulo
 ```
 
-### Propriedades Avançadas
+#### Nível Intermediate
+```lua
+-- Criar item
+local item = Item.create(2160)         -- Gold coin
+local item2 = Item.create(2160, 100)   -- 100 gold coins
 
+-- Propriedades básicas
+local id = item:getId()                 -- ID do item (2160)
+local count = item:getCount()           -- Quantidade
+local subType = item:getSubType()       -- Subtipo
+local description = item:getDescription() -- Descrição
+
+-- Definir propriedades
+item:setCount(50)                       -- Define quantidade
+item:setSubType(5)                      -- Define subtipo
+
+-- Posição e localização
+local pos = item:getPosition()          -- Posição no mapa
+local tile = item:getTile()             -- Tile onde está
+local container = item:getContainer()   -- Container onde está
+local containerSlot = item:getContainerSlot() -- Slot no container
+
+-- Verificações de estado
+local exists = item:isValid()           -- Item existe/é válido
+local nil_item = item:isNull()          -- É item nulo
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Criar item
+local item = Item.create(2160)         -- Gold coin
+local item2 = Item.create(2160, 100)   -- 100 gold coins
+
+-- Propriedades básicas
+local id = item:getId()                 -- ID do item (2160)
+local count = item:getCount()           -- Quantidade
+local subType = item:getSubType()       -- Subtipo
+local description = item:getDescription() -- Descrição
+
+-- Definir propriedades
+item:setCount(50)                       -- Define quantidade
+item:setSubType(5)                      -- Define subtipo
+
+-- Posição e localização
+local pos = item:getPosition()          -- Posição no mapa
+local tile = item:getTile()             -- Tile onde está
+local container = item:getContainer()   -- Container onde está
+local containerSlot = item:getContainerSlot() -- Slot no container
+
+-- Verificações de estado
+local exists = item:isValid()           -- Item existe/é válido
+local nil_item = item:isNull()          -- É item nulo
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### Propriedades Avançadas 📝
+
+#### Nível Basic
+```lua
+-- Características físicas
+local stackable = item:isStackable()    -- É empilhável
+local moveable = item:isMoveable()      -- É movível
+local pickupable = item:isPickupable()  -- Pode ser pego
+local rotatable = item:isRotatable()    -- Pode ser rotacionado
+local hangable = item:isHangable()      -- Pode ser pendurado
+-- Interação
+local readable = item:isReadable()      -- Pode ser lido
+local writable = item:isWritable()      -- Pode ser escrito
+local useable = item:isUseable()        -- Pode ser usado
+local multiUse = item:isMultiUse()      -- Uso múltiplo (ex: rope)
+-- Características especiais
+local blocking = item:isBlocking()      -- Bloqueia passagem
+local blockProjectile = item:isBlockProjectile() -- Bloqueia projéteis
+local notWalkable = item:isNotWalkable() -- Não é caminhável
+local notMoveable = item:isNotMoveable() -- Não é movível
+-- Propriedades do tile
+local ground = item:isGround()          -- É chão
+local topOrder = item:getTopOrder()     -- Ordem de renderização
+```
+
+#### Nível Intermediate
 ```lua
 -- Características físicas
 local stackable = item:isStackable()    -- É empilhável
@@ -139,10 +301,72 @@ local ground = item:isGround()          -- É chão
 local topOrder = item:getTopOrder()     -- Ordem de renderização
 ```
 
-## 🎲 Tipos de Itens
+#### Nível Advanced
+```lua
+-- Características físicas
+local stackable = item:isStackable()    -- É empilhável
+local moveable = item:isMoveable()      -- É movível
+local pickupable = item:isPickupable()  -- Pode ser pego
+local rotatable = item:isRotatable()    -- Pode ser rotacionado
+local hangable = item:isHangable()      -- Pode ser pendurado
 
-### Equipamentos
+-- Interação
+local readable = item:isReadable()      -- Pode ser lido
+local writable = item:isWritable()      -- Pode ser escrito
+local useable = item:isUseable()        -- Pode ser usado
+local multiUse = item:isMultiUse()      -- Uso múltiplo (ex: rope)
 
+-- Características especiais
+local blocking = item:isBlocking()      -- Bloqueia passagem
+local blockProjectile = item:isBlockProjectile() -- Bloqueia projéteis
+local notWalkable = item:isNotWalkable() -- Não é caminhável
+local notMoveable = item:isNotMoveable() -- Não é movível
+
+-- Propriedades do tile
+local ground = item:isGround()          -- É chão
+local topOrder = item:getTopOrder()     -- Ordem de renderização
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+
+---
+
+## 🎲 Tipos de Itens 📋
+
+### Equipamentos 📝
+
+#### Nível Basic
+```lua
+-- Verificar tipo de equipamento
+local weapon = item:isWeapon()          -- É arma
+local armor = item:isArmor()            -- É armadura
+local ammo = item:isAmmo()              -- É munição
+local shield = item:isShield()          -- É escudo
+-- Informações de arma
+if item:isWeapon() then
+    local weaponType = item:getWeaponType() -- Tipo da arma
+    local attackValue = item:getAttackValue() -- Valor de ataque
+    local defenseValue = item:getDefenseValue() -- Valor de defesa
+    local range = item:getRange()         -- Alcance
+    local skillType = item:getSkillType() -- Skill necessária
+end
+-- Informações de armadura
+if item:isArmor() then
+    local armorValue = item:getArmorValue() -- Valor de armadura
+    local weight = item:getWeight()       -- Peso
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Verificar tipo de equipamento
 local weapon = item:isWeapon()          -- É arma
@@ -166,8 +390,43 @@ if item:isArmor() then
 end
 ```
 
-### Containers
+#### Nível Advanced
+```lua
+-- Verificar tipo de equipamento
+local weapon = item:isWeapon()          -- É arma
+local armor = item:isArmor()            -- É armadura
+local ammo = item:isAmmo()              -- É munição
+local shield = item:isShield()          -- É escudo
 
+-- Informações de arma
+if item:isWeapon() then
+    local weaponType = item:getWeaponType() -- Tipo da arma
+    local attackValue = item:getAttackValue() -- Valor de ataque
+    local defenseValue = item:getDefenseValue() -- Valor de defesa
+    local range = item:getRange()         -- Alcance
+    local skillType = item:getSkillType() -- Skill necessária
+end
+
+-- Informações de armadura
+if item:isArmor() then
+    local armorValue = item:getArmorValue() -- Valor de armadura
+    local weight = item:getWeight()       -- Peso
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### Containers 📝
+
+#### Nível Basic
 ```lua
 -- Verificar se é container
 if item:isContainer() then
@@ -185,27 +444,87 @@ if item:isContainer() then
 end
 ```
 
-### Fluidos
+#### Nível Intermediate
+```lua
+-- Verificar se é container
+if item:isContainer() then
+    local capacity = item:getCapacity()  -- Capacidade máxima
+    local size = item:getSize()          -- Itens dentro
+    local hasParent = item:hasParent()   -- Tem container pai
+    
+    -- Obter itens dentro
+    local items = item:getItems()        -- Lista de itens
+    local itemAt = item:getItem(slot)    -- Item no slot específico
+    
+    -- Verificações
+    local empty = item:isEmpty()         -- Está vazio
+    local full = item:isFull()           -- Está cheio
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Verificar se é container
+if item:isContainer() then
+    local capacity = item:getCapacity()  -- Capacidade máxima
+    local size = item:getSize()          -- Itens dentro
+    local hasParent = item:hasParent()   -- Tem container pai
+    
+    -- Obter itens dentro
+    local items = item:getItems()        -- Lista de itens
+    local itemAt = item:getItem(slot)    -- Item no slot específico
+    
+    -- Verificações
+    local empty = item:isEmpty()         -- Está vazio
+    local full = item:isFull()           -- Está cheio
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### Fluidos 📝
 
 ```lua
 -- Containers de fluido
+    --  Containers de fluido (traduzido)
 if item:isFluidContainer() then
+    -- Verificação condicional
     local fluidType = item:getFluidType() -- Tipo do fluido
     item:setFluidType(FluidType.Water)   -- Define tipo do fluido
     
     -- Tipos de fluido comuns
+    --  Tipos de fluido comuns (traduzido)
     -- FluidType.None, FluidType.Water, FluidType.Wine, 
+    --  FluidType.None, FluidType.Water, FluidType.Wine, (traduzido)
     -- FluidType.Beer, FluidType.Mud, FluidType.Blood, etc.
+    --  FluidType.Beer, FluidType.Mud, FluidType.Blood, etc. (traduzido)
 end
 
 -- Splash items (poções, etc.)
 if item:isSplash() then
+    -- Verificação condicional
     local splashType = item:getSplashType()
 end
 ```
 
-### Runes e Consumíveis
+### Runes e Consumíveis 📝
 
+#### Nível Basic
 ```lua
 -- Runes
 if item:isRune() then
@@ -227,11 +546,74 @@ if item:isConsumable() then
 end
 ```
 
-### Itens com Texto
+#### Nível Intermediate
+```lua
+-- Runes
+if item:isRune() then
+    local charges = item:getCharges()    -- Cargas restantes
+    local maxCharges = item:getMaxCharges() -- Cargas máximas
+    local runeSpell = item:getRuneSpell() -- Spell da runa
+end
+
+-- Itens com cargas
+if item:isCharged() then
+    local charges = item:getCharges()
+    item:setCharges(5)                   -- Define cargas
+end
+
+-- Consumíveis (food, potions)
+if item:isConsumable() then
+    local nutrition = item:getNutrition() -- Valor nutricional (food)
+    local regeneration = item:getRegeneration() -- Regeneração
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Runes
+if item:isRune() then
+    local charges = item:getCharges()    -- Cargas restantes
+    local maxCharges = item:getMaxCharges() -- Cargas máximas
+    local runeSpell = item:getRuneSpell() -- Spell da runa
+end
+
+-- Itens com cargas
+if item:isCharged() then
+    local charges = item:getCharges()
+    item:setCharges(5)                   -- Define cargas
+end
+
+-- Consumíveis (food, potions)
+if item:isConsumable() then
+    local nutrition = item:getNutrition() -- Valor nutricional (food)
+    local regeneration = item:getRegeneration() -- Regeneração
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### Itens com Texto 📝
 
 ```lua
 -- Itens que podem ter texto (books, signs, etc.)
+    --  Itens que podem ter texto (books, signs, etc.) (traduzido)
 if item:isReadable() or item:isWritable() then
+    -- Verificação condicional
     local text = item:getText()          -- Texto atual
     item:setText("Novo texto")           -- Define texto (se writeable)
     
@@ -239,16 +621,22 @@ if item:isReadable() or item:isWritable() then
 end
 
 -- Writable items (pergaminhos, livros)
+    --  Writable items (pergaminhos, livros) (traduzido)
 if item:isWritable() then
+    -- Verificação condicional
     local writer = item:getWriter()      -- Quem escreveu
     local date = item:getDate()          -- Data de escrita
 end
 ```
 
-## 🎒 Sistema de Inventário
 
-### Gerenciamento de Slots
+---
 
+## 🎒 Sistema de Inventário ⚙️
+
+### Gerenciamento de Slots 📝
+
+#### Nível Basic
 ```lua
 -- Obter itens do inventário
 local player = g_game.getLocalPlayer()
@@ -274,26 +662,100 @@ if player then
 end
 ```
 
-### Uso de Itens do Inventário
+#### Nível Intermediate
+```lua
+-- Obter itens do inventário
+local player = g_game.getLocalPlayer()
+if player then
+    -- Item em slot específico
+    local helmet = player:getInventoryItem(InventorySlotHead)
+    local backpack = player:getInventoryItem(InventorySlotBack)
+    local weapon = player:getInventoryItem(InventorySlotRight)
+    
+    -- Todos os itens do inventário
+    local allItems = player:getInventoryItems()
+    
+    -- Verificar se slot está vazio
+    if not helmet then
+        print("Não está usando capacete")
+    end
+    
+    -- Procurar item específico
+    local goldCoin = g_game.findPlayerItem(2160, -1) -- -1 = qualquer quantidade
+    if goldCoin then
+        print("Encontrou gold coin:", goldCoin:getCount())
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Obter itens do inventário
+local player = g_game.getLocalPlayer()
+if player then
+    -- Item em slot específico
+    local helmet = player:getInventoryItem(InventorySlotHead)
+    local backpack = player:getInventoryItem(InventorySlotBack)
+    local weapon = player:getInventoryItem(InventorySlotRight)
+    
+    -- Todos os itens do inventário
+    local allItems = player:getInventoryItems()
+    
+    -- Verificar se slot está vazio
+    if not helmet then
+        print("Não está usando capacete")
+    end
+    
+    -- Procurar item específico
+    local goldCoin = g_game.findPlayerItem(2160, -1) -- -1 = qualquer quantidade
+    if goldCoin then
+        print("Encontrou gold coin:", goldCoin:getCount())
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### Uso de Itens do Inventário 📝
 
 ```lua
 -- Usar item por ID
+    --  Usar item por ID (traduzido)
 g_game.useInventoryItem(2160)           -- Usar gold coin
 
 -- Usar item com alvo
+    --  Usar item com alvo (traduzido)
 g_game.useInventoryItemWith(2160, creature) -- Usar item em criatura
 g_game.useInventoryItemWith(2160, tile)     -- Usar item em tile
 
 -- Usar item do slot
+    --  Usar item do slot (traduzido)
 local item = player:getInventoryItem(InventorySlotRight)
 if item then
+    -- Verificação condicional
     g_game.use(item)                    -- Usar item
     g_game.useWith(item, target)        -- Usar item em alvo
 end
 ```
 
-### Cálculos de Inventário
+### Cálculos de Inventário 📝
 
+#### Inicialização e Configuração
 ```lua
 -- Peso e capacidade
 local capacity = player:getCapacity()    -- Capacidade total
@@ -321,6 +783,10 @@ function countItemsInInventory(itemId)
         if item:getId() == itemId then
             total = total + item:getCount()
         end
+```
+
+#### Funcionalidade 1
+```lua
         
         -- Verificar dentro de containers também
         if item:isContainer() then
@@ -343,16 +809,43 @@ function countItemsInContainer(container, itemId)
         if item:isContainer() then
             total = total + countItemsInContainer(item, itemId)
         end
+```
+
+#### Finalização
+```lua
     end
     
     return total
 end
 ```
 
-## 📦 Sistema de Containers
 
-### Gerenciamento de Containers
+---
 
+## 📦 Sistema de Containers ⚙️
+
+### Gerenciamento de Containers 📝
+
+#### Nível Basic
+```lua
+-- Abrir container
+-- Informações do container
+local name = container:getName()         -- Nome do container
+local capacity = container:getCapacity() -- Capacidade
+local size = container:getSize()         -- Itens dentro
+local items = container:getItems()       -- Lista de itens
+local empty = container:isEmpty()        -- Está vazio
+local full = container:isFull()         -- Está cheio
+-- Hierarquia de containers
+local hasParent = container:hasParent()  -- Tem container pai
+local parent = container:getParentContainer() -- Container pai
+local isChild = container:isChild()      -- É container filho
+-- Obter item em slot específico
+local item = container:getItem(slot)     -- Item no slot (0-based)
+local firstItem = container:getItem(0)   -- Primeiro item
+```
+
+#### Nível Intermediate
 ```lua
 -- Abrir container
 g_game.open(item, container)            -- Abre item como container
@@ -377,10 +870,46 @@ local item = container:getItem(slot)     -- Item no slot (0-based)
 local firstItem = container:getItem(0)   -- Primeiro item
 ```
 
-### Manipulação de Itens em Containers
+#### Nível Advanced
+```lua
+-- Abrir container
+g_game.open(item, container)            -- Abre item como container
+g_game.openParent(container)            -- Abre container pai
+g_game.close(container)                 -- Fecha container
+
+-- Informações do container
+local name = container:getName()         -- Nome do container
+local capacity = container:getCapacity() -- Capacidade
+local size = container:getSize()         -- Itens dentro
+local items = container:getItems()       -- Lista de itens
+local empty = container:isEmpty()        -- Está vazio
+local full = container:isFull()         -- Está cheio
+
+-- Hierarquia de containers
+local hasParent = container:hasParent()  -- Tem container pai
+local parent = container:getParentContainer() -- Container pai
+local isChild = container:isChild()      -- É container filho
+
+-- Obter item em slot específico
+local item = container:getItem(slot)     -- Item no slot (0-based)
+local firstItem = container:getItem(0)   -- Primeiro item
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### Manipulação de Itens em Containers 📝
 
 ```lua
 -- Mover item para container
+    --  Mover item para container (traduzido)
 g_game.move(item, containerPosition, count)
 
 -- Posição em container
@@ -391,18 +920,22 @@ local containerPos = {
 }
 
 -- Exemplo: mover 50 gold coins para slot 0 do container ID 100
+    --  Exemplo: mover 50 gold coins para slot 0 do container ID 100 (traduzido)
 g_game.move(goldCoin, {x = 0xFFFF, y = 100, z = 0}, 50)
 
 -- Usar item do container
+    --  Usar item do container (traduzido)
 local containerItem = container:getItem(0)
 if containerItem then
+    -- Verificação condicional
     g_game.use(containerItem)
     g_game.useWith(containerItem, target)
 end
 ```
 
-### Busca em Containers
+### Busca em Containers 📝
 
+#### Inicialização e Configuração
 ```lua
 -- Procurar item em todos os containers
 function findItemInContainers(itemId, minCount)
@@ -430,6 +963,10 @@ function findItemInContainer(container, itemId, minCount)
         if item:getId() == itemId and item:getCount() >= minCount then
             return item
         end
+```
+
+#### Funcionalidade 1
+```lua
         
         -- Busca recursiva em sub-containers
         if item:isContainer() then
@@ -451,6 +988,10 @@ function listAllContainerItems()
             table.insert(allItems, item)
         end
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     return allItems
 end
@@ -472,16 +1013,40 @@ function listContainerItems(container)
                 table.insert(items, subItem)
             end
         end
+```
+
+#### Finalização
+```lua
     end
     
     return items
 end
 ```
 
-## 🎨 UIItem Widget
 
-### Criação e Configuração
+---
 
+## 🎨 UIItem Widget 📋
+
+### Criação e Configuração 📝
+
+#### Nível Basic
+```lua
+-- Criar UIItem widget
+local itemWidget = g_ui.createWidget('UIItem', parent)
+-- Configurar item
+-- Obter informações
+local item = itemWidget:getItem()       -- Objeto Item
+local itemId = itemWidget:getItemId()   -- ID do item
+local count = itemWidget:getItemCount() -- Quantidade
+local subType = itemWidget:getItemSubType() -- Subtipo
+-- Estados especiais
+local virtual = itemWidget:isVirtual()  -- Verifica se virtual
+-- Posição (para itens no mapa)
+local pos = itemWidget:getPosition()    -- Obtém posição
+```
+
+#### Nível Intermediate
 ```lua
 -- Criar UIItem widget
 local itemWidget = g_ui.createWidget('UIItem', parent)
@@ -507,13 +1072,50 @@ itemWidget:setPosition(position)        -- Define posição
 local pos = itemWidget:getPosition()    -- Obtém posição
 ```
 
-### Eventos de UIItem
+#### Nível Advanced
+```lua
+-- Criar UIItem widget
+local itemWidget = g_ui.createWidget('UIItem', parent)
+
+-- Configurar item
+itemWidget:setItemId(2160)              -- ID do item
+itemWidget:setItemCount(100)            -- Quantidade
+itemWidget:setItemSubType(5)            -- Subtipo
+itemWidget:setItem(item)                -- Objeto Item completo
+
+-- Obter informações
+local item = itemWidget:getItem()       -- Objeto Item
+local itemId = itemWidget:getItemId()   -- ID do item
+local count = itemWidget:getItemCount() -- Quantidade
+local subType = itemWidget:getItemSubType() -- Subtipo
+
+-- Estados especiais
+itemWidget:setVirtual(true)             -- Item virtual (não real)
+local virtual = itemWidget:isVirtual()  -- Verifica se virtual
+
+-- Posição (para itens no mapa)
+itemWidget:setPosition(position)        -- Define posição
+local pos = itemWidget:getPosition()    -- Obtém posição
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### Eventos de UIItem 📝
 
 ```lua
 -- Eventos de interação
 itemWidget.onClick = function(widget)
     local item = widget:getItem()
     if item then
+    -- Verificação condicional
         print("Clicou no item:", item:getId())
     end
 end
@@ -521,20 +1123,24 @@ end
 itemWidget.onDoubleClick = function(widget)
     local item = widget:getItem()
     if item then
+    -- Verificação condicional
         g_game.use(item)  -- Usar item no duplo clique
     end
 end
 
 itemWidget.onMousePress = function(widget, mousePos, button)
     if button == MouseRightButton then
+    -- Verificação condicional
         local item = widget:getItem()
         if item then
+    -- Verificação condicional
             g_game.look(item)  -- Examinar item
         end
     end
 end
 
 -- Eventos de drag & drop
+    --  Eventos de drag & drop (traduzido)
 itemWidget.onDragEnter = function(widget, mousePos)
     widget:setBorderWidth(1)
     widget:setBorderColor('#FFFF00')
@@ -551,6 +1157,7 @@ itemWidget.onDrop = function(widget, droppedWidget, mousePos)
     local targetItem = widget:getItem()
     
     if draggedItem and targetItem then
+    -- Verificação condicional
         -- Lógica de drop customizada
         print("Dropou", draggedItem:getId(), "em", targetItem:getId())
     end
@@ -560,10 +1167,31 @@ itemWidget.onDrop = function(widget, droppedWidget, mousePos)
 end
 ```
 
-## 💰 Market System
 
-### Market Data
+---
 
+## 💰 Market System ⚙️
+
+### Market Data 📝
+
+#### Nível Basic
+```lua
+-- Obter dados de market
+local marketData = item:getMarketData()
+if marketData then
+    local category = marketData.category     -- Categoria
+    local name = marketData.name            -- Nome no market
+    local requiredLevel = marketData.requiredLevel -- Level necessário
+    local restrictVocation = marketData.restrictVocation -- Vocação restrita
+    local showAs = marketData.showAs        -- Como mostrar
+    local tradeAs = marketData.tradeAs      -- Como negociar
+end
+-- Verificações de market
+local marketable = item:isMarketable()    -- Pode ser vendido no market
+local stackable = item:isStackable()      -- É empilhável no market
+```
+
+#### Nível Intermediate
 ```lua
 -- Obter dados de market
 local marketData = item:getMarketData()
@@ -581,8 +1209,27 @@ local marketable = item:isMarketable()    -- Pode ser vendido no market
 local stackable = item:isStackable()      -- É empilhável no market
 ```
 
-### Market Operations
+#### Nível Advanced
+```lua
+-- Obter dados de market
+local marketData = item:getMarketData()
+if marketData then
+    local category = marketData.category     -- Categoria
+    local name = marketData.name            -- Nome no market
+    local requiredLevel = marketData.requiredLevel -- Level necessário
+    local restrictVocation = marketData.restrictVocation -- Vocação restrita
+    local showAs = marketData.showAs        -- Como mostrar
+    local tradeAs = marketData.tradeAs      -- Como negociar
+end
 
+-- Verificações de market
+local marketable = item:isMarketable()    -- Pode ser vendido no market
+local stackable = item:isStackable()      -- É empilhável no market
+```
+
+### Market Operations 📝
+
+#### Nível Basic
 ```lua
 -- Criar oferta de venda
 function createSellOffer(itemId, amount, price)
@@ -629,20 +1276,138 @@ function cancelMarketOffer(offerId)
 end
 ```
 
-## 🔄 Drag & Drop
+#### Nível Intermediate
+```lua
+-- Criar oferta de venda
+function createSellOffer(itemId, amount, price)
+    local protocolGame = g_game.getProtocolGame()
+    if protocolGame then
+        protocolGame:sendMarketCreateOffer(
+            MarketOfferType.Sell,  -- Tipo: venda
+            itemId,                -- ID do item
+            amount,                -- Quantidade
+            price,                 -- Preço por item
+            false                  -- Anônimo
+        )
+    end
+end
 
-### Sistema de Drag & Drop
+-- Criar oferta de compra
+function createBuyOffer(itemId, amount, price)
+    local protocolGame = g_game.getProtocolGame()
+    if protocolGame then
+        protocolGame:sendMarketCreateOffer(
+            MarketOfferType.Buy,   -- Tipo: compra
+            itemId,                -- ID do item
+            amount,                -- Quantidade
+            price,                 -- Preço por item
+            false                  -- Anônimo
+        )
+    end
+end
+
+-- Aceitar oferta
+function acceptMarketOffer(offerId, amount)
+    local protocolGame = g_game.getProtocolGame()
+    if protocolGame then
+        protocolGame:sendMarketAcceptOffer(offerId, amount)
+    end
+end
+
+-- Cancelar oferta
+function cancelMarketOffer(offerId)
+    local protocolGame = g_game.getProtocolGame()
+    if protocolGame then
+        protocolGame:sendMarketCancelOffer(offerId)
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Criar oferta de venda
+function createSellOffer(itemId, amount, price)
+    local protocolGame = g_game.getProtocolGame()
+    if protocolGame then
+        protocolGame:sendMarketCreateOffer(
+            MarketOfferType.Sell,  -- Tipo: venda
+            itemId,                -- ID do item
+            amount,                -- Quantidade
+            price,                 -- Preço por item
+            false                  -- Anônimo
+        )
+    end
+end
+
+-- Criar oferta de compra
+function createBuyOffer(itemId, amount, price)
+    local protocolGame = g_game.getProtocolGame()
+    if protocolGame then
+        protocolGame:sendMarketCreateOffer(
+            MarketOfferType.Buy,   -- Tipo: compra
+            itemId,                -- ID do item
+            amount,                -- Quantidade
+            price,                 -- Preço por item
+            false                  -- Anônimo
+        )
+    end
+end
+
+-- Aceitar oferta
+function acceptMarketOffer(offerId, amount)
+    local protocolGame = g_game.getProtocolGame()
+    if protocolGame then
+        protocolGame:sendMarketAcceptOffer(offerId, amount)
+    end
+end
+
+-- Cancelar oferta
+function cancelMarketOffer(offerId)
+    local protocolGame = g_game.getProtocolGame()
+    if protocolGame then
+        protocolGame:sendMarketCancelOffer(offerId)
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+
+---
+
+## 🔄 Drag & Drop 📋
+
+### Sistema de Drag & Drop 📝
 
 ```lua
 -- Implementar drag & drop customizado
+    --  Implementar drag & drop customizado (traduzido)
 function setupItemDragDrop(itemWidget)
+    -- Função: setupItemDragDrop
     itemWidget:setDraggable(true)
     
     itemWidget.onDragEnter = function(widget, mousePos)
         if widget:isVirtual() then return false end
+    -- Verificação condicional
         
         local item = widget:getItem()
         if not item then return false end
+    -- Verificação condicional
         
         widget:setBorderWidth(1)
         widget:setBorderColor('#00FF00')
@@ -653,6 +1418,7 @@ function setupItemDragDrop(itemWidget)
     
     itemWidget.onDragLeave = function(widget, droppedWidget, mousePos)
         if widget:isVirtual() then return false end
+    -- Verificação condicional
         
         widget.currentDragThing = nil
         g_mouse.popCursor('target')
@@ -663,16 +1429,20 @@ function setupItemDragDrop(itemWidget)
     itemWidget.onDrop = function(widget, droppedWidget, mousePos)
         local draggedItem = droppedWidget.currentDragThing
         if not draggedItem or not draggedItem:isItem() then return false end
+    -- Verificação condicional
         
         local toPos = widget:getPosition()
         local fromPos = draggedItem:getPosition()
         
         if fromPos.x == toPos.x and fromPos.y == toPos.y and fromPos.z == toPos.z then
+    -- Verificação condicional
             return false
         end
         
         -- Mover item
+    --  Mover item (traduzido)
         if draggedItem:getCount() > 1 then
+    -- Verificação condicional
             modules.game_interface.moveStackableItem(draggedItem, toPos)
         else
             g_game.move(draggedItem, toPos, 1)
@@ -684,16 +1454,19 @@ function setupItemDragDrop(itemWidget)
 end
 ```
 
-### Drag & Drop para Containers
+### Drag & Drop para Containers 📝
 
 ```lua
 -- Setup para container slots
+    --  Setup para container slots (traduzido)
 function setupContainerSlot(slotWidget, containerId, slotIndex)
+    -- Função: setupContainerSlot
     slotWidget:setAcceptDrops(true)
     
     slotWidget.onDrop = function(widget, droppedWidget, mousePos)
         local draggedItem = droppedWidget:getItem()
         if not draggedItem then return false end
+    -- Verificação condicional
         
         local targetPos = {
             x = 0xFFFF,
@@ -702,7 +1475,9 @@ function setupContainerSlot(slotWidget, containerId, slotIndex)
         }
         
         -- Verificar se pode mover para este slot
+    --  Verificar se pode mover para este slot (traduzido)
         if draggedItem:getCount() > 1 then
+    -- Verificação condicional
             modules.game_interface.moveStackableItem(draggedItem, targetPos)
         else
             g_game.move(draggedItem, targetPos, 1)
@@ -713,10 +1488,14 @@ function setupContainerSlot(slotWidget, containerId, slotIndex)
 end
 ```
 
-## ⏱️ Durabilidade e Cargas
 
-### Sistema de Durabilidade
+---
 
+## ⏱️ Durabilidade e Cargas 📋
+
+### Sistema de Durabilidade 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Itens com duração
 if item:hasDuration() then
@@ -741,6 +1520,10 @@ function formatDuration(seconds)
     else
         return string.format("%ds", secs)
     end
+```
+
+#### Funcionalidade 1
+```lua
 end
 
 -- Monitor de duração
@@ -762,6 +1545,10 @@ function startDurationMonitor()
                     removeDurationDisplay(slot)
                 end
             end
+```
+
+#### Finalização
+```lua
         end
         
         updateEvent = scheduleEvent(updateDurations, 1000)
@@ -772,18 +1559,22 @@ function startDurationMonitor()
 end
 ```
 
-### Sistema de Cargas
+### Sistema de Cargas 📝
 
 ```lua
 -- Itens com cargas (runes, tools)
+    --  Itens com cargas (runes, tools) (traduzido)
 if item:isCharged() then
+    -- Verificação condicional
     local charges = item:getCharges()    -- Cargas atuais
     local maxCharges = item:getMaxCharges() -- Cargas máximas
     
     print(string.format("Cargas: %d/%d", charges, maxCharges))
     
     -- Verificar se ainda tem cargas
+    --  Verificar se ainda tem cargas (traduzido)
     if charges > 0 then
+    -- Verificação condicional
         print("Item ainda utilizável")
     else
         print("Item sem cargas")
@@ -791,17 +1582,23 @@ if item:isCharged() then
 end
 
 -- Monitor de cargas para runes
+    --  Monitor de cargas para runes (traduzido)
 function monitorRuneCharges()
+    -- Função: monitorRuneCharges
     local player = g_game.getLocalPlayer()
     if not player then return end
+    -- Verificação condicional
     
     local allItems = listAllContainerItems()
     
     for _, itemInfo in ipairs(allItems) do
+    -- Loop de repetição
         local item = itemInfo.item
         if item:isRune() and item:isCharged() then
+    -- Verificação condicional
             local charges = item:getCharges()
             if charges <= 5 then  -- Aviso quando restam poucas cargas
+    -- Verificação condicional
                 print(string.format("AVISO: %s com apenas %d cargas!", 
                                    item:getDescription(), charges))
             end
@@ -810,10 +1607,14 @@ function monitorRuneCharges()
 end
 ```
 
-## 💡 Exemplos Práticos
 
-### Exemplo 1: Sistema de Auto-Loot
+---
 
+## 💡 Exemplos Práticos 💡
+
+### Exemplo 1: Sistema de Auto-Loot 🎮
+
+#### Inicialização e Configuração
 ```lua
 -- modules/auto_loot/auto_loot.lua
 autoLoot = {}
@@ -842,6 +1643,10 @@ function autoLoot.setupInterface()
         autoLoot.enabled = checked
         autoLoot.saveConfiguration()
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     autoLoot.addButton.onClick = autoLoot.addCurrentItem
     autoLoot.removeButton.onClick = autoLoot.removeSelectedItem
@@ -863,6 +1668,10 @@ function autoLoot.addCurrentItem()
                     autoLoot.addItemToList(item:getId(), item:getDescription())
                 end
             end
+```
+
+#### Funcionalidade 2
+```lua
         end
         
         g_mouse.popCursor('target')
@@ -884,6 +1693,10 @@ function autoLoot.addItemToList(itemId, description)
         modules.game_textmessage.displayGameMessage('Item adicionado ao loot: ' .. description)
     end
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 function autoLoot.updateItemList()
     autoLoot.itemList:destroyChildren()
@@ -908,6 +1721,10 @@ function autoLoot.onContainerOpen(container)
         scheduleEvent(function()
             autoLoot.lootContainer(container)
         end, 500)
+```
+
+#### Funcionalidade 4
+```lua
     end
 end
 
@@ -931,6 +1748,10 @@ function autoLoot.lootContainer(container)
     table.sort(lootedItems, function(a, b)
         return a.priority > b.priority
     end)
+```
+
+#### Funcionalidade 5
+```lua
     
     -- Pegar itens
     for _, lootItem in ipairs(lootedItems) do
@@ -953,6 +1774,10 @@ function autoLoot.loadConfiguration()
 end
 
 function autoLoot.saveConfiguration()
+```
+
+#### Finalização
+```lua
     g_settings.setNode('autoLoot', {
         enabled = autoLoot.enabled,
         lootList = autoLoot.lootList
@@ -961,8 +1786,9 @@ function autoLoot.saveConfiguration()
 end
 ```
 
-### Exemplo 2: Item Manager
+### Exemplo 2: Item Manager 🎮
 
+#### Inicialização e Configuração
 ```lua
 -- modules/item_manager/item_manager.lua
 itemManager = {}
@@ -997,6 +1823,10 @@ function itemManager.setupInterface()
     itemManager.categoryCombo.onOptionChange = itemManager.filterItems
     itemManager.itemList.onChildFocusChange = itemManager.onItemSelect
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function itemManager.updateItemDatabase()
     itemManager.itemDatabase = {}
@@ -1020,6 +1850,10 @@ function itemManager.updateItemDatabase()
                 armor = item:isArmor(),
                 marketable = item:isMarketable()
             }
+```
+
+#### Funcionalidade 2
+```lua
             
             if item:isContainer() then
                 itemInfo.capacity = item:getCapacity()
@@ -1041,6 +1875,10 @@ function itemManager.updateItemDatabase()
     
     print("Item database atualizada:", table.size(itemManager.itemDatabase), "itens")
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 function itemManager.categorizeItem(item)
     if item:isWeapon() then
@@ -1072,6 +1910,10 @@ function itemManager.filterItems()
             if not itemInfo.description:lower():find(searchText) then
                 matches = false
             end
+```
+
+#### Funcionalidade 4
+```lua
         end
         
         -- Filtro de categoria
@@ -1094,6 +1936,10 @@ function itemManager.filterItems()
                 consumables = '#FF66FF',
                 misc = '#FFFFFF'
             }
+```
+
+#### Funcionalidade 5
+```lua
             item:setColor(colors[itemInfo.category] or '#FFFFFF')
         end
     end
@@ -1146,6 +1992,10 @@ Market: %s]],
                                            itemInfo.defense or 0,
                                            itemInfo.range or 0)
     end
+```
+
+#### Funcionalidade 6
+```lua
     
     if itemInfo.armor then
         infoText = infoText .. string.format("\nArmadura: %d", itemInfo.armorValue or 0)
@@ -1169,14 +2019,19 @@ function itemManager.onGameStart()
     -- Atualizar base quando conectar
     scheduleEvent(itemManager.updateItemDatabase, 2000)
 end
+```
+
+#### Finalização
+```lua
 
 function itemManager.onGameEnd()
     -- Limpar ao desconectar
 end
 ```
 
-### Exemplo 3: Smart Container Organizer
+### Exemplo 3: Smart Container Organizer 🎮
 
+#### Inicialização e Configuração
 ```lua
 -- modules/container_organizer/container_organizer.lua
 containerOrganizer = {}
@@ -1203,6 +2058,10 @@ function containerOrganizer.setupInterface()
     containerOrganizer.removeRuleButton.onClick = containerOrganizer.removeRule
     containerOrganizer.organizeButton.onClick = containerOrganizer.organizeAllContainers
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function containerOrganizer.addRule()
     local dialog = g_ui.createWidget('UIInputDialog', rootWidget)
@@ -1224,6 +2083,10 @@ function containerOrganizer.addRule()
         end
     end
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 function containerOrganizer.organizeAllContainers()
     local containers = g_game.getContainers()
@@ -1246,6 +2109,10 @@ function containerOrganizer.organizeContainer(container)
                 fromContainer = container,
                 toContainer = targetContainer
             })
+```
+
+#### Funcionalidade 3
+```lua
         end
     end
     
@@ -1269,6 +2136,10 @@ function containerOrganizer.findTargetContainer(item)
     
     return nil
 end
+```
+
+#### Funcionalidade 4
+```lua
 
 function containerOrganizer.itemMatchesRule(item, rule)
     local condition = rule.condition
@@ -1290,6 +2161,10 @@ function containerOrganizer.itemMatchesRule(item, rule)
     elseif condition == 'potions' and containerOrganizer.isPotion(item) then
         return true
     end
+```
+
+#### Funcionalidade 5
+```lua
     
     return false
 end
@@ -1312,6 +2187,10 @@ function containerOrganizer.moveItemToContainer(item, targetContainer)
         y = targetContainer:getId(),
         z = targetContainer:getFirstEmptySlot() or 0
     }
+```
+
+#### Funcionalidade 6
+```lua
     
     g_game.move(item, targetPos, item:getCount())
 end
@@ -1333,6 +2212,10 @@ function containerOrganizer.onContainerAddItem(container, slot, item)
             if targetContainer and targetContainer ~= container then
                 containerOrganizer.moveItemToContainer(item, targetContainer)
             end
+```
+
+#### Funcionalidade 7
+```lua
         end, 500)
     end
 end
@@ -1354,6 +2237,10 @@ function containerOrganizer.loadConfiguration()
     
     containerOrganizer.updateRulesList()
 end
+```
+
+#### Finalização
+```lua
 
 function containerOrganizer.saveConfiguration()
     g_settings.setNode('containerOrganizer', {

@@ -139,6 +139,7 @@ Design content that remains engaging through multiple playthroughs or interactio
 #### Quest System Implementation
 ```lua
 -- Example quest structure
+    --  Example quest structure (traduzido)
 local quest = {
     name = "The Lost Artifact",
     description = "Help the archaeologist recover the ancient artifact",
@@ -170,11 +171,13 @@ local quest = {
 #### NPC Behavior Scripting
 ```lua
 -- Example NPC dialogue system
+    --  Example NPC dialogue system (traduzido)
 local npc = {
     name = "Village Elder",
     responses = {
         greeting = function(player)
             if player:getQuestStatus("village_troubles") == 0 then
+    -- Verificação condicional
                 return "Greetings, traveler. Our village needs help..."
             else
                 return "Thank you for your assistance!"
@@ -183,6 +186,7 @@ local npc = {
         
         quest_offer = function(player)
             if player:getLevel() >= 15 then
+    -- Verificação condicional
                 player:startQuest("village_troubles")
                 return "Will you help us with the bandits?"
             else
@@ -196,6 +200,7 @@ local npc = {
 #### Item Functionality Implementation
 ```lua
 -- Example magical item with special effects
+    --  Example magical item with special effects (traduzido)
 local magicSword = {
     id = 4001,
     name = "Flame Blade",
@@ -211,6 +216,7 @@ local magicSword = {
     
     onHit = function(attacker, target, damage)
         if math.random(100) <= 15 then -- 15% chance
+    -- Verificação condicional
             target:addCondition(burnCondition, 10) -- 10 seconds burn
             attacker:sendTextMessage("Your blade sets the enemy ablaze!")
         end

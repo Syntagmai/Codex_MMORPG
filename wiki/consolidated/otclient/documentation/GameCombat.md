@@ -15,6 +15,7 @@ O sistema de combate gerencia ataques, defesas, dano e mecânicas de luta entre 
 
 ## 🔧 API C++
 
+#### Nível Basic
 ```cpp
 // Processamento de ataque
 void Game::processAttack(Creature* attacker, Creature* target) {
@@ -23,11 +24,47 @@ void Game::processAttack(Creature* attacker, Creature* target) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Processamento de ataque
+void Game::processAttack(Creature* attacker, Creature* target) {
+    int damage = calculateDamage(attacker, target);
+    target->takeDamage(damage);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Processamento de ataque
+void Game::processAttack(Creature* attacker, Creature* target) {
+    int damage = calculateDamage(attacker, target);
+    target->takeDamage(damage);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🐍 API Lua
 
 ```lua
 -- Função de ataque
 function attack(target)
+    -- Função: attack
     local damage = calculateDamage(player, target)
     target:takeDamage(damage)
     showDamageEffect(target, damage)
@@ -38,7 +75,9 @@ end
 
 ```lua
 -- Sistema de combate completo
+    --  Sistema de combate completo (traduzido)
 function onCombatStart(attacker, target)
+    -- Função: onCombatStart
     startCombatAnimation(attacker)
     processAttack(attacker, target)
     updateCombatUI()

@@ -93,6 +93,7 @@ target: canary
 ### **🔧 Classes Principais**
 ```cpp
 class NomeClasse {
+    -- Classe: NomeClasse
     // Descrição da classe
     // Responsabilidades principais
     // Padrões de design utilizados
@@ -142,6 +143,7 @@ src/game/[sistema]/
 - **Com [Sistema B]**: [Tipo de integração]
 
 ### **📚 Exemplos Práticos**
+#### Nível Basic
 ```cpp
 // Exemplo 1: Uso básico
 [Exemplo de código]
@@ -151,6 +153,47 @@ src/game/[sistema]/
 
 // Exemplo 3: Integração
 [Exemplo de código]
+```
+
+#### Nível Intermediate
+```cpp
+// Exemplo 1: Uso básico
+[Exemplo de código]
+
+// Exemplo 2: Configuração avançada
+[Exemplo de código]
+
+// Exemplo 3: Integração
+[Exemplo de código]
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo 1: Uso básico
+[Exemplo de código]
+
+// Exemplo 2: Configuração avançada
+[Exemplo de código]
+
+// Exemplo 3: Integração
+[Exemplo de código]
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 ```
 
@@ -255,8 +298,92 @@ src/game/[sistema]/
 ### **🔧 Exemplo 1: [Nome do Exemplo]**
 **Objetivo**: [Descrição do objetivo]
 
+#### Nível Basic
+#### Nível Basic
+#### Nível Basic
 ```cpp
 // Código do exemplo
+```
+
+#### Nível Intermediate
+```cpp
+// Código do exemplo
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Código do exemplo
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+#### Nível Intermediate
+```cpp
+// Código do exemplo
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Código do exemplo
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+#### Nível Intermediate
+```cpp
+// Código do exemplo
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Código do exemplo
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 **Explicação**: [Explicação do código]
@@ -264,8 +391,92 @@ src/game/[sistema]/
 ### **🔧 Exemplo 2: [Nome do Exemplo]**
 **Objetivo**: [Descrição do objetivo]
 
+#### Nível Basic
+#### Nível Basic
+#### Nível Basic
 ```cpp
 // Código do exemplo
+```
+
+#### Nível Intermediate
+```cpp
+// Código do exemplo
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Código do exemplo
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+#### Nível Intermediate
+```cpp
+// Código do exemplo
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Código do exemplo
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+#### Nível Intermediate
+```cpp
+// Código do exemplo
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Código do exemplo
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 **Explicação**: [Explicação do código]
@@ -273,8 +484,92 @@ src/game/[sistema]/
 ### **🔧 Exemplo 3: [Nome do Exemplo]**
 **Objetivo**: [Descrição do objetivo]
 
+#### Nível Basic
+#### Nível Basic
+#### Nível Basic
 ```cpp
 // Código do exemplo
+```
+
+#### Nível Intermediate
+```cpp
+// Código do exemplo
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Código do exemplo
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+#### Nível Intermediate
+```cpp
+// Código do exemplo
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Código do exemplo
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+#### Nível Intermediate
+```cpp
+// Código do exemplo
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Código do exemplo
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 **Explicação**: [Explicação do código]
@@ -311,8 +606,36 @@ src/game/[sistema]/
 - **[Estratégia 2]**: [Descrição] - [Vantagens/Desvantagens]
 
 ### **🔧 APIs Unificadas Propostas**
+#### Nível Basic
 ```cpp
 // Proposta de API unificada
+```
+
+#### Nível Intermediate
+```cpp
+// Proposta de API unificada
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Proposta de API unificada
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **⚠️ Riscos e Desafios**

@@ -25,13 +25,16 @@ otclient, ui_framework
 
 ```lua
 --[[
+    -- [[ (traduzido)
 OTClient UI Enhancement - Melhorias na interface do usuário do OTClient
 
 Funcionalidades:
 -- Interface responsiva
+    --  Interface responsiva (traduzido)
 -- Temas personalizáveis
 -- Animações suaves
 --]]
+    -- ]] (traduzido)
 
 local OTClientUIEnhancement = {}
 
@@ -40,6 +43,7 @@ OTClientUIEnhancement.description = "Melhorias na interface do usuário do OTCli
 OTClientUIEnhancement.features = {"Interface responsiva", "Temas personalizáveis", "Animações suaves"}
 
 function OTClientUIEnhancement:run()
+    -- Função: OTClientUIEnhancement
     print("🚀 Exe...
 ```
 

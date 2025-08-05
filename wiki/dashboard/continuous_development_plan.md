@@ -137,6 +137,7 @@ Estabelecer um **sistema de desenvolvimento contínuo completo, automatizado e e
 ## 🔄 **Processos de Desenvolvimento**
 
 ### **📋 Processo de Desenvolvimento**
+#### Nível Basic
 ```lua
 -- Fluxo de desenvolvimento contínuo
 local function developmentWorkflow()
@@ -170,9 +171,95 @@ local function developmentWorkflow()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Fluxo de desenvolvimento contínuo
+local function developmentWorkflow()
+    return {
+        planning = {
+            task_creation = "Criar tarefa no Task Manager",
+            priority_assignment = "Definir prioridade e prazo",
+            resource_allocation = "Alocar agentes responsáveis"
+        },
+        development = {
+            code_development = "Desenvolver código seguindo padrões",
+            documentation_update = "Atualizar documentação",
+            testing_creation = "Criar testes automatizados"
+        },
+        review = {
+            code_review = "Revisão de código automatizada",
+            quality_check = "Verificação de qualidade",
+            security_audit = "Auditoria de segurança"
+        },
+        integration = {
+            ci_cd_pipeline = "Pipeline de integração contínua",
+            automated_testing = "Testes automatizados",
+            deployment_preparation = "Preparação para deploy"
+        },
+        deployment = {
+            staging_deploy = "Deploy em ambiente de teste",
+            production_deploy = "Deploy em produção",
+            monitoring_setup = "Configuração de monitoramento"
+        }
+    }
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Fluxo de desenvolvimento contínuo
+local function developmentWorkflow()
+    return {
+        planning = {
+            task_creation = "Criar tarefa no Task Manager",
+            priority_assignment = "Definir prioridade e prazo",
+            resource_allocation = "Alocar agentes responsáveis"
+        },
+        development = {
+            code_development = "Desenvolver código seguindo padrões",
+            documentation_update = "Atualizar documentação",
+            testing_creation = "Criar testes automatizados"
+        },
+        review = {
+            code_review = "Revisão de código automatizada",
+            quality_check = "Verificação de qualidade",
+            security_audit = "Auditoria de segurança"
+        },
+        integration = {
+            ci_cd_pipeline = "Pipeline de integração contínua",
+            automated_testing = "Testes automatizados",
+            deployment_preparation = "Preparação para deploy"
+        },
+        deployment = {
+            staging_deploy = "Deploy em ambiente de teste",
+            production_deploy = "Deploy em produção",
+            monitoring_setup = "Configuração de monitoramento"
+        }
+    }
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🔍 Processo de Qualidade**
 ```lua
 -- Sistema de controle de qualidade
+    --  Sistema de controle de qualidade (traduzido)
 local function qualityControl()
     return {
         automated_checks = {
@@ -197,6 +284,14 @@ end
 ```
 
 ### **📈 Processo de Monitoramento**
+#### Nível Basic
+```lua
+-- Sistema de monitoramento contínuo
+local function continuousMonitoring()
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Sistema de monitoramento contínuo
 local function continuousMonitoring()
@@ -223,11 +318,55 @@ local function continuousMonitoring()
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Sistema de monitoramento contínuo
+local function continuousMonitoring()
+    return {
+        performance_metrics = {
+            response_time = "Tempo de resposta",
+            throughput = "Taxa de processamento",
+            error_rate = "Taxa de erro",
+            resource_usage = "Uso de recursos"
+        },
+        business_metrics = {
+            user_activity = "Atividade de usuários",
+            feature_usage = "Uso de funcionalidades",
+            satisfaction = "Satisfação do usuário",
+            revenue = "Receita gerada"
+        },
+        development_metrics = {
+            deployment_frequency = "Frequência de deploy",
+            lead_time = "Tempo de entrega",
+            change_failure_rate = "Taxa de falha de mudanças",
+            mean_time_to_recovery = "Tempo médio de recuperação"
+        }
+    }
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🤖 **Agentes de Desenvolvimento**
 
 ### **🛠️ Development Agent**
+#### Nível Basic
+```lua
+-- Agente responsável pelo desenvolvimento
+local DevelopmentAgent = {
+```
+
+#### Nível Intermediate
 ```lua
 -- Agente responsável pelo desenvolvimento
 local DevelopmentAgent = {
@@ -246,7 +385,43 @@ local DevelopmentAgent = {
 }
 ```
 
+#### Nível Advanced
+```lua
+-- Agente responsável pelo desenvolvimento
+local DevelopmentAgent = {
+    capabilities = {
+        code_generation = "Geração automática de código",
+        code_review = "Revisão automática de código",
+        testing = "Criação de testes automatizados",
+        documentation = "Geração de documentação"
+    },
+    responsibilities = {
+        task_execution = "Execução de tarefas de desenvolvimento",
+        quality_assurance = "Garantia de qualidade",
+        performance_optimization = "Otimização de performance",
+        security_implementation = "Implementação de segurança"
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🔍 Quality Assurance Agent**
+#### Nível Basic
+```lua
+-- Agente responsável pela qualidade
+local QualityAssuranceAgent = {
+```
+
+#### Nível Intermediate
 ```lua
 -- Agente responsável pela qualidade
 local QualityAssuranceAgent = {
@@ -265,7 +440,43 @@ local QualityAssuranceAgent = {
 }
 ```
 
+#### Nível Advanced
+```lua
+-- Agente responsável pela qualidade
+local QualityAssuranceAgent = {
+    capabilities = {
+        automated_testing = "Testes automatizados",
+        code_analysis = "Análise de código",
+        security_scanning = "Scan de segurança",
+        performance_monitoring = "Monitoramento de performance"
+    },
+    responsibilities = {
+        quality_control = "Controle de qualidade",
+        bug_detection = "Detecção de bugs",
+        regression_testing = "Testes de regressão",
+        quality_metrics = "Métricas de qualidade"
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🚀 Deployment Agent**
+#### Nível Basic
+```lua
+-- Agente responsável pelo deploy
+local DeploymentAgent = {
+```
+
+#### Nível Intermediate
 ```lua
 -- Agente responsável pelo deploy
 local DeploymentAgent = {
@@ -282,6 +493,35 @@ local DeploymentAgent = {
         performance_optimization = "Otimização de performance"
     }
 }
+```
+
+#### Nível Advanced
+```lua
+-- Agente responsável pelo deploy
+local DeploymentAgent = {
+    capabilities = {
+        automated_deployment = "Deploy automatizado",
+        environment_management = "Gerenciamento de ambientes",
+        rollback_management = "Gerenciamento de rollback",
+        monitoring_setup = "Configuração de monitoramento"
+    },
+    responsibilities = {
+        deployment_execution = "Execução de deploys",
+        environment_monitoring = "Monitoramento de ambientes",
+        incident_response = "Resposta a incidentes",
+        performance_optimization = "Otimização de performance"
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---
@@ -311,6 +551,7 @@ local DeploymentAgent = {
 ## 🔄 **Ferramentas e Tecnologias**
 
 ### **🛠️ Ferramentas de Desenvolvimento**
+#### Nível Basic
 ```lua
 local developmentTools = {
     version_control = {
@@ -331,7 +572,67 @@ local developmentTools = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+local developmentTools = {
+    version_control = {
+        git = "Controle de versão",
+        github = "Repositório remoto",
+        gitlab = "CI/CD integrado"
+    },
+    ide = {
+        vscode = "Editor principal",
+        intellij = "IDE Java/C++",
+        eclipse = "IDE alternativa"
+    },
+    build_tools = {
+        cmake = "Build system C++",
+        gradle = "Build system Java",
+        npm = "Package manager JavaScript"
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local developmentTools = {
+    version_control = {
+        git = "Controle de versão",
+        github = "Repositório remoto",
+        gitlab = "CI/CD integrado"
+    },
+    ide = {
+        vscode = "Editor principal",
+        intellij = "IDE Java/C++",
+        eclipse = "IDE alternativa"
+    },
+    build_tools = {
+        cmake = "Build system C++",
+        gradle = "Build system Java",
+        npm = "Package manager JavaScript"
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🤖 Ferramentas de Automação**
+#### Nível Basic
 ```lua
 local automationTools = {
     ci_cd = {
@@ -352,7 +653,72 @@ local automationTools = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+local automationTools = {
+    ci_cd = {
+        jenkins = "Pipeline CI/CD",
+        github_actions = "CI/CD integrado",
+        gitlab_ci = "CI/CD GitLab"
+    },
+    testing = {
+        pytest = "Testes Python",
+        junit = "Testes Java",
+        cppunit = "Testes C++"
+    },
+    monitoring = {
+        prometheus = "Métricas",
+        grafana = "Dashboards",
+        elasticsearch = "Logs"
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local automationTools = {
+    ci_cd = {
+        jenkins = "Pipeline CI/CD",
+        github_actions = "CI/CD integrado",
+        gitlab_ci = "CI/CD GitLab"
+    },
+    testing = {
+        pytest = "Testes Python",
+        junit = "Testes Java",
+        cppunit = "Testes C++"
+    },
+    monitoring = {
+        prometheus = "Métricas",
+        grafana = "Dashboards",
+        elasticsearch = "Logs"
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🔧 Ferramentas de Qualidade**
+#### Nível Basic
+```lua
+local qualityTools = {
+```
+
+#### Nível Intermediate
 ```lua
 local qualityTools = {
     code_analysis = {
@@ -371,6 +737,37 @@ local qualityTools = {
         valgrind = "Análise C++"
     }
 }
+```
+
+#### Nível Advanced
+```lua
+local qualityTools = {
+    code_analysis = {
+        sonarqube = "Análise de código",
+        eslint = "Linter JavaScript",
+        clang_tidy = "Linter C++"
+    },
+    security = {
+        owasp_zap = "Scan de segurança",
+        bandit = "Análise Python",
+        semgrep = "Análise de segurança"
+    },
+    performance = {
+        jmeter = "Testes de carga",
+        lighthouse = "Performance web",
+        valgrind = "Análise C++"
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---

@@ -44,19 +44,24 @@ aliases: [Análise Debug Modules, Debug Analysis Report, Module Debug Status]
 #### **📁 Arquivos Analisados**
 ```lua
 -- modules/corelib/util.lua (linhas 1-30)
+    --  modules/corelib/util.lua (linhas 1-30) (traduzido)
 function pinfo(msg)
+    -- Função: pinfo
     g_logger.log(LogInfo, msg)
 end
 
 function perror(msg)
+    -- Função: perror
     g_logger.log(LogError, msg)
 end
 
 function pwarning(msg)
+    -- Função: pwarning
     g_logger.log(LogWarning, msg)
 end
 
 function pdebug(msg)
+    -- Função: pdebug
     g_logger.log(LogDebug, msg)
 end
 ```
@@ -82,14 +87,19 @@ end
 #### **📁 Exemplos Encontrados**
 ```lua
 -- modules/game_things/things.lua (linhas 44-91)
+    --  modules/game_things/things.lua (linhas 44-91) (traduzido)
 local errorList = {}
 -- Coleta erros e exibe todos de uma vez
+    --  Coleta erros e exibe todos de uma vez (traduzido)
 if not tryLoadDatWithFallbacks(datPath) then
+    -- Verificação condicional
     errorList[#errorList + 1] = tr('Unable to load dat file...')
 end
 
 -- modules/updater/updater.lua (linhas 48-76)
+    --  modules/updater/updater.lua (linhas 48-76) (traduzido)
 function Updater.error(message)
+    -- Função: Updater
     displayErrorBox(tr("Updater Error"), message)
 end
 ```
@@ -105,10 +115,14 @@ end
 #### **📁 Implementação Analisada**
 ```lua
 -- modules/client_debug_info/debug_info.lua
+    --  modules/client_debug_info/debug_info.lua (traduzido)
 function update()
+    -- Função: update
     if g_proxy then
+    -- Verificação condicional
         local proxiesDebug = g_proxy.getProxiesDebugInfo()
         for proxy_name, proxy_debug in pairs(proxiesDebug) do
+    -- Loop de repetição
             text = text .. proxy_name .. " - " .. proxy_debug .. "\n"
         end
         debugInfoWindow.debugPanel.proxies:setText(text)
@@ -131,6 +145,7 @@ end
 - **Sandboxing**: Módulos podem ser sandboxados
 
 #### **📁 Sistema C++ Analisado**
+#### Nível Basic
 ```cpp
 // src/framework/core/module.cpp (linhas 30-159)
 bool Module::load()
@@ -146,16 +161,68 @@ bool Module::load()
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// src/framework/core/module.cpp (linhas 30-159)
+bool Module::load()
+{
+    try {
+        // Carregamento com tratamento de erro
+        g_lua.safeCall(0, 0);
+        m_loaded = true;
+    } catch (const stdext::exception& e) {
+        g_logger.error("Unable to load module '{}': {}", m_name, e.what());
+        return false;
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// src/framework/core/module.cpp (linhas 30-159)
+bool Module::load()
+{
+    try {
+        // Carregamento com tratamento de erro
+        g_lua.safeCall(0, 0);
+        m_loaded = true;
+    } catch (const stdext::exception& e) {
+        g_logger.error("Unable to load module '{}': {}", m_name, e.what());
+        return false;
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **🎯 Padrão Lua**
 ```lua
 -- Padrão encontrado em 95% dos módulos
 function init()
+    -- Função: init
     -- Inicialização com logging
     g_logger.info("Module initialized")
 end
 
 function terminate()
+    -- Função: terminate
     -- Cleanup adequado
+    --  Cleanup adequado (traduzido)
     g_logger.info("Module terminated")
 end
 ```
@@ -171,7 +238,9 @@ end
 #### **📁 Implementação Atual**
 ```lua
 -- modules/client_debug_info/debug_info.lua
+    --  modules/client_debug_info/debug_info.lua (traduzido)
 function update()
+    -- Função: update
     updateEvent = scheduleEvent(update, 20)  -- 50 FPS update
     -- Métricas básicas de proxy
 end
@@ -186,6 +255,7 @@ end
 - **Error Logging**: Logs de crash preservados
 
 #### **📁 Sistema C++**
+#### Nível Basic
 ```cpp
 // src/main.cpp (linhas 82-128)
 void exitSignalHandler(const int sig)
@@ -195,6 +265,47 @@ void exitSignalHandler(const int sig)
         g_dispatcher.addEvent([ObjectPtr = &g_app] { ObjectPtr->close(); });
     }
 }
+```
+
+#### Nível Intermediate
+```cpp
+// src/main.cpp (linhas 82-128)
+void exitSignalHandler(const int sig)
+{
+    if (!signaled && !g_app.isStopping()) {
+        signaled = true;
+        g_dispatcher.addEvent([ObjectPtr = &g_app] { ObjectPtr->close(); });
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// src/main.cpp (linhas 82-128)
+void exitSignalHandler(const int sig)
+{
+    if (!signaled && !g_app.isStopping()) {
+        signaled = true;
+        g_dispatcher.addEvent([ObjectPtr = &g_app] { ObjectPtr->close(); });
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---
@@ -235,6 +346,7 @@ void exitSignalHandler(const int sig)
 local function safeModuleCall(func, moduleName, ...)
     local success, result = pcall(func, ...)
     if not success then
+    -- Verificação condicional
         g_logger.error("Module {} error: {}", moduleName, result)
         -- Tentar recuperação
         return false, result
@@ -248,6 +360,7 @@ end
 -- Adicionar profiling automático
 local ModuleProfiler = {}
 function ModuleProfiler.profile(moduleName, func)
+    -- Função: ModuleProfiler
     return function(...)
         local startTime = g_clock.millis()
         local result = func(...)
@@ -261,7 +374,9 @@ end
 ### **3. 🔍 Debug Context**
 ```lua
 -- Melhorar contexto de debug
+    --  Melhorar contexto de debug (traduzido)
 function debugContext(moduleName, operation)
+    -- Função: debugContext
     return {
         module = moduleName,
         operation = operation,
@@ -273,6 +388,7 @@ end
 ```
 
 ### **4. 🚨 Error Recovery**
+#### Nível Basic
 ```lua
 -- Sistema de recuperação automática
 local ErrorRecovery = {}
@@ -281,6 +397,45 @@ function ErrorRecovery.attemptRecovery(moduleName, error)
     -- Limpar estado corrompido
     -- Notificar usuário
 end
+```
+
+#### Nível Intermediate
+```lua
+-- Sistema de recuperação automática
+local ErrorRecovery = {}
+function ErrorRecovery.attemptRecovery(moduleName, error)
+    -- Tentar reinicializar módulo
+    -- Limpar estado corrompido
+    -- Notificar usuário
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Sistema de recuperação automática
+local ErrorRecovery = {}
+function ErrorRecovery.attemptRecovery(moduleName, error)
+    -- Tentar reinicializar módulo
+    -- Limpar estado corrompido
+    -- Notificar usuário
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---

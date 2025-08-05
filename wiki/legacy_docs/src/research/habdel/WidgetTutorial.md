@@ -24,7 +24,9 @@ Guia passo-a-passo para criar widgets personalizados seguindo as melhores práti
 
 ```lua
 -- Widget personalizado
+    --  Widget personalizado (traduzido)
 function createCustomWidget()
+    -- Função: createCustomWidget
     local widget = g_ui.createWidget("Panel")
     widget:setSize({width=200, height=100})
     return widget
@@ -35,6 +37,7 @@ end
 
 ```lua
 -- Exemplo completo
+    --  Exemplo completo (traduzido)
 local customButton = g_ui.createWidget("Button")
 customButton:setText("Clique Aqui")
 customButton.onClick = function()

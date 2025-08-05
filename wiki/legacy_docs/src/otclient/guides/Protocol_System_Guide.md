@@ -53,6 +53,7 @@ Responsável pela autenticação e seleção de personagem no servidor de login.
 
 ```lua
 -- Iniciar processo de login
+    --  Iniciar processo de login (traduzido)
 local protocolLogin = ProtocolLogin.create()
 
 protocolLogin.onLoginError = function(protocol, error)
@@ -62,6 +63,7 @@ end
 protocolLogin.onCharacterList = function(protocol, characters, account)
     print('Personagens disponíveis:')
     for _, char in ipairs(characters) do
+    -- Loop de repetição
         print('- ' .. char.name .. ' (Level ' .. char.level .. ')')
     end
 end
@@ -71,6 +73,7 @@ protocolLogin.onUpdateNeeded = function(protocol, signature)
 end
 
 -- Conectar ao servidor de login
+    --  Conectar ao servidor de login (traduzido)
 protocolLogin:login(
     'otserver.com',        -- host
     7171,                  -- porta
@@ -85,6 +88,7 @@ protocolLogin:login(
 
 ```lua
 -- Opcodes do servidor de login
+    --  Opcodes do servidor de login (traduzido)
 LoginServerError = 10           -- Erro de login
 LoginServerTokenSuccess = 12    -- Token aceito
 LoginServerTokenError = 13      -- Token inválido
@@ -96,6 +100,28 @@ LoginServerCharacterList = 100  -- Lista de personagens
 
 ### 🔧 **Implementação de Login**
 
+#### Nível Basic
+```lua
+function ProtocolLogin:sendLoginPacket()
+    local msg = OutputMessage.create()
+    if g_game.getFeature(GameClientVersion) then
+    end
+    -- Adicionar dados da conta
+    -- Token de autenticação (se presente)
+    if string.len(self.authenticatorToken) > 0 then
+        msg:addString(self.authenticatorToken)
+    end
+    self:send(msg)
+end
+function ProtocolLogin:parseCharacterList(msg)
+    local characters = {}
+    local charactersCount = msg:getU8()
+        local character = {
+    end
+end
+```
+
+#### Nível Intermediate
 ```lua
 function ProtocolLogin:sendLoginPacket()
     local msg = OutputMessage.create()
@@ -144,6 +170,65 @@ function ProtocolLogin:parseCharacterList(msg)
 end
 ```
 
+#### Nível Advanced
+```lua
+function ProtocolLogin:sendLoginPacket()
+    local msg = OutputMessage.create()
+    msg:addU8(ClientOpcodes.ClientEnterAccount)
+    msg:addU16(g_game.getOs())                    -- OS
+    msg:addU16(g_game.getProtocolVersion())       -- Versão do protocolo
+    
+    if g_game.getFeature(GameClientVersion) then
+        msg:addU32(g_game.getClientVersion())     -- Versão do cliente
+    end
+    
+    -- Adicionar dados da conta
+    msg:addString(self.accountName)
+    msg:addString(self.accountPassword)
+    
+    -- Token de autenticação (se presente)
+    if string.len(self.authenticatorToken) > 0 then
+        msg:addString(self.authenticatorToken)
+    end
+    
+    self:send(msg)
+end
+
+function ProtocolLogin:parseCharacterList(msg)
+    local characters = {}
+    local charactersCount = msg:getU8()
+    
+    for i = 1, charactersCount do
+        local character = {
+            name = msg:getString(),
+            world = msg:getString(),
+            worldPort = msg:getU16(),
+            level = msg:getU16(),
+            vocation = msg:getU8(),
+            lookType = msg:getU16(),
+            lookHead = msg:getU8(),
+            lookBody = msg:getU8(),
+            lookLegs = msg:getU8(),
+            lookFeet = msg:getU8(),
+            lookAddons = msg:getU8()
+        }
+        table.insert(characters, character)
+    end
+    
+    signalcall(self.onCharacterList, self, characters)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🎮 ProtocolGame
 
 Gerencia toda a comunicação durante o jogo, incluindo movimento, chat, ações e eventos.
@@ -152,9 +237,11 @@ Gerencia toda a comunicação durante o jogo, incluindo movimento, chat, ações
 
 ```lua
 -- Conectar ao servidor de jogo
+    --  Conectar ao servidor de jogo (traduzido)
 local protocolGame = ProtocolGame.create()
 
 -- Configurar callbacks
+    --  Configurar callbacks (traduzido)
 protocolGame.onConnectionError = function(protocol, error, code)
     print('Erro de conexão:', error, code)
 end
@@ -168,6 +255,7 @@ protocolGame.onGameEnd = function(protocol)
 end
 
 -- Login no servidor de jogo
+    --  Login no servidor de jogo (traduzido)
 protocolGame:loginWorld(
     'game.otserver.com',   -- host do jogo
     7172,                  -- porta do jogo
@@ -182,11 +270,13 @@ protocolGame:loginWorld(
 
 ```lua
 -- Movimento
+    --  Movimento (traduzido)
 protocolGame:sendWalkNorth()
 protocolGame:sendWalkEast()
 protocolGame:sendAutoWalk({Otc.North, Otc.East, Otc.South})
 
 -- Chat
+    --  Chat (traduzido)
 protocolGame:sendTalk(Otc.MessageSay, 0, '', 'Olá mundo!')
 protocolGame:sendTalk(Otc.MessageWhisper, 0, '', 'Sussurro')
 protocolGame:sendTalk(Otc.MessagePrivateTo, 0, 'Player', 'Mensagem privada')
@@ -197,11 +287,13 @@ protocolGame:sendMove(fromPos, itemId, stackPos, toPos, count)
 protocolGame:sendLook(position, itemId, stackPos)
 
 -- Combat
+    --  Combat (traduzido)
 protocolGame:sendAttack(creatureId, seq)
 protocolGame:sendFollow(creatureId, seq)
 protocolGame:sendCancelAttackAndFollow()
 
 -- Interface
+    --  Interface (traduzido)
 protocolGame:sendCloseContainer(containerId)
 protocolGame:sendOpenOwnChannel()
 protocolGame:sendRequestChannels()
@@ -221,6 +313,7 @@ ProtocolGame.registerOpcode(GameServerTextMessage, function(protocol, msg)
     local message = msg:getString()
     
     if messageType == MessageTypes.StatusDefault then
+    -- Verificação condicional
         g_game.processTextMessage(messageType, message)
     end
 end)
@@ -233,6 +326,7 @@ ProtocolGame.registerOpcode(GameServerCreatureSay, function(protocol, msg)
     local channelId = 0
     
     if messageType == MessageTypes.ChannelYellow then
+    -- Verificação condicional
         channelId = msg:getU16()
     end
     
@@ -251,11 +345,13 @@ Opcodes são códigos únicos que identificam o tipo de mensagem sendo enviada o
 ```lua
 ClientOpcodes = {
     -- Login
+    --  Login (traduzido)
     ClientEnterAccount = 1,
     ClientEnterGame = 10,
     ClientLeaveGame = 20,
     
     -- Movimento
+    --  Movimento (traduzido)
     ClientAutoWalk = 100,
     ClientWalkNorth = 101,
     ClientWalkEast = 102,
@@ -289,6 +385,7 @@ ClientOpcodes = {
     ClientCloseOwnChannel = 156,
     
     -- Extended Opcodes
+    --  Extended Opcodes (traduzido)
     ClientExtendedOpcode = 50
 }
 ```
@@ -298,6 +395,7 @@ ClientOpcodes = {
 ```lua
 GameServerOpcodes = {
     -- Estados do jogo
+    --  Estados do jogo (traduzido)
     GameServerLoginOrPendingState = 10,
     GameServerEnterGame = 15,
     GameServerLoginError = 20,
@@ -307,9 +405,11 @@ GameServerOpcodes = {
     GameServerDeath = 40,
     
     -- Extended Opcodes
+    --  Extended Opcodes (traduzido)
     GameServerExtendedOpcode = 50,
     
     -- Mapa
+    --  Mapa (traduzido)
     GameServerFullMap = 100,
     GameServerMapTopRow = 101,
     GameServerMapRightRow = 102,
@@ -322,6 +422,7 @@ GameServerOpcodes = {
     GameServerMoveCreature = 109,
     
     -- Containers
+    --  Containers (traduzido)
     GameServerOpenContainer = 110,
     GameServerCloseContainer = 111,
     GameServerCreateContainer = 112,
@@ -333,12 +434,14 @@ GameServerOpcodes = {
     GameServerDeleteInventory = 121,
     
     -- Chat
+    --  Chat (traduzido)
     GameServerCreatureSay = 170,
     GameServerChannelList = 171,
     GameServerOpenChannel = 172,
     GameServerTextMessage = 180,
     
     -- Stats
+    --  Stats (traduzido)
     GameServerStats = 160,
     GameServerSkills = 161,
     GameServerPlayerConditions = 162,
@@ -357,10 +460,12 @@ Sistema extensivo para comunicação customizada entre cliente e servidor.
 
 ```lua
 -- No cliente: registrar handler para extended opcode
+    --  No cliente: registrar handler para extended opcode (traduzido)
 ProtocolGame.registerExtendedOpcode(100, function(protocol, opcode, buffer)
     local data = json.decode(buffer)
     
     if data.action == 'updateHealth' then
+    -- Verificação condicional
         local health = data.health
         local maxHealth = data.maxHealth
         g_game.getLocalPlayer():setHealth(health, maxHealth)
@@ -377,6 +482,7 @@ ProtocolGame.registerExtendedOpcode(100, function(protocol, opcode, buffer)
 end)
 
 -- Enviar extended opcode para o servidor
+    --  Enviar extended opcode para o servidor (traduzido)
 local function sendCustomData(action, data)
     local payload = {
         action = action,
@@ -389,6 +495,7 @@ local function sendCustomData(action, data)
 end
 
 -- Uso
+    --  Uso (traduzido)
 sendCustomData('requestPlayerInfo', {playerId = 12345})
 sendCustomData('updateSetting', {setting = 'pvpMode', value = true})
 ```
@@ -397,10 +504,12 @@ sendCustomData('updateSetting', {setting = 'pvpMode', value = true})
 
 ```lua
 -- Sistema robusto para mensagens JSON grandes
+    --  Sistema robusto para mensagens JSON grandes (traduzido)
 ProtocolGame.registerExtendedJSONOpcode(101, function(protocol, opcode, jsonData)
     -- jsonData já é um objeto Lua (decodificado automaticamente)
     
     if jsonData.type == 'mapData' then
+    -- Verificação condicional
         local mapInfo = jsonData.payload
         processMapData(mapInfo)
         
@@ -415,19 +524,24 @@ ProtocolGame.registerExtendedJSONOpcode(101, function(protocol, opcode, jsonData
 end)
 
 -- O sistema automaticamente lida com:
+    --  O sistema automaticamente lida com: (traduzido)
 -- - Mensagens muito grandes (divide em partes)
+    --  - Mensagens muito grandes (divide em partes) (traduzido)
 -- - Validação JSON
 -- - Reagrupamento de mensagens fragmentadas
+    --  - Reagrupamento de mensagens fragmentadas (traduzido)
 ```
 
 ### 📦 **Exemplos de Extended Opcodes**
 
 ```lua
 -- Opcode 80: Sistema de Quests Customizado
+    --  Opcode 80: Sistema de Quests Customizado (traduzido)
 ProtocolGame.registerExtendedOpcode(80, function(protocol, opcode, buffer)
     local questData = json.decode(buffer)
     
     if questData.action == 'questStarted' then
+    -- Verificação condicional
         QuestSystem.startQuest(questData.questId, questData.questData)
         
     elseif questData.action == 'questCompleted' then
@@ -439,10 +553,12 @@ ProtocolGame.registerExtendedOpcode(80, function(protocol, opcode, buffer)
 end)
 
 -- Opcode 81: Sistema de Loja Customizada
+    --  Opcode 81: Sistema de Loja Customizada (traduzido)
 ProtocolGame.registerExtendedOpcode(81, function(protocol, opcode, buffer)
     local shopData = json.decode(buffer)
     
     if shopData.action == 'openShop' then
+    -- Verificação condicional
         CustomShop.open(shopData.items, shopData.categories)
         
     elseif shopData.action == 'purchaseResult' then
@@ -455,6 +571,7 @@ ProtocolGame.registerExtendedOpcode(82, function(protocol, opcode, buffer)
     local effectData = json.decode(buffer)
     
     if effectData.action == 'playEffect' then
+    -- Verificação condicional
         local position = effectData.position
         local effectId = effectData.effectId
         local duration = effectData.duration
@@ -473,6 +590,7 @@ O OTClient suporta múltiplas versões do protocolo Tibia.
 
 ### 📊 **Versões Suportadas**
 
+#### Nível Basic
 ```lua
 -- Versões principais suportadas
 local supportedVersions = {
@@ -493,8 +611,68 @@ print('Versão do cliente:', currentVersion)
 print('Versão do protocolo:', protocolVersion)
 ```
 
+#### Nível Intermediate
+```lua
+-- Versões principais suportadas
+local supportedVersions = {
+    772,   -- 7.72 (Nostalrius, TFS Downgrade)
+    860,   -- 8.60 (TFS 0.4, clássico)
+    1098,  -- 10.98 (TFS 1.4.2, estável)
+    1300,  -- 13.00 (TFS 1.6, moderna)
+    1321,  -- 13.21 (Canary)
+    1340,  -- 13.40 (Canary atual)
+    1412   -- 14.12 (Mais recente)
+}
+
+-- Verificar versão atual
+local currentVersion = g_game.getClientVersion()
+local protocolVersion = g_game.getProtocolVersion()
+
+print('Versão do cliente:', currentVersion)
+print('Versão do protocolo:', protocolVersion)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Versões principais suportadas
+local supportedVersions = {
+    772,   -- 7.72 (Nostalrius, TFS Downgrade)
+    860,   -- 8.60 (TFS 0.4, clássico)
+    1098,  -- 10.98 (TFS 1.4.2, estável)
+    1300,  -- 13.00 (TFS 1.6, moderna)
+    1321,  -- 13.21 (Canary)
+    1340,  -- 13.40 (Canary atual)
+    1412   -- 14.12 (Mais recente)
+}
+
+-- Verificar versão atual
+local currentVersion = g_game.getClientVersion()
+local protocolVersion = g_game.getProtocolVersion()
+
+print('Versão do cliente:', currentVersion)
+print('Versão do protocolo:', protocolVersion)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔧 **Features por Versão**
 
+#### Nível Basic
 ```lua
 -- Sistema de features baseado na versão
 local function checkFeatures()
@@ -536,6 +714,107 @@ local function adaptToVersion()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Sistema de features baseado na versão
+local function checkFeatures()
+    if g_game.getFeature(GameProtocolChecksum) then
+        print('Suporte a checksum de protocolo')
+    end
+    
+    if g_game.getFeature(GameAccountNames) then
+        print('Login com nome de conta')
+    end
+    
+    if g_game.getFeature(GameExtendedOpcode) then
+        print('Suporte a extended opcodes')
+    end
+    
+    if g_game.getFeature(GameLoginPending) then
+        print('Estado de login pendente')
+    end
+    
+    if g_game.getFeature(GameNewSpeedLaw) then
+        print('Nova fórmula de velocidade')
+    end
+end
+
+-- Adaptação baseada na versão
+local function adaptToVersion()
+    local version = g_game.getClientVersion()
+    
+    if version >= 1300 then
+        -- Recursos modernos disponíveis
+        enableModernFeatures()
+    elseif version >= 1000 then
+        -- Recursos intermediários
+        enableStandardFeatures()
+    else
+        -- Versão clássica
+        enableClassicFeatures()
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Sistema de features baseado na versão
+local function checkFeatures()
+    if g_game.getFeature(GameProtocolChecksum) then
+        print('Suporte a checksum de protocolo')
+    end
+    
+    if g_game.getFeature(GameAccountNames) then
+        print('Login com nome de conta')
+    end
+    
+    if g_game.getFeature(GameExtendedOpcode) then
+        print('Suporte a extended opcodes')
+    end
+    
+    if g_game.getFeature(GameLoginPending) then
+        print('Estado de login pendente')
+    end
+    
+    if g_game.getFeature(GameNewSpeedLaw) then
+        print('Nova fórmula de velocidade')
+    end
+end
+
+-- Adaptação baseada na versão
+local function adaptToVersion()
+    local version = g_game.getClientVersion()
+    
+    if version >= 1300 then
+        -- Recursos modernos disponíveis
+        enableModernFeatures()
+    elseif version >= 1000 then
+        -- Recursos intermediários
+        enableStandardFeatures()
+    else
+        -- Versão clássica
+        enableClassicFeatures()
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 📨 Mensagens e Serialização
 
 Sistema para construir e ler mensagens binárias do protocolo.
@@ -544,6 +823,7 @@ Sistema para construir e ler mensagens binárias do protocolo.
 
 ```lua
 -- Criar mensagem para envio
+    --  Criar mensagem para envio (traduzido)
 local msg = OutputMessage.create()
 
 -- Adicionar dados básicos
@@ -553,6 +833,7 @@ msg:addU32(4294967295)      -- Int (0-4294967295)
 msg:addU64(1234567890)      -- Long
 
 -- Adicionar strings
+    --  Adicionar strings (traduzido)
 msg:addString('Olá mundo')  -- String com comprimento
 msg:addPaddingBytes(4, 0)   -- Padding bytes
 
@@ -561,10 +842,12 @@ local pos = {x = 1000, y = 1000, z = 7}
 msg:addPosition(pos)
 
 -- Adicionar dados customizados
+    --  Adicionar dados customizados (traduzido)
 msg:addDouble(3.14159)      -- Double precision
 msg:addFloat(2.71)          -- Float
 
 -- Enviar mensagem
+    --  Enviar mensagem (traduzido)
 protocolGame:send(msg)
 ```
 
@@ -572,8 +855,11 @@ protocolGame:send(msg)
 
 ```lua
 -- Processar mensagem recebida
+    --  Processar mensagem recebida (traduzido)
 function parseCustomMessage(protocol, msg)
+    -- Função: parseCustomMessage
     -- Ler dados na mesma ordem que foram escritos
+    --  Ler dados na mesma ordem que foram escritos (traduzido)
     local opcode = msg:getU8()
     local playerId = msg:getU32()
     local playerName = msg:getString()
@@ -583,23 +869,29 @@ function parseCustomMessage(protocol, msg)
     
     -- Verificar se ainda há dados
     if not msg:eof() then
+    -- Verificação condicional
         local additionalData = msg:getString()
         print('Dados adicionais:', additionalData)
     end
     
     -- Processar dados
+    --  Processar dados (traduzido)
     local player = g_game.getCreatureById(playerId)
     if player then
+    -- Verificação condicional
         player:setHealthPercent((health / maxHealth) * 100)
     end
 end
 
 -- Ler arrays
+    --  Ler arrays (traduzido)
 function parseItemList(msg)
+    -- Função: parseItemList
     local itemCount = msg:getU8()
     local items = {}
     
     for i = 1, itemCount do
+    -- Loop de repetição
         local item = {
             id = msg:getU16(),
             count = msg:getU8(),
@@ -617,7 +909,9 @@ end
 ```lua
 -- Validação de mensagens
 function safeParseMessage(protocol, msg)
+    -- Função: safeParseMessage
     if msg:getMessageSize() < 10 then
+    -- Verificação condicional
         error('Mensagem muito pequena')
         return
     end
@@ -626,12 +920,15 @@ function safeParseMessage(protocol, msg)
     
     -- Verificar tipo válido
     if messageType < 1 or messageType > 100 then
+    -- Verificação condicional
         error('Tipo de mensagem inválido: ' .. messageType)
         return
     end
     
     -- Processar conforme o tipo
+    --  Processar conforme o tipo (traduzido)
     if messageType == 1 then
+    -- Verificação condicional
         parsePlayerUpdate(msg)
     elseif messageType == 2 then
         parseInventoryUpdate(msg)
@@ -641,15 +938,18 @@ function safeParseMessage(protocol, msg)
 end
 
 -- Rate limiting para extended opcodes
+    --  Rate limiting para extended opcodes (traduzido)
 local opcodeTimestamps = {}
 local OPCODE_COOLDOWN = 100 -- ms
 
 function rateLimitedExtendedOpcode(opcode, callback)
+    -- Função: rateLimitedExtendedOpcode
     return function(protocol, opcode, buffer)
         local now = g_clock.millis()
         local lastCall = opcodeTimestamps[opcode] or 0
         
         if now - lastCall < OPCODE_COOLDOWN then
+    -- Verificação condicional
             print('Rate limit atingido para opcode:', opcode)
             return
         end
@@ -660,6 +960,7 @@ function rateLimitedExtendedOpcode(opcode, callback)
 end
 
 -- Usar
+    --  Usar (traduzido)
 ProtocolGame.registerExtendedOpcode(100, 
     rateLimitedExtendedOpcode(100, handleCustomOpcode))
 ```
@@ -672,7 +973,9 @@ ProtocolGame.registerExtendedOpcode(100,
 local CustomChat = {}
 
 function CustomChat.init()
+    -- Função: CustomChat
     -- Interceptar mensagens de chat
+    --  Interceptar mensagens de chat (traduzido)
     ProtocolGame.registerOpcode(GameServerCreatureSay, function(protocol, msg)
         local name = msg:getString()
         local level = msg:getU16()
@@ -680,12 +983,15 @@ function CustomChat.init()
         local message = msg:getString()
         
         -- Processar comandos especiais
+    --  Processar comandos especiais (traduzido)
         if message:starts('/custom ') then
+    -- Verificação condicional
             CustomChat.handleCustomCommand(name, message:sub(9))
             return -- Não processar normalmente
         end
         
         -- Processar normalmente
+    --  Processar normalmente (traduzido)
         g_game.processCreatureSay(name, level, messageType, message)
     end)
     
@@ -697,6 +1003,7 @@ function CustomChat.init()
 end
 
 function CustomChat.sendFormattedMessage(message, color, style)
+    -- Função: CustomChat
     local data = {
         action = 'formattedMessage',
         message = message,
@@ -708,7 +1015,9 @@ function CustomChat.sendFormattedMessage(message, color, style)
 end
 
 function CustomChat.handleCustomCommand(playerName, command)
+    -- Função: CustomChat
     if command == 'time' then
+    -- Verificação condicional
         local timeStr = os.date('%H:%M:%S')
         CustomChat.sendFormattedMessage('Hora atual: ' .. timeStr, '#00ff00', 'bold')
     elseif command == 'players' then
@@ -724,6 +1033,7 @@ end
 local AdvancedStats = {}
 
 function AdvancedStats.init()
+    -- Função: AdvancedStats
     -- Interceptar atualizações de stats
     ProtocolGame.registerOpcode(GameServerStats, function(protocol, msg)
         local health = msg:getU16()
@@ -740,6 +1050,7 @@ function AdvancedStats.init()
         local stamina = msg:getU16()
         
         -- Atualizar interface customizada
+    --  Atualizar interface customizada (traduzido)
         AdvancedStats.updateDisplay({
             health = health,
             maxHealth = maxHealth,
@@ -752,6 +1063,7 @@ function AdvancedStats.init()
     end)
     
     -- Opcode para stats extras
+    --  Opcode para stats extras (traduzido)
     ProtocolGame.registerExtendedOpcode(85, function(protocol, opcode, buffer)
         local extraStats = json.decode(buffer)
         AdvancedStats.updateExtraStats(extraStats)
@@ -759,6 +1071,7 @@ function AdvancedStats.init()
 end
 
 function AdvancedStats.requestDetailedStats()
+    -- Função: AdvancedStats
     protocolGame:sendExtendedOpcode(85, json.encode({
         action = 'requestStats',
         details = {'damage', 'defense', 'speed', 'regeneration'}
@@ -772,28 +1085,35 @@ end
 
 ```lua
 -- ✅ BOM: Validar dados recebidos
+    --  ✅ BOM: Validar dados recebidos (traduzido)
 function safeExtendedOpcode(protocol, opcode, buffer)
+    -- Função: safeExtendedOpcode
     if not buffer or buffer:len() == 0 then
+    -- Verificação condicional
         return
     end
     
     local success, data = pcall(json.decode, buffer)
     if not success then
+    -- Verificação condicional
         print('JSON inválido recebido')
         return
     end
     
     if type(data) ~= 'table' then
+    -- Verificação condicional
         print('Dados em formato inválido')
         return
     end
     
     -- Processar dados seguros
+    --  Processar dados seguros (traduzido)
     processValidData(data)
 end
 
 -- ❌ EVITE: Processar dados sem validação
 function unsafeExtendedOpcode(protocol, opcode, buffer)
+    -- Função: unsafeExtendedOpcode
     local data = json.decode(buffer) -- Pode falhar
     processData(data.someField)      -- Pode ser nil
 end
@@ -803,9 +1123,11 @@ end
 
 ```lua
 -- ✅ BOM: Cache para lookups frequentes
+    --  ✅ BOM: Cache para lookups frequentes (traduzido)
 local opcodeCache = {}
 
 function registerOptimizedOpcode(opcode, callback)
+    -- Função: registerOptimizedOpcode
     opcodeCache[opcode] = callback
     ProtocolGame.registerOpcode(opcode, callback)
 end
@@ -815,15 +1137,19 @@ local messageQueue = {}
 local processingTimer = nil
 
 function queueMessage(message)
+    -- Função: queueMessage
     table.insert(messageQueue, message)
     
     if not processingTimer then
+    -- Verificação condicional
         processingTimer = scheduleEvent(processMessageQueue, 10)
     end
 end
 
 function processMessageQueue()
+    -- Função: processMessageQueue
     for _, message in ipairs(messageQueue) do
+    -- Loop de repetição
         processMessage(message)
     end
     messageQueue = {}
@@ -835,17 +1161,22 @@ end
 
 ```lua
 -- Sistema de debug para protocolo
+    --  Sistema de debug para protocolo (traduzido)
 local ProtocolDebugger = {}
 ProtocolDebugger.enabled = false
 ProtocolDebugger.loggedOpcodes = {}
 
 function ProtocolDebugger.enable()
+    -- Função: ProtocolDebugger
     ProtocolDebugger.enabled = true
     
     -- Interceptar todos os opcodes
+    --  Interceptar todos os opcodes (traduzido)
     for opcode = 1, 255 do
+    -- Loop de repetição
         ProtocolGame.registerOpcode(opcode, function(protocol, msg)
             if ProtocolDebugger.enabled then
+    -- Verificação condicional
                 ProtocolDebugger.logOpcode(opcode, msg:getMessageSize())
             end
         end)
@@ -853,6 +1184,7 @@ function ProtocolDebugger.enable()
 end
 
 function ProtocolDebugger.logOpcode(opcode, size)
+    -- Função: ProtocolDebugger
     local info = {
         opcode = opcode,
         size = size,
@@ -864,7 +1196,9 @@ function ProtocolDebugger.logOpcode(opcode, size)
 end
 
 -- Usar durante desenvolvimento
+    --  Usar durante desenvolvimento (traduzido)
 -- ProtocolDebugger.enable()
+    --  ProtocolDebugger.enable() (traduzido)
 ```
 
 O sistema de protocolo do OTClient oferece flexibilidade máxima para comunicação cliente-servidor robusta e extensível. Use as práticas recomendadas para garantir segurança, performance e compatibilidade.

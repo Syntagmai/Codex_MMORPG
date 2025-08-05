@@ -55,6 +55,27 @@ def validate_env_vars(required_vars: List[str]) -> Dict[str, str]:
 ```
 
 ## Configuration Schema Examples
+#### Nível Basic
+```json
+
+```
+
+#### Nível Intermediate
+```json
+{
+  "type": "object",
+  "properties": {
+    "timeout": {"type": "integer", "minimum": 1, "maximum": 300},
+    "port": {"type": "integer", "minimum": 1024, "maximum": 65535},
+    "host": {"type": "string", "format": "hostname"},
+    "debug": {"type": "boolean"},
+    "log_level": {"type": "string", "enum": ["DEBUG", "INFO", "WARNING", "ERROR"]}
+  },
+  "required": ["timeout", "port", "host"]
+}
+```
+
+#### Nível Advanced
 ```json
 {
   "type": "object",

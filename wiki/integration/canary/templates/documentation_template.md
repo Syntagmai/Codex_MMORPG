@@ -103,6 +103,7 @@ Sistema Canary
 ### **🔧 Implementação**
 
 #### **Configuração Básica:**
+#### Nível Basic
 ```lua
 -- Configuração do sistema Canary
 local canaryConfig = {
@@ -113,12 +114,54 @@ local canaryConfig = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Configuração do sistema Canary
+local canaryConfig = {
+    host = "localhost",
+    port = 7171,
+    protocol = "opencode",
+    timeout = 5000
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Configuração do sistema Canary
+local canaryConfig = {
+    host = "localhost",
+    port = 7171,
+    protocol = "opencode",
+    timeout = 5000
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Integração com OTClient:**
 ```lua
 -- Exemplo de integração
 function onCanaryEvent(event, data)
+    -- Função: onCanaryEvent
     if event == "canary_response" then
+    -- Verificação condicional
         -- Processar resposta do Canary
+    --  Processar resposta do Canary (traduzido)
         updateUI(data)
     end
 end
@@ -153,6 +196,7 @@ end
 #### **Exemplo 1: Conexão Básica**
 ```lua
 -- Conectar ao Canary
+    --  Conectar ao Canary (traduzido)
 local canary = require("canary")
 canary.connect({
     host = "localhost",
@@ -160,6 +204,7 @@ canary.connect({
 })
 
 -- Escutar eventos
+    --  Escutar eventos (traduzido)
 canary.on("connected", function()
     print("Conectado ao Canary!")
 end)
@@ -170,6 +215,7 @@ end)
 -- Sistema completo de integração
 local function setupCanaryIntegration()
     -- Configurar handlers
+    --  Configurar handlers (traduzido)
     canary.on("game_state", function(data)
         updateGameState(data)
     end)
@@ -179,6 +225,7 @@ local function setupCanaryIntegration()
     end)
     
     -- Conectar
+    --  Conectar (traduzido)
     canary.connect()
 end
 ```
@@ -186,12 +233,16 @@ end
 #### **Exemplo 3: Tratamento de Erros**
 ```lua
 -- Tratamento robusto de erros
+    --  Tratamento robusto de erros (traduzido)
 canary.on("error", function(error)
     if error.type == "connection" then
+    -- Verificação condicional
         -- Tentar reconectar
+    --  Tentar reconectar (traduzido)
         canary.reconnect()
     elseif error.type == "protocol" then
         -- Log do erro
+    --  Log do erro (traduzido)
         logError(error.message)
     end
 end)

@@ -279,6 +279,7 @@ Sistema de partículas
 ### **Inicialização Básica do Sistema de Gráficos**
 Como inicializar o sistema de gráficos do OTClient
 
+#### Nível Basic
 ```cpp
 // Exemplo de inicialização do sistema de gráficos
 #include "graphics.h"
@@ -295,9 +296,61 @@ void initGraphics() {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de inicialização do sistema de gráficos
+#include "graphics.h"
+
+void initGraphics() {
+    // Inicializar sistema de gráficos
+    g_graphics.init();
+    
+    // Configurar viewport
+    g_graphics.resize(800, 600);
+    
+    // Limpar tela
+    g_graphics.clear();
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de inicialização do sistema de gráficos
+#include "graphics.h"
+
+void initGraphics() {
+    // Inicializar sistema de gráficos
+    g_graphics.init();
+    
+    // Configurar viewport
+    g_graphics.resize(800, 600);
+    
+    // Limpar tela
+    g_graphics.clear();
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Carregamento de Texturas**
 Como carregar e usar texturas no OTClient
 
+#### Nível Basic
 ```cpp
 // Exemplo de carregamento de texturas
 #include "texture.h"
@@ -316,9 +369,70 @@ void loadGameTextures() {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de carregamento de texturas
+#include "texture.h"
+#include "texturemanager.h"
+
+void loadGameTextures() {
+    // Carregar textura
+    TexturePtr texture = g_textures.getTexture("player.png");
+    
+    if (texture) {
+        // Usar textura
+        texture->bind();
+        // Renderizar...
+        texture->unbind();
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de carregamento de texturas
+#include "texture.h"
+#include "texturemanager.h"
+
+void loadGameTextures() {
+    // Carregar textura
+    TexturePtr texture = g_textures.getTexture("player.png");
+    
+    if (texture) {
+        // Usar textura
+        texture->bind();
+        // Renderizar...
+        texture->unbind();
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Uso de Shaders**
 Como usar shaders para efeitos visuais
 
+#### Nível Basic
+```cpp
+    program->setUniformValue("color", Color::red);
+```
+
+#### Nível Intermediate
 ```cpp
 // Exemplo de uso de shaders
 #include "shaderprogram.h"
@@ -340,9 +454,42 @@ void setupShader() {
 }
 ```
 
+#### Nível Advanced
+```cpp
+// Exemplo de uso de shaders
+#include "shaderprogram.h"
+
+void setupShader() {
+    // Criar programa de shader
+    ShaderProgramPtr program = ShaderProgram::create();
+    
+    // Compilar shaders
+    program->addShaderFromSourceCode(Shader::Vertex, vertexSource);
+    program->addShaderFromSourceCode(Shader::Fragment, fragmentSource);
+    
+    // Linkar programa
+    program->link();
+    
+    // Usar programa
+    program->use();
+    program->setUniformValue("color", Color::red);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Sistema de Partículas**
 Como criar e gerenciar sistemas de partículas
 
+#### Nível Basic
 ```cpp
 // Exemplo de sistema de partículas
 #include "particlesystem.h"
@@ -360,6 +507,63 @@ void createParticleEffect() {
     // Adicionar ao gerenciador
     g_particles.addParticleSystem(system);
 }
+```
+
+#### Nível Intermediate
+```cpp
+// Exemplo de sistema de partículas
+#include "particlesystem.h"
+#include "particlemanager.h"
+
+void createParticleEffect() {
+    // Criar sistema de partículas
+    ParticleSystemPtr system = ParticleSystem::create();
+    
+    // Configurar partículas
+    system->setParticleType("fire");
+    system->setEmissionRate(100);
+    system->setLifetime(2.0f);
+    
+    // Adicionar ao gerenciador
+    g_particles.addParticleSystem(system);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de sistema de partículas
+#include "particlesystem.h"
+#include "particlemanager.h"
+
+void createParticleEffect() {
+    // Criar sistema de partículas
+    ParticleSystemPtr system = ParticleSystem::create();
+    
+    // Configurar partículas
+    system->setParticleType("fire");
+    system->setEmissionRate(100);
+    system->setLifetime(2.0f);
+    
+    // Adicionar ao gerenciador
+    g_particles.addParticleSystem(system);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 
@@ -402,6 +606,7 @@ Integração com camada de plataforma (OpenGL)
 
 ### **Inicialização do Sistema**
 
+#### Nível Basic
 ```cpp
 #include "graphics.h"
 
@@ -415,8 +620,54 @@ g_graphics.resize(800, 600);
 g_graphics.clear();
 ```
 
+#### Nível Intermediate
+```cpp
+#include "graphics.h"
+
+// Inicializar sistema de gráficos
+g_graphics.init();
+
+// Configurar viewport
+g_graphics.resize(800, 600);
+
+// Limpar tela
+g_graphics.clear();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+#include "graphics.h"
+
+// Inicializar sistema de gráficos
+g_graphics.init();
+
+// Configurar viewport
+g_graphics.resize(800, 600);
+
+// Limpar tela
+g_graphics.clear();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Renderização Básica**
 
+#### Nível Basic
 ```cpp
 #include "painter.h"
 
@@ -430,8 +681,54 @@ painter.setColor(Color::white);
 painter.drawFilledRect(Rect(10, 10, 100, 100));
 ```
 
+#### Nível Intermediate
+```cpp
+#include "painter.h"
+
+// Criar painter
+Painter painter;
+
+// Configurar cor
+painter.setColor(Color::white);
+
+// Desenhar retângulo
+painter.drawFilledRect(Rect(10, 10, 100, 100));
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+#include "painter.h"
+
+// Criar painter
+Painter painter;
+
+// Configurar cor
+painter.setColor(Color::white);
+
+// Desenhar retângulo
+painter.drawFilledRect(Rect(10, 10, 100, 100));
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Gerenciamento de Texturas**
 
+#### Nível Basic
 ```cpp
 #include "texture.h"
 #include "texturemanager.h"
@@ -443,6 +740,51 @@ TexturePtr texture = g_textures.getTexture("sprite.png");
 texture->bind();
 // Renderizar...
 texture->unbind();
+```
+
+#### Nível Intermediate
+```cpp
+#include "texture.h"
+#include "texturemanager.h"
+
+// Carregar textura
+TexturePtr texture = g_textures.getTexture("sprite.png");
+
+// Usar textura
+texture->bind();
+// Renderizar...
+texture->unbind();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+#include "texture.h"
+#include "texturemanager.h"
+
+// Carregar textura
+TexturePtr texture = g_textures.getTexture("sprite.png");
+
+// Usar textura
+texture->bind();
+// Renderizar...
+texture->unbind();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🎨 Sistema de Shaders
@@ -495,6 +837,7 @@ O sistema de partículas oferece:
 
 ### **Exemplo de Efeito de Fogo**
 
+#### Nível Basic
 ```cpp
 // Criar sistema de partículas
 ParticleSystemPtr fireSystem = ParticleSystem::create();
@@ -506,6 +849,51 @@ fireSystem->setLifetime(1.5f);
 
 // Adicionar affector de gravidade
 fireSystem->addAffector(ParticleAffector::createGravity(Vector(0, -50)));
+```
+
+#### Nível Intermediate
+```cpp
+// Criar sistema de partículas
+ParticleSystemPtr fireSystem = ParticleSystem::create();
+
+// Configurar tipo de partícula
+fireSystem->setParticleType("fire");
+fireSystem->setEmissionRate(150);
+fireSystem->setLifetime(1.5f);
+
+// Adicionar affector de gravidade
+fireSystem->addAffector(ParticleAffector::createGravity(Vector(0, -50)));
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Criar sistema de partículas
+ParticleSystemPtr fireSystem = ParticleSystem::create();
+
+// Configurar tipo de partícula
+fireSystem->setParticleType("fire");
+fireSystem->setEmissionRate(150);
+fireSystem->setLifetime(1.5f);
+
+// Adicionar affector de gravidade
+fireSystem->addAffector(ParticleAffector::createGravity(Vector(0, -50)));
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🔧 Otimizações

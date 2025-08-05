@@ -70,6 +70,7 @@ def analyze_resource_availability(module_path: str) -> Dict[str, Any]:
 ### 📦 Recursos Avançados
 
 #### **Sistema de UI Avançado**
+#### Inicialização e Configuração
 ```lua
 -- Código original Canary
 local function createAdvancedCanaryUI()
@@ -103,6 +104,10 @@ local function createBasicOTClientUI()
             else
                 widget:setOpacity(1.0)
             end
+```
+
+#### Funcionalidade 1
+```lua
         end
         
         button.onClick = function()
@@ -124,11 +129,16 @@ local function createBasicOTClientUI()
                 print("Botão avançado clicado!")
             end
         })
+```
+
+#### Finalização
+```lua
     end
 end
 ```
 
 #### **Sistema de Rede Avançado**
+#### Inicialização e Configuração
 ```lua
 -- Código original Canary
 local function connectAdvancedCanary()
@@ -165,6 +175,10 @@ local function connectBasicOTClient()
                 scheduleEvent(function()
                     g_game.connect(server, port)
                 end, 2000)
+```
+
+#### Finalização
+```lua
             end
         end
     else
@@ -189,6 +203,7 @@ end
 ### 🎮 Sistemas de Jogo Avançados
 
 #### **Sistema de Criaturas Avançado**
+#### Inicialização e Configuração
 ```lua
 -- Código original Canary
 local function createAdvancedCreatureCanary()
@@ -211,6 +226,10 @@ local function createAdvancedCreatureCanary()
         }
     })
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 -- Código adaptado para OTClient
 local function createBasicCreatureOTClient()
@@ -238,6 +257,10 @@ local function createBasicCreatureOTClient()
                 attack = "combo_attack",
                 death = "dramatic_death"
             },
+```
+
+#### Finalização
+```lua
             effects = {
                 aura = "magical_glow",
                 particles = "sparkle_trail"
@@ -289,6 +312,7 @@ def test_resource_availability():
 #### **Testes de Performance**
 ```lua
 -- Teste de performance adaptada
+    --  Teste de performance adaptada (traduzido)
 local function testAdaptedPerformance()
     local startTime = os.clock()
     
@@ -299,7 +323,9 @@ local function testAdaptedPerformance()
     local duration = endTime - startTime
     
     -- Validar performance adaptada
+    --  Validar performance adaptada (traduzido)
     if duration > MAX_ADAPTED_TIME then
+    -- Verificação condicional
         print("⚠️ Performance adaptada abaixo do esperado: " .. duration .. "s")
         return false
     else
@@ -356,9 +382,11 @@ echo "✅ Deploy adaptado concluído!"
 #### **Métricas de Monitoramento**
 ```lua
 -- Sistema de monitoramento adaptado
+    --  Sistema de monitoramento adaptado (traduzido)
 local AdaptationMonitor = require('monitor.adaptation')
 
 -- Configurar monitoramento
+    --  Configurar monitoramento (traduzido)
 AdaptationMonitor.configure({
     check_interval = 5000, -- 5 segundos
     alert_threshold = 0.8, -- 80%
@@ -371,6 +399,7 @@ AdaptationMonitor.configure({
 })
 
 -- Iniciar monitoramento
+    --  Iniciar monitoramento (traduzido)
 AdaptationMonitor.start()
 ```
 
@@ -381,6 +410,7 @@ AdaptationMonitor.start()
 ### 🚨 Problemas Comuns de Adaptação
 
 #### **Problema: Recursos Avançados Não Disponíveis**
+#### Nível Basic
 ```lua
 -- Solução: Implementar versão simplificada
 local AdaptationLayer = {}
@@ -396,7 +426,57 @@ function AdaptationLayer.createAdvancedFeature(config)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Solução: Implementar versão simplificada
+local AdaptationLayer = {}
+
+function AdaptationLayer.createAdvancedFeature(config)
+    if OTClient then
+        -- Versão simplificada para OTClient
+        return createBasicVersion(config)
+    else
+        -- Versão completa para Canary
+        return createAdvancedVersion(config)
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Solução: Implementar versão simplificada
+local AdaptationLayer = {}
+
+function AdaptationLayer.createAdvancedFeature(config)
+    if OTClient then
+        -- Versão simplificada para OTClient
+        return createBasicVersion(config)
+    else
+        -- Versão completa para Canary
+        return createAdvancedVersion(config)
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Problema: APIs Incompatíveis**
+#### Nível Basic
 ```lua
 -- Solução: Adaptador de API
 local APIAdapter = {}
@@ -410,6 +490,55 @@ function APIAdapter.callAdvancedAPI(apiName, params)
         return callAdvancedAPI(apiName, params)
     end
 end
+```
+
+#### Nível Intermediate
+```lua
+-- Solução: Adaptador de API
+local APIAdapter = {}
+
+function APIAdapter.callAdvancedAPI(apiName, params)
+    if OTClient then
+        -- Mapear para API básica OTClient
+        return mapToBasicAPI(apiName, params)
+    else
+        -- Usar API avançada Canary
+        return callAdvancedAPI(apiName, params)
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Solução: Adaptador de API
+local APIAdapter = {}
+
+function APIAdapter.callAdvancedAPI(apiName, params)
+    if OTClient then
+        -- Mapear para API básica OTClient
+        return mapToBasicAPI(apiName, params)
+    else
+        -- Usar API avançada Canary
+        return callAdvancedAPI(apiName, params)
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### 📋 Troubleshooting Guide

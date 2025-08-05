@@ -1,18 +1,13 @@
----
-tags: [otclient, core, performance, optimization, system, profiling, memory, cpu, fps]
-type: core_story
-status: completed
-priority: critical
-story_id: CORE-008
-created: 2025-01-27
----
 
 # CORE-008: Sistema de Performance
 
 > [!info] **Sistema Completo de Performance e Otimização**
 > Documentação completa do sistema de performance do OTClient, incluindo otimização de memória, CPU, GPU, profiling avançado e técnicas de melhoria de performance para desenvolvimento eficiente.
 
-## 📋 Índice
+
+---
+
+## 📋 Índice 📋
 - [[#Visão Geral]]
 - [[#Sistema de Profiling]]
 - [[#Otimização de Memória]]
@@ -25,11 +20,14 @@ created: 2025-01-27
 
 ---
 
-## 🎯 Visão Geral
+
+---
+
+## 🎯 Visão Geral 🎯
 
 O sistema de performance do OTClient oferece ferramentas completas para otimização e monitoramento:
 
-### **⚡ Componentes Principais:**
+### **⚡ Componentes Principais:** 📝
 - **Profiling Avançado**: Análise detalhada de performance
 - **Otimização de Memória**: Gerenciamento eficiente de memória
 - **Otimização de CPU**: Redução de carga de processamento
@@ -37,7 +35,7 @@ O sistema de performance do OTClient oferece ferramentas completas para otimiza�
 - **Monitor em Tempo Real**: Acompanhamento contínuo de métricas
 - **Técnicas de Otimização**: Estratégias comprovadas de melhoria
 
-### 🏗️ **Arquitetura do Sistema**
+### 🏗️ **Arquitetura do Sistema** 📝
 
 ```
 Sistema de Performance
@@ -69,10 +67,14 @@ Sistema de Performance
 
 ---
 
-## 📊 Sistema de Profiling
 
-### 🎯 **Profiling de CPU**
+---
 
+## 📊 Sistema de Profiling ⚙️
+
+### 🎯 **Profiling de CPU** 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Sistema de profiling de CPU
 local CPUProfiler = {}
@@ -97,6 +99,10 @@ function CPUProfiler.profileFunction(funcName, func)
     if not CPUProfiler.enabled then
         return func
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     return function(...)
         local startTime = g_clock.millis()
@@ -128,6 +134,10 @@ function CPUProfiler.profileFunction(funcName, func)
                 maxTime = 0,
                 avgTime = 0
             }
+```
+
+#### Funcionalidade 2
+```lua
         end
         
         local stats = CPUProfiler.functions[funcName]
@@ -150,6 +160,10 @@ function CPUProfiler.generateReport()
     for funcName, stats in pairs(CPUProfiler.functions) do
         table.insert(sortedFunctions, {name = funcName, stats = stats})
     end
+```
+
+#### Finalização
+```lua
     
     table.sort(sortedFunctions, function(a, b)
         return a.stats.totalTime > b.stats.totalTime
@@ -171,8 +185,9 @@ function CPUProfiler.generateReport()
 end
 ```
 
-### 🧠 **Profiling de Memória**
+### 🧠 **Profiling de Memória** 📝
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de profiling de memória
 local MemoryProfiler = {}
@@ -195,6 +210,10 @@ function MemoryProfiler.stop()
 end
 
 function MemoryProfiler.takeSnapshot(name)
+```
+
+#### Funcionalidade 1
+```lua
     if not MemoryProfiler.enabled then
         return
     end
@@ -216,6 +235,10 @@ function MemoryProfiler.autoSnapshotUpdate()
     if not MemoryProfiler.enabled or not MemoryProfiler.autoSnapshot then
         return
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     local currentTime = g_clock.millis()
     if currentTime - MemoryProfiler.lastSnapshot >= MemoryProfiler.snapshotInterval then
@@ -253,16 +276,24 @@ function MemoryProfiler.detectMemoryLeaks()
             print(string.format("  Growth Rate: %.2f KB/s", memoryDiff / (timeDiff / 1000)))
             print()
         end
+```
+
+#### Finalização
+```lua
     end
 end
 ```
 
 ---
 
-## 🧠 Otimização de Memória
 
-### 🎯 **Gerenciamento de Memória**
+---
 
+## 🧠 Otimização de Memória ⚡
+
+### 🎯 **Gerenciamento de Memória** 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Sistema de otimização de memória
 local MemoryOptimizer = {}
@@ -285,6 +316,10 @@ function MemoryOptimizer.setupMemoryOptimization()
     MemoryOptimizer.cache = {}
     MemoryOptimizer.cacheSize = g_settings.getNumber("performance.cacheSize", 100)
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function MemoryOptimizer.startMemoryMonitor()
     -- Monitor de memória em tempo real
@@ -306,6 +341,10 @@ function MemoryOptimizer.monitorMemory()
     if memory > 30000 then  -- 30MB
         MemoryOptimizer.cleanCache()
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 function MemoryOptimizer.optimizeMemory()
@@ -333,6 +372,10 @@ function MemoryOptimizer.cleanCache()
         if currentTime - item.timestamp > 300000 then  -- 5 minutos
             table.insert(toRemove, key)
         end
+```
+
+#### Funcionalidade 3
+```lua
     end
     
     for _, key in ipairs(toRemove) do
@@ -354,6 +397,10 @@ function MemoryOptimizer.cleanCache()
     for i = cacheSize + 1, #cacheItems do
         MemoryOptimizer.cache[cacheItems[i].key] = nil
     end
+```
+
+#### Finalização
+```lua
 end
 
 function MemoryOptimizer.cleanUnusedResources()
@@ -370,8 +417,9 @@ function MemoryOptimizer.cleanUnusedResources()
 end
 ```
 
-### 🔄 **Cache Inteligente**
+### 🔄 **Cache Inteligente** 📝
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de cache inteligente
 local SmartCache = {}
@@ -394,6 +442,10 @@ function SmartCache.get(key, generator, ttl)
         item.lastAccess = currentTime
         return item.value
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Gerar novo valor
     local value = generator()
@@ -417,6 +469,10 @@ function SmartCache.checkCacheSize()
     for _ in pairs(SmartCache.cache) do
         cacheSize = cacheSize + 1
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     if cacheSize > SmartCache.maxSize then
         SmartCache.evictLeastUsed()
@@ -442,15 +498,23 @@ function SmartCache.evictLeastUsed()
     for i = 1, toRemove do
         SmartCache.cache[items[i].key] = nil
     end
+```
+
+#### Finalização
+```lua
 end
 ```
 
 ---
 
-## ⚡ Otimização de CPU
 
-### 🎯 **Otimização de Loops**
+---
 
+## ⚡ Otimização de CPU ⚡
+
+### 🎯 **Otimização de Loops** 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Sistema de otimização de CPU
 local CPUOptimizer = {}
@@ -476,6 +540,10 @@ function CPUOptimizer.startFrameMonitor()
     connect(g_app, 'onRun', function()
         CPUOptimizer.monitorFrameTime()
     end)
+```
+
+#### Funcionalidade 1
+```lua
 end
 
 function CPUOptimizer.monitorFrameTime()
@@ -499,6 +567,10 @@ function CPUOptimizer.optimizeFrame()
     -- Limpar operações desnecessárias
     CPUOptimizer.cleanUnnecessaryOperations()
 end
+```
+
+#### Finalização
+```lua
 
 function CPUOptimizer.reduceUpdateFrequency()
     -- Reduzir frequência de atualizações de UI
@@ -521,8 +593,9 @@ function CPUOptimizer.cleanUnnecessaryOperations()
 end
 ```
 
-### 🔄 **Processamento Assíncrono**
+### 🔄 **Processamento Assíncrono** 📝
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de processamento assíncrono
 local AsyncProcessor = {}
@@ -545,6 +618,10 @@ function AsyncProcessor.addTask(task, priority)
         task()  -- Executar síncrono
         return
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     table.insert(AsyncProcessor.tasks, {
         task = task,
@@ -575,6 +652,10 @@ function AsyncProcessor.processTasks()
         if not success then
             print("Async task error: " .. tostring(error))
         end
+```
+
+#### Finalização
+```lua
         
         processed = processed + 1
     end
@@ -599,10 +680,14 @@ end
 
 ---
 
-## 🎮 Otimização de GPU
 
-### 🎯 **Otimização de Renderização**
+---
 
+## 🎮 Otimização de GPU ⚡
+
+### 🎯 **Otimização de Renderização** 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Sistema de otimização de GPU
 local GPUOptimizer = {}
@@ -625,6 +710,10 @@ function GPUOptimizer.setupGPUOptimization()
     if g_graphics then
         GPUOptimizer.configureGraphics()
     end
+```
+
+#### Funcionalidade 1
+```lua
 end
 
 function GPUOptimizer.configureGraphics()
@@ -646,6 +735,10 @@ function GPUOptimizer.configureGraphics()
         g_graphics.setAntiAliasing(true)
         g_graphics.setShadowQuality("high")
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 function GPUOptimizer.startGPUMonitor()
@@ -668,6 +761,10 @@ function GPUOptimizer.monitorGPU()
         print("WARNING: High GPU draw calls: " .. drawCalls)
         GPUOptimizer.optimizeGPU()
     end
+```
+
+#### Funcionalidade 3
+```lua
     
     if gpuTime > 16 then  -- Mais de 16ms
         print("WARNING: High GPU time: " .. gpuTime .. "ms")
@@ -698,6 +795,10 @@ function GPUOptimizer.reduceVisualQuality()
     -- Reduzir distância de renderização
     g_graphics.setRenderDistance(50)
 end
+```
+
+#### Finalização
+```lua
 
 function GPUOptimizer.optimizeRendering()
     -- Usar instancing para objetos similares
@@ -724,10 +825,14 @@ end
 
 ---
 
-## 📊 Monitor de Performance
 
-### 🎯 **Monitor em Tempo Real**
+---
 
+## 📊 Monitor de Performance ⚡
+
+### 🎯 **Monitor em Tempo Real** 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Sistema de monitor de performance
 local PerformanceMonitor = {}
@@ -750,6 +855,10 @@ function PerformanceMonitor.stop()
 end
 
 function PerformanceMonitor.update()
+```
+
+#### Funcionalidade 1
+```lua
     if not PerformanceMonitor.enabled then
         return
     end
@@ -777,6 +886,10 @@ function PerformanceMonitor.collectMetrics()
     if #PerformanceMonitor.metrics > 100 then
         table.remove(PerformanceMonitor.metrics, 1)
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     -- Verificar alertas
     PerformanceMonitor.checkAlerts(metrics)
@@ -798,6 +911,10 @@ function PerformanceMonitor.checkAlerts(metrics)
         print("ALERT: High CPU usage: " .. metrics.cpu .. "%")
     end
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 function PerformanceMonitor.generateFinalReport()
     if #PerformanceMonitor.metrics == 0 then
@@ -835,6 +952,10 @@ function PerformanceMonitor.generateFinalReport()
         maxMemory = math.max(maxMemory, metrics.memory)
         maxCPU = math.max(maxCPU, metrics.cpu)
     end
+```
+
+#### Finalização
+```lua
     
     print(string.format("Min FPS: %.2f", minFPS))
     print(string.format("Max Memory: %.2f KB", maxMemory))
@@ -844,10 +965,14 @@ end
 
 ---
 
-## 🛠️ Técnicas de Otimização
 
-### 🎯 **Otimização de Código**
+---
 
+## 🛠️ Técnicas de Otimização ⚡
+
+### 🎯 **Otimização de Código** 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Técnicas de otimização de código
 local CodeOptimizer = {}
@@ -873,6 +998,10 @@ function CodeOptimizer.optimizeLuaCode()
         for i, v in ipairs(t) do  -- Mais rápido que pairs
             -- Processar valor
         end
+```
+
+#### Funcionalidade 1
+```lua
     end
     
     -- 4. Evitar concatenação de strings em loops
@@ -898,6 +1027,10 @@ function CodeOptimizer.optimizeDataStructures()
     for i = 1, 100 do
         optimizedTable[i] = i  -- Índices numéricos são mais rápidos
     end
+```
+
+#### Finalização
+```lua
     
     -- 2. Pré-alocar tabelas quando possível
     local preallocatedTable = {}
@@ -922,10 +1055,14 @@ end
 
 ---
 
-## 💡 Exemplos Práticos
 
-### 🎯 **Exemplo de Uso Completo**
+---
 
+## 💡 Exemplos Práticos 💡
+
+### 🎯 **Exemplo de Uso Completo** 🎮
+
+#### Inicialização e Configuração
 ```lua
 -- Exemplo completo de uso do sistema de performance
 function setupPerformanceSystem()
@@ -949,6 +1086,10 @@ function setupPerformanceSystem()
     
     print("Sistema de performance inicializado com sucesso")
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 -- Exemplo de otimização de função
 function optimizedFunction()
@@ -972,6 +1113,10 @@ function optimizedFunction()
     
     return result
 end
+```
+
+#### Finalização
+```lua
 
 -- Exemplo de monitoramento contínuo
 function continuousMonitoring()
@@ -992,9 +1137,12 @@ end
 
 ---
 
-## ✅ Melhores Práticas
 
-### 🎯 **Recomendações de Performance**
+---
+
+## ✅ Melhores Práticas 📋
+
+### 🎯 **Recomendações de Performance** 📝
 
 1. **Otimização de Memória**
    - Use `local` em vez de variáveis globais
@@ -1020,7 +1168,7 @@ end
    - Identifique gargalos
    - Otimize baseado em dados
 
-### 🚨 **Considerações Importantes**
+### 🚨 **Considerações Importantes** 📝
 
 - **Balanceamento**: Equilibre qualidade visual e performance
 - **Adaptação**: Adapte qualidade baseada no hardware
@@ -1029,9 +1177,12 @@ end
 
 ---
 
-## 📊 Métricas e KPIs
 
-### 📈 **Indicadores de Performance**
+---
+
+## 📊 Métricas e KPIs 📋
+
+### 📈 **Indicadores de Performance** 📝
 
 - **FPS**: Frames por segundo (meta: >30)
 - **Memory Usage**: Uso de memória em KB (meta: <50MB)
@@ -1039,8 +1190,9 @@ end
 - **GPU Time**: Tempo de GPU em ms (meta: <16ms)
 - **Load Time**: Tempo de carregamento em ms (meta: <1000ms)
 
-### 🔍 **Relatórios de Performance**
+### 🔍 **Relatórios de Performance** 📝
 
+#### Nível Basic
 ```json
 {
   "timestamp": "2025-01-27T10:30:00Z",
@@ -1059,9 +1211,87 @@ end
 }
 ```
 
+#### Nível Intermediate
+```json
+{
+  "timestamp": "2025-01-27T10:30:00Z",
+  "metrics": {
+    "fps": 60,
+    "memory": 25000,
+    "cpu": 45,
+    "gpu": 12,
+    "loadTime": 800
+  },
+  "optimizations": {
+    "memoryOptimized": true,
+    "gpuOptimized": false,
+    "cacheHitRate": 0.85
+  }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```json
+{
+  "timestamp": "2025-01-27T10:30:00Z",
+  "metrics": {
+    "fps": 60,
+    "memory": 25000,
+    "cpu": 45,
+    "gpu": 12,
+    "loadTime": 800
+  },
+  "optimizations": {
+    "memoryOptimized": true,
+    "gpuOptimized": false,
+    "cacheHitRate": 0.85
+  }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 **Story ID**: CORE-008  
 **Categoria**: CORE  
 **Status**: ✅ Completo  
 **Última Atualização**: 2025-01-27 
+
+---
+
+## 🧭 **NAVEGAÇÃO**
+
+### **📖 Guias Relacionados**
+
+- [Guia de Início Rápido](../Getting_Started_Guide.md)
+- [Guia de Configuração](../Configuration_Guide.md)
+- [Guia de Debug](../Debug_System_Guide.md)
+
+### **🔗 Links Úteis**
+
+- [Documentação Principal](../../../README.md)
+- [Índice da Wiki](../../../Wiki_Index.md)
+- [Sistema de Busca](../../../Navigation_Index_Search.md)
+
+### **📞 Suporte**
+
+Para dúvidas ou problemas:
+- Consulte a seção [Troubleshooting](#troubleshooting)
+- Verifique os [Exemplos Práticos](#exemplos-práticos)
+- Consulte a [Referência da API](#api)

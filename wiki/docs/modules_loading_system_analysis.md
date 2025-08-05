@@ -71,6 +71,7 @@ graph TD
 
 ```cpp
 class ModuleManager
+    -- Classe: ModuleManager
 {
 public:
     void discoverModules();
@@ -119,6 +120,7 @@ void ModuleManager::autoLoadModules(const int maxPriority)
 
 ### 🎮 Module Class
 
+#### Inicialização e Configuração
 ```cpp
 class Module final : public LuaObject
 {
@@ -156,6 +158,10 @@ private:
     std::list<std::string> m_scripts;
     std::list<std::string> m_loadLaterModules;
 };
+```
+
+#### Funcionalidade 1
+```cpp
 
 // Carregamento de módulo
 bool Module::load()
@@ -192,6 +198,10 @@ bool Module::load()
             if (!dep->isLoaded() && !dep->load())
                 throw Exception("dependency '{}' has failed to load", depName);
         }
+```
+
+#### Funcionalidade 2
+```cpp
         
         // Configurar sandbox se necessário
         if (m_sandboxed)
@@ -214,6 +224,10 @@ bool Module::load()
             }
             g_lua.safeCall(0, 0);
         }
+```
+
+#### Finalização
+```cpp
         
         if (m_sandboxed)
             g_lua.resetGlobalEnvironment();

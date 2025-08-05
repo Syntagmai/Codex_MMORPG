@@ -1,0 +1,534 @@
+{
+  "metadata": {
+    "extraction_date": "2025-08-04T19:40:13.299681",
+    "total_recommendations": 34,
+    "high_priority_count": 33,
+    "medium_priority_count": 1
+  },
+  "high_priority_files": [
+    {
+      "file": "docs\\otclient\\guides\\Sound_System_Guide.md",
+      "total_lines": 1577,
+      "long_sections": 2,
+      "action": "reorganize",
+      "priority": "alta",
+      "suggested_structure": [
+        {
+          "section": "Exemplo 1: Gerenciador de Áudio",
+          "action": "dividir_em_subseções",
+          "suggested_subseções": [
+            "Conceitos",
+            "Implementação",
+            "Exemplos",
+            "Referência"
+          ]
+        },
+        {
+          "section": "Exemplo 3: Sistema de Efeitos Sonoros 3D",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "consolidated\\otclient\\research\\Sound_System_Guide.md",
+      "total_lines": 1577,
+      "long_sections": 2,
+      "action": "reorganize",
+      "priority": "alta",
+      "suggested_structure": [
+        {
+          "section": "Exemplo 1: Gerenciador de Áudio",
+          "action": "dividir_em_subseções",
+          "suggested_subseções": [
+            "Conceitos",
+            "Implementação",
+            "Exemplos",
+            "Referência"
+          ]
+        },
+        {
+          "section": "Exemplo 3: Sistema de Efeitos Sonoros 3D",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "legacy_docs\\src\\otclient\\guides\\Sound_System_Guide.md",
+      "total_lines": 1571,
+      "long_sections": 2,
+      "action": "reorganize",
+      "priority": "alta",
+      "suggested_structure": [
+        {
+          "section": "Exemplo 1: Gerenciador de Áudio",
+          "action": "dividir_em_subseções",
+          "suggested_subseções": [
+            "Conceitos",
+            "Implementação",
+            "Exemplos",
+            "Referência"
+          ]
+        },
+        {
+          "section": "Exemplo 3: Sistema de Efeitos Sonoros 3D",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "legacy_docs\\src\\research\\habdel\\SoundSystem.md",
+      "total_lines": 1560,
+      "long_sections": 2,
+      "action": "reorganize",
+      "priority": "alta",
+      "suggested_structure": [
+        {
+          "section": "Exemplo 1: Gerenciador de Áudio",
+          "action": "dividir_em_subseções",
+          "suggested_subseções": [
+            "Conceitos",
+            "Implementação",
+            "Exemplos",
+            "Referência"
+          ]
+        },
+        {
+          "section": "Exemplo 3: Sistema de Efeitos Sonoros 3D",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs\\research\\habdel\\SoundSystem.md",
+      "total_lines": 1560,
+      "long_sections": 2,
+      "action": "reorganize",
+      "priority": "alta",
+      "suggested_structure": [
+        {
+          "section": "Exemplo 1: Gerenciador de Áudio",
+          "action": "dividir_em_subseções",
+          "suggested_subseções": [
+            "Conceitos",
+            "Implementação",
+            "Exemplos",
+            "Referência"
+          ]
+        },
+        {
+          "section": "Exemplo 3: Sistema de Efeitos Sonoros 3D",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "consolidated\\otclient\\documentation\\SoundSystem.md",
+      "total_lines": 1560,
+      "long_sections": 2,
+      "action": "reorganize",
+      "priority": "alta",
+      "suggested_structure": [
+        {
+          "section": "Exemplo 1: Gerenciador de Áudio",
+          "action": "dividir_em_subseções",
+          "suggested_subseções": [
+            "Conceitos",
+            "Implementação",
+            "Exemplos",
+            "Referência"
+          ]
+        },
+        {
+          "section": "Exemplo 3: Sistema de Efeitos Sonoros 3D",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs\\otclient\\guides\\Module_Development_Guide.md",
+      "total_lines": 1557,
+      "long_sections": 4,
+      "action": "reorganize",
+      "priority": "alta",
+      "suggested_structure": [
+        {
+          "section": "💻 **3. Lógica Principal**",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "💻 **3. Sistema de Notificações**",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "modules/custom_modules/my_statusmonitor/statusmonitor.otui",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "💻 **3. Lógica do Monitor**",
+          "action": "dividir_em_subseções",
+          "suggested_subseções": [
+            "Conceitos",
+            "Implementação",
+            "Exemplos",
+            "Referência"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "consolidated\\otclient\\research\\Module_Development_Guide.md",
+      "total_lines": 1557,
+      "long_sections": 4,
+      "action": "reorganize",
+      "priority": "alta",
+      "suggested_structure": [
+        {
+          "section": "💻 **3. Lógica Principal**",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "💻 **3. Sistema de Notificações**",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "modules/custom_modules/my_statusmonitor/statusmonitor.otui",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "💻 **3. Lógica do Monitor**",
+          "action": "dividir_em_subseções",
+          "suggested_subseções": [
+            "Conceitos",
+            "Implementação",
+            "Exemplos",
+            "Referência"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "legacy_docs\\src\\otclient\\guides\\Module_Development_Guide.md",
+      "total_lines": 1551,
+      "long_sections": 4,
+      "action": "reorganize",
+      "priority": "alta",
+      "suggested_structure": [
+        {
+          "section": "💻 **3. Lógica Principal**",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "💻 **3. Sistema de Notificações**",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "modules/custom_modules/my_statusmonitor/statusmonitor.otui",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "💻 **3. Lógica do Monitor**",
+          "action": "dividir_em_subseções",
+          "suggested_subseções": [
+            "Conceitos",
+            "Implementação",
+            "Exemplos",
+            "Referência"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "legacy_docs\\src\\research\\habdel\\FirstModule.md",
+      "total_lines": 1540,
+      "long_sections": 4,
+      "action": "reorganize",
+      "priority": "alta",
+      "suggested_structure": [
+        {
+          "section": "💻 **3. Lógica Principal**",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "💻 **3. Sistema de Notificações**",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "modules/custom_modules/my_statusmonitor/statusmonitor.otui",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "💻 **3. Lógica do Monitor**",
+          "action": "dividir_em_subseções",
+          "suggested_subseções": [
+            "Conceitos",
+            "Implementação",
+            "Exemplos",
+            "Referência"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs\\research\\habdel\\FirstModule.md",
+      "total_lines": 1540,
+      "long_sections": 4,
+      "action": "reorganize",
+      "priority": "alta",
+      "suggested_structure": [
+        {
+          "section": "💻 **3. Lógica Principal**",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "💻 **3. Sistema de Notificações**",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "modules/custom_modules/my_statusmonitor/statusmonitor.otui",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "💻 **3. Lógica do Monitor**",
+          "action": "dividir_em_subseções",
+          "suggested_subseções": [
+            "Conceitos",
+            "Implementação",
+            "Exemplos",
+            "Referência"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "consolidated\\otclient\\documentation\\FirstModule.md",
+      "total_lines": 1540,
+      "long_sections": 4,
+      "action": "reorganize",
+      "priority": "alta",
+      "suggested_structure": [
+        {
+          "section": "💻 **3. Lógica Principal**",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "💻 **3. Sistema de Notificações**",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "modules/custom_modules/my_statusmonitor/statusmonitor.otui",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        },
+        {
+          "section": "💻 **3. Lógica do Monitor**",
+          "action": "dividir_em_subseções",
+          "suggested_subseções": [
+            "Conceitos",
+            "Implementação",
+            "Exemplos",
+            "Referência"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "legacy_docs\\src\\otclient\\guides\\GUIDE-008_Deploy.md",
+      "total_lines": 1386,
+      "long_sections": 1,
+      "action": "reorganize",
+      "priority": "alta",
+      "suggested_structure": [
+        {
+          "section": "**4.1 CI/CD Pipeline**",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "legacy_docs\\src\\otclient\\guides\\Item_System_Guide.md",
+      "total_lines": 1381,
+      "long_sections": 1,
+      "action": "reorganize",
+      "priority": "alta",
+      "suggested_structure": [
+        {
+          "section": "Exemplo 2: Item Manager",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "docs\\otclient\\guides\\Item_System_Guide.md",
+      "total_lines": 1379,
+      "long_sections": 1,
+      "action": "reorganize",
+      "priority": "alta",
+      "suggested_structure": [
+        {
+          "section": "Exemplo 2: Item Manager",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        }
+      ]
+    }
+  ],
+  "medium_priority_files": [
+    {
+      "file": "cursor_core\\.bmad-game-core\\agents\\qa-tester-enhanced.md",
+      "total_lines": 389,
+      "long_sections": 1,
+      "action": "reorganize",
+      "priority": "média",
+      "suggested_structure": [
+        {
+          "section": "QA Tester Enhanced - Cliente Logs & Debug Specialist",
+          "action": "adicionar_subseções",
+          "suggested_subseções": [
+            "Visão Geral",
+            "Detalhes",
+            "Exemplos"
+          ]
+        }
+      ]
+    }
+  ],
+  "action_plan": {
+    "phase_1": "Reorganizar arquivos com prioridade alta (>500 linhas)",
+    "phase_2": "Reorganizar arquivos com prioridade alta (200-500 linhas)",
+    "phase_3": "Reorganizar arquivos com prioridade média",
+    "estimated_time": "16 horas total"
+  }
+}

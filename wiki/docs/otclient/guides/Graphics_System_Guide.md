@@ -1,15 +1,12 @@
----
-title: Graphicssystem
-tags: [otclient, system, guide, documentation]
-status: completed
-aliases: [Graphicssystem]
----
 
 # Sistema de Gráficos - OTClient Redemption
 
 Documentação completa do sistema de gráficos do OTClient, incluindo renderização, shaders, texturas, fontes e efeitos visuais.
 
-## 📋 Índice
+
+---
+
+## 📋 Índice 📋
 
 1. [Visão Geral](#-visão-geral)
 2. [Sistema de Renderização](#-sistema-de-renderização)
@@ -22,12 +19,16 @@ Documentação completa do sistema de gráficos do OTClient, incluindo renderiza
 9. [Screenshots e Gravação](#-screenshots-e-gravação)
 10. [Exemplos Práticos](#-exemplos-práticos)
 
-## 🎯 Visão Geral
+
+---
+
+## 🎯 Visão Geral 🎯
 
 O sistema de gráficos do OTClient é baseado em OpenGL e fornece renderização acelerada por hardware, suporte a shaders personalizados, gerenciamento de texturas e diversos efeitos visuais para melhorar a experiência do jogo.
 
-### Arquitetura Gráfica
+### Arquitetura Gráfica 📝
 
+#### Nível Basic
 ```lua
 -- Hierarquia do sistema gráfico
 Graphics Engine (OpenGL)
@@ -39,8 +40,64 @@ Graphics Engine (OpenGL)
 └── Painters (drawing operations)
 ```
 
-### Informações do Sistema
+#### Nível Intermediate
+```lua
+-- Hierarquia do sistema gráfico
+Graphics Engine (OpenGL)
+├── Renderer (g_graphics)
+├── Shaders (g_shaders)  
+├── Textures (g_textures)
+├── Fonts (g_fonts)
+├── Effects (particles, animations)
+└── Painters (drawing operations)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
 
+#### Nível Advanced
+```lua
+-- Hierarquia do sistema gráfico
+Graphics Engine (OpenGL)
+├── Renderer (g_graphics)
+├── Shaders (g_shaders)  
+├── Textures (g_textures)
+├── Fonts (g_fonts)
+├── Effects (particles, animations)
+└── Painters (drawing operations)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### Informações do Sistema 📝
+
+#### Nível Basic
+```lua
+-- Obter informações da placa gráfica
+local vendor = g_graphics.getVendor()       -- "NVIDIA Corporation"
+local renderer = g_graphics.getRenderer()   -- "GeForce GTX 1060"
+local version = g_graphics.getVersion()     -- "4.6.0 NVIDIA 461.92"
+-- Verificar compatibilidade
+local glslVersion = g_graphics.getGLSLVersion() -- Versão do GLSL
+local extensions = g_graphics.getExtensions()   -- Extensões suportadas
+print("GPU:", vendor, renderer)
+print("OpenGL:", version)
+print("GLSL:", glslVersion)
+```
+
+#### Nível Intermediate
 ```lua
 -- Obter informações da placa gráfica
 local vendor = g_graphics.getVendor()       -- "NVIDIA Corporation"
@@ -56,10 +113,55 @@ print("OpenGL:", version)
 print("GLSL:", glslVersion)
 ```
 
-## 🎨 Sistema de Renderização
+#### Nível Advanced
+```lua
+-- Obter informações da placa gráfica
+local vendor = g_graphics.getVendor()       -- "NVIDIA Corporation"
+local renderer = g_graphics.getRenderer()   -- "GeForce GTX 1060"
+local version = g_graphics.getVersion()     -- "4.6.0 NVIDIA 461.92"
 
-### g_graphics - Interface Principal
+-- Verificar compatibilidade
+local glslVersion = g_graphics.getGLSLVersion() -- Versão do GLSL
+local extensions = g_graphics.getExtensions()   -- Extensões suportadas
 
+print("GPU:", vendor, renderer)
+print("OpenGL:", version)
+print("GLSL:", glslVersion)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+
+---
+
+## 🎨 Sistema de Renderização ⚙️
+
+### g_graphics - Interface Principal 📝
+
+#### Nível Basic
+```lua
+-- Informações da viewport
+local viewportSize = g_graphics.getViewportSize() -- {width, height}
+local width = viewportSize.width
+local height = viewportSize.height
+-- Redimensionamento
+-- VSync
+local vsyncEnabled = g_graphics.isVSyncEnabled() -- Verifica se VSync está ativo
+-- FPS
+local averageFPS = g_graphics.getAverageFPS() -- FPS médio
+local maxFPS = g_graphics.getMaxFPS()     -- FPS máximo configurado
+-- Screenshots
+```
+
+#### Nível Intermediate
 ```lua
 -- Informações da viewport
 local viewportSize = g_graphics.getViewportSize() -- {width, height}
@@ -83,18 +185,55 @@ g_graphics.screenshot("screenshot.png")   -- Captura tela
 g_graphics.screenshotMap("map.png", {x=1000, y=1000, z=7}, 15) -- Screenshot do mapa
 ```
 
-### Configurações de Renderização
+#### Nível Advanced
+```lua
+-- Informações da viewport
+local viewportSize = g_graphics.getViewportSize() -- {width, height}
+local width = viewportSize.width
+local height = viewportSize.height
+
+-- Redimensionamento
+g_graphics.resize(1920, 1080)            -- Redimensiona viewport
+
+-- VSync
+g_graphics.setVSync(true)                -- Ativa sincronização vertical
+local vsyncEnabled = g_graphics.isVSyncEnabled() -- Verifica se VSync está ativo
+
+-- FPS
+local averageFPS = g_graphics.getAverageFPS() -- FPS médio
+local maxFPS = g_graphics.getMaxFPS()     -- FPS máximo configurado
+g_graphics.setMaxFPS(60)                 -- Define limite de FPS
+
+-- Screenshots
+g_graphics.screenshot("screenshot.png")   -- Captura tela
+g_graphics.screenshotMap("map.png", {x=1000, y=1000, z=7}, 15) -- Screenshot do mapa
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### Configurações de Renderização 📝
 
 ```lua
 -- Anti-aliasing
+    --  Anti-aliasing (traduzido)
 g_graphics.setAntialiasingMode(mode)     -- 0=None, 1=AA, 2=Smooth Retro
 local aaMode = g_graphics.getAntialiasingMode()
 
 -- Qualidade de textura
+    --  Qualidade de textura (traduzido)
 g_graphics.setTextureFiltering(enabled)  -- Filtro de textura
 local filtering = g_graphics.isTextureFilteringEnabled()
 
 -- Floor view modes
+    --  Floor view modes (traduzido)
 g_graphics.setFloorViewMode(mode)        -- 0=Normal, 1=Fade, 2=Locked, etc.
 local floorMode = g_graphics.getFloorViewMode()
 
@@ -104,8 +243,20 @@ g_graphics.setDrawTexts(enabled)         -- Desenhar textos
 g_graphics.setDrawHealthBars(enabled)    -- Desenhar barras de HP
 ```
 
-### Painters - Sistema de Desenho
+### Painters - Sistema de Desenho 📝
 
+#### Nível Basic
+```lua
+-- Painter para desenho customizado
+local painter = g_ui.createPainter()
+-- Configurações do painter
+-- Desenhar formas básicas
+-- Exemplo de uso em widget
+widget.onPaint = function(widget, painter, clip)
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Painter para desenho customizado
 local painter = g_ui.createPainter()
@@ -131,22 +282,64 @@ widget.onPaint = function(widget, painter, clip)
 end
 ```
 
-## 🌟 Sistema de Shaders
+#### Nível Advanced
+```lua
+-- Painter para desenho customizado
+local painter = g_ui.createPainter()
 
-### g_shaders - Interface de Shaders
+-- Configurações do painter
+painter:setColor('#FF0000')              -- Cor vermelha
+painter:setOpacity(0.8)                  -- 80% de opacidade
+painter:setCompositionMode(mode)         -- Modo de composição
+
+-- Desenhar formas básicas
+painter:drawBoundingRect(rect)           -- Retângulo
+painter:drawFilledRect(rect)             -- Retângulo preenchido
+painter:drawText(text, rect)             -- Texto
+painter:drawTexturedRect(rect, texture)  -- Retângulo com textura
+
+-- Exemplo de uso em widget
+widget.onPaint = function(widget, painter, clip)
+    painter:setColor('#00FF00')
+    painter:drawFilledRect(widget:getRect())
+    
+    painter:setColor('#FFFFFF')
+    painter:drawText("Custom Text", widget:getRect())
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+
+---
+
+## 🌟 Sistema de Shaders ⚙️
+
+### g_shaders - Interface de Shaders 📝
 
 ```lua
 -- Criar shader
+    --  Criar shader (traduzido)
 g_shaders.createShader(name, useFramebuffer)
 g_shaders.createFragmentShader(name, fragmentPath, useFramebuffer)
 g_shaders.createVertexShader(name, vertexPath)
 
 -- Gerenciar shaders ativos
+    --  Gerenciar shaders ativos (traduzido)
 g_shaders.setShader(name)                -- Ativa shader
 g_shaders.clearShader()                  -- Remove shader ativo
 g_shaders.clear()                        -- Limpa todos os shaders
 
 -- Uniforms
+    --  Uniforms (traduzido)
 g_shaders.setUniform(name, value)        -- Define uniform
 g_shaders.setUniformFloat(name, value)   -- Float
 g_shaders.setUniformInt(name, value)     -- Integer
@@ -159,11 +352,13 @@ g_shaders.addMultiTexture(shaderName, texturePath)
 g_shaders.bindTexture(texture, unit)     -- Bind texture na unidade
 
 -- Framebuffers
+    --  Framebuffers (traduzido)
 g_shaders.useFramebuffer(name)           -- Usa framebuffer específico
 ```
 
-### Shaders Predefinidos
+### Shaders Predefinidos 📝
 
+#### Nível Basic
 ```lua
 -- Shaders de mapa disponíveis
 local MAP_SHADERS = {
@@ -205,11 +400,114 @@ if player then
 end
 ```
 
-### Criação de Shaders Customizados
+#### Nível Intermediate
+```lua
+-- Shaders de mapa disponíveis
+local MAP_SHADERS = {
+    'Map - Default',        -- Sem shader
+    'Map - Fog',           -- Névoa
+    'Map - Rain',          -- Chuva
+    'Map - Snow',          -- Neve
+    'Map - Gray Scale',    -- Escala de cinza
+    'Map - Bloom',         -- Efeito bloom
+    'Map - Sepia',         -- Sepia
+    'Map - Pulse',         -- Pulsação
+    'Map - Old Tv',        -- TV antiga
+    'Map - Party',         -- Cores vibrantes
+    'Map - Radial Blur',   -- Desfoque radial
+    'Map - Zomg',          -- Efeito especial
+    'Map - Heat',          -- Efeito de calor
+    'Map - Noise'          -- Ruído
+}
+
+-- Shaders de outfit
+local OUTFIT_SHADERS = {
+    'Outfit - Default',    -- Padrão
+    'Outfit - Rainbow',    -- Arco-íris
+    'Outfit - Ghost',      -- Fantasma
+    'Outfit - Jelly',      -- Gelatina
+    'Outfit - Fragmented', -- Fragmentado
+    'Outfit - Outline'     -- Contorno
+}
+
+-- Aplicar shader ao mapa
+local map = modules.game_interface.getMapPanel()
+map:setShader('Map - Fog')
+
+-- Aplicar shader ao jogador
+local player = g_game.getLocalPlayer()
+if player then
+    player:setShader('Outfit - Rainbow')
+    player:setMountShader('Mount - Rainbow')
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Shaders de mapa disponíveis
+local MAP_SHADERS = {
+    'Map - Default',        -- Sem shader
+    'Map - Fog',           -- Névoa
+    'Map - Rain',          -- Chuva
+    'Map - Snow',          -- Neve
+    'Map - Gray Scale',    -- Escala de cinza
+    'Map - Bloom',         -- Efeito bloom
+    'Map - Sepia',         -- Sepia
+    'Map - Pulse',         -- Pulsação
+    'Map - Old Tv',        -- TV antiga
+    'Map - Party',         -- Cores vibrantes
+    'Map - Radial Blur',   -- Desfoque radial
+    'Map - Zomg',          -- Efeito especial
+    'Map - Heat',          -- Efeito de calor
+    'Map - Noise'          -- Ruído
+}
+
+-- Shaders de outfit
+local OUTFIT_SHADERS = {
+    'Outfit - Default',    -- Padrão
+    'Outfit - Rainbow',    -- Arco-íris
+    'Outfit - Ghost',      -- Fantasma
+    'Outfit - Jelly',      -- Gelatina
+    'Outfit - Fragmented', -- Fragmentado
+    'Outfit - Outline'     -- Contorno
+}
+
+-- Aplicar shader ao mapa
+local map = modules.game_interface.getMapPanel()
+map:setShader('Map - Fog')
+
+-- Aplicar shader ao jogador
+local player = g_game.getLocalPlayer()
+if player then
+    player:setShader('Outfit - Rainbow')
+    player:setMountShader('Mount - Rainbow')
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### Criação de Shaders Customizados 📝
 
 ```lua
 -- Criar shader customizado
+    --  Criar shader customizado (traduzido)
 function createCustomShader()
+    -- Função: createCustomShader
     local fragmentShader = [[
         uniform float u_Time;
         uniform vec2 u_Resolution;
@@ -222,17 +520,21 @@ function createCustomShader()
     ]]
     
     -- Salvar shader em arquivo
+    --  Salvar shader em arquivo (traduzido)
     local shaderPath = g_resources.getWorkDir() .. 'shaders/fragment/custom.frag'
     g_resources.writeFileContents(shaderPath, fragmentShader)
     
     -- Registrar shader
+    --  Registrar shader (traduzido)
     g_shaders.createFragmentShader('Custom Shader', 'shaders/fragment/custom.frag', false)
     
     -- Aplicar shader
+    --  Aplicar shader (traduzido)
     local map = modules.game_interface.getMapPanel()
     map:setShader('Custom Shader')
     
     -- Atualizar uniforms
+    --  Atualizar uniforms (traduzido)
     scheduleEvent(function()
         g_shaders.setUniformFloat('u_Time', g_clock.seconds())
         g_shaders.setUniformVec2('u_Resolution', g_graphics.getViewportSize().width, g_graphics.getViewportSize().height)
@@ -240,7 +542,9 @@ function createCustomShader()
 end
 
 -- Shader animado com timer
+    --  Shader animado com timer (traduzido)
 function startAnimatedShader()
+    -- Função: startAnimatedShader
     local updateEvent
     
     local function updateShader()
@@ -253,10 +557,31 @@ function startAnimatedShader()
 end
 ```
 
-## 🖼️ Gerenciamento de Texturas
 
-### g_textures - Interface de Texturas
+---
 
+## 🖼️ Gerenciamento de Texturas 📋
+
+### g_textures - Interface de Texturas 📝
+
+#### Nível Basic
+```lua
+-- Carregar textura
+local texture = g_textures.getTexture(path) -- Carrega/obtém textura
+-- Informações da textura
+local size = texture:getSize()           -- {width, height}
+local width = texture:getWidth()         -- Largura
+local height = texture:getHeight()       -- Altura
+local glId = texture:getId()             -- ID OpenGL
+-- Estados da textura
+local loaded = texture:isLoaded()        -- Está carregada
+local smooth = texture:isSmooth()        -- Suavização ativa
+-- Bind de textura
+-- Criar textura em branco
+local blankTexture = g_textures.createTexture(width, height)
+```
+
+#### Nível Intermediate
 ```lua
 -- Carregar textura
 local texture = g_textures.getTexture(path) -- Carrega/obtém textura
@@ -280,8 +605,43 @@ texture:bind()                           -- Bind para uso
 local blankTexture = g_textures.createTexture(width, height)
 ```
 
-### Cache de Texturas
+#### Nível Advanced
+```lua
+-- Carregar textura
+local texture = g_textures.getTexture(path) -- Carrega/obtém textura
+g_textures.preload(directory)            -- Pré-carrega diretório
 
+-- Informações da textura
+local size = texture:getSize()           -- {width, height}
+local width = texture:getWidth()         -- Largura
+local height = texture:getHeight()       -- Altura
+local glId = texture:getId()             -- ID OpenGL
+
+-- Estados da textura
+local loaded = texture:isLoaded()        -- Está carregada
+local smooth = texture:isSmooth()        -- Suavização ativa
+texture:setSmooth(true)                  -- Ativa suavização
+
+-- Bind de textura
+texture:bind()                           -- Bind para uso
+
+-- Criar textura em branco
+local blankTexture = g_textures.createTexture(width, height)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### Cache de Texturas 📝
+
+#### Nível Basic
 ```lua
 -- Gerenciamento de cache
 function preloadGameTextures()
@@ -312,12 +672,95 @@ function cleanTextureCache()
 end
 ```
 
-## 🔤 Sistema de Fontes
+#### Nível Intermediate
+```lua
+-- Gerenciamento de cache
+function preloadGameTextures()
+    -- Pré-carregar texturas principais
+    g_textures.preload('/images/game/')
+    g_textures.preload('/images/ui/')
+    g_textures.preload('/images/icons/')
+    
+    print("Texturas pré-carregadas")
+end
 
-### g_fonts - Interface de Fontes
+-- Verificar uso de memória
+function getTextureMemoryUsage()
+    local totalMemory = 0
+    local textureCount = 0
+    
+    -- Esta seria uma função hipotética para obter estatísticas
+    -- local stats = g_textures.getMemoryStats()
+    -- return stats.totalMemory, stats.textureCount
+    
+    return totalMemory, textureCount
+end
+
+-- Limpar cache de texturas não utilizadas
+function cleanTextureCache()
+    -- g_textures.cleanUnused() -- Função hipotética
+    collectgarbage()
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Gerenciamento de cache
+function preloadGameTextures()
+    -- Pré-carregar texturas principais
+    g_textures.preload('/images/game/')
+    g_textures.preload('/images/ui/')
+    g_textures.preload('/images/icons/')
+    
+    print("Texturas pré-carregadas")
+end
+
+-- Verificar uso de memória
+function getTextureMemoryUsage()
+    local totalMemory = 0
+    local textureCount = 0
+    
+    -- Esta seria uma função hipotética para obter estatísticas
+    -- local stats = g_textures.getMemoryStats()
+    -- return stats.totalMemory, stats.textureCount
+    
+    return totalMemory, textureCount
+end
+
+-- Limpar cache de texturas não utilizadas
+function cleanTextureCache()
+    -- g_textures.cleanUnused() -- Função hipotética
+    collectgarbage()
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+
+---
+
+## 🔤 Sistema de Fontes ⚙️
+
+### g_fonts - Interface de Fontes 📝
 
 ```lua
 -- Carregar fonte
+    --  Carregar fonte (traduzido)
 local font = g_fonts.getFont(name)       -- "verdana-11px-rounded"
 g_fonts.importFont(path)                 -- Importa fonte customizada
 
@@ -327,15 +770,17 @@ local glyphSpacing = font:getGlyphSpacing() -- Espaçamento
 local textureSize = font:getTextureSize() -- Tamanho da textura
 
 -- Calcular tamanho do texto
+    --  Calcular tamanho do texto (traduzido)
 local textSize = font:calculateTextRectSize(text, maxWidth)
 local width = textSize.width
 local height = textSize.height
 
 -- Renderizar texto
+    --  Renderizar texto (traduzido)
 font:renderText(text, position, color)   -- Renderiza texto
 ```
 
-### Fontes Disponíveis
+### Fontes Disponíveis 📝
 
 ```lua
 -- Fontes padrão do OTClient
@@ -350,23 +795,28 @@ local AVAILABLE_FONTS = {
 
 -- Usar fonte específica
 function setWidgetFont(widget, fontName)
+    -- Função: setWidgetFont
     widget:setFont(fontName)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local label = g_ui.createWidget('UILabel', parent)
 label:setText("Texto com fonte customizada")
 label:setFont('terminus-14px-bold')
 ```
 
-### Criação de Fontes Customizadas
+### Criação de Fontes Customizadas 📝
 
 ```lua
 -- Carregar fonte customizada
+    --  Carregar fonte customizada (traduzido)
 function loadCustomFont()
+    -- Função: loadCustomFont
     local fontPath = g_resources.getWorkDir() .. 'fonts/custom.otfont'
     
     if g_resources.fileExists(fontPath) then
+    -- Verificação condicional
         g_fonts.importFont(fontPath)
         print("Fonte customizada carregada")
     else
@@ -375,7 +825,9 @@ function loadCustomFont()
 end
 
 -- Gerar fonte bitmap
+    --  Gerar fonte bitmap (traduzido)
 function generateBitmapFont(ttfPath, size, outputPath)
+    -- Função: generateBitmapFont
     -- Esta seria uma função para gerar fonte bitmap
     -- a partir de fonte TrueType (implementação específica)
     local success = g_fonts.generateBitmapFont(ttfPath, size, outputPath)
@@ -383,10 +835,14 @@ function generateBitmapFont(ttfPath, size, outputPath)
 end
 ```
 
-## ✨ Efeitos Visuais
 
-### Particles e Animações
+---
 
+## ✨ Efeitos Visuais 📋
+
+### Particles e Animações 📝
+
+#### Nível Basic
 ```lua
 -- Sistema de partículas (se disponível)
 function createParticleEffect(position, type)
@@ -437,15 +893,137 @@ function fadeOut(widget, duration, callback)
 end
 ```
 
-### Efeitos de Luz
+#### Nível Intermediate
+```lua
+-- Sistema de partículas (se disponível)
+function createParticleEffect(position, type)
+    local effect = g_effects.createEffect(type, position)
+    effect:setDuration(2000)             -- 2 segundos
+    effect:setIntensity(1.0)             -- Intensidade máxima
+    effect:start()
+    
+    return effect
+end
+
+-- Animações de interface
+function animateWidget(widget, property, targetValue, duration)
+    local startValue = widget[property]
+    local startTime = g_clock.millis()
+    local updateEvent
+    
+    local function updateAnimation()
+        local elapsed = g_clock.millis() - startTime
+        local progress = math.min(elapsed / duration, 1.0)
+        
+        -- Interpolação linear
+        local currentValue = startValue + (targetValue - startValue) * progress
+        widget[property] = currentValue
+        
+        if progress < 1.0 then
+            updateEvent = scheduleEvent(updateAnimation, 16)
+        end
+    end
+    
+    updateEvent = scheduleEvent(updateAnimation, 16)
+    return updateEvent
+end
+
+-- Efeitos de fade
+function fadeIn(widget, duration)
+    widget:setOpacity(0)
+    widget:setVisible(true)
+    animateWidget(widget, 'opacity', 1.0, duration or 250)
+end
+
+function fadeOut(widget, duration, callback)
+    animateWidget(widget, 'opacity', 0.0, duration or 250)
+    scheduleEvent(function()
+        widget:setVisible(false)
+        if callback then callback() end
+    end, duration or 250)
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Sistema de partículas (se disponível)
+function createParticleEffect(position, type)
+    local effect = g_effects.createEffect(type, position)
+    effect:setDuration(2000)             -- 2 segundos
+    effect:setIntensity(1.0)             -- Intensidade máxima
+    effect:start()
+    
+    return effect
+end
+
+-- Animações de interface
+function animateWidget(widget, property, targetValue, duration)
+    local startValue = widget[property]
+    local startTime = g_clock.millis()
+    local updateEvent
+    
+    local function updateAnimation()
+        local elapsed = g_clock.millis() - startTime
+        local progress = math.min(elapsed / duration, 1.0)
+        
+        -- Interpolação linear
+        local currentValue = startValue + (targetValue - startValue) * progress
+        widget[property] = currentValue
+        
+        if progress < 1.0 then
+            updateEvent = scheduleEvent(updateAnimation, 16)
+        end
+    end
+    
+    updateEvent = scheduleEvent(updateAnimation, 16)
+    return updateEvent
+end
+
+-- Efeitos de fade
+function fadeIn(widget, duration)
+    widget:setOpacity(0)
+    widget:setVisible(true)
+    animateWidget(widget, 'opacity', 1.0, duration or 250)
+end
+
+function fadeOut(widget, duration, callback)
+    animateWidget(widget, 'opacity', 0.0, duration or 250)
+    scheduleEvent(function()
+        widget:setVisible(false)
+        if callback then callback() end
+    end, duration or 250)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### Efeitos de Luz 📝
 
 ```lua
 -- Sistema de luz
+    --  Sistema de luz (traduzido)
 function setAmbientLight(intensity)
+    -- Função: setAmbientLight
     g_graphics.setAmbientLight(intensity) -- 0.0 a 1.0
 end
 
 function addDynamicLight(creature, color, intensity)
+    -- Função: addDynamicLight
     local light = {
         color = color,         -- {r, g, b}
         intensity = intensity, -- 0-255
@@ -456,18 +1034,24 @@ function addDynamicLight(creature, color, intensity)
 end
 
 -- Exemplos de luz
+    --  Exemplos de luz (traduzido)
 function applyTorchLight(creature)
+    -- Função: applyTorchLight
     addDynamicLight(creature, {255, 180, 100}, 200) -- Luz alaranjada
 end
 
 function applyMagicLight(creature)
+    -- Função: applyMagicLight
     addDynamicLight(creature, {100, 100, 255}, 150) -- Luz azul mágica
 end
 ```
 
-## ⚙️ Configurações Gráficas
 
-### Opções de Renderização
+---
+
+## ⚙️ Configurações Gráficas 📋
+
+### Opções de Renderização 📝
 
 ```lua
 -- Configurações principais
@@ -477,21 +1061,25 @@ g_graphics.setDrawHealthBars(enabled)    -- Barras de HP
 g_graphics.setDrawNames(enabled)         -- Nomes das criaturas
 
 -- Qualidade visual
+    --  Qualidade visual (traduzido)
 g_graphics.setAntialiasingMode(mode)     -- Anti-aliasing
 g_graphics.setTextureFiltering(enabled)  -- Filtro de textura
 g_graphics.setFloorViewMode(mode)        -- Modo de visualização de andares
 
 -- Floor fade out
+    --  Floor fade out (traduzido)
 g_graphics.setFloorFading(enabled)       -- Fade de andares
 g_graphics.setFloorShadowing(enabled)    -- Sombras de andares
 
 -- Performance
+    --  Performance (traduzido)
 g_graphics.setOptimizeMana(enabled)      -- Otimizar mana
 g_graphics.setOptimizeHP(enabled)        -- Otimizar HP
 ```
 
-### Sistema de Configurações
+### Sistema de Configurações 📝
 
+#### Inicialização e Configuração
 ```lua
 -- Carregar configurações gráficas
 function loadGraphicsSettings()
@@ -524,6 +1112,10 @@ function saveGraphicsSettings()
         drawHealthBars = g_graphics.isDrawingHealthBars(),
         drawNames = g_graphics.isDrawingNames()
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     g_settings.setNode('graphics', settings)
     g_settings.save()
@@ -556,15 +1148,23 @@ function autoDetectGraphicsSettings()
         g_graphics.setTextureFiltering(true)
         g_graphics.setMaxFPS(60)
     end
+```
+
+#### Finalização
+```lua
     
     print("Configurações gráficas auto-detectadas para:", vendor, renderer)
 end
 ```
 
-## 🚀 Performance e Otimização
 
-### Monitoramento de Performance
+---
 
+## 🚀 Performance e Otimização ⚡
+
+### Monitoramento de Performance 📝
+
+#### Inicialização e Configuração
 ```lua
 -- Monitor de FPS
 function createFPSMonitor()
@@ -594,6 +1194,10 @@ function createFPSMonitor()
         
         updateEvent = scheduleEvent(updateFPS, 100)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     updateEvent = scheduleEvent(updateFPS, 100)
     return window, updateEvent
@@ -627,14 +1231,43 @@ function runGraphicsBenchmark()
             print("Min FPS:", minFPS)
             print("Max FPS:", maxFPS)
         end
+```
+
+#### Finalização
+```lua
     end
     
     updateEvent = scheduleEvent(benchmarkFrame, 16)
 end
 ```
 
-### Otimizações
+### Otimizações 📝
 
+#### Nível Basic
+```lua
+-- Configurações de performance
+function applyPerformanceOptimizations()
+    -- Reduzir qualidade visual para melhor performance
+    -- Reduzir efeitos visuais
+    -- Otimizações específicas
+    print("Otimizações de performance aplicadas")
+end
+-- Configurações de qualidade
+function applyQualitySettings()
+    -- Máxima qualidade visual
+    -- Ativar todos os efeitos
+    print("Configurações de qualidade aplicadas")
+end
+-- Limpeza de recursos gráficos
+function cleanGraphicsResources()
+    -- Limpar cache de texturas
+    -- Limpar shaders não utilizados
+    -- Forçar garbage collection
+    print("Recursos gráficos limpos")
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Configurações de performance
 function applyPerformanceOptimizations()
@@ -684,10 +1317,102 @@ function cleanGraphicsResources()
 end
 ```
 
-## 📸 Screenshots e Gravação
+#### Nível Advanced
+```lua
+-- Configurações de performance
+function applyPerformanceOptimizations()
+    -- Reduzir qualidade visual para melhor performance
+    g_graphics.setAntialiasingMode(0)     -- Desativar anti-aliasing
+    g_graphics.setTextureFiltering(false) -- Desativar filtro de textura
+    g_graphics.setMaxFPS(60)              -- Limitar FPS
+    
+    -- Reduzir efeitos visuais
+    g_graphics.setDrawLights(false)       -- Desativar luzes
+    g_graphics.setFloorFading(false)      -- Desativar fade de andares
+    
+    -- Otimizações específicas
+    setOption('optimizeHP', true)         -- Otimizar barras de HP
+    setOption('optimizeMana', true)       -- Otimizar barras de mana
+    
+    print("Otimizações de performance aplicadas")
+end
 
-### Sistema de Screenshots
+-- Configurações de qualidade
+function applyQualitySettings()
+    -- Máxima qualidade visual
+    g_graphics.setAntialiasingMode(2)     -- Smooth Retro
+    g_graphics.setTextureFiltering(true)  -- Ativar filtro de textura
+    g_graphics.setMaxFPS(0)               -- FPS ilimitado
+    
+    -- Ativar todos os efeitos
+    g_graphics.setDrawLights(true)        -- Ativar luzes
+    g_graphics.setFloorFading(true)       -- Ativar fade de andares
+    g_graphics.setFloorShadowing(true)    -- Ativar sombras
+    
+    print("Configurações de qualidade aplicadas")
+end
 
+-- Limpeza de recursos gráficos
+function cleanGraphicsResources()
+    -- Limpar cache de texturas
+    g_textures.cleanCache()
+    
+    -- Limpar shaders não utilizados
+    g_shaders.cleanUnused()
+    
+    -- Forçar garbage collection
+    collectgarbage('collect')
+    
+    print("Recursos gráficos limpos")
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+
+---
+
+## 📸 Screenshots e Gravação 📋
+
+### Sistema de Screenshots 📝
+
+#### Nível Basic
+```lua
+-- Screenshot básico
+function takeScreenshot(filename)
+    print("Screenshot salvo:", filename)
+end
+-- Screenshot do mapa específico
+function takeMapScreenshot(position, range, filename)
+    print("Screenshot do mapa salvo:", filename)
+end
+-- Screenshot de widget específico
+function takeWidgetScreenshot(widget, filename)
+    -- Criar framebuffer para o widget
+    local rect = widget:getRect()
+    local texture = g_textures.createTexture(rect.width, rect.height)
+    -- Renderizar widget para textura
+    widget:render(texture)
+    -- Salvar textura como imagem
+    print("Screenshot do widget salvo:", filename)
+end
+-- Screenshot automático
+function startAutoScreenshot(interval)
+    local updateEvent
+    local function autoScreenshot()
+    end
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Screenshot básico
 function takeScreenshot(filename)
@@ -735,10 +1460,72 @@ function startAutoScreenshot(interval)
 end
 ```
 
-## 💡 Exemplos Práticos
+#### Nível Advanced
+```lua
+-- Screenshot básico
+function takeScreenshot(filename)
+    filename = filename or string.format("screenshot_%s.png", os.date("%Y%m%d_%H%M%S"))
+    g_graphics.screenshot(filename)
+    print("Screenshot salvo:", filename)
+end
 
-### Exemplo 1: Sistema de Configurações Gráficas
+-- Screenshot do mapa específico
+function takeMapScreenshot(position, range, filename)
+    filename = filename or string.format("map_%d_%d_%d.png", position.x, position.y, position.z)
+    g_graphics.screenshotMap(filename, position, range)
+    print("Screenshot do mapa salvo:", filename)
+end
 
+-- Screenshot de widget específico
+function takeWidgetScreenshot(widget, filename)
+    filename = filename or "widget_screenshot.png"
+    
+    -- Criar framebuffer para o widget
+    local rect = widget:getRect()
+    local texture = g_textures.createTexture(rect.width, rect.height)
+    
+    -- Renderizar widget para textura
+    widget:render(texture)
+    
+    -- Salvar textura como imagem
+    texture:saveToFile(filename)
+    
+    print("Screenshot do widget salvo:", filename)
+end
+
+-- Screenshot automático
+function startAutoScreenshot(interval)
+    interval = interval or 60000 -- 1 minuto
+    
+    local updateEvent
+    local function autoScreenshot()
+        takeScreenshot()
+        updateEvent = scheduleEvent(autoScreenshot, interval)
+    end
+    
+    updateEvent = scheduleEvent(autoScreenshot, interval)
+    return updateEvent
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+
+---
+
+## 💡 Exemplos Práticos 💡
+
+### Exemplo 1: Sistema de Configurações Gráficas 🎮
+
+#### Inicialização e Configuração
 ```lua
 -- modules/graphics_settings/graphics_settings.lua
 graphicsSettings = {}
@@ -788,6 +1575,10 @@ function graphicsSettings.setupInterface()
     graphicsSettings.applyButton.onClick = graphicsSettings.applySettings
     graphicsSettings.resetButton.onClick = graphicsSettings.resetSettings
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function graphicsSettings.onFPSChange(slider, value)
     local fps = value == 0 and 0 or (30 + value * 2) -- 0 = unlimited, 30-120
@@ -810,6 +1601,10 @@ function graphicsSettings.onAAChange(combo, option)
 end
 
 function graphicsSettings.autoDetect()
+```
+
+#### Funcionalidade 2
+```lua
     local vendor = g_graphics.getVendor():lower()
     
     if vendor:find('nvidia') then
@@ -847,6 +1642,10 @@ function graphicsSettings.applyProfile(profile)
         g_graphics.setDrawLights(false)
         g_graphics.setFloorViewMode(0)
     end
+```
+
+#### Funcionalidade 3
+```lua
 end
 
 function graphicsSettings.loadSettings()
@@ -870,6 +1669,10 @@ function graphicsSettings.saveSettings()
         textureFiltering = g_graphics.isTextureFilteringEnabled(),
         drawLights = g_graphics.isDrawingLights()
     }
+```
+
+#### Finalização
+```lua
     
     g_settings.setNode('graphics', settings)
     g_settings.save()
@@ -884,8 +1687,9 @@ function graphicsSettings.updateInterface()
 end
 ```
 
-### Exemplo 2: Sistema de Shaders Dinâmicos
+### Exemplo 2: Sistema de Shaders Dinâmicos 🎮
 
+#### Inicialização e Configuração
 ```lua
 -- modules/dynamic_shaders/dynamic_shaders.lua
 dynamicShaders = {}
@@ -912,6 +1716,10 @@ function dynamicShaders.setupInterface()
     dynamicShaders.applyButton.onClick = dynamicShaders.applySelectedShader
     dynamicShaders.removeButton.onClick = dynamicShaders.removeActiveShader
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function dynamicShaders.loadShaders()
     -- Carregar shaders do diretório
@@ -935,6 +1743,10 @@ function dynamicShaders.registerShader(name, path)
         path = path,
         parameters = dynamicShaders.parseShaderParameters(path)
     }
+```
+
+#### Funcionalidade 2
+```lua
     
     table.insert(dynamicShaders.activeShaders, shaderInfo)
 end
@@ -956,6 +1768,10 @@ function dynamicShaders.parseShaderParameters(path)
 end
 
 function dynamicShaders.updateShaderList()
+```
+
+#### Funcionalidade 3
+```lua
     dynamicShaders.shaderList:destroyChildren()
     
     for _, shader in ipairs(dynamicShaders.activeShaders) do
@@ -986,6 +1802,10 @@ function dynamicShaders.showShaderPreview(shader)
         control:addAnchor(AnchorTop, 'prev', AnchorBottom)
         control:addAnchor(AnchorLeft, 'parent', AnchorLeft)
     end
+```
+
+#### Funcionalidade 4
+```lua
 end
 
 function dynamicShaders.createParameterControl(param, shader)
@@ -1007,6 +1827,10 @@ function dynamicShaders.createParameterControl(param, shader)
         slider.onValueChange = function(slider, value)
             g_shaders.setUniformFloat(param.name, value / 100.0)
         end
+```
+
+#### Funcionalidade 5
+```lua
     elseif param.type == 'vec2' then
         local xSlider = g_ui.createWidget('UISlider', container)
         local ySlider = g_ui.createWidget('UISlider', container)
@@ -1028,6 +1852,10 @@ function dynamicShaders.applySelectedShader()
 end
 
 function dynamicShaders.removeActiveShader()
+```
+
+#### Finalização
+```lua
     local map = modules.game_interface.getMapPanel()
     map:setShader('Default')
     
@@ -1047,8 +1875,9 @@ function dynamicShaders.onGameEnd()
 end
 ```
 
-### Exemplo 3: Monitor de Performance Gráfica
+### Exemplo 3: Monitor de Performance Gráfica 🎮
 
+#### Inicialização e Configuração
 ```lua
 -- modules/graphics_monitor/graphics_monitor.lua
 graphicsMonitor = {}
@@ -1071,6 +1900,10 @@ function graphicsMonitor.setupInterface()
     graphicsMonitor.resetButton = graphicsMonitor.window:getChildById('resetButton')
     graphicsMonitor.resetButton.onClick = graphicsMonitor.resetStats
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function graphicsMonitor.startMonitoring()
     local updateEvent
@@ -1100,6 +1933,10 @@ function graphicsMonitor.startMonitoring()
             maxFPS = math.max(maxFPS, entry.fps)
             totalFPS = totalFPS + entry.fps
         end
+```
+
+#### Funcionalidade 2
+```lua
         
         local avgFPS = #graphicsMonitor.history > 0 and (totalFPS / #graphicsMonitor.history) or 0
         
@@ -1130,6 +1967,10 @@ function graphicsMonitor.updateChart()
     for _, entry in ipairs(graphicsMonitor.history) do
         maxFPS = math.max(maxFPS, entry.fps)
     end
+```
+
+#### Funcionalidade 3
+```lua
     
     if maxFPS == 0 then return end
     
@@ -1156,6 +1997,10 @@ function graphicsMonitor.updateChart()
         else
             line:setBackgroundColor('#00FF00') -- Verde para FPS alto
         end
+```
+
+#### Finalização
+```lua
     end
 end
 

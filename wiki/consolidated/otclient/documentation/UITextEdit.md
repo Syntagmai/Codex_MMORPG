@@ -93,20 +93,84 @@ O `UITextEdit` é um widget avançado que estende `UIWidget` para fornecer funci
 
 Conecta uma barra de rolagem vertical ao TextEdit. A barra será atualizada automaticamente conforme o conteúdo muda.
 
+#### Nível Basic
 ```lua
 local textEdit = g_ui.createWidget('MultilineTextEdit', parent)
 local vScrollBar = g_ui.createWidget('VerticalScrollBar', parent)
 textEdit:setVerticalScrollBar(vScrollBar)
 ```
 
+#### Nível Intermediate
+```lua
+local textEdit = g_ui.createWidget('MultilineTextEdit', parent)
+local vScrollBar = g_ui.createWidget('VerticalScrollBar', parent)
+textEdit:setVerticalScrollBar(vScrollBar)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local textEdit = g_ui.createWidget('MultilineTextEdit', parent)
+local vScrollBar = g_ui.createWidget('VerticalScrollBar', parent)
+textEdit:setVerticalScrollBar(vScrollBar)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### `setHorizontalScrollBar(scrollbar)`
 
 Conecta uma barra de rolagem horizontal ao TextEdit.
 
+#### Nível Basic
 ```lua
 local textEdit = g_ui.createWidget('TextEdit', parent)
 local hScrollBar = g_ui.createWidget('HorizontalScrollBar', parent)
 textEdit:setHorizontalScrollBar(hScrollBar)
+```
+
+#### Nível Intermediate
+```lua
+local textEdit = g_ui.createWidget('TextEdit', parent)
+local hScrollBar = g_ui.createWidget('HorizontalScrollBar', parent)
+textEdit:setHorizontalScrollBar(hScrollBar)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local textEdit = g_ui.createWidget('TextEdit', parent)
+local hScrollBar = g_ui.createWidget('HorizontalScrollBar', parent)
+textEdit:setHorizontalScrollBar(hScrollBar)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 #### `updateScrollBars()`
@@ -174,6 +238,7 @@ TextQtEdit < UITextEdit
 
 ### Campo de Texto Simples
 
+#### Nível Basic
 ```lua
 local textEdit = g_ui.createWidget('TextEdit', parent)
 textEdit:setPosition({x = 100, y = 100})
@@ -186,8 +251,52 @@ textEdit.onTextChange = function(widget, newText)
 end
 ```
 
+#### Nível Intermediate
+```lua
+local textEdit = g_ui.createWidget('TextEdit', parent)
+textEdit:setPosition({x = 100, y = 100})
+textEdit:setSize({width = 200, height = 22})
+textEdit:setText('Digite aqui...')
+textEdit:setMaxLength(50)
+
+textEdit.onTextChange = function(widget, newText)
+  print('Texto alterado para:', newText)
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local textEdit = g_ui.createWidget('TextEdit', parent)
+textEdit:setPosition({x = 100, y = 100})
+textEdit:setSize({width = 200, height = 22})
+textEdit:setText('Digite aqui...')
+textEdit:setMaxLength(50)
+
+textEdit.onTextChange = function(widget, newText)
+  print('Texto alterado para:', newText)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Campo de Senha
 
+#### Nível Basic
 ```lua
 local passwordEdit = g_ui.createWidget('PasswordTextEdit', parent)
 passwordEdit:setPosition({x = 100, y = 130})
@@ -196,23 +305,62 @@ passwordEdit:setPlaceholder('Senha')
 passwordEdit:setMaxLength(32)
 ```
 
+#### Nível Intermediate
+```lua
+local passwordEdit = g_ui.createWidget('PasswordTextEdit', parent)
+passwordEdit:setPosition({x = 100, y = 130})
+passwordEdit:setSize({width = 200, height = 22})
+passwordEdit:setPlaceholder('Senha')
+passwordEdit:setMaxLength(32)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local passwordEdit = g_ui.createWidget('PasswordTextEdit', parent)
+passwordEdit:setPosition({x = 100, y = 130})
+passwordEdit:setSize({width = 200, height = 22})
+passwordEdit:setPlaceholder('Senha')
+passwordEdit:setMaxLength(32)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Editor de Texto Multilinha com Rolagem
 
 ```lua
 -- Criar editor multilinha
+    --  Criar editor multilinha (traduzido)
 local textEditor = g_ui.createWidget('MultilineTextEdit', parent)
 textEditor:setPosition({x = 50, y = 50})
 textEditor:setSize({width = 300, height = 200})
 
 -- Criar barra de rolagem vertical
+    --  Criar barra de rolagem vertical (traduzido)
 local vScrollBar = g_ui.createWidget('VerticalScrollBar', parent)
 vScrollBar:setPosition({x = 355, y = 50})
 vScrollBar:setSize({width = 20, height = 200})
 
 -- Conectar barra de rolagem
+    --  Conectar barra de rolagem (traduzido)
 textEditor:setVerticalScrollBar(vScrollBar)
 
 -- Configurar propriedades
+    --  Configurar propriedades (traduzido)
 textEditor:setEditable(true)
 textEditor:setSelectable(true)
 textEditor:setAutoScroll(true)
@@ -227,12 +375,14 @@ numberEdit:setValidCharacters('0123456789')
 numberEdit:setMaxLength(10)
 
 -- Campo que aceita apenas letras
+    --  Campo que aceita apenas letras (traduzido)
 local nameEdit = g_ui.createWidget('TextEdit', parent)
 nameEdit:setValidCharacters('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ')
 ```
 
 ### Manipulação Programática
 
+#### Nível Basic
 ```lua
 local textEdit = g_ui.createWidget('TextEdit', parent)
 
@@ -255,6 +405,69 @@ textEdit:clearSelection()
 textEdit:paste(' - Colado!')
 ```
 
+#### Nível Intermediate
+```lua
+local textEdit = g_ui.createWidget('TextEdit', parent)
+
+-- Definir texto e posicionar cursor
+textEdit:setText('Olá Mundo')
+textEdit:setCursorPos(5) -- Posiciona cursor após "Olá "
+
+-- Selecionar parte do texto
+textEdit:setSelection(0, 4) -- Seleciona "Olá "
+
+-- Manipular seleção
+local selectedText = textEdit:getSelection()
+textEdit:deleteSelection()
+textEdit:appendText('Novo texto')
+
+-- Operações de clipboard
+textEdit:selectAll()
+local copiedText = textEdit:copy()
+textEdit:clearSelection()
+textEdit:paste(' - Colado!')
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local textEdit = g_ui.createWidget('TextEdit', parent)
+
+-- Definir texto e posicionar cursor
+textEdit:setText('Olá Mundo')
+textEdit:setCursorPos(5) -- Posiciona cursor após "Olá "
+
+-- Selecionar parte do texto
+textEdit:setSelection(0, 4) -- Seleciona "Olá "
+
+-- Manipular seleção
+local selectedText = textEdit:getSelection()
+textEdit:deleteSelection()
+textEdit:appendText('Novo texto')
+
+-- Operações de clipboard
+textEdit:selectAll()
+local copiedText = textEdit:copy()
+textEdit:clearSelection()
+textEdit:paste(' - Colado!')
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Personalização de Aparência
 
 ```lua
@@ -265,6 +478,7 @@ customEdit:setSelectionColor('#ffff00') -- Texto amarelo
 customEdit:setSelectionBackgroundColor('#0000ff') -- Fundo azul
 
 -- Configurar placeholder
+    --  Configurar placeholder (traduzido)
 customEdit:setPlaceholder('Digite seu nome...')
 customEdit:setPlaceholderColor('#888888')
 customEdit:setPlaceholderAlign(AlignCenter)
@@ -284,8 +498,10 @@ textEdit.onTextChange = function(widget, newText, oldText)
 end
 
 -- Evento de foco
+    --  Evento de foco (traduzido)
 textEdit.onFocusChange = function(widget, focused)
   if focused then
+    -- Verificação condicional
     print('TextEdit ganhou foco')
   else
     print('TextEdit perdeu foco')
@@ -293,8 +509,10 @@ textEdit.onFocusChange = function(widget, focused)
 end
 
 -- Evento de tecla pressionada
+    --  Evento de tecla pressionada (traduzido)
 textEdit.onKeyPress = function(widget, keyCode, keyModifiers)
   if keyCode == KeyEnter then
+    -- Verificação condicional
     print('Enter pressionado, texto:', widget:getText())
     return true -- Consumir evento
   end

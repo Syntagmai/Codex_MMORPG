@@ -51,6 +51,7 @@ O sistema de módulos do Canary é responsável por gerenciar extensões customi
 #### **1. Module Class**
 ```cpp
 class Module final : public Event {
+    -- Classe: Module
 public:
     explicit Module(LuaScriptInterface* interface);
 
@@ -89,6 +90,7 @@ protected:
 #### **2. Modules Manager**
 ```cpp
 class Modules final : public BaseEvents {
+    -- Classe: Modules
 public:
     Modules();
 
@@ -129,11 +131,45 @@ constexpr auto g_modules = Modules::getInstance;
 - **Interface Lua**: Integração com Lua
 
 #### **3. Module Types**
+#### Nível Basic
 ```cpp
 enum ModuleType_t {
     MODULE_TYPE_RECVBYTE,
     MODULE_TYPE_NONE,
 };
+```
+
+#### Nível Intermediate
+```cpp
+enum ModuleType_t {
+    MODULE_TYPE_RECVBYTE,
+    MODULE_TYPE_NONE,
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+enum ModuleType_t {
+    MODULE_TYPE_RECVBYTE,
+    MODULE_TYPE_NONE,
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 **Localização**: `canary/src/lua/lua_definitions.hpp`
@@ -145,6 +181,7 @@ enum ModuleType_t {
 #### **4. Player Module Management**
 ```cpp
 class Player {
+    -- Classe: Player
 public:
     void setModuleDelay(uint8_t byteortype, int16_t delay);
     bool canRunModule(uint8_t byteortype);
@@ -186,6 +223,7 @@ enum class Reload_t : uint8_t {
 };
 
 class GameReload {
+    -- Classe: GameReload
 public:
     static bool init(Reload_t reloadType);
     static uint8_t getReloadNumber(Reload_t reloadTypes);
@@ -205,6 +243,7 @@ private:
 #### **6. Server Module Loading**
 ```cpp
 class CanaryServer {
+    -- Classe: CanaryServer
 private:
     void loadModules();
     void modulesLoadHelper(bool loaded, std::string moduleName);
@@ -223,6 +262,7 @@ private:
 #### **Recvbyte Management**
 ```cpp
 class Modules {
+    -- Classe: Modules
 public:
     void executeOnRecvbyte(uint32_t playerId, NetworkMessage &msg, uint8_t byte) const;
     Module_ptr getEventByRecvbyte(uint8_t recvbyte, bool force);
@@ -244,6 +284,7 @@ private:
 #### **Delay Management**
 ```cpp
 class Player {
+    -- Classe: Player
 public:
     void setModuleDelay(uint8_t byteortype, int16_t delay);
     bool canRunModule(uint8_t byteortype);
@@ -262,6 +303,7 @@ private:
 ### **🔧 APIs Principais**
 
 #### **Module Creation and Management**
+#### Nível Basic
 ```cpp
 // Criar módulo
 auto module = std::make_shared<Module>(scriptInterface);
@@ -277,7 +319,57 @@ modules->executeOnRecvbyte(playerId, msg, recvbyte);
 auto module = modules->getEventByRecvbyte(recvbyte, false);
 ```
 
+#### Nível Intermediate
+```cpp
+// Criar módulo
+auto module = std::make_shared<Module>(scriptInterface);
+module->configureEvent(xmlNode);
+
+// Registrar módulo
+modules->registerEvent(module, xmlNode);
+
+// Executar módulo
+modules->executeOnRecvbyte(playerId, msg, recvbyte);
+
+// Obter módulo por recvbyte
+auto module = modules->getEventByRecvbyte(recvbyte, false);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Criar módulo
+auto module = std::make_shared<Module>(scriptInterface);
+module->configureEvent(xmlNode);
+
+// Registrar módulo
+modules->registerEvent(module, xmlNode);
+
+// Executar módulo
+modules->executeOnRecvbyte(playerId, msg, recvbyte);
+
+// Obter módulo por recvbyte
+auto module = modules->getEventByRecvbyte(recvbyte, false);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Player Module Control**
+#### Nível Basic
 ```cpp
 // Configurar delay de módulo
 player->setModuleDelay(recvbyte, 1000); // 1 segundo
@@ -294,7 +386,59 @@ if (module && module->isLoaded()) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Configurar delay de módulo
+player->setModuleDelay(recvbyte, 1000); // 1 segundo
+
+// Verificar se pode executar
+if (player->canRunModule(recvbyte)) {
+    // Módulo pode executar
+}
+
+// Verificar estado do módulo
+auto module = modules->getEventByRecvbyte(recvbyte, false);
+if (module && module->isLoaded()) {
+    // Módulo carregado e pronto
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Configurar delay de módulo
+player->setModuleDelay(recvbyte, 1000); // 1 segundo
+
+// Verificar se pode executar
+if (player->canRunModule(recvbyte)) {
+    // Módulo pode executar
+}
+
+// Verificar estado do módulo
+auto module = modules->getEventByRecvbyte(recvbyte, false);
+if (module && module->isLoaded()) {
+    // Módulo carregado e pronto
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Module Reload**
+#### Nível Basic
 ```cpp
 // Reload específico de módulos
 GameReload::init(Reload_t::RELOAD_TYPE_MODULES);
@@ -306,7 +450,49 @@ GameReload::init(Reload_t::RELOAD_TYPE_ALL);
 uint8_t reloadNumber = GameReload::getReloadNumber(Reload_t::RELOAD_TYPE_MODULES);
 ```
 
+#### Nível Intermediate
+```cpp
+// Reload específico de módulos
+GameReload::init(Reload_t::RELOAD_TYPE_MODULES);
+
+// Reload completo (inclui módulos)
+GameReload::init(Reload_t::RELOAD_TYPE_ALL);
+
+// Verificar número de reload
+uint8_t reloadNumber = GameReload::getReloadNumber(Reload_t::RELOAD_TYPE_MODULES);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Reload específico de módulos
+GameReload::init(Reload_t::RELOAD_TYPE_MODULES);
+
+// Reload completo (inclui módulos)
+GameReload::init(Reload_t::RELOAD_TYPE_ALL);
+
+// Verificar número de reload
+uint8_t reloadNumber = GameReload::getReloadNumber(Reload_t::RELOAD_TYPE_MODULES);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Server Module Loading**
+#### Nível Basic
 ```cpp
 // Carregamento durante inicialização
 canaryServer->loadModules();
@@ -314,6 +500,43 @@ canaryServer->loadModules();
 // Helper para logging
 canaryServer->modulesLoadHelper(true, "CustomModule");
 canaryServer->modulesLoadHelper(false, "FailedModule");
+```
+
+#### Nível Intermediate
+```cpp
+// Carregamento durante inicialização
+canaryServer->loadModules();
+
+// Helper para logging
+canaryServer->modulesLoadHelper(true, "CustomModule");
+canaryServer->modulesLoadHelper(false, "FailedModule");
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Carregamento durante inicialização
+canaryServer->loadModules();
+
+// Helper para logging
+canaryServer->modulesLoadHelper(true, "CustomModule");
+canaryServer->modulesLoadHelper(false, "FailedModule");
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **📊 Métricas de Performance**

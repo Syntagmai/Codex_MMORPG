@@ -59,12 +59,14 @@ O `UIWidget` é a classe base para todos os elementos de interface no OTClient.
 #### 🔧 Métodos Core
 ```lua
 -- Gerenciamento de hierarquia
+    --  Gerenciamento de hierarquia (traduzido)
 widget:addChild(childWidget)
 widget:removeChild(childWidget)
 widget:getChildById('childId')
 widget:getChildren()
 
 -- Visibilidade e foco
+    --  Visibilidade e foco (traduzido)
 widget:show()
 widget:hide()
 widget:focus()
@@ -72,6 +74,7 @@ widget:raise()
 widget:lower()
 
 -- Propriedades
+    --  Propriedades (traduzido)
 widget:setId('myWidget')
 widget:setEnabled(true)
 widget:setVisible(true)
@@ -82,6 +85,7 @@ widget:setPosition({x = 10, y = 20})
 #### 🎨 Propriedades dos Widgets
 ```lua
 -- Obter propriedades
+    --  Obter propriedades (traduzido)
 local id = widget:getId()
 local size = widget:getSize()
 local position = widget:getPosition()
@@ -90,6 +94,7 @@ local isEnabled = widget:isEnabled()
 local isFocused = widget:isFocused()
 
 -- Definir propriedades
+    --  Definir propriedades (traduzido)
 widget:setText('Hello World')
 widget:setFont('verdana-11px-antialised')
 widget:setColor('#FFFFFF')
@@ -100,6 +105,7 @@ widget:setOpacity(0.8)
 ### 🎯 Widgets Principais
 
 #### 📝 Label
+#### Nível Basic
 ```lua
 local label = g_ui.createWidget('Label', parent)
 label:setText('Texto do label')
@@ -108,7 +114,43 @@ label:setColor('#FFFFFF')
 label:setTextAlign('center')
 ```
 
+#### Nível Intermediate
+```lua
+local label = g_ui.createWidget('Label', parent)
+label:setText('Texto do label')
+label:setFont('verdana-11px-antialised')
+label:setColor('#FFFFFF')
+label:setTextAlign('center')
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local label = g_ui.createWidget('Label', parent)
+label:setText('Texto do label')
+label:setFont('verdana-11px-antialised')
+label:setColor('#FFFFFF')
+label:setTextAlign('center')
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### 🔘 Button
+#### Nível Basic
 ```lua
 local button = g_ui.createWidget('Button', parent)
 button:setText('Clique aqui')
@@ -118,13 +160,86 @@ button.onClick = function(widget)
 end
 ```
 
+#### Nível Intermediate
+```lua
+local button = g_ui.createWidget('Button', parent)
+button:setText('Clique aqui')
+button:setImage('/images/button.png')
+button.onClick = function(widget)
+    print('Botão clicado!')
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local button = g_ui.createWidget('Button', parent)
+button:setText('Clique aqui')
+button:setImage('/images/button.png')
+button.onClick = function(widget)
+    print('Botão clicado!')
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### 📋 Panel
+#### Nível Basic
 ```lua
 local panel = g_ui.createWidget('Panel', parent)
 panel:setSize({width = 200, height = 150})
 panel:setBackgroundColor('#2c3e50')
 panel:setBorderWidth(2)
 panel:setBorderColor('#34495e')
+```
+
+#### Nível Intermediate
+```lua
+local panel = g_ui.createWidget('Panel', parent)
+panel:setSize({width = 200, height = 150})
+panel:setBackgroundColor('#2c3e50')
+panel:setBorderWidth(2)
+panel:setBorderColor('#34495e')
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local panel = g_ui.createWidget('Panel', parent)
+panel:setSize({width = 200, height = 150})
+panel:setBackgroundColor('#2c3e50')
+panel:setBorderWidth(2)
+panel:setBorderColor('#34495e')
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 #### 📦 Container
@@ -134,6 +249,7 @@ container:setLayout('UIHorizontalLayout')
 container:setSize({width = 300, height = 100})
 
 -- Adicionar widgets ao container
+    --  Adicionar widgets ao container (traduzido)
 local label1 = g_ui.createWidget('Label', container)
 label1:setText('Item 1')
 
@@ -163,6 +279,7 @@ widget:addAnchor('hcenter', 'parent', 'hcenter')
 widget:addAnchor('vcenter', 'parent', 'vcenter')
 
 -- Anchors customizados
+    --  Anchors customizados (traduzido)
 widget:addAnchor('left', 'otherWidget', 'right')
 widget:addAnchor('bottom', 'otherWidget', 'top')
 ```
@@ -170,6 +287,7 @@ widget:addAnchor('bottom', 'otherWidget', 'top')
 #### 📏 Exemplos de Posicionamento
 ```lua
 -- Widget que preenche o pai
+    --  Widget que preenche o pai (traduzido)
 local fullWidget = g_ui.createWidget('UIWidget', parent)
 fullWidget:addAnchor('left', 'parent', 'left')
 fullWidget:addAnchor('right', 'parent', 'right')
@@ -177,11 +295,13 @@ fullWidget:addAnchor('top', 'parent', 'top')
 fullWidget:addAnchor('bottom', 'parent', 'bottom')
 
 -- Widget centralizado
+    --  Widget centralizado (traduzido)
 local centerWidget = g_ui.createWidget('UIWidget', parent)
 centerWidget:addAnchor('center', 'parent', 'center')
 centerWidget:setSize({width = 100, height = 50})
 
 -- Widget ancorado a outro
+    --  Widget ancorado a outro (traduzido)
 local button = g_ui.createWidget('Button', parent)
 button:setSize({width = 80, height = 30})
 button:addAnchor('left', 'parent', 'left')
@@ -198,7 +318,9 @@ container:setLayout('UIHorizontalLayout')
 container:setSize({width = 300, height = 50})
 
 -- Adicionar widgets horizontalmente
+    --  Adicionar widgets horizontalmente (traduzido)
 for i = 1, 3 do
+    -- Loop de repetição
     local button = g_ui.createWidget('Button', container)
     button:setText('Botão ' .. i)
     button:setSize({width = 80, height = 30})
@@ -212,7 +334,9 @@ container:setLayout('UIVerticalLayout')
 container:setSize({width = 200, height = 150})
 
 -- Adicionar widgets verticalmente
+    --  Adicionar widgets verticalmente (traduzido)
 for i = 1, 3 do
+    -- Loop de repetição
     local label = g_ui.createWidget('Label', container)
     label:setText('Linha ' .. i)
     label:setSize({width = 180, height = 30})
@@ -227,7 +351,9 @@ container:setGridSize({columns = 3, rows = 2})
 container:setSize({width = 300, height = 100})
 
 -- Adicionar widgets em grid
+    --  Adicionar widgets em grid (traduzido)
 for i = 1, 6 do
+    -- Loop de repetição
     local button = g_ui.createWidget('Button', container)
     button:setText('Item ' .. i)
 end
@@ -238,6 +364,7 @@ end
 ## 🎛️ Sistema de Eventos
 
 ### 📡 Eventos de Mouse
+#### Nível Basic
 ```lua
 -- Eventos básicos de mouse
 widget.onClick = function(widget)
@@ -269,13 +396,96 @@ widget.onMouseRelease = function(widget, button)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Eventos básicos de mouse
+widget.onClick = function(widget)
+    print('Widget clicado:', widget:getId())
+end
+
+widget.onDoubleClick = function(widget)
+    print('Widget clicado duas vezes')
+end
+
+widget.onRightClick = function(widget)
+    print('Botão direito clicado')
+end
+
+widget.onMouseEnter = function(widget)
+    print('Mouse entrou no widget')
+end
+
+widget.onMouseLeave = function(widget)
+    print('Mouse saiu do widget')
+end
+
+widget.onMousePress = function(widget, button)
+    print('Botão pressionado:', button)
+end
+
+widget.onMouseRelease = function(widget, button)
+    print('Botão solto:', button)
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Eventos básicos de mouse
+widget.onClick = function(widget)
+    print('Widget clicado:', widget:getId())
+end
+
+widget.onDoubleClick = function(widget)
+    print('Widget clicado duas vezes')
+end
+
+widget.onRightClick = function(widget)
+    print('Botão direito clicado')
+end
+
+widget.onMouseEnter = function(widget)
+    print('Mouse entrou no widget')
+end
+
+widget.onMouseLeave = function(widget)
+    print('Mouse saiu do widget')
+end
+
+widget.onMousePress = function(widget, button)
+    print('Botão pressionado:', button)
+end
+
+widget.onMouseRelease = function(widget, button)
+    print('Botão solto:', button)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### ⌨️ Eventos de Teclado
 ```lua
 -- Eventos de teclado
+    --  Eventos de teclado (traduzido)
 widget.onKeyPress = function(widget, keyCode, keyboardModifiers)
     print('Tecla pressionada:', keyCode)
     
     if keyCode == Key_Escape then
+    -- Verificação condicional
         widget:hide()
     elseif keyCode == Key_Enter then
         -- Executar ação
@@ -295,6 +505,7 @@ end
 ```lua
 widget.onFocusChange = function(widget, focused)
     if focused then
+    -- Verificação condicional
         print('Widget recebeu foco')
         widget:setBackgroundColor('#3498db')
     else
@@ -307,9 +518,11 @@ end
 ### 🎮 Eventos Customizados
 ```lua
 -- Disparar evento customizado
+    --  Disparar evento customizado (traduzido)
 widget:fireEvent('customEvent', {data = 'value'})
 
 -- Escutar evento customizado
+    --  Escutar evento customizado (traduzido)
 widget.onCustomEvent = function(widget, data)
     print('Evento customizado recebido:', data.data)
 end
@@ -330,9 +543,11 @@ end
 #### 📝 Aplicando Estilos
 ```lua
 -- Estilo inline
+    --  Estilo inline (traduzido)
 widget:setStyle('background-color: #2c3e50; color: white; border: 1px solid #34495e;')
 
 -- Estilo via propriedades
+    --  Estilo via propriedades (traduzido)
 widget:setBackgroundColor('#2c3e50')
 widget:setColor('#FFFFFF')
 widget:setBorderWidth(1)
@@ -340,6 +555,7 @@ widget:setBorderColor('#34495e')
 ```
 
 #### 🎨 Estilos CSS-like
+#### Inicialização e Configuração
 ```lua
 -- Aplicar múltiplos estilos
 g_ui.setStyleSheet([
@@ -364,6 +580,10 @@ g_ui.setStyleSheet([
   Button:pressed {
     background-color: #1f5f8b;
   }
+```
+
+#### Funcionalidade 1
+```lua
   
   Label {
     color: #ecf0f1;
@@ -387,6 +607,10 @@ g_ui.setStyleSheet([
   Button:hover {
     background-color: #2980b9;
   }
+```
+
+#### Finalização
+```lua
   
   Button:pressed {
     background-color: #1f5f8b;
@@ -400,6 +624,7 @@ g_ui.setStyleSheet([
 ```
 
 #### 🎯 Seletores Avançados
+#### Nível Basic
 ```lua
 -- Estilos específicos por ID
 g_ui.setStyleSheet([
@@ -443,9 +668,115 @@ g_ui.setStyleSheet([
 .md))
 ```
 
+#### Nível Intermediate
+```lua
+-- Estilos específicos por ID
+g_ui.setStyleSheet([
+  #myButton {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  #myButton:hover {
+    background-color: #c0392b;
+  }
+  
+  .error {
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  
+  .success {
+    color: #27ae60;
+    font-weight: bold;
+  }
+](
+  #myButton {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  #myButton:hover {
+    background-color: #c0392b;
+  }
+  
+  .error {
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  
+  .success {
+    color: #27ae60;
+    font-weight: bold;
+  }
+.md))
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Estilos específicos por ID
+g_ui.setStyleSheet([
+  #myButton {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  #myButton:hover {
+    background-color: #c0392b;
+  }
+  
+  .error {
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  
+  .success {
+    color: #27ae60;
+    font-weight: bold;
+  }
+](
+  #myButton {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  #myButton:hover {
+    background-color: #c0392b;
+  }
+  
+  .error {
+    color: #e74c3c;
+    font-weight: bold;
+  }
+  
+  .success {
+    color: #27ae60;
+    font-weight: bold;
+  }
+.md))
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🌈 Sistema de Cores
 ```lua
 -- Cores predefinidas
+    --  Cores predefinidas (traduzido)
 local colors = {
     primary = '#3498db',
     secondary = '#2ecc71',
@@ -457,6 +788,7 @@ local colors = {
 }
 
 -- Aplicar cores
+    --  Aplicar cores (traduzido)
 widget:setColor(colors.primary)
 widget:setBackgroundColor(colors.light)
 ```
@@ -468,19 +800,24 @@ widget:setBackgroundColor(colors.light)
 ### 🎯 Gerenciamento de Widgets
 ```lua
 -- Criar widget
+    --  Criar widget (traduzido)
 local widget = g_ui.createWidget('UIWidget', parent)
 
 -- Buscar widget por ID
+    --  Buscar widget por ID (traduzido)
 local widget = g_ui.getWidgetById('myWidget')
 
 -- Obter widget raiz
+    --  Obter widget raiz (traduzido)
 local rootWidget = g_ui.getRootWidget()
 
 -- Destruir widget
+    --  Destruir widget (traduzido)
 widget:destroy()
 
 -- Verificar existência
 if widget then
+    -- Verificação condicional
     print('Widget existe')
 end
 ```
@@ -488,19 +825,23 @@ end
 ### 🎨 Carregamento de Interfaces
 ```lua
 -- Carregar interface do arquivo .otui
+    --  Carregar interface do arquivo .otui (traduzido)
 local window = g_ui.loadUI('myinterface', parent)
 window:hide()
 
 -- Exibir interface
+    --  Exibir interface (traduzido)
 g_ui.displayUI('myinterface')
 
 -- Destruir interface
+    --  Destruir interface (traduzido)
 window:destroy()
 ```
 
 ### 📊 Gerenciamento de Janelas
 ```lua
 -- Criar janela modal
+    --  Criar janela modal (traduzido)
 local modal = g_ui.createWidget('MainWindow', rootWidget)
 modal:setModal(true)
 modal:show()
@@ -512,11 +853,13 @@ window:setModal(false)
 window:show()
 
 -- Gerenciar z-order
+    --  Gerenciar z-order (traduzido)
 window:raise()  -- Trazer para frente
 window:lower()  -- Enviar para trás
 ```
 
 ### 🎛️ Sistema de Configuração
+#### Nível Basic
 ```lua
 -- Salvar configuração de UI
 g_settings.set('ui.windowSize', {width = 800, height = 600})
@@ -531,6 +874,53 @@ g_window.resize(windowSize)
 applyTheme(theme)
 ```
 
+#### Nível Intermediate
+```lua
+-- Salvar configuração de UI
+g_settings.set('ui.windowSize', {width = 800, height = 600})
+g_settings.set('ui.theme', 'dark')
+
+-- Carregar configuração
+local windowSize = g_settings.getSize('ui.windowSize')
+local theme = g_settings.getString('ui.theme')
+
+-- Aplicar configuração
+g_window.resize(windowSize)
+applyTheme(theme)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Salvar configuração de UI
+g_settings.set('ui.windowSize', {width = 800, height = 600})
+g_settings.set('ui.theme', 'dark')
+
+-- Carregar configuração
+local windowSize = g_settings.getSize('ui.windowSize')
+local theme = g_settings.getString('ui.theme')
+
+-- Aplicar configuração
+g_window.resize(windowSize)
+applyTheme(theme)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🛠️ Criando Widgets Customizados
@@ -538,16 +928,20 @@ applyTheme(theme)
 ### 🎯 Widget Básico
 ```lua
 -- Criar widget customizado
+    --  Criar widget customizado (traduzido)
 local CustomWidget = {}
 
 function CustomWidget.create(parent)
+    -- Função: CustomWidget
     local widget = g_ui.createWidget('UIWidget', parent)
     
     -- Configurar propriedades
+    --  Configurar propriedades (traduzido)
     widget:setId('customWidget')
     widget:setSize({width = 200, height = 100})
     
     -- Adicionar elementos internos
+    --  Adicionar elementos internos (traduzido)
     local label = g_ui.createWidget('Label', widget)
     label:setText('Widget Customizado')
     label:setPosition({x = 10, y = 10})
@@ -563,6 +957,7 @@ function CustomWidget.create(parent)
 end
 
 -- Uso
+    --  Uso (traduzido)
 local myWidget = CustomWidget.create(parent)
 ```
 
@@ -572,9 +967,11 @@ local myWidget = CustomWidget.create(parent)
 local StyledWidget = {}
 
 function StyledWidget.create(parent)
+    -- Função: StyledWidget
     local widget = g_ui.createWidget('UIWidget', parent)
     
     -- Aplicar estilo customizado
+    --  Aplicar estilo customizado (traduzido)
     widget:setStyle([
         background-color: linear-gradient(to bottom, #3498db, #2980b9);
         border: 2px solid #2c3e50;
@@ -604,9 +1001,11 @@ end
 local EventWidget = {}
 
 function EventWidget.create(parent)
+    -- Função: EventWidget
     local widget = g_ui.createWidget('UIWidget', parent)
     
     -- Eventos customizados
+    --  Eventos customizados (traduzido)
     widget.onValueChanged = function(widget, newValue)
         print('Valor alterado para:', newValue)
     end
@@ -629,6 +1028,7 @@ function EventWidget.create(parent)
 end
 
 -- Uso
+    --  Uso (traduzido)
 local eventWidget = EventWidget.create(parent)
 eventWidget:setValue('novo valor')
 ```
@@ -640,10 +1040,12 @@ eventWidget:setValue('novo valor')
 ### 🛡️ Performance e Otimização
 ```lua
 -- ✅ BOM: Reutilizar widgets
+    --  ✅ BOM: Reutilizar widgets (traduzido)
 local widgetPool = {}
 
 local function getWidget()
     if #widgetPool > 0 then
+    -- Verificação condicional
         return table.remove(widgetPool)
     else
         return g_ui.createWidget('UIWidget', parent)
@@ -659,6 +1061,7 @@ end
 local function createLimitedWidgets(count)
     local widgets = {}
     for i = 1, math.min(count, 100) do
+    -- Loop de repetição
         local widget = g_ui.createWidget('UIWidget', parent)
         table.insert(widgets, widget)
     end
@@ -668,8 +1071,10 @@ end
 -- ❌ EVITE: Criar widgets desnecessários
 local function badPractice()
     for i = 1, 1000 do
+    -- Loop de repetição
         local widget = g_ui.createWidget('UIWidget', parent)
         -- widget usado apenas uma vez
+    --  widget usado apenas uma vez (traduzido)
     end
 end
 ```
@@ -677,8 +1082,10 @@ end
 ### 🔒 Validação e Segurança
 ```lua
 -- ✅ BOM: Validar widgets antes de usar
+    --  ✅ BOM: Validar widgets antes de usar (traduzido)
 local function safeWidgetOperation(widget)
     if not widget or not widget:isVisible() then
+    -- Verificação condicional
         return false
     end
     
@@ -690,9 +1097,11 @@ end
 -- ✅ BOM: Verificar existência de elementos
 local function safeChildAccess(parent, childId)
     if not parent then return nil end
+    -- Verificação condicional
     
     local child = parent:getChildById(childId)
     if not child then
+    -- Verificação condicional
         print('Child não encontrado:', childId)
         return nil
     end
@@ -702,6 +1111,7 @@ end
 ```
 
 ### 🎯 Organização de Código
+#### Nível Basic
 ```lua
 -- ✅ BOM: Módulo bem organizado
 local MyUIModule = {}
@@ -749,6 +1159,123 @@ function MyUIModule.hide()
 end
 
 return MyUIModule
+```
+
+#### Nível Intermediate
+```lua
+-- ✅ BOM: Módulo bem organizado
+local MyUIModule = {}
+
+-- Variáveis privadas
+local mainWindow
+local widgets = {}
+
+-- Função de inicialização
+function MyUIModule.init()
+    mainWindow = g_ui.loadUI('myinterface')
+    mainWindow:hide()
+    
+    -- Configurar eventos
+    connect(g_game, {
+        onGameStart = MyUIModule.show,
+        onGameEnd = MyUIModule.hide
+    })
+end
+
+-- Função de finalização
+function MyUIModule.terminate()
+    if mainWindow then
+        mainWindow:destroy()
+    end
+    
+    disconnect(g_game, {
+        onGameStart = MyUIModule.show,
+        onGameEnd = MyUIModule.hide
+    })
+end
+
+-- Funções públicas
+function MyUIModule.show()
+    if mainWindow then
+        mainWindow:show()
+        mainWindow:focus()
+    end
+end
+
+function MyUIModule.hide()
+    if mainWindow then
+        mainWindow:hide()
+    end
+end
+
+return MyUIModule
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- ✅ BOM: Módulo bem organizado
+local MyUIModule = {}
+
+-- Variáveis privadas
+local mainWindow
+local widgets = {}
+
+-- Função de inicialização
+function MyUIModule.init()
+    mainWindow = g_ui.loadUI('myinterface')
+    mainWindow:hide()
+    
+    -- Configurar eventos
+    connect(g_game, {
+        onGameStart = MyUIModule.show,
+        onGameEnd = MyUIModule.hide
+    })
+end
+
+-- Função de finalização
+function MyUIModule.terminate()
+    if mainWindow then
+        mainWindow:destroy()
+    end
+    
+    disconnect(g_game, {
+        onGameStart = MyUIModule.show,
+        onGameEnd = MyUIModule.hide
+    })
+end
+
+-- Funções públicas
+function MyUIModule.show()
+    if mainWindow then
+        mainWindow:show()
+        mainWindow:focus()
+    end
+end
+
+function MyUIModule.hide()
+    if mainWindow then
+        mainWindow:hide()
+    end
+end
+
+return MyUIModule
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 > - [Getting_Started_Guide](Getting_Started_Guide.md) - Primeiros passos
 > - [Module_System_Guide](Module_System_Guide.md) - Sistema de módulos

@@ -26,13 +26,35 @@ Engine de performance
 ## Prática
 
 ### Exemplo Básico
+#### Nível Basic
 ```lua
 -- Exemplo de código relacionado a Performance Engine
+```
+
+#### Nível Intermediate
+```lua
+-- Exemplo de código relacionado a Performance Engine
+```
+
+#### Nível Advanced
+```lua
+-- Exemplo de código relacionado a Performance Engine
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### Exemplo Avançado
 ```lua
 -- Exemplo mais complexo
+    --  Exemplo mais complexo (traduzido)
 ```
 
 

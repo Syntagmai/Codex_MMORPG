@@ -60,6 +60,7 @@ Sistema de Debug
 
 ### 🎯 **Configuração de Logs**
 
+#### Nível Basic
 ```lua
 -- Sistema de logging principal
 local DebugLogger = {}
@@ -111,8 +112,130 @@ function DebugLogger.openLogFile()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Sistema de logging principal
+local DebugLogger = {}
+
+-- Níveis de log
+DebugLogger.LEVELS = {
+    TRACE = 0,
+    DEBUG = 1,
+    INFO = 2,
+    WARN = 3,
+    ERROR = 4,
+    FATAL = 5
+}
+
+-- Configuração padrão
+DebugLogger.config = {
+    level = DebugLogger.LEVELS.INFO,
+    enableConsole = true,
+    enableFile = true,
+    logFile = "otclient.log",
+    maxFileSize = 10 * 1024 * 1024,  -- 10MB
+    maxFiles = 5
+}
+
+-- Inicializar sistema de logging
+function DebugLogger.init()
+    -- Configurar nível de log
+    local logLevel = g_settings.getString("debug.logLevel", "INFO")
+    DebugLogger.config.level = DebugLogger.LEVELS[string.upper(logLevel)]
+    
+    -- Configurar saída
+    DebugLogger.config.enableConsole = g_settings.getBoolean("debug.enableConsole", true)
+    DebugLogger.config.enableFile = g_settings.getBoolean("debug.enableFile", true)
+    
+    -- Abrir arquivo de log
+    if DebugLogger.config.enableFile then
+        DebugLogger.openLogFile()
+    end
+    
+    print("Debug Logger inicializado - Nível:", logLevel)
+end
+
+-- Abrir arquivo de log
+function DebugLogger.openLogFile()
+    DebugLogger.logFile = io.open(DebugLogger.config.logFile, "a")
+    if not DebugLogger.logFile then
+        print("Erro: Não foi possível abrir arquivo de log")
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Sistema de logging principal
+local DebugLogger = {}
+
+-- Níveis de log
+DebugLogger.LEVELS = {
+    TRACE = 0,
+    DEBUG = 1,
+    INFO = 2,
+    WARN = 3,
+    ERROR = 4,
+    FATAL = 5
+}
+
+-- Configuração padrão
+DebugLogger.config = {
+    level = DebugLogger.LEVELS.INFO,
+    enableConsole = true,
+    enableFile = true,
+    logFile = "otclient.log",
+    maxFileSize = 10 * 1024 * 1024,  -- 10MB
+    maxFiles = 5
+}
+
+-- Inicializar sistema de logging
+function DebugLogger.init()
+    -- Configurar nível de log
+    local logLevel = g_settings.getString("debug.logLevel", "INFO")
+    DebugLogger.config.level = DebugLogger.LEVELS[string.upper(logLevel)]
+    
+    -- Configurar saída
+    DebugLogger.config.enableConsole = g_settings.getBoolean("debug.enableConsole", true)
+    DebugLogger.config.enableFile = g_settings.getBoolean("debug.enableFile", true)
+    
+    -- Abrir arquivo de log
+    if DebugLogger.config.enableFile then
+        DebugLogger.openLogFile()
+    end
+    
+    print("Debug Logger inicializado - Nível:", logLevel)
+end
+
+-- Abrir arquivo de log
+function DebugLogger.openLogFile()
+    DebugLogger.logFile = io.open(DebugLogger.config.logFile, "a")
+    if not DebugLogger.logFile then
+        print("Erro: Não foi possível abrir arquivo de log")
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 📊 **Funções de Logging**
 
+#### Inicialização e Configuração
 ```lua
 -- Função principal de logging
 function DebugLogger.log(level, category, message, ...)
@@ -140,6 +263,10 @@ function DebugLogger.log(level, category, message, ...)
         -- Rotação de arquivo
         DebugLogger.checkFileRotation()
     end
+```
+
+#### Funcionalidade 1
+```lua
 end
 
 -- Funções de conveniência
@@ -162,6 +289,10 @@ end
 function DebugLogger.error(category, message, ...)
     DebugLogger.log(DebugLogger.LEVELS.ERROR, category, message, ...)
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 function DebugLogger.fatal(category, message, ...)
     DebugLogger.log(DebugLogger.LEVELS.FATAL, category, message, ...)
@@ -185,6 +316,10 @@ function DebugLogger.checkFileRotation()
     if fileSize > DebugLogger.config.maxFileSize then
         DebugLogger.rotateLogFile()
     end
+```
+
+#### Finalização
+```lua
 end
 
 -- Rotacionar arquivo de log
@@ -215,6 +350,7 @@ end
 
 ### 🎯 **Console Avançado**
 
+#### Inicialização e Configuração
 ```lua
 -- Console de debug avançado
 local DebugConsole = {}
@@ -253,6 +389,10 @@ function DebugConsole.init()
     -- Configurar hotkey
     g_keyboard.bindKeyDown('Ctrl+Shift+D', DebugConsole.toggle)
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 -- Alternar visibilidade do console
 function DebugConsole.toggle()
@@ -276,6 +416,10 @@ end
 
 -- Executar comando Lua
 function DebugConsole.executeLuaCommand(command)
+```
+
+#### Funcionalidade 2
+```lua
     -- Adicionar comando ao log
     DebugConsole.addLog("> " .. command)
     
@@ -301,6 +445,10 @@ function DebugConsole.addLog(message)
     for line in newText:gmatch("[^\r\n]+") do
         table.insert(lines, line)
     end
+```
+
+#### Finalização
+```lua
     
     if #lines > 1000 then
         table.remove(lines, 1)
@@ -315,6 +463,7 @@ end
 
 ### 🔍 **Inspetor de UI**
 
+#### Inicialização e Configuração
 ```lua
 -- Inspetor de UI
 local UIInspector = {}
@@ -342,6 +491,10 @@ function UIInspector.init()
     connect(g_mouse, {
         onMousePress = UIInspector.onMousePress
     })
+```
+
+#### Funcionalidade 1
+```lua
 end
 
 -- Alternar visibilidade do inspetor
@@ -365,6 +518,10 @@ function UIInspector.onMousePress(mousePos, button)
     if widget then
         UIInspector.inspectWidget(widget)
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 -- Inspecionar widget
@@ -390,6 +547,10 @@ function UIInspector.inspectWidget(widget)
         if text and text ~= '' then
             table.insert(properties, "Texto: " .. text)
         end
+```
+
+#### Funcionalidade 3
+```lua
     end
     
     -- Imagem
@@ -413,6 +574,10 @@ function UIInspector.inspectWidget(widget)
         if fgColor then
             table.insert(properties, "Cor de frente: " .. fgColor)
         end
+```
+
+#### Finalização
+```lua
     end
     
     -- Filhos
@@ -436,6 +601,7 @@ end
 
 ### 📊 **Sistema de Profiling**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de profiling
 local PerformanceProfiler = {}
@@ -459,6 +625,10 @@ function PerformanceProfiler.measureTime(name, func)
             minTime = math.huge,
             maxTime = 0
         }
+```
+
+#### Funcionalidade 1
+```lua
     end
     
     local timer = PerformanceProfiler.timers[name]
@@ -485,6 +655,10 @@ function PerformanceProfiler.measureTimeCallback(name, callback)
                 minTime = math.huge,
                 maxTime = 0
             }
+```
+
+#### Funcionalidade 2
+```lua
         end
         
         local timer = PerformanceProfiler.timers[name]
@@ -508,6 +682,10 @@ end
 
 -- Snapshot de memória
 function PerformanceProfiler.takeMemorySnapshot(name)
+```
+
+#### Funcionalidade 3
+```lua
     local memoryUsage = collectgarbage("count")
     PerformanceProfiler.memorySnapshots[name] = {
         memory = memoryUsage,
@@ -536,6 +714,10 @@ function PerformanceProfiler.generateReport()
     for name, count in pairs(PerformanceProfiler.counters) do
         table.insert(report, string.format("  %s: %d", name, count))
     end
+```
+
+#### Finalização
+```lua
     
     table.insert(report, "")
     
@@ -552,6 +734,7 @@ end
 
 ### 🎯 **Ferramentas de Análise**
 
+#### Inicialização e Configuração
 ```lua
 -- Analisador de performance
 local PerformanceAnalyzer = {}
@@ -574,6 +757,10 @@ function PerformanceAnalyzer.analyzeFrameTime()
         
         scheduleEvent(measureFrame, 16)  -- ~60 FPS
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     measureFrame()
     
@@ -598,6 +785,10 @@ function PerformanceAnalyzer.analyzeFrameTime()
         fps = fps,
         frameCount = #frameTimes
     }
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 -- Analisador de memória
@@ -628,6 +819,10 @@ function PerformanceAnalyzer.analyzeWidgets()
         for _, child in ipairs(children) do
             countWidgets(child)
         end
+```
+
+#### Finalização
+```lua
     end
     
     countWidgets(g_ui.getRootWidget())
@@ -645,6 +840,7 @@ end
 
 ### 🎯 **Inspetor de Hierarquia**
 
+#### Inicialização e Configuração
 ```lua
 -- Inspetor de hierarquia de widgets
 local HierarchyInspector = {}
@@ -669,6 +865,10 @@ end
 
 -- Alternar visibilidade
 function HierarchyInspector.toggle()
+```
+
+#### Funcionalidade 1
+```lua
     if HierarchyInspector.window:isVisible() then
         HierarchyInspector.window:hide()
     else
@@ -695,6 +895,10 @@ function HierarchyInspector.buildTree(widget, parentNode, depth)
     if widget:getId() then
         nodeText = nodeText .. " (ID: " .. widget:getId() .. ")"
     end
+```
+
+#### Finalização
+```lua
     
     if not widget:isVisible() then
         nodeText = nodeText .. " [HIDDEN]"
@@ -718,6 +922,7 @@ end
 
 ### 🎯 **Captura de Exceções**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de captura de erros
 local ErrorHandler = {}
@@ -740,6 +945,10 @@ function ErrorHandler.captureError(error, stackTrace)
     if #ErrorHandler.errors > ErrorHandler.maxErrors then
         table.remove(ErrorHandler.errors, 1)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Log do erro
     DebugLogger.error("ERROR", "Erro capturado: " .. error)
@@ -765,6 +974,10 @@ function ErrorHandler.getContext()
             context.playerPosition = context.player:getPosition()
             context.playerHealth = context.player:getHealth()
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
     
     -- Informações do sistema
@@ -794,6 +1007,10 @@ function ErrorHandler.showErrorDialog(error, stackTrace)
     closeButton.onClick = function()
         dialog:destroy()
     end
+```
+
+#### Funcionalidade 3
+```lua
 end
 
 -- Relatório de erros
@@ -817,6 +1034,10 @@ function ErrorHandler.generateErrorReport()
         
         table.insert(report, "")
     end
+```
+
+#### Finalização
+```lua
     
     return table.concat(report, "\n")
 end
@@ -828,6 +1049,7 @@ end
 
 ### 🎯 **Sistema de Debug Remoto**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de debug remoto
 local RemoteDebugger = {}
@@ -852,6 +1074,10 @@ function RemoteDebugger.startServer()
     if RemoteDebugger.server then
         return
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Aqui você implementaria a conexão com um servidor de debug
     -- Por exemplo, usando WebSockets ou TCP
@@ -873,6 +1099,10 @@ end
 
 -- Enviar dados para debug remoto
 function RemoteDebugger.sendData(data)
+```
+
+#### Finalização
+```lua
     if not RemoteDebugger.connected then
         return
     end
@@ -899,6 +1129,30 @@ end
 
 ### 🚀 **Otimizações de Debug**
 
+#### Nível Basic
+```lua
+-- Configurações de performance para debug
+local DebugPerformance = {}
+-- Configurar debug baseado em performance
+function DebugPerformance.configureDebug()
+    local fps = g_app.getFps()
+    local memory = collectgarbage("count")
+    if fps < 30 then
+        -- Desabilitar debug pesado em performance baixa
+    elseif fps < 50 then
+        -- Debug limitado
+        -- Debug completo
+    end
+end
+-- Verificar se debug está habilitado
+function DebugPerformance.isDebugEnabled()
+end
+-- Verificar se profiling está habilitado
+function DebugPerformance.isProfilingEnabled()
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Configurações de performance para debug
 local DebugPerformance = {}
@@ -947,10 +1201,70 @@ function DebugPerformance.isProfilingEnabled()
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Configurações de performance para debug
+local DebugPerformance = {}
+
+DebugPerformance.config = {
+    enableProfiling = false,
+    enableMemoryTracking = false,
+    enableWidgetTracking = false,
+    logLevel = "INFO"
+}
+
+-- Configurar debug baseado em performance
+function DebugPerformance.configureDebug()
+    local fps = g_app.getFps()
+    local memory = collectgarbage("count")
+    
+    if fps < 30 then
+        -- Desabilitar debug pesado em performance baixa
+        DebugPerformance.config.enableProfiling = false
+        DebugPerformance.config.enableMemoryTracking = false
+        DebugPerformance.config.enableWidgetTracking = false
+        DebugPerformance.config.logLevel = "ERROR"
+    elseif fps < 50 then
+        -- Debug limitado
+        DebugPerformance.config.enableProfiling = true
+        DebugPerformance.config.enableMemoryTracking = false
+        DebugPerformance.config.enableWidgetTracking = false
+        DebugPerformance.config.logLevel = "WARN"
+    else
+        -- Debug completo
+        DebugPerformance.config.enableProfiling = true
+        DebugPerformance.config.enableMemoryTracking = true
+        DebugPerformance.config.enableWidgetTracking = true
+        DebugPerformance.config.logLevel = "INFO"
+    end
+end
+
+-- Verificar se debug está habilitado
+function DebugPerformance.isDebugEnabled()
+    return g_settings.getBoolean("debug.enabled", false)
+end
+
+-- Verificar se profiling está habilitado
+function DebugPerformance.isProfilingEnabled()
+    return DebugPerformance.config.enableProfiling and DebugPerformance.isDebugEnabled()
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ### 🎮 **Sistema de Debug Completo**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de debug principal
 local DebugSystem = {}
@@ -975,6 +1289,10 @@ function DebugSystem.init()
     
     DebugLogger.info("DEBUG", "Sistema de debug inicializado")
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function DebugSystem.terminate()
     -- Gerar relatórios finais
@@ -997,6 +1315,10 @@ function DebugSystem.log(category, message, ...)
 end
 
 function DebugSystem.error(category, message, ...)
+```
+
+#### Finalização
+```lua
     DebugLogger.error(category, message, ...)
 end
 
@@ -1017,6 +1339,36 @@ end
 
 ### 🎨 **Debug de Módulos**
 
+#### Nível Basic
+```lua
+-- Debug específico para módulos
+local ModuleDebugger = {}
+function ModuleDebugger.setupModuleDebug(moduleName)
+    local module = modules[moduleName]
+    if not module then
+    end
+    -- Wrapper para funções do módulo
+    local originalInit = module.init
+    local originalTerminate = module.terminate
+    module.init = function(...)
+        local startTime = g_clock.millis()
+        local result = originalInit(...)
+        local endTime = g_clock.millis()
+            " (tempo: " .. (endTime - startTime) .. "ms)")
+    end
+    module.terminate = function(...)
+        local result = originalTerminate(...)
+    end
+end
+-- Setup automático para todos os módulos
+function ModuleDebugger.setupAllModules()
+        if module.init and module.terminate then
+        end
+    end
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Debug específico para módulos
 local ModuleDebugger = {}
@@ -1068,12 +1420,94 @@ function ModuleDebugger.setupAllModules()
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Debug específico para módulos
+local ModuleDebugger = {}
+
+function ModuleDebugger.setupModuleDebug(moduleName)
+    local module = modules[moduleName]
+    if not module then
+        DebugLogger.error("MODULE_DEBUG", "Módulo não encontrado: " .. moduleName)
+        return
+    end
+    
+    -- Wrapper para funções do módulo
+    local originalInit = module.init
+    local originalTerminate = module.terminate
+    
+    module.init = function(...)
+        DebugLogger.info("MODULE_DEBUG", "Iniciando módulo: " .. moduleName)
+        local startTime = g_clock.millis()
+        
+        local result = originalInit(...)
+        
+        local endTime = g_clock.millis()
+        DebugLogger.info("MODULE_DEBUG", "Módulo iniciado: " .. moduleName .. 
+            " (tempo: " .. (endTime - startTime) .. "ms)")
+        
+        return result
+    end
+    
+    module.terminate = function(...)
+        DebugLogger.info("MODULE_DEBUG", "Finalizando módulo: " .. moduleName)
+        
+        local result = originalTerminate(...)
+        
+        DebugLogger.info("MODULE_DEBUG", "Módulo finalizado: " .. moduleName)
+        
+        return result
+    end
+    
+    DebugLogger.info("MODULE_DEBUG", "Debug configurado para módulo: " .. moduleName)
+end
+
+-- Setup automático para todos os módulos
+function ModuleDebugger.setupAllModules()
+    for moduleName, module in pairs(modules) do
+        if module.init and module.terminate then
+            ModuleDebugger.setupModuleDebug(moduleName)
+        end
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## ✅ Melhores Práticas
 
 ### 🎯 **Uso Eficiente do Sistema**
 
+#### Nível Basic
+```lua
+-- ✅ BOM: Usar níveis de log apropriados
+-- ✅ BOM: Medir performance seletivamente
+if DebugPerformance.isProfilingEnabled() then
+    PerformanceProfiler.measureTime("expensiveOperation", function()
+        -- operação custosa
+    end)
+end
+-- ✅ BOM: Usar contextos específicos
+-- ❌ EVITE: Log excessivo
+function onEveryFrame()
+end
+-- ❌ EVITE: Medir tudo
+PerformanceProfiler.measureTime("simpleOperation", function()
+    local x = 1 + 1  -- Operação muito simples
+end)
+```
+
+#### Nível Intermediate
 ```lua
 -- ✅ BOM: Usar níveis de log apropriados
 DebugLogger.debug("NETWORK", "Pacote recebido: " .. packetType)
@@ -1103,10 +1537,51 @@ PerformanceProfiler.measureTime("simpleOperation", function()
 end)
 ```
 
+#### Nível Advanced
+```lua
+-- ✅ BOM: Usar níveis de log apropriados
+DebugLogger.debug("NETWORK", "Pacote recebido: " .. packetType)
+DebugLogger.info("GAME", "Jogador conectado: " .. playerName)
+DebugLogger.warn("UI", "Widget não encontrado: " .. widgetId)
+DebugLogger.error("SYSTEM", "Erro crítico: " .. errorMessage)
+
+-- ✅ BOM: Medir performance seletivamente
+if DebugPerformance.isProfilingEnabled() then
+    PerformanceProfiler.measureTime("expensiveOperation", function()
+        -- operação custosa
+    end)
+end
+
+-- ✅ BOM: Usar contextos específicos
+DebugLogger.info("COMBAT", "Ataque realizado: " .. damage .. " dano")
+DebugLogger.info("INVENTORY", "Item movido: " .. itemId)
+
+-- ❌ EVITE: Log excessivo
+function onEveryFrame()
+    DebugLogger.debug("FRAME", "Frame processado")  -- Muito verboso
+end
+
+-- ❌ EVITE: Medir tudo
+PerformanceProfiler.measureTime("simpleOperation", function()
+    local x = 1 + 1  -- Operação muito simples
+end)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔧 **Configuração Adequada**
 
 ```lua
 -- ✅ BOM: Configurar debug baseado em ambiente
+    --  ✅ BOM: Configurar debug baseado em ambiente (traduzido)
 local DEBUG_CONFIG = {
     development = {
         logLevel = "DEBUG",
@@ -1122,23 +1597,31 @@ local DEBUG_CONFIG = {
 
 -- ✅ BOM: Verificar configurações antes de usar
 function safeDebugLog(level, category, message, ...)
+    -- Função: safeDebugLog
     if DebugPerformance.isDebugEnabled() then
+    -- Verificação condicional
         DebugLogger.log(level, category, message, ...)
     end
 end
 
 -- ✅ BOM: Limpar recursos adequadamente
+    --  ✅ BOM: Limpar recursos adequadamente (traduzido)
 function cleanupDebugSystem()
+    -- Função: cleanupDebugSystem
     -- Limpar timers
+    --  Limpar timers (traduzido)
     PerformanceProfiler.timers = {}
     PerformanceProfiler.counters = {}
     
     -- Fechar arquivos de log
+    --  Fechar arquivos de log (traduzido)
     if DebugLogger.logFile then
+    -- Verificação condicional
         DebugLogger.logFile:close()
     end
     
     -- Parar servidor remoto
+    --  Parar servidor remoto (traduzido)
     RemoteDebugger.stopServer()
 end
 ```
@@ -1147,6 +1630,7 @@ end
 
 ```lua
 -- ✅ BOM: Usar categorias padronizadas
+    --  ✅ BOM: Usar categorias padronizadas (traduzido)
 local DEBUG_CATEGORIES = {
     SYSTEM = "SYSTEM",
     NETWORK = "NETWORK",
@@ -1169,14 +1653,17 @@ local DEBUG_LEVELS = {
 
 -- ✅ BOM: Funções de debug padronizadas
 function debugLog(category, message, ...)
+    -- Função: debugLog
     DebugLogger.info(category, message, ...)
 end
 
 function debugError(category, message, ...)
+    -- Função: debugError
     DebugLogger.error(category, message, ...)
 end
 
 function debugMeasure(name, func)
+    -- Função: debugMeasure
     return PerformanceProfiler.measureTime(name, func)
 end
 ```

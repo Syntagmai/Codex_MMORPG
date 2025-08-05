@@ -284,6 +284,7 @@ Module
 
 ### Estrutura Básica
 
+#### Nível Basic
 ```lua
 -- Namespace do módulo
 MeuModulo = {}
@@ -328,10 +329,118 @@ function MeuModulo.hide()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Namespace do módulo
+MeuModulo = {}
+
+-- Variáveis globais do módulo
+local minhaJanela
+local dados = {}
+
+-- Função de inicialização
+function init()
+    -- Conectar eventos do jogo
+    connect(g_game, {
+        onGameEnd = hide,
+        onImbuementWindow = MeuModulo.onImbuementWindow
+    })
+    
+    -- Carregar interface
+    minhaJanela = g_ui.displayUI('meu_modulo')
+    minhaJanela:hide()
+end
+
+-- Função de finalização
+function terminate()
+    -- Limpar recursos
+    if minhaJanela then
+        minhaJanela:destroy()
+    end
+end
+
+-- Funções do módulo
+function MeuModulo.show()
+    if minhaJanela then
+        minhaJanela:show()
+        minhaJanela:focus()
+    end
+end
+
+function MeuModulo.hide()
+    if minhaJanela then
+        minhaJanela:hide()
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Namespace do módulo
+MeuModulo = {}
+
+-- Variáveis globais do módulo
+local minhaJanela
+local dados = {}
+
+-- Função de inicialização
+function init()
+    -- Conectar eventos do jogo
+    connect(g_game, {
+        onGameEnd = hide,
+        onImbuementWindow = MeuModulo.onImbuementWindow
+    })
+    
+    -- Carregar interface
+    minhaJanela = g_ui.displayUI('meu_modulo')
+    minhaJanela:hide()
+end
+
+-- Função de finalização
+function terminate()
+    -- Limpar recursos
+    if minhaJanela then
+        minhaJanela:destroy()
+    end
+end
+
+-- Funções do módulo
+function MeuModulo.show()
+    if minhaJanela then
+        minhaJanela:show()
+        minhaJanela:focus()
+    end
+end
+
+function MeuModulo.hide()
+    if minhaJanela then
+        minhaJanela:hide()
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Carregando Interface
 
 ```lua
 -- Carregar interface do arquivo .otui
+    --  Carregar interface do arquivo .otui (traduzido)
 minhaJanela = g_ui.displayUI('nome_do_arquivo')
 
 -- Carregar em um widget específico
@@ -345,11 +454,13 @@ minhaJanela = g_ui.displayUI('nome_do_arquivo', parentWidget)
 minhaJanela = g_ui.displayUI('meu_modulo')
 
 -- Acessar elementos por ID
+    --  Acessar elementos por ID (traduzido)
 local botao = minhaJanela.botaoId
 local label = minhaJanela.titulo
 local combo = minhaJanela.comboBox
 
 -- Configurar elementos
+    --  Configurar elementos (traduzido)
 botao.onClick = function()
     print("Botão clicado!")
 end
@@ -369,6 +480,7 @@ Carrega uma interface do arquivo `.otui`.
 
 ```lua
 -- Carregar interface
+    --  Carregar interface (traduzido)
 local window = g_ui.displayUI('nome_do_arquivo')
 
 -- Carregar em widget específico
@@ -378,6 +490,7 @@ local window = g_ui.displayUI('nome_do_arquivo', parentWidget)
 ### connect()
 Conecta eventos do jogo.
 
+#### Nível Basic
 ```lua
 connect(g_game, {
     onGameEnd = hide,
@@ -386,9 +499,45 @@ connect(g_game, {
 })
 ```
 
+#### Nível Intermediate
+```lua
+connect(g_game, {
+    onGameEnd = hide,
+    onImbuementWindow = MeuModulo.onImbuementWindow,
+    onCloseImbuementWindow = MeuModulo.onCloseImbuementWindow
+})
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+connect(g_game, {
+    onGameEnd = hide,
+    onImbuementWindow = MeuModulo.onImbuementWindow,
+    onCloseImbuementWindow = MeuModulo.onCloseImbuementWindow
+})
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### g_ui.createWidget()
 Cria widgets dinamicamente.
 
+#### Nível Basic
 ```lua
 -- Criar widget básico
 local widget = g_ui.createWidget('UIWidget', parent)
@@ -398,9 +547,47 @@ local button = g_ui.createWidget('Button', parent)
 local label = g_ui.createWidget('Label', parent)
 ```
 
+#### Nível Intermediate
+```lua
+-- Criar widget básico
+local widget = g_ui.createWidget('UIWidget', parent)
+
+-- Criar widget específico
+local button = g_ui.createWidget('Button', parent)
+local label = g_ui.createWidget('Label', parent)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Criar widget básico
+local widget = g_ui.createWidget('UIWidget', parent)
+
+-- Criar widget específico
+local button = g_ui.createWidget('Button', parent)
+local label = g_ui.createWidget('Label', parent)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Eventos de Widget
 ```lua
 -- Eventos de mouse
+    --  Eventos de mouse (traduzido)
 widget.onClick = function()
     print("Clicado!")
 end
@@ -410,8 +597,10 @@ widget.onDoubleClick = function()
 end
 
 -- Eventos de teclado
+    --  Eventos de teclado (traduzido)
 widget.onKeyDown = function(keyCode, keyboardModifiers)
     if keyCode == KeyEscape then
+    -- Verificação condicional
         hide()
     end
 end
@@ -509,6 +698,7 @@ ExemploSimples = {}
 local exemploWindow
 
 function init()
+    -- Função: init
     exemploWindow = g_ui.displayUI('exemplo_simples')
     exemploWindow:hide()
     
@@ -519,20 +709,26 @@ function init()
 end
 
 function terminate()
+    -- Função: terminate
     if exemploWindow then
+    -- Verificação condicional
         exemploWindow:destroy()
     end
 end
 
 function ExemploSimples.show()
+    -- Função: ExemploSimples
     if exemploWindow then
+    -- Verificação condicional
         exemploWindow:show()
         exemploWindow:focus()
     end
 end
 
 function ExemploSimples.hide()
+    -- Função: ExemploSimples
     if exemploWindow then
+    -- Verificação condicional
         exemploWindow:hide()
     end
 end
@@ -616,6 +812,7 @@ MeuSistemaWindow < MainWindow
 ```
 
 #### `modules/game_meu_sistema/meu_sistema.lua`
+#### Inicialização e Configuração
 ```lua
 MeuSistema = {}
 
@@ -640,6 +837,10 @@ function init()
     meuSistemaWindow.removeButton.onClick = function()
         removerItem()
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     meuSistemaWindow.closeButton.onClick = function()
         hide()
@@ -663,6 +864,10 @@ function removerItem()
         local item = table.remove(itens)
         item:destroy()
     end
+```
+
+#### Finalização
+```lua
 end
 
 function MeuSistema.show()
@@ -687,6 +892,7 @@ end
 > Siga estas práticas para criar módulos eficientes e mantíveis.
 
 ### Organização de Código
+#### Nível Basic
 ```lua
 -- Sempre use namespace para seu módulo
 MeuModulo = {}
@@ -706,16 +912,78 @@ local function processarDados()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Sempre use namespace para seu módulo
+MeuModulo = {}
+
+-- Variáveis locais para o módulo
+local minhaJanela
+local dados = {}
+
+-- Funções públicas do módulo
+function MeuModulo.show()
+    -- implementação
+end
+
+-- Funções privadas (locais)
+local function processarDados()
+    -- implementação
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Sempre use namespace para seu módulo
+MeuModulo = {}
+
+-- Variáveis locais para o módulo
+local minhaJanela
+local dados = {}
+
+-- Funções públicas do módulo
+function MeuModulo.show()
+    -- implementação
+end
+
+-- Funções privadas (locais)
+local function processarDados()
+    -- implementação
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Gerenciamento de Recursos
 ```lua
 function init()
+    -- Função: init
     -- Carregar recursos
+    --  Carregar recursos (traduzido)
     minhaJanela = g_ui.displayUI('meu_modulo')
 end
 
 function terminate()
+    -- Função: terminate
     -- Limpar recursos
+    --  Limpar recursos (traduzido)
     if minhaJanela then
+    -- Verificação condicional
         minhaJanela:destroy()
         minhaJanela = nil
     end
@@ -725,7 +993,9 @@ end
 ### Tratamento de Erros
 ```lua
 function MeuModulo.show()
+    -- Função: MeuModulo
     if not minhaJanela then
+    -- Verificação condicional
         print("Erro: Janela não inicializada")
         return
     end
@@ -738,6 +1008,7 @@ end
 ### Documentação
 ```lua
 --[
+    -- [ (traduzido)
     Módulo: Meu Modulo
     Descrição: Sistema de exemplo
     Autor: Seu Nome
@@ -753,7 +1024,9 @@ MeuModulo = {}
 
 -- Função para mostrar a interface
 -- @return void
+    --  @return void (traduzido)
 function MeuModulo.show()
+    -- Função: MeuModulo
     -- implementação
 end
 ```

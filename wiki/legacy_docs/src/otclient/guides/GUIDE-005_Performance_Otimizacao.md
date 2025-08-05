@@ -18,6 +18,21 @@ Este guia fornece técnicas avançadas de otimização de performance para o OTC
 
 ### **1.1 Métricas de Performance**
 
+#### Nível Basic
+```lua
+-- Métricas principais de performance
+local PerformanceMetrics = {
+    -- Tempo de frame (alvo: < 16.67ms para 60 FPS)
+    -- Uso de memória (alvo: < 80% do disponível)
+    -- Uso de CPU (alvo: < 70% em uso normal)
+    -- Latência de rede (alvo: < 100ms)
+    -- Taxa de FPS (alvo: > 60 FPS)
+    -- Tempo de carregamento (alvo: < 5 segundos)
+function PerformanceMetrics:update()
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Métricas principais de performance
 local PerformanceMetrics = {
@@ -49,8 +64,57 @@ function PerformanceMetrics:update()
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Métricas principais de performance
+local PerformanceMetrics = {
+    -- Tempo de frame (alvo: < 16.67ms para 60 FPS)
+    frame_time = 0,
+    
+    -- Uso de memória (alvo: < 80% do disponível)
+    memory_usage = 0,
+    
+    -- Uso de CPU (alvo: < 70% em uso normal)
+    cpu_usage = 0,
+    
+    -- Latência de rede (alvo: < 100ms)
+    network_latency = 0,
+    
+    -- Taxa de FPS (alvo: > 60 FPS)
+    fps = 0,
+    
+    -- Tempo de carregamento (alvo: < 5 segundos)
+    load_time = 0
+}
+
+function PerformanceMetrics:update()
+    self.frame_time = g_graphics.getAverageFrameTime()
+    self.memory_usage = g_graphics.getMemoryUsage()
+    self.cpu_usage = g_graphics.getCPUUsage()
+    self.network_latency = g_game.getLatency()
+    self.fps = 1000 / self.frame_time
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **1.2 Benchmarks de Referência**
 
+#### Nível Basic
+```lua
+-- Benchmarks de performance para diferentes cenários
+local PerformanceBenchmarks = {
+```
+
+#### Nível Intermediate
 ```lua
 -- Benchmarks de performance para diferentes cenários
 local PerformanceBenchmarks = {
@@ -84,12 +148,57 @@ local PerformanceBenchmarks = {
 }
 ```
 
+#### Nível Advanced
+```lua
+-- Benchmarks de performance para diferentes cenários
+local PerformanceBenchmarks = {
+    idle = {
+        frame_time = 5,    -- 5ms
+        memory_usage = 50, -- 50MB
+        cpu_usage = 10,    -- 10%
+        fps = 200          -- 200 FPS
+    },
+    
+    combat = {
+        frame_time = 12,   -- 12ms
+        memory_usage = 80, -- 80MB
+        cpu_usage = 30,    -- 30%
+        fps = 83           -- 83 FPS
+    },
+    
+    crowded_area = {
+        frame_time = 16,   -- 16ms
+        memory_usage = 120, -- 120MB
+        cpu_usage = 50,    -- 50%
+        fps = 62           -- 62 FPS
+    },
+    
+    maximum_load = {
+        frame_time = 25,   -- 25ms
+        memory_usage = 200, -- 200MB
+        cpu_usage = 80,    -- 80%
+        fps = 40           -- 40 FPS
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🔍 **2. Profiling Avançado**
 
 ### **2.1 CPU Profiler Detalhado**
 
+#### Inicialização e Configuração
 ```lua
 -- Profiler de CPU avançado
 local AdvancedCPUProfiler = {
@@ -118,6 +227,10 @@ function AdvancedCPUProfiler:takeSample()
         call_stack = call_stack,
         memory = g_graphics.getMemoryUsage()
     })
+```
+
+#### Funcionalidade 1
+```lua
 end
 
 function AdvancedCPUProfiler:stopProfiling()
@@ -140,6 +253,10 @@ function AdvancedCPUProfiler:generateReport()
 end
 
 function AdvancedCPUProfiler:findHotspots()
+```
+
+#### Finalização
+```lua
     local hotspots = {}
     local function_counts = {}
     
@@ -166,6 +283,7 @@ end
 
 ### **2.2 Memory Profiler Avançado**
 
+#### Inicialização e Configuração
 ```lua
 -- Profiler de memória avançado
 local AdvancedMemoryProfiler = {
@@ -189,6 +307,10 @@ function AdvancedMemoryProfiler:createSnapshot(name)
 end
 
 function AdvancedMemoryProfiler:compareSnapshots(snapshot1_name, snapshot2_name)
+```
+
+#### Funcionalidade 1
+```lua
     local snap1 = self:findSnapshot(snapshot1_name)
     local snap2 = self:findSnapshot(snapshot2_name)
     
@@ -225,6 +347,10 @@ function AdvancedMemoryProfiler:detectLeaks()
                 increase = memory_increase,
                 between = current.name .. " -> " .. next_snap.name
             })
+```
+
+#### Finalização
+```lua
         end
         
         if object_increase > 1000 then -- 1000 objetos
@@ -246,6 +372,7 @@ end
 
 ### **3.1 Otimização de Renderização**
 
+#### Inicialização e Configuração
 ```lua
 -- Otimizador de renderização
 local RenderingOptimizer = {
@@ -268,6 +395,10 @@ function RenderingOptimizer:optimizeRendering()
     if self.techniques.level_of_detail then
         self:setupLOD()
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     -- 3. Texture Atlas
     if self.techniques.texture_atlas then
@@ -296,6 +427,10 @@ function RenderingOptimizer:enableFrustumCulling()
         if frustum:contains(object:getPosition()) then
             table.insert(visible_objects, object)
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
     
     return visible_objects
@@ -317,6 +452,10 @@ function RenderingOptimizer:setupLOD()
 end
 
 function RenderingOptimizer:calculateLODLevel(distance, distances)
+```
+
+#### Finalização
+```lua
     if distance <= distances.near then
         return 3 -- LOD alto
     elseif distance <= distances.medium then
@@ -329,6 +468,7 @@ end
 
 ### **3.2 Otimização de Memória**
 
+#### Inicialização e Configuração
 ```lua
 -- Otimizador de memória
 local MemoryOptimizer = {
@@ -352,6 +492,10 @@ function MemoryOptimizer:optimizeMemory()
 end
 
 function MemoryOptimizer:cleanTextureCache()
+```
+
+#### Funcionalidade 1
+```lua
     local textures = g_graphics.getLoadedTextures()
     local current_time = os.time()
     
@@ -373,6 +517,10 @@ function MemoryOptimizer:optimizeGarbageCollection()
 end
 
 function MemoryOptimizer:setupObjectPool()
+```
+
+#### Funcionalidade 2
+```lua
     -- Pool para objetos frequentemente criados/destruídos
     self.object_pools = {
         particles = {},
@@ -394,6 +542,10 @@ function MemoryOptimizer:getFromPool(pool_name)
         return self:createObject(pool_name)
     end
 end
+```
+
+#### Finalização
+```lua
 
 function MemoryOptimizer:returnToPool(pool_name, object)
     object:reset()
@@ -403,6 +555,7 @@ end
 
 ### **3.3 Otimização de CPU**
 
+#### Inicialização e Configuração
 ```lua
 -- Otimizador de CPU
 local CPUOptimizer = {
@@ -426,6 +579,10 @@ function CPUOptimizer:optimizeCPU()
 end
 
 function CPUOptimizer:implementFrameBudget()
+```
+
+#### Funcionalidade 1
+```lua
     local frame_start = os.clock()
     
     -- Processar tarefas dentro do budget
@@ -447,6 +604,10 @@ function CPUOptimizer:implementFrameBudget()
 end
 
 function CPUOptimizer:setupAsyncProcessing()
+```
+
+#### Funcionalidade 2
+```lua
     -- Tarefas que podem ser executadas assincronamente
     local async_tasks = {
         pathfinding = true,
@@ -471,6 +632,10 @@ function CPUOptimizer:makeAsync(task_name)
         scheduleEvent(function()
             original_function(unpack(args))
         end, 1)
+```
+
+#### Funcionalidade 3
+```lua
     end
 end
 
@@ -503,6 +668,10 @@ function CPUOptimizer:optimizeCreatureUpdates()
         else
             creature:updateMinimal() -- Atualização mínima
         end
+```
+
+#### Finalização
+```lua
     end
 end
 ```
@@ -513,6 +682,7 @@ end
 
 ### **4.1 Performance Monitor Avançado**
 
+#### Inicialização e Configuração
 ```lua
 -- Monitor de performance avançado
 local AdvancedPerformanceMonitor = {
@@ -535,6 +705,10 @@ function AdvancedPerformanceMonitor:startMonitoring()
         self:updateHistory()
         self:generateAlerts()
     end, 1000) -- A cada segundo
+```
+
+#### Funcionalidade 1
+```lua
 end
 
 function AdvancedPerformanceMonitor:collectMetrics()
@@ -563,6 +737,10 @@ function AdvancedPerformanceMonitor:checkThresholds()
             else
                 is_violated = value > threshold
             end
+```
+
+#### Funcionalidade 2
+```lua
             
             if is_violated then
                 self:createAlert(metric, value, threshold)
@@ -585,6 +763,10 @@ function AdvancedPerformanceMonitor:createAlert(metric, value, threshold)
 end
 
 function AdvancedPerformanceMonitor:calculateSeverity(metric, value, threshold)
+```
+
+#### Funcionalidade 3
+```lua
     local deviation = math.abs(value - threshold) / threshold
     
     if deviation > 0.5 then
@@ -606,6 +788,10 @@ function AdvancedPerformanceMonitor:updateHistory()
 end
 
 function AdvancedPerformanceMonitor:generateReport()
+```
+
+#### Funcionalidade 4
+```lua
     local report = {
         current = self.metrics,
         alerts = self.alerts,
@@ -629,6 +815,10 @@ function AdvancedPerformanceMonitor:generateRecommendations()
         table.insert(recommendations, "Limpar cache de texturas")
         table.insert(recommendations, "Reiniciar cliente")
     end
+```
+
+#### Finalização
+```lua
     
     if self.metrics.cpu_usage > self.thresholds.cpu_usage then
         table.insert(recommendations, "Fechar aplicações em segundo plano")
@@ -641,6 +831,7 @@ end
 
 ### **4.2 Performance Dashboard**
 
+#### Inicialização e Configuração
 ```lua
 -- Dashboard de performance em tempo real
 local PerformanceDashboard = {
@@ -671,6 +862,10 @@ function PerformanceDashboard:create()
     -- Iniciar atualização
     self:startUpdates()
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function PerformanceDashboard:positionWidgets()
     local x = 10
@@ -699,6 +894,10 @@ function PerformanceDashboard:updateWidgets()
     -- Colorir baseado na performance
     self:colorizeWidgets(metrics)
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 function PerformanceDashboard:colorizeWidgets(metrics)
     -- Colorir widgets baseado na performance
@@ -725,6 +924,10 @@ function PerformanceDashboard:colorizeWidgets(metrics)
     else
         self.widgets.memory:setColor(colors.critical)
     end
+```
+
+#### Finalização
+```lua
 end
 ```
 
@@ -734,6 +937,7 @@ end
 
 ### **5.1 Otimização para Combate**
 
+#### Inicialização e Configuração
 ```lua
 -- Otimizador específico para combate
 local CombatOptimizer = {
@@ -758,6 +962,10 @@ function CombatOptimizer:startCombatOptimization()
     if self.optimizations.simplify_animations then
         g_settings.set('animation-quality', 'low')
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Otimizar IA
     if self.optimizations.optimize_ai then
@@ -780,6 +988,10 @@ function CombatOptimizer:stopCombatOptimization()
 end
 
 function CombatOptimizer:optimizeAI()
+```
+
+#### Finalização
+```lua
     -- Otimizar IA durante combate
     local creatures = g_map.getCreatures()
     
@@ -794,6 +1006,7 @@ end
 
 ### **5.2 Otimização para Áreas Populadas**
 
+#### Inicialização e Configuração
 ```lua
 -- Otimizador para áreas com muitos jogadores
 local CrowdedAreaOptimizer = {
@@ -817,6 +1030,10 @@ function CrowdedAreaOptimizer:checkAndOptimize()
 end
 
 function CrowdedAreaOptimizer:startCrowdedOptimization()
+```
+
+#### Funcionalidade 1
+```lua
     -- Reduzir distância de renderização
     if self.optimizations.reduce_rendering_distance then
         g_settings.set('render-distance', 8) -- Reduzir de 12 para 8
@@ -838,6 +1055,10 @@ function CrowdedAreaOptimizer:startCrowdedOptimization()
     if self.optimizations.reduce_animations then
         g_settings.set('enable-player-animations', false)
     end
+```
+
+#### Finalização
+```lua
 end
 
 function CrowdedAreaOptimizer:stopCrowdedOptimization()
@@ -859,6 +1080,7 @@ end
 
 ### **6.1 Performance Analyzer**
 
+#### Inicialização e Configuração
 ```lua
 -- Analisador de performance
 local PerformanceAnalyzer = {
@@ -882,6 +1104,10 @@ function PerformanceAnalyzer:analyzePerformance(duration)
         
         scheduleEvent(function() end, 1000) -- Esperar 1 segundo
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     return self:processAnalysis(metrics)
 end
@@ -910,6 +1136,10 @@ function PerformanceAnalyzer:processAnalysis(metrics)
         analysis.min_fps = math.min(analysis.min_fps, metric.fps)
         analysis.max_fps = math.max(analysis.max_fps, metric.fps)
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     analysis.average_fps = total_fps / #metrics
     analysis.average_memory = total_memory / #metrics
@@ -941,6 +1171,10 @@ function PerformanceAnalyzer:analyzeTrend(metrics, field)
     else
         return "stable"
     end
+```
+
+#### Finalização
+```lua
 end
 
 function PerformanceAnalyzer:generateRecommendations(analysis)
@@ -979,6 +1213,7 @@ end
 
 ### **7.2 Otimizações Recomendadas**
 
+#### Nível Basic
 ```lua
 -- Lista de otimizações recomendadas
 local RecommendedOptimizations = {
@@ -1008,8 +1243,94 @@ local RecommendedOptimizations = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Lista de otimizações recomendadas
+local RecommendedOptimizations = {
+    -- Renderização
+    "Usar frustum culling",
+    "Implementar LOD (Level of Detail)",
+    "Otimizar texturas e atlases",
+    "Usar instancing para objetos similares",
+    
+    -- Memória
+    "Implementar object pooling",
+    "Limpar cache regularmente",
+    "Usar weak references quando apropriado",
+    "Otimizar garbage collection",
+    
+    -- CPU
+    "Implementar frame budget",
+    "Usar processamento assíncrono",
+    "Otimizar loops críticos",
+    "Cachear cálculos frequentes",
+    
+    -- Rede
+    "Comprimir dados de rede",
+    "Implementar predição de movimento",
+    "Otimizar protocolo de comunicação",
+    "Usar conexões persistentes"
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Lista de otimizações recomendadas
+local RecommendedOptimizations = {
+    -- Renderização
+    "Usar frustum culling",
+    "Implementar LOD (Level of Detail)",
+    "Otimizar texturas e atlases",
+    "Usar instancing para objetos similares",
+    
+    -- Memória
+    "Implementar object pooling",
+    "Limpar cache regularmente",
+    "Usar weak references quando apropriado",
+    "Otimizar garbage collection",
+    
+    -- CPU
+    "Implementar frame budget",
+    "Usar processamento assíncrono",
+    "Otimizar loops críticos",
+    "Cachear cálculos frequentes",
+    
+    -- Rede
+    "Comprimir dados de rede",
+    "Implementar predição de movimento",
+    "Otimizar protocolo de comunicação",
+    "Usar conexões persistentes"
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **7.3 Checklist de Performance**
 
+#### Nível Basic
+```lua
+local performanceChecklist = {
+    "Verificar uso de memória",
+    "Testar em diferentes cenários",
+    "Otimizar gargalos identificados",
+```
+
+#### Nível Intermediate
 ```lua
 local performanceChecklist = {
     "Medir FPS atual",
@@ -1021,6 +1342,30 @@ local performanceChecklist = {
     "Documentar mudanças",
     "Monitorar em produção"
 }
+```
+
+#### Nível Advanced
+```lua
+local performanceChecklist = {
+    "Medir FPS atual",
+    "Verificar uso de memória",
+    "Analisar uso de CPU",
+    "Testar em diferentes cenários",
+    "Otimizar gargalos identificados",
+    "Validar melhorias",
+    "Documentar mudanças",
+    "Monitorar em produção"
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---

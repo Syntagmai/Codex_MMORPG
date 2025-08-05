@@ -18,6 +18,7 @@ Este guia fornece informações essenciais para contribuir com o desenvolvimento
 
 ### **1.1 Workflow de Contribuição**
 
+#### Inicialização e Configuração
 ```lua
 -- Workflow de contribuição
 local ContributionWorkflow = {
@@ -47,6 +48,10 @@ function ContributionWorkflow:startContribution(feature)
         localRepo = localRepo,
         branchName = branchName
     }
+```
+
+#### Funcionalidade 1
+```lua
 end
 
 function ContributionWorkflow:createFeatureBranch(feature)
@@ -68,6 +73,10 @@ function ContributionWorkflow:pushChanges(branchName)
     local command = string.format("git push origin %s", branchName)
     return os.execute(command) == 0
 end
+```
+
+#### Finalização
+```lua
 
 function ContributionWorkflow:createPullRequest(title, description)
     -- Implementar criação de PR via API
@@ -99,10 +108,12 @@ local CommitPatterns = {
 }
 
 function CommitPatterns:formatCommitMessage(type, scope, description)
+    -- Função: CommitPatterns
     return string.format("%s(%s): %s", type, scope, description)
 end
 
 function CommitPatterns:validateCommitMessage(message)
+    -- Função: CommitPatterns
     local pattern = "^(feat|fix|docs|style|refactor|test|chore)(\\(.+\\))?: .+"
     return string.match(message, pattern) ~= nil
 end
@@ -114,6 +125,7 @@ end
 
 ### **2.1 Coding Standards**
 
+#### Inicialização e Configuração
 ```lua
 -- Padrões de código
 local CodingStandards = {
@@ -137,6 +149,10 @@ local CodingStandards = {
             constants = "UPPER_SNAKE_CASE",
             classes = "PascalCase"
         }
+```
+
+#### Finalização
+```lua
     }
 }
 
@@ -174,6 +190,7 @@ end
 
 ```lua
 -- Checklist de code review
+    --  Checklist de code review (traduzido)
 local CodeReviewChecklist = {
     items = {
         "Código segue padrões estabelecidos",
@@ -188,6 +205,7 @@ local CodeReviewChecklist = {
 }
 
 function CodeReviewChecklist:reviewCode(prId)
+    -- Função: CodeReviewChecklist
     local review = {
         prId = prId,
         checklist = {},
@@ -196,6 +214,7 @@ function CodeReviewChecklist:reviewCode(prId)
     }
     
     for _, item in ipairs(self.items) do
+    -- Loop de repetição
         review.checklist[item] = false
     end
     
@@ -203,6 +222,7 @@ function CodeReviewChecklist:reviewCode(prId)
 end
 
 function CodeReviewChecklist:completeReview(review, approved)
+    -- Função: CodeReviewChecklist
     review.status = approved and "approved" or "changes_requested"
     review.completedAt = os.time()
     
@@ -218,6 +238,7 @@ end
 
 ```lua
 -- Suite de testes
+    --  Suite de testes (traduzido)
 local TestSuite = {
     types = {
         unit = "Testes unitários",
@@ -228,9 +249,11 @@ local TestSuite = {
 }
 
 function TestSuite:runTests(testType)
+    -- Função: TestSuite
     local command = ""
     
     if testType == "unit" then
+    -- Verificação condicional
         command = "ctest --output-on-failure"
     elseif testType == "integration" then
         command = "ctest -L integration"
@@ -247,6 +270,7 @@ function TestSuite:runTests(testType)
 end
 
 function TestSuite:generateTestReport()
+    -- Função: TestSuite
     local report = {
         total = 0,
         passed = 0,
@@ -261,6 +285,21 @@ end
 
 ### **3.2 Quality Gates**
 
+#### Nível Basic
+```lua
+-- Gates de qualidade
+local QualityGates = {
+function QualityGates:checkQuality(metrics)
+    local passed = true
+    local issues = {}
+        local value = metrics[gate]
+        if value and value < threshold then
+        end
+    end
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Gates de qualidade
 local QualityGates = {
@@ -288,6 +327,44 @@ function QualityGates:checkQuality(metrics)
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Gates de qualidade
+local QualityGates = {
+    thresholds = {
+        testCoverage = 80, -- 80% de cobertura
+        codeDuplication = 5, -- Máximo 5% de duplicação
+        complexity = 10, -- Complexidade máxima
+        maintainability = 60 -- Índice de manutenibilidade
+    }
+}
+
+function QualityGates:checkQuality(metrics)
+    local passed = true
+    local issues = {}
+    
+    for gate, threshold in pairs(self.thresholds) do
+        local value = metrics[gate]
+        if value and value < threshold then
+            passed = false
+            table.insert(issues, string.format("%s: %d < %d", gate, value, threshold))
+        end
+    end
+    
+    return passed, issues
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 📝 **4. Documentação**
@@ -313,10 +390,13 @@ local DocumentationStandards = {
 }
 
 function DocumentationStandards:validateDocumentation()
+    -- Função: DocumentationStandards
     local missing = {}
     
     for _, file in ipairs(self.required) do
+    -- Loop de repetição
         if not self:fileExists(file) then
+    -- Verificação condicional
             table.insert(missing, file)
         end
     end
@@ -325,6 +405,7 @@ function DocumentationStandards:validateDocumentation()
 end
 
 function DocumentationStandards:generateDocs()
+    -- Função: DocumentationStandards
     -- Gerar documentação automática
     local command = "doxygen Doxyfile"
     return os.execute(command) == 0
@@ -345,6 +426,7 @@ end
 
 ### **5.2 Checklist de Contribuição**
 
+#### Nível Basic
 ```lua
 local contributionChecklist = {
     "Código segue padrões estabelecidos",
@@ -356,6 +438,51 @@ local contributionChecklist = {
     "Builds passando",
     "Funcionalidade testada"
 }
+```
+
+#### Nível Intermediate
+```lua
+local contributionChecklist = {
+    "Código segue padrões estabelecidos",
+    "Testes incluídos e passando",
+    "Documentação atualizada",
+    "Commit messages seguem padrão",
+    "Pull Request descrito adequadamente",
+    "Code review solicitado",
+    "Builds passando",
+    "Funcionalidade testada"
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local contributionChecklist = {
+    "Código segue padrões estabelecidos",
+    "Testes incluídos e passando",
+    "Documentação atualizada",
+    "Commit messages seguem padrão",
+    "Pull Request descrito adequadamente",
+    "Code review solicitado",
+    "Builds passando",
+    "Funcionalidade testada"
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---

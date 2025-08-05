@@ -16,9 +16,12 @@ Este documento fornece **guias práticos** para uso das APIs Lua do projeto Cana
 ### **Criação e Gerenciamento**
 ```lua
 -- Criar novo jogador
+    --  Criar novo jogador (traduzido)
 function createNewPlayer(name, vocation)
+    -- Função: createNewPlayer
     local player = Player.create(name, Position(100, 100, 7))
     if not player then
+    -- Verificação condicional
         return false, "Failed to create player"
     end
     
@@ -26,16 +29,20 @@ function createNewPlayer(name, vocation)
     player:setVocation(vocation)
     
     -- Configurar stats iniciais
+    --  Configurar stats iniciais (traduzido)
     player:setLevel(1)
     player:setHealth(150)
     player:setMana(50)
     player:setCapacity(400)
     
     -- Adicionar itens iniciais
+    --  Adicionar itens iniciais (traduzido)
     local starterItems = getStarterItems(vocation)
     for _, itemData in ipairs(starterItems) do
+    -- Loop de repetição
         local item = Item.create(itemData.id, itemData.count)
         if item then
+    -- Verificação condicional
             player:addItem(item)
         end
     end
@@ -45,6 +52,7 @@ end
 
 -- Obter itens iniciais por vocação
 function getStarterItems(vocation)
+    -- Função: getStarterItems
     local items = {
         [VOCATION_KNIGHT] = {
             {id = 2380, count = 1}, -- Iron Mace
@@ -67,6 +75,7 @@ end
 ```lua
 -- Adicionar experiência com level up
 function addExperienceWithLevelUp(player, exp)
+    -- Função: addExperienceWithLevelUp
     local currentLevel = player:getLevel()
     local currentExp = player:getExperience()
     
@@ -74,7 +83,9 @@ function addExperienceWithLevelUp(player, exp)
     
     local newLevel = player:getLevel()
     if newLevel > currentLevel then
+    -- Verificação condicional
         -- Level up ocorreu
+    --  Level up ocorreu (traduzido)
         player:setHealth(player:getMaxHealth())
         player:setMana(player:getMaxMana())
         
@@ -84,7 +95,9 @@ function addExperienceWithLevelUp(player, exp)
         -- Broadcast para jogadores próximos
         local nearbyPlayers = getPlayersInArea(player:getPosition(), 10)
         for _, nearbyPlayer in ipairs(nearbyPlayers) do
+    -- Loop de repetição
             if nearbyPlayer ~= player then
+    -- Verificação condicional
                 nearbyPlayer:sendTextMessage(MESSAGE_EVENT_ADVANCE,
                     player:getName() .. " reached level " .. newLevel .. "!")
             end
@@ -98,6 +111,7 @@ end
 ## ⚔️ **Guia: Sistema de Combate**
 
 ### **Sistema de Ataque**
+#### Inicialização e Configuração
 ```lua
 -- Processar ataque completo
 function processCombatAttack(attacker, target, weapon)
@@ -127,6 +141,10 @@ function processCombatAttack(attacker, target, weapon)
         target:sendTextMessage(MESSAGE_EVENT_ADVANCE,
             "You receive " .. damage .. " damage from " .. attacker:getName())
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     return true, "Attack successful"
 end
@@ -152,12 +170,17 @@ function calculateCombatDamage(attacker, target, weapon)
         target:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You dodged the attack!")
         return 0
     end
+```
+
+#### Finalização
+```lua
     
     return math.max(1, math.floor(damage))
 end
 ```
 
 ### **Sistema de Magias**
+#### Inicialização e Configuração
 ```lua
 -- Executar magia
 function castSpell(caster, spellName, target)
@@ -184,6 +207,10 @@ function castSpell(caster, spellName, target)
     if spell.effect then
         spell.effect(caster, target)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Cooldown
     if spell.cooldown then
@@ -206,6 +233,10 @@ function checkSpellRequirements(caster, spell)
             "You need " .. spell.mana .. " mana to cast this spell.")
         return false
     end
+```
+
+#### Finalização
+```lua
     
     if spell.cooldown and caster:getSpellCooldown(spellName) > os.mtime() then
         caster:sendTextMessage(MESSAGE_EVENT_ADVANCE, "This spell is on cooldown.")
@@ -221,6 +252,7 @@ end
 ## 🎒 **Guia: Sistema de Itens**
 
 ### **Sistema de Loot**
+#### Inicialização e Configuração
 ```lua
 -- Gerar loot de criatura
 function generateCreatureLoot(creature, player)
@@ -246,6 +278,10 @@ function generateCreatureLoot(creature, player)
     
     return loot
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 -- Distribuir loot
 function distributeLoot(loot, killer, position)
@@ -275,6 +311,10 @@ function distributeLoot(loot, killer, position)
             -- Drop no chão
             item:setPosition(position)
         end
+```
+
+#### Finalização
+```lua
     end
 end
 ```
@@ -282,41 +322,55 @@ end
 ### **Sistema de Crafting**
 ```lua
 -- Processar crafting
+    --  Processar crafting (traduzido)
 function processCrafting(player, recipeId)
+    -- Função: processCrafting
     local recipe = getRecipe(recipeId)
     if not recipe then
+    -- Verificação condicional
         return false, "Unknown recipe"
     end
     
     -- Verificar ingredientes
+    --  Verificar ingredientes (traduzido)
     for _, ingredient in ipairs(recipe.ingredients) do
+    -- Loop de repetição
         if not player:hasItem(ingredient.itemId, ingredient.count) then
+    -- Verificação condicional
             return false, "Missing ingredient: " .. ingredient.name
         end
     end
     
     -- Verificar nível
     if recipe.level and player:getLevel() < recipe.level then
+    -- Verificação condicional
         return false, "You need level " .. recipe.level .. " to craft this item"
     end
     
     -- Remover ingredientes
+    --  Remover ingredientes (traduzido)
     for _, ingredient in ipairs(recipe.ingredients) do
+    -- Loop de repetição
         player:removeItem(ingredient.itemId, ingredient.count)
     end
     
     -- Criar resultado
+    --  Criar resultado (traduzido)
     local result = Item.create(recipe.result.itemId, recipe.result.count)
     if result then
+    -- Verificação condicional
         if player:addItem(result) then
+    -- Verificação condicional
             player:sendTextMessage(MESSAGE_EVENT_ADVANCE,
                 "You successfully crafted " .. result:getName())
             return true, "Crafting successful"
         else
             -- Devolver ingredientes se inventário cheio
             for _, ingredient in ipairs(recipe.ingredients) do
+    -- Loop de repetição
                 local item = Item.create(ingredient.itemId, ingredient.count)
                 if item then
+    -- Verificação condicional
                     player:addItem(item)
                 end
             end
@@ -333,6 +387,7 @@ end
 ## 🗄️ **Guia: Sistema de Banco de Dados**
 
 ### **Operações CRUD**
+#### Inicialização e Configuração
 ```lua
 -- Criar jogador no banco
 function createPlayerInDatabase(name, password, vocation)
@@ -372,6 +427,10 @@ function loadPlayerFromDatabase(name)
             result:free()
             return player
         end
+```
+
+#### Funcionalidade 1
+```lua
         result:free()
     end
     
@@ -400,6 +459,10 @@ function savePlayerToDatabase(player)
         Database.rollbackTransaction()
         return false, "Failed to save player to database"
     end
+```
+
+#### Finalização
+```lua
 end
 ```
 
@@ -408,6 +471,7 @@ end
 ## 🔄 **Guia: Sistema de Eventos**
 
 ### **Sistema de Eventos**
+#### Inicialização e Configuração
 ```lua
 -- Registrar eventos de jogador
 function registerPlayerEvents()
@@ -439,6 +503,10 @@ function registerPlayerEvents()
         -- Log de atividade
         logPlayerActivity(player:getName(), "logout")
     end)
+```
+
+#### Finalização
+```lua
     
     EventManager.register("playerDeath", function(player, killer)
         print("Player died: " .. player:getName() .. " killed by " .. (killer and killer:getName() or "unknown"))
@@ -471,6 +539,7 @@ end
 ## 🏰 **Guia: Sistema de Raids**
 
 ### **Gerenciamento de Raids**
+#### Inicialização e Configuração
 ```lua
 -- Iniciar raid
 function startRaid(raidName, position)
@@ -496,6 +565,10 @@ function startRaid(raidName, position)
             creature:spawn()
             table.insert(raid.creatures, creature)
         end
+```
+
+#### Funcionalidade 1
+```lua
     end
     
     -- Notificar jogadores na área
@@ -523,6 +596,10 @@ function processRaids()
             if raid.config.logic then
                 raid.config.logic(raid)
             end
+```
+
+#### Funcionalidade 2
+```lua
             
             -- Verificar condições de vitória/derrota
             checkRaidConditions(raid)
@@ -545,6 +622,10 @@ function checkRaidConditions(raid)
         -- Dar recompensas
         giveRaidRewards(raid)
     end
+```
+
+#### Finalização
+```lua
     
     -- Verificar timeout
     if os.mtime() - raid.startTime > raid.config.timeout then

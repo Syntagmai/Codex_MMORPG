@@ -106,6 +106,7 @@ target: canary
 ## 🔧 **APIs Documentadas**
 
 ### **1. Game Layer**
+#### Nível Basic
 ```cpp
 void Game::sendSingleSoundEffect(
     const Position &pos, 
@@ -121,7 +122,57 @@ void Game::sendDoubleSoundEffect(
 );
 ```
 
+#### Nível Intermediate
+```cpp
+void Game::sendSingleSoundEffect(
+    const Position &pos, 
+    SoundEffect_t soundId, 
+    const std::shared_ptr<Creature> &actor = nullptr
+);
+
+void Game::sendDoubleSoundEffect(
+    const Position &pos, 
+    SoundEffect_t mainSoundEffect, 
+    SoundEffect_t secondarySoundEffect, 
+    const std::shared_ptr<Creature> &actor = nullptr
+);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+void Game::sendSingleSoundEffect(
+    const Position &pos, 
+    SoundEffect_t soundId, 
+    const std::shared_ptr<Creature> &actor = nullptr
+);
+
+void Game::sendDoubleSoundEffect(
+    const Position &pos, 
+    SoundEffect_t mainSoundEffect, 
+    SoundEffect_t secondarySoundEffect, 
+    const std::shared_ptr<Creature> &actor = nullptr
+);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **2. Protocol Layer**
+#### Nível Basic
 ```cpp
 void ProtocolGame::sendSingleSoundEffect(
     const Position &pos, 
@@ -138,6 +189,57 @@ void ProtocolGame::sendDoubleSoundEffect(
 );
 ```
 
+#### Nível Intermediate
+```cpp
+void ProtocolGame::sendSingleSoundEffect(
+    const Position &pos, 
+    SoundEffect_t id, 
+    SourceEffect_t source
+);
+
+void ProtocolGame::sendDoubleSoundEffect(
+    const Position &pos,
+    SoundEffect_t mainSoundId,
+    SourceEffect_t mainSource,
+    SoundEffect_t secondarySoundId,
+    SourceEffect_t secondarySource
+);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+void ProtocolGame::sendSingleSoundEffect(
+    const Position &pos, 
+    SoundEffect_t id, 
+    SourceEffect_t source
+);
+
+void ProtocolGame::sendDoubleSoundEffect(
+    const Position &pos,
+    SoundEffect_t mainSoundId,
+    SourceEffect_t mainSource,
+    SoundEffect_t secondarySoundId,
+    SourceEffect_t secondarySource
+);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **3. Lua APIs**
 ```lua
 -- Via posição
@@ -145,6 +247,7 @@ pos:sendSingleSoundEffect(soundId)
 pos:sendDoubleSoundEffect(mainSound, secondarySound)
 
 -- Via jogador
+    --  Via jogador (traduzido)
 player:sendSingleSoundEffect(soundId, isOwn)
 player:sendDoubleSoundEffect(mainSound, secondarySound, isOwn)
 ```

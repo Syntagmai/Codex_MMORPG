@@ -27,6 +27,7 @@ Analisar profundamente o sistema **Sistema de Combate** do OTClient usando metod
 ### **Estrutura do Sistema**
 ```lua
 -- Exemplo de estrutura do sistema Sistema de Combate
+    --  Exemplo de estrutura do sistema Sistema de Combate (traduzido)
 -- Será preenchido durante a análise
 ```
 
@@ -38,6 +39,7 @@ Analisar profundamente o sistema **Sistema de Combate** do OTClient usando metod
 ### **APIs e Interfaces**
 ```lua
 -- APIs principais do sistema
+    --  APIs principais do sistema (traduzido)
 -- Será documentado durante a análise
 ```
 

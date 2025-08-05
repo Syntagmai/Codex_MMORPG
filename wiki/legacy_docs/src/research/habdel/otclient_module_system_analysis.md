@@ -85,6 +85,7 @@ Como criar um módulo básico
 #include "module.h"
 
 class MyModule : public Module {{
+    -- Classe: MyModule
 public:
     void load() override {{
         // Inicializar módulo
@@ -114,6 +115,7 @@ MODULE_LOADER(MyModule)
 ### **Uso do ModuleManager**
 Como usar o gerenciador de módulos
 
+#### Nível Basic
 ```cpp
 // Exemplo de uso do ModuleManager
 #include "modulemanager.h"
@@ -141,6 +143,79 @@ void manageModules() {{
 }}
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de uso do ModuleManager
+#include "modulemanager.h"
+
+void manageModules() {{
+    // Carregar módulo
+    ModulePtr module = g_modules.loadModule("MyModule");
+    
+    if (module) {{
+        std::cout << "Módulo carregado com sucesso!" << std::endl;
+        
+        // Verificar se está carregado
+        if (module->isLoaded()) {{
+            std::cout << "Módulo está ativo" << std::endl;
+        }}
+        
+        // Recarregar módulo
+        g_modules.reloadModule("MyModule");
+        
+        // Descarregar módulo
+        g_modules.unloadModule("MyModule");
+    }} else {{
+        std::cout << "Falha ao carregar módulo!" << std::endl;
+    }}
+}}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de uso do ModuleManager
+#include "modulemanager.h"
+
+void manageModules() {{
+    // Carregar módulo
+    ModulePtr module = g_modules.loadModule("MyModule");
+    
+    if (module) {{
+        std::cout << "Módulo carregado com sucesso!" << std::endl;
+        
+        // Verificar se está carregado
+        if (module->isLoaded()) {{
+            std::cout << "Módulo está ativo" << std::endl;
+        }}
+        
+        // Recarregar módulo
+        g_modules.reloadModule("MyModule");
+        
+        // Descarregar módulo
+        g_modules.unloadModule("MyModule");
+    }} else {{
+        std::cout << "Falha ao carregar módulo!" << std::endl;
+    }}
+}}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Módulo de Jogo**
 Como criar um módulo específico do jogo
 
@@ -150,6 +225,7 @@ Como criar um módulo específico do jogo
 #include "uimanager.h"
 
 class GameInventoryModule : public Module {{
+    -- Classe: GameInventoryModule
 private:
     UIWidgetPtr inventoryWindow;
     
@@ -197,6 +273,7 @@ Como criar um módulo de interface do cliente
 #include "uimanager.h"
 
 class ClientTopMenuModule : public Module {{
+    -- Classe: ClientTopMenuModule
 private:
     UIWidgetPtr topMenu;
     
@@ -276,6 +353,7 @@ Integração com gerenciamento de recursos
 #include "module.h"
 
 class MyModule : public Module {
+    -- Classe: MyModule
 public:
     void load() override {
         // Inicializar módulo
@@ -291,6 +369,7 @@ MODULE_LOADER(MyModule)
 
 ### **Gerenciamento de Módulos**
 
+#### Nível Basic
 ```cpp
 #include "modulemanager.h"
 
@@ -304,6 +383,55 @@ if (module->isLoaded()) {
 
 // Descarregar módulo
 g_modules.unloadModule("MyModule");
+```
+
+#### Nível Intermediate
+```cpp
+#include "modulemanager.h"
+
+// Carregar módulo
+ModulePtr module = g_modules.loadModule("MyModule");
+
+// Verificar status
+if (module->isLoaded()) {
+    // Módulo ativo
+}
+
+// Descarregar módulo
+g_modules.unloadModule("MyModule");
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+#include "modulemanager.h"
+
+// Carregar módulo
+ModulePtr module = g_modules.loadModule("MyModule");
+
+// Verificar status
+if (module->isLoaded()) {
+    // Módulo ativo
+}
+
+// Descarregar módulo
+g_modules.unloadModule("MyModule");
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 📦 Tipos de Módulos
@@ -363,6 +491,7 @@ g_modules.unloadModule("MyModule");
 
 ### **Comunicação Entre Módulos**
 
+#### Nível Basic
 ```cpp
 // Enviar evento
 g_dispatcher.dispatchEvent("inventory_opened", data);
@@ -371,6 +500,45 @@ g_dispatcher.dispatchEvent("inventory_opened", data);
 g_dispatcher.addEventCallback("inventory_opened", [](const Event& event) {
     // Processar evento
 });
+```
+
+#### Nível Intermediate
+```cpp
+// Enviar evento
+g_dispatcher.dispatchEvent("inventory_opened", data);
+
+// Receber evento
+g_dispatcher.addEventCallback("inventory_opened", [](const Event& event) {
+    // Processar evento
+});
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Enviar evento
+g_dispatcher.dispatchEvent("inventory_opened", data);
+
+// Receber evento
+g_dispatcher.addEventCallback("inventory_opened", [](const Event& event) {
+    // Processar evento
+});
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🔧 Performance

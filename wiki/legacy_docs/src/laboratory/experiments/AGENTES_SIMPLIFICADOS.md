@@ -13,6 +13,7 @@
 local originalAddToggleButton = modules.game_mainpanel.addToggleButton
 modules.game_mainpanel.addToggleButton = function(id, text, image, callback, checked, priority)
     if id == "bosstiary" then
+    -- Verificação condicional
         return nil
     end
     return originalAddToggleButton(id, text, image, callback, checked, priority)
@@ -36,12 +37,48 @@ UIButton
 
 ### **Tarefa 2: NPC Backpack - SIMPLIFICADA**
 **❌ Complexo (Lua):**
+#### Nível Basic
 ```lua
 -- Interceptar função de compra
 local originalBuyItem = g_game.buyItem
 g_game.buyItem = function(item, amount, ignoreCapacity, buyWithBackpack)
     return originalBuyItem(item, amount, ignoreCapacity, false)
 end
+```
+
+#### Nível Intermediate
+```lua
+-- Interceptar função de compra
+local originalBuyItem = g_game.buyItem
+g_game.buyItem = function(item, amount, ignoreCapacity, buyWithBackpack)
+    return originalBuyItem(item, amount, ignoreCapacity, false)
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Interceptar função de compra
+local originalBuyItem = g_game.buyItem
+g_game.buyItem = function(item, amount, ignoreCapacity, buyWithBackpack)
+    return originalBuyItem(item, amount, ignoreCapacity, false)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 **✅ Simples (.otui):**
@@ -65,6 +102,7 @@ CheckBox
 local originalAddToggleButton = modules.game_mainpanel.addToggleButton
 modules.game_mainpanel.addToggleButton = function(id, text, image, callback, checked, priority)
     if id == "bosstiary" then
+    -- Verificação condicional
         return nil
     end
     return originalAddToggleButton(id, text, image, callback, checked, priority)
@@ -89,6 +127,7 @@ UIButton
 local originalCreateWidget = g_ui.createWidget
 g_ui.createWidget = function(widgetType, parent)
     if widgetType:find("Aura") or widgetType:find("Wing") then
+    -- Verificação condicional
         return nil
     end
     return originalCreateWidget(widgetType, parent)

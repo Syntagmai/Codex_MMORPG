@@ -79,9 +79,39 @@ Esta referência documenta **[descrição da funcionalidade]** do Canary, fornec
 - `param2` (type): Descrição do parâmetro
 **Retorno**: `type` - Descrição do retorno
 **Exemplo**:
+#### Nível Basic
 ```lua
 local result = canary.methodName("value1", "value2")
 print(result)
+```
+
+#### Nível Intermediate
+```lua
+local result = canary.methodName("value1", "value2")
+print(result)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local result = canary.methodName("value1", "value2")
+print(result)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ##### **`canary.asyncMethod(param, callback)`**
@@ -91,10 +121,42 @@ print(result)
 - `callback` (function): Função de callback
 **Retorno**: `void`
 **Exemplo**:
+#### Nível Basic
 ```lua
 canary.asyncMethod("data", function(result)
     print("Resultado: " .. result)
 end)
+```
+
+#### Nível Intermediate
+```lua
+canary.asyncMethod("data", function(result)
+    print("Resultado: " .. result)
+end)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+canary.asyncMethod("data", function(result)
+    print("Resultado: " .. result)
+end)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 #### **Propriedades:**
@@ -106,9 +168,11 @@ end)
 **Exemplo**:
 ```lua
 -- Ler propriedade
+    --  Ler propriedade (traduzido)
 local value = canary.propertyName
 
 -- Definir propriedade
+    --  Definir propriedade (traduzido)
 canary.propertyName = "new value"
 ```
 
@@ -120,6 +184,7 @@ canary.propertyName = "new value"
 ```lua
 local value = canary.readOnlyProperty
 -- canary.readOnlyProperty = "value" -- ERRO!
+    --  canary.readOnlyProperty = "value" -- ERRO! (traduzido)
 ```
 
 #### **Eventos:**
@@ -130,20 +195,84 @@ local value = canary.readOnlyProperty
 - `data` (object): Dados do evento
 - `timestamp` (number): Timestamp do evento
 **Exemplo**:
+#### Nível Basic
 ```lua
 canary:on("eventName", function(data, timestamp)
     print("Evento recebido: " .. data.message)
 end)
 ```
 
+#### Nível Intermediate
+```lua
+canary:on("eventName", function(data, timestamp)
+    print("Evento recebido: " .. data.message)
+end)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+canary:on("eventName", function(data, timestamp)
+    print("Evento recebido: " .. data.message)
+end)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ##### **`canary:once("eventName", callback)`**
 **Descrição**: Evento que executa apenas uma vez
 **Parâmetros**: Mesmos do evento normal
 **Exemplo**:
+#### Nível Basic
 ```lua
 canary:once("eventName", function(data)
     print("Evento único: " .. data.message)
 end)
+```
+
+#### Nível Intermediate
+```lua
+canary:once("eventName", function(data)
+    print("Evento único: " .. data.message)
+end)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+canary:once("eventName", function(data)
+    print("Evento único: " .. data.message)
+end)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 #### **Constantes:**
@@ -155,6 +284,7 @@ end)
 **Exemplo**:
 ```lua
 if status == canary.CONSTANT_NAME then
+    -- Verificação condicional
     print("Status correto")
 end
 ```
@@ -169,15 +299,18 @@ end
 local canary = require("canary")
 
 -- Inicializar
+    --  Inicializar (traduzido)
 canary.init({
     host = "localhost",
     port = 7171
 })
 
 -- Conectar
+    --  Conectar (traduzido)
 canary.connect()
 
 -- Escutar eventos
+    --  Escutar eventos (traduzido)
 canary:on("connected", function()
     print("Conectado!")
 end)
@@ -189,19 +322,25 @@ end)
 local AdvancedUsage = {}
 
 function AdvancedUsage.setup()
+    -- Função: AdvancedUsage
     -- Configurar handlers
+    --  Configurar handlers (traduzido)
     canary:on("data", AdvancedUsage.handleData)
     canary:on("error", AdvancedUsage.handleError)
     canary:on("disconnect", AdvancedUsage.handleDisconnect)
     
     -- Configurar propriedades
+    --  Configurar propriedades (traduzido)
     canary.timeout = 10000
     canary.retryAttempts = 3
 end
 
 function AdvancedUsage.handleData(data)
+    -- Função: AdvancedUsage
     -- Processar dados
+    --  Processar dados (traduzido)
     if data.type == "game_state" then
+    -- Verificação condicional
         AdvancedUsage.updateGameState(data)
     elseif data.type == "player_info" then
         AdvancedUsage.updatePlayerInfo(data)
@@ -209,26 +348,33 @@ function AdvancedUsage.handleData(data)
 end
 
 function AdvancedUsage.handleError(error)
+    -- Função: AdvancedUsage
     -- Tratar erros
+    --  Tratar erros (traduzido)
     print("Erro: " .. error.message)
     
     if error.code == canary.ERROR_CONNECTION_LOST then
+    -- Verificação condicional
         AdvancedUsage.reconnect()
     end
 end
 
 function AdvancedUsage.handleDisconnect()
+    -- Função: AdvancedUsage
     -- Reconectar automaticamente
+    --  Reconectar automaticamente (traduzido)
     print("Desconectado, tentando reconectar...")
     AdvancedUsage.reconnect()
 end
 
 function AdvancedUsage.reconnect()
+    -- Função: AdvancedUsage
     canary.connect()
 end
 ```
 
 #### **Exemplo 3: Padrões de Uso**
+#### Nível Basic
 ```lua
 -- Padrão: Singleton para integração
 local CanaryIntegration = {}
@@ -271,7 +417,180 @@ function CanaryIntegration.onDisconnected()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Padrão: Singleton para integração
+local CanaryIntegration = {}
+
+function CanaryIntegration.getInstance()
+    if not CanaryIntegration.instance then
+        CanaryIntegration.instance = {
+            connected = false,
+            handlers = {},
+            config = {}
+        }
+    end
+    return CanaryIntegration.instance
+end
+
+function CanaryIntegration.setup(config)
+    local instance = CanaryIntegration.getInstance()
+    instance.config = config
+    
+    -- Configurar handlers
+    canary:on("connected", function()
+        instance.connected = true
+        CanaryIntegration.onConnected()
+    end)
+    
+    canary:on("disconnected", function()
+        instance.connected = false
+        CanaryIntegration.onDisconnected()
+    end)
+end
+
+function CanaryIntegration.onConnected()
+    print("Canary conectado!")
+    -- Lógica adicional
+end
+
+function CanaryIntegration.onDisconnected()
+    print("Canary desconectado!")
+    -- Lógica adicional
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Padrão: Singleton para integração
+local CanaryIntegration = {}
+
+function CanaryIntegration.getInstance()
+    if not CanaryIntegration.instance then
+        CanaryIntegration.instance = {
+            connected = false,
+            handlers = {},
+            config = {}
+        }
+    end
+    return CanaryIntegration.instance
+end
+
+function CanaryIntegration.setup(config)
+    local instance = CanaryIntegration.getInstance()
+    instance.config = config
+    
+    -- Configurar handlers
+    canary:on("connected", function()
+        instance.connected = true
+        CanaryIntegration.onConnected()
+    end)
+    
+    canary:on("disconnected", function()
+        instance.connected = false
+        CanaryIntegration.onDisconnected()
+    end)
+end
+
+function CanaryIntegration.onConnected()
+    print("Canary conectado!")
+    -- Lógica adicional
+end
+
+function CanaryIntegration.onDisconnected()
+    print("Canary desconectado!")
+    -- Lógica adicional
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Exemplo 4: Anti-padrões (O que evitar)**
+#### Nível Basic
+```lua
+-- ❌ ANTI-PADRÃO: Não fazer isso
+function badExample()
+    -- Não verificar se está conectado
+    canary.sendData("data") -- Pode falhar
+    -- Não tratar erros
+    local result = canary.processData("data") -- Pode quebrar
+    -- Não limpar handlers
+    canary:on("event", function() end) -- Memory leak
+end
+-- ✅ PADRÃO CORRETO
+function goodExample()
+    -- Verificar conexão
+    if not canary.isConnected() then
+        print("Não conectado!")
+    end
+    -- Tratar erros
+    local success, result = pcall(function()
+    end)
+    if not success then
+        print("Erro: " .. result)
+    end
+    -- Limpar handlers quando necessário
+    local handler = function() end
+    -- Limpar quando não precisar mais
+end
+```
+
+#### Nível Intermediate
+```lua
+-- ❌ ANTI-PADRÃO: Não fazer isso
+function badExample()
+    -- Não verificar se está conectado
+    canary.sendData("data") -- Pode falhar
+    
+    -- Não tratar erros
+    local result = canary.processData("data") -- Pode quebrar
+    
+    -- Não limpar handlers
+    canary:on("event", function() end) -- Memory leak
+end
+
+-- ✅ PADRÃO CORRETO
+function goodExample()
+    -- Verificar conexão
+    if not canary.isConnected() then
+        print("Não conectado!")
+        return
+    end
+    
+    -- Tratar erros
+        return canary.processData("data")
+    end)
+    
+    if not success then
+        print("Erro: " .. result)
+        return
+    end
+    
+    -- Limpar handlers quando necessário
+    local handler = function() end
+    canary:on("event", handler)
+    
+    -- Limpar quando não precisar mais
+    canary:off("event", handler)
+end
+```
+
+#### Nível Advanced
 ```lua
 -- ❌ ANTI-PADRÃO: Não fazer isso
 function badExample()
@@ -319,6 +638,7 @@ end
 #### **Implementação Interna:**
 ```lua
 -- Estrutura interna (simplificada)
+    --  Estrutura interna (simplificada) (traduzido)
 local CanaryInternal = {
     socket = nil,
     handlers = {},
@@ -327,18 +647,23 @@ local CanaryInternal = {
 }
 
 function CanaryInternal.connect()
+    -- Função: CanaryInternal
     -- Implementação da conexão
     CanaryInternal.socket = createSocket()
     CanaryInternal.socket:connect(CanaryInternal.config.host, CanaryInternal.config.port)
 end
 
 function CanaryInternal.handleMessage(message)
+    -- Função: CanaryInternal
     -- Processamento de mensagens
+    --  Processamento de mensagens (traduzido)
     local event = message.event
     local data = message.data
     
     if CanaryInternal.handlers[event] then
+    -- Verificação condicional
         for _, handler in ipairs(CanaryInternal.handlers[event]) do
+    -- Loop de repetição
             handler(data)
         end
     end

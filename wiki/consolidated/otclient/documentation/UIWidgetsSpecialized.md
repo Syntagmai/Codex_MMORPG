@@ -21,6 +21,7 @@ Documentação completa dos widgets especializados do OTClient, incluindo minima
 
 **Descrição**: Widget para exibição do minimapa do jogo.
 
+#### Nível Basic
 ```lua
 -- Criar minimap
 local minimap = g_ui.createWidget('Minimap', parent)
@@ -62,6 +63,111 @@ minimap.onMousePress = function(minimap, mousePos, button)
         print("Clique direito em:", position.x, position.y, position.z)
     end
 end
+```
+
+#### Nível Intermediate
+```lua
+-- Criar minimap
+local minimap = g_ui.createWidget('Minimap', parent)
+
+-- Configurações básicas
+minimap:setZoom(2)                       -- Define zoom (1-5)
+local zoom = minimap:getZoom()           -- Obtém zoom atual
+minimap:setPosition({x = 1000, y = 1000, z = 7}) -- Define posição central
+
+-- Navegação
+minimap:setCameraPosition({x = 1000, y = 1000, z = 7}) -- Posição da câmera
+local cameraPos = minimap:getCameraPosition() -- Obtém posição da câmera
+minimap:followCreature(creature)         -- Segue criatura
+minimap:setCrosshair(true)               -- Exibe crosshair central
+
+-- Floors/Andares
+minimap:setFloor(7)                      -- Define andar
+local floor = minimap:getFloor()         -- Obtém andar atual
+minimap:floorUp()                        -- Sobe um andar
+minimap:floorDown()                      -- Desce um andar
+
+-- Modo tela cheia
+minimap:setFullscreen(true)              -- Modo tela cheia
+local fullscreen = minimap:isFullscreen() -- Verifica se em tela cheia
+
+-- Flags e marcadores
+minimap:addFlag({x = 1000, y = 1000, z = 7}, 255, "Minha Casa") -- Adiciona flag
+minimap:removeFlag({x = 1000, y = 1000, z = 7}) -- Remove flag
+
+-- Eventos
+minimap.onPositionChange = function(minimap, position, mousePos)
+    print("Clicou na posição:", position.x, position.y, position.z)
+end
+
+minimap.onMousePress = function(minimap, mousePos, button)
+    if button == MouseRightButton then
+        -- Menu de contexto
+        local position = minimap:getPosition(mousePos)
+        print("Clique direito em:", position.x, position.y, position.z)
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Criar minimap
+local minimap = g_ui.createWidget('Minimap', parent)
+
+-- Configurações básicas
+minimap:setZoom(2)                       -- Define zoom (1-5)
+local zoom = minimap:getZoom()           -- Obtém zoom atual
+minimap:setPosition({x = 1000, y = 1000, z = 7}) -- Define posição central
+
+-- Navegação
+minimap:setCameraPosition({x = 1000, y = 1000, z = 7}) -- Posição da câmera
+local cameraPos = minimap:getCameraPosition() -- Obtém posição da câmera
+minimap:followCreature(creature)         -- Segue criatura
+minimap:setCrosshair(true)               -- Exibe crosshair central
+
+-- Floors/Andares
+minimap:setFloor(7)                      -- Define andar
+local floor = minimap:getFloor()         -- Obtém andar atual
+minimap:floorUp()                        -- Sobe um andar
+minimap:floorDown()                      -- Desce um andar
+
+-- Modo tela cheia
+minimap:setFullscreen(true)              -- Modo tela cheia
+local fullscreen = minimap:isFullscreen() -- Verifica se em tela cheia
+
+-- Flags e marcadores
+minimap:addFlag({x = 1000, y = 1000, z = 7}, 255, "Minha Casa") -- Adiciona flag
+minimap:removeFlag({x = 1000, y = 1000, z = 7}) -- Remove flag
+
+-- Eventos
+minimap.onPositionChange = function(minimap, position, mousePos)
+    print("Clicou na posição:", position.x, position.y, position.z)
+end
+
+minimap.onMousePress = function(minimap, mousePos, button)
+    if button == MouseRightButton then
+        -- Menu de contexto
+        local position = minimap:getPosition(mousePos)
+        print("Clique direito em:", position.x, position.y, position.z)
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### Interface .otui do Minimap
@@ -136,6 +242,7 @@ MinimapWindow < MainWindow
 
 **Descrição**: Sistema de containers para itens do jogo.
 
+#### Nível Basic
 ```lua
 -- Criar container
 local container = g_ui.createWidget('Container', parent)
@@ -181,6 +288,119 @@ end
 container.onClose = function(container)
     print("Container fechado:", container:getName())
 end
+```
+
+#### Nível Intermediate
+```lua
+-- Criar container
+local container = g_ui.createWidget('Container', parent)
+
+-- Configurações
+container:setCapacity(20)                -- Define capacidade
+local capacity = container:getCapacity() -- Obtém capacidade
+container:setName("Backpack")            -- Nome do container
+local name = container:getName()         -- Obtém nome
+
+-- Gerenciamento de itens
+container:addItem(item, slot)            -- Adiciona item no slot
+container:removeItem(slot)               -- Remove item do slot
+local item = container:getItem(slot)     -- Obtém item do slot
+local items = container:getItems()       -- Lista todos os itens
+
+-- Paginação (para containers grandes)
+container:setCurrentPage(1)              -- Define página atual
+local page = container:getCurrentPage()  -- Obtém página atual
+local maxPages = container:getMaxPages() -- Número máximo de páginas
+
+-- Estados
+local hasParent = container:hasParent()  -- Tem container pai
+local parent = container:getParentContainer() -- Container pai
+
+-- Eventos
+container.onItemAdd = function(container, slot, item)
+    print("Item adicionado no slot", slot, ":", item:getId())
+end
+
+container.onItemRemove = function(container, slot, item)
+    print("Item removido do slot", slot, ":", item:getId())
+end
+
+container.onItemUpdate = function(container, slot, item, oldItem)
+    print("Item atualizado no slot", slot)
+end
+
+container.onOpen = function(container)
+    print("Container aberto:", container:getName())
+end
+
+container.onClose = function(container)
+    print("Container fechado:", container:getName())
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Criar container
+local container = g_ui.createWidget('Container', parent)
+
+-- Configurações
+container:setCapacity(20)                -- Define capacidade
+local capacity = container:getCapacity() -- Obtém capacidade
+container:setName("Backpack")            -- Nome do container
+local name = container:getName()         -- Obtém nome
+
+-- Gerenciamento de itens
+container:addItem(item, slot)            -- Adiciona item no slot
+container:removeItem(slot)               -- Remove item do slot
+local item = container:getItem(slot)     -- Obtém item do slot
+local items = container:getItems()       -- Lista todos os itens
+
+-- Paginação (para containers grandes)
+container:setCurrentPage(1)              -- Define página atual
+local page = container:getCurrentPage()  -- Obtém página atual
+local maxPages = container:getMaxPages() -- Número máximo de páginas
+
+-- Estados
+local hasParent = container:hasParent()  -- Tem container pai
+local parent = container:getParentContainer() -- Container pai
+
+-- Eventos
+container.onItemAdd = function(container, slot, item)
+    print("Item adicionado no slot", slot, ":", item:getId())
+end
+
+container.onItemRemove = function(container, slot, item)
+    print("Item removido do slot", slot, ":", item:getId())
+end
+
+container.onItemUpdate = function(container, slot, item, oldItem)
+    print("Item atualizado no slot", slot)
+end
+
+container.onOpen = function(container)
+    print("Container aberto:", container:getName())
+end
+
+container.onClose = function(container)
+    print("Container fechado:", container:getName())
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### Interface .otui de Container
@@ -255,6 +475,7 @@ ContainerWindow < MiniWindow
 
 **Descrição**: Sistema de abas para organizar conteúdo.
 
+#### Nível Basic
 ```lua
 -- Criar tab bar
 local tabBar = g_ui.createWidget('UITabBar', parent)
@@ -294,6 +515,107 @@ end
 tab1.onClick = function(tab)
     print("Aba clicada:", tab:getText())
 end
+```
+
+#### Nível Intermediate
+```lua
+-- Criar tab bar
+local tabBar = g_ui.createWidget('UITabBar', parent)
+
+-- Adicionar abas
+local tab1 = tabBar:addTab('Aba 1', "Tab 1")
+local tab2 = tabBar:addTab('Aba 2', "Tab 2")
+local tab3 = tabBar:addTab('Aba 3', "Tab 3")
+
+-- Gerenciar abas
+tabBar:selectTab(tab1)                   -- Seleciona aba
+local currentTab = tabBar:getCurrentTab() -- Aba atual
+tabBar:removeTab(tab2)                   -- Remove aba
+tabBar:moveTab(tab1, 2)                  -- Move aba para posição
+
+-- Configurações da aba
+tab1:setText("Nova Aba")                 -- Altera texto
+tab1:setIcon("/icons/tab1.png")          -- Define ícone
+tab1:setCloseable(true)                  -- Permite fechar
+tab1:setEnabled(true)                    -- Habilita/desabilita
+
+-- Conteúdo da aba
+local content = g_ui.createWidget('UIWidget')
+content:setId('tab1Content')
+tab1:setContentWidget(content)           -- Define widget de conteúdo
+
+-- Eventos
+tabBar.onTabChange = function(tabBar, tab)
+    print("Aba alterada para:", tab:getText())
+end
+
+tab1.onClose = function(tab)
+    print("Aba fechada:", tab:getText())
+    return true -- Permite fechar
+end
+
+tab1.onClick = function(tab)
+    print("Aba clicada:", tab:getText())
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Criar tab bar
+local tabBar = g_ui.createWidget('UITabBar', parent)
+
+-- Adicionar abas
+local tab1 = tabBar:addTab('Aba 1', "Tab 1")
+local tab2 = tabBar:addTab('Aba 2', "Tab 2")
+local tab3 = tabBar:addTab('Aba 3', "Tab 3")
+
+-- Gerenciar abas
+tabBar:selectTab(tab1)                   -- Seleciona aba
+local currentTab = tabBar:getCurrentTab() -- Aba atual
+tabBar:removeTab(tab2)                   -- Remove aba
+tabBar:moveTab(tab1, 2)                  -- Move aba para posição
+
+-- Configurações da aba
+tab1:setText("Nova Aba")                 -- Altera texto
+tab1:setIcon("/icons/tab1.png")          -- Define ícone
+tab1:setCloseable(true)                  -- Permite fechar
+tab1:setEnabled(true)                    -- Habilita/desabilita
+
+-- Conteúdo da aba
+local content = g_ui.createWidget('UIWidget')
+content:setId('tab1Content')
+tab1:setContentWidget(content)           -- Define widget de conteúdo
+
+-- Eventos
+tabBar.onTabChange = function(tabBar, tab)
+    print("Aba alterada para:", tab:getText())
+end
+
+tab1.onClose = function(tab)
+    print("Aba fechada:", tab:getText())
+    return true -- Permite fechar
+end
+
+tab1.onClick = function(tab)
+    print("Aba clicada:", tab:getText())
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### Interface .otui com Tabs
@@ -367,6 +689,7 @@ UIWidget
 
 **Descrição**: Widgets específicos para o sistema de market.
 
+#### Inicialização e Configuração
 ```lua
 -- Market Principal
 local marketWindow = g_ui.displayUI('market')
@@ -397,6 +720,10 @@ searchEdit:setPlaceholder('Search items...')
 searchEdit.onTextChange = function(widget, text)
     filterMarketItems(text)
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 -- Market Category Combo
 local categoryCombo = g_ui.createWidget('UIComboBox', parent)
@@ -424,6 +751,10 @@ marketTabBar.onTabChange = function(tabBar, tab)
     elseif tabName == 'myoffers' then
         showMyOffersInterface()
     end
+```
+
+#### Finalização
+```lua
 end
 ```
 
@@ -441,19 +772,23 @@ progressBar:setMaximum(100)
 progressBar:setValue(50)
 
 -- Progress bar com texto
+    --  Progress bar com texto (traduzido)
 progressBar:setShowText(true)
 progressBar:setTextFormat("{value}/{maximum} ({percent}%)")
 
 -- Progress bar animada
+    --  Progress bar animada (traduzido)
 progressBar:setAnimated(true)
 progressBar:setAnimationDuration(500)
 
 -- Cores personalizadas
+    --  Cores personalizadas (traduzido)
 progressBar:setBackgroundColor('#404040')
 progressBar:setForegroundColor('#00AA00')
 progressBar:setBorderColor('#FFFFFF')
 
 -- Progress circular
+    --  Progress circular (traduzido)
 local circularProgress = g_ui.createWidget('UICircularProgress', parent)
 circularProgress:setValue(75)
 circularProgress:setStartAngle(0)
@@ -467,11 +802,14 @@ multiProgress:addProgress('MP', 60, '#0000FF')
 multiProgress:addProgress('Stamina', 45, '#00FF00')
 
 -- Eventos
+    --  Eventos (traduzido)
 progressBar.onValueChange = function(progressBar, value, oldValue)
     print("Progresso alterado:", value)
     
     -- Cor baseada no valor
+    --  Cor baseada no valor (traduzido)
     if value < 30 then
+    -- Verificação condicional
         progressBar:setForegroundColor('#FF0000') -- Vermelho
     elseif value < 70 then
         progressBar:setForegroundColor('#FFAA00') -- Laranja
@@ -551,6 +889,31 @@ ProgressWindow < MainWindow
 
 **Descrição**: Áreas com scroll personalizado.
 
+#### Nível Basic
+```lua
+-- Scroll area básica
+local scrollArea = g_ui.createWidget('UIScrollArea', parent)
+-- Scroll bars
+local vScrollBar = g_ui.createWidget('UIScrollBar', scrollArea)
+local hScrollBar = g_ui.createWidget('UIScrollBar', scrollArea)
+-- Configurações
+-- Scroll suave
+-- Conteúdo
+local content = g_ui.createWidget('UIWidget', scrollArea)
+    local item = g_ui.createWidget('UILabel', content)
+    if i == 1 then
+    end
+end
+-- Eventos
+scrollArea.onScroll = function(scrollArea, offset)
+    print("Scroll offset:", offset.x, offset.y)
+end
+vScrollBar.onValueChange = function(scrollBar, value)
+    print("Scroll vertical:", value)
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Scroll area básica
 local scrollArea = g_ui.createWidget('UIScrollArea', parent)
@@ -600,12 +963,73 @@ vScrollBar.onValueChange = function(scrollBar, value)
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Scroll area básica
+local scrollArea = g_ui.createWidget('UIScrollArea', parent)
+
+-- Scroll bars
+local vScrollBar = g_ui.createWidget('UIScrollBar', scrollArea)
+vScrollBar:setOrientation('vertical')
+scrollArea:setVerticalScrollBar(vScrollBar)
+
+local hScrollBar = g_ui.createWidget('UIScrollBar', scrollArea)
+hScrollBar:setOrientation('horizontal')
+scrollArea:setHorizontalScrollBar(hScrollBar)
+
+-- Configurações
+scrollArea:setScrollStep(10)             -- Passo do scroll
+scrollArea:setAutoScrollEnabled(true)    -- Auto-scroll automático
+scrollArea:scrollToTop()                 -- Scroll para o topo
+scrollArea:scrollToBottom()              -- Scroll para baixo
+
+-- Scroll suave
+scrollArea:setSmoothScrolling(true)
+scrollArea:setScrollAnimationDuration(300)
+
+-- Conteúdo
+local content = g_ui.createWidget('UIWidget', scrollArea)
+content:setHeight(1000) -- Altura maior que o scroll area
+for i = 1, 50 do
+    local item = g_ui.createWidget('UILabel', content)
+    item:setText('Item ' .. i)
+    item:setHeight(20)
+    if i == 1 then
+        item:addAnchor(AnchorTop, 'parent', AnchorTop)
+    else
+        item:addAnchor(AnchorTop, 'prev', AnchorBottom)
+    end
+    item:addAnchor(AnchorLeft, 'parent', AnchorLeft)
+    item:addAnchor(AnchorRight, 'parent', AnchorRight)
+end
+
+-- Eventos
+scrollArea.onScroll = function(scrollArea, offset)
+    print("Scroll offset:", offset.x, offset.y)
+end
+
+vScrollBar.onValueChange = function(scrollBar, value)
+    print("Scroll vertical:", value)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## ✂️ Split Widgets
 
 ### UISplitter
 
 **Descrição**: Divisores redimensionáveis.
 
+#### Nível Basic
 ```lua
 -- Splitter horizontal
 local hSplitter = g_ui.createWidget('UISplitter', parent)
@@ -637,6 +1061,91 @@ hSplitter.onSplitRatioChange = function(splitter, ratio)
     print("Split ratio alterado:", ratio)
     g_settings.set('window.splitRatio', ratio)
 end
+```
+
+#### Nível Intermediate
+```lua
+-- Splitter horizontal
+local hSplitter = g_ui.createWidget('UISplitter', parent)
+hSplitter:setOrientation('horizontal')
+hSplitter:setSplitRatio(0.5) -- 50% para cada lado
+
+-- Painéis do splitter
+local leftPanel = g_ui.createWidget('UIWidget')
+local rightPanel = g_ui.createWidget('UIWidget')
+hSplitter:setLeftWidget(leftPanel)
+hSplitter:setRightWidget(rightPanel)
+
+-- Splitter vertical
+local vSplitter = g_ui.createWidget('UISplitter', parent)
+vSplitter:setOrientation('vertical')
+vSplitter:setSplitRatio(0.3) -- 30% superior, 70% inferior
+
+-- Configurações
+hSplitter:setMinimumSizes(100, 100)      -- Tamanhos mínimos
+hSplitter:setResizable(true)             -- Permite redimensionar
+hSplitter:setSplitterWidth(5)            -- Largura do divisor
+
+-- Splitter aninhado
+local nestedSplitter = g_ui.createWidget('UISplitter', rightPanel)
+nestedSplitter:setOrientation('vertical')
+
+-- Eventos
+hSplitter.onSplitRatioChange = function(splitter, ratio)
+    print("Split ratio alterado:", ratio)
+    g_settings.set('window.splitRatio', ratio)
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Splitter horizontal
+local hSplitter = g_ui.createWidget('UISplitter', parent)
+hSplitter:setOrientation('horizontal')
+hSplitter:setSplitRatio(0.5) -- 50% para cada lado
+
+-- Painéis do splitter
+local leftPanel = g_ui.createWidget('UIWidget')
+local rightPanel = g_ui.createWidget('UIWidget')
+hSplitter:setLeftWidget(leftPanel)
+hSplitter:setRightWidget(rightPanel)
+
+-- Splitter vertical
+local vSplitter = g_ui.createWidget('UISplitter', parent)
+vSplitter:setOrientation('vertical')
+vSplitter:setSplitRatio(0.3) -- 30% superior, 70% inferior
+
+-- Configurações
+hSplitter:setMinimumSizes(100, 100)      -- Tamanhos mínimos
+hSplitter:setResizable(true)             -- Permite redimensionar
+hSplitter:setSplitterWidth(5)            -- Largura do divisor
+
+-- Splitter aninhado
+local nestedSplitter = g_ui.createWidget('UISplitter', rightPanel)
+nestedSplitter:setOrientation('vertical')
+
+-- Eventos
+hSplitter.onSplitRatioChange = function(splitter, ratio)
+    print("Split ratio alterado:", ratio)
+    g_settings.set('window.splitRatio', ratio)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### Interface .otui com Splitters
@@ -712,6 +1221,7 @@ SplitterWindow < MainWindow
 
 **Descrição**: Visualização em árvore hierárquica.
 
+#### Inicialização e Configuração
 ```lua
 -- Tree view
 local treeView = g_ui.createWidget('UITreeView', parent)
@@ -757,6 +1267,10 @@ treeView.onNodeSelect = function(treeView, node)
     if data == 'file' then
         openFile(node:getText())
     end
+```
+
+#### Finalização
+```lua
 end
 
 treeView.onNodeExpand = function(treeView, node)
@@ -778,6 +1292,38 @@ end
 
 **Descrição**: Widget de calendário.
 
+#### Nível Basic
+```lua
+-- Calendar
+local calendar = g_ui.createWidget('UICalendar', parent)
+-- Data atual
+local today = os.date('*t')
+calendar:setDate(today.year, today.month, today.day)
+-- Configurações
+calendar:setMinDate(2020, 1, 1)          -- Data mínima
+calendar:setMaxDate(2030, 12, 31)        -- Data máxima
+calendar:setFirstDayOfWeek(1)            -- Segunda-feira como primeiro dia
+-- Eventos especiais
+calendar:addEvent(2025, 1, 15, 'Aniversário', '#FF0000')
+calendar:addEvent(2025, 1, 25, 'Reunião', '#0000FF')
+-- Navegação
+calendar:nextMonth()                     -- Próximo mês
+calendar:previousMonth()                 -- Mês anterior
+calendar:goToToday()                     -- Ir para hoje
+-- Obter informações
+local selectedDate = calendar:getSelectedDate()
+local currentMonth = calendar:getCurrentMonth()
+local currentYear = calendar:getCurrentYear()
+-- Eventos
+calendar.onDateSelect = function(calendar, year, month, day)
+    print("Data selecionada:", day .. "/" .. month .. "/" .. year)
+end
+calendar.onMonthChange = function(calendar, year, month)
+    print("Mês alterado:", month .. "/" .. year)
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Calendar
 local calendar = g_ui.createWidget('UICalendar', parent)
@@ -815,6 +1361,56 @@ calendar.onMonthChange = function(calendar, year, month)
     print("Mês alterado:", month .. "/" .. year)
     loadEventsForMonth(year, month)
 end
+```
+
+#### Nível Advanced
+```lua
+-- Calendar
+local calendar = g_ui.createWidget('UICalendar', parent)
+
+-- Data atual
+local today = os.date('*t')
+calendar:setDate(today.year, today.month, today.day)
+
+-- Configurações
+calendar:setMinDate(2020, 1, 1)          -- Data mínima
+calendar:setMaxDate(2030, 12, 31)        -- Data máxima
+calendar:setFirstDayOfWeek(1)            -- Segunda-feira como primeiro dia
+
+-- Eventos especiais
+calendar:addEvent(2025, 1, 15, 'Aniversário', '#FF0000')
+calendar:addEvent(2025, 1, 25, 'Reunião', '#0000FF')
+
+-- Navegação
+calendar:nextMonth()                     -- Próximo mês
+calendar:previousMonth()                 -- Mês anterior
+calendar:goToToday()                     -- Ir para hoje
+
+-- Obter informações
+local selectedDate = calendar:getSelectedDate()
+local currentMonth = calendar:getCurrentMonth()
+local currentYear = calendar:getCurrentYear()
+
+-- Eventos
+calendar.onDateSelect = function(calendar, year, month, day)
+    print("Data selecionada:", day .. "/" .. month .. "/" .. year)
+    showEventsForDate(year, month, day)
+end
+
+calendar.onMonthChange = function(calendar, year, month)
+    print("Mês alterado:", month .. "/" .. year)
+    loadEventsForMonth(year, month)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### Interface .otui de Calendar
@@ -889,6 +1485,7 @@ CalendarWindow < MainWindow
 
 ### Exemplo 1: File Browser com Tree e Splitter
 
+#### Inicialização e Configuração
 ```lua
 -- modules/file_browser/file_browser.lua
 fileBrowser = {}
@@ -911,6 +1508,10 @@ function fileBrowser.setupInterface()
             fileBrowser.loadDirectory(path)
         end
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     treeView.onNodeExpand = function(treeView, node)
         local path = node:getData('path')
@@ -939,6 +1540,10 @@ function fileBrowser.loadRootDirectory()
     
     fileBrowser.loadSubDirectories(rootNode, rootPath)
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 function fileBrowser.loadSubDirectories(parentNode, path)
     local files = g_resources.listDirectoryFiles(path)
@@ -971,6 +1576,10 @@ function fileBrowser.loadDirectory(path)
         else
             item:addAnchor(AnchorTop, 'prev', AnchorBottom)
         end
+```
+
+#### Finalização
+```lua
         
         -- Click event
         item.onClick = function()
@@ -985,6 +1594,7 @@ end
 
 ### Exemplo 2: Status Dashboard com Progress Bars
 
+#### Inicialização e Configuração
 ```lua
 -- modules/status_dashboard/status_dashboard.lua
 statusDashboard = {}
@@ -1023,6 +1633,10 @@ function statusDashboard.setupProgressBars()
         else
             bar:setForegroundColor('#00AA00')
         end
+```
+
+#### Funcionalidade 1
+```lua
     end
     
     manaBar.onValueChange = function(bar, value)
@@ -1062,6 +1676,10 @@ function statusDashboard.updateStats()
     local stamina = player:getStamina()
     staminaCircle:setValue(math.floor(stamina / 42 * 100)) -- 42 horas = 100%
 end
+```
+
+#### Finalização
+```lua
 
 function statusDashboard.startUpdating()
     statusDashboard.updateStats()
@@ -1071,6 +1689,7 @@ end
 
 ### Exemplo 3: Data Explorer com Tabs e Search
 
+#### Inicialização e Configuração
 ```lua
 -- modules/data_explorer/data_explorer.lua
 dataExplorer = {}
@@ -1094,6 +1713,10 @@ function dataExplorer.setupTabs()
         local tabType = tab:getData()
         dataExplorer.switchToTab(tabType)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Selecionar primeira tab
     tabBar:selectTab(itemsTab)
@@ -1124,6 +1747,10 @@ function dataExplorer.switchToTab(tabType)
     elseif tabType == 'creatures' then
         dataExplorer.showCreaturesInterface()
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 function dataExplorer.showItemsInterface()
@@ -1147,6 +1774,10 @@ function dataExplorer.showItemsInterface()
             row:setCell(2, item:getTypeName())
             row:setCell(3, tostring(item:getMarketData().value or 0))
         end
+```
+
+#### Finalização
+```lua
     end
     
     itemsList.onRowSelect = function(tableView, row)

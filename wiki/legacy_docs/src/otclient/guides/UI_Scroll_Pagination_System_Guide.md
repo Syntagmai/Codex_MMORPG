@@ -82,6 +82,7 @@ Sistema de Scroll e Paginação
 
 ```lua
 -- Estrutura do UIScrollBar
+    --  Estrutura do UIScrollBar (traduzido)
 {
     orientation = 'vertical',    -- 'vertical' ou 'horizontal'
     value = 0,                   -- Valor atual
@@ -98,6 +99,7 @@ Sistema de Scroll e Paginação
 
 ```lua
 -- Estrutura do UIScrollArea
+    --  Estrutura do UIScrollArea (traduzido)
 {
     verticalScrollBar = nil,     -- Scrollbar vertical
     horizontalScrollBar = nil,   -- Scrollbar horizontal
@@ -109,6 +111,7 @@ Sistema de Scroll e Paginação
 
 #### 📄 **Sistema de Paginação**
 
+#### Nível Basic
 ```lua
 -- Estrutura de Paginação
 {
@@ -118,6 +121,47 @@ Sistema de Scroll e Paginação
     totalItems = 0,              -- Total de itens
     navigation = {}              -- Controles de navegação
 }
+```
+
+#### Nível Intermediate
+```lua
+-- Estrutura de Paginação
+{
+    currentPage = 1,             -- Página atual
+    totalPages = 1,              -- Total de páginas
+    itemsPerPage = 25,           -- Itens por página
+    totalItems = 0,              -- Total de itens
+    navigation = {}              -- Controles de navegação
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Estrutura de Paginação
+{
+    currentPage = 1,             -- Página atual
+    totalPages = 1,              -- Total de páginas
+    itemsPerPage = 25,           -- Itens por página
+    totalItems = 0,              -- Total de itens
+    navigation = {}              -- Controles de navegação
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---
@@ -130,9 +174,11 @@ Sistema de Scroll e Paginação
 
 ```lua
 -- Criar scrollbar
+    --  Criar scrollbar (traduzido)
 local scrollBar = UIScrollBar.create()
 
 -- Configurar valores
+    --  Configurar valores (traduzido)
 scrollBar:setValue(value)
 scrollBar:setMinimum(min)
 scrollBar:setMaximum(max)
@@ -145,6 +191,7 @@ scrollBar:onIncrement()
 scrollBar:onDecrement()
 
 -- Propriedades
+    --  Propriedades (traduzido)
 scrollBar:setOrientation('vertical')
 scrollBar:setPixelsScroll(true)
 scrollBar:setMouseScroll(true)
@@ -157,10 +204,12 @@ scrollBar:setMouseScroll(true)
 local scrollArea = g_ui.createWidget('UIScrollArea', parent)
 
 -- Configurar scrollbars
+    --  Configurar scrollbars (traduzido)
 scrollArea:setVerticalScrollBar(verticalBar)
 scrollArea:setHorizontalScrollBar(horizontalBar)
 
 -- Controle de offset
+    --  Controle de offset (traduzido)
 scrollArea:setVirtualOffset({x=0, y=0})
 scrollArea:getVirtualOffset()
 
@@ -174,6 +223,7 @@ scrollArea:setInverted(true)
 ```lua
 -- Configurar paginação
 function setupPagination(totalItems, itemsPerPage)
+    -- Função: setupPagination
     local currentPage = 1
     local totalPages = math.ceil(totalItems / itemsPerPage)
     
@@ -187,7 +237,9 @@ end
 
 -- Navegar entre páginas
 function nextPage(pagination)
+    -- Função: nextPage
     if pagination.currentPage < pagination.totalPages then
+    -- Verificação condicional
         pagination.currentPage = pagination.currentPage + 1
         return true
     end
@@ -195,7 +247,9 @@ function nextPage(pagination)
 end
 
 function prevPage(pagination)
+    -- Função: prevPage
     if pagination.currentPage > 1 then
+    -- Verificação condicional
         pagination.currentPage = pagination.currentPage - 1
         return true
     end
@@ -203,7 +257,9 @@ function prevPage(pagination)
 end
 
 function goToPage(pagination, page)
+    -- Função: goToPage
     if page >= 1 and page <= pagination.totalPages then
+    -- Verificação condicional
         pagination.currentPage = page
         return true
     end
@@ -213,6 +269,7 @@ end
 
 ### 🎮 **Implementação Completa do Sistema**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema completo de Scroll e Paginação
 local ScrollPaginationSystem = {}
@@ -241,6 +298,10 @@ function ScrollPaginationSystem.createVerticalScrollBar(parent)
     scrollBar.onValueChange = function(widget, value)
         ScrollPaginationSystem.onScrollValueChange(widget, value)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     return scrollBar
 end
@@ -263,6 +324,10 @@ function ScrollPaginationSystem.createHorizontalScrollBar(parent)
     
     return scrollBar
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 -- Criar área de scroll
 function ScrollPaginationSystem.createScrollArea(parent, options)
@@ -285,6 +350,10 @@ function ScrollPaginationSystem.createScrollArea(parent, options)
         local verticalBar = ScrollPaginationSystem.createVerticalScrollBar(scrollArea)
         scrollArea:setVerticalScrollBar(verticalBar)
     end
+```
+
+#### Funcionalidade 3
+```lua
     
     if options.horizontalScroll then
         local horizontalBar = ScrollPaginationSystem.createHorizontalScrollBar(scrollArea)
@@ -306,6 +375,10 @@ end
 
 -- Criar sistema de paginação
 function ScrollPaginationSystem.createPagination(parent, totalItems, itemsPerPage)
+```
+
+#### Funcionalidade 4
+```lua
     local pagination = {
         currentPage = 1,
         totalPages = math.ceil(totalItems / itemsPerPage),
@@ -344,6 +417,10 @@ function ScrollPaginationSystem.createPagination(parent, totalItems, itemsPerPag
             if pagination.onPageChange then
                 pagination.onPageChange(pagination.currentPage)
             end
+```
+
+#### Funcionalidade 5
+```lua
         end
     end
     
@@ -381,6 +458,10 @@ function ScrollPaginationSystem.createPagination(parent, totalItems, itemsPerPag
     
     return container, pagination
 end
+```
+
+#### Funcionalidade 6
+```lua
 
 -- Atualizar conteúdo da página
 function ScrollPaginationSystem.updateContent(contentArea, pagination)
@@ -402,6 +483,10 @@ function ScrollPaginationSystem.updateContent(contentArea, pagination)
     -- Atualizar scrollbars
     contentArea:updateScrollBars()
 end
+```
+
+#### Funcionalidade 7
+```lua
 
 -- Atualizar controles de paginação
 function ScrollPaginationSystem.updateControls(paginationPanel, pagination)
@@ -424,6 +509,10 @@ function ScrollPaginationSystem.nextPage(pagination)
     end
     return false
 end
+```
+
+#### Funcionalidade 8
+```lua
 
 -- Navegar para página anterior
 function ScrollPaginationSystem.prevPage(pagination)
@@ -445,6 +534,10 @@ end
 
 -- Evento de mudança de valor do scroll
 function ScrollPaginationSystem.onScrollValueChange(widget, value)
+```
+
+#### Funcionalidade 9
+```lua
     -- Implementar lógica de scroll customizada se necessário
     print("Scroll value changed to: " .. value)
 end
@@ -470,6 +563,10 @@ function ScrollPaginationSystem.setupKeyboardNavigation(pagination)
             ScrollPaginationSystem.updateContent(pagination.contentArea, pagination)
             ScrollPaginationSystem.updateControls(pagination.paginationPanel, pagination)
         end
+```
+
+#### Finalização
+```lua
     end)
     
     g_keyboard.bindKeyPress('End', function()
@@ -597,18 +694,23 @@ PaginationControls < Panel
 local SimpleScrollList = {}
 
 function SimpleScrollList.create(parent, items)
+    -- Função: SimpleScrollList
     -- Container principal
+    --  Container principal (traduzido)
     local container = g_ui.createWidget('Panel', parent)
     container:setSize({width = 300, height = 200})
     
     -- Área de scroll
+    --  Área de scroll (traduzido)
     local scrollArea = ScrollPaginationSystem.createScrollArea(container, {
         size = {width = 300, height = 200},
         verticalScroll = true
     })
     
     -- Adicionar itens
+    --  Adicionar itens (traduzido)
     for i, itemText in ipairs(items) do
+    -- Loop de repetição
         local item = g_ui.createWidget('Label', scrollArea)
         item:setText(itemText)
         item:setPosition({x = 10, y = (i - 1) * 25})
@@ -619,12 +721,14 @@ function SimpleScrollList.create(parent, items)
 end
 
 -- Uso
+    --  Uso (traduzido)
 local items = {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5"}
 local list = SimpleScrollList.create(parent, items)
 ```
 
 ### 🎨 **Exemplo 2: Sistema de Paginação Avançado**
 
+#### Inicialização e Configuração
 ```lua
 local AdvancedPaginationSystem = {}
 
@@ -692,6 +796,10 @@ function AdvancedPaginationSystem.create(parent, data, itemsPerPage)
             item:setPosition({x = 10, y = (i - startIndex) * 30})
             item:setSize({width = 580, height = 25})
         end
+```
+
+#### Funcionalidade 1
+```lua
         
         contentArea:updateScrollBars()
     end
@@ -719,6 +827,10 @@ function AdvancedPaginationSystem.create(parent, data, itemsPerPage)
             updateContent()
             updateControls()
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
     
     nextButton.onClick = function()
@@ -741,6 +853,10 @@ function AdvancedPaginationSystem.create(parent, data, itemsPerPage)
     
     return container, pagination
 end
+```
+
+#### Finalização
+```lua
 
 -- Uso
 local data = {}
@@ -753,6 +869,7 @@ local container, pagination = AdvancedPaginationSystem.create(parent, data, 10)
 
 ### 🪟 **Exemplo 3: Scroll Infinito**
 
+#### Inicialização e Configuração
 ```lua
 local InfiniteScrollSystem = {}
 
@@ -780,6 +897,10 @@ function InfiniteScrollSystem.create(parent, dataLoader)
         if system.isLoading or not system.hasMore then
             return
         end
+```
+
+#### Funcionalidade 1
+```lua
         
         system.isLoading = true
         
@@ -802,6 +923,10 @@ function InfiniteScrollSystem.create(parent, dataLoader)
             else
                 system.hasMore = false
             end
+```
+
+#### Funcionalidade 2
+```lua
             
             system.isLoading = false
         end, 100)
@@ -823,6 +948,10 @@ function InfiniteScrollSystem.create(parent, dataLoader)
     
     return container, system
 end
+```
+
+#### Finalização
+```lua
 
 -- Exemplo de uso
 local function sampleDataLoader(pageSize)
@@ -842,6 +971,7 @@ local container, infiniteScroll = InfiniteScrollSystem.create(parent, sampleData
 
 ### 🎯 **Uso Eficiente**
 
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Sempre configurar valores mínimos e máximos
 function createProperScrollBar(parent)
@@ -866,6 +996,10 @@ function createScrollableContent(parent, items)
     scrollArea:updateScrollBars()
     return scrollArea
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 -- ✅ BOM: Implementar paginação para grandes datasets
 function createPaginatedList(parent, data, itemsPerPage)
@@ -889,6 +1023,10 @@ function createPaginatedList(parent, data, itemsPerPage)
         for i = startIndex, endIndex do
             table.insert(pageData, data[i])
         end
+```
+
+#### Funcionalidade 2
+```lua
         
         createScrollableContent(contentArea, pageData)
     end
@@ -912,12 +1050,17 @@ function badContentUpdate(scrollArea, items)
         local widget = g_ui.createWidget('Label', scrollArea)
         widget:setText(item)
     end
+```
+
+#### Finalização
+```lua
     -- Falta updateScrollBars()
 end
 ```
 
 ### 🎨 **Organização de Código**
 
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Separar responsabilidades
 local ScrollManager = {
@@ -941,6 +1084,10 @@ function ScrollManager:createScrollArea(parent, options)
     table.insert(self.scrollAreas, scrollArea)
     return scrollArea
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 function ScrollManager:createVerticalScrollBar(parent)
     local scrollBar = g_ui.createWidget('VerticalScrollBar', parent)
@@ -964,6 +1111,10 @@ end
 local PaginationEventSystem = {
     listeners = {}
 }
+```
+
+#### Finalização
+```lua
 
 function PaginationEventSystem:addEventListener(event, callback)
     if not self.listeners[event] then
@@ -989,6 +1140,7 @@ end)
 
 ### 🔧 **Performance e Otimização**
 
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Virtualização para listas grandes
 local VirtualizedList = {}
@@ -1022,6 +1174,10 @@ function VirtualizedList.create(parent, totalItems, itemHeight, visibleHeight)
             else
                 item:setVisible(false)
             end
+```
+
+#### Funcionalidade 1
+```lua
         end
     end
     
@@ -1048,6 +1204,10 @@ function debouncedScrollHandler(scrollValue)
         processScrollUpdate(scrollValue)
         scrollDebounce = nil
     end, 16)  -- ~60fps
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 -- ✅ BOM: Pool de widgets para paginação
@@ -1069,6 +1229,10 @@ function WidgetPool:getWidget()
 end
 
 function WidgetPool:returnWidget(widget)
+```
+
+#### Finalização
+```lua
     widget:hide()
     widget:setText("")
     
@@ -1092,6 +1256,7 @@ end
 
 ### 🎨 **Estilização e Temas**
 
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Sistema de temas para scroll
 local scrollThemes = {
@@ -1115,6 +1280,10 @@ local scrollThemes = {
         borderColor = '#2a2a2a',
         hoverColor = '#505050'
     }
+```
+
+#### Funcionalidade 1
+```lua
 }
 
 function applyScrollTheme(scrollBar, themeName)
@@ -1149,6 +1318,10 @@ function createSmoothScrollArea(parent)
             x = scrollArea:getVirtualOffset().x,
             y = scrollArea:getVirtualOffset().y + delta
         })
+```
+
+#### Funcionalidade 2
+```lua
         animation:start()
         
         lastValue = value
@@ -1175,6 +1348,10 @@ function createLoadingIndicator(parent)
         for i = 1, dots do
             text = text .. '.'
         end
+```
+
+#### Finalização
+```lua
         label:setText(text)
     end, 500)
     

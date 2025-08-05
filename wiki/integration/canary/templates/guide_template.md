@@ -82,6 +82,7 @@ Ao completar este guia, você terá:
 -- Verificar se o Canary está disponível
 local canary = require("canary")
 if not canary then
+    -- Verificação condicional
     error("Canary não está disponível. Verifique a instalação.")
 end
 
@@ -90,6 +91,7 @@ print("Versão do Canary: " .. canary.version)
 ```
 
 #### **2. Configuração Básica:**
+#### Nível Basic
 ```lua
 -- Configuração inicial do Canary
 local config = {
@@ -104,11 +106,59 @@ local config = {
 canary.init(config)
 ```
 
+#### Nível Intermediate
+```lua
+-- Configuração inicial do Canary
+local config = {
+    host = "localhost",
+    port = 7171,
+    protocol = "opencode",
+    timeout = 5000,
+    retry_attempts = 3
+}
+
+-- Inicializar conexão
+canary.init(config)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Configuração inicial do Canary
+local config = {
+    host = "localhost",
+    port = 7171,
+    protocol = "opencode",
+    timeout = 5000,
+    retry_attempts = 3
+}
+
+-- Inicializar conexão
+canary.init(config)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **3. Verificar Conexão:**
 ```lua
 -- Testar conexão
 local success, error = canary.testConnection()
 if success then
+    -- Verificação condicional
     print("✅ Conexão com Canary estabelecida!")
 else
     print("❌ Erro na conexão: " .. error)
@@ -125,7 +175,9 @@ end
 local CanaryIntegration = {}
 
 -- Configurar handlers de eventos
+    --  Configurar handlers de eventos (traduzido)
 function CanaryIntegration.setupEventHandlers()
+    -- Função: CanaryIntegration
     canary.on("connected", function()
         print("Conectado ao Canary!")
     end)
@@ -140,6 +192,7 @@ end
 ```lua
 -- Implementar função principal
 function CanaryIntegration.mainFunction()
+    -- Função: CanaryIntegration
     -- Lógica principal aqui
     local result = canary.processData({
         type = "example",
@@ -154,7 +207,9 @@ end
 ```lua
 -- Integração com OTClient
 function CanaryIntegration.integrateWithOTClient()
+    -- Função: CanaryIntegration
     -- Conectar eventos do OTClient
+    --  Conectar eventos do OTClient (traduzido)
     connect(g_game, { onGameStart = function()
         CanaryIntegration.setupEventHandlers()
         CanaryIntegration.mainFunction()
@@ -163,6 +218,7 @@ end
 ```
 
 #### **Passo 4: Testar Implementação**
+#### Nível Basic
 ```lua
 -- Função de teste
 function CanaryIntegration.test()
@@ -183,6 +239,65 @@ function CanaryIntegration.test()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Função de teste
+function CanaryIntegration.test()
+    print("🧪 Iniciando testes...")
+    
+    -- Teste 1: Conexão
+    local connected = canary.isConnected()
+    print("Conexão: " .. (connected and "✅" or "❌"))
+    
+    -- Teste 2: Funcionalidade
+    local result = CanaryIntegration.mainFunction()
+    print("Funcionalidade: " .. (result and "✅" or "❌"))
+    
+    -- Teste 3: Integração
+    print("Integração: ✅")
+    
+    print("🎉 Testes concluídos!")
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Função de teste
+function CanaryIntegration.test()
+    print("🧪 Iniciando testes...")
+    
+    -- Teste 1: Conexão
+    local connected = canary.isConnected()
+    print("Conexão: " .. (connected and "✅" or "❌"))
+    
+    -- Teste 2: Funcionalidade
+    local result = CanaryIntegration.mainFunction()
+    print("Funcionalidade: " .. (result and "✅" or "❌"))
+    
+    -- Teste 3: Integração
+    print("Integração: ✅")
+    
+    print("🎉 Testes concluídos!")
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ### **🎨 Exemplos Práticos**
@@ -193,6 +308,7 @@ end
 local BasicSystem = {}
 
 function BasicSystem.init()
+    -- Função: BasicSystem
     -- Configuração básica
     BasicSystem.config = {
         enabled = true,
@@ -201,12 +317,15 @@ function BasicSystem.init()
     }
     
     -- Setup inicial
+    --  Setup inicial (traduzido)
     if BasicSystem.config.autoConnect then
+    -- Verificação condicional
         BasicSystem.connect()
     end
 end
 
 function BasicSystem.connect()
+    -- Função: BasicSystem
     canary.connect({
         host = "localhost",
         port = 7171
@@ -214,10 +333,12 @@ function BasicSystem.connect()
 end
 
 function BasicSystem.disconnect()
+    -- Função: BasicSystem
     canary.disconnect()
 end
 
 -- Uso
+    --  Uso (traduzido)
 BasicSystem.init()
 ```
 
@@ -233,16 +354,20 @@ AdvancedSystem.config = {
 }
 
 function AdvancedSystem.getDataWithCache(key)
+    -- Função: AdvancedSystem
     -- Verificar cache
+    --  Verificar cache (traduzido)
     if AdvancedSystem.cache[key] and 
        AdvancedSystem.cache[key].expires > os.time() then
         return AdvancedSystem.cache[key].data
     end
     
     -- Buscar dados
+    --  Buscar dados (traduzido)
     local data = canary.getData(key)
     
     -- Armazenar no cache
+    --  Armazenar no cache (traduzido)
     AdvancedSystem.cache[key] = {
         data = data,
         expires = os.time() + AdvancedSystem.config.cacheTimeout
@@ -255,23 +380,59 @@ function AdvancedSystem.getDataWithCache(key)
 end
 
 function AdvancedSystem.cleanCache()
+    -- Função: AdvancedSystem
     local currentTime = os.time()
     local count = 0
     
     for key, item in pairs(AdvancedSystem.cache) do
+    -- Loop de repetição
         if item.expires < currentTime then
+    -- Verificação condicional
             AdvancedSystem.cache[key] = nil
             count = count + 1
         end
     end
     
     if count > 0 then
+    -- Verificação condicional
         print("🧹 Cache limpo: " .. count .. " itens removidos")
     end
 end
 ```
 
 #### **Exemplo 3: Integração Completa com OTClient**
+#### Nível Basic
+```lua
+-- Integração completa com OTClient
+local OTClientIntegration = {}
+function OTClientIntegration.setup()
+    -- Configurar handlers do OTClient
+    -- Configurar handlers do Canary
+end
+function OTClientIntegration.onGameStart()
+    print("🎮 Jogo iniciado - Conectando ao Canary...")
+end
+function OTClientIntegration.onGameEnd()
+    print("🏁 Jogo finalizado - Desconectando do Canary...")
+end
+function OTClientIntegration.onGameState(data)
+    -- Atualizar estado do jogo
+    print("📊 Estado do jogo atualizado: " .. data.state)
+end
+function OTClientIntegration.onPlayerUpdate(data)
+    -- Atualizar informações do jogador
+    local player = g_game.getLocalPlayer()
+    if player then
+        print("👤 Jogador atualizado")
+    end
+end
+function OTClientIntegration.onError(error)
+    print("❌ Erro do Canary: " .. error.message)
+    -- Implementar lógica de retry se necessário
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Integração completa com OTClient
 local OTClientIntegration = {}
@@ -322,6 +483,67 @@ function OTClientIntegration.onError(error)
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Integração completa com OTClient
+local OTClientIntegration = {}
+
+function OTClientIntegration.setup()
+    -- Configurar handlers do OTClient
+    connect(g_game, { 
+        onGameStart = OTClientIntegration.onGameStart,
+        onGameEnd = OTClientIntegration.onGameEnd,
+        onLoginAdvice = OTClientIntegration.onLoginAdvice
+    })
+    
+    -- Configurar handlers do Canary
+    canary.on("game_state", OTClientIntegration.onGameState)
+    canary.on("player_update", OTClientIntegration.onPlayerUpdate)
+    canary.on("error", OTClientIntegration.onError)
+end
+
+function OTClientIntegration.onGameStart()
+    print("🎮 Jogo iniciado - Conectando ao Canary...")
+    canary.connect()
+end
+
+function OTClientIntegration.onGameEnd()
+    print("🏁 Jogo finalizado - Desconectando do Canary...")
+    canary.disconnect()
+end
+
+function OTClientIntegration.onGameState(data)
+    -- Atualizar estado do jogo
+    g_game.setGameState(data.state)
+    print("📊 Estado do jogo atualizado: " .. data.state)
+end
+
+function OTClientIntegration.onPlayerUpdate(data)
+    -- Atualizar informações do jogador
+    local player = g_game.getLocalPlayer()
+    if player then
+        player:setHealth(data.health)
+        player:setMana(data.mana)
+        print("👤 Jogador atualizado")
+    end
+end
+
+function OTClientIntegration.onError(error)
+    print("❌ Erro do Canary: " .. error.message)
+    -- Implementar lógica de retry se necessário
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ### **🔍 Troubleshooting**
@@ -336,6 +558,7 @@ end
 -- Verificar se o Canary está rodando
 local success = canary.ping()
 if not success then
+    -- Verificação condicional
     print("❌ Canary não está respondendo")
     print("💡 Verifique se o Canary está rodando na porta 7171")
 end
@@ -347,6 +570,7 @@ end
 **Solução**:
 ```lua
 -- Aumentar timeout
+    --  Aumentar timeout (traduzido)
 canary.init({
     host = "localhost",
     port = 7171,
@@ -358,6 +582,7 @@ canary.init({
 **Sintoma**: `Invalid protocol`
 **Causa**: Versão do protocolo incompatível
 **Solução**:
+#### Nível Basic
 ```lua
 -- Verificar versão do protocolo
 local protocolVersion = canary.getProtocolVersion()
@@ -370,17 +595,63 @@ canary.init({
 })
 ```
 
+#### Nível Intermediate
+```lua
+-- Verificar versão do protocolo
+local protocolVersion = canary.getProtocolVersion()
+print("Protocolo: " .. protocolVersion)
+
+-- Usar versão compatível
+canary.init({
+    protocol = "opencode",  -- ou "extendedopen"
+    version = "1.0"
+})
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Verificar versão do protocolo
+local protocolVersion = canary.getProtocolVersion()
+print("Protocolo: " .. protocolVersion)
+
+-- Usar versão compatível
+canary.init({
+    protocol = "opencode",  -- ou "extendedopen"
+    version = "1.0"
+})
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Debugging Avançado:**
 ```lua
 -- Habilitar modo debug
+    --  Habilitar modo debug (traduzido)
 canary.setDebugMode(true)
 
 -- Logs detalhados
+    --  Logs detalhados (traduzido)
 canary.on("debug", function(message)
     print("🐛 DEBUG: " .. message)
 end)
 
 -- Monitor de performance
+    --  Monitor de performance (traduzido)
 local startTime = os.clock()
 local result = canary.processData(data)
 local endTime = os.clock()

@@ -1,14 +1,10 @@
----
-tags: [index, search, keywords, navigation]
-type: search_index
-status: active
-priority: medium
-created: 2025-07-29
----
 
 # 🔍 Índice de Busca - Palavras-Chave
 
-## 📋 Visão Geral
+
+---
+
+## 📋 Visão Geral 🎯
 
 Este índice organiza documentos por palavras-chave, facilitando a busca por tópicos específicos.
 
@@ -17,9 +13,12 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 
 ---
 
-## 🔑 Palavras-Chave Principais
 
-### **API** (106 documentos)
+---
+
+## 🔑 Palavras-Chave Principais 📋
+
+### **API** (106 documentos) 📝
 
 - ✅ 📚 **[Boas Práticas de Desenvolvimento - OTClient](habdel\documentation\BestPractices.md)** (GUIDE-002) - Habdel
 - ✅ 📚 **[Cheat Sheet de Desenvolvimento - OTClient Redemption](habdel\documentation\CheatSheet.md)** - Habdel
@@ -128,22 +127,22 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 - ✅ 📖 **[Relatório de Otimização da Wiki - OTClient](otclient\Wiki_Optimization_Report.md)** - Wiki
 - 📋 📖 **[Sistema de Mundo e Mapas OTClient](otclient\World_System_Guide.md)** - Wiki
 
-### **Agent** (2 documentos)
+### **Agent** (2 documentos) 📝
 
 - 📋 📚 **[Sistema Integrado - Visão Geral](habdel\integration\documentation\integration_overview.md)** - Habdel
 - 📋 📚 **[Workflows Integrados - Sistema Unificado](habdel\integration\workflows\unified_workflows.md)** - Habdel
 
-### **Analysis** (2 documentos)
+### **Analysis** (2 documentos) 📝
 
 - ✅ 📚 **[Relatório de Progresso Real - Fase 2: Pesquisador OTClient](habdel\otclient\phase2_real_progress_report.md)** - Habdel
 - 📋 📚 **[Sem título](habdel\otclient\documentation\OTCLIENT-001_core_system_analysis.md)** - Habdel
 
-### **AttachedEffect** (2 documentos)
+### **AttachedEffect** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Efeitos](habdel\EffectsSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Efeitos](otclient\Effects_System_Guide.md)** - Wiki
 
-### **C** (45 documentos)
+### **C** (45 documentos) 📝
 
 - ✅ 📚 **[Sistema de Configuração Avançada](habdel\ConfigurationAdvanced.md)** - Habdel
 - ✅ 📚 **[Plano de Documentação OTClient - Redemption](habdel\DOCUMENTATION_PLAN.md)** (UI-001) - Habdel
@@ -191,70 +190,70 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 - 📋 📖 **[Sistema de Efeitos](otclient\Effects_System_Guide.md)** - Wiki
 - 📋 📖 **[Sistema de Rede](otclient\Network_System_Guide.md)** - Wiki
 
-### **CPUProfiler** (1 documentos)
+### **CPUProfiler** (1 documentos) 📝
 
 - 📋 📖 **[Performance System Guide](otclient\Performance_System_Guide.md)** - Wiki
 
-### **ClickCounter** (2 documentos)
+### **ClickCounter** (2 documentos) 📝
 
 - ✅ 📚 **[Criando Seu Primeiro Módulo - OTClient](habdel\FirstModule.md)** - Habdel
 - 📋 📖 **[Criando Seu Primeiro Módulo - OTClient](otclient\Module_Development_Guide.md)** - Wiki
 
-### **ConfigManager** (2 documentos)
+### **ConfigManager** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Configuração Avançada](habdel\ConfigurationAdvanced.md)** - Habdel
 - 📋 📖 **[Sistema de Configuração Avançada](otclient\Advanced_Configuration_Guide.md)** - Wiki
 
-### **ConfigProfiles** (2 documentos)
+### **ConfigProfiles** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Configuração Avançada](habdel\ConfigurationAdvanced.md)** - Habdel
 - 📋 📖 **[Sistema de Configuração Avançada](otclient\Advanced_Configuration_Guide.md)** - Wiki
 
-### **Connection** (2 documentos)
+### **Connection** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Rede](habdel\NetworkSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Rede](otclient\Network_System_Guide.md)** - Wiki
 
-### **ContextMenu** (1 documentos)
+### **ContextMenu** (1 documentos) 📝
 
 - ✅ 📚 **[Sistema de Eventos UIWidget](habdel\UIEvents.md)** - Habdel
 
-### **CustomWidget** (1 documentos)
+### **CustomWidget** (1 documentos) 📝
 
 - 📋 📖 **[UI System Guide](otclient\UI_System_Guide.md)** - Wiki
 
-### **DebugLogger** (1 documentos)
+### **DebugLogger** (1 documentos) 📝
 
 - 📋 📖 **[Debug System Guide](otclient\Debug_System_Guide.md)** - Wiki
 
-### **Documentation** (1 documentos)
+### **Documentation** (1 documentos) 📝
 
 - ✅ 📚 **[Plano de Documentação OTClient - Redemption](habdel\DOCUMENTATION_PLAN.md)** (UI-001) - Habdel
 
-### **Effect** (2 documentos)
+### **Effect** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Efeitos](habdel\EffectsSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Efeitos](otclient\Effects_System_Guide.md)** - Wiki
 
-### **EffectHelper** (2 documentos)
+### **EffectHelper** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Efeitos](habdel\EffectsSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Efeitos](otclient\Effects_System_Guide.md)** - Wiki
 
-### **EffectManager** (2 documentos)
+### **EffectManager** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Efeitos](habdel\EffectsSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Efeitos](otclient\Effects_System_Guide.md)** - Wiki
 
-### **EventSystem** (1 documentos)
+### **EventSystem** (1 documentos) 📝
 
 - ✅ 📚 **[Sistema de Eventos UIWidget](habdel\UIEvents.md)** - Habdel
 
-### **EventWidget** (1 documentos)
+### **EventWidget** (1 documentos) 📝
 
 - 📋 📖 **[UI System Guide](otclient\UI_System_Guide.md)** - Wiki
 
-### **Guide** (7 documentos)
+### **Guide** (7 documentos) 📝
 
 - 📋 📖 **[Animation System Guide](otclient\Animation_System_Guide.md)** - Wiki
 - 📋 📖 **[Sem título](otclient\Combat_System_Guide.md)** - Wiki
@@ -264,17 +263,17 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 - 📋 📖 **[Performance System Guide](otclient\Performance_System_Guide.md)** - Wiki
 - 📋 📖 **[UI System Guide](otclient\UI_System_Guide.md)** - Wiki
 
-### **HelloWorld** (2 documentos)
+### **HelloWorld** (2 documentos) 📝
 
 - ✅ 📚 **[Getting Started - OTClient Redemption](habdel\GettingStarted.md)** - Habdel
 - 📋 📖 **[Getting Started - OTClient Redemption](otclient\Getting_Started_Guide.md)** - Wiki
 
-### **InputMessage** (2 documentos)
+### **InputMessage** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Rede](habdel\NetworkSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Rede](otclient\Network_System_Guide.md)** - Wiki
 
-### **Lua** (50 documentos)
+### **Lua** (50 documentos) 📝
 
 - ✅ 📚 **[Sistema de Configuração Avançada](habdel\ConfigurationAdvanced.md)** - Habdel
 - ✅ 📚 **[Plano de Documentação OTClient - Redemption](habdel\DOCUMENTATION_PLAN.md)** (UI-001) - Habdel
@@ -327,41 +326,41 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 - ✅ 📖 **[Índice Completo da Wiki - OTClient](otclient\Wiki_Index.md)** - Wiki
 - ✅ 📖 **[Relatório de Otimização da Wiki - OTClient](otclient\Wiki_Optimization_Report.md)** - Wiki
 
-### **MeuModulo** (1 documentos)
+### **MeuModulo** (1 documentos) 📝
 
 - 📋 📖 **[Guia de Desenvolvimento de Módulos OTUI](otclient\OTUI_Module_Development_Guide.md)** - Wiki
 
-### **ModuleManager** (2 documentos)
+### **ModuleManager** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Módulos OTClient](habdel\ModuleSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Módulos OTClient](otclient\Module_System_Guide.md)** - Wiki
 
-### **MyModule** (2 documentos)
+### **MyModule** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Módulos OTClient](habdel\ModuleSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Módulos OTClient](otclient\Module_System_Guide.md)** - Wiki
 
-### **MyProtocol** (2 documentos)
+### **MyProtocol** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Rede](habdel\NetworkSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Rede](otclient\Network_System_Guide.md)** - Wiki
 
-### **OutputMessage** (2 documentos)
+### **OutputMessage** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Rede](habdel\NetworkSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Rede](otclient\Network_System_Guide.md)** - Wiki
 
-### **Protocol** (2 documentos)
+### **Protocol** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Rede](habdel\NetworkSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Rede](otclient\Network_System_Guide.md)** - Wiki
 
-### **ProtocolLogin** (2 documentos)
+### **ProtocolLogin** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Protocolo de Comunicação OTClient](habdel\Protocol.md)** - Habdel
 - 📋 📖 **[Sistema de Protocolo de Comunicação OTClient](otclient\Protocol_System_Guide.md)** - Wiki
 
-### **Reference** (5 documentos)
+### **Reference** (5 documentos) 📚
 
 - ✅ 📚 **[Plano de Documentação OTClient - Redemption](habdel\DOCUMENTATION_PLAN.md)** (UI-001) - Habdel
 - ✅ 📚 **[Lua API Reference - OTClient Redemption](habdel\LuaAPI.md)** - Habdel
@@ -369,7 +368,7 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 - ✅ 📖 **[🧭 Guia de Navegação Habdel](otclient\Habdel_Navigation_Guide.md)** (UI-019) - Wiki
 - ✅ 📖 **[Lua API Reference - OTClient](otclient\Lua_API_Reference.md)** (GUIDE-002) - Wiki
 
-### **Sistema** (16 documentos)
+### **Sistema** (16 documentos) 📝
 
 - 📋 📚 **[Sem título](habdel\otclient\documentation\OTCLIENT-002_graphics_system.md)** - Habdel
 - 📋 📚 **[Sem título](habdel\otclient\documentation\OTCLIENT-003_network_system.md)** - Habdel
@@ -388,119 +387,119 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 - 📋 📚 **[Sem título](habdel\otclient\documentation\OTCLIENT-019_performance_system.md)** - Habdel
 - 📋 📚 **[Sem título](habdel\otclient\documentation\OTCLIENT-020_debug_system.md)** - Habdel
 
-### **StyledWidget** (1 documentos)
+### **StyledWidget** (1 documentos) 📝
 
 - 📋 📖 **[UI System Guide](otclient\UI_System_Guide.md)** - Wiki
 
-### **ThemeManager** (1 documentos)
+### **ThemeManager** (1 documentos) 📝
 
 - ✅ 📚 **[Sistema de Estilização e Temas UIWidget](habdel\UIStyling.md)** - Habdel
 
-### **TileBlock** (3 documentos)
+### **TileBlock** (3 documentos) 📝
 
 - ✅ 📚 **[Sistema de Mundo e Mapas OTClient](habdel\WorldSystem.md)** - Habdel
 - 📋 📖 **[Map System Guide](otclient\Map_System_Guide.md)** - Wiki
 - 📋 📖 **[Sistema de Mundo e Mapas OTClient](otclient\World_System_Guide.md)** - Wiki
 
-### **Tooltip** (1 documentos)
+### **Tooltip** (1 documentos) 📝
 
 - ✅ 📚 **[Sistema de Eventos UIWidget](habdel\UIEvents.md)** - Habdel
 
-### **Utils** (2 documentos)
+### **Utils** (2 documentos) 📝
 
 - ✅ 📚 **[Criando Seu Primeiro Módulo - OTClient](habdel\FirstModule.md)** - Habdel
 - 📋 📖 **[Criando Seu Primeiro Módulo - OTClient](otclient\Module_Development_Guide.md)** - Wiki
 
-### **XTEAManager** (2 documentos)
+### **XTEAManager** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Rede](habdel\NetworkSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Rede](otclient\Network_System_Guide.md)** - Wiki
 
-### **adaptToVersion** (2 documentos)
+### **adaptToVersion** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Protocolo de Comunicação OTClient](habdel\Protocol.md)** - Habdel
 - 📋 📖 **[Sistema de Protocolo de Comunicação OTClient](otclient\Protocol_System_Guide.md)** - Wiki
 
-### **animateBounce** (1 documentos)
+### **animateBounce** (1 documentos) 📝
 
 - 📋 📖 **[Animation System Guide](otclient\Animation_System_Guide.md)** - Wiki
 
-### **animateEntry** (1 documentos)
+### **animateEntry** (1 documentos) 📝
 
 - 📋 📖 **[Animation System Guide](otclient\Animation_System_Guide.md)** - Wiki
 
-### **animateExit** (1 documentos)
+### **animateExit** (1 documentos) 📝
 
 - 📋 📖 **[Animation System Guide](otclient\Animation_System_Guide.md)** - Wiki
 
-### **animateSequence** (1 documentos)
+### **animateSequence** (1 documentos) 📝
 
 - 📋 📖 **[Animation System Guide](otclient\Animation_System_Guide.md)** - Wiki
 
-### **animateWidget** (1 documentos)
+### **animateWidget** (1 documentos) 📝
 
 - 📋 📖 **[Animation System Guide](otclient\Animation_System_Guide.md)** - Wiki
 
-### **applyGraphicsSettings** (2 documentos)
+### **applyGraphicsSettings** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Configuração OTClient](habdel\Configuration.md)** - Habdel
 - 📋 📖 **[Sistema de Configuração OTClient](otclient\Configuration_Guide.md)** - Wiki
 
-### **applyModifiers** (1 documentos)
+### **applyModifiers** (1 documentos) 📝
 
 - 📋 📖 **[Sem título](otclient\Combat_System_Guide.md)** - Wiki
 
-### **attack** (1 documentos)
+### **attack** (1 documentos) 📝
 
 - ✅ 📚 **[Sistema de Combate](habdel\documentation\GameCombat.md)** (GAME-006) - Habdel
 
-### **autoLogin** (1 documentos)
+### **autoLogin** (1 documentos) 📝
 
 - ✅ 📚 **[Lua API Reference - OTClient Redemption](habdel\LuaAPI.md)** - Habdel
 
-### **calculateBaseDamage** (1 documentos)
+### **calculateBaseDamage** (1 documentos) 📝
 
 - 📋 📖 **[Sem título](otclient\Combat_System_Guide.md)** - Wiki
 
-### **calculateDamage** (2 documentos)
+### **calculateDamage** (2 documentos) 📝
 
 - ✅ 📚 **[Boas Práticas de Desenvolvimento - OTClient](habdel\BestPractices.md)** (GUIDE-002) - Habdel
 - ✅ 📖 **[Lua API Reference - OTClient](otclient\Lua_API_Reference.md)** (GUIDE-002) - Wiki
 
-### **calculateDamageComplex** (2 documentos)
+### **calculateDamageComplex** (2 documentos) 📝
 
 - ✅ 📚 **[Boas Práticas de Desenvolvimento - OTClient](habdel\BestPractices.md)** (GUIDE-002) - Habdel
 - ✅ 📖 **[Lua API Reference - OTClient](otclient\Lua_API_Reference.md)** (GUIDE-002) - Wiki
 
-### **calculateMagicDamage** (1 documentos)
+### **calculateMagicDamage** (1 documentos) 📝
 
 - 📋 📖 **[Sem título](otclient\Combat_System_Guide.md)** - Wiki
 
-### **can** (1 documentos)
+### **can** (1 documentos) 📝
 
 - ✅ 📚 **[UIWidget](habdel\UIWidget.md)** - Habdel
 
-### **canCarryItem** (2 documentos)
+### **canCarryItem** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Itens - OTClient Redemption](habdel\ItemSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Itens - OTClient Redemption](otclient\Item_System_Guide.md)** - Wiki
 
-### **check** (2 documentos)
+### **check** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Módulos OTClient](habdel\ModuleSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Módulos OTClient](otclient\Module_System_Guide.md)** - Wiki
 
-### **checkAudioCompatibility** (2 documentos)
+### **checkAudioCompatibility** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Som - OTClient Redemption](habdel\SoundSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Som - OTClient Redemption](otclient\Sound_System_Guide.md)** - Wiki
 
-### **checkFeatures** (2 documentos)
+### **checkFeatures** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Protocolo de Comunicação OTClient](habdel\Protocol.md)** - Habdel
 - 📋 📖 **[Sistema de Protocolo de Comunicação OTClient](otclient\Protocol_System_Guide.md)** - Wiki
 
-### **completa** (12 documentos)
+### **completa** (12 documentos) 📝
 
 - ✅ 📚 **[Sistema de Som - OTClient Redemption](habdel\SoundSystem.md)** - Habdel
 - 📋 📖 **[Animation System Guide](otclient\Animation_System_Guide.md)** - Wiki
@@ -515,78 +514,78 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 - 📋 📖 **[Sistema de Som - OTClient Redemption](otclient\Sound_System_Guide.md)** - Wiki
 - 📋 📖 **[UI System Guide](otclient\UI_System_Guide.md)** - Wiki
 
-### **countItemsInContainer** (2 documentos)
+### **countItemsInContainer** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Itens - OTClient Redemption](habdel\ItemSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Itens - OTClient Redemption](otclient\Item_System_Guide.md)** - Wiki
 
-### **countItemsInInventory** (2 documentos)
+### **countItemsInInventory** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Itens - OTClient Redemption](habdel\ItemSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Itens - OTClient Redemption](otclient\Item_System_Guide.md)** - Wiki
 
-### **create** (2 documentos)
+### **create** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Efeitos](habdel\EffectsSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Efeitos](otclient\Effects_System_Guide.md)** - Wiki
 
-### **createBattleButton** (2 documentos)
+### **createBattleButton** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Criaturas - OTClient Redemption](habdel\CreatureSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Criaturas - OTClient Redemption](otclient\Creature_System_Guide.md)** - Wiki
 
-### **createCustomConfig** (2 documentos)
+### **createCustomConfig** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Configuração OTClient](habdel\Configuration.md)** - Habdel
 - 📋 📖 **[Sistema de Configuração OTClient](otclient\Configuration_Guide.md)** - Wiki
 
-### **createCustomShader** (2 documentos)
+### **createCustomShader** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Gráficos - OTClient Redemption](habdel\GraphicsSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Gráficos - OTClient Redemption](otclient\Graphics_System_Guide.md)** - Wiki
 
-### **createCustomWidget** (1 documentos)
+### **createCustomWidget** (1 documentos) 📝
 
 - ✅ 📚 **[Tutorial de Widgets](habdel\documentation\WidgetTutorial.md)** (GUIDE-004) - Habdel
 
-### **createDragPreview** (1 documentos)
+### **createDragPreview** (1 documentos) 📝
 
 - 📋 📖 **[Drag & Drop System Guide](otclient\Drag_Drop_System_Guide.md)** - Wiki
 
-### **createDropZone** (1 documentos)
+### **createDropZone** (1 documentos) 📝
 
 - 📋 📖 **[Drag & Drop System Guide](otclient\Drag_Drop_System_Guide.md)** - Wiki
 
-### **createDynamicStyle** (1 documentos)
+### **createDynamicStyle** (1 documentos) 📝
 
 - ✅ 📚 **[Sistema de Estilização e Temas UIWidget](habdel\UIStyling.md)** - Habdel
 
-### **createMageInterface** (2 documentos)
+### **createMageInterface** (2 documentos) 📝
 
 - ✅ 📚 **[Boas Práticas de Desenvolvimento - OTClient](habdel\BestPractices.md)** (GUIDE-002) - Habdel
 - ✅ 📖 **[Lua API Reference - OTClient](otclient\Lua_API_Reference.md)** (GUIDE-002) - Wiki
 
-### **createMapEffect** (2 documentos)
+### **createMapEffect** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Efeitos](habdel\EffectsSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Efeitos](otclient\Effects_System_Guide.md)** - Wiki
 
-### **createStatsInterface** (2 documentos)
+### **createStatsInterface** (2 documentos) 📝
 
 - ✅ 📚 **[Boas Práticas de Desenvolvimento - OTClient](habdel\BestPractices.md)** (GUIDE-002) - Habdel
 - ✅ 📖 **[Lua API Reference - OTClient](otclient\Lua_API_Reference.md)** (GUIDE-002) - Wiki
 
-### **createWarriorInterface** (2 documentos)
+### **createWarriorInterface** (2 documentos) 📝
 
 - ✅ 📚 **[Boas Práticas de Desenvolvimento - OTClient](habdel\BestPractices.md)** (GUIDE-002) - Habdel
 - ✅ 📖 **[Lua API Reference - OTClient](otclient\Lua_API_Reference.md)** (GUIDE-002) - Wiki
 
-### **createWidgetForOption** (2 documentos)
+### **createWidgetForOption** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Configuração Avançada](habdel\ConfigurationAdvanced.md)** - Habdel
 - 📋 📖 **[Sistema de Configuração Avançada](otclient\Advanced_Configuration_Guide.md)** - Wiki
 
-### **de** (7 documentos)
+### **de** (7 documentos) 📝
 
 - ✅ 📚 **[Boas Práticas de Desenvolvimento - OTClient](habdel\BestPractices.md)** (GUIDE-002) - Habdel
 - ✅ 📚 **[Getting Started - OTClient Redemption](habdel\GettingStarted.md)** - Habdel
@@ -596,112 +595,112 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 - ✅ 📖 **[OTClient Wiki](otclient\otclient_wiki.md)** - Wiki
 - 📋 📖 **[Sistema de Som - OTClient Redemption](otclient\Sound_System_Guide.md)** - Wiki
 
-### **debugLayout** (1 documentos)
+### **debugLayout** (1 documentos) 📝
 
 - ✅ 📚 **[Sistema de Layouts UIWidget](habdel\UILayouts.md)** - Habdel
 
-### **debugModules** (2 documentos)
+### **debugModules** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Módulos OTClient](habdel\ModuleSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Módulos OTClient](otclient\Module_System_Guide.md)** - Wiki
 
-### **debugVar** (1 documentos)
+### **debugVar** (1 documentos) 📝
 
 - ✅ 📚 **[Sistema de Debug](habdel\documentation\CoreDebug.md)** (CORE-007) - Habdel
 
-### **do** (2 documentos)
+### **do** (2 documentos) 📝
 
 - ✅ 📚 **[Getting Started - OTClient Redemption](habdel\GettingStarted.md)** - Habdel
 - 📋 📖 **[Getting Started - OTClient Redemption](otclient\Getting_Started_Guide.md)** - Wiki
 
-### **e** (1 documentos)
+### **e** (1 documentos) 📝
 
 - ✅ 📚 **[Sem título](habdel\methodology\templates\research_template.md)** - Habdel
 
-### **enableDebugMode** (1 documentos)
+### **enableDebugMode** (1 documentos) 📝
 
 - ✅ 📚 **[Sistema de Debug](habdel\documentation\CoreDebug.md)** (CORE-007) - Habdel
 
-### **endMeasurement** (1 documentos)
+### **endMeasurement** (1 documentos) 📝
 
 - 📋 📖 **[Performance System Guide](otclient\Performance_System_Guide.md)** - Wiki
 
-### **exemplo** (1 documentos)
+### **exemplo** (1 documentos) 🎮
 
 - 📋 📖 **[Status da Documentação da Wiki](otclient\Documentation_Status.md)** (UI-013) - Wiki
 
-### **extends** (1 documentos)
+### **extends** (1 documentos) 📝
 
 - ✅ 📚 **[UIWidget](habdel\UIWidget.md)** - Habdel
 
-### **fileBrowser** (1 documentos)
+### **fileBrowser** (1 documentos) 📝
 
 - ✅ 📚 **[Widgets Especializados - OTClient Redemption](habdel\UIWidgetsSpecialized.md)** - Habdel
 
-### **findAllItems** (1 documentos)
+### **findAllItems** (1 documentos) 📝
 
 - 📋 📖 **[Map System Guide](otclient\Map_System_Guide.md)** - Wiki
 
-### **findItemsInRange** (2 documentos)
+### **findItemsInRange** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Mundo e Mapas OTClient](habdel\WorldSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Mundo e Mapas OTClient](otclient\World_System_Guide.md)** - Wiki
 
-### **findNearbyItems** (2 documentos)
+### **findNearbyItems** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Mundo e Mapas OTClient](habdel\WorldSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Mundo e Mapas OTClient](otclient\World_System_Guide.md)** - Wiki
 
-### **fireCustomEvent** (1 documentos)
+### **fireCustomEvent** (1 documentos) 📝
 
 - ✅ 📚 **[Sistema de Eventos UIWidget](habdel\UIEvents.md)** - Habdel
 
-### **gameInterface** (2 documentos)
+### **gameInterface** (2 documentos) 📝
 
 - ✅ 📚 **[Getting Started - OTClient Redemption](habdel\GettingStarted.md)** - Habdel
 - 📋 📖 **[Getting Started - OTClient Redemption](otclient\Getting_Started_Guide.md)** - Wiki
 
-### **getCachedTile** (3 documentos)
+### **getCachedTile** (3 documentos) 📝
 
 - ✅ 📚 **[Sistema de Mundo e Mapas OTClient](habdel\WorldSystem.md)** - Habdel
 - 📋 📖 **[Map System Guide](otclient\Map_System_Guide.md)** - Wiki
 - 📋 📖 **[Sistema de Mundo e Mapas OTClient](otclient\World_System_Guide.md)** - Wiki
 
-### **getEmblemImagePath** (2 documentos)
+### **getEmblemImagePath** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Criaturas - OTClient Redemption](habdel\CreatureSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Criaturas - OTClient Redemption](otclient\Creature_System_Guide.md)** - Wiki
 
-### **getItemWeight** (2 documentos)
+### **getItemWeight** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Itens - OTClient Redemption](habdel\ItemSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Itens - OTClient Redemption](otclient\Item_System_Guide.md)** - Wiki
 
-### **getOption** (2 documentos)
+### **getOption** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Configuração OTClient](habdel\Configuration.md)** - Habdel
 - 📋 📖 **[Sistema de Configuração OTClient](otclient\Configuration_Guide.md)** - Wiki
 
-### **getShieldImagePathAndBlink** (2 documentos)
+### **getShieldImagePathAndBlink** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Criaturas - OTClient Redemption](habdel\CreatureSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Criaturas - OTClient Redemption](otclient\Creature_System_Guide.md)** - Wiki
 
-### **getSkullImagePath** (2 documentos)
+### **getSkullImagePath** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Criaturas - OTClient Redemption](habdel\CreatureSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Criaturas - OTClient Redemption](otclient\Creature_System_Guide.md)** - Wiki
 
-### **getTextureMemoryUsage** (2 documentos)
+### **getTextureMemoryUsage** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Gráficos - OTClient Redemption](habdel\GraphicsSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Gráficos - OTClient Redemption](otclient\Graphics_System_Guide.md)** - Wiki
 
-### **getWidget** (1 documentos)
+### **getWidget** (1 documentos) 📝
 
 - 📋 📖 **[UI System Guide](otclient\UI_System_Guide.md)** - Wiki
 
-### **guide** (39 documentos)
+### **guide** (39 documentos) 📝
 
 - ✅ 📚 **[Boas Práticas de Desenvolvimento - OTClient](habdel\BestPractices.md)** (GUIDE-002) - Habdel
 - ✅ 📚 **[Plano de Documentação OTClient - Redemption](habdel\DOCUMENTATION_PLAN.md)** (UI-001) - Habdel
@@ -743,7 +742,7 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 - ✅ 📖 **[Relatório de Otimização da Wiki - OTClient](otclient\Wiki_Optimization_Report.md)** - Wiki
 - 📋 📖 **[Sistema de Mundo e Mapas OTClient](otclient\World_System_Guide.md)** - Wiki
 
-### **identificada** (20 documentos)
+### **identificada** (20 documentos) 📝
 
 - 📋 📚 **[Sem título](habdel\otclient\documentation\OTCLIENT-001_core_system_analysis.md)** - Habdel
 - 📋 📚 **[Sem título](habdel\otclient\documentation\OTCLIENT-002_graphics_system.md)** - Habdel
@@ -766,67 +765,67 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 - 📋 📚 **[Sem título](habdel\otclient\documentation\OTCLIENT-019_performance_system.md)** - Habdel
 - 📋 📚 **[Sem título](habdel\otclient\documentation\OTCLIENT-020_debug_system.md)** - Habdel
 
-### **init** (3 documentos)
+### **init** (3 documentos) 📝
 
 - ✅ 📚 **[Cheat Sheet de Desenvolvimento - OTClient Redemption](habdel\CheatSheet.md)** - Habdel
 - 📋 📖 **[Cheat Sheet de Desenvolvimento - OTClient Redemption](otclient\Cheat_Sheet.md)** - Wiki
 - 📋 📖 **[Guia de Desenvolvimento de Módulos OTUI](otclient\OTUI_Module_Development_Guide.md)** - Wiki
 
-### **initializeAudioSystem** (2 documentos)
+### **initializeAudioSystem** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Som - OTClient Redemption](habdel\SoundSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Som - OTClient Redemption](otclient\Sound_System_Guide.md)** - Wiki
 
-### **isValidPosition** (1 documentos)
+### **isValidPosition** (1 documentos) 📝
 
 - 📋 📖 **[Map System Guide](otclient\Map_System_Guide.md)** - Wiki
 
-### **isValidSlot** (2 documentos)
+### **isValidSlot** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Itens - OTClient Redemption](habdel\ItemSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Itens - OTClient Redemption](otclient\Item_System_Guide.md)** - Wiki
 
-### **loadOptionalModules** (2 documentos)
+### **loadOptionalModules** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Módulos OTClient](habdel\ModuleSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Módulos OTClient](otclient\Module_System_Guide.md)** - Wiki
 
-### **local** (1 documentos)
+### **local** (1 documentos) 📝
 
 - 📋 📖 **[Animation System Guide](otclient\Animation_System_Guide.md)** - Wiki
 
-### **meuModulo** (2 documentos)
+### **meuModulo** (2 documentos) 📝
 
 - ✅ 📚 **[Cheat Sheet de Desenvolvimento - OTClient Redemption](habdel\CheatSheet.md)** - Habdel
 - 📋 📖 **[Cheat Sheet de Desenvolvimento - OTClient Redemption](otclient\Cheat_Sheet.md)** - Wiki
 
-### **muteAllChannels** (2 documentos)
+### **muteAllChannels** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Som - OTClient Redemption](habdel\SoundSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Som - OTClient Redemption](otclient\Sound_System_Guide.md)** - Wiki
 
-### **onCombatStart** (1 documentos)
+### **onCombatStart** (1 documentos) 📝
 
 - ✅ 📚 **[Sistema de Combate](habdel\documentation\GameCombat.md)** (GAME-006) - Habdel
 
-### **onSpellCast** (1 documentos)
+### **onSpellCast** (1 documentos) 📝
 
 - ✅ 📚 **[Sistema de Efeitos](habdel\documentation\GameEffects.md)** (GAME-005) - Habdel
 
-### **or** (2 documentos)
+### **or** (2 documentos) 📝
 
 - ✅ 📚 **[Boas Práticas de Desenvolvimento - OTClient](habdel\BestPractices.md)** (GUIDE-002) - Habdel
 - ✅ 📖 **[Lua API Reference - OTClient](otclient\Lua_API_Reference.md)** (GUIDE-002) - Wiki
 
-### **performMagicAttack** (1 documentos)
+### **performMagicAttack** (1 documentos) 📝
 
 - 📋 📖 **[Sem título](otclient\Combat_System_Guide.md)** - Wiki
 
-### **performPhysicalAttack** (1 documentos)
+### **performPhysicalAttack** (1 documentos) 📝
 
 - 📋 📖 **[Sem título](otclient\Combat_System_Guide.md)** - Wiki
 
-### **phase** (16 documentos)
+### **phase** (16 documentos) 📝
 
 - 📋 📚 **[Sem título](habdel\otclient\documentation\OTCLIENT-002_graphics_system.md)** - Habdel
 - 📋 📚 **[Sem título](habdel\otclient\documentation\OTCLIENT-003_network_system.md)** - Habdel
@@ -845,12 +844,12 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 - 📋 📚 **[Sem título](habdel\otclient\documentation\OTCLIENT-019_performance_system.md)** - Habdel
 - 📋 📚 **[Sem título](habdel\otclient\documentation\OTCLIENT-020_debug_system.md)** - Habdel
 
-### **preloadGameTextures** (2 documentos)
+### **preloadGameTextures** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Gráficos - OTClient Redemption](habdel\GraphicsSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Gráficos - OTClient Redemption](otclient\Graphics_System_Guide.md)** - Wiki
 
-### **pública** (5 documentos)
+### **pública** (5 documentos) 📝
 
 - ✅ 📚 **[Boas Práticas de Desenvolvimento - OTClient](habdel\BestPractices.md)** (GUIDE-002) - Habdel
 - ✅ 📚 **[Criando Seu Primeiro Módulo - OTClient](habdel\FirstModule.md)** - Habdel
@@ -858,16 +857,16 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 - ✅ 📖 **[Lua API Reference - OTClient](otclient\Lua_API_Reference.md)** (GUIDE-002) - Wiki
 - 📋 📖 **[Criando Seu Primeiro Módulo - OTClient](otclient\Module_Development_Guide.md)** - Wiki
 
-### **readConfigValues** (2 documentos)
+### **readConfigValues** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Configuração OTClient](habdel\Configuration.md)** - Habdel
 - 📋 📖 **[Sistema de Configuração OTClient](otclient\Configuration_Guide.md)** - Wiki
 
-### **recycleWidget** (1 documentos)
+### **recycleWidget** (1 documentos) 📝
 
 - 📋 📖 **[UI System Guide](otclient\UI_System_Guide.md)** - Wiki
 
-### **reference** (34 documentos)
+### **reference** (34 documentos) 📚
 
 - ✅ 📚 **[Plano de Documentação OTClient - Redemption](habdel\DOCUMENTATION_PLAN.md)** (UI-001) - Habdel
 - ✅ 📚 **[Getting Started - OTClient Redemption](habdel\GettingStarted.md)** - Habdel
@@ -904,51 +903,51 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 - ✅ 📖 **[Relatório de Otimização da Wiki - OTClient](otclient\Wiki_Optimization_Report.md)** - Wiki
 - 📋 📖 **[Sistema de Mundo e Mapas OTClient](otclient\World_System_Guide.md)** - Wiki
 
-### **removeDragPreview** (1 documentos)
+### **removeDragPreview** (1 documentos) 📝
 
 - 📋 📖 **[Drag & Drop System Guide](otclient\Drag_Drop_System_Guide.md)** - Wiki
 
-### **restoreChannelVolumes** (2 documentos)
+### **restoreChannelVolumes** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Som - OTClient Redemption](habdel\SoundSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Som - OTClient Redemption](otclient\Sound_System_Guide.md)** - Wiki
 
-### **safeTileAccess** (3 documentos)
+### **safeTileAccess** (3 documentos) 📝
 
 - ✅ 📚 **[Sistema de Mundo e Mapas OTClient](habdel\WorldSystem.md)** - Habdel
 - 📋 📖 **[Map System Guide](otclient\Map_System_Guide.md)** - Wiki
 - 📋 📖 **[Sistema de Mundo e Mapas OTClient](otclient\World_System_Guide.md)** - Wiki
 
-### **sendCustomData** (2 documentos)
+### **sendCustomData** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Protocolo de Comunicação OTClient](habdel\Protocol.md)** - Habdel
 - 📋 📖 **[Sistema de Protocolo de Comunicação OTClient](otclient\Protocol_System_Guide.md)** - Wiki
 
-### **setChannelVolume** (2 documentos)
+### **setChannelVolume** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Configuração Avançada](habdel\ConfigurationAdvanced.md)** - Habdel
 - 📋 📖 **[Sistema de Configuração Avançada](otclient\Advanced_Configuration_Guide.md)** - Wiki
 
-### **setOption** (2 documentos)
+### **setOption** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Configuração OTClient](habdel\Configuration.md)** - Habdel
 - 📋 📖 **[Sistema de Configuração OTClient](otclient\Configuration_Guide.md)** - Wiki
 
-### **setupDraggableWidget** (1 documentos)
+### **setupDraggableWidget** (1 documentos) 📝
 
 - 📋 📖 **[Drag & Drop System Guide](otclient\Drag_Drop_System_Guide.md)** - Wiki
 
-### **setupVolumeChannels** (2 documentos)
+### **setupVolumeChannels** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Som - OTClient Redemption](habdel\SoundSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Som - OTClient Redemption](otclient\Sound_System_Guide.md)** - Wiki
 
-### **startAnimatedShader** (2 documentos)
+### **startAnimatedShader** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Gráficos - OTClient Redemption](habdel\GraphicsSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Gráficos - OTClient Redemption](otclient\Graphics_System_Guide.md)** - Wiki
 
-### **system** (72 documentos)
+### **system** (72 documentos) 📝
 
 - ✅ 📚 **[Boas Práticas de Desenvolvimento - OTClient](habdel\BestPractices.md)** (GUIDE-002) - Habdel
 - ✅ 📚 **[Sistema de Criaturas - OTClient Redemption](habdel\CreatureSystem.md)** - Habdel
@@ -1023,7 +1022,7 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 - ✅ 📖 **[Relatório de Otimização da Wiki - OTClient](otclient\Wiki_Optimization_Report.md)** - Wiki
 - 📋 📖 **[Sistema de Mundo e Mapas OTClient](otclient\World_System_Guide.md)** - Wiki
 
-### **tags** (8 documentos)
+### **tags** (8 documentos) 📝
 
 - 📋 📖 **[Sistema de Criaturas - OTClient Redemption](otclient\Creature_System_Guide.md)** - Wiki
 - 📋 📖 **[Sistema de Efeitos](otclient\Effects_System_Guide.md)** - Wiki
@@ -1034,24 +1033,24 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 - 📋 📖 **[Sistema de Som - OTClient Redemption](otclient\Sound_System_Guide.md)** - Wiki
 - 📋 📖 **[Sistema de Mundo e Mapas OTClient](otclient\World_System_Guide.md)** - Wiki
 
-### **teleportPlayer** (3 documentos)
+### **teleportPlayer** (3 documentos) 📝
 
 - ✅ 📚 **[Sistema de Mundo e Mapas OTClient](habdel\WorldSystem.md)** - Habdel
 - 📋 📖 **[Map System Guide](otclient\Map_System_Guide.md)** - Wiki
 - 📋 📖 **[Sistema de Mundo e Mapas OTClient](otclient\World_System_Guide.md)** - Wiki
 
-### **terminate** (3 documentos)
+### **terminate** (3 documentos) 📝
 
 - ✅ 📚 **[Cheat Sheet de Desenvolvimento - OTClient Redemption](habdel\CheatSheet.md)** - Habdel
 - 📋 📖 **[Cheat Sheet de Desenvolvimento - OTClient Redemption](otclient\Cheat_Sheet.md)** - Wiki
 - 📋 📖 **[Guia de Desenvolvimento de Módulos OTUI](otclient\OTUI_Module_Development_Guide.md)** - Wiki
 
-### **toggleChannel** (2 documentos)
+### **toggleChannel** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Configuração Avançada](habdel\ConfigurationAdvanced.md)** - Habdel
 - 📋 📖 **[Sistema de Configuração Avançada](otclient\Advanced_Configuration_Guide.md)** - Wiki
 
-### **tutorial** (11 documentos)
+### **tutorial** (11 documentos) 📝
 
 - ✅ 📚 **[Boas Práticas de Desenvolvimento - OTClient](habdel\BestPractices.md)** (GUIDE-002) - Habdel
 - ✅ 📚 **[Criando Seu Primeiro Módulo - OTClient](habdel\FirstModule.md)** - Habdel
@@ -1065,21 +1064,21 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 - ✅ 📖 **[Lua API Reference - OTClient](otclient\Lua_API_Reference.md)** (GUIDE-002) - Wiki
 - 📋 📖 **[Criando Seu Primeiro Módulo - OTClient](otclient\Module_Development_Guide.md)** - Wiki
 
-### **updateBattleButton** (2 documentos)
+### **updateBattleButton** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Criaturas - OTClient Redemption](habdel\CreatureSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Criaturas - OTClient Redemption](otclient\Creature_System_Guide.md)** - Wiki
 
-### **updateDragPreview** (1 documentos)
+### **updateDragPreview** (1 documentos) 📝
 
 - 📋 📖 **[Drag & Drop System Guide](otclient\Drag_Drop_System_Guide.md)** - Wiki
 
-### **updateShader** (2 documentos)
+### **updateShader** (2 documentos) 📝
 
 - ✅ 📚 **[Sistema de Gráficos - OTClient Redemption](habdel\GraphicsSystem.md)** - Habdel
 - 📋 📖 **[Sistema de Gráficos - OTClient Redemption](otclient\Graphics_System_Guide.md)** - Wiki
 
-### **widget** (59 documentos)
+### **widget** (59 documentos) 📝
 
 - ✅ 📚 **[Boas Práticas de Desenvolvimento - OTClient](habdel\BestPractices.md)** (GUIDE-002) - Habdel
 - ✅ 📚 **[Cheat Sheet de Desenvolvimento - OTClient Redemption](habdel\CheatSheet.md)** - Habdel
@@ -1141,12 +1140,15 @@ Este índice organiza documentos por palavras-chave, facilitando a busca por tó
 - ✅ 📖 **[Relatório de Otimização da Wiki - OTClient](otclient\Wiki_Optimization_Report.md)** - Wiki
 - 📋 📖 **[Sistema de Mundo e Mapas OTClient](otclient\World_System_Guide.md)** - Wiki
 
-### **with** (1 documentos)
+### **with** (1 documentos) 📝
 
 - ✅ 📚 **[UIWidget](habdel\UIWidget.md)** - Habdel
 
 
-## 📊 Estatísticas de Busca
+
+---
+
+## 📊 Estatísticas de Busca 📋
 
 - **Palavras-Chave Únicas**: 138
 - **Documentos Indexados**: 143

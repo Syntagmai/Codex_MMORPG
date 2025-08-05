@@ -38,13 +38,42 @@ Engine de segurança
 ## Prática
 
 ### Exemplo Básico
+#### Nível Basic
 ```lua
 -- Exemplo de código relacionado a Security Engine
+```
+
+#### Nível Intermediate
+```lua
+-- Exemplo de código relacionado a Security Engine
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Exemplo de código relacionado a Security Engine
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### Exemplo Avançado
 ```lua
 -- Exemplo mais complexo
+    --  Exemplo mais complexo (traduzido)
 ```
 
 

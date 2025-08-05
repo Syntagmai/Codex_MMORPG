@@ -84,19 +84,23 @@ Canary System Architecture
 **config.lua.dist** - Configuração principal do servidor:
 ```lua
 -- Core settings
+    --  Core settings (traduzido)
 useAnyDatapackFolder = false
 dataPackDirectory = "data-otservbr-global"
 coreDirectory = "data"
 
 -- Log level
+    --  Log level (traduzido)
 logLevel = "info"
 
 -- Combat settings
+    --  Combat settings (traduzido)
 worldType = "pvp"
 protectionLevel = 7
 pzLocked = 60 * 1000
 
 -- Connection Config
+    --  Connection Config (traduzido)
 ip = "127.0.0.1"
 loginProtocolPort = 7171
 gameProtocolPort = 7172
@@ -105,9 +109,11 @@ maxPlayers = 0
 serverName = "OTServBR-Global"
 
 -- Packet Compression
+    --  Packet Compression (traduzido)
 packetCompressionLevel = 6
 
 -- Item and containers limit
+    --  Item and containers limit (traduzido)
 maxItem = 5000
 maxContainer = 500
 maxContainerDepth = 200
@@ -118,6 +124,7 @@ maxContainerDepth = 200
 #### **1. CanaryServer (Main Server)**
 ```cpp
 class CanaryServer {
+    -- Classe: CanaryServer
 public:
     explicit CanaryServer(
         Logger &logger,

@@ -126,6 +126,25 @@ def execute_commit(message):
 ## 🔧 Configuração
 
 ### **Parâmetros Padrão**
+#### Nível Basic
+```json
+
+```
+
+#### Nível Intermediate
+```json
+{
+  "auto_commit": true,
+  "auto_push": false,
+  "conventional_commits": true,
+  "max_commit_size": 10,
+  "require_description": true,
+  "validation_strict": true,
+  "language": "portuguese"
+}
+```
+
+#### Nível Advanced
 ```json
 {
   "auto_commit": true,

@@ -22,6 +22,7 @@ Este guia prático fornece exemplos funcionais, tutoriais e casos de uso para im
 local Criação = {}
 
 function Criação:init()
+    -- Função: Criação
     self.settings = {
         enabled = true,
         timeout = 5000,
@@ -30,12 +31,82 @@ function Criação:init()
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local criação = Criação:new()
 criação:init()
 ```
 
 ### **2. Sistema de Dependências**
 
+#### Nível Basic
+```lua
+-- Implementação de sistema de dependências
+local ModuleDependencies = {}
+function ModuleDependencies:init()
+    self.dependencies = {}
+end
+-- Adicionar dependência
+function ModuleDependencies:addDependency(moduleName, requiredModule)
+    if not self.dependencies[moduleName] then
+        self.dependencies[moduleName] = {}
+    end
+    table.insert(self.dependencies[moduleName], requiredModule)
+end
+-- Verificar dependências
+function ModuleDependencies:checkDependencies(moduleName)
+    local deps = self.dependencies[moduleName] or {}
+        if not self.loadedModules[dep] then
+        end
+    end
+end
+-- Exemplo de uso
+local deps = ModuleDependencies:new()
+deps:addDependency("game_module", "core")
+deps:addDependency("game_module", "utils")
+```
+
+#### Nível Intermediate
+```lua
+-- Implementação de sistema de dependências
+local ModuleDependencies = {}
+
+function ModuleDependencies:init()
+    self.dependencies = {}
+    self.loadedModules = {}
+    self.settings = {
+        enabled = true,
+        timeout = 5000,
+        maxRetries = 3
+    }
+end
+
+-- Adicionar dependência
+function ModuleDependencies:addDependency(moduleName, requiredModule)
+    if not self.dependencies[moduleName] then
+        self.dependencies[moduleName] = {}
+    end
+    table.insert(self.dependencies[moduleName], requiredModule)
+end
+
+-- Verificar dependências
+function ModuleDependencies:checkDependencies(moduleName)
+    local deps = self.dependencies[moduleName] or {}
+    for _, dep in ipairs(deps) do
+        if not self.loadedModules[dep] then
+            return { success = false, missing = dep }
+        end
+    end
+    return { success = true }
+end
+
+-- Exemplo de uso
+local deps = ModuleDependencies:new()
+deps:init()
+deps:addDependency("game_module", "core")
+deps:addDependency("game_module", "utils")
+```
+
+#### Nível Advanced
 ```lua
 -- Implementação de sistema de dependências
 local ModuleDependencies = {}
@@ -83,6 +154,7 @@ deps:addDependency("game_module", "utils")
 local Arquivos = {}
 
 function Arquivos:init()
+    -- Função: Arquivos
     self.settings = {
         enabled = true,
         timeout = 5000,
@@ -91,6 +163,7 @@ function Arquivos:init()
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local arquivos = Arquivos:new()
 arquivos:init()
 ```
@@ -102,6 +175,7 @@ arquivos:init()
 local Hierarquia = {}
 
 function Hierarquia:init()
+    -- Função: Hierarquia
     self.settings = {
         enabled = true,
         timeout = 5000,
@@ -110,6 +184,7 @@ function Hierarquia:init()
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local hierarquia = Hierarquia:new()
 hierarquia:init()
 ```
@@ -121,6 +196,7 @@ hierarquia:init()
 ```lua
 -- Módulo Básico
 function Módulo:processBásico(data)
+    -- Função: Módulo
     local result = {
         success = false,
         data = nil,
@@ -129,11 +205,13 @@ function Módulo:processBásico(data)
     
     -- Validação
     if not data then
+    -- Verificação condicional
         result.error = "Data is required"
         return result
     end
     
     -- Processamento
+    --  Processamento (traduzido)
     result.success = true
     result.data = data
     
@@ -141,6 +219,7 @@ function Módulo:processBásico(data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = módulo:processBásico({
     type = "test",
     value = "example"
@@ -152,6 +231,7 @@ local result = módulo:processBásico({
 ```lua
 -- Dependências Complexas
 function Dependências:processComplexas(data)
+    -- Função: Dependências
     local result = {
         success = false,
         data = nil,
@@ -160,11 +240,13 @@ function Dependências:processComplexas(data)
     
     -- Validação
     if not data then
+    -- Verificação condicional
         result.error = "Data is required"
         return result
     end
     
     -- Processamento
+    --  Processamento (traduzido)
     result.success = true
     result.data = data
     
@@ -172,6 +254,7 @@ function Dependências:processComplexas(data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = dependências:processComplexas({
     type = "test",
     value = "example"
@@ -183,6 +266,7 @@ local result = dependências:processComplexas({
 ```lua
 -- Carregamento Dinâmico
 function Carregamento:processDinâmico(data)
+    -- Função: Carregamento
     local result = {
         success = false,
         data = nil,
@@ -191,11 +275,13 @@ function Carregamento:processDinâmico(data)
     
     -- Validação
     if not data then
+    -- Verificação condicional
         result.error = "Data is required"
         return result
     end
     
     -- Processamento
+    --  Processamento (traduzido)
     result.success = true
     result.data = data
     
@@ -203,6 +289,7 @@ function Carregamento:processDinâmico(data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = carregamento:processDinâmico({
     type = "test",
     value = "example"
@@ -213,7 +300,9 @@ local result = carregamento:processDinâmico({
 
 ```lua
 -- Sistema de Sandbox
+    --  Sistema de Sandbox (traduzido)
 function Sistema:processSandbox(data)
+    -- Função: Sistema
     local result = {
         success = false,
         data = nil,
@@ -222,11 +311,13 @@ function Sistema:processSandbox(data)
     
     -- Validação
     if not data then
+    -- Verificação condicional
         result.error = "Data is required"
         return result
     end
     
     -- Processamento
+    --  Processamento (traduzido)
     result.success = true
     result.data = data
     
@@ -234,6 +325,7 @@ function Sistema:processSandbox(data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = sistema:processSandbox({
     type = "test",
     value = "example"
@@ -247,6 +339,7 @@ local result = sistema:processSandbox({
 ```lua
 -- Cenário: Implementação básica do sistema
 function System:basicImplementation()
+    -- Função: System
     local config = {
         enabled = true,
         timeout = 5000,
@@ -255,6 +348,7 @@ function System:basicImplementation()
     
     local result = self:initialize(config)
     if result.success then
+    -- Verificação condicional
         print("Sistema inicializado com sucesso")
     else
         print("Erro na inicialização:", result.error)
@@ -269,13 +363,16 @@ end
 ```lua
 -- Cenário: Validação de dados de entrada
 function System:validateData(data)
+    -- Função: System
     local errors = {}
     
     if not data then
+    -- Verificação condicional
         table.insert(errors, "Data is required")
     end
     
     if data and type(data) ~= "table" then
+    -- Verificação condicional
         table.insert(errors, "Data must be a table")
     end
     
@@ -291,6 +388,7 @@ end
 ```lua
 -- Cenário: Tratamento robusto de erros
 function System:handleError(error, context)
+    -- Função: System
     local errorInfo = {
         message = error,
         context = context,
@@ -299,6 +397,7 @@ function System:handleError(error, context)
     }
     
     -- Log do erro
+    --  Log do erro (traduzido)
     self:logError(errorInfo)
     
     -- Notificar usuário
@@ -315,6 +414,7 @@ end
 ```lua
 -- Teste de validação básica
 function System:testBasicValidation()
+    -- Função: System
     print("=== Teste de Validação Básica ===")
     
     local testData = {
@@ -326,6 +426,7 @@ function System:testBasicValidation()
     print("Validação:", validation.valid)
     
     if not validation.valid then
+    -- Verificação condicional
         print("Erros:", table.concat(validation.errors, ", "))
     end
     
@@ -338,6 +439,7 @@ end
 ```lua
 -- Simulação de funcionamento do sistema
 function System:simulateOperation()
+    -- Função: System
     print("=== Simulação de Operação ===")
     
     local data = {
@@ -378,6 +480,7 @@ SystemData = {{
 }}
 
 -- Estrutura de resultado
+    --  Estrutura de resultado (traduzido)
 Result = {{
     success = boolean,
     data = any,

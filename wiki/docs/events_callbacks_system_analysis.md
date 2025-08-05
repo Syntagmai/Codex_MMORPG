@@ -62,6 +62,7 @@ graph TD
 
 ### 🎮 Game Events (g_game)
 
+#### Nível Basic
 ```cpp
 // Eventos principais do jogo
 void Game::processLogin()
@@ -101,8 +102,106 @@ void Game::processDeath(const uint8_t deathType, const uint8_t penality)
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Eventos principais do jogo
+void Game::processLogin()
+{
+    g_lua.callGlobalField("g_game", "onLogin");
+}
+
+void Game::processGameStart()
+{
+    m_online = true;
+    g_app.resetTargetFps();
+    
+    // Sincronização de modos de combate
+    m_protocolGame->sendChangeFightModes(m_fightMode, m_chaseMode, m_safeFight, m_pvpMode);
+    
+    enableBotCall();
+    g_lua.callGlobalField("g_game", "onGameStart");
+    disableBotCall();
+}
+
+void Game::processGameEnd()
+{
+    g_app.setTargetFps(60u);
+    m_online = false;
+    g_lua.callGlobalField("g_game", "onGameEnd");
+    
+    // Reset do estado do jogo
+    resetGameStates();
+    g_map.cleanDynamicThings();
+}
+
+void Game::processDeath(const uint8_t deathType, const uint8_t penality)
+{
+    m_dead = true;
+    m_localPlayer->stopWalk();
+    g_lua.callGlobalField("g_game", "onDeath", deathType, penality);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Eventos principais do jogo
+void Game::processLogin()
+{
+    g_lua.callGlobalField("g_game", "onLogin");
+}
+
+void Game::processGameStart()
+{
+    m_online = true;
+    g_app.resetTargetFps();
+    
+    // Sincronização de modos de combate
+    m_protocolGame->sendChangeFightModes(m_fightMode, m_chaseMode, m_safeFight, m_pvpMode);
+    
+    enableBotCall();
+    g_lua.callGlobalField("g_game", "onGameStart");
+    disableBotCall();
+}
+
+void Game::processGameEnd()
+{
+    g_app.setTargetFps(60u);
+    m_online = false;
+    g_lua.callGlobalField("g_game", "onGameEnd");
+    
+    // Reset do estado do jogo
+    resetGameStates();
+    g_map.cleanDynamicThings();
+}
+
+void Game::processDeath(const uint8_t deathType, const uint8_t penality)
+{
+    m_dead = true;
+    m_localPlayer->stopWalk();
+    g_lua.callGlobalField("g_game", "onDeath", deathType, penality);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### ⚙️ Settings Events (g_settings)
 
+#### Nível Basic
 ```lua
 -- Sistema de configurações
 local function loadSettings()
@@ -129,8 +228,80 @@ function onSettingChanged(key, value)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Sistema de configurações
+local function loadSettings()
+    local settings = g_settings.getNode('BattleList')
+    if settings then
+        -- Carregar configurações salvas
+        return settings
+    end
+    return {}
+end
+
+local function saveSettings(settings)
+    g_settings.setNode('BattleList', settings)
+    g_settings.save()
+end
+
+-- Eventos de mudança de configuração
+function onSettingChanged(key, value)
+    g_settings.set(key, value)
+    g_settings.save()
+    
+    -- Notificar mudança
+    signalcall(onSettingsChanged, key, value)
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Sistema de configurações
+local function loadSettings()
+    local settings = g_settings.getNode('BattleList')
+    if settings then
+        -- Carregar configurações salvas
+        return settings
+    end
+    return {}
+end
+
+local function saveSettings(settings)
+    g_settings.setNode('BattleList', settings)
+    g_settings.save()
+end
+
+-- Eventos de mudança de configuração
+function onSettingChanged(key, value)
+    g_settings.set(key, value)
+    g_settings.save()
+    
+    -- Notificar mudança
+    signalcall(onSettingsChanged, key, value)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 📡 Protocol Events
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de callbacks de protocolo
 local opcodeCallbacks = {}
@@ -162,6 +333,10 @@ function ProtocolGame:onExtendedOpcode(opcode, buffer)
         if status ~= 'E' and status ~= 'P' then
             extendedJSONData[opcode] = ''
         end
+```
+
+#### Funcionalidade 1
+```lua
         
         if status ~= 'S' and status ~= 'P' and status ~= 'E' then
             extendedJSONData[opcode] = buffer
@@ -183,6 +358,10 @@ function ProtocolGame:onExtendedOpcode(opcode, buffer)
             callback(self, opcode, json_data)
         end
     end
+```
+
+#### Finalização
+```lua
 end
 ```
 
@@ -190,23 +369,30 @@ end
 
 ```lua
 -- Registro de callbacks
+    --  Registro de callbacks (traduzido)
 function ProtocolGame.registerOpcode(opcode, callback)
+    -- Função: ProtocolGame
     if opcodeCallbacks[opcode] then
+    -- Verificação condicional
         error('opcode ' .. opcode .. ' already registered will be overriden')
     end
     opcodeCallbacks[opcode] = callback
 end
 
 function ProtocolGame.registerExtendedOpcode(opcode, callback)
+    -- Função: ProtocolGame
     if not callback or type(callback) ~= 'function' then
+    -- Verificação condicional
         error('Invalid callback.')
     end
     
     if opcode < 0 or opcode > 255 then
+    -- Verificação condicional
         error('Invalid opcode. Range: 0-255')
     end
     
     if extendedCallbacks[opcode] then
+    -- Verificação condicional
         error('Opcode is already taken.')
     end
     

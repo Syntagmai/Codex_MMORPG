@@ -27,6 +27,7 @@ Analisar profundamente o sistema **Sistema de UI** do OTClient usando metodologi
 ### **Estrutura do Sistema**
 ```lua
 -- Exemplo de estrutura do sistema Sistema de UI
+    --  Exemplo de estrutura do sistema Sistema de UI (traduzido)
 -- Será preenchido durante a análise
 ```
 
@@ -38,6 +39,7 @@ Analisar profundamente o sistema **Sistema de UI** do OTClient usando metodologi
 ### **APIs e Interfaces**
 ```lua
 -- APIs principais do sistema
+    --  APIs principais do sistema (traduzido)
 -- Será documentado durante a análise
 ```
 

@@ -18,6 +18,7 @@ Analisar profundamente o sistema **Sistema de NPCs** do OTClient usando metodolo
 ### **Estrutura do Sistema**
 ```lua
 -- Exemplo de estrutura do sistema Sistema de NPCs
+    --  Exemplo de estrutura do sistema Sistema de NPCs (traduzido)
 -- Será preenchido durante a análise
 ```
 
@@ -29,6 +30,7 @@ Analisar profundamente o sistema **Sistema de NPCs** do OTClient usando metodolo
 ### **APIs e Interfaces**
 ```lua
 -- APIs principais do sistema
+    --  APIs principais do sistema (traduzido)
 -- Será documentado durante a análise
 ```
 

@@ -22,6 +22,7 @@ Este guia prático fornece exemplos funcionais, tutoriais e casos de uso para im
 local GameStore = {}
 
 function GameStore:init()
+    -- Função: GameStore
     self.offers = {}
     self.categories = {}
     self.history = {}
@@ -34,6 +35,7 @@ function GameStore:init()
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local store = GameStore:new()
 store:init()
 ```
@@ -43,6 +45,7 @@ store:init()
 ```lua
 -- Criando uma oferta básica
 function GameStore:createOffer(data)
+    -- Função: GameStore
     local offer = {
         id = self:generateId(),
         name = data.name,
@@ -60,6 +63,7 @@ function GameStore:createOffer(data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local swordOffer = store:createOffer({
     name = "Sword of Power",
     description = "A powerful magical sword",
@@ -74,9 +78,12 @@ local swordOffer = store:createOffer({
 
 ```lua
 -- Processando uma compra
+    --  Processando uma compra (traduzido)
 function GameStore:processPurchase(playerId, offerId, quantity)
+    -- Função: GameStore
     local offer = self:getOffer(offerId)
     if not offer then
+    -- Verificação condicional
         return { success = false, error = "Offer not found" }
     end
     
@@ -84,13 +91,16 @@ function GameStore:processPurchase(playerId, offerId, quantity)
     local playerCoins = self:getPlayerCoins(playerId)
     
     if playerCoins < totalCost then
+    -- Verificação condicional
         return { success = false, error = "Insufficient coins" }
     end
     
     -- Processar pagamento
+    --  Processar pagamento (traduzido)
     self:deductCoins(playerId, totalCost)
     
     -- Entregar item
+    --  Entregar item (traduzido)
     self:deliverItem(playerId, offer, quantity)
     
     -- Registrar transação
@@ -106,6 +116,7 @@ end
 
 ```lua
 -- Sistema de categorias do Game Store
+    --  Sistema de categorias do Game Store (traduzido)
 local GameStoreCategories = {
     WEAPONS = "weapons",
     ARMOR = "armor",
@@ -118,9 +129,12 @@ local GameStoreCategories = {
 }
 
 function GameStore:getOffersByCategory(category)
+    -- Função: GameStore
     local filteredOffers = {}
     for _, offer in ipairs(self.offers) do
+    -- Loop de repetição
         if offer.category == category then
+    -- Verificação condicional
             table.insert(filteredOffers, offer)
         end
     end
@@ -128,6 +142,7 @@ function GameStore:getOffersByCategory(category)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local weapons = store:getOffersByCategory(GameStoreCategories.WEAPONS)
 ```
 
@@ -136,6 +151,7 @@ local weapons = store:getOffersByCategory(GameStoreCategories.WEAPONS)
 ```lua
 -- Sistema de histórico de transações
 function GameStore:recordTransaction(playerId, offerId, quantity, cost)
+    -- Função: GameStore
     local transaction = {
         id = self:generateTransactionId(),
         playerId = playerId,
@@ -151,13 +167,17 @@ function GameStore:recordTransaction(playerId, offerId, quantity, cost)
 end
 
 function GameStore:getPlayerHistory(playerId, limit)
+    -- Função: GameStore
     limit = limit or 10
     local playerHistory = {}
     
     for i = #self.history, 1, -1 do
+    -- Loop de repetição
         if self.history[i].playerId == playerId then
+    -- Verificação condicional
             table.insert(playerHistory, self.history[i])
             if #playerHistory >= limit then
+    -- Verificação condicional
                 break
             end
         end
@@ -172,6 +192,7 @@ end
 ```lua
 -- Sistema de notificações do Game Store
 function GameStore:sendNotification(playerId, message, type)
+    -- Função: GameStore
     local notification = {
         id = self:generateId(),
         playerId = playerId,
@@ -182,11 +203,13 @@ function GameStore:sendNotification(playerId, message, type)
     }
     
     -- Enviar para o cliente
+    --  Enviar para o cliente (traduzido)
     self:sendToClient(playerId, "gameStoreNotification", notification)
     return notification
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 store:sendNotification(playerId, "Your purchase was successful!", "success")
 ```
 
@@ -197,13 +220,16 @@ store:sendNotification(playerId, "Your purchase was successful!", "success")
 ```lua
 -- Cenário: Jogador compra uma espada
 function GameStore:buyWeapon(playerId, weaponId)
+    -- Função: GameStore
     local weapon = self:getOffer(weaponId)
     if not weapon or weapon.category ~= "weapons" then
+    -- Verificação condicional
         return { success = false, error = "Invalid weapon" }
     end
     
     local result = self:processPurchase(playerId, weaponId, 1)
     if result.success then
+    -- Verificação condicional
         self:sendNotification(playerId, "Weapon purchased successfully!", "success")
         self:updatePlayerInventory(playerId, weapon)
     else
@@ -216,6 +242,7 @@ end
 
 ### **Caso de Uso 2: Transferência de Coins**
 
+#### Nível Basic
 ```lua
 -- Cenário: Transferência de coins entre jogadores
 function GameStore:transferCoins(fromPlayerId, toPlayerId, amount)
@@ -243,13 +270,88 @@ function GameStore:transferCoins(fromPlayerId, toPlayerId, amount)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Cenário: Transferência de coins entre jogadores
+function GameStore:transferCoins(fromPlayerId, toPlayerId, amount)
+    if amount <= 0 then
+        return { success = false, error = "Invalid amount" }
+    end
+    
+    local fromPlayerCoins = self:getPlayerCoins(fromPlayerId)
+    if fromPlayerCoins < amount then
+        return { success = false, error = "Insufficient coins" }
+    end
+    
+    -- Processar transferência
+    self:deductCoins(fromPlayerId, amount)
+    self:addCoins(toPlayerId, amount)
+    
+    -- Registrar transferência
+    self:recordTransfer(fromPlayerId, toPlayerId, amount)
+    
+    -- Notificar jogadores
+    self:sendNotification(fromPlayerId, "Transferred " .. amount .. " coins", "info")
+    self:sendNotification(toPlayerId, "Received " .. amount .. " coins", "success")
+    
+    return { success = true }
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Cenário: Transferência de coins entre jogadores
+function GameStore:transferCoins(fromPlayerId, toPlayerId, amount)
+    if amount <= 0 then
+        return { success = false, error = "Invalid amount" }
+    end
+    
+    local fromPlayerCoins = self:getPlayerCoins(fromPlayerId)
+    if fromPlayerCoins < amount then
+        return { success = false, error = "Insufficient coins" }
+    end
+    
+    -- Processar transferência
+    self:deductCoins(fromPlayerId, amount)
+    self:addCoins(toPlayerId, amount)
+    
+    -- Registrar transferência
+    self:recordTransfer(fromPlayerId, toPlayerId, amount)
+    
+    -- Notificar jogadores
+    self:sendNotification(fromPlayerId, "Transferred " .. amount .. " coins", "info")
+    self:sendNotification(toPlayerId, "Received " .. amount .. " coins", "success")
+    
+    return { success = true }
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Caso de Uso 3: Sistema de Promoções**
 
 ```lua
 -- Cenário: Sistema de promoções e descontos
 function GameStore:applyPromotion(offerId, discountPercent)
+    -- Função: GameStore
     local offer = self:getOffer(offerId)
     if not offer then
+    -- Verificação condicional
         return { success = false, error = "Offer not found" }
     end
     
@@ -272,21 +374,26 @@ end
 ```lua
 -- Teste de validação de ofertas
 function GameStore:validateOffer(offer)
+    -- Função: GameStore
     local errors = {}
     
     if not offer.name or offer.name == "" then
+    -- Verificação condicional
         table.insert(errors, "Name is required")
     end
     
     if not offer.price or offer.price <= 0 then
+    -- Verificação condicional
         table.insert(errors, "Price must be greater than 0")
     end
     
     if offer.price > self.settings.maxPrice then
+    -- Verificação condicional
         table.insert(errors, "Price exceeds maximum allowed")
     end
     
     if not offer.category then
+    -- Verificação condicional
         table.insert(errors, "Category is required")
     end
     
@@ -302,6 +409,7 @@ end
 ```lua
 -- Simulação de processo de compra
 function GameStore:simulatePurchase(playerId, offerId, quantity)
+    -- Função: GameStore
     print("=== Simulação de Compra ===")
     print("Jogador ID:", playerId)
     print("Oferta ID:", offerId)
@@ -309,6 +417,7 @@ function GameStore:simulatePurchase(playerId, offerId, quantity)
     
     local offer = self:getOffer(offerId)
     if offer then
+    -- Verificação condicional
         print("Oferta:", offer.name)
         print("Preço:", offer.price)
         print("Categoria:", offer.category)
@@ -321,6 +430,7 @@ function GameStore:simulatePurchase(playerId, offerId, quantity)
     print("Custo total:", totalCost)
     
     if playerCoins >= totalCost then
+    -- Verificação condicional
         print("✅ Compra possível")
     else
         print("❌ Coins insuficientes")
@@ -346,6 +456,7 @@ end
 ### **Estruturas de Dados**
 ```lua
 -- Estrutura de uma oferta
+    --  Estrutura de uma oferta (traduzido)
 Offer = {
     id = number,
     name = string,

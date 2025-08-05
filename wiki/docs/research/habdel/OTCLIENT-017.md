@@ -27,6 +27,7 @@ Analisar profundamente o sistema **Sistema de Guilds** do OTClient usando metodo
 ### **Estrutura do Sistema**
 ```lua
 -- Exemplo de estrutura do sistema Sistema de Guilds
+    --  Exemplo de estrutura do sistema Sistema de Guilds (traduzido)
 -- Será preenchido durante a análise
 ```
 
@@ -38,6 +39,7 @@ Analisar profundamente o sistema **Sistema de Guilds** do OTClient usando metodo
 ### **APIs e Interfaces**
 ```lua
 -- APIs principais do sistema
+    --  APIs principais do sistema (traduzido)
 -- Será documentado durante a análise
 ```
 

@@ -94,6 +94,7 @@ Scrollbar padrão com funcionalidades básicas.
 
 ```lua
 -- Estrutura do UIScrollBar
+    --  Estrutura do UIScrollBar (traduzido)
 {
     orientation = 'vertical',    -- 'vertical' ou 'horizontal'
     value = 0,                   -- Valor atual
@@ -112,6 +113,7 @@ Scrollbar padrão com funcionalidades básicas.
 
 ```lua
 -- Estrutura do UIScrollArea
+    --  Estrutura do UIScrollArea (traduzido)
 {
     verticalScrollBar = nil,     -- Scrollbar vertical
     horizontalScrollBar = nil,   -- Scrollbar horizontal
@@ -125,6 +127,7 @@ Scrollbar padrão com funcionalidades básicas.
 
 Navegação por páginas de conteúdo.
 
+#### Nível Basic
 ```lua
 -- Estrutura de Paginação
 {
@@ -136,6 +139,47 @@ Navegação por páginas de conteúdo.
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Estrutura de Paginação
+{
+    currentPage = 1,             -- Página atual
+    totalPages = 1,              -- Total de páginas
+    itemsPerPage = 25,           -- Itens por página
+    totalItems = 0,              -- Total de itens
+    navigation = {}              -- Controles de navegação
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Estrutura de Paginação
+{
+    currentPage = 1,             -- Página atual
+    totalPages = 1,              -- Total de páginas
+    itemsPerPage = 25,           -- Itens por página
+    totalItems = 0,              -- Total de itens
+    navigation = {}              -- Controles de navegação
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🐍 API Lua
@@ -144,9 +188,11 @@ Navegação por páginas de conteúdo.
 
 ```lua
 -- Criar scrollbar
+    --  Criar scrollbar (traduzido)
 local scrollBar = UIScrollBar.create()
 
 -- Configurar valores
+    --  Configurar valores (traduzido)
 scrollBar:setValue(value)
 scrollBar:setMinimum(min)
 scrollBar:setMaximum(max)
@@ -159,6 +205,7 @@ scrollBar:onIncrement()
 scrollBar:onDecrement()
 
 -- Propriedades
+    --  Propriedades (traduzido)
 scrollBar:setOrientation('vertical')
 scrollBar:setPixelsScroll(true)
 scrollBar:setMouseScroll(true)
@@ -171,10 +218,12 @@ scrollBar:setMouseScroll(true)
 local scrollArea = g_ui.createWidget('UIScrollArea', parent)
 
 -- Configurar scrollbars
+    --  Configurar scrollbars (traduzido)
 scrollArea:setVerticalScrollBar(verticalBar)
 scrollArea:setHorizontalScrollBar(horizontalBar)
 
 -- Controle de offset
+    --  Controle de offset (traduzido)
 scrollArea:setVirtualOffset({x=0, y=0})
 scrollArea:getVirtualOffset()
 
@@ -188,6 +237,7 @@ scrollArea:setInverted(true)
 ```lua
 -- Configurar paginação
 function setupPagination(totalItems, itemsPerPage)
+    -- Função: setupPagination
     local currentPage = 1
     local totalPages = math.ceil(totalItems / itemsPerPage)
     
@@ -201,7 +251,9 @@ end
 
 -- Navegar entre páginas
 function nextPage(pagination)
+    -- Função: nextPage
     if pagination.currentPage < pagination.totalPages then
+    -- Verificação condicional
         pagination.currentPage = pagination.currentPage + 1
         return true
     end
@@ -209,7 +261,9 @@ function nextPage(pagination)
 end
 
 function prevPage(pagination)
+    -- Função: prevPage
     if pagination.currentPage > 1 then
+    -- Verificação condicional
         pagination.currentPage = pagination.currentPage - 1
         return true
     end
@@ -223,6 +277,7 @@ end
 
 ### 🎯 **Implementação Completa**
 
+#### Inicialização e Configuração
 ```lua
 -- Classe UIScrollBar
 UIScrollBar = extends(UIWidget, 'UIScrollBar')
@@ -245,6 +300,10 @@ local function calcValues(self)
                       incrementButton:getMarginRight())
         center = self:getX() + math.floor(self:getWidth() / 2)
     end
+```
+
+#### Funcionalidade 1
+```lua
 
     local range = self.maximum - self.minimum + 1
     local proportion
@@ -269,6 +328,10 @@ local function calcValues(self)
         else
             offset = -math.floor((self:getWidth() - px) / 2) + decrementButton:getMarginRect().width
         end
+```
+
+#### Funcionalidade 2
+```lua
     elseif range > 1 and self.value == self.maximum then
         if self.orientation == 'vertical' then
             offset = math.floor((self:getHeight() - px) / 2) - incrementButton:getMarginRect().height
@@ -291,6 +354,10 @@ local function calcValues(self)
         slider:setSize({width = px, height = px})
         slider:setPosition({x = self:getX() + offset, y = center - math.floor(px / 2)})
     end
+```
+
+#### Funcionalidade 3
+```lua
 
     if self.showValue then
         local valueLabel = self:getChildById('valueLabel')
@@ -331,6 +398,10 @@ local function parseSliderPos(self, slider, mousePos, mouseMoved)
         local percent = (mousePos.x - self:getX() - self.hotDistance) / pxrange
         newvalue = self.minimum + math.floor(percent * range)
     end
+```
+
+#### Funcionalidade 4
+```lua
 
     newvalue = math.max(self.minimum, math.min(self.maximum, newvalue))
     if newvalue ~= self.value then
@@ -362,6 +433,10 @@ function UIScrollBar.create()
     scrollbar.scrollSize = nil
     return scrollbar
 end
+```
+
+#### Funcionalidade 5
+```lua
 
 -- Configurar após criação
 function UIScrollBar:onSetup()
@@ -383,6 +458,10 @@ function UIScrollBar:onSetup()
     g_mouse.bindPress(sliderButton, function(mousePos, mouseButton)
         parseSliderPress(self, sliderButton, mousePos, mouseButton)
     end)
+```
+
+#### Funcionalidade 6
+```lua
 
     updateSlider(self)
 
@@ -420,6 +499,10 @@ function UIScrollBar:onStyleApply(styleName, styleNode)
         elseif name == 'parent-scroll' then
             self.scrollSize = value
         end
+```
+
+#### Funcionalidade 7
+```lua
     end
 end
 
@@ -443,6 +526,10 @@ function UIScrollBar:onIncrement()
     else
         self:increment()
     end
+```
+
+#### Funcionalidade 8
+```lua
 end
 
 -- Decrementar valor
@@ -466,6 +553,10 @@ function UIScrollBar:setMaximum(maximum)
     if self.minimum > maximum then
         self:setMinimum(maximum)
     end
+```
+
+#### Funcionalidade 9
+```lua
     if self.value > maximum then
         self:setValue(maximum)
     else
@@ -487,6 +578,10 @@ function UIScrollBar:setMinimum(minimum)
     else
         updateSlider(self)
     end
+```
+
+#### Funcionalidade 10
+```lua
 end
 
 -- Definir valor atual
@@ -509,6 +604,10 @@ function UIScrollBar:setOrientation(orientation)
     self.orientation = orientation
     updateSlider(self)
 end
+```
+
+#### Funcionalidade 11
+```lua
 
 -- Evento de mudança de geometria
 function UIScrollBar:onGeometryChange()
@@ -531,6 +630,10 @@ function UIScrollBar:onMouseWheel(mousePos, mouseWheel)
             if self.value >= self.maximum then
                 return false
             end
+```
+
+#### Funcionalidade 12
+```lua
             self:increment()
         end
     else
@@ -553,6 +656,10 @@ end
 function UIScrollBar:getMaximum()
     return self.maximum
 end
+```
+
+#### Funcionalidade 13
+```lua
 
 function UIScrollBar:getMinimum()
     return self.minimum
@@ -575,6 +682,10 @@ function UIScrollBar:getShowValue()
 end
 
 function UIScrollBar:getSymbol()
+```
+
+#### Finalização
+```lua
     return self.symbol
 end
 
@@ -715,6 +826,7 @@ HorizontalScrollBar < UIScrollBar
 
 ### 🎯 **Implementação Completa**
 
+#### Inicialização e Configuração
 ```lua
 -- Classe UIScrollArea
 UIScrollArea = extends(UIWidget, 'UIScrollArea')
@@ -748,6 +860,10 @@ function UIScrollArea:updateScrollBars()
             scrollbar:setMinimum(0)
             scrollbar:setMaximum(scrollHeight)
         end
+```
+
+#### Funcionalidade 1
+```lua
     end
 
     local scrollbar = self.horizontalScrollBar
@@ -771,6 +887,10 @@ function UIScrollArea:updateScrollBars()
     self.lastScrollWidth = scrollWidth
     self.lastScrollHeight = scrollHeight
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 -- Definir scrollbar vertical
 function UIScrollArea:setVerticalScrollBar(scrollbar)
@@ -793,6 +913,10 @@ function UIScrollArea:setHorizontalScrollBar(scrollbar)
         self:setVirtualOffset(virtualOffset)
         signalcall(self.onScrollChange, self, virtualOffset)
     end)
+```
+
+#### Funcionalidade 3
+```lua
     self:updateScrollBars()
 end
 
@@ -816,6 +940,10 @@ function UIScrollArea:setVirtualOffset(offset)
     self.virtualOffset = offset
     self:updateChildrenOffset()
 end
+```
+
+#### Finalização
+```lua
 
 -- Atualizar offset dos filhos
 function UIScrollArea:updateChildrenOffset()
@@ -848,10 +976,12 @@ end
 local BasicScrollSystem = {}
 
 function BasicScrollSystem.createBasicScroll(parent)
+    -- Função: BasicScrollSystem
     local scrollArea = g_ui.createWidget('UIScrollArea', parent)
     scrollArea:setSize({width = 300, height = 200})
     
     -- Criar scrollbar vertical
+    --  Criar scrollbar vertical (traduzido)
     local verticalScrollBar = g_ui.createWidget('VerticalScrollBar', parent)
     verticalScrollBar:setPosition({x = 310, y = 0})
     verticalScrollBar:setSize({width = 13, height = 200})
@@ -860,6 +990,7 @@ function BasicScrollSystem.createBasicScroll(parent)
     
     -- Adicionar conteúdo
     for i = 1, 20 do
+    -- Loop de repetição
         local label = g_ui.createWidget('Label', scrollArea)
         label:setText('Item ' .. i)
         label:setPosition({x = 10, y = (i-1) * 25})
@@ -870,11 +1001,13 @@ function BasicScrollSystem.createBasicScroll(parent)
 end
 
 -- Uso
+    --  Uso (traduzido)
 local scrollArea = BasicScrollSystem.createBasicScroll(parent)
 ```
 
 ### 🎨 **Exemplo 2: Sistema de Paginação**
 
+#### Inicialização e Configuração
 ```lua
 local PaginationSystem = {}
 
@@ -919,6 +1052,10 @@ function PaginationSystem.createPagination(parent, totalItems, itemsPerPage)
             PaginationSystem.updateContent(contentArea, pagination)
             PaginationSystem.updateControls(paginationPanel, pagination)
         end
+```
+
+#### Funcionalidade 1
+```lua
     end
     
     -- Botão próximo
@@ -949,6 +1086,10 @@ function PaginationSystem.createPagination(parent, totalItems, itemsPerPage)
     
     return container, pagination
 end
+```
+
+#### Funcionalidade 2
+```lua
 
 function PaginationSystem.updateContent(contentArea, pagination)
     -- Limpar conteúdo atual
@@ -978,6 +1119,10 @@ function PaginationSystem.updateControls(paginationPanel, pagination)
     prevButton:setEnabled(pagination.currentPage > 1)
     nextButton:setEnabled(pagination.currentPage < pagination.totalPages)
 end
+```
+
+#### Finalização
+```lua
 
 -- Uso
 local container, pagination = PaginationSystem.createPagination(parent, 100, 10)
@@ -989,10 +1134,12 @@ local container, pagination = PaginationSystem.createPagination(parent, 100, 10)
 local AdvancedScrollSystem = {}
 
 function AdvancedScrollSystem.createAdvancedScroll(parent)
+    -- Função: AdvancedScrollSystem
     local scrollArea = g_ui.createWidget('UIScrollArea', parent)
     scrollArea:setSize({width = 500, height = 400})
     
     -- Scrollbar vertical
+    --  Scrollbar vertical (traduzido)
     local verticalScrollBar = g_ui.createWidget('VerticalScrollBar', scrollArea)
     verticalScrollBar:setPosition({x = 510, y = 0})
     verticalScrollBar:setSize({width = 13, height = 400})
@@ -1002,6 +1149,7 @@ function AdvancedScrollSystem.createAdvancedScroll(parent)
     scrollArea:setVerticalScrollBar(verticalScrollBar)
     
     -- Scrollbar horizontal
+    --  Scrollbar horizontal (traduzido)
     local horizontalScrollBar = g_ui.createWidget('HorizontalScrollBar', scrollArea)
     horizontalScrollBar:setPosition({x = 0, y = 410})
     horizontalScrollBar:setSize({width = 500, height = 13})
@@ -1016,8 +1164,11 @@ function AdvancedScrollSystem.createAdvancedScroll(parent)
     gridPanel:setSize({width = 800, height = 600})
     
     -- Criar grid de itens
+    --  Criar grid de itens (traduzido)
     for row = 1, 20 do
+    -- Loop de repetição
         for col = 1, 10 do
+    -- Loop de repetição
             local item = g_ui.createWidget('UIItem', gridPanel)
             item:setPosition({x = (col-1) * 80, y = (row-1) * 30})
             item:setSize({width = 75, height = 25})
@@ -1026,6 +1177,7 @@ function AdvancedScrollSystem.createAdvancedScroll(parent)
     end
     
     -- Eventos de scroll
+    --  Eventos de scroll (traduzido)
     scrollArea.onScrollChange = function(area, offset)
         print('Scroll offset:', offset.x, offset.y)
     end
@@ -1034,6 +1186,7 @@ function AdvancedScrollSystem.createAdvancedScroll(parent)
 end
 
 -- Uso
+    --  Uso (traduzido)
 local advancedScroll = AdvancedScrollSystem.createAdvancedScroll(parent)
 ```
 
@@ -1045,7 +1198,9 @@ local advancedScroll = AdvancedScrollSystem.createAdvancedScroll(parent)
 
 ```lua
 -- ✅ BOM: Sempre definir range adequado
+    --  ✅ BOM: Sempre definir range adequado (traduzido)
 function setupScrollBarWithRange(scrollBar, min, max, step)
+    -- Função: setupScrollBarWithRange
     scrollBar:setMinimum(min)
     scrollBar:setMaximum(max)
     scrollBar:setStep(step)
@@ -1054,18 +1209,23 @@ end
 
 -- ✅ BOM: Configurar scroll por pixels quando necessário
 function setupPixelScroll(scrollBar, enabled)
+    -- Função: setupPixelScroll
     scrollBar:setPixelsScroll(enabled)
     if enabled then
+    -- Verificação condicional
         scrollBar:setStep(1)
     end
 end
 
 -- ✅ BOM: Validar valores antes de definir
+    --  ✅ BOM: Validar valores antes de definir (traduzido)
 function validateScrollValue(scrollBar, value)
+    -- Função: validateScrollValue
     local min = scrollBar:getMinimum()
     local max = scrollBar:getMaximum()
     
     if value < min then
+    -- Verificação condicional
         value = min
     elseif value > max then
         value = max
@@ -1077,6 +1237,21 @@ end
 
 ### 🎨 **Organização de Conteúdo**
 
+#### Nível Basic
+```lua
+-- ✅ BOM: Organizar conteúdo em containers
+function organizeScrollContent(scrollArea, contentCreator)
+    local container = g_ui.createWidget('Panel', scrollArea)
+end
+-- ✅ BOM: Usar layouts para organização automática
+function setupScrollWithLayout(scrollArea, layoutType)
+    -- Adicionar conteúdo
+        local item = g_ui.createWidget('Label', scrollArea)
+    end
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- ✅ BOM: Organizar conteúdo em containers
 function organizeScrollContent(scrollArea, contentCreator)
@@ -1100,11 +1275,46 @@ function setupScrollWithLayout(scrollArea, layoutType)
 end
 ```
 
+#### Nível Advanced
+```lua
+-- ✅ BOM: Organizar conteúdo em containers
+function organizeScrollContent(scrollArea, contentCreator)
+    local container = g_ui.createWidget('Panel', scrollArea)
+    container:setSize({width = 1000, height = 1000}) -- Tamanho virtual
+    
+    contentCreator(container)
+    
+    return container
+end
+
+-- ✅ BOM: Usar layouts para organização automática
+function setupScrollWithLayout(scrollArea, layoutType)
+    scrollArea:setLayout(layoutType)
+    
+    -- Adicionar conteúdo
+    for i = 1, 50 do
+        local item = g_ui.createWidget('Label', scrollArea)
+        item:setText('Item ' .. i)
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔧 **Performance Otimizada**
 
 ```lua
 -- ✅ BOM: Lazy loading de conteúdo
 function setupLazyScrollContent(scrollArea, totalItems, itemCreator)
+    -- Função: setupLazyScrollContent
     local visibleItems = 20
     local currentOffset = 0
     
@@ -1112,6 +1322,7 @@ function setupLazyScrollContent(scrollArea, totalItems, itemCreator)
         scrollArea:clearChildren()
         
         for i = currentOffset + 1, math.min(currentOffset + visibleItems, totalItems) do
+    -- Loop de repetição
             local item = itemCreator(i)
             scrollArea:addChild(item)
         end
@@ -1120,6 +1331,7 @@ function setupLazyScrollContent(scrollArea, totalItems, itemCreator)
     scrollArea.onScrollChange = function(area, offset)
         local newOffset = math.floor(offset.y / 25) -- Altura do item
         if newOffset ~= currentOffset then
+    -- Verificação condicional
             currentOffset = newOffset
             loadVisibleItems()
         end
@@ -1144,9 +1356,11 @@ end
 
 ```lua
 -- Virtual scrolling para grandes listas
+    --  Virtual scrolling para grandes listas (traduzido)
 local VirtualScrollSystem = {}
 
 function VirtualScrollSystem.createVirtualScroll(parent, totalItems, itemHeight)
+    -- Função: VirtualScrollSystem
     local scrollArea = g_ui.createWidget('UIScrollArea', parent)
     local scrollBar = g_ui.createWidget('VerticalScrollBar', scrollArea)
     
@@ -1157,6 +1371,7 @@ function VirtualScrollSystem.createVirtualScroll(parent, totalItems, itemHeight)
     
     -- Criar apenas itens visíveis
     for i = 1, visibleItems do
+    -- Loop de repetição
         local item = g_ui.createWidget('Label', scrollArea)
         item:setSize({width = scrollArea:getWidth(), height = itemHeight})
         item:setPosition({x = 0, y = (i-1) * itemHeight})
@@ -1168,8 +1383,10 @@ function VirtualScrollSystem.createVirtualScroll(parent, totalItems, itemHeight)
         local startIndex = math.floor(offset.y / itemHeight) + 1
         
         for i, item in ipairs(virtualItems) do
+    -- Loop de repetição
             local itemIndex = startIndex + i - 1
             if itemIndex <= totalItems then
+    -- Verificação condicional
                 item:setText('Item ' .. itemIndex)
                 item:setVisible(true)
             else
@@ -1194,6 +1411,7 @@ local function measureScrollPerformance()
     scrollBar:setMaximum(1000)
     
     for i = 1, 100 do
+    -- Loop de repetição
         scrollBar:setValue(i)
     end
     
@@ -1211,10 +1429,12 @@ local scrollMetrics = {
 }
 
 function trackScrollCreation()
+    -- Função: trackScrollCreation
     scrollMetrics.created = scrollMetrics.created + 1
 end
 
 function trackScrollUpdate(duration)
+    -- Função: trackScrollUpdate
     scrollMetrics.updated = scrollMetrics.updated + 1
     scrollMetrics.totalTime = scrollMetrics.totalTime + duration
 end

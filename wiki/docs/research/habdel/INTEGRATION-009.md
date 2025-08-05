@@ -110,6 +110,7 @@ A **INTEGRATION-009** realiza a validação completa da integração entre OTCli
 ```cpp
 // Testes funcionais de integração
 class IntegrationFunctionalTests {
+    -- Classe: IntegrationFunctionalTests
 public:
     // Testes de comunicação
     static bool testCommunication();
@@ -145,6 +146,7 @@ private:
 ```cpp
 // Testes de performance de integração
 class IntegrationPerformanceTests {
+    -- Classe: IntegrationPerformanceTests
 public:
     // Testes de latência
     static bool testNetworkLatency();
@@ -180,6 +182,7 @@ private:
 ```cpp
 // Testes de segurança de integração
 class IntegrationSecurityTests {
+    -- Classe: IntegrationSecurityTests
 public:
     // Testes de autenticação
     static bool testPasswordSecurity();
@@ -217,6 +220,7 @@ private:
 ```cpp
 // Testes de compatibilidade de integração
 class IntegrationCompatibilityTests {
+    -- Classe: IntegrationCompatibilityTests
 public:
     // Testes de protocolos
     static bool testOpenCodeProtocol();
@@ -330,6 +334,7 @@ private:
 ```cpp
 // Ferramentas de validação de integração
 class IntegrationValidationTools {
+    -- Classe: IntegrationValidationTools
 public:
     // Ferramentas de teste funcional
     static TestRunner& getFunctionalTestRunner();
@@ -362,6 +367,7 @@ public:
 ```cpp
 // Ferramentas de monitoramento de integração
 class IntegrationMonitoringTools {
+    -- Classe: IntegrationMonitoringTools
 public:
     // Monitoramento de sistema
     static SystemMonitor& getSystemMonitor();

@@ -128,6 +128,7 @@ Realizar uma análise profunda e completa do Sistema de Inventário do Canary, m
 O sistema de inventário do Canary é uma arquitetura complexa e modular que gerencia todos os itens que um jogador pode carregar. Ele é composto por vários componentes interconectados:
 
 #### **1.1 Sistema de Slots**
+#### Nível Basic
 ```cpp
 enum Slots_t : uint8_t {
     CONST_SLOT_WHEREEVER = 0,
@@ -148,9 +149,69 @@ enum Slots_t : uint8_t {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+enum Slots_t : uint8_t {
+    CONST_SLOT_WHEREEVER = 0,
+    CONST_SLOT_HEAD = 1,
+    CONST_SLOT_NECKLACE = 2,
+    CONST_SLOT_BACKPACK = 3,
+    CONST_SLOT_ARMOR = 4,
+    CONST_SLOT_RIGHT = 5,
+    CONST_SLOT_LEFT = 6,
+    CONST_SLOT_LEGS = 7,
+    CONST_SLOT_FEET = 8,
+    CONST_SLOT_RING = 9,
+    CONST_SLOT_AMMO = 10,
+    CONST_SLOT_STORE_INBOX = 11,
+
+    CONST_SLOT_FIRST = CONST_SLOT_HEAD,
+    CONST_SLOT_LAST = CONST_SLOT_STORE_INBOX,
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+enum Slots_t : uint8_t {
+    CONST_SLOT_WHEREEVER = 0,
+    CONST_SLOT_HEAD = 1,
+    CONST_SLOT_NECKLACE = 2,
+    CONST_SLOT_BACKPACK = 3,
+    CONST_SLOT_ARMOR = 4,
+    CONST_SLOT_RIGHT = 5,
+    CONST_SLOT_LEFT = 6,
+    CONST_SLOT_LEGS = 7,
+    CONST_SLOT_FEET = 8,
+    CONST_SLOT_RING = 9,
+    CONST_SLOT_AMMO = 10,
+    CONST_SLOT_STORE_INBOX = 11,
+
+    CONST_SLOT_FIRST = CONST_SLOT_HEAD,
+    CONST_SLOT_LAST = CONST_SLOT_STORE_INBOX,
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **1.2 Estrutura do Inventário do Player**
 ```cpp
 class Player : public Creature, public Cylinder, public Bankable {
+    -- Classe: Player
 private:
     // Array de itens do inventário
     std::shared_ptr<Item> inventory[CONST_SLOT_LAST + 1] = {};
@@ -169,6 +230,7 @@ private:
 ```
 
 #### **1.3 Estrutura OpenContainer**
+#### Nível Basic
 ```cpp
 struct OpenContainer {
     std::shared_ptr<Container> container;
@@ -176,11 +238,45 @@ struct OpenContainer {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+struct OpenContainer {
+    std::shared_ptr<Container> container;
+    uint16_t index;
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+struct OpenContainer {
+    std::shared_ptr<Container> container;
+    uint16_t index;
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **2. Sistema de Containers**
 
 #### **2.1 Classe Container**
 ```cpp
 class Container : public Item, public Cylinder {
+    -- Classe: Container
 private:
     uint32_t m_maxItems {};
     uint32_t maxSize {};
@@ -219,6 +315,7 @@ public:
 #### **2.2 ContainerIterator**
 ```cpp
 class ContainerIterator {
+    -- Classe: ContainerIterator
 public:
     ContainerIterator(const std::shared_ptr<Container> &container, size_t maxDepth);
     
@@ -252,6 +349,7 @@ private:
 #### **3.1 Cálculo de Capacidade**
 ```cpp
 class Player {
+    -- Classe: Player
 public:
     uint32_t getBaseCapacity() const;
     uint32_t getCapacity() const;
@@ -264,6 +362,7 @@ private:
 ```
 
 #### **3.2 Sistema de Peso**
+#### Nível Basic
 ```cpp
 // Cálculo do peso total do inventário
 uint32_t inventoryWeight = 0;
@@ -283,11 +382,69 @@ uint32_t getFreeCapacity() const {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Cálculo do peso total do inventário
+uint32_t inventoryWeight = 0;
+
+// Capacidade base e bônus
+uint32_t capacity = 40000;
+uint32_t bonusCapacity = 0;
+
+// Capacidade total = base + bônus
+uint32_t getCapacity() const {
+    return capacity + bonusCapacity;
+}
+
+// Capacidade livre = total - peso atual
+uint32_t getFreeCapacity() const {
+    return getCapacity() - inventoryWeight;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Cálculo do peso total do inventário
+uint32_t inventoryWeight = 0;
+
+// Capacidade base e bônus
+uint32_t capacity = 40000;
+uint32_t bonusCapacity = 0;
+
+// Capacidade total = base + bônus
+uint32_t getCapacity() const {
+    return capacity + bonusCapacity;
+}
+
+// Capacidade livre = total - peso atual
+uint32_t getFreeCapacity() const {
+    return getCapacity() - inventoryWeight;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **4. Sistema de Containers Abertos**
 
 #### **4.1 Gerenciamento de Containers**
 ```cpp
 class Player {
+    -- Classe: Player
 public:
     void addContainer(uint8_t cid, const std::shared_ptr<Container> &container);
     void closeContainer(uint8_t cid);
@@ -302,6 +459,7 @@ private:
 ```
 
 #### **4.2 Operações de Container**
+#### Nível Basic
 ```cpp
 // Adicionar container
 void Player::addContainer(uint8_t cid, const std::shared_ptr<Container> &container) {
@@ -320,11 +478,67 @@ std::shared_ptr<Container> Player::getContainerByID(uint8_t cid) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Adicionar container
+void Player::addContainer(uint8_t cid, const std::shared_ptr<Container> &container) {
+    openContainers[cid] = { container, 0 };
+}
+
+// Fechar container
+void Player::closeContainer(uint8_t cid) {
+    openContainers.erase(cid);
+}
+
+// Obter container por ID
+std::shared_ptr<Container> Player::getContainerByID(uint8_t cid) {
+    auto it = openContainers.find(cid);
+    return it != openContainers.end() ? it->second.container : nullptr;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Adicionar container
+void Player::addContainer(uint8_t cid, const std::shared_ptr<Container> &container) {
+    openContainers[cid] = { container, 0 };
+}
+
+// Fechar container
+void Player::closeContainer(uint8_t cid) {
+    openContainers.erase(cid);
+}
+
+// Obter container por ID
+std::shared_ptr<Container> Player::getContainerByID(uint8_t cid) {
+    auto it = openContainers.find(cid);
+    return it != openContainers.end() ? it->second.container : nullptr;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **5. Sistema de Consultas (Cylinder)**
 
 #### **5.1 Interface Cylinder**
 ```cpp
 class Cylinder {
+    -- Classe: Cylinder
 public:
     virtual ReturnValue queryAdd(int32_t index, const std::shared_ptr<Thing> &thing, uint32_t count, uint32_t flags, const std::shared_ptr<Creature> &actor = nullptr) = 0;
     virtual ReturnValue queryMaxCount(int32_t index, const std::shared_ptr<Thing> &thing, uint32_t count, uint32_t &maxQueryCount, uint32_t flags) = 0;
@@ -346,6 +560,7 @@ public:
 ```
 
 #### **5.2 Implementação no Container**
+#### Nível Basic
 ```cpp
 ReturnValue Container::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing, uint32_t count, uint32_t flags, const std::shared_ptr<Creature> &actor) {
     if (!unlocked) {
@@ -375,11 +590,89 @@ ReturnValue Container::queryAdd(int32_t index, const std::shared_ptr<Thing> &thi
 }
 ```
 
+#### Nível Intermediate
+```cpp
+ReturnValue Container::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing, uint32_t count, uint32_t flags, const std::shared_ptr<Creature> &actor) {
+    if (!unlocked) {
+        return RETURNVALUE_NOTPOSSIBLE;
+    }
+    
+    if (thing == nullptr) {
+        return RETURNVALUE_NOTPOSSIBLE;
+    }
+    
+    if (index == INDEX_WHEREEVER && size() >= capacity()) {
+        return RETURNVALUE_CONTAINERNOTENOUGHROOM;
+    }
+    
+    // Verificar se o item pode ser adicionado
+    const std::shared_ptr<Item> &item = thing->getItem();
+    if (!item) {
+        return RETURNVALUE_NOTPOSSIBLE;
+    }
+    
+    // Verificar capacidade
+    if (item->isStackable() && count != item->getItemCount()) {
+        return RETURNVALUE_NOTPOSSIBLE;
+    }
+    
+    return RETURNVALUE_NOERROR;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+ReturnValue Container::queryAdd(int32_t index, const std::shared_ptr<Thing> &thing, uint32_t count, uint32_t flags, const std::shared_ptr<Creature> &actor) {
+    if (!unlocked) {
+        return RETURNVALUE_NOTPOSSIBLE;
+    }
+    
+    if (thing == nullptr) {
+        return RETURNVALUE_NOTPOSSIBLE;
+    }
+    
+    if (index == INDEX_WHEREEVER && size() >= capacity()) {
+        return RETURNVALUE_CONTAINERNOTENOUGHROOM;
+    }
+    
+    // Verificar se o item pode ser adicionado
+    const std::shared_ptr<Item> &item = thing->getItem();
+    if (!item) {
+        return RETURNVALUE_NOTPOSSIBLE;
+    }
+    
+    // Verificar capacidade
+    if (item->isStackable() && count != item->getItemCount()) {
+        return RETURNVALUE_NOTPOSSIBLE;
+    }
+    
+    return RETURNVALUE_NOERROR;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **6. Sistema de Itens do Inventário**
 
 #### **6.1 Métodos do Player para Inventário**
 ```cpp
 class Player {
+    -- Classe: Player
 public:
     // Obter item do inventário
     std::shared_ptr<Item> getInventoryItem(Slots_t slot) const;
@@ -407,6 +700,7 @@ public:
 ```
 
 #### **6.2 Sistema de Stash**
+#### Nível Basic
 ```cpp
 // Adicionar item do stash
 ReturnValue Player::addItemFromStash(uint16_t itemId, uint32_t itemCount) {
@@ -449,11 +743,115 @@ void Player::stowItem(const std::shared_ptr<Item> &item, uint32_t count, bool al
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Adicionar item do stash
+ReturnValue Player::addItemFromStash(uint16_t itemId, uint32_t itemCount) {
+    auto stashCount = getStashItemCount(itemId);
+    if (stashCount < itemCount) {
+        return RETURNVALUE_NOTPOSSIBLE;
+    }
+    
+    // Criar item e adicionar ao inventário
+    auto item = Item::CreateItem(itemId, itemCount);
+    if (!item) {
+        return RETURNVALUE_NOTPOSSIBLE;
+    }
+    
+    ReturnValue ret = addItem(item);
+    if (ret == RETURNVALUE_NOERROR) {
+        // Remover do stash
+        withdrawItem(itemId, itemCount);
+    }
+    
+    return ret;
+}
+
+// Guardar item no stash
+void Player::stowItem(const std::shared_ptr<Item> &item, uint32_t count, bool allItems) {
+    if (!item) {
+        return;
+    }
+    
+    uint32_t itemCount = allItems ? item->getItemCount() : count;
+    if (itemCount > item->getItemCount()) {
+        itemCount = item->getItemCount();
+    }
+    
+    // Adicionar ao stash
+    addItemOnStash(item->getID(), itemCount);
+    
+    // Remover do inventário
+    removeItem(item, itemCount);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Adicionar item do stash
+ReturnValue Player::addItemFromStash(uint16_t itemId, uint32_t itemCount) {
+    auto stashCount = getStashItemCount(itemId);
+    if (stashCount < itemCount) {
+        return RETURNVALUE_NOTPOSSIBLE;
+    }
+    
+    // Criar item e adicionar ao inventário
+    auto item = Item::CreateItem(itemId, itemCount);
+    if (!item) {
+        return RETURNVALUE_NOTPOSSIBLE;
+    }
+    
+    ReturnValue ret = addItem(item);
+    if (ret == RETURNVALUE_NOERROR) {
+        // Remover do stash
+        withdrawItem(itemId, itemCount);
+    }
+    
+    return ret;
+}
+
+// Guardar item no stash
+void Player::stowItem(const std::shared_ptr<Item> &item, uint32_t count, bool allItems) {
+    if (!item) {
+        return;
+    }
+    
+    uint32_t itemCount = allItems ? item->getItemCount() : count;
+    if (itemCount > item->getItemCount()) {
+        itemCount = item->getItemCount();
+    }
+    
+    // Adicionar ao stash
+    addItemOnStash(item->getID(), itemCount);
+    
+    // Remover do inventário
+    removeItem(item, itemCount);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **7. Sistema de Containers Especializados**
 
 #### **7.1 DepotChest**
 ```cpp
 class DepotChest : public Container {
+    -- Classe: DepotChest
 public:
     explicit DepotChest(uint16_t type);
     
@@ -468,6 +866,7 @@ private:
 #### **7.2 Inbox**
 ```cpp
 class Inbox : public Container {
+    -- Classe: Inbox
 public:
     explicit Inbox(uint16_t type);
     
@@ -478,6 +877,7 @@ public:
 #### **7.3 RewardChest**
 ```cpp
 class RewardChest : public Container {
+    -- Classe: RewardChest
 public:
     explicit RewardChest(uint16_t type);
     
@@ -490,6 +890,7 @@ public:
 #### **8.1 Envio de Dados do Inventário**
 ```cpp
 class ProtocolGame {
+    -- Classe: ProtocolGame
 public:
     // Enviar item do inventário
     void sendInventoryItem(Slots_t slot, const std::shared_ptr<Item> &item);
@@ -508,6 +909,7 @@ public:
 #### **8.2 Recebimento de Dados**
 ```cpp
 class ProtocolGame {
+    -- Classe: ProtocolGame
 public:
     // Processar imbuements do inventário
     void parseInventoryImbuements(NetworkMessage &msg);
@@ -519,6 +921,7 @@ public:
 #### **9.1 Managed Containers**
 ```cpp
 class Player {
+    -- Classe: Player
 public:
     std::shared_ptr<Container> refreshManagedContainer(ObjectCategory_t category, const std::shared_ptr<Container> &container, bool isLootContainer, bool loading = false);
     std::shared_ptr<Container> getManagedContainer(ObjectCategory_t category, bool isLootContainer) const;
@@ -530,6 +933,7 @@ private:
 ```
 
 #### **9.2 ObjectCategory_t**
+#### Nível Basic
 ```cpp
 enum ObjectCategory_t : uint8_t {
     OBJECTCATEGORY_NONE = 0,
@@ -562,11 +966,95 @@ enum ObjectCategory_t : uint8_t {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+enum ObjectCategory_t : uint8_t {
+    OBJECTCATEGORY_NONE = 0,
+    OBJECTCATEGORY_ARMORS = 1,
+    OBJECTCATEGORY_AMULETS = 2,
+    OBJECTCATEGORY_BOOTS = 3,
+    OBJECTCATEGORY_CONTAINERS = 4,
+    OBJECTCATEGORY_DECORATION = 5,
+    OBJECTCATEGORY_FOOD = 6,
+    OBJECTCATEGORY_HELMETS = 7,
+    OBJECTCATEGORY_LEGS = 8,
+    OBJECTCATEGORY_OTHERS = 9,
+    OBJECTCATEGORY_POTIONS = 10,
+    OBJECTCATEGORY_RINGS = 11,
+    OBJECTCATEGORY_RUNES = 12,
+    OBJECTCATEGORY_SHIELDS = 13,
+    OBJECTCATEGORY_TOOLS = 14,
+    OBJECTCATEGORY_VALUABLES = 15,
+    OBJECTCATEGORY_AMMO = 16,
+    OBJECTCATEGORY_AXES = 17,
+    OBJECTCATEGORY_CLUBS = 18,
+    OBJECTCATEGORY_DISTANCEWEAPONS = 19,
+    OBJECTCATEGORY_SWORDS = 20,
+    OBJECTCATEGORY_WANDS = 21,
+    OBJECTCATEGORY_CREATUREPRODUCTS = 22,
+    OBJECTCATEGORY_RETRIEVAL = 23,
+    OBJECTCATEGORY_GOLD = 24,
+    OBJECTCATEGORY_DEFAULT = 25,
+    OBJECTCATEGORY_UNASSIGNED = 26,
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+enum ObjectCategory_t : uint8_t {
+    OBJECTCATEGORY_NONE = 0,
+    OBJECTCATEGORY_ARMORS = 1,
+    OBJECTCATEGORY_AMULETS = 2,
+    OBJECTCATEGORY_BOOTS = 3,
+    OBJECTCATEGORY_CONTAINERS = 4,
+    OBJECTCATEGORY_DECORATION = 5,
+    OBJECTCATEGORY_FOOD = 6,
+    OBJECTCATEGORY_HELMETS = 7,
+    OBJECTCATEGORY_LEGS = 8,
+    OBJECTCATEGORY_OTHERS = 9,
+    OBJECTCATEGORY_POTIONS = 10,
+    OBJECTCATEGORY_RINGS = 11,
+    OBJECTCATEGORY_RUNES = 12,
+    OBJECTCATEGORY_SHIELDS = 13,
+    OBJECTCATEGORY_TOOLS = 14,
+    OBJECTCATEGORY_VALUABLES = 15,
+    OBJECTCATEGORY_AMMO = 16,
+    OBJECTCATEGORY_AXES = 17,
+    OBJECTCATEGORY_CLUBS = 18,
+    OBJECTCATEGORY_DISTANCEWEAPONS = 19,
+    OBJECTCATEGORY_SWORDS = 20,
+    OBJECTCATEGORY_WANDS = 21,
+    OBJECTCATEGORY_CREATUREPRODUCTS = 22,
+    OBJECTCATEGORY_RETRIEVAL = 23,
+    OBJECTCATEGORY_GOLD = 24,
+    OBJECTCATEGORY_DEFAULT = 25,
+    OBJECTCATEGORY_UNASSIGNED = 26,
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **10. Sistema de Loot e Recompensas**
 
 #### **10.1 Loot Pouch**
 ```cpp
 class Player {
+    -- Classe: Player
 public:
     std::shared_ptr<Container> getLootPouch();
     
@@ -578,6 +1066,7 @@ private:
 #### **10.2 Sistema de Recompensas**
 ```cpp
 class Player {
+    -- Classe: Player
 public:
     std::shared_ptr<Reward> getReward(uint64_t rewardId, bool autoCreate);
     void removeReward(uint64_t rewardId);
@@ -596,6 +1085,7 @@ private:
 #### **11.1 DepotChest e DepotLocker**
 ```cpp
 class Player {
+    -- Classe: Player
 public:
     std::shared_ptr<DepotChest> getDepotChest(uint32_t depotId, bool autoCreate);
     std::shared_ptr<DepotLocker> getDepotLocker(uint32_t depotId);
@@ -614,6 +1104,7 @@ private:
 #### **12.1 Store Inbox**
 ```cpp
 class Player {
+    -- Classe: Player
 public:
     std::shared_ptr<Container> getStoreInbox() const;
     ItemsTierCountList getStoreInboxItemsId() const;
@@ -644,6 +1135,7 @@ O inventário utiliza um sistema de slots fixos com IDs específicos:
 ### **2. Sistema de Peso e Capacidade Sofisticado**
 
 #### **2.1 Cálculo Dinâmico**
+#### Nível Basic
 ```cpp
 // Capacidade total = base + bônus
 uint32_t getCapacity() const {
@@ -656,6 +1148,49 @@ uint32_t getFreeCapacity() const {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Capacidade total = base + bônus
+uint32_t getCapacity() const {
+    return capacity + bonusCapacity;
+}
+
+// Capacidade livre = total - peso atual
+uint32_t getFreeCapacity() const {
+    return getCapacity() - inventoryWeight;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Capacidade total = base + bônus
+uint32_t getCapacity() const {
+    return capacity + bonusCapacity;
+}
+
+// Capacidade livre = total - peso atual
+uint32_t getFreeCapacity() const {
+    return getCapacity() - inventoryWeight;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2.2 Sistema de Bônus**
 - Capacidade base: 40000
 - Bônus de capacidade: Modificável via itens/efeitos
@@ -666,6 +1201,7 @@ uint32_t getFreeCapacity() const {
 #### **3.1 ContainerIterator Inteligente**
 ```cpp
 class ContainerIterator {
+    -- Classe: ContainerIterator
     // Suporte a profundidade máxima
     // Detecção de ciclos
     // Navegação hierárquica
@@ -674,6 +1210,7 @@ class ContainerIterator {
 ```
 
 #### **3.2 Sistema de Consultas Robusto**
+#### Nível Basic
 ```cpp
 // Verificações antes de adicionar itens
 ReturnValue queryAdd(...);
@@ -683,6 +1220,47 @@ ReturnValue queryRemove(...);
 ReturnValue queryMaxCount(...);
 // Determinação de destino
 std::shared_ptr<Cylinder> queryDestination(...);
+```
+
+#### Nível Intermediate
+```cpp
+// Verificações antes de adicionar itens
+ReturnValue queryAdd(...);
+// Verificações antes de remover itens
+ReturnValue queryRemove(...);
+// Verificações de capacidade máxima
+ReturnValue queryMaxCount(...);
+// Determinação de destino
+std::shared_ptr<Cylinder> queryDestination(...);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificações antes de adicionar itens
+ReturnValue queryAdd(...);
+// Verificações antes de remover itens
+ReturnValue queryRemove(...);
+// Verificações de capacidade máxima
+ReturnValue queryMaxCount(...);
+// Determinação de destino
+std::shared_ptr<Cylinder> queryDestination(...);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **4. Sistema de Stash Inovador**
@@ -695,6 +1273,7 @@ std::shared_ptr<Cylinder> queryDestination(...);
 - **Listagem**: `getStashItems()`
 
 #### **4.2 Integração com Inventário**
+#### Nível Basic
 ```cpp
 // Adicionar do stash para inventário
 ReturnValue addItemFromStash(uint16_t itemId, uint32_t itemCount);
@@ -703,9 +1282,45 @@ ReturnValue addItemFromStash(uint16_t itemId, uint32_t itemCount);
 void stowItem(const std::shared_ptr<Item> &item, uint32_t count, bool allItems);
 ```
 
+#### Nível Intermediate
+```cpp
+// Adicionar do stash para inventário
+ReturnValue addItemFromStash(uint16_t itemId, uint32_t itemCount);
+
+// Mover do inventário para stash
+void stowItem(const std::shared_ptr<Item> &item, uint32_t count, bool allItems);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Adicionar do stash para inventário
+ReturnValue addItemFromStash(uint16_t itemId, uint32_t itemCount);
+
+// Mover do inventário para stash
+void stowItem(const std::shared_ptr<Item> &item, uint32_t count, bool allItems);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **5. Sistema de Containers Gerenciados**
 
 #### **5.1 Categorização Automática**
+#### Nível Basic
 ```cpp
 enum ObjectCategory_t : uint8_t {
     OBJECTCATEGORY_ARMORS = 1,
@@ -715,10 +1330,77 @@ enum ObjectCategory_t : uint8_t {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+enum ObjectCategory_t : uint8_t {
+    OBJECTCATEGORY_ARMORS = 1,
+    OBJECTCATEGORY_AMULETS = 2,
+    OBJECTCATEGORY_BOOTS = 3,
+    // ... 26 categorias diferentes
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+enum ObjectCategory_t : uint8_t {
+    OBJECTCATEGORY_ARMORS = 1,
+    OBJECTCATEGORY_AMULETS = 2,
+    OBJECTCATEGORY_BOOTS = 3,
+    // ... 26 categorias diferentes
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **5.2 Gerenciamento Automático**
+#### Nível Basic
 ```cpp
 // Container principal e secundário por categoria
 std::map<ObjectCategory_t, std::pair<std::shared_ptr<Container>, std::shared_ptr<Container>>> m_managedContainers;
+```
+
+#### Nível Intermediate
+```cpp
+// Container principal e secundário por categoria
+std::map<ObjectCategory_t, std::pair<std::shared_ptr<Container>, std::shared_ptr<Container>>> m_managedContainers;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Container principal e secundário por categoria
+std::map<ObjectCategory_t, std::pair<std::shared_ptr<Container>, std::shared_ptr<Container>>> m_managedContainers;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **6. Sistema de Redes Otimizado**
@@ -730,6 +1412,7 @@ std::map<ObjectCategory_t, std::pair<std::shared_ptr<Container>, std::shared_ptr
 - Integração com market
 
 #### **6.2 Sincronização Bidirecional**
+#### Nível Basic
 ```cpp
 // Servidor → Cliente
 void sendInventoryItem(Slots_t slot, const std::shared_ptr<Item> &item);
@@ -737,6 +1420,43 @@ void sendInventoryIds();
 
 // Cliente → Servidor
 void parseInventoryImbuements(NetworkMessage &msg);
+```
+
+#### Nível Intermediate
+```cpp
+// Servidor → Cliente
+void sendInventoryItem(Slots_t slot, const std::shared_ptr<Item> &item);
+void sendInventoryIds();
+
+// Cliente → Servidor
+void parseInventoryImbuements(NetworkMessage &msg);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Servidor → Cliente
+void sendInventoryItem(Slots_t slot, const std::shared_ptr<Item> &item);
+void sendInventoryIds();
+
+// Cliente → Servidor
+void parseInventoryImbuements(NetworkMessage &msg);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **7. Sistema de Loot e Recompensas**
@@ -747,6 +1467,7 @@ void parseInventoryImbuements(NetworkMessage &msg);
 - Gerenciamento automático
 
 #### **7.2 Sistema de Recompensas**
+#### Nível Basic
 ```cpp
 // Múltiplas recompensas por jogador
 std::map<uint64_t, std::shared_ptr<Reward>> rewardMap;
@@ -755,20 +1476,119 @@ std::map<uint64_t, std::shared_ptr<Reward>> rewardMap;
 std::shared_ptr<RewardChest> rewardChest;
 ```
 
+#### Nível Intermediate
+```cpp
+// Múltiplas recompensas por jogador
+std::map<uint64_t, std::shared_ptr<Reward>> rewardMap;
+
+// Container especializado
+std::shared_ptr<RewardChest> rewardChest;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Múltiplas recompensas por jogador
+std::map<uint64_t, std::shared_ptr<Reward>> rewardMap;
+
+// Container especializado
+std::shared_ptr<RewardChest> rewardChest;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **8. Sistema de Depot Completo**
 
 #### **8.1 Múltiplos Depósitos**
+#### Nível Basic
 ```cpp
 // Múltiplos depósitos por jogador
 std::map<uint32_t, std::shared_ptr<DepotLocker>> depotLockerMap;
 std::map<uint32_t, std::shared_ptr<DepotChest>> depotChests;
 ```
 
+#### Nível Intermediate
+```cpp
+// Múltiplos depósitos por jogador
+std::map<uint32_t, std::shared_ptr<DepotLocker>> depotLockerMap;
+std::map<uint32_t, std::shared_ptr<DepotChest>> depotChests;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Múltiplos depósitos por jogador
+std::map<uint32_t, std::shared_ptr<DepotLocker>> depotLockerMap;
+std::map<uint32_t, std::shared_ptr<DepotChest>> depotChests;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **8.2 Sistema de Mail**
+#### Nível Basic
 ```cpp
 // Caixa de entrada integrada
 std::shared_ptr<Inbox> inbox;
 void onReceiveMail();
+```
+
+#### Nível Intermediate
+```cpp
+// Caixa de entrada integrada
+std::shared_ptr<Inbox> inbox;
+void onReceiveMail();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Caixa de entrada integrada
+std::shared_ptr<Inbox> inbox;
+void onReceiveMail();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **9. Integração com Market**
@@ -779,9 +1599,39 @@ void onReceiveMail();
 - Sincronização automática
 
 #### **9.2 Sistema de Vendas**
+#### Nível Basic
 ```cpp
 // Lista de itens para venda
 void sendSaleItemList(const std::vector<ShopBlock> &shopVector, const std::map<uint16_t, uint16_t> &inventoryMap);
+```
+
+#### Nível Intermediate
+```cpp
+// Lista de itens para venda
+void sendSaleItemList(const std::vector<ShopBlock> &shopVector, const std::map<uint16_t, uint16_t> &inventoryMap);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Lista de itens para venda
+void sendSaleItemList(const std::vector<ShopBlock> &shopVector, const std::map<uint16_t, uint16_t> &inventoryMap);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **10. Otimizações de Performance**
@@ -792,12 +1642,84 @@ void sendSaleItemList(const std::vector<ShopBlock> &shopVector, const std::map<u
 - Atualizações incrementais
 
 #### **10.2 Sistema de Eventos**
+#### Nível Basic
+#### Nível Basic
 ```cpp
 // Eventos de inventário
 void onUpdateInventoryItem(const std::shared_ptr<Item> &oldItem, const std::shared_ptr<Item> &newItem);
 void onRemoveInventoryItem(const std::shared_ptr<Item> &item);
 void onEquipInventory();
 void onDeEquipInventory();
+```
+
+#### Nível Intermediate
+```cpp
+// Eventos de inventário
+void onUpdateInventoryItem(const std::shared_ptr<Item> &oldItem, const std::shared_ptr<Item> &newItem);
+void onRemoveInventoryItem(const std::shared_ptr<Item> &item);
+void onEquipInventory();
+void onDeEquipInventory();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Eventos de inventário
+void onUpdateInventoryItem(const std::shared_ptr<Item> &oldItem, const std::shared_ptr<Item> &newItem);
+void onRemoveInventoryItem(const std::shared_ptr<Item> &item);
+void onEquipInventory();
+void onDeEquipInventory();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+#### Nível Intermediate
+```cpp
+// Eventos de inventário
+void onUpdateInventoryItem(const std::shared_ptr<Item> &oldItem, const std::shared_ptr<Item> &newItem);
+void onRemoveInventoryItem(const std::shared_ptr<Item> &item);
+void onEquipInventory();
+void onDeEquipInventory();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Eventos de inventário
+void onUpdateInventoryItem(const std::shared_ptr<Item> &oldItem, const std::shared_ptr<Item> &newItem);
+void onRemoveInventoryItem(const std::shared_ptr<Item> &item);
+void onEquipInventory();
+void onDeEquipInventory();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **11. Padrões de Design Identificados**
@@ -875,6 +1797,7 @@ O Sistema de Inventário do Canary é responsável por gerenciar todos os itens 
 #### **Exemplos Práticos**
 
 **1. Criando um Container Básico**
+#### Nível Basic
 ```cpp
 // Criar container simples
 auto container = Container::create(ITEM_BAG, 20, true, false);
@@ -888,7 +1811,53 @@ uint16_t freeSlots = container->getFreeSlots();
 uint32_t weight = container->getWeight();
 ```
 
+#### Nível Intermediate
+```cpp
+// Criar container simples
+auto container = Container::create(ITEM_BAG, 20, true, false);
+
+// Adicionar item ao container
+auto item = Item::CreateItem(ITEM_GOLD_COIN, 100);
+container->addItem(item);
+
+// Verificar capacidade
+uint16_t freeSlots = container->getFreeSlots();
+uint32_t weight = container->getWeight();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Criar container simples
+auto container = Container::create(ITEM_BAG, 20, true, false);
+
+// Adicionar item ao container
+auto item = Item::CreateItem(ITEM_GOLD_COIN, 100);
+container->addItem(item);
+
+// Verificar capacidade
+uint16_t freeSlots = container->getFreeSlots();
+uint32_t weight = container->getWeight();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 **2. Gerenciando Inventário do Player**
+#### Nível Basic
 ```cpp
 // Obter item do inventário
 auto item = player->getInventoryItem(CONST_SLOT_BACKPACK);
@@ -902,7 +1871,53 @@ auto newItem = Item::CreateItem(ITEM_GOLD_COIN, 100);
 ReturnValue ret = player->addItem(newItem);
 ```
 
+#### Nível Intermediate
+```cpp
+// Obter item do inventário
+auto item = player->getInventoryItem(CONST_SLOT_BACKPACK);
+
+// Verificar capacidade
+uint32_t freeCapacity = player->getFreeCapacity();
+uint32_t totalCapacity = player->getCapacity();
+
+// Adicionar item ao inventário
+auto newItem = Item::CreateItem(ITEM_GOLD_COIN, 100);
+ReturnValue ret = player->addItem(newItem);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Obter item do inventário
+auto item = player->getInventoryItem(CONST_SLOT_BACKPACK);
+
+// Verificar capacidade
+uint32_t freeCapacity = player->getFreeCapacity();
+uint32_t totalCapacity = player->getCapacity();
+
+// Adicionar item ao inventário
+auto newItem = Item::CreateItem(ITEM_GOLD_COIN, 100);
+ReturnValue ret = player->addItem(newItem);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 **3. Sistema de Stash**
+#### Nível Basic
 ```cpp
 // Adicionar item ao stash
 player->addItemOnStash(ITEM_GOLD_COIN, 1000);
@@ -918,7 +1933,57 @@ auto item = player->getInventoryItem(CONST_SLOT_BACKPACK);
 player->stowItem(item, 50, false);
 ```
 
+#### Nível Intermediate
+```cpp
+// Adicionar item ao stash
+player->addItemOnStash(ITEM_GOLD_COIN, 1000);
+
+// Verificar quantidade no stash
+uint32_t count = player->getStashItemCount(ITEM_GOLD_COIN);
+
+// Retirar do stash
+player->withdrawItem(ITEM_GOLD_COIN, 500);
+
+// Mover item do inventário para stash
+auto item = player->getInventoryItem(CONST_SLOT_BACKPACK);
+player->stowItem(item, 50, false);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Adicionar item ao stash
+player->addItemOnStash(ITEM_GOLD_COIN, 1000);
+
+// Verificar quantidade no stash
+uint32_t count = player->getStashItemCount(ITEM_GOLD_COIN);
+
+// Retirar do stash
+player->withdrawItem(ITEM_GOLD_COIN, 500);
+
+// Mover item do inventário para stash
+auto item = player->getInventoryItem(CONST_SLOT_BACKPACK);
+player->stowItem(item, 50, false);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 **4. Sistema de Containers Abertos**
+#### Nível Basic
 ```cpp
 // Abrir container
 auto container = Container::create(ITEM_BAG, 20);
@@ -931,7 +1996,51 @@ auto openContainer = player->getContainerByID(0);
 player->closeContainer(0);
 ```
 
+#### Nível Intermediate
+```cpp
+// Abrir container
+auto container = Container::create(ITEM_BAG, 20);
+player->addContainer(0, container);
+
+// Obter container aberto
+auto openContainer = player->getContainerByID(0);
+
+// Fechar container
+player->closeContainer(0);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Abrir container
+auto container = Container::create(ITEM_BAG, 20);
+player->addContainer(0, container);
+
+// Obter container aberto
+auto openContainer = player->getContainerByID(0);
+
+// Fechar container
+player->closeContainer(0);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 **5. Sistema de Depot**
+#### Nível Basic
 ```cpp
 // Obter depósito
 auto depotChest = player->getDepotChest(1, true);
@@ -941,7 +2050,45 @@ auto depotLocker = player->getDepotLocker(1);
 bool nearDepot = player->isNearDepotBox();
 ```
 
+#### Nível Intermediate
+```cpp
+// Obter depósito
+auto depotChest = player->getDepotChest(1, true);
+auto depotLocker = player->getDepotLocker(1);
+
+// Verificar se está perto do depósito
+bool nearDepot = player->isNearDepotBox();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Obter depósito
+auto depotChest = player->getDepotChest(1, true);
+auto depotLocker = player->getDepotLocker(1);
+
+// Verificar se está perto do depósito
+bool nearDepot = player->isNearDepotBox();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 **6. Sistema de Recompensas**
+#### Nível Basic
 ```cpp
 // Obter recompensa
 auto reward = player->getReward(12345, true);
@@ -952,6 +2099,49 @@ player->getRewardList(rewards);
 
 // Obter container de recompensas
 auto rewardChest = player->getRewardChest();
+```
+
+#### Nível Intermediate
+```cpp
+// Obter recompensa
+auto reward = player->getReward(12345, true);
+
+// Obter lista de recompensas
+std::vector<uint64_t> rewards;
+player->getRewardList(rewards);
+
+// Obter container de recompensas
+auto rewardChest = player->getRewardChest();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Obter recompensa
+auto reward = player->getReward(12345, true);
+
+// Obter lista de recompensas
+std::vector<uint64_t> rewards;
+player->getRewardList(rewards);
+
+// Obter container de recompensas
+auto rewardChest = player->getRewardChest();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 #### **Exercícios Práticos**
@@ -974,6 +2164,7 @@ Crie um sistema que distribui recompensas automaticamente para jogadores.
 #### **Conceitos Avançados**
 
 **1. Sistema de Consultas**
+#### Nível Basic
 ```cpp
 // Verificar se pode adicionar item
 ReturnValue ret = container->queryAdd(0, item, 1, 0, player);
@@ -982,7 +2173,48 @@ if (ret == RETURNVALUE_NOERROR) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Verificar se pode adicionar item
+ReturnValue ret = container->queryAdd(0, item, 1, 0, player);
+if (ret == RETURNVALUE_NOERROR) {
+    container->addItem(item);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificar se pode adicionar item
+ReturnValue ret = container->queryAdd(0, item, 1, 0, player);
+if (ret == RETURNVALUE_NOERROR) {
+    container->addItem(item);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 **2. ContainerIterator**
+#### Nível Basic
+```cpp
+
+```
+
+#### Nível Intermediate
 ```cpp
 // Iterar sobre todos os itens em um container
 auto iterator = container->iterator();
@@ -993,13 +2225,106 @@ while (iterator.hasNext()) {
 }
 ```
 
+#### Nível Advanced
+```cpp
+// Iterar sobre todos os itens em um container
+auto iterator = container->iterator();
+while (iterator.hasNext()) {
+    auto item = *iterator;
+    // Processar item
+    iterator.advance();
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 **3. Sistema de Eventos**
+#### Nível Basic
+#### Nível Basic
 ```cpp
 // Eventos de inventário
 void onUpdateInventoryItem(const std::shared_ptr<Item> &oldItem, const std::shared_ptr<Item> &newItem);
 void onRemoveInventoryItem(const std::shared_ptr<Item> &item);
 void onEquipInventory();
 void onDeEquipInventory();
+```
+
+#### Nível Intermediate
+```cpp
+// Eventos de inventário
+void onUpdateInventoryItem(const std::shared_ptr<Item> &oldItem, const std::shared_ptr<Item> &newItem);
+void onRemoveInventoryItem(const std::shared_ptr<Item> &item);
+void onEquipInventory();
+void onDeEquipInventory();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Eventos de inventário
+void onUpdateInventoryItem(const std::shared_ptr<Item> &oldItem, const std::shared_ptr<Item> &newItem);
+void onRemoveInventoryItem(const std::shared_ptr<Item> &item);
+void onEquipInventory();
+void onDeEquipInventory();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+#### Nível Intermediate
+```cpp
+// Eventos de inventário
+void onUpdateInventoryItem(const std::shared_ptr<Item> &oldItem, const std::shared_ptr<Item> &newItem);
+void onRemoveInventoryItem(const std::shared_ptr<Item> &item);
+void onEquipInventory();
+void onDeEquipInventory();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Eventos de inventário
+void onUpdateInventoryItem(const std::shared_ptr<Item> &oldItem, const std::shared_ptr<Item> &newItem);
+void onRemoveInventoryItem(const std::shared_ptr<Item> &item);
+void onEquipInventory();
+void onDeEquipInventory();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 #### **Boas Práticas**

@@ -15,6 +15,7 @@ O sistema de efeitos gerencia partículas, animações especiais e efeitos sonor
 
 ## 🔧 API C++
 
+#### Nível Basic
 ```cpp
 // Criação de efeito de partículas
 EffectPtr effect = EffectManager::createEffect("fire");
@@ -22,8 +23,42 @@ effect->setPosition(position);
 effect->start();
 ```
 
+#### Nível Intermediate
+```cpp
+// Criação de efeito de partículas
+EffectPtr effect = EffectManager::createEffect("fire");
+effect->setPosition(position);
+effect->start();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Criação de efeito de partículas
+EffectPtr effect = EffectManager::createEffect("fire");
+effect->setPosition(position);
+effect->start();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🐍 API Lua
 
+#### Nível Basic
 ```lua
 -- Efeito de explosão
 local effect = g_effects.createEffect("explosion")
@@ -31,11 +66,46 @@ effect:setPosition(player:getPosition())
 effect:start()
 ```
 
+#### Nível Intermediate
+```lua
+-- Efeito de explosão
+local effect = g_effects.createEffect("explosion")
+effect:setPosition(player:getPosition())
+effect:start()
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Efeito de explosão
+local effect = g_effects.createEffect("explosion")
+effect:setPosition(player:getPosition())
+effect:start()
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 💡 Exemplos
 
 ```lua
 -- Sistema de efeitos completo
+    --  Sistema de efeitos completo (traduzido)
 function onSpellCast(spell)
+    -- Função: onSpellCast
     local effect = g_effects.createEffect(spell.effectName)
     effect:setPosition(spell.target)
     effect:start()

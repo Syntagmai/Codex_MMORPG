@@ -1,0 +1,1943 @@
+{
+  "metadata": {
+    "analysis_date": "2025-08-04 20:29:27",
+    "files_analyzed": [
+      "leia_me.md",
+      "Guia_Inicio_Rapido.md",
+      "Glossario_Tecnico.md",
+      "Conceitos_Basicos.md",
+      "Troubleshooting_Comum.md",
+      "dashboard/task_master.md",
+      "dashboard/integrated_task_manager.md",
+      "docs/otclient/guides/Module_Development_Guide.md",
+      "docs/otclient/guides/Getting_Started_Guide.md"
+    ],
+    "total_links_found": 157,
+    "broken_links": 146,
+    "valid_links": 11
+  },
+  "broken_links": [
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Getting_Started_Guide|🚀 Guia de Primeiros Passos",
+      "link_url": null,
+      "target": "docs/otclient/guides/Getting_Started_Guide|🚀 Guia de Primeiros Passos.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "docs\\otclient\\guides\\Getting_Started_Guide.md",
+        "docs\\otclient\\guides\\Getting_Started_Guide",
+        "docs\\otclient\\guides\\Getting_Started_Guide_backup_20250804_194251"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Cheat_Sheet|📋 Cheat Sheet",
+      "link_url": null,
+      "target": "docs/otclient/guides/Cheat_Sheet|📋 Cheat Sheet.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": []
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Module_Development_Guide|🧩 Criando Seu Primeiro Módulo",
+      "link_url": null,
+      "target": "docs/otclient/guides/Module_Development_Guide|🧩 Criando Seu Primeiro Módulo.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "docs\\otclient\\guides\\Module_Development_Guide_backup_20250804_194251.md",
+        "docs\\otclient\\guides\\Module_Development_Guide_backup_20250804_194202_backup_20250804_194251.md",
+        "docs\\otclient\\guides\\OTUI_Module_Development_Guide.md"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Getting_Started_Guide|Guia de Primeiros Passos",
+      "link_url": null,
+      "target": "docs/otclient/guides/Getting_Started_Guide|Guia de Primeiros Passos.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "docs\\otclient\\guides\\Getting_Started_Guide.md",
+        "docs\\otclient\\guides\\Getting_Started_Guide",
+        "docs\\otclient\\guides\\Getting_Started_Guide_backup_20250804_194251"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Cheat_Sheet|Cheat Sheet",
+      "link_url": null,
+      "target": "docs/otclient/guides/Cheat_Sheet|Cheat Sheet.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": []
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/UI_System_Guide|Sistema de Interface",
+      "link_url": null,
+      "target": "docs/otclient/guides/UI_System_Guide|Sistema de Interface.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Combat_System_Guide|⚔️ Sistema de Combate",
+      "link_url": null,
+      "target": "docs/otclient/guides/Combat_System_Guide|⚔️ Sistema de Combate.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Item_System_Guide|🎒 Sistema de Itens",
+      "link_url": null,
+      "target": "docs/otclient/guides/Item_System_Guide|🎒 Sistema de Itens.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Creature_System_Guide|🐉 Sistema de Criaturas",
+      "link_url": null,
+      "target": "docs/otclient/guides/Creature_System_Guide|🐉 Sistema de Criaturas.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/World_System_Guide|🌍 Sistema de Mundo",
+      "link_url": null,
+      "target": "docs/otclient/guides/World_System_Guide|🌍 Sistema de Mundo.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Map_System_Guide|🗺️ Sistema de Mapas",
+      "link_url": null,
+      "target": "docs/otclient/guides/Map_System_Guide|🗺️ Sistema de Mapas.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/UI_System_Guide|🖥️ Sistema de Interface",
+      "link_url": null,
+      "target": "docs/otclient/guides/UI_System_Guide|🖥️ Sistema de Interface.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/OTUI_Module_Development_Guide|🧩 Desenvolvimento OTUI",
+      "link_url": null,
+      "target": "docs/otclient/guides/OTUI_Module_Development_Guide|🧩 Desenvolvimento OTUI.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "update\\documentation\\migrated_module_creator\\README",
+        "log\\task_12_2_module_structure_report",
+        "legacy_docs\\src\\research\\habdel\\OTCLIENT-006_module_system"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Animation_System_Guide|🎬 Sistema de Animações",
+      "link_url": null,
+      "target": "docs/otclient/guides/Animation_System_Guide|🎬 Sistema de Animações.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Graphics_System_Guide|🎨 Sistema Gráfico",
+      "link_url": null,
+      "target": "docs/otclient/guides/Graphics_System_Guide|🎨 Sistema Gráfico.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Effects_System_Guide|✨ Sistema de Efeitos",
+      "link_url": null,
+      "target": "docs/otclient/guides/Effects_System_Guide|✨ Sistema de Efeitos.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Module_System_Guide|🧩 Sistema de Módulos",
+      "link_url": null,
+      "target": "docs/otclient/guides/Module_System_Guide|🧩 Sistema de Módulos.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Module_Development_Guide|💻 Desenvolvimento de Módulos",
+      "link_url": null,
+      "target": "docs/otclient/guides/Module_Development_Guide|💻 Desenvolvimento de Módulos.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "docs\\otclient\\guides\\Module_Development_Guide_backup_20250804_194251.md",
+        "docs\\otclient\\guides\\Module_Development_Guide_backup_20250804_194202_backup_20250804_194251.md",
+        "docs\\otclient\\guides\\OTUI_Module_Development_Guide.md"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Configuration_Guide|⚙️ Sistema de Configuração",
+      "link_url": null,
+      "target": "docs/otclient/guides/Configuration_Guide|⚙️ Sistema de Configuração.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": []
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Advanced_Configuration_Guide|🔧 Configuração Avançada",
+      "link_url": null,
+      "target": "docs/otclient/guides/Advanced_Configuration_Guide|🔧 Configuração Avançada.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "docs\\research\\habdel\\OTCLIENT-009_configuration_system",
+        "docs\\lessons\\otclient\\OTCLIENT-009_configuration_system.md",
+        "legacy_docs\\src\\lessons\\otclient\\OTCLIENT-009_configuration_system.md"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Network_System_Guide|🌐 Sistema de Rede",
+      "link_url": null,
+      "target": "docs/otclient/guides/Network_System_Guide|🌐 Sistema de Rede.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Sound_System_Guide|🔊 Sistema de Som",
+      "link_url": null,
+      "target": "docs/otclient/guides/Sound_System_Guide|🔊 Sistema de Som.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Performance_System_Guide|⚡ Sistema de Performance",
+      "link_url": null,
+      "target": "docs/otclient/guides/Performance_System_Guide|⚡ Sistema de Performance.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Debug_System_Guide|🐛 Sistema de Debug",
+      "link_url": null,
+      "target": "docs/otclient/guides/Debug_System_Guide|🐛 Sistema de Debug.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Protocol_System_Guide|📡 Sistema de Protocolo",
+      "link_url": null,
+      "target": "docs/otclient/guides/Protocol_System_Guide|📡 Sistema de Protocolo.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Lua_API_Reference|📋 API Lua Completa",
+      "link_url": null,
+      "target": "docs/otclient/guides/Lua_API_Reference|📋 API Lua Completa.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\canary\\guides\\lua_api_reference.md",
+        "docs\\otclient\\guides\\Lua_API_Reference_backup_20250804_194251.md",
+        "docs\\canary\\guides\\lua_api_reference"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Drag_Drop_System_Guide|🖱️ Sistema Drag & Drop",
+      "link_url": null,
+      "target": "docs/otclient/guides/Drag_Drop_System_Guide|🖱️ Sistema Drag & Drop.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Cheat_Sheet|📋 Cheat Sheet Completo",
+      "link_url": null,
+      "target": "docs/otclient/guides/Cheat_Sheet|📋 Cheat Sheet Completo.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": []
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/GUIDE-004_Debugging_Avancado|🔍 Debugging Avançado",
+      "link_url": null,
+      "target": "docs/otclient/guides/GUIDE-004_Debugging_Avancado|🔍 Debugging Avançado.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\GUIDE-004_Debugging_Avancado.md",
+        "consolidated\\otclient\\research\\GUIDE-004_Debugging_Avancado.md",
+        "consolidated\\otclient\\research\\GUIDE-004_Debugging_Avancado"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/GUIDE-005_Performance_Otimizacao|⚡ Otimização de Performance",
+      "link_url": null,
+      "target": "docs/otclient/guides/GUIDE-005_Performance_Otimizacao|⚡ Otimização de Performance.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "consolidated\\integration\\comparisons\\INTEGRATION-005_performance_analysis",
+        "update\\documentation\\test_performance_monitor\\TECHNICAL",
+        "consolidated\\otclient\\research\\OTCLIENT-019_performance_system.md"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/GUIDE-006_UI_Avancada|🎨 UI Avançada",
+      "link_url": null,
+      "target": "docs/otclient/guides/GUIDE-006_UI_Avancada|🎨 UI Avançada.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "docs\\research\\habdel\\OTCLIENT-005_ui_framework.md",
+        "consolidated\\otclient\\research\\otclient_ui_system_analysis",
+        "consolidated\\otclient\\research\\GUIDE-006_UI_Avancada.md"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/GUIDE-007_Game_Systems|🎮 Sistemas de Jogo",
+      "link_url": null,
+      "target": "docs/otclient/guides/GUIDE-007_Game_Systems|🎮 Sistemas de Jogo.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "log\\backup_centralization\\canary_game_progress.md",
+        "docs\\otclient\\guides\\GUIDE-007_Game_Systems.md",
+        "consolidated\\canary\\research\\CANARY-007_game_mechanics"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/GUIDE-008_Deploy|🚀 Deploy e Distribuição",
+      "link_url": null,
+      "target": "docs/otclient/guides/GUIDE-008_Deploy|🚀 Deploy e Distribuição.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": []
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/GUIDE-009_Contribuicao|🤝 Como Contribuir",
+      "link_url": null,
+      "target": "docs/otclient/guides/GUIDE-009_Contribuicao|🤝 Como Contribuir.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": []
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/GUIDE-010_Troubleshooting|🔧 Troubleshooting",
+      "link_url": null,
+      "target": "docs/otclient/guides/GUIDE-010_Troubleshooting|🔧 Troubleshooting.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": []
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/CORE-007_Debug_System|🐛 Sistema de Debug",
+      "link_url": null,
+      "target": "docs/otclient/guides/CORE-007_Debug_System|🐛 Sistema de Debug.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "log\\archives\\general\\Relatório_Analise_Debug_Modules_OTClient_20250801_103952.md",
+        "log\\archives\\general\\Relatório_Commit_Analise_Debug_Modules_20250801_103952",
+        "legacy_docs\\src\\research\\habdel\\OTCLIENT-020_debug_system.md"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/CORE-008_Performance_System|⚡ Sistema de Performance",
+      "link_url": null,
+      "target": "docs/otclient/guides/CORE-008_Performance_System|⚡ Sistema de Performance.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "consolidated\\integration\\comparisons\\INTEGRATION-005_performance_analysis",
+        "update\\documentation\\test_performance_monitor\\TECHNICAL",
+        "consolidated\\otclient\\research\\OTCLIENT-019_performance_system.md"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/CORE-009_Logs_System|📝 Sistema de Logs",
+      "link_url": null,
+      "target": "docs/otclient/guides/CORE-009_Logs_System|📝 Sistema de Logs.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System",
+        "consolidated\\otclient\\research\\CORE-009_Logs_System",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System.md"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/CORE-010_Backup_System|💾 Sistema de Backup",
+      "link_url": null,
+      "target": "docs/otclient/guides/CORE-010_Backup_System|💾 Sistema de Backup.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "docs\\otclient\\guides\\Navigation_Index_Categorical_backup_20250804_194251.md",
+        "docs\\otclient\\guides\\GUIDE-008_Deploy_backup_20250804_194251",
+        "docs\\otclient\\guides\\CORE-010_Backup_System_backup_20250804_194251"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Navigation_Index_Alphabetical|📋 Índice Alfabético",
+      "link_url": null,
+      "target": "docs/otclient/guides/Navigation_Index_Alphabetical|📋 Índice Alfabético.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "docs\\otclient\\guides\\Navigation_Index_Categorical_backup_20250804_194251.md",
+        "update\\documentation\\navigation_index_generator\\TECHNICAL",
+        "consolidated\\education\\courses\\courses_index"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Navigation_Index_Categorical|📋 Índice por Categoria",
+      "link_url": null,
+      "target": "docs/otclient/guides/Navigation_Index_Categorical|📋 Índice por Categoria.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "docs\\otclient\\guides\\Navigation_Index_Categorical_backup_20250804_194251.md",
+        "update\\documentation\\navigation_index_generator\\TECHNICAL",
+        "consolidated\\education\\courses\\courses_index"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Navigation_Index_Search|🔍 Índice de Busca",
+      "link_url": null,
+      "target": "docs/otclient/guides/Navigation_Index_Search|🔍 Índice de Busca.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "docs\\otclient\\guides\\Navigation_Index_Categorical_backup_20250804_194251.md",
+        "update\\documentation\\navigation_index_generator\\TECHNICAL",
+        "consolidated\\education\\courses\\courses_index"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Navigation_Index_Story_Based|📖 Índice Baseado em Histórias",
+      "link_url": null,
+      "target": "docs/otclient/guides/Navigation_Index_Story_Based|📖 Índice Baseado em Histórias.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "docs\\otclient\\guides\\Navigation_Index_Categorical_backup_20250804_194251.md",
+        "update\\documentation\\navigation_index_generator\\TECHNICAL",
+        "consolidated\\education\\courses\\courses_index"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Documentation_Status|📊 Status da Documentação",
+      "link_url": null,
+      "target": "docs/otclient/guides/Documentation_Status|📊 Status da Documentação.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": []
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Wiki_Completion_Plan|📋 Plano de Conclusão",
+      "link_url": null,
+      "target": "docs/otclient/guides/Wiki_Completion_Plan|📋 Plano de Conclusão.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "log\\reports\\general\\canary_011_completion_report_20250801_103951.md",
+        "consolidated\\otclient\\research\\Wiki_Completion_Plan.md",
+        "log\\reports\\general\\habdel_stories_completion_final_report_1"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Wiki_Optimization_Report|📈 Relatório de Otimização",
+      "link_url": null,
+      "target": "docs/otclient/guides/Wiki_Optimization_Report|📈 Relatório de Otimização.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "update\\documentation\\migrated_optimization_engine\\TECHNICAL",
+        "docs\\otclient\\guides\\Wiki_Optimization_Report",
+        "docs\\otclient\\guides\\Wiki_Optimization_Report_backup_20250804_194251"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "dashboard/task_master|🎯 Task Master - Sistema Principal",
+      "link_url": null,
+      "target": "dashboard/task_master|🎯 Task Master - Sistema Principal.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": []
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "dashboard/integrated_task_manager|🔄 Task Manager Integrado",
+      "link_url": null,
+      "target": "dashboard/integrated_task_manager|🔄 Task Manager Integrado.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "log\\archives\\game_stories_priority_task",
+        "log\\reports\\task_reports\\git_task_manager_integration_report_1.md",
+        "log\\reports\\task_reports\\qa_report_task_master_agent_20250729_221733_20250801_103951.md"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "integration/|🔗 Pasta de Integração",
+      "link_url": null,
+      "target": "integration/|🔗 Pasta de Integração.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": []
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "habdel/|📊 Pesquisa Habdel",
+      "link_url": null,
+      "target": "habdel/|📊 Pesquisa Habdel.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": []
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Performance_System_Guide|Guia de Performance",
+      "link_url": null,
+      "target": "docs/otclient/guides/Performance_System_Guide|Guia de Performance.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/Network_System_Guide|Sistema de Rede",
+      "link_url": null,
+      "target": "docs/otclient/guides/Network_System_Guide|Sistema de Rede.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/CORE-009_Logs_System|Sistema de Logs",
+      "link_url": null,
+      "target": "docs/otclient/guides/CORE-009_Logs_System|Sistema de Logs.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System",
+        "consolidated\\otclient\\research\\CORE-009_Logs_System",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System.md"
+      ]
+    },
+    {
+      "source_file": "leia_me.md",
+      "link_text": "docs/otclient/guides/GUIDE-009_Contribuicao|Guia de Contribuição",
+      "link_url": null,
+      "target": "docs/otclient/guides/GUIDE-009_Contribuicao|Guia de Contribuição.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": []
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "O que é OTClient?",
+      "link_url": "#-o-que-é-otclient",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Primeiros Passos",
+      "link_url": "#-primeiros-passos",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Criando seu Primeiro Módulo",
+      "link_url": "#-criando-seu-primeiro-módulo",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Conceitos Básicos",
+      "link_url": "#-conceitos-básicos",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Próximos Passos",
+      "link_url": "#-próximos-passos",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Guia de Configuração",
+      "link_url": "../docs/otclient/guides/Configuration_Guide.md",
+      "target": "docs/otclient/guides/Configuration_Guide.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\otclient\\guides\\Graphics_System_Guide.md",
+        "consolidated\\otclient\\research\\Debug_System_Guide.md"
+      ]
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Guia de Desenvolvimento de Módulos",
+      "link_url": "../docs/otclient/guides/Module_Development_Guide.md",
+      "target": "docs/otclient/guides/Module_Development_Guide.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\otclient\\guides\\Graphics_System_Guide.md",
+        "consolidated\\otclient\\research\\Debug_System_Guide.md"
+      ]
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Referência da API Lua",
+      "link_url": "../docs/otclient/guides/Lua_API_Reference.md",
+      "target": "docs/otclient/guides/Lua_API_Reference.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "docs\\canary\\guides\\api_reference",
+        "consolidated\\canary\\research\\api_reference",
+        "legacy_docs\\src\\canary\\guides\\lua_api_reference.md"
+      ]
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Exemplos de Código",
+      "link_url": "../docs/otclient/guides/CodeExamples.md",
+      "target": "docs/otclient/guides/CodeExamples.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": []
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Melhores Práticas",
+      "link_url": "../docs/otclient/guides/BestPractices.md",
+      "target": "docs/otclient/guides/BestPractices.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": []
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Troubleshooting",
+      "link_url": "../docs/otclient/guides/Troubleshooting.md",
+      "target": "docs/otclient/guides/Troubleshooting.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": []
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Guia de Configuração",
+      "link_url": "../docs/otclient/guides/Configuration_Guide.md",
+      "target": "docs/otclient/guides/Configuration_Guide.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\otclient\\guides\\Graphics_System_Guide.md",
+        "consolidated\\otclient\\research\\Debug_System_Guide.md"
+      ]
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Guia de Desenvolvimento de Módulos",
+      "link_url": "../docs/otclient/guides/Module_Development_Guide.md",
+      "target": "docs/otclient/guides/Module_Development_Guide.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\otclient\\guides\\Graphics_System_Guide.md",
+        "consolidated\\otclient\\research\\Debug_System_Guide.md"
+      ]
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Guia de Troubleshooting",
+      "link_url": "../docs/otclient/guides/Troubleshooting.md",
+      "target": "docs/otclient/guides/Troubleshooting.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": []
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Documentação Principal",
+      "link_url": "../README.md",
+      "target": "README.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "update\\documentation\\migrated_module_creator\\README",
+        "update\\documentation\\test_advanced_searcher\\README.md",
+        "update\\documentation\\migrated_aaa_agent_specialization_system\\README.md"
+      ]
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Índice da Wiki",
+      "link_url": "../Wiki_Index.md",
+      "target": "Wiki_Index.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "docs\\otclient\\guides\\Navigation_Index_Categorical_backup_20250804_194251.md",
+        "update\\documentation\\migrated_wiki_optimizer\\TECHNICAL.md",
+        "update\\documentation\\test_wiki_optimizer\\README.md"
+      ]
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Sistema de Busca",
+      "link_url": "../Navigation_Index_Search.md",
+      "target": "Navigation_Index_Search.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "docs\\otclient\\guides\\Navigation_Index_Categorical_backup_20250804_194251.md",
+        "update\\documentation\\navigation_index_generator\\TECHNICAL",
+        "consolidated\\education\\courses\\courses_index"
+      ]
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Troubleshooting",
+      "link_url": "#troubleshooting-comum",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Exemplos Práticos",
+      "link_url": "#criando-seu-primeiro-módulo",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Guia_Inicio_Rapido.md",
+      "link_text": "Referência da API",
+      "link_url": "../docs/otclient/guides/Lua_API_Reference.md",
+      "target": "docs/otclient/guides/Lua_API_Reference.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "docs\\canary\\guides\\api_reference",
+        "consolidated\\canary\\research\\api_reference",
+        "legacy_docs\\src\\canary\\guides\\lua_api_reference.md"
+      ]
+    },
+    {
+      "source_file": "Glossario_Tecnico.md",
+      "link_text": "Conceitos Fundamentais",
+      "link_url": "#-conceitos-fundamentais",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Glossario_Tecnico.md",
+      "link_text": "Linguagens e Tecnologias",
+      "link_url": "#-linguagens-e-tecnologias",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Glossario_Tecnico.md",
+      "link_text": "Arquitetura e Sistemas",
+      "link_url": "#-arquitetura-e-sistemas",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Glossario_Tecnico.md",
+      "link_text": "Interface e UI",
+      "link_url": "#-interface-e-ui",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Glossario_Tecnico.md",
+      "link_text": "Desenvolvimento",
+      "link_url": "#-desenvolvimento",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Glossario_Tecnico.md",
+      "link_text": "Networking e Comunicação",
+      "link_url": "#-networking-e-comunicação",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Glossario_Tecnico.md",
+      "link_text": "Performance e Otimização",
+      "link_url": "#-performance-e-otimização",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Glossario_Tecnico.md",
+      "link_text": "Debug e Troubleshooting",
+      "link_url": "#-debug-e-troubleshooting",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Glossario_Tecnico.md",
+      "link_text": "Guia de Desenvolvimento de Módulos",
+      "link_url": "../docs/otclient/guides/Module_Development_Guide.md",
+      "target": "docs/otclient/guides/Module_Development_Guide.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\otclient\\guides\\Graphics_System_Guide.md",
+        "consolidated\\otclient\\research\\Debug_System_Guide.md"
+      ]
+    },
+    {
+      "source_file": "Glossario_Tecnico.md",
+      "link_text": "Referência da API Lua",
+      "link_url": "../docs/otclient/guides/Lua_API_Reference.md",
+      "target": "docs/otclient/guides/Lua_API_Reference.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "docs\\canary\\guides\\api_reference",
+        "consolidated\\canary\\research\\api_reference",
+        "legacy_docs\\src\\canary\\guides\\lua_api_reference.md"
+      ]
+    },
+    {
+      "source_file": "Glossario_Tecnico.md",
+      "link_text": "Documentação Principal",
+      "link_url": "../README.md",
+      "target": "README.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "update\\documentation\\migrated_module_creator\\README",
+        "update\\documentation\\test_advanced_searcher\\README.md",
+        "update\\documentation\\migrated_aaa_agent_specialization_system\\README.md"
+      ]
+    },
+    {
+      "source_file": "Glossario_Tecnico.md",
+      "link_text": "Índice da Wiki",
+      "link_url": "../Wiki_Index.md",
+      "target": "Wiki_Index.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "docs\\otclient\\guides\\Navigation_Index_Categorical_backup_20250804_194251.md",
+        "update\\documentation\\migrated_wiki_optimizer\\TECHNICAL.md",
+        "update\\documentation\\test_wiki_optimizer\\README.md"
+      ]
+    },
+    {
+      "source_file": "Glossario_Tecnico.md",
+      "link_text": "Sistema de Busca",
+      "link_url": "../Navigation_Index_Search.md",
+      "target": "Navigation_Index_Search.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "docs\\otclient\\guides\\Navigation_Index_Categorical_backup_20250804_194251.md",
+        "update\\documentation\\navigation_index_generator\\TECHNICAL",
+        "consolidated\\education\\courses\\courses_index"
+      ]
+    },
+    {
+      "source_file": "Glossario_Tecnico.md",
+      "link_text": "Exemplos Práticos",
+      "link_url": "#-exemplos-práticos",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Glossario_Tecnico.md",
+      "link_text": "Referência da API",
+      "link_url": "../docs/otclient/guides/Lua_API_Reference.md",
+      "target": "docs/otclient/guides/Lua_API_Reference.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "docs\\canary\\guides\\api_reference",
+        "consolidated\\canary\\research\\api_reference",
+        "legacy_docs\\src\\canary\\guides\\lua_api_reference.md"
+      ]
+    },
+    {
+      "source_file": "Conceitos_Basicos.md",
+      "link_text": "O que é Programação?",
+      "link_url": "#-o-que-é-programação",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Conceitos_Basicos.md",
+      "link_text": "Linguagens de Programação",
+      "link_url": "#-linguagens-de-programação",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Conceitos_Basicos.md",
+      "link_text": "Conceitos de Interface",
+      "link_url": "#-conceitos-de-interface",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Conceitos_Basicos.md",
+      "link_text": "Sistema de Arquivos",
+      "link_url": "#-sistema-de-arquivos",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Conceitos_Basicos.md",
+      "link_text": "Debug e Erros",
+      "link_url": "#-debug-e-erros",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Conceitos_Basicos.md",
+      "link_text": "Exemplos de Código",
+      "link_url": "../docs/otclient/guides/CodeExamples.md",
+      "target": "docs/otclient/guides/CodeExamples.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": []
+    },
+    {
+      "source_file": "Conceitos_Basicos.md",
+      "link_text": "Guia de Desenvolvimento de Módulos",
+      "link_url": "../docs/otclient/guides/Module_Development_Guide.md",
+      "target": "docs/otclient/guides/Module_Development_Guide.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\otclient\\guides\\Graphics_System_Guide.md",
+        "consolidated\\otclient\\research\\Debug_System_Guide.md"
+      ]
+    },
+    {
+      "source_file": "Conceitos_Basicos.md",
+      "link_text": "Referência da API Lua",
+      "link_url": "../docs/otclient/guides/Lua_API_Reference.md",
+      "target": "docs/otclient/guides/Lua_API_Reference.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "docs\\canary\\guides\\api_reference",
+        "consolidated\\canary\\research\\api_reference",
+        "legacy_docs\\src\\canary\\guides\\lua_api_reference.md"
+      ]
+    },
+    {
+      "source_file": "Conceitos_Basicos.md",
+      "link_text": "Melhores Práticas",
+      "link_url": "../docs/otclient/guides/BestPractices.md",
+      "target": "docs/otclient/guides/BestPractices.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": []
+    },
+    {
+      "source_file": "Conceitos_Basicos.md",
+      "link_text": "Documentação Principal",
+      "link_url": "../README.md",
+      "target": "README.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "update\\documentation\\migrated_module_creator\\README",
+        "update\\documentation\\test_advanced_searcher\\README.md",
+        "update\\documentation\\migrated_aaa_agent_specialization_system\\README.md"
+      ]
+    },
+    {
+      "source_file": "Conceitos_Basicos.md",
+      "link_text": "Índice da Wiki",
+      "link_url": "../Wiki_Index.md",
+      "target": "Wiki_Index.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "docs\\otclient\\guides\\Navigation_Index_Categorical_backup_20250804_194251.md",
+        "update\\documentation\\migrated_wiki_optimizer\\TECHNICAL.md",
+        "update\\documentation\\test_wiki_optimizer\\README.md"
+      ]
+    },
+    {
+      "source_file": "Conceitos_Basicos.md",
+      "link_text": "Sistema de Busca",
+      "link_url": "../Navigation_Index_Search.md",
+      "target": "Navigation_Index_Search.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "docs\\otclient\\guides\\Navigation_Index_Categorical_backup_20250804_194251.md",
+        "update\\documentation\\navigation_index_generator\\TECHNICAL",
+        "consolidated\\education\\courses\\courses_index"
+      ]
+    },
+    {
+      "source_file": "Troubleshooting_Comum.md",
+      "link_text": "Problemas de Instalação",
+      "link_url": "#-problemas-de-instalação",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Troubleshooting_Comum.md",
+      "link_text": "Problemas de Compilação",
+      "link_url": "#-problemas-de-compilação",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Troubleshooting_Comum.md",
+      "link_text": "Problemas de Módulos",
+      "link_url": "#-problemas-de-módulos",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Troubleshooting_Comum.md",
+      "link_text": "Problemas de Interface",
+      "link_url": "#-problemas-de-interface",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Troubleshooting_Comum.md",
+      "link_text": "Problemas de Performance",
+      "link_url": "#-problemas-de-performance",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Troubleshooting_Comum.md",
+      "link_text": "Problemas de Rede",
+      "link_url": "#-problemas-de-rede",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "Troubleshooting_Comum.md",
+      "link_text": "OTClient Tools",
+      "link_url": "../tools/",
+      "target": "tools/.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": []
+    },
+    {
+      "source_file": "Troubleshooting_Comum.md",
+      "link_text": "Documentação Principal",
+      "link_url": "../README.md",
+      "target": "README.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "update\\documentation\\migrated_module_creator\\README",
+        "update\\documentation\\test_advanced_searcher\\README.md",
+        "update\\documentation\\migrated_aaa_agent_specialization_system\\README.md"
+      ]
+    },
+    {
+      "source_file": "Troubleshooting_Comum.md",
+      "link_text": "Índice da Wiki",
+      "link_url": "../Wiki_Index.md",
+      "target": "Wiki_Index.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "docs\\otclient\\guides\\Navigation_Index_Categorical_backup_20250804_194251.md",
+        "update\\documentation\\migrated_wiki_optimizer\\TECHNICAL.md",
+        "update\\documentation\\test_wiki_optimizer\\README.md"
+      ]
+    },
+    {
+      "source_file": "Troubleshooting_Comum.md",
+      "link_text": "Sistema de Busca",
+      "link_url": "../Navigation_Index_Search.md",
+      "target": "Navigation_Index_Search.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "docs\\otclient\\guides\\Navigation_Index_Categorical_backup_20250804_194251.md",
+        "update\\documentation\\navigation_index_generator\\TECHNICAL",
+        "consolidated\\education\\courses\\courses_index"
+      ]
+    },
+    {
+      "source_file": "dashboard/task_master.md",
+      "link_text": "📚 Epics Arquivadas",
+      "link_url": "task_master_archived.md",
+      "target": "task_master_archived.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "log\\archives\\game_stories_priority_task",
+        "log\\reports\\task_reports\\git_task_manager_integration_report_1.md",
+        "log\\reports\\task_reports\\qa_report_task_master_agent_20250729_221733_20250801_103951.md"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Module_Development_Guide.md",
+      "link_text": "Preparação do Ambiente",
+      "link_url": "#preparação-do-ambiente",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Module_Development_Guide.md",
+      "link_text": "Anatomia de um Módulo",
+      "link_url": "#anatomia-de-um-módulo",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Module_Development_Guide.md",
+      "link_text": "Projeto 1: Contador de Cliques",
+      "link_url": "#projeto-1-contador-de-cliques",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Module_Development_Guide.md",
+      "link_text": "Projeto 2: Sistema de Notificações",
+      "link_url": "#projeto-2-sistema-de-notificações",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Module_Development_Guide.md",
+      "link_text": "Projeto 3: Monitor de Status",
+      "link_url": "#projeto-3-monitor-de-status",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Module_Development_Guide.md",
+      "link_text": "Projeto 4: Sistema de Comandos",
+      "link_url": "#projeto-4-sistema-de-comandos",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Module_Development_Guide.md",
+      "link_text": "Projeto 5: Mini-Jogo Integrado",
+      "link_url": "#projeto-5-mini-jogo-integrado",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Module_Development_Guide.md",
+      "link_text": "Debugging e Testes",
+      "link_url": "#debugging-e-testes",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Module_Development_Guide.md",
+      "link_text": "Otimização e Performance",
+      "link_url": "#otimização-e-performance",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Module_Development_Guide.md",
+      "link_text": "Distribuição e Compartilhamento",
+      "link_url": "#distribuição-e-compartilhamento",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Module_Development_Guide.md",
+      "link_text": "Getting_Started_Guide",
+      "link_url": null,
+      "target": "Getting_Started_Guide.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\otclient\\guides\\Graphics_System_Guide.md",
+        "consolidated\\otclient\\research\\Debug_System_Guide.md"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Module_Development_Guide.md",
+      "link_text": "Module_System_Guide",
+      "link_url": null,
+      "target": "Module_System_Guide.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_module_creator\\README",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Module_Development_Guide.md",
+      "link_text": "UI_System_Guide",
+      "link_url": null,
+      "target": "UI_System_Guide.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Module_Development_Guide.md",
+      "link_text": "Lua_API_Reference",
+      "link_url": null,
+      "target": "Lua_API_Reference.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "docs\\canary\\guides\\epic_2_1_3_lua_analysis_report",
+        "docs\\canary\\guides\\api_reference",
+        "consolidated\\canary\\research\\api_reference"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "Visão Geral",
+      "link_url": "#visão-geral",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "Instalação e Setup",
+      "link_url": "#instalação-e-setup",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "Primeira Execução",
+      "link_url": "#primeira-execução",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "Estrutura do Projeto",
+      "link_url": "#estrutura-do-projeto",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "Conceitos Fundamentais",
+      "link_url": "#conceitos-fundamentais",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "Primeiro Módulo",
+      "link_url": "#primeiro-módulo",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "Customização Básica",
+      "link_url": "#customização-básica",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "Desenvolvimento Local",
+      "link_url": "#desenvolvimento-local",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "Debugging e Ferramentas",
+      "link_url": "#debugging-e-ferramentas",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "Próximos Passos",
+      "link_url": "#próximos-passos",
+      "target": "",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_migrated_metrics_system\\TECHNICAL",
+        "update\\documentation\\migrated_module_creator\\README"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "Sistema de Módulos",
+      "link_url": "ModuleSystem.md",
+      "target": "ModuleSystem.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "docs\\research\\habdel\\ModuleSystem",
+        "legacy_docs\\src\\research\\habdel\\ModuleSystem",
+        "docs\\research\\habdel\\ModuleSystem.md"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "Sistema de Configuração",
+      "link_url": "Configuration.md",
+      "target": "Configuration.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "docs\\research\\habdel\\OTCLIENT-009_configuration_system",
+        "consolidated\\otclient\\documentation\\Configuration.md",
+        "docs\\lessons\\otclient\\OTCLIENT-009_configuration_system.md"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "UIWidget Reference",
+      "link_url": "UIWidget_Reference.md",
+      "target": "UIWidget_Reference.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "docs\\canary\\guides\\api_reference",
+        "consolidated\\canary\\research\\api_reference",
+        "legacy_docs\\src\\canary\\guides\\lua_api_reference.md"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "Protocolo de Comunicação",
+      "link_url": "Protocol.md",
+      "target": "Protocol.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "consolidated\\canary\\research\\MÓDULO-004_protocolo_de_rede.md",
+        "legacy_docs\\src\\integration\\protocols\\migration_canary_to_otclient",
+        "docs\\research\\habdel\\Protocol.md"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "Sistema de Mundo e Mapas",
+      "link_url": "WorldSystem.md",
+      "target": "WorldSystem.md",
+      "status": "broken",
+      "type": "markdown",
+      "suggestion": [
+        "consolidated\\otclient\\documentation\\WorldSystem.md",
+        "legacy_docs\\src\\research\\habdel\\WorldSystem.md",
+        "consolidated\\otclient\\documentation\\WorldSystem"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "\n  MainWindow {\n    background-color: #2c3e50;\n    border: 1px solid #34495e;\n  }\n  \n  Button {\n    background-color: #3498db;\n    color: white;\n    border-radius: 3px;\n  }\n  \n  Button:hover {\n    background-color: #2980b9;\n  }\n",
+      "link_url": null,
+      "target": "\n  MainWindow {\n    background-color: #2c3e50;\n    border: 1px solid #34495e;\n  }\n  \n  Button {\n    background-color: #3498db;\n    color: white;\n    border-radius: 3px;\n  }\n  \n  Button:hover {\n    background-color: #2980b9;\n  }\n.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": []
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "Getting_Started_Guide",
+      "link_url": null,
+      "target": "Getting_Started_Guide.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\otclient\\guides\\Graphics_System_Guide.md",
+        "consolidated\\otclient\\research\\Debug_System_Guide.md"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "Module_System_Guide",
+      "link_url": null,
+      "target": "Module_System_Guide.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "update\\documentation\\migrated_module_creator\\README",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "UI_System_Guide",
+      "link_url": null,
+      "target": "UI_System_Guide.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "legacy_docs\\src\\otclient\\guides\\Module_System_Guide.md",
+        "legacy_docs\\src\\research\\habdel\\otclient_graphics_system_analysis",
+        "legacy_docs\\src\\otclient\\guides\\CORE-009_Logs_System"
+      ]
+    },
+    {
+      "source_file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "link_text": "Lua_API_Reference",
+      "link_url": null,
+      "target": "Lua_API_Reference.md",
+      "status": "broken",
+      "type": "wiki",
+      "suggestion": [
+        "docs\\canary\\guides\\epic_2_1_3_lua_analysis_report",
+        "docs\\canary\\guides\\api_reference",
+        "consolidated\\canary\\research\\api_reference"
+      ]
+    }
+  ],
+  "valid_links": [
+    {
+      "source_file": "Glossario_Tecnico.md",
+      "link_text": "Guia de Início Rápido",
+      "link_url": "Guia_Inicio_Rapido.md",
+      "target": "Guia_Inicio_Rapido.md",
+      "status": "valid",
+      "type": "markdown"
+    },
+    {
+      "source_file": "Conceitos_Basicos.md",
+      "link_text": "Guia de Início Rápido",
+      "link_url": "Guia_Inicio_Rapido.md",
+      "target": "Guia_Inicio_Rapido.md",
+      "status": "valid",
+      "type": "markdown"
+    },
+    {
+      "source_file": "Conceitos_Basicos.md",
+      "link_text": "Guia de Início Rápido",
+      "link_url": "Guia_Inicio_Rapido.md",
+      "target": "Guia_Inicio_Rapido.md",
+      "status": "valid",
+      "type": "markdown"
+    },
+    {
+      "source_file": "Conceitos_Basicos.md",
+      "link_text": "Glossário Técnico",
+      "link_url": "Glossario_Tecnico.md",
+      "target": "Glossario_Tecnico.md",
+      "status": "valid",
+      "type": "markdown"
+    },
+    {
+      "source_file": "Conceitos_Basicos.md",
+      "link_text": "Troubleshooting Comum",
+      "link_url": "Troubleshooting_Comum.md",
+      "target": "Troubleshooting_Comum.md",
+      "status": "valid",
+      "type": "markdown"
+    },
+    {
+      "source_file": "Troubleshooting_Comum.md",
+      "link_text": "Guia de Início Rápido",
+      "link_url": "Guia_Inicio_Rapido.md",
+      "target": "Guia_Inicio_Rapido.md",
+      "status": "valid",
+      "type": "markdown"
+    },
+    {
+      "source_file": "Troubleshooting_Comum.md",
+      "link_text": "Conceitos Básicos",
+      "link_url": "Conceitos_Basicos.md",
+      "target": "Conceitos_Basicos.md",
+      "status": "valid",
+      "type": "markdown"
+    },
+    {
+      "source_file": "Troubleshooting_Comum.md",
+      "link_text": "Glossário Técnico",
+      "link_url": "Glossario_Tecnico.md",
+      "target": "Glossario_Tecnico.md",
+      "status": "valid",
+      "type": "markdown"
+    },
+    {
+      "source_file": "Troubleshooting_Comum.md",
+      "link_text": "Guia de Início Rápido",
+      "link_url": "Guia_Inicio_Rapido.md",
+      "target": "Guia_Inicio_Rapido.md",
+      "status": "valid",
+      "type": "markdown"
+    },
+    {
+      "source_file": "Troubleshooting_Comum.md",
+      "link_text": "Conceitos Básicos",
+      "link_url": "Conceitos_Basicos.md",
+      "target": "Conceitos_Basicos.md",
+      "status": "valid",
+      "type": "markdown"
+    },
+    {
+      "source_file": "Troubleshooting_Comum.md",
+      "link_text": "Glossário Técnico",
+      "link_url": "Glossario_Tecnico.md",
+      "target": "Glossario_Tecnico.md",
+      "status": "valid",
+      "type": "markdown"
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "broken_links",
+      "priority": "high",
+      "description": "Corrigir 146 links quebrados",
+      "action": "Verificar e corrigir links quebrados identificados"
+    },
+    {
+      "type": "navigation",
+      "priority": "medium",
+      "description": "Melhorar navegação entre documentos",
+      "action": "Adicionar links de navegação e índices"
+    }
+  ]
+}

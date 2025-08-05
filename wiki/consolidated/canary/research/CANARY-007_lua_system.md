@@ -69,6 +69,7 @@ O sistema Lua no Canary é uma implementação robusta e otimizada para servidor
 ## Prática
 
 ### Exemplo Básico - Carregamento de Script
+#### Nível Basic
 ```cpp
 // Carregamento de arquivo Lua
 int32_t LuaScriptInterface::loadFile(const std::string &file, const std::string &scriptName) {
@@ -104,11 +105,102 @@ int32_t LuaScriptInterface::loadFile(const std::string &file, const std::string 
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Carregamento de arquivo Lua
+int32_t LuaScriptInterface::loadFile(const std::string &file, const std::string &scriptName) {
+    int ret = luaL_loadfile(luaState, file.c_str());
+    if (ret != 0) {
+        lastLuaError = popString(luaState);
+        return -1;
+    }
+    
+    if (!isFunction(luaState, -1)) {
+        return -1;
+    }
+    
+    loadingFile = file;
+    setLoadingScriptName(scriptName);
+    
+    if (!reserveScriptEnv()) {
+        return -1;
+    }
+    
+    ScriptEnvironment* env = getScriptEnv();
+    env->setScriptId(EVENT_ID_LOADING, this);
+    
+    ret = protectedCall(luaState, 0, 0);
+    if (ret != 0) {
+        reportError(nullptr, popString(luaState));
+        resetScriptEnv();
+        return -1;
+    }
+    
+    resetScriptEnv();
+    return 0;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Carregamento de arquivo Lua
+int32_t LuaScriptInterface::loadFile(const std::string &file, const std::string &scriptName) {
+    int ret = luaL_loadfile(luaState, file.c_str());
+    if (ret != 0) {
+        lastLuaError = popString(luaState);
+        return -1;
+    }
+    
+    if (!isFunction(luaState, -1)) {
+        return -1;
+    }
+    
+    loadingFile = file;
+    setLoadingScriptName(scriptName);
+    
+    if (!reserveScriptEnv()) {
+        return -1;
+    }
+    
+    ScriptEnvironment* env = getScriptEnv();
+    env->setScriptId(EVENT_ID_LOADING, this);
+    
+    ret = protectedCall(luaState, 0, 0);
+    if (ret != 0) {
+        reportError(nullptr, popString(luaState));
+        resetScriptEnv();
+        return -1;
+    }
+    
+    resetScriptEnv();
+    return 0;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Exemplo Avançado - Script Lua Completo
 ```lua
 -- Exemplo de script de ação
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+    -- Função: onUse
     if player:getStorageValue(1000) == 1 then
+    -- Verificação condicional
         player:sendTextMessage(MESSAGE_INFO_DESCR, "Você já usou este item.")
         return false
     end
@@ -121,12 +213,16 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
 end
 
 -- Exemplo de evento de criatura
+    --  Exemplo de evento de criatura (traduzido)
 function onDeath(creature, corpse, killer, mostDamageKiller, unjustified, mostDamageUnjustified)
+    -- Função: onDeath
     if creature:isPlayer() then
+    -- Verificação condicional
         local player = creature:getPlayer()
         player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Você morreu!")
         
         -- Log da morte
+    --  Log da morte (traduzido)
         logEvent("Player death", {
             player = player:getName(),
             killer = killer and killer:getName() or "Unknown",
@@ -138,9 +234,13 @@ function onDeath(creature, corpse, killer, mostDamageKiller, unjustified, mostDa
 end
 
 -- Exemplo de evento global
+    --  Exemplo de evento global (traduzido)
 function onThink(interval)
+    -- Função: onThink
     -- Executar a cada 5 minutos
+    --  Executar a cada 5 minutos (traduzido)
     if interval % 300 == 0 then
+    -- Verificação condicional
         broadcastMessage("Servidor funcionando normalmente!", MESSAGE_STATUS_WARNING)
     end
     
@@ -164,6 +264,7 @@ Criar um script Lua simples que adiciona um item ao jogador quando ele usa um it
 
 ```lua
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+    -- Função: onUse
     player:addItem(2160, 10) -- 10 crystal coins
     player:sendTextMessage(MESSAGE_INFO_DESCR, "Você recebeu 10 crystal coins!")
     return true
@@ -175,19 +276,25 @@ Criar um sistema de quest que verifica se o jogador tem itens específicos e rec
 
 ```lua
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+    -- Função: onUse
     local requiredItems = {2160, 2160, 2160} -- 3 crystal coins
     local hasAllItems = true
     
     for _, itemId in ipairs(requiredItems) do
+    -- Loop de repetição
         if player:getItemCount(itemId) < 1 then
+    -- Verificação condicional
             hasAllItems = false
             break
         end
     end
     
     if hasAllItems then
+    -- Verificação condicional
         -- Remove os itens
+    --  Remove os itens (traduzido)
         for _, itemId in ipairs(requiredItems) do
+    -- Loop de repetição
             player:removeItem(itemId, 1)
         end
         
@@ -207,16 +314,19 @@ Criar um sistema de teleporte com verificação de nível e custo.
 
 ```lua
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+    -- Função: onUse
     local requiredLevel = 50
     local cost = 1000 -- gold coins
     local destination = Position(1000, 1000, 7)
     
     if player:getLevel() < requiredLevel then
+    -- Verificação condicional
         player:sendTextMessage(MESSAGE_INFO_DESCR, "Você precisa ser nível " .. requiredLevel .. "!")
         return false
     end
     
     if player:getMoney() < cost then
+    -- Verificação condicional
         player:sendTextMessage(MESSAGE_INFO_DESCR, "Você precisa de " .. cost .. " gold coins!")
         return false
     end

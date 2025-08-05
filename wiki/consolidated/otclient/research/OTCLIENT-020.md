@@ -73,6 +73,7 @@ Sistema de Logs OTClient
 **API Principal**:
 ```cpp
 class Logger {
+    -- Classe: Logger
 public:
     // Funções básicas de log
     void log(Fw::LogLevel level, std::string_view message);
@@ -117,6 +118,7 @@ public:
 **Interface Lua**:
 ```lua
 -- Acesso ao logger global
+    --  Acesso ao logger global (traduzido)
 g_logger.fine("Mensagem detalhada")
 g_logger.debug("Informação de debug")
 g_logger.info("Informação geral")
@@ -134,6 +136,12 @@ g_logger.setLevel(Fw.LogDebug)
 **Localização**: `otclient/src/framework/const.h`
 
 **Definição dos Níveis**:
+#### Nível Basic
+```cpp
+
+```
+
+#### Nível Intermediate
 ```cpp
 enum LogLevel : uint8_t
 {
@@ -144,6 +152,29 @@ enum LogLevel : uint8_t
     LogError,         // Erros
     LogFatal          // Erros fatais
 };
+```
+
+#### Nível Advanced
+```cpp
+enum LogLevel : uint8_t
+{
+    LogFine = 0,      // Logs muito detalhados
+    LogDebug,         // Logs de debug
+    LogInfo,          // Informações gerais
+    LogWarning,       // Avisos
+    LogError,         // Erros
+    LogFatal          // Erros fatais
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 **Características dos Níveis**:
@@ -159,6 +190,7 @@ enum LogLevel : uint8_t
 **Localização**: `otclient/src/framework/core/logger.h`
 
 **Definição**:
+#### Nível Basic
 ```cpp
 struct LogMessage
 {
@@ -171,12 +203,56 @@ struct LogMessage
 };
 ```
 
+#### Nível Intermediate
+```cpp
+struct LogMessage
+{
+    LogMessage(const Fw::LogLevel level, const std::string_view message, const std::size_t when) 
+        : level(level), message(message), when(when) {}
+    
+    Fw::LogLevel level;    // Nível do log
+    std::string message;   // Mensagem do log
+    std::size_t when;      // Timestamp
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+struct LogMessage
+{
+    LogMessage(const Fw::LogLevel level, const std::string_view message, const std::size_t when) 
+        : level(level), message(message), when(when) {}
+    
+    Fw::LogLevel level;    // Nível do log
+    std::string message;   // Mensagem do log
+    std::size_t when;      // Timestamp
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **📄 Funcionalidades Avançadas**
 
 #### **1. Thread Safety**
 
 O sistema de logs é thread-safe através do Event Dispatcher:
 
+#### Nível Basic
 ```cpp
 void Logger::log(Fw::LogLevel level, const std::string_view message)
 {
@@ -194,10 +270,71 @@ void Logger::log(Fw::LogLevel level, const std::string_view message)
 }
 ```
 
+#### Nível Intermediate
+```cpp
+void Logger::log(Fw::LogLevel level, const std::string_view message)
+{
+    // Verificar se estamos na thread principal
+    if (g_eventThreadId > -1 && g_eventThreadId != stdext::getThreadId()) {
+        // Agendar log para thread principal
+        g_dispatcher.addEvent([this, level, msg = std::string{ message }] {
+            log(level, msg);
+        });
+        return;
+    }
+    
+    // Processar log na thread principal
+    // ... resto da implementação
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+void Logger::log(Fw::LogLevel level, const std::string_view message)
+{
+    // Verificar se estamos na thread principal
+    if (g_eventThreadId > -1 && g_eventThreadId != stdext::getThreadId()) {
+        // Agendar log para thread principal
+        g_dispatcher.addEvent([this, level, msg = std::string{ message }] {
+            log(level, msg);
+        });
+        return;
+    }
+    
+    // Processar log na thread principal
+    // ... resto da implementação
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Function Tracing**
 
 Sistema de tracing de funções com stack traces:
 
+#### Nível Basic
+```cpp
+    if (fncName.find_last_of(' ') != std::string::npos)
+    if (!fncName.empty()) {
+        if (g_lua.isInCppCallback())
+```
+
+#### Nível Intermediate
 ```cpp
 void Logger::logFunc(Fw::LogLevel level, const std::string_view message, const std::string_view prettyFunction)
 {
@@ -220,10 +357,44 @@ void Logger::logFunc(Fw::LogLevel level, const std::string_view message, const s
 }
 ```
 
+#### Nível Advanced
+```cpp
+void Logger::logFunc(Fw::LogLevel level, const std::string_view message, const std::string_view prettyFunction)
+{
+    // Extrair nome da função
+    auto fncName = prettyFunction.substr(0, prettyFunction.find_first_of('('));
+    if (fncName.find_last_of(' ') != std::string::npos)
+        fncName = fncName.substr(fncName.find_last_of(' ') + 1);
+    
+    std::stringstream ss;
+    ss << message;
+    
+    if (!fncName.empty()) {
+        // Adicionar stack trace se estiver em callback Lua
+        if (g_lua.isInCppCallback())
+            ss << g_lua.traceback("", 1);
+        ss << g_platform.traceback(fncName, 1, 8);
+    }
+    
+    log(level, ss.str());
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **3. Callbacks de Log**
 
 Sistema de callbacks para processamento customizado:
 
+#### Nível Basic
 ```cpp
 using OnLogCallback = std::function<void(Fw::LogLevel, std::string_view, int64_t)>;
 
@@ -234,10 +405,50 @@ g_logger.setOnLog([](Fw::LogLevel level, std::string_view message, int64_t times
 });
 ```
 
+#### Nível Intermediate
+```cpp
+using OnLogCallback = std::function<void(Fw::LogLevel, std::string_view, int64_t)>;
+
+// Definir callback
+g_logger.setOnLog([](Fw::LogLevel level, std::string_view message, int64_t timestamp) {
+    // Processar log customizado
+    processCustomLog(level, message, timestamp);
+});
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+using OnLogCallback = std::function<void(Fw::LogLevel, std::string_view, int64_t)>;
+
+// Definir callback
+g_logger.setOnLog([](Fw::LogLevel level, std::string_view message, int64_t timestamp) {
+    // Processar log customizado
+    processCustomLog(level, message, timestamp);
+});
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **4. Fatal Error Handling**
 
 Tratamento especial para erros fatais:
 
+#### Nível Basic
 ```cpp
 if (level == Fw::LogFatal) {
 #ifdef FRAMEWORK_GRAPHICS
@@ -248,10 +459,50 @@ if (level == Fw::LogFatal) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+if (level == Fw::LogFatal) {
+#ifdef FRAMEWORK_GRAPHICS
+    g_window.displayFatalError(message);
+#endif
+    s_ignoreLogs = true;
+    exit(-1);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+if (level == Fw::LogFatal) {
+#ifdef FRAMEWORK_GRAPHICS
+    g_window.displayFatalError(message);
+#endif
+    s_ignoreLogs = true;
+    exit(-1);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🎮 Configurações de Log**
 
 #### **Configuração de Níveis**
 
+#### Nível Basic
 ```cpp
 // Definir nível de log
 g_logger.setLevel(Fw::LogDebug);
@@ -260,8 +511,44 @@ g_logger.setLevel(Fw::LogDebug);
 Fw::LogLevel currentLevel = g_logger.getLevel();
 ```
 
+#### Nível Intermediate
+```cpp
+// Definir nível de log
+g_logger.setLevel(Fw::LogDebug);
+
+// Verificar nível atual
+Fw::LogLevel currentLevel = g_logger.getLevel();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Definir nível de log
+g_logger.setLevel(Fw::LogDebug);
+
+// Verificar nível atual
+Fw::LogLevel currentLevel = g_logger.getLevel();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Configuração de Arquivo**
 
+#### Nível Basic
 ```cpp
 // Configurar arquivo de log
 g_logger.setLogFile("otclient.log");
@@ -273,8 +560,50 @@ if (m_outFile.good()) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Configurar arquivo de log
+g_logger.setLogFile("otclient.log");
+
+// Verificar se arquivo está aberto
+if (m_outFile.good()) {
+    m_outFile << outmsg << std::endl;
+    m_outFile.flush();
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Configurar arquivo de log
+g_logger.setLogFile("otclient.log");
+
+// Verificar se arquivo está aberto
+if (m_outFile.good()) {
+    m_outFile << outmsg << std::endl;
+    m_outFile.flush();
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Configuração de Console**
 
+#### Nível Basic
 ```cpp
 // Output para console
 std::cout << outmsg << std::endl;
@@ -285,10 +614,55 @@ __android_log_print(ANDROID_LOG_INFO, "OTClientMobile", "%s", outmsg.c_str());
 #endif
 ```
 
+#### Nível Intermediate
+```cpp
+// Output para console
+std::cout << outmsg << std::endl;
+
+// Output para Android
+#ifdef ANDROID
+__android_log_print(ANDROID_LOG_INFO, "OTClientMobile", "%s", outmsg.c_str());
+#endif
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Output para console
+std::cout << outmsg << std::endl;
+
+// Output para Android
+#ifdef ANDROID
+__android_log_print(ANDROID_LOG_INFO, "OTClientMobile", "%s", outmsg.c_str());
+#endif
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🔧 Implementação Prática**
 
 #### **Exemplo 1: Sistema de Logging Básico**
 
+#### Nível Basic
+```cpp
+
+```
+
+#### Nível Intermediate
 ```cpp
 // Exemplo de uso básico do logger
 void exampleBasicLogging() {
@@ -305,8 +679,36 @@ void exampleBasicLogging() {
 }
 ```
 
+#### Nível Advanced
+```cpp
+// Exemplo de uso básico do logger
+void exampleBasicLogging() {
+    // Logs básicos
+    g_logger.info("Sistema inicializado");
+    g_logger.debug("Carregando configurações");
+    g_logger.warning("Configuração não encontrada, usando padrão");
+    g_logger.error("Falha ao carregar módulo");
+    
+    // Logs com formatação
+    g_logger.info("Conectando ao servidor {}:{}", host, port);
+    g_logger.debug("Módulo '{}' carregado em {:.2f}s", moduleName, loadTime);
+    g_logger.error("Erro ao processar arquivo '{}': {}", filename, error);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Exemplo 2: Function Tracing**
 
+#### Nível Basic
 ```cpp
 // Exemplo de tracing de funções
 void processData(const std::string& data) {
@@ -321,8 +723,56 @@ void processData(const std::string& data) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de tracing de funções
+void processData(const std::string& data) {
+    g_logger.traceDebug("Processando dados");  // Inclui nome da função
+    
+    try {
+        // Processamento
+        g_logger.debug("Dados processados com sucesso");
+    } catch (const std::exception& e) {
+        g_logger.traceError("Erro no processamento: {}", e.what());
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de tracing de funções
+void processData(const std::string& data) {
+    g_logger.traceDebug("Processando dados");  // Inclui nome da função
+    
+    try {
+        // Processamento
+        g_logger.debug("Dados processados com sucesso");
+    } catch (const std::exception& e) {
+        g_logger.traceError("Erro no processamento: {}", e.what());
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Exemplo 3: Sistema de Logging Customizado**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de logging customizado em Lua
 local CustomLogger = {}
@@ -349,6 +799,10 @@ function CustomLogger.processLog(level, message, timestamp)
         [Fw.LogError] = "ERROR",
         [Fw.LogFatal] = "FATAL"
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     local timestampStr = os.date("%Y-%m-%d %H:%M:%S", timestamp)
     local logEntry = string.format("[%s] [%s] %s", timestampStr, levelName[level], message)
@@ -372,6 +826,10 @@ function CustomLogger.sendToServer(level, message, timestamp)
         -- Enviar erros imediatamente
         sendToMonitoringServer(level, message, timestamp)
     end
+```
+
+#### Finalização
+```lua
 end
 
 return CustomLogger
@@ -379,6 +837,7 @@ return CustomLogger
 
 #### **Exemplo 4: Sistema de Logging Estruturado**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de logging estruturado
 local StructuredLogger = {}
@@ -403,6 +862,10 @@ function StructuredLogger.log(level, category, message, data)
         thread = stdext.getThreadId(),
         module = getCurrentModule()
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Adicionar metadados
     if StructuredLogger.config.includeMetadata then
@@ -426,6 +889,10 @@ function StructuredLogger.log(level, category, message, data)
     if data then
         logEntry.data = data
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     -- Converter para JSON
     local jsonEntry = json.encode(logEntry)
@@ -447,6 +914,10 @@ end
 
 -- Funções de conveniência
 function StructuredLogger.debug(category, message, data)
+```
+
+#### Finalização
+```lua
     StructuredLogger.log(Fw.LogDebug, category, message, data)
 end
 
@@ -474,6 +945,7 @@ return StructuredLogger
 local MyModule = {}
 
 function MyModule.init()
+    -- Função: MyModule
     g_logger.info("Inicializando módulo MyModule")
     
     -- Configurar logging específico do módulo
@@ -488,10 +960,12 @@ function MyModule.init()
 end
 
 function MyModule.processData(data)
+    -- Função: MyModule
     MyModule.logger.debug("Processando dados: " .. tostring(data))
     
     try {
         -- Processamento
+    --  Processamento (traduzido)
         MyModule.logger.info("Dados processados com sucesso")
     } catch (error) {
         MyModule.logger.error("Erro no processamento: " .. tostring(error))
@@ -506,17 +980,22 @@ end
 local DebugLogger = {}
 
 function DebugLogger.init()
+    -- Função: DebugLogger
     -- Configurar callback para logs de debug
+    --  Configurar callback para logs de debug (traduzido)
     g_logger.setOnLog(function(level, message, timestamp)
         if level <= Fw.LogDebug then
+    -- Verificação condicional
             DebugLogger.processDebugLog(level, message, timestamp)
         end
     end)
 end
 
 function DebugLogger.processDebugLog(level, message, timestamp)
+    -- Função: DebugLogger
     -- Adicionar à interface de debug
     if DebugConsole and DebugConsole.logArea then
+    -- Verificação condicional
         local levelName = {
             [Fw.LogFine] = "FINE",
             [Fw.LogDebug] = "DEBUG"
@@ -551,6 +1030,7 @@ end
 
 #### **Validação de Níveis**
 
+#### Nível Basic
 ```cpp
 // Validação automática de níveis
 if (level < m_level)
@@ -562,16 +1042,90 @@ if (level == Fw::LogDebug || level == Fw::LogFine)
 #endif
 ```
 
+#### Nível Intermediate
+```cpp
+// Validação automática de níveis
+if (level < m_level)
+    return;  // Ignorar logs abaixo do nível configurado
+
+#ifdef NDEBUG
+if (level == Fw::LogDebug || level == Fw::LogFine)
+    return;  // Remover logs de debug em release
+#endif
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Validação automática de níveis
+if (level < m_level)
+    return;  // Ignorar logs abaixo do nível configurado
+
+#ifdef NDEBUG
+if (level == Fw::LogDebug || level == Fw::LogFine)
+    return;  // Remover logs de debug em release
+#endif
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Proteção contra Loops**
 
+#### Nível Basic
 ```cpp
 // Proteção contra loops infinitos
 if (s_ignoreLogs)
     return;  // Ignorar logs após erro fatal
 ```
 
+#### Nível Intermediate
+```cpp
+// Proteção contra loops infinitos
+if (s_ignoreLogs)
+    return;  // Ignorar logs após erro fatal
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Proteção contra loops infinitos
+if (s_ignoreLogs)
+    return;  // Ignorar logs após erro fatal
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Tratamento de Erros**
 
+#### Nível Basic
 ```cpp
 // Tratamento de erros de arquivo
 void Logger::setLogFile(const std::string_view file)
@@ -585,12 +1139,63 @@ void Logger::setLogFile(const std::string_view file)
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Tratamento de erros de arquivo
+void Logger::setLogFile(const std::string_view file)
+{
+    m_outFile.open(stdext::utf8_to_latin1(file), std::ios::out | std::ios::app);
+    if (!m_outFile.is_open() || !m_outFile.good()) {
+        g_logger.error("Unable to save log to '{}'", file);
+        return;
+    }
+    m_outFile.flush();
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Tratamento de erros de arquivo
+void Logger::setLogFile(const std::string_view file)
+{
+    m_outFile.open(stdext::utf8_to_latin1(file), std::ios::out | std::ios::app);
+    if (!m_outFile.is_open() || !m_outFile.good()) {
+        g_logger.error("Unable to save log to '{}'", file);
+        return;
+    }
+    m_outFile.flush();
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 📚 **Documentação Técnica**
 
 ### **APIs Principais**
 
 #### **Logger API**
 
+#### Nível Basic
+```cpp
+
+```
+
+#### Nível Intermediate
 ```cpp
 // C++
 Logger g_logger;
@@ -627,8 +1232,61 @@ Fw::LogLevel level = g_logger.getLevel();
 g_logger.fireOldMessages();
 ```
 
+#### Nível Advanced
+```cpp
+// C++
+Logger g_logger;
+
+// Funções básicas
+g_logger.log(Fw::LogLevel::LogInfo, "Mensagem");
+g_logger.logFunc(Fw::LogLevel::LogDebug, "Mensagem", __PRETTY_FUNCTION__);
+
+// Funções Lua-compatíveis
+g_logger.fine("Mensagem detalhada");
+g_logger.debug("Mensagem de debug");
+g_logger.info("Informação");
+g_logger.warning("Aviso");
+g_logger.error("Erro");
+g_logger.fatal("Erro fatal");
+
+// Funções com formatação
+g_logger.debug("Valor: {}", value);
+g_logger.info("Conectando a {}:{}", host, port);
+g_logger.error("Erro no arquivo '{}': {}", filename, error);
+
+// Funções de tracing
+g_logger.trace();
+g_logger.traceDebug("Debug com função");
+g_logger.traceInfo("Info com função");
+g_logger.traceWarning("Warning com função");
+g_logger.traceError("Erro com função");
+
+// Configuração
+g_logger.setLogFile("otclient.log");
+g_logger.setOnLog(callback);
+g_logger.setLevel(Fw::LogLevel::LogDebug);
+Fw::LogLevel level = g_logger.getLevel();
+g_logger.fireOldMessages();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **LogLevel Enum**
 
+#### Nível Basic
+```cpp
+
+```
+
+#### Nível Intermediate
 ```cpp
 // C++
 enum LogLevel : uint8_t
@@ -642,8 +1300,33 @@ enum LogLevel : uint8_t
 };
 ```
 
+#### Nível Advanced
+```cpp
+// C++
+enum LogLevel : uint8_t
+{
+    LogFine = 0,      // Logs muito detalhados
+    LogDebug,         // Logs de debug
+    LogInfo,          // Informações gerais
+    LogWarning,       // Avisos
+    LogError,         // Erros
+    LogFatal          // Erros fatais
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **LogMessage Struct**
 
+#### Nível Basic
 ```cpp
 // C++
 struct LogMessage
@@ -656,12 +1339,56 @@ struct LogMessage
 };
 ```
 
+#### Nível Intermediate
+```cpp
+// C++
+struct LogMessage
+{
+    LogMessage(const Fw::LogLevel level, const std::string_view message, const std::size_t when);
+    
+    Fw::LogLevel level;    // Nível do log
+    std::string message;   // Mensagem do log
+    std::size_t when;      // Timestamp
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// C++
+struct LogMessage
+{
+    LogMessage(const Fw::LogLevel level, const std::string_view message, const std::size_t when);
+    
+    Fw::LogLevel level;    // Nível do log
+    std::string message;   // Mensagem do log
+    std::size_t when;      // Timestamp
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Interface Lua**
 
 #### **g_logger (Logger)**
 
 ```lua
 -- Lua
+    --  Lua (traduzido)
 -- Funções básicas
 g_logger.fine("Mensagem detalhada")
 g_logger.debug("Mensagem de debug")
@@ -676,8 +1403,10 @@ g_logger.setLevel(Fw.LogDebug)
 local level = g_logger.getLevel()
 
 -- Callbacks
+    --  Callbacks (traduzido)
 g_logger.setOnLog(function(level, message, timestamp)
     -- Processar log customizado
+    --  Processar log customizado (traduzido)
 end)
 ```
 
@@ -685,6 +1414,7 @@ end)
 
 ```lua
 -- Lua
+    --  Lua (traduzido)
 -- Níveis de log
 Fw.LogFine = 0
 Fw.LogDebug = 1
@@ -698,6 +1428,7 @@ Fw.LogFatal = 5
 
 ### **Exemplo 1: Sistema de Logging Completo**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de logging completo
 local LoggingSystem = {}
@@ -727,6 +1458,10 @@ function LoggingSystem.processLog(level, message, timestamp)
         [Fw.LogError] = "ERROR",
         [Fw.LogFatal] = "FATAL"
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     local timestampStr = os.date("%Y-%m-%d %H:%M:%S", timestamp)
     local logEntry = string.format("[%s] [%s] %s", timestampStr, levelName[level], message)
@@ -750,6 +1485,10 @@ function LoggingSystem.sendToMonitoring(level, message, timestamp)
         -- Implementar envio para servidor de monitoramento
         sendToMonitoringServer(level, message, timestamp)
     end
+```
+
+#### Finalização
+```lua
 end
 
 return LoggingSystem
@@ -757,6 +1496,7 @@ return LoggingSystem
 
 ### **Exemplo 2: Sistema de Logging por Categoria**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de logging por categoria
 local CategoryLogger = {}
@@ -788,6 +1528,10 @@ function CategoryLogger.log(category, level, message, data)
     elseif level == Fw.LogFatal then
         g_logger.fatal(fullMessage)
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Log estruturado se dados fornecidos
     if data then
@@ -811,6 +1555,10 @@ function CategoryLogger.logStructured(category, level, message, data)
         file:write(jsonEntry .. "\n")
         file:close()
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 -- Funções de conveniência por categoria
@@ -833,6 +1581,10 @@ end
 function CategoryLogger.module(level, message, data)
     CategoryLogger.log(CategoryLogger.categories.MODULE, level, message, data)
 end
+```
+
+#### Finalização
+```lua
 
 function CategoryLogger.debug(level, message, data)
     CategoryLogger.log(CategoryLogger.categories.DEBUG, level, message, data)
@@ -843,6 +1595,7 @@ return CategoryLogger
 
 ### **Exemplo 3: Sistema de Logging de Performance**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de logging de performance
 local PerformanceLogger = {}
@@ -870,6 +1623,10 @@ function PerformanceLogger.endTimer(name)
         g_logger.warning("Timer não encontrado: " .. name)
         return
     end
+```
+
+#### Funcionalidade 1
+```lua
     
     metric.endTime = stdext.millis()
     metric.duration = metric.endTime - metric.startTime
@@ -892,6 +1649,10 @@ function PerformanceLogger.saveMetric(name, metric)
         duration = metric.duration,
         startTime = metric.startTime,
         endTime = metric.endTime
+```
+
+#### Funcionalidade 2
+```lua
     }
     
     local jsonEntry = json.encode(logEntry)
@@ -915,6 +1676,10 @@ function PerformanceLogger.logMemoryUsage()
         type = "memory",
         usage = memoryUsage
     }
+```
+
+#### Finalização
+```lua
     
     local jsonEntry = json.encode(logEntry)
     
@@ -930,6 +1695,7 @@ return PerformanceLogger
 
 ### **Exemplo 4: Sistema de Logging de Erros**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de logging de erros
 local ErrorLogger = {}
@@ -952,6 +1718,10 @@ function ErrorLogger.logError(error, context)
         context = context or {},
         stackTrace = ErrorLogger.config.saveStackTraces and debug.traceback() or nil
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Adicionar à lista de erros
     table.insert(ErrorLogger.errors, errorInfo)
@@ -979,6 +1749,10 @@ function ErrorLogger.saveError(errorInfo)
         file:write(jsonEntry .. "\n")
         file:close()
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 function ErrorLogger.sendToMonitoring(errorInfo)
@@ -1001,6 +1775,10 @@ function ErrorLogger.getErrorSummary()
     for i = math.max(1, #ErrorLogger.errors - 9), #ErrorLogger.errors do
         table.insert(summary.recentErrors, ErrorLogger.errors[i])
     end
+```
+
+#### Finalização
+```lua
     
     -- Contar tipos de erro
     for _, error in ipairs(ErrorLogger.errors) do

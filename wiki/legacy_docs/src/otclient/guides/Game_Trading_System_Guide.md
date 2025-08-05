@@ -65,12 +65,14 @@ Sistema de Trade e Economia
 
 ```lua
 -- Tipos de moedas
+    --  Tipos de moedas (traduzido)
 GameStore.CoinType = {
     Coin = 0,           -- Tibia Coins regulares
     Transferable = 1    -- Tibia Coins transferíveis
 }
 
 -- Estados dos produtos
+    --  Estados dos produtos (traduzido)
 GameStore.States = {
     STATE_NONE = 0,     -- Estado normal
     STATE_NEW = 1,      -- Produto novo
@@ -81,6 +83,7 @@ GameStore.States = {
 
 #### 🛍️ **Estrutura de Produto**
 
+#### Nível Basic
 ```lua
 -- Estrutura de um produto da loja
 {
@@ -97,10 +100,62 @@ GameStore.States = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Estrutura de um produto da loja
+{
+    id = productId,           -- ID único do produto
+    name = productName,       -- Nome do produto
+    description = "",         -- Descrição detalhada
+    price = 100,             -- Preço em moedas
+    coinType = 0,            -- Tipo de moeda (0 = regular, 1 = transferível)
+    count = 1,               -- Quantidade do produto
+    configurable = false,    -- Se é configurável
+    disabled = false,        -- Se está desabilitado
+    subOffers = {},          -- Subofertas do produto
+    reasonIdDisable = nil    -- Razão da desabilitação
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Estrutura de um produto da loja
+{
+    id = productId,           -- ID único do produto
+    name = productName,       -- Nome do produto
+    description = "",         -- Descrição detalhada
+    price = 100,             -- Preço em moedas
+    coinType = 0,            -- Tipo de moeda (0 = regular, 1 = transferível)
+    count = 1,               -- Quantidade do produto
+    configurable = false,    -- Se é configurável
+    disabled = false,        -- Se está desabilitado
+    subOffers = {},          -- Subofertas do produto
+    reasonIdDisable = nil    -- Razão da desabilitação
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### 📦 **Estrutura de Categoria**
 
 ```lua
 -- Estrutura de uma categoria
+    --  Estrutura de uma categoria (traduzido)
 {
     id = categoryId,         -- ID da categoria
     name = categoryName,     -- Nome da categoria
@@ -121,21 +176,25 @@ GameStore.States = {
 
 ```lua
 -- Abrir loja
+    --  Abrir loja (traduzido)
 g_game.openStore()
 
 -- Solicitar página inicial da loja
 g_game.sendRequestStoreHome()
 
 -- Solicitar ofertas da loja
+    --  Solicitar ofertas da loja (traduzido)
 g_game.requestStoreOffers(category, subcategory, page)
 
 -- Comprar oferta da loja
+    --  Comprar oferta da loja (traduzido)
 g_game.buyStoreOffer(offerId, offerType)
 
 -- Solicitar histórico de transações
 g_game.requestTransactionHistory(page)
 
 -- Transferir moedas
+    --  Transferir moedas (traduzido)
 g_game.transferCoins(amount, characterName)
 ```
 
@@ -143,12 +202,15 @@ g_game.transferCoins(amount, characterName)
 
 ```lua
 -- Mostrar loja
+    --  Mostrar loja (traduzido)
 controllerShop:show()
 
 -- Ocultar loja
+    --  Ocultar loja (traduzido)
 controllerShop:hide()
 
 -- Alternar visibilidade
+    --  Alternar visibilidade (traduzido)
 controllerShop:toggle()
 
 -- Mostrar painel específico
@@ -161,13 +223,16 @@ showPanel("transferHistory") -- Histórico de transferências
 
 ```lua
 -- Obter saldo de moedas
+    --  Obter saldo de moedas (traduzido)
 local regularCoins, transferableCoins = getCoinsBalance()
 
 -- Formatar número com vírgulas
 local formattedNumber = formatNumberWithCommas(1000000)
 
 -- Verificar se tem moedas suficientes
+    --  Verificar se tem moedas suficientes (traduzido)
 function hasEnoughCoins(price, coinType)
+    -- Função: hasEnoughCoins
     local regular, transferable = getCoinsBalance()
     local balance = (coinType == GameStore.CoinType.Transferable) 
         and transferable or regular
@@ -177,6 +242,7 @@ end
 
 ### 🎮 **Implementação Completa do Controller**
 
+#### Inicialização e Configuração
 ```lua
 -- Controller principal da Game Store
 controllerShop = Controller:new()
@@ -204,6 +270,10 @@ GameStore.CoinType = {
     Coin = 0,
     Transferable = 1
 }
+```
+
+#### Funcionalidade 1
+```lua
 
 GameStore.States = {
     STATE_NONE = 0,
@@ -237,6 +307,10 @@ local function showPanel(panel)
         controllerShop.ui.panelItem:setVisible(true)
         controllerShop.ui.transferHistory:setVisible(false)
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 -- Função para destruir janelas
@@ -265,6 +339,10 @@ function getCoinsBalance()
     
     return regularCoins, transferableCoins
 end
+```
+
+#### Funcionalidade 3
+```lua
 
 -- Função para formatar números
 function formatNumberWithCommas(number)
@@ -296,6 +374,10 @@ function chooseOffert(self, focusedChild)
         local descriptionInfo = offerDescriptions[subOffers[1].id] or { id = 0xFFFF, description = "" }
         description = descriptionInfo.description
     end
+```
+
+#### Funcionalidade 4
+```lua
 
     panel:getChildById('lblDescription'):setText(description)
 
@@ -323,6 +405,10 @@ function chooseOffert(self, focusedChild)
         if offer.count and offer.count > 0 then
             offerPanel:getChildById('btnBuy'):setText("Buy " .. offer.count .. "x")
         end
+```
+
+#### Funcionalidade 5
+```lua
 
         if product.configurable then
             offerPanel:getChildById('btnBuy'):setText("Configurable")
@@ -346,6 +432,10 @@ function chooseOffert(self, focusedChild)
             priceLabel:setColor("white")
             offerPanel:getChildById('btnBuy'):enable()
         end
+```
+
+#### Funcionalidade 6
+```lua
 
         -- Configurar botão de compra
         offerPanel:getChildById('btnBuy').onClick = function(widget)
@@ -367,6 +457,10 @@ function chooseOffert(self, focusedChild)
                     local closeWindow = function()
                         destroyWindow(processingWindow)
                     end
+```
+
+#### Funcionalidade 7
+```lua
                     
                     controllerShop.ui:hide()
                     processingWindow = displayGeneralBox('Processing purchase.', 'Your purchase is being processed',
@@ -394,6 +488,10 @@ function chooseOffert(self, focusedChild)
                 { text = tr('Cancel'), callback = cancelFunc },
                 anchor = 50
             }, cancelFunc, cancelFunc)
+```
+
+#### Finalização
+```lua
         end
     end
 end
@@ -534,11 +632,14 @@ StoreCategory < Panel
 local BasicStoreSystem = {}
 
 function BasicStoreSystem.createBasicStore()
+    -- Função: BasicStoreSystem
     -- Criar interface da loja
+    --  Criar interface da loja (traduzido)
     local storeWindow = g_ui.createWidget('GameStoreWindow', rootWidget)
     storeWindow:hide()
     
     -- Configurar categorias
+    --  Configurar categorias (traduzido)
     local categoryList = storeWindow:getChildById('listCategory')
     
     local categories = {
@@ -549,6 +650,7 @@ function BasicStoreSystem.createBasicStore()
     }
     
     for _, categoryData in ipairs(categories) do
+    -- Loop de repetição
         local categoryWidget = g_ui.createWidget('StoreCategory', categoryList)
         categoryWidget:setId(categoryData.id)
         categoryWidget:getChildById('lblName'):setText(categoryData.name)
@@ -562,24 +664,30 @@ function BasicStoreSystem.createBasicStore()
 end
 
 function BasicStoreSystem.loadCategory(categoryId)
+    -- Função: BasicStoreSystem
     -- Solicitar produtos da categoria
+    --  Solicitar produtos da categoria (traduzido)
     g_game.requestStoreOffers(categoryId, "", 0)
 end
 
 function BasicStoreSystem.showStore()
+    -- Função: BasicStoreSystem
     local storeWindow = g_ui.getWidgetById('gameStore')
     if storeWindow then
+    -- Verificação condicional
         storeWindow:show()
         g_game.openStore()
     end
 end
 
 -- Uso
+    --  Uso (traduzido)
 local storeSystem = BasicStoreSystem.createBasicStore()
 ```
 
 ### 🎨 **Exemplo 2: Sistema de Moedas Avançado**
 
+#### Inicialização e Configuração
 ```lua
 local AdvancedCoinSystem = {}
 
@@ -603,6 +711,10 @@ function AdvancedCoinSystem.createCoinManager()
     
     -- Função para verificar se pode comprar
     function coinManager:canAfford(price, coinType)
+```
+
+#### Funcionalidade 1
+```lua
         local balance = (coinType == GameStore.CoinType.Transferable) 
             and self.transferableCoins or self.regularCoins
         return balance >= price
@@ -624,6 +736,10 @@ function AdvancedCoinSystem.createCoinManager()
 end
 
 function AdvancedCoinSystem.createTransferSystem()
+```
+
+#### Funcionalidade 2
+```lua
     local transferSystem = {
         history = {},
         maxHistory = 100
@@ -650,6 +766,10 @@ function AdvancedCoinSystem.createTransferSystem()
             timestamp = os.time(),
             status = "pending"
         })
+```
+
+#### Finalização
+```lua
         
         -- Manter histórico limitado
         if #self.history > self.maxHistory then
@@ -674,6 +794,7 @@ local transferSystem = AdvancedCoinSystem.createTransferSystem()
 
 ### 🪟 **Exemplo 3: Sistema de Produtos Configuráveis**
 
+#### Inicialização e Configuração
 ```lua
 local ConfigurableProductSystem = {}
 
@@ -698,6 +819,10 @@ function ConfigurableProductSystem.createConfigurableProduct(productData)
     
     -- Função para validar configuração
     function product:isValidConfiguration()
+```
+
+#### Funcionalidade 1
+```lua
         for _, option in ipairs(self.options) do
             if option.required and not self.currentConfig[option.id] then
                 return false
@@ -720,6 +845,10 @@ function ConfigurableProductSystem.createConfigurableProduct(productData)
         
         return totalPrice
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     -- Função para encontrar opção
     function product:findOption(optionId)
@@ -742,6 +871,10 @@ function ConfigurableProductSystem.createProductConfigurator(product)
     
     -- Função para criar interface
     function configurator:createUI(parent)
+```
+
+#### Funcionalidade 3
+```lua
         self.ui = g_ui.createWidget('Panel', parent)
         self.ui:setLayout('verticalBox')
         
@@ -763,6 +896,10 @@ function ConfigurableProductSystem.createProductConfigurator(product)
     
     -- Função para criar widget de opção
     function configurator:createOptionWidget(option)
+```
+
+#### Funcionalidade 4
+```lua
         local optionPanel = g_ui.createWidget('Panel')
         optionPanel:setLayout('horizontalBox')
         
@@ -786,6 +923,10 @@ function ConfigurableProductSystem.createProductConfigurator(product)
         
         return optionPanel
     end
+```
+
+#### Funcionalidade 5
+```lua
     
     -- Função para confirmar configuração
     function configurator:confirmConfiguration()
@@ -807,6 +948,10 @@ function ConfigurableProductSystem.createProductConfigurator(product)
         -- Processar compra
         self:processPurchase(configuredOffer)
     end
+```
+
+#### Funcionalidade 6
+```lua
     
     -- Função para processar compra
     function configurator:processPurchase(offer)
@@ -837,6 +982,10 @@ local productData = {
             type = "text",
             required = true
         },
+```
+
+#### Finalização
+```lua
         {
             id = "name_type",
             name = "Name Type",
@@ -860,6 +1009,7 @@ local configurator = ConfigurableProductSystem.createProductConfigurator(product
 
 ### 🎯 **Uso Eficiente**
 
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Sempre verificar se a loja existe
 function showStore()
@@ -882,6 +1032,10 @@ function updateCoinBalance(regular, transferable)
     controllerShop.ui.lblCoins.lblTibiaTransfer:setText(
         string.format("(Including: %s)", formatNumberWithCommas(transferable)))
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 -- ✅ BOM: Validar produtos antes da compra
 function validateProductPurchase(product, coinType)
@@ -903,6 +1057,10 @@ function validateProductPurchase(product, coinType)
     
     return true, "Valid purchase"
 end
+```
+
+#### Finalização
+```lua
 
 -- ❌ EVITE: Não verificar existência de widgets
 function badShowStore()
@@ -917,6 +1075,7 @@ end
 
 ### 🎨 **Organização de Código**
 
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Separar responsabilidades
 local StoreDataManager = {
@@ -939,6 +1098,10 @@ function StoreDataManager:getProduct(productId)
 end
 
 function StoreDataManager:addTransaction(transaction)
+```
+
+#### Funcionalidade 1
+```lua
     table.insert(self.history, {
         id = transaction.id,
         product = transaction.product,
@@ -963,6 +1126,10 @@ function createStoreWithCallbacks(storeData, callbacks)
     if callbacks.onPurchase then
         store.onPurchase = callbacks.onPurchase
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     return store
 end
@@ -985,12 +1152,17 @@ function StoreEventSystem:triggerEvent(event, data)
         for _, callback in ipairs(self.listeners[event]) do
             callback(data)
         end
+```
+
+#### Finalização
+```lua
     end
 end
 ```
 
 ### 🔧 **Performance e Otimização**
 
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Cache de produtos
 local ProductCache = {
@@ -1013,6 +1185,10 @@ function ProductCache:getProduct(productId)
         price = 0,
         loading = true
     }
+```
+
+#### Funcionalidade 1
+```lua
     
     self.cache[productId] = placeholder
     return placeholder
@@ -1034,6 +1210,10 @@ function ProductCache:updateProduct(productId, productData)
             oldestKey = key
             break
         end
+```
+
+#### Funcionalidade 2
+```lua
         if oldestKey then
             self.cache[oldestKey] = nil
         end
@@ -1059,6 +1239,10 @@ local ProductWidgetPool = {
     available = {},
     inUse = {}
 }
+```
+
+#### Finalização
+```lua
 
 function ProductWidgetPool:getWidget()
     if #self.available > 0 then
@@ -1084,6 +1268,7 @@ end
 
 ### 🎨 **Estilização e Temas**
 
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Sistema de temas para loja
 local storeThemes = {
@@ -1110,6 +1295,10 @@ local storeThemes = {
         errorColor = '#f44336',
         successColor = '#4caf50'
     }
+```
+
+#### Funcionalidade 1
+```lua
 }
 
 function applyStoreTheme(themeName)
@@ -1131,6 +1320,10 @@ function applyStoreTheme(themeName)
     if descriptionLabel then
         descriptionLabel:setColor(theme.textColor)
     end
+```
+
+#### Funcionalidade 2
+```lua
 end
 
 -- ✅ BOM: Animações suaves
@@ -1160,6 +1353,10 @@ function showPurchaseFeedback(success, message)
         feedbackWindow:setText("Purchase Failed")
         feedbackWindow:setColor(storeThemes.default.errorColor)
     end
+```
+
+#### Finalização
+```lua
     
     feedbackWindow:setDescription(message)
     

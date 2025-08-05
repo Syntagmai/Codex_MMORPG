@@ -1,14 +1,12 @@
----
-tags: [otclient, wiki, documentation, index, guide]
-type: index
-aliases: [OTClient Wiki, Documentação OTClient, Wiki Principal]
----
 
 # OTClient Wiki
 
 > [!info] Bem-vindo à Wiki do OTClient! Esta é a porta de entrada para toda a documentação do sistema, organizada por prioridade e status de desenvolvimento.
 
-## 📋 Índice
+
+---
+
+## 📋 Índice 📋
 - [[#🎯 Visão Geral]]
 - [[#📚 Documentação Criada]]
 - [[#🚧 Documentação em Desenvolvimento]]
@@ -17,11 +15,14 @@ aliases: [OTClient Wiki, Documentação OTClient, Wiki Principal]
 
 ---
 
-## 🎯 Visão Geral
+
+---
+
+## 🎯 Visão Geral 🎯
 
 Esta wiki documenta o **OTClient - Redemption**, um cliente Tibia alternativo de código aberto que oferece flexibilidade total através de um sistema modular baseado em Lua.
 
-### 🏗️ Arquitetura do Sistema
+### 🏗️ Arquitetura do Sistema 📝
 ```mermaid
 graph TD
     A[OTClient Core] --> B[Engine C++]
@@ -44,9 +45,12 @@ graph TD
 
 ---
 
-## 📚 Documentação Criada
 
-### ✅ **Documentos Completos**
+---
+
+## 📚 Documentação Criada 📋
+
+### ✅ **Documentos Completos** 📝
 
 #### 🎯 **[[Getting_Started_Guide]]** ✅
 - **Descrição**: Guia completo para iniciantes no OTClient
@@ -128,9 +132,12 @@ graph TD
 
 ---
 
-## 🚧 Documentação em Desenvolvimento
 
-### 🔄 **Documentos em Progresso**
+---
+
+## 🚧 Documentação em Desenvolvimento 📋
+
+### 🔄 **Documentos em Progresso** 📝
 
 > [!warning] Estes documentos estão sendo desenvolvidos ou precisam de atualizações.
 
@@ -150,9 +157,12 @@ graph TD
 
 ---
 
-## 📋 Documentação Planejada
 
-### 📊 **Capítulos Prioritários (1-5)**
+---
+
+## 📋 Documentação Planejada 📋
+
+### 📊 **Capítulos Prioritários (1-5)** 📝
 
 #### 1️⃣ **[[Configuration_System_Guide]]** ❌
 - **Descrição**: Sistema de configuração e settings
@@ -184,7 +194,7 @@ graph TD
 - **Dependências**: Lua_Programming_Guide, Debugging_Tools_Guide
 - **Impacto**: Médio - Performance do cliente
 
-### 🎯 **Sistemas Avançados (Completos)**
+### 🎯 **Sistemas Avançados (Completos)** 📝
 
 #### ⚡ **[[Effects_System_Guide]]** ✅
 - **Descrição**: Sistema completo de efeitos visuais
@@ -222,7 +232,7 @@ graph TD
 - **Dependências**: Debug_System_Guide
 - **Impacto**: Alto - Performance máxima
 
-### 📚 **Capítulos Secundários (6-10)**
+### 📚 **Capítulos Secundários (6-10)** 📝
 
 #### 6️⃣ **[[Shader_System_Guide]]** ❌
 - **Descrição**: Sistema de shaders e efeitos visuais
@@ -254,7 +264,7 @@ graph TD
 - **Dependências**: Nenhuma
 - **Impacto**: Baixo - Compilação do cliente
 
-### 🎯 **Capítulos Especializados (11-15)**
+### 🎯 **Capítulos Especializados (11-15)** 📝
 
 #### 1️⃣1️⃣ **[[Android_Development_Guide]]** ❌
 - **Descrição**: Desenvolvimento para Android
@@ -288,9 +298,12 @@ graph TD
 
 ---
 
-## 📊 Status Geral
 
-### 📈 **Estatísticas da Wiki**
+---
+
+## 📊 Status Geral 📋
+
+### 📈 **Estatísticas da Wiki** 📝
 
 | Categoria | Total | Documentado | Em Desenvolvimento | Não Documentado |
 |-----------|-------|-------------|-------------------|-----------------|
@@ -301,7 +314,7 @@ graph TD
 | **Sistemas Avançados** | 7 | **7** ✅ | 0 | 0 |
 | **Total Geral** | 29 | **14** ✅ | 2 🔄 | 13 ❌ |
 
-### 🎯 **Progresso por Área**
+### 🎯 **Progresso por Área** 📝
 
 #### ✅ **Completamente Documentado**
 - **Sistema de UI**: UIWidget_Reference, UI_System_Guide, OTUI_Module_Development_Guide
@@ -337,7 +350,7 @@ graph TD
 - **Testes**: Testing_Framework_Guide
 - **Contribuição**: Contributing_Guide
 
-### 🚀 **Próximos Passos Recomendados**
+### 🚀 **Próximos Passos Recomendados** 📝
 
 > [!tip] **Prioridade 1**: Desenvolver sistemas de jogo essenciais
 > - [[Spell_System_Guide]] - Sistema de magias e spells

@@ -49,6 +49,7 @@ graph TD
 ### 🔹 Pacotes de Envio (Client → Server)
 
 #### **ClientExtendedOpcode (0x32)**
+#### Nível Basic
 ```cpp
 // Estrutura do pacote
 struct ClientExtendedOpcode {
@@ -57,7 +58,43 @@ struct ClientExtendedOpcode {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+// Estrutura do pacote
+struct ClientExtendedOpcode {
+    uint8_t opcode;        // Código da operação (0-255)
+    std::string buffer;    // Dados da mensagem
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Estrutura do pacote
+struct ClientExtendedOpcode {
+    uint8_t opcode;        // Código da operação (0-255)
+    std::string buffer;    // Dados da mensagem
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 **Implementação C++ (OTClient):**
+#### Nível Basic
 ```cpp
 void ProtocolGame::sendExtendedOpcode(const uint8_t opcode, const std::string& buffer)
 {
@@ -73,9 +110,59 @@ void ProtocolGame::sendExtendedOpcode(const uint8_t opcode, const std::string& b
 }
 ```
 
+#### Nível Intermediate
+```cpp
+void ProtocolGame::sendExtendedOpcode(const uint8_t opcode, const std::string& buffer)
+{
+    if (m_enableSendExtendedOpcode) {
+        const auto& msg = std::make_shared<OutputMessage>();
+        msg->addU8(Proto::ClientExtendedOpcode);  // 0x32
+        msg->addU8(opcode);
+        msg->addString(buffer);
+        send(msg);
+    } else {
+        g_logger.error("Unable to send extended opcode {}, extended opcodes are not enabled", opcode);
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+void ProtocolGame::sendExtendedOpcode(const uint8_t opcode, const std::string& buffer)
+{
+    if (m_enableSendExtendedOpcode) {
+        const auto& msg = std::make_shared<OutputMessage>();
+        msg->addU8(Proto::ClientExtendedOpcode);  // 0x32
+        msg->addU8(opcode);
+        msg->addString(buffer);
+        send(msg);
+    } else {
+        g_logger.error("Unable to send extended opcode {}, extended opcodes are not enabled", opcode);
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔹 Pacotes de Recebimento (Server → Client)
 
 #### **GameServerExtendedOpcode (0x32)**
+#### Nível Basic
 ```cpp
 // Estrutura do pacote
 struct GameServerExtendedOpcode {
@@ -84,7 +171,43 @@ struct GameServerExtendedOpcode {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+// Estrutura do pacote
+struct GameServerExtendedOpcode {
+    uint8_t opcode;        // Código da operação (0-255)
+    std::string buffer;    // Dados da mensagem
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Estrutura do pacote
+struct GameServerExtendedOpcode {
+    uint8_t opcode;        // Código da operação (0-255)
+    std::string buffer;    // Dados da mensagem
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 **Implementação C++ (Canary):**
+#### Nível Basic
 ```cpp
 void ProtocolGame::parseExtendedOpcode(NetworkMessage &msg) {
     uint8_t opcode = msg.getByte();
@@ -95,6 +218,45 @@ void ProtocolGame::parseExtendedOpcode(NetworkMessage &msg) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+void ProtocolGame::parseExtendedOpcode(NetworkMessage &msg) {
+    uint8_t opcode = msg.getByte();
+    const std::string &buffer = msg.getString();
+    
+    // process additional opcodes via lua script event
+    g_game().parsePlayerExtendedOpcode(player->getID(), opcode, buffer);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+void ProtocolGame::parseExtendedOpcode(NetworkMessage &msg) {
+    uint8_t opcode = msg.getByte();
+    const std::string &buffer = msg.getString();
+    
+    // process additional opcodes via lua script event
+    g_game().parsePlayerExtendedOpcode(player->getID(), opcode, buffer);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🔧 Implementação Lua (OTClient)
@@ -103,9 +265,11 @@ void ProtocolGame::parseExtendedOpcode(NetworkMessage &msg) {
 
 ```lua
 -- Registro de callbacks normais
+    --  Registro de callbacks normais (traduzido)
 ProtocolGame.registerExtendedOpcode(opcode, callback)
 
 -- Registro de callbacks JSON
+    --  Registro de callbacks JSON (traduzido)
 ProtocolGame.registerExtendedJSONOpcode(opcode, callback)
 
 -- Remoção de callbacks
@@ -117,34 +281,41 @@ ProtocolGame.unregisterExtendedJSONOpcode(opcode)
 
 ```lua
 function ProtocolGame:onExtendedOpcode(opcode, buffer)
+    -- Função: ProtocolGame
     local callback = extendedCallbacks[opcode]
     if callback then
+    -- Verificação condicional
         callback(self, opcode, buffer)
     end
 
     callback = extendedJSONCallbacks[opcode]
     if callback then
+    -- Verificação condicional
         -- Processamento JSON com fragmentação
         local status = buffer:sub(1, 1) -- O, S, P, E
         local data = buffer:sub(2)
         
         if status ~= 'E' and status ~= 'P' then
+    -- Verificação condicional
             extendedJSONData[opcode] = ''
         end
         
         if status ~= 'S' and status ~= 'P' and status ~= 'E' then
+    -- Verificação condicional
             extendedJSONData[opcode] = buffer
         else
             extendedJSONData[opcode] = extendedJSONData[opcode] .. data
         end
         
         if status ~= 'S' and status ~= 'P' then
+    -- Verificação condicional
             local json_status, json_data = pcall(function()
                 return json.decode(extendedJSONData[opcode])
             end)
             extendedJSONData[opcode] = nil
             
             if not json_status then
+    -- Verificação condicional
                 error('Invalid data in extended JSON opcode: ' .. json_data)
                 return
             end
@@ -159,20 +330,25 @@ end
 
 ```lua
 function ProtocolGame:sendExtendedJSONOpcode(opcode, data)
+    -- Função: ProtocolGame
     if opcode < 0 or opcode > 255 then
+    -- Verificação condicional
         error('Invalid opcode. Range: 0-255')
     end
     if type(data) ~= 'table' then
+    -- Verificação condicional
         error('Invalid data type, should be table')
     end
 
     local buffer = json.encode(data)
     local s = {}
     for i = 1, #buffer, maxPacketSize do
+    -- Loop de repetição
         s[#s + 1] = buffer:sub(i, i + maxPacketSize - 1)
     end
     
     if #s == 1 then
+    -- Verificação condicional
         self:sendExtendedOpcode(opcode, s[1])
         return
     end
@@ -180,6 +356,7 @@ function ProtocolGame:sendExtendedJSONOpcode(opcode, data)
     -- Fragmentação para pacotes grandes
     self:sendExtendedOpcode(opcode, 'S' .. s[1])
     for i = 2, #s - 1 do
+    -- Loop de repetição
         self:sendExtendedOpcode(opcode, 'P' .. s[i])
     end
     self:sendExtendedOpcode(opcode, 'E' .. s[#s])
@@ -194,16 +371,22 @@ end
 
 ```lua
 -- Registro do evento ExtendedOpcode
+    --  Registro do evento ExtendedOpcode (traduzido)
 local extendedOpcode = CreatureEvent("ExtendedOpcode")
 
 function extendedOpcode.onExtendedOpcode(player, opcode, buffer)
+    -- Função: extendedOpcode
     if opcode == OPCODE_LANGUAGE then
+    -- Verificação condicional
         -- Processamento de idioma
+    --  Processamento de idioma (traduzido)
         if buffer == "en" or buffer == "pt" then
+    -- Verificação condicional
             -- Configuração de idioma do jogador
         end
     else
         -- Outros opcodes podem ser ignorados
+    --  Outros opcodes podem ser ignorados (traduzido)
     end
 end
 
@@ -214,7 +397,9 @@ extendedOpcode:register()
 
 ```lua
 function Player.sendExtendedJSONOpcode(self, opcode, buffer)
+    -- Função: Player
     if not self:isUsingOtClient() then
+    -- Verificação condicional
         return false
     end
 
@@ -235,6 +420,7 @@ end
 ### 📊 Enums e Constantes
 
 #### **Opcode Ranges**
+#### Nível Basic
 ```cpp
 // OTClient Protocol Codes
 enum GameServerOpcodes : uint8_t {
@@ -248,7 +434,53 @@ enum ClientOpcodes : uint8_t {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+// OTClient Protocol Codes
+enum GameServerOpcodes : uint8_t {
+    GameServerExtendedOpcode = 50,  // OTClient ONLY
+    // ... outros opcodes
+};
+
+enum ClientOpcodes : uint8_t {
+    ClientExtendedOpcode = 50,      // OTClient ONLY
+    // ... outros opcodes
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// OTClient Protocol Codes
+enum GameServerOpcodes : uint8_t {
+    GameServerExtendedOpcode = 50,  // OTClient ONLY
+    // ... outros opcodes
+};
+
+enum ClientOpcodes : uint8_t {
+    ClientExtendedOpcode = 50,      // OTClient ONLY
+    // ... outros opcodes
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Status de Fragmentação JSON**
+#### Nível Basic
 ```lua
 -- Status codes para fragmentação
 local JSON_STATUS = {
@@ -259,11 +491,51 @@ local JSON_STATUS = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Status codes para fragmentação
+local JSON_STATUS = {
+    SINGLE = 'O',    -- Mensagem única
+    START = 'S',     -- Início de fragmentação
+    PART = 'P',      -- Parte intermediária
+    END = 'E'        -- Fim de fragmentação
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Status codes para fragmentação
+local JSON_STATUS = {
+    SINGLE = 'O',    -- Mensagem única
+    START = 'S',     -- Início de fragmentação
+    PART = 'P',      -- Parte intermediária
+    END = 'E'        -- Fim de fragmentação
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 📦 Tipos de Dados
 
 #### **1. Dados Simples**
 ```lua
 -- String simples
+    --  String simples (traduzido)
 protocol:sendExtendedOpcode(1, "Hello World")
 
 -- Dados binários
@@ -273,6 +545,7 @@ protocol:sendExtendedOpcode(2, binaryData)
 #### **2. Dados JSON**
 ```lua
 -- Objeto JSON
+    --  Objeto JSON (traduzido)
 local data = {
     action = "updateUI",
     parameters = {
@@ -339,6 +612,20 @@ sequenceDiagram
 ### ✅ Validações de Entrada
 
 #### **Cliente (OTClient)**
+#### Nível Basic
+```lua
+-- Validação de opcode
+if opcode < 0 or opcode > 255 then
+end
+-- Validação de callback
+if not callback or type(callback) ~= 'function' then
+end
+-- Validação de dados JSON
+if type(data) ~= 'table' then
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Validação de opcode
 if opcode < 0 or opcode > 255 then
@@ -356,12 +643,74 @@ if type(data) ~= 'table' then
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Validação de opcode
+if opcode < 0 or opcode > 255 then
+    error('Invalid opcode. Range: 0-255')
+end
+
+-- Validação de callback
+if not callback or type(callback) ~= 'function' then
+    error('Invalid callback.')
+end
+
+-- Validação de dados JSON
+if type(data) ~= 'table' then
+    error('Invalid data type, should be table')
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Servidor (Canary)**
+#### Nível Basic
 ```cpp
 // Verificação de cliente OTClient
 if(player && !player->isUsingOtclient()) {
     return; // Ignora pacotes de clientes não-OTClient
 }
+```
+
+#### Nível Intermediate
+```cpp
+// Verificação de cliente OTClient
+if(player && !player->isUsingOtclient()) {
+    return; // Ignora pacotes de clientes não-OTClient
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Verificação de cliente OTClient
+if(player && !player->isUsingOtclient()) {
+    return; // Ignora pacotes de clientes não-OTClient
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### 🚫 Proteções
@@ -374,17 +723,21 @@ local maxRequests = 10
 local timeWindow = 1000 -- ms
 
 function checkRateLimit(opcode)
+    -- Função: checkRateLimit
     local now = os.time()
     if not rateLimit[opcode] then
+    -- Verificação condicional
         rateLimit[opcode] = {}
     end
     
     -- Limpa registros antigos
+    --  Limpa registros antigos (traduzido)
     rateLimit[opcode] = table.filter(rateLimit[opcode], function(timestamp)
         return now - timestamp < timeWindow
     end)
     
     if #rateLimit[opcode] >= maxRequests then
+    -- Verificação condicional
         return false
     end
     
@@ -402,6 +755,7 @@ local function safeJSONDecode(jsonString)
     end)
     
     if not status then
+    -- Verificação condicional
         error('Invalid JSON data: ' .. tostring(result))
         return nil
     end
@@ -423,8 +777,10 @@ local maxPacketSize = 65000
 
 -- Fragmentação automática para dados grandes
 function fragmentData(data, maxSize)
+    -- Função: fragmentData
     local fragments = {}
     for i = 1, #data, maxSize do
+    -- Loop de repetição
         table.insert(fragments, data:sub(i, i + maxSize - 1))
     end
     return fragments
@@ -438,8 +794,11 @@ local extendedCallbacks = {}
 local extendedJSONCallbacks = {}
 
 -- Registro otimizado
+    --  Registro otimizado (traduzido)
 function ProtocolGame.registerExtendedOpcode(opcode, callback)
+    -- Função: ProtocolGame
     if extendedCallbacks[opcode] then
+    -- Verificação condicional
         error('Opcode is already taken.')
     end
     extendedCallbacks[opcode] = callback
@@ -452,15 +811,18 @@ end
 ```lua
 -- Limpeza automática após processamento
 if status ~= 'S' and status ~= 'P' then
+    -- Verificação condicional
     local json_status, json_data = pcall(function()
         return json.decode(extendedJSONData[opcode])
     end)
     extendedJSONData[opcode] = nil  -- Limpeza imediata
     -- ... processamento
+    --  ... processamento (traduzido)
 end
 ```
 
 #### **2. Gerenciamento de NetworkMessage**
+#### Nível Basic
 ```lua
 -- Criação e destruição adequada
 local networkMessage = NetworkMessage()
@@ -471,12 +833,52 @@ networkMessage:sendToPlayer(self)
 networkMessage:delete()  -- Liberação de memória
 ```
 
+#### Nível Intermediate
+```lua
+-- Criação e destruição adequada
+local networkMessage = NetworkMessage()
+networkMessage:addByte(0x32)
+networkMessage:addByte(opcode)
+networkMessage:addString(json.encode(buffer))
+networkMessage:sendToPlayer(self)
+networkMessage:delete()  -- Liberação de memória
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Criação e destruição adequada
+local networkMessage = NetworkMessage()
+networkMessage:addByte(0x32)
+networkMessage:addByte(opcode)
+networkMessage:addString(json.encode(buffer))
+networkMessage:sendToPlayer(self)
+networkMessage:delete()  -- Liberação de memória
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🔧 Padrões de Implementação
 
 ### 📋 1. Padrão de Registro de Callbacks
 
+#### Nível Basic
 ```lua
 -- Padrão recomendado para módulos
 local MyModule = {}
@@ -504,11 +906,86 @@ function MyModule.onJSONOpcode101(protocol, opcode, data)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Padrão recomendado para módulos
+local MyModule = {}
+
+function MyModule.init()
+    -- Registra callbacks na inicialização
+    ProtocolGame.registerExtendedOpcode(100, MyModule.onOpcode100)
+    ProtocolGame.registerExtendedJSONOpcode(101, MyModule.onJSONOpcode101)
+end
+
+function MyModule.terminate()
+    -- Remove callbacks na finalização
+    ProtocolGame.unregisterExtendedOpcode(100)
+    ProtocolGame.unregisterExtendedJSONOpcode(101)
+end
+
+function MyModule.onOpcode100(protocol, opcode, buffer)
+    -- Processamento de opcode simples
+    print("Received opcode 100:", buffer)
+end
+
+function MyModule.onJSONOpcode101(protocol, opcode, data)
+    -- Processamento de opcode JSON
+    print("Received JSON opcode 101:", data.action)
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Padrão recomendado para módulos
+local MyModule = {}
+
+function MyModule.init()
+    -- Registra callbacks na inicialização
+    ProtocolGame.registerExtendedOpcode(100, MyModule.onOpcode100)
+    ProtocolGame.registerExtendedJSONOpcode(101, MyModule.onJSONOpcode101)
+end
+
+function MyModule.terminate()
+    -- Remove callbacks na finalização
+    ProtocolGame.unregisterExtendedOpcode(100)
+    ProtocolGame.unregisterExtendedJSONOpcode(101)
+end
+
+function MyModule.onOpcode100(protocol, opcode, buffer)
+    -- Processamento de opcode simples
+    print("Received opcode 100:", buffer)
+end
+
+function MyModule.onJSONOpcode101(protocol, opcode, data)
+    -- Processamento de opcode JSON
+    print("Received JSON opcode 101:", data.action)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 📋 2. Padrão de Comunicação Bidirecional
 
 ```lua
 -- Cliente
+    --  Cliente (traduzido)
 function sendRequest(requestType, parameters)
+    -- Função: sendRequest
     local data = {
         type = "request",
         requestType = requestType,
@@ -519,8 +996,11 @@ function sendRequest(requestType, parameters)
 end
 
 -- Servidor
+    --  Servidor (traduzido)
 function handleRequest(player, data)
+    -- Função: handleRequest
     if data.type == "request" then
+    -- Verificação condicional
         local response = {
             type = "response",
             requestType = data.requestType,
@@ -534,6 +1014,28 @@ end
 
 ### 📋 3. Padrão de Fragmentação
 
+#### Nível Basic
+```lua
+-- Sistema de fragmentação robusto
+function sendLargeData(opcode, data)
+    local jsonString = json.encode(data)
+    if #jsonString <= maxPacketSize then
+        -- Dados pequenos: envio direto
+        protocol:sendExtendedOpcode(opcode, jsonString)
+        -- Dados grandes: fragmentação
+        local fragments = fragmentData(jsonString, maxPacketSize)
+        -- Primeiro fragmento
+        protocol:sendExtendedOpcode(opcode, 'S' .. fragments[1])
+        -- Fragmentos intermediários
+            protocol:sendExtendedOpcode(opcode, 'P' .. fragments[i])
+        end
+        -- Último fragmento
+        protocol:sendExtendedOpcode(opcode, 'E' .. fragments[#fragments])
+    end
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Sistema de fragmentação robusto
 function sendLargeData(opcode, data)
@@ -560,6 +1062,43 @@ function sendLargeData(opcode, data)
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Sistema de fragmentação robusto
+function sendLargeData(opcode, data)
+    local jsonString = json.encode(data)
+    
+    if #jsonString <= maxPacketSize then
+        -- Dados pequenos: envio direto
+        protocol:sendExtendedOpcode(opcode, jsonString)
+    else
+        -- Dados grandes: fragmentação
+        local fragments = fragmentData(jsonString, maxPacketSize)
+        
+        -- Primeiro fragmento
+        protocol:sendExtendedOpcode(opcode, 'S' .. fragments[1])
+        
+        -- Fragmentos intermediários
+        for i = 2, #fragments - 1 do
+            protocol:sendExtendedOpcode(opcode, 'P' .. fragments[i])
+        end
+        
+        -- Último fragmento
+        protocol:sendExtendedOpcode(opcode, 'E' .. fragments[#fragments])
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🎨 Interface e UX
@@ -570,6 +1109,7 @@ end
 ```lua
 -- Notificações via Extended Opcode
 function sendNotification(message, type)
+    -- Função: sendNotification
     local data = {
         action = "notification",
         message = message,
@@ -584,6 +1124,7 @@ end
 ```lua
 -- Atualização de UI remota
 function updateUI(component, properties)
+    -- Função: updateUI
     local data = {
         action = "updateUI",
         component = component,
@@ -599,6 +1140,7 @@ end
 ```lua
 -- Feedback de operações
 function sendOperationFeedback(operation, status, message)
+    -- Função: sendOperationFeedback
     local data = {
         action = "feedback",
         operation = operation,
@@ -612,7 +1154,9 @@ end
 #### **2. Progress Indicators**
 ```lua
 -- Indicadores de progresso
+    --  Indicadores de progresso (traduzido)
 function sendProgress(operation, current, total)
+    -- Função: sendProgress
     local data = {
         action = "progress",
         operation = operation,
@@ -633,12 +1177,15 @@ end
 #### **1. Teste de Envio**
 ```lua
 function testExtendedOpcodeSend()
+    -- Função: testExtendedOpcodeSend
     local protocol = g_game.getProtocol()
     
     -- Teste de opcode simples
+    --  Teste de opcode simples (traduzido)
     protocol:sendExtendedOpcode(1, "test data")
     
     -- Teste de opcode JSON
+    --  Teste de opcode JSON (traduzido)
     local testData = {test = true, value = 123}
     protocol:sendExtendedJSONOpcode(2, testData)
     
@@ -649,6 +1196,7 @@ end
 #### **2. Teste de Recebimento**
 ```lua
 function testExtendedOpcodeReceive()
+    -- Função: testExtendedOpcodeReceive
     local received = false
     
     ProtocolGame.registerExtendedOpcode(1, function(protocol, opcode, buffer)
@@ -657,6 +1205,7 @@ function testExtendedOpcodeReceive()
     end)
     
     -- Simula recebimento
+    --  Simula recebimento (traduzido)
     ProtocolGame:onExtendedOpcode(1, "test data")
     
     assert(received, "Callback not called")
@@ -669,7 +1218,9 @@ end
 #### **1. Teste Cliente-Servidor**
 ```lua
 -- Cliente
+    --  Cliente (traduzido)
 function testClientServerCommunication()
+    -- Função: testClientServerCommunication
     local data = {
         action = "ping",
         timestamp = os.time()
@@ -684,8 +1235,11 @@ function testClientServerCommunication()
 end
 
 -- Servidor
+    --  Servidor (traduzido)
 function handlePing(player, data)
+    -- Função: handlePing
     if data.action == "ping" then
+    -- Verificação condicional
         local response = {
             action = "pong",
             timestamp = os.time(),
@@ -708,6 +1262,7 @@ end
 local latencyMetrics = {}
 
 function measureLatency(opcode)
+    -- Função: measureLatency
     local startTime = os.time()
     
     return function()
@@ -715,6 +1270,7 @@ function measureLatency(opcode)
         local latency = endTime - startTime
         
         if not latencyMetrics[opcode] then
+    -- Verificação condicional
             latencyMetrics[opcode] = {}
         end
         
@@ -722,6 +1278,7 @@ function measureLatency(opcode)
         
         -- Mantém apenas as últimas 100 medições
         if #latencyMetrics[opcode] > 100 then
+    -- Verificação condicional
             table.remove(latencyMetrics[opcode], 1)
         end
     end
@@ -734,7 +1291,9 @@ end
 local opcodeStats = {}
 
 function trackOpcodeUsage(opcode, dataSize)
+    -- Função: trackOpcodeUsage
     if not opcodeStats[opcode] then
+    -- Verificação condicional
         opcodeStats[opcode] = {
             count = 0,
             totalSize = 0,
@@ -753,7 +1312,9 @@ end
 #### **1. Log de Erros**
 ```lua
 -- Sistema de logging
+    --  Sistema de logging (traduzido)
 function logExtendedOpcodeError(opcode, error, context)
+    -- Função: logExtendedOpcodeError
     local logEntry = {
         timestamp = os.time(),
         opcode = opcode,
@@ -763,6 +1324,7 @@ function logExtendedOpcodeError(opcode, error, context)
     }
     
     -- Salva no log
+    --  Salva no log (traduzido)
     g_logger.error("Extended Opcode Error: " .. json.encode(logEntry))
 end
 ```
@@ -770,15 +1332,19 @@ end
 #### **2. Alertas de Sistema**
 ```lua
 -- Sistema de alertas
+    --  Sistema de alertas (traduzido)
 function checkSystemHealth()
+    -- Função: checkSystemHealth
     local errors = getRecentErrors(300) -- Últimos 5 minutos
     
     if #errors > 10 then
+    -- Verificação condicional
         sendSystemAlert("High error rate in Extended Opcode system")
     end
     
     local avgLatency = calculateAverageLatency()
     if avgLatency > 1000 then -- Mais de 1 segundo
+    -- Verificação condicional
         sendSystemAlert("High latency in Extended Opcode communication")
     end
 end
@@ -791,6 +1357,7 @@ end
 ### 📋 Melhorias Planejadas
 
 #### **1. Compressão de Dados**
+#### Nível Basic
 ```lua
 -- Implementação de compressão
 function compressData(data)
@@ -804,16 +1371,65 @@ function decompressData(compressedData)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Implementação de compressão
+function compressData(data)
+    -- Implementar compressão gzip/zlib
+    return compressedData
+end
+
+function decompressData(compressedData)
+    -- Implementar descompressão
+    return originalData
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Implementação de compressão
+function compressData(data)
+    -- Implementar compressão gzip/zlib
+    return compressedData
+end
+
+function decompressData(compressedData)
+    -- Implementar descompressão
+    return originalData
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Criptografia**
 ```lua
 -- Criptografia de dados sensíveis
 function encryptData(data, key)
+    -- Função: encryptData
     -- Implementar criptografia AES
+    --  Implementar criptografia AES (traduzido)
     return encryptedData
 end
 
 function decryptData(encryptedData, key)
+    -- Função: decryptData
     -- Implementar descriptografia
+    --  Implementar descriptografia (traduzido)
     return originalData
 end
 ```
@@ -821,17 +1437,21 @@ end
 #### **3. Cache Inteligente**
 ```lua
 -- Sistema de cache para dados frequentes
+    --  Sistema de cache para dados frequentes (traduzido)
 local dataCache = {}
 
 function getCachedData(key)
+    -- Função: getCachedData
     local cached = dataCache[key]
     if cached and os.time() - cached.timestamp < 300 then -- 5 minutos
+    -- Verificação condicional
         return cached.data
     end
     return nil
 end
 
 function setCachedData(key, data)
+    -- Função: setCachedData
     dataCache[key] = {
         data = data,
         timestamp = os.time()
@@ -844,11 +1464,14 @@ end
 #### **1. Streaming de Dados**
 ```lua
 -- Streaming para dados em tempo real
+    --  Streaming para dados em tempo real (traduzido)
 function startDataStream(opcode, callback)
+    -- Função: startDataStream
     local streamId = generateStreamId()
     
     ProtocolGame.registerExtendedJSONOpcode(opcode, function(protocol, opcode, data)
         if data.streamId == streamId then
+    -- Verificação condicional
             callback(data.chunk, data.isLast)
         end
     end)
@@ -861,6 +1484,7 @@ end
 ```lua
 -- Sincronização de estado entre cliente e servidor
 function syncState(stateKey, stateData)
+    -- Função: syncState
     local data = {
         action = "syncState",
         key = stateKey,
@@ -879,13 +1503,16 @@ end
 
 ```lua
 -- Cliente
+    --  Cliente (traduzido)
 local AdvancedChat = {}
 
 function AdvancedChat.init()
+    -- Função: AdvancedChat
     ProtocolGame.registerExtendedJSONOpcode(100, AdvancedChat.onChatMessage)
 end
 
 function AdvancedChat.sendMessage(message, channel, style)
+    -- Função: AdvancedChat
     local data = {
         action = "sendMessage",
         message = message,
@@ -897,19 +1524,27 @@ function AdvancedChat.sendMessage(message, channel, style)
 end
 
 function AdvancedChat.onChatMessage(protocol, opcode, data)
+    -- Função: AdvancedChat
     if data.action == "receiveMessage" then
+    -- Verificação condicional
         -- Processa mensagem recebida
+    --  Processa mensagem recebida (traduzido)
         displayChatMessage(data.message, data.sender, data.style)
     end
 end
 
 -- Servidor
+    --  Servidor (traduzido)
 function handleChatMessage(player, data)
+    -- Função: handleChatMessage
     if data.action == "sendMessage" then
+    -- Verificação condicional
         -- Valida e processa mensagem
+    --  Valida e processa mensagem (traduzido)
         local processedMessage = processChatMessage(data.message)
         
         -- Envia para todos os jogadores no canal
+    --  Envia para todos os jogadores no canal (traduzido)
         local response = {
             action = "receiveMessage",
             message = processedMessage,
@@ -927,9 +1562,11 @@ end
 
 ```lua
 -- Cliente
+    --  Cliente (traduzido)
 local RemoteInventory = {}
 
 function RemoteInventory.requestItems()
+    -- Função: RemoteInventory
     local data = {
         action = "requestItems",
         timestamp = os.time()
@@ -938,15 +1575,20 @@ function RemoteInventory.requestItems()
 end
 
 function RemoteInventory.onInventoryUpdate(protocol, opcode, data)
+    -- Função: RemoteInventory
     if data.action == "inventoryUpdate" then
+    -- Verificação condicional
         -- Atualiza interface do inventário
         updateInventoryUI(data.items)
     end
 end
 
 -- Servidor
+    --  Servidor (traduzido)
 function handleInventoryRequest(player, data)
+    -- Função: handleInventoryRequest
     if data.action == "requestItems" then
+    -- Verificação condicional
         local items = player:getInventoryItems()
         
         local response = {
@@ -962,6 +1604,7 @@ end
 
 ### 🎮 Exemplo 3: Sistema de Configurações
 
+#### Inicialização e Configuração
 ```lua
 -- Cliente
 local ConfigManager = {}
@@ -984,6 +1627,10 @@ function ConfigManager.loadConfig()
 end
 
 function ConfigManager.onConfigResponse(protocol, opcode, data)
+```
+
+#### Funcionalidade 1
+```lua
     if data.action == "configLoaded" then
         applyConfig(data.config)
     elseif data.action == "configSaved" then
@@ -1012,6 +1659,10 @@ function handleConfigRequest(player, data)
             config = config,
             timestamp = os.time()
         }
+```
+
+#### Finalização
+```lua
         player:sendExtendedJSONOpcode(102, response)
     end
 end
@@ -1026,6 +1677,7 @@ end
 ```lua
 -- Sistema de notificações do Game Store
 function GameStore.sendNotification(message, type)
+    -- Função: GameStore
     local data = {
         action = "storeNotification",
         message = message,
@@ -1040,7 +1692,9 @@ end
 
 ```lua
 -- Sistema de eventos customizados
+    --  Sistema de eventos customizados (traduzido)
 function EventSystem.triggerEvent(eventName, parameters)
+    -- Função: EventSystem
     local data = {
         action = "triggerEvent",
         eventName = eventName,

@@ -71,6 +71,7 @@ A API **[Nome]** do Canary fornece **[descrição da funcionalidade]** para inte
 ### **🔧 Autenticação**
 
 #### **Método de Autenticação:**
+#### Nível Basic
 ```lua
 -- Exemplo de autenticação
 local headers = {
@@ -80,9 +81,47 @@ local headers = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Exemplo de autenticação
+local headers = {
+    ["Authorization"] = "Bearer " .. apiToken,
+    ["Content-Type"] = "application/json",
+    ["X-API-Version"] = "1.0"
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Exemplo de autenticação
+local headers = {
+    ["Authorization"] = "Bearer " .. apiToken,
+    ["Content-Type"] = "application/json",
+    ["X-API-Version"] = "1.0"
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Obtenção de Token:**
 ```lua
 -- Solicitar token de acesso
+    --  Solicitar token de acesso (traduzido)
 local response = http.post("https://api.canary.com/auth", {
     username = "user",
     password = "pass"
@@ -111,6 +150,7 @@ https://api.canary.com/v1
 ##### **GET /api/[resource]**
 ```lua
 -- Buscar recursos
+    --  Buscar recursos (traduzido)
 local response = http.get("https://api.canary.com/v1/[resource]", {
     headers = headers,
     params = {
@@ -127,6 +167,7 @@ local response = http.get("https://api.canary.com/v1/[resource]", {
 - `filter` (string): Filtro de resultados
 
 **Resposta:**
+#### Nível Basic
 ```json
 {
     "success": true,
@@ -145,9 +186,65 @@ local response = http.get("https://api.canary.com/v1/[resource]", {
 }
 ```
 
+#### Nível Intermediate
+```json
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "name": "Example",
+            "status": "active"
+        }
+    ],
+    "pagination": {
+        "total": 100,
+        "limit": 10,
+        "offset": 0
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```json
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1,
+            "name": "Example",
+            "status": "active"
+        }
+    ],
+    "pagination": {
+        "total": 100,
+        "limit": 10,
+        "offset": 0
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ##### **POST /api/[resource]**
 ```lua
 -- Criar novo recurso
+    --  Criar novo recurso (traduzido)
 local response = http.post("https://api.canary.com/v1/[resource]", {
     headers = headers,
     body = {
@@ -159,6 +256,7 @@ local response = http.post("https://api.canary.com/v1/[resource]", {
 ```
 
 **Body:**
+#### Nível Basic
 ```json
 {
     "name": "string",
@@ -167,7 +265,43 @@ local response = http.post("https://api.canary.com/v1/[resource]", {
 }
 ```
 
+#### Nível Intermediate
+```json
+{
+    "name": "string",
+    "description": "string",
+    "status": "active|inactive"
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```json
+{
+    "name": "string",
+    "description": "string",
+    "status": "active|inactive"
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 **Resposta:**
+#### Nível Basic
 ```json
 {
     "success": true,
@@ -181,9 +315,55 @@ local response = http.post("https://api.canary.com/v1/[resource]", {
 }
 ```
 
+#### Nível Intermediate
+```json
+{
+    "success": true,
+    "data": {
+        "id": 123,
+        "name": "New Resource",
+        "description": "Description",
+        "status": "active",
+        "created_at": "2025-01-27T10:00:00Z"
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```json
+{
+    "success": true,
+    "data": {
+        "id": 123,
+        "name": "New Resource",
+        "description": "Description",
+        "status": "active",
+        "created_at": "2025-01-27T10:00:00Z"
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ##### **PUT /api/[resource]/{id}**
 ```lua
 -- Atualizar recurso existente
+    --  Atualizar recurso existente (traduzido)
 local response = http.put("https://api.canary.com/v1/[resource]/123", {
     headers = headers,
     body = {
@@ -196,6 +376,7 @@ local response = http.put("https://api.canary.com/v1/[resource]/123", {
 ##### **DELETE /api/[resource]/{id}**
 ```lua
 -- Remover recurso
+    --  Remover recurso (traduzido)
 local response = http.delete("https://api.canary.com/v1/[resource]/123", {
     headers = headers
 })
@@ -206,6 +387,7 @@ local response = http.delete("https://api.canary.com/v1/[resource]/123", {
 ### **📊 Modelos de Dados**
 
 #### **Estrutura de Recurso:**
+#### Nível Basic
 ```json
 {
     "id": "number",
@@ -216,6 +398,49 @@ local response = http.delete("https://api.canary.com/v1/[resource]/123", {
     "updated_at": "datetime",
     "metadata": "object"
 }
+```
+
+#### Nível Intermediate
+```json
+{
+    "id": "number",
+    "name": "string",
+    "description": "string",
+    "status": "enum",
+    "created_at": "datetime",
+    "updated_at": "datetime",
+    "metadata": "object"
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```json
+{
+    "id": "number",
+    "name": "string",
+    "description": "string",
+    "status": "enum",
+    "created_at": "datetime",
+    "updated_at": "datetime",
+    "metadata": "object"
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 #### **Tipos de Dados:**
@@ -232,10 +457,12 @@ local response = http.delete("https://api.canary.com/v1/[resource]/123", {
 -- Exemplo de validação
 local function validateResource(data)
     if not data.name or #data.name < 3 then
+    -- Verificação condicional
         return false, "Nome deve ter pelo menos 3 caracteres"
     end
     
     if not data.status or not (data.status == "active" or data.status == "inactive") then
+    -- Verificação condicional
         return false, "Status deve ser 'active' ou 'inactive'"
     end
     
@@ -253,6 +480,7 @@ end
 local CanaryAPI = {}
 
 function CanaryAPI.init(config)
+    -- Função: CanaryAPI
     CanaryAPI.baseURL = config.baseURL or "https://api.canary.com/v1"
     CanaryAPI.token = config.token
     CanaryAPI.headers = {
@@ -262,12 +490,14 @@ function CanaryAPI.init(config)
 end
 
 function CanaryAPI.getResources(params)
+    -- Função: CanaryAPI
     local response = http.get(CanaryAPI.baseURL .. "/resources", {
         headers = CanaryAPI.headers,
         params = params
     })
     
     if response.success then
+    -- Verificação condicional
         return response.data
     else
         error("Erro na API: " .. response.error)
@@ -275,6 +505,7 @@ function CanaryAPI.getResources(params)
 end
 
 -- Uso no OTClient
+    --  Uso no OTClient (traduzido)
 CanaryAPI.init({
     baseURL = "https://api.canary.com/v1",
     token = "your-token"
@@ -289,21 +520,28 @@ local resources = CanaryAPI.getResources({
 #### **Exemplo 2: Sistema de Cache**
 ```lua
 -- Sistema de cache para otimizar chamadas
+    --  Sistema de cache para otimizar chamadas (traduzido)
 local cache = {}
 
 function CanaryAPI.getResourceWithCache(id)
+    -- Função: CanaryAPI
     -- Verificar cache
+    --  Verificar cache (traduzido)
     if cache[id] and cache[id].expires > os.time() then
+    -- Verificação condicional
         return cache[id].data
     end
     
     -- Buscar da API
+    --  Buscar da API (traduzido)
     local response = http.get(CanaryAPI.baseURL .. "/resources/" .. id, {
         headers = CanaryAPI.headers
     })
     
     if response.success then
+    -- Verificação condicional
         -- Armazenar no cache (5 minutos)
+    --  Armazenar no cache (5 minutos) (traduzido)
         cache[id] = {
             data = response.data,
             expires = os.time() + 300
@@ -318,7 +556,9 @@ end
 #### **Exemplo 3: Tratamento de Erros Robusto**
 ```lua
 -- Sistema robusto de tratamento de erros
+    --  Sistema robusto de tratamento de erros (traduzido)
 function CanaryAPI.safeRequest(method, endpoint, data)
+    -- Função: CanaryAPI
     local success, result = pcall(function()
         local response = http[method](CanaryAPI.baseURL .. endpoint, {
             headers = CanaryAPI.headers,
@@ -326,6 +566,7 @@ function CanaryAPI.safeRequest(method, endpoint, data)
         })
         
         if not response.success then
+    -- Verificação condicional
             error({
                 type = "api_error",
                 code = response.status,
@@ -337,12 +578,16 @@ function CanaryAPI.safeRequest(method, endpoint, data)
     end)
     
     if not success then
+    -- Verificação condicional
         if type(result) == "table" and result.type == "api_error" then
+    -- Verificação condicional
             -- Erro da API
+    --  Erro da API (traduzido)
             logError("API Error: " .. result.message)
             return nil, result
         else
             -- Erro de rede/sistema
+    --  Erro de rede/sistema (traduzido)
             logError("System Error: " .. tostring(result))
             return nil, {
                 type = "system_error",

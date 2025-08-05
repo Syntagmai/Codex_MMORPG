@@ -101,6 +101,7 @@ Sistema de Grid e Listas
 
 Layout em grade com células de tamanho fixo.
 
+#### Nível Basic
 ```lua
 -- Estrutura do UIGridLayout
 {
@@ -112,10 +113,52 @@ Layout em grade com células de tamanho fixo.
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Estrutura do UIGridLayout
+{
+    cellSize = {width = 32, height = 32},    -- Tamanho das células
+    cellSpacing = 1,                         -- Espaçamento entre células
+    numColumns = 4,                          -- Número de colunas
+    flow = true,                             -- Fluxo automático
+    fitChildren = false                      -- Ajustar ao conteúdo
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Estrutura do UIGridLayout
+{
+    cellSize = {width = 32, height = 32},    -- Tamanho das células
+    cellSpacing = 1,                         -- Espaçamento entre células
+    numColumns = 4,                          -- Número de colunas
+    flow = true,                             -- Fluxo automático
+    fitChildren = false                      -- Ajustar ao conteúdo
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎨 **UIGridLayout (Avançado)**
 
 Layout em grade com funcionalidades avançadas.
 
+#### Nível Basic
 ```lua
 -- Estrutura Avançada
 {
@@ -129,10 +172,56 @@ Layout em grade com funcionalidades avançadas.
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Estrutura Avançada
+{
+    cellSize = {width = 32, height = 32},    -- Tamanho das células
+    cellSpacing = {x = 1, y = 1},            -- Espaçamento X/Y
+    numColumns = 0,                          -- 0 = automático
+    flow = true,                             -- Fluxo automático
+    fitChildren = true,                      -- Ajustar ao conteúdo
+    maxColumns = 10,                         -- Máximo de colunas
+    minColumns = 1                           -- Mínimo de colunas
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Estrutura Avançada
+{
+    cellSize = {width = 32, height = 32},    -- Tamanho das células
+    cellSpacing = {x = 1, y = 1},            -- Espaçamento X/Y
+    numColumns = 0,                          -- 0 = automático
+    flow = true,                             -- Fluxo automático
+    fitChildren = true,                      -- Ajustar ao conteúdo
+    maxColumns = 10,                         -- Máximo de colunas
+    minColumns = 1                           -- Mínimo de colunas
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 📋 **UIVerticalLayout (Lista)**
 
 Layout vertical para listas ordenadas.
 
+#### Nível Basic
 ```lua
 -- Estrutura do UIVerticalLayout
 {
@@ -141,6 +230,45 @@ Layout vertical para listas ordenadas.
     alignRight = false,                      -- Alinhar à direita
     autoScroll = true                        -- Scroll automático
 }
+```
+
+#### Nível Intermediate
+```lua
+-- Estrutura do UIVerticalLayout
+{
+    spacing = 2,                             -- Espaçamento entre itens
+    fitChildren = true,                      -- Ajustar ao conteúdo
+    alignRight = false,                      -- Alinhar à direita
+    autoScroll = true                        -- Scroll automático
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Estrutura do UIVerticalLayout
+{
+    spacing = 2,                             -- Espaçamento entre itens
+    fitChildren = true,                      -- Ajustar ao conteúdo
+    alignRight = false,                      -- Alinhar à direita
+    autoScroll = true                        -- Scroll automático
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---
@@ -153,6 +281,7 @@ Lista básica com itens verticais.
 
 ```lua
 -- Estrutura de Lista Simples
+    --  Estrutura de Lista Simples (traduzido)
 {
     items = {},                              -- Lista de itens
     selectedIndex = 1,                       -- Índice selecionado
@@ -165,6 +294,12 @@ Lista básica com itens verticais.
 
 Lista com funcionalidades avançadas.
 
+#### Nível Basic
+```lua
+-- Estrutura de Lista Avançada
+```
+
+#### Nível Intermediate
 ```lua
 -- Estrutura de Lista Avançada
 {
@@ -177,6 +312,29 @@ Lista com funcionalidades avançadas.
 }
 ```
 
+#### Nível Advanced
+```lua
+-- Estrutura de Lista Avançada
+{
+    items = {},                              -- Lista de itens
+    selectedIndices = {},                    -- Índices selecionados
+    multiSelect = true,                      -- Seleção múltipla
+    searchable = true,                       -- Busca
+    sortable = true,                         -- Ordenação
+    filterable = true                        -- Filtros
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🐍 API Lua
@@ -185,18 +343,22 @@ Lista com funcionalidades avançadas.
 
 ```lua
 -- Criar layout de grade
+    --  Criar layout de grade (traduzido)
 local gridLayout = UIGridLayout.create(container)
 
 -- Configurar grade
+    --  Configurar grade (traduzido)
 gridLayout:setCellSize({width = 32, height = 32})
 gridLayout:setCellSpacing(1)
 gridLayout:setNumColumns(4)
 gridLayout:setFlow(true)
 
 -- Aplicar layout
+    --  Aplicar layout (traduzido)
 container:setLayout(gridLayout)
 
 -- Propriedades
+    --  Propriedades (traduzido)
 gridLayout:getCellSize()
 gridLayout:getCellSpacing()
 gridLayout:getNumColumns()
@@ -207,17 +369,21 @@ gridLayout:isFlow()
 
 ```lua
 -- Criar layout vertical
+    --  Criar layout vertical (traduzido)
 local verticalLayout = UIVerticalLayout.create(container)
 
 -- Configurar lista
+    --  Configurar lista (traduzido)
 verticalLayout:setSpacing(2)
 verticalLayout:setFitChildren(true)
 verticalLayout:setAlignRight(false)
 
 -- Aplicar layout
+    --  Aplicar layout (traduzido)
 container:setLayout(verticalLayout)
 
 -- Propriedades
+    --  Propriedades (traduzido)
 verticalLayout:getSpacing()
 verticalLayout:isFitChildren()
 verticalLayout:isAlignRight()
@@ -230,10 +396,12 @@ verticalLayout:isAlignRight()
 local scrollArea = g_ui.createWidget('UIScrollArea', parent)
 
 -- Configurar scrollbars
+    --  Configurar scrollbars (traduzido)
 scrollArea:setVerticalScrollBar(verticalBar)
 scrollArea:setHorizontalScrollBar(horizontalBar)
 
 -- Controle de offset
+    --  Controle de offset (traduzido)
 scrollArea:setVirtualOffset({x=0, y=0})
 scrollArea:getVirtualOffset()
 
@@ -250,10 +418,12 @@ scrollArea:setInverted(true)
 
 ```lua
 -- Criar container de grade
+    --  Criar container de grade (traduzido)
 local gridContainer = g_ui.createWidget('UIWidget', parent)
 gridContainer:setId('inventoryGrid')
 
 -- Configurar layout de grade
+    --  Configurar layout de grade (traduzido)
 local gridLayout = UIGridLayout.create(gridContainer)
 gridLayout:setCellSize({width = 32, height = 32})
 gridLayout:setCellSpacing(1)
@@ -261,10 +431,12 @@ gridLayout:setNumColumns(8)  -- 8 colunas para inventário
 gridLayout:setFlow(true)
 
 -- Aplicar layout
+    --  Aplicar layout (traduzido)
 gridContainer:setLayout(gridLayout)
 
 -- Adicionar células
 for i = 1, 32 do
+    -- Loop de repetição
     local cell = g_ui.createWidget('UIWidget', gridContainer)
     cell:setId('cell' .. i)
     cell:setSize({width = 32, height = 32})
@@ -276,6 +448,7 @@ end
 
 ### 🎨 **Implementação Avançada**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de inventário avançado
 local InventoryGrid = {}
@@ -309,6 +482,10 @@ function InventoryGrid.create(parent, columns, rows)
             cell.onClick = function(widget)
                 InventoryGrid.onCellClick(widget, index)
             end
+```
+
+#### Funcionalidade 1
+```lua
             
             cell.onHoverChange = function(widget, hovered)
                 if hovered then
@@ -330,6 +507,10 @@ function InventoryGrid.onCellClick(cell, index)
     print('Célula clicada:', index)
     -- Implementar lógica de seleção
 end
+```
+
+#### Finalização
+```lua
 
 -- Uso
 local inventory = InventoryGrid.create(parent, 8, 4)  -- 8x4 grid
@@ -343,18 +524,22 @@ local inventory = InventoryGrid.create(parent, 8, 4)  -- 8x4 grid
 
 ```lua
 -- Criar lista vertical
+    --  Criar lista vertical (traduzido)
 local listContainer = g_ui.createWidget('UIWidget', parent)
 listContainer:setId('itemList')
 
 -- Configurar layout vertical
+    --  Configurar layout vertical (traduzido)
 local verticalLayout = UIVerticalLayout.create(listContainer)
 verticalLayout:setSpacing(2)
 verticalLayout:setFitChildren(true)
 listContainer:setLayout(verticalLayout)
 
 -- Adicionar itens
+    --  Adicionar itens (traduzido)
 local items = {'Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'}
 for i, itemText in ipairs(items) do
+    -- Loop de repetição
     local item = g_ui.createWidget('Label', listContainer)
     item:setId('item' .. i)
     item:setText(itemText)
@@ -364,6 +549,7 @@ for i, itemText in ipairs(items) do
     item:setBorderColor('#666666')
     
     -- Eventos do item
+    --  Eventos do item (traduzido)
     item.onClick = function(widget)
         print('Item selecionado:', itemText)
     end
@@ -372,6 +558,7 @@ end
 
 ### 🎨 **Implementação Avançada**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de lista avançado
 local AdvancedList = {}
@@ -405,6 +592,10 @@ function AdvancedList.create(parent, items)
         item.onClick = function(widget)
             AdvancedList.selectItem(widget, i, itemData)
         end
+```
+
+#### Funcionalidade 1
+```lua
         
         item.onHoverChange = function(widget, hovered)
             if hovered then
@@ -429,6 +620,10 @@ function AdvancedList.selectItem(item, index, data)
     if container.selectedIndex and container.items[container.selectedIndex] then
         container.items[container.selectedIndex]:setBackgroundColor('#444444')
     end
+```
+
+#### Finalização
+```lua
     
     -- Selecionar novo item
     item:setBackgroundColor('#666666')
@@ -452,6 +647,7 @@ local list = AdvancedList.create(parent, items)
 
 ### 🎮 **Inventário de Jogo**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de inventário completo
 local GameInventory = {}
@@ -491,6 +687,10 @@ function GameInventory.create(parent)
         cell.onClick = function(widget)
             GameInventory.onCellClick(widget, i)
         end
+```
+
+#### Finalização
+```lua
         
         cell.onHoverChange = function(widget, hovered)
             if hovered then
@@ -518,6 +718,7 @@ local inventory = GameInventory.create(parent)
 
 ### 📋 **Lista de Chat**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de chat com lista
 local ChatList = {}
@@ -564,6 +765,10 @@ function ChatList.create(parent)
     window.messageContainer = messageContainer
     return window
 end
+```
+
+#### Finalização
+```lua
 
 function ChatList.addMessage(chatWindow, sender, message)
     local messageContainer = chatWindow.messageContainer
@@ -596,7 +801,9 @@ ChatList.addMessage(chat, 'Player2', 'Oi!')
 
 ```lua
 -- ✅ BOM: Usar virtual scrolling para listas grandes
+    --  ✅ BOM: Usar virtual scrolling para listas grandes (traduzido)
 function createVirtualList(parent, totalItems)
+    -- Função: createVirtualList
     local visibleItems = 20
     local itemHeight = 25
     
@@ -613,6 +820,7 @@ function createVirtualList(parent, totalItems)
     
     -- Adicionar itens conforme necessário
     for i = 1, math.min(visibleItems, totalItems) do
+    -- Loop de repetição
         local item = g_ui.createWidget('Label', container)
         item:setText('Item ' .. i)
         item:setHeight(itemHeight)
@@ -620,7 +828,9 @@ function createVirtualList(parent, totalItems)
 end
 
 -- ❌ EVITE: Criar muitos widgets de uma vez
+    --  ❌ EVITE: Criar muitos widgets de uma vez (traduzido)
 for i = 1, 10000 do
+    -- Loop de repetição
     local item = g_ui.createWidget('Label', parent)
     item:setText('Item ' .. i)
 end
@@ -641,17 +851,21 @@ local GRID_CONFIG = {
 
 -- ✅ BOM: Implementar seleção visual
 function selectGridCell(cell)
+    -- Função: selectGridCell
     cell:setBackgroundColor('#666666')
     cell:setBorderColor('#FFFF00')
 end
 
 function deselectGridCell(cell)
+    -- Função: deselectGridCell
     cell:setBackgroundColor(GRID_CONFIG.BACKGROUND_COLOR)
     cell:setBorderColor(GRID_CONFIG.BORDER_COLOR)
 end
 
 -- ✅ BOM: Usar feedback visual
+    --  ✅ BOM: Usar feedback visual (traduzido)
 function highlightGridCell(cell)
+    -- Função: highlightGridCell
     cell:setBorderColor(GRID_CONFIG.HOVER_COLOR)
 end
 ```
@@ -663,6 +877,7 @@ end
 local GridSystem = {}
 
 function GridSystem.createGrid(parent, config)
+    -- Função: GridSystem
     local container = g_ui.createWidget('UIWidget', parent)
     
     local gridLayout = UIGridLayout.create(container)
@@ -676,12 +891,14 @@ function GridSystem.createGrid(parent, config)
 end
 
 function GridSystem.addCell(grid, cellData)
+    -- Função: GridSystem
     local cell = g_ui.createWidget('UIWidget', grid)
     cell:setSize(cellData.size)
     cell:setBackgroundColor(cellData.backgroundColor)
     
     -- Adicionar conteúdo da célula
     if cellData.text then
+    -- Verificação condicional
         local label = g_ui.createWidget('Label', cell)
         label:setText(cellData.text)
         label:setPosition({x = 5, y = 5})
@@ -691,6 +908,7 @@ function GridSystem.addCell(grid, cellData)
 end
 
 -- Uso
+    --  Uso (traduzido)
 local grid = GridSystem.createGrid(parent, {
     cellSize = {width = 32, height = 32},
     cellSpacing = 1,
@@ -725,7 +943,9 @@ local CellPool = {
 }
 
 function CellPool.getCell()
+    -- Função: CellPool
     if #CellPool.available > 0 then
+    -- Verificação condicional
         local cell = table.remove(CellPool.available)
         table.insert(CellPool.inUse, cell)
         return cell
@@ -737,8 +957,11 @@ function CellPool.getCell()
 end
 
 function CellPool.releaseCell(cell)
+    -- Função: CellPool
     for i, usedCell in ipairs(CellPool.inUse) do
+    -- Loop de repetição
         if usedCell == cell then
+    -- Verificação condicional
             table.remove(CellPool.inUse, i)
             table.insert(CellPool.available, cell)
             break
@@ -747,9 +970,13 @@ function CellPool.releaseCell(cell)
 end
 
 -- ✅ BOM: Implementar lazy loading
+    --  ✅ BOM: Implementar lazy loading (traduzido)
 function loadGridData(grid, data, startIndex, count)
+    -- Função: loadGridData
     for i = startIndex, startIndex + count - 1 do
+    -- Loop de repetição
         if data[i] then
+    -- Verificação condicional
             local cell = CellPool.getCell()
             cell:setText(data[i].text)
             grid:addChild(cell)
@@ -762,6 +989,7 @@ end
 
 ```lua
 -- ✅ BOM: Monitorar performance
+    --  ✅ BOM: Monitorar performance (traduzido)
 local GridPerformance = {
     renderTime = 0,
     cellCount = 0,
@@ -769,15 +997,18 @@ local GridPerformance = {
 }
 
 function GridPerformance.startRender()
+    -- Função: GridPerformance
     GridPerformance.renderStart = os.clock()
 end
 
 function GridPerformance.endRender()
+    -- Função: GridPerformance
     GridPerformance.renderTime = os.clock() - GridPerformance.renderStart
     print('Grid render time:', GridPerformance.renderTime * 1000, 'ms')
 end
 
 function GridPerformance.updateStats(cellCount)
+    -- Função: GridPerformance
     GridPerformance.cellCount = cellCount
     GridPerformance.memoryUsage = cellCount * 2 -- 2KB por célula
 end

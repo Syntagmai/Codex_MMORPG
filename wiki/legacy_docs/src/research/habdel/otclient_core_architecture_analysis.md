@@ -180,6 +180,7 @@ ModuleManager
 ### **Application API**
 ```cpp
 class Application {
+    -- Classe: Application
     virtual void init(std::vector<std::string>& args, ApplicationContext* context);
     virtual void deinit();
     virtual void run() = 0;
@@ -199,6 +200,7 @@ class Application {
 ### **ModuleManager API**
 ```cpp
 class ModuleManager {
+    -- Classe: ModuleManager
     void discoverModules();
     void autoLoadModules(int maxPriority);
     ModulePtr discoverModule(const std::string& moduleFile);
@@ -215,6 +217,7 @@ class ModuleManager {
 ### **EventDispatcher API**
 ```cpp
 class EventDispatcher {
+    -- Classe: EventDispatcher
     EventPtr addEvent(const std::function<void()>& callback);
     void deferEvent(const std::function<void()>& callback);
     ScheduledEventPtr scheduleEvent(const std::function<void()>& callback, int delay);
@@ -233,6 +236,7 @@ class EventDispatcher {
 ### **Criando uma Aplicação Básica**
 ```cpp
 class MyApplication : public Application {
+    -- Classe: MyApplication
 public:
     void run() override {
         while (isRunning()) {
@@ -254,6 +258,7 @@ int main() {
 ### **Criando um Módulo**
 ```cpp
 class MyModule : public Module {
+    -- Classe: MyModule
 public:
     void load() override {
         // Inicialização do módulo
@@ -269,6 +274,7 @@ OTCLIENT_MODULE(MyModule)
 ```
 
 ### **Usando o Sistema de Eventos**
+#### Nível Basic
 ```cpp
 // Evento simples
 g_dispatcher.addEvent([]() {
@@ -284,6 +290,59 @@ g_dispatcher.scheduleEvent([]() {
 g_dispatcher.cycleEvent([]() {
     std::cout << "Evento cíclico!" << std::endl;
 }, 5000); // A cada 5 segundos
+```
+
+#### Nível Intermediate
+```cpp
+// Evento simples
+g_dispatcher.addEvent([]() {
+    std::cout << "Evento executado!" << std::endl;
+});
+
+// Evento agendado
+g_dispatcher.scheduleEvent([]() {
+    std::cout << "Evento agendado!" << std::endl;
+}, 1000); // 1 segundo
+
+// Evento cíclico
+g_dispatcher.cycleEvent([]() {
+    std::cout << "Evento cíclico!" << std::endl;
+}, 5000); // A cada 5 segundos
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Evento simples
+g_dispatcher.addEvent([]() {
+    std::cout << "Evento executado!" << std::endl;
+});
+
+// Evento agendado
+g_dispatcher.scheduleEvent([]() {
+    std::cout << "Evento agendado!" << std::endl;
+}, 1000); // 1 segundo
+
+// Evento cíclico
+g_dispatcher.cycleEvent([]() {
+    std::cout << "Evento cíclico!" << std::endl;
+}, 5000); // A cada 5 segundos
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---

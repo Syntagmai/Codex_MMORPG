@@ -24,6 +24,7 @@ Este documento estabelece a **estrutura de validação** para preparação da in
 ## 🎯 **1. Estrutura de Validação Base**
 
 ### **📋 Framework de Validação**
+#### Inicialização e Configuração
 ```lua
 -- Framework base para validação de integração
 local ValidationFramework = {
@@ -52,6 +53,10 @@ local ValidationFramework = {
             "range_validation",
             "integrity_validation"
         },
+```
+
+#### Funcionalidade 1
+```lua
         
         -- Validação de performance
         performance = {
@@ -77,10 +82,28 @@ local ValidationFramework = {
         parallel_tests = 5,
         report_format = "json"
     }
+```
+
+#### Finalização
+```lua
 }
 ```
 
 ### **🔍 Tipos de Validação**
+#### Nível Basic
+```lua
+-- Tipos de validação disponíveis
+local ValidationTypes = {
+    -- Validação unitária
+        scope = "Single function/module",
+    -- Validação de integração
+    -- Validação de sistema
+        coverage = "End-to-end"
+    -- Validação de regressão
+        scope = "Previous functionality",
+```
+
+#### Nível Intermediate
 ```lua
 -- Tipos de validação disponíveis
 local ValidationTypes = {
@@ -118,11 +141,60 @@ local ValidationTypes = {
 }
 ```
 
+#### Nível Advanced
+```lua
+-- Tipos de validação disponíveis
+local ValidationTypes = {
+    -- Validação unitária
+    unit_validation = {
+        description = "Test individual components",
+        scope = "Single function/module",
+        execution = "Fast, isolated",
+        coverage = "High"
+    },
+    
+    -- Validação de integração
+    integration_validation = {
+        description = "Test component interactions",
+        scope = "Multiple components",
+        execution = "Medium speed",
+        coverage = "Medium"
+    },
+    
+    -- Validação de sistema
+    system_validation = {
+        description = "Test complete system",
+        scope = "Full system",
+        execution = "Slow, comprehensive",
+        coverage = "End-to-end"
+    },
+    
+    -- Validação de regressão
+    regression_validation = {
+        description = "Test for regressions",
+        scope = "Previous functionality",
+        execution = "Automated",
+        coverage = "Critical paths"
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🔗 **2. Validação de Conectividade**
 
 ### **🌐 Testes de Conectividade**
+#### Inicialização e Configuração
 ```lua
 -- Testes de conectividade entre OTClient e Canary
 local ConnectivityValidation = {
@@ -145,6 +217,10 @@ local ConnectivityValidation = {
             response_time = "< 100ms",
             connection_closed = true
         },
+```
+
+#### Funcionalidade 1
+```lua
         
         failure_criteria = {
             connection_timeout = "> 5s",
@@ -172,6 +248,10 @@ local ConnectivityValidation = {
             token_valid = true,
             session_established = true
         },
+```
+
+#### Funcionalidade 2
+```lua
         
         failure_criteria = {
             invalid_credentials = true,
@@ -199,6 +279,10 @@ local ConnectivityValidation = {
             connection_stable = true,
             reconnection_successful = true
         },
+```
+
+#### Finalização
+```lua
         
         failure_criteria = {
             heartbeat_timeout = "> 30s",
@@ -210,6 +294,7 @@ local ConnectivityValidation = {
 ```
 
 ### **📡 Testes de Protocolo**
+#### Inicialização e Configuração
 ```lua
 -- Testes de protocolos de comunicação
 local ProtocolValidation = {
@@ -232,6 +317,10 @@ local ProtocolValidation = {
                     timestamp = "valid_timestamp"
                 }
             },
+```
+
+#### Funcionalidade 1
+```lua
             
             -- Teste de mensagem de erro
             error_message = {
@@ -259,6 +348,10 @@ local ProtocolValidation = {
                     type = "stream_start",
                     data = { stream_type = "game_data" }
                 },
+```
+
+#### Finalização
+```lua
                 expected_output = {
                     type = "stream_data",
                     data = { stream_id = "valid_id", data = "stream_data" }
@@ -286,6 +379,7 @@ local ProtocolValidation = {
 ## 📊 **3. Validação de Dados**
 
 ### **🔍 Validação de Formato**
+#### Inicialização e Configuração
 ```lua
 -- Validação de formatos de dados
 local DataFormatValidation = {
@@ -310,6 +404,10 @@ local DataFormatValidation = {
             type_validator = function(data, expected_types)
                 return validate_data_types(data, expected_types)
             end
+```
+
+#### Funcionalidade 1
+```lua
         },
         
         test_cases = {
@@ -339,6 +437,10 @@ local DataFormatValidation = {
             header_validator = function(message)
                 return validate_protocol_header(message.header)
             end,
+```
+
+#### Finalização
+```lua
             
             -- Validador de corpo
             body_validator = function(message)
@@ -355,6 +457,7 @@ local DataFormatValidation = {
 ```
 
 ### **🔒 Validação de Integridade**
+#### Inicialização e Configuração
 ```lua
 -- Validação de integridade de dados
 local DataIntegrityValidation = {
@@ -378,6 +481,10 @@ local DataIntegrityValidation = {
             sha256 = function(data)
                 return calculate_sha256(data)
             end
+```
+
+#### Funcionalidade 1
+```lua
         },
         
         test_cases = {
@@ -407,6 +514,10 @@ local DataIntegrityValidation = {
             rsa = function(data, signature, public_key)
                 return verify_rsa_signature(data, signature, public_key)
             end,
+```
+
+#### Finalização
+```lua
             
             -- ECDSA
             ecdsa = function(data, signature, public_key)
@@ -422,6 +533,7 @@ local DataIntegrityValidation = {
 ## ⚡ **4. Validação de Performance**
 
 ### **📈 Testes de Performance**
+#### Inicialização e Configuração
 ```lua
 -- Testes de performance para integração
 local PerformanceValidation = {
@@ -447,6 +559,10 @@ local PerformanceValidation = {
                 for _, value in ipairs(measurements) do
                     sum = sum + value
                 end
+```
+
+#### Funcionalidade 1
+```lua
                 return sum / #measurements
             end,
             
@@ -476,6 +592,10 @@ local PerformanceValidation = {
             requests_per_second = function(requests, time)
                 return requests / time
             end,
+```
+
+#### Funcionalidade 2
+```lua
             
             -- Bytes por segundo
             bytes_per_second = function(bytes, time)
@@ -507,6 +627,10 @@ local PerformanceValidation = {
                 duration = 300,  -- seconds
                 ramp_up = 60     -- seconds
             },
+```
+
+#### Funcionalidade 3
+```lua
             
             -- Carga alta
             high_load = {
@@ -528,11 +652,16 @@ local PerformanceValidation = {
             error_rate = "< 1%",
             system_stability = true
         }
+```
+
+#### Finalização
+```lua
     }
 }
 ```
 
 ### **💾 Testes de Recursos**
+#### Inicialização e Configuração
 ```lua
 -- Testes de uso de recursos
 local ResourceValidation = {
@@ -556,6 +685,10 @@ local ResourceValidation = {
             memory_fragmentation = function()
                 return calculate_memory_fragmentation()
             end
+```
+
+#### Funcionalidade 1
+```lua
         },
         
         thresholds = {
@@ -580,6 +713,10 @@ local ResourceValidation = {
             cpu_time = function()
                 return get_cpu_time()
             end,
+```
+
+#### Finalização
+```lua
             
             -- Load average
             load_average = function()
@@ -601,6 +738,7 @@ local ResourceValidation = {
 ## 🔐 **5. Validação de Segurança**
 
 ### **🛡️ Testes de Segurança**
+#### Inicialização e Configuração
 ```lua
 -- Testes de segurança para integração
 local SecurityValidation = {
@@ -623,6 +761,10 @@ local SecurityValidation = {
                 password = "invalid_password",
                 expected_result = "failure"
             },
+```
+
+#### Funcionalidade 1
+```lua
             
             -- Teste de token expirado
             expired_token = {
@@ -650,6 +792,10 @@ local SecurityValidation = {
                 resource = "admin_panel",
                 expected_result = "allowed"
             },
+```
+
+#### Funcionalidade 2
+```lua
             
             -- Teste de acesso negado
             denied_access = {
@@ -679,6 +825,10 @@ local SecurityValidation = {
                 data = "sensitive_data",
                 expected_result = "encrypted"
             },
+```
+
+#### Finalização
+```lua
             
             -- Teste de descriptografia
             decryption = {
@@ -699,6 +849,7 @@ local SecurityValidation = {
 ```
 
 ### **🔍 Testes de Vulnerabilidade**
+#### Inicialização e Configuração
 ```lua
 -- Testes de vulnerabilidades de segurança
 local VulnerabilityValidation = {
@@ -726,6 +877,10 @@ local VulnerabilityValidation = {
             "javascript:alert('XSS')",
             "<img src=x onerror=alert('XSS')>"
         },
+```
+
+#### Funcionalidade 1
+```lua
         
         expected_result = "safe"
     },
@@ -749,6 +904,10 @@ local VulnerabilityValidation = {
                 headers = { "X-CSRF-Token" = "invalid_token" },
                 expected_result = "rejected"
             }
+```
+
+#### Finalização
+```lua
         }
     }
 }
@@ -759,6 +918,7 @@ local VulnerabilityValidation = {
 ## 🧪 **6. Validação de Funcionalidade**
 
 ### **🎮 Testes de Jogo**
+#### Inicialização e Configuração
 ```lua
 -- Testes de funcionalidades de jogo
 local GameFunctionalityValidation = {
@@ -781,6 +941,10 @@ local GameFunctionalityValidation = {
                 to_position = {x = 100, y = 100, z = 7}, -- Parede
                 expected_result = "blocked"
             },
+```
+
+#### Funcionalidade 1
+```lua
             
             -- Movimento muito rápido
             too_fast_movement = {
@@ -807,6 +971,10 @@ local GameFunctionalityValidation = {
                 weapon = "sword",
                 expected_result = "damage_dealt"
             },
+```
+
+#### Funcionalidade 2
+```lua
             
             -- Ataque fora de alcance
             out_of_range_attack = {
@@ -839,6 +1007,10 @@ local GameFunctionalityValidation = {
                 quantity = 100,
                 expected_result = "success"
             },
+```
+
+#### Finalização
+```lua
             
             -- Trade sem item suficiente
             insufficient_items = {
@@ -863,6 +1035,7 @@ local GameFunctionalityValidation = {
 ```
 
 ### **🔧 Testes de Sistema**
+#### Inicialização e Configuração
 ```lua
 -- Testes de funcionalidades do sistema
 local SystemFunctionalityValidation = {
@@ -889,6 +1062,10 @@ local SystemFunctionalityValidation = {
                 config_data = {setting = "value"},
                 expected_result = "saved"
             }
+```
+
+#### Funcionalidade 1
+```lua
         }
     },
     
@@ -915,6 +1092,10 @@ local SystemFunctionalityValidation = {
                 module_name = "loaded_module",
                 expected_result = "unloaded"
             }
+```
+
+#### Finalização
+```lua
         }
     }
 }
@@ -925,6 +1106,7 @@ local SystemFunctionalityValidation = {
 ## 📊 **7. Sistema de Relatórios**
 
 ### **📋 Estrutura de Relatório**
+#### Inicialização e Configuração
 ```lua
 -- Estrutura de relatórios de validação
 local ValidationReport = {
@@ -955,6 +1137,10 @@ local ValidationReport = {
             failed = 0,
             details = {}
         },
+```
+
+#### Funcionalidade 1
+```lua
         
         performance = {
             total = 0,
@@ -976,6 +1162,10 @@ local ValidationReport = {
             failed = 0,
             details = {}
         }
+```
+
+#### Finalização
+```lua
     },
     
     -- Métricas de performance
@@ -998,6 +1188,7 @@ local ValidationReport = {
 ```
 
 ### **📈 Visualização de Resultados**
+#### Inicialização e Configuração
 ```lua
 -- Sistema de visualização de resultados
 local ResultVisualization = {
@@ -1026,6 +1217,10 @@ local ResultVisualization = {
             x_axis = "time",
             y_axis = "usage_percentage"
         }
+```
+
+#### Funcionalidade 1
+```lua
     },
     
     -- Dashboards
@@ -1050,6 +1245,10 @@ local ResultVisualization = {
             authorization_status = "status_indicator",
             vulnerability_status = "status_indicator"
         }
+```
+
+#### Finalização
+```lua
     }
 }
 ```
@@ -1059,6 +1258,7 @@ local ResultVisualization = {
 ## 🔄 **8. Automação de Validação**
 
 ### **🤖 Sistema de Automação**
+#### Inicialização e Configuração
 ```lua
 -- Sistema de automação de validação
 local ValidationAutomation = {
@@ -1085,6 +1285,10 @@ local ValidationAutomation = {
             time = "03:00",
             scope = "comprehensive_tests"
         }
+```
+
+#### Funcionalidade 1
+```lua
     },
     
     -- Execução paralela
@@ -1111,6 +1315,10 @@ local ValidationAutomation = {
             recipients = {"developers", "qa_team"},
             threshold = "any_failure"
         },
+```
+
+#### Finalização
+```lua
         
         -- Notificações de performance
         performance_notifications = {
@@ -1123,6 +1331,7 @@ local ValidationAutomation = {
 ```
 
 ### **📊 Monitoramento Contínuo**
+#### Inicialização e Configuração
 ```lua
 -- Sistema de monitoramento contínuo
 local ContinuousMonitoring = {
@@ -1148,6 +1357,10 @@ local ContinuousMonitoring = {
             suspicious_activity = "counter",
             security_events = "counter"
         }
+```
+
+#### Funcionalidade 1
+```lua
     },
     
     -- Alertas
@@ -1174,6 +1387,10 @@ local ContinuousMonitoring = {
                 severity = "high",
                 action = "security_investigation"
             },
+```
+
+#### Finalização
+```lua
             
             suspicious_activity = {
                 condition = "suspicious_activity > 5/min",

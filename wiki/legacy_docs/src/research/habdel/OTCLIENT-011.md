@@ -18,6 +18,7 @@ Analisar profundamente o sistema **Sistema de Mapas** do OTClient usando metodol
 ### **Estrutura do Sistema**
 ```lua
 -- Exemplo de estrutura do sistema Sistema de Mapas
+    --  Exemplo de estrutura do sistema Sistema de Mapas (traduzido)
 -- Será preenchido durante a análise
 ```
 
@@ -29,6 +30,7 @@ Analisar profundamente o sistema **Sistema de Mapas** do OTClient usando metodol
 ### **APIs e Interfaces**
 ```lua
 -- APIs principais do sistema
+    --  APIs principais do sistema (traduzido)
 -- Será documentado durante a análise
 ```
 

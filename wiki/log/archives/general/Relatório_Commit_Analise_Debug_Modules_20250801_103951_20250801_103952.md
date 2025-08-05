@@ -108,6 +108,7 @@ aliases: [Commit Análise Debug, Debug Analysis Commit Report]
 local function safeModuleCall(func, moduleName, ...)
     local success, result = pcall(func, ...)
     if not success then
+    -- Verificação condicional
         g_logger.error("Module {} error: {}", moduleName, result)
         return false, result
     end
@@ -120,6 +121,7 @@ end
 -- Adicionar profiling automático
 local ModuleProfiler = {}
 function ModuleProfiler.profile(moduleName, func)
+    -- Função: ModuleProfiler
     return function(...)
         local startTime = g_clock.millis()
         local result = func(...)
@@ -133,7 +135,9 @@ end
 ### **3. 🔍 Debug Context**
 ```lua
 -- Melhorar contexto de debug
+    --  Melhorar contexto de debug (traduzido)
 function debugContext(moduleName, operation)
+    -- Função: debugContext
     return {
         module = moduleName,
         operation = operation,

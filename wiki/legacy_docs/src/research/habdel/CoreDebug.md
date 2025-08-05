@@ -15,6 +15,7 @@ Ferramentas e utilitários para debug, profiling e desenvolvimento de módulos O
 
 ## 🔧 API C++
 
+#### Nível Basic
 ```cpp
 // Debug de widgets
 void debugWidget(UIWidget* widget) {
@@ -23,11 +24,47 @@ void debugWidget(UIWidget* widget) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Debug de widgets
+void debugWidget(UIWidget* widget) {
+    std::cout << "Widget: " << widget->getId() << std::endl;
+    std::cout << "Position: " << widget->getPosition() << std::endl;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Debug de widgets
+void debugWidget(UIWidget* widget) {
+    std::cout << "Widget: " << widget->getId() << std::endl;
+    std::cout << "Position: " << widget->getPosition() << std::endl;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🐍 API Lua
 
 ```lua
 -- Debug de variáveis
 function debugVar(name, value)
+    -- Função: debugVar
     print(string.format("[DEBUG] %s = %s", name, tostring(value)))
 end
 ```
@@ -36,7 +73,9 @@ end
 
 ```lua
 -- Sistema de debug completo
+    --  Sistema de debug completo (traduzido)
 function enableDebugMode()
+    -- Função: enableDebugMode
     g_debug.enable()
     g_debug.setLevel("verbose")
     g_debug.addCallback(onDebugEvent)

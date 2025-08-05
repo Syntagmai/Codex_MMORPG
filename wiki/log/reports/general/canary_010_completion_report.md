@@ -117,24 +117,120 @@ target: canary
 ## 🔧 **APIs e Interfaces Documentadas**
 
 ### **Funções Game Layer**
+#### Nível Basic
 ```cpp
 void Game::addMagicEffect(const Position &pos, uint16_t effect);
 void Game::removeMagicEffect(const Position &pos, uint16_t effect);
 void Game::addDistanceEffect(const Position &fromPos, const Position &toPos, uint16_t effect);
 ```
 
+#### Nível Intermediate
+```cpp
+void Game::addMagicEffect(const Position &pos, uint16_t effect);
+void Game::removeMagicEffect(const Position &pos, uint16_t effect);
+void Game::addDistanceEffect(const Position &fromPos, const Position &toPos, uint16_t effect);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+void Game::addMagicEffect(const Position &pos, uint16_t effect);
+void Game::removeMagicEffect(const Position &pos, uint16_t effect);
+void Game::addDistanceEffect(const Position &fromPos, const Position &toPos, uint16_t effect);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Funções Protocol Layer**
+#### Nível Basic
 ```cpp
 void ProtocolGame::sendMagicEffect(const Position &pos, uint16_t type);
 void ProtocolGame::removeMagicEffect(const Position &pos, uint16_t type);
 void ProtocolGame::sendDistanceShoot(const Position &from, const Position &to, uint16_t type);
 ```
 
+#### Nível Intermediate
+```cpp
+void ProtocolGame::sendMagicEffect(const Position &pos, uint16_t type);
+void ProtocolGame::removeMagicEffect(const Position &pos, uint16_t type);
+void ProtocolGame::sendDistanceShoot(const Position &from, const Position &to, uint16_t type);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+void ProtocolGame::sendMagicEffect(const Position &pos, uint16_t type);
+void ProtocolGame::removeMagicEffect(const Position &pos, uint16_t type);
+void ProtocolGame::sendDistanceShoot(const Position &from, const Position &to, uint16_t type);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Funções Lua**
+#### Nível Basic
 ```lua
 position:sendMagicEffect(magicEffect[, player = nullptr])
 position:removeMagicEffect(magicEffect[, player = nullptr])
 position:sendDistanceEffect(positionEx, distanceEffect[, player = nullptr])
+```
+
+#### Nível Intermediate
+```lua
+position:sendMagicEffect(magicEffect[, player = nullptr])
+position:removeMagicEffect(magicEffect[, player = nullptr])
+position:sendDistanceEffect(positionEx, distanceEffect[, player = nullptr])
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+position:sendMagicEffect(magicEffect[, player = nullptr])
+position:removeMagicEffect(magicEffect[, player = nullptr])
+position:sendDistanceEffect(positionEx, distanceEffect[, player = nullptr])
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 💡 **Insights Técnicos**

@@ -1,18 +1,31 @@
----
-tags: [navigation, habdel, links, quick_access]
-type: navigation_guide
-status: active
-priority: medium
-created: 2025-07-29
----
 
 # 🧭 Guia de Navegação Habdel
 
-## 📋 Links Rápidos por Categoria
+## 📋 **ÍNDICE DETALHADO**
 
-### **🎨 Interface (UI)**
+### **🎯 Navegação Rápida**
 
-### **🎨 Sistema de Interface**
+1. [📋](#📋)
+2. [📋](#📋)
+3. [📋](#📋)
+
+### **📚 Seções Principais**
+
+| Seção | Descrição |
+|-------|-----------|
+| 📋 | Documentação e referência |
+| 📋 | Documentação e referência |
+| 📋 | Documentação e referência |
+
+
+
+---
+
+## 📋 Links Rápidos por Categoria 📋
+
+### **🎨 Interface (UI)** 📝
+
+### **🎨 Sistema de Interface** 📝
 - 📋 **[UIButton.md](../habdel/UIButton.md)**
 - 📋 **[UIEvents.md](../habdel/UIEvents.md)**
 - 📋 **[UILayouts.md](../habdel/UILayouts.md)**
@@ -35,14 +48,14 @@ created: 2025-07-29
 - ✅ **[UITooltips.md](../habdel/UITooltips.md)** (UI-013) - Sistema de Tooltips
 
 
-### **🎮 Sistema de Jogo**
+### **🎮 Sistema de Jogo** 📝
 - 📋 **[CreatureSystem.md](../habdel/CreatureSystem.md)**
 - 📋 **[ItemSystem.md](../habdel/ItemSystem.md)**
 - 📋 **[Protocol.md](../habdel/Protocol.md)**
 - 📋 **[WorldSystem.md](../habdel/WorldSystem.md)**
 
 
-### **🔧 Sistema Central**
+### **🔧 Sistema Central** 📝
 - 📋 **[Configuration.md](../habdel/Configuration.md)**
 - 📋 **[GraphicsSystem.md](../habdel/GraphicsSystem.md)**
 - 📋 **[ModuleSystem.md](../habdel/ModuleSystem.md)**
@@ -50,20 +63,23 @@ created: 2025-07-29
 - 📋 **[SoundSystem.md](../habdel/SoundSystem.md)**
 
 
-### **📚 Guias e Tutoriais**
+### **📚 Guias e Tutoriais** 📝
 - ✅ **[BestPractices.md](../habdel/BestPractices.md)** (GUIDE-002) - Boas Práticas de Desenvolvimento - OTClient
 - 📋 **[FirstModule.md](../habdel/FirstModule.md)**
 - 📋 **[GettingStarted.md](../habdel/GettingStarted.md)**
 
 
-### **🔍 Referências**
+### **🔍 Referências** 📚
 - 📋 **[CheatSheet.md](../habdel/CheatSheet.md)**
 - 📋 **[LuaAPI.md](../habdel/LuaAPI.md)**
 
 
-## 🔍 Busca Rápida
 
-### **📚 Por ID de Story:**
+---
+
+## 🔍 Busca Rápida 📋
+
+### **📚 Por ID de Story:** 📝
 - ✅ **CORE-007**: [CoreDebug.md](../habdel/CoreDebug.md) - Sistema de Debug
 - ✅ **CORE-008**: [CoreOptimization.md](../habdel/CoreOptimization.md) - Sistema de Otimização
 - ✅ **CORE-009**: [CoreProfiling.md](../habdel/CoreProfiling.md) - Sistema de Profiling
@@ -104,7 +120,10 @@ created: 2025-07-29
 - ✅ **UI-019**: [UIAccessibility.md](../habdel/UIAccessibility.md) - Sistema de Acessibilidade
 - ✅ **UI-020**: [UIReportWidgets.md](../habdel/UIReportWidgets.md) - Widgets de Relatórios
 
-## 📊 Estatísticas de Navegação
+
+---
+
+## 📊 Estatísticas de Navegação 📋
 
 - **Total de Arquivos**: 113
 - **Stories Identificadas**: 39

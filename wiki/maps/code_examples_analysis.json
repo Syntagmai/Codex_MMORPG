@@ -1,0 +1,1384 @@
+{
+  "metadata": {
+    "analysis_date": "2025-08-04 20:34:38",
+    "files_analyzed": [
+      "docs/otclient/guides/Module_Development_Guide.md",
+      "docs/otclient/guides/Getting_Started_Guide.md",
+      "docs/otclient/guides/UI_System_Guide.md",
+      "docs/otclient/guides/Configuration_Guide.md",
+      "Troubleshooting_Comum.md"
+    ],
+    "total_code_blocks": 134,
+    "long_code_blocks": 9,
+    "uncommented_blocks": 48,
+    "optimization_opportunities": 57
+  },
+  "code_blocks": [
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "language": "bash",
+      "lines_count": 14,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "# Criar diretório para seus módulos customizados\nmkdir modules/custom_modules\ncd modules/custom_modules\n\n# Estrutura recomendada para organização\ncustom_modules/\n├── my_clickcounter/           # Proje..."
+    },
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "language": "lua",
+      "lines_count": 36,
+      "has_comments": true,
+      "comment_lines": 6,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- modules/custom_modules/shared/utils.lua\n-- Utilitários compartilhados entre módulos\n\nlocal Utils = {}\n\n-- Função para criar janela padrão\nfunction Utils.createWindow(id, title, size, parent)\n    lo..."
+    },
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "language": "text",
+      "lines_count": 15,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "other",
+      "content_preview": "my_module/\n├── my_module.otmod           # Metadados e configuração\n├── my_module.lua             # Lógica principal\n├── my_module.otui            # Interface principal\n├── styles/                   #..."
+    },
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "language": "yaml",
+      "lines_count": 22,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "ui_definition",
+      "content_preview": "# template.otmod\nModule\n  name: my_module\n  description: Descrição do meu módulo\n  author: Seu Nome\n  version: 1.0.0\n  website: https://github.com/seuusuario/meu-modulo\n  \n  autoload: true\n  autoload-..."
+    },
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "language": "yaml",
+      "lines_count": 18,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "ui_definition",
+      "content_preview": "# modules/custom_modules/my_clickcounter/clickcounter.otmod\nModule\n  name: clickcounter\n  description: Contador de cliques com estatísticas avançadas\n  author: Tutorial OTClient\n  version: 1.0.0\n  \n  ..."
+    },
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "language": "yaml",
+      "lines_count": 98,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "ui_definition",
+      "content_preview": "# modules/custom_modules/my_clickcounter/clickcounter.otui\nClickCounterWindow < MainWindow\n  id: clickCounterWindow\n  !text: tr('Contador de Cliques')\n  size: 350 280\n  @onEscape: ClickCounter.hide()\n..."
+    },
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "language": "lua",
+      "lines_count": 244,
+      "has_comments": true,
+      "comment_lines": 30,
+      "needs_optimization": true,
+      "code_type": "module_init",
+      "content_preview": "-- modules/custom_modules/my_clickcounter/clickcounter.lua\nClickCounter = {}\n\n-- Variáveis globais do módulo\nlocal clickCounterWindow\nlocal menuButton\n\n-- Estatísticas\nlocal stats = {\n    totalClicks ..."
+    },
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "language": "yaml",
+      "lines_count": 19,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "ui_definition",
+      "content_preview": "# modules/custom_modules/my_notifications/notifications.otmod\nModule\n  name: notifications\n  description: Sistema avançado de notificações em tempo real\n  author: Tutorial OTClient\n  version: 1.0.0\n  ..."
+    },
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "language": "yaml",
+      "lines_count": 71,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "ui_definition",
+      "content_preview": "# modules/custom_modules/my_notifications/notifications.otui\nNotificationWidget < Panel\n  height: 60\n  margin-bottom: 5\n  background-color: alpha\n  border-radius: 5\n  \n  Panel\n    id: iconPanel\n    an..."
+    },
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "language": "lua",
+      "lines_count": 258,
+      "has_comments": true,
+      "comment_lines": 28,
+      "needs_optimization": true,
+      "code_type": "module_init",
+      "content_preview": "-- modules/custom_modules/my_notifications/notifications.lua\nNotifications = {}\n\n-- Container de notificações\nlocal notificationContainer\nlocal activeNotifications = {}\nlocal notificationQueue = {}\n\n-..."
+    },
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "language": "lua",
+      "lines_count": 2,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Enviar notificação de evento\nmodule:notify(\"eventOccurred\", {data = \"example\"})"
+    },
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "language": "lua",
+      "lines_count": 4,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Receber notificação\nmodule:on(\"eventOccurred\", function(data)\n    print(\"Evento recebido:\", data)\nend)"
+    },
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "language": "yaml",
+      "lines_count": 22,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "ui_definition",
+      "content_preview": "# modules/custom_modules/my_statusmonitor/statusmonitor.otmod\nModule\n  name: statusmonitor\n  description: Monitor avançado de status do jogador\n  author: Tutorial OTClient\n  version: 1.0.0\n  \n  autolo..."
+    },
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "language": "yaml",
+      "lines_count": 201,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "ui_definition",
+      "content_preview": "# modules/custom_modules/my_statusmonitor/statusmonitor.otui\nStatusMonitorWindow < MiniWindow\n  id: statusMonitorWindow\n  !text: tr('Monitor de Status')\n  size: 280 400\n  \n  MiniWindowContents\n    Scr..."
+    },
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "language": "lua",
+      "lines_count": 326,
+      "has_comments": true,
+      "comment_lines": 23,
+      "needs_optimization": true,
+      "code_type": "module_init",
+      "content_preview": "-- modules/custom_modules/my_statusmonitor/statusmonitor.lua\nStatusMonitor = {}\n\nlocal statusWindow\nlocal widgets = {}\nlocal updateTimer\n\n-- Configurações\nlocal config = {\n    updateInterval = 100,  -..."
+    },
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "language": "lua",
+      "lines_count": 32,
+      "has_comments": true,
+      "comment_lines": 4,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Adicionar ao início de cada módulo\nlocal DEBUG = true\n\nlocal function debugLog(module, message, level)\n    if not DEBUG then return end\n    \n    level = level or 'DEBUG'\n    local timestamp = os.da..."
+    },
+    {
+      "file": "docs/otclient/guides/Module_Development_Guide.md",
+      "language": "lua",
+      "lines_count": 45,
+      "has_comments": true,
+      "comment_lines": 5,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Comandos úteis para o console do OTClient (Ctrl+T)\n\n-- Recarregar módulo específico\nfunction reloadModule(moduleName)\n    local module = g_modules.getModule(moduleName)\n    if module then\n        m..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "text",
+      "lines_count": 17,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "other",
+      "content_preview": "OTClient - Redemption\n   │\n   ├─ Engine C++ (Core)\n   │   ├─ Graphics (OpenGL)\n   │   ├─ Audio (OpenAL)  \n   │   ├─ Network (Asio)\n   │   └─ Lua Engine (LuaJIT)\n   │\n   ├─ Framework Lua\n   │   ├─ Core..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "bash",
+      "lines_count": 11,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "# Clone do repositório\ngit clone https://github.com/mehah/otclient.git\ncd otclient\n\n# Dependências necessárias (já incluídas via vcpkg):\n# - LuaJIT 2.1\n# - OpenGL 2.0+\n# - OpenAL\n# - Asio\n# - PhysFS\n#..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "bash",
+      "lines_count": 9,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "# Linux/macOS - Build rápido\n./recompile.sh\n\n# Windows - Build manual\ncmake --preset windows-release\ncmake --build --preset windows-release\n\n# Verificar se a compilação foi bem-sucedida\n./otclient --v..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "text",
+      "lines_count": 14,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "other",
+      "content_preview": "OTClient/\n├── src/                    # Código fonte C++ (não modificar frequentemente)\n├── data/                   # Dados do cliente\n│   ├── images/            # Sprites e texturas\n│   ├── sounds/  ..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "bash",
+      "lines_count": 8,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "# Executar o OTClient\n./otclient\n\n# Com parâmetros específicos\n./otclient --data-dir=./data --config=custom.otml\n\n# Modo debug\n./otclient --debug --verbose"
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "lua",
+      "lines_count": 13,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Em init.lua, configurar servidores padrão\nServers_init = {\n    [\"http://127.0.0.1/login.php\"] = {\n        [\"port\"] = 80,\n        [\"protocol\"] = 1412,\n        [\"httpLogin\"] = true\n    },\n    [\"otser..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "lua",
+      "lines_count": 3,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Em modules/startup/startup.lua\nlocal size = { width = 1920, height = 1080 }  -- Sua resolução preferida\ng_window.resize(size)"
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "lua",
+      "lines_count": 4,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Acessível via interface ou g_settings\ng_settings.set('graphics.fullscreen', false)\ng_settings.set('graphics.vsync', true)\ng_settings.set('graphics.antialiasing', '2x')"
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "text",
+      "lines_count": 6,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "other",
+      "content_preview": "modules/game_interface/         # Módulo de interface\n├── interface.otmod            # Metadados do módulo\n├── gameinterface.lua          # Lógica principal\n├── gameinterface.otui         # Layout da ..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "yaml",
+      "lines_count": 17,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "ui_definition",
+      "content_preview": "# game_interface/interface.otmod\nModule\n  name: game_interface\n  description: Gerencia a interface principal do jogo\n  author: OTClient Team\n  website: https://github.com/mehah/otclient\n  version: 1.0..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "yaml",
+      "lines_count": 25,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "ui_definition",
+      "content_preview": "# gameinterface.otui\nMainInterface < Interface\n  id: gameInterface\n  anchors.fill: parent\n  \n  UIGameMap\n    id: gameMapPanel\n    anchors.left: parent.left\n    anchors.top: parent.top\n    anchors.bott..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "lua",
+      "lines_count": 38,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": true,
+      "code_type": "module_init",
+      "content_preview": "-- gameinterface.lua\ngameInterface = {}\n\nlocal gameRootPanel\nlocal gameMapPanel\nlocal gameRightPanel\n\nfunction gameInterface.init()\n    connect(g_game, { \n        onGameStart = gameInterface.show,\n   ..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "lua",
+      "lines_count": 18,
+      "has_comments": true,
+      "comment_lines": 2,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Conectar a eventos globais\nconnect(g_game, {\n    onGameStart = function()\n        print(\"Jogo iniciado!\")\n    end,\n    onCreatureAppear = function(creature)\n        print(\"Criatura apareceu:\", crea..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "lua",
+      "lines_count": 20,
+      "has_comments": true,
+      "comment_lines": 5,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- API do Jogo\nlocal player = g_game.getLocalPlayer()\nlocal position = player:getPosition()\nlocal health = player:getHealth()\n\n-- API do Mapa\nlocal tile = g_map.getTile(position)\nlocal creatures = g_m..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "lua",
+      "lines_count": 13,
+      "has_comments": true,
+      "comment_lines": 5,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Carregar imagem\nlocal texture = g_textures.getTexture('/images/icons/sword.png')\n\n-- Tocar som\ng_sounds.playSoundFile('/sounds/effects/sword_hit.ogg')\n\n-- Ler arquivo\nlocal content = g_resources.re..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "bash",
+      "lines_count": 1,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "mkdir modules/tutorial_helloworld"
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "yaml",
+      "lines_count": 8,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "ui_definition",
+      "content_preview": "# modules/tutorial_helloworld/helloworld.otmod\nModule\n  name: tutorial_helloworld  \n  description: Primeiro módulo tutorial\n  author: Seu Nome\n  version: 1.0\n  autoload: true\n  autoload-priority: 100"
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "yaml",
+      "lines_count": 22,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "ui_definition",
+      "content_preview": "# modules/tutorial_helloworld/helloworld.otui\nHelloWorldWindow < MainWindow\n  id: helloWorldWindow\n  !text: tr('Hello World')\n  size: 300 200\n  @onEscape: HelloWorld.hide()\n  \n  Label\n    id: messageL..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "lua",
+      "lines_count": 41,
+      "has_comments": true,
+      "comment_lines": 3,
+      "needs_optimization": false,
+      "code_type": "module_init",
+      "content_preview": "-- modules/tutorial_helloworld/helloworld.lua\nHelloWorld = {}\n\nlocal helloWorldWindow\n\nfunction HelloWorld.init()\n    -- Carregar interface\n    helloWorldWindow = g_ui.loadUI('helloworld', rootWidget)..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "bash",
+      "lines_count": 1,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "./otclient"
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "lua",
+      "lines_count": 22,
+      "has_comments": true,
+      "comment_lines": 2,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Alterar tema de cores\ng_ui.setStyleSheet([[\n  MainWindow {\n    background-color: #2c3e50;\n    border: 1px solid #34495e;\n  }\n  \n  Button {\n    background-color: #3498db;\n    color: white;\n    borde..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "lua",
+      "lines_count": 12,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": false,
+      "code_type": "game_logic",
+      "content_preview": "-- Tocar som quando conectar\nconnect(g_game, {\n    onGameStart = function()\n        g_sounds.playSoundFile('/sounds/custom/login.ogg')\n    end,\n    \n    onCreatureAppear = function(creature)\n        i..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "lua",
+      "lines_count": 12,
+      "has_comments": true,
+      "comment_lines": 2,
+      "needs_optimization": false,
+      "code_type": "game_logic",
+      "content_preview": "-- Registrar hotkey personalizada\ng_keyboard.bindKeyDown('Ctrl+H', function()\n    HelloWorld.toggle()\nend)\n\n-- Hotkey para comando rápido\ng_keyboard.bindKeyDown('F9', function()\n    local player = g_g..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "text",
+      "lines_count": 10,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "other",
+      "content_preview": "Seu Projeto/\n├── custom_modules/          # Seus módulos personalizados\n│   ├── my_inventory/\n│   ├── my_minimap/\n│   └── my_ui_theme/\n├── custom_data/            # Seus assets personalizados\n│   ├── ..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "lua",
+      "lines_count": 23,
+      "has_comments": true,
+      "comment_lines": 7,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- 1. Desenvolvimento iterativo\n-- Modificar código Lua não requer recompilação\n-- Use Ctrl+R para recarregar módulos\n\n-- 2. Debug rápido\nfunction debugInfo(info)\n    print(\"[DEBUG]\", os.date(), info)..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "lua",
+      "lines_count": 12,
+      "has_comments": true,
+      "comment_lines": 3,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Função para recarregar módulo específico\nfunction reloadModule(moduleName)\n    local module = g_modules.getModule(moduleName)\n    if module then\n        module:unload()\n        module:load()\n      ..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "lua",
+      "lines_count": 15,
+      "has_comments": true,
+      "comment_lines": 6,
+      "needs_optimization": false,
+      "code_type": "game_logic",
+      "content_preview": "-- Abrir console: Ctrl+T\n-- Comandos úteis no console:\n\n-- Listar módulos carregados\nfor k,v in pairs(g_modules.getModules()) do print(k, v:getName()) end\n\n-- Inspecionar objeto\nlocal player = g_game...."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "lua",
+      "lines_count": 29,
+      "has_comments": true,
+      "comment_lines": 4,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Medir tempo de execução\nlocal function measureTime(func, name)\n    local startTime = g_clock.millis()\n    func()\n    local endTime = g_clock.millis()\n    print(name .. \" levou \" .. (endTime - start..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "lua",
+      "lines_count": 29,
+      "has_comments": true,
+      "comment_lines": 6,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- 1. Inspector de UI (módulo game_ui_inspector)\n-- Permite inspecionar hierarquia de widgets em tempo real\n\n-- 2. Terminal Lua avançado\n-- Histórico de comandos, autocomplete\n\n-- 3. Monitor de recurs..."
+    },
+    {
+      "file": "docs/otclient/guides/Getting_Started_Guide.md",
+      "language": "bash",
+      "lines_count": 16,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "# 1. Fork do repositório\ngit fork https://github.com/mehah/otclient\n\n# 2. Criar branch para sua feature\ngit checkout -b feature/minha-feature\n\n# 3. Desenvolver e testar\n# ... fazer modificações ...\n\n#..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "text",
+      "lines_count": 20,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "other",
+      "content_preview": "UI Manager (g_ui)\n   │\n   ├─ Root Widget\n   │   │\n   │   ├─ Main Windows\n   │   │   ├─ Game Interface\n   │   │   ├─ Inventory\n   │   │   └─ Chat\n   │   │\n   │   ├─ Modal Dialogs\n   │   │   ├─ Confirma..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 19,
+      "has_comments": true,
+      "comment_lines": 3,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Gerenciamento de hierarquia\nwidget:addChild(childWidget)\nwidget:removeChild(childWidget)\nwidget:getChildById('childId')\nwidget:getChildren()\n\n-- Visibilidade e foco\nwidget:show()\nwidget:hide()\nwidg..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 14,
+      "has_comments": true,
+      "comment_lines": 2,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Obter propriedades\nlocal id = widget:getId()\nlocal size = widget:getSize()\nlocal position = widget:getPosition()\nlocal isVisible = widget:isVisible()\nlocal isEnabled = widget:isEnabled()\nlocal isFo..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 5,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "ui_code",
+      "content_preview": "local label = g_ui.createWidget('Label', parent)\nlabel:setText('Texto do label')\nlabel:setFont('verdana-11px-antialised')\nlabel:setColor('#FFFFFF')\nlabel:setTextAlign('center')"
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 6,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "ui_code",
+      "content_preview": "local button = g_ui.createWidget('Button', parent)\nbutton:setText('Clique aqui')\nbutton:setImage('/images/button.png')\nbutton.onClick = function(widget)\n    print('Botão clicado!')\nend"
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 5,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "ui_code",
+      "content_preview": "local panel = g_ui.createWidget('Panel', parent)\npanel:setSize({width = 200, height = 150})\npanel:setBackgroundColor('#2c3e50')\npanel:setBorderWidth(2)\npanel:setBorderColor('#34495e')"
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 10,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "local container = g_ui.createWidget('UIWidget', parent)\ncontainer:setLayout('UIHorizontalLayout')\ncontainer:setSize({width = 300, height = 100})\n\n-- Adicionar widgets ao container\nlocal label1 = g_ui...."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 14,
+      "has_comments": true,
+      "comment_lines": 3,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Anchors básicos\nwidget:addAnchor('left', 'parent', 'left')\nwidget:addAnchor('right', 'parent', 'right')\nwidget:addAnchor('top', 'parent', 'top')\nwidget:addAnchor('bottom', 'parent', 'bottom')\n\n-- A..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 18,
+      "has_comments": true,
+      "comment_lines": 3,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Widget que preenche o pai\nlocal fullWidget = g_ui.createWidget('UIWidget', parent)\nfullWidget:addAnchor('left', 'parent', 'left')\nfullWidget:addAnchor('right', 'parent', 'right')\nfullWidget:addAnch..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 10,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "local container = g_ui.createWidget('UIWidget', parent)\ncontainer:setLayout('UIHorizontalLayout')\ncontainer:setSize({width = 300, height = 50})\n\n-- Adicionar widgets horizontalmente\nfor i = 1, 3 do\n  ..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 10,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "local container = g_ui.createWidget('UIWidget', parent)\ncontainer:setLayout('UIVerticalLayout')\ncontainer:setSize({width = 200, height = 150})\n\n-- Adicionar widgets verticalmente\nfor i = 1, 3 do\n    l..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 10,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "local container = g_ui.createWidget('UIWidget', parent)\ncontainer:setLayout('UIGridLayout')\ncontainer:setGridSize({columns = 3, rows = 2})\ncontainer:setSize({width = 300, height = 100})\n\n-- Adicionar ..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 28,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": true,
+      "code_type": "ui_code",
+      "content_preview": "-- Eventos básicos de mouse\nwidget.onClick = function(widget)\n    print('Widget clicado:', widget:getId())\nend\n\nwidget.onDoubleClick = function(widget)\n    print('Widget clicado duas vezes')\nend\n\nwidg..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 18,
+      "has_comments": true,
+      "comment_lines": 2,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Eventos de teclado\nwidget.onKeyPress = function(widget, keyCode, keyboardModifiers)\n    print('Tecla pressionada:', keyCode)\n    \n    if keyCode == Key_Escape then\n        widget:hide()\n    elseif ..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 9,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "ui_code",
+      "content_preview": "widget.onFocusChange = function(widget, focused)\n    if focused then\n        print('Widget recebeu foco')\n        widget:setBackgroundColor('#3498db')\n    else\n        print('Widget perdeu foco')\n    ..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 13,
+      "has_comments": true,
+      "comment_lines": 3,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Disparar evento customizado\nwidget:fireEvent('customEvent', {data = 'value'})\n\n-- Escutar evento customizado\nwidget.onCustomEvent = function(widget, data)\n    print('Evento customizado recebido:', ..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 8,
+      "has_comments": true,
+      "comment_lines": 2,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Estilo inline\nwidget:setStyle('background-color: #2c3e50; color: white; border: 1px solid #34495e;')\n\n-- Estilo via propriedades\nwidget:setBackgroundColor('#2c3e50')\nwidget:setColor('#FFFFFF')\nwidg..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 29,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": true,
+      "code_type": "ui_code",
+      "content_preview": "-- Aplicar múltiplos estilos\ng_ui.setStyleSheet([[\n  MainWindow {\n    background-color: #2c3e50;\n    border: 1px solid #34495e;\n    border-radius: 5px;\n  }\n  \n  Button {\n    background-color: #3498db;..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 21,
+      "has_comments": true,
+      "comment_lines": 3,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Estilos específicos por ID\ng_ui.setStyleSheet([[\n  #myButton {\n    background-color: #e74c3c;\n    color: white;\n  }\n  \n  #myButton:hover {\n    background-color: #c0392b;\n  }\n  \n  .error {\n    color..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 14,
+      "has_comments": true,
+      "comment_lines": 2,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Cores predefinidas\nlocal colors = {\n    primary = '#3498db',\n    secondary = '#2ecc71',\n    danger = '#e74c3c',\n    warning = '#f39c12',\n    info = '#3498db',\n    light = '#ecf0f1',\n    dark = '#2c..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 16,
+      "has_comments": true,
+      "comment_lines": 5,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Criar widget\nlocal widget = g_ui.createWidget('UIWidget', parent)\n\n-- Buscar widget por ID\nlocal widget = g_ui.getWidgetById('myWidget')\n\n-- Obter widget raiz\nlocal rootWidget = g_ui.getRootWidget(..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 9,
+      "has_comments": true,
+      "comment_lines": 3,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Carregar interface do arquivo .otui\nlocal window = g_ui.loadUI('myinterface', parent)\nwindow:hide()\n\n-- Exibir interface\ng_ui.displayUI('myinterface')\n\n-- Destruir interface\nwindow:destroy()"
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 14,
+      "has_comments": true,
+      "comment_lines": 3,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Criar janela modal\nlocal modal = g_ui.createWidget('MainWindow', rootWidget)\nmodal:setModal(true)\nmodal:show()\nmodal:focus()\n\n-- Criar janela não-modal\nlocal window = g_ui.createWidget('MainWindow'..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 11,
+      "has_comments": true,
+      "comment_lines": 3,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Salvar configuração de UI\ng_settings.set('ui.windowSize', {width = 800, height = 600})\ng_settings.set('ui.theme', 'dark')\n\n-- Carregar configuração\nlocal windowSize = g_settings.getSize('ui.windowS..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 27,
+      "has_comments": true,
+      "comment_lines": 4,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Criar widget customizado\nlocal CustomWidget = {}\n\nfunction CustomWidget.create(parent)\n    local widget = g_ui.createWidget('UIWidget', parent)\n    \n    -- Configurar propriedades\n    widget:setId(..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 23,
+      "has_comments": true,
+      "comment_lines": 3,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Widget com estilo próprio\nlocal StyledWidget = {}\n\nfunction StyledWidget.create(parent)\n    local widget = g_ui.createWidget('UIWidget', parent)\n    \n    -- Aplicar estilo customizado\n    widget:se..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 31,
+      "has_comments": true,
+      "comment_lines": 4,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Widget com eventos próprios\nlocal EventWidget = {}\n\nfunction EventWidget.create(parent)\n    local widget = g_ui.createWidget('UIWidget', parent)\n    \n    -- Eventos customizados\n    widget.onValueC..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 33,
+      "has_comments": true,
+      "comment_lines": 4,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- ✅ BOM: Reutilizar widgets\nlocal widgetPool = {}\n\nlocal function getWidget()\n    if #widgetPool > 0 then\n        return table.remove(widgetPool)\n    else\n        return g_ui.createWidget('UIWidget',..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 23,
+      "has_comments": true,
+      "comment_lines": 3,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- ✅ BOM: Validar widgets antes de usar\nlocal function safeWidgetOperation(widget)\n    if not widget or not widget:isVisible() then\n        return false\n    end\n    \n    -- Operação segura\n    widget:..."
+    },
+    {
+      "file": "docs/otclient/guides/UI_System_Guide.md",
+      "language": "lua",
+      "lines_count": 46,
+      "has_comments": true,
+      "comment_lines": 6,
+      "needs_optimization": false,
+      "code_type": "module_init",
+      "content_preview": "-- ✅ BOM: Módulo bem organizado\nlocal MyUIModule = {}\n\n-- Variáveis privadas\nlocal mainWindow\nlocal widgets = {}\n\n-- Função de inicialização\nfunction MyUIModule.init()\n    mainWindow = g_ui.loadUI('my..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "text",
+      "lines_count": 19,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "other",
+      "content_preview": "Sistema de Configuração\n   │\n   ├─ ConfigManager (g_configs)\n   │   │\n   │   ├─ Settings (config principal)\n   │   │   └─ settings.otml\n   │   │\n   │   ├─ Configs específicos\n   │   │   ├─ keybinds/*...."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "lua",
+      "lines_count": 17,
+      "has_comments": true,
+      "comment_lines": 7,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- ConfigManager é um singleton global disponível como g_configs\n-- Gerencia carregamento, salvamento e ciclo de vida dos configs\n\n-- Obter configuração principal (settings)\nlocal settings = g_configs..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "lua",
+      "lines_count": 40,
+      "has_comments": true,
+      "comment_lines": 5,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Criar um config personalizado\nlocal function createCustomConfig()\n    local config = g_configs.create(\"data/custom.otml\")\n    \n    -- Definir valores\n    config:setValue(\"window.width\", 1024)\n    c..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "lua",
+      "lines_count": 37,
+      "has_comments": true,
+      "comment_lines": 6,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Trabalhar com nodes OTML complexos\nlocal config = g_configs.create(\"complex.otml\")\n\n-- Criar node estruturado\nlocal windowNode = {\n    size = \"1024 768\",\n    position = \"center\",\n    fullscreen = f..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "lua",
+      "lines_count": 43,
+      "has_comments": true,
+      "comment_lines": 9,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- GameConfig contém configurações fixas do jogo carregadas de setup.otml\n-- Não são editáveis pelo usuário em runtime\n\n-- Configurações de sprite\nlocal spriteSize = g_gameConfig.getSpriteSize()  -- 3..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "lua",
+      "lines_count": 22,
+      "has_comments": true,
+      "comment_lines": 5,
+      "needs_optimization": false,
+      "code_type": "game_logic",
+      "content_preview": "-- Velocidade de movimento\nlocal playerDiagSpeed = g_gameConfig.getPlayerDiagonalWalkSpeed()  -- 3\nlocal creatureDiagSpeed = g_gameConfig.getCreatureDiagonalWalkSpeed()  -- 3\n\n-- Timings de animação\nl..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "lua",
+      "lines_count": 29,
+      "has_comments": true,
+      "comment_lines": 8,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- g_settings é o config principal para configurações do usuário\n-- Automaticamente persistido em settings.otml\n\n-- Definir valores\ng_settings.set(\"graphics.fullscreen\", true)\ng_settings.set(\"audio.ma..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "lua",
+      "lines_count": 27,
+      "has_comments": true,
+      "comment_lines": 4,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Trabalhar com listas\nlocal serverList = {\n    \"server1.otserv.com:7171\",\n    \"server2.otserv.com:7172\",\n    \"localhost:7171\"\n}\n\ng_settings.setList(\"recent.servers\", serverList)\n\n-- Obter lista\nloca..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "otml",
+      "lines_count": 49,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "other",
+      "content_preview": "// Arquivo: example.otml\n// Comentários com // ou #\n\n// Valores simples\nwindow-width: 1024\nwindow-height: 768\nfullscreen: false\ntitle: \"OTClient - Redemption\"\n\n// Números\nvolume: 0.8\nfps-limit: 60\n\n//..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "otml",
+      "lines_count": 45,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "other",
+      "content_preview": "// Arquivo: gameconfig.otml\ngame:\n  sprite-size: 32\n  last-supported-version: 1412\n  draw-typing: false\n  typing-icon: \"/images/game/console/typing\"\n  \n  map:\n    viewport: 8 6\n    max-z: 15\n    sea-f..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "lua",
+      "lines_count": 34,
+      "has_comments": true,
+      "comment_lines": 8,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Sistema de opções do cliente (modules/client_options)\n-- Integra com g_settings para persistência\n\n-- Definir uma opção\nfunction setOption(key, value, force)\n    if not options[key] or (not force a..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "lua",
+      "lines_count": 31,
+      "has_comments": true,
+      "comment_lines": 4,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Configurações de gráficos\nlocal graphicsOptions = {\n    fullscreen = g_settings.getBoolean(\"graphics.fullscreen\"),\n    vsync = g_settings.getBoolean(\"graphics.vsync\"), \n    antialiasing = g_setting..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "lua",
+      "lines_count": 25,
+      "has_comments": true,
+      "comment_lines": 5,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Sistema de áudio\nlocal audioOptions = {\n    masterVolume = g_settings.getNumber(\"audio.masterVolume\"),\n    musicVolume = g_settings.getNumber(\"audio.musicVolume\"),\n    sfxVolume = g_settings.getNum..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "lua",
+      "lines_count": 43,
+      "has_comments": true,
+      "comment_lines": 10,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Sistema de controles com múltiplos presets\n-- Cada preset tem keybinds e hotkeys separados\n\n-- Configuração de keybinds\nlocal function setupKeybinds()\n    local preset = Keybind.currentPreset or \"D..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "lua",
+      "lines_count": 57,
+      "has_comments": true,
+      "comment_lines": 7,
+      "needs_optimization": true,
+      "code_type": "general_lua",
+      "content_preview": "-- Configuração de hotkeys\nlocal function setupHotkeys(config)\n    -- Hotkey para cura\n    config:setNode(\"hotkey1\", {\n        key = \"F1\",\n        action = HOTKEY_ACTION.SPELL,\n        spell = \"exura\"..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "lua",
+      "lines_count": 111,
+      "has_comments": true,
+      "comment_lines": 7,
+      "needs_optimization": true,
+      "code_type": "module_init",
+      "content_preview": "-- Sistema de perfis de usuário\nlocal ProfileManager = {}\n\nfunction ProfileManager.init()\n    if not g_resources.directoryExists(\"/profiles\") then\n        g_resources.makeDir(\"/profiles\")\n    end\nend\n..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "lua",
+      "lines_count": 94,
+      "has_comments": true,
+      "comment_lines": 6,
+      "needs_optimization": true,
+      "code_type": "general_lua",
+      "content_preview": "-- Configuração avançada com validação\nlocal AdvancedConfig = {}\n\nfunction AdvancedConfig.validateConfig(config, schema)\n    for key, rules in pairs(schema) do\n        if config:exists(key) then\n     ..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "lua",
+      "lines_count": 41,
+      "has_comments": true,
+      "comment_lines": 4,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- ✅ BOM: Sempre validar valores\nlocal function setSafeOption(key, value, validator)\n    if validator and not validator(value) then\n        print(\"Valor inválido para \" .. key .. \":\", value)\n        r..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "lua",
+      "lines_count": 42,
+      "has_comments": true,
+      "comment_lines": 4,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- ✅ BOM: Cache de configurações frequentes\nlocal configCache = {}\n\nlocal function getCachedOption(key)\n    if not configCache[key] then\n        configCache[key] = getOption(key)\n    end\n    return co..."
+    },
+    {
+      "file": "docs/otclient/guides/Configuration_Guide.md",
+      "language": "lua",
+      "lines_count": 45,
+      "has_comments": true,
+      "comment_lines": 7,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- ✅ BOM: Sistema de backup\nlocal function backupConfigs()\n    local timestamp = os.date(\"%Y%m%d_%H%M%S\")\n    local backupDir = \"/backups/\" .. timestamp\n    \n    g_resources.makeDir(backupDir)\n    \n  ..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "bash",
+      "lines_count": 10,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "# Windows\n# Verificar se Visual Studio Redistributable está instalado\n\n# Linux\nsudo apt-get install libgl1-mesa-glx libglu1-mesa\nsudo apt-get install libxrandr2 libxinerama1 libxcursor1\n\n# macOS\n# Ver..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "bash",
+      "lines_count": 5,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "# Linux/macOS\nchmod +x otclient\n\n# Windows\n# Executar como administrador"
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "bash",
+      "lines_count": 3,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "# Verificar se todos os arquivos estão presentes\nls -la\n# Deve mostrar: otclient, data/, modules/, etc."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "bash",
+      "lines_count": 6,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "# Instalar Visual C++ Redistributable\n# Baixar da Microsoft: https://aka.ms/vs/17/release/vc_redist.x64.exe\n\n# Verificar PATH\necho %PATH%\n# Deve incluir caminho para bibliotecas"
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "bash",
+      "lines_count": 5,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "# Instalar dependências básicas\nsudo apt-get update\nsudo apt-get install build-essential cmake\nsudo apt-get install libgl1-mesa-dev libglu1-mesa-dev\nsudo apt-get install libxrandr-dev libxinerama-dev ..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "bash",
+      "lines_count": 7,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "# Instalar Homebrew (se não tiver)\n/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"\n\n# Instalar dependências\nbrew install cmake\nbrew install glfw\nbrew in..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "bash",
+      "lines_count": 10,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "# Limpar build anterior\nrm -rf build/\nmkdir build\ncd build\n\n# Reconfigurar\ncmake ..\n\n# Compilar\nmake -j4"
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "bash",
+      "lines_count": 2,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "cmake --version\n# Deve ser 3.10 ou superior"
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "bash",
+      "lines_count": 8,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "# GCC (Linux)\ngcc --version\n\n# Clang (macOS)\nclang --version\n\n# MSVC (Windows)\ncl"
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "bash",
+      "lines_count": 5,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "# Verificar se arquivos de cabeçalho estão presentes\nfind . -name \"*.h\" | head -10\n\n# Verificar CMakeLists.txt\ncat CMakeLists.txt"
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "bash",
+      "lines_count": 2,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "# Verificar se bibliotecas estão linkadas\n# Verificar CMakeLists.txt - target_link_libraries"
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "text",
+      "lines_count": 4,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "other",
+      "content_preview": "modules/meu_modulo/\n├── meu_modulo.otmod    # Arquivo de definição\n├── meu_modulo.lua      # Código Lua\n└── meu_modulo.otui     # Interface (opcional)"
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 13,
+      "has_comments": true,
+      "comment_lines": 3,
+      "needs_optimization": false,
+      "code_type": "module_init",
+      "content_preview": "-- Verificar se não há erros de sintaxe\n-- Usar linter Lua se disponível\n\n-- Exemplo de módulo básico\nmeuModulo = {}\n\nfunction meuModulo.init()\n    print(\"Módulo inicializado!\")\nend\n\nfunction meuModul..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "xml",
+      "lines_count": 11,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "other",
+      "content_preview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<module>\n    <name>Meu Módulo</name>\n    <description>Descrição do módulo</description>\n    <author>Seu Nome</author>\n    <version>1.0.0</version>\n    <entry>meu..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 5,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Verificar se dependências estão carregadas\nif not g_ui then\n    print(\"ERRO: g_ui não está disponível!\")\n    return\nend"
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 18,
+      "has_comments": true,
+      "comment_lines": 2,
+      "needs_optimization": false,
+      "code_type": "module_init",
+      "content_preview": "function meuModulo.init()\n    print(\"DEBUG: Inicializando módulo...\")\n    \n    -- Verificar se recursos estão disponíveis\n    if not g_resources.fileExists(\"meu_modulo.otui\") then\n        print(\"ERRO:..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 10,
+      "has_comments": true,
+      "comment_lines": 2,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Verificar se eventos estão conectados\nlocal button = meuModulo.window:getChildById('meuBotao')\nif button then\n    button.onClick = function()\n        print(\"DEBUG: Botão clicado!\")\n        -- Sua l..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 18,
+      "has_comments": true,
+      "comment_lines": 4,
+      "needs_optimization": false,
+      "code_type": "module_init",
+      "content_preview": "function meuModulo.init()\n    -- Criar interface\n    meuModulo.window = g_ui.displayUI('meu_modulo')\n    \n    -- Verificar se foi criada\n    if not meuModulo.window then\n        print(\"ERRO: Falha ao ..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "xml",
+      "lines_count": 5,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "other",
+      "content_preview": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MainWindow id=\"meu_modulo\" size=\"300 200\" text=\"Meu Módulo\">\n    <Label id=\"titulo\" pos=\"10 10\" size=\"280 30\" text=\"Título\" />\n    <Button id=\"botao\" pos=\"100 8..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 6,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Posicionar janela no centro\nlocal screenSize = g_window.getSize()\nlocal windowSize = meuModulo.window:getSize()\nlocal x = (screenSize.width - windowSize.width) / 2\nlocal y = (screenSize.height - wi..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 16,
+      "has_comments": true,
+      "comment_lines": 2,
+      "needs_optimization": false,
+      "code_type": "module_init",
+      "content_preview": "function meuModulo.init()\n    meuModulo.window = g_ui.displayUI('meu_modulo')\n    meuModulo.window:show()\n    \n    -- Conectar eventos\n    local button = meuModulo.window:getChildById('meuBotao')\n    ..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "xml",
+      "lines_count": 2,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "other",
+      "content_preview": "<!-- Verificar se ID está correto -->\n<Button id=\"meuBotao\" pos=\"100 80\" size=\"100 30\" text=\"Clique Aqui!\" />"
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 13,
+      "has_comments": true,
+      "comment_lines": 2,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Listar todos os widgets da janela\nfunction listarWidgets(widget, nivel)\n    nivel = nivel or 0\n    local indent = string.rep(\"  \", nivel)\n    print(indent .. \"- \" .. widget:getId() .. \" (\" .. widge..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 9,
+      "has_comments": true,
+      "comment_lines": 4,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- ❌ Ruim: Loop desnecessário\nfor i = 1, 1000 do\n    -- Operação pesada\nend\n\n-- ✅ Bom: Evitar loops desnecessários\nif condicao then\n    -- Operação apenas quando necessário\nend"
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 7,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Limpar referências quando não precisar mais\nfunction meuModulo.terminate()\n    if meuModulo.window then\n        meuModulo.window:destroy()\n        meuModulo.window = nil\n    end\nend"
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 11,
+      "has_comments": true,
+      "comment_lines": 4,
+      "needs_optimization": false,
+      "code_type": "event_handling",
+      "content_preview": "-- ❌ Ruim: Timer muito frequente\nconnect(g_timer, { onTimeout = function()\n    -- Operação pesada a cada 16ms\nend })\ng_timer:start(16)\n\n-- ✅ Bom: Timer menos frequente\nconnect(g_timer, { onTimeout = f..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 6,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": false,
+      "code_type": "event_handling",
+      "content_preview": "-- Desconectar eventos quando não precisar mais\nfunction meuModulo.terminate()\n    if meuModulo.button then\n        disconnect(meuModulo.button, { onClick = meuModulo.onClick })\n    end\nend"
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 7,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Parar timers\nfunction meuModulo.terminate()\n    if meuModulo.timer then\n        meuModulo.timer:stop()\n        meuModulo.timer = nil\n    end\nend"
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 5,
+      "has_comments": true,
+      "comment_lines": 2,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Evitar referências circulares\nmeuModulo.data = {}\nmeuModulo.data.parent = meuModulo  -- ❌ Referência circular\n\n-- ✅ Bom: Usar weak references se necessário"
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 6,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Verificar configurações de conexão\nlocal config = g_settings.getNode('general')\nlocal host = config:getString('host', 'localhost')\nlocal port = config:getInt('port', 7172)\n\nprint(\"Tentando conectar..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "bash",
+      "lines_count": 9,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "# Windows\n# Verificar Windows Firewall\n\n# Linux\nsudo ufw status\nsudo ufw allow 7172\n\n# macOS\n# Verificar System Preferences > Security & Privacy > Firewall"
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "bash",
+      "lines_count": 3,
+      "has_comments": false,
+      "comment_lines": 0,
+      "needs_optimization": true,
+      "code_type": "setup_commands",
+      "content_preview": "# Testar conectividade\nping servidor.com\ntelnet servidor.com 7172"
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 15,
+      "has_comments": true,
+      "comment_lines": 2,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Validar dados antes de usar\nfunction processarDados(dados)\n    if not dados then\n        print(\"ERRO: Dados nulos recebidos!\")\n        return\n    end\n    \n    if type(dados) ~= \"table\" then\n       ..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 10,
+      "has_comments": true,
+      "comment_lines": 1,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Capturar erros de processamento\nfunction processarComSeguranca(dados)\n    local success, result = pcall(function()\n        return processarDados(dados)\n    end)\n    \n    if not success then\n       ..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 19,
+      "has_comments": true,
+      "comment_lines": 2,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Sistema de logging personalizado\nlocal logger = {}\n\nfunction logger.debug(message)\n    print(\"[DEBUG] \" .. os.date(\"%H:%M:%S\") .. \" - \" .. message)\nend\n\nfunction logger.info(message)\n    print(\"[IN..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 19,
+      "has_comments": true,
+      "comment_lines": 2,
+      "needs_optimization": false,
+      "code_type": "general_lua",
+      "content_preview": "-- Função para inspecionar variáveis\nfunction inspect(var, name)\n    name = name or \"variável\"\n    print(\"=== INSPEÇÃO: \" .. name .. \" ===\")\n    print(\"Tipo:\", type(var))\n    print(\"Valor:\", tostring(..."
+    },
+    {
+      "file": "Troubleshooting_Comum.md",
+      "language": "lua",
+      "lines_count": 18,
+      "has_comments": true,
+      "comment_lines": 2,
+      "needs_optimization": false,
+      "code_type": "ui_code",
+      "content_preview": "-- Função para inspecionar widgets\nfunction inspecionarWidget(widget, nivel)\n    nivel = nivel or 0\n    local indent = string.rep(\"  \", nivel)\n    \n    print(indent .. \"Widget: \" .. widget:getId())\n  ..."
+    }
+  ],
+  "recommendations": [
+    {
+      "type": "split_long_blocks",
+      "priority": "high",
+      "description": "Dividir 9 blocos de código longos",
+      "action": "Dividir blocos com mais de 50 linhas em partes menores"
+    },
+    {
+      "type": "add_comments",
+      "priority": "medium",
+      "description": "Adicionar comentários em 48 blocos",
+      "action": "Adicionar comentários explicativos em português"
+    },
+    {
+      "type": "progressive_examples",
+      "priority": "medium",
+      "description": "Criar exemplos progressivos",
+      "action": "Organizar exemplos do básico ao avançado"
+    },
+    {
+      "type": "context_for_beginners",
+      "priority": "medium",
+      "description": "Adicionar contexto para iniciantes",
+      "action": "Incluir explicações de conceitos básicos"
+    }
+  ]
+}

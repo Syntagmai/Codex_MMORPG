@@ -22,6 +22,7 @@ Este guia prático fornece exemplos funcionais, tutoriais e casos de uso para im
 local ExtendedOpcode = {}
 
 function ExtendedOpcode:init()
+    -- Função: ExtendedOpcode
     self.callbacks = {}
     self.registeredOpcodes = {}
     self.jsonHandlers = {}
@@ -34,6 +35,7 @@ function ExtendedOpcode:init()
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local opcode = ExtendedOpcode:new()
 opcode:init()
 ```
@@ -42,8 +44,11 @@ opcode:init()
 
 ```lua
 -- Registrando callbacks para opcodes
+    --  Registrando callbacks para opcodes (traduzido)
 function ExtendedOpcode:registerCallback(opcodeId, callback)
+    -- Função: ExtendedOpcode
     if type(callback) ~= "function" then
+    -- Verificação condicional
         error("Callback must be a function")
     end
     
@@ -58,6 +63,7 @@ function ExtendedOpcode:registerCallback(opcodeId, callback)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 opcode:registerCallback(0x01, function(data)
     print("Received opcode 0x01 with data:", data)
     return { success = true }
@@ -68,17 +74,23 @@ end)
 
 ```lua
 -- Processando dados JSON fragmentados
+    --  Processando dados JSON fragmentados (traduzido)
 function ExtendedOpcode:processJsonData(fragments)
+    -- Função: ExtendedOpcode
     local completeJson = ""
     
     -- Reconstruir JSON a partir dos fragmentos
+    --  Reconstruir JSON a partir dos fragmentos (traduzido)
     for i, fragment in ipairs(fragments) do
+    -- Loop de repetição
         completeJson = completeJson .. fragment
     end
     
     -- Validar JSON
+    --  Validar JSON (traduzido)
     local success, data = pcall(json.decode, completeJson)
     if not success then
+    -- Verificação condicional
         return { success = false, error = "Invalid JSON" }
     end
     
@@ -86,6 +98,7 @@ function ExtendedOpcode:processJsonData(fragments)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local fragments = {"{\"type\":\"", "message\",\"data\":\"", "hello\"}"}
 local result = opcode:processJsonData(fragments)
 ```
@@ -97,11 +110,13 @@ local result = opcode:processJsonData(fragments)
 ```lua
 -- Sistema de fragmentação de dados grandes
 function ExtendedOpcode:fragmentData(data, maxSize)
+    -- Função: ExtendedOpcode
     maxSize = maxSize or self.settings.maxOpcodeSize
     local fragments = {}
     local dataLength = #data
     
     for i = 1, dataLength, maxSize do
+    -- Loop de repetição
         local fragment = string.sub(data, i, i + maxSize - 1)
         table.insert(fragments, fragment)
     end
@@ -110,14 +125,17 @@ function ExtendedOpcode:fragmentData(data, maxSize)
 end
 
 function ExtendedOpcode:reconstructData(fragments)
+    -- Função: ExtendedOpcode
     local completeData = ""
     for _, fragment in ipairs(fragments) do
+    -- Loop de repetição
         completeData = completeData .. fragment
     end
     return completeData
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local largeData = string.rep("A", 100000)
 local fragments = opcode:fragmentData(largeData, 1000)
 local reconstructed = opcode:reconstructData(fragments)
@@ -128,20 +146,27 @@ local reconstructed = opcode:reconstructData(fragments)
 ```lua
 -- Sistema de validação de opcodes
 function ExtendedOpcode:validateOpcode(opcodeId, data)
+    -- Função: ExtendedOpcode
     local errors = {}
     
     -- Validar ID do opcode
+    --  Validar ID do opcode (traduzido)
     if not opcodeId or opcodeId < 0 or opcodeId > 255 then
+    -- Verificação condicional
         table.insert(errors, "Invalid opcode ID")
     end
     
     -- Validar dados
+    --  Validar dados (traduzido)
     if not data then
+    -- Verificação condicional
         table.insert(errors, "Data is required")
     end
     
     -- Validar tamanho
+    --  Validar tamanho (traduzido)
     if data and #data > self.settings.maxOpcodeSize then
+    -- Verificação condicional
         table.insert(errors, "Data too large")
     end
     
@@ -152,8 +177,10 @@ function ExtendedOpcode:validateOpcode(opcodeId, data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local validation = opcode:validateOpcode(0x01, "test data")
 if not validation.valid then
+    -- Verificação condicional
     print("Validation errors:", table.concat(validation.errors, ", "))
 end
 ```
@@ -163,11 +190,13 @@ end
 ```lua
 -- Sistema de timeout para operações
 function ExtendedOpcode:executeWithTimeout(callback, timeout)
+    -- Função: ExtendedOpcode
     timeout = timeout or self.settings.timeout
     local startTime = os.time()
     
     local function checkTimeout()
         if os.time() - startTime > timeout then
+    -- Verificação condicional
             return { success = false, error = "Timeout" }
         end
         return nil
@@ -177,6 +206,7 @@ function ExtendedOpcode:executeWithTimeout(callback, timeout)
     local timeoutResult = checkTimeout()
     
     if timeoutResult then
+    -- Verificação condicional
         return timeoutResult
     end
     
@@ -184,6 +214,7 @@ function ExtendedOpcode:executeWithTimeout(callback, timeout)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = opcode:executeWithTimeout(function()
     -- Operação que pode demorar
     os.execute("sleep 2")
@@ -198,23 +229,29 @@ end, 1000)
 ```lua
 -- Cenário: Enviar dados para o servidor
 function ExtendedOpcode:sendToServer(opcodeId, data)
+    -- Função: ExtendedOpcode
     local validation = self:validateOpcode(opcodeId, data)
     if not validation.valid then
+    -- Verificação condicional
         return { success = false, errors = validation.errors }
     end
     
     -- Fragmentar dados se necessário
     local fragments = {}
     if #data > self.settings.maxOpcodeSize then
+    -- Verificação condicional
         fragments = self:fragmentData(data)
     else
         fragments = {data}
     end
     
     -- Enviar fragmentos
+    --  Enviar fragmentos (traduzido)
     for i, fragment in ipairs(fragments) do
+    -- Loop de repetição
         local result = self:sendFragment(opcodeId, fragment, i, #fragments)
         if not result.success then
+    -- Verificação condicional
             return result
         end
     end
@@ -223,6 +260,7 @@ function ExtendedOpcode:sendToServer(opcodeId, data)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 local result = opcode:sendToServer(0x01, json.encode({
     type = "player_action",
     action = "move",
@@ -235,8 +273,10 @@ local result = opcode:sendToServer(0x01, json.encode({
 ```lua
 -- Cenário: Processar comandos recebidos
 function ExtendedOpcode:processCommand(data)
+    -- Função: ExtendedOpcode
     local jsonResult = self:processJsonData({data})
     if not jsonResult.success then
+    -- Verificação condicional
         return { success = false, error = "Invalid JSON" }
     end
     
@@ -244,6 +284,7 @@ function ExtendedOpcode:processCommand(data)
     local commandType = command.type
     
     if commandType == "player_action" then
+    -- Verificação condicional
         return self:handlePlayerAction(command)
     elseif commandType == "system_message" then
         return self:handleSystemMessage(command)
@@ -255,6 +296,7 @@ function ExtendedOpcode:processCommand(data)
 end
 
 function ExtendedOpcode:handlePlayerAction(command)
+    -- Função: ExtendedOpcode
     print("Processing player action:", command.action)
     return { success = true, processed = true }
 end
@@ -265,8 +307,10 @@ end
 ```lua
 -- Cenário: Sistema de callbacks assíncronos
 function ExtendedOpcode:registerAsyncCallback(opcodeId, callback)
+    -- Função: ExtendedOpcode
     self:registerCallback(opcodeId, function(data)
         -- Executar callback em thread separada
+    --  Executar callback em thread separada (traduzido)
         local thread = love.thread.newThread([[
             local callback = ...
             local data = ...
@@ -276,14 +320,17 @@ function ExtendedOpcode:registerAsyncCallback(opcodeId, callback)
         thread:start(callback, data)
         
         -- Aguardar resultado
+    --  Aguardar resultado (traduzido)
         local result = thread:wait()
         return result
     end)
 end
 
 -- Exemplo de uso
+    --  Exemplo de uso (traduzido)
 opcode:registerAsyncCallback(0x02, function(data)
     -- Processamento pesado
+    --  Processamento pesado (traduzido)
     os.execute("sleep 1")
     return { success = true, processed = data }
 end)
@@ -296,6 +343,7 @@ end)
 ```lua
 -- Teste de fragmentação e reconstrução
 function ExtendedOpcode:testFragmentation()
+    -- Função: ExtendedOpcode
     print("=== Teste de Fragmentação ===")
     
     local testData = "Hello, this is a test message for fragmentation!"
@@ -306,6 +354,7 @@ function ExtendedOpcode:testFragmentation()
     print("Fragmentos criados:", #fragments)
     
     for i, fragment in ipairs(fragments) do
+    -- Loop de repetição
         print("Fragmento", i, ":", fragment)
     end
     
@@ -322,9 +371,11 @@ end
 ```lua
 -- Simulação de comunicação cliente-servidor
 function ExtendedOpcode:simulateCommunication()
+    -- Função: ExtendedOpcode
     print("=== Simulação de Comunicação ===")
     
     -- Simular envio
+    --  Simular envio (traduzido)
     local message = {
         type = "test_message",
         data = "Hello server!",
@@ -339,12 +390,15 @@ function ExtendedOpcode:simulateCommunication()
     print("Fragmentos:", #fragments)
     
     -- Simular recebimento
+    --  Simular recebimento (traduzido)
     local receivedData = self:reconstructData(fragments)
     print("Recebido:", receivedData)
     
     -- Simular processamento
+    --  Simular processamento (traduzido)
     local result = self:processJsonData({receivedData})
     if result.success then
+    -- Verificação condicional
         print("Processado com sucesso:", result.data.type)
     else
         print("Erro no processamento:", result.error)
@@ -369,6 +423,7 @@ end
 ### **Estruturas de Dados**
 ```lua
 -- Estrutura de um callback
+    --  Estrutura de um callback (traduzido)
 Callback = {
     function = function,
     registeredAt = number,
@@ -376,6 +431,7 @@ Callback = {
 }
 
 -- Estrutura de dados JSON
+    --  Estrutura de dados JSON (traduzido)
 JsonData = {
     type = string,
     data = any,
@@ -384,6 +440,7 @@ JsonData = {
 }
 
 -- Estrutura de fragmento
+    --  Estrutura de fragmento (traduzido)
 Fragment = {
     opcodeId = number,
     data = string,

@@ -77,6 +77,26 @@ wiki/docs/practical_guides/extended_opcode_practical_guide.md
 
 ### **Exemplo 1: Implementar Sistema Game Store**
 
+#### Nível Basic
+```lua
+-- 1. Consultar análise do sistema
+-- wiki/docs/game_store_system_analysis.md
+-- 2. Usar guia prático
+-- wiki/docs/practical_guides/game_store_practical_guide.md
+-- 3. Implementar baseado nos exemplos
+local GameStore = {}
+function GameStore:init()
+        enableNotifications = true
+end
+function GameStore:createOffer(data)
+    local offer = {
+end
+-- 4. Validar implementação
+local store = GameStore:new()
+local offer = store:createOffer({
+```
+
+#### Nível Intermediate
 ```lua
 -- 1. Consultar análise do sistema
 -- wiki/docs/game_store_system_analysis.md
@@ -126,8 +146,69 @@ local offer = store:createOffer({
 })
 ```
 
+#### Nível Advanced
+```lua
+-- 1. Consultar análise do sistema
+-- wiki/docs/game_store_system_analysis.md
+
+-- 2. Usar guia prático
+-- wiki/docs/practical_guides/game_store_practical_guide.md
+
+-- 3. Implementar baseado nos exemplos
+local GameStore = {}
+
+function GameStore:init()
+    self.offers = {}
+    self.categories = {}
+    self.history = {}
+    self.settings = {
+        maxOffers = 100,
+        maxPrice = 1000000,
+        enableHistory = true,
+        enableNotifications = true
+    }
+end
+
+function GameStore:createOffer(data)
+    local offer = {
+        id = self:generateId(),
+        name = data.name,
+        description = data.description,
+        price = data.price,
+        category = data.category,
+        type = data.type or "item",
+        image = data.image,
+        timestamp = os.time(),
+        status = "active"
+    }
+    
+    table.insert(self.offers, offer)
+    return offer
+end
+
+-- 4. Validar implementação
+local store = GameStore:new()
+store:init()
+local offer = store:createOffer({
+    name = "Sword of Power",
+    price = 5000,
+    category = "weapons"
+})
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Exemplo 2: Implementar Sistema Extended Opcode**
 
+#### Nível Basic
 ```lua
 -- 1. Consultar análise do sistema
 -- wiki/docs/extended_opcode_system_analysis.md
@@ -173,8 +254,176 @@ opcode:registerCallback(0x01, function(data)
 end)
 ```
 
+#### Nível Intermediate
+```lua
+-- 1. Consultar análise do sistema
+-- wiki/docs/extended_opcode_system_analysis.md
+
+-- 2. Usar guia prático
+-- wiki/docs/practical_guides/extended_opcode_practical_guide.md
+
+-- 3. Implementar baseado nos exemplos
+local ExtendedOpcode = {}
+
+function ExtendedOpcode:init()
+    self.callbacks = {}
+    self.registeredOpcodes = {}
+    self.jsonHandlers = {}
+    self.settings = {
+        maxOpcodeSize = 65535,
+        enableFragmentation = true,
+        enableCompression = false,
+        timeout = 5000
+    }
+end
+
+function ExtendedOpcode:registerCallback(opcodeId, callback)
+    if type(callback) ~= "function" then
+        error("Callback must be a function")
+    end
+    
+    self.callbacks[opcodeId] = {
+        function = callback,
+        registeredAt = os.time(),
+        callCount = 0
+    }
+    
+    return true
+end
+
+-- 4. Validar implementação
+local opcode = ExtendedOpcode:new()
+opcode:init()
+opcode:registerCallback(0x01, function(data)
+    print("Received opcode 0x01 with data:", data)
+    return { success = true }
+end)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- 1. Consultar análise do sistema
+-- wiki/docs/extended_opcode_system_analysis.md
+
+-- 2. Usar guia prático
+-- wiki/docs/practical_guides/extended_opcode_practical_guide.md
+
+-- 3. Implementar baseado nos exemplos
+local ExtendedOpcode = {}
+
+function ExtendedOpcode:init()
+    self.callbacks = {}
+    self.registeredOpcodes = {}
+    self.jsonHandlers = {}
+    self.settings = {
+        maxOpcodeSize = 65535,
+        enableFragmentation = true,
+        enableCompression = false,
+        timeout = 5000
+    }
+end
+
+function ExtendedOpcode:registerCallback(opcodeId, callback)
+    if type(callback) ~= "function" then
+        error("Callback must be a function")
+    end
+    
+    self.callbacks[opcodeId] = {
+        function = callback,
+        registeredAt = os.time(),
+        callCount = 0
+    }
+    
+    return true
+end
+
+-- 4. Validar implementação
+local opcode = ExtendedOpcode:new()
+opcode:init()
+opcode:registerCallback(0x01, function(data)
+    print("Received opcode 0x01 with data:", data)
+    return { success = true }
+end)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Exemplo 3: Implementar Sistema de Módulos**
 
+#### Nível Basic
+```lua
+-- 1. Consultar análise do sistema
+-- wiki/docs/modules_loading_system_analysis.md
+-- 2. Usar guia prático
+-- wiki/docs/practical_guides/modules_loading_practical_guide.md
+-- 3. Implementar baseado nos exemplos
+local ModuleDependencies = {}
+function ModuleDependencies:init()
+    self.dependencies = {}
+end
+function ModuleDependencies:addDependency(moduleName, requiredModule)
+    if not self.dependencies[moduleName] then
+        self.dependencies[moduleName] = {}
+    end
+    table.insert(self.dependencies[moduleName], requiredModule)
+end
+-- 4. Validar implementação
+local deps = ModuleDependencies:new()
+deps:addDependency("game_module", "core")
+deps:addDependency("game_module", "utils")
+```
+
+#### Nível Intermediate
+```lua
+-- 1. Consultar análise do sistema
+-- wiki/docs/modules_loading_system_analysis.md
+
+-- 2. Usar guia prático
+-- wiki/docs/practical_guides/modules_loading_practical_guide.md
+
+-- 3. Implementar baseado nos exemplos
+local ModuleDependencies = {}
+
+function ModuleDependencies:init()
+    self.dependencies = {}
+    self.loadedModules = {}
+    self.settings = {
+        enabled = true,
+        timeout = 5000,
+        maxRetries = 3
+    }
+end
+
+function ModuleDependencies:addDependency(moduleName, requiredModule)
+    if not self.dependencies[moduleName] then
+        self.dependencies[moduleName] = {}
+    end
+    table.insert(self.dependencies[moduleName], requiredModule)
+end
+
+-- 4. Validar implementação
+local deps = ModuleDependencies:new()
+deps:init()
+deps:addDependency("game_module", "core")
+deps:addDependency("game_module", "utils")
+```
+
+#### Nível Advanced
 ```lua
 -- 1. Consultar análise do sistema
 -- wiki/docs/modules_loading_system_analysis.md
@@ -249,7 +498,9 @@ cat wiki/docs/validation_tests/test_results.json
 
 ```lua
 -- Teste de Game Store
+    --  Teste de Game Store (traduzido)
 function testGameStoreImplementation()
+    -- Função: testGameStoreImplementation
     local store = GameStore:new()
     store:init()
     
@@ -267,7 +518,9 @@ function testGameStoreImplementation()
 end
 
 -- Teste de Extended Opcode
+    --  Teste de Extended Opcode (traduzido)
 function testExtendedOpcodeImplementation()
+    -- Função: testExtendedOpcodeImplementation
     local opcode = ExtendedOpcode:new()
     opcode:init()
     

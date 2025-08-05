@@ -1,229 +1,266 @@
 #!/usr/bin/env python3
 """
-Script para verificar deep links na wiki OTClient
-Verifica todos os links internos e identifica problemas de navegação
+Script para verificar e corrigir deep links na wiki.
+Identifica links quebrados e propõe correções.
 """
-
 import os
 import re
 import json
-from pathlib import Path
-from typing import Dict, List, Set, Tuple
 from datetime import datetime
+from pathlib import Path
 
-class WikiLinkVerifier:
-    def __init__(self, wiki_dir: str = ".."):
-        self.wiki_dir = Path(wiki_dir)
-        self.all_files = set()
-        self.links_found = {}
-        self.broken_links = []
-        self.missing_links = []
-        self.orphaned_files = []
-        
-    def scan_all_files(self):
-        """Escaneia todos os arquivos .md na wiki"""
-        print("🔍 Escaneando arquivos da wiki...")
-        
-        for file_path in self.wiki_dir.rglob("*.md"):
-            if file_path.is_file():
-                # Normalizar caminho relativo
-                relative_path = file_path.relative_to(self.wiki_dir)
-                self.all_files.add(str(relative_path))
-                
-        print(f"✅ Encontrados {len(self.all_files)} arquivos .md")
-        
-    def extract_links_from_file(self, file_path: Path) -> List[str]:
-        """Extrai todos os links de um arquivo markdown"""
-        links = []
+def verify_deep_links():
+    """Verifica todos os links internos da wiki."""
+    
+    wiki_path = Path("wiki")
+    report_path = Path("wiki/maps/deep_links_report.json")
+    
+    # Padrões para identificar links
+    link_patterns = [
+        r'\[([^\]]+)\]\(([^)]+)\)',  # Markdown links [text](url)
+        r'\[\[([^\]]+)\]\]',         # Wiki links [[page]]
+        r'@([a-zA-Z_][a-zA-Z0-9_]*)', # @mentions
+        r'`([^`]+)`',               # Code references
+    ]
+    
+    # Arquivos para verificar
+    markdown_files = list(wiki_path.rglob("*.md"))
+    
+    links_data = {
+        "metadata": {
+            "analysis_date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "total_files_analyzed": len(markdown_files),
+            "total_links_found": 0,
+            "broken_links": 0,
+            "valid_links": 0
+        },
+        "broken_links": [],
+        "valid_links": [],
+        "orphaned_files": [],
+        "recommendations": []
+    }
+    
+    # Coletar todos os arquivos existentes
+    existing_files = set()
+    for file_path in markdown_files:
+        # Caminho relativo à pasta wiki
+        relative_path = file_path.relative_to(wiki_path)
+        existing_files.add(str(relative_path))
+        existing_files.add(str(relative_path.with_suffix('')))  # Sem extensão
+    
+    print(f"🔍 Analisando {len(markdown_files)} arquivos da wiki...")
+    
+    for file_path in markdown_files:
+        relative_path = file_path.relative_to(wiki_path)
         
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 content = f.read()
-                
-            # Padrões de links Obsidian
-            patterns = [
-                r'\[\[([^\]]+)\]\]',  # [[link]]
-                r'\[([^\]]+)\]\(([^)]+)\)',  # [text](link)
-                r'\[\[([^\]]+)\|([^\]]+)\]\]',  # [[link|text]]
-            ]
             
-            for pattern in patterns:
-                matches = re.findall(pattern, content)
+            # Encontrar todos os links
+            for pattern in link_patterns:
+                matches = re.finditer(pattern, content)
+                
                 for match in matches:
-                    if isinstance(match, tuple):
-                        # Para [[link|text]] ou [text](link)
-                        link = match[0] if '|' not in match[0] else match[1]
-                    else:
-                        link = match
+                    link_text = match.group(1) if len(match.groups()) > 0 else match.group(0)
+                    link_url = match.group(2) if len(match.groups()) > 1 else None
                     
-                    # Limpar link
-                    link = link.strip()
-                    if link and not link.startswith('http'):
-                        links.append(link)
+                    # Analisar link
+                    link_info = analyze_link(link_text, link_url, relative_path, existing_files)
+                    
+                    if link_info:
+                        links_data["total_links_found"] += 1
                         
+                        if link_info["status"] == "broken":
+                            links_data["broken_links"].append(link_info)
+                            links_data["metadata"]["broken_links"] += 1
+                        else:
+                            links_data["valid_links"].append(link_info)
+                            links_data["metadata"]["valid_links"] += 1
+                            
         except Exception as e:
-            print(f"❌ Erro ao ler {file_path}: {e}")
-            
-        return links
+            print(f"❌ Erro ao processar {file_path}: {e}")
     
-    def verify_links(self):
-        """Verifica todos os links na wiki"""
-        print("🔗 Verificando links...")
-        
-        for file_path in self.wiki_dir.rglob("*.md"):
-            if not file_path.is_file():
-                continue
-                
-            relative_path = str(file_path.relative_to(self.wiki_dir))
-            links = self.extract_links_from_file(file_path)
-            
-            if links:
-                self.links_found[relative_path] = links
-                
-                for link in links:
-                    if not self.is_link_valid(link, relative_path):
-                        self.broken_links.append({
-                            'file': relative_path,
-                            'link': link,
-                            'type': 'broken'
-                        })
-        
-        print(f"✅ Verificados {len(self.links_found)} arquivos com links")
-        
-    def is_link_valid(self, link: str, source_file: str) -> bool:
-        """Verifica se um link é válido"""
-        # Remover âncora se existir
-        if '#' in link:
-            link = link.split('#')[0]
-            
-        # Se link vazio, considerar válido (âncora local)
-        if not link:
-            return True
-            
-        # Verificar se arquivo existe
-        if link in self.all_files:
-            return True
-            
-        # Verificar variações do link
-        variations = [
-            link,
-            link + '.md',
-            link.replace(' ', '_'),
-            link.replace('_', ' '),
-        ]
-        
-        for variation in variations:
-            if variation in self.all_files:
-                return True
-                
-        return False
-        
-    def find_orphaned_files(self):
-        """Encontra arquivos sem links apontando para eles"""
-        print("🔍 Procurando arquivos órfãos...")
-        
-        linked_files = set()
-        for links in self.links_found.values():
-            for link in links:
-                if '#' in link:
-                    link = link.split('#')[0]
-                if link:
-                    linked_files.add(link)
-                    
-        for file_path in self.all_files:
-            if file_path not in linked_files:
-                self.orphaned_files.append(file_path)
-                
-        print(f"✅ Encontrados {len(self.orphaned_files)} arquivos órfãos")
-        
-    def generate_report(self):
-        """Gera relatório completo"""
-        print("📊 Gerando relatório...")
-        
-        report = {
-            'metadata': {
-                'generated_at': datetime.now().isoformat(),
-                'total_files': len(self.all_files),
-                'files_with_links': len(self.links_found),
-                'total_links': sum(len(links) for links in self.links_found.values()),
-                'broken_links': len(self.broken_links),
-                'orphaned_files': len(self.orphaned_files)
-            },
-            'broken_links': self.broken_links,
-            'orphaned_files': self.orphaned_files,
-            'link_statistics': {
-                'files_with_most_links': sorted(
-                    self.links_found.items(),
-                    key=lambda x: len(x[1]),
-                    reverse=True
-                )[:10]
-            }
-        }
-        
-        # Salvar relatório
-        report_path = self.wiki_dir / 'maps' / 'deep_links_report.json'
-        report_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(report_path, 'w', encoding='utf-8') as f:
-            json.dump(report, f, indent=2, ensure_ascii=False)
-            
-        print(f"📄 Relatório salvo em: {report_path}")
-        
-        return report
-        
-    def print_summary(self, report: Dict):
-        """Imprime resumo do relatório"""
-        print("\n" + "="*60)
-        print("📊 RELATÓRIO DE VERIFICAÇÃO DE DEEP LINKS")
-        print("="*60)
-        
-        metadata = report['metadata']
-        print(f"📁 Total de arquivos: {metadata['total_files']}")
-        print(f"🔗 Arquivos com links: {metadata['files_with_links']}")
-        print(f"🔗 Total de links: {metadata['total_links']}")
-        print(f"❌ Links quebrados: {metadata['broken_links']}")
-        print(f"📄 Arquivos órfãos: {metadata['orphaned_files']}")
-        
-        if self.broken_links:
-            print(f"\n❌ LINKS QUEBRADOS ENCONTRADOS:")
-            for broken in self.broken_links[:10]:  # Mostrar apenas os primeiros 10
-                print(f"  📄 {broken['file']} → {broken['link']}")
-            if len(self.broken_links) > 10:
-                print(f"  ... e mais {len(self.broken_links) - 10} links quebrados")
-                
-        if self.orphaned_files:
-            print(f"\n📄 ARQUIVOS ÓRFÃOS:")
-            for orphaned in self.orphaned_files[:10]:  # Mostrar apenas os primeiros 10
-                print(f"  📄 {orphaned}")
-            if len(self.orphaned_files) > 10:
-                print(f"  ... e mais {len(self.orphaned_files) - 10} arquivos órfãos")
-                
-        print("\n" + "="*60)
-        
-    def run(self):
-        """Executa verificação completa"""
-        print("🚀 Iniciando verificação de deep links da wiki...")
-        
-        self.scan_all_files()
-        self.verify_links()
-        self.find_orphaned_files()
-        
-        report = self.generate_report()
-        self.print_summary(report)
-        
-        return report
+    # Identificar arquivos órfãos (sem links para eles)
+    find_orphaned_files(links_data, existing_files, markdown_files)
+    
+    # Gerar recomendações
+    generate_recommendations(links_data)
+    
+    # Salvar relatório
+    with open(report_path, 'w', encoding='utf-8') as f:
+        json.dump(links_data, f, indent=2, ensure_ascii=False)
+    
+    print(f"✅ Análise concluída!")
+    print(f"📊 Total de links encontrados: {links_data['metadata']['total_links_found']}")
+    print(f"❌ Links quebrados: {links_data['metadata']['broken_links']}")
+    print(f"✅ Links válidos: {links_data['metadata']['valid_links']}")
+    print(f"📄 Arquivos órfãos: {len(links_data['orphaned_files'])}")
+    print(f"📋 Relatório salvo: {report_path}")
+    
+    return links_data
 
-def main():
-    """Função principal"""
-    verifier = WikiLinkVerifier()
-    report = verifier.run()
+def analyze_link(link_text, link_url, source_file, existing_files):
+    """Analisa um link específico."""
     
-    # Retornar código de saída baseado nos problemas encontrados
-    if report['metadata']['broken_links'] > 0 or report['metadata']['orphaned_files'] > 0:
-        print("⚠️  Problemas encontrados na wiki!")
-        return 1
-    else:
-        print("✅ Wiki está com links perfeitos!")
-        return 0
+    # Se é um link markdown [text](url)
+    if link_url:
+        target = link_url
+        
+        # Remover âncora se houver
+        if '#' in target:
+            target = target.split('#')[0]
+        
+        # Verificar se é um link interno
+        if target.startswith('./') or target.startswith('../') or not target.startswith(('http', 'mailto', '#')):
+            # Normalizar caminho
+            if target.startswith('./'):
+                target = target[2:]
+            elif target.startswith('../'):
+                # Simplificar para análise
+                target = target[3:]
+            
+            # Verificar se o arquivo existe
+            if target and not target.endswith('.md'):
+                target += '.md'
+            
+            if target in existing_files:
+                return {
+                    "source_file": str(source_file),
+                    "link_text": link_text,
+                    "link_url": link_url,
+                    "target": target,
+                    "status": "valid",
+                    "type": "markdown"
+                }
+            else:
+                return {
+                    "source_file": str(source_file),
+                    "link_text": link_text,
+                    "link_url": link_url,
+                    "target": target,
+                    "status": "broken",
+                    "type": "markdown",
+                    "suggestion": suggest_correction(target, existing_files)
+                }
+    
+    # Se é um wiki link [[page]]
+    elif link_text and not link_url:
+        target = link_text + '.md'
+        
+        if target in existing_files:
+            return {
+                "source_file": str(source_file),
+                "link_text": link_text,
+                "link_url": None,
+                "target": target,
+                "status": "valid",
+                "type": "wiki"
+            }
+        else:
+            return {
+                "source_file": str(source_file),
+                "link_text": link_text,
+                "link_url": None,
+                "target": target,
+                "status": "broken",
+                "type": "wiki",
+                "suggestion": suggest_correction(target, existing_files)
+            }
+    
+    return None
+
+def suggest_correction(target, existing_files):
+    """Sugere correção para link quebrado."""
+    
+    # Remover extensão para comparação
+    target_base = target.replace('.md', '')
+    
+    # Buscar arquivos similares
+    suggestions = []
+    
+    for existing_file in existing_files:
+        existing_base = existing_file.replace('.md', '')
+        
+        # Verificar se contém o nome do arquivo
+        if target_base.lower() in existing_base.lower():
+            suggestions.append(existing_file)
+        
+        # Verificar similaridade
+        elif similar_strings(target_base, existing_base):
+            suggestions.append(existing_file)
+    
+    return suggestions[:3]  # Retornar até 3 sugestões
+
+def similar_strings(str1, str2):
+    """Verifica se duas strings são similares."""
+    str1_lower = str1.lower()
+    str2_lower = str2.lower()
+    
+    # Verificar se uma contém a outra
+    if str1_lower in str2_lower or str2_lower in str1_lower:
+        return True
+    
+    # Verificar similaridade por palavras
+    words1 = set(str1_lower.split('_'))
+    words2 = set(str2_lower.split('_'))
+    
+    if words1 & words2:  # Intersecção
+        return True
+    
+    return False
+
+def find_orphaned_files(links_data, existing_files, markdown_files):
+    """Identifica arquivos órfãos (sem links para eles)."""
+    
+    # Coletar todos os targets de links válidos
+    linked_files = set()
+    for link in links_data["valid_links"]:
+        linked_files.add(link["target"])
+    
+    # Encontrar arquivos não linkados
+    for file_path in markdown_files:
+        relative_path = str(file_path.relative_to(Path("wiki")))
+        
+        if relative_path not in linked_files:
+            links_data["orphaned_files"].append({
+                "file": relative_path,
+                "size": file_path.stat().st_size,
+                "last_modified": datetime.fromtimestamp(file_path.stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S")
+            })
+
+def generate_recommendations(links_data):
+    """Gera recomendações para correção."""
+    
+    recommendations = []
+    
+    # Recomendações para links quebrados
+    if links_data["broken_links"]:
+        recommendations.append({
+            "type": "broken_links",
+            "priority": "high",
+            "description": f"Corrigir {len(links_data['broken_links'])} links quebrados",
+            "action": "Verificar e corrigir links quebrados identificados"
+        })
+    
+    # Recomendações para arquivos órfãos
+    if links_data["orphaned_files"]:
+        recommendations.append({
+            "type": "orphaned_files",
+            "priority": "medium",
+            "description": f"Adicionar links para {len(links_data['orphaned_files'])} arquivos órfãos",
+            "action": "Adicionar links de navegação para arquivos sem referências"
+        })
+    
+    # Recomendações gerais
+    recommendations.append({
+        "type": "navigation",
+        "priority": "medium",
+        "description": "Melhorar navegação entre documentos",
+        "action": "Adicionar links de navegação e índices"
+    })
+    
+    links_data["recommendations"] = recommendations
 
 if __name__ == "__main__":
-    exit(main()) 
+    verify_deep_links() 

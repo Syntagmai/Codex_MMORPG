@@ -105,6 +105,7 @@ textEdit:setValidCharacters('a-zA-Z')  -- Caracteres permitidos
 textEdit:setPlaceholder('Digite aqui...')
 
 -- Eventos
+    --  Eventos (traduzido)
 textEdit.onTextChange = function(widget, text, oldText)
     print('Texto alterado:', text)
 end
@@ -124,12 +125,14 @@ multilineEdit:setTextWrap(true)
 multilineEdit:setSize({width = 200, height = 100})
 
 -- Configurar texto com quebras de linha
+    --  Configurar texto com quebras de linha (traduzido)
 multilineEdit:setText('Linha 1\nLinha 2\nLinha 3')
 ```
 
 #### PasswordTextEdit
 Campo de texto especializado para senhas com ocultação de caracteres.
 
+#### Nível Basic
 ```lua
 local passwordEdit = g_ui.createWidget('PasswordTextEdit', parent)
 passwordEdit:setPasswordMode(true)
@@ -138,6 +141,45 @@ passwordEdit:setPlaceholder('Digite sua senha...')
 
 -- Toggle de visibilidade (se disponível)
 passwordEdit:setTextHidden(true)
+```
+
+#### Nível Intermediate
+```lua
+local passwordEdit = g_ui.createWidget('PasswordTextEdit', parent)
+passwordEdit:setPasswordMode(true)
+passwordEdit:setMaxLength(20)
+passwordEdit:setPlaceholder('Digite sua senha...')
+
+-- Toggle de visibilidade (se disponível)
+passwordEdit:setTextHidden(true)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local passwordEdit = g_ui.createWidget('PasswordTextEdit', parent)
+passwordEdit:setPasswordMode(true)
+passwordEdit:setMaxLength(20)
+passwordEdit:setPlaceholder('Digite sua senha...')
+
+-- Toggle de visibilidade (se disponível)
+passwordEdit:setTextHidden(true)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### ☑️ **Controles de Seleção**
@@ -151,6 +193,7 @@ checkBox:setText('Aceito os termos')
 checkBox:setChecked(false)
 
 -- Eventos
+    --  Eventos (traduzido)
 checkBox.onCheckChange = function(widget, checked)
     print('Estado alterado:', checked)
 end
@@ -171,6 +214,7 @@ comboBox:addOption('Opção 3', 'value3')
 comboBox:setCurrentOption('value1')
 
 -- Eventos
+    --  Eventos (traduzido)
 comboBox.onOptionChange = function(widget, option)
     print('Opção selecionada:', option)
 end
@@ -183,12 +227,14 @@ Controle numérico com incremento/decremento.
 local spinBox = g_ui.createWidget('UISpinBox', parent)
 
 -- Configurar limites e valores
+    --  Configurar limites e valores (traduzido)
 spinBox:setMinimum(0)
 spinBox:setMaximum(100)
 spinBox:setValue(50)
 spinBox:setStep(5)
 
 -- Eventos
+    --  Eventos (traduzido)
 spinBox.onValueChange = function(widget, value)
     print('Valor alterado:', value)
 end
@@ -205,12 +251,14 @@ button:setText('Enviar')
 button:setEnabled(true)
 
 -- Eventos
+    --  Eventos (traduzido)
 button.onClick = function(widget)
     print('Botão clicado!')
 end
 
 button.onHoverChange = function(widget, hovered)
     if hovered then
+    -- Verificação condicional
         widget:setBackgroundColor('#4CAF50')
     else
         widget:setBackgroundColor('#2196F3')
@@ -225,14 +273,17 @@ Barra de progresso para indicar status.
 local progressBar = g_ui.createWidget('UIProgressBar', parent)
 
 -- Configurar progresso
+    --  Configurar progresso (traduzido)
 progressBar:setMinimum(0)
 progressBar:setMaximum(100)
 progressBar:setValue(75)
 
 -- Animar progresso
+    --  Animar progresso (traduzido)
 local function animateProgress()
     local currentValue = progressBar:getValue()
     if currentValue < 100 then
+    -- Verificação condicional
         progressBar:setValue(currentValue + 1)
         scheduleEvent(animateProgress, 50)
     end
@@ -247,6 +298,7 @@ animateProgress()
 
 ### 📦 **Métodos Comuns**
 
+#### Nível Basic
 ```lua
 -- Configuração básica
 widget:setEnabled(true)           -- Habilitar/desabilitar
@@ -265,9 +317,75 @@ widget:setBorderColor('#000000')
 widget:setOpacity(1.0)
 ```
 
+#### Nível Intermediate
+```lua
+-- Configuração básica
+widget:setEnabled(true)           -- Habilitar/desabilitar
+widget:setVisible(true)           -- Mostrar/ocultar
+widget:setFocusable(true)         -- Permitir foco
+widget:setId('uniqueId')          -- Definir ID único
+
+-- Posicionamento e tamanho
+widget:setPosition({x = 100, y = 100})
+widget:setSize({width = 200, height = 30})
+widget:setRect({x = 100, y = 100, width = 200, height = 30})
+
+-- Estilização
+widget:setBackgroundColor('#FFFFFF')
+widget:setBorderColor('#000000')
+widget:setOpacity(1.0)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Configuração básica
+widget:setEnabled(true)           -- Habilitar/desabilitar
+widget:setVisible(true)           -- Mostrar/ocultar
+widget:setFocusable(true)         -- Permitir foco
+widget:setId('uniqueId')          -- Definir ID único
+
+-- Posicionamento e tamanho
+widget:setPosition({x = 100, y = 100})
+widget:setSize({width = 200, height = 30})
+widget:setRect({x = 100, y = 100, width = 200, height = 30})
+
+-- Estilização
+widget:setBackgroundColor('#FFFFFF')
+widget:setBorderColor('#000000')
+widget:setOpacity(1.0)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎯 **Métodos Específicos por Tipo**
 
 #### UITextEdit
+#### Nível Basic
+```lua
+-- Manipulação de texto
+local text = textEdit:getText()
+textEdit:appendText(' mais texto')
+-- Cursor e seleção
+local pos = textEdit:getCursorPos()
+-- Configurações
+```
+
+#### Nível Intermediate
 ```lua
 -- Manipulação de texto
 textEdit:setText('Novo texto')
@@ -290,19 +408,55 @@ textEdit:setValidCharacters('a-zA-Z0-9')
 textEdit:setPlaceholder('Digite aqui...')
 ```
 
+#### Nível Advanced
+```lua
+-- Manipulação de texto
+textEdit:setText('Novo texto')
+local text = textEdit:getText()
+textEdit:clearText()
+textEdit:appendText(' mais texto')
+
+-- Cursor e seleção
+textEdit:setCursorPos(5)
+local pos = textEdit:getCursorPos()
+textEdit:setSelection(0, 10)
+textEdit:selectAll()
+
+-- Configurações
+textEdit:setMaxLength(100)
+textEdit:setEditable(true)
+textEdit:setMultiline(true)
+textEdit:setPasswordMode(true)
+textEdit:setValidCharacters('a-zA-Z0-9')
+textEdit:setPlaceholder('Digite aqui...')
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### UICheckBox
 ```lua
 -- Estado
+    --  Estado (traduzido)
 checkBox:setChecked(true)
 local checked = checkBox:isChecked()
 checkBox:toggle()
 
 -- Texto
+    --  Texto (traduzido)
 checkBox:setText('Texto do checkbox')
 local text = checkBox:getText()
 ```
 
 #### UIComboBox
+#### Nível Basic
 ```lua
 -- Opções
 comboBox:addOption('Texto', 'valor')
@@ -319,13 +473,66 @@ comboBox:selectNext()
 comboBox:selectPrevious()
 ```
 
+#### Nível Intermediate
+```lua
+-- Opções
+comboBox:addOption('Texto', 'valor')
+comboBox:addOption('Outro texto', 'outro_valor')
+comboBox:clearOptions()
+
+-- Seleção
+comboBox:setCurrentOption('valor')
+local current = comboBox:getCurrentOption()
+local currentText = comboBox:getCurrentText()
+
+-- Navegação
+comboBox:selectNext()
+comboBox:selectPrevious()
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Opções
+comboBox:addOption('Texto', 'valor')
+comboBox:addOption('Outro texto', 'outro_valor')
+comboBox:clearOptions()
+
+-- Seleção
+comboBox:setCurrentOption('valor')
+local current = comboBox:getCurrentOption()
+local currentText = comboBox:getCurrentText()
+
+-- Navegação
+comboBox:selectNext()
+comboBox:selectPrevious()
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### UISpinBox
 ```lua
 -- Valores
+    --  Valores (traduzido)
 spinBox:setValue(50)
 local value = spinBox:getValue()
 
 -- Limites
+    --  Limites (traduzido)
 spinBox:setMinimum(0)
 spinBox:setMaximum(100)
 spinBox:setStep(5)
@@ -339,6 +546,7 @@ spinBox:stepDown()
 
 ```lua
 -- Eventos de texto
+    --  Eventos de texto (traduzido)
 textEdit.onTextChange = function(widget, text, oldText)
     print('Texto alterado de', oldText, 'para', text)
 end
@@ -349,6 +557,7 @@ end
 
 textEdit.onFocusChange = function(widget, focused)
     if focused then
+    -- Verificação condicional
         print('Campo recebeu foco')
     else
         print('Campo perdeu foco')
@@ -375,6 +584,7 @@ end
 
 button.onHoverChange = function(widget, hovered)
     if hovered then
+    -- Verificação condicional
         widget:setBackgroundColor('#4CAF50')
     else
         widget:setBackgroundColor('#2196F3')
@@ -388,6 +598,7 @@ end
 
 ### 🎯 **Validação Básica**
 
+#### Nível Basic
 ```lua
 -- Validação de comprimento
 function validateLength(text, minLength, maxLength)
@@ -419,8 +630,90 @@ textEdit.onTextChange = function(widget, text)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Validação de comprimento
+function validateLength(text, minLength, maxLength)
+    local length = string.len(text)
+    return length >= minLength and length <= maxLength
+end
+
+-- Validação de email
+function validateEmail(email)
+    local pattern = '^[%w.]+@[%w]+%.[%w]+$'
+    return string.match(email, pattern) ~= nil
+end
+
+-- Validação de números
+function validateNumber(value, min, max)
+    local num = tonumber(value)
+    return num and num >= min and num <= max
+end
+
+-- Aplicar validação
+textEdit.onTextChange = function(widget, text)
+    if not validateLength(text, 3, 50) then
+        widget:setBorderColor('#FF0000')
+        widget:setTooltip('Texto deve ter entre 3 e 50 caracteres')
+    else
+        widget:setBorderColor('#00FF00')
+        widget:setTooltip('')
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Validação de comprimento
+function validateLength(text, minLength, maxLength)
+    local length = string.len(text)
+    return length >= minLength and length <= maxLength
+end
+
+-- Validação de email
+function validateEmail(email)
+    local pattern = '^[%w.]+@[%w]+%.[%w]+$'
+    return string.match(email, pattern) ~= nil
+end
+
+-- Validação de números
+function validateNumber(value, min, max)
+    local num = tonumber(value)
+    return num and num >= min and num <= max
+end
+
+-- Aplicar validação
+textEdit.onTextChange = function(widget, text)
+    if not validateLength(text, 3, 50) then
+        widget:setBorderColor('#FF0000')
+        widget:setTooltip('Texto deve ter entre 3 e 50 caracteres')
+    else
+        widget:setBorderColor('#00FF00')
+        widget:setTooltip('')
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔧 **Sistema de Validação Avançado**
 
+#### Inicialização e Configuração
 ```lua
 local ValidationSystem = {}
 
@@ -446,6 +739,10 @@ ValidationSystem.validators = {
     pattern = function(value, pattern)
         return string.match(value, pattern) ~= nil
     end,
+```
+
+#### Funcionalidade 1
+```lua
     
     range = function(value, min, max)
         local num = tonumber(value)
@@ -467,6 +764,10 @@ function ValidationSystem.validate(widget, rules)
             end
         end
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     -- Aplicar feedback visual
     if #errors > 0 then
@@ -489,6 +790,10 @@ emailField.onTextChange = function(widget, text)
         minLength = {5},
         maxLength = {100}
     })
+```
+
+#### Finalização
+```lua
 end
 ```
 
@@ -498,6 +803,7 @@ end
 
 ### 🎯 **Exemplo 1: Formulário de Registro**
 
+#### Inicialização e Configuração
 ```lua
 local RegistrationForm = {}
 
@@ -592,6 +898,10 @@ function RegistrationForm.create(parent)
             age = ageField,
             terms = termsCheckBox
         })
+```
+
+#### Funcionalidade 1
+```lua
     end
     
     cancelButton.onClick = function()
@@ -613,6 +923,10 @@ function RegistrationForm.validateAndSubmit(form, fields)
     if not string.match(fields.email:getText(), '^[%w.]+@[%w]+%.[%w]+$') then
         table.insert(errors, 'Email inválido')
     end
+```
+
+#### Funcionalidade 2
+```lua
     
     -- Validação da senha
     if string.len(fields.password:getText()) < 6 then
@@ -635,6 +949,10 @@ function RegistrationForm.validateAndSubmit(form, fields)
         for _, error in ipairs(errors) do
             print('- ' .. error)
         end
+```
+
+#### Finalização
+```lua
     else
         print('Formulário válido! Enviando dados...')
         -- Aqui você enviaria os dados para o servidor
@@ -645,6 +963,7 @@ end
 
 ### 🎨 **Exemplo 2: Formulário de Configurações**
 
+#### Inicialização e Configuração
 ```lua
 local SettingsForm = {}
 
@@ -743,6 +1062,10 @@ function SettingsForm.create(parent)
             fullscreen = fullscreenCheckBox:isChecked(),
             shadows = shadowsCheckBox:isChecked()
         })
+```
+
+#### Funcionalidade 1
+```lua
         form:destroy()
     end
     
@@ -765,6 +1088,10 @@ function SettingsForm.create(parent)
 end
 
 function SettingsForm.applySettings(settings)
+```
+
+#### Finalização
+```lua
     print('Aplicando configurações:')
     for key, value in pairs(settings) do
         print(key .. ': ' .. tostring(value))
@@ -793,6 +1120,7 @@ O OTClient oferece o sistema **UIInputBox** para criar diálogos de entrada ráp
 ```lua
 -- InputBox básico de texto
 function showTextInput(title, label, callback)
+    -- Função: showTextInput
     local inputBox = UIInputBox.create(title, callback)
     inputBox:addLineEdit(label)
     inputBox:display()
@@ -800,6 +1128,7 @@ end
 
 -- InputBox com múltiplos campos
 function showRegistrationInput(callback)
+    -- Função: showRegistrationInput
     local inputBox = UIInputBox.create('Registro', callback)
     inputBox:addLineEdit('Nome:')
     inputBox:addLineEdit('Email:')
@@ -811,6 +1140,7 @@ function showRegistrationInput(callback)
 end
 
 -- Uso
+    --  Uso (traduzido)
 showTextInput('Login', 'Usuário:', function(inputBox)
     local username = inputBox:getText()
     print('Usuário:', username)
@@ -834,9 +1164,11 @@ end)
 local CustomInputBox = {}
 
 function CustomInputBox.create(title, callback)
+    -- Função: CustomInputBox
     local inputBox = UIInputBox.create(title, callback)
     
     -- Adicionar campos personalizados
+    --  Adicionar campos personalizados (traduzido)
     inputBox:addLineEdit('Nome do Personagem:')
     inputBox:addLineEdit('Servidor:')
     inputBox:addComboBox('Vocação:', 'Sorcerer', 'Druid', 'Paladin', 'Knight')
@@ -847,6 +1179,7 @@ function CustomInputBox.create(title, callback)
 end
 
 -- Uso
+    --  Uso (traduzido)
 local inputBox = CustomInputBox.create('Novo Personagem', function(inputBox)
     local name = inputBox:getText(1)
     local server = inputBox:getText(2)
@@ -868,6 +1201,7 @@ inputBox:display('Criar', 'Cancelar')
 
 ```lua
 -- ✅ BOM: Agrupar campos relacionados
+    --  ✅ BOM: Agrupar campos relacionados (traduzido)
 local personalInfoPanel = g_ui.createWidget('Panel', form)
 personalInfoPanel:setLayout('verticalBox')
 personalInfoPanel:setPadding(10)
@@ -876,6 +1210,7 @@ local nameField = g_ui.createWidget('UITextEdit', personalInfoPanel)
 local emailField = g_ui.createWidget('UITextEdit', personalInfoPanel)
 
 -- ✅ BOM: Usar labels descritivos
+    --  ✅ BOM: Usar labels descritivos (traduzido)
 local nameLabel = g_ui.createWidget('UILabel', form)
 nameLabel:setText('Nome Completo:')
 nameField:setPlaceholder('Digite seu nome completo')
@@ -883,6 +1218,7 @@ nameField:setPlaceholder('Digite seu nome completo')
 -- ✅ BOM: Implementar validação em tempo real
 nameField.onTextChange = function(widget, text)
     if string.len(text) < 3 then
+    -- Verificação condicional
         widget:setBorderColor('#FF0000')
     else
         widget:setBorderColor('#00FF00')
@@ -894,8 +1230,11 @@ end
 
 ```lua
 -- ✅ BOM: Feedback visual para estados
+    --  ✅ BOM: Feedback visual para estados (traduzido)
 function updateFieldState(field, isValid, message)
+    -- Função: updateFieldState
     if isValid then
+    -- Verificação condicional
         field:setBorderColor('#4CAF50')
         field:setTooltip('')
     else
@@ -905,6 +1244,7 @@ function updateFieldState(field, isValid, message)
 end
 
 -- ✅ BOM: Indicadores de progresso
+    --  ✅ BOM: Indicadores de progresso (traduzido)
 local progressBar = g_ui.createWidget('UIProgressBar', form)
 progressBar:setValue(0)
 
@@ -916,6 +1256,74 @@ end
 
 ### 🔧 **Validação Robusta**
 
+#### Nível Basic
+```lua
+-- ✅ BOM: Validação completa
+function validateForm(fields)
+    local errors = {}
+    -- Validar campos obrigatórios
+        if field.required and string.len(field:getText()) == 0 then
+        end
+    end
+    -- Validar formato de email
+    if fields.email and not validateEmail(fields.email:getText()) then
+    end
+    -- Validar confirmação de senha
+    if fields.password and fields.confirm then
+        if fields.password:getText() ~= fields.confirm:getText() then
+        end
+    end
+end
+-- ✅ BOM: Exibir erros de forma clara
+function showErrors(errors)
+    local errorText = 'Erros encontrados:\n'
+    end
+    -- Mostrar em um popup ou label
+    print(errorText)
+end
+```
+
+#### Nível Intermediate
+```lua
+-- ✅ BOM: Validação completa
+function validateForm(fields)
+    local errors = {}
+    
+    -- Validar campos obrigatórios
+    for name, field in pairs(fields) do
+        if field.required and string.len(field:getText()) == 0 then
+            table.insert(errors, name .. ' é obrigatório')
+        end
+    end
+    
+    -- Validar formato de email
+    if fields.email and not validateEmail(fields.email:getText()) then
+        table.insert(errors, 'Email inválido')
+    end
+    
+    -- Validar confirmação de senha
+    if fields.password and fields.confirm then
+        if fields.password:getText() ~= fields.confirm:getText() then
+            table.insert(errors, 'Senhas não coincidem')
+        end
+    end
+    
+    return errors
+end
+
+-- ✅ BOM: Exibir erros de forma clara
+function showErrors(errors)
+    local errorText = 'Erros encontrados:\n'
+    for _, error in ipairs(errors) do
+        errorText = errorText .. '• ' .. error .. '\n'
+    end
+    
+    -- Mostrar em um popup ou label
+    print(errorText)
+end
+```
+
+#### Nível Advanced
 ```lua
 -- ✅ BOM: Validação completa
 function validateForm(fields)
@@ -968,6 +1376,32 @@ end
 
 ### 🎯 **Técnicas de Otimização**
 
+#### Nível Basic
+```lua
+-- Lazy loading de validação
+local validationCache = {}
+function validateField(field, rules)
+    local fieldId = field:getId()
+    local currentValue = field:getText()
+    -- Verificar cache
+    if validationCache[fieldId] and validationCache[fieldId].value == currentValue then
+    end
+    -- Executar validação
+    local result = performValidation(currentValue, rules)
+    -- Armazenar no cache
+end
+-- Debounce para validação em tempo real
+local validationTimers = {}
+function debouncedValidation(field, rules, delay)
+    local fieldId = field:getId()
+    if validationTimers[fieldId] then
+    end
+    validationTimers[fieldId] = scheduleEvent(function()
+    end, delay)
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Lazy loading de validação
 local validationCache = {}
@@ -1012,6 +1446,61 @@ function debouncedValidation(field, rules, delay)
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Lazy loading de validação
+local validationCache = {}
+
+function validateField(field, rules)
+    local fieldId = field:getId()
+    local currentValue = field:getText()
+    
+    -- Verificar cache
+    if validationCache[fieldId] and validationCache[fieldId].value == currentValue then
+        return validationCache[fieldId].result
+    end
+    
+    -- Executar validação
+    local result = performValidation(currentValue, rules)
+    
+    -- Armazenar no cache
+    validationCache[fieldId] = {
+        value = currentValue,
+        result = result
+    }
+    
+    return result
+end
+
+-- Debounce para validação em tempo real
+local validationTimers = {}
+
+function debouncedValidation(field, rules, delay)
+    delay = delay or 300
+    
+    local fieldId = field:getId()
+    
+    if validationTimers[fieldId] then
+        removeEvent(validationTimers[fieldId])
+    end
+    
+    validationTimers[fieldId] = scheduleEvent(function()
+        validateField(field, rules)
+        validationTimers[fieldId] = nil
+    end, delay)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔧 **Monitoramento de Performance**
 
 ```lua
@@ -1023,6 +1512,7 @@ local function measureFormPerformance(fieldCount)
     local fields = {}
     
     for i = 1, fieldCount do
+    -- Loop de repetição
         fields[i] = g_ui.createWidget('UITextEdit', form)
         fields[i]:setText('Teste ' .. i)
     end
@@ -1032,11 +1522,13 @@ local function measureFormPerformance(fieldCount)
     -- Medir tempo de validação
     startTime = g_clock.millis()
     for _, field in ipairs(fields) do
+    -- Loop de repetição
         validateField(field, {required = {}, minLength = {3}})
     end
     local validationTime = g_clock.millis() - startTime
     
     -- Limpeza
+    --  Limpeza (traduzido)
     form:destroy()
     
     print(string.format('Criação: %dms, Validação: %dms', creationTime, validationTime))

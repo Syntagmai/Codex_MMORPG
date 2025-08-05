@@ -38,6 +38,7 @@ O sistema de UI do Canary é responsável por gerenciar todas as interfaces do u
 ### **🔧 Componentes Principais**
 
 #### **1. Modal Window System**
+#### Nível Basic
 ```cpp
 struct ModalWindow {
     std::list<std::pair<std::string, uint8_t>> buttons, choices;
@@ -56,6 +57,61 @@ struct ModalWindow {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+struct ModalWindow {
+    std::list<std::pair<std::string, uint8_t>> buttons, choices;
+    std::string title, message;
+    uint32_t id;
+    uint8_t defaultEnterButton, defaultEscapeButton;
+    bool priority;
+
+    ModalWindow(uint32_t newId, std::string newTitle, std::string newMessage) :
+        title(std::move(newTitle)),
+        message(std::move(newMessage)),
+        id(newId),
+        defaultEnterButton(0xFF),
+        defaultEscapeButton(0xFF),
+        priority(false) { }
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+struct ModalWindow {
+    std::list<std::pair<std::string, uint8_t>> buttons, choices;
+    std::string title, message;
+    uint32_t id;
+    uint8_t defaultEnterButton, defaultEscapeButton;
+    bool priority;
+
+    ModalWindow(uint32_t newId, std::string newTitle, std::string newMessage) :
+        title(std::move(newTitle)),
+        message(std::move(newMessage)),
+        id(newId),
+        defaultEnterButton(0xFF),
+        defaultEscapeButton(0xFF),
+        priority(false) { }
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 **Localização**: `canary/src/game/modal_window/modal_window.hpp`
 
 **Funcionalidades**:
@@ -68,6 +124,7 @@ struct ModalWindow {
 #### **2. Player UI System**
 ```cpp
 class Player : public Creature, public Cylinder, public Bankable {
+    -- Classe: Player
 public:
     // Modal Window Management
     void clearModalWindows();
@@ -114,6 +171,7 @@ private:
 #### **3. Game UI Management**
 ```cpp
 class Game {
+    -- Classe: Game
 public:
     // Player UI Actions
     void playerAnswerModalWindow(uint32_t playerId, uint32_t modalWindowId, 
@@ -160,6 +218,7 @@ public:
 #### **4. Protocol UI Communication**
 ```cpp
 class ProtocolGame {
+    -- Classe: ProtocolGame
 public:
     // Modal Window Protocol
     void parseModalWindowAnswer(NetworkMessage &msg);
@@ -210,6 +269,7 @@ struct OpenContainer {
 };
 
 class Player {
+    -- Classe: Player
 private:
     std::map<uint8_t, OpenContainer> openContainers;
     
@@ -234,6 +294,7 @@ public:
 #### **Shop Interface**
 ```cpp
 class Player {
+    -- Classe: Player
 public:
     bool openShopWindow(const std::shared_ptr<Npc> &npc, 
                        const std::vector<ShopBlock> &shopItems = {});
@@ -261,6 +322,7 @@ private:
 #### **Trade Interface**
 ```cpp
 class Player {
+    -- Classe: Player
 public:
     // Trade State Management
     void setTradeState(TradeState_t state);
@@ -287,6 +349,7 @@ private:
 #### **Message Broadcasting**
 ```cpp
 class Game {
+    -- Classe: Game
 public:
     void broadcastMessage(const std::string &text, MessageClasses type) const;
     bool playerBroadcastMessage(const std::shared_ptr<Player> &player, 
@@ -312,6 +375,7 @@ public:
 #### **UI Exhaustion Control**
 ```cpp
 class Player {
+    -- Classe: Player
 public:
     bool isUIExhausted(uint32_t exhaustionTime = 250) const;
     void updateUIExhausted();
@@ -330,6 +394,7 @@ private:
 ### **🔧 APIs Principais**
 
 #### **Modal Window Management**
+#### Nível Basic
 ```cpp
 // Criar janela modal
 ModalWindow modalWindow(1, "Título", "Mensagem");
@@ -348,7 +413,63 @@ if (player->hasModalWindowOpen(1)) {
 player->clearModalWindows();
 ```
 
+#### Nível Intermediate
+```cpp
+// Criar janela modal
+ModalWindow modalWindow(1, "Título", "Mensagem");
+modalWindow.buttons.push_back({"OK", 1});
+modalWindow.choices.push_back({"Opção 1", 1});
+
+// Enviar para jogador
+player->sendModalWindow(modalWindow);
+
+// Verificar se está aberta
+if (player->hasModalWindowOpen(1)) {
+    // Janela está aberta
+}
+
+// Limpar janelas
+player->clearModalWindows();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Criar janela modal
+ModalWindow modalWindow(1, "Título", "Mensagem");
+modalWindow.buttons.push_back({"OK", 1});
+modalWindow.choices.push_back({"Opção 1", 1});
+
+// Enviar para jogador
+player->sendModalWindow(modalWindow);
+
+// Verificar se está aberta
+if (player->hasModalWindowOpen(1)) {
+    // Janela está aberta
+}
+
+// Limpar janelas
+player->clearModalWindows();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Container Management**
+#### Nível Basic
 ```cpp
 // Abrir container
 player->addContainer(0, container);
@@ -365,7 +486,59 @@ if (container != nullptr) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Abrir container
+player->addContainer(0, container);
+
+// Fechar container
+player->closeContainer(0);
+
+// Obter container
+auto container = player->getContainerByID(0);
+
+// Verificar se está aberto
+if (container != nullptr) {
+    // Container está aberto
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Abrir container
+player->addContainer(0, container);
+
+// Fechar container
+player->closeContainer(0);
+
+// Obter container
+auto container = player->getContainerByID(0);
+
+// Verificar se está aberto
+if (container != nullptr) {
+    // Container está aberto
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Shop Interface**
+#### Nível Basic
 ```cpp
 // Abrir loja
 std::vector<ShopBlock> shopItems = {
@@ -382,7 +555,59 @@ if (player->isInMarket()) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Abrir loja
+std::vector<ShopBlock> shopItems = {
+    {itemId: 2160, count: 1, price: 1000}
+};
+player->openShopWindow(npc, shopItems);
+
+// Fechar loja
+player->closeShopWindow();
+
+// Verificar se está na loja
+if (player->isInMarket()) {
+    // Jogador está na loja
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Abrir loja
+std::vector<ShopBlock> shopItems = {
+    {itemId: 2160, count: 1, price: 1000}
+};
+player->openShopWindow(npc, shopItems);
+
+// Fechar loja
+player->closeShopWindow();
+
+// Verificar se está na loja
+if (player->isInMarket()) {
+    // Jogador está na loja
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Trade Interface**
+#### Nível Basic
 ```cpp
 // Iniciar troca
 game->internalStartTrade(player1, player2, item);
@@ -399,7 +624,59 @@ if (player->getTradeState() == TRADE_TRANSFER) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Iniciar troca
+game->internalStartTrade(player1, player2, item);
+
+// Aceitar troca
+player->playerAcceptTrade(playerId);
+
+// Fechar troca
+game->internalCloseTrade(player);
+
+// Verificar estado
+if (player->getTradeState() == TRADE_TRANSFER) {
+    // Troca em andamento
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Iniciar troca
+game->internalStartTrade(player1, player2, item);
+
+// Aceitar troca
+player->playerAcceptTrade(playerId);
+
+// Fechar troca
+game->internalCloseTrade(player);
+
+// Verificar estado
+if (player->getTradeState() == TRADE_TRANSFER) {
+    // Troca em andamento
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Message Broadcasting**
+#### Nível Basic
 ```cpp
 // Broadcast para todos
 game->broadcastMessage("Servidor reiniciará em 5 minutos", MESSAGE_STATUS_WARNING);
@@ -409,6 +686,47 @@ game->playerSay(playerId, 0, TALKTYPE_PRIVATE, "Destinatário", "Mensagem");
 
 // Criar canal privado
 game->playerCreatePrivateChannel(playerId);
+```
+
+#### Nível Intermediate
+```cpp
+// Broadcast para todos
+game->broadcastMessage("Servidor reiniciará em 5 minutos", MESSAGE_STATUS_WARNING);
+
+// Mensagem privada
+game->playerSay(playerId, 0, TALKTYPE_PRIVATE, "Destinatário", "Mensagem");
+
+// Criar canal privado
+game->playerCreatePrivateChannel(playerId);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Broadcast para todos
+game->broadcastMessage("Servidor reiniciará em 5 minutos", MESSAGE_STATUS_WARNING);
+
+// Mensagem privada
+game->playerSay(playerId, 0, TALKTYPE_PRIVATE, "Destinatário", "Mensagem");
+
+// Criar canal privado
+game->playerCreatePrivateChannel(playerId);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **📊 Métricas de Performance**

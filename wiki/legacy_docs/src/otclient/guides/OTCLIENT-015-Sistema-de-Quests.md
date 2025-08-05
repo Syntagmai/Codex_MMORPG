@@ -36,6 +36,7 @@ O **Sistema de Quests** é um componente fundamental do OTClient, responsável p
 
 ### **1. Protocolo de Quests**
 
+#### Inicialização e Configuração
 ```cpp
 // Parsing do Quest Log
 void ProtocolGame::parseQuestLog(const InputMessagePtr& msg) {
@@ -64,6 +65,10 @@ void ProtocolGame::parseQuestLine(const InputMessagePtr& msg) {
         const uint16_t missionId = msg->getU16();
         questMissions.emplace_back(missionName, missionDesc, missionId);
     }
+```
+
+#### Funcionalidade 1
+```cpp
 
     g_game.processQuestLine(questId, questMissions);
 }
@@ -88,6 +93,10 @@ void ProtocolGame::parseQuestTracker(const InputMessagePtr& msg) {
                 const std::string& missionDesc = msg->getString();
                 missions.emplace_back(questId, missionId, questName, missionName, missionDesc);
             }
+```
+
+#### Finalização
+```cpp
             return g_lua.callGlobalField("g_game", "onQuestTracker", remainingQuests, missions);
         }
         case 0: { // Atualização de quest
@@ -110,6 +119,7 @@ void ProtocolGame::parseQuestTracker(const InputMessagePtr& msg) {
 
 ### **2. Processamento de Quests**
 
+#### Nível Basic
 ```cpp
 // Processamento do Quest Log
 void Game::processQuestLog(const std::vector<std::tuple<uint16_t, std::string, bool>>& questList) {
@@ -132,8 +142,72 @@ void Game::processUpdateQuestTracker(const uint16_t questId, const uint16_t miss
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Processamento do Quest Log
+void Game::processQuestLog(const std::vector<std::tuple<uint16_t, std::string, bool>>& questList) {
+    g_lua.callGlobalField("g_game", "onQuestLog", questList);
+}
+
+// Processamento do Quest Line
+void Game::processQuestLine(const uint16_t questId, const std::vector<std::tuple<std::string, std::string, uint16_t>>& questMissions) {
+    g_lua.callGlobalField("g_game", "onQuestLine", questId, questMissions);
+}
+
+// Processamento do Quest Tracker
+void Game::processQuestTracker(const uint8_t remainingQuests, const std::vector<std::tuple<uint16_t, uint16_t, std::string, std::string, std::string>>& missions) {
+    g_lua.callGlobalField("g_game", "onQuestTracker", remainingQuests, missions);
+}
+
+// Processamento de atualização do Quest Tracker
+void Game::processUpdateQuestTracker(const uint16_t questId, const uint16_t missionId, const std::string& questName, const std::string& missionName, const std::string& missionDesc) {
+    g_lua.callGlobalField("g_game", "onUpdateQuestTracker", questId, missionId, questName, missionName, missionDesc);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Processamento do Quest Log
+void Game::processQuestLog(const std::vector<std::tuple<uint16_t, std::string, bool>>& questList) {
+    g_lua.callGlobalField("g_game", "onQuestLog", questList);
+}
+
+// Processamento do Quest Line
+void Game::processQuestLine(const uint16_t questId, const std::vector<std::tuple<std::string, std::string, uint16_t>>& questMissions) {
+    g_lua.callGlobalField("g_game", "onQuestLine", questId, questMissions);
+}
+
+// Processamento do Quest Tracker
+void Game::processQuestTracker(const uint8_t remainingQuests, const std::vector<std::tuple<uint16_t, uint16_t, std::string, std::string, std::string>>& missions) {
+    g_lua.callGlobalField("g_game", "onQuestTracker", remainingQuests, missions);
+}
+
+// Processamento de atualização do Quest Tracker
+void Game::processUpdateQuestTracker(const uint16_t questId, const uint16_t missionId, const std::string& questName, const std::string& missionName, const std::string& missionDesc) {
+    g_lua.callGlobalField("g_game", "onUpdateQuestTracker", questId, missionId, questName, missionName, missionDesc);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **3. Estruturas de Dados**
 
+#### Nível Basic
 ```cpp
 // Estrutura de Quest (Protobuf)
 message Quest {
@@ -175,12 +249,114 @@ struct QuestTrackerEntry {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+// Estrutura de Quest (Protobuf)
+message Quest {
+    optional uint32 id = 1;
+    optional string name = 2;
+}
+
+// Estrutura de Quest Log
+struct QuestLogEntry {
+    uint16_t id;
+    std::string name;
+    bool completed;
+    
+    QuestLogEntry(uint16_t questId, const std::string& questName, bool isCompleted)
+        : id(questId), name(questName), completed(isCompleted) {}
+};
+
+// Estrutura de Quest Mission
+struct QuestMission {
+    std::string name;
+    std::string description;
+    uint16_t id;
+    bool completed;
+    
+    QuestMission(const std::string& missionName, const std::string& missionDesc, uint16_t missionId)
+        : name(missionName), description(missionDesc), id(missionId), completed(false) {}
+};
+
+// Estrutura de Quest Tracker
+struct QuestTrackerEntry {
+    uint16_t questId;
+    uint16_t missionId;
+    std::string questName;
+    std::string missionName;
+    std::string missionDesc;
+    
+    QuestTrackerEntry(uint16_t qId, uint16_t mId, const std::string& qName, const std::string& mName, const std::string& mDesc)
+        : questId(qId), missionId(mId), questName(qName), missionName(mName), missionDesc(mDesc) {}
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Estrutura de Quest (Protobuf)
+message Quest {
+    optional uint32 id = 1;
+    optional string name = 2;
+}
+
+// Estrutura de Quest Log
+struct QuestLogEntry {
+    uint16_t id;
+    std::string name;
+    bool completed;
+    
+    QuestLogEntry(uint16_t questId, const std::string& questName, bool isCompleted)
+        : id(questId), name(questName), completed(isCompleted) {}
+};
+
+// Estrutura de Quest Mission
+struct QuestMission {
+    std::string name;
+    std::string description;
+    uint16_t id;
+    bool completed;
+    
+    QuestMission(const std::string& missionName, const std::string& missionDesc, uint16_t missionId)
+        : name(missionName), description(missionDesc), id(missionId), completed(false) {}
+};
+
+// Estrutura de Quest Tracker
+struct QuestTrackerEntry {
+    uint16_t questId;
+    uint16_t missionId;
+    std::string questName;
+    std::string missionName;
+    std::string missionDesc;
+    
+    QuestTrackerEntry(uint16_t qId, uint16_t mId, const std::string& qName, const std::string& mName, const std::string& mDesc)
+        : questId(qId), missionId(mId), questName(qName), missionName(mName), missionDesc(mDesc) {}
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## ⚙️ **Mecânicas do Sistema**
 
 ### **1. Sistema de Quest Log**
 
 ```cpp
 class QuestLog {
+    -- Classe: QuestLog
 private:
     std::vector<QuestLogEntry> quests;
     std::map<uint16_t, std::vector<QuestMission>> questMissions;
@@ -218,6 +394,7 @@ public:
 
 ```cpp
 class QuestTracker {
+    -- Classe: QuestTracker
 private:
     std::vector<QuestTrackerEntry> activeQuests;
     uint8_t remainingQuests;
@@ -260,6 +437,7 @@ public:
 
 ```cpp
 class QuestProgress {
+    -- Classe: QuestProgress
 private:
     std::map<uint16_t, std::map<uint16_t, bool>> questProgress;
     std::map<uint16_t, uint32_t> questObjectives;
@@ -329,6 +507,7 @@ graph TD
 
 ### **3. Sistema de Objetivos**
 
+#### Inicialização e Configuração
 ```cpp
 class QuestObjective {
 public:
@@ -354,6 +533,10 @@ public:
         bool isCompleted() const {
             return current >= amount;
         }
+```
+
+#### Funcionalidade 1
+```cpp
         
         float getProgress() const {
             return amount > 0 ? static_cast<float>(current) / amount : 0.0f;
@@ -379,6 +562,10 @@ public:
         auto it = questObjectives.find(questId);
         return it != questObjectives.end() ? it->second : std::vector<Objective>();
     }
+```
+
+#### Finalização
+```cpp
     
     bool isQuestCompleted(uint16_t questId) const {
         auto it = questObjectives.find(questId);
@@ -401,17 +588,21 @@ public:
 
 ```lua
 -- questlog.lua
+    --  questlog.lua (traduzido)
 function init()
+    -- Função: init
     connect(g_game, { onQuestLog = updateQuestLog,
                       onQuestLine = updateQuestLine })
 end
 
 function updateQuestLog(questList)
+    -- Função: updateQuestLog
     local questLogWindow = g_ui.displayUI('questlog')
     local questListWidget = questLogWindow:getChildById('questList')
     questListWidget:clearChildren()
     
     for _, quest in ipairs(questList) do
+    -- Loop de repetição
         local questId, questName, completed = unpack(quest)
         local questItem = g_ui.createWidget('QuestItem', questListWidget)
         questItem:setText(questName)
@@ -424,11 +615,13 @@ function updateQuestLog(questList)
 end
 
 function updateQuestLine(questId, questMissions)
+    -- Função: updateQuestLine
     local questLogWindow = g_ui.displayUI('questlog')
     local missionListWidget = questLogWindow:getChildById('missionList')
     missionListWidget:clearChildren()
     
     for _, mission in ipairs(questMissions) do
+    -- Loop de repetição
         local missionName, missionDesc, missionId = unpack(mission)
         local missionItem = g_ui.createWidget('MissionItem', missionListWidget)
         missionItem:setText(missionName)
@@ -441,17 +634,21 @@ end
 
 ```lua
 -- questtracker.lua
+    --  questtracker.lua (traduzido)
 function init()
+    -- Função: init
     connect(g_game, { onQuestTracker = updateQuestTracker,
                       onUpdateQuestTracker = updateQuestTracker })
 end
 
 function updateQuestTracker(remainingQuests, missions)
+    -- Função: updateQuestTracker
     local trackerWindow = g_ui.displayUI('questtracker')
     local missionListWidget = trackerWindow:getChildById('missionList')
     missionListWidget:clearChildren()
     
     for _, mission in ipairs(missions) do
+    -- Loop de repetição
         local questId, missionId, questName, missionName, missionDesc = unpack(mission)
         local missionItem = g_ui.createWidget('TrackerMissionItem', missionListWidget)
         missionItem:setText(missionName)
@@ -461,12 +658,15 @@ function updateQuestTracker(remainingQuests, missions)
 end
 
 function updateQuestTracker(questId, missionId, questName, missionName, missionDesc)
+    -- Função: updateQuestTracker
     local trackerWindow = g_ui.displayUI('questtracker')
     local missionListWidget = trackerWindow:getChildById('missionList')
     
     -- Atualizar missão específica
     for _, child in ipairs(missionListWidget:getChildren()) do
+    -- Loop de repetição
         if child.questId == questId and child.missionId == missionId then
+    -- Verificação condicional
             child:setText(missionName)
             child:setDescription(missionDesc)
             child:setQuestName(questName)
@@ -478,6 +678,7 @@ end
 
 ### **3. Protocolo de Comunicação**
 
+#### Nível Basic
 ```cpp
 // Envio de requisição de quest line
 void ProtocolGame::sendRequestQuestLine(uint16_t questId) {
@@ -502,6 +703,73 @@ void ProtocolGame::sendRequestQuestTracker() {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Envio de requisição de quest line
+void ProtocolGame::sendRequestQuestLine(uint16_t questId) {
+    NetworkMessage msg;
+    msg.addByte(0x8F);
+    msg.add<uint16_t>(questId);
+    sendNetworkMessage(msg);
+}
+
+// Envio de requisição de quest log
+void ProtocolGame::sendRequestQuestLog() {
+    NetworkMessage msg;
+    msg.addByte(0x8E);
+    sendNetworkMessage(msg);
+}
+
+// Envio de requisição de quest tracker
+void ProtocolGame::sendRequestQuestTracker() {
+    NetworkMessage msg;
+    msg.addByte(0x90);
+    sendNetworkMessage(msg);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Envio de requisição de quest line
+void ProtocolGame::sendRequestQuestLine(uint16_t questId) {
+    NetworkMessage msg;
+    msg.addByte(0x8F);
+    msg.add<uint16_t>(questId);
+    sendNetworkMessage(msg);
+}
+
+// Envio de requisição de quest log
+void ProtocolGame::sendRequestQuestLog() {
+    NetworkMessage msg;
+    msg.addByte(0x8E);
+    sendNetworkMessage(msg);
+}
+
+// Envio de requisição de quest tracker
+void ProtocolGame::sendRequestQuestTracker() {
+    NetworkMessage msg;
+    msg.addByte(0x90);
+    sendNetworkMessage(msg);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🔧 **Sistema de Eventos**
 
 ### **1. Eventos de Quest**
@@ -516,6 +784,7 @@ enum QuestEventType {
 };
 
 class QuestEventHandler {
+    -- Classe: QuestEventHandler
 public:
     virtual void onQuestStart(uint16_t questId) = 0;
     virtual void onQuestProgress(uint16_t questId, uint16_t missionId, uint32_t progress) = 0;
@@ -529,6 +798,7 @@ public:
 
 ```cpp
 class QuestNotification {
+    -- Classe: QuestNotification
 public:
     void showQuestStarted(uint16_t questId, const std::string& questName) {
         std::string message = "Quest started: " + questName;
@@ -553,6 +823,7 @@ public:
 
 ```cpp
 class QuestCache {
+    -- Classe: QuestCache
 private:
     std::map<uint16_t, QuestLogEntry> questCache;
     std::map<uint16_t, std::vector<QuestMission>> missionCache;
@@ -593,6 +864,7 @@ public:
 
 ```cpp
 class QuestPersistence {
+    -- Classe: QuestPersistence
 private:
     std::string saveFile;
     
@@ -625,6 +897,7 @@ public:
 
 ```cpp
 class QuestValidator {
+    -- Classe: QuestValidator
 public:
     bool isValidQuestId(uint16_t questId) const {
         return questId > 0 && questId <= MAX_QUEST_ID;
@@ -650,6 +923,7 @@ public:
 
 ```cpp
 class QuestIntegrityChecker {
+    -- Classe: QuestIntegrityChecker
 public:
     bool validateQuestData(const std::vector<QuestLogEntry>& quests) {
         for (const auto& quest : quests) {
@@ -686,6 +960,7 @@ private:
 
 ```cpp
 class LazyQuestLoader {
+    -- Classe: LazyQuestLoader
 private:
     std::map<uint16_t, bool> loadedQuests;
     std::map<uint16_t, bool> loadedMissions;
@@ -718,6 +993,7 @@ public:
 
 ```cpp
 class QuestUICache {
+    -- Classe: QuestUICache
 private:
     std::map<uint16_t, std::shared_ptr<UIWidget>> questWidgets;
     std::map<uint16_t, std::map<uint16_t, std::shared_ptr<UIWidget>>> missionWidgets;
@@ -758,6 +1034,7 @@ public:
 
 ```cpp
 class DailyQuestSystem {
+    -- Classe: DailyQuestSystem
 private:
     std::map<uint16_t, time_t> lastCompletion;
     std::vector<uint16_t> dailyQuestIds;
@@ -794,6 +1071,7 @@ public:
 
 ```cpp
 class ChainQuestSystem {
+    -- Classe: ChainQuestSystem
 private:
     std::map<uint16_t, std::vector<uint16_t>> questChains;
     
@@ -829,6 +1107,7 @@ public:
 
 ```cpp
 class TimedQuestSystem {
+    -- Classe: TimedQuestSystem
 private:
     std::map<uint16_t, time_t> questTimeouts;
     std::map<uint16_t, uint32_t> questDurations;

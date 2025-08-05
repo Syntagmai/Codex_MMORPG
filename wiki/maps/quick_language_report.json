@@ -1,0 +1,329 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-04T19:32:17.911688",
+    "total_files": 4,
+    "total_issues": 59,
+    "description": "Verificação rápida de consistência de idioma"
+  },
+  "files": [
+    {
+      "file": "wiki/leia_me.md",
+      "issues": [
+        {
+          "term": "interface",
+          "sugestao": "interface",
+          "linha": 27
+        },
+        {
+          "term": "interface",
+          "sugestao": "interface",
+          "linha": 40
+        },
+        {
+          "term": "interface",
+          "sugestao": "interface",
+          "linha": 41
+        },
+        {
+          "term": "interface",
+          "sugestao": "interface",
+          "linha": 135
+        },
+        {
+          "term": "interface",
+          "sugestao": "interface",
+          "linha": 142
+        },
+        {
+          "term": "interface",
+          "sugestao": "interface",
+          "linha": 145
+        },
+        {
+          "term": "interface",
+          "sugestao": "interface",
+          "linha": 156
+        },
+        {
+          "term": "widget",
+          "sugestao": "widget",
+          "linha": 142
+        },
+        {
+          "term": "debug",
+          "sugestao": "depuração",
+          "linha": 57
+        },
+        {
+          "term": "debug",
+          "sugestao": "depuração",
+          "linha": 79
+        },
+        {
+          "term": "info",
+          "sugestao": "informação",
+          "linha": 202
+        },
+        {
+          "term": "success",
+          "sugestao": "sucesso",
+          "linha": 199
+        }
+      ],
+      "total_issues": 12
+    },
+    {
+      "file": "wiki/GLOSSARIO_TERMINOLOGIA_TECNICA.md",
+      "issues": [
+        {
+          "term": "function",
+          "sugestao": "função",
+          "linha": 28
+        },
+        {
+          "term": "class",
+          "sugestao": "classe",
+          "linha": 29
+        },
+        {
+          "term": "method",
+          "sugestao": "método",
+          "linha": 30
+        },
+        {
+          "term": "variable",
+          "sugestao": "variável",
+          "linha": 31
+        },
+        {
+          "term": "parameter",
+          "sugestao": "parâmetro",
+          "linha": 32
+        },
+        {
+          "term": "return",
+          "sugestao": "retornar",
+          "linha": 33
+        },
+        {
+          "term": "import",
+          "sugestao": "importar",
+          "linha": 34
+        },
+        {
+          "term": "export",
+          "sugestao": "exportar",
+          "linha": 35
+        },
+        {
+          "term": "module",
+          "sugestao": "módulo",
+          "linha": 36
+        },
+        {
+          "term": "interface",
+          "sugestao": "interface",
+          "linha": 37
+        },
+        {
+          "term": "interface",
+          "sugestao": "interface",
+          "linha": 37
+        },
+        {
+          "term": "interface",
+          "sugestao": "interface",
+          "linha": 134
+        },
+        {
+          "term": "interface",
+          "sugestao": "interface",
+          "linha": 138
+        },
+        {
+          "term": "event",
+          "sugestao": "evento",
+          "linha": 45
+        },
+        {
+          "term": "callback",
+          "sugestao": "função de retorno",
+          "linha": 44
+        },
+        {
+          "term": "system",
+          "sugestao": "sistema",
+          "linha": 124
+        },
+        {
+          "term": "component",
+          "sugestao": "componente",
+          "linha": 123
+        },
+        {
+          "term": "widget",
+          "sugestao": "widget",
+          "linha": 138
+        },
+        {
+          "term": "widget",
+          "sugestao": "widget",
+          "linha": 138
+        },
+        {
+          "term": "button",
+          "sugestao": "botão",
+          "linha": 139
+        },
+        {
+          "term": "window",
+          "sugestao": "janela",
+          "linha": 143
+        },
+        {
+          "term": "file",
+          "sugestao": "arquivo",
+          "linha": 201
+        },
+        {
+          "term": "folder",
+          "sugestao": "pasta",
+          "linha": 202
+        },
+        {
+          "term": "directory",
+          "sugestao": "diretório",
+          "linha": 203
+        },
+        {
+          "term": "config",
+          "sugestao": "configuração",
+          "linha": 211
+        },
+        {
+          "term": "settings",
+          "sugestao": "configurações",
+          "linha": 212
+        },
+        {
+          "term": "debug",
+          "sugestao": "depuração",
+          "linha": 215
+        },
+        {
+          "term": "debug",
+          "sugestao": "depuração",
+          "linha": 216
+        },
+        {
+          "term": "error",
+          "sugestao": "erro",
+          "linha": 163
+        },
+        {
+          "term": "error",
+          "sugestao": "erro",
+          "linha": 214
+        },
+        {
+          "term": "warning",
+          "sugestao": "aviso",
+          "linha": 164
+        },
+        {
+          "term": "info",
+          "sugestao": "informação",
+          "linha": 12
+        },
+        {
+          "term": "info",
+          "sugestao": "informação",
+          "linha": 165
+        },
+        {
+          "term": "success",
+          "sugestao": "sucesso",
+          "linha": 166
+        },
+        {
+          "term": "success",
+          "sugestao": "sucesso",
+          "linha": 258
+        }
+      ],
+      "total_issues": 35
+    },
+    {
+      "file": "wiki/dashboard/task_master.md",
+      "issues": [
+        {
+          "term": "info",
+          "sugestao": "informação",
+          "linha": 12
+        },
+        {
+          "term": "info",
+          "sugestao": "informação",
+          "linha": 194
+        },
+        {
+          "term": "success",
+          "sugestao": "sucesso",
+          "linha": 189
+        }
+      ],
+      "total_issues": 3
+    },
+    {
+      "file": "wiki/dashboard/integrated_task_manager.md",
+      "issues": [
+        {
+          "term": "system",
+          "sugestao": "sistema",
+          "linha": 247
+        },
+        {
+          "term": "debug",
+          "sugestao": "depuração",
+          "linha": 208
+        },
+        {
+          "term": "debug",
+          "sugestao": "depuração",
+          "linha": 374
+        },
+        {
+          "term": "warning",
+          "sugestao": "aviso",
+          "linha": 430
+        },
+        {
+          "term": "success",
+          "sugestao": "sucesso",
+          "linha": 92
+        },
+        {
+          "term": "success",
+          "sugestao": "sucesso",
+          "linha": 110
+        },
+        {
+          "term": "success",
+          "sugestao": "sucesso",
+          "linha": 123
+        },
+        {
+          "term": "success",
+          "sugestao": "sucesso",
+          "linha": 136
+        },
+        {
+          "term": "success",
+          "sugestao": "sucesso",
+          "linha": 150
+        }
+      ],
+      "total_issues": 9
+    }
+  ]
+}

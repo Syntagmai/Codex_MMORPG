@@ -55,6 +55,7 @@ canary/src/lua/functions/core/game/
 #### **1. Classe ConfigManager (configmanager.hpp)**
 ```cpp
 class ConfigManager {
+    -- Classe: ConfigManager
 public:
     ConfigManager() = default;
 
@@ -106,6 +107,7 @@ private:
 ```
 
 #### **2. Enumerações de Configuração (config_enums.hpp)**
+#### Nível Basic
 ```cpp
 enum ConfigKey_t : uint16_t {
     // Configurações de rede
@@ -173,9 +175,163 @@ enum ConfigKey_t : uint16_t {
 };
 ```
 
+#### Nível Intermediate
+```cpp
+enum ConfigKey_t : uint16_t {
+    // Configurações de rede
+    GAME_PORT,
+    LOGIN_PORT,
+    STATUS_PORT,
+    IP,
+    
+    // Configurações de banco de dados
+    MYSQL_HOST,
+    MYSQL_USER,
+    MYSQL_PASS,
+    MYSQL_DB,
+    MYSQL_SOCK,
+    SQL_PORT,
+    
+    // Configurações de jogo
+    MAX_PLAYERS,
+    MAX_PLAYERS_PER_ACCOUNT,
+    MAX_PLAYERS_OUTSIDE_PZ_PER_ACCOUNT,
+    RATE_EXPERIENCE,
+    RATE_SKILL,
+    RATE_LOOT,
+    RATE_MAGIC,
+    RATE_SPAWN,
+    
+    // Configurações de servidor
+    SERVER_NAME,
+    SERVER_MOTD,
+    OWNER_NAME,
+    OWNER_EMAIL,
+    LOCATION,
+    URL,
+    
+    // Configurações de mapa
+    MAP_NAME,
+    MAP_AUTHOR,
+    MAP_DOWNLOAD_URL,
+    
+    // Configurações de house
+    HOUSE_PRICE_PER_SQM,
+    HOUSE_RENT_PERIOD,
+    HOUSE_RENT_RATE,
+    HOUSE_PRICE_RENT_MULTIPLIER,
+    
+    // Configurações de VIP
+    VIP_SYSTEM_ENABLED,
+    VIP_BONUS_EXP,
+    VIP_BONUS_LOOT,
+    VIP_BONUS_SKILL,
+    
+    // Configurações de segurança
+    AUTH_TYPE,
+    M_CONST,
+    T_CONST,
+    PARALLELISM,
+    
+    // Configurações de features
+    OLD_PROTOCOL,
+    TOGGLE_MAINTAIN_MODE,
+    TOGGLE_MAP_CUSTOM,
+    TOGGLE_SAVE_ASYNC,
+    
+    // ... e muitas outras configurações
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+enum ConfigKey_t : uint16_t {
+    // Configurações de rede
+    GAME_PORT,
+    LOGIN_PORT,
+    STATUS_PORT,
+    IP,
+    
+    // Configurações de banco de dados
+    MYSQL_HOST,
+    MYSQL_USER,
+    MYSQL_PASS,
+    MYSQL_DB,
+    MYSQL_SOCK,
+    SQL_PORT,
+    
+    // Configurações de jogo
+    MAX_PLAYERS,
+    MAX_PLAYERS_PER_ACCOUNT,
+    MAX_PLAYERS_OUTSIDE_PZ_PER_ACCOUNT,
+    RATE_EXPERIENCE,
+    RATE_SKILL,
+    RATE_LOOT,
+    RATE_MAGIC,
+    RATE_SPAWN,
+    
+    // Configurações de servidor
+    SERVER_NAME,
+    SERVER_MOTD,
+    OWNER_NAME,
+    OWNER_EMAIL,
+    LOCATION,
+    URL,
+    
+    // Configurações de mapa
+    MAP_NAME,
+    MAP_AUTHOR,
+    MAP_DOWNLOAD_URL,
+    
+    // Configurações de house
+    HOUSE_PRICE_PER_SQM,
+    HOUSE_RENT_PERIOD,
+    HOUSE_RENT_RATE,
+    HOUSE_PRICE_RENT_MULTIPLIER,
+    
+    // Configurações de VIP
+    VIP_SYSTEM_ENABLED,
+    VIP_BONUS_EXP,
+    VIP_BONUS_LOOT,
+    VIP_BONUS_SKILL,
+    
+    // Configurações de segurança
+    AUTH_TYPE,
+    M_CONST,
+    T_CONST,
+    PARALLELISM,
+    
+    // Configurações de features
+    OLD_PROTOCOL,
+    TOGGLE_MAINTAIN_MODE,
+    TOGGLE_MAP_CUSTOM,
+    TOGGLE_SAVE_ASYNC,
+    
+    // ... e muitas outras configurações
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **3. Funções Lua (config_functions.hpp)**
 ```cpp
 class ConfigFunctions {
+    -- Classe: ConfigFunctions
 public:
     static void init(lua_State* L);
 
@@ -190,6 +346,7 @@ private:
 ### **🔧 APIs e Interfaces**
 
 #### **1. Métodos de Acesso**
+#### Nível Basic
 ```cpp
 // Acesso a strings
 const std::string &getString(const ConfigKey_t &key, const std::source_location &location = std::source_location::current()) const;
@@ -204,7 +361,60 @@ bool getBoolean(const ConfigKey_t &key, const std::source_location &location = s
 float getFloat(const ConfigKey_t &key, const std::source_location &location = std::source_location::current()) const;
 ```
 
+#### Nível Intermediate
+```cpp
+// Acesso a strings
+const std::string &getString(const ConfigKey_t &key, const std::source_location &location = std::source_location::current()) const;
+
+// Acesso a números inteiros
+int32_t getNumber(const ConfigKey_t &key, const std::source_location &location = std::source_location::current()) const;
+
+// Acesso a booleanos
+bool getBoolean(const ConfigKey_t &key, const std::source_location &location = std::source_location::current()) const;
+
+// Acesso a números float
+float getFloat(const ConfigKey_t &key, const std::source_location &location = std::source_location::current()) const;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Acesso a strings
+const std::string &getString(const ConfigKey_t &key, const std::source_location &location = std::source_location::current()) const;
+
+// Acesso a números inteiros
+int32_t getNumber(const ConfigKey_t &key, const std::source_location &location = std::source_location::current()) const;
+
+// Acesso a booleanos
+bool getBoolean(const ConfigKey_t &key, const std::source_location &location = std::source_location::current()) const;
+
+// Acesso a números float
+float getFloat(const ConfigKey_t &key, const std::source_location &location = std::source_location::current()) const;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Funções Lua**
+#### Nível Basic
+```cpp
+        if (enumName) {
+```
+
+#### Nível Intermediate
 ```cpp
 // Registro das funções Lua
 void ConfigFunctions::init(lua_State* L) {
@@ -223,6 +433,37 @@ void ConfigFunctions::init(lua_State* L) {
         }
     }
 }
+```
+
+#### Nível Advanced
+```cpp
+// Registro das funções Lua
+void ConfigFunctions::init(lua_State* L) {
+    Lua::registerTable(L, "configManager");
+    Lua::registerMethod(L, "configManager", "getString", luaConfigManagerGetString);
+    Lua::registerMethod(L, "configManager", "getNumber", luaConfigManagerGetNumber);
+    Lua::registerMethod(L, "configManager", "getBoolean", luaConfigManagerGetBoolean);
+    Lua::registerMethod(L, "configManager", "getFloat", luaConfigManagerGetFloat);
+    
+    // Registro das enumerações
+    Lua::registerTable(L, "configKeys");
+    for (auto value : magic_enum::enum_values<ConfigKey_t>()) {
+        auto enumName = magic_enum::enum_name(value).data();
+        if (enumName) {
+            registerMagicEnumIn(L, "configKeys", value);
+        }
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **📊 Fluxo de Dados**
@@ -258,6 +499,7 @@ void ConfigFunctions::init(lua_State* L) {
 ## 💡 **Exemplos Práticos**
 
 ### **1. Carregando Configurações Básicas**
+#### Nível Basic
 ```cpp
 // Exemplo de carregamento de configurações
 void loadBasicConfigs() {
@@ -281,7 +523,73 @@ void loadBasicConfigs() {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de carregamento de configurações
+void loadBasicConfigs() {
+    auto& config = g_configManager();
+    
+    // Configurações de rede
+    std::string serverIP = config.getString(IP);
+    int gamePort = config.getNumber(GAME_PORT);
+    int loginPort = config.getNumber(LOGIN_PORT);
+    
+    // Configurações de banco de dados
+    std::string dbHost = config.getString(MYSQL_HOST);
+    std::string dbUser = config.getString(MYSQL_USER);
+    std::string dbPass = config.getString(MYSQL_PASS);
+    std::string dbName = config.getString(MYSQL_DB);
+    
+    // Configurações de jogo
+    int maxPlayers = config.getNumber(MAX_PLAYERS);
+    int rateExp = config.getNumber(RATE_EXPERIENCE);
+    int rateLoot = config.getNumber(RATE_LOOT);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de carregamento de configurações
+void loadBasicConfigs() {
+    auto& config = g_configManager();
+    
+    // Configurações de rede
+    std::string serverIP = config.getString(IP);
+    int gamePort = config.getNumber(GAME_PORT);
+    int loginPort = config.getNumber(LOGIN_PORT);
+    
+    // Configurações de banco de dados
+    std::string dbHost = config.getString(MYSQL_HOST);
+    std::string dbUser = config.getString(MYSQL_USER);
+    std::string dbPass = config.getString(MYSQL_PASS);
+    std::string dbName = config.getString(MYSQL_DB);
+    
+    // Configurações de jogo
+    int maxPlayers = config.getNumber(MAX_PLAYERS);
+    int rateExp = config.getNumber(RATE_EXPERIENCE);
+    int rateLoot = config.getNumber(RATE_LOOT);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **2. Verificando Features**
+#### Nível Basic
 ```cpp
 // Exemplo de verificação de features
 void checkServerFeatures() {
@@ -308,7 +616,79 @@ void checkServerFeatures() {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de verificação de features
+void checkServerFeatures() {
+    auto& config = g_configManager();
+    
+    // Verificar protocolo
+    bool oldProtocol = config.getBoolean(OLD_PROTOCOL);
+    if (oldProtocol) {
+        g_logger().info("Server running in old protocol mode");
+    }
+    
+    // Verificar modo de manutenção
+    bool maintainMode = config.getBoolean(TOGGLE_MAINTAIN_MODE);
+    if (maintainMode) {
+        g_logger().warn("Server in maintenance mode");
+    }
+    
+    // Verificar sistema VIP
+    bool vipEnabled = config.getBoolean(VIP_SYSTEM_ENABLED);
+    if (vipEnabled) {
+        int vipExpBonus = config.getNumber(VIP_BONUS_EXP);
+        g_logger().info("VIP system enabled with {}% exp bonus", vipExpBonus);
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de verificação de features
+void checkServerFeatures() {
+    auto& config = g_configManager();
+    
+    // Verificar protocolo
+    bool oldProtocol = config.getBoolean(OLD_PROTOCOL);
+    if (oldProtocol) {
+        g_logger().info("Server running in old protocol mode");
+    }
+    
+    // Verificar modo de manutenção
+    bool maintainMode = config.getBoolean(TOGGLE_MAINTAIN_MODE);
+    if (maintainMode) {
+        g_logger().warn("Server in maintenance mode");
+    }
+    
+    // Verificar sistema VIP
+    bool vipEnabled = config.getBoolean(VIP_SYSTEM_ENABLED);
+    if (vipEnabled) {
+        int vipExpBonus = config.getNumber(VIP_BONUS_EXP);
+        g_logger().info("VIP system enabled with {}% exp bonus", vipExpBonus);
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **3. Configurações de House**
+#### Nível Basic
 ```cpp
 // Exemplo de configurações de house
 void setupHouseSystem() {
@@ -327,10 +707,66 @@ void setupHouseSystem() {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Exemplo de configurações de house
+void setupHouseSystem() {
+    auto& config = g_configManager();
+    
+    // Configurações de preço
+    int pricePerSqm = config.getNumber(HOUSE_PRICE_PER_SQM);
+    float rentMultiplier = config.getFloat(HOUSE_PRICE_RENT_MULTIPLIER);
+    std::string rentPeriod = config.getString(HOUSE_RENT_PERIOD);
+    
+    // Configurações de propriedade
+    bool ownedByAccount = config.getBoolean(HOUSE_OWNED_BY_ACCOUNT);
+    int buyLevel = config.getNumber(HOUSE_BUY_LEVEL);
+    
+    g_logger().info("House system: {} gold/sqm, rent period: {}", pricePerSqm, rentPeriod);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Exemplo de configurações de house
+void setupHouseSystem() {
+    auto& config = g_configManager();
+    
+    // Configurações de preço
+    int pricePerSqm = config.getNumber(HOUSE_PRICE_PER_SQM);
+    float rentMultiplier = config.getFloat(HOUSE_PRICE_RENT_MULTIPLIER);
+    std::string rentPeriod = config.getString(HOUSE_RENT_PERIOD);
+    
+    // Configurações de propriedade
+    bool ownedByAccount = config.getBoolean(HOUSE_OWNED_BY_ACCOUNT);
+    int buyLevel = config.getNumber(HOUSE_BUY_LEVEL);
+    
+    g_logger().info("House system: {} gold/sqm, rent period: {}", pricePerSqm, rentPeriod);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **4. Uso em Lua**
 ```lua
 -- Exemplo de uso das configurações em Lua
 function checkServerConfig()
+    -- Função: checkServerConfig
     local maxPlayers = configManager.getNumber(configKeys.MAX_PLAYERS)
     local serverName = configManager.getString(configKeys.SERVER_NAME)
     local rateExp = configManager.getNumber(configKeys.RATE_EXPERIENCE)
@@ -369,24 +805,138 @@ end
 ### **Padrões de Design**
 
 #### **1. Singleton Pattern**
+#### Nível Basic
 ```cpp
 static ConfigManager &getInstance();
 ```
 
+#### Nível Intermediate
+```cpp
+static ConfigManager &getInstance();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+static ConfigManager &getInstance();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Factory Pattern**
+#### Nível Basic
 ```cpp
 bool load();
 bool reload();
 ```
 
+#### Nível Intermediate
+```cpp
+bool load();
+bool reload();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+bool load();
+bool reload();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **3. Strategy Pattern**
+#### Nível Basic
 ```cpp
 std::string loadStringConfig(lua_State* L, const ConfigKey_t &key, const char* identifier, const std::string &defaultValue);
 ```
 
+#### Nível Intermediate
+```cpp
+std::string loadStringConfig(lua_State* L, const ConfigKey_t &key, const char* identifier, const std::string &defaultValue);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+std::string loadStringConfig(lua_State* L, const ConfigKey_t &key, const char* identifier, const std::string &defaultValue);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **4. Observer Pattern**
+#### Nível Basic
 ```cpp
 void missingConfigWarning(const char* identifier);
+```
+
+#### Nível Intermediate
+```cpp
+void missingConfigWarning(const char* identifier);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+void missingConfigWarning(const char* identifier);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🔍 **Insights Técnicos**
@@ -436,6 +986,7 @@ void missingConfigWarning(const char* identifier);
 ### **3. Configuração e Customização**
 
 #### **Arquivo config.lua**
+#### Nível Basic
 ```lua
 -- Exemplo de arquivo de configuração
 serverName = "Canary Server"
@@ -464,11 +1015,118 @@ vipBonusLoot = 25
 vipBonusSkill = 25
 ```
 
+#### Nível Intermediate
+```lua
+-- Exemplo de arquivo de configuração
+serverName = "Canary Server"
+ip = "127.0.0.1"
+gameProtocolPort = 7172
+loginProtocolPort = 7171
+
+mysqlHost = "127.0.0.1"
+mysqlUser = "root"
+mysqlPass = ""
+mysqlDatabase = "canary"
+
+maxPlayers = 1000
+rateExperience = 1
+rateLoot = 1
+rateMagic = 1
+rateSpawn = 1
+
+housePricePerSqm = 100
+houseRentPeriod = "monthly"
+housePriceRentMultiplier = 1.0
+
+vipSystemEnabled = true
+vipBonusExp = 50
+vipBonusLoot = 25
+vipBonusSkill = 25
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Exemplo de arquivo de configuração
+serverName = "Canary Server"
+ip = "127.0.0.1"
+gameProtocolPort = 7172
+loginProtocolPort = 7171
+
+mysqlHost = "127.0.0.1"
+mysqlUser = "root"
+mysqlPass = ""
+mysqlDatabase = "canary"
+
+maxPlayers = 1000
+rateExperience = 1
+rateLoot = 1
+rateMagic = 1
+rateSpawn = 1
+
+housePricePerSqm = 100
+houseRentPeriod = "monthly"
+housePriceRentMultiplier = 1.0
+
+vipSystemEnabled = true
+vipBonusExp = 50
+vipBonusLoot = 25
+vipBonusSkill = 25
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Sistema de Features**
+#### Nível Basic
 ```cpp
 // Features OTC (Open Tibia Client)
 OTCFeatures getEnabledFeaturesOTC() const;
 OTCFeatures getDisabledFeaturesOTC() const;
+```
+
+#### Nível Intermediate
+```cpp
+// Features OTC (Open Tibia Client)
+OTCFeatures getEnabledFeaturesOTC() const;
+OTCFeatures getDisabledFeaturesOTC() const;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Features OTC (Open Tibia Client)
+OTCFeatures getEnabledFeaturesOTC() const;
+OTCFeatures getDisabledFeaturesOTC() const;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🚀 **Recomendações e Melhorias**
@@ -479,6 +1137,7 @@ OTCFeatures getDisabledFeaturesOTC() const;
 ```cpp
 // Sistema de reload a quente
 class HotReloadConfig {
+    -- Classe: HotReloadConfig
     std::filesystem::path configPath;
     std::chrono::system_clock::time_point lastModified;
 public:
@@ -491,6 +1150,7 @@ public:
 ```cpp
 // Sistema de validação de configurações
 class ConfigValidator {
+    -- Classe: ConfigValidator
 public:
     bool validateConfig(const ConfigKey_t& key, const ConfigValue& value);
     std::vector<std::string> getValidationErrors();
@@ -502,6 +1162,7 @@ public:
 ```cpp
 // Suporte a variáveis de ambiente
 class EnvironmentConfig {
+    -- Classe: EnvironmentConfig
 public:
     std::string getEnvOrDefault(const std::string& key, const std::string& defaultValue);
     void loadFromEnvironment();
@@ -515,6 +1176,7 @@ public:
 ```cpp
 // Sistema de perfis de configuração
 class ConfigProfile {
+    -- Classe: ConfigProfile
     std::string name;
     std::map<ConfigKey_t, ConfigValue> overrides;
 public:
@@ -528,6 +1190,7 @@ public:
 ```cpp
 // Sistema de criptografia para configurações sensíveis
 class ConfigEncryption {
+    -- Classe: ConfigEncryption
     std::string encryptionKey;
 public:
     std::string encryptValue(const std::string& value);
@@ -540,6 +1203,7 @@ public:
 ```cpp
 // Analytics para configurações
 class ConfigAnalytics {
+    -- Classe: ConfigAnalytics
 public:
     void trackConfigAccess(const ConfigKey_t& key);
     void generateAccessReport();
@@ -554,6 +1218,7 @@ public:
 ```cpp
 // Monitoramento de performance
 class ConfigPerformanceMonitor {
+    -- Classe: ConfigPerformanceMonitor
 public:
     void trackLoadTime();
     void trackAccessTime(const ConfigKey_t& key);
@@ -566,6 +1231,7 @@ public:
 ```cpp
 // Analytics de uso
 class ConfigUsageAnalytics {
+    -- Classe: ConfigUsageAnalytics
 public:
     void trackConfigChanges();
     void trackConfigAccess();

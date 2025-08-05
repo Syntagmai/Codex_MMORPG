@@ -1,482 +1,444 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
-Script para atualização automática dos mapas JSON da wiki do OTClient
-Atualiza: maps/tags_index.json, maps/wiki_map.json, maps/relationships.json
+Script para atualizar mapas JSON após mudanças da Epic 19
+Task 19.7 - Atualizar Mapas JSON e Índices
 """
 
 import os
-import json
 import re
+import json
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List, Any
 
-class WikiJSONUpdater:
-    def __init__(self, wiki_dir: str = "."):
-        self.wiki_dir = Path(wiki_dir)
-        self.md_files = []
-        self.tags_index = {}
-        self.wiki_map = {}
-        self.relationships = {}
-        
-    def scan_markdown_files(self) -> List[str]:
-        """Escaneia todos os arquivos markdown na pasta wiki"""
-        md_files = []
-        for file in self.wiki_dir.glob("*.md"):
-            if not file.name.startswith(".") and file.name != "README.md":
-                md_files.append(file.name)
-        self.md_files = sorted(md_files)
-        return md_files
-    
-    def extract_frontmatter(self, file_path: str) -> Dict[str, Any]:
-        """Extrai frontmatter de um arquivo markdown"""
-        frontmatter = {
-            "title": file_path.replace(".md", ""),
-            "tags": [],
-            "status": "unknown",
-            "aliases": [],
-            "description": ""
+class JSONMapsUpdater:
+    def __init__(self):
+        self.wiki_path = Path("wiki")
+        self.maps_path = self.wiki_path / "maps"
+        self.results = {
+            "files_processed": 0,
+            "maps_updated": 0,
+            "wiki_map_updated": False,
+            "tags_index_updated": False,
+            "search_index_updated": False,
+            "relationships_updated": False,
+            "new_files_found": 0,
+            "renamed_files_found": 0,
+            "errors": []
         }
         
+    def scan_wiki_files(self):
+        """Escaneia todos os arquivos markdown na wiki."""
+        markdown_files = []
+        
+        for file_path in self.wiki_path.rglob("*.md"):
+            if file_path.is_file():
+                relative_path = file_path.relative_to(self.wiki_path)
+                markdown_files.append(str(relative_path))
+        
+        return sorted(markdown_files)
+    
+    def extract_file_metadata(self, file_path):
+        """Extrai metadados de um arquivo markdown."""
         try:
-            with open(self.wiki_dir / file_path, 'r', encoding='utf-8') as f:
-                content = f.read()
-                
-            # Extrair frontmatter
-            if content.startswith("---"):
-                parts = content.split("---", 2)
-                if len(parts) >= 3:
-                    frontmatter_text = parts[1].strip()
-                    
-                    # Extrair tags
-                    tags_match = re.search(r'tags:\s*\[(.*?)\]', frontmatter_text)
-                    if tags_match:
-                        tags_str = tags_match.group(1)
-                        frontmatter["tags"] = [tag.strip() for tag in tags_str.split(",")]
-                    
-                    # Extrair status
-                    status_match = re.search(r'status:\s*(\w+)', frontmatter_text)
-                    if status_match:
-                        frontmatter["status"] = status_match.group(1)
-                    
-                    # Extrair aliases
-                    aliases_match = re.search(r'aliases:\s*\[(.*?)\]', frontmatter_text)
-                    if aliases_match:
-                        aliases_str = aliases_match.group(1)
-                        frontmatter["aliases"] = [alias.strip() for alias in aliases_str.split(",")]
-                    
-                    # Extrair título
-                    title_match = re.search(r'title:\s*(.+)', frontmatter_text)
-                    if title_match:
-                        frontmatter["title"] = title_match.group(1).strip()
-                        
+            # Tentar diferentes encodings
+            encodings = ['utf-8', 'latin-1', 'cp1252']
+            content = None
+            
+            for encoding in encodings:
+                try:
+                    with open(self.wiki_path / file_path, "r", encoding=encoding) as f:
+                        content = f.read()
+                    break
+                except UnicodeDecodeError:
+                    continue
+            
+            if content is None:
+                # Se nenhum encoding funcionar, pular o arquivo
+                return None
+            
+            # Extrair título do arquivo
+            title_match = re.search(r'^#\s+(.+)$', content, re.MULTILINE)
+            file_path_obj = Path(file_path)
+            title = title_match.group(1) if title_match else file_path_obj.stem
+            
+            # Extrair tags
+            tags_match = re.search(r'tags:\s*\[(.*?)\]', content)
+            tags = []
+            if tags_match:
+                tags_str = tags_match.group(1)
+                tags = [tag.strip().strip('"\'') for tag in tags_str.split(',')]
+            
+            # Extrair tipo
+            type_match = re.search(r'type:\s*(\w+)', content)
+            file_type = type_match.group(1) if type_match else "document"
+            
+            # Extrair status
+            status_match = re.search(r'status:\s*(\w+)', content)
+            status = status_match.group(1) if status_match else "active"
+            
+            return {
+                "title": title,
+                "tags": tags,
+                "type": file_type,
+                "status": status,
+                "path": str(file_path)
+            }
         except Exception as e:
-            print(f"Erro ao processar {file_path}: {e}")
-            
-        return frontmatter
+            self.results["errors"].append(f"Erro ao processar {file_path}: {e}")
+            file_path_obj = Path(file_path)
+            return {
+                "title": file_path_obj.stem,
+                "tags": [],
+                "type": "document",
+                "status": "active",
+                "path": str(file_path)
+            }
     
-    def generate_tags_index(self) -> Dict[str, Any]:
-        """Gera o índice de tags"""
-        files_by_tag = {}
-        tags_by_file = {}
-        all_tags = set()
-        
-        # Processar cada arquivo
-        for file in self.md_files:
-            frontmatter = self.extract_frontmatter(file)
-            tags = frontmatter["tags"]
+    def update_wiki_map(self, files_metadata):
+        """Atualiza o wiki_map.json."""
+        try:
+            wiki_map_path = self.maps_path / "wiki_map.json"
             
-            # Adicionar tags ao arquivo
-            tags_by_file[file] = tags
+            if wiki_map_path.exists():
+                with open(wiki_map_path, "r", encoding="utf-8") as f:
+                    wiki_map = json.load(f)
+            else:
+                wiki_map = {
+                    "metadata": {
+                        "version": "1.0",
+                        "last_updated": "",
+                        "total_documents": 0,
+                        "context": "otclient",
+                        "description": "OTCLIENT wiki map",
+                        "optimized": True,
+                        "optimization_date": ""
+                    },
+                    "categories": {},
+                    "files": {}
+                }
             
-            # Adicionar arquivo às tags
-            for tag in tags:
-                all_tags.add(tag)
-                if tag not in files_by_tag:
-                    files_by_tag[tag] = []
-                files_by_tag[tag].append(file)
-        
-        # Gerar aliases de busca
-        search_aliases = self.generate_search_aliases(files_by_tag)
-        
-        # Estrutura final
-        tags_index = {
-            "metadata": {
-                "version": "1.0",
-                "last_updated": datetime.now().isoformat(),
-                "total_files": len(self.md_files),
-                "total_tags": len(all_tags),
-                "description": "Índice de tags da wiki do OTClient"
-            },
-            "files_by_tag": files_by_tag,
-            "tags_by_file": tags_by_file,
-            "search_aliases": search_aliases
-        }
-        
-        return tags_index
-    
-    def generate_search_aliases(self, files_by_tag: Dict[str, List[str]]) -> Dict[str, str]:
-        """Gera aliases de busca para tags"""
-        aliases = {}
-        
-        # Aliases comuns
-        common_aliases = {
-            "ui": ["interface", "user interface", "widget", "gui"],
-            "game": ["jogo", "gameplay", "mecanica"],
-            "core": ["nucleo", "principal", "base"],
-            "api": ["interface", "programacao", "desenvolvimento"],
-            "guide": ["guia", "tutorial", "como fazer"],
-            "reference": ["referencia", "documentacao", "manual"]
-        }
-        
-        for tag, alias_list in common_aliases.items():
-            if tag in files_by_tag:
-                for alias in alias_list:
-                    aliases[alias] = tag
-        
-        return aliases
-    
-    def generate_wiki_map(self) -> Dict[str, Any]:
-        """Gera o mapa completo da wiki"""
-        categories = {
-            "core": {"name": "Sistema Core", "files": []},
-            "ui": {"name": "Interface do Usuário", "files": []},
-            "game": {"name": "Sistema de Jogo", "files": []},
-            "api": {"name": "APIs e Desenvolvimento", "files": []},
-            "guide": {"name": "Guias e Tutoriais", "files": []},
-            "reference": {"name": "Referências", "files": []},
-            "other": {"name": "Outros", "files": []}
-        }
-        
-        # Categorizar documentos
-        for file in self.md_files:
-            frontmatter = self.extract_frontmatter(file)
-            category = self.categorize_document(file, frontmatter)
-            priority = self.get_priority(file, frontmatter)
-            description = self.get_description(file, frontmatter)
+            # Remover duplicatas baseado no nome do arquivo
+            unique_files = {}
+            for metadata in files_metadata:
+                filename = Path(metadata["path"]).name
+                if filename not in unique_files:
+                    unique_files[filename] = metadata
             
-            doc_info = {
-                "file": file,
-                "title": frontmatter["title"],
-                "tags": frontmatter["tags"],
-                "status": frontmatter["status"],
-                "priority": priority,
-                "description": description,
-                "aliases": frontmatter["aliases"]
+            # Atualizar metadados
+            wiki_map["metadata"]["last_updated"] = datetime.now().isoformat()
+            wiki_map["metadata"]["total_documents"] = len(unique_files)
+            wiki_map["metadata"]["optimization_date"] = datetime.now().isoformat()
+            
+            # Categorizar arquivos
+            categories = {
+                "core": {"name": "Sistemas Core", "documents": []},
+                "ui": {"name": "Interface do Usuário", "documents": []},
+                "development": {"name": "Desenvolvimento", "documents": []},
+                "reference": {"name": "Referência", "documents": []},
+                "integration": {"name": "Integração", "documents": []},
+                "guides": {"name": "Guias", "documents": []},
+                "troubleshooting": {"name": "Solução de Problemas", "documents": []}
             }
             
-            if category in categories:
-                categories[category]["files"].append(doc_info)
-            else:
-                categories["other"]["files"].append(doc_info)
-        
-        # Gerar estatísticas
-        statistics = self.generate_statistics(categories)
-        
-        # Gerar caminhos de navegação
-        navigation = self.generate_navigation_paths(categories)
-        
-        # Estrutura final
-        wiki_map = {
-            "metadata": {
-                "version": "1.0",
-                "last_updated": datetime.now().isoformat(),
-                "total_files": len(self.md_files),
-                "description": "Mapa completo da wiki do OTClient"
-            },
-            "categories": categories,
-            "statistics": statistics,
-            "navigation": navigation
-        }
-        
-        return wiki_map
-    
-    def categorize_document(self, file: str, frontmatter: Dict[str, Any]) -> str:
-        """Categoriza um documento baseado em seu conteúdo"""
-        tags = frontmatter["tags"]
-        title = frontmatter["title"].lower()
-        
-        # Categorizar por tags
-        if any(tag in ["ui", "interface", "widget"] for tag in tags):
-            return "ui"
-        elif any(tag in ["game", "jogo", "creature", "item"] for tag in tags):
-            return "game"
-        elif any(tag in ["core", "nucleo", "principal"] for tag in tags):
-            return "core"
-        elif any(tag in ["api", "programacao", "desenvolvimento"] for tag in tags):
-            return "api"
-        elif any(tag in ["guide", "guia", "tutorial"] for tag in tags):
-            return "guide"
-        elif any(tag in ["reference", "referencia", "manual"] for tag in tags):
-            return "reference"
-        
-        # Categorizar por título
-        if "ui" in title or "interface" in title:
-            return "ui"
-        elif "game" in title or "jogo" in title:
-            return "game"
-        elif "core" in title or "nucleo" in title:
-            return "core"
-        elif "api" in title or "programacao" in title:
-            return "api"
-        elif "guide" in title or "guia" in title:
-            return "guide"
-        elif "reference" in title or "referencia" in title:
-            return "reference"
-        
-        return "other"
-    
-    def get_priority(self, file: str, frontmatter: Dict[str, Any]) -> int:
-        """Determina a prioridade de um documento"""
-        if "core" in frontmatter["tags"]:
-            return 1
-        elif "guide" in frontmatter["tags"]:
-            return 2
-        elif "api" in frontmatter["tags"]:
-            return 3
-        elif "ui" in frontmatter["tags"]:
-            return 4
-        elif "game" in frontmatter["tags"]:
-            return 5
-        else:
-            return 6
-    
-    def get_description(self, file: str, frontmatter: Dict[str, Any]) -> str:
-        """Extrai descrição do documento"""
-        if frontmatter["description"]:
-            return frontmatter["description"]
-        
-        # Gerar descrição baseada no título
-        title = frontmatter["title"]
-        if "ui" in title.lower():
-            return f"Documentação sobre {title}"
-        elif "game" in title.lower():
-            return f"Documentação sobre {title}"
-        elif "api" in title.lower():
-            return f"Referência da API: {title}"
-        else:
-            return f"Documentação: {title}"
-    
-    def generate_statistics(self, categories: Dict[str, Any]) -> Dict[str, Any]:
-        """Gera estatísticas da wiki"""
-        stats = {
-            "by_category": {},
-            "by_status": {},
-            "by_priority": {},
-            "total_files": len(self.md_files)
-        }
-        
-        # Estatísticas por categoria
-        for category, cat_info in categories.items():
-            stats["by_category"][category] = len(cat_info["files"])
-        
-        # Estatísticas por status
-        status_counts = {}
-        for category, cat_info in categories.items():
-            for file_info in cat_info["files"]:
-                status = file_info["status"]
-                status_counts[status] = status_counts.get(status, 0) + 1
-        stats["by_status"] = status_counts
-        
-        # Estatísticas por prioridade
-        priority_counts = {}
-        for category, cat_info in categories.items():
-            for file_info in cat_info["files"]:
-                priority = file_info["priority"]
-                priority_counts[priority] = priority_counts.get(priority, 0) + 1
-        stats["by_priority"] = priority_counts
-        
-        return stats
-    
-    def generate_navigation_paths(self, categories: Dict[str, Any]) -> Dict[str, List[str]]:
-        """Gera caminhos de navegação"""
-        paths = {
-            "beginner": [],
-            "intermediate": [],
-            "advanced": []
-        }
-        
-        # Caminho para iniciantes
-        if "guide" in categories:
-            paths["beginner"].extend([f["file"] for f in categories["guide"]["files"]])
-        if "core" in categories:
-            paths["beginner"].extend([f["file"] for f in categories["core"]["files"]])
-        
-        # Caminho intermediário
-        if "ui" in categories:
-            paths["intermediate"].extend([f["file"] for f in categories["ui"]["files"]])
-        if "game" in categories:
-            paths["intermediate"].extend([f["file"] for f in categories["game"]["files"]])
-        
-        # Caminho avançado
-        if "api" in categories:
-            paths["advanced"].extend([f["file"] for f in categories["api"]["files"]])
-        if "reference" in categories:
-            paths["advanced"].extend([f["file"] for f in categories["reference"]["files"]])
-        
-        return paths
-    
-    def generate_relationships(self) -> Dict[str, Any]:
-        """Gera relacionamentos entre documentos"""
-        relationships = {}
-        learning_paths = self.generate_learning_paths()
-        dependency_graph = self.generate_dependency_graph(relationships)
-        topic_clusters = self.generate_topic_clusters()
-        
-        # Estrutura final
-        relationships_data = {
-            "metadata": {
-                "version": "1.0",
-                "last_updated": datetime.now().isoformat(),
-                "total_files": len(self.md_files),
-                "description": "Relacionamentos entre documentos da wiki"
-            },
-            "relationships": relationships,
-            "learning_paths": learning_paths,
-            "dependency_graph": dependency_graph,
-            "topic_clusters": topic_clusters
-        }
-        
-        return relationships_data
-    
-    def generate_learning_paths(self) -> Dict[str, List[str]]:
-        """Gera caminhos de aprendizado"""
-        paths = {
-            "fundamentals": [],
-            "ui_development": [],
-            "game_development": [],
-            "advanced_topics": []
-        }
-        
-        # Caminho de fundamentos
-        for file in self.md_files:
-            frontmatter = self.extract_frontmatter(file)
-            if "core" in frontmatter["tags"] or "guide" in frontmatter["tags"]:
-                paths["fundamentals"].append(file)
-        
-        # Caminho de desenvolvimento de UI
-        for file in self.md_files:
-            frontmatter = self.extract_frontmatter(file)
-            if "ui" in frontmatter["tags"]:
-                paths["ui_development"].append(file)
-        
-        # Caminho de desenvolvimento de jogo
-        for file in self.md_files:
-            frontmatter = self.extract_frontmatter(file)
-            if "game" in frontmatter["tags"]:
-                paths["game_development"].append(file)
-        
-        # Caminho de tópicos avançados
-        for file in self.md_files:
-            frontmatter = self.extract_frontmatter(file)
-            if "api" in frontmatter["tags"] or "reference" in frontmatter["tags"]:
-                paths["advanced_topics"].append(file)
-        
-        return paths
-    
-    def generate_dependency_graph(self, relationships: Dict[str, Any]) -> Dict[str, Any]:
-        """Gera grafo de dependências"""
-        graph = {
-            "nodes": [],
-            "edges": []
-        }
-        
-        # Adicionar nós (documentos)
-        for file in self.md_files:
-            frontmatter = self.extract_frontmatter(file)
-            graph["nodes"].append({
-                "id": file,
-                "title": frontmatter["title"],
-                "category": self.categorize_document(file, frontmatter)
-            })
-        
-        # Adicionar arestas (relacionamentos)
-        for file in self.md_files:
-            frontmatter = self.extract_frontmatter(file)
-            tags = frontmatter["tags"]
+            # Atualizar arquivos
+            wiki_map["files"] = {}
             
-            # Relacionamentos baseados em tags
-            for other_file in self.md_files:
-                if file != other_file:
-                    other_frontmatter = self.extract_frontmatter(other_file)
-                    other_tags = other_frontmatter["tags"]
-                    
-                    # Se compartilham tags, criar relacionamento
-                    common_tags = set(tags) & set(other_tags)
-                    if common_tags:
-                        graph["edges"].append({
-                            "source": file,
-                            "target": other_file,
-                            "weight": len(common_tags)
-                        })
-        
-        return graph
+            for filename, metadata in unique_files.items():
+                # Determinar categoria
+                category = "guides"  # padrão
+                if "core" in filename.lower() or "CORE-" in filename:
+                    category = "core"
+                elif "ui" in filename.lower() or "interface" in filename.lower():
+                    category = "ui"
+                elif "development" in filename.lower() or "dev" in filename.lower():
+                    category = "development"
+                elif "reference" in filename.lower() or "api" in filename.lower():
+                    category = "reference"
+                elif "integration" in filename.lower() or "habdel" in filename.lower():
+                    category = "integration"
+                elif "troubleshooting" in filename.lower() or "debug" in filename.lower():
+                    category = "troubleshooting"
+                
+                categories[category]["documents"].append(filename)
+                
+                # Adicionar ao files
+                wiki_map["files"][filename] = {
+                    "title": metadata["title"],
+                    "tags": metadata["tags"],
+                    "status": metadata["status"],
+                    "aliases": [metadata["title"].lower().replace(" ", "_")],
+                    "category": category,
+                    "path": metadata["path"]
+                }
+            
+            # Atualizar categorias
+            wiki_map["categories"] = {k: v for k, v in categories.items() if v["documents"]}
+            
+            # Salvar
+            with open(wiki_map_path, "w", encoding="utf-8") as f:
+                json.dump(wiki_map, f, indent=2, ensure_ascii=False)
+            
+            self.results["wiki_map_updated"] = True
+            self.results["maps_updated"] += 1
+            
+        except Exception as e:
+            self.results["errors"].append(f"Erro ao atualizar wiki_map.json: {e}")
     
-    def generate_topic_clusters(self) -> Dict[str, List[str]]:
-        """Gera clusters de tópicos"""
-        clusters = {}
-        
-        # Cluster de UI
-        ui_files = []
-        for file in self.md_files:
-            frontmatter = self.extract_frontmatter(file)
-            if "ui" in frontmatter["tags"]:
-                ui_files.append(file)
-        if ui_files:
-            clusters["ui"] = ui_files
-        
-        # Cluster de Game
-        game_files = []
-        for file in self.md_files:
-            frontmatter = self.extract_frontmatter(file)
-            if "game" in frontmatter["tags"]:
-                game_files.append(file)
-        if game_files:
-            clusters["game"] = game_files
-        
-        # Cluster de API
-        api_files = []
-        for file in self.md_files:
-            frontmatter = self.extract_frontmatter(file)
-            if "api" in frontmatter["tags"]:
-                api_files.append(file)
-        if api_files:
-            clusters["api"] = api_files
-        
-        return clusters
+    def update_tags_index(self, files_metadata):
+        """Atualiza o tags_index.json."""
+        try:
+            tags_index_path = self.maps_path / "tags_index.json"
+            
+            if tags_index_path.exists():
+                with open(tags_index_path, "r", encoding="utf-8") as f:
+                    tags_index = json.load(f)
+            else:
+                tags_index = {
+                    "metadata": {
+                        "version": "1.0",
+                        "last_updated": "",
+                        "total_files": 0,
+                        "total_tags": 0,
+                        "description": "OTCLIENT wiki tags index",
+                        "optimized": True,
+                        "optimization_date": "",
+                        "portuguese_tags": 0
+                    },
+                    "files_by_tag": {},
+                    "tags_by_file": {}
+                }
+            
+            # Remover duplicatas baseado no nome do arquivo
+            unique_files = {}
+            for metadata in files_metadata:
+                filename = Path(metadata["path"]).name
+                if filename not in unique_files:
+                    unique_files[filename] = metadata
+            
+            # Atualizar metadados
+            tags_index["metadata"]["last_updated"] = datetime.now().isoformat()
+            tags_index["metadata"]["total_files"] = len(unique_files)
+            tags_index["metadata"]["optimization_date"] = datetime.now().isoformat()
+            
+            # Processar tags
+            files_by_tag = {}
+            tags_by_file = {}
+            portuguese_tags = 0
+            
+            for filename, metadata in unique_files.items():
+                tags = metadata["tags"]
+                
+                # Adicionar tags padrão se não houver
+                if not tags:
+                    tags = ["otclient", "documentation"]
+                
+                # Contar tags em português
+                for tag in tags:
+                    if any(word in tag.lower() for word in ["sistema", "guia", "configuracao", "desenvolvimento", "interface"]):
+                        portuguese_tags += 1
+                
+                # Organizar por tag
+                for tag in tags:
+                    if tag not in files_by_tag:
+                        files_by_tag[tag] = []
+                    if filename not in files_by_tag[tag]:  # Evitar duplicatas
+                        files_by_tag[tag].append(filename)
+                
+                # Organizar por arquivo
+                tags_by_file[filename] = tags
+            
+            tags_index["metadata"]["total_tags"] = len(files_by_tag)
+            tags_index["metadata"]["portuguese_tags"] = portuguese_tags
+            tags_index["files_by_tag"] = files_by_tag
+            tags_index["tags_by_file"] = tags_by_file
+            
+            # Salvar
+            with open(tags_index_path, "w", encoding="utf-8") as f:
+                json.dump(tags_index, f, indent=2, ensure_ascii=False)
+            
+            self.results["tags_index_updated"] = True
+            self.results["maps_updated"] += 1
+            
+        except Exception as e:
+            self.results["errors"].append(f"Erro ao atualizar tags_index.json: {e}")
     
-    def update_all_json_files(self):
-        """Atualiza todos os arquivos JSON"""
-        print("Atualizando mapas JSON da wiki...")
+    def update_search_index(self, files_metadata):
+        """Atualiza o search_index.json."""
+        try:
+            search_index_path = self.maps_path / "search_index.json"
+            
+            if search_index_path.exists():
+                with open(search_index_path, "r", encoding="utf-8") as f:
+                    search_index = json.load(f)
+            else:
+                search_index = {
+                    "metadata": {
+                        "version": "2.0",
+                        "optimized": True,
+                        "created": ""
+                    },
+                    "quick_search": {},
+                    "full_text_search": {}
+                }
+            
+            # Atualizar metadados
+            search_index["metadata"]["created"] = datetime.now().isoformat()
+            
+            # Processar busca rápida
+            quick_search = {}
+            
+            for metadata in files_metadata:
+                filename = Path(metadata["path"]).name
+                title = metadata["title"]
+                tags = metadata["tags"]
+                
+                # Adicionar por tags
+                for tag in tags:
+                    if tag not in quick_search:
+                        quick_search[tag] = {
+                            "files": [],
+                            "count": 0,
+                            "priority": "medium"
+                        }
+                    quick_search[tag]["files"].append(filename)
+                    quick_search[tag]["count"] += 1
+                
+                # Adicionar por palavras-chave do título
+                title_words = title.lower().split()
+                for word in title_words:
+                    if len(word) > 3:  # palavras com mais de 3 caracteres
+                        if word not in quick_search:
+                            quick_search[word] = {
+                                "files": [],
+                                "count": 0,
+                                "priority": "low"
+                            }
+                        if filename not in quick_search[word]["files"]:
+                            quick_search[word]["files"].append(filename)
+                            quick_search[word]["count"] += 1
+            
+            search_index["quick_search"] = quick_search
+            
+            # Salvar
+            with open(search_index_path, "w", encoding="utf-8") as f:
+                json.dump(search_index, f, indent=2, ensure_ascii=False)
+            
+            self.results["search_index_updated"] = True
+            self.results["maps_updated"] += 1
+            
+        except Exception as e:
+            self.results["errors"].append(f"Erro ao atualizar search_index.json: {e}")
+    
+    def update_relationships(self, files_metadata):
+        """Atualiza o relationships.json."""
+        try:
+            relationships_path = self.maps_path / "relationships.json"
+            
+            if relationships_path.exists():
+                with open(relationships_path, "r", encoding="utf-8") as f:
+                    relationships = json.load(f)
+            else:
+                relationships = {
+                    "metadata": {
+                        "version": "1.0",
+                        "last_updated": "",
+                        "context": "otclient",
+                        "description": "OTCLIENT document relationships"
+                    }
+                }
+            
+            # Atualizar metadados
+            relationships["metadata"]["last_updated"] = datetime.now().isoformat()
+            
+            # Processar relacionamentos
+            for metadata in files_metadata:
+                filename = Path(metadata["path"]).name
+                title = metadata["title"]
+                tags = metadata["tags"]
+                
+                # Determinar relacionamentos baseados em tags e título
+                related = []
+                prerequisites = []
+                next_steps = []
+                
+                # Relacionamentos baseados em tags
+                for other_metadata in files_metadata:
+                    other_filename = Path(other_metadata["path"]).name
+                    if other_filename != filename:
+                        common_tags = set(tags) & set(other_metadata["tags"])
+                        if common_tags:
+                            related.append(other_filename)
+                
+                # Adicionar ao relationships
+                relationships[filename] = {
+                    "prerequisites": prerequisites,
+                    "next_steps": next_steps,
+                    "related": related[:5],  # máximo 5 relacionados
+                    "integration_links": []
+                }
+            
+            # Salvar
+            with open(relationships_path, "w", encoding="utf-8") as f:
+                json.dump(relationships, f, indent=2, ensure_ascii=False)
+            
+            self.results["relationships_updated"] = True
+            self.results["maps_updated"] += 1
+            
+        except Exception as e:
+            self.results["errors"].append(f"Erro ao atualizar relationships.json: {e}")
+    
+    def run(self):
+        """Executa o processo de atualização."""
+        print("🔄 Iniciando atualização dos mapas JSON...")
         
-        # Escanear arquivos markdown
-        md_files = self.scan_markdown_files()
-        print(f"Encontrados {len(md_files)} arquivos markdown")
+        # Escanear arquivos da wiki
+        wiki_files = self.scan_wiki_files()
+        self.results["files_processed"] = len(wiki_files)
         
-        # Gerar tags_index.json
-        print("Gerando tags_index.json...")
-        self.tags_index = self.generate_tags_index()
-        with open(self.wiki_dir / "maps/tags_index.json", 'w', encoding='utf-8') as f:
-            json.dump(self.tags_index, f, indent=2, ensure_ascii=False)
+        print(f"   📁 Arquivos encontrados: {len(wiki_files)}")
         
-        # Gerar wiki_map.json
-        print("Gerando wiki_map.json...")
-        self.wiki_map = self.generate_wiki_map()
-        with open(self.wiki_dir / "maps/wiki_map.json", 'w', encoding='utf-8') as f:
-            json.dump(self.wiki_map, f, indent=2, ensure_ascii=False)
+        # Extrair metadados
+        files_metadata = []
+        for file_path in wiki_files:
+            metadata = self.extract_file_metadata(file_path)
+            if metadata is not None:  # Pular arquivos que não puderam ser processados
+                files_metadata.append(metadata)
         
-        # Gerar relationships.json
-        print("Gerando relationships.json...")
-        self.relationships = self.generate_relationships()
-        with open(self.wiki_dir / "maps/relationships.json", 'w', encoding='utf-8') as f:
-            json.dump(self.relationships, f, indent=2, ensure_ascii=False)
+        # Atualizar mapas
+        self.update_wiki_map(files_metadata)
+        self.update_tags_index(files_metadata)
+        self.update_search_index(files_metadata)
+        self.update_relationships(files_metadata)
         
-        print("Todos os arquivos JSON foram atualizados!")
-
-def main():
-    """Função principal"""
-    updater = WikiJSONUpdater("wiki")
-    updater.update_all_json_files()
+        # Salvar relatório
+        self.save_report()
+        
+        print(f"✅ Atualização concluída!")
+        print(f"   📁 Arquivos processados: {self.results['files_processed']}")
+        print(f"   🔄 Mapas atualizados: {self.results['maps_updated']}")
+        print(f"   📊 Wiki Map: {'✅' if self.results['wiki_map_updated'] else '❌'}")
+        print(f"   🏷️ Tags Index: {'✅' if self.results['tags_index_updated'] else '❌'}")
+        print(f"   🔍 Search Index: {'✅' if self.results['search_index_updated'] else '❌'}")
+        print(f"   🔗 Relationships: {'✅' if self.results['relationships_updated'] else '❌'}")
+        
+        if self.results["errors"]:
+            print(f"   ⚠️ Erros encontrados: {len(self.results['errors'])}")
+    
+    def save_report(self):
+        """Salva o relatório de atualização."""
+        report = {
+            "timestamp": datetime.now().isoformat(),
+            "task": "19.7 - Atualizar Mapas JSON e Índices",
+            "results": self.results
+        }
+        
+        report_path = self.wiki_path / "log" / "json_maps_update_report.json"
+        report_path.parent.mkdir(parents=True, exist_ok=True)
+        
+        with open(report_path, "w", encoding="utf-8") as f:
+            json.dump(report, f, indent=2, ensure_ascii=False)
 
 if __name__ == "__main__":
-    main() 
+    updater = JSONMapsUpdater()
+    updater.run() 

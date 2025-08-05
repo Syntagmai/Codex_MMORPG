@@ -69,12 +69,19 @@
 ```cpp
 // Preferred pattern for entity management
 class Player : public Creature {
+    -- Classe: Player
     std::shared_ptr<Player> getPlayer() override { return shared_from_this(); }
     // Use smart pointers for automatic memory management
 };
 ```
 
 #### Event Handling
+#### Nível Basic
+```cpp
+
+```
+
+#### Nível Intermediate
 ```cpp
 // Use the dispatcher for asynchronous operations
 g_dispatcher.addEvent([=]() {
@@ -83,16 +90,39 @@ g_dispatcher.addEvent([=]() {
 }, "player_experience_update");
 ```
 
+#### Nível Advanced
+```cpp
+// Use the dispatcher for asynchronous operations
+g_dispatcher.addEvent([=]() {
+    // Event handling code
+    player->updateExperience(amount);
+}, "player_experience_update");
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### Lua Integration
 ```lua
 -- Canary Lua API patterns
+    --  Canary Lua API patterns (traduzido)
 function onUse(player, item, fromPosition, target, toPosition, isHotkey)
+    -- Função: onUse
     if player:getLevel() < 20 then
+    -- Verificação condicional
         player:sendTextMessage(MESSAGE_INFO_DESCR, "You need level 20 to use this item.")
         return false
     end
     
     -- Item functionality
+    --  Item functionality (traduzido)
     return true
 end
 ```

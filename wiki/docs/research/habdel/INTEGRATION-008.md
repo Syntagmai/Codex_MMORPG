@@ -85,6 +85,7 @@ A **INTEGRATION-008** cria APIs unificadas entre OTClient e Canary, aplicando a 
 ```cpp
 // API unificada de configuração
 class UnifiedConfigAPI {
+    -- Classe: UnifiedConfigAPI
 public:
     // Gerenciamento de configurações
     static bool loadConfig(const std::string& file_path);
@@ -121,6 +122,7 @@ private:
 ```cpp
 // API unificada de logging
 class UnifiedLogAPI {
+    -- Classe: UnifiedLogAPI
 public:
     // Configuração de logging
     static bool initialize(const std::string& log_file = "");
@@ -161,6 +163,7 @@ private:
 ```cpp
 // API unificada de eventos
 class UnifiedEventAPI {
+    -- Classe: UnifiedEventAPI
 public:
     // Gerenciamento de eventos
     static bool initialize();
@@ -203,6 +206,7 @@ private:
 ```cpp
 // API unificada de rede
 class UnifiedNetworkAPI {
+    -- Classe: UnifiedNetworkAPI
 public:
     // Inicialização
     static bool initialize();
@@ -247,6 +251,7 @@ private:
 ```cpp
 // API unificada de segurança
 class UnifiedSecurityAPI {
+    -- Classe: UnifiedSecurityAPI
 public:
     // Inicialização
     static bool initialize();
@@ -286,6 +291,7 @@ private:
 ```cpp
 // API unificada de dados
 class UnifiedDataAPI {
+    -- Classe: UnifiedDataAPI
 public:
     // Inicialização
     static bool initialize();
@@ -335,6 +341,7 @@ private:
 ```cpp
 // API unificada de jogo
 class UnifiedGameAPI {
+    -- Classe: UnifiedGameAPI
 public:
     // Inicialização do jogo
     static bool initializeGame();
@@ -373,6 +380,7 @@ private:
 ```cpp
 // API unificada de UI
 class UnifiedUIAPI {
+    -- Classe: UnifiedUIAPI
 public:
     // Inicialização da UI
     static bool initializeUI();
@@ -414,6 +422,7 @@ private:
 ```cpp
 // API principal de integração
 class UnifiedIntegrationAPI {
+    -- Classe: UnifiedIntegrationAPI
 public:
     // Inicialização do sistema unificado
     static bool initialize();
@@ -451,6 +460,7 @@ private:
 ```cpp
 // API unificada de métricas
 class UnifiedMetricsAPI {
+    -- Classe: UnifiedMetricsAPI
 public:
     // Coleta de métricas
     static bool startMetricsCollection();

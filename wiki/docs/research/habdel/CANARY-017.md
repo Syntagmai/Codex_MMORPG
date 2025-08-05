@@ -58,6 +58,7 @@ canary/src/lua/functions/creatures/player/
 ### **🏗️ Arquitetura do Sistema**
 
 #### **1. Estrutura GuildRank (guild.hpp)**
+#### Nível Basic
 ```cpp
 struct GuildRank {
     uint32_t id;        // ID único do rank
@@ -71,9 +72,55 @@ struct GuildRank {
 using GuildRank_ptr = std::shared_ptr<GuildRank>;
 ```
 
+#### Nível Intermediate
+```cpp
+struct GuildRank {
+    uint32_t id;        // ID único do rank
+    std::string name;   // Nome do rank
+    uint8_t level;      // Nível hierárquico
+
+    GuildRank(uint32_t initId, std::string initName, uint8_t initLevel) :
+        id(initId), name(std::move(initName)), level(initLevel) { }
+};
+
+using GuildRank_ptr = std::shared_ptr<GuildRank>;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+struct GuildRank {
+    uint32_t id;        // ID único do rank
+    std::string name;   // Nome do rank
+    uint8_t level;      // Nível hierárquico
+
+    GuildRank(uint32_t initId, std::string initName, uint8_t initLevel) :
+        id(initId), name(std::move(initName)), level(initLevel) { }
+};
+
+using GuildRank_ptr = std::shared_ptr<GuildRank>;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **2. Classe Guild (guild.hpp)**
 ```cpp
 class Guild final : public Bankable {
+    -- Classe: Guild
 public:
     Guild(uint32_t initId, std::string initName) :
         name(std::move(initName)), id(initId) { }
@@ -127,6 +174,7 @@ private:
 #### **3. Interface I/O (ioguild.hpp)**
 ```cpp
 class IOGuild {
+    -- Classe: IOGuild
 public:
     static std::shared_ptr<Guild> loadGuild(uint32_t guildId);
     static void saveGuild(const std::shared_ptr<Guild> &guild);
@@ -140,6 +188,7 @@ public:
 #### **1. Funções Lua para Guildas (guild_functions.hpp)**
 ```cpp
 class GuildFunctions {
+    -- Classe: GuildFunctions
 public:
     static void init(lua_State* L);
 
@@ -167,6 +216,7 @@ private:
 ```
 
 #### **2. Funções Lua para Players (player_functions.hpp)**
+#### Nível Basic
 ```cpp
 // Funções relacionadas a guildas
 static int luaPlayerGetGuild(lua_State* L);
@@ -177,7 +227,47 @@ static int luaPlayerGetGuildNick(lua_State* L);
 static int luaPlayerSetGuildNick(lua_State* L);
 ```
 
+#### Nível Intermediate
+```cpp
+// Funções relacionadas a guildas
+static int luaPlayerGetGuild(lua_State* L);
+static int luaPlayerSetGuild(lua_State* L);
+static int luaPlayerGetGuildLevel(lua_State* L);
+static int luaPlayerSetGuildLevel(lua_State* L);
+static int luaPlayerGetGuildNick(lua_State* L);
+static int luaPlayerSetGuildNick(lua_State* L);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Funções relacionadas a guildas
+static int luaPlayerGetGuild(lua_State* L);
+static int luaPlayerSetGuild(lua_State* L);
+static int luaPlayerGetGuildLevel(lua_State* L);
+static int luaPlayerSetGuildLevel(lua_State* L);
+static int luaPlayerGetGuildNick(lua_State* L);
+static int luaPlayerSetGuildNick(lua_State* L);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **3. Funções do Game (game.hpp)**
+#### Nível Basic
 ```cpp
 // Gerenciamento de guildas
 const phmap::parallel_flat_hash_map<uint32_t, std::shared_ptr<Guild>> &getGuilds() const;
@@ -186,6 +276,45 @@ std::shared_ptr<Guild> getGuildByName(const std::string &name, bool allowOffline
 void addGuild(const std::shared_ptr<Guild> &guild);
 void removeGuild(uint32_t guildId);
 void sendGuildMotd(uint32_t playerId);
+```
+
+#### Nível Intermediate
+```cpp
+// Gerenciamento de guildas
+const phmap::parallel_flat_hash_map<uint32_t, std::shared_ptr<Guild>> &getGuilds() const;
+std::shared_ptr<Guild> getGuild(uint32_t id, bool allowOffline = false) const;
+std::shared_ptr<Guild> getGuildByName(const std::string &name, bool allowOffline = false) const;
+void addGuild(const std::shared_ptr<Guild> &guild);
+void removeGuild(uint32_t guildId);
+void sendGuildMotd(uint32_t playerId);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Gerenciamento de guildas
+const phmap::parallel_flat_hash_map<uint32_t, std::shared_ptr<Guild>> &getGuilds() const;
+std::shared_ptr<Guild> getGuild(uint32_t id, bool allowOffline = false) const;
+std::shared_ptr<Guild> getGuildByName(const std::string &name, bool allowOffline = false) const;
+void addGuild(const std::shared_ptr<Guild> &guild);
+void removeGuild(uint32_t guildId);
+void sendGuildMotd(uint32_t playerId);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **📊 Fluxo de Dados**
@@ -228,17 +357,21 @@ void sendGuildMotd(uint32_t playerId);
 // Exemplo de criação de guilda via Lua
 local guild = Guild(1) -- Cria guilda com ID 1
 if guild then
+    -- Verificação condicional
     print("Guilda criada: " .. guild:getName())
     
     -- Adicionar ranks
+    --  Adicionar ranks (traduzido)
     guild:addRank(1, "Leader", 3)
     guild:addRank(2, "Vice-Leader", 2)
     guild:addRank(3, "Member", 1)
     
     -- Definir MOTD
+    --  Definir MOTD (traduzido)
     guild:setMotd("Bem-vindos à nossa guilda!")
     
     -- Configurar banco
+    --  Configurar banco (traduzido)
     guild:setBankBalance(100000)
 end
 ```
@@ -250,16 +383,21 @@ local player = Player("TestPlayer")
 local guild = player:getGuild()
 
 if guild then
+    -- Verificação condicional
     -- Adicionar membro
+    --  Adicionar membro (traduzido)
     guild:addMember(player)
     
     -- Verificar membros online
+    --  Verificar membros online (traduzido)
     local members = guild:getMembersOnline()
     print("Membros online: " .. #members)
     
     -- Verificar rank
+    --  Verificar rank (traduzido)
     local rank = guild:getRankByLevel(3)
     if rank then
+    -- Verificação condicional
         print("Rank encontrado: " .. rank.name)
     end
 end
@@ -270,15 +408,20 @@ end
 // Exemplo de operações bancárias
 local guild = Guild(1)
 if guild then
+    -- Verificação condicional
     -- Verificar saldo
+    --  Verificar saldo (traduzido)
     local balance = guild:getBankBalance()
     print("Saldo da guilda: " .. balance)
     
     -- Depositar dinheiro
+    --  Depositar dinheiro (traduzido)
     guild:setBankBalance(balance + 50000)
     
     -- Transferir para guilda (via banco)
+    --  Transferir para guilda (via banco) (traduzido)
     -- Bank::transferToGuild(guild, amount)
+    --  Bank::transferToGuild(guild, amount) (traduzido)
 end
 ```
 
@@ -287,12 +430,16 @@ end
 // Exemplo de MOTD
 local guild = Guild(1)
 if guild then
+    -- Verificação condicional
     -- Definir mensagem
+    --  Definir mensagem (traduzido)
     guild:setMotd("Reunião hoje às 20:00!")
     
     -- Enviar para todos os membros
+    --  Enviar para todos os membros (traduzido)
     local members = guild:getMembersOnline()
     for _, member in ipairs(members) do
+    -- Loop de repetição
         g_game():sendGuildMotd(member:getId())
     end
 end
@@ -328,24 +475,111 @@ end
 #### **1. Inheritance Pattern**
 ```cpp
 class Guild final : public Bankable {
+    -- Classe: Guild
     // Herda funcionalidades bancárias
 };
 ```
 
 #### **2. Factory Pattern**
+#### Nível Basic
 ```cpp
 static std::shared_ptr<Guild> loadGuild(uint32_t guildId);
 ```
 
+#### Nível Intermediate
+```cpp
+static std::shared_ptr<Guild> loadGuild(uint32_t guildId);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+static std::shared_ptr<Guild> loadGuild(uint32_t guildId);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **3. Observer Pattern**
+#### Nível Basic
 ```cpp
 void updatePlayerHelpers(const std::shared_ptr<Player> &member);
 ```
 
+#### Nível Intermediate
+```cpp
+void updatePlayerHelpers(const std::shared_ptr<Player> &member);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+void updatePlayerHelpers(const std::shared_ptr<Player> &member);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **4. Strategy Pattern**
+#### Nível Basic
 ```cpp
 GuildRank_ptr getRankById(uint32_t id) const;
 GuildRank_ptr getRankByLevel(uint8_t level) const;
+```
+
+#### Nível Intermediate
+```cpp
+GuildRank_ptr getRankById(uint32_t id) const;
+GuildRank_ptr getRankByLevel(uint8_t level) const;
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+GuildRank_ptr getRankById(uint32_t id) const;
+GuildRank_ptr getRankByLevel(uint8_t level) const;
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🔍 **Insights Técnicos**
@@ -409,6 +643,7 @@ GuildRank_ptr getRankByLevel(uint8_t level) const;
 ```cpp
 // Implementar cache para guildas frequentemente acessadas
 class GuildCache {
+    -- Classe: GuildCache
     std::unordered_map<uint32_t, std::shared_ptr<Guild>> cache;
     std::mutex cacheMutex;
 public:
@@ -418,6 +653,7 @@ public:
 ```
 
 #### **Async Operations**
+#### Nível Basic
 ```cpp
 // Operações assíncronas para guildas
 std::future<std::shared_ptr<Guild>> IOGuild::loadGuildAsync(uint32_t guildId) {
@@ -427,10 +663,77 @@ std::future<std::shared_ptr<Guild>> IOGuild::loadGuildAsync(uint32_t guildId) {
 }
 ```
 
+#### Nível Intermediate
+```cpp
+// Operações assíncronas para guildas
+std::future<std::shared_ptr<Guild>> IOGuild::loadGuildAsync(uint32_t guildId) {
+    return std::async(std::launch::async, [guildId]() {
+        return IOGuild::loadGuild(guildId);
+    });
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Operações assíncronas para guildas
+std::future<std::shared_ptr<Guild>> IOGuild::loadGuildAsync(uint32_t guildId) {
+    return std::async(std::launch::async, [guildId]() {
+        return IOGuild::loadGuild(guildId);
+    });
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### **Batch Operations**
+#### Nível Basic
 ```cpp
 // Operações em lote para múltiplas guildas
 void Game::updateMultipleGuilds(const std::vector<GuildUpdate>& updates);
+```
+
+#### Nível Intermediate
+```cpp
+// Operações em lote para múltiplas guildas
+void Game::updateMultipleGuilds(const std::vector<GuildUpdate>& updates);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Operações em lote para múltiplas guildas
+void Game::updateMultipleGuilds(const std::vector<GuildUpdate>& updates);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **2. Funcionalidades Avançadas**
@@ -439,6 +742,7 @@ void Game::updateMultipleGuilds(const std::vector<GuildUpdate>& updates);
 ```cpp
 // Sistema de eventos de guilda
 class GuildEvent {
+    -- Classe: GuildEvent
     std::string name;
     std::function<void(Guild*)> callback;
     uint32_t cooldown;
@@ -451,6 +755,7 @@ public:
 ```cpp
 // Sistema de conquistas de guilda
 class GuildAchievement {
+    -- Classe: GuildAchievement
     std::string name;
     std::string description;
     uint32_t points;
@@ -464,6 +769,7 @@ public:
 ```cpp
 // Sistema de alianças entre guildas
 class GuildAlliance {
+    -- Classe: GuildAlliance
     std::vector<std::shared_ptr<Guild>> members;
     std::string name;
 public:
@@ -478,6 +784,7 @@ public:
 ```cpp
 // Analytics para guildas
 class GuildAnalytics {
+    -- Classe: GuildAnalytics
 public:
     void trackGuildActivity(uint32_t guildId, const std::string& action);
     void generateGuildReport(uint32_t guildId);
@@ -489,6 +796,7 @@ public:
 ```cpp
 // Monitoramento de performance
 class GuildPerformanceMonitor {
+    -- Classe: GuildPerformanceMonitor
 public:
     void trackGuildLoadTime();
     void trackMemberOperationTime();

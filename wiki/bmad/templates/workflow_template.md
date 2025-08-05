@@ -68,6 +68,23 @@ graph TD
 ## ⚙️ Configuração
 
 ### **Parâmetros de Execução**
+#### Nível Basic
+```json
+  "notification_enabled": true
+```
+
+#### Nível Intermediate
+```json
+{
+  "timeout": 1800,
+  "max_retries": 3,
+  "parallel_execution": true,
+  "validation_required": true,
+  "notification_enabled": true
+}
+```
+
+#### Nível Advanced
 ```json
 {
   "timeout": 1800,
@@ -103,6 +120,7 @@ graph TD
 ## 🔧 Implementação
 
 ### **Código Principal**
+#### Nível Basic
 ```lua
 -- Workflow principal
 function executeWorkflow(input)
@@ -121,7 +139,63 @@ function executeWorkflow(input)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Workflow principal
+function executeWorkflow(input)
+    local workflow = WorkflowTemplate.new()
+    
+    -- Fase 1: Inicialização
+    workflow:initialize(input)
+    
+    -- Fase 2: Execução
+    local results = workflow:execute()
+    
+    -- Fase 3: Finalização
+    workflow:finalize(results)
+    
+    return results
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Workflow principal
+function executeWorkflow(input)
+    local workflow = WorkflowTemplate.new()
+    
+    -- Fase 1: Inicialização
+    workflow:initialize(input)
+    
+    -- Fase 2: Execução
+    local results = workflow:execute()
+    
+    -- Fase 3: Finalização
+    workflow:finalize(results)
+    
+    return results
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Funções de Suporte**
+#### Nível Basic
 ```lua
 -- Validação de entrada
 function validateInput(input)
@@ -139,6 +213,59 @@ function generateReport(results)
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Validação de entrada
+function validateInput(input)
+    -- Validação dos dados de entrada
+end
+
+-- Processamento principal
+function processData(data)
+    -- Processamento dos dados
+end
+
+-- Geração de relatório
+function generateReport(results)
+    -- Geração do relatório final
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Validação de entrada
+function validateInput(input)
+    -- Validação dos dados de entrada
+end
+
+-- Processamento principal
+function processData(data)
+    -- Processamento dos dados
+end
+
+-- Geração de relatório
+function generateReport(results)
+    -- Geração do relatório final
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🚨 Tratamento de Erros
 
 ### **Cenários de Erro**
@@ -151,7 +278,9 @@ end
 ```lua
 -- Recuperação automática
 function handleError(error, context)
+    -- Função: handleError
     if error.type == "validation" then
+    -- Verificação condicional
         return retryValidation(context)
     elseif error.type == "timeout" then
         return extendTimeout(context)
@@ -164,6 +293,7 @@ end
 ## 📝 Exemplos de Uso
 
 ### **Cenário 1: Processamento Simples**
+#### Nível Basic
 ```lua
 local input = {
     data = "exemplo",
@@ -174,7 +304,47 @@ local result = executeWorkflow(input)
 print("Resultado:", result.status)
 ```
 
+#### Nível Intermediate
+```lua
+local input = {
+    data = "exemplo",
+    priority = "high"
+}
+
+local result = executeWorkflow(input)
+print("Resultado:", result.status)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local input = {
+    data = "exemplo",
+    priority = "high"
+}
+
+local result = executeWorkflow(input)
+print("Resultado:", result.status)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Cenário 2: Processamento Complexo**
+#### Nível Basic
 ```lua
 local input = {
     data = complex_data,
@@ -183,6 +353,45 @@ local input = {
 }
 
 local result = executeWorkflow(input)
+```
+
+#### Nível Intermediate
+```lua
+local input = {
+    data = complex_data,
+    agents = ["agent1", "agent2", "agent3"],
+    validation = true
+}
+
+local result = executeWorkflow(input)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local input = {
+    data = complex_data,
+    agents = ["agent1", "agent2", "agent3"],
+    validation = true
+}
+
+local result = executeWorkflow(input)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🔗 Integração

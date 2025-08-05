@@ -177,7 +177,8 @@ A **INTEGRATION-006** cria guias práticos e detalhados para migração entre os
 
 #### **Fase 2: Migração Core (4-8 semanas)**
 1. **Migração de Game Logic**
-   ```cpp
+   #### Inicialização e Configuração
+```cpp
    // OTClient Game Logic
    class OTClientGame {
        void updatePlayer();
@@ -201,6 +202,10 @@ A **INTEGRATION-006** cria guias práticos e detalhados para migração entre os
        static bool receivePlayerInput(uint32_t player_id, Input& input);
        static bool authenticatePlayer(const std::string& username, const std::string& password);
    };
+```
+
+#### Funcionalidade 1
+```cpp
    ```
 
 3. **Migração de Configuration**
@@ -237,6 +242,10 @@ A **INTEGRATION-006** cria guias práticos e detalhados para migração entre os
 2. **Implementação de Autenticação**
    ```cpp
    class AuthenticationSystem {
+```
+
+#### Funcionalidade 2
+```cpp
    public:
        static bool authenticate(const std::string& username, const std::string& password);
        static std::string createSession(uint32_t player_id);
@@ -266,6 +275,10 @@ A **INTEGRATION-006** cria guias práticos e detalhados para migração entre os
        REQUIRE(AuthenticationSystem::authenticate("test", "password") == true);
        REQUIRE(AuthenticationSystem::authenticate("test", "wrong") == false);
    }
+```
+
+#### Funcionalidade 3
+```cpp
    
    TEST_CASE("Session Management") {
        std::string token;
@@ -292,6 +305,10 @@ A **INTEGRATION-006** cria guias práticos e detalhados para migração entre os
            for (int i = 0; i < 1000; i++) {
                game.updatePlayer(i);
            }
+```
+
+#### Finalização
+```cpp
        };
    }
    ```
@@ -341,7 +358,8 @@ A **INTEGRATION-006** cria guias práticos e detalhados para migração entre os
 
 #### **Fase 2: Migração Core (3-6 semanas)**
 1. **Migração de Game Logic**
-   ```cpp
+   #### Inicialização e Configuração
+```cpp
    // Canary Game Logic
    class CanaryGame {
        void updatePlayer(uint32_t player_id);
@@ -371,6 +389,10 @@ A **INTEGRATION-006** cria guias práticos e detalhados para migração entre os
        void renderUI();
        void renderGame();
    };
+```
+
+#### Funcionalidade 1
+```cpp
    ```
 
 3. **Implementação de Sistema de Áudio**
@@ -392,6 +414,10 @@ A **INTEGRATION-006** cria guias práticos e detalhados para migração entre os
 1. **Implementação de UI Framework**
    ```cpp
    class UIFramework {
+```
+
+#### Funcionalidade 2
+```cpp
    private:
        std::vector<UIComponent*> components;
        
@@ -413,6 +439,10 @@ A **INTEGRATION-006** cria guias práticos e detalhados para migração entre os
    };
    
    class ChatWindow : public UIComponent {
+```
+
+#### Funcionalidade 3
+```cpp
    public:
        void render() override;
        void addMessage(const std::string& message);
@@ -442,6 +472,10 @@ A **INTEGRATION-006** cria guias práticos e detalhados para migração entre os
        REQUIRE(renderer.initialize() == true);
        REQUIRE_NOTHROW(renderer.renderFrame());
    }
+```
+
+#### Funcionalidade 4
+```cpp
    
    TEST_CASE("Audio System") {
        AudioSystem audio;
@@ -465,6 +499,10 @@ A **INTEGRATION-006** cria guias práticos e detalhados para migração entre os
        BENCHMARK("Frame Rendering") {
            renderer.renderFrame();
        };
+```
+
+#### Finalização
+```cpp
    }
    ```
 
@@ -643,6 +681,7 @@ echo "Migração concluída!"
 ```cpp
 // Ferramenta de validação de migração
 class MigrationValidator {
+    -- Classe: MigrationValidator
 public:
     static bool validateCodeMigration(const std::string& source, const std::string& target);
     static bool validatePerformance(const std::string& system, double threshold);

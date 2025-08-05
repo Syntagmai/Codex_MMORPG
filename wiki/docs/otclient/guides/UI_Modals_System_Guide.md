@@ -1,14 +1,12 @@
----
-tags: [otclient, ui, modals, dialogs, system, guide, documentation]
-status: completed
-aliases: [Sistema de Modais, ModalDialog, UIMessageBox, Diálogos]
----
 
 # 🪟 Sistema de Modais e Diálogos
 
 > [!info] O Sistema de Modais e Diálogos do OTClient oferece funcionalidades avançadas para criar janelas modais, diálogos de confirmação e interfaces de interação com o usuário.
 
-## 📋 Índice
+
+---
+
+## 📋 Índice 📋
 - [[#Visão Geral]]
 - [[#Componentes do Sistema]]
 - [[#Implementação Prática]]
@@ -17,11 +15,14 @@ aliases: [Sistema de Modais, ModalDialog, UIMessageBox, Diálogos]
 
 ---
 
-## 🎯 Visão Geral
+
+---
+
+## 🎯 Visão Geral 🎯
 
 O **Sistema de Modais e Diálogos** do OTClient oferece funcionalidades avançadas para criar janelas modais, diálogos de confirmação e interfaces de interação com o usuário. O sistema é integrado com o protocolo do jogo e oferece diferentes tipos de modais.
 
-### 🎨 **Características Principais**
+### 🎨 **Características Principais** 📝
 
 - **ModalDialog**: Diálogos do servidor com botões e escolhas
 - **UIMessageBox**: Caixas de mensagem customizáveis
@@ -32,9 +33,12 @@ O **Sistema de Modais e Diálogos** do OTClient oferece funcionalidades avançad
 
 ---
 
-## 🔧 Componentes do Sistema
 
-### 🏗️ **Arquitetura do Sistema**
+---
+
+## 🔧 Componentes do Sistema ⚙️
+
+### 🏗️ **Arquitetura do Sistema** 📝
 
 ```
 Sistema de Modais
@@ -62,12 +66,13 @@ Sistema de Modais
        └─ Auto-focus
 ```
 
-### 🎭 **Tipos de Modais**
+### 🎭 **Tipos de Modais** 📝
 
 #### 🎮 **ModalDialog (Servidor)**
 
 Diálogos enviados pelo servidor do jogo com botões e escolhas predefinidas.
 
+#### Nível Basic
 ```lua
 -- Estrutura do ModalDialog
 {
@@ -87,10 +92,68 @@ Diálogos enviados pelo servidor do jogo com botões e escolhas predefinidas.
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Estrutura do ModalDialog
+{
+    id = windowId,           -- ID único do diálogo
+    title = "Título",        -- Título da janela
+    message = "Mensagem",    -- Texto principal
+    buttons = {              -- Lista de botões
+        {id = 1, text = "OK"},
+        {id = 2, text = "Cancelar"}
+    },
+    choices = {              -- Lista de escolhas (opcional)
+        {id = 1, text = "Escolha 1"},
+        {id = 2, text = "Escolha 2"}
+    },
+    enterButton = 1,         -- Botão padrão (Enter)
+    escapeButton = 2         -- Botão de escape (ESC)
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Estrutura do ModalDialog
+{
+    id = windowId,           -- ID único do diálogo
+    title = "Título",        -- Título da janela
+    message = "Mensagem",    -- Texto principal
+    buttons = {              -- Lista de botões
+        {id = 1, text = "OK"},
+        {id = 2, text = "Cancelar"}
+    },
+    choices = {              -- Lista de escolhas (opcional)
+        {id = 1, text = "Escolha 1"},
+        {id = 2, text = "Escolha 2"}
+    },
+    enterButton = 1,         -- Botão padrão (Enter)
+    escapeButton = 2         -- Botão de escape (ESC)
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### 💬 **UIMessageBox (Cliente)**
 
 Caixas de mensagem criadas pelo cliente para confirmações e notificações.
 
+#### Nível Basic
 ```lua
 -- Estrutura do UIMessageBox
 {
@@ -105,12 +168,60 @@ Caixas de mensagem criadas pelo cliente para confirmações e notificações.
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Estrutura do UIMessageBox
+{
+    title = "Título",        -- Título da janela
+    message = "Mensagem",    -- Conteúdo principal
+    buttons = {              -- Botões customizáveis
+        {text = "OK", callback = function() end},
+        {text = "Cancelar", callback = function() end}
+    },
+    onEnter = callback,      -- Callback para Enter
+    onEscape = callback      -- Callback para Escape
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Estrutura do UIMessageBox
+{
+    title = "Título",        -- Título da janela
+    message = "Mensagem",    -- Conteúdo principal
+    buttons = {              -- Botões customizáveis
+        {text = "OK", callback = function() end},
+        {text = "Cancelar", callback = function() end}
+    },
+    onEnter = callback,      -- Callback para Enter
+    onEscape = callback      -- Callback para Escape
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### 🪟 **Janelas Modais Customizadas**
 
 Janelas criadas pelo desenvolvedor com comportamento modal.
 
 ```lua
 -- Estrutura de Janela Modal
+    --  Estrutura de Janela Modal (traduzido)
 {
     modal = true,            -- Comportamento modal
     draggable = true,        -- Arrastável
@@ -122,12 +233,16 @@ Janelas criadas pelo desenvolvedor com comportamento modal.
 
 ---
 
-## 💡 Implementação Prática
 
-### 🐍 **API Lua**
+---
+
+## 💡 Implementação Prática 📋
+
+### 🐍 **API Lua** 📝
 
 #### 📦 **Métodos de ModalDialog**
 
+#### Nível Basic
 ```lua
 -- Processar diálogo modal do servidor
 g_game.processModalDialog(id, title, message, buttons, enterButton, escapeButton, choices, priority)
@@ -141,13 +256,60 @@ g_game.onModalDialog = function(id, title, message, buttons, enterButton, escape
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Processar diálogo modal do servidor
+g_game.processModalDialog(id, title, message, buttons, enterButton, escapeButton, choices, priority)
+
+-- Responder ao diálogo modal
+g_game.answerModalDialog(id, buttonId, choice)
+
+-- Evento de diálogo modal
+g_game.onModalDialog = function(id, title, message, buttons, enterButton, escapeButton, choices, priority)
+    -- Implementar lógica do diálogo
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Processar diálogo modal do servidor
+g_game.processModalDialog(id, title, message, buttons, enterButton, escapeButton, choices, priority)
+
+-- Responder ao diálogo modal
+g_game.answerModalDialog(id, buttonId, choice)
+
+-- Evento de diálogo modal
+g_game.onModalDialog = function(id, title, message, buttons, enterButton, escapeButton, choices, priority)
+    -- Implementar lógica do diálogo
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### 🎯 **Métodos de UIMessageBox**
 
 ```lua
 -- Criar e exibir message box
+    --  Criar e exibir message box (traduzido)
 UIMessageBox.display(title, message, buttons, onEnterCallback, onEscapeCallback)
 
 -- Criar message box customizada
+    --  Criar message box customizada (traduzido)
 local messageBox = g_ui.createWidget('MessageBoxWindow', rootWidget)
 messageBox:setText(title)
 messageBox:addButton(text, callback)
@@ -157,24 +319,29 @@ messageBox:addButton(text, callback)
 
 ```lua
 -- Configurar janela como modal
+    --  Configurar janela como modal (traduzido)
 window:setModal(true)
 
 -- Gerenciar visibilidade
+    --  Gerenciar visibilidade (traduzido)
 window:show()
 window:hide()
 
 -- Gerenciar foco
+    --  Gerenciar foco (traduzido)
 window:focus()
 window:raise()
 window:lower()
 
 -- Eventos de teclado
+    --  Eventos de teclado (traduzido)
 window.onEnter = function(widget) end
 window.onEscape = function(widget) end
 ```
 
-### 🎮 **Implementação Completa do ModalDialog**
+### 🎮 **Implementação Completa do ModalDialog** 💻
 
+#### Inicialização e Configuração
 ```lua
 -- Variável global para o diálogo modal
 modalDialog = nil
@@ -197,6 +364,10 @@ end
 
 -- Destruir diálogo modal
 function destroyDialog()
+```
+
+#### Funcionalidade 1
+```lua
     if modalDialog then
         modalDialog:destroy()
         modalDialog = nil
@@ -237,6 +408,10 @@ function onModalDialog(id, title, message, buttons, enterButton, escapeButton, c
         if not labelHeight then
             labelHeight = label:getHeight()
         end
+```
+
+#### Funcionalidade 2
+```lua
     end
     
     -- Focar primeira escolha
@@ -265,6 +440,10 @@ function onModalDialog(id, title, message, buttons, enterButton, escapeButton, c
             if focusedChoice then
                 choice = focusedChoice.choiceId
             end
+```
+
+#### Funcionalidade 3
+```lua
             g_game.answerModalDialog(id, buttonId, choice)
             destroyDialog()
         end
@@ -302,6 +481,10 @@ function onModalDialog(id, title, message, buttons, enterButton, escapeButton, c
         if focusedChoice then
             choice = focusedChoice.choiceId
         end
+```
+
+#### Finalização
+```lua
         g_game.answerModalDialog(id, enterButton, choice)
         destroyDialog()
     end
@@ -321,7 +504,7 @@ function onModalDialog(id, title, message, buttons, enterButton, escapeButton, c
 end
 ```
 
-### 🎨 **Estilo OTUI para ModalDialog**
+### 🎨 **Estilo OTUI para ModalDialog** 📝
 
 ```otui
 ChoiceListLabel < Label
@@ -400,22 +583,28 @@ ModalDialog < MainWindow
 
 ---
 
-## 💡 Exemplos Práticos
 
-### 🎯 **Exemplo 1: Sistema de Confirmação**
+---
+
+## 💡 Exemplos Práticos 💡
+
+### 🎯 **Exemplo 1: Sistema de Confirmação** 🎮
 
 ```lua
 local ConfirmationSystem = {}
 
 function ConfirmationSystem.showConfirmation(title, message, onConfirm, onCancel)
+    -- Função: ConfirmationSystem
     local buttons = {
         {text = "Confirmar", callback = function()
             if onConfirm then
+    -- Verificação condicional
                 onConfirm()
             end
         end},
         {text = "Cancelar", callback = function()
             if onCancel then
+    -- Verificação condicional
                 onCancel()
             end
         end}
@@ -424,8 +613,10 @@ function ConfirmationSystem.showConfirmation(title, message, onConfirm, onCancel
     local messageBox = UIMessageBox.display(title, message, buttons)
     
     -- Configurar callbacks de teclado
+    --  Configurar callbacks de teclado (traduzido)
     messageBox.onEnter = function()
         if onConfirm then
+    -- Verificação condicional
             onConfirm()
         end
         messageBox:destroy()
@@ -433,6 +624,7 @@ function ConfirmationSystem.showConfirmation(title, message, onConfirm, onCancel
     
     messageBox.onEscape = function()
         if onCancel then
+    -- Verificação condicional
             onCancel()
         end
         messageBox:destroy()
@@ -442,6 +634,7 @@ function ConfirmationSystem.showConfirmation(title, message, onConfirm, onCancel
 end
 
 -- Uso
+    --  Uso (traduzido)
 ConfirmationSystem.showConfirmation(
     "Confirmar Ação",
     "Tem certeza que deseja deletar este item?",
@@ -454,12 +647,13 @@ ConfirmationSystem.showConfirmation(
 )
 ```
 
-### 🎨 **Exemplo 2: Sistema de Notificação**
+### 🎨 **Exemplo 2: Sistema de Notificação** 🎮
 
 ```lua
 local NotificationSystem = {}
 
 function NotificationSystem.showNotification(title, message, duration)
+    -- Função: NotificationSystem
     duration = duration or 3000
     
     local buttons = {
@@ -473,6 +667,7 @@ function NotificationSystem.showNotification(title, message, duration)
     -- Auto-fechar após duração
     scheduleEvent(function()
         if messageBox then
+    -- Verificação condicional
             messageBox:destroy()
         end
     end, duration)
@@ -481,6 +676,7 @@ function NotificationSystem.showNotification(title, message, duration)
 end
 
 -- Uso
+    --  Uso (traduzido)
 NotificationSystem.showNotification(
     "Sucesso!",
     "Item adicionado ao inventário com sucesso!",
@@ -488,8 +684,9 @@ NotificationSystem.showNotification(
 )
 ```
 
-### 🪟 **Exemplo 3: Modal Customizado**
+### 🪟 **Exemplo 3: Modal Customizado** 🎮
 
+#### Inicialização e Configuração
 ```lua
 local CustomModalSystem = {}
 
@@ -522,6 +719,10 @@ function CustomModalSystem.createCustomModal(title, content, buttons)
             if buttonData.callback then
                 buttonData.callback()
             end
+```
+
+#### Funcionalidade 1
+```lua
             modal:destroy()
         end
     end
@@ -546,6 +747,10 @@ function CustomModalSystem.createCustomModal(title, content, buttons)
     
     return modal
 end
+```
+
+#### Finalização
+```lua
 
 -- Uso
 CustomModalSystem.createCustomModal(
@@ -564,10 +769,14 @@ CustomModalSystem.createCustomModal(
 
 ---
 
-## ✅ Melhores Práticas
 
-### 🎯 **Uso Eficiente**
+---
 
+## ✅ Melhores Práticas 📋
+
+### 🎯 **Uso Eficiente** 📝
+
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Sempre destruir modais após uso
 function showModalAndCleanup(title, message)
@@ -594,6 +803,10 @@ function showUniqueModal(title, message)
     modal:setModal(true)
     -- ... configuração
 end
+```
+
+#### Funcionalidade 1
+```lua
 
 -- ✅ BOM: Usar callbacks para flexibilidade
 function createModalWithCallbacks(title, content, callbacks)
@@ -616,6 +829,10 @@ end
 
 -- ❌ EVITE: Não destruir modais
 function badModalExample(title, message)
+```
+
+#### Finalização
+```lua
     local modal = UIMessageBox.display(title, message, {
         {text = "OK", callback = function()
             -- Modal não é destruído - vazamento de memória!
@@ -631,11 +848,13 @@ function badMultipleModals()
 end
 ```
 
-### 🎨 **Feedback Visual**
+### 🎨 **Feedback Visual** 📝
 
 ```lua
 -- ✅ BOM: Feedback visual para modais
+    --  ✅ BOM: Feedback visual para modais (traduzido)
 function showModalWithFeedback(title, message, type)
+    -- Função: showModalWithFeedback
     local colors = {
         success = '#27ae60',
         error = '#e74c3c',
@@ -650,13 +869,16 @@ function showModalWithFeedback(title, message, type)
     })
     
     -- Aplicar cor baseada no tipo
+    --  Aplicar cor baseada no tipo (traduzido)
     if colors[type] then
+    -- Verificação condicional
         modal:getChildById('title'):setColor(colors[type])
     end
 end
 
 -- ✅ BOM: Animações suaves
 function showModalWithAnimation(title, message)
+    -- Função: showModalWithAnimation
     local modal = g_ui.createWidget('MainWindow', rootWidget)
     modal:setModal(true)
     modal:setText(title)
@@ -673,8 +895,9 @@ function showModalWithAnimation(title, message)
 end
 ```
 
-### 🔧 **Validação Robusta**
+### 🔧 **Validação Robusta** 📝
 
+#### Inicialização e Configuração
 ```lua
 -- ✅ BOM: Validação de parâmetros
 function validateModalParams(title, message, buttons)
@@ -702,6 +925,10 @@ local modalQueue = {}
 local currentModal = nil
 
 function showModalWithPriority(title, message, priority)
+```
+
+#### Funcionalidade 1
+```lua
     priority = priority or 1
     
     table.insert(modalQueue, {
@@ -729,6 +956,10 @@ function processModalQueue()
             currentModal = nil
             processModalQueue()
         end}
+```
+
+#### Finalização
+```lua
     })
 end
 ```

@@ -65,6 +65,7 @@ Copiar apenas as seções modificadas de cada arquivo:
 #### **Tarefa 2: NPC Backpack**
 ```lua
 -- Em modules/game_npctrade/npctrade.lua
+    --  Em modules/game_npctrade/npctrade.lua (traduzido)
 -- Substituir função onTradeTypeChange (linha ~157)
 -- Adicionar interceptação de g_game.buyItem (linha ~170)
 ```
@@ -72,6 +73,7 @@ Copiar apenas as seções modificadas de cada arquivo:
 #### **Tarefa 3: Bosstiary Hide**
 ```lua
 -- Em modules/game_cyclopedia/game_cyclopedia.lua
+    --  Em modules/game_cyclopedia/game_cyclopedia.lua (traduzido)
 -- Adicionar interceptação de addToggleButton (linha ~47)
 -- Comentar criação do botão bosstiary (linha ~58)
 ```
@@ -79,12 +81,14 @@ Copiar apenas as seções modificadas de cada arquivo:
 #### **Tarefa 4: Locales Disable**
 ```lua
 -- Em modules/client_locales/locales.lua
+    --  Em modules/client_locales/locales.lua (traduzido)
 -- Substituir funções init(), terminate(), tr(), trn()
 ```
 
 #### **Tarefa 5: Auras/Asas**
 ```lua
 -- Em modules/game_outfit/outfit.lua
+    --  Em modules/game_outfit/outfit.lua (traduzido)
 -- Adicionar interceptação de g_ui.createWidget no início
 -- Adicionar função hideAurasAndWings()
 ```

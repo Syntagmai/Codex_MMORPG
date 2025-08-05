@@ -41,8 +41,11 @@ status: template
 ### 1. **Recebimento de Tarefa**
 ```lua
 -- Exemplo de recebimento
+    --  Exemplo de recebimento (traduzido)
 function receiveTask(task)
+    -- Função: receiveTask
     -- Processamento da tarefa
+    --  Processamento da tarefa (traduzido)
 end
 ```
 
@@ -50,6 +53,7 @@ end
 ```lua
 -- Exemplo de análise
 function analyzeContext(context)
+    -- Função: analyzeContext
     -- Análise do contexto
 end
 ```
@@ -58,6 +62,7 @@ end
 ```lua
 -- Exemplo de execução
 function executeTask(task)
+    -- Função: executeTask
     -- Execução da tarefa
 end
 ```
@@ -66,6 +71,7 @@ end
 ```lua
 -- Exemplo de relatório
 function generateReport(results)
+    -- Função: generateReport
     -- Geração do relatório
 end
 ```
@@ -94,12 +100,48 @@ end
 ## 🔧 Configuração
 
 ### **Parâmetros Padrão**
+#### Nível Basic
 ```json
 {
   "timeout": 300,
   "retry_attempts": 3,
   "priority": "medium"
 }
+```
+
+#### Nível Intermediate
+```json
+{
+  "timeout": 300,
+  "retry_attempts": 3,
+  "priority": "medium"
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```json
+{
+  "timeout": 300,
+  "retry_attempts": 3,
+  "priority": "medium"
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **Variáveis de Ambiente**
@@ -110,16 +152,78 @@ end
 ## 📝 Exemplos de Uso
 
 ### **Cenário 1: [Descrição]**
+#### Nível Basic
 ```lua
 -- Exemplo de código
 local agent = AgentTemplate.new()
 agent:processTask("exemplo_tarefa")
 ```
 
+#### Nível Intermediate
+```lua
+-- Exemplo de código
+local agent = AgentTemplate.new()
+agent:processTask("exemplo_tarefa")
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Exemplo de código
+local agent = AgentTemplate.new()
+agent:processTask("exemplo_tarefa")
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **Cenário 2: [Descrição]**
+#### Nível Basic
 ```lua
 -- Exemplo de código
 local result = agent:analyzeData(data)
+```
+
+#### Nível Intermediate
+```lua
+-- Exemplo de código
+local result = agent:analyzeData(data)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Exemplo de código
+local result = agent:analyzeData(data)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## 🚨 Tratamento de Erros
@@ -133,7 +237,9 @@ local result = agent:analyzeData(data)
 ```lua
 -- Exemplo de recuperação
 function handleError(error)
+    -- Função: handleError
     -- Tratamento do erro
+    --  Tratamento do erro (traduzido)
 end
 ```
 

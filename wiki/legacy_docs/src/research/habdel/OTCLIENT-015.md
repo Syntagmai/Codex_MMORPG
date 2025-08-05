@@ -18,6 +18,7 @@ Analisar profundamente o sistema **Sistema de Quests** do OTClient usando metodo
 ### **Estrutura do Sistema**
 ```lua
 -- Exemplo de estrutura do sistema Sistema de Quests
+    --  Exemplo de estrutura do sistema Sistema de Quests (traduzido)
 -- Será preenchido durante a análise
 ```
 
@@ -29,6 +30,7 @@ Analisar profundamente o sistema **Sistema de Quests** do OTClient usando metodo
 ### **APIs e Interfaces**
 ```lua
 -- APIs principais do sistema
+    --  APIs principais do sistema (traduzido)
 -- Será documentado durante a análise
 ```
 

@@ -74,6 +74,7 @@ A classe `UIWidget` é definida em `src/framework/ui/uiwidget.h` e implementada 
 
 #### 🔧 Métodos Core
 
+#### Nível Basic
 ```cpp
 // Construtor e Destrutor
 UIWidget();
@@ -118,8 +119,116 @@ void raise();
 void lower();
 ```
 
+#### Nível Intermediate
+```cpp
+// Construtor e Destrutor
+UIWidget();
+~UIWidget();
+
+// Renderização
+virtual void drawSelf(DrawPoolType drawPane);
+virtual void draw(const Rect& visibleRect, DrawPoolType drawPane);
+protected: virtual void drawChildren(const Rect& visibleRect, DrawPoolType drawPane);
+
+// Gerenciamento de Hierarquia
+void addChild(const UIWidgetPtr& child);
+void insertChild(int32_t index, const UIWidgetPtr& child);
+void removeChild(const UIWidgetPtr& child);
+void focusChild(const UIWidgetPtr& child, Fw::FocusReason reason);
+void focusNextChild(Fw::FocusReason reason, bool rotate = false);
+void focusPreviousChild(Fw::FocusReason reason, bool rotate = false);
+
+// Posicionamento e Layout
+void setRect(const Rect& rect);
+Rect getRect() const;
+void setPosition(const Point& position);
+Point getPosition() const;
+void setSize(const Size& size);
+Size getSize() const;
+
+// Estados e Propriedades
+void setEnabled(bool enabled);
+bool isEnabled() const;
+void setVisible(bool visible);
+bool isVisible() const;
+void setFocusable(bool focusable);
+bool isFocusable() const;
+void setDraggable(bool draggable);
+bool isDraggable() const;
+
+// Foco e Interação
+void focus(Fw::FocusReason reason = Fw::ActiveFocusReason);
+void unfocus();
+bool isFocused() const;
+void raise();
+void lower();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Construtor e Destrutor
+UIWidget();
+~UIWidget();
+
+// Renderização
+virtual void drawSelf(DrawPoolType drawPane);
+virtual void draw(const Rect& visibleRect, DrawPoolType drawPane);
+protected: virtual void drawChildren(const Rect& visibleRect, DrawPoolType drawPane);
+
+// Gerenciamento de Hierarquia
+void addChild(const UIWidgetPtr& child);
+void insertChild(int32_t index, const UIWidgetPtr& child);
+void removeChild(const UIWidgetPtr& child);
+void focusChild(const UIWidgetPtr& child, Fw::FocusReason reason);
+void focusNextChild(Fw::FocusReason reason, bool rotate = false);
+void focusPreviousChild(Fw::FocusReason reason, bool rotate = false);
+
+// Posicionamento e Layout
+void setRect(const Rect& rect);
+Rect getRect() const;
+void setPosition(const Point& position);
+Point getPosition() const;
+void setSize(const Size& size);
+Size getSize() const;
+
+// Estados e Propriedades
+void setEnabled(bool enabled);
+bool isEnabled() const;
+void setVisible(bool visible);
+bool isVisible() const;
+void setFocusable(bool focusable);
+bool isFocusable() const;
+void setDraggable(bool draggable);
+bool isDraggable() const;
+
+// Foco e Interação
+void focus(Fw::FocusReason reason = Fw::ActiveFocusReason);
+void unfocus();
+bool isFocused() const;
+void raise();
+void lower();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### 🎨 Sistema de Estados
 
+#### Nível Basic
 ```cpp
 // Flags de Propriedades
 enum FlagProp : uint32_t {
@@ -158,8 +267,104 @@ bool hasState(Fw::WidgetState state);
 void updateStates();
 ```
 
+#### Nível Intermediate
+```cpp
+// Flags de Propriedades
+enum FlagProp : uint32_t {
+    PropTextWrap = 1 << 0,
+    PropTextVerticalAutoResize = 1 << 1,
+    PropTextHorizontalAutoResize = 1 << 2,
+    PropTextOnlyUpperCase = 1 << 3,
+    PropEnabled = 1 << 4,
+    PropVisible = 1 << 5,
+    PropFocusable = 1 << 6,
+    PropFixedSize = 1 << 7,
+    PropPhantom = 1 << 8,
+    PropDraggable = 1 << 9,
+    PropDestroyed = 1 << 10,
+    PropClipping = 1 << 11,
+    PropCustomId = 1 << 12,
+    PropUpdateEventScheduled = 1 << 13,
+    PropUpdatingMove = 1 << 14,
+    PropLoadingStyle = 1 << 15,
+    PropUpdateStyleScheduled = 1 << 16,
+    PropFirstOnStyle = 1 << 17,
+    PropImageBordered = 1 << 18,
+    PropImageFixedRatio = 1 << 19,
+    PropImageRepeated = 1 << 20,
+    PropImageSmooth = 1 << 21,
+    PropImageAutoResize = 1 << 22,
+    PropImageIndividualAnimation = 1 << 23,
+    PropUpdateChildrenIndexStates = 1 << 24,
+    PropDisableUpdateTemporarily = 1 << 25,
+    PropOnHTML = 1 << 26
+};
+
+// Gerenciamento de Estados
+bool setState(Fw::WidgetState state, bool on);
+bool hasState(Fw::WidgetState state);
+void updateStates();
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Flags de Propriedades
+enum FlagProp : uint32_t {
+    PropTextWrap = 1 << 0,
+    PropTextVerticalAutoResize = 1 << 1,
+    PropTextHorizontalAutoResize = 1 << 2,
+    PropTextOnlyUpperCase = 1 << 3,
+    PropEnabled = 1 << 4,
+    PropVisible = 1 << 5,
+    PropFocusable = 1 << 6,
+    PropFixedSize = 1 << 7,
+    PropPhantom = 1 << 8,
+    PropDraggable = 1 << 9,
+    PropDestroyed = 1 << 10,
+    PropClipping = 1 << 11,
+    PropCustomId = 1 << 12,
+    PropUpdateEventScheduled = 1 << 13,
+    PropUpdatingMove = 1 << 14,
+    PropLoadingStyle = 1 << 15,
+    PropUpdateStyleScheduled = 1 << 16,
+    PropFirstOnStyle = 1 << 17,
+    PropImageBordered = 1 << 18,
+    PropImageFixedRatio = 1 << 19,
+    PropImageRepeated = 1 << 20,
+    PropImageSmooth = 1 << 21,
+    PropImageAutoResize = 1 << 22,
+    PropImageIndividualAnimation = 1 << 23,
+    PropUpdateChildrenIndexStates = 1 << 24,
+    PropDisableUpdateTemporarily = 1 << 25,
+    PropOnHTML = 1 << 26
+};
+
+// Gerenciamento de Estados
+bool setState(Fw::WidgetState state, bool on);
+bool hasState(Fw::WidgetState state);
+void updateStates();
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 #### 🎯 Sistema de Eventos
 
+#### Nível Basic
 ```cpp
 // Eventos de Mouse
 virtual bool onMousePress(const Point& mousePos, Fw::MouseButton button);
@@ -191,6 +396,87 @@ virtual void onLayoutUpdate();
 virtual void onStyleApply(std::string_view styleName, const OTMLNodePtr& styleNode);
 ```
 
+#### Nível Intermediate
+```cpp
+// Eventos de Mouse
+virtual bool onMousePress(const Point& mousePos, Fw::MouseButton button);
+virtual bool onMouseRelease(const Point& mousePos, Fw::MouseButton button);
+virtual bool onMouseMove(const Point& mousePos, const Point& mouseMoved);
+virtual bool onMouseWheel(const Point& mousePos, Fw::MouseWheelDirection direction);
+virtual bool onClick(const Point& mousePos);
+virtual bool onDoubleClick(const Point& mousePos);
+
+// Eventos de Teclado
+virtual bool onKeyText(std::string_view keyText);
+virtual bool onKeyDown(uint8_t keyCode, int keyboardModifiers);
+virtual bool onKeyPress(uint8_t keyCode, int keyboardModifiers, int autoRepeatTicks);
+virtual bool onKeyUp(uint8_t keyCode, int keyboardModifiers);
+
+// Eventos de Foco
+virtual void onFocusChange(bool focused, Fw::FocusReason reason);
+virtual void onChildFocusChange(const UIWidgetPtr& focusedChild, const UIWidgetPtr& unfocusedChild, Fw::FocusReason reason);
+
+// Eventos de Drag & Drop
+virtual bool onDragEnter(const Point& mousePos);
+virtual bool onDragLeave(UIWidgetPtr droppedWidget, const Point& mousePos);
+virtual bool onDragMove(const Point& mousePos, const Point& mouseMoved);
+virtual bool onDrop(UIWidgetPtr draggedWidget, const Point& mousePos);
+
+// Eventos de Layout e Estilo
+virtual void onGeometryChange(const Rect& oldRect, const Rect& newRect);
+virtual void onLayoutUpdate();
+virtual void onStyleApply(std::string_view styleName, const OTMLNodePtr& styleNode);
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// Eventos de Mouse
+virtual bool onMousePress(const Point& mousePos, Fw::MouseButton button);
+virtual bool onMouseRelease(const Point& mousePos, Fw::MouseButton button);
+virtual bool onMouseMove(const Point& mousePos, const Point& mouseMoved);
+virtual bool onMouseWheel(const Point& mousePos, Fw::MouseWheelDirection direction);
+virtual bool onClick(const Point& mousePos);
+virtual bool onDoubleClick(const Point& mousePos);
+
+// Eventos de Teclado
+virtual bool onKeyText(std::string_view keyText);
+virtual bool onKeyDown(uint8_t keyCode, int keyboardModifiers);
+virtual bool onKeyPress(uint8_t keyCode, int keyboardModifiers, int autoRepeatTicks);
+virtual bool onKeyUp(uint8_t keyCode, int keyboardModifiers);
+
+// Eventos de Foco
+virtual void onFocusChange(bool focused, Fw::FocusReason reason);
+virtual void onChildFocusChange(const UIWidgetPtr& focusedChild, const UIWidgetPtr& unfocusedChild, Fw::FocusReason reason);
+
+// Eventos de Drag & Drop
+virtual bool onDragEnter(const Point& mousePos);
+virtual bool onDragLeave(UIWidgetPtr droppedWidget, const Point& mousePos);
+virtual bool onDragMove(const Point& mousePos, const Point& mouseMoved);
+virtual bool onDrop(UIWidgetPtr draggedWidget, const Point& mousePos);
+
+// Eventos de Layout e Estilo
+virtual void onGeometryChange(const Rect& oldRect, const Rect& newRect);
+virtual void onLayoutUpdate();
+virtual void onStyleApply(std::string_view styleName, const OTMLNodePtr& styleNode);
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🐍 API Lua
@@ -211,12 +497,14 @@ advancedWidget:setFocusable(true)
 advancedWidget:setDraggable(true)
 
 -- Gerenciamento de Hierarquia
+    --  Gerenciamento de Hierarquia (traduzido)
 local childWidget = g_ui.createWidget('UIWidget', advancedWidget)
 advancedWidget:addChild(childWidget)
 advancedWidget:insertChild(0, childWidget)
 advancedWidget:removeChild(childWidget)
 
 -- Busca de Filhos
+    --  Busca de Filhos (traduzido)
 local child = advancedWidget:getChildById('childId')
 local children = advancedWidget:getChildren()
 local childCount = advancedWidget:getChildCount()
@@ -240,6 +528,7 @@ local isDraggable = advancedWidget:isDraggable()
 local isFocused = advancedWidget:isFocused()
 
 -- Controle de Foco
+    --  Controle de Foco (traduzido)
 advancedWidget:focus()
 advancedWidget:unfocus()
 advancedWidget:raise()
@@ -250,6 +539,7 @@ advancedWidget:lower()
 
 ```lua
 -- Eventos de Mouse
+    --  Eventos de Mouse (traduzido)
 advancedWidget.onMousePress = function(widget, mousePos, button)
     print('Mouse pressed on widget:', widget:getId())
 end
@@ -267,6 +557,7 @@ advancedWidget.onDoubleClick = function(widget, mousePos)
 end
 
 -- Eventos de Teclado
+    --  Eventos de Teclado (traduzido)
 advancedWidget.onKeyDown = function(widget, keyCode, keyboardModifiers)
     print('Key pressed:', keyCode)
 end
@@ -276,8 +567,10 @@ advancedWidget.onKeyUp = function(widget, keyCode, keyboardModifiers)
 end
 
 -- Eventos de Foco
+    --  Eventos de Foco (traduzido)
 advancedWidget.onFocusChange = function(widget, focused, reason)
     if focused then
+    -- Verificação condicional
         print('Widget gained focus:', widget:getId())
     else
         print('Widget lost focus:', widget:getId())
@@ -285,6 +578,7 @@ advancedWidget.onFocusChange = function(widget, focused, reason)
 end
 
 -- Eventos de Drag & Drop
+    --  Eventos de Drag & Drop (traduzido)
 advancedWidget.onDragEnter = function(widget, mousePos)
     print('Drag entered widget:', widget:getId())
     return true -- Aceitar drop
@@ -298,6 +592,7 @@ end
 
 ### 🎨 Sistema de Estilização
 
+#### Nível Basic
 ```lua
 -- Aplicação de Estilos
 advancedWidget:setStyleName('advancedWidgetStyle')
@@ -312,6 +607,57 @@ advancedWidget:setOpacity(0.8)
 advancedWidget:setLayout('vertical')
 advancedWidget:setLayout('horizontal')
 advancedWidget:setLayout('grid')
+```
+
+#### Nível Intermediate
+```lua
+-- Aplicação de Estilos
+advancedWidget:setStyleName('advancedWidgetStyle')
+advancedWidget:setStyleFromNode(styleNode)
+
+-- Estilização Dinâmica
+advancedWidget:setBackgroundColor('#FF0000')
+advancedWidget:setBorderColor('#00FF00')
+advancedWidget:setOpacity(0.8)
+
+-- Configuração de Layout
+advancedWidget:setLayout('vertical')
+advancedWidget:setLayout('horizontal')
+advancedWidget:setLayout('grid')
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Aplicação de Estilos
+advancedWidget:setStyleName('advancedWidgetStyle')
+advancedWidget:setStyleFromNode(styleNode)
+
+-- Estilização Dinâmica
+advancedWidget:setBackgroundColor('#FF0000')
+advancedWidget:setBorderColor('#00FF00')
+advancedWidget:setOpacity(0.8)
+
+-- Configuração de Layout
+advancedWidget:setLayout('vertical')
+advancedWidget:setLayout('horizontal')
+advancedWidget:setLayout('grid')
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---
@@ -349,6 +695,7 @@ Baseado na análise do código-fonte, o OTClient oferece os seguintes widgets es
 local CustomAdvancedWidget = {}
 
 function CustomAdvancedWidget.create()
+    -- Função: CustomAdvancedWidget
     local widget = g_ui.createWidget('UIWidget')
     
     -- Configuração inicial
@@ -356,6 +703,7 @@ function CustomAdvancedWidget.create()
     widget:setSize({width = 300, height = 200})
     
     -- Adicionar elementos internos
+    --  Adicionar elementos internos (traduzido)
     local title = g_ui.createWidget('UILabel', widget)
     title:setText('Widget Avançado')
     title:setPosition({x = 10, y = 10})
@@ -365,12 +713,14 @@ function CustomAdvancedWidget.create()
     content:setSize({width = 280, height = 150})
     
     -- Configurar eventos
+    --  Configurar eventos (traduzido)
     widget.onMousePress = function(widget, mousePos, button)
         print('Custom widget pressed!')
     end
     
     widget.onFocusChange = function(widget, focused, reason)
         if focused then
+    -- Verificação condicional
             widget:setBackgroundColor('#FFFF00')
         else
             widget:setBackgroundColor('#FFFFFF')
@@ -381,6 +731,7 @@ function CustomAdvancedWidget.create()
 end
 
 -- Uso do Widget Customizado
+    --  Uso do Widget Customizado (traduzido)
 local myWidget = CustomAdvancedWidget.create()
 myWidget:setPosition({x = 100, y = 100})
 ```
@@ -391,6 +742,29 @@ myWidget:setPosition({x = 100, y = 100})
 
 ### 🎯 Exemplo 1: Widget com Hierarquia Complexa
 
+#### Nível Basic
+```lua
+-- Criar widget principal
+local mainWidget = g_ui.createWidget('UIWidget')
+-- Criar cabeçalho
+local header = g_ui.createWidget('UIWidget', mainWidget)
+local title = g_ui.createWidget('UILabel', header)
+-- Criar área de conteúdo
+local content = g_ui.createWidget('UIWidget', mainWidget)
+-- Adicionar widgets filhos ao conteúdo
+    local child = g_ui.createWidget('UIWidget', content)
+    -- Adicionar evento de clique
+    child.onClick = function(widget, mousePos)
+        print('Child widget clicked:', widget:getId())
+    end
+end
+-- Configurar eventos do widget principal
+mainWidget.onMousePress = function(widget, mousePos, button)
+    print('Main widget pressed at:', mousePos.x, mousePos.y)
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Criar widget principal
 local mainWidget = g_ui.createWidget('UIWidget')
@@ -435,6 +809,61 @@ mainWidget.onMousePress = function(widget, mousePos, button)
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Criar widget principal
+local mainWidget = g_ui.createWidget('UIWidget')
+mainWidget:setId('mainContainer')
+mainWidget:setSize({width = 400, height = 300})
+
+-- Criar cabeçalho
+local header = g_ui.createWidget('UIWidget', mainWidget)
+header:setId('header')
+header:setPosition({x = 0, y = 0})
+header:setSize({width = 400, height = 50})
+header:setBackgroundColor('#2C3E50')
+
+local title = g_ui.createWidget('UILabel', header)
+title:setText('Widget Avançado')
+title:setPosition({x = 10, y = 15})
+title:setColor('#FFFFFF')
+
+-- Criar área de conteúdo
+local content = g_ui.createWidget('UIWidget', mainWidget)
+content:setId('content')
+content:setPosition({x = 0, y = 50})
+content:setSize({width = 400, height = 250})
+
+-- Adicionar widgets filhos ao conteúdo
+for i = 1, 5 do
+    local child = g_ui.createWidget('UIWidget', content)
+    child:setId('child_' .. i)
+    child:setPosition({x = 10, y = (i-1) * 40 + 10})
+    child:setSize({width = 380, height = 30})
+    child:setBackgroundColor('#ECF0F1')
+    
+    -- Adicionar evento de clique
+    child.onClick = function(widget, mousePos)
+        print('Child widget clicked:', widget:getId())
+    end
+end
+
+-- Configurar eventos do widget principal
+mainWidget.onMousePress = function(widget, mousePos, button)
+    print('Main widget pressed at:', mousePos.x, mousePos.y)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎨 Exemplo 2: Widget com Drag & Drop
 
 ```lua
@@ -447,6 +876,7 @@ draggableWidget:setBackgroundColor('#E74C3C')
 draggableWidget:setDraggable(true)
 
 -- Widget de destino
+    --  Widget de destino (traduzido)
 local dropZone = g_ui.createWidget('UIWidget')
 dropZone:setId('dropZone')
 dropZone:setSize({width = 200, height = 200})
@@ -454,6 +884,7 @@ dropZone:setPosition({x = 200, y = 50})
 dropZone:setBackgroundColor('#3498DB')
 
 -- Eventos de Drag & Drop
+    --  Eventos de Drag & Drop (traduzido)
 draggableWidget.onDragEnter = function(widget, mousePos)
     print('Dragging widget entered drop zone')
     return true
@@ -466,12 +897,14 @@ end
 draggableWidget.onDrop = function(widget, draggedWidget, mousePos)
     print('Widget dropped on drop zone')
     -- Processar o drop aqui
+    --  Processar o drop aqui (traduzido)
     return true
 end
 ```
 
 ### 🎯 Exemplo 3: Widget com Estados Dinâmicos
 
+#### Inicialização e Configuração
 ```lua
 -- Widget com estados múltiplos
 local stateWidget = g_ui.createWidget('UIWidget')
@@ -500,6 +933,10 @@ local function updateState(newState)
     if textWidget then
         textWidget:setText(state.text)
     end
+```
+
+#### Funcionalidade 1
+```lua
 end
 
 -- Criar label para mostrar estado
@@ -521,6 +958,10 @@ stateWidget.onMousePress = function(widget, mousePos, button)
     if currentState ~= 'disabled' then
         updateState('pressed')
     end
+```
+
+#### Finalização
+```lua
 end
 
 stateWidget.onMouseRelease = function(widget, mousePos, button)
@@ -540,13 +981,42 @@ updateState('normal')
 ### 🎯 Organização e Estrutura
 
 1. **Identificação Única**: Sempre use IDs únicos para widgets
+#### Nível Basic
 ```lua
 widget:setId('uniqueWidgetId')
+```
+
+#### Nível Intermediate
+```lua
+widget:setId('uniqueWidgetId')
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+widget:setId('uniqueWidgetId')
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 2. **Hierarquia Clara**: Organize widgets em hierarquia lógica
 ```lua
 -- Bom: Hierarquia clara
+    --  Bom: Hierarquia clara (traduzido)
 local container = g_ui.createWidget('UIWidget')
 local header = g_ui.createWidget('UIWidget', container)
 local content = g_ui.createWidget('UIWidget', container)
@@ -560,6 +1030,7 @@ local displayWidget = g_ui.createWidget('UIWidget')
 displayWidget:setId('displayWidget')
 
 -- Widget para entrada
+    --  Widget para entrada (traduzido)
 local inputWidget = g_ui.createWidget('UITextEdit')
 inputWidget:setId('inputWidget')
 ```
@@ -570,6 +1041,7 @@ inputWidget:setId('inputWidget')
 ```lua
 local function createWidgetOnDemand()
     if not widgetCache then
+    -- Verificação condicional
         widgetCache = g_ui.createWidget('UIWidget')
         -- Configuração inicial
     end
@@ -580,10 +1052,12 @@ end
 2. **Reutilização de Widgets**: Reutilize widgets quando possível
 ```lua
 -- Pool de widgets
+    --  Pool de widgets (traduzido)
 local widgetPool = {}
 
 local function getWidgetFromPool()
     if #widgetPool > 0 then
+    -- Verificação condicional
         return table.remove(widgetPool)
     else
         return g_ui.createWidget('UIWidget')
@@ -597,6 +1071,7 @@ end
 ```
 
 3. **Otimização de Renderização**: Minimize redraws desnecessários
+#### Nível Basic
 ```lua
 -- Agrupar mudanças de propriedades
 widget:setPosition({x = 100, y = 100})
@@ -605,9 +1080,45 @@ widget:setBackgroundColor('#FF0000')
 -- Apenas um redraw será executado
 ```
 
+#### Nível Intermediate
+```lua
+-- Agrupar mudanças de propriedades
+widget:setPosition({x = 100, y = 100})
+widget:setSize({width = 200, height = 150})
+widget:setBackgroundColor('#FF0000')
+-- Apenas um redraw será executado
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Agrupar mudanças de propriedades
+widget:setPosition({x = 100, y = 100})
+widget:setSize({width = 200, height = 150})
+widget:setBackgroundColor('#FF0000')
+-- Apenas um redraw será executado
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🎯 Gerenciamento de Eventos
 
 1. **Limpeza de Eventos**: Sempre limpe eventos quando destruir widgets
+#### Nível Basic
 ```lua
 local function cleanupWidget(widget)
     widget.onMousePress = nil
@@ -617,6 +1128,43 @@ local function cleanupWidget(widget)
 end
 ```
 
+#### Nível Intermediate
+```lua
+local function cleanupWidget(widget)
+    widget.onMousePress = nil
+    widget.onKeyDown = nil
+    widget.onFocusChange = nil
+    widget:destroy()
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local function cleanupWidget(widget)
+    widget.onMousePress = nil
+    widget.onKeyDown = nil
+    widget.onFocusChange = nil
+    widget:destroy()
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 2. **Prevenção de Memory Leaks**: Use referências fracas quando necessário
 ```lua
 -- Usar referências fracas para callbacks
@@ -624,7 +1172,9 @@ local weakRef = setmetatable({}, {__mode = 'v'})
 weakRef.widget = widget
 widget.onClick = function()
     if weakRef.widget then
+    -- Verificação condicional
         -- Processar clique
+    --  Processar clique (traduzido)
     end
 end
 ```
@@ -633,10 +1183,12 @@ end
 ```lua
 widget.onMousePress = function(widget, mousePos, button)
     if not mousePos or not button then
+    -- Verificação condicional
         return false
     end
     
     -- Processar evento
+    --  Processar evento (traduzido)
     return true
 end
 ```
@@ -668,6 +1220,7 @@ local function measureWidgetPerformance(widgetCount)
     
     local widgets = {}
     for i = 1, widgetCount do
+    -- Loop de repetição
         widgets[i] = g_ui.createWidget('UIWidget')
     end
     
@@ -676,12 +1229,15 @@ local function measureWidgetPerformance(widgetCount)
     -- Medir tempo de renderização
     startTime = os.clock()
     for _, widget in ipairs(widgets) do
+    -- Loop de repetição
         widget:setPosition({x = math.random(100), y = math.random(100)})
     end
     local renderTime = os.clock() - startTime
     
     -- Limpeza
+    --  Limpeza (traduzido)
     for _, widget in ipairs(widgets) do
+    -- Loop de repetição
         widget:destroy()
     end
     

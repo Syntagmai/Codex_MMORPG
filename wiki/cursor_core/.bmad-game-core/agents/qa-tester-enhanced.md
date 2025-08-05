@@ -245,6 +245,7 @@ dependencies:
 #### **Log Level Interpretation:**
 ```lua
 -- Log levels and their meaning
+    --  Log levels and their meaning (traduzido)
 TRACE = 0  -- Detailed execution flow
 DEBUG = 1  -- Debug information
 INFO = 2   -- General information
@@ -256,6 +257,7 @@ FATAL = 5  -- Fatal errors (client crash)
 #### **Log Category Analysis:**
 ```lua
 -- Common log categories
+    --  Common log categories (traduzido)
 SYSTEM    -- Core system operations
 NETWORK   -- Network communication
 GAME      -- Game logic and state

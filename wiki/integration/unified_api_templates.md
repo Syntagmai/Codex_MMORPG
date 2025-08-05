@@ -24,6 +24,7 @@ Este documento fornece **templates de APIs unificadas** para integração entre 
 ## 📋 **1. Template de API Base**
 
 ### **🎯 Estrutura Padrão de API**
+#### Inicialização e Configuração
 ```lua
 -- Template base para todas as APIs unificadas
 local UnifiedAPITemplate = {
@@ -47,6 +48,10 @@ local UnifiedAPITemplate = {
     
     -- Endpoints da API
     endpoints = {
+```
+
+#### Funcionalidade 1
+```lua
         -- Endpoints obrigatórios
         required = {
             "initialize",
@@ -72,6 +77,10 @@ local UnifiedAPITemplate = {
             INTERNAL_ERROR = 500,
             TIMEOUT = 408
         },
+```
+
+#### Finalização
+```lua
         
         error_messages = {
             [0] = "Success",
@@ -90,6 +99,7 @@ local UnifiedAPITemplate = {
 ## 🎮 **2. Game API Templates**
 
 ### **🌍 World API Template**
+#### Inicialização e Configuração
 ```lua
 -- Template para API de mundo
 local WorldAPITemplate = {
@@ -117,6 +127,10 @@ local WorldAPITemplate = {
                         items = "array",
                         creatures = "array"
                     }
+```
+
+#### Funcionalidade 1
+```lua
                 }
             },
             
@@ -140,6 +154,10 @@ local WorldAPITemplate = {
                 path = "/api/world/creatures/:id",
                 description = "Get creature information"
             },
+```
+
+#### Funcionalidade 2
+```lua
             
             update_creature = {
                 method = "PUT",
@@ -161,6 +179,10 @@ local WorldAPITemplate = {
                 path = "/api/world/items/:id",
                 description = "Get item information"
             },
+```
+
+#### Finalização
+```lua
             
             update_item = {
                 method = "PUT",
@@ -179,6 +201,7 @@ local WorldAPITemplate = {
 ```
 
 ### **⚔️ Combat API Template**
+#### Inicialização e Configuração
 ```lua
 -- Template para API de combate
 local CombatAPITemplate = {
@@ -206,6 +229,10 @@ local CombatAPITemplate = {
                         hit = "boolean",
                         critical = "boolean"
                     }
+```
+
+#### Funcionalidade 1
+```lua
                 }
             },
             
@@ -228,6 +255,10 @@ local CombatAPITemplate = {
                 path = "/api/combat/health/:id",
                 description = "Get creature health"
             },
+```
+
+#### Finalização
+```lua
             
             get_mana = {
                 method = "GET",
@@ -246,6 +277,7 @@ local CombatAPITemplate = {
 ```
 
 ### **💰 Trade API Template**
+#### Inicialização e Configuração
 ```lua
 -- Template para API de trade
 local TradeAPITemplate = {
@@ -268,6 +300,10 @@ local TradeAPITemplate = {
                     quantity = { type = "integer", required = true },
                     price = { type = "integer", required = true }
                 }
+```
+
+#### Funcionalidade 1
+```lua
             },
             
             get_offers = {
@@ -289,6 +325,10 @@ local TradeAPITemplate = {
                     buyer_id = { type = "integer", required = true }
                 }
             }
+```
+
+#### Funcionalidade 2
+```lua
         },
         
         -- Transações
@@ -310,6 +350,10 @@ local TradeAPITemplate = {
                 }
             }
         }
+```
+
+#### Finalização
+```lua
     }
 }
 ```
@@ -319,6 +363,7 @@ local TradeAPITemplate = {
 ## 🔧 **3. System API Templates**
 
 ### **⚙️ Configuration API Template**
+#### Inicialização e Configuração
 ```lua
 -- Template para API de configuração
 local ConfigAPITemplate = {
@@ -348,6 +393,10 @@ local ConfigAPITemplate = {
                     key = { type = "string", required = true },
                     value = { type = "any", required = true }
                 }
+```
+
+#### Funcionalidade 1
+```lua
             },
             
             get_all_configs = {
@@ -370,6 +419,10 @@ local ConfigAPITemplate = {
                 path = "/api/config/sync",
                 description = "Synchronize configurations between client and server"
             },
+```
+
+#### Finalização
+```lua
             
             export_config = {
                 method = "GET",
@@ -388,6 +441,7 @@ local ConfigAPITemplate = {
 ```
 
 ### **📦 Module API Template**
+#### Inicialização e Configuração
 ```lua
 -- Template para API de módulos
 local ModuleAPITemplate = {
@@ -417,6 +471,10 @@ local ModuleAPITemplate = {
                 parameters = {
                     module_name = { type = "string", required = true }
                 }
+```
+
+#### Funcionalidade 1
+```lua
             },
             
             reload_module = {
@@ -439,6 +497,10 @@ local ModuleAPITemplate = {
                 path = "/api/modules",
                 description = "List all loaded modules"
             }
+```
+
+#### Funcionalidade 2
+```lua
         },
         
         -- Comunicação entre módulos
@@ -461,6 +523,10 @@ local ModuleAPITemplate = {
                 parameters = {
                     module_name = { type = "string", required = true }
                 }
+```
+
+#### Finalização
+```lua
             }
         }
     }
@@ -468,6 +534,7 @@ local ModuleAPITemplate = {
 ```
 
 ### **🐛 Debug API Template**
+#### Inicialização e Configuração
 ```lua
 -- Template para API de debug
 local DebugAPITemplate = {
@@ -490,6 +557,10 @@ local DebugAPITemplate = {
                     module = { type = "string", required = false },
                     timestamp = { type = "string", required = false }
                 }
+```
+
+#### Funcionalidade 1
+```lua
             },
             
             get_logs = {
@@ -511,6 +582,10 @@ local DebugAPITemplate = {
                 description = "Clear all logs"
             }
         },
+```
+
+#### Funcionalidade 2
+```lua
         
         -- Monitoramento de performance
         performance = {
@@ -537,6 +612,10 @@ local DebugAPITemplate = {
                 path = "/api/debug/performance/profile",
                 description = "Get profiling results"
             }
+```
+
+#### Funcionalidade 3
+```lua
         },
         
         -- Relatórios de erro
@@ -561,6 +640,10 @@ local DebugAPITemplate = {
                     error_type = { type = "string", required = false },
                     start_time = { type = "string", required = false },
                     end_time = { type = "string", required = false }
+```
+
+#### Finalização
+```lua
                 }
             }
         }
@@ -573,6 +656,7 @@ local DebugAPITemplate = {
 ## 🔄 **4. Communication API Templates**
 
 ### **📡 REST API Template**
+#### Inicialização e Configuração
 ```lua
 -- Template para APIs REST
 local RESTAPITemplate = {
@@ -601,6 +685,10 @@ local RESTAPITemplate = {
                 timestamp = "timestamp",
                 request_id = "request_id"
             }
+```
+
+#### Funcionalidade 1
+```lua
         },
         
         error = {
@@ -625,6 +713,10 @@ local RESTAPITemplate = {
             limit = { type = "integer", default = 10 },
             offset = { type = "integer", default = 0 }
         },
+```
+
+#### Finalização
+```lua
         
         response = {
             data = "array",
@@ -640,6 +732,7 @@ local RESTAPITemplate = {
 ```
 
 ### **🔌 WebSocket API Template**
+#### Inicialização e Configuração
 ```lua
 -- Template para APIs WebSocket
 local WebSocketAPITemplate = {
@@ -668,6 +761,10 @@ local WebSocketAPITemplate = {
                 token = "string",
                 session_id = "string"
             }
+```
+
+#### Funcionalidade 1
+```lua
         },
         
         -- Mensagem de heartbeat
@@ -697,6 +794,10 @@ local WebSocketAPITemplate = {
                 error_message = "string",
                 error_details = "object"
             }
+```
+
+#### Funcionalidade 2
+```lua
         }
     },
     
@@ -718,6 +819,10 @@ local WebSocketAPITemplate = {
             "config_change",
             "error_occurred"
         }
+```
+
+#### Finalização
+```lua
     }
 }
 ```
@@ -727,6 +832,7 @@ local WebSocketAPITemplate = {
 ## 🧪 **5. Testing API Templates**
 
 ### **🔬 Test API Template**
+#### Inicialização e Configuração
 ```lua
 -- Template para APIs de teste
 local TestAPITemplate = {
@@ -750,6 +856,10 @@ local TestAPITemplate = {
                 path = "/api/test/health",
                 description = "Comprehensive health check"
             }
+```
+
+#### Funcionalidade 1
+```lua
         },
         
         -- Testes de performance
@@ -776,6 +886,10 @@ local TestAPITemplate = {
                 parameters = {
                     data = { type = "any", required = true }
                 }
+```
+
+#### Finalização
+```lua
             },
             
             validate = {
@@ -797,6 +911,7 @@ local TestAPITemplate = {
 ## 📝 **6. Implementação de Referência**
 
 ### **🎯 Template de Implementação**
+#### Inicialização e Configuração
 ```lua
 -- Template para implementação de API unificada
 local APIImplementationTemplate = {
@@ -823,6 +938,10 @@ local APIImplementationTemplate = {
             handler = handler,
             options = options or {}
         }
+```
+
+#### Funcionalidade 1
+```lua
     end,
     
     -- Adicionar middleware
@@ -847,6 +966,10 @@ local APIImplementationTemplate = {
             success = true,
             data = data
         }
+```
+
+#### Finalização
+```lua
     end
 }
 ```
@@ -854,8 +977,10 @@ local APIImplementationTemplate = {
 ### **🧪 Testes de API**
 ```lua
 -- Testes para APIs unificadas
+    --  Testes para APIs unificadas (traduzido)
 local APITests = {
     -- Testes de conectividade
+    --  Testes de conectividade (traduzido)
     connectivity_tests = {
         "test_api_connection",
         "test_authentication",
@@ -863,6 +988,7 @@ local APITests = {
     },
     
     -- Testes de funcionalidade
+    --  Testes de funcionalidade (traduzido)
     functionality_tests = {
         "test_endpoint_responses",
         "test_error_handling",
@@ -870,6 +996,7 @@ local APITests = {
     },
     
     -- Testes de performance
+    --  Testes de performance (traduzido)
     performance_tests = {
         "test_response_time",
         "test_throughput",

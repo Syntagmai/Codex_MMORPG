@@ -55,6 +55,7 @@ Sistema de Configuração
 
 ### 📁 **Gerenciamento Central de Configs**
 
+#### Nível Basic
 ```lua
 -- ConfigManager é um singleton global disponível como g_configs
 -- Gerencia carregamento, salvamento e ciclo de vida dos configs
@@ -75,20 +76,82 @@ local customSettings = g_configs.loadSettings("mysettings.otml")
 g_configs.unload("myconfig.otml")
 ```
 
+#### Nível Intermediate
+```lua
+-- ConfigManager é um singleton global disponível como g_configs
+-- Gerencia carregamento, salvamento e ciclo de vida dos configs
+
+-- Obter configuração principal (settings)
+local settings = g_configs.getSettings()
+
+-- Carregar config específico
+local myConfig = g_configs.get("myconfig.otml")
+
+-- Criar novo config
+local newConfig = g_configs.create("data/myapp.otml")
+
+-- Carregar config como settings
+local customSettings = g_configs.loadSettings("mysettings.otml")
+
+-- Descarregar config da memória
+g_configs.unload("myconfig.otml")
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- ConfigManager é um singleton global disponível como g_configs
+-- Gerencia carregamento, salvamento e ciclo de vida dos configs
+
+-- Obter configuração principal (settings)
+local settings = g_configs.getSettings()
+
+-- Carregar config específico
+local myConfig = g_configs.get("myconfig.otml")
+
+-- Criar novo config
+local newConfig = g_configs.create("data/myapp.otml")
+
+-- Carregar config como settings
+local customSettings = g_configs.loadSettings("mysettings.otml")
+
+-- Descarregar config da memória
+g_configs.unload("myconfig.otml")
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔧 **Operações com Configs**
 
 ```lua
 -- Criar um config personalizado
+    --  Criar um config personalizado (traduzido)
 local function createCustomConfig()
     local config = g_configs.create("data/custom.otml")
     
     -- Definir valores
+    --  Definir valores (traduzido)
     config:setValue("window.width", 1024)
     config:setValue("window.height", 768)
     config:setValue("graphics.vsync", true)
     config:setValue("audio.volume", 0.8)
     
     -- Definir lista
+    --  Definir lista (traduzido)
     config:setList("recent.servers", {
         "server1.com",
         "server2.com", 
@@ -96,12 +159,14 @@ local function createCustomConfig()
     })
     
     -- Salvar no disco
+    --  Salvar no disco (traduzido)
     config:save()
     
     return config
 end
 
 -- Ler valores do config
+    --  Ler valores do config (traduzido)
 local function readConfigValues(config)
     local width = config:getValue("window.width")
     local height = config:getValue("window.height")
@@ -115,6 +180,7 @@ local function readConfigValues(config)
     print("Volume:", volume)
     print("Servidores:")
     for _, server in ipairs(servers) do
+    -- Loop de repetição
         print("- " .. server)
     end
 end
@@ -124,9 +190,11 @@ end
 
 ```lua
 -- Trabalhar com nodes OTML complexos
+    --  Trabalhar com nodes OTML complexos (traduzido)
 local config = g_configs.create("complex.otml")
 
 -- Criar node estruturado
+    --  Criar node estruturado (traduzido)
 local windowNode = {
     size = "1024 768",
     position = "center",
@@ -137,13 +205,16 @@ local windowNode = {
 config:setNode("window", windowNode)
 
 -- Obter node
+    --  Obter node (traduzido)
 local retrievedNode = config:getNode("window")
 if retrievedNode then
+    -- Verificação condicional
     print("Tamanho da janela:", retrievedNode.size)
     print("Posição:", retrievedNode.position)
 end
 
 -- Mesclar nodes
+    --  Mesclar nodes (traduzido)
 local updateNode = {
     maximized = true,
     opacity = 0.95
@@ -152,10 +223,12 @@ local updateNode = {
 config:mergeNode("window", updateNode)
 
 -- Verificar tamanho do node
+    --  Verificar tamanho do node (traduzido)
 local nodeSize = config:getNodeSize("window")
 print("Node possui " .. nodeSize .. " elementos")
 
 -- Obter ou criar node
+    --  Obter ou criar node (traduzido)
 local audioNode = config:getOrCreateNode("audio", {
     volume = 1.0,
     muted = false
@@ -166,6 +239,45 @@ local audioNode = config:getOrCreateNode("audio", {
 
 ### 🔧 **Configuração Global do Jogo**
 
+#### Nível Basic
+```lua
+-- GameConfig contém configurações fixas do jogo carregadas de setup.otml
+-- Não são editáveis pelo usuário em runtime
+-- Configurações de sprite
+local spriteSize = g_gameConfig.getSpriteSize()  -- 32
+print("Tamanho do sprite:", spriteSize .. "x" .. spriteSize)
+-- Versão suportada
+local lastVersion = g_gameConfig.getLastSupportedVersion()  -- 1412
+print("Última versão suportada:", lastVersion)
+-- Configurações de mapa
+local mapViewPort = g_gameConfig.getMapViewPort()  -- {width=8, height=6}
+local mapMaxZ = g_gameConfig.getMapMaxZ()  -- 15
+local seaFloor = g_gameConfig.getMapSeaFloor()  -- 7
+print("Viewport do mapa:", mapViewPort.width .. "x" .. mapViewPort.height)
+print("Máximo Z:", mapMaxZ)
+print("Andar do mar:", seaFloor)
+-- Configurações de tile
+local maxElevation = g_gameConfig.getTileMaxElevation()  -- 24
+local maxThings = g_gameConfig.getTileMaxThings()  -- 10
+local transparentRange = g_gameConfig.getTileTransparentFloorViewRange()  -- 2
+-- Configurações de criatura
+local drawByWidget = g_gameConfig.isDrawingInformationByWidget()
+local forceWalkFormula = g_gameConfig.isForcingNewWalkingFormula()
+local shieldBlinkTicks = g_gameConfig.getShieldBlinkTicks()  -- 500
+-- Configurações de renderização
+local drawCovered = g_gameConfig.isDrawingCoveredThings()
+local itemTicksPerFrame = g_gameConfig.getItemTicksPerFrame()  -- 500
+local effectTicksPerFrame = g_gameConfig.getEffectTicksPerFrame()  -- 75
+-- Configurações de fonte
+local creatureFont = g_gameConfig.getCreatureNameFont()
+local animatedFont = g_gameConfig.getAnimatedTextFont()
+local staticFont = g_gameConfig.getStaticTextFont()
+local widgetFont = g_gameConfig.getWidgetTextFont()
+print("Fonte de criaturas:", g_gameConfig.getCreatureNameFontName())
+print("Fonte de texto animado:", g_gameConfig.getAnimatedTextFontName())
+```
+
+#### Nível Intermediate
 ```lua
 -- GameConfig contém configurações fixas do jogo carregadas de setup.otml
 -- Não são editáveis pelo usuário em runtime
@@ -212,8 +324,66 @@ print("Fonte de criaturas:", g_gameConfig.getCreatureNameFontName())
 print("Fonte de texto animado:", g_gameConfig.getAnimatedTextFontName())
 ```
 
+#### Nível Advanced
+```lua
+-- GameConfig contém configurações fixas do jogo carregadas de setup.otml
+-- Não são editáveis pelo usuário em runtime
+
+-- Configurações de sprite
+local spriteSize = g_gameConfig.getSpriteSize()  -- 32
+print("Tamanho do sprite:", spriteSize .. "x" .. spriteSize)
+
+-- Versão suportada
+local lastVersion = g_gameConfig.getLastSupportedVersion()  -- 1412
+print("Última versão suportada:", lastVersion)
+
+-- Configurações de mapa
+local mapViewPort = g_gameConfig.getMapViewPort()  -- {width=8, height=6}
+local mapMaxZ = g_gameConfig.getMapMaxZ()  -- 15
+local seaFloor = g_gameConfig.getMapSeaFloor()  -- 7
+
+print("Viewport do mapa:", mapViewPort.width .. "x" .. mapViewPort.height)
+print("Máximo Z:", mapMaxZ)
+print("Andar do mar:", seaFloor)
+
+-- Configurações de tile
+local maxElevation = g_gameConfig.getTileMaxElevation()  -- 24
+local maxThings = g_gameConfig.getTileMaxThings()  -- 10
+local transparentRange = g_gameConfig.getTileTransparentFloorViewRange()  -- 2
+
+-- Configurações de criatura
+local drawByWidget = g_gameConfig.isDrawingInformationByWidget()
+local forceWalkFormula = g_gameConfig.isForcingNewWalkingFormula()
+local shieldBlinkTicks = g_gameConfig.getShieldBlinkTicks()  -- 500
+
+-- Configurações de renderização
+local drawCovered = g_gameConfig.isDrawingCoveredThings()
+local itemTicksPerFrame = g_gameConfig.getItemTicksPerFrame()  -- 500
+local effectTicksPerFrame = g_gameConfig.getEffectTicksPerFrame()  -- 75
+
+-- Configurações de fonte
+local creatureFont = g_gameConfig.getCreatureNameFont()
+local animatedFont = g_gameConfig.getAnimatedTextFont()
+local staticFont = g_gameConfig.getStaticTextFont()
+local widgetFont = g_gameConfig.getWidgetTextFont()
+
+print("Fonte de criaturas:", g_gameConfig.getCreatureNameFontName())
+print("Fonte de texto animado:", g_gameConfig.getAnimatedTextFontName())
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### ⚡ **Configurações de Performance**
 
+#### Nível Basic
 ```lua
 -- Velocidade de movimento
 local playerDiagSpeed = g_gameConfig.getPlayerDiagonalWalkSpeed()  -- 3
@@ -239,10 +409,80 @@ print("Mostrar digitação:", drawTyping)
 print("Ícone de digitação:", typingIcon)
 ```
 
+#### Nível Intermediate
+```lua
+-- Velocidade de movimento
+local playerDiagSpeed = g_gameConfig.getPlayerDiagonalWalkSpeed()  -- 3
+local creatureDiagSpeed = g_gameConfig.getCreatureDiagonalWalkSpeed()  -- 3
+
+-- Timings de animação
+local invisibleTicks = g_gameConfig.getInvisibleTicksPerFrame()  -- 500
+local missileTicks = g_gameConfig.getMissileTicksPerFrame()  -- 75
+local animatedTextDuration = g_gameConfig.getAnimatedTextDuration()  -- 1000
+
+-- Duração de texto estático
+local staticDurationPerChar = g_gameConfig.getStaticDurationPerCharacter()  -- 60
+local minStaticDuration = g_gameConfig.getMinStatictextDuration()  -- 3000
+
+-- Configurações visuais
+local volatileSquareDuration = g_gameConfig.getVolatileSquareDuration()  -- 1000
+
+-- Typing indicator
+local drawTyping = g_gameConfig.drawTyping()
+local typingIcon = g_gameConfig.getTypingIcon()
+
+print("Mostrar digitação:", drawTyping)
+print("Ícone de digitação:", typingIcon)
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Velocidade de movimento
+local playerDiagSpeed = g_gameConfig.getPlayerDiagonalWalkSpeed()  -- 3
+local creatureDiagSpeed = g_gameConfig.getCreatureDiagonalWalkSpeed()  -- 3
+
+-- Timings de animação
+local invisibleTicks = g_gameConfig.getInvisibleTicksPerFrame()  -- 500
+local missileTicks = g_gameConfig.getMissileTicksPerFrame()  -- 75
+local animatedTextDuration = g_gameConfig.getAnimatedTextDuration()  -- 1000
+
+-- Duração de texto estático
+local staticDurationPerChar = g_gameConfig.getStaticDurationPerCharacter()  -- 60
+local minStaticDuration = g_gameConfig.getMinStatictextDuration()  -- 3000
+
+-- Configurações visuais
+local volatileSquareDuration = g_gameConfig.getVolatileSquareDuration()  -- 1000
+
+-- Typing indicator
+local drawTyping = g_gameConfig.drawTyping()
+local typingIcon = g_gameConfig.getTypingIcon()
+
+print("Mostrar digitação:", drawTyping)
+print("Ícone de digitação:", typingIcon)
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## ⚙️ Settings (g_settings)
 
 ### 💾 **Configurações Persistentes do Usuário**
 
+#### Nível Basic
 ```lua
 -- g_settings é o config principal para configurações do usuário
 -- Automaticamente persistido em settings.otml
@@ -275,10 +515,94 @@ g_settings.remove("temporary.setting")
 g_settings.save()
 ```
 
+#### Nível Intermediate
+```lua
+-- g_settings é o config principal para configurações do usuário
+-- Automaticamente persistido em settings.otml
+
+-- Definir valores
+g_settings.set("graphics.fullscreen", true)
+g_settings.set("audio.masterVolume", 0.8)
+g_settings.set("game.autoLogin", false)
+g_settings.set("interface.theme", "dark")
+
+-- Obter valores com tipos específicos
+local fullscreen = g_settings.getBoolean("graphics.fullscreen")
+local volume = g_settings.getNumber("audio.masterVolume")
+local theme = g_settings.getString("interface.theme")
+
+-- Verificar existência
+if g_settings.exists("user.nickname") then
+    local nickname = g_settings.getString("user.nickname")
+    print("Usuário:", nickname)
+end
+
+-- Definir valores padrão
+g_settings.setDefault("graphics.antialiasing", true)
+g_settings.setDefault("controls.mouseSensitivity", 1.0)
+
+-- Remover configuração
+g_settings.remove("temporary.setting")
+
+-- Salvar configurações
+g_settings.save()
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- g_settings é o config principal para configurações do usuário
+-- Automaticamente persistido em settings.otml
+
+-- Definir valores
+g_settings.set("graphics.fullscreen", true)
+g_settings.set("audio.masterVolume", 0.8)
+g_settings.set("game.autoLogin", false)
+g_settings.set("interface.theme", "dark")
+
+-- Obter valores com tipos específicos
+local fullscreen = g_settings.getBoolean("graphics.fullscreen")
+local volume = g_settings.getNumber("audio.masterVolume")
+local theme = g_settings.getString("interface.theme")
+
+-- Verificar existência
+if g_settings.exists("user.nickname") then
+    local nickname = g_settings.getString("user.nickname")
+    print("Usuário:", nickname)
+end
+
+-- Definir valores padrão
+g_settings.setDefault("graphics.antialiasing", true)
+g_settings.setDefault("controls.mouseSensitivity", 1.0)
+
+-- Remover configuração
+g_settings.remove("temporary.setting")
+
+-- Salvar configurações
+g_settings.save()
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 📋 **Listas e Arrays**
 
 ```lua
 -- Trabalhar com listas
+    --  Trabalhar com listas (traduzido)
 local serverList = {
     "server1.otserv.com:7171",
     "server2.otserv.com:7172",
@@ -288,8 +612,10 @@ local serverList = {
 g_settings.setList("recent.servers", serverList)
 
 -- Obter lista
+    --  Obter lista (traduzido)
 local servers = g_settings.getList("recent.servers")
 for i, server in ipairs(servers) do
+    -- Loop de repetição
     print("Servidor " .. i .. ":", server)
 end
 
@@ -298,8 +624,10 @@ table.insert(servers, "newserver.com:7171")
 g_settings.setList("recent.servers", servers)
 
 -- Controles presets
+    --  Controles presets (traduzido)
 local presets = g_settings.getList("controls-presets")
 if #presets == 0 then
+    -- Verificação condicional
     presets = {"Druid", "Knight", "Paladin", "Sorcerer"}
     g_settings.setList("controls-presets", presets)
 end
@@ -417,6 +745,29 @@ font:
 
 ### 🎮 **Sistema de Opções Integrado**
 
+#### Nível Basic
+```lua
+-- Sistema de opções do cliente (modules/client_options)
+-- Integra com g_settings para persistência
+-- Definir uma opção
+function setOption(key, value, force)
+    if not options[key] or (not force and options[key].value == value) then
+    end
+    -- Executar ação associada
+    if options[key].action then
+    end
+    -- Atualizar UI
+    -- Salvar em settings
+end
+-- Obter valor de opção
+function getOption(key)
+end
+-- Exemplos de uso
+local fullscreen = getOption("graphics.fullscreen")
+local volume = getOption("audio.masterVolume")
+```
+
+#### Nível Intermediate
 ```lua
 -- Sistema de opções do cliente (modules/client_options)
 -- Integra com g_settings para persistência
@@ -454,6 +805,54 @@ local fullscreen = getOption("graphics.fullscreen")
 local volume = getOption("audio.masterVolume")
 ```
 
+#### Nível Advanced
+```lua
+-- Sistema de opções do cliente (modules/client_options)
+-- Integra com g_settings para persistência
+
+-- Definir uma opção
+function setOption(key, value, force)
+    if not options[key] or (not force and options[key].value == value) then
+        return
+    end
+    
+    -- Executar ação associada
+    if options[key].action then
+        options[key].action(value)
+    end
+    
+    -- Atualizar UI
+    updateOptionWidget(key, value)
+    
+    -- Salvar em settings
+    options[key].value = value
+    g_settings.set(key, value)
+end
+
+-- Obter valor de opção
+function getOption(key)
+    return options[key].value
+end
+
+-- Exemplos de uso
+setOption("graphics.fullscreen", true)
+setOption("audio.masterVolume", 0.8)
+setOption("interface.showFPS", false)
+
+local fullscreen = getOption("graphics.fullscreen")
+local volume = getOption("audio.masterVolume")
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔧 **Configurações Gráficas**
 
 ```lua
@@ -466,6 +865,7 @@ local graphicsOptions = {
     frameRate = g_settings.getNumber("graphics.frameRate"),
     
     -- Efeitos
+    --  Efeitos (traduzido)
     particles = g_settings.getBoolean("effects.particles"),
     bloom = g_settings.getBoolean("effects.bloom"),
     shadows = g_settings.getBoolean("effects.shadows")
@@ -473,18 +873,23 @@ local graphicsOptions = {
 
 -- Aplicar configurações gráficas
 function applyGraphicsSettings()
+    -- Função: applyGraphicsSettings
     if graphicsOptions.fullscreen then
+    -- Verificação condicional
         g_window.setFullscreen(true)
     end
     
     g_graphics.setVSync(graphicsOptions.vsync)
     
     if graphicsOptions.frameRate > 0 then
+    -- Verificação condicional
         g_app.setMaxFps(graphicsOptions.frameRate)
     end
     
     -- Configurar antialiasing
+    --  Configurar antialiasing (traduzido)
     if graphicsOptions.antialiasing ~= "none" then
+    -- Verificação condicional
         g_graphics.setAntialiasing(graphicsOptions.antialiasing)
     end
 end
@@ -492,6 +897,7 @@ end
 
 ### 🔊 **Configurações de Áudio**
 
+#### Nível Basic
 ```lua
 -- Sistema de áudio
 local audioOptions = {
@@ -520,10 +926,110 @@ function applyAudioSettings()
 end
 ```
 
+#### Nível Intermediate
+```lua
+-- Sistema de áudio
+local audioOptions = {
+    masterVolume = g_settings.getNumber("audio.masterVolume"),
+    musicVolume = g_settings.getNumber("audio.musicVolume"),
+    sfxVolume = g_settings.getNumber("audio.sfxVolume"),
+    
+    -- Dispositivos
+    outputDevice = g_settings.getString("audio.outputDevice"),
+    inputDevice = g_settings.getString("audio.inputDevice"),
+    
+    -- Configurações avançadas
+    sampleRate = g_settings.getNumber("audio.sampleRate"),
+    bufferSize = g_settings.getNumber("audio.bufferSize")
+}
+
+-- Aplicar configurações de áudio
+function applyAudioSettings()
+    g_sounds.setVolume(audioOptions.masterVolume)
+    g_music.setVolume(audioOptions.musicVolume)
+    
+    -- Configurar dispositivos se suportado
+    if g_audio.setOutputDevice then
+        g_audio.setOutputDevice(audioOptions.outputDevice)
+    end
+end
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Sistema de áudio
+local audioOptions = {
+    masterVolume = g_settings.getNumber("audio.masterVolume"),
+    musicVolume = g_settings.getNumber("audio.musicVolume"),
+    sfxVolume = g_settings.getNumber("audio.sfxVolume"),
+    
+    -- Dispositivos
+    outputDevice = g_settings.getString("audio.outputDevice"),
+    inputDevice = g_settings.getString("audio.inputDevice"),
+    
+    -- Configurações avançadas
+    sampleRate = g_settings.getNumber("audio.sampleRate"),
+    bufferSize = g_settings.getNumber("audio.bufferSize")
+}
+
+-- Aplicar configurações de áudio
+function applyAudioSettings()
+    g_sounds.setVolume(audioOptions.masterVolume)
+    g_music.setVolume(audioOptions.musicVolume)
+    
+    -- Configurar dispositivos se suportado
+    if g_audio.setOutputDevice then
+        g_audio.setOutputDevice(audioOptions.outputDevice)
+    end
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ## 🎛️ Configurações de Controle
 
 ### ⌨️ **Sistema de Keybinds**
 
+#### Nível Basic
+```lua
+-- Sistema de controles com múltiplos presets
+-- Cada preset tem keybinds e hotkeys separados
+-- Configuração de keybinds
+local function setupKeybinds()
+    local preset = Keybind.currentPreset or "Druid"
+    -- Carregar configs do preset
+    local keybindsConfig = g_configs.create("/controls/keybinds/" .. preset .. ".otml")
+    local hotkeysConfig = g_configs.create("/controls/hotkeys/" .. preset .. ".otml")
+    -- Definir keybinds padrão
+    -- Salvar configurações
+end
+-- Gerenciar presets
+local function createControlsPreset(presetName)
+    -- Adicionar à lista de presets
+    local presets = g_settings.getList("controls-presets")
+    -- Criar arquivos de configuração
+    local keybindsConfig = g_configs.create("/controls/keybinds/" .. presetName .. ".otml")
+    local hotkeysConfig = g_configs.create("/controls/hotkeys/" .. presetName .. ".otml")
+    -- Configurações padrão para novo preset
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- Sistema de controles com múltiplos presets
 -- Cada preset tem keybinds e hotkeys separados
@@ -570,8 +1076,66 @@ local function createControlsPreset(presetName)
 end
 ```
 
+#### Nível Advanced
+```lua
+-- Sistema de controles com múltiplos presets
+-- Cada preset tem keybinds e hotkeys separados
+
+-- Configuração de keybinds
+local function setupKeybinds()
+    local preset = Keybind.currentPreset or "Druid"
+    
+    -- Carregar configs do preset
+    local keybindsConfig = g_configs.create("/controls/keybinds/" .. preset .. ".otml")
+    local hotkeysConfig = g_configs.create("/controls/hotkeys/" .. preset .. ".otml")
+    
+    -- Definir keybinds padrão
+    keybindsConfig:setValue("movement.north", "Up")
+    keybindsConfig:setValue("movement.south", "Down") 
+    keybindsConfig:setValue("movement.east", "Right")
+    keybindsConfig:setValue("movement.west", "Left")
+    
+    keybindsConfig:setValue("interface.inventory", "Ctrl+I")
+    keybindsConfig:setValue("interface.spells", "Ctrl+S")
+    keybindsConfig:setValue("interface.skills", "Ctrl+K")
+    
+    -- Salvar configurações
+    keybindsConfig:save()
+    hotkeysConfig:save()
+end
+
+-- Gerenciar presets
+local function createControlsPreset(presetName)
+    -- Adicionar à lista de presets
+    local presets = g_settings.getList("controls-presets")
+    table.insert(presets, presetName)
+    g_settings.setList("controls-presets", presets)
+    
+    -- Criar arquivos de configuração
+    local keybindsConfig = g_configs.create("/controls/keybinds/" .. presetName .. ".otml")
+    local hotkeysConfig = g_configs.create("/controls/hotkeys/" .. presetName .. ".otml")
+    
+    -- Configurações padrão para novo preset
+    setupDefaultKeybinds(keybindsConfig)
+    setupDefaultHotkeys(hotkeysConfig)
+    
+    return presetName
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔥 **Sistema de Hotkeys**
 
+#### Inicialização e Configuração
 ```lua
 -- Configuração de hotkeys
 local function setupHotkeys(config)
@@ -600,6 +1164,10 @@ local function setupHotkeys(config)
         text = "utani hur",
         parameter = ""
     })
+```
+
+#### Funcionalidade 1
+```lua
     
     -- Hotkey para usar item com crosshair
     config:setNode("hotkey4", {
@@ -621,6 +1189,10 @@ local function loadHotkeys()
     if not config:isLoaded() then
         return
     end
+```
+
+#### Finalização
+```lua
     
     -- Processar cada hotkey
     for i = 1, 36 do  -- F1-F12, Shift+F1-F12, Ctrl+F1-F12
@@ -636,6 +1208,7 @@ end
 
 ### 🛠️ **Sistema de Profiles Personalizado**
 
+#### Inicialização e Configuração
 ```lua
 -- Sistema de perfis de usuário
 local ProfileManager = {}
@@ -658,6 +1231,10 @@ function ProfileManager.createProfile(profileName, baseSettings)
             antialiasing = "2x",
             frameRate = 60
         },
+```
+
+#### Funcionalidade 1
+```lua
         audio = {
             masterVolume = 0.8,
             musicVolume = 0.6,
@@ -683,6 +1260,10 @@ function ProfileManager.createProfile(profileName, baseSettings)
                 for key, value in pairs(settings) do
                     defaultSettings[category][key] = value
                 end
+```
+
+#### Funcionalidade 2
+```lua
             else
                 defaultSettings[category] = settings
             end
@@ -706,6 +1287,10 @@ function ProfileManager.loadProfile(profileName)
         print("Perfil não encontrado:", profileName)
         return false
     end
+```
+
+#### Funcionalidade 3
+```lua
     
     -- Aplicar configurações do perfil
     local graphics = config:getNode("graphics")
@@ -727,6 +1312,10 @@ function ProfileManager.loadProfile(profileName)
         for key, value in pairs(interface) do
             setOption("interface." .. key, value)
         end
+```
+
+#### Finalização
+```lua
     end
     
     -- Marcar como perfil ativo
@@ -752,6 +1341,7 @@ end
 
 ### 🔧 **Sistema de Configuração Avançada**
 
+#### Inicialização e Configuração
 ```lua
 -- Configuração avançada com validação
 local AdvancedConfig = {}
@@ -774,6 +1364,10 @@ function AdvancedConfig.validateConfig(config, schema)
                         error("Valor inválido para " .. key .. ": deve ser true/false")
                     end
                 end
+```
+
+#### Funcionalidade 1
+```lua
             end
             
             -- Validar range para números
@@ -797,6 +1391,10 @@ function AdvancedConfig.validateConfig(config, schema)
                 if not found then
                     error("Valor inválido para " .. key .. ": deve ser um de " .. table.concat(rules.options, ", "))
                 end
+```
+
+#### Funcionalidade 2
+```lua
             end
         elseif rules.required then
             error("Configuração obrigatória ausente: " .. key)
@@ -823,6 +1421,10 @@ local configSchema = {
         max = 1.0,
         required = false
     },
+```
+
+#### Funcionalidade 3
+```lua
     ["interface.theme"] = {
         type = "string",
         options = {"default", "dark", "light", "classic"},
@@ -844,6 +1446,10 @@ function AdvancedConfig.loadWithValidation(configPath)
         
         return config
     end
+```
+
+#### Finalização
+```lua
     
     return nil
 end
@@ -855,8 +1461,10 @@ end
 
 ```lua
 -- ✅ BOM: Sempre validar valores
+    --  ✅ BOM: Sempre validar valores (traduzido)
 local function setSafeOption(key, value, validator)
     if validator and not validator(value) then
+    -- Verificação condicional
         print("Valor inválido para " .. key .. ":", value)
         return false
     end
@@ -868,6 +1476,7 @@ end
 -- ✅ BOM: Usar valores padrão
 local function getOptionWithDefault(key, defaultValue)
     if g_settings.exists(key) then
+    -- Verificação condicional
         return getOption(key)
     else
         setOption(key, defaultValue)
@@ -893,12 +1502,36 @@ local validators = {
 }
 
 -- Uso seguro
+    --  Uso seguro (traduzido)
 setSafeOption("audio.volume", 0.8, validators.volume)
 setSafeOption("graphics.frameRate", 60, validators.frameRate)
 ```
 
 ### ⚡ **Performance e Organização**
 
+#### Nível Basic
+```lua
+-- ✅ BOM: Cache de configurações frequentes
+local configCache = {}
+local function getCachedOption(key)
+    if not configCache[key] then
+    end
+end
+local function setCachedOption(key, value)
+end
+-- ✅ BOM: Batch de configurações
+local function applyConfigBatch(configs)
+    end
+    -- Salvar uma vez no final
+end
+-- ✅ BOM: Organização hierárquica
+local function organizeConfigs()
+    local gameConfigs = {
+    local graphicsConfigs = {
+end
+```
+
+#### Nível Intermediate
 ```lua
 -- ✅ BOM: Cache de configurações frequentes
 local configCache = {}
@@ -944,10 +1577,67 @@ local function organizeConfigs()
 end
 ```
 
+#### Nível Advanced
+```lua
+-- ✅ BOM: Cache de configurações frequentes
+local configCache = {}
+
+local function getCachedOption(key)
+    if not configCache[key] then
+        configCache[key] = getOption(key)
+    end
+    return configCache[key]
+end
+
+local function setCachedOption(key, value)
+    configCache[key] = value
+    setOption(key, value)
+end
+
+-- ✅ BOM: Batch de configurações
+local function applyConfigBatch(configs)
+    for key, value in pairs(configs) do
+        setOption(key, value)
+    end
+    
+    -- Salvar uma vez no final
+    g_settings.save()
+end
+
+-- ✅ BOM: Organização hierárquica
+local function organizeConfigs()
+    local gameConfigs = {
+        ["game.autoLogin"] = false,
+        ["game.rememberAccount"] = true,
+        ["game.classicControls"] = false
+    }
+    
+    local graphicsConfigs = {
+        ["graphics.fullscreen"] = false,
+        ["graphics.vsync"] = true,
+        ["graphics.antialiasing"] = "2x"
+    }
+    
+    applyConfigBatch(gameConfigs)
+    applyConfigBatch(graphicsConfigs)
+end
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### 🔄 **Backup e Restauração**
 
 ```lua
 -- ✅ BOM: Sistema de backup
+    --  ✅ BOM: Sistema de backup (traduzido)
 local function backupConfigs()
     local timestamp = os.date("%Y%m%d_%H%M%S")
     local backupDir = "/backups/" .. timestamp
@@ -955,11 +1645,14 @@ local function backupConfigs()
     g_resources.makeDir(backupDir)
     
     -- Backup do settings principal
+    --  Backup do settings principal (traduzido)
     local settingsContent = g_resources.readFileContents("/settings.otml")
     g_resources.writeFileContents(backupDir .. "/settings.otml", settingsContent)
     
     -- Backup dos controles
+    --  Backup dos controles (traduzido)
     if g_resources.directoryExists("/controls") then
+    -- Verificação condicional
         g_resources.copyDir("/controls", backupDir .. "/controls")
     end
     
@@ -970,13 +1663,16 @@ end
 -- ✅ BOM: Restauração de backup
 local function restoreBackup(backupDir)
     if not g_resources.directoryExists(backupDir) then
+    -- Verificação condicional
         print("Backup não encontrado:", backupDir)
         return false
     end
     
     -- Restaurar settings
+    --  Restaurar settings (traduzido)
     local settingsContent = g_resources.readFileContents(backupDir .. "/settings.otml")
     if settingsContent then
+    -- Verificação condicional
         g_resources.writeFileContents("/settings.otml", settingsContent)
         
         -- Recarregar configurações
@@ -985,7 +1681,9 @@ local function restoreBackup(backupDir)
     end
     
     -- Restaurar controles
+    --  Restaurar controles (traduzido)
     if g_resources.directoryExists(backupDir .. "/controls") then
+    -- Verificação condicional
         g_resources.copyDir(backupDir .. "/controls", "/controls")
     end
     

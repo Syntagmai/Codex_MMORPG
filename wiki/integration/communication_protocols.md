@@ -24,6 +24,7 @@ Este documento estabelece os **padrões de comunicação** para integração fut
 ## 📋 **1. Protocolos de Comunicação Base**
 
 ### **🔧 Protocolo OpenCode (Base)**
+#### Nível Basic
 ```lua
 -- Protocolo base para comunicação cliente-servidor
 local OpenCode = {
@@ -34,7 +35,47 @@ local OpenCode = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Protocolo base para comunicação cliente-servidor
+local OpenCode = {
+    version = "1.0",
+    encoding = "UTF-8",
+    compression = "gzip",
+    encryption = "AES-256"
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Protocolo base para comunicação cliente-servidor
+local OpenCode = {
+    version = "1.0",
+    encoding = "UTF-8",
+    compression = "gzip",
+    encryption = "AES-256"
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🚀 Protocolo ExtendedOpen (Avançado)**
+#### Nível Basic
 ```lua
 -- Protocolo estendido para funcionalidades avançadas
 local ExtendedOpen = {
@@ -48,6 +89,51 @@ local ExtendedOpen = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- Protocolo estendido para funcionalidades avançadas
+local ExtendedOpen = {
+    base = OpenCode,
+    features = {
+        realtime = true,
+        streaming = true,
+        multiplexing = true,
+        compression = "lz4"
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Protocolo estendido para funcionalidades avançadas
+local ExtendedOpen = {
+    base = OpenCode,
+    features = {
+        realtime = true,
+        streaming = true,
+        multiplexing = true,
+        compression = "lz4"
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 📡 **2. APIs de Comunicação**
@@ -57,6 +143,7 @@ local ExtendedOpen = {
 -- API para comunicação de jogo
 local GameAPI = {
     -- Protocolos de mundo
+    --  Protocolos de mundo (traduzido)
     world = {
         map = "world/map",
         creatures = "world/creatures", 
@@ -73,6 +160,7 @@ local GameAPI = {
     },
     
     -- Protocolos de sistema
+    --  Protocolos de sistema (traduzido)
     system = {
         chat = "system/chat",
         login = "system/login",
@@ -82,6 +170,7 @@ local GameAPI = {
 ```
 
 ### **🔧 Core Communication API**
+#### Nível Basic
 ```lua
 -- API para comunicação de sistema
 local CoreAPI = {
@@ -108,11 +197,83 @@ local CoreAPI = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+-- API para comunicação de sistema
+local CoreAPI = {
+    -- Configuração
+    config = {
+        load = "config/load",
+        save = "config/save",
+        reset = "config/reset"
+    },
+    
+    -- Módulos
+    modules = {
+        load = "modules/load",
+        unload = "modules/unload",
+        reload = "modules/reload"
+    },
+    
+    -- Debug
+    debug = {
+        log = "debug/log",
+        error = "debug/error",
+        warning = "debug/warning"
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- API para comunicação de sistema
+local CoreAPI = {
+    -- Configuração
+    config = {
+        load = "config/load",
+        save = "config/save",
+        reset = "config/reset"
+    },
+    
+    -- Módulos
+    modules = {
+        load = "modules/load",
+        unload = "modules/unload",
+        reload = "modules/reload"
+    },
+    
+    -- Debug
+    debug = {
+        log = "debug/log",
+        error = "debug/error",
+        warning = "debug/warning"
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🔄 **3. Padrões de Mensagem**
 
 ### **📨 Estrutura de Mensagem Padrão**
+#### Nível Basic
 ```lua
 local Message = {
     header = {
@@ -135,7 +296,71 @@ local Message = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+local Message = {
+    header = {
+        id = "unique_message_id",
+        timestamp = os.time(),
+        version = "1.0",
+        type = "request|response|event"
+    },
+    
+    body = {
+        action = "action_name",
+        data = {},
+        metadata = {}
+    },
+    
+    footer = {
+        checksum = "message_checksum",
+        signature = "digital_signature"
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local Message = {
+    header = {
+        id = "unique_message_id",
+        timestamp = os.time(),
+        version = "1.0",
+        type = "request|response|event"
+    },
+    
+    body = {
+        action = "action_name",
+        data = {},
+        metadata = {}
+    },
+    
+    footer = {
+        checksum = "message_checksum",
+        signature = "digital_signature"
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🎯 Tipos de Mensagem**
+#### Nível Basic
 ```lua
 local MessageTypes = {
     REQUEST = "request",    -- Solicitação do cliente
@@ -146,11 +371,51 @@ local MessageTypes = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+local MessageTypes = {
+    REQUEST = "request",    -- Solicitação do cliente
+    RESPONSE = "response",  -- Resposta do servidor
+    EVENT = "event",        -- Evento assíncrono
+    ERROR = "error",        -- Erro de comunicação
+    HEARTBEAT = "heartbeat" -- Manutenção de conexão
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local MessageTypes = {
+    REQUEST = "request",    -- Solicitação do cliente
+    RESPONSE = "response",  -- Resposta do servidor
+    EVENT = "event",        -- Evento assíncrono
+    ERROR = "error",        -- Erro de comunicação
+    HEARTBEAT = "heartbeat" -- Manutenção de conexão
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🔐 **4. Segurança e Autenticação**
 
 ### **🔑 Sistema de Autenticação**
+#### Nível Basic
 ```lua
 local Auth = {
     methods = {
@@ -167,7 +432,59 @@ local Auth = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+local Auth = {
+    methods = {
+        token = "JWT",
+        session = "session_id",
+        certificate = "SSL/TLS"
+    },
+    
+    encryption = {
+        transport = "TLS_1.3",
+        data = "AES-256-GCM",
+        key_exchange = "ECDHE"
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local Auth = {
+    methods = {
+        token = "JWT",
+        session = "session_id",
+        certificate = "SSL/TLS"
+    },
+    
+    encryption = {
+        transport = "TLS_1.3",
+        data = "AES-256-GCM",
+        key_exchange = "ECDHE"
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **🛡️ Validação de Dados**
+#### Nível Basic
 ```lua
 local Validation = {
     input = {
@@ -184,11 +501,68 @@ local Validation = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+local Validation = {
+    input = {
+        sanitize = true,
+        validate = true,
+        escape = true
+    },
+    
+    output = {
+        encode = true,
+        compress = true,
+        sign = true
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local Validation = {
+    input = {
+        sanitize = true,
+        validate = true,
+        escape = true
+    },
+    
+    output = {
+        encode = true,
+        compress = true,
+        sign = true
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 📊 **5. Padrões de Performance**
 
 ### **⚡ Otimizações de Comunicação**
+#### Nível Basic
+```lua
+local Performance = {
+```
+
+#### Nível Intermediate
 ```lua
 local Performance = {
     compression = {
@@ -211,7 +585,41 @@ local Performance = {
 }
 ```
 
+#### Nível Advanced
+```lua
+local Performance = {
+    compression = {
+        algorithm = "lz4",
+        threshold = 1024, -- bytes
+        level = 6
+    },
+    
+    caching = {
+        enabled = true,
+        ttl = 300, -- seconds
+        max_size = "100MB"
+    },
+    
+    batching = {
+        enabled = true,
+        max_batch_size = 100,
+        timeout = 50 -- ms
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### **📈 Métricas de Performance**
+#### Nível Basic
 ```lua
 local Metrics = {
     latency = {
@@ -234,11 +642,111 @@ local Metrics = {
 }
 ```
 
+#### Nível Intermediate
+```lua
+local Metrics = {
+    latency = {
+        target = "< 50ms",
+        warning = "50-100ms",
+        critical = "> 100ms"
+    },
+    
+    throughput = {
+        target = "> 1000 msg/s",
+        warning = "500-1000 msg/s",
+        critical = "< 500 msg/s"
+    },
+    
+    reliability = {
+        target = "99.9%",
+        warning = "99.0-99.9%",
+        critical = "< 99.0%"
+    }
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+local Metrics = {
+    latency = {
+        target = "< 50ms",
+        warning = "50-100ms",
+        critical = "> 100ms"
+    },
+    
+    throughput = {
+        target = "> 1000 msg/s",
+        warning = "500-1000 msg/s",
+        critical = "< 500 msg/s"
+    },
+    
+    reliability = {
+        target = "99.9%",
+        warning = "99.0-99.9%",
+        critical = "< 99.0%"
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
 ## 🔧 **6. Implementação de Referência**
 
 ### **📝 Template de Implementação**
+#### Nível Basic
+```lua
+-- Template para implementação de protocolo
+local ProtocolTemplate = {
+    -- Implementação obrigatória
+        "send",
+    -- Implementação opcional
+```
+
+#### Nível Intermediate
+```lua
+-- Template para implementação de protocolo
+local ProtocolTemplate = {
+    name = "protocol_name",
+    version = "1.0",
+    
+    -- Implementação obrigatória
+    required = {
+        "initialize",
+        "connect", 
+        "disconnect",
+        "send",
+        "receive",
+        "validate"
+    },
+    
+    -- Implementação opcional
+    optional = {
+        "compress",
+        "encrypt",
+        "cache",
+        "retry"
+    }
+}
+```
+
+#### Nível Advanced
 ```lua
 -- Template para implementação de protocolo
 local ProtocolTemplate = {
@@ -266,6 +774,13 @@ local ProtocolTemplate = {
 ```
 
 ### **🧪 Testes de Comunicação**
+#### Nível Basic
+```lua
+local CommunicationTests = {
+        "checksum_verification",
+```
+
+#### Nível Intermediate
 ```lua
 local CommunicationTests = {
     connectivity = {
@@ -286,6 +801,39 @@ local CommunicationTests = {
         "stress_test"
     }
 }
+```
+
+#### Nível Advanced
+```lua
+local CommunicationTests = {
+    connectivity = {
+        "ping_pong",
+        "connection_timeout",
+        "reconnection"
+    },
+    
+    data_integrity = {
+        "message_validation",
+        "checksum_verification",
+        "corruption_detection"
+    },
+    
+    performance = {
+        "latency_measurement",
+        "throughput_test",
+        "stress_test"
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ---

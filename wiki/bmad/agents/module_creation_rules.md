@@ -128,10 +128,12 @@ Module
 InventoryModal = {}
 
 function InventoryModal.init()
+    -- Função: InventoryModal
     -- Inicialização
 end
 
 function InventoryModal.terminate()
+    -- Função: InventoryModal
     -- Finalização
 end
 ```

@@ -1,22 +1,56 @@
----
-tags: [otclient, sistema_npcs, npc_system, merchant, shop, trade, habdel_research]
-type: technical_documentation
-status: complete
-priority: critical
-created: 2025-01-27
-updated: 2025-01-27
-aliases: [npc_system, merchant_system, shop_system]
----
 
 # 🏪 OTCLIENT-014: Sistema de NPCs
 
-## 🎯 **Visão Geral**
+## 📋 **ÍNDICE DETALHADO**
+
+### **🎯 Navegação Rápida**
+
+1. [🎯](#🎯)
+2. [⚙️](#⚙️)
+3. [📋](#📋)
+4. [⚙️](#⚙️)
+5. [📋](#📋)
+6. [📋](#📋)
+7. [⚙️](#⚙️)
+8. [⚙️](#⚙️)
+9. [⚙️](#⚙️)
+10. [⚡](#⚡)
+11. [📋](#📋)
+12. [📋](#📋)
+13. [📚](#📚)
+
+### **📚 Seções Principais**
+
+| Seção | Descrição |
+|-------|-----------|
+| 🎯 | Documentação e referência |
+| ⚙️ | Documentação e referência |
+| 📋 | Documentação e referência |
+| ⚙️ | Documentação e referência |
+| 📋 | Documentação e referência |
+| 📋 | Documentação e referência |
+| ⚙️ | Documentação e referência |
+| ⚙️ | Documentação e referência |
+| ⚙️ | Documentação e referência |
+| ⚡ | Documentação e referência |
+| 📋 | Documentação e referência |
+| 📋 | Documentação e referência |
+| 📚 | Documentação e referência |
+
+
+
+---
+
+## 🎯 **Visão Geral** 🎯
 
 O **Sistema de NPCs** é um componente essencial do OTClient, responsável por gerenciar todos os personagens não-jogadores (NPCs), incluindo mercadores, vendedores, quest givers e outros personagens interativos. Este sistema trabalha em conjunto com o servidor Canary para fornecer interações dinâmicas e sistemas de comércio.
 
-## 🏗️ **Arquitetura do Sistema**
 
-### **📁 Estrutura de Arquivos**
+---
+
+## 🏗️ **Arquitetura do Sistema** ⚙️
+
+### **📁 Estrutura de Arquivos** 🏗️
 
 ```
 📁 src/creatures/npcs/
@@ -34,7 +68,7 @@ O **Sistema de NPCs** é um componente essencial do OTClient, responsável por g
 └── protocolgamesend.cpp   # Envio de protocolo
 ```
 
-### **🔗 Dependências Principais**
+### **🔗 Dependências Principais** 📝
 
 - **Creature System**: Sistema base de criaturas
 - **Lua Scripting**: Scripts de comportamento
@@ -42,10 +76,14 @@ O **Sistema de NPCs** é um componente essencial do OTClient, responsável por g
 - **Network Protocol**: Comunicação com servidor
 - **Game Engine**: Sistema principal de jogo
 
-## 🏪 **Componentes Principais**
 
-### **1. Classe NpcType**
+---
 
+## 🏪 **Componentes Principais** 📋
+
+### **1. Classe NpcType** 📝
+
+#### Inicialização e Configuração
 ```cpp
 class NpcType final : public SharedObject {
     struct NpcInfo {
@@ -93,6 +131,10 @@ class NpcType final : public SharedObject {
         
         NpcsEvent_t eventType = NPCS_EVENT_NONE;
     };
+```
+
+#### Finalização
+```cpp
 
 public:
     std::string name;
@@ -107,10 +149,11 @@ public:
 };
 ```
 
-### **2. Classe Npc**
+### **2. Classe Npc** 📝
 
 ```cpp
 class Npc final : public Creature {
+    -- Classe: Npc
 public:
     static std::shared_ptr<Npc> createNpc(const std::string &name);
     static int32_t despawnRange;
@@ -168,10 +211,11 @@ private:
 };
 ```
 
-### **3. Classe Shop**
+### **3. Classe Shop** 📝
 
 ```cpp
 class Shop {
+    -- Classe: Shop
 public:
     Shop() = default;
     
@@ -196,10 +240,11 @@ struct ShopBlock {
 };
 ```
 
-### **4. Gerenciador de NPCs**
+### **4. Gerenciador de NPCs** 📝
 
 ```cpp
 class Npcs {
+    -- Classe: Npcs
 public:
     Npcs() = default;
     
@@ -218,10 +263,14 @@ private:
 constexpr auto g_npcs = Npcs::getInstance;
 ```
 
-## ⚙️ **Mecânicas do Sistema**
 
-### **1. Sistema de Eventos Lua**
+---
 
+## ⚙️ **Mecânicas do Sistema** ⚙️
+
+### **1. Sistema de Eventos Lua** 📝
+
+#### Nível Basic
 ```cpp
 bool NpcType::loadCallback(LuaScriptInterface* scriptInterface) {
     const int32_t id = scriptInterface->getEvent();
@@ -267,8 +316,118 @@ bool NpcType::loadCallback(LuaScriptInterface* scriptInterface) {
 }
 ```
 
-### **2. Sistema de Loja**
+#### Nível Intermediate
+```cpp
+bool NpcType::loadCallback(LuaScriptInterface* scriptInterface) {
+    const int32_t id = scriptInterface->getEvent();
+    if (id == -1) {
+        g_logger().warn("[NpcType::loadCallback] - Event not found");
+        return false;
+    }
+    
+    info.scriptInterface = scriptInterface;
+    switch (info.eventType) {
+        case NPCS_EVENT_THINK:
+            info.thinkEvent = id;
+            break;
+        case NPCS_EVENT_APPEAR:
+            info.creatureAppearEvent = id;
+            break;
+        case NPCS_EVENT_DISAPPEAR:
+            info.creatureDisappearEvent = id;
+            break;
+        case NPCS_EVENT_MOVE:
+            info.creatureMoveEvent = id;
+            break;
+        case NPCS_EVENT_SAY:
+            info.creatureSayEvent = id;
+            break;
+        case NPCS_EVENT_PLAYER_BUY:
+            info.playerBuyEvent = id;
+            break;
+        case NPCS_EVENT_PLAYER_SELL:
+            info.playerSellEvent = id;
+            break;
+        case NPCS_EVENT_PLAYER_CHECK_ITEM:
+            info.playerLookEvent = id;
+            break;
+        case NPCS_EVENT_PLAYER_CLOSE_CHANNEL:
+            info.playerCloseChannel = id;
+            break;
+        default:
+            break;
+    }
+    
+    return true;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
 
+#### Nível Advanced
+```cpp
+bool NpcType::loadCallback(LuaScriptInterface* scriptInterface) {
+    const int32_t id = scriptInterface->getEvent();
+    if (id == -1) {
+        g_logger().warn("[NpcType::loadCallback] - Event not found");
+        return false;
+    }
+    
+    info.scriptInterface = scriptInterface;
+    switch (info.eventType) {
+        case NPCS_EVENT_THINK:
+            info.thinkEvent = id;
+            break;
+        case NPCS_EVENT_APPEAR:
+            info.creatureAppearEvent = id;
+            break;
+        case NPCS_EVENT_DISAPPEAR:
+            info.creatureDisappearEvent = id;
+            break;
+        case NPCS_EVENT_MOVE:
+            info.creatureMoveEvent = id;
+            break;
+        case NPCS_EVENT_SAY:
+            info.creatureSayEvent = id;
+            break;
+        case NPCS_EVENT_PLAYER_BUY:
+            info.playerBuyEvent = id;
+            break;
+        case NPCS_EVENT_PLAYER_SELL:
+            info.playerSellEvent = id;
+            break;
+        case NPCS_EVENT_PLAYER_CHECK_ITEM:
+            info.playerLookEvent = id;
+            break;
+        case NPCS_EVENT_PLAYER_CLOSE_CHANNEL:
+            info.playerCloseChannel = id;
+            break;
+        default:
+            break;
+    }
+    
+    return true;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### **2. Sistema de Loja** 📝
+
+#### Nível Basic
 ```cpp
 void NpcType::loadShop(const std::shared_ptr<NpcType> &npcType, ShopBlock shopBlock) {
     ItemType &iType = Item::items.getItemType(shopBlock.itemId);
@@ -296,8 +455,97 @@ void NpcType::loadShop(const std::shared_ptr<NpcType> &npcType, ShopBlock shopBl
 }
 ```
 
-### **3. Sistema de Compra**
+#### Nível Intermediate
+```cpp
+void NpcType::loadShop(const std::shared_ptr<NpcType> &npcType, ShopBlock shopBlock) {
+    ItemType &iType = Item::items.getItemType(shopBlock.itemId);
+    
+    // Registrar preços globalmente
+    if (shopBlock.itemSellPrice > iType.sellPrice) {
+        iType.sellPrice = shopBlock.itemSellPrice;
+    }
+    if (shopBlock.itemBuyPrice > iType.buyPrice) {
+        iType.buyPrice = shopBlock.itemBuyPrice;
+    }
+    
+    // Verificar se item já existe na loja
+    if (std::ranges::any_of(npcType->info.shopItemVector, [&shopBlock](const auto &shopIterator) {
+        return shopIterator == shopBlock;
+    })) {
+        return;
+    }
+    
+    // Adicionar item à loja
+    npcType->info.shopItemVector.emplace_back(shopBlock);
+    
+    // Definir bubble de fala como trade
+    info.speechBubble = SPEECHBUBBLE_TRADE;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
 
+#### Nível Advanced
+```cpp
+void NpcType::loadShop(const std::shared_ptr<NpcType> &npcType, ShopBlock shopBlock) {
+    ItemType &iType = Item::items.getItemType(shopBlock.itemId);
+    
+    // Registrar preços globalmente
+    if (shopBlock.itemSellPrice > iType.sellPrice) {
+        iType.sellPrice = shopBlock.itemSellPrice;
+    }
+    if (shopBlock.itemBuyPrice > iType.buyPrice) {
+        iType.buyPrice = shopBlock.itemBuyPrice;
+    }
+    
+    // Verificar se item já existe na loja
+    if (std::ranges::any_of(npcType->info.shopItemVector, [&shopBlock](const auto &shopIterator) {
+        return shopIterator == shopBlock;
+    })) {
+        return;
+    }
+    
+    // Adicionar item à loja
+    npcType->info.shopItemVector.emplace_back(shopBlock);
+    
+    // Definir bubble de fala como trade
+    info.speechBubble = SPEECHBUBBLE_TRADE;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### **3. Sistema de Compra** 📝
+
+#### Nível Basic
+```cpp
+    if (player == nullptr) {
+    // Verificar slots disponíveis
+    if (!ignore && (player->getFreeBackpackSlots() == 0 && (player->getInventoryItem(CONST_SLOT_BACKPACK) || (!Item::items[itemId].isContainer() || !(Item::items[itemId].slotPosition & SLOTP_BACKPACK))))) {
+        player->sendCancelMessage(RETURNVALUE_NOTENOUGHROOM);
+        if (Item::items[itemId].id == shopBlock.itemId && shopBlock.itemBuyPrice != 0) {
+    // Verificar moeda
+    if (getCurrency() == ITEM_GOLD_COIN && player->getBankBalance() < totalCost) {
+        player->sendCancelMessage(RETURNVALUE_NOTENOUGHMONEY);
+    if (g_game().removeMoney(player, totalCost, 0, true)) {
+        // Notificar compra
+        player->sendTextMessage(MESSAGE_TRANSACTION, ss.str());
+```
+
+#### Nível Intermediate
 ```cpp
 void Npc::onPlayerBuyItem(const std::shared_ptr<Player> &player, uint16_t itemId, uint8_t subType, uint16_t amount, bool ignore, bool inBackpacks) {
     if (player == nullptr) {
@@ -341,8 +589,63 @@ void Npc::onPlayerBuyItem(const std::shared_ptr<Player> &player, uint16_t itemId
 }
 ```
 
-### **4. Sistema de Venda**
+#### Nível Advanced
+```cpp
+void Npc::onPlayerBuyItem(const std::shared_ptr<Player> &player, uint16_t itemId, uint8_t subType, uint16_t amount, bool ignore, bool inBackpacks) {
+    if (player == nullptr) {
+        g_logger().error("[Npc::onPlayerBuyItem] - Player is nullptr");
+        return;
+    }
+    
+    // Verificar slots disponíveis
+    if (!ignore && (player->getFreeBackpackSlots() == 0 && (player->getInventoryItem(CONST_SLOT_BACKPACK) || (!Item::items[itemId].isContainer() || !(Item::items[itemId].slotPosition & SLOTP_BACKPACK))))) {
+        player->sendCancelMessage(RETURNVALUE_NOTENOUGHROOM);
+        return;
+    }
+    
+    // Calcular preço
+    uint32_t buyPrice = 0;
+    const auto &shopVector = getShopItemVector(player->getGUID());
+    for (const ShopBlock &shopBlock : shopVector) {
+        if (Item::items[itemId].id == shopBlock.itemId && shopBlock.itemBuyPrice != 0) {
+            buyPrice = shopBlock.itemBuyPrice;
+        }
+    }
+    
+    const uint32_t totalCost = buyPrice * amount;
+    
+    // Verificar moeda
+    if (getCurrency() == ITEM_GOLD_COIN && player->getBankBalance() < totalCost) {
+        player->sendCancelMessage(RETURNVALUE_NOTENOUGHMONEY);
+        return;
+    }
+    
+    // Processar compra
+    if (g_game().removeMoney(player, totalCost, 0, true)) {
+        g_game().addItem(player, itemId, amount);
+        
+        // Notificar compra
+        std::stringstream ss;
+        ss << "Bought " << amount << "x " << Item::items[itemId].name << " for " << totalCost << " gold.";
+        player->sendTextMessage(MESSAGE_TRANSACTION, ss.str());
+        player->openPlayerContainers();
+    }
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
 
+### **4. Sistema de Venda** 📝
+
+#### Inicialização e Configuração
 ```cpp
 void Npc::onPlayerSellItem(const std::shared_ptr<Player> &player, uint16_t itemId, uint8_t subType, uint16_t amount, bool ignore, uint64_t &totalPrice, const std::shared_ptr<Cylinder> &parent) {
     if (!player) {
@@ -367,6 +670,10 @@ void Npc::onPlayerSellItem(const std::shared_ptr<Player> &player, uint16_t itemI
         if (itemType.id == shopBlock.itemId && shopBlock.itemSellPrice != 0) {
             sellPrice = shopBlock.itemSellPrice;
         }
+```
+
+#### Funcionalidade 1
+```cpp
     }
     
     if (sellPrice == 0) {
@@ -390,6 +697,10 @@ void Npc::onPlayerSellItem(const std::shared_ptr<Player> &player, uint16_t itemI
         if (parent && item->getParent() != parent) {
             continue;
         }
+```
+
+#### Funcionalidade 2
+```cpp
         
         if (!item->hasMarketAttributes()) {
             continue;
@@ -413,6 +724,10 @@ void Npc::onPlayerSellItem(const std::shared_ptr<Player> &player, uint16_t itemI
     if (totalRemoved == 0) {
         return;
     }
+```
+
+#### Finalização
+```cpp
     
     totalPrice = static_cast<uint64_t>(sellPrice * totalRemoved);
     
@@ -426,9 +741,12 @@ void Npc::onPlayerSellItem(const std::shared_ptr<Player> &player, uint16_t itemI
 }
 ```
 
-## 🎮 **Fluxo de Interação**
 
-### **1. Interação com NPC**
+---
+
+## 🎮 **Fluxo de Interação** 📋
+
+### **1. Interação com NPC** 📝
 
 ```mermaid
 graph TD
@@ -441,8 +759,9 @@ graph TD
     G --> H[Atualizar Interface]
 ```
 
-### **2. Sistema de Loja**
+### **2. Sistema de Loja** 📝
 
+#### Nível Basic
 ```cpp
 bool Npc::canInteract(const Position &pos, uint32_t range) {
     if (range == 0) {
@@ -468,10 +787,83 @@ void Npc::removeShopPlayer(uint32_t playerGUID) {
 }
 ```
 
-## 🎨 **Interface do Cliente**
+#### Nível Intermediate
+```cpp
+bool Npc::canInteract(const Position &pos, uint32_t range) {
+    if (range == 0) {
+        range = 4;
+    }
+    
+    const Position &myPos = getPosition();
+    if (Position::getDistanceX(myPos, pos) > range || Position::getDistanceY(myPos, pos) > range) {
+        return false;
+    }
+    
+    return true;
+}
 
-### **1. Protocolo de Loja**
+void Npc::addShopPlayer(uint32_t playerGUID, const std::vector<ShopBlock> &shopItems) {
+    shopPlayers[playerGUID] = shopItems;
+    playerInteractionsOrder.push_back(playerGUID);
+}
 
+void Npc::removeShopPlayer(uint32_t playerGUID) {
+    shopPlayers.erase(playerGUID);
+    playerInteractionsOrder.erase(std::remove(playerInteractionsOrder.begin(), playerInteractionsOrder.end(), playerGUID), playerInteractionsOrder.end());
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+bool Npc::canInteract(const Position &pos, uint32_t range) {
+    if (range == 0) {
+        range = 4;
+    }
+    
+    const Position &myPos = getPosition();
+    if (Position::getDistanceX(myPos, pos) > range || Position::getDistanceY(myPos, pos) > range) {
+        return false;
+    }
+    
+    return true;
+}
+
+void Npc::addShopPlayer(uint32_t playerGUID, const std::vector<ShopBlock> &shopItems) {
+    shopPlayers[playerGUID] = shopItems;
+    playerInteractionsOrder.push_back(playerGUID);
+}
+
+void Npc::removeShopPlayer(uint32_t playerGUID) {
+    shopPlayers.erase(playerGUID);
+    playerInteractionsOrder.erase(std::remove(playerInteractionsOrder.begin(), playerInteractionsOrder.end(), playerGUID), playerInteractionsOrder.end());
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+
+---
+
+## 🎨 **Interface do Cliente** 📋
+
+### **1. Protocolo de Loja** 📝
+
+#### Inicialização e Configuração
 ```cpp
 void ProtocolGame::sendShop(const std::shared_ptr<Npc> &npc) {
     NetworkMessage msg;
@@ -496,6 +888,10 @@ void ProtocolGame::sendShop(const std::shared_ptr<Npc> &npc) {
         if (++i > itemsToSend) {
             break;
         }
+```
+
+#### Funcionalidade 1
+```cpp
         
         // Verificar se item deve ser escondido
         auto talkactionHidden = player->kv()->get("npc-shop-hidden-sell-item");
@@ -522,6 +918,10 @@ void ProtocolGame::AddShopItem(NetworkMessage &msg, const ShopBlock &shopBlock) 
     msg.add<uint16_t>(shopBlock.itemStorageKey);
     msg.add<uint32_t>(shopBlock.itemStorageValue);
 }
+```
+
+#### Finalização
+```cpp
 
 void ProtocolGame::AddHiddenShopItem(NetworkMessage &msg) {
     msg.add<uint16_t>(0x00);
@@ -534,8 +934,9 @@ void ProtocolGame::AddHiddenShopItem(NetworkMessage &msg) {
 }
 ```
 
-### **2. Parsing de Compras**
+### **2. Parsing de Compras** 📝
 
+#### Nível Basic
 ```cpp
 void ProtocolGame::parsePlayerBuyItem(const InputMessagePtr& msg) {
     uint16_t itemId = msg->getU16();
@@ -561,10 +962,83 @@ void ProtocolGame::sendPlayerBuyItem(uint16_t itemId, uint8_t subType, uint16_t 
 }
 ```
 
-## 🔧 **Sistema de Eventos**
+#### Nível Intermediate
+```cpp
+void ProtocolGame::parsePlayerBuyItem(const InputMessagePtr& msg) {
+    uint16_t itemId = msg->getU16();
+    uint8_t subType = msg->getU8();
+    uint16_t amount = msg->getU16();
+    bool ignoreCap = msg->getU8() != 0;
+    bool inBackpacks = msg->getU8() != 0;
+    
+    // Enviar compra para servidor
+    sendPlayerBuyItem(itemId, subType, amount, ignoreCap, inBackpacks);
+}
 
-### **1. Eventos de NPC**
+void ProtocolGame::sendPlayerBuyItem(uint16_t itemId, uint8_t subType, uint16_t amount, bool ignoreCap, bool inBackpacks) {
+    NetworkMessage msg;
+    msg.addByte(0x7B);
+    msg.add<uint16_t>(itemId);
+    msg.add<uint8_t>(subType);
+    msg.add<uint16_t>(amount);
+    msg.add<uint8_t>(ignoreCap ? 1 : 0);
+    msg.add<uint8_t>(inBackpacks ? 1 : 0);
+    
+    sendNetworkMessage(msg);
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
 
+#### Nível Advanced
+```cpp
+void ProtocolGame::parsePlayerBuyItem(const InputMessagePtr& msg) {
+    uint16_t itemId = msg->getU16();
+    uint8_t subType = msg->getU8();
+    uint16_t amount = msg->getU16();
+    bool ignoreCap = msg->getU8() != 0;
+    bool inBackpacks = msg->getU8() != 0;
+    
+    // Enviar compra para servidor
+    sendPlayerBuyItem(itemId, subType, amount, ignoreCap, inBackpacks);
+}
+
+void ProtocolGame::sendPlayerBuyItem(uint16_t itemId, uint8_t subType, uint16_t amount, bool ignoreCap, bool inBackpacks) {
+    NetworkMessage msg;
+    msg.addByte(0x7B);
+    msg.add<uint16_t>(itemId);
+    msg.add<uint8_t>(subType);
+    msg.add<uint16_t>(amount);
+    msg.add<uint8_t>(ignoreCap ? 1 : 0);
+    msg.add<uint8_t>(inBackpacks ? 1 : 0);
+    
+    sendNetworkMessage(msg);
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+
+---
+
+## 🔧 **Sistema de Eventos** ⚙️
+
+### **1. Eventos de NPC** 📝
+
+#### Nível Basic
 ```cpp
 enum NpcsEvent_t : uint8_t {
     NPCS_EVENT_NONE = 0,
@@ -580,8 +1054,58 @@ enum NpcsEvent_t : uint8_t {
 };
 ```
 
-### **2. Sistema de Pensamento**
+#### Nível Intermediate
+```cpp
+enum NpcsEvent_t : uint8_t {
+    NPCS_EVENT_NONE = 0,
+    NPCS_EVENT_THINK = 1,
+    NPCS_EVENT_APPEAR = 2,
+    NPCS_EVENT_DISAPPEAR = 3,
+    NPCS_EVENT_MOVE = 4,
+    NPCS_EVENT_SAY = 5,
+    NPCS_EVENT_PLAYER_BUY = 6,
+    NPCS_EVENT_PLAYER_SELL = 7,
+    NPCS_EVENT_PLAYER_CHECK_ITEM = 8,
+    NPCS_EVENT_PLAYER_CLOSE_CHANNEL = 9
+};
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
 
+#### Nível Advanced
+```cpp
+enum NpcsEvent_t : uint8_t {
+    NPCS_EVENT_NONE = 0,
+    NPCS_EVENT_THINK = 1,
+    NPCS_EVENT_APPEAR = 2,
+    NPCS_EVENT_DISAPPEAR = 3,
+    NPCS_EVENT_MOVE = 4,
+    NPCS_EVENT_SAY = 5,
+    NPCS_EVENT_PLAYER_BUY = 6,
+    NPCS_EVENT_PLAYER_SELL = 7,
+    NPCS_EVENT_PLAYER_CHECK_ITEM = 8,
+    NPCS_EVENT_PLAYER_CLOSE_CHANNEL = 9
+};
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### **2. Sistema de Pensamento** 📝
+
+#### Inicialização e Configuração
 ```cpp
 void Npc::onThinkYell(uint32_t interval) {
     if (npcType->info.yellChance == 0) {
@@ -607,6 +1131,10 @@ void Npc::onThinkWalk(uint32_t interval) {
     if (npcType->info.walkInterval == 0) {
         return;
     }
+```
+
+#### Funcionalidade 1
+```cpp
     
     if (walkTicks > 0) {
         walkTicks -= interval;
@@ -629,6 +1157,10 @@ void Npc::onThinkSound(uint32_t interval) {
         soundTicks -= interval;
         return;
     }
+```
+
+#### Finalização
+```cpp
     
     if (uniform_random(1, 100) <= npcType->info.soundChance) {
         if (!npcType->info.soundVector.empty()) {
@@ -641,9 +1173,12 @@ void Npc::onThinkSound(uint32_t interval) {
 }
 ```
 
-## 📊 **Sistema de Gerenciamento**
 
-### **1. Carregamento de NPCs**
+---
+
+## 📊 **Sistema de Gerenciamento** ⚙️
+
+### **1. Carregamento de NPCs** 📝
 
 ```cpp
 bool Npcs::load(bool loadLibs, bool loadNpcs, bool reloading) const {
@@ -683,6 +1218,7 @@ bool Npcs::loadNpc(const std::string &file, bool reloading) {
     }
     
     for (auto npcNode : doc.child("npcs").children()) {
+    -- Loop de repetição
         std::string name = npcNode.attribute("name").as_string();
         if (name.empty()) {
             continue;
@@ -698,8 +1234,9 @@ bool Npcs::loadNpc(const std::string &file, bool reloading) {
 }
 ```
 
-### **2. Sistema de Spawn**
+### **2. Sistema de Spawn** 📝
 
+#### Nível Basic
 ```cpp
 bool NpcType::canSpawn(const Position &pos) const {
     if (!info.floorChange) {
@@ -729,10 +1266,91 @@ std::shared_ptr<Npc> Npc::createNpc(const std::string &name) {
 }
 ```
 
-## 🛡️ **Sistema de Segurança**
+#### Nível Intermediate
+```cpp
+bool NpcType::canSpawn(const Position &pos) const {
+    if (!info.floorChange) {
+        return true;
+    }
+    
+    const std::shared_ptr<Tile> &tile = g_game().map.getTile(pos);
+    if (!tile) {
+        return false;
+    }
+    
+    return tile->hasFlag(TILESTATE_FLOORCHANGE);
+}
 
-### **1. Validações de Interação**
+std::shared_ptr<Npc> Npc::createNpc(const std::string &name) {
+    auto npcType = g_npcs().getNpcType(name);
+    if (!npcType) {
+        g_logger().error("[Npc::createNpc] - NpcType not found: {}", name);
+        return nullptr;
+    }
+    
+    auto npc = std::make_shared<Npc>(npcType);
+    npc->setID();
+    npc->setMasterPos(npc->getPosition());
+    
+    return npc;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
 
+#### Nível Advanced
+```cpp
+bool NpcType::canSpawn(const Position &pos) const {
+    if (!info.floorChange) {
+        return true;
+    }
+    
+    const std::shared_ptr<Tile> &tile = g_game().map.getTile(pos);
+    if (!tile) {
+        return false;
+    }
+    
+    return tile->hasFlag(TILESTATE_FLOORCHANGE);
+}
+
+std::shared_ptr<Npc> Npc::createNpc(const std::string &name) {
+    auto npcType = g_npcs().getNpcType(name);
+    if (!npcType) {
+        g_logger().error("[Npc::createNpc] - NpcType not found: {}", name);
+        return nullptr;
+    }
+    
+    auto npc = std::make_shared<Npc>(npcType);
+    npc->setID();
+    npc->setMasterPos(npc->getPosition());
+    
+    return npc;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+
+---
+
+## 🛡️ **Sistema de Segurança** ⚙️
+
+### **1. Validações de Interação** 📝
+
+#### Nível Basic
 ```cpp
 bool Npc::isAttackable() const {
     return false; // NPCs não são atacáveis
@@ -751,8 +1369,64 @@ bool Npc::canPushCreatures() const {
 }
 ```
 
-### **2. Verificações de Comércio**
+#### Nível Intermediate
+```cpp
+bool Npc::isAttackable() const {
+    return false; // NPCs não são atacáveis
+}
 
+bool Npc::isPushable() {
+    return npcType->info.pushable;
+}
+
+bool Npc::canPushItems() const {
+    return npcType->info.canPushItems;
+}
+
+bool Npc::canPushCreatures() const {
+    return npcType->info.canPushCreatures;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+bool Npc::isAttackable() const {
+    return false; // NPCs não são atacáveis
+}
+
+bool Npc::isPushable() {
+    return npcType->info.pushable;
+}
+
+bool Npc::canPushItems() const {
+    return npcType->info.canPushItems;
+}
+
+bool Npc::canPushCreatures() const {
+    return npcType->info.canPushCreatures;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+### **2. Verificações de Comércio** 📝
+
+#### Nível Basic
 ```cpp
 bool Npc::isShopPlayer(uint32_t playerGUID) const {
     return shopPlayers.find(playerGUID) != shopPlayers.end();
@@ -770,12 +1444,69 @@ const std::vector<ShopBlock> &Npc::getShopItemVector(uint32_t playerGUID) const 
 }
 ```
 
-## 📈 **Otimizações de Performance**
+#### Nível Intermediate
+```cpp
+bool Npc::isShopPlayer(uint32_t playerGUID) const {
+    return shopPlayers.find(playerGUID) != shopPlayers.end();
+}
 
-### **1. Cache de NPCs**
+const std::vector<ShopBlock> &Npc::getShopItemVector(uint32_t playerGUID) const {
+    if (playerGUID != 0) {
+        auto it = shopPlayers.find(playerGUID);
+        if (it != shopPlayers.end() && !it->second.empty()) {
+            return it->second;
+        }
+    }
+    
+    return npcType->info.shopItemVector;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+bool Npc::isShopPlayer(uint32_t playerGUID) const {
+    return shopPlayers.find(playerGUID) != shopPlayers.end();
+}
+
+const std::vector<ShopBlock> &Npc::getShopItemVector(uint32_t playerGUID) const {
+    if (playerGUID != 0) {
+        auto it = shopPlayers.find(playerGUID);
+        if (it != shopPlayers.end() && !it->second.empty()) {
+            return it->second;
+        }
+    }
+    
+    return npcType->info.shopItemVector;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
+
+---
+
+## 📈 **Otimizações de Performance** ⚡
+
+### **1. Cache de NPCs** 📝
 
 ```cpp
 class NpcCache {
+    -- Classe: NpcCache
 private:
     std::map<std::string, std::shared_ptr<NpcType>> m_npcTypes;
     std::mutex m_mutex;
@@ -799,10 +1530,11 @@ public:
 };
 ```
 
-### **2. Lazy Loading de Scripts**
+### **2. Lazy Loading de Scripts** 📝
 
 ```cpp
 class LazyNpcScript {
+    -- Classe: LazyNpcScript
 private:
     std::string m_scriptPath;
     bool m_loaded = false;
@@ -824,12 +1556,16 @@ public:
 };
 ```
 
-## 🎯 **Casos de Uso Específicos**
 
-### **1. Sistema de Mercadores**
+---
+
+## 🎯 **Casos de Uso Específicos** 📋
+
+### **1. Sistema de Mercadores** 📝
 
 ```cpp
 class Merchant : public Npc {
+    -- Classe: Merchant
 public:
     Merchant(const std::shared_ptr<NpcType> &npcType) : Npc(npcType) {}
     
@@ -852,10 +1588,11 @@ public:
 };
 ```
 
-### **2. Sistema de Quest Givers**
+### **2. Sistema de Quest Givers** 📝
 
 ```cpp
 class QuestGiver : public Npc {
+    -- Classe: QuestGiver
 public:
     QuestGiver(const std::shared_ptr<NpcType> &npcType) : Npc(npcType) {}
     
@@ -881,10 +1618,11 @@ private:
 };
 ```
 
-### **3. Sistema de Trainers**
+### **3. Sistema de Trainers** 📝
 
 ```cpp
 class Trainer : public Npc {
+    -- Classe: Trainer
 public:
     Trainer(const std::shared_ptr<NpcType> &npcType) : Npc(npcType) {}
     
@@ -924,42 +1662,48 @@ private:
 };
 ```
 
-## 🔮 **Futuras Melhorias**
 
-### **1. Sistema de Diálogos Avançados**
+---
+
+## 🔮 **Futuras Melhorias** 📋
+
+### **1. Sistema de Diálogos Avançados** 📝
 
 - **Árvores de Diálogo**: Sistema de diálogos ramificados
 - **Condições Dinâmicas**: Diálogos baseados em estado do jogador
 - **Multi-língua**: Suporte a múltiplos idiomas
 
-### **2. Sistema de Reputação**
+### **2. Sistema de Reputação** 📝
 
 - **Reputação por NPC**: Sistema de reputação individual
 - **Consequências**: Ações baseadas na reputação
 - **Progressão**: Sistema de progressão de reputação
 
-### **3. Sistema de Crafting**
+### **3. Sistema de Crafting** 📝
 
 - **Receitas Dinâmicas**: Receitas que mudam com o tempo
 - **Materiais Especiais**: Materiais únicos de NPCs
 - **Qualidade de Item**: Sistema de qualidade de crafting
 
-## 📚 **Referências Técnicas**
 
-### **1. Arquivos Principais**
+---
+
+## 📚 **Referências Técnicas** 📚
+
+### **1. Arquivos Principais** 📝
 
 - `canary/src/creatures/npcs/npc.hpp`: Definições de NPCs
 - `canary/src/creatures/npcs/npc.cpp`: Implementação de NPCs
 - `canary/src/creatures/npcs/npcs.hpp`: Gerenciador de tipos
 - `canary/src/lua/functions/creatures/npc/npc_functions.hpp`: Funções Lua
 
-### **2. Documentação Relacionada**
+### **2. Documentação Relacionada** 📝
 
 - [OTCLIENT-013: Sistema de Inventário](../OTCLIENT-013-Sistema-de-Inventario.md)
 - [OTCLIENT-015: Sistema de Quests](../OTCLIENT-015-Sistema-de-Quests.md)
 - [OTCLIENT-019: Sistema de Chat](../OTCLIENT-019-Sistema-de-Chat.md)
 
-### **3. APIs e Interfaces**
+### **3. APIs e Interfaces** 📝
 
 - **NPC API**: Interface principal de NPCs
 - **Shop API**: Interface do sistema de loja

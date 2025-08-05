@@ -1,27 +1,31 @@
----
-tags: [otclient, wiki, completion, plan, priority, habdel]
-status: active
-aliases: [Plano de Completamento da Wiki, Priorização de Documentação]
----
 
 # 📋 Plano de Completamento da Wiki OTClient
 
 > [!info] Este documento define o plano de ação para completar a documentação da wiki do OTClient baseado no conhecimento disponível em habdel.
 
-## 📊 Status Atual
+
+---
+
+## 📊 Status Atual 📋
 
 **Última Atualização:** 2025-01-27  
 **Progresso da Wiki:** 43% (13/30 documentos completos)  
 **Conhecimento Habdel:** 115.4% (60/52 documentos completos)  
 **Gap de Conhecimento:** 17 documentos faltantes na wiki
 
-## 🎯 Objetivo
+
+---
+
+## 🎯 Objetivo 📋
 
 **Completar a wiki do OTClient** integrando todo o conhecimento disponível em habdel, seguindo o template e regras estabelecidas.
 
-## 📈 Análise de Gap
 
-### ✅ **Conhecimento Disponível em Habdel (60 documentos)**
+---
+
+## 📈 Análise de Gap 📋
+
+### ✅ **Conhecimento Disponível em Habdel (60 documentos)** 📝
 
 #### 🎨 **Sistema UI (20 documentos)**
 - ✅ UI-001: UIWidget Reference Guide
@@ -91,7 +95,7 @@ aliases: [Plano de Completamento da Wiki, Priorização de Documentação]
 - ✅ GUIDE-009: Guia de Contribuição
 - ✅ GUIDE-010: Guia de Troubleshooting
 
-### 🔄 **Status da Wiki (12 documentos)**
+### 🔄 **Status da Wiki (12 documentos)** 📝
 
 #### ✅ **Completos (12/30)**
 - ✅ Getting_Started_Guide.md
@@ -128,9 +132,12 @@ aliases: [Plano de Completamento da Wiki, Priorização de Documentação]
 - ❌ GUIDE-004: Guia de Debugging Avançado
 - ❌ GUIDE-005: Guia de Performance e Otimização
 
-## 🚀 Plano de Ação Prioritizado
 
-### 🔥 **FASE 1: Prioridade MÁXIMA (5 documentos)**
+---
+
+## 🚀 Plano de Ação Prioritizado 📋
+
+### 🔥 **FASE 1: Prioridade MÁXIMA (5 documentos)** 📝
 
 #### 1. **Sistema de Tabs e Abas** (UI-014)
 - **Fonte:** `wiki/habdel/documentation/UITabs.md`
@@ -162,7 +169,7 @@ aliases: [Plano de Completamento da Wiki, Priorização de Documentação]
 - **Estimativa:** 2 horas
 - **Dependências:** Nenhuma
 
-### ⚡ **FASE 2: Prioridade ALTA (8 documentos)**
+### ⚡ **FASE 2: Prioridade ALTA (8 documentos)** 📝
 
 #### 6. **Sistema de Grid e Listas** (UI-016)
 - **Fonte:** `wiki/habdel/documentation/UIGridList.md`
@@ -196,7 +203,7 @@ aliases: [Plano de Completamento da Wiki, Priorização de Documentação]
 - **Fonte:** `wiki/habdel/documentation/CoreDebug.md`
 - **Arquivo:** `wiki/otclient/Advanced_Debugging_Guide.md`
 
-### 🔵 **FASE 3: Prioridade MÉDIA (5 documentos)**
+### 🔵 **FASE 3: Prioridade MÉDIA (5 documentos)** 📝
 
 #### 14. **Sistema de Calendário e Datas** (UI-019)
 - **Fonte:** `wiki/habdel/documentation/UICalendarDates.md`
@@ -218,9 +225,12 @@ aliases: [Plano de Completamento da Wiki, Priorização de Documentação]
 - **Fonte:** `wiki/habdel/documentation/PerformanceTips.md`
 - **Arquivo:** `wiki/otclient/Performance_Optimization_Guide.md`
 
-## 📋 Template de Conversão
 
-### 🔄 **Processo de Conversão Habdel → Wiki**
+---
+
+## 📋 Template de Conversão 📋
+
+### 🔄 **Processo de Conversão Habdel → Wiki** 📝
 
 1. **Leitura do documento habdel**
 2. **Análise da estrutura e conteúdo**
@@ -231,7 +241,7 @@ aliases: [Plano de Completamento da Wiki, Priorização de Documentação]
 7. **Verificação de links internos**
 8. **Atualização do status**
 
-### 📄 **Template Padrão da Wiki**
+### 📄 **Template Padrão da Wiki** 📝
 
 ```markdown
 ---
@@ -244,7 +254,10 @@ aliases: [Nome em Português, English Name, Related Terms]
 
 > [!info] Descrição breve do sistema e seu propósito.
 
-## 📋 Índice
+
+---
+
+## 📋 Índice 📋
 - [[#Visão Geral]]
 - [[#Componentes do Sistema]]
 - [[#Implementação Prática]]
@@ -253,11 +266,14 @@ aliases: [Nome em Português, English Name, Related Terms]
 
 ---
 
-## 🎯 Visão Geral
+
+---
+
+## 🎯 Visão Geral 🎯
 
 Descrição detalhada do sistema...
 
-### 🏗️ **Arquitetura do Sistema**
+### 🏗️ **Arquitetura do Sistema** 📝
 
 ```
 Diagrama da arquitetura
@@ -265,44 +281,87 @@ Diagrama da arquitetura
 
 ---
 
-## 🔧 Componentes do Sistema
 
-### 🎯 **Componente Principal**
+---
+
+## 🔧 Componentes do Sistema ⚙️
+
+### 🎯 **Componente Principal** 📝
 
 ```lua
 -- Exemplos de código
 function exemplo()
+    -- Função: exemplo
     -- implementação
 end
 ```
 
 ---
 
-## 💡 Exemplos Práticos
 
-### 🎮 **Exemplo Completo**
+---
 
+## 💡 Exemplos Práticos 💡
+
+### 🎮 **Exemplo Completo** 🎮
+
+#### Nível Basic
 ```lua
 -- Implementação completa
 ```
 
+#### Nível Intermediate
+```lua
+-- Implementação completa
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```lua
+-- Implementação completa
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ---
 
-## ✅ Melhores Práticas
 
-### 🎯 **Uso Eficiente**
+---
+
+## ✅ Melhores Práticas 📋
+
+### 🎯 **Uso Eficiente** 📝
 
 ```lua
 -- ✅ BOM: Exemplo correto
+    --  ✅ BOM: Exemplo correto (traduzido)
 -- ❌ EVITE: Exemplo incorreto
+    --  ❌ EVITE: Exemplo incorreto (traduzido)
 ```
 
 O sistema oferece ferramentas poderosas...
 ```
 
-## 📊 Métricas de Progresso
 
-### 🎯 **KPIs de Completamento**
+---
+
+## 📊 Métricas de Progresso 📋
+
+### 🎯 **KPIs de Completamento** 📝
 
 | Métrica | Meta | Atual | Status |
 |---------|------|-------|--------|
@@ -312,16 +371,19 @@ O sistema oferece ferramentas poderosas...
 | **Fase 3 (Média)** | 5 | 0 | 🔴 0% |
 | **Cobertura Total** | 100% | 40% | 🟡 |
 
-### 🚀 **Marcos (Milestones)**
+### 🚀 **Marcos (Milestones)** 📝
 
 - **M1**: Fase 1 Completa (5 documentos) - *Meta: 2 dias*
 - **M2**: Fase 2 Completa (13 documentos) - *Meta: 5 dias*
 - **M3**: Fase 3 Completa (18 documentos) - *Meta: 7 dias*
 - **M4**: Wiki 100% Completa (30 documentos) - *Meta: 10 dias*
 
-## 🔄 Sistema de Tracking
 
-### 📋 **Status de Execução**
+---
+
+## 🔄 Sistema de Tracking ⚙️
+
+### 📋 **Status de Execução** 📝
 
 - 🔴 **Not Started**: Não iniciado
 - 🟡 **In Progress**: Em andamento
@@ -329,7 +391,7 @@ O sistema oferece ferramentas poderosas...
 - ⚪ **Blocked**: Bloqueado
 - 🔵 **Review**: Em revisão
 
-### 📝 **Log de Atividades**
+### 📝 **Log de Atividades** 📝
 
 ```
 2025-01-27:
@@ -341,9 +403,12 @@ O sistema oferece ferramentas poderosas...
 🎯 PRÓXIMO: Iniciar Fase 1 (5 documentos restantes)
 ```
 
-## 🤝 Próximos Passos
 
-### 🔥 **Ação Imediata (Hoje)**
+---
+
+## 🤝 Próximos Passos 📋
+
+### 🔥 **Ação Imediata (Hoje)** 📝
 
 1. **Iniciar Fase 1** com Sistema de Modais e Diálogos
 2. **Converter** documento habdel para template da wiki
@@ -351,14 +416,14 @@ O sistema oferece ferramentas poderosas...
 4. **Verificar** qualidade e consistência
 5. **Atualizar** status de progresso
 
-### ⚡ **Ação Curto Prazo (Esta Semana)**
+### ⚡ **Ação Curto Prazo (Esta Semana)** 📝
 
 1. **Completar Fase 1** (5 documentos)
 2. **Iniciar Fase 2** (8 documentos)
 3. **Revisar** qualidade dos documentos criados
 4. **Atualizar** índices de navegação
 
-### 🔵 **Ação Médio Prazo (Próximas 2 Semanas)**
+### 🔵 **Ação Médio Prazo (Próximas 2 Semanas)** 📝
 
 1. **Completar Fase 2** (13 documentos)
 2. **Iniciar Fase 3** (5 documentos)

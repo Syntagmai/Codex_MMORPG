@@ -188,6 +188,7 @@ feat: implementar agente de automação Git
 
 O sistema já está configurado automaticamente com as seguintes configurações:
 
+#### Nível Basic
 ```json
 {
   "git.automation.enabled": true,
@@ -198,6 +199,49 @@ O sistema já está configurado automaticamente com as seguintes configurações
   "git.automation.validation": true,
   "git.automation.taskIntegration": true
 }
+```
+
+#### Nível Intermediate
+```json
+{
+  "git.automation.enabled": true,
+  "git.automation.language": "portuguese",
+  "git.automation.conventionalCommits": true,
+  "git.automation.autoCommit": true,
+  "git.automation.autoPush": false,
+  "git.automation.validation": true,
+  "git.automation.taskIntegration": true
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```json
+{
+  "git.automation.enabled": true,
+  "git.automation.language": "portuguese",
+  "git.automation.conventionalCommits": true,
+  "git.automation.autoCommit": true,
+  "git.automation.autoPush": false,
+  "git.automation.validation": true,
+  "git.automation.taskIntegration": true
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ### **Variáveis de Ambiente (Opcional)**

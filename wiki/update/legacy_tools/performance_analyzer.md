@@ -38,6 +38,7 @@ opengl, glfw, imgui
  */
 
 class PerformanceAnalyzer {
+    -- Classe: PerformanceAnalyzer
 private:
     std::string name;
     std::string description;

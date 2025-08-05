@@ -11,6 +11,7 @@ The `Game` class serves as the central orchestrator for all server operations:
 
 ```cpp
 class Game {
+    -- Classe: Game
     static Game& getInstance() { return instance; }
     
     // Core responsibilities:
@@ -33,6 +34,7 @@ The `Dispatcher` handles asynchronous event processing:
 
 ```cpp
 class Dispatcher {
+    -- Classe: Dispatcher
     void addEvent(const std::function<void()>& func, std::string description);
     void scheduleEvent(uint32_t delay, const std::function<void()>& func);
     
@@ -165,6 +167,12 @@ Key CMake Files:
 ```
 
 ### vcpkg Dependencies
+#### Nível Basic
+```json
+
+```
+
+#### Nível Intermediate
 ```json
 Core Libraries:
   - asio: Networking and async I/O
@@ -176,6 +184,28 @@ Core Libraries:
   - openssl: Cryptography and security
 ```
 
+#### Nível Advanced
+```json
+Core Libraries:
+  - asio: Networking and async I/O
+  - luajit: Lua scripting engine
+  - libmariadb: MySQL database client
+  - fmt: String formatting
+  - spdlog: Logging framework
+  - boost: Additional utilities
+  - openssl: Cryptography and security
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 **Key Files:**
 - `vcpkg.json` - Package manifest
 - `CMakePresets.json` - Build preset configurations
@@ -185,6 +215,7 @@ Core Libraries:
 ### Configuration Management
 ```cpp
 class ConfigManager {
+    -- Classe: ConfigManager
     // Singleton pattern for server configuration
     static ConfigManager& getInstance();
     
@@ -221,12 +252,19 @@ std::weak_ptr<Creature> target = monster->getTarget();
 
 // RAII for resource management
 class ResourceManager {
+    -- Classe: ResourceManager
     ResourceManager() { acquire(); }
     ~ResourceManager() { release(); }
 };
 ```
 
 ### Event Handling
+#### Nível Basic
+```cpp
+    player->sendTextMessage(MESSAGE_EVENT_ADVANCE, "You gained experience!");
+```
+
+#### Nível Intermediate
 ```cpp
 // Dispatcher events for asynchronous processing
 g_dispatcher.addEvent([player, amount]() {
@@ -240,7 +278,32 @@ g_dispatcher.scheduleEvent(5000, [monster]() {
 }, "monster_regeneration");
 ```
 
+#### Nível Advanced
+```cpp
+// Dispatcher events for asynchronous processing
+g_dispatcher.addEvent([player, amount]() {
+    player->addExperience(amount);
+    player->sendTextMessage(MESSAGE_EVENT_ADVANCE, "You gained experience!");
+}, "player_experience_gain");
+
+// Scheduled events for timed actions
+g_dispatcher.scheduleEvent(5000, [monster]() {
+    monster->heal(monster->getMaxHealth() * 0.1);
+}, "monster_regeneration");
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
+```
+
 ### Lua Integration Patterns
+#### Nível Basic
 ```cpp
 // C++ to Lua function binding
 lua_register(L, "doPlayerAddExperience", LuaScriptInterface::luaDoPlayerAddExperience);
@@ -258,6 +321,63 @@ int32_t LuaScriptInterface::luaDoPlayerAddExperience(lua_State* L) {
     }
     return 1;
 }
+```
+
+#### Nível Intermediate
+```cpp
+// C++ to Lua function binding
+lua_register(L, "doPlayerAddExperience", LuaScriptInterface::luaDoPlayerAddExperience);
+
+// Lua to C++ callbacks
+int32_t LuaScriptInterface::luaDoPlayerAddExperience(lua_State* L) {
+    Player* player = getUserdata<Player>(L, 1);
+    uint64_t experience = getNumber<uint64_t>(L, 2);
+    
+    if (player) {
+        player->addExperience(experience);
+        pushBoolean(L, true);
+    } else {
+        pushBoolean(L, false);
+    }
+    return 1;
+}
+-- Adicionar tratamento de erros
+local success, result = pcall(function()
+    -- Código original aqui
+end)
+if not success then
+    print('Erro:', result)
+end
+```
+
+#### Nível Advanced
+```cpp
+// C++ to Lua function binding
+lua_register(L, "doPlayerAddExperience", LuaScriptInterface::luaDoPlayerAddExperience);
+
+// Lua to C++ callbacks
+int32_t LuaScriptInterface::luaDoPlayerAddExperience(lua_State* L) {
+    Player* player = getUserdata<Player>(L, 1);
+    uint64_t experience = getNumber<uint64_t>(L, 2);
+    
+    if (player) {
+        player->addExperience(experience);
+        pushBoolean(L, true);
+    } else {
+        pushBoolean(L, false);
+    }
+    return 1;
+}
+-- Adicionar metatable para funcionalidade avançada
+local mt = {
+    __index = function(t, k)
+        return rawget(t, k) or 'Valor não encontrado'
+    end
+    __call = function(t, ...)
+        print('Objeto chamado com:', ...)
+    end
+}
+setmetatable(meuObjeto, mt)
 ```
 
 ## Performance Considerations
