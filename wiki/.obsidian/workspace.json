@@ -164,8 +164,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0603d39037b720ce",
+  "active": "f680c32b0913bd3b",
   "lastOpenFiles": [
+    "diretorios.md",
+    "monitoring/advanced_monitoring_system.md",
+    "monitoring",
+    "ml/machine_learning_system.md",
+    "ml",
+    "tools/advanced_development_tools.md",
+    "bmad/performance_optimization_system.md",
+    "integration/advanced_integration_system.md",
     "README.md",
     "maps/critical_categories_optimization_report.json",
     "log/README.md",
@@ -179,8 +187,6 @@
     "maps/automatic_linkage_report.json",
     "maps/automatic_links_processed.json",
     "maps/linkage_rules.json",
-    "update/automatic_linkage_system.py",
-    "maps/automatic_link_templates_report.json",
     "templates/template_validation.md",
     "templates/template_ui_systems.md",
     "templates/template_tools.md",
@@ -195,11 +201,6 @@
     "templates/template_development.md",
     "templates/template_core.md",
     "templates/template_bmad_system.md",
-    "Conceitos_Basicos.md",
-    "docs/otclient/guides/Getting_Started_Guide.md",
-    "Indice_Legacy.md",
-    "Indice_Tools.md",
-    "Indice_Documentation.md",
-    "Indice_Research.md"
+    "Conceitos_Basicos.md"
   ]
 }
