@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "362dbd101c8113ef",
+        "id": "516760760ffb23a5",
         "type": "tabs",
         "children": [
           {
-            "id": "0603d39037b720ce",
+            "id": "efae323403e98db7",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "otclient_course.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "otclient_course"
+              "title": "New tab"
             }
           }
         ]
@@ -168,43 +164,43 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f680c32b0913bd3b",
+  "active": "efae323403e98db7",
   "lastOpenFiles": [
-    "cursor_core",
+    "EPIC_23_PROGRESS_REPORT.md",
+    "topics/canary.md",
+    "modules/02_canary/01_canary_introduction.md",
+    "exercises/setup_canary_server.md",
+    "examples/canary_setup.md",
+    "concepts/canary_server_overview.md",
+    "exercises",
+    "examples",
+    "concepts",
+    "templates/exercise_template.md",
+    "templates/example_template.md",
+    "templates/concept_template.md",
+    "EPIC_23_STRATEGIC_PLAN.md",
+    "wiki/modules/01_fundamentals/01_architecture_overview.md",
+    "MMORPG_Development_Guide.md",
+    "wiki/modules/01_fundamentals",
+    "wiki/modules",
+    "wiki",
+    "integration_course.md",
+    "fundamentals_course.md",
+    "educational_overview.md",
+    "courses_overview.md",
+    "canary_course.md",
+    "otclient_course.md",
+    "WIKI_CREATION_SUMMARY.md",
+    "templates/educational_module_template.md",
+    "templates",
+    "topics/architecture.md",
+    "modules/01_fundamentals/01_architecture_overview.md",
+    "projects",
+    "tools",
+    "levels",
     "diretorios.md",
     "monitoring/advanced_monitoring_system.md",
-    "monitoring",
     "ml/machine_learning_system.md",
-    "ml",
-    "tools/advanced_development_tools.md",
-    "bmad/performance_optimization_system.md",
-    "integration/advanced_integration_system.md",
-    "README.md",
-    "maps/critical_categories_optimization_report.json",
-    "log/README.md",
-    "update/optimize_critical_categories.py",
-    "README.tex",
-    "docs/system_generator/Intelligent_Navigation_System.md",
-    "docs/system_generator/Specialized_Agents_Guide.md",
-    "docs/system_generator/BMAD_System_Complete_Guide.md",
-    "docs/system_generator",
-    "README.html",
-    "maps/automatic_linkage_report.json",
-    "maps/automatic_links_processed.json",
-    "maps/linkage_rules.json",
-    "templates/template_validation.md",
-    "templates/template_ui_systems.md",
-    "templates/template_tools.md",
-    "templates/template_task_management.md",
-    "templates/template_research.md",
-    "templates/template_notification.md",
-    "templates/template_link_rules.md",
-    "templates/template_legacy.md",
-    "templates/template_integration.md",
-    "templates/template_game_systems.md",
-    "templates/template_documentation.md",
-    "templates/template_development.md",
-    "templates/template_core.md",
-    "templates/template_bmad_system.md"
+    "tools/advanced_development_tools.md"
   ]
 }
