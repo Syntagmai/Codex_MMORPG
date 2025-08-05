@@ -55,7 +55,33 @@ A **Epic 17** foi concluída com sucesso, realizando uma verificação geral com
 - **Dependências Faltantes**: 753
 - **Arquivos Analisados**: 0
 
-### 🔗 **Integração** (Score: 20/100)
+### 🔗 **Links Automáticos**
+
+> [!info] **Links Gerados Automaticamente**
+> Estes links foram criados automaticamente pelo sistema de linkagem da categoria **Documentation**
+
+### **📚 Links Obrigatórios**
+- [[../README|Hub Central da Wiki]]
+- [[../dashboard/task_master|Task Master]]
+- [[../dashboard/integrated_task_manager|Dashboard Central]]
+- [[../maps/search_index|Índice de Busca]]
+- [[../maps/tags_index|Índice de Tags]]
+
+### **🧭 Navegação**
+- [[../maps/search_index|Índice de Busca]]
+- [[../maps/tags_index|Índice de Tags]]
+- [[../maps/category_indices|Índices por Categoria]]
+- [[../maps/relationships|Relacionamentos]]
+
+### **📊 Métricas da Categoria**
+- **Categoria**: Documentation
+- **Total de arquivos**: <!-- Contador automático -->
+- **Arquivos linkados**: <!-- Contador automático -->
+- **Taxa de linkagem**: <!-- Percentual automático -->
+
+---
+
+## 🔗 **Integração** (Score: 20/100)
 - **Dependências Circulares**: 661
 - **Interfaces Quebradas**: 223
 - **Integrações Críticas**: 424

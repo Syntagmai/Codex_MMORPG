@@ -273,3 +273,29 @@ Verificar se o **Dashboard do Sistema** contempla **100% de todas as tarefas e p
 **Responsável**: System Analysis Agent  
 **Status**: 🚨 **Gaps Críticos Identificados**  
 **Próximo**: 🔧 **Implementar Correções Prioritárias** 
+## 🔗 **Links Automáticos**
+
+> [!info] **Links Gerados Automaticamente**
+> Estes links foram criados automaticamente pelo sistema de linkagem da categoria **Task_Management**
+
+### **📚 Links Obrigatórios**
+- [[../README|Hub Central da Wiki]]
+- [[../dashboard/task_master|Task Master]]
+- [[../dashboard/integrated_task_manager|Dashboard Central]]
+- [[../dashboard/task_master|Task Master]]
+- [[../dashboard/integrated_task_manager|Dashboard Central]]
+
+### **🧭 Navegação**
+- [[../maps/search_index|Índice de Busca]]
+- [[../maps/tags_index|Índice de Tags]]
+- [[../maps/category_indices|Índices por Categoria]]
+- [[../maps/relationships|Relacionamentos]]
+
+### **📊 Métricas da Categoria**
+- **Categoria**: Task_Management
+- **Total de arquivos**: <!-- Contador automático -->
+- **Arquivos linkados**: <!-- Contador automático -->
+- **Taxa de linkagem**: <!-- Percentual automático -->
+
+---
+

@@ -249,3 +249,29 @@ A **Epic 2.1.3 - Análise dos Módulos Lua** foi **concluída com sucesso total*
 **Responsável**: Documentation Agent  
 **Status**: ✅ **Epic Concluída com Sucesso**  
 **Próximo**: 🎨 **Epic 2.1.4 - Análise de Recursos e Assets** 
+## 🔗 **Links Automáticos**
+
+> [!info] **Links Gerados Automaticamente**
+> Estes links foram criados automaticamente pelo sistema de linkagem da categoria **Legacy**
+
+### **📚 Links Obrigatórios**
+- [[../README|Hub Central da Wiki]]
+- [[../dashboard/task_master|Task Master]]
+- [[../dashboard/integrated_task_manager|Dashboard Central]]
+- [[../maps/search_index|Busca em Arquivos Legados]]
+- [[../legacy_docs/README|Documentação Legada]]
+
+### **🧭 Navegação**
+- [[../maps/search_index|Índice de Busca]]
+- [[../maps/tags_index|Índice de Tags]]
+- [[../maps/category_indices|Índices por Categoria]]
+- [[../maps/relationships|Relacionamentos]]
+
+### **📊 Métricas da Categoria**
+- **Categoria**: Legacy
+- **Total de arquivos**: <!-- Contador automático -->
+- **Arquivos linkados**: <!-- Contador automático -->
+- **Taxa de linkagem**: <!-- Percentual automático -->
+
+---
+

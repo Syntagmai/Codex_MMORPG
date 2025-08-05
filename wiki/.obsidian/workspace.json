@@ -11,14 +11,10 @@
             "id": "0603d39037b720ce",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "README"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -94,7 +90,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "otclient_wiki.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +100,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for otclient_wiki"
+              "title": "Backlinks for README"
             }
           },
           {
@@ -170,41 +166,40 @@
   },
   "active": "0603d39037b720ce",
   "lastOpenFiles": [
-    "Conceitos_Basicos.md",
     "README.md",
+    "maps/critical_categories_optimization_report.json",
+    "log/README.md",
+    "update/optimize_critical_categories.py",
+    "README.tex",
+    "docs/system_generator/Intelligent_Navigation_System.md",
+    "docs/system_generator/Specialized_Agents_Guide.md",
+    "docs/system_generator/BMAD_System_Complete_Guide.md",
+    "docs/system_generator",
+    "README.html",
+    "maps/automatic_linkage_report.json",
+    "maps/automatic_links_processed.json",
+    "maps/linkage_rules.json",
+    "update/automatic_linkage_system.py",
+    "maps/automatic_link_templates_report.json",
+    "templates/template_validation.md",
+    "templates/template_ui_systems.md",
+    "templates/template_tools.md",
+    "templates/template_task_management.md",
+    "templates/template_research.md",
+    "templates/template_notification.md",
+    "templates/template_link_rules.md",
+    "templates/template_legacy.md",
+    "templates/template_integration.md",
+    "templates/template_game_systems.md",
+    "templates/template_documentation.md",
+    "templates/template_development.md",
+    "templates/template_core.md",
+    "templates/template_bmad_system.md",
+    "Conceitos_Basicos.md",
     "docs/otclient/guides/Getting_Started_Guide.md",
     "Indice_Legacy.md",
     "Indice_Tools.md",
     "Indice_Documentation.md",
-    "Indice_Research.md",
-    "Indice_Integration.md",
-    "Indice_Task_Management.md",
-    "Indice_BMAD_System.md",
-    "Indice_Development.md",
-    "Indice_UI_Systems.md",
-    "Indice_Game_Systems.md",
-    "Indice_Core.md",
-    "Indice_Tags.md",
-    "Guia_Navegacao_Categoria.md",
-    "Indice_Principal_Categorias.md",
-    "update/generate_category_indices.py",
-    "log/categorization_stats.json",
-    "maps/tag_system.json",
-    "maps/category_indices.json",
-    "maps/files_categorized.json",
-    "maps/category_hierarchy.json",
-    "update/intelligent_categorization_system.py",
-    "Relatorio_Qualidade_Linkagem.md",
-    "Arquivos_Linkados.md",
-    "Arquivos_Orfaos.md",
-    "update/generate_link_map_visual.py",
-    "log/orphan_metrics_report.txt",
-    "update/orphan_metrics_report.py",
-    "RELATORIO_MELHORIAS_WIKI.md",
-    "teste/COMPARACAO_SIMPLIFICADA.md",
-    "teste/AGENTES_SIMPLIFICADOS.md",
-    "teste/ESTRUTURA_FINAL.md",
-    "teste/CHERRY_PICK_GUIDE.md",
-    "otclient/Animation_System_Guide.md"
+    "Indice_Research.md"
   ]
 }

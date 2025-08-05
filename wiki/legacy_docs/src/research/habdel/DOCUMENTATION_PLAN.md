@@ -385,3 +385,29 @@ Estabelecer um **sistema de documentação Habdel completo, organizado e auto-su
 O **Plano de Documentação Habdel** estabelece uma estratégia completa e sustentável para o desenvolvimento e manutenção da documentação do sistema Habdel. Com foco em qualidade, automação e melhoria contínua, este plano garante que a documentação seja sempre atualizada, acessível e útil para todos os usuários.
 
 **Próximo**: Plano de Desenvolvimento Contínuo
+## 🔗 **Links Automáticos**
+
+> [!info] **Links Gerados Automaticamente**
+> Estes links foram criados automaticamente pelo sistema de linkagem da categoria **Legacy**
+
+### **📚 Links Obrigatórios**
+- [[../README|Hub Central da Wiki]]
+- [[../dashboard/task_master|Task Master]]
+- [[../dashboard/integrated_task_manager|Dashboard Central]]
+- [[../maps/search_index|Busca em Arquivos Legados]]
+- [[../legacy_docs/README|Documentação Legada]]
+
+### **🧭 Navegação**
+- [[../maps/search_index|Índice de Busca]]
+- [[../maps/tags_index|Índice de Tags]]
+- [[../maps/category_indices|Índices por Categoria]]
+- [[../maps/relationships|Relacionamentos]]
+
+### **📊 Métricas da Categoria**
+- **Categoria**: Legacy
+- **Total de arquivos**: <!-- Contador automático -->
+- **Arquivos linkados**: <!-- Contador automático -->
+- **Taxa de linkagem**: <!-- Percentual automático -->
+
+---
+

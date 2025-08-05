@@ -738,3 +738,30 @@
  8. `docs\otclient\guides\Navigation_Index_Alphabetical.md` - **143 links**
  9. `docs\otclient\guides\Navigation_Index_Alphabetical_backup_20250804_194251.md` - **143 links**
 10. `docs\otclient\guides\Navigation_Index_Categorical.md` - **143 links**
+
+## 🔗 **Links Automáticos**
+
+> [!info] **Links Gerados Automaticamente**
+> Estes links foram criados automaticamente pelo sistema de linkagem da categoria **Research**
+
+### **📚 Links Obrigatórios**
+- [[../README|Hub Central da Wiki]]
+- [[../dashboard/task_master|Task Master]]
+- [[../dashboard/integrated_task_manager|Dashboard Central]]
+- [[../habdel/README|Sistema Habdel]]
+- [[../maps/habdel_index|Índice Habdel]]
+
+### **🧭 Navegação**
+- [[../maps/search_index|Índice de Busca]]
+- [[../maps/tags_index|Índice de Tags]]
+- [[../maps/category_indices|Índices por Categoria]]
+- [[../maps/relationships|Relacionamentos]]
+
+### **📊 Métricas da Categoria**
+- **Categoria**: Research
+- **Total de arquivos**: <!-- Contador automático -->
+- **Arquivos linkados**: <!-- Contador automático -->
+- **Taxa de linkagem**: <!-- Percentual automático -->
+
+---
+

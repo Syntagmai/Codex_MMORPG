@@ -1,0 +1,42 @@
+{
+  "timestamp": "2025-08-05T00:56:13.446728",
+  "optimization_results": {
+    "scripts": {
+      "category": "Scripts",
+      "files_processed": 959,
+      "links_created": 956,
+      "errors": 0
+    },
+    "logs": {
+      "category": "Logs",
+      "files_processed": 314,
+      "links_created": 1,
+      "errors": 0
+    },
+    "dashboard": {
+      "category": "Dashboard",
+      "files_processed": 27,
+      "links_created": 0,
+      "errors": 0
+    },
+    "bmad": {
+      "category": "BMAD",
+      "files_processed": 27,
+      "links_created": 1,
+      "errors": 0
+    },
+    "habdel": {
+      "category": "Habdel",
+      "files_processed": 12,
+      "links_created": 0,
+      "errors": 0
+    }
+  },
+  "summary": {
+    "total_files_processed": 1339,
+    "total_links_created": 958,
+    "total_errors": 0,
+    "success_rate": 71.54592979835698
+  },
+  "status": "success"
+}

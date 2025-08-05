@@ -3964,3 +3964,33 @@ setmetatable(meuObjeto, mt)
 ```
 
 Esta referência da API Lua cobre as principais funcionalidades disponíveis no OTClient. Para casos específicos ou funcionalidades avançadas, consulte também a documentação dos módulos individuais e os exemplos práticos fornecidos.
+
+---
+
+## 🔗 **Links Automáticos - Documentação OTClient**
+
+> [!info] **Documentação OTClient**
+> Este arquivo faz parte da documentação consolidada do OTClient
+
+### **📚 Links Obrigatórios**
+- [[../../README|Hub Central da Wiki]]
+- [[../../dashboard/task_master|Task Master]]
+- [[../../dashboard/integrated_task_manager|Dashboard Central]]
+
+### **🔧 Links de Documentação**
+- [[../../docs/README|Documentação Principal]]
+- [[../../docs/otclient/README|Documentação OTClient]]
+- [[../../docs/research/README|Pesquisa e Análise]]
+
+### **📊 Documentação Relacionada**
+- [[../../docs/otclient/LuaAPI_Guide|Guia Lua API]]
+- [[../../docs/otclient/Module_Development|Desenvolvimento de Módulos]]
+- [[../../docs/otclient/Interface_System|Sistema de Interface]]
+
+### **📈 Métricas do Arquivo**
+- **Nome**: LuaAPI.md
+- **Categoria**: Documentação OTClient
+- **Função**: Referência completa da API Lua
+- **Status**: Ativo
+
+---

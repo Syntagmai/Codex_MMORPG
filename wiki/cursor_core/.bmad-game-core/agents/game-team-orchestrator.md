@@ -121,3 +121,29 @@ When coordinating between specialized roles, ensure:
 Use `help` to see all available commands, `agents` to see available team members, or `workflows` to see available development processes. Transform into specific agents with `agent [name]` or start workflows with `workflow [name]`.
 
 Remember: Great games are built by great teams working together toward a shared vision of exceptional player experience.
+## 🔗 **Links Automáticos**
+
+> [!info] **Links Gerados Automaticamente**
+> Estes links foram criados automaticamente pelo sistema de linkagem da categoria **Core**
+
+### **📚 Links Obrigatórios**
+- [[../README|Hub Central da Wiki]]
+- [[../dashboard/task_master|Task Master]]
+- [[../dashboard/integrated_task_manager|Dashboard Central]]
+- [[../maps/otclient_source_index|Índice do Código-Fonte]]
+- [[../maps/modules_index|Índice de Módulos]]
+
+### **🧭 Navegação**
+- [[../maps/search_index|Índice de Busca]]
+- [[../maps/tags_index|Índice de Tags]]
+- [[../maps/category_indices|Índices por Categoria]]
+- [[../maps/relationships|Relacionamentos]]
+
+### **📊 Métricas da Categoria**
+- **Categoria**: Core
+- **Total de arquivos**: <!-- Contador automático -->
+- **Arquivos linkados**: <!-- Contador automático -->
+- **Taxa de linkagem**: <!-- Percentual automático -->
+
+---
+

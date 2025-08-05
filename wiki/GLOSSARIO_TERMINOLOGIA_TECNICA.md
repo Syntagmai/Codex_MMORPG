@@ -1,4 +1,15 @@
 ---
+
+> [!important] **Glossários Relacionados**
+> - [[Glossario_Tecnico|Glossário Técnico Geral]]
+> - [[Conceitos_Basicos|Conceitos Básicos]]
+> - [[Troubleshooting_Comum|Solução de Problemas]]
+
+> [!example] **Documentação de Referência**
+> - [[Exemplos_Progressivos_OTClient|Exemplos Progressivos]]
+> - [[Guia_Inicio_Rapido|Guia de Início Rápido]]
+
+---
 tags: [glossario, terminologia, padronizacao, portugues, tecnico]
 type: reference
 status: active
@@ -257,3 +268,49 @@ Padronizar todos os termos técnicos em português brasileiro para garantir cons
 
 > [!success] **GLOSSÁRIO ATIVO**
 > Este glossário deve ser consultado e seguido em toda a documentação da wiki. 
+---
+
+## 🔗 **Links Automáticos**
+
+> [!info] **Links Gerados Automaticamente**
+> Estes links foram criados automaticamente pelo sistema de linkagem da categoria **Documentation**
+
+### **📚 Links Obrigatórios**
+- [[../README|Hub Central da Wiki]]
+- [[../dashboard/task_master|Task Master]]
+- [[../dashboard/integrated_task_manager|Dashboard Central]]
+- [[../maps/search_index|Índice de Busca]]
+- [[../maps/tags_index|Índice de Tags]]
+
+### **🧭 Navegação**
+- [[../maps/search_index|Índice de Busca]]
+- [[../maps/tags_index|Índice de Tags]]
+- [[../maps/category_indices|Índices por Categoria]]
+- [[../maps/relationships|Relacionamentos]]
+
+### **📊 Métricas da Categoria**
+- **Categoria**: Documentation
+- **Total de arquivos**: <!-- Contador automático -->
+- **Arquivos linkados**: <!-- Contador automático -->
+- **Taxa de linkagem**: <!-- Percentual automático -->
+
+---
+
+## 🔗 **Navegação da Wiki**
+
+> [!tip] **Links Relacionados**
+> - [[README|Hub Central da Wiki]]
+> - [[Indice_Principal_Categorias|Índice de Categorias]]
+> - [[Guia_Navegacao_Categoria|Guia de Navegação]]
+
+> [!info] **Sistemas Principais**
+> - [[dashboard/task_master|Sistema de Tarefas]]
+> - [[bmad/README|Sistema BMAD]]
+> - [[habdel/README|Sistema Habdel]]
+
+> [!note] **Relatórios e Métricas**
+> - [[Relatorio_Qualidade_Linkagem|Relatório de Qualidade]]
+> - [[Arquivos_Orfaos|Arquivos Órfãos]]
+> - [[Arquivos_Linkados|Arquivos Linkados]]
+
+---

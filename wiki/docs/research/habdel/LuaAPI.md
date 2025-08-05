@@ -3964,3 +3964,33 @@ setmetatable(meuObjeto, mt)
 ```
 
 Esta referência da API Lua cobre as principais funcionalidades disponíveis no OTClient. Para casos específicos ou funcionalidades avançadas, consulte também a documentação dos módulos individuais e os exemplos práticos fornecidos.
+
+---
+
+## 🔗 **Links Automáticos - Pesquisa Habdel**
+
+> [!info] **Pesquisa Habdel**
+> Este arquivo faz parte da pesquisa Habdel sobre OTClient
+
+### **📚 Links Obrigatórios**
+- [[../../README|Hub Central da Wiki]]
+- [[../../dashboard/task_master|Task Master]]
+- [[../../dashboard/integrated_task_manager|Dashboard Central]]
+
+### **🔧 Links de Pesquisa**
+- [[../../research/README|Pesquisa Principal]]
+- [[../../research/habdel/README|Pesquisa Habdel]]
+- [[../../research/otclient/README|Pesquisa OTClient]]
+
+### **📊 Pesquisa Relacionada**
+- [[../../research/habdel/LuaAPI_Research|Pesquisa Lua API]]
+- [[../../research/habdel/Module_Analysis|Análise de Módulos]]
+- [[../../research/habdel/Workflow_Research|Pesquisa de Workflows]]
+
+### **📈 Métricas do Arquivo**
+- **Nome**: LuaAPI.md
+- **Categoria**: Pesquisa Habdel
+- **Função**: Referência Lua API para pesquisa
+- **Status**: Ativo
+
+---

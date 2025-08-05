@@ -245,3 +245,29 @@ Este relatório documenta o status final da integração entre o sistema BMAD (B
 ## 🏆 **Status Final: SUCESSO TOTAL** ✅
 
 **A integração foi um sucesso completo, resultando em um sistema revolucionário que elimina a necessidade de comandos manuais e automatiza completamente a coordenação de agentes BMAD. O sistema está 100% funcional e pronto para uso imediato.** 
+## 🔗 **Links Automáticos**
+
+> [!info] **Links Gerados Automaticamente**
+> Estes links foram criados automaticamente pelo sistema de linkagem da categoria **Tools**
+
+### **📚 Links Obrigatórios**
+- [[../README|Hub Central da Wiki]]
+- [[../dashboard/task_master|Task Master]]
+- [[../dashboard/integrated_task_manager|Dashboard Central]]
+- [[../maps/tools_index|Índice de Ferramentas]]
+- [[../update/README|Scripts de Atualização]]
+
+### **🧭 Navegação**
+- [[../maps/search_index|Índice de Busca]]
+- [[../maps/tags_index|Índice de Tags]]
+- [[../maps/category_indices|Índices por Categoria]]
+- [[../maps/relationships|Relacionamentos]]
+
+### **📊 Métricas da Categoria**
+- **Categoria**: Tools
+- **Total de arquivos**: <!-- Contador automático -->
+- **Arquivos linkados**: <!-- Contador automático -->
+- **Taxa de linkagem**: <!-- Percentual automático -->
+
+---
+

@@ -314,3 +314,25 @@ wiki/bmad/
 - **Documentação OTClient**: `wiki/otclient/`
 - **Mapas de Navegação**: `wiki/maps/`
 - **Regras do Sistema**: `.cursor/rules/` 
+## 🔗 **Links Automáticos - BMAD**
+
+> [!info] **Sistema BMAD**
+> Este arquivo faz parte do sistema BMAD de agentes inteligentes
+
+### **📚 Links Obrigatórios**
+- [[../README|Hub Central da Wiki]]
+- [[../dashboard/task_master|Task Master]]
+- [[../bmad/README|Sistema BMAD]]
+
+### **🤖 Links BMAD**
+- [[../docs/system_generator/BMAD_System_Complete_Guide|Guia Completo BMAD]]
+- [[../docs/system_generator/Specialized_Agents_Guide|Guia de Agentes]]
+- [[../maps/bmad_agents_index|Índice de Agentes]]
+
+### **📊 Categoria BMAD**
+- **Categoria**: BMAD_System
+- **Função**: Sistema de agentes inteligentes
+- **Status**: Ativo
+
+---
+

@@ -1,0 +1,200 @@
+{
+  "Core": {
+    "description": "Sistemas fundamentais e núcleo do OTClient",
+    "required_links": [
+      "[[../README|Hub Central da Wiki]]",
+      "[[../dashboard/task_master|Task Master]]",
+      "[[../dashboard/integrated_task_manager|Dashboard Central]]",
+      "[[../maps/otclient_source_index|Índice do Código-Fonte]]",
+      "[[../maps/modules_index|Índice de Módulos]]"
+    ],
+    "navigation_links": [
+      "[[../maps/search_index|Índice de Busca]]",
+      "[[../maps/tags_index|Índice de Tags]]",
+      "[[../maps/category_indices|Índices por Categoria]]",
+      "[[../maps/relationships|Relacionamentos]]"
+    ],
+    "priority": "Alta",
+    "auto_link": true
+  },
+  "Game_Systems": {
+    "description": "Sistemas específicos do jogo",
+    "required_links": [
+      "[[../README|Hub Central da Wiki]]",
+      "[[../dashboard/task_master|Task Master]]",
+      "[[../dashboard/integrated_task_manager|Dashboard Central]]",
+      "[[../maps/search_index|Busca por Sistemas de Jogo]]",
+      "[[../maps/tags_index|Tags de Game Systems]]"
+    ],
+    "navigation_links": [
+      "[[../maps/search_index|Índice de Busca]]",
+      "[[../maps/tags_index|Índice de Tags]]",
+      "[[../maps/category_indices|Índices por Categoria]]",
+      "[[../maps/relationships|Relacionamentos]]"
+    ],
+    "priority": "Alta",
+    "auto_link": true
+  },
+  "UI_Systems": {
+    "description": "Sistemas de interface e usuário",
+    "required_links": [
+      "[[../README|Hub Central da Wiki]]",
+      "[[../dashboard/task_master|Task Master]]",
+      "[[../dashboard/integrated_task_manager|Dashboard Central]]",
+      "[[../maps/styles_index|Índice de Estilos]]",
+      "[[../maps/search_index|Busca por UI Systems]]"
+    ],
+    "navigation_links": [
+      "[[../maps/search_index|Índice de Busca]]",
+      "[[../maps/tags_index|Índice de Tags]]",
+      "[[../maps/category_indices|Índices por Categoria]]",
+      "[[../maps/relationships|Relacionamentos]]"
+    ],
+    "priority": "Média",
+    "auto_link": true
+  },
+  "Development": {
+    "description": "Ferramentas e guias de desenvolvimento",
+    "required_links": [
+      "[[../README|Hub Central da Wiki]]",
+      "[[../dashboard/task_master|Task Master]]",
+      "[[../dashboard/integrated_task_manager|Dashboard Central]]",
+      "[[../maps/code_examples_analysis|Análise de Exemplos]]",
+      "[[../maps/search_index|Busca por Desenvolvimento]]"
+    ],
+    "navigation_links": [
+      "[[../maps/search_index|Índice de Busca]]",
+      "[[../maps/tags_index|Índice de Tags]]",
+      "[[../maps/category_indices|Índices por Categoria]]",
+      "[[../maps/relationships|Relacionamentos]]"
+    ],
+    "priority": "Alta",
+    "auto_link": true
+  },
+  "BMAD_System": {
+    "description": "Sistema de agentes inteligentes BMAD",
+    "required_links": [
+      "[[../README|Hub Central da Wiki]]",
+      "[[../dashboard/task_master|Task Master]]",
+      "[[../dashboard/integrated_task_manager|Dashboard Central]]",
+      "[[../bmad/README|Sistema BMAD]]",
+      "[[../maps/bmad_agents_index|Índice de Agentes]]"
+    ],
+    "navigation_links": [
+      "[[../maps/search_index|Índice de Busca]]",
+      "[[../maps/tags_index|Índice de Tags]]",
+      "[[../maps/category_indices|Índices por Categoria]]",
+      "[[../maps/relationships|Relacionamentos]]"
+    ],
+    "priority": "Média",
+    "auto_link": true
+  },
+  "Task_Management": {
+    "description": "Sistema de gerenciamento de tarefas",
+    "required_links": [
+      "[[../README|Hub Central da Wiki]]",
+      "[[../dashboard/task_master|Task Master]]",
+      "[[../dashboard/integrated_task_manager|Dashboard Central]]",
+      "[[../dashboard/task_master|Task Master]]",
+      "[[../dashboard/integrated_task_manager|Dashboard Central]]"
+    ],
+    "navigation_links": [
+      "[[../maps/search_index|Índice de Busca]]",
+      "[[../maps/tags_index|Índice de Tags]]",
+      "[[../maps/category_indices|Índices por Categoria]]",
+      "[[../maps/relationships|Relacionamentos]]"
+    ],
+    "priority": "Alta",
+    "auto_link": true
+  },
+  "Integration": {
+    "description": "Sistema de integração OTClient-Canary",
+    "required_links": [
+      "[[../README|Hub Central da Wiki]]",
+      "[[../dashboard/task_master|Task Master]]",
+      "[[../dashboard/integrated_task_manager|Dashboard Central]]",
+      "[[../integration/README|Sistema de Integração]]",
+      "[[../maps/canary_integration_map|Mapa de Integração Canary]]"
+    ],
+    "navigation_links": [
+      "[[../maps/search_index|Índice de Busca]]",
+      "[[../maps/tags_index|Índice de Tags]]",
+      "[[../maps/category_indices|Índices por Categoria]]",
+      "[[../maps/relationships|Relacionamentos]]"
+    ],
+    "priority": "Média",
+    "auto_link": true
+  },
+  "Research": {
+    "description": "Sistema de pesquisa Habdel",
+    "required_links": [
+      "[[../README|Hub Central da Wiki]]",
+      "[[../dashboard/task_master|Task Master]]",
+      "[[../dashboard/integrated_task_manager|Dashboard Central]]",
+      "[[../habdel/README|Sistema Habdel]]",
+      "[[../maps/habdel_index|Índice Habdel]]"
+    ],
+    "navigation_links": [
+      "[[../maps/search_index|Índice de Busca]]",
+      "[[../maps/tags_index|Índice de Tags]]",
+      "[[../maps/category_indices|Índices por Categoria]]",
+      "[[../maps/relationships|Relacionamentos]]"
+    ],
+    "priority": "Baixa",
+    "auto_link": true
+  },
+  "Documentation": {
+    "description": "Documentação geral e referências",
+    "required_links": [
+      "[[../README|Hub Central da Wiki]]",
+      "[[../dashboard/task_master|Task Master]]",
+      "[[../dashboard/integrated_task_manager|Dashboard Central]]",
+      "[[../maps/search_index|Índice de Busca]]",
+      "[[../maps/tags_index|Índice de Tags]]"
+    ],
+    "navigation_links": [
+      "[[../maps/search_index|Índice de Busca]]",
+      "[[../maps/tags_index|Índice de Tags]]",
+      "[[../maps/category_indices|Índices por Categoria]]",
+      "[[../maps/relationships|Relacionamentos]]"
+    ],
+    "priority": "Média",
+    "auto_link": true
+  },
+  "Tools": {
+    "description": "Ferramentas e scripts de manutenção",
+    "required_links": [
+      "[[../README|Hub Central da Wiki]]",
+      "[[../dashboard/task_master|Task Master]]",
+      "[[../dashboard/integrated_task_manager|Dashboard Central]]",
+      "[[../maps/tools_index|Índice de Ferramentas]]",
+      "[[../update/README|Scripts de Atualização]]"
+    ],
+    "navigation_links": [
+      "[[../maps/search_index|Índice de Busca]]",
+      "[[../maps/tags_index|Índice de Tags]]",
+      "[[../maps/category_indices|Índices por Categoria]]",
+      "[[../maps/relationships|Relacionamentos]]"
+    ],
+    "priority": "Baixa",
+    "auto_link": true
+  },
+  "Legacy": {
+    "description": "Documentação legada e histórica",
+    "required_links": [
+      "[[../README|Hub Central da Wiki]]",
+      "[[../dashboard/task_master|Task Master]]",
+      "[[../dashboard/integrated_task_manager|Dashboard Central]]",
+      "[[../maps/search_index|Busca em Arquivos Legados]]",
+      "[[../legacy_docs/README|Documentação Legada]]"
+    ],
+    "navigation_links": [
+      "[[../maps/search_index|Índice de Busca]]",
+      "[[../maps/tags_index|Índice de Tags]]",
+      "[[../maps/category_indices|Índices por Categoria]]",
+      "[[../maps/relationships|Relacionamentos]]"
+    ],
+    "priority": "Baixa",
+    "auto_link": true
+  }
+}

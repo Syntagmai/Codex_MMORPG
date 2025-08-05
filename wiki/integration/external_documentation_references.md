@@ -21,6 +21,32 @@ Este documento centraliza **todas as referências externas** necessárias para i
 
 ---
 
+## 🔗 **Links Automáticos**
+
+> [!info] **Links Gerados Automaticamente**
+> Estes links foram criados automaticamente pelo sistema de linkagem da categoria **Integration**
+
+### **📚 Links Obrigatórios**
+- [[../README|Hub Central da Wiki]]
+- [[../dashboard/task_master|Task Master]]
+- [[../dashboard/integrated_task_manager|Dashboard Central]]
+- [[../integration/README|Sistema de Integração]]
+- [[../maps/canary_integration_map|Mapa de Integração Canary]]
+
+### **🧭 Navegação**
+- [[../maps/search_index|Índice de Busca]]
+- [[../maps/tags_index|Índice de Tags]]
+- [[../maps/category_indices|Índices por Categoria]]
+- [[../maps/relationships|Relacionamentos]]
+
+### **📊 Métricas da Categoria**
+- **Categoria**: Integration
+- **Total de arquivos**: <!-- Contador automático -->
+- **Arquivos linkados**: <!-- Contador automático -->
+- **Taxa de linkagem**: <!-- Percentual automático -->
+
+---
+
 ## 🔗 **1. Documentação Oficial Canary**
 
 ### **📖 Repositórios Principais**
@@ -157,6 +183,32 @@ Este documento centraliza **todas as referências externas** necessárias para i
 - **UI Design**: [https://docs.otclient.com/ui-design](https://docs.otclient.com/ui-design)
 - **Styling**: [https://docs.otclient.com/styling](https://docs.otclient.com/styling)
 - **Animations**: [https://docs.otclient.com/animations](https://docs.otclient.com/animations)
+
+---
+
+## 🔗 **Links Automáticos**
+
+> [!info] **Links Gerados Automaticamente**
+> Estes links foram criados automaticamente pelo sistema de linkagem da categoria **Integration**
+
+### **📚 Links Obrigatórios**
+- [[../README|Hub Central da Wiki]]
+- [[../dashboard/task_master|Task Master]]
+- [[../dashboard/integrated_task_manager|Dashboard Central]]
+- [[../integration/README|Sistema de Integração]]
+- [[../maps/canary_integration_map|Mapa de Integração Canary]]
+
+### **🧭 Navegação**
+- [[../maps/search_index|Índice de Busca]]
+- [[../maps/tags_index|Índice de Tags]]
+- [[../maps/category_indices|Índices por Categoria]]
+- [[../maps/relationships|Relacionamentos]]
+
+### **📊 Métricas da Categoria**
+- **Categoria**: Integration
+- **Total de arquivos**: <!-- Contador automático -->
+- **Arquivos linkados**: <!-- Contador automático -->
+- **Taxa de linkagem**: <!-- Percentual automático -->
 
 ---
 

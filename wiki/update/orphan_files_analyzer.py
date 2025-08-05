@@ -319,4 +319,5 @@ class OrphanFilesAnalyzer:
 
 if __name__ == "__main__":
     analyzer = OrphanFilesAnalyzer()
-    analyzer.run() 
+    analyzer.run()
+

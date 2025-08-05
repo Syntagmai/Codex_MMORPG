@@ -1,4 +1,19 @@
 ---
+
+> [!important] **Sistemas Integrados**
+> - [[bmad/README|Sistema BMAD]]
+> - [[habdel/README|Sistema Habdel]]
+> - [[dashboard/task_master|Sistema de Tarefas]]
+
+> [!example] **Documentação de Integração**
+> - [[integration/README|Documentação de Integração]]
+> - [[integration/comparisons/INTEGRATION-001_architecture_comparison|Comparação de Arquitetura]]
+
+> [!info] **Relatórios Relacionados**
+> - [[RELATORIO_MELHORIAS_WIKI|Relatório de Melhorias]]
+> - [[bmad/RELATORIO_WORKFLOW_MODULOS|Relatório de Workflow]]
+
+---
 title: Sistema OTClient + BMAD - Relatório Geral de Integração
 tags: [sistema, bmad, integração, relatório, habdel, colaboração]
 status: completed
@@ -181,6 +196,32 @@ workflow performance-optimization "Sistema de rede"
 
 ---
 
+## 🔗 **Links Automáticos**
+
+> [!info] **Links Gerados Automaticamente**
+> Estes links foram criados automaticamente pelo sistema de linkagem da categoria **BMAD_System**
+
+### **📚 Links Obrigatórios**
+- [[../README|Hub Central da Wiki]]
+- [[../dashboard/task_master|Task Master]]
+- [[../dashboard/integrated_task_manager|Dashboard Central]]
+- [[../bmad/README|Sistema BMAD]]
+- [[../maps/bmad_agents_index|Índice de Agentes]]
+
+### **🧭 Navegação**
+- [[../maps/search_index|Índice de Busca]]
+- [[../maps/tags_index|Índice de Tags]]
+- [[../maps/category_indices|Índices por Categoria]]
+- [[../maps/relationships|Relacionamentos]]
+
+### **📊 Métricas da Categoria**
+- **Categoria**: BMAD_System
+- **Total de arquivos**: <!-- Contador automático -->
+- **Arquivos linkados**: <!-- Contador automático -->
+- **Taxa de linkagem**: <!-- Percentual automático -->
+
+---
+
 ## 🔗 **Integração com Canary**
 
 ### **🌐 Preparação para Ecossistema Completo:**
@@ -302,3 +343,49 @@ Qualquer dúvida ou sugestão, é só falar! 😊
 > - [[BMAD_Templates_Guide]] - Guia dos templates
 > - [OTClient Wiki](wiki/otclient/) - Documentação do cliente
 > - [Canary Wiki](wiki/canary/) - Documentação do servidor 
+---
+
+## 🔗 **Links Automáticos**
+
+> [!info] **Links Gerados Automaticamente**
+> Estes links foram criados automaticamente pelo sistema de linkagem da categoria **BMAD_System**
+
+### **📚 Links Obrigatórios**
+- [[../README|Hub Central da Wiki]]
+- [[../dashboard/task_master|Task Master]]
+- [[../dashboard/integrated_task_manager|Dashboard Central]]
+- [[../bmad/README|Sistema BMAD]]
+- [[../maps/bmad_agents_index|Índice de Agentes]]
+
+### **🧭 Navegação**
+- [[../maps/search_index|Índice de Busca]]
+- [[../maps/tags_index|Índice de Tags]]
+- [[../maps/category_indices|Índices por Categoria]]
+- [[../maps/relationships|Relacionamentos]]
+
+### **📊 Métricas da Categoria**
+- **Categoria**: BMAD_System
+- **Total de arquivos**: <!-- Contador automático -->
+- **Arquivos linkados**: <!-- Contador automático -->
+- **Taxa de linkagem**: <!-- Percentual automático -->
+
+---
+
+## 🔗 **Navegação da Wiki**
+
+> [!tip] **Links Relacionados**
+> - [[README|Hub Central da Wiki]]
+> - [[Indice_Principal_Categorias|Índice de Categorias]]
+> - [[Guia_Navegacao_Categoria|Guia de Navegação]]
+
+> [!info] **Sistemas Principais**
+> - [[dashboard/task_master|Sistema de Tarefas]]
+> - [[bmad/README|Sistema BMAD]]
+> - [[habdel/README|Sistema Habdel]]
+
+> [!note] **Relatórios e Métricas**
+> - [[Relatorio_Qualidade_Linkagem|Relatório de Qualidade]]
+> - [[Arquivos_Orfaos|Arquivos Órfãos]]
+> - [[Arquivos_Linkados|Arquivos Linkados]]
+
+---

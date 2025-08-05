@@ -313,4 +313,34 @@ wiki/bmad/
 - **Sistema BMAD**: `wiki/bmad/`
 - **Documentação OTClient**: `wiki/otclient/`
 - **Mapas de Navegação**: `wiki/maps/`
-- **Regras do Sistema**: `.cursor/rules/` 
+- **Regras do Sistema**: `.cursor/rules/`
+
+---
+
+## 🔗 **Links Automáticos - Pesquisa OTClient**
+
+> [!info] **Pesquisa OTClient**
+> Este arquivo faz parte da pesquisa consolidada do OTClient
+
+### **📚 Links Obrigatórios**
+- [[../../README|Hub Central da Wiki]]
+- [[../../dashboard/task_master|Task Master]]
+- [[../../dashboard/integrated_task_manager|Dashboard Central]]
+
+### **🔧 Links de Pesquisa**
+- [[../../research/README|Pesquisa Principal]]
+- [[../../research/otclient/README|Pesquisa OTClient]]
+- [[../../research/habdel/README|Pesquisa Habdel]]
+
+### **📊 Pesquisa Relacionada**
+- [[../../research/otclient/Module_Analysis|Análise de Módulos]]
+- [[../../research/otclient/Workflow_Research|Pesquisa de Workflows]]
+- [[../../research/otclient/Agent_System|Sistema de Agentes]]
+
+### **📈 Métricas do Arquivo**
+- **Nome**: otclient_module_workflow.md
+- **Categoria**: Pesquisa OTClient
+- **Função**: Workflow de agentes para módulos
+- **Status**: Ativo
+
+--- 

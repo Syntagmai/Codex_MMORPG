@@ -6,6 +6,22 @@ O **Sistema de Orquestração Inteligente** é uma evolução revolucionária do
 
 ---
 
+> [!important] **Sistemas de Automação**
+> - [[bmad/README|Sistema BMAD]]
+> - [[bmad/automacao_git|Automação Git]]
+> - [[bmad/sistema_autonomo|Sistema Autônomo]]
+
+> [!example] **Guias e Templates**
+> - [[bmad/guides/Auto_Learning_Guide|Guia de Auto-Aprendizado]]
+> - [[bmad/guides/git_automation_guide|Guia de Automação Git]]
+> - [[bmad/templates/agent_template|Template de Agente]]
+
+> [!info] **Relatórios de Sistema**
+> - [[Sistema_OTClient_BMAD_Relatorio_Geral|Relatório Geral OTClient-BMAD]]
+> - [[bmad/RELATORIO_CRIACAO_MODULO_ZERO|Relatório Criação Módulo Zero]]
+
+---
+
 ## 🚀 **Como Funciona**
 
 ### **❌ Sistema Antigo (Comandos Manuais)**
@@ -304,3 +320,49 @@ O sistema está **100% funcional** e pronto para uso imediato. Agora você pode 
 5. **Compartilhe** feedback para melhorias contínuas
 
 **O futuro da orquestração de agentes está aqui!** 🚀 
+---
+
+## 🔗 **Links Automáticos**
+
+> [!info] **Links Gerados Automaticamente**
+> Estes links foram criados automaticamente pelo sistema de linkagem da categoria **Documentation**
+
+### **📚 Links Obrigatórios**
+- [[../README|Hub Central da Wiki]]
+- [[../dashboard/task_master|Task Master]]
+- [[../dashboard/integrated_task_manager|Dashboard Central]]
+- [[../maps/search_index|Índice de Busca]]
+- [[../maps/tags_index|Índice de Tags]]
+
+### **🧭 Navegação**
+- [[../maps/search_index|Índice de Busca]]
+- [[../maps/tags_index|Índice de Tags]]
+- [[../maps/category_indices|Índices por Categoria]]
+- [[../maps/relationships|Relacionamentos]]
+
+### **📊 Métricas da Categoria**
+- **Categoria**: Documentation
+- **Total de arquivos**: <!-- Contador automático -->
+- **Arquivos linkados**: <!-- Contador automático -->
+- **Taxa de linkagem**: <!-- Percentual automático -->
+
+---
+
+## 🔗 **Navegação da Wiki**
+
+> [!tip] **Links Relacionados**
+> - [[README|Hub Central da Wiki]]
+> - [[Indice_Principal_Categorias|Índice de Categorias]]
+> - [[Guia_Navegacao_Categoria|Guia de Navegação]]
+
+> [!info] **Sistemas Principais**
+> - [[dashboard/task_master|Sistema de Tarefas]]
+> - [[bmad/README|Sistema BMAD]]
+> - [[habdel/README|Sistema Habdel]]
+
+> [!note] **Relatórios e Métricas**
+> - [[Relatorio_Qualidade_Linkagem|Relatório de Qualidade]]
+> - [[Arquivos_Orfaos|Arquivos Órfãos]]
+> - [[Arquivos_Linkados|Arquivos Linkados]]
+
+---
