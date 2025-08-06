@@ -133,8 +133,8 @@ Cada módulo inclui projetos práticos que consolidam o conhecimento:
 
 ### **Sistema de Tracking**
 - [ ] **Módulo 1**: Fundamentos (0/4)
-- [x] **Módulo 2**: Canary (1/6) - Introdução ao Canary ✅
-- [ ] **Módulo 3**: OTClient (0/6)
+- [x] **Módulo 2**: Canary (3/6) - Introdução ao Canary ✅, Arquitetura Core ✅, Sistema de Scripting ✅
+- [x] **Módulo 3**: OTClient (1/6) - Introdução ao OTClient ✅
 - [ ] **Módulo 4**: Integração (0/4)
 
 ### **Projetos Completados**
