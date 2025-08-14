@@ -1,5 +1,5 @@
 ---
-tags: [integration, protocol, communication, otclient, canary, wiki, canary_otclient]
+tags: [integration, protocol, communication, otclient, canary, wiki, canary_otclient, network, security, cpp, lua]
 type: wiki_page
 status: active
 priority: high
@@ -7,6 +7,11 @@ created: 2025-08-05
 updated: 2025-08-05
 aliases: [Protocolo Comunicação, Protocolo OTClient Canary, Comunicação Cliente Servidor]
 ---
+
+> [!breadcrumbs]
+> - **[Wiki](<wikipedia_canary_otclient.md>)**
+> - **[Integração](<integracao_canary_otclient.md>)**
+> - **Protocolo de Comunicação**
 
 # 🌐 **Protocolo de Comunicação - OTClient vs Canary**
 
@@ -871,20 +876,13 @@ end
 
 ---
 
-## 📖 **Recursos Adicionais**
+## 📖 **Páginas Relacionadas**
 
-### **Documentação Relacionada**
-- **[[integracao_comparacao_arquiteturas|Comparação de Arquiteturas]]** - Análise arquitetural
-- **[[integracao_open_codes|Open Codes]]** - Protocolo básico
-- **[[integracao_extended_open_codes|Extended Open Codes]]** - Protocolo avançado
-
-### **Exemplos de Código**
-- **[[integracao_exemplos_protocolo|Exemplos de Protocolo]]** - Exemplos práticos
-- **[[integracao_seguranca_comunicacao|Segurança de Comunicação]]** - Implementações de segurança
-
-### **Ferramentas de Desenvolvimento**
-- **[[integracao_ferramentas_protocolo|Ferramentas de Protocolo]]** - Ferramentas para desenvolvimento
-- **[[integracao_debug_protocolo|Debug de Protocolo]]** - Ferramentas de debug
+- **[Sistema de Rede (Canary)](<canary_sistema_rede.md>)**: A implementação do protocolo no lado do servidor.
+- **[Sistema de Rede (OTClient)](<otclient_sistema_rede.md>)**: A implementação do protocolo no lado do cliente.
+- **[Segurança](<INTEGRATION-009_Security.md>)**: Detalhes sobre a criptografia e segurança da comunicação.
+- **[Otimização de Rede](<INTEGRATION-008_Network_Optimization.md>)**: Técnicas para melhorar a performance.
+- **[Comparação de Arquiteturas](<integracao_comparacao_arquiteturas.md>)**: Contexto geral da integração.
 
 ---
 

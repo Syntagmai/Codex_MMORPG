@@ -1,5 +1,5 @@
 ---
-tags: [otclient, sistema_ui, fundamentos, habdel_research]
+tags: [otclient, sistema_ui, fundamentos, habdel_research, lua, c++, ui, widgets, events]
 type: wiki_page
 status: active
 priority: high
@@ -11,6 +11,11 @@ category: fundamentos
 dependencies: [otclient_arquitetura_core]
 related: [otclient_arquitetura_core, otclient_sistema_modulos, otclient_sistema_rede, otclient_sistema_graficos]
 ---
+
+> [!breadcrumbs]
+> - **[Wiki](<wikipedia_canary_otclient.md>)**
+> - **[OTClient](<otclient_arquitetura_core.md>)**
+> - **Sistema de UI**
 
 # 🖥️ **Sistema de UI do OTClient**
 
@@ -498,11 +503,11 @@ return dynamicInterface
 
 ## 🔗 **Páginas Relacionadas**
 
-- [[otclient_arquitetura_core|Arquitetura Core]] - Estrutura geral do OTClient
-- [[otclient_sistema_modulos|Sistema de Módulos]] - Módulos Lua
-- [[otclient_sistema_rede|Sistema de Rede]] - Comunicação com servidor
-- [[otclient_sistema_graficos|Sistema de Gráficos]] - Renderização
-- [[wikipedia_canary_otclient|Wikipedia Canary + OTClient]] - Visão geral do projeto
+- **[Arquitetura Core (OTClient)](<otclient_arquitetura_core.md>)**: Para entender a estrutura geral do cliente.
+- **[Sistema de Módulos (OTClient)](<otclient_sistema_modulos.md>)**: Essencial para entender como a UI é organizada e estendida.
+- **[Sistema de Eventos (OTClient)](<otclient_sistema_eventos.md>)**: Como a UI responde às interações do usuário.
+- **[Sistema de Gráficos (OTClient)](<otclient_sistema_graficos.md>)**: Detalhes sobre a renderização dos componentes da UI.
+- **[Sistema de UI Avançado (OTClient)](<otclient_sistema_ui_avancado.md>)**: Para aprofundar em tópicos como widgets customizados.
 
 ---
 

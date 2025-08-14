@@ -1,5 +1,5 @@
 ---
-tags: [canary, arquitetura, core, servidor, c++, inicialização, serviços]
+tags: [canary, arquitetura, core, servidor, c++, inicialização, serviços, database]
 type: course
 status: published
 level: intermediate
@@ -7,6 +7,11 @@ created: 2025-01-27
 updated: 2025-01-27
 aliases: [canary_core_architecture, canary_server_architecture, canary_initialization]
 ---
+
+> [!breadcrumbs]
+> - **[Wiki](<wikipedia_canary_otclient.md>)**
+> - **[Canary](<canary_fundamentos.md>)**
+> - **Arquitetura Core**
 
 # Arquitetura Core do Canary
 
@@ -708,20 +713,13 @@ if (loaderStatus == LoaderStatus::FAILED) {
 }
 ```
 
-## 📖 **Próximos Passos**
+## 📖 **Páginas Relacionadas**
 
-### **Leitura Recomendada**
-
-1. [[canary_sistema_rede|Sistema de Rede]] - Comunicação cliente-servidor
-2. [[canary_sistema_ui|Sistema de UI]] - Interfaces do usuário
-3. [[canary_sistema_modulos|Sistema de Módulos]] - Extensibilidade
-4. [[canary_fundamentos|Fundamentos do Canary]] - Visão geral
-
-### **Recursos Adicionais**
-
-- [[wikipedia_canary_otclient|Wikipedia Canary + OTClient]] - Visão geral completa
-- [[guia_navegacao|Guia de Navegação]] - Como navegar pela documentação
-- [[glossario_tecnico|Glossário Técnico]] - Termos e conceitos
+- **[Fundamentos do Canary](<canary_fundamentos.md>)**: Para uma visão geral do servidor.
+- **[Sistema de Rede (Canary)](<canary_sistema_rede.md>)**: Detalhes sobre o `ServiceManager` e a comunicação.
+- **[Sistema de Banco de Dados (Canary)](<canary_sistema_banco_dados.md>)**: Aprofunde-se no `DatabaseManager`.
+- **[Sistema de Scripting Lua (Canary)](<canary_sistema_scripting.md>)**: Entenda como os módulos Lua são carregados durante a inicialização.
+- **[Comparação de Arquiteturas](<integracao_comparacao_arquiteturas.md>)**: Compare a arquitetura do Canary com a do OTClient.
 
 ## 🎯 **Conclusão**
 
@@ -745,7 +743,7 @@ Esta base sólida permite o desenvolvimento e manutenção eficiente do servidor
 
 ---
 
-**Tags**: #canary #arquitetura #core #servidor #c++ #inicialização #serviços  
+**Tags**: #canary #arquitetura #core #servidor #c++ #inicialização #serviços #database
 **Nível**: Intermediate  
 **Tempo Estimado**: 45 minutos  
 **Próximo**: [[canary_sistema_rede|Sistema de Rede]] 

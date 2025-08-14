@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "wikipedia_canary_otclient.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "wikipedia_canary_otclient"
             }
           }
         ]
@@ -168,8 +168,24 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "efae323403e98db7",
+  "active": "f680c32b0913bd3b",
   "lastOpenFiles": [
+    "indices/inventario_codigo_otclient.md",
+    "indices/inventario_codigo_canary.md",
+    "indices/relatorio_final_completude.md",
+    "indices/validacao_links.md",
+    "indices/otimizacao_ia_busca.md",
+    "indices/sistema_recomendacoes.md",
+    "indices/relacionamentos_modulos.md",
+    "indices/ferramentas/cpp.md",
+    "indices/ferramentas/lua.md",
+    "indices/ferramentas/otclient.md",
+    "indices/ferramentas/canary.md",
+    "indices/ferramentas",
+    "otclient_sistema_ui_avancado.md",
+    "otclient_sistema_ui.md",
+    "modules/3.3_interface_usuario.md",
+    "README.md",
     "wikipedia_canary_otclient.md",
     "integracao_sincronizacao_dados.md",
     "integracao_extended_open_codes.md",
@@ -180,22 +196,7 @@
     "otclient_sistema_modulos_avancado_2.md",
     "otclient_sistema_graficos_avancado.md",
     "otclient_sistema_rede_avancado.md",
-    "otclient_sistema_ui_avancado.md",
     "otclient_sistema_modulos_avancado.md",
-    "otclient_sistema_lua_avancado.md",
-    "otclient_sistema_quests.md",
-    "otclient_sistema_npcs.md",
-    "otclient_sistema_inventario.md",
-    "otclient_sistema_combate.md",
-    "otclient_sistema_mapas.md",
-    "modules/3.2_sistema_graficos.md",
-    "projects/04_mmorpg_basico_funcional.md",
-    "projects/03_sistema_chat_completo.md",
-    "projects/02_cliente_interface_simples.md",
-    "projects/01_servidor_basico_npcs.md",
-    "TASK_23_4_COMPLETION_REPORT.md",
-    "modules/04_integration/4.4_estrategias_teste.md",
-    "modules/04_integration/4.3_tratamento_erros.md",
     "exercises",
     "examples",
     "concepts",
@@ -204,7 +205,6 @@
     "wiki",
     "templates",
     "projects",
-    "tools",
-    "levels"
+    "tools"
   ]
 }

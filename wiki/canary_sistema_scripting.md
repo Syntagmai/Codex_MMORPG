@@ -1,5 +1,5 @@
 ---
-tags: [canary, scripting, lua, módulos, recvbyte, extensibilidade, servidor, mmorpg, c++, habdel]
+tags: [canary, scripting, lua, módulos, recvbyte, extensibilidade, servidor, mmorpg, c++, habdel, network, events]
 type: course
 level: intermediate
 created: 2025-08-05
